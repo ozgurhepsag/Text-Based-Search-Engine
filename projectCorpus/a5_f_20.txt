@@ -1,0 +1,1792 @@
+Preface xi
+Acknowledgments xv
+PART ONE What Is Business Statistics? 1
+CHAPTER 1 Statistics for Business 7
+Doing Without Statistics 7
+Statistics are Cheap 8
+Lying with Statistics 9
+So Many Choices, So Little Time 10
+Math and Mystery 11
+Where Is Statistics Used? 12
+The Statistical Study 16
+The Statistical Report 17
+Quiz 17
+CHAPTER 2 What Is Statistics? 20
+Measurement 21
+Error 30
+Sampling 36
+Analysis 42
+Quiz 45
+v
+For more information about this title, click here
+CHAPTER 3 What Is Probability? 47
+How Probability Fits in With Statistics 48
+Measuring Likelihoods 48
+Three Types of Probability 52
+Using Probability for Statistics 62
+The Laws of Probability 83
+Quiz 84
+Exam for Part One 87
+PART TWO Preparing a Statistical Report 93
+CHAPTER 4 What Is a Statistical Study? 95
+Why Do a Study? 97
+Why Use Statistics? 97
+What Are the Key Steps in a
+Statistical Study? 99
+Planning a Study 101
+What Are Data and Why Do We Need Them? 102
+Gathering Data: Where and
+How to Get Data 104
+Writing a Statistical Report for Business 107
+Reading a Statistical Report 107
+Quiz 109
+CHAPTER 5 Planning a Statistical Study 111
+Determining Plan Objectives 113
+Defining the Research Questions 113
+Assessing the Practicality of the Study 116
+Preparing the Data Collection Plan 116
+Planning Data Analysis 118
+Planning the Preparation of the
+Statistical Report 119
+Writing Up the Plan 120
+Quiz 123
+vi CONTENTS
+CHAPTER 6 Getting the Data 125
+Stealing Statistics: Pros and Cons 125
+Someone Else’s Data: Pros and Cons 127
+Doing it Yourself: Pros and Cons 129
+Survey Data 132
+Experimental and Quasi-Experimental
+Data 137
+Quiz 138
+CHAPTER 7 Statistics Without Numbers:
+Graphs and Charts 140
+When to Use Pictures: Clarity and
+Precision 141
+Parts is Parts: The Pie Chart 142
+Compare and Contrast: The Bar Chart 144
+Change: The Line Graph 152
+Comparing Two Variables: The Scatter
+Plot 154
+Don’t Get Stuck in a Rut: Other
+Types of Figures 156
+Do’s and Don’ts: Best Practices in
+Statistical Graphics 160
+Quiz 171
+CHAPTER 8 Common Statistical Measures 173
+Fundamental Measures 174
+Descriptive Statistics: Characterizing
+Distributions 179
+Measuring Measurement 195
+Quiz 205
+CHAPTER 9 A Difference That Makes a Difference.
+When Do Statistics Mean Something? 208
+The Scientific Approach 209
+CONTENTS vii
+Hypothesis Testing 212
+Statistical Significance In Business 227
+Quiz 236
+CHAPTER 10 Reporting the Results 238
+Three Contexts for Decision Support 238
+Good Reports and Presentations 239
+Reports and Presentations Before the
+Decision 244
+Reports and Presentations After the
+Decision 245
+Advertisements and Sales Tools Using
+Statistics 246
+Quiz 247
+Exam for Part Two 249
+PART THREE Statistical Inference: Basic Procedures 255
+CHAPTER 11 Estimation: Summarizing Data About
+One Variable 257
+Basic Principles of Estimation 258
+Single-Sample Inferences: Using
+Estimates to Make Inferences 262
+CHAPTER 12 Correlation and Regression 267
+Relations Between Variables 268
+Regression Analysis: The Measured
+and the Unmeasured 273
+Multiple Regression 281
+CHAPTER 13 Group Differences: Analysis of Variance
+(ANOVA) and Designed Experiments 285
+Making Sense of Experiments With Groups 286
+Group Tests 289
+Fun With ANOVA 295
+viii CONTENTS
+CHAPTER 14 Nonparametric Statistics 298
+Problems With Populations 298
+A Solution: Sturdy Statistics 299
+Popular Nonparametric Tests 301
+Exam for Part Three 312
+PART FOUR Making Business Decisions 317
+CHAPTER 15 Creating Surveys 319
+Planning and Design 319
+Conducting the Survey 324
+Interpreting and Reporting the Results 325
+Quiz 325
+CHAPTER 16 Forecasting 327
+The Future Is Good To Know 328
+The Measurement Model 329
+Descriptive Statistics 335
+Inferential Statistics 337
+Cautions About Forecasting 340
+Quiz 344
+CHAPTER 17 Quality Management 346
+Key Quality Concepts 346
+Root Cause Analysis 348
+Statistical Process Control 353
+Quiz 358
+APPENDIX A Basic Math for Statistics 361
+APPENDIX B Answers to Quizzes and Exams 364
+APPENDIX C Resources for Learning 366
+Index 369
+CONTENTS ix
+This page intentionally left blank
+PREFACE
+Many people find statistics challenging, but most statistics professors do not.
+As a result, it is sometimes hard for our professors and the authors of statistics
+textbooks to make statistics clear and practical for business students,
+managers, and executives. Business Statistics Demystified fills that gap. We
+begin slowly, introducing statistical concepts without mathematics. We
+build step by step, from defining statistics in Part One providing the basic
+tools for creating and understanding statistical reports in Part Two, introducing
+the statistical measures commonly—and some not-so-commonly—used
+in business in Part Three and, in Part Four, applying statistics to practical
+business situations with forecasting, quality management, and more.
+Our approach is to focus on understanding statistics and how to use it to
+support business decisions. The math comes in when it is needed. In fact,
+most of the math in statistics is done by computers now, anyway. When the
+ideas are clear, the math will follow fairly easily.
+Business Statistics Demystified is for you if:
+. You are in a business statistics class, and you find it challenging.
+Whether you just can’t seem to think like a statistician, or it’s the
+math, or you’re not sure what the problem is, the answer is here. We
+take you through all the rough spots step by step.
+. You are in a business statistics class, and you want to excel. You will
+learn how to use statistics in real business situations, and how to
+prepare top-quality statistical reports for your assignments.
+. You are studying business statistics to move up the career ladder. We
+show you where statistics can—and can’t—be applied in practical
+business situations.
+xi
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+We wrote this book so that you would be able to apply statistics in a
+practical way. When you have finished with this book, you will find that
+you can:
+. Understand and evaluate statistical reports
+. Help perform statistical studies and author statistical reports
+. Detect problems and limitations in statistical studies
+. Select the correct statistical measures and techniques for making most
+basic statistical decisions
+. Understand how to select the appropriate statistical techniques for
+making common business decisions
+. Be familiar with statistical tools used in the most common areas of
+business
+. Avoid all the most common errors in working with and presenting
+statistics
+. Present effective statistical reports that support business decisions
+HOW TO GET THE MOST OUT OF THIS BOOK
+If you are just learning statistics, we recommend you start at the beginning,
+and work your way through. We demystify the things that other books jump
+over too quickly, leaving your head spinning. In fact, you might read
+Part One before you look at other books, so you can avoid getting mystified
+in the first place!
+If you are comfortable with statistics, skim Part One and see if it clarifies
+some of the vague ideas we can all carry around without knowing it, and then
+use the rest of the book as you see fit. If you want to focus on performing
+statistical studies and preparing statistical reports—or even just reading
+them—then Part Two will be a big help. Part Three is a useful reference for
+the more advanced statistical techniques used in business. And Part Four
+makes the link between statistics and business interesting and exciting.
+SIDEBARS FOR EASY LEARNING
+In Business Statistics Demystified, we want to make it easy for you to learn
+and to find what you need to know. So we’ve created several different types
+of sidebars that will introduce key ideas. Here they are:
+. Tips on Terms. Definitions and crucial terminology.
+. Critical Cautions. Something statistical you must do—or must avoid—
+to get things right.
+xii PREFACE
+. Study Review. Key points for exam preparation.
+. Survival Strategies. What to do on the job.
+. Handy Hints. Other practical advice.
+. Fun Facts. A little bit on the lighter side.
+. Case Studies. Real-world examples that teach what works—and what
+doesn’t.
+. Bio Bites. The authors’ experience—if you learn from what we’ve been
+through, your statistical work will be easier.
+. Quick Quotes. Bits of wisdom from folks much smarter than we are.
+PREFACE xiii
+This page intentionally left blank
+ACKNOWLEDGMENTS
+Our first thanks go to Scott Hoffheiser, our administrative assistant, whose
+understanding of statistics, proofreading skill, and skills with Microsoft
+Equation Editor and in creating graphs with Microsoft Excel were indispensable,
+and are well illustrated in Business Statistics Demystified. If you
+like the quizzes, then you will be as grateful as we are to Anna Romero,
+Ph.D. Professor Mark Appelbaum, currently of the University of
+California, San Diego, was the first person to be successful in teaching me
+(Steve) statistics and deserves special thanks for that. Our Dad, Bernie
+Kemp, a now retired professor of economics, offered some wonderful suggestions,
+which improved the book immensely. More importantly, he taught us
+about numbers before we learned them in school. Most importantly, we
+learned all about the uncertainty of the world and the limits of measurement
+at his knee. Our Mom, Edie Kemp, provided support, which allowed us the
+time to write, always the sine qua non of any book, as did Kris Lindbeck,
+Sid’s wife.
+Dave Eckerman and Peter Ornstein, both of the Psychology Department
+at the University of North Carolina at Chapel Hill, have supported the first
+author’s affiliation with that institution, whose extensive research resources
+were invaluable in the preparation of the manuscript of the book.
+xv
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+This page intentionally left blank
+PART ONE
+What Is Business
+Statistics?
+People in business want to make good decisions and implement them. When
+we do, our businesses flourish, we solve problems, we make money, we
+succeed in developing new opportunities, etc. In the work of implementation—
+executing business plans—statistics can’t play much of a part. But in
+the making of good decisions—in planning, choosing among options, finding
+out what our customers, our manufacturing plants, or our staff are thinking
+and doing, and controlling the work of people and machinery—business
+people need all the help we can get. And statistics can help a great deal.
+To understand how statistics can help business people understand the
+world, it is important to see the bigger picture, of which business statistics is a
+part. This is illustrated in Fig. I-1.
+Let’s start at the top. Philosophy is the field that asks, and tries to answer,
+questions that folks in other fields take for granted. These include questions
+like: What is business? What is mathematics? How can we relate mathematics
+to science, engineering, and statistics? We left out the arrows because
+1
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+philosophy takes every other field as its field of study. And the first piece of
+good news is that, while the authors of a good statistics book may need to
+worry about philosophy, you don’t.
+Next, mathematics can’t help business directly, because it is a pure
+abstraction, and business people want to understand, make decisions about,
+work in, and change the real world. Statistics brings the power of
+mathematics to the real world by gathering real-world data and applying
+mathematics to them. The second piece of good news is that, while statistics
+often uses mathematics, statisticians often don’t need to. In the practical
+world of business statistics, we leave the math (or at least the calculations) to
+Observation,
+measurement,
+and sampling
+Tools
+Formulas
+Observation,
+analysis,
+and interpretation
+Tools
+Formulas
+Interpretation
+Justification
+of Confidence
+Fig. I-1. Business statistics, mathematics, probability, models, and the real world.
+2 PART ONE What Is Business Statistics?
+computers. But we do need to understand enough math to:
+. understand the equations in statistical tools,
+. know which equations to use when, and
+. pass the exams in our statistics classes.
+QUICK QUOTE
+All real statistics can be done on an empty beach drawing in the sand with a stick.
+The rest is just calculation.
+John Tukey
+The next point is key: statistics is not a part of mathematics. It is its own
+field, its own discipline, independent of math or other fields. But it does make
+use of mathematics. And it has important links to science, engineering,
+business models of the world, and probability.
+KEY POINT
+Statistics Stands by Itself
+Statistics is not part of mathematics, probability, business, science, or engineering. It
+stands independent of the others. At the same time, statistics does make use of, and
+relate to, mathematics, probability, science, and engineering. And it can help
+business people make good decisions.
+A fundamental problem of business—perhaps the fundamental problem of
+life—is that we would love to know exactly how the world works and know
+everything that is going on, but we can’t. Instead, we have only partial
+information—all too often inaccurate information—about what is going on
+in the real world. We also have a bunch of guesses—often called theories, but
+we will call them models—about how the real world works. The guesses we
+use in business often come from experts in science, engineering, the social
+sciences, and business theory.
+When business executives turn to experts for help in making decisions, we
+often run into a problem. We understand that the experts know their stuff.
+But what if their whole model is wrong? The most we can give to anyone
+coming to us with a model of how the world works—a business model, a
+PART ONE What Is Business Statistics? 3
+scientific model, a social model, or an engineering model—is this: If your
+model is right, then your advice will improve my chances of getting me to the
+right decision. But what if your model is wrong?
+In this, statistics stands apart from other fields. Engineering, science, the
+social sciences, and business models all rely on being right about how the
+world works. Statistics does not. Statistics relies on only one basic
+assumption: that the future is likely to resemble the past, in general. If we
+accept that principle, we can use statistics to understand the world, even if we
+have no model about how the world works, or no model we are confident
+enough to use.
+Part of making good decisions is avoiding assumptions that might be
+wrong. In using statistics, we are avoiding the assumption that a particular
+idea of how the world works—how customers look at advertisements, or how
+vendors deliver their goods—is true. We are relying on more general, more
+proven principles.
+But we can’t use statistics for every business decision. And Business
+Statistics Demystified will show you how to know when statistics can help
+with business decisions, how to use good statistics, and how to spot and
+avoid bad statistical methods and unreliable statements backed up with a lot
+of good-sounding statistics. Also, parts of statistical theory, especially those
+regarding the significance of statistical results, were invented for statistics in
+its relationship to science. Determining what statistical results mean for
+business is very different from deciding what statistical results are important
+for science, and we will demystify that, as well.
+Statistics helps business in two basic ways. The first is called descriptive
+statistics, and it tells us some useful things about what is going on in the data
+we have about the world. The second is called inferential statistics, and it
+helps us know about things we can’t affordably measure and count, and
+about what is likely to happen if we make a particular decision.
+We open Business Statistics Demystified with three chapters that lay a
+foundation for the rest of the book. Chapter 1 ‘‘Statistics for Business’’
+expands on and clarifies the issues we have raised here: What is statistics, and
+how does it help us make business decisions? We also explore the basis of
+statistics, and explain why knowing how to do bad statistics is essential to not
+being fooled by them, and also for doing good statistics.
+In Chapter 2 ‘‘What Is Statistics?’’ you will learn the basic elements and
+terms of statistics: Measurement, error, sampling, and analyzing. In Chapter 3
+‘‘What Is Probability?’’ we briefly turn away from statistics to introduce a
+related, but separate field, probability. Probability and statistics seem similar.
+Both apply mathematics to the real world. Both try to tell us what we are
+likely to find in the real world, or what is likely to happen if we make a
+4 PART ONE What Is Business Statistics?
+certain decision. But there is a fundamental difference. Probability is a way of
+relating models to the real world and statistics is a way of finding out about
+the world without models. We will then distinguish probability from statistics.
+Finally, we will also show how the two work together to help us have
+confidence in our methods and decisions.
+When we make the right decisions, and have confidence in them, it is easier
+to follow through on them. And when we make the right decision and follow
+through, we solve problems and succeed.
+PART ONE What Is Business Statistics? 5
+This page intentionally left blank
+CHAPTER
+1
+Statistics for
+Business
+Statistics is the use of numbers to provide general descriptions of the world.
+And business is, well, business. In business, knowing about the world can be
+very useful, particularly when it comes to making decisions. Statistics is an
+excellent way to get information about the world. Here, we define business
+statistics as the use of statistics to help make business decisions.
+In this chapter, we will learn what statistics is for and how it ties into
+business. We will discuss generally what statistics can and cannot do. There
+will be no math and almost no technical terminology in this chapter (there will
+be plenty of time for that later). For now, we need to understand the basics.
+Doing Without Statistics
+Statistics is like anything else in business. It should be used only if it is
+worthwhile. Using statistics takes time, effort, and resources. Statistics for its
+own sake just lowers profits by increasing expenses. It is extremely important
+to recognize when and where statistics will aid in a business decision.
+7
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+Business decisions, big and small, get made every day without statistics.
+The very smallest decisions will almost never benefit from statistics. What
+restaurant to take our client to for lunch is probably a decision best made
+without statistical assistance. There are many reasons not to use statistics for
+bigger decisions as well. Statistics is one of the most effective ways to convert
+specific facts about the world into useful information, but statistics cannot
+improve the quality of the original facts. If we can’t get the right facts,
+statistics will just make the wrong facts look snazzy and mathematical and
+trustworthy. In that case, statistics may make us even worse-off than if we
+hadn’t used them at all. It is vital to understand what facts are needed in
+order to make a good decision before we use statistics, and even before we
+decide what statistics to use.
+KEY POINT
+Facts First!
+For example, if you are planning to take a foreign business guest to an excellent
+restaurant, you might think it’s a good idea to pick the best restaurant in Chicago.
+Looking at customer surveys, that’s likely to be a steak house.
+But the more relevant information might be the fact that your guest is a
+vegetarian.
+The lesson: Decide what’s important, get the right facts, and then do statistics if
+they help.
+Even if the facts are right, there may not be enough of them to help us
+make our decision. If so, the general information we get from statistics will
+not be precise or accurate enough for our needs. In statistics, imprecision and
+inaccuracy are called error. Error is one of the most important aspects of
+statistics. One of the most remarkable things about statistics is that we can
+use statistics to tell us how much error our statistics have. This means that
+sometimes we can use statistics to find out when not to use statistics.
+Statistics are Cheap
+Is statistics overused or underused in business? It is hard to say. Some
+business decisions are not made using statistics and some business decisions
+should not be. But deciding when to use statistics is often not easy. Many
+business decisions that could use statistical information are made without
+statistics and many business decisions that shouldn’t use statistics are made
+using statistics. It is probably fair to say that there are types of decisions and
+8 PART ONE What Is Business Statistics?
+areas of business where statistics are underused and others where they are
+overused.
+Things that lead to the underuse of statistics are:
+. lack of statistical knowledge on the part of the business people
+. mistaken assumptions about how complicated or difficult to use or
+costly statistics can be
+. the time pressure to make business decisions
+. a failure to set up statistical systems in advance of decision making
+Your decision to learn about statistics will help you avoid the underuse of
+statistics and Business Statistics Demystified will help you do that.
+Things that lead to the overuse of statistics are:
+. requirements made by bosses, standards, organizations, and legal
+authorities that fail to recognize the limitations of statistics
+. failures by decision makers to determine the value of statistics as part
+of their analysis
+. a poor understanding of the limits of the available facts or the statistical
+techniques useful for converting those facts into information
+. a desire to justify a decision with the appearance of a statistical analysis
+Learning about statistics means more than learning what statistics is and
+what it can do. It means learning about how numbers link up to the world
+and about the limits of what information can be extracted. This is what it
+means to think statistically. Far more important than learning about the
+specific techniques of statistics is learning how to think statistically about real
+business problems. This book will help you do both.
+Lying with Statistics
+There is a wonderful book by Huff and Geis (1954) called How to Lie with
+Statistics. In clear and simple terms, it shows how statistics can be used to
+misinform, rather than inform. It also provides wonderful examples about
+how to think statistically about problems and about how to read statistical
+information critically. (If How to Lie with Statistics covered all of basic
+statistics and was focused on business, there might be no need for this book!)
+The real importance of knowing how to lie with statistics is that it is the best
+way to learn that careful, sound judgment is vital in making statistics work
+for us while making business decisions. Identifying a problem and applying
+the formulas without understanding the subtleties of how to apply statistics
+to business situations is as likely to hurt our decision making as it is to help it.
+CHAPTER 1 Statistics for Business 9
+KEY POINT
+97% Fat-Free
+The term fat-free on food labels is an excellent example of what we mean by lying
+with statistics. It would be easy to think that 97% fat-free meant that 97% of the
+original fat had been removed. Not at all. It means that 3% of the milk is fat. So
+97% fat-free just means ‘‘3% fat.’’ But how well would that sell?
+There are two lessons here: First, we can only build good statistics if we gather
+and understand all the relevant numbers. Second, when we read statistical reports—
+on our job or in the newspaper—we should be cautious about incomplete
+measurements and undefined terms.
+Each and every statistical measure and statistical technique have their own
+strengths and limitations. The key to making statistics work for us is to learn
+those strengths and limitations and to choose the right statistics for the
+situation (or to choose not to use statistics at all when statistics cannot help).
+Throughout this book, we will learn about each statistical measure and
+technique in terms of what it can and cannot do in different business
+situations, with respect to different business problems, for making different
+business decisions. (We will also slip in the occasional fun example of how
+statistics get misused in business.)
+So Many Choices, So Little Time
+One feature of statistics is the enormous number of widely different techniques
+available. It is impossible to list them all, because as we write the
+list, statisticians are inventing new ones. In introducing statistics, we focus
+our attention on the most common and useful statistical methods. However,
+as consumers of statistics and statistical information, we need to know
+that there are lots more out there. Most often, when we need more
+complicated and sophisticated statistics, we will have to go to an expert to get
+them, but we will still have to use our best statistical judgment to make sure
+that they are being used correctly.
+Even when we are choosing from basic statistical methods to help with our
+business decisions, we will need to understand how they work in order to
+make good use of them. Instead of just memorizing the fact that medians
+should be used in measuring salaries and means should be used in measuring
+monthly sales, we need to know what information the median gives us that
+10 PART ONE What Is Business Statistics?
+the mean does not, and vice versa. That way, when a new problem shows up
+in our business, we will know what statistic to use, even if it wasn’t on a list
+in our statistics book.
+When we get past basic statistical measures and onto basic statistical
+techniques, we will learn about statistical assumptions. Each statistical
+technique has situations in which it is guaranteed to work (more or less).
+These situations are described in terms of assumptions about how the
+numbers look. When the situation we face is different than that described by
+the assumptions, we say that the assumptions do not hold. It may still work to
+use the statistical technique when some of the assumptions do not hold, but
+we have lost our guarantee. If there is another statistical technique that we
+can use, which has assumptions closer to the situation we are actually in, then
+we should consider using that technique instead.
+CRITICAL CAUTION
+Whenever a statistical technique is taught, the assumptions of that technique are
+presented. Because the assumptions are key to knowing when to apply one technique
+instead of another, it is vitally important to learn the assumptions along with the
+technique.
+One very nice thing about statistical assumptions is that, because they are
+written in terms of how the numbers look, we can use statistics to decide
+whether the statistical assumptions hold. Not only will statistics help us with
+our business decisions, but we will find that statistics can often help us with
+the statistical decisions that we need to make on the way to making our
+business decisions.
+In the end, it is just as important to know how to match the type of
+statistics we use to the business decision at hand as it is to know how to use
+each type of statistic. This is why every statistics book spends so much time
+on assumptions, as will we.
+Math and Mystery
+Now comes the scary part: math. As we all have heard over and over again,
+mathematics has become part of our everyday life. (When I was a kid,
+computers were big things in far-off places, so we didn’t believe it much. Now
+that computers are everywhere, most people see how math has taken over our
+CHAPTER 1 Statistics for Business 11
+world.) Up to a certain point, the more you understand math, the better off
+you are. And this is true in business as well.
+But math is only a part of our world when it does something useful. Most
+of the mathematics that a mathematician worries about won’t bother us in
+our world, even in the world of business. Even understanding all the math
+won’t be especially helpful if we don’t know how to apply it. Statistics is a
+very odd subject, in a way, because it works with both abstract things like
+math, and with the very real things in the world that we want to know about.
+The key to understanding statistics is not in understanding the mathematics,
+but in understanding how the mathematics is tied to the world. The equations
+are things you can look up in a book (unless you are taking an exam!) or
+select off a menu in a spreadsheet. Once you understand how statistics links
+up numbers to the world, the equations will be easy to use.
+Of course, this does not mean that you can get by without the algebra
+required for this book (and probably for your statistics class). You need to
+understand what a constant is, what a variable is, what an equation is, etc. If
+you are unsure of these things, we have provided Appendix A with some of
+the basic definitions from algebra.
+Where Is Statistics Used?
+At the start of this chapter, we defined business statistics as statistics used to
+help with business decisions. In business, decisions are everywhere, little ones,
+big ones, trivial ones, important ones, and critical ones. As the quotation by
+Abraham Lincoln suggests, the more we know about what is going on, the
+more likely we are to make the right decision. In the ideal, if we knew
+specifics about the future outcome of our decision, we would never make a
+mistake. Until our boss buys us a crystal ball so that we can see into the
+future, we will have to rely on using information about the present.
+QUICK QUOTE
+If we could first know where we are, and whither we are tending, we could better
+judge what to do, and how to do it.
+Abraham Lincoln
+But what sort of information about the present will help us make our
+decision? Even if we know everything about what is going on right now, how
+do we apply that information to making our decision? The simple answer is
+12 PART ONE What Is Business Statistics?
+that we need to look at the outcomes of similar decisions made previously in
+similar circumstances. We cannot know the outcome of our present decision,
+but we can hope that the outcomes of similar decisions will be similar.
+The central notion of all statistics is that similar past events can be used to
+predict future events. First and foremost, this assumption explains why we
+have defined statistics as the use of numbers to describe general features of
+the world. No specific fact will help us, except for the specific future outcome
+of our decision, and that is what we can’t know. In general, the more we
+know about similar decisions in the past and their results, the better we can
+predict the outcome of the present decision. The better we can predict the
+outcome of the present decision, the better we can choose among the
+alternative courses of action.
+FUN FACTS
+The statistical notion that past events can be used to predict future ones is derived
+from a deeper philosophical notion that the future will be like the past. This is a
+central notion to all of Western science. It gives rise to the very famous ‘‘Humean
+dilemma’’ named after the philosopher, David Hume, who was the first person to
+point out that we cannot have any evidence that the future will be like the past,
+except to note that the future has been like the past in the past. And that kind of
+logic is what philosophers call a vicious circle.
+We discuss this problem more deeply in Chapter 16 ‘‘Forecasting.’’
+There are three things we need to know before statistics can be useful for
+a business decision. First, we need to be able to characterize the current
+decision we face precisely. If the decision is to go with an ad campaign that is
+either ‘‘edgy’’ or ‘‘dynamic,’’ we will need to know a lot about what is and
+is not an edgy or a dynamic ad campaign before we can determine what
+information about past decisions will be useful. If not, our intuition,
+unassisted by statistics, may be our best bet. It is also important to be able to
+determine what general features of the world will help us make our decision.
+Usually, in statistics, we specify what we need to know about the world, by
+framing a question about general characteristics of the world as precisely as
+possible. And, of course, we don’t need to describe the whole world. In fact,
+defining which part of the world we really need to know about is a key step in
+deciding how to use statistics to help with our decisions. For example, if we
+are predicting future sales, it is more valuable to know if our company’s
+specific market is growing than to know if the general economy is improving.
+We’ll look at these issues further in Part Four, when we discuss forecasting.
+CHAPTER 1 Statistics for Business 13
+Second, there needs to be a history of similar situations that we can rely
+upon for guidance. Happily, here we are assisted by nature. Wildly
+different situations have important features in common that we can make
+use of in statistics. The important common elements can be found and
+described by abstracting away from the details of the situation, using
+numbers. This most important concept of abstraction is very simple and we
+have a lot of experience with it. We all learned very early on that, once we
+learned to count marbles and pencils we could also count sheep, cars, and
+dollars.
+When we think about what we’ve done, we realize that we’ve defined a new
+practice, counting, and created a new tool for understanding the world, the
+count. The number of pennies in a jar or the number of sheep in a flock is not
+a specific fact about one specific penny or sheep. It is a general fact about the
+contents of the jar or the size of the flock. A count is a statistical measure that
+we use to tell us the quantity we have of an item. It is the first and simplest of
+what are called descriptive statistics, since it is a statistical measure used to
+describe things.
+If our general question about the world merely requires a description of
+the current situation or of previous similar situations as an answer,
+descriptive statistics may be enough. Examples of questions that call for
+descriptive statistics are:
+. How many married women between 18 and 34 have purchased our
+product in the past year?
+. How many of our employees rate their work experience as very good
+or excellent?
+. Which vendor gave us the best price on our key component last
+quarter?
+. How many units failed quality checks today?
+. How many consumers have enough disposable income to purchase our
+premier product?
+Third, there needs to be a history of similar decisions that we can rely
+upon for guidance. While descriptive statistics have been around in some
+form since the beginning of civilization and the serious study of statistics
+has been around for almost a thousand years, it has been less than a hundred
+years since statisticians figured out how to describe entire decisions with
+numbers so that techniques useful in making one decision can be applied
+to other, similar decisions. The techniques used are at the heart of what is
+called inferential statistics, since they help us reason about, or make inferences
+from, the data in a way that provides answers, called conclusions, to our
+14 PART ONE What Is Business Statistics?
+precisely phrased questions. In general, inferential statistics answers questions
+about relations between general facts about the world. The answers are based
+not only on relationships in the data, but also on how relationships of that
+same character can have an important effect on the consequences of our
+decisions.
+If our question about the world requires a conclusion about a relationship
+as an answer, inferential statistics may be able to tell us, not only if the
+relationship is present in the data, but if that relationship is strong enough to
+give us confidence that our decision will work out. Examples of questions
+that call for inferential statistics are:
+. Have men or women purchased more of our product in the past year?
+. Do our employees rate their work experience more highly than do our
+competitors’ employees?
+. Did our lowest priced vendor give us enough of a price break on our
+key component last quarter to impact profits?
+. Did enough units fail quality checks today to justify a maintenance
+call?
+. How many consumers have enough disposable income to purchase our
+premier product if we lower the price by a specific amount?
+TIPS ON TERMS
+Descriptive statistics. Statistical methods, measures, or techniques used to summarize
+groups of numbers.
+Inferential statistics. Statistical methods, measures, or techniques used to make
+decisions based groups of numbers by providing answers to specific types of
+questions about them.
+Using statistics to make decisions in business is both easier and harder
+than using statistics in the rest of life. It is easier because so much of a
+business situation is already described with numbers. Inventories, accounts,
+sales, taxes, and a multitude of other business facts have been described using
+numbers since ancient Sumeria, over 4000 years ago. It is harder because, in
+business, it is not always easy to say what makes the best decision best. We
+may want to increase profits, or market share, or saturation, or stock price,
+etc. As we will see in Part Four, it is much easier to use statistics to predict the
+immediate outcome of our decision than it is to know if, in the end, it will be
+good for business.
+CHAPTER 1 Statistics for Business 15
+CASE STUDY
+Selling to Men and Women
+For example, say that we know that more women than men bought our product
+during the Christmas season. And we know that, statistically, more women between
+18 and 34 bought our product than the competitors’. Does that tell us whether we
+should focus our advertising on men or women in the spring? Not necessarily. It
+depends on whether we are selling a women’s perfume or a power tool.
+If perfume, maybe we should focus on men to buy Valentine’s Day gifts. Or maybe
+on women, so they’ll ask their husbands and boyfriends for our perfume by name.
+If a power tool, then the Christmas season sales might be gifts. And a spring
+advertisement might be better focused on men who will be getting ready for summer
+do-it-yourself projects.
+The lesson: Statistics may or may not be valuable to business. Common sense
+always is. If we use statistics, be sure to use them with some common sense thrown in.
+CRITICAL CAUTION
+Good statistics is not just a matter of knowing how to pick the techniques and apply
+them. Good statistics means knowing what makes for the best outcome and what the
+problems are in measuring the situation. Good business statistics demands a good
+understanding of business.
+The Statistical Study
+While statistics can be used on a one-time-only basis to help make a single
+business decision, most commonly we find that a statistical study, containing
+many statistics, either descriptive, or both descriptive and inferential, is
+conducted. The reason for this is that, when many decisions have to be made
+for one company, or for one department, or one project, and so forth, the
+situations that must be studied to make good choices for each decision may
+have a lot in common. A single statistical study can collect and describe a
+large amount of information that can be used to help make an even larger
+number of decisions. Like anything else, the economies of scale apply to
+statistics. It is much cheaper to collect a lot of statistics all at once that may
+help with lots of decisions later on than to collect statistics one by one as they
+are needed. In fact, as we will see later, both governmental agencies and
+16 PART ONE What Is Business Statistics?
+private firms conduct statistical studies containing thousands of statistics
+they have no use for, but will be of use (and value) to their customers. We will
+have much to say about statistical studies in Part Two.
+TIPS ON TERMS
+Statistical study. A project using statistics to describe a particular set of circumstances,
+to answer a collection of related questions, or to make a collection of
+related decisions.
+Statistical report. The document presenting the results of a statistical study.
+The Statistical Report
+No less important than the statistical study is the reporting of the results. Too
+often we think of statistics as the collection of the information and the
+calculation of the statistical measures. No amount of careful data collection
+or clever mathematics will make up for a statistical report that does not make
+the circumstances, assumptions, and results of the study clear to the
+audience. Statistics that cannot be understood cannot be used. One of the
+most important goals of this book is to explain how to read and understand a
+statistical report. Another equally important goal is to show how to create a
+report that communicates statistics effectively.
+The rules for effective communication of statistics include all the rules for
+effective communication in general. Presenting numbers clearly is difficult to
+begin with, because much of our audience is not going to be comfortable with
+them. One solution is to present the numbers pictorially, and different kinds
+of numbers require different kinds of pictures, charts, and graphs. In
+addition, the numbers that result from statistical calculations are meaningful
+only as they relate to the business decisions they are intended to help.
+Whether we present them as numbers or as pictures, we need to be able to
+present them so that they are effective in serving their specific purpose.
+Quiz
+1. What do we call the use of numbers to provide general descriptions of the
+world to help make business decisions?
+(a) Common sense
+(b) Statistics
+(c) Business statistics
+(d) Mathematics
+CHAPTER 1 Statistics for Business 17
+2. Which of the following does not lead to the underuse of statistics in business?
+(a) A failure to set up statistical systems in advance of decision making
+(b) A poor understanding of the limits of the available facts or
+the statistical techniques useful for converting those facts into information
+(c) Lack of statistical knowledge on the part of business persons
+(d) The time pressure to make business decisions
+3. Which of the following does not lead to the overuse of statistics in business?
+(a) Mistaken assumptions about how complicated or difficult to use or
+costly statistics can be
+(b) Requirements made by bosses and standards organizations and legal
+authorities that fail to recognize limitations of statistics
+(c) A desire to justify a decision with the appearance of a statistical analysis
+(d) Failures by decision makers to determine the value of statistics as a
+part of their analysis
+4. The key to knowing when to apply one statistical technique instead of
+another is to understand the _______ of the techniques.
+(a) Error
+(b) Statistical assumptions
+(c) Mathematics
+(d) History
+5. Which of the following is not one of the three things that we need to know,
+and can know, before statistics can be useful for a business decision?
+(a) We need to be able to characterize the current decision we face precisely
+(b) There needs to be a history of similar situations that we can rely upon
+for guidance
+(c) We need to know specific facts about the future outcome of our
+decision
+(d) There needs to be a history of similar decisions that we can rely upon
+for guidance
+6. Which of the following is a question that can adequately be answered by
+descriptive statistics?
+(a) How many units failed quality checks today?
+(b) Did our lowest priced vendor give us enough of a price break on our
+key component last quarter to impact profits?
+(c) Have men or women purchased more of our product in the past year?
+(d) Do our employees rate their work experience more highly than do our
+competitors’ employees?
+18 PART ONE What Is Business Statistics?
+7. Which of the following is a question that can adequately be answered by
+inferential statistics?
+(a) How many of our employees rate their work experience as very good
+or excellent?
+(b) How many women between 18 and 34 have purchased our product in
+the past year?
+(c) Which vendor gave us the best price on our key component last
+quarter?
+(d) Did enough units fail quality checks today to justify a maintenance
+call?
+8. What are the advantages of conducting a statistical study over using a statistical
+technique on a one-time only basis?
+(a) It is cheaper to collect a lot of statistics at once that may help with a
+lot of decisions later on than to collect statistics one by one as they are
+needed
+(b) A single statistical study can collect and describe a large amount of
+information that can be used to help make an even larger number
+of decisions
+(c) Both (a) and (b) are advantages
+(d) Neither (a) nor (b) are advantages
+9. Which of the following components of a statistical study is not necessary to
+present in a statistical report?
+(a) The calculations of the statistical techniques used in the statistical
+study
+(b) The circumstances of the statistical study
+(c) The assumptions of the statistical study
+(d) The results of the statistical study
+10. Which of the following is not an advantage of understanding how to lie with
+statistics?
+(a) It is the best way to learn that sound judgment is vital to making statistics
+work for us
+(b) It allows us to create convincing advertising campaigns
+(c) It helps us to learn the strengths and limitations of statistical measures
+and techniques
+(d) It helps us to be cautious about incomplete measurements and undefined
+terms in statistical reports
+CHAPTER 1 Statistics for Business 19
+CHAPTER
+2
+What Is Statistics?
+We have learned what it is that statistics does, now we need to find out a bit
+about how it works. How do statistical measures describe general facts about
+the world? How do they help us make inferences and decisions? There is a
+general logic to how statistics works and that is what we will learn about
+here. There will be no equations in this chapter, but we will introduce and
+define important technical terms.
+SURVIVAL STRATEGIES
+Use the definition sidebars and the quizzes to memorize the meaning of the technical
+terms in this chapter. The more familiar and comfortable you are with the
+terminology, the easier it will be to learn statistics.
+This chapter will cover four very important topics: measurement, error,
+sampling, and analysis. Sampling, measurement, and analysis are the first
+three steps in doing statistics. First, we pick what we are going to measure,
+then we measure it, then we calculate the statistics.
+20
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+We have organized the chapter so that the basic concepts are presented
+first and the more complicated concepts that require an understanding of the
+more basic concepts are presented afterwards. This will allow us to introduce
+most of the basic statistical terminology used in the rest of the book. But it
+will mean presenting these topics out of order compared to the order they are
+done in a statistical study.
+These four topics relate to one another as follows: We need to measure the
+world to get numbers that tell us the details and then do statistical analysis to
+convert those details into general descriptions. In doing both measurement
+and analysis, we inevitably encounter error. The practice of statistics involves
+both the acknowledgment that error is unavoidable and the use of techniques
+to deal with error. Sampling is a key theoretical notion in understanding how
+measurements relate to the world and why error is inevitable.
+Measurement
+Statistics is not a form of mathematics. The most important difference is that
+statistics is explicitly tied to the world. That tie is the process of measurement.
+WHAT IS MEASUREMENT?
+The first and most fundamental concept in statistics is the concept of
+measurement. Measurement is the process by which we examine the world
+and end up with a description (usually a number) of some aspect of the
+world. The results of measurement are specific descriptions of the world.
+They are the first step in doing statistics, which results in general descriptions
+of the world.
+Measurement is a formalized version of observation, which is how we all
+find out about the world every day. Measurement is different from ordinary
+day-to-day observation because the procedures we use to observe and record
+the results are specified so that the observation can be repeated the same way
+over and over again.
+When we measure someone’s height, we take a look at a person; apply a
+specific procedure involving (perhaps) a measuring tape, a pencil, and a part
+of the wall; and record the number that results. Let’s suppose that we
+measure Judy’s height and that Judy is ‘‘five foot two.’’ We record the
+number 62, measured in inches. That number does not tell us a lot about
+Judy. It just tells us about one aspect of Judy, her height. In fact, it just tells
+us about her height on that one occasion. (A few years earlier, she might have
+been shorter.)
+CHAPTER 2 What Is Statistics? 21
+Statistics uses the algebraic devices of variables and values to deal with
+measurements mathematically. In statistics, a variable matches up to some
+aspect of the thing being measured. In the example above, the variable is
+height. The value is the particular number resulting from the measurement on
+this occasion. In this case, the value is 62. The person who is the subject of the
+measurement has many attributes we could measure and many others we
+cannot. Statisticians like to think of subjects (whether they are persons or
+companies or business transactions) as being composed of many variables, but
+we need to remember that there is always more to the thing being measured
+than the measurements taken. A person is more than her height, weight,
+intelligence, education level, occupation, hair color, salary, and so forth. Most
+importantly, not every variable is important to every purpose on every
+occasion. There are always more attributes than there are measurable
+variables, and there are always lots more variables that can be measured than
+we will measure.
+KEY POINT
+Vital to any statistical analysis will be determining which variables are relevant to the
+business decision at hand. The easiest things to measure are often not the most
+useful, and the most important things to know about are often the hardest to
+measure. The hardest part of all is to determine what variables will make a difference
+in making our business decision.
+TIPS ON TERMS
+Subject. The individual thing (object or event) being measured. Ordinarily, the subject
+has many attributes, some of which are measurable features. A subject may be a single
+person, object, or event, or some unified group or institution. So long as a single act of
+measuring can be applied to it, it can be considered a single subject. Also called the
+‘‘unit of analysis’’ (not to be confused with the unit of measurement, below).
+Occasion. The particular occurrence of the particular act of measurement, usually
+identified by the combination of the subject and the time the measurement is taken.
+Situation. The circumstances surrounding the subject at the time the measurement is
+taken. Very often, when multiple measurements of a subject are taken on a single
+occasion, measurements characterizing the situation are also taken.
+Value. The result of the particular act of measurement. Ordinarily, values
+are numbers, but they can also be names or other types of identifiers. Each value
+usually describes one aspect or feature of the subject on the occasion of the
+measurement.
+22 PART ONE What Is Business Statistics?
+Variable. A mathematical abstraction that can take on multiple values. In statistics,
+each variable usually corresponds to some measurable feature of the subject. Each
+measurement usually results in one value of that variable.
+Unit. (Short for unit of measurement. Not to be confused with unit of analysis in the
+definition of Subject, above.) For some types of measurement, the particular
+standard measure used to define the meaning of the number, one. For instance,
+inches, grams, dollars, minutes, etc., are all units of measurement. When we say
+something weighs two and a half pounds, we mean that it weighs two and a half
+times as much as a standard pound measure.
+Data. The collection of values resulting from a group of measurements. Usually,
+each value is labeled by variable and subject, with a timestamp to identify the
+occasion.
+Values that aren’t numbers
+In statistics, measurement doesn’t always result in numbers, at least not
+numbers in the usual sense. Suppose we are doing an inventory of cars in a car
+lot. We want to make a record of the important features of each car: make,
+model, year, and color. (Afterwards, we may want to do some statistics, but
+that can wait for a later chapter.) Statisticians would refer to the process of
+collecting and recording the make, model, year, and color of each car in the lot
+as measurement, even though it’s not much like using a tape measure or a
+scale, and only in the case of the year does it result in a number. The reason for
+this is that, just like measuring height or weight, recording the color of an
+automobile results in a description of one feature of that particular car on that
+particular occasion. From a statistical point of view, the important thing is not
+whether the result is a number, but whether the results, each of which is a
+specific description of the world, can be combined to create general
+descriptions of the world. In the next section, Levels of Measurement, we
+will see how statisticians deal with non-numerical values.
+TIPS ON TERMS
+Categorical data. Data recorded in non-numerical terms. It is called categorical
+because each different value (such as car model or job title) places the subject in a
+different category.
+Numerical data. Data recorded in numerical terms. There are different types of
+numerical data depending upon what numbers the values can be. (See Levels of
+Measurement below.)
+CHAPTER 2 What Is Statistics? 23
+What is data?
+In Chapter 1 ‘‘Statistics for Business,’’ we didn’t bother too much about
+specific definitions. Now, in Chapter 2 ‘‘What is Statistics?’’we are starting to
+concern ourselves with more exact terminology. Throughout the remainder
+of the book, we will try to be as consistent as possible with our wording,
+in order to keep things clear. This does not mean that statisticians and
+others who use statistics are always as precise in their wording as we should
+be. There is a great deal of confusion about certain terms. Among these are
+the notorious terms, data and information.
+The values recorded as the result of measurement are data. In order to
+distinguish them from other sorts of values, we will use the term data values.
+Data are not the facts of the world that were measured. Data are
+descriptions, not the things described. Data are not the statistical measures
+calculated from the data values, no matter how simple. Often, statisticians
+will distinguish between ‘‘raw’’ data and ‘‘cleaned’’ data. The raw data are
+the values as originally recorded, before they are examined and edited. As we
+will see later on, cleaning data may involve changing it, but does not involve
+summarizing it or making inferences from it.
+QUICK QUOTE
+The map is not the territory. Alfred Korzybski
+KEY POINT
+Data are specific descriptions. Statistics are general descriptions.
+A lot of data is used only indirectly, in support of various statistical
+techniques. And data are always subject to error. To the degree that data
+contain error, they cannot inform. So data, even though they are information
+in the informal computer science sense, contain both information and error in
+the more technical, theoretical sense. In statistics, as in information theory, it
+is this latter, more technical sense that is most important. Because we will be
+using data to make business decisions, we must not forget that data contain
+error and that can result in bad decisions. We will have to work hard to control
+the error in order to allow the data to inform us and help us make our
+decisions.
+24 PART ONE What Is Business Statistics?
+FUN FACTS
+Facts. You may have noticed that we haven’t defined the term, fact. This is not an
+accident. Statisticians rarely use the term in any technical sense. They consider it a
+philosopher’s term.
+You may have heard the expression, ‘‘It’s a statistical fact!’’ but you probably
+didn’t hear that from a statistician. The meaning of this expression is unclear. It
+could mean that a statistical description is free from error, which is never the
+case. It could mean that the results of a statistical inference are certain, which
+is never the case. It probably means that a statistical conclusion is good enough
+to base our decisions on, but statisticians prefer to state things more cautiously.
+As we mentioned earlier, statistics allows us to say how good our statistical
+conclusions are. Statisticians prefer to say how good, rather than just to say,
+‘‘good enough.’’
+Some philosophers say that facts are the things we can measure, even if we don’t
+measure them. Judy is some height or other, even if we don’t know what that height
+is. Other (smarter) philosophers say that facts are the results we would get if our
+measurements could be free of error, which they can never be. This sort of dispute
+seems to be an excellent reason to leave facts to the philosophers.
+LEVELS OF MEASUREMENT
+You may have noticed that we have cheated a bit. In Chapter 1 ‘‘Statistics for
+Business,’’ we defined statistics as the use of numbers to describe general facts
+about the world. Now, we have shown how some measurements used in
+statistics are not really numbers at all, at least not in the ordinary sense that
+we learned about numbers in high school. Statistics uses an expanded notion
+of number that includes other sorts of symbol systems. The statistical notion
+of number does have its limits. First of all, the non-numeric values used in
+statistics must be part of a formal system that can be treated mathematically.
+In this section, we will learn about the most common systems used in
+statistics. Also, for most statistical techniques used in inferential statistics, the
+values will need to be converted into numbers, because inferential statistical
+techniques use algebra, which requires numbers.
+Let’s start with our example of measuring Judy’s height. We say that that
+measurement results in a number, 62. You may remember from high school
+algebra (or else from Appendix A) that there is more than just one kind
+of number. There are counting numbers, integers, rational numbers, real
+numbers, and so forth. We will see that it matters a lot what kind of number
+CHAPTER 2 What Is Statistics? 25
+we use for different kinds of measurements. Height is measured with positive
+real numbers. A person can be 5 foot 10 1
+2 inches tall, but they can’t be minus
+six feet tall, or zero inches tall.
+We can see that the type of number used for different kinds of
+measurement depends on what different values are possible outcomes of
+that type of measurement. The number of items on a receipt is measured as a
+positive integer, also known as a counting number. Counting numbers are
+non-negative integers because counts don’t include fractions (ordinarily) or
+negative values. The number of children in a family could be zero
+(technically, a non-negative integer). A bank balance, whether measured in
+dollars or in cents, is an integer, because it can be negative as well as positive
+(negative if there is an overdraft), but we can’t have fractions of pennies.
+Height and weight are positive real numbers. The amount of oil in an oil
+tanker could be zero as well as a positive value. So it is measured as a nonnegative
+real number. The temperature inside a refrigerated container
+could be negative or positive or zero, at least in the Celsius or Fahrenheit
+scales.
+KEY POINT
+In algebra, different types of numbers are defined in terms of the different possible
+values included. We choose the type of number for measuring a particular type of
+variable when the different possible numeric values match up to the different
+measurement outcomes.
+But what about measurements that don’t result in numbers? Let’s go
+back to our example of making an inventory of cars in a car lot. Suppose
+that each parking spot in the car lot is labeled from A to Z. Each car is
+either a sedan, convertible, or minivan. Our inventory sheet, shown in
+Table 2-1, has one line for each parking spot on the lot. We go through the
+lot and write down the model of the car in the line corresponding to its
+parking spot.
+Car models, like height, or weight, or dollars in a bank account, have
+different values for different subjects, but the different values don’t really
+correspond well to the different values for different types of numbers. The
+closest match is positive integers, by assigning different numbers to different
+models, like 1 for sedan, 2 for convertible, and 3 for minivan, but there is a
+problem with this as well.
+26 PART ONE What Is Business Statistics?
+Integers are different from car models in two ways. The first problem is
+minor. There are an infinite number of integers, but only a finite number of
+car models. Every bank account may have a finite amount of money in it, but
+in principle, there is no limit to how much money can be in our bank account.
+That is a good reason to use integers to measure money. Similarly, new car
+models, like the minivan, occasionally get invented, so the infinite number of
+integers available may be handy.
+The other problem is not so minor. The integers possess a very important
+property that car models do not: the property of order. Three is bigger than
+two, which is bigger than one. There is no relation like ‘‘bigger than’’ that
+applies to car models. The best way to see this is to realize that there is no
+reason to choose any particular number for any particular car model. Instead
+of choosing 1 for sedan, 2 for convertible, and 3 for minivan, we could just
+as easily have chosen 1 for convertible, 2 for minivan, and 3 for sedan. Our
+choice of which number to use is arbitrary. And arbitrary is not a good thing
+when it comes to mathematics.
+Statisticians do not classify different types of measurement in terms of
+what types of numbers (or non-numerical symbols) are used to record the
+results. While it may make a difference to certain types of calculations used
+in statistics as to whether the original measurements are integers or real
+numbers, this difference does not figure into the classification of measurement.
+Instead, they group the different types of numbers in terms of what
+Table 2-1 Automobile inventory.
+Parking spot Type of car
+A sedan
+B sedan
+C convertible
+D sedan
+E minivan
+F minivan
+. . . . . .
+CHAPTER 2 What Is Statistics? 27
+makes a difference in using different statistical techniques. Just as with
+statistical assumptions, the different types of measurement, called levels of
+measurement, are grounded in the very important issue of how to pick the
+right sort of statistical analysis for the problem at hand. The different levels
+of measurement are:
+. Nominal scale. When the values have no relation of order, the variable
+is said to be on a nominal scale. This corresponds to categorical data.
+Example: Methods of drug administration: oral, intravenous, intramuscular,
+subcutaneous, inhalant, topical, etc.
+. Ordinal scale. When the values have a relation of order, but intervals
+between adjacent values are not equal, the variable is said to be on an
+ordinal scale. This is one type of numerical data. Example: Coin
+grades: Poor, Fair, Good, Very Good, Fine, Very Fine, Extra Fine,
+Mint, etc.
+. Interval scale. When the values have a relation of order, and intervals
+between adjacent values are equal, but a value of zero is arbitrary, the
+variable is said to be on an interval scale. This is another type of
+numerical data. Example: Fahrenheit temperature.
+. Ratio scale. When the values have a relation of order, the intervals
+between adjacent values are equal, and a value of zero is meaningful,
+the variable is said to be on a ratio scale. (A meaningful value of zero
+is called a true zero point or origin.) This is the last type of numerical
+data. Example: Money, with debt measured as negative numbers.
+HANDY HINTS
+Some textbooks define ordinal data as a form of categorical data and others as a
+form of numerical data. This is because ordinal data has characteristics of each and,
+depending on what we do with it, it may be treated as either. An ordinal variable
+does classify each individual subject item into one and only one category and, by that
+standard, is definitely a type of categorical variable, where the categories have a
+specific order. When graphing, ordinal variables are treated as categorical. Because
+the positive integers are a very convenient way of showing order (after all, we are
+all pretty familiar with the counting order), ordinal variables are very often coded
+numerically as positive integers, which is one reason why some textbooks classify
+ordinal variables as numerical.
+Finally, many statistical inference techniques that require an interval level of
+measurement can be and are used effectively with ordinal variables coded as integers.
+(This is a good example of using a statistical technique even though one of
+its assumptions is violated.) When it comes to inferential statistics, ordinal variables
+28 PART ONE What Is Business Statistics?
+are treated as categorical or numerical depending on the technique used. Using a
+technique (called a nonparametric technique) designed for categorical variables will
+be more accurate, but may be less powerful. (That is, the technique is more likely to fail
+to give a definitive answer to our question.) Using a technique (called a parametric
+technique) designed for numerical variables is more powerful, but less accurate,
+because the fact that the adjacent categories of an ordinal variable are not guaranteed
+to be equally far apart violates one of the assumptions of the technique.
+There is also a special case of a nominal variable that can be treated as interval.
+When a variable can take on only two values, like true and false, or male and female,
+or is-a-current-customer and is-not-a-current-customer, the data are nominal because
+there is no order to the values. When used in inferential statistics, these variables
+can be treated as interval, because, having only two possible values, they only have
+one interval between the values. And one interval is always equal to itself. Variables
+that can take on only two values are sometimes called binary variables, most often
+called dichotomous variables, and when used in the inferential technique known as
+regression (see Chapter 12 ‘‘Correlation and Regression’’), as dummy variables.
+We will learn more about all of this in Part Three, where we learn about
+inferential statistical techniques.
+Note that this classification system ignores the differences between
+integers, rational numbers, and real numbers. This is because measurements
+are always made up to some level of precision. There is always the possibility
+that two values are so close that they cannot be distinguished. Two people,
+where one is six feet tall and the other is six feet and one millionth of an inch
+tall, will both be classified as six feet tall. For the purpose of the analysis,
+there is no difference between them. There are no truly continuous numbers
+in measurement. Since statistics always begins with measurement, the issue
+of continuity is irrelevant in applied statistics.
+The only exception to this rule is for measurements that don’t ever come in
+fractions. For example, sometimes the general fact of the world we care about
+is discovered by counting, as in the number of widgets we produced last
+week. The number of widgets is always a whole number. It wouldn’t make
+much sense to say we have 45 1
+2 widgets on hand. As we will see in later
+chapters, statistics handles this problem in two different ways. If the number
+of items is large enough, many of our questions can be answered statistically
+by pretending that fractional values are possible. For example, if we are
+producing between 40 and 50 thousand widgets a month, the fact that the
+detailed calculations use fictitious values like 42,893.087 instead of genuinely
+possible values like 42,893, doesn’t matter much. If the number of items is
+small (usually less than 20), and it is the count that we really care about, there
+are separate statistics, called count statistics that are used to answer our
+CHAPTER 2 What Is Statistics? 29
+questions. In order to keep this difference straight, we will have two separate
+examples running through the book: one about counting sheep, and one
+about measuring people.
+As we will see later on in Part Two and Part Three, the issues of possessing
+order, equal intervals, and a true zero point are used to classify variables
+because they make a difference as to whether different statistical measures
+and techniques can be used effectively.
+Error
+In order to help make decisions, we need to know the true value of the
+information that statistics provides. Statistics not only provides information,
+but also specific measures of the degree of confidence with which that
+information can be trusted. This ability to measure the quality of statistical
+information is based on the concept of error.
+TIPS ON TERMS
+Error. The degree to which a description does not match whatever is being described.
+All aspects of statistics are prone to error. No individual measurement is
+free from error. Measurement is a human process, limited by our tools and our
+senses and our other fallible human capacities. We need to understand
+measurement error in order to have the right amount of confidence in our
+data. Statistical measures and statistical techniques are also prone to error
+of another type. Even when calculated mechanically and exactly from the
+data, the information statistics gives us is never an exact description of the
+true state of the world. (We will see more of why this is so later on in
+this chapter and also in Chapter 3 ‘‘What Is Probability?’’) The statistical
+theory of error helps us gauge the right amount of confidence to have in both
+our data and our statistics.
+CLEANING YOUR DATA
+Computers have made statistics much easier to do, but they also make it
+much easier to do statistics badly. A very common and very bad mistake is to
+collect our data, get it onto the computer, and immediately begin to calculate
+statistics. Both during and immediately after collecting data, we must check
+our data thoroughly for errors. We will not be able to find every error. There
+30 PART ONE What Is Business Statistics?
+are many types of errors we can’t even find in principle. But when a value
+is clearly wrong, we need to fix it, or throw it out.
+Throwing out a value leaves what is called missing data. Missing data can
+be a real problem in statistics, but missing data is better than wrong data.
+CRITICAL CAUTION
+Missing Data
+When there are multiple variables for each subject and one or more values for a
+subject are missing, various serious problems can occur with different statistical
+measures and techniques. Most computer programs that do statistics will handle
+missing data automatically in the simplest way possible, which is usually good
+enough. However, when there is lots of missing data, an expert should be consulted
+to determine the best way to treat it.
+QUICK QUOTE
+There is only one good way to deal with missing data. Don’t have any!
+Gertrude Cox
+How do we know when the data are bad? Often, it’s quite simple. If the
+variable is age, then values like ‘‘handle,’’ ‘‘3,’’ and ‘‘123’’ are most likely
+errors. Before data are collected, it is important to determine what the
+acceptable values will be. These acceptable values are called legal values.
+When the variable is non-numerical, it is a good idea to set up specific values
+called codes for each legal category. Returning to our example of car models,
+we might decide to save time and trouble by just coding the model of each car
+using the first letter: C for convertible, S for sedan, and M for minivan. This
+is fine, unless we find a coupe on the lot! Always plan for your possible values
+before you start collecting data. If you are not sure of all possible values,
+have a system ready to add more legal values and validate them.
+BIO BITES
+Always Almost Always
+There are also more indirect ways of finding bad data. The first author used a
+multiple-choice questionnaire for his Master’s research. All of the items had answers
+rated from ‘‘1’’ to ‘‘5,’’ ranging from ‘‘never,’’ through ‘‘sometimes’’ to ‘‘always.’’
+CHAPTER 2 What Is Statistics? 31
+The answers for one subject were all ‘‘4.’’ Either the computer was broken that day,
+or that student was in a hurry and didn’t want to read the questions.
+You should also consider how the data will be collected. For instance, if
+we are collecting information about cars in the lot on handwritten sheets,
+different sorts of errors are likely to occur than if we are collecting that same
+information with a hand-held computer. We should plan our codes
+accordingly. If we are using the computer, we may want to use the full
+names of the colors of the cars in the lot. If we know all the colors in advance,
+we could put them on a menu. If we are writing things down by hand, names
+can be a problem. The word ‘‘gray’’ can look an awful like the word, ‘‘green.’’
+It might be better to assign numbers for each color and list those numbers at
+the top of the sheet.
+The important lesson is that dealing with error starts even before data
+is collected. Careful planning and design is needed to prevent errors from
+happening to begin with, and to make errors easier to detect if they do
+happen. We cannot prevent errors entirely, but we need to work carefully to
+minimize them.
+TWO WAYS OF BEING WRONG: VALIDITY AND
+RELIABILITY
+In later chapters, we will have a great deal more to say about error. For
+now, it is important to understand that there are two sorts of error. In
+statistics, these two kinds of error are talked about in terms of reliability
+and validity. The distinction is related to the difference between precision
+and accuracy in physics and engineering, or between precision and clarity
+in philosophy.
+Suppose I am shooting at a target with a bow and arrow. Over time, I find
+that I am hitting the target about 30% of the time, but that almost all of my
+misses are falling short of the target. In addition, my arrows are scattered up
+and down, right and left. The first step is to realize that I am making two
+errors. My precision is low—the arrows are going all over the map. And my
+accuracy is low—I am hitting consistently short of the target.
+Being a statistician—and perhaps not a good student of archery—I choose
+to work on my precision first. I give up on trying to hit the target, and I just
+try to get all of my arrows to land in a small area, well short of the target.
+Once I have accomplished this, I am making just about the same error with
+every shot—I am always in line to the target, and I am always falling short.
+32 PART ONE What Is Business Statistics?
+My precision is high—I hit almost the same spot every time. My accuracy is
+low—I never hit the target.
+At this point, I go to an archery instructor. I say, ‘‘I’ve gotten very good at
+getting all the arrows to land in the same spot. But I’m pulling the bow as
+hard as I can, and they don’t go far enough.’’ He says, ‘‘Let me watch.’’ I
+shoot ten arrows. They all land in the dirt short of the target, in a circle
+smaller than the bull’s eye of the target. He laughs, ‘‘You don’t need to pull
+any harder. A bow should always be pulled with just enough strength for the
+arrowhead to be just past the bow. If you want to hit the target, you have to
+shoot farther. To shoot farther, just aim higher.’’ I give it a try, and, with a
+little practice, I am hitting the target dead center every time. I’ve corrected
+my second error. I’m shooting accurately.
+When we are both precise and accurate, we hit the target. In statistics, we
+would say that when our measurements are both reliable and valid, we have
+reduced both types of error.
+HANDY HINTS
+Reliability is like precision and validity is like accuracy.
+A similar situation happens in golf. If my shots consistently go left, the
+golf pro coaches me to improve parts of my swing to reduce hooking.
+Likewise for going right and slicing. The coach is working to reduce the bias
+in my form and my golf swing. None of the coaching will have anything to do
+with aiming at the target. It will all have to do with my form. On the other
+hand, if I am missing both left and right, the golf pro will assist me with my
+aim, that is, keeping my shots on target, keeping the spread down. The golf
+pro is working first to reduce bias, that is, to increase accuracy, so that my
+shots are centered around the hole. Secondly, the pro will help me increase
+the precision of my golf shot, so I’m not just getting somewhere near the hole,
+I’m landing on the green, very near the hole.
+For reasons we will see in a moment, in statistics, we have to do things in
+the reverse order from what our golf pro did and from what is done in sports
+in general. First, we need to get the spread down, increasing the reliability of
+our measurements, and then we need to make sure we are pointed in the right
+direction, increasing their validity. (This is how our statistician tried to teach
+himself archery, and why the archery instructor found it so amusing.)
+Reliability is how statisticians talk about minimizing unbiased error,
+reducing spread. The value of knowing the reliability of our measurement is
+that we don’t have to measure again and again to get it right. If our technique
+CHAPTER 2 What Is Statistics? 33
+for measuring Judy’s height is reliable, whatever height we get the first time
+won’t be too far from the height we get the second time or the fifth time or
+the fiftieth time (presuming Judy’s real height isn’t changing between
+measurements). We can rely on the number we get being independent of
+when we measure it. Measuring a person’s height with a tape measure is
+pretty reliable; that is, if we measure several times in a row, we’ll probably get
+almost the same answer.
+Validity is how statisticians talk about minimizing biased error, making
+sure things are centered at what they are pointed at. The value of knowing
+the validity of our measurement is that we have a good estimate of how faroff
+from the truth our measurement can be. If our technique for measuring
+Judy’s height is valid, we know that her real height won’t be far from what we
+get by measuring. If our measuring technique is not valid, we will need to find
+and correct the source of bias if we can, or take it into account and adjust for
+it. For example, if our tape measure is cut off at the front end, and starts at
+two inches, instead of at zero, every time we measure Judy’s height, our result
+is two inches taller than her actual height. Getting a good tape measure
+would eliminate the bias.
+There is an interesting relationship between reliability and validity. Our
+measurements can’t be any more valid than they are reliable. The amount of
+reliability is a ceiling on the amount of validity. This is true with precision
+and accuracy as well. We can be perfectly precise and very inaccurate. In golf,
+if I hook badly, it doesn’t matter if my spread is perfect. If it was, I might find
+myself always missing the hole to the left by exactly ten and a half feet.
+Strange, but possible. A statistician would say that my shot was biased and
+invalid, but highly reliable. A physicist would say that my golf shot was
+inaccurate, but precise. And my golf coach would tell me to pretend that the
+hole was ten and a half feet further to the right.
+On the other hand, we can’t be perfectly accurate and very imprecise. If my
+every shot is a hole in one, then the spread of all my shots can’t be wider than
+the hole. To have a high degree of accuracy, we need to have both validity
+and reliability; we need to be both free of bias and consistently close to the
+target. And, if our reliability is low, then we can’t know for sure whether our
+validity is good. If we may always be missing by ten feet or so, we can’t find a
+bias of less than ten feet with any certainty.
+Another way to think about this is in terms of a clock. If our clock runs
+with perfect precision and we set it five minutes fast, it will never give us the
+correct time, but it will always be exact. It will be exactly five minutes off. On
+the other hand, if the clock has poor precision, running faster and slower
+from time to time due to a broken regulator, it will only give the correct time
+now and then, and we won’t have any way of knowing when it is right. We
+34 PART ONE What Is Business Statistics?
+will also have no way to set it to the correct time and keep it there, because it
+does not keep time reliably.
+In statistics, there is an important difference between reliability and
+validity. We can calculate the reliability without even knowing the right
+answer! Let’s go back to the golf example. Suppose I take a bunch of shots at
+a hole from a place where I can reach the green easily. Now, we go up in the
+blimp and take a picture of all of the golf balls from straight overhead.
+Suppose we can see the golf balls in the picture, but we can’t see the hole,
+because someone removed the flag. If all of the golf balls are close together,
+we will know that my shooting was very precise, very reliable, but we won’t
+know if I was hooking or slicing or very accurate. Now, someone goes and
+puts the flag back in the hole, and the cameraman takes another photo. If the
+hole is near the center of the area where the balls were found, then my golf
+shot was accurate, free of bias, or, in statistical terms, valid. We need to see
+the target to determine accuracy. In assessing validity, like accuracy, we need
+to know what the true value is.
+When it comes to statistics, obviously, validity is the most important thing.
+We want our numbers to be right, or at least clustered around the right
+answer. But validity is much harder to measure than reliability. The reason
+for this is that we don’t know the world directly; we only find out about the
+world by observing it. Recall that measurement is just formalized, repeatable
+observation. As a result, we are always comparing one observation to other
+observations, one measurement to other measurements. Statistics is like
+playing golf, only nobody knows exactly where the hole is. Suppose we
+measure Judy’s height over and over again and record the numbers. If all of
+the numbers are close together, we know that our technique for measuring
+Judy’s height is reliable, but how do we know if it is valid? Maybe, like the
+case with the cut-off tape measure, every measurement is almost exactly two
+inches off. Unlike the golf balls on the golf course, there is no way of knowing
+where the target is. What is Judy’s ‘‘true height’’? The only way we know
+Judy’s height at all is to measure it, yet we don’t know if our measuring
+technique is giving us the right answer.
+BIO BITES
+Counting Blood Cells
+The co-author of this book worked at a hospital blood lab when he was in high
+school. A new machine for counting red blood cells had just been invented. It gave
+different results than the old machine. Was it broken? Possibly not. Maybe it was
+better than the old machine. If the old machine had a bias, and the new one didn’t,
+CHAPTER 2 What Is Statistics? 35
+then the more accurate results would simply look different—they would look wrong
+from the perspective of the old way of doing things.
+This is the difficulty of determining validity. Only if we know what is really out
+there can we say which method of measurement is more valid. But the only way to
+know what is out there is to measure it, one way or another.
+The hospital tested the new machine by comparing it against two or three other
+methods, and determined it was a better device than the one it was replacing.
+The best way to determine validity is to compare the measurements we get
+to other measurements taken using an entirely different measurement technique.
+We could compare our results measuring Judy’s height with other
+measurements taken with a doctor’s scale. When there is only one way to
+measure something, the problems of assessing validity become much more
+difficult.
+Because of these two facts about the relationship between reliability and
+validity, in statistics, we always consider reliability first. First of all, reliability
+is easier to measure, because we don’t have to know where the target is. This
+is the opposite of archery and golf, where we can see the target, and so the
+easiest thing is to evaluate each shot with respect to the target. Even more
+importantly, because our measurements can be no more valid than they are
+reliable, it makes no sense to attempt to check our validity if our measurements
+are all over the place. As we said above, low reliability means
+we can’t even measure validity very closely. If all our golf shots are flying
+into the crowd, it really doesn’t matter if more of them are going to the right
+than to the left.
+Sampling
+We said earlier that, even if our measurements were perfectly free from error,
+statistics would still not give us perfectly correct answers. Over and above
+measurement error, there is also statistical error. Key to understanding
+statistical error is the concept of sampling. Sampling is the process by which
+we choose the individuals we will measure. The statistical errors due to
+limitations of sampling are known as sampling error.
+Statistical conclusions, whether the results of measurements or the results
+of an analysis, usually take the form of a single number (the statistic, which is
+a general description) that characterizes a group of numbers (the data, which
+are specific descriptions). But we may want to know a general fact about
+subjects we cannot measure. A good example of this is political polls for
+36 PART ONE What Is Business Statistics?
+predicting election results. Before the election, the pollsters call people up and
+ask who they are going to vote for. Even if we supposed that everyone knows
+who they will vote for, that everyone answers, and that everyone tells the
+truth (all of which means that there is no measurement error), the pollsters
+could make the wrong prediction. Why? Because there is no way the pollsters
+can call every voter. We all see polls on TV when no one called us the night
+before. They must have been calling someone else. Suppose the pollsters only
+called Republicans that night? Their prediction might be way off.
+WHAT IS A POPULATION?
+Ideally, if the pollster could call every person who was going to vote (and
+there was no measurement error), they could get an exact prediction of the
+election results. The group of people who are actually going to vote in the
+election is what statisticians call the population. Practically speaking, limits
+on time and money usually prevent measuring values from the entire
+population, in polls or elsewhere. However, there are problems measuring the
+entire population, even in principle. Even the night before the election, some
+people might not be sure if they are going to vote. Maybe they are running
+late the next morning and decide to skip it. Then, at lunch, a few co-workers
+decide to go to vote together and the person who missed voting that morning
+gets dragged along. Even someone who is 1000% sure they are going to vote
+tomorrow may have an emergency and just not be able to make it. And we
+also have to consider someone who plans to vote, does vote, and whose ballot
+gets eliminated later on due to damage from a broken voting machine.
+CRITICAL CAUTION
+A population is a theoretical concept. We can envision it, but, when we get down to
+the nitty-gritty details, we can almost never actually measure it exactly.
+It is easy, but wrong, to think of a population as something real, that we
+can’t measure because of the expense, but there are always limitations. Some
+of these limitations might be classified as measurement error, and others
+might not, but the result is the same. Suppose we want to evaluate yesterday’s
+sales. Then yesterday’s sales are our population. Yesterday’s sales receipts are
+how we can measure them. It may look like we have access to the entire
+population at low cost, but that is not the case. Yesterday’s sales are past
+events. Absent a time machine, we will never see them again directly. The
+CHAPTER 2 What Is Statistics? 37
+sales receipts are just records, measurements of those events. Some may be
+lost or have errors. Or a sales receipt from some other day may be marked
+with yesterday’s date by mistake.
+KEY POINT
+The most important thing to understand about populations is the need to specify
+them clearly and precisely. As we will see later on, every statistical study begins with
+a question about some population. To make that question clear means being clear
+about what the population is, who or what is or is not subject of the study, what is
+the study question about. A good statistical study begins with a clearly specified
+question. The easiest way to turn a good study bad is not to specify the population of
+interest clearly and precisely.
+In fact, one of the key reasons that different pollsters and pundits had different
+predictions for the results of the Iowa Democratic Caucus is that they had different
+expectations about who would participate in the caucus, that is, who would be in the
+population.
+The example of yesterday’s sales receipts is the ideal situation. Absent
+measurement error, we have every reason to believe that we have access to
+the entire population. Our collection of receipts is what statisticians call a
+comprehensive sample. This is one of the best types of sample to have, but, in
+practice, it is usually impossible to get. And, when we have it, it may be too
+costly to measure every individual in the sample.
+TIPS ON TERMS
+Population. All of the subjects of interest. The population can be a group of business
+transactions, companies, customers, anything we can measure and want to know
+about. The details of which subjects are and are not part of our population should be
+carefully specified.
+Sample. The subjects in the population we actually measure. There are many ways of
+picking a sample from a population. Each way has its limitations and difficulties.
+It is important to know what kind of sample we are using.
+Sampling. The process of selecting the individuals from the population that makes up
+our sample. The details of the sampling procedure are what make for different kinds
+of sample.
+38 PART ONE What Is Business Statistics?
+WHAT IS A SAMPLE?
+This brings us to the critical notion of a sample. A sample is the part of the
+population we actually measure. Sampling is the process of selecting those
+members of the population we will measure. Different ways of sampling lead
+to different types of samples. The types of statistical error we can encounter
+in our study depend on how our sample differs from the population we are
+interested in. Understanding the limits of how confident we can be about the
+results of our study is critically tied to the types of statistical error created.
+Choosing the right sampling procedure and knowing the errors it creates is
+critical to the design and execution of any statistical study.
+KEY POINT
+Choosing the right sampling procedure and knowing the errors it creates is critical to
+the design and execution of any statistical study.
+The relationship between sampling and error is not as hard as it seems. We
+begin by wanting to know general facts about a situation: What were last
+year’s sales like? How will our current customers react to a price increase?
+Which job applicants will make the best employees? How many rejects will
+result from a new manufacturing process? If we can measure all of last year’s
+sales, all of our current customers, all of our future job applicants, etc., we
+will have a comprehensive sample and we will only have to worry about
+measurement error. But to the degree that our sample does not include
+someone or something in the population, any statistics we calculate will have
+errors. General descriptions of some of last year’s sales, some of our current
+customers, or just the current crop of job applicants will be different from
+general descriptions of all of the sales, customers, or applicants, respectively.
+Which members of the population get left out of our measurements
+determine what the error will be.
+HANDY HINTS
+Note that sampling error is a question of validity, not reliability. That is, sampling
+error introduces bias. Differences between the sample and the population will create
+statistical results that are different from what the results would have been for the
+entire population, which is what we started out wanting to know. On the other hand,
+our choice of sample size affects reliability. The larger the sample size in proportion
+CHAPTER 2 What Is Statistics? 39
+to the population, the more reliable the statistics will be, whether they are biased
+or not.
+Here are some of the most common types of samples:
+. Comprehensive sample. This is when the sample consists of the entire
+population, at least in principle. Most often, this kind of sample is not
+possible and when it is possible, it is rarely practical.
+. Random sample. This is when the sample is selected randomly from the
+population. In this context, randomly means that every member of the
+population has an equal chance of being selected as part of the sample.
+In most situations, this is the best kind of sample to use.
+. Convenience sample. This is usually the worst kind of sample to use,
+but, as its name implies, it is also the easiest. Convenience sampling
+means selecting the sample by the easiest and/or least costly method
+available. Whatever kinds of sampling error happen, happen.
+Convenience sampling is used very often, especially in small studies.
+The most important thing to understand about using a convenience
+sample is to understand the types of errors most likely to happen, given
+the particular sampling procedure used and the particular population
+being sampled. Each convenience sampling process is unique and the
+types of sampling error created need to be understood and stated
+clearly in the statistical report.
+. Systematic sample. This is when the sample is selected by a nonrandom
+procedure, such as picking every tenth product unit off of the
+assembly line for testing or every 50th customer off of a mailing list.
+The trick to systematic sampling is that, if the list of items is ordered
+in a way that is unrelated to the statistical questions of interest, a systematic
+sample can be just as good as, or even better than, a random
+sample. For example, if the customers are listed alphabetically by last
+name, it may be that every customer of a particular type will have an
+equal chance of being selected, even if not every customer has a chance
+of being selected. The problem is that it is not often easy to determine
+whether the order really is unrelated to what we want to know. If the
+stamping machine produces product molds in batches of ten,
+choosing every tenth item may miss defects in some part of the stamping
+mold.
+. Stratified sample. Also called a stratified random sample. This is a
+sophisticated technique used when there are possible problems with
+ordinary random sampling, most often due to small sample size.
+40 PART ONE What Is Business Statistics?
+It uses known facts about the population to systematically select
+subpopulations and then random sampling is used within each subpopulation.
+Stratified sampling requires an expert to plan and
+execute it.
+. Quota sample. This is a variant on the convenience sample common in
+surveys. Each person responsible for data collection is assigned a quota
+and then uses convenience sampling, sometimes with restrictions. An
+advantage of quota sampling is that different data collectors may find
+different collection methods convenient. This can prevent the bias
+created by using just one convenient sampling method. The biggest
+problem with a quota sample is that a lot of folks find the same
+things convenient. In general, the problems of convenience samples
+apply to quota samples.
+. Self-selected sample. This is a form of convenience sample where the
+subjects determine whether or not to be part of the sample. There are
+degrees of self-selection and, in general, the more self-selection the
+more problems and potential bias. Any sampling procedure that is
+voluntary for the subjects is contaminated with some degree of selfselection.
+(Sampling invoices from a file or products from an assembly
+line involves no self-selection because invoices and products lack the
+ability to refuse to be measured.) One of the most drastic forms of selfselection
+is used in the Internet polls common to TV news shows.
+Everyone is invited to log onto the Web and vote for this or that.
+But the choice to view the show is self-selection, and others do not
+get the invitation. Not everyone who gets the invitation has Internet
+access. Since having Internet access is a personal choice, there is selfselection
+there, as well. And lots and lots of folks with Internet access
+don’t vote on that particular question. The people who make choices
+that lead to hearing the invitation, being able to vote, and voting, are
+self-selected in at least these three different ways. On TV, we are told
+these polls are ‘‘not scientific.’’ That is polite. Self-selection tends to
+create very dangerous and misleading bias and should be minimized
+whenever possible.
+We will have much more to say about exactly what kinds of errors result
+from sampling in Chapters 3, 8, and 11. There is always more to learn about
+sampling. Note that, although we discussed measurement first, the practical
+order is: Define the population; Select the sample; Take the measurements.
+When we have that, we have our data. Once we clean up our data—see
+Chapter 6 ‘‘Getting the Data’’ about that—we are ready to analyze the data.
+CHAPTER 2 What Is Statistics? 41
+Analysis
+Analysis is the process that follows measurement. In Chapter 1 ‘‘Statistics for
+Business,’’ we discussed the difference between descriptive and inferential
+statistics. Both of these are types of statistical analysis. Here, we will explain
+those differences in more detail.
+Our data consist of a number of measurements of one or more different
+features for each one of all of the individual subjects in our sample. Each
+measurement value gives us specific information about the world. We use
+mathematics to calculate statistical measures from those measurement values.
+Each statistical measure gives us general information about the world
+because it is calculated from multiple data values containing specific
+information. The process of calculating general information from data is
+called statistical analysis.
+SUMMARIZING DATA: WHEN IS A NUMBER A
+STATISTIC?
+Within the field of statistics, the word, ‘‘statistic’’ has another, more specific
+meaning. A statistic, also called a statistical measure, is a value calculated
+from more than one data value, using a specific calculation procedure,
+called a statistical technique or statistical method. We have mentioned one
+statistic, the count, in Chapter 1. We will learn about a number of other
+statistical measures in Chapter 8 ‘‘Common Statistical Measures.’’ Examples
+of statistical measures are: ratio, mean, median, mode, range, variance,
+standard deviation, and many others.
+STUDY REVIEW
+In statistics, a statistical measure, is a variable calculated from the data. We discuss the
+most basic of these in Parts One and Two, especially in Chapter 8. Each variable
+is calculated using a specific method, described by a mathematical equation.
+A statistical procedure, some of which are called statistical significance tests, are
+more complex methods that give you more advanced statistical measures. We discuss
+these in Part Three. Statistical procedures often involve a number of equations and
+provide more subtle and intricate information about the data. However, there is no
+hard and fast rule dividing the measures from the procedures. In all cases, a number
+is calculated from the data that informs us about the data.
+42 PART ONE What Is Business Statistics?
+The procedures used for calculating a statistical measure starts with
+multiple values and summarizes them, producing a single number that
+characterizes all of the values used in the calculation. It is this process of
+summarization that generates general descriptions from specific ones.
+As we discussed in Chapter 1, there are two basic kinds of statistical
+measures, descriptive and inferential. As you might imagine, a descriptive
+statistic is one that describes a general feature of the data. An inferential
+statistic describes the strength of a relationship within the data, but its most
+common use is to say whether a relationship in the data is strong enough
+to affect the outcome of a particular sort of decision. The calculated value of
+the inferential statistic determines the conclusion of the statistical inference.
+For example, in one of the most basic inferential procedures, the t test, the end
+result is the calculation of an inferential statistical measure called the t statistic.
+The t statistic is higher whenever the value of the particular variable being
+analyzed is higher for one group of subject units than for another.
+KEY POINT
+Both descriptive and inferential statistics tell us about the world. An inferential
+statistic also answers a specific type of question within the framework of a statistical
+technique designed to perform a statistical inference. (For more on statistical
+inference, see the sidebar on inductive inference.) All of the guarantees for that
+statistical technique come with the proper use of the inferential statistic.
+In the end, the distinction between a descriptive and an inferential statistic
+is not a hard and fast one. It is a common error in statistics to use a
+descriptive measure as if it could provide a conclusion to a statistical
+inference. It is a common oversight in statistics to forget that any inferential
+statistic does describe the data in some way. Simply put, every inferential
+statistic is descriptive, but most descriptive statistics are not inferential.
+WHAT IS A STATISTICAL TECHNIQUE?
+Throughout these first two chapters, we have talked about statistical
+techniques and differentiated them from statistical measures, but we haven’t
+yet defined the difference. A statistical measure is a number that results from
+making calculations according to a specified procedure. For every statistical
+measure, there are one or more (usually more) procedures that produce the
+right number as a result. Take the example of the simplest statistical measure,
+CHAPTER 2 What Is Statistics? 43
+the count. The procedure used to produce counts is counting, which we all
+know how to do.
+When we get to more sophisticated statistical measures, particularly
+inferential statistical measures, the procedures for calculating the measure get
+a lot more complex. We call these much more complex procedures statistical
+techniques or statistical methods. As a result, the distinction between a simple
+calculation procedure and a complex statistical technique is also not a hard
+and fast one.
+One way of teaching basic, descriptive statistical measures is to present
+step-by-step procedures for calculating them. On the other hand, this method
+is almost never used for the more complex inferential measures, except in the
+most advanced texts. Knowing how to do these calculations may be a good
+teaching device, but, on the job, no one does these calculations, even the
+simplest ones, by hand anymore. Computers are used instead. In this book,
+we will not walk through the details for calculating most statistical measures,
+because those can be found in other excellent texts, which we list for you at
+www.qualitytechnology.com/books/bsd.htm. We will, however, provide
+detailed procedures for some special types of calculations that you may
+find useful in business when there is no computer around. (Recall the
+quotation from John Tukey in the introduction to Part One about the stick
+in the sand on the beach. Even without a computer, we can learn important
+facts about data right on the spot.)
+FUN FACTS
+Brewing Up Inferential Statistics
+Until the early part of the last century, statistics was about description. Then, in
+1920, a statistician named Gossett, working in the business of brewing beer for
+Guinness, came up with a trick called the t test. A famous statistician and scientist
+named Sir Ronald A. Fisher immediately recognized the enormous importance of
+the t test, and began the development of a second kind of statistics, inferential
+statistics.
+Statistical methods are formal, which means that once we abstract away from the
+topic of interest by measuring things, we can do statistics on almost anything:
+employees, receipts, competitors, transactions, etc. But the guarantee that statistical
+techniques provide is not apodictic, because of the possibility of statistical error. As
+we discussed before, even if all our measurements are perfect, our conclusions are
+not guaranteed to be true.
+What Fisher recognized was that the t test (also called Student’s t test, because
+Gossett had to publish under the pseudonym ‘‘Student,’’ because, at the time,
+Guinness Breweries prohibited its employees from publishing their work in scholarly
+44 PART ONE What Is Business Statistics?
+journals) provided a weaker sort of guarantee, based on the concept of probability.
+If all of our measurements are perfect (that is, all of our premises are true), we have a
+guarantee that the statistical values we calculate are probably close to the right
+values. (We will learn more details about this guarantee in later chapters.)
+The three most important things to understand about statistical inference are that
+it uses a specifiable procedure, that procedure is formal, and that it uses probability
+to describe how confident we have a right to be about the results. Today, formal
+procedures can be performed by computer, which is what makes the very powerful
+and very complex statistical analyses so popular and useful in business (and
+elsewhere) possible.
+Quiz
+1. What is the correct order of the first three steps in performing statistics?
+(a) Analysis, sampling, and measurement
+(b) Sampling, measurement, and analysis
+(c) Analysis, measurement, and sampling
+(d) Measurement, sampling, and analysis
+2. Which of the following statements about measurement is not true?
+(a) Measurement is a formalized version of observation
+(b) Measurement is different from ordinary observation
+(c) Measurement provides a specific description of the world
+(d) Measurement provides a general description of the world
+3. How is a variable used in statistics?
+(a) A variable usually corresponds to some measurable feature of the subject
+(b) A variable is a person, object, or event to which a measurement can be
+applied
+(c) A variable is the result of a particular measurement
+(d) A variable is the collection of values resulting from a group of measurements
+4. The series ‘‘President, Vice-President, Secretary, Treasurer, Board Member’’
+is on which type of scale?
+(a) Nominal
+(b) Ordinal
+(c) Interval
+(d) Ratio
+CHAPTER 2 What Is Statistics? 45
+5. Which of the following components of statistics contain error?
+(a) Measurement
+(b) Statistical analysis
+(c) Sampling
+(d) All of the above
+6. If we have a set of measurements that are valid, but not very reliable, they
+will . . .
+(a) Be clustered around the right value, but in a wide cluster
+(b) Be clustered very closely together, but around the wrong answer
+(c) Be in a wide cluster around the wrong value
+(d) Include at least one measurement that is exactly the right value
+7. Validity is how statisticians talk about minimizing _______ error;
+Reliability is how statisticians talk about minimizing _______ error.
+(a) Biased; biased
+(b) Biased; unbiased
+(c) Unbiased; biased
+(d) Unbiased; unbiased
+8. When a comprehensive sample is not possible, what is the best sampling
+technique to use in order to avoid introducing additional bias?
+(a) Convenience sample
+(b) Stratified sample
+(c) Random sample
+(d) Systematic sample
+9. Which of the following is the end product of the procedures used for calculating
+a statistical measure?
+(a) A single summary number that characterizes all of the values used in
+the calculation
+(b) A statistical technique
+(c) A range of numbers that characterize the population of interest
+(d) A valid and reliable measure
+10. Every inferential statistic is _______, but most descriptive statistics are not
+_______.
+(a) Inferential; inferential
+(b) Inferential; descriptive
+(c) Descriptive; inferential
+(d) Descriptive; descriptive

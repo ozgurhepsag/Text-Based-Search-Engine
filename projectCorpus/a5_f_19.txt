@@ -1,0 +1,1693 @@
+An Interview with
+Wassily Leontief
+Interviewed by Duncan K. Foley
+BARNARD COLLEGE OF COLUMBIA UNIVERSITY
+April 14, 1997
+Wassily Leontief is one of the central creators and shapers of twentiethcentury
+economics. He invented input–output theory and the techniques
+for constructing input–output tables from economic and technological
+data and was responsible for making input–output tables the most powerful
+and widely used tool of structural economic analysis. The theory of
+input–output matrices played an important role in the clarification of
+general equilibrium theory in the 1940s and 1950s as well. Leontief
+has also made fundamental and seminal contributions to the theories of
+demand, international trade, and economic dynamics. His research interests
+include monetary economics, population, econometric method, environmental
+economics, distribution, disarmament, induced technical change,
+international capital movements, growth, economic planning, and the
+Soviet and other socialist economies. Leontief has played a vigorous part
+in formulating national and international policies addressing technology,
+trade, population, arms control, and the environment. He has also been
+a well-informed and influential critic of contemporary economic method,
+theory, and practice. Leontief received the Nobel Memorial Prize for
+Economics in 1973.
+I met Wassily Leontief on April 14, 1997, at his apartment high above
+Washington Square Park in New York City. Leontief reclined on a sofa
+in the living room, with Mrs. Leontief going about her business in the
+Reprinted from Macroeconomic Dynamics, 2, 1998, 116–140. Copyright © 1998
+Cambridge University Press.
+16 Duncan K. Foley
+background, occasionally asking
+after Leontief ’s comfort. Leontief’s
+voice on the tape ranges from an
+assertive forte to a whispery piano.
+He is by turns animated, thoughtful,
+puzzled, inspiring, and charming.
+A chiming clock marking the
+passage of quarter-hours and characteristic
+New York street noise
+occasionally obscure his words on
+the tape. I have edited the transcript
+for continuity and clarity.
+Foley: There has been considerable
+discussion about the relation
+between input–output analysis
+and Marx’s schemes of reproduction
+from Volume II of Capital.
+What was the role, if any, of Marx
+in your education as an economist?
+Were Marx’s schemes of reproduction an inspiration or influence
+on your development?
+Leontief: I did my undergraduate work in Russia, and that’s where
+I learned Marx, but I am not a militant Marxist economist. When I
+developed input–output analysis it was as a response to the weaknesses
+of classical–neoclassical supply-and-demand analysis. It was terribly disjointed
+essentially, I always thought. You read my Presidential Address, I
+think? I felt that general equilibrium theory does not see how to integrate
+the facts and I developed input–output analysis quite consciously to
+provide a factual background, to register the facts in a systematic way, so
+it would be possible to explain the operation of this system.
+Foley: So, did the structure of Marx’s schemes of reproduction play
+any role in forming your ideas?
+Leontief: No. Not really. No. Marx was not a very good mathematician.
+He was always mixed up in math, and the labor theory of value
+didn’t make much sense, but essentially I interpret Marx and am interested
+in Marx only as a classical economist. And it is possibly Quesnay,
+the ideas of Quesnay, that influenced me. It is very difficult to say what
+influenced you. I got my training as an economist as an undergraduate.
+Already I read systematically all economists beginning with the seventeenth
+century. I just read and read, so I had a pretty good background
+in the history of economic thought, and my feeling is that I understand
+the state of the science.
+Figure 1.1 Wassily Leontief.
+An Interview with Wassily Leontief 17
+Foley: You were in the Soviet Union in the very first years of the
+Soviet experiment?
+Leontief: I left the Soviet Union in 1925. I got in trouble with the
+government, actually. I had to go away in order to be able to work.
+Foley: Was anyone at that time thinking about a statistical basis for
+planning in the Soviet Union?
+Leontief: No. The first thing which had some relation to it was essentially
+a national income analysis. Like all national income analyses, it was
+not very disaggregated. Everything gives you one figure, while I thought
+that to understand the operation of the system, one figure is not enough.
+You want to see how it disaggregates. I was not interested in improving
+the system; I was just concentrating on understanding how it works. Of
+course, it’s nice to understand before you improve, but my feeling is that
+to understand the economic system is the first job of the economist.
+Foley: Then, in 1925, you moved to Berlin?
+Leontief: To Berlin. I got my Ph.D. very quickly, and I had two
+professors. I was research assistant of Professor Sombart, who was a quite
+interesting historical economist, and Bortkiewicz, who was a mathematical
+economist. But Professor Sombart didn’t understand mathematics.
+Foley: Were they particularly interested in the statistical side of input–
+output tables?
+Leontief: No, and economists in their empirical efforts must be factual.
+But there is a tendency to be abstract, theoretical, particularly among the
+better economists.
+Foley: How long did you stay in Berlin?
+Leontief: About two years. I got my Ph.D. very quickly. Then I was
+in the Institute for World Economics—a big Institute in Kiel—and I
+was invited to be a member of the staff, and this is essentially where I
+developed my idea of the input–output approach.
+Foley: Were there other scholars at Kiel working on that general line,
+or anything related to that type of thing?
+Leontief: No. I was isolated.
+Foley: It must have been a tremendous job to do the statistical groundwork
+for input–output analysis.
+Leontief: Yes, it was. I decided the only thing was practically to show
+how to do it, and I did this with one assistant. I was invited to the
+United States by the National Bureau of Economic Research. I received
+some foundation money and my assistant and I worked very hard, I
+mean, using all kinds of information—technological information, naturally,
+beginning with the Census. The U.S. Census was the best statistical record
+of an economy. From there I was invited to Harvard, where I spent 45
+years. When the war began, interest in input–output analysis grew. I was
+18 Duncan K. Foley
+kind of a consultant on economic planning. It was for the Air Force,
+which of course was very important during the war. The best input–
+output matrix was computed by the Air Force. They had also an input–
+output table of the German economy, because it enabled them to choose
+targets. Usually I’m not very pragmatic, but if you want to do something,
+you have to understand what you’re doing, and for the Air Force
+that was the committed choice of targets and so on, so input–output
+analysis was very interesting to them.
+Foley: What was your reaction to Keynes’s work during the 1930s?
+Have you changed your mind since then?
+Leontief: No, not at all. My attitude was rather critical because I felt
+that he developed his theory to justify his political advice. Keynes was
+more of a politician than an analyst. I never became a Keynesian,
+although I wrote some of the first criticisms of Keynes. If you look at my
+bibliography you’ll find them. But I tried to do it systematically; that is,
+not so much the political side but just the approach, which was for me
+too pragmatic. Now, you improve the system, all right, but first describe
+the system in order to improve it.
+Foley: Did you have an alternative theory of the Depression at that time?
+Leontief: No. My feeling is that the fundamental theoretical understanding
+of economic fluctuations is as a dynamic process. I still believe,
+what explains the fluctuations of economies is some kind of difference,
+differential equations. Of course, structural change is very important, particularly
+now. It’s always dynamic. It’s a system of interrelationships,
+a system of equations, but still the quantitative approach is important.
+Since I paid so much attention to the relationship between observation
+and theory, at the same time I developed a theory of input–output
+analysis which is really mathematical, and tried myself to collect data. I
+think I influenced the course of economic statistics.
+Foley: Yes. Input–output analysis and national income analysis are the
+two major systems that came into place in the 1940s and 1950s.
+Leontief: Right. I don’t think there is really a dichotomy. I think
+input–output analysis is just much more detailed. Stone, for example,
+who was commissioned to develop the statistical economic system for the
+United Nations, assigned a very great role to input–output analysis,
+as a foundation for the aggregation to national income.
+Foley: In a system of that kind, there’s usually some attempt to model
+both supply-side effects and demand-side effects.
+Leontief: I was always slightly worried about having demand analysis
+as a separate thing. My feeling is that households are an element of the
+system. In a good theoretical formulation, households are just a large
+sector of the economy.
+An Interview with Wassily Leontief 19
+Foley: This echoes the classical idea that the reproduction of the
+population is an aspect of the reproduction of the economic system.
+Leontief: Exactly. This goes back to Quesnay.
+Foley: I’ve also talked with Richard Goodwin about this theme of the
+interplay between structural change and fluctuations.
+Leontief: Richard Goodwin was my student. He studied with me, he
+was my assistant. He couldn’t get a permanent appointment at Harvard
+and then went to England. He was a good friend. He was very interesting.
+Foley: I talked with Goodwin about this at one time. He did have a
+job at Harvard in the late 1940s, but it was an untenured job, right?
+Leontief: Yes. He couldn’t get tenure. And this was the reason why he
+went to England.
+Foley: Yes, that’s what he told me as well, but I was somewhat
+puzzled as to why someone who had been doing the kind of work he was
+doing in the late 1940s would not have been a shoo-in for tenure.
+Leontief: I think possibly it was politics. He was on the left.
+Foley: So that shaded the evaluation of his scientific work?
+Leontief: Yes. That was it, frankly.
+Foley: So you would still now look for the major cause of businesscycle
+fluctuations in lags, but the impulses in supply-side structural change?
+Leontief: Yes, structural changes, but be very careful, because a system,
+a dynamic system, without structural change would have lags, and
+latent eigenroots that create fluctuations. Of course, at the present time,
+technological change is very important. Technological change is the driving
+force of economic change and the cause of social change.
+Foley: To come to a slightly more technical issue, what about the
+question of whether the fluctuations are damped or undamped?
+Leontief: They don’t have from a mathematical point of view necessarily
+to be damped. This raises the problem, why don’t we explode? And
+there are some forces which prevent them from exploding, including
+economic forces, such as policy and other nonlinear effects.
+Foley: In the 1930s, you had a controversy with Marschak over
+demand analysis.
+Leontief: Yes, now I do not remember the details, but I think there
+was a logical flaw in Marschak’s position.
+Foley: Did this have anything to do with the development of input–
+output analysis?
+Leontief: That was already after I developed input–output analysis,
+which I really developed when I was in Kiel, and at the National Bureau.
+In the National Bureau, I was very subversive, because the National Bureau
+under Mitchell was extremely empirical, while I on the other side had a
+very strong theoretical intuition. To understand the process you have to
+20 Duncan K. Foley
+have a theory. I organized an underground theoretical seminar in the
+National Bureau. It was underground, because it was against the principle
+of the National Bureau.
+Foley: In the 1940s, there was a rather sharp controversy between the
+Cowles Foundation and the National Bureau around issues of empirical
+method and theory. Koopmans wrote a very sharp paper at that time.
+Leontief: Since I thought mathematics plays a great, important role,
+I would of course be on the side of the Cowles Commission.
+Foley: But you found yourself institutionally associated with the National
+Bureau.
+Leontief: Exactly. Because I always felt, as I explained in my Presidential
+Address, if you want to really understand an empirical science, you
+must have the facts. And the problem is how to organize the facts.
+Essentially, theory organizes facts.
+Foley: So your position was a kind of synthesis of these two points
+of view.
+Leontief: Yes. Right.
+Foley: The Cowles Commission developed a very characteristic approach
+to econometrics and measurement problems in the 1940s. Did you find
+yourself sympathetic to that way of doing it?
+Leontief: No. I criticized it very early.
+Foley: Did you foresee that there would be a role for input–output
+analysis in guiding government policy after the Second World War? This
+is an interesting period because it set the pattern for the next decades.
+Leontief: Not only in government, but also in industry. I remember
+when the question arose much later about the position of the automobile
+industry in the American economy, there was some kind of association
+of industrialists who said “go to Leontief,” because I published some work
+using the example of the auto industry. I published empirical work, and
+my principle always, though I could not always adhere to it, was always,
+when I made some theoretical observation to use the data—not just to
+say it, but really to see how it works.
+Foley: And so you used input–output analysis, say, to study the future
+of the auto industry or prospects for specific industries?
+Leontief: Right, right. During the Cold War, there was an economist
+by the name of Hoffenberg. He did a lot of empirical analysis. In constructing
+an input–output table of the United States, he played a very
+important role. He was a really excellent intuitive statistician. And, you
+must understand, it takes a particular knack to understand statistics. When
+I constructed the first input–output table, which was very early, I often
+used the telephone. I called up industries, particularly firms which were
+engaged in the distribution of commodities, and got the data from them.
+An Interview with Wassily Leontief 21
+Foley: So you would ask the distributors what their customers’ proportions
+were in terms of the sectors?
+Leontief: Exactly! I just went straight to them.
+Foley: Did the U.S. government have a functioning input–output
+table in 1946?
+Leontief: Yes, yes. In the Department of Commerce, in the Bureau of
+Economic Analysis. National income computations were conducted in
+the Bureau of Economic Analysis, and they had an input–output table.
+Although the best input–output table was constructed by the Department
+of Labor. Roosevelt’s Secretary of Labor, Frances Perkins, wrote to
+me that the President had asked her the question, what will happen to
+the American economy after the war? She said, we don’t know how to do
+it. We tried to look at the literature, but we don’t know how to study
+this type of thing, and then one of my first articles appeared and they
+said, all right, we thought possibly you could tell us how to do it. They
+sent a representative, and I said, get the facts and good theory; and, as
+a matter of fact, at that time under Roosevelt the government was very
+active and intelligent. Yes, they told me, all right, collect the facts. Come
+to Washington and collect the facts. I said, no. One cannot collect facts
+in Washington. I must do it at Harvard. And they opened a division of
+the Bureau of Labor Statistics at Harvard, at the Littauer School, and I
+hired people, not many economists, mostly engineers, and we constructed
+an input–output table. The next detailed input–output table was constructed
+with the money of the Defense Department. And they had a lot.
+Without money it’s very difficult to construct an input–output table; it’s
+a resource-intensive activity.
+Foley: After the war, was there a competition between Keynesian
+demand management and a more structurally oriented input–output
+approach to economic policy?
+Leontief: Oh, I think the Keynesian approach definitely took over. I
+don’t think there was much competition. Keynes took over.
+Foley: Why did that happen?
+Leontief: Because Keynes was very pragmatically oriented. In spirit, he
+was very much a politician, an excellent politician. I think he developed
+his theory essentially as an instrument to support his policy advice. He
+was incredibly intelligent.
+Foley: Well, it sounds as if you had your political contacts, too, in the
+Labor Department and the Defense Department, and the Commerce
+Department.
+Leontief: Oh, yes, but you know it was different. It was much more
+modest. The Labor Department studied the problem of the supply of
+labor, different skills and so on. It was much more technical. They still
+22 Duncan K. Foley
+Figure 1.2 Members of Professor Leontief ’s seminar of the August 1948
+Salzburg Seminar in American Studies. 1, Friedrich G. Seib (Germany);
+2, Bjarn Larsen (?) (Norway); 3, Helge Seip (Norway); 4, Leendert Koyck (?)
+(Holland); 5, Gérard Debreu (France); 6, Paul Winding (Denmark); 7, Robert
+Solow (U.S.A.); 8, Mrs. Robert Solow (U.S.A.); 9, Mario Di Lorenzo (Italy);
+10, Arvo Puukari (Finland); 11, Jacques D. Mayer (France); 12, Odd Aukrust
+(Norway); 13, Professor William G. Rice (U.S.A.); 14, Joseph Klatzmann
+(France); 15, unknown (Germany); 16, Bjarke Fog (Denmark); 17, Professor
+Leontief Wassily (U.S.A.); 18, Per Silve Tweite (Norway).
+have an input–output division in the Labor Department—the Bureau of
+Labor Statistics.
+Foley: The late 1940s, as we look back on it, seems to be the time
+when a methodological synthesis took place in economics. How did
+you view the relation of input–output to the developing methodological
+consensus in economics and econometric theory? Did you see it as part
+of it or as a different path?
+Leontief: You see, I was somewhat skeptical of the whole curve-fitting
+notion. I thought of technological information. The people who know
+the structure of the economy are not statisticians but technologists, but
+of course to model technological information is very difficult. My
+idea was not to infer the structure indirectly from econometric or statistical
+techniques, but to go directly to technological and engineering
+An Interview with Wassily Leontief 23
+sources. I had some proposals to this effect, which could not be realized
+because there was no money. Empirical analyses are extremely expensive.
+Foley: And the input–output type is more expensive than the indirect
+statistical investigation.
+Leontief: Oh yes, much more. It was indirect statistical methods that
+were used. I think I have a very strong theoretical streak. I am essentially
+a theorist. But I felt very strongly that theory is just construction of
+frameworks to understand how real systems work. It is an organizing
+principle, while for many economists theory is a separate object.
+Foley: Some economists think of theory as predictive or behavioral.
+Leontief: Yes. I think if one knows, or one agrees, what the formal
+nature of a mathematical system is, one can do certain predictions because
+of the general nature of the system. I published a couple of articles on
+prediction. There are short-run problems and long-run problems in quantitative
+analysis, and I have a feeling that conventional prediction is good
+for short-run problems; but technological change, which is the driving
+force of all economic development, is a long-run process.
+Foley: So, from this point of view, specific hypotheses about human
+behavior, or expectation formation, or preferences would play a subsidiary
+role.
+Figure 1.3 Joseph Schumpeter, Wassily Leontief, and Paul Sweezy at
+Harvard in the late 1940s.
+24 Duncan K. Foley
+Leontief: A subsidiary role. I think so, because my feeling is that,
+particularly under a market system, a capitalist system, the big industrialists
+play a really big role, and they try to make profits, to choose technologies
+which maximize profits—essentially in the short run. Of course, national
+policy has to be taken into account, but business is certainly a short-term
+type of system.
+Foley: In sectors like transportation or power generation where you
+have long-term investments, this can create problems.
+Leontief: I agree. There you need long-run engineering, power generation,
+and—I suppose—environment, which is important now.
+Foley: You talked about the money and resource problem. Was there
+a competition for resources between national income approaches and
+input–output approaches in the United States during the 1950s?
+Leontief: I have a feeling that, at least in the Department of Commerce,
+they realized input–output was very useful for national income
+computations. As a matter of fact, there was a period of time—possibly
+even now—when the national income computation essentially summarized
+the results of the input–output analysis. Funding is always a problem.
+For input–output analysis, particularly analysis of technological
+change, we need more of an engineering understanding, because scientific
+progress is now the driving force in technological change.
+Foley: Do you see any feedback in the other direction, to the priorities
+in scientific research from economic bottlenecks?
+Leontief: Oh, no doubt, no doubt. First of all, it was always true of
+the war industry. Scientific progress helped the military.
+Foley: In the 1960s and early 1970s, there was another major change
+in economic doctrine, a shift from a Keynesian consensus to what’s
+now called rational-expectations models and the notion of market clearing
+and perfect foresight. You were a professor at Harvard at that time.
+How did you see that happening in the profession? What factors determined
+that change?
+Leontief: In the earlier times, Keynes dominated economic thinking. I
+do not know to what extent the whole expectations revolution made
+any headway. It is a very delicate thing mathematically, and I do not follow
+the literature closely now, but I think there was not so much analysis
+about expectations. There was just talk about it. I did not see any material
+contribution to the theory of expectations, except the very short run,
+naturally, for the business cycle, which is important.
+Foley: So you don’t think that was the result of any empirical superiority
+of this new approach?
+Leontief: No, I don’t think so.
+Foley: Was it just that Keynesianism ran out of steam?
+An Interview with Wassily Leontief 25
+Leontief: I think so.
+Foley: You said that you were not that taken with the Keynesian
+point of view to begin with, so I suppose you observed this with some
+equanimity.
+Leontief: Yes. I’m not a monetary economist, but I think that deeper
+analysis of the flow of money might give a little more meat to this field.
+Foley: There has been the development of the flow of funds accounts.
+Leontief: Yes, but it was very aggregative. For our understanding
+how the economic system works, disaggregation is very important.
+Foley: Would it make sense to try to link flow of funds with input–
+output analysis at the same levels of disaggregation?
+Leontief: Oh, yes, but I didn’t see anybody try to do it. Of course,
+there’s no money there, but I think the money flows are important. I
+sometimes suggested the possibility of aligning money flows from micro up
+rather than from macro down, because I think in every corporation there
+is some high functionary who is in charge of money flows—budgets,
+credit, and so on—and he has to make a plan. The only planning that exists
+is for money flows, and there is his counterpart in a bank, who is close
+to operations and, if I’m not mistaken, there is a cooperation between
+the official in the company who sees to it that they have enough credit,
+and the credit manager in the bank, who is very often in charge of separate
+corporations. I made a couple of proposals to work on this. The interesting
+thing is to have the same figures from two points of view. It might be
+very helpful to understand how they interact to determine the short-run
+path of investment.
+Foley: There’s not been a lot of economic theorizing in that area.
+Most of the models assume some kind of equilibrium conditions, but
+you said that it was a mistake to start from equilibrium as opposed to
+explicit dynamics.
+Leontief: Exactly, exactly.
+Foley: When you resigned from Harvard in 1974, soon after you
+received the Nobel Memorial Prize, you sharply criticized the direction
+of economics as a discipline and called for a reevaluation and redirection
+of research methodology in economics. Do you think that redirection
+has taken place?
+Leontief: No.
+Foley: Would you have the same view on the success of economics
+as a science now?
+Leontief: Yes. My feeling is we require patient, practical economic
+advice. Our basis of understanding how the economy works is not very
+strong. Practical advice could and should be more based on understanding
+how the system works.
+26 Duncan K. Foley
+Foley: We’ve mentioned several times this afternoon the role of
+mathematics. Some people argue that economics has become too dominated
+by mathematical formalism.
+Leontief: I completely agree. Very many mathematical economists
+were simply mathematicians who were not good enough to become pure
+mathematicians, so mathematical economics, which had always been dull,
+gave them a marvelous pretext to become economists.
+Foley: But on the other hand, you’ve strongly supported the role of
+mathematics in theory in economics. When is mathematics fertile and
+when does it become just a formalism?
+Leontief: My feeling is that mathematics is simply logic. The general
+insights are the most important. For example, I think mathematics gives
+us good reason to feel that all fluctuations are due to lags—it’s dynamics.
+This is a real mathematical insight. Mathematicians know it. As a matter of
+fact, one of the problems I had in my theoretical work was how to avoid
+explosive fluctuations, because there are so many eigenvalues in those big
+matrices, and some explode.
+Foley: What was your own training as a mathematician?
+Leontief: I took mathematics courses, but I tried to improve my range
+of mathematics very early, when I realized that mathematical argument
+was of great importance for economics. I read a lot. I took basic courses
+in the university. My tendency was always to combine the empirical and
+theoretical. In economics that combination requires mathematical concepts,
+such as systems analysis.
+Foley: But you’re also saying that the vision of the economic structure
+and relations has to come first.
+Leontief: I think, together, because if we have only that vision, it never
+adds up to anything. When I developed input–output analysis before
+going to the National Bureau of Economic Research, I felt it terribly
+important to have a good insight into the mathematical relationships. I
+think that the mathematics which economics used are not of a particularly
+high order. For example, those who translated neoclassical economics
+into mathematics didn’t develop any very interesting insights. They
+obviously developed some things, but didn’t come to any very interesting
+insights into how the economic system works, and they were, on the
+whole, not interested in empirical analysis.
+Foley: From having talked with other people about that, I think there
+were very high hopes that the formalization of economics would yield
+some substantive insights.
+Leontief: Without data you couldn’t do it. Absolutely, without data it
+couldn’t work. It can just establish certain principles of equilibrium and
+nonequilibrium.
+An Interview with Wassily Leontief 27
+Foley: You think that more or less exhausted the real scientific contribution
+of the program?
+Leontief: I think so. They would have made more progress if they really
+had good, very detailed, empirical information. For example, it would be
+very interesting to see how modern technological change has affected the
+demand for labor. It might reduce the demand for labor, and even create
+a social problem, because labor isn’t just one more factor of production.
+Then you will have to support labor. My speculative intuition is that the
+government now has to support a large part of income through education
+expenditure, health expenditure, and of course social security—and
+possibly a kind of welfare—but social security is more important. My
+feeling is that ultimately the transfer of income so as to provide people
+money to buy consumers’ goods will become part of social security. It’s
+already very large—I’m amazed how large my family social security is.
+Foley: This is a Keynesian theme, the support of demand through
+government subsidies.
+Leontief: Yes, Yes, but it’s not only supporting demand. Keynes was
+supporting employment, which this does not do. Just demand. You feed
+people. Technology will reduce employment, or certainly not increase
+employment. Certainly I think that technology competes with labor,
+ordinary labor: If you produce everything automatically naturally you’re
+not going to employ so much labor.
+Foley: So this is an example of your sense that there should be a
+substantive foundation for the investigation in the real structure of what’s
+going on?
+Leontief: Yes. Technological change was always the driving force for
+economic development beginning in prehistorical time, but now, when
+technological change has become propelled by scientific investigation,
+this type of analysis is extremely important. Economists attempted to do
+it, but mostly by making general statements. The moment energy becomes
+cheaper, technological change becomes important. Production now requires
+much more energy.
+Foley: Do you think the establishment of the Nobel Memorial Prize in
+Economics has, on the whole, fostered a better atmosphere for research
+in economics?
+Leontief: You know, there’s a problem. I think they’ll soon run out
+of candidates for Nobel Prizes in economics. I think we have already
+problems now.
+Foley: Did the Nobel Prize have any particular impact on your work
+or your life as a scientist?
+Leontief: On my life, some. Not on my work. Naturally, it was easier
+to get jobs. Not necessarily easier to get financing. Now, for example, I
+28 Duncan K. Foley
+cannot get any financing. So, I suppose my academic life got easier, but,
+as I said, there is a problem how the Nobel committee can continue. I
+think they have already begun to shift from theoretical to institutional
+economists. Now there is a problem because in technical economics at
+least you can point out some hierarchy, and also major steps forward,
+breakthroughs, while in institutional economics I don’t really see any
+large breakthroughs. As a matter of fact, I am concerned that economists
+are not sufficiently interested now in institutional changes brought about
+by the development of new technologies, which I think is definitely the
+driving force.
+Foley: There’s been a lot of discussion about whether economics should
+take any other science as its model, in particular physics or biology, and,
+if so, which one. Did you ever think in those terms, that economics
+should be like a physics of society or a biology of society?
+Leontief: I think it doesn’t help much. Naturally, mathematical economists
+like to look to physics. I think it was the Darwinian approach that
+was really interesting, and I think that in one way the great intellectual
+revolutionary was Darwin. Incredible revolution, not only in biology, but
+in the analysis of all living processes. I think Darwin—it was Newton and
+Darwin who I think were the great contributors to the understanding of
+social change. Darwinism is very important, although, of course, it is
+interesting that Darwin was influenced by Malthus. What are you interested
+in?
+Foley: One of the things I’ve been spending some time on recently is
+evolutionary modeling of technical change. The issue of global warming
+evolves over the kind of very long timescale on which changes in technology
+will be decisive.
+Leontief: Oh, yes. I completely agree. Technology is terribly important.
+Foley: If you look over a shorter time horizon, substitution of existing
+technologies might be important, but I think over a long time period,
+it’s going to be the direction of technological change, and the bias of
+technological change. The question is whether there’s any way to control
+it.
+Leontief: Exactly. Not necessarily consciously, but. . . . Now, of course,
+there is a much closer link between scientific change and technological
+change. One hardly even can visualize technological change without
+science, and, with global warming, these things are terribly important.
+And what can we do? We can do many things. Slow down, for one.
+Foley: That’s not popular in a world anxious to develop as fast as
+it can.
+Leontief: It is remarkable how technologically backward many lessdeveloped
+economies are. Once you begin to cut trees, you can do it
+very quickly.
+An Interview with Wassily Leontief 29
+Foley: If you were encountering a younger scholar who had some
+innovative but expensive idea like input–output, how would you recommend
+that person proceed?
+Leontief: He has to publish something. I do not know who gets money
+nowadays. I haven’t been following the development of the field recently.
+I’m, after all, over 90 years old, but, of course, big money is spent not on
+research, but on data collection. Some people have good ideas and can
+really do something with the data, but economics has come closer and
+closer to technology now. To exploit the influence of technological change
+on economic change, you just can’t compute some supply curve; you
+must really have a mass of information. I wrote up how it can be done,
+and I nearly succeeded in getting money to do it. My feeling is one could
+even do some anticipation, prediction, if one had really detailed data. I
+got in touch with engineering societies, the society of mechanical engineers,
+and they were ready to provide information. I think this is the
+future of the work, in the interaction between economics and engineering,
+science, and the substructure of production.
+Foley: Did you ever have any personal or scientific contact with Piero
+Sraffa, the Anglo-Italian who worked on linear models?
+Leontief: No. I never met him. But I think he was a very interesting
+man. His vision was interesting. In general, I think the input–output
+analysis is not necessarily linear. I would interpret it as an outgrowth of
+neoclassical theory. Sraffa was interested in something slightly different,
+the indirect relationships. I don’t insist on linear relationships, only I’m
+conscious of the fact that dealing with nonlinear systems is terribly complicated;
+and even in computations, what do mathematicians do? Linearize
+the system in pieces, and then put it together. This is the way most of us
+use mathematics in a field in which data is important.
+Foley: I was going to ask you about the relationship between
+production-function analysis and input–output. Production functions seem
+to have taken over the economics of production.
+Leontief: Oh, yes. The production function is too flexible. First of all,
+continuity is silly. I visualize different methods of production as cooking
+recipes, including even such things as temperature and so forth, and what
+must be known in order to be able to cook the dish. This approach
+might enable us to analyze technological change. The technological
+production function was essentially an attempt not to go into empirical
+analysis. You see, given production functions, you don’t need that. You
+guess at a few parameters, instead of having to look in detail at what’s
+happening, and if you try to generalize production functions, it’s dangerous,
+very dangerous.
+Foley: What are your thoughts on the advantages and disadvantages of
+linking sectoral and establishment- or firm-level data?
+30 Duncan K. Foley
+Leontief: I think the institutional organization of production through
+the establishment in some way reflects technology, but it is a very delicate
+situation, because it’s not very simple, how economic activities are distributed
+to different human organizations. It has some relation to what is
+actually being done, but it’s very delicate. Human organizations are very
+complicated. You can accomplish this linkage in some respects and not
+some other respects, but I agree with both approaches, particularly since
+the establishment is not enough. Even establishments are now institutional
+organizations.
+Foley: One practical problem is that, as you disaggregate the input–
+output structure, you find that one firm begins to appear in several
+different sectors. This also touches on the theme you were talking about
+earlier of finance. Finance comes at the firm level.
+Leontief: I completely agree, and here, we agree with the need for
+continuity. Institutional organizations change very easily. So far as top
+management is concerned, the firm doesn’t reflect technology at all. You
+can have the same corporation making ice cream and making steel. This
+is, I think, unavoidable, but, possibly because of my interests, I would
+rather favor establishments first, and then corporations, because the establishment
+is a homogeneous concept. It is quite an interesting problem.
+Foley: Where do you think the future of economics, and macroeconomics
+in particular, lies?
+Leontief: I think problems of income distribution will increase in
+importance. As I mentioned before, labor will be not so important, and
+the problem will be just to manage the system. People will get their
+income allocated through social security—already now we get it through
+social security, and we try to invent pretexts to provide social security
+for people. Here, I think, the role of the government will be incredibly
+important, and those economists who try to minimize the role of the
+government, I fear, show a superficial understanding of how the economic
+system works. My feeling is, if we abolished the government now,
+already there would be complete chaos. Now, planning plays a role,
+naturally, but I don’t emphasize just planning as a role for the government,
+which is I think extremely important, and its importance is bound
+to increase because of technological change. If one asks oneself, what will
+happen to the system if we abolished completely the government, it
+would be horrible.
+Foley: But you think that’s particularly true because of the pressures
+technological change in capitalism are putting on the social fabric, and a
+weakening of the nexus between labor and income?
+Leontief: Oh yes. Absolutely. The labor market is not a sufficient
+instrument to move from production to consumption.
+An Interview with Wassily Leontief 31
+Foley: I’m just going to ask you one more question. You’ve been a
+lifetime participant observer in the subculture of American economics
+and the larger world of American science and politics. If you were an
+anthropologist, how would you characterize economists as a tribe or a
+culture compared to the physicists or biologists?
+Leontief: It depends what economists you have in mind. Academic
+economists are just part of the academic establishment, but I suppose
+we economists are as indispensable as accountants. In managing a system,
+you have to have represented the point of view and principle which
+managers have, and economists are just a particular type of management,
+if you disregard academic economists, who are a special type.
+Foley: Within academics, do you see any difference between economists
+and their counterparts in science or the engineers that you work
+with?
+Leontief: You see different tendencies in economics. Some prominent
+economists have just proved a couple of theorems, or codified classical
+and neoclassical textbooks.
+Foley: You’re suggesting that economists value classificatory or formal
+contributions more than finding out something about the world itself ?
+Leontief: Yes. My observation was a critical one. Particularly since I
+am interested in society, I see economics as a social science. Certainly
+economists should contribute something to understanding how human
+society developed, and here, economists have to cooperate with anthropologists
+and others.
+32 Stephen E. Spear and Randall Wright
+2
+An Interview with
+David Cass
+Interviewed by Stephen E. Spear
+CARNEGIE MELLON UNIVERSITY
+and
+Randall Wright
+UNIVERSITY OF PENNSYLVANIA
+February 13, 1998
+David Cass is undoubtedly one of the central contributors to modern
+dynamic economics. His fundamental contributions include work on optimal
+growth problems, overlapping-generations models, sunspot equilibria, and
+general equilibrium models with incomplete markets. His research has
+shaped in profound ways the manner in which we do both micro- and
+macroeconomics. From laying the foundations of real business-cycle theory
+via the Cass–Koopmans model, to providing us with general tools and
+techniques to analyze dynamic economic models, to furthering our understanding
+of monetary economics, to making fundamental contributions
+to the economics of extrinsic uncertainty, Cass’s work has played a major
+part in the development of much of modern macroeconomic theory. In
+addition to being a first-class scholar, Cass is also truly his own man and
+a free spirit of the highest order.
+In this interview, we tried to gain some insights into the story of David
+Cass and his approach to economic theory. Also, given the title as well as
+the intended readership of Macroeconomic Dynamics, we made a real
+Reprinted from Macroeconomic Dynamics, 2, 1998, 533–558. Copyright © 1998
+Cambridge University Press.
+An Interview with David Cass 33
+Figure 2.1 David Cass, June 3,
+1994, on the occasion of receiving an
+honorary degree (“docteur ès sciences
+economiques honoris causa”) from
+the University of Geneva.
+effort to get him to discuss modern
+macroeconomics and the
+influence his work has had on its
+development. We edited out some
+parts of the discussion in the
+interests of space, but what remains
+is essentially unedited. As
+most readers will know, David
+Cass has collaborated extensively
+with Karl Shell over the years.
+We met with Dave in his office
+at the University of Pennsylvania’s
+Economics Department just
+before noon. Amid the boxes
+and piles of articles, books, and
+CDs, he sat in his standard jeans
+and T-shirt, looking about as
+disheveled as he usually does. We
+chatted there for a while, went out
+and continued over lunch, and
+then returned to complete the
+interview several hours later. It
+was an unseasonably warm day in
+February, and Friday the 13th to
+be exact. That is traditionally an unlucky day, but one that turned out in
+this case to be a real treat, at least for us! We hope that you get as much
+out of this conversation with Dave as we did.
+MD (Macroeconomic Dynamics): Let’s begin by talking about
+graduate school and your adviser, [Hirofumi] Uzawa. How did you first
+hook up with him?
+Cass: Okay. I viewed Stanford’s graduate program as being completely
+chaotic. I’ll give you an example. The first year I went to Stanford, they
+had a qualifying oral in the first semester and everybody had realized that
+this was patently absurd. So they had abolished the requirement, but
+they’d scheduled the orals already, so they decided to hold them. My
+oral—and I didn’t even know people on the Stanford faculty very well at
+the time—my oral was composed of Ken Arrow and somebody else.
+When I found out about Arrow, I was terrified. So I went in and Ken
+asked me a question and I gave some half-assed answer, and he has this
+capability of taking someone’s answer and then reframing it in a way that
+makes a lot of sense. So, my qualifying exams consisted of my short
+responses to Arrow and then him elaborating to make sense of them.
+34 Stephen E. Spear and Randall Wright
+But the point is, they had this requirement that they abolished but they
+scheduled, and that was typical. So basically, at Stanford you were kind
+of left on your own as a graduate student. There was just no coherence
+in the program. Now, I don’t remember exactly how I first met Uzawa,
+but there was a mathematical economics group who had offices separate
+from the department in a little house on campus called Serra House, and
+that is where what I consider the really good people at Stanford were:
+Arrow, Uzawa , Scarf. We had other kinds of mathematical social scientists
+there. And somehow, Karl [Shell] knew about Serra House right away,
+and we had our offices there.
+MD: Did you and Karl enter in the same year?
+Cass: Yeah, and somehow Karl introduced me to Serra House. I don’t
+remember how we got involved with Uzawa, but we just got involved with
+him. Maybe he ran a seminar or something. I don’t really remember how
+we met, but it was clear that this guy was really into research and very
+good at directing people, so we hooked up with him. Then, the last two
+years at Stanford (I stayed four years), I basically spent at Serra House
+working with Uzawa. He always had seminars going. Uzawa, in my view,
+by conventional standards, is a terrible lecturer, but he is an awesome
+teacher. His greatest virtue is that when he lectures he shows you how he
+does research. If he doesn’t prepare, he will tell you about a paper he is
+working on, and he gets up and basically re-creates the mistakes that he
+made and corrects them. He explains why he decided to do this and that,
+and it is just like you are taught by doing research.
+So, I took a couple of courses from him and found them great, but
+from conventional standards they were probably a disaster. He taught
+econometrics, and he wanted to calculate some estimator, probably a
+limited information maximum likelihood estimator, but he didn’t really
+remember anything about it. Half of the course consisted of Uzawa
+coming in and starting to prove a theorem about this estimator, and he
+would go on for about an hour or an hour and a half, and then he would
+realize that he had gone off on the wrong track again and he would say
+“Oh, sorry.” Next time he would start up again—it was really incredible!
+But it was interesting. He has a really good mind for working from first
+principles and for working out how you solve a problem.
+Uzawa was a marvelous person to work with. I model my career in
+terms of working with graduate students after the experience I had working
+with Uzawa. He treats them exactly as equals and he spends a hell of
+a lot of time one-on-one with them in all kinds of situations. Don’t think
+it was only in the office—it could be going to a bar, or any of that. He
+just spent an enormous amount of time. Now Uzawa probably never
+read anything that I wrote. I am sure he didn’t. But he always wanted to
+An Interview with David Cass 35
+talk about it. He’d always force his students to deal with that, and he had
+a group of students in seminars, so that all the students knew what the
+other students were doing. Of course, we had a focused subject—growth
+theory and, more particularly, applications of a fancy version of the
+calculus of variations, the maximum principle, to growth models. So we
+all had a common background but, actually, that personal thing is one of
+the reasons I got into trouble with the Penn administration. One of the
+basic issues I had about dealing with graduate students here was that
+somehow the administration wanted me to distinguish very carefully
+between my professional activities and my social activities, and I told
+them that wasn’t consistent with my idea of how you deal with graduate
+students, and it isn’t. So this is all in response to the question of how
+did you meet Uzawa—and the actual details about meeting Uzawa I do
+not remember.
+MD: Did you know that you wanted to do growth theory?
+Cass: Not at all.
+MD: What was your undergraduate training?
+Cass: I was a joint Economics–Russian Studies major.
+MD: Russian Studies?
+Cass: Yeah. Very anomalous because languages were probably my
+weakest suit.
+MD: Where was that?
+Cass: The University of Oregon. I always thought that I was to become
+a lawyer because that’s a tradition in my family. I spent a year at the
+Harvard Law School and hated every minute of it. I spent most of my
+time re-reading great Russian literature, and I learned how to answer
+exams just by deductive logic. I’d memorize a few definitions and go
+from there, which got me through. Then I went in the army and I
+decided that what I really wanted to do was to go back to graduate
+school in Economics, and I decided to stay on the West Coast. I was
+very lucky. I didn’t know anything about graduate schools but it seemed
+like the major choices were Berkeley and Stanford. Just by chance I
+decided Stanford rather than Berkeley, and I think it was a hell of a
+good decision, because the faculty that I got inspired by are really
+world class.
+MD: So why did you decide to go to graduate school in economics?
+Cass: I liked economics, and I realized that my undergraduate degree
+was the tip of the iceberg. They were just barely getting into the use of
+equations in class and it was kind of fascinating to me—the idea of being
+formal about a social science.
+MD: So you probably had very little mathematics training when you
+went to grad school.
+36 Stephen E. Spear and Randall Wright
+Cass: I had virtually no math training. I had taken college trig, algebra,
+geometry, and that was it. In fact, I remember the first day of class at
+Stanford there was a guy teaching a macro course; his name was Bob
+Slighton. The first day of class he wrote down a general equilibrium
+model and decided that he was going to calculate a multiplier, which is
+just a derivative of the model. He filled the blackboard in the front of
+the room and the side of the room and I didn’t understand a word
+of this. I knew what a derivative was but I didn’t know what a partial
+derivative was. He was doing all this partial differentiation. Of course, in
+those days, in terms of partial differentiation, people didn’t really understand
+what they were doing. They would write down differential forms,
+what in differential topology are called the tangent spaces, and they’d
+be dealing with calculus on manifolds but didn’t really understand it.
+The technique was kind of incomprehensible.
+I went home from that class and I said, “Well, you’re not really prepared
+to sit in graduate classes in economics,” so I basically re-registered
+for calculus and statistics and I think I sat through Slighton’s class, which
+was excellent. The micro class was more problematic. It was taught by a
+guy named Melvin Reder, a labor economist, and he came in the first day
+of class and put his feet on the chalkboard and said something deprecating
+about economic theory, so I never went back. The first term I spent
+learning introductory calculus and probability theory. The probability
+theory was actually taught by a guy whom I later learned was a worldclass
+probabilist. It was marvelous because he introduced everything via
+examples, and then you could study for the exam because you had a
+good feel for what probability theory was all about.
+MD: Did you and Karl work together at Stanford?
+Cass: No. One of the funny things about Stanford, and this may be
+true in other graduate programs too, they preselected people that they
+assumed were going to be stars. Karl was an undergraduate math major
+at Princeton who basically went to Stanford because he knew about Ken
+Arrow, and Karl was a preselected star. (He was not selected as top star
+of the class; I forgot the name of the guy who was, but he turned out
+to be a real bust.) Since I decided not to take economics the first year I
+was there, I really didn’t have much to do with economics students, and
+I only got to know Karl probably toward the end of my second year.
+He introduced me to Serra House, and there Uzawa’s students all worked
+together because we all knew each others’ problems, so we could communicate
+very quickly. But none of us actually wrote papers together.
+Karl and I started collaborating on papers much later, in the early 1970s,
+but, again, Karl knew my thesis and I knew Karl’s thesis throughout the
+whole development phase, so basically who contributed what to what as
+graduate students with Uzawa was always up in the air.
+An Interview with David Cass 37
+MD: And how were you led to your thesis topic?
+Cass: Optimal growth? Well, it was basically the fascination Uzawa
+had with the maximum principle.
+MD: What growth theory did you know before that?
+Cass: At that period there was a distinction between what we wanted
+to do, optimal or prescriptive growth, and descriptive growth à la Solow.
+He wrote a ton of papers, starting with the very famous paper on the
+one-sector model, and then he wrote many others describing competitive
+growth models that had more goods, and maybe some specialized technology,
+and he kept repeating how you describe a competitive equilibrium
+and its efficiency properties (something Malinvaud did much more elegantly
+in his justifiably famous Econometrica paper). So that’s descriptive
+growth theory. Then there was this famous paper by Ramsey, and Uzawa
+was clearly fascinated by two-sector versions of the neoclassical growth
+model. He wrote several papers on that. Then he decided to go into
+optimal growth theory and produced a paper which was essentially a
+two-sector model with a linear objective function. Basically, he re-created
+the calculus of variations himself—he is a very original guy—and then he
+discovered the maximum principle and became fascinated with it. Uzawa
+also gave a seminar on economic history in which he went back and took
+all the great names in economics, starting with Ricardo, Marx, . . . and
+reproduced what they were doing as a growth model. I was very influenced
+by Uzawa’s work. I didn’t even know about Ramsey at the time.
+MD: That is interesting because sometimes one hears about Ramsey as
+this hidden classic. But didn’t some people know about Ramsey? Didn’t
+Uzawa?
+Cass: No, I don’t think so, because I didn’t find out about Ramsey
+until after I had written the first chapter of my thesis on optimum
+growth. And then I was, to be perfectly honest, I was a bit embarrassed
+about it.
+MD: How did you discover Ramsey?
+Cass: I don’t remember now. Maybe somebody mentioned it; maybe
+Uzawa knew about it, but not really, because he thought my contribution
+was absolutely seminal. In a way it is not at all. In fact I always
+have been kind of embarrassed because that paper is always cited although
+now I think of it as an exercise, almost re-creating and going a little
+beyond the Ramsey model.
+MD: Ramsey had no discounting and you did have discounting. That’s
+one difference, right?
+Cass: Ramsey had no discounting. He made a big point of talking about
+the correctness of the social welfare function from a moral viewpoint, I
+believe, maybe in his side remarks. Tjalling Koopmans was very sensitive
+to this issue, too, when he wrote a paper of this sort. It turns out to be
+38 Stephen E. Spear and Randall Wright
+much harder to solve the problem with no discounting because, even if
+the objective is written as a function of a functional, it is not well-defined
+because it may be infinite-valued, and you have to use a trick to make
+sense out of it. You have to take the difference between utility of consumption
+and utility of the golden rule consumption so that you get a
+function that is well defined. As a technical aside, it is very interesting
+that the Ramsey problem is a counterexample to something which people
+now always do. I think they do it in macro without even thinking about
+it, when they do dynamic optimization, and they write down transversality
+conditions as necessary, which I also said something about in my thesis,
+and this is dead wrong. The Ramsey problem is a counterexample to this:
+You have an optimum, but it doesn’t satisfy the transversality condition.
+MD: Is this an issue only in the no-discounting case?
+Cass: Yeah, that’s in the undiscounted case. It has to do with the condition
+in capital theory that is called nontightness, which is a sufficient
+condition for the transversality condition to be necessary, and basically is
+an interiority condition that enables you to use a separating hyperplane
+theorem. Now I have forgotten what the original question was!
+MD: How you came to the optimal growth problem.
+Cass: Actually, even though Uzawa always went back and read literature
+and was always motivated by literature, I didn’t pick that up from
+him at all; I just decided to work on this problem because the techniques
+were new and exciting and it seemed like an interesting problem. So I
+taught myself the maximum principle, some differential equations, and so
+on, by talking to people, seeing Uzawa working, and basically reading
+math books. Our bible at the time was Pontryagin’s original book on the
+maximum principle. That is really interesting too, because that book is
+very geometric, and Pontryagin’s blind.
+MD: Was it in Russian? You would have had a natural advantage there.
+Cass: I could have read a little bit of Russian, but it was translated.
+Anyway, he’s blind, and yet all of his thinking is purely geometric; he
+pictures things. So I just put the two together, and then Uzawa thought
+this was great. I’m not sure why, I guess probably because Tjalling
+Koopmans was working on this problem and Tjalling was a bit of an idol
+for Uzawa. Actually, Uzawa liked to one-up people. At some point he
+was talking to Tjalling about the problem, and Tjalling was describing
+what he was doing and Uzawa interrupted and said, “Well, I have a
+graduate student who did that problem.” Then Tjalling got very nervous
+about it, he was always very nervous about . . . , oh, authorship and who
+was first and that sort of thing, and we had some correspondence.
+Koopmans was also very interested in the no-discounting case, so he
+solved the much harder problem in some ways, in addition to solving the
+An Interview with David Cass 39
+problem with discounting. Tjalling did all his analysis from first principles;
+he derived all of the conditions.
+MD: Then you went on the job market.
+Cass: I’ll tell you a story about the job market that reflects the character,
+the idiosyncratic character, of Uzawa. Uzawa originally engineered for
+me to have a postdoc at Purdue, which was a pretty good department,
+but then he had contact with Koopmans at the Cowles Foundation, who
+were interested in doing some hiring. Uzawa decided that would be a
+better job, but his idea of supporting a student on the market was that
+it was immoral to have more than one offer. So I went to the winter
+meetings in Boston with just an interview with the Cowles Foundation,
+and a couple more that I had arranged that turned into disasters. I spent
+most of the time in the hotel room watching football, and I was rooming
+with Karl who had a million interviews! It came down to the last day of
+interviews and everything depended on my passing an interview with the
+Cowles Foundation, which was a lunch with Tjalling and Herb Scarf and
+I don’t remember who else, very likely Jim Tobin. I talked a little about
+my thesis, but Tjalling already knew about it, and he decided to question
+me with “What will you be working on 10 years from now?” As with any
+graduate student, I couldn’t even think two months ahead. I had no idea
+what I would be doing!
+For some reason, they couldn’t make me a regular appointment, and
+I remember Tjalling had obligated himself to make an appointment that
+it turned out he couldn’t make, so he signed me as a research associate
+at the Cowles Foundation for one year, on a one-year appointment, with
+the promise that it would be extended and I’d become an assistant
+professor as well as research associate. You can’t believe salaries in those
+days, even adjusted for inflation. My salary when I started was $8,000.
+MD: Tell us about Yale.
+Cass: Yale was a great postgraduate education. The Cowles Foundation,
+at that point, had a lot of money, and a policy of hiring or having in
+residence lots of junior faculty. The physical setting was in a separate
+building, in a separate little house. People like Tobin, in particular, really
+encouraged us. I really remember my days at Yale very fondly. When I
+was first there I talked a lot with Ned Phelps. Then of course I met
+Manny Yaari, and Manny and I talked a lot and ended up writing papers
+just based on these conversations. The consumption loan paper came
+about this way.
+MD: And that was when you got into overlapping-generations models?
+Cass: Yeah, overlapping generations was with Manny.
+MD: Was the overlapping-generations model something many people
+were interested in then, in the late 1960s? Presumably not, since
+40 Stephen E. Spear and Randall Wright
+Samuelson’s paper was published in the 1950s and then sat there for a
+long time without attracting much additional attention.
+Cass: Yeah, it sat there for a long time. The Cass and Yaari paper used
+to have a lot of cites, and I think the main reason for that was it revivified
+interest in the overlapping-generations model. That’s not a paper that I
+think of as a great paper because we were really struggling. I don’t want
+to be quoted on this, but in my opinion I don’t think that there is much
+in that paper that survives.
+MD: So you and Yaari were chatting about things and began talking
+about overlapping generations. Had you and Karl talked about it
+previously?
+Cass: No, I don’t think so. My recollection is that I really first thought
+about it the first year I was at Cowles.
+Going on about Cowles, my second year and into my third year, there
+was this big influx from MIT: Joe Stiglitz, Marty Weitzman, Bill Nordhaus,
+and others, too, and the environment was just great. Hell, I shared offices
+with Joe Stiglitz. I probably never would have gotten to know Joe and
+take him very seriously, because he is so quick and so sloppy, except that
+we shared an office together. Joe used to come in and sit down in the
+morning and say, “I am going to write a paper today.” And he’d sit at
+his typewriter and write a paper. This just drove me nuts because I am
+very deliberate. So I got into a habit, when Joe would tell me he was
+going to write a paper about something, of talking with him about it. He
+would come up with some point and I would say, “Well, Joe, how do
+you know that’s true?” Actually, we ended up writing a lot of papers
+together based on the fact that I would ask Joe, “How do you know
+that that is true?” One of those papers is still cited a lot. It is about portfolio
+choice—the reduction to choice between two assets. I think that
+was a hard paper and we have really cool results from it, but it’s just to
+justify a simplification. In order to justify the simplification, it turns out
+you have to make extremely strong assumptions about preferences.
+Anyway, Cowles was extraordinary. Very stimulating. For the most
+part, nobody was proprietary about sharing ideas. Nobody would try to
+protect their ideas. They talked about them.
+MD: Was Yaari there as a visitor?
+Cass: No, Manny had had his first appointment with Cowles. He
+was promoted to, I suppose, associate without tenure, a standard step. I
+was too, while I was there. Then he came up for tenure, and he had to
+decide whether he was going to go back to Hebrew University in Israel
+or stay at Cowles. Yale actually made some, I thought, really stupid
+personnel decisions. Partly it was motivated by the fact that they wanted
+to keep a throughput of junior faculty; they didn’t want to get a large
+An Interview with David Cass 41
+senior group. So they turned down Manny. Another example of a serious
+mistake is that they turned down Ned Phelps. Hey, he has got an
+extraordinarily creative mind. So does Yaari. I have tremendous feeling
+and respect for both of them. And they were turned down flat.
+I was also one of the young people that was throughput at Yale, if you
+will. I don’t think that they were seriously considering giving me tenure
+and, to be honest, I didn’t have a lot of publications when I would have
+come up for tenure, maybe a half dozen. I remember, I was on the
+market and I went to Johns Hopkins, and the department chair there
+told me they couldn’t seriously consider me because I didn’t have enough
+publications. But for some reason Dick Cyert had decided several years
+before that he really wanted me to come to Carnegie. Cyert is nothing if
+not tenacious—he kept after me every year. Originally (you probably
+don’t want to repeat this exactly), my view of Carnegie was that it was a
+serious place but that the typical paper was just to apply the Kuhn–
+Tucker Theorem to some problem, and I didn’t find that very exciting.
+But then I went to Carnegie and met some of the junior faculty. I knew
+Bob Lucas very well and he was a big draw.
+MD: How did you know Lucas?
+Cass: Well, Bob was at Chicago, probably just finishing up, when
+Uzawa moved from Stanford to Chicago. Bob never worked with Uzawa,
+but Bob’s work was probably also not particularly fashionable with any
+other faculty there because he was interested in doing the kind of things
+Uzawa did. So he became sort of a semiprotégée of Uzawa. I don’t want
+to exaggerate that, but anyway, I remember my first encounter with Bob
+intellectually. He gave some version of a dynamic IO problem, something
+about industrial structure, firms entering and exiting, as I remember.
+Anyway, I met Bob because Uzawa kept track of his graduate students
+and he used to hold conferences when he was in Chicago, where he had
+also built up a group of graduate students. One of the first conferences I
+went to, Bob Lucas was there and that is how I met him. He was obviously
+very smart, very serious, and we got along very well and so he was quite
+a draw to go to Carnegie. I knew he was not the kind of guy to just
+apply Kuhn–Tucker conditions, so he clearly did not fit my stereotype.
+So I went to visit and I met other people at Carnegie. Len Rapping,
+for example, was a very interesting person. He was originally a die-hard
+Chicago market-oriented person who had a complete change of heart
+during the Vietnam War, but still a very interesting and smart guy. The
+other person that I remember who really impressed me was Herb Simon,
+who was clearly a really interesting and creative individual. And I said,
+“Well, your stereotype is wrong, and that might be a very interesting place
+to go.” When I went to Carnegie it was a very good place. It was not a
+42 Stephen E. Spear and Randall Wright
+business school; even though they had a Master in Business Administration
+program, it was just not a traditional business school.
+MD: This would have been around 1970?
+Cass: Yes, this was in 1970. It was a small faculty and a relatively small
+number of MBAs. We taught the MBAs the same as we taught the Ph.D.’s
+almost, and at that point, unlike today, the MBAs came and they were
+expected to perform, and they didn’t raise questions about whether the
+stuff was too hard or didn’t have anything to do with business. Carnegie
+was an absolute innovator in introducing quantitative techniques, and
+especially economics as kind of a broad basis for most fields in business.
+In fact, a great example of that was the development of finance as something
+serious. The finance people won’t like this but, to learn finance,
+you basically learn economic techniques, and that originally took place at
+Carnegie and took place in the standard way that Carnegie operated. If
+they had a course to teach, they would just assign somebody to teach the
+course. Merton Miller was one of the people assigned to teach a course on
+finance along with Franco Modigliani, and so: Modigliani–Miller. They
+were puzzled by something, and used economic methodology to solve it.
+Carnegie was really a great place. They used the MBA program also to
+find good Ph.D. students. You didn’t mind teaching MBAs at Carnegie
+because you could teach them a serious course. You didn’t have to pull
+your punches because they were expected to learn programming, expected
+to learn serious economics, serious econometrics, and so on. The other
+thing about Carnegie is that it had a very good system for supporting
+and encouraging young faculty to interact and to have time to do research.
+They were really good, as Cowles had been, about teaching loads, summer
+support, secretarial support, and support for travel until you were well
+enough recognized that you could go out and raise your own money. So
+I had nothing but respect for Carnegie Mellon, GSIA at Carnegie Mellon,
+and the team run by Dick Cyert. I have enormous respect for Dick.
+MD: What were you working on in those days?
+Cass: One of the nice things about Cyert was that he basically paid for
+a year’s leave between being at Cowles and being at Carnegie, so I spent
+that year in Tokyo, and I wrote several papers there. One I really liked
+the best, I think it is one of my best papers, and I don’t think that it is
+one that is very widely read. It is solving the following problem:
+In the neoclassical growth model, you can have competitive equilibria
+which are not optimal, not efficient, if you use consumption as the criterion.
+You can basically overaccumulate capital. The best example of that
+—an example by Ned Phelps—is if you look at the same neoclassical
+model and you look at a steady state that is above the golden-rule path,
+you can move from that steady state and take one step back to the golden-
+An Interview with David Cass 43
+Figure 2.2 A conference at Carnegie Mellon University in honor of Dick
+Cyert, September 11, 1993. Pictured (from left to right) are Dave Cass,
+Robert Lucas, Dick Cyert, Allan Meltzer, Edward Prescott, and Timothy
+McGuire.
+rule capital stock, and get a consumption bonus and have higher consumption
+ever after that. Being at the upper point you still have competitive
+prices, they are just not efficiency prices. If you look at those
+competitive paths, you can rule out the ones that are inefficient if you
+impose the transversality condition. So the transversality condition is a
+sufficient condition for ruling out capital overaccumulation.
+I found this to be a very interesting problem: What is a necessary and
+sufficient condition? The transversality condition is a sufficient condition
+for efficiency, but is not necessary. The golden-rule path itself is a counterexample,
+as I said earlier. The golden-rule path is efficient, and for
+some criterion is also Pareto optimal, but there the transversality condition
+is not satisfied since the interest rate is identically zero. Manny Yaari
+and I had started working on this problem two years before, and we got
+one solution for it that was in terms of a condition that wasn’t that
+interpretable. Now I know why I didn’t like the condition. I wanted a
+condition on the price path itself that was necessary and sufficient, so I
+worked all year in Japan on that and got a complete solution. I really like
+that paper.
+So I spent a year in Japan working on that problem, and then I wrote
+a couple of other papers on things I wanted to write about. One of them
+44 Stephen E. Spear and Randall Wright
+was actually very much Solow-like. I took the Wicksellian model, the pointinput/
+point-output model and analyzed competitive equilibrium. I like
+that paper a lot, too, but it’s very specialized. I doubt anyone has ever
+read it. And Joe and I finished our paper on portfolio choice that year.
+The biggest stumbling block for that was that in the paper itself there are
+computations for specific parametric forms and neither Joe nor I was that
+excited about, or that careful sometimes, dealing with parametric forms.
+So we really had a hell of a lot of trouble agreeing upon what was the
+correct way to write down these examples to illustrate our theorem. In
+the final version of that paper there were still algebraic errors; somehow
+neither of us took the responsibility for proofreading it.
+Then I kind of fished around for a while. I worked more on growth
+theory. I got interested in the general problem, which was then very
+unfashionable because it was at the tail end of the neoclassical growth
+period, of the stability of competitive dynamical systems more generally.
+Karl and I produced a paper that I like a lot, although it might have been
+a little archaic even then, on this problem.
+MD: Was that the first time you worked with Karl?
+Cass: That was the first time Karl and I really worked together on a
+paper. Karl was at Penn at that time. Anyway, back at Carnegie I wrote
+some minor papers, like on the Hamiltonian representation of efficient
+production, a paper on duality; these were not major papers. Probably
+I got to talking with programmers and got back to doing things with
+programming at Carnegie. The guy I really talked to a lot was—I remember
+him well, in fact he died some years ago—a guy named Bob Jeroslow,
+who was really a mathematical logician turned programmer. He was
+extraordinarily clever. The big thing in programming then was integer
+programming, finding algorithms that would solve integer programming
+problems. There were lots of algorithms but people didn’t have any idea
+of why they worked, and Bob was really good at constructing for any
+algorithm a counterexample that would never converge. I used to talk to
+him a lot. He started to get interested in economics and I got interested
+in programming again, so I wrote some programming papers.
+After that, Karl and I got into the stability thing, which we spent a
+couple of years finishing up. Then at some point—I don’t now how this
+should appear in this interview—the Dean, Cyert, became President and
+we had to hire a new Dean. At Carnegie the faculty was very involved in
+this process, and we actually talked a lot about the kind of person we
+wanted. For some reason we settled on Arnie Weber, who was a Chicago
+Business School labor economist. That turned out to be, from Carnegie’s
+viewpoint and my own viewpoint, a disaster, because the guy had no feel
+for the Carnegie tradition at all. He did not understand the fact that
+Carnegie was quantitative, and that the quantitative emphasis was on
+An Interview with David Cass 45
+economics, and that meant that you were going to have a lot of economists
+around. An example of this, a personal example, is that very early on
+Arnie called me into his office for some reason, and I had an interview
+with him. He told me that I was a luxury good and that I didn’t do
+business. I did theoretical economics and it wasn’t something that business
+schools could really support, and he did it in a very obnoxious way
+that really pissed me off. And I said “f— you, Arnie.”
+MD: Literally?
+Cass: Yeah, I said “f— you,” and I decided that since I was working
+with Karl it might make sense to come to Penn, even though I had a few
+reservations about Penn because I knew it was very econometric-model
+oriented. But they made me a good offer so I couldn’t turn it down.
+MD: Could we stay on your time at Carnegie for a while?
+Cass: Yeah, we could do that.
+MD: Okay. Ph.D. students: One of the prominent ones you worked
+with there was Finn Kydland.
+Cass: Finn Kydland, yeah, I was on his committee, and actually worked
+with him a lot on one or two chapters, but not most of his thesis. His
+thesis was all programming. Another one was Bill Barnett. I don’t remember
+if I was formally on Barnett’s committee. I know I talked to him a lot
+but I may have left before he finished or he may have just drifted off. The
+main group I worked with includes people who came my first year at
+Carnegie, such as John Donaldson and Bob Forsythe. Those two stand
+out in my mind.
+MD: Kydland’s work with Ed Prescott began the development of real
+business-cycle theory, and the workhorse model in real business-cycle
+theory is the Cass–Koopmans model. Did you and Finn ever talk about
+growth theory?
+Cass: No, as I said, Finn when he was a graduate student was doing
+programming.
+MD: Let’s talk about Lucas’s use of the overlapping-generations
+model.
+Cass: I’ll tell you, that is an interesting paper we’re talking about, in
+Journal of Economic Theory, an interesting paper. I wasn’t so interested in
+the macro, but what struck me, and this is related to some of my later work,
+was the assumption that Bob made to solve for equilibrium, that the
+state variables were obvious (that is actually the first time that I thought
+about the sunspot idea). Bob and I had some long discussions, and I
+would say, “Well Bob, why is this the actual state space in this model?”
+That question came up—and now I am jumping ahead—after I came
+to Penn. At some point Karl and I started talking about that and we
+developed what we called the idea of sunspots. But the initial impetus
+toward that for me was talking to Lucas.
+46 Stephen E. Spear and Randall Wright
+MD: Also, technically, Lucas’s paper was one of the first uses in
+economics of contraction mappings.
+Cass: Well, Bob was very fixated on using contraction mappings to
+get fixed points. I think maybe he always uses that technique. I don’t think
+he even knows Brouwer’s Theorem! No, actually he does. He just likes
+contraction mappings. Anyway, the view in capital theory, as I understood
+it, was that you could treat, from a fundamental state space, uncertainty
+as well as time. So a commodity index could represent time, uncertainty,
+and commodity characteristics like location, whatever you wanted. But
+the viewpoint in growth theory is precisely that equilibrium is just prices
+that depend on the underlying state space. Bob went a step further and—
+I’m not even sure how I would say it—it is more like a function of the
+underlying state variables, or to put it more accurately, the state space
+itself is generated via some underlying process through observed variables.
+So that’s what the state space itself is, for instance, money and
+some actual random shocks. Money is one of the state variables, though
+it’s actually defined on the underlying state space. The states of the world
+are described by money and a random variable that has to do with islandspecific
+shocks.
+The ultimate question is, “What is a state space?”
+MD: Brock and Mirman was another seminal paper.
+Cass: Brock and Mirman was kind of a milestone because they focused
+on introducing uncertainty into the neoclassical model. Where did I
+meet Buzz Brock? Somehow, Buzz was a student at Berkeley and I think
+his thesis had to do with optimal growth in a multisector model. That is
+probably when I first met him. Our careers overlapped in several dimensions,
+for instance, when Jan and I spent the year later visiting Cal Tech
+and Buzz spent part of the year there. We had quite a bit of contact
+when Brock was working on growth theory, and then we just kind of
+drifted apart. He is still very active. I just haven’t kept up with him or
+much of his work.
+MD: When you were at Carnegie and people like Lucas and Prescott
+were working on the new macro stuff, were you paying attention?
+Cass: Not really.
+MD: Or do you think that this work is more microeconomics?
+Cass: It was clearly micro and was being called macro, and you know,
+actually, for some reason, I never talked a lot with Bob about it. I don’t
+know why. We had a great personal relationship, but somehow we didn’t
+talk much about that. Our styles are really different, so we didn’t talk a
+lot about that work, except we would go to lunch together and we would
+talk about it more on a casual level, but it was not at the blackboard
+level. It probably had to do with the fact that Bob was in the Chicago
+tradition and was very concerned about empirical testing—whatever the
+An Interview with David Cass 47
+hell that means—something that I have little sympathy for and very little
+interest in, to be perfectly honest. So there was quite a difference in
+viewpoints about why you did theory and what the relevance of theory is,
+and I am still of the opinion that theory is more a way of organizing your
+thoughts, how you think about the world. And it’s strongest in providing
+counterexamples when people confidently claim that something is
+true in general. If you can construct a not-unreasonable model in which
+this phenomenon is not true, then [Bronx cheer]. You can’t assert with
+any confidence that some proposition is true. Now this clearly does go
+over to the question of when an assertion is true or not true if you want
+to quantify it. You can stay at the qualitative level—like the Laffer curve,
+an idea that was by example. Then you can construct models, plausible
+models, where you can get either result, and that makes his proposition
+absolutely dubious. I don’t know how the data look. Probably most
+regressions are very mixed: Take a bunch of data and fit some curve to it
+and then claim that you summarize the data with some curve and that’s
+a dubious claim.
+MD: This is probably a good point to ask you how you feel
+about calibration, as pushed by Prescott and others over the past decade
+or so.
+Cass: The main problem I have with calibration is the level of abstraction
+of the models that are being calibrated. I mean, if you are calibrating
+something that is essentially like a neoclassical model, then I kind of
+wonder what the hell that means. I suppose when I thought about it
+(and I haven’t thought in great detail about it, to be honest), the whole
+notion of calibration and how you say that you’ve got a model that fits
+the data well is pretty amorphous. For example, to say that it generates
+time series for certain parameter values that share certain characteristics
+with the observed time series, I think you have to have a formal methodology
+for talking about what it means for two time series to be close.
+I thought that when I paid attention to the real business-cycle stuff, the
+idea of what to calibrate or what a good model is was pretty vague. Now
+I am probably being unfair to the real business-cycle people, because
+there are some really smart people working in the area, and they’ve
+probably refined the idea of calibration and gone beyond the simple
+calculations of the original neoclassical growth model; but probably not
+very far beyond, because you’re still dealing with aggregate time series.
+My student John Donaldson, who works in the area, is very good and I
+have a lot of respect for him.
+But the thing about real business-cycle theory, I suppose, is that it is
+almost like a religion. I have talked quite a bit with Victor [Rios-Rull],
+whom I have a lot of respect for, who has this view, this view that he is
+convinced quite strongly about, that this is the only way to look at the
+48 Stephen E. Spear and Randall Wright
+world, to look at economics. When anybody tells me it’s the only thing,
+I’m skeptical. I don’t believe that using general equilibrium theory is
+the only way of looking at the world. I think I have learned a lot from
+game theory, focusing on strategic ideas, the importance of strategy, and
+imperfect information.
+MD: Isn’t that general equilibrium?
+Cass: It can be, but there are other ways of looking at imperfect
+information and all these ways are important. But I also think that the
+general equilibrium model itself has a role, that it is still an important
+benchmark, and that there are still a lot of interesting things that can be
+done with that theory.
+MD: That is one thing that you do have in common with Prescott.
+Cass: Yeah, absolutely. But, if anything, maybe Prescott is more extreme.
+I have learned a hell of a lot being at Penn, where there are good game
+theorists. I mean, I have really learned a lot. I could probably teach a
+Figure 2.3 Cass singing with Randy Wright’s band (The Contractions) at
+the Penn Economics department’s “skit night,” at which economics graduate
+students lampoon the department faculty, and vice versa, March 3, 1998.
+Pictured (from left to right) are Randy Wright, Dave Cass, Andrei Shevchenko
+(a Penn Economics graduate student), Gwen Eudey (Georgetown University,
+visiting at the Research Department, FRB of Philadelphia), and Boyen
+Jovanovic (at piano).
+An Interview with David Cass 49
+game theory course without ever having read more than a dozen articles,
+just from having been here.
+MD: Let’s talk more about the Penn years, which are tied in with
+overlapping-generations models.
+Cass: Karl and I got back, if my memory serves, into thinking about
+the overlapping-generations model sometime in the middle to late 1970s.
+If I had to pinpoint a date I would peg the year about 1977. I’ll tell you
+the genesis, to my recollection. Karl and I were having a discussion because
+there was a seminar here run by more junior faculty, and we participated,
+and we would go back and read some classics in macro that people
+wanted to read. One of the papers people wanted to talk about was Lucas
+1972. I don’t remember why one of us decided to present it, but it got
+me to thinking again about this issue I’d raised with Bob about the state
+space, and Karl and I talked about it. Karl was astute enough to observe
+that we could formalize the idea of having arbitrary variables in the state
+space. So Karl constructed the first example of sunspot equilibrium, and
+I think it is the one that appeared in his so-called Malinvaud lecture. It’s
+a linear OLG model where households’ allocations but not their welfare
+depend on sunspots, and so I objected to the example. I said, “Karl, that’s
+not a convincing example. It doesn’t matter from a welfare viewpoint.”
+We were going to a conference that Karl and I had organized at
+Squam Lake in New Hampshire on growth theory, and after this discussion,
+I spent most of the conference closeted in my room trying
+to construct an example of a sunspot equilibrium in an overlappinggenerations
+model where sunspots mattered for allocations. The first
+example I came up with was with quadratic utility. It was laborious as
+holy hell! So Karl and I were going to talk about this at this conference,
+and nobody understood the idea at all. They just didn’t understand, until
+that last day when we actually gave the paper, and Steve Salop was the
+only person who understood the idea. This was sort of discouraging.
+MD: Was this an overlapping-generations problem?
+Cass: This was an overlapping-generations model, but in the
+overlapping-generations model (as Steve Spear will attest, because his
+thesis is about this), you have to be careful picking your utility function.
+I do remember that I decided that I couldn’t get sunspot equilibria for
+the standard parametric forms, and I was going to need cross-product
+terms, so . . . anyway, Karl and I came back and we knew this was a great
+idea, but somehow the reception that it got was a little discouraging, so
+we didn’t really start working on it until much later. Karl’s enthusiasm
+for the idea was extraordinarily high, and he talked about it a lot. He
+went to Paris in the late 1970s where he gave his Malinvaud lecture,
+which he always cites because he wants us to claim priority, correctly.
+50 Stephen E. Spear and Randall Wright
+One of the other people he talked to a lot about it was Costas Azariadis.
+My view is that Karl explained the idea to Costas a number of times,
+and Costas finally picked up on it and he wrote a paper about it. He
+realized, not from a utility approach, but by having a first-order Markov
+system of probabilities, that one can get sunspot equilibria. Steve’s thesis
+actually develops the general story, and he solved that problem long
+before, for example, Azariadis and Guesnerie did. But I have to credit
+Costas with something. When Costas produced a working paper or maybe
+even before that we realized that if we were going to develop the idea
+we’d better get to it.
+MD: And this led to the Journal of Political Economy paper?
+Cass: The JPE paper constructs a standard simple example that didn’t
+require using the overlapping-generations structure, although we built
+on one of the properties of the overlapping-generations model, the friction
+you get by restricting participation on certain markets. Much later we wrote
+a paper showing that there’s another aspect of the overlapping-generations
+model, that somehow the open-endedness of time also plays a role. We
+constructed an example where there were complete markets and unrestricted
+participation—it is something like the following. This is basically
+an overlapping-generations model where the uncertainty is all in the
+first period, you either get an alpha or a beta, and you can buy insurance
+against that, but because of the infinite structure of the model, you
+would still have sunspot equilibria. So there are two causes for sunspot
+equilibria: One of them has to do with the time structure of overlapping
+generations; the other has to do with not having enough access to asset
+markets.
+MD: Didn’t Jim Peck pick up on the second thing in his thesis?
+Cass: Yeah, yeah, that’s right. I haven’t thought much about sunspots,
+especially in the overlapping-generations model, for quite a while, but he
+develops a generalization about nonstationary sunspot equilibria in the
+OLG model. I think sunspots are really interesting, but even when Karl
+and I wrote that JPE paper, my interests had already diverged to thinking
+the way I did on the general equilibrium problem, in which you can
+actually do a finite-dimensional model. Of course, we have this simple
+but important theorem which says that if you have all the hypotheses
+that are necessary, stated and unstated, to get the First Welfare Theorem,
+then you can’t have sunspots. Then we have what Karl used to call the
+Philadelphia Pholk theorem, which is that if you violate any of these
+hypotheses you can get sunspot equilibria. It’s not quite true, because
+all it is saying is that if you have a theorem that says A, B, and C imply
+D, it’s likely to be the case that if you drop one of the assumptions
+the conclusion is not going to be true. But, of course, it may be that it
+An Interview with David Cass 51
+can still be true. I guess that is where Karl and I diverged on this a little,
+but he’s gotten very interested in the absence of convexity. Now, his
+examples are perfectly okay, but it is not quite true to say that if you
+have some nonconvexity then you have sunspots, because—as Heracles
+Polemarchakis and I pointed out—you can have nonconvexity in production
+and, since profit maximization is relative to a hyperplane, you can
+substitute everything under the hyperplane and call that the production
+set, and you get the first welfare theorem back.
+The JPE example is a real simple example where there are two states
+of the world and we interpret it, in the structure of the overlappinggenerations
+model, as two classes of households. One class can trade
+assets against the state of the world, while the other can’t because it is
+born later, so it has to trade just on the spot market. That is one kind of
+example. But I got interested in constructing other examples of sunspot
+equilibria. In particular, in the early 1980s, I went to spend a year in
+Paris, and the first project I wanted to work on was to construct a sunspot
+example where there was a missing market. Somehow I decided the way
+to do that was in a model where you had assets, and not enough assets to
+span the states of the world. That’s how I got interested in incomplete
+markets. That’s another paper I like a lot, “The Leading Example”
+paper. I had real trouble getting it published because I wrote it precisely in
+the JPE style, a kind of a followup to the first paper but, to the Chicago
+mind, sunspots are irrelevant, just not interesting. Ironic as holy hell.
+MD: In the famous Kareken and Wallace volume, one thing Cass and
+Shell say is that by definition the overlapping-generations model is the
+only dynamic disaggregated model, which one may take to mean it is
+the only interesting macro model.
+Cass: I have to get back now to the train of thought about the
+overlapping-generations model. I got interested in the overlappinggenerations
+model because of sunspots. And then Okuno and Zilcha—
+this may have even been at the same conference at Squam Lake—
+presented a paper which was an attempt to prove that if you introduced
+money into the overlapping-generations model, then equilibrium where
+money had a nontrivial price would necessarily be Pareto optimal. There
+was a flaw in their proof.
+MD: Neil Wallace was always inclined to say that in Minnesota.
+Cass: Their work was based on trying to verify formally what Neil
+believed. I saw their proof, read their proof very carefully, and it had an
+error in it. I decided that it probably wasn’t true, depending on some
+characteristics of the utility functions, and so on, so I decided to work on
+a counterexample. Basically, I constructed a lot of counterexamples, where
+you can introduce money and, for one reason or another—heterogeneity,
+52 Stephen E. Spear and Randall Wright
+nonstationarity, and so on—you will not get Pareto optimality. I got
+interested in the overlapping-generations model again. Karl and I really did
+believe in it, and we started working more generally on the overlappinggenerations
+model after we’d worked on sunspots. We really did believe
+at that time that it was the only serious model where money played a
+role. Of course, subsequently you have some very famous papers which
+present other basic paradigms in which money plays a basic role.
+MD: Although mathematically those structures maybe aren’t so different?
+Cass: Well, I was going to talk about that. The Kiyotaki–Wright model
+I like a lot, but as I have pointed out to you, Randy, I think that the
+ultimate principle in both of those models is that the horizon is indefinite.
+If you truncated your search model, you wouldn’t get a role for money
+either. So even though we didn’t have the imagination to think of another
+model, and this, for example, would be your model with search, in which
+there would be an infinite horizon, I think you were right in asserting
+that the underlying time structure of the overlapping-generations model
+is what provides a reason for having money. I still think that the ultimate
+thing is that money has value because people believe it is going to have
+value, and the only way they’ll consistently believe it will have value is if
+they’re never forced to put up. And that’s common to Kiyotaki–Wright
+and the overlapping-generations model.
+MD: Well, it’s interesting, because there are some infinite horizon
+models in which money has no role. So the infinite horizon isn’t a sufficient
+condition.
+Cass: Just the infinite horizon does not necessarily give you a role for
+money. In addition, you have to have some type of imperfection, some
+violation of the hypotheses of the first welfare theorem, like restricted
+participation (overlapping generations), or noncompetitive behavior (the
+search model).
+MD: Do you agree that there are still many issues in monetary economics
+that are yet to be sorted out?
+Cass: Oh absolutely. It would be nice but probably impossible to have
+a consistent model where we could get away from having to have an
+indefinite future to give value to money, but it is hard to conceive of how
+you would do that. John Geanakoplos has a model, it’s an incomplete
+markets model with money and cash-in-advance constraints, where he
+gets value for money because money is issued by a bank and you have to
+repay the bank. But, ultimately, the bank is just throwing money away at
+the end of the day, and somehow the model is not really closed. It’s a
+little unsatisfying.
+MD: What are the issues with an infinite horizon?
+Cass: I changed my mind sometime in the 1980s about the infinite
+horizon. I suppose ultimately the reason that I object to it relates to
+An Interview with David Cass 53
+rational expectations, although I would define rational expectations in a
+more general equilibrium than a macro way. I define rational expectations
+to mean that you have a well-defined state space, and that in those
+states every individual has common beliefs about the prices that will prevail.
+For those beliefs about future prices, today’s markets will clear, and when
+tomorrow’s state rolls around, given the plans, one equilibrium in the
+realized spot market will be at the prices that they forecast. Now there’s
+a little problem in that there could be other equilibria. No equilibrium
+model that I’m aware of has a sensible process for actually achieving
+equilibrium prices, so it’s not clear why the particular prices they forecast
+are going to be the ones that occur. Getting back to the issue, I can kind
+of understand why I might want to use rational expectations as a benchmark
+when the predictions that we’re making are not too far ahead. But
+this is generally a question of assuming that you know what the structure
+of the world is. There’s a big difference in my mind between that and
+assuming implicitly that you know this forever. I have become very uncomfortable
+with that.
+MD: Is your view that for some relevant questions it may be more
+appropriate to use a short-run model?
+Cass: I think you can use a short-run model, but the objection there
+is exactly the motivation behind the overlapping-generations model, that
+when you reach a certain period, if you reach that period, then it is
+reasonable for people to expect that there will be a period to follow.
+It’s sort of like an induction argument. You can’t cut the world off because,
+in the last period, people are still going to be looking ahead one period.
+I mean, I understand that argument, I’m just uncomfortable with the
+conclusion that the model has to be infinite dimensional. I guess in my
+experience, except for these paradoxes of infinity, I find that infinitedimensional
+and finite-dimensional models are isomorphic. But they aren’t
+isomorphic on this one dimension of providing a role for fiat money and
+I’m uncomfortable with that. So I’m willing to introduce one of the
+artifacts I used to scoff at, that people, for example, get utility from holding
+money, or that they’re constrained to hold money, in order to close
+the model. I am more comfortable with that artifact than with the artifact
+of introducing the infinite horizon. I have come full circle. I am sure that
+Karl and I in our defense of the overlapping-generations model scoffed
+a lot at these other artificial ways of closing the model, but I’m more
+sympathetic to that now.
+MD: Continuing on with incomplete markets, one of the things that
+has been happening in macro is the integration of the finance side.
+Cass: Introducing finance into macro more generally, I think, is key,
+and I also think that macro fundamentally is going to be dealing with
+missing markets.
+54 Stephen E. Spear and Randall Wright
+MD: Some people find incomplete markets models to be a little ad
+hoc because some subset of the markets is simply shut down.
+Cass: It is very ad hoc, but the first step to understand the problem is
+to build a model where you assumed it. There is a lot of work now going
+on in which you try to justify missing markets, for example, along the
+line of, if you have a complete state space then idiosyncratic variables
+should appear as part of the definition of the state space. Then you won’t
+have markets for the idiosyncratic risk because of the problem of moral
+hazard. Small numbers is another possibility. People are now trying to
+build more formal models that start out with some kind of standard
+information imperfection that would drive you to have incomplete markets.
+They want to make the incompleteness endogenous.
+Another way of doing this is to maintain the structure of the incomplete
+markets model, but then to introduce agents who are optimizing
+the structure of the assets. I don’t think those models have been very
+successful, probably because they require, for example, that the agents
+who are going to create the instruments have to be able to forecast (since
+it’s a Nash equilibrium) what the other agents are introducing and then
+doing, what the equilibria are. You have to make this very strong informational
+assumption in order to get a formal model. This is an example
+of the kinds of problems that occur. You know, people are very aware
+of that, although I still think that a lot of things that are true in the
+model where incomplete markets are simply assumed will then be true in
+models where you explain why you have incompleteness. I have this
+belief. One of the results in incomplete markets that I like a lot was a
+result that I worked out in kind of a crude way, and then Yves Balasko
+and I wrote a paper about, and John Geanakoplos and Andreu Mas-
+Colell wrote a paper about at the same time, that shows that with incomplete
+markets you get a huge indeterminacy of equilibria in a real sense.
+I think that result is going to be robust.
+MD: And that actually feeds back into monetary models since it
+implies nonneutral monetary policies when markets are incomplete.
+Cass: Yes, and I am going to go a step further than that. The simplest
+version of indeterminacy comes about because you can pick different
+price numeraires, like price numeraires period by period, with incomplete
+markets. But another cause of indeterminacy, which creates even more
+indeterminacy, is that you can make the asset structure a parameter of the
+model.
+MD: Haven’t you made the point that one of the things about sunspots
+or dynamics is that market clearing and rational expectations are
+not enough to pin down very much?
+Cass: Right. This is kind of self-destructive in a way.
+An Interview with David Cass 55
+MD: Some people say similar things because of fundamental belief in
+Keynesian macro—is that why you do it?
+Cass: No, it isn’t. I have to admit that this is kind of an anomaly,
+because what it is ultimately is destructive. I’ve been using a competitive
+equilibrium model as a benchmark and it has no predictive power, so
+in a way it is kind of self-destructive. I’m very interested in that. Intellectually,
+it interests me to try to figure out what it is that will pin down
+equilibrium. I am still at the stage where I don’t know what the answer is.
+MD: It’s certainly a clear intellectual challenge for the future.
+Cass: Well, it is an intellectual puzzle. And I must admit that in my
+career in economics I have always been interested in an intellectual
+puzzle, even though it’s not fashionable, it may have no practical
+relevance—God knows what—you can criticize it on a million grounds.
+A good example of that is spending a couple of years working on this
+problem of characterizing Pareto optimality and efficiency in an infinitedimensional
+growth model.
+MD: What is in the future for micro, macro, general equilibrium,
+game theory? What lies ahead?
+Cass: I have a very short work horizon. I always have. I think ahead to
+the next problem I am going to work on. I have always been penalized
+greatly when applying for grants, because I haven’t the foggiest idea of
+what I will be working on in the future!
+MD: It goes back to the question you told us Koopmans asked on the
+job market, doesn’t it?
+Cass: Maybe that’s the whole problem, yeah! We’ve come full circle.
+But I actually know that there is a big component of serendipity in research.
+I mean, if you told me 15 years ago that I would be doing general
+equilibrium with incomplete markets, I would have said “Are you crazy?”
+The serendipity there is that I wanted to construct examples of sunspot
+equilibria with missing markets, and I realized that there were a lot of
+interesting questions about the model that I wanted to use for that
+purpose. In particular, the reason that I got into indeterminacy is that,
+in the sunspot model, if you have a missing financial instrument, then
+you get a continuum of sunspot equilibria; that turns out to be a general
+property of incomplete markets. The question I am pursuing now is what
+will actually cut down the set of equilibria. The best you could hope for
+is a finite number of equilibria, and I don’t think the answer is that you
+have to introduce money in a way that normalizes prices spot by spot,
+because there is still something that is given as a primitive in the model
+that should be endogenous, and that’s the asset structure. That needs to
+be endogenized. Now, the question is, whether when you put things in
+that framework, you still get indeterminacy. I’m interested in that question.
+56 Stephen E. Spear and Randall Wright
+MD: So you want to endogenize the asset structure.
+Cass: Yeah, you endogenize the asset structure. There are examples
+when you endogenize the asset structure that you do pin down the equilibrium,
+in a sense, but you really don’t. A good example is work by
+Alberto Bisin, in his thesis, where he introduces basically this game theoretic
+idea where some households introduce new financial instruments
+and the way that they do it is in the Nash way. They take as given what
+all the other households are doing and they look at how the equilibrium
+is going to vary across their actions and they optimize. Now the problem
+with that is that we know with Nash equilibrium typically there’s a
+plethora. What this cuts down on is the number of equilibria after the set
+of financial instruments is determined. Somehow, in his model, there is a
+section which deals with real indeterminacy which shows that you don’t
+have a lot of equilibria associated with a given asset structure. But you do
+have a lot of equilibria associated with the Nash equilibrium. You’ve just
+moved the indeterminacy back one step.
+MD: You were saying something a few minutes ago about the way you
+do research—about looking at the model as well as the questions that
+you think the model may help us answer. Can you expand on that?
+Cass: Well, what drives me to do research is not what drives an awful
+lot of people to do research. I mean, I’m never much motivated by what
+some people call real-world problems. I am much more of a structuralist.
+I have pursued some questions just because they are interesting puzzles
+to me, not because of any economic relevance.
+MD: One thing interesting about your career is that you may have
+worked on these things for whatever reason—independent of any interest
+in, say, real-world policy—and yet the Cass–Koopmans model is the
+foundation for modern business-cycle theory, your work on overlappinggenerations
+models is related to much practical research in monetary
+economics, and your sunspot stuff also has macro policy relevance.
+Cass: That is the beauty of a true intellectual discipline. It has room
+for people like me.
+MD: Somewhere down the food chain?
+Cass: Well, no, . . . you just learn something! You should never scoff
+at an intellectual’s looking at a question, because you never know
+when what they are going to come up with will be actually interesting for
+other reasons.
+MD: It may take 20 or 30 years, too.
+Cass: It may take forever. And it may not ever happen.

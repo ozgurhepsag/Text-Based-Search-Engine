@@ -1,0 +1,594 @@
+Full Text Search in Multi-lingual Documents - A Case Study describing  evolution of the Technology At Spectrum Business Support Ltd.
+
+D. B. Modak
+
+
+A. Executive Summary
+
+Full text search & retrieval is the bedrock technology that supports almost all major technology initiatives in the areas of Information Retrieval and Knowledge Management. At Spectrum Business Support Ltd. we have been working in these areas for over 10 years. WordMiner, our text & image database management system has been used for this entire period to develop applications involving large text and multi-media databases.
+
+Today, with the spread of the Internet we have the death of distance but an increasing appreciation of the importance of geography and geography-based diversity in languages and databases. In this context, the need for technologies to ably address multi-lingual databases is increasing with leaps and bounds.
+
+Here, we would define a Multi-lingual document as a document containing more than one language. We are not referring to different documents each in a different language, which may be called multiple language files, but necessarily, documents developed with content in more than one language. More often than not, this would mean English and the mother-tongue/native language of the author/reader/both. This could mean more than one script in the same document. Also, possibly transliterations from other scripts into Diacritical Roman. WordMiner supports such needs ably and fully. This paper attempts to describe the evolution of this technology.
+
+WordMiner began life as a full-text search & retrieval engine for English-language databases, primarily addressing law information. It has slowly but surely grown in sophistication. WordMiner now capably addresses multi-media information access issues. All standard access methodologies viz., usage of Boolean search parameters, proximity parameters, (thesaurus support) combination text and index search, progressive search, and so on are fully supported.
+
+Four years back, a major South Indian publishing organisation, needed access to such capability in respect of Malayalam. This was achieved and brought to the same level of sophistication, as was possible with English, or more appropriately, the Roman script. The technology was then successfully extended to the Devanagari and Diacritical Roman scripts. Today, WordMiner fully supports all single-byte scripts, including therefore all Indian languages within its ambit.
+
+Meanwhile, a need arose for creating the ability to address multiple languages or scripts within the same document. This need was felt by a leading Oriental Research institution in Western India. This problem was resolved by the end of October 2000, with demonstrable ability to address documents with content in Sanskrit, Roman and Diacritical Roman.
+
+This paper discusses the issues that crone up and were addressed along this path. To close, we will enumerate further research issues, including issues relating to Double-byte character-sets such as those used by the Japanese, Korean and Chinese languages, order of representation differences such as those used by Arabic, transliteration, translation, intelligent classification of content in different languages, and so on.
+
+B. Single Language Search
+
+The basic steps for providing single language search and retrieval are summed up below:
+
+Firstly, let us discuss the case of doing a simple single word search in a single language. The process would be simply described as below:
+
+Submit all documents that will be searched into a database to the database management engine.
+Divide each document into "words" - character strings separated by commonly and consistently understandable separators such as "space" marks
+Build a list of unique words in a dictionary. Dictionaries are basic building blocks of search.
+Repeat for all the documents with the dictionary itself growing for new unique words.
+Store an inverted index of words and documents in which they are to be found.
+Additionally store offsets from start of the document, if certain proximity searches are to be permitted.
+When a search request is received, match the requested string of characters with the "dictionary" and report the location of the string if it exists in the database.
+
+In essence, this is all that is required for single word searches.  These can, however, result in a very large number of documents being found containing the word the user has searched for.
+
+To provide more focus, the engine provides the ability to query multiple words in combinations defining their inter se relationships with each other. Boolean Algebra provides expressions of set theory that would allow users to obtain results as they desire. Boolean Search is a mathematical (set theory based) way of specifying how the two (or more) words in a search instruction are related to each other. The logic requires some careful handling,  but no additional information is required to be pre-stored.
+
+For example, if a user wants to look for a vacation package in Hawaii or Paris, he can search Hawaii OR Paris AND vacation. This will give all the documents containing vacations in Hawaii or Paris or both! Here 'OR' and 'AND' are used as Boolean operators. In case no Boolean operator is specified, WordMiner takes the 'AND' operator as default.
+
+For further fine-tuning, we turn to Proximity searches. Proximate occurrence of words typically tends to provide more relevance to search results, thereby reducing the junk data that the user needlessly must scan to arrive at the valuable nugget of desired information. To enable proximity searches, the process could be described thus:
+When multiple words are to be searched, in proximity with one another, an additional item of information is also required to be saved i.e. all the offsets or locations in the document where the word exists.
+This information can be saved in several different ways. As a byte offset from the start of the document or as word-count offset from the start of the document or in any other manner. The trade-off is primarily between providing early search results and minimising the size of the dictionary or other overhead, by whatever name called.
+Armed with this additional information, search can be extended to a specified proximity i.e. the two words occur in the same document, in the same page, in the same paragraph, in the same sentence or in variations of these criteria.
+If the order of the two words is relevant, as is in case of a phrase, the logic is easy to extend to enable phrase search.
+
+Today, with WordMiner, single language search with Proximity Search and Boolean Search features enabled can be considered to be a proven art with many successful implementations. (See Appendix A and B for screen shots of Grand Jurix in Operation) It requires careful handling of large data. It also requires tweaking of algorithms to ensure fast finding of the required data and displaying of the data in the manner that the user expects it.
+
+Our experience with users suggests that they have come to expect this minimum level of proficiency from the software product. They are, also, due to their focus on their professional needs, focused a lot more on ease of use and speed of use. These are parameters that need close and careful attention and a lot of hard and painstaking work to ensure user happiness.
+
+Thus, by the time we had arrived at the conclusion that we had a reasonably accomplished software product; we were driven to conclude that this is just the necessary part of the equation. Sufficiency could only be achieved through attention to User Interface design and focus on value additions to content, quite apart from making the search engine more capable and sophisticated. 
+
+For this paper, however, we will now turn to the desire to make the engine more capable of addressing different languages - or more appropriately different scripts. To be exact, we began to look to extending our ability to search & retrieve characters going beyond say the first 64 characters from the ASCII standard.
+
+C.  Different Language Search
+
+There were two steps we needed to take when requiring search in different languages.
+
+Firstly, acquaint WordMiner with the key differences between various languages. Essentially, WordMiner needed to be taught the script and character set used by each new language. Each language uses a character set specifying the characters used in representing the language on computer. WordMiner was taught - on being told before hand - to understand the script and character sets in a different language (to begin with Panchari for Malayalam, later Devanagari for Sanskrit) and to create dictionaries in each such identified character set.
+
+Thereafter, the most important requirement for a search engine to move from a single well-understood language to any other, is to provide the ability to switch between various languages when the language of the document changes. The Search Engine must exhibit the ability to figure out the language within the document (within a set of documents which are themselves in two or more languages) and then search accordingly. Here, therefore, we built technology into WordMiner that allowed the software to distinguish between scripts and character sets, without being told - before hand - which language was being addressed.
+
+Incidentally in the first implementation of Multi-lingual search engine, there was another issue that needed to be addressed at the same time was to do with distributed databases to be accessed from geographically distant servers and providing access to user groups on Internets as well as off of the Internet. This was successfully done.
+
+Then, having acquired confidence with one more script apart from Roman, we turned our attention to Devanagari. Why Devanagari - since it allowed us to address three languages while addressing one script, viz., Sanskrit, Hindi and Marathi.
+
+After having achieved success with Devanagari, we approached an Institution in Western India with whose archival problems we were somewhat acquainted. On seeing the demonstration of single language searches in different languages, they came up with the problem of addressing documents that contained matter in more than one script. Primarily their concern was with three scripts - Devanagari, Roman and Diacritical Roman. The last script was often used to represent Devanagari characters where Devanagari could not directly be used.
+
+D.   Multi-lingual Search
+
+Documents containing multiple languages contain multiple fonts. This type of search, therefore, requires capabilities very different from Multiple Language Searches.
+
+To begin with, the document under consideration is written in more than one language (two or more languages have been used within the same document) and all the features of the Search are to be made available across all the languages of the document.
+
+The single words to be searched could come from any of the languages found in the document. The proximity search could be between two (or more words) could be from two different languages. Similarly Boolean Search could also involve words from multiple languages simultaneously. Successful implementations of multi-lingual searches are rare . 
+
+Basic Search:
+
+While searching, the search engine identifies the language of the word to be searched and activates the corresponding dictionary to get the result. Thus, if words in multiple languages are required to be searched simultaneously, multiple dictionaries are activated to get the desired result.
+
+For example, word 'country' will be searched in English dictionary. Word   will be searched in Hindi Dictionary and word   will be searched in Gujarati dictionary.
+
+Boolean Search:
+
+WordMiner now provides Boolean search in multiple languages. While searching WordMiner will search the words independently by activating respective dictionaries and then give the result after performing the Boolean operations desired.
+
+For Example, you can search for   AND Paris, WordMiner will search   in Hindi dictionary and Paris in English dictionary to give all documents containing both the words.
+
+Proximity Search - specifically Phrase Search:
+
+A phrase is a set of words coming in continuation in a specific order. A phrase is required to be specified in double quotation marks (" "). WordMiner identifies the language in which phrase is entered and enables the dictionary to search it. WordMiner uses a sophisticated phrase search mechanism to search phrases. E.g. if you search for "George Washington" all documents containing the words "George" and "Washington" in the specific order will be given.
+
+Currently, WordMiner requires a phrase to be only in one language i.e. the entire phrase searched should be in the same language. However, WordMiner can search for phrases of different languages can be given for search to WordMiner.
+
+For Example,  can be searched as a phrase, and will give all the documents containing   in the same specific order.
+
+Progressive Search:
+
+All searches result in documents that contain the words searched for. It may not be necessary that all the documents resulted by a search are relevant to the user. To reach the desired document, it is necessary to search more words or phrases in results. This is called Progressive Searching.
+
+For WordMiner, the language of the previously searched word/phrase is immaterial. If the first search was for English words, and within the resulting document list, documents containing a Hindi word are to be sought, the progressive search mechanism will search for the Hindi word(s) in the documents previously found by the search.
+
+For example, if we search for "languages for computers", the user may locate a large number of documents containing the phrase. Further, she could search for   in the results found by the search from "languages for computers". In the first search, WordMiner will use the Roman dictionary and in the second search it will use the Devanagari dictionary to search  .
+ ( Appendices C,D E and F contain screen shots of ”MahaBharat on CD Rom “ where the above aspects are shown at work.)
+
+E.  Further Research Issues
+
+Based on our interactions with users and looking to the emerging needs, we believe we will need to conduct further research in the following areas to develop truly appropriate technology:
+
+1.	Addressing the need for search & retrieval of strings in languages represented in Double-byte character-sets such as Japanese, Chinese and Korean.
+2.	In most languages, text is written from left to right and from top to bottom. A few languages do, however, do things differently. For example, Arabic is written from left to right. For such languages, character strings will need to be searched in the reverse order.
+3.	In order to provide fully multi-lingual search & retrieval, transliteration will need to become easy and ubiquitous, allowing for changing script without changing language.
+4.	Apart from merely searching for strings, software will need to be developed for intelligent classification of content in different languages, so as to allow for more focused searches that reduce result list length when coupled with full text searches.
+5.	Finally, translation automation - domain by domain - will need to be developed to a level of significance, using Artificial Intelligence techniques to arrive at meanings.
+Chapter 9: Pattern Matching with Regular Expressions
+
+After learning everything you've learned so far, you may think you've got a pretty good foundation in programming Perl, since you'd already be a good way through most of the concepts many other languages entail. But if you put down this book today and did nothing else with Perl beyond what I've already taught you, you'd miss one of the most powerful and flexible aspects of Perl—that of pattern matching using a technique called regular expressions. Pattern matching is more than just searching for some set of characters in your data; it’s a way of looking at data and processing that data in a manner that can be incredibly efficient and amazingly easy to program. Learning Perl without learning regular expressions is like trying to understand snowboarding without ever encountering snow. In other words, don't stop now—you're just getting to the good part!
+
+Today, we'll dive deep into regular expressions, why they're useful, how they're built, and how they work. Tomorrow we'll continue the discussion and cover more advanced uses of regular expressions. Today, specifically, you'll learn:
+
+    Understanding pattern matching and regular expressions and why you'll find them useful
+    Building simple regular expressions with single-character searches and pattern-matching operators
+    Matching groups of characters
+    Matching multiple instances of characters
+    Using patterns in tests and loops.
+
+The Whys and Wherefores of Pattern Matching
+
+Pattern matching is the technique of searching a string containing text or binary data for some set of characters based on a specific search pattern. When you search for a string of characters in a file using the Find command in your word processor, or when you use a search engine to look for something on the Web, you're using a simple version of pattern matching: your criteria is "find these characters." In those environments, you can often customize your criteria in particular ways, for example, to search for this or that, to search for this or that but not the other thing, to search for whole words only, or to search only for those words that are 12 points and underlined. Pattern matching in Perl, however, can be even more complicated than that. Using Perl, you can define an incredibly specific set of search criteria, and do it in an incredibly small amount of space using a pattern-definition mini-language called regular expressions.
+
+Perl's regular expressions, often called just regexes or REs, borrow from the regular expressions used in many Unix tools, such as grep(1) and sed(1). As with many other features Perl has borrowed from other places, however, Perl includes slight changes and lots of added capabilities. If you're used to using regular expressions, you'll be able to pick up Perl's regular expressions fairly easily, since most of the same rules apply (although there are some gotchas to be aware of, particularly if you've used sophisticated regular expressions in the past).
+
+Note: The term regular expressions may seem sort of nonsensical. They don't really seem to be expressions, nor is it easy to figure out what's regular about them. Don't get hung up on the term itself; regular expression is a term borrowed from mathematics that refers to the actual language with which you write patterns for pattern matching in Perl.
+
+I used the example of the search engine and the Find command earlier to describe the sorts of things that pattern matching can do. It’s important for you not to get hung up on thinking that pattern matching is only good for plain old searching. The sorts of things regular expressions can do in Perl include:
+
+    Making sure your user has entered the data you're looking for—input validation
+    Verifying that input is in the right specific format, for example, that email addresses have the right components
+    Extracting parts of a file that match a specific criteria (for example, you could extract the headings from a file to build a table of contents, or extract all the links in and HTML file).
+    Splitting a string into elements based on different separator fields (and often, complex nested separator fields)
+    Finding irregularities in a set of data—multiple spaces that don't belong there, duplicated words, errors in formatting
+    Counting the number of occurrences of a pattern in a string
+    Searching and replacing—find a string that matches a pattern and replace it with some other string
+
+This is only a partial list, of course—you can apply Perl's regular expressions to all kinds of tasks. Generally, if there's a task for which you'd want to iterate over a string or over your data in another language, that task is probably better solved in Perl using regular expressions. Many of the operations you learned about yesterday for finding bits of strings can be better done with patterns.
+Pattern Matching Operators and Expressions
+
+To use pattern matching in Perl, you figure out what you want to find, you write a regular expression to find it, and then you stick that pattern in a situation where the result of finding (or not finding) that pattern makes sense. As with other aspects of Perl, where you put a pattern and what context you use it in determines how that pattern is used.
+
+We'll start with a fairly simple case—patterns in a boolean scalar context, where if a string contains the pattern, the expression returns true.
+
+To construct patterns in this way, you use two operators: the regular expression operator m// and the pattern-match operator =~, like this:
+
+if ($string =~ m/foo/) {
+# do something...
+}
+
+What that test inside the if says is: if the string contained in $string contains the pattern foo, return true. Note that the =~ operator is not an assignment operator, even though it looks like one. =~ is used exclusively for pattern matching, and means, effectively, "find the pattern on the right somewhere in the string on the left." You'll sometimes find =~ called the binding operator.
+
+The pattern itself is contained between the slashes in m//. This particular pattern is one of the simplest patterns you can create—it’s just three specific characters in sequence (you'll learn more about what constitutes a match and what doesn't later on). The pattern could just as easily be m/.*\d+/ or m/^[+-]?\d+\.?\d*$/ or some other seemingly incomprehensible set of characters (don't panic yet; you'll learn how to decipher those patterns soon).
+
+For these sorts of patterns, the m is optional and can be left off the pattern itself (and usually is). In addition, you can leave off the variable and the =~ if you want to search the contents of the default variable $_. Commonly in Perl, you'll see shorthand pattern matching like this one:
+
+if (/^\d+/) { # ...
+
+Which is equivalent to
+
+if ($_ =~ m/^\d+/) { # ...
+
+You've already learned a simple case of this yesterday with the grep function, which can use patterns to find a bit of a string inside the $_ list element:
+
+@foothings = grep /foo/, @strings;
+
+That line, in turn, is equivalent to this long form:
+
+@foothings = grep { $_ =~ /foo/ } @strings;
+
+As we work through today's lesson, you'll learn different ways of using patterns in different contexts and for different reasons. Much of the work of learning pattern matching, however, involves actually learning the regular expression syntax to build patterns, so let's stick with this one situation for now.
+Simple Patterns
+
+We'll start with some of the most simple and basic patterns you can create: patterns that match specific sequences of characters, patterns that match only at specific places in a string, or combining patterns using what's called alternation.
+Character Sequences
+
+One of the simplest patterns is just a sequence of characters you want to match, like this:
+
+/foo/
+
+/this or that/
+
+/ /
+
+/Laura/
+
+/patterns that match specific sequences/
+
+All of these patterns will match if the data contains those characters in that order. All the characters must match, including spaces. The word or in the second pattern doesn't have any special significance (it’s not a logical or); that pattern will only match if the data contains the string this or that somewhere inside it.
+
+Note that characters in patterns can be matched anywhere in a string. Word boundaries are not relevant for these patterns—the pattern /if/ will match in the string "if wishes were horses" and in the string "there is no difference." The pattern /if /, however, because it contains a space, will only match in the first string where the characters i, f, and the one space occur in that order.
+
+Upper- and lowercase are relevant for characters: /kazoo/ will only match kazoo and not Kazoo or KAZOO. To make a particular search case-insensitive, you can use the i option after the pattern itself (the i indicates ignore case), like this:
+
+/kazoo/i # search for any upper and lowercase versions
+
+Alternately, you can also create patterns that will search for either upper- or lowercase letters, as you'll learn about in the next section.
+
+You can include most alphanumeric characters in patterns, including string escapes for binary data (octal and hex escapes). There are a number of characters that you cannot match without escaping them. These characters are called metacharacters and refer to bits of the pattern language and not to the literal character. These are the metacharacters to watch out for in patterns:
+
+
+If you want to actually match a metacharacter in a string—for example, search for an actual question mark—you can escape it using a backslash, just as you would in a regular string:
+
+matches question mark
+Matching at Word or Line Boundaries
+
+When you create a pattern to match a sequence of characters, those characters can appear anywhere inside the string and the pattern will still match. But sometimes you want a pattern to match those characters only if they occur at a specific place—for example, match /if/ only when it’s a whole word, or /kazoo/ only if it occurs at the start of the line (that is, the beginning of the string).
+
+Note: I'm making an assumption here that the data you're searching is a line of input, where the line is a single string with no embedded newline characters. Given that assumption, the terms string, line, and data are effectively interchangeable. Tomorrow, we'll talk about how patterns deal with newlines.
+
+To match a pattern at a specific position, you use pattern anchors. To anchor a pattern at the start of the string, use ^:
+
+/^Kazoo/ # match only if Kazoo occurs at the start of the line
+
+To match at the end of the string, use $:
+
+/end$/ # match only if end occurs at the end of the line
+
+Once again, think of the pattern as a sequence of things in which each part of the pattern must match the data you're applying it to. The pattern matching routines in Perl actually begin searching at a position just before the first character, which will match ^. Then it moves to each character in turn until the end of the line, where $ matches. If there's a newline at the end of the string, the position marked by $ is just before that newline character.
+
+So, for example, let's see what happens when you try to match the pattern /^foo/ to the string "to be or not to be" (which, obviously, won't match, but let's try it anyhow). Perl starts at the beginning of the line, which matches the ^ character. That part of the pattern is true. It then tests the first character. The pattern wants to see an f there, but it got a t instead, so the pattern stops and returns false.
+
+What happens if you try to apply the pattern to the string "fob"? The match will get farther—it'll match the start of the line, the f and the o, but then fail at the b. And keep in mind that /^foo/ will not match in the string " foo"—the foo is not at the very start of the line where the pattern expects it to be. It will only match when all four parts of the pattern match the string.
+
+Some interesting but potentially tricky uses of ^ and $—can you guess what these patterns will match?
+
+
+The first pattern matches any strings that have a start of the line. It would be very weird strings indeed that didn't have the start of a line, so this pattern will match any string data whatsoever, even the empty string.
+
+The second one wants to find the start of the line, the numeral 1, and then the end of the line. So it'll only match if the string contains 1 and only 1—it won't match "123" or "foo 1" or even " 1 ".
+
+The third pattern will match only if the start of the line is immediately followed by the end of the line—that is, if there is no actual data. This pattern will only match an empty line. Keep in mind that because $ occurs just before the newline character, this last pattern will match both "" and "\n".
+
+Another boundary to match is a word boundary—where a word boundary is considered the position between a word character (a letter, number, or underscore) and some other character such as whitespace or punctuation. A word boundary is indicated using a \b escape. So /\bif\b/ will match only when the whole word "if" exists in the string—but not when the characters i and f appear in the middle of a word (as in "difference."). You can use \b to refer to both the start and end of a word; /\bif/, for example, will match in both "if I were king" and "that result is iffy," and even in "As if!", but not in "bomb the aquifer" or "the serif is obtuse."
+
+You can also search for a pattern not in a word boundary using the \B escape. With this, /\Bif/ will match only when the characters i and f occur inside a word and not at the start of a word.
+Matching Alternatives
+
+Sometimes, when you're building a pattern, you may want to search for more than one pattern in the same string and then test based on whether all the patterns were found, or perhaps any of the set of patterns was found. You could, of course, do this with the regular Perl logical expressions for boolean AND (&& or and) and OR (|| or or) with multiple pattern-matching expressions, something like this:
+
+if (($in =~ /this/) || ($in =~ /that/)) { ...
+
+Then, if the string contains /this/ or if it contains /that/, the whole test will return true.
+
+In the case of an OR search (match this pattern or that pattern—either one will work), however, there is a regular expression metacharacter you can use: the pipe character (|). So, for example, the long if test in that example could just be written as:
+
+if ($in =~ /this|that/) { ...
+
+Using the | character inside a pattern is officially known as alternation because it allows you to match alternate patterns. A true value for the pattern occurs if any of the alternatives match.
+
+Any anchoring characters you use with an alternation character apply only to the pattern on the same side of the pipe. So, for example, the pattern /^this|that/ means "this at the start of the line" or "that anywhere," and not "either this or that at the start of a line." If you wanted the latter form you could use /^this|^that/, but a better way is to group your patterns using parentheses:
+
+/^(this|that)/
+
+For this pattern, Perl first matches the start of the line, and then tries and matches all the characters in "this." If it can't match "this", it'll then back up to the start of the line and try to match "that." For a pattern line /^this|that/, it'll first try and match everything on the left side of the pipe (start of line, followed by this), and if it can't do that, it'll back up and search the entire string for "that".
+
+An even better version would be to group only the things that are different between the two patterns, not just the ^ to match the beginning of the line, but also the th characters, like this:
+
+/^th(is|at)/
+
+This last version means that Perl won't even try the alternation unless th has already been matched at the start of the line, and then there will be a minimum of backing up to match the pattern. With regular expressions, the less work Perl has to do to match something, the better.
+
+You can use grouping for any kinds of alternation within a pattern. For example, /(1st|2nd|3rd|4th) time/ will match "1st time", "2nd time", and so on—as long as the data contains one of the alternations inside the parentheses and the string " time" (note the space).
+Matching Groups of Characters
+
+So far, so good? The regular expressions we've been building so far shouldn't strike you as being that complex, particularly if you look at each pattern in the way that Perl looks at it, character by character and alternate by alternate, taking grouping into effect. Now we're going to start looking at some of the shortcuts that regular expressions provide for describing and grouping various kinds of characters.
+Character Classes
+
+Say you had a string, and you wanted to match one of five words in that string: pet, get, met, set, and bet. You could do this:
+
+/pet|get|met|set|bet/
+
+That would work. Perl would search through the whole string for pet, then search through the whole string for get, then do the same thing for met, and so on. A shorter way—both for number of characters for you to type and for Perl—would be to group characters so that we don't duplicate the et part each time:
+
+/(p|g|m|s|b)et/
+
+In this case, Perl searches through the entire string for p, g, m, s, or b, and if it finds one of those, it'll try to match et just after it. Much more efficient!
+
+This sort of pattern—where you have lots of alternates of single characters, is such a common case that there's regular expression syntax for it. The set of alternating characters is called a character class, and you enclose it inside brackets. So, for example, that same pet/get/met pattern would look like this using a character class:
+
+/[pgmsb]et/
+
+That's a savings of at least a couple of characters, and it’s even slightly easier to read. Perl will do the same thing as the alternation character, in this case: it'll look for any of the characters inside the character class before testing any of the characters outside it.
+
+The rules for the characters that can appear inside a character class are different from those that can appear outside of one—most of the metacharacters become plain ordinary characters inside a character class (the exception being a right-bracket, which needs to be escaped for obvious reasons, a caret (^), which can't appear first, or a hyphen, which has a special meaning inside a character class). So, for example, a pattern to match on punctuation at the end of a sentence (punctuation after a word boundary and before two spaces) might look like this:
+
+/\b[.!?] /
+
+Whereas . and ? have special meanings outside the character class, here they're plain old characters.
+Ranges
+
+What if you wanted to match, say, all the lowercase characters a through f (as you might in a hexadecimal number, for example). You could do:
+
+/[abcdef]/
+
+Looks like a job for a range, doesn't it? You can do ranges inside character classes, but you don't use the range operator .. that you learned about on Day 4. Regular expressions use a hyphen for ranges instead (which is why you have to backslash it if you actually want to match a hyphen). So, for example, lowercase a through f looks like this:
+
+/[a-f]/
+
+You can use any range of numbers or characters, as in /[0-9]/, /[a-z]/ or /[A-Z]/. You can even combine them: /[0-9a-z]/ will match the same thing as /[0123456789abcdefghijklmnopqrstuvwxyz]/.
+Negated Character Classes
+
+Brackets define a class of characters to match in a pattern. You can also define a set of characters not to match using negated character classes—just make sure the first character in your character class is a caret (^). So, for example, to match anything that isn't an A or a B, use:
+
+/[^AB]/
+
+Note that the caret inside a character class is not the same as the caret outside one. The former is used to create a negated character class, and the latter is used to mean the beginning of a line.
+
+If you want to actually search for the caret character inside a character class, you're welcome to—just make sure it’s not the first character or escape it (it might be best just to escape it either way to cut down on the rules you have to keep track of):
+
+/[\^?.%]/ # search for ^, ?, ., %
+
+You most likely end up using a lot of negated character classes in your regular expressions, so keep this syntax in mind. Note one subtlety: negated characters classes don't negate the entire value of the pattern. If /[12]/ means "return true if the data contains 1 or 2", /[^12]/ does not mean "return true if the data doesn't contain 1 or 2." If that were the case, you'd get a match even if the string in question was empty. What negated character classes really mean is "match any character that's not these characters." There must be at least one actual character to match for a negated character class to work.
+Special Classes
+
+If character class ranges are still too much for you to type, there are also special character classes (and negated character classes) that have their own escape codes. You'll see these a lot in regular expressions, particularly those that match numbers in specific formats. Note that these special codes don't need to be enclosed between brackets; you can use them all by themselves to refer to that class of characters.
+
+Table 9.1 shows the list of special character class codes:
+Table 9.1. Character Class Codes.
+Code 	Equivalent character class 	What it means
+
+\d
+	
+
+[0-9]
+	
+
+Any digit
+
+\D
+	
+
+[^0-9]
+	
+
+Any character not a digit
+
+\w
+	
+
+[0-9a-zA-z_]
+	
+
+Any "word character"
+
+\W
+	
+
+[^0-9a-zA-z_]
+	
+
+Any character not a word character
+
+\s
+	
+
+[ \t\n\r\f]
+	
+
+whitespace (space, tab, newline, carriage return, form feed)
+
+\S
+	
+
+[^ \t\n\r\f]
+	
+
+Any non-whitespace character
+
+Word characters (\w and \W) is a bit mystifying—why is an underscore considered a word character, but punctuation isn't? In reality, word characters have little to do with words, but are the valid characters you can use in variable names: numbers, letters, and underscores. Any other characters are not considered word characters.
+
+You can use these character codes anywhere you need a specific type of character. For example, the \d code to refers to any digit. With \d, you could create patterns that match any three digits /\d\d\d/, or, perhaps, any three digits, a dash, and any four digits, to represent a phone number such as 555-1212: /\d\d\d-\d\d\d\d/. All this repetition isn't necessarily the best way to go, however, as you'll learn in a bit when we cover quantifiers.
+Matching Any character with . (dot)
+
+The broadest possible character class you can get is to match based on any character whatsoever. For that, you'd use the dot character (.). So, for example, the following pattern will match lines that contain one character and one character only:
+
+/^.$/
+
+You'll use the dot more often in patterns with quantifiers (which you'll learn about next), but the dot can be used to indicate fields of a certain width, for example:
+
+/^..:/
+
+This pattern will match only if the line starts with two characters and a colon.
+
+More about the dot operator after we pause for an example.
+An Example: Optimizing Numspeller
+
+Remember the numspeller script from yesterday? This was the script that took a single-digit number and converted it into a word. You many remember when I described the numspeller script that I mentioned it was easier to write using regular expressions. So, now that you know something of regular expressions, let's rewrite the script to use regular expressions instead of all those if statements.
+
+And, while we're at it, why don't we revise the part of number speller that verifies the input. We can do a lot more in terms of input validation with regular expressions, to the point of absurdity. In fact, we'll approach absurdity with the input validation in this script. This version tests for a number of things that could be entered, and replies with various comments (many of them sarcastic):
+
+numspeller2.pl
+Enter the number you want to spell(0-9): foo
+You can't fool me. There are letters in there.
+Enter the number you want to spell(0-9): 45foo
+You can't fool me. There are letters in there.
+Enter the number you want to spell(0-9): ###
+huh? That *really* doesn't look like a number
+Enter the number you want to spell(0-9): -45
+That's a negative number. Positive only, please!
+Enter the number you want to spell(0-9): 789
+Too big! 0 through 9, please.
+Enter the number you want to spell(0-9): 4
+Thanks!
+Number 4 is four
+Try another number (y/n)?: x
+y or n, please
+Try another number (y/n)?: n
+%
+
+Instead of showing you this script and then working through it line by line, let's go in the reverse direction: I'm going to show you sections from both the old and new versions of numspeller, explain them, and then at the end, I'll list the whole thing so you can get the big picture.
+
+Let's start with the loop that accepts a number as input. This is what the loop looked like in the old version of numspeller:
+
+while () {
+    print 'Enter the number you want to spell: ';
+    chomp($num = <STDIN>);
+    if ($num gt "9" ) { # test for strings
+        print "No strings.  0 through 9 please..\n";
+        next;
+    }
+    if ($num > 9) { # numbers w/more than 1 digit
+        print "Too big. 0 through 9 please.\n";
+        next;
+    }
+    if ($num < 0) { # negative numbers
+        print "No negative numbers.  0 through 9 please.\n";
+        next;
+    }
+    last;
+}
+
+We can easily replace the three tests in this loop with regular expressions that make more sense—and we can also test for more sophisticated kinds of things. Our new loop will test for three major groups of things:
+
+    Whether the input contains a single digit and only a single digit (in which case we're done).
+    Whether the input contains any characters other than numbers
+    Whether the number is larger than 9
+
+That second test can then be broken into sub-tests for things like alphabetic characters, negative numbers (starting with -), floating-point numbers (with a decimal point), or totally bizarre characters. Here's the new version of our loop, which also makes use of the $_ variable to save us some typing in the pattern matching tests:
+
+1: while () {
+2:     print 'Enter the number you want to spell(0-9): ';
+3:     chomp($_ = <STDIN>);
+4:     if (/^\d$/) {  # correct input
+5:         print "Thanks!\n";
+6:         last;
+7:     } elsif (/^$/) {
+8:         print "You didn't enter anything.\n";
+9:     } elsif (/\D/) { # nonnummbers
+10:        if (/[a-zA-z]/) { # letters
+11:            print "You can't fool me.  There are letters in there.\n";
+12:        } elsif (/^-\d/) { # negative numbers
+13:            print "That's a negative number.  Positive only, please!\n";
+14:        } elsif (/\./) { # decimals
+15:            print "That looks like it could be a floating-point number.\n";
+16:            print "I can't spell a floating-point number.  Try again.\n";
+17:        } elsif (/[\W_]/) {  # other chars
+18:            print "huh?  That *really* doesn't look like a number\n";
+19:        }
+20:    } elsif ($_ > 9) {
+21:        print "Too big!  0 through 9, please.\n";
+22:    }
+23:  }
+
+Let's look at those regular expressions, line by line, so you know what's getting matched here:
+
+    Line 4: /^\d$/ This pattern matches input with a single digit, and only a single digit—that is, it matches exactly the input we want to match. I stuck it up here at the top because if the user does enter the right value, we don't want to spend a lot of time cycling through all the options to figure out that they were right. This way, given this very specific match, if we get the correct input we can exit right out of the loop with last.
+    Line 7: /^$/ As you learned in the section on matching at boundaries, this pattern matches an empty line—which is just what you get here if you hit return at the prompt without entering anything.
+    Line 9 /\D/ This character code means "any characters other than numbers." If you type anything at the prompt that isn't a number—a mixture of numbers and letters, all letters, or with characters like -, ., or $—this pattern will match. This branches into a number of sub-tests for the specific non-number characters that got entered.
+    Line 10 /[a-zA-z]/ These character class ranges look for actual characters from the alphabet. I didn't use the \w code here because that would have included the underscore, and I want to group the underscore into the any-other-character test instead.
+    Line 12 /^-\d/ Here we're testing for a dash at the start of the line, immediately followed by a digit. This is the test for negative numbers.
+    Line 14 /\./ Input containing a decimal point is probably a floating-point number. Note here that because . is a metacharacter for the pattern, we have to escape it to match an actual dot.
+    Line 17 /[\W_] Here we use a character class of two things: any character that's not a word character (0-9, a-z, A-Z), or the underscore. This is the catch-all for all other characters that might have been entered.
+    Line 20. No pattern here; this line catches input that is a number (so it won't get caught by most of the previous tests), but is a number with more than one digit. Here we'll just test the value to see if it’s bigger than 9 to catch those cases. There is actually a pattern than will match this, but you haven't learned it yet. This test works just as well.
+
+The next part of the old numspeller script was a set of if...elsif loops that compared the input value to a number string. Using regular expressions, the default variable $_, and logical expressions used as conditionals, we can reduce the nested ifs that looked like this:
+
+if ($num == 1) { print 'one'; }
+    elsif ($num == 2) { print 'two'; }
+    elsif ($num == 3) { print 'three'; }
+    elsif ($num == 4) { print 'four'; }
+    # ... other numbers removed for space
+}
+
+Into a set of logicals that look like this:
+
+/1/ && print 'one';
+/2/ && print 'two';
+/3/ && print 'three';
+/4/ && print 'four';
+# ... and so on
+
+Cool, eh? It’s almost switch-like, and, arguably, easier to read.
+
+Finally, we'll rewrite our little yes-or-no loop to repeat the entire script. The old version looked like this:
+
+while () {
+    print 'Try another number (y/n)?: ';
+    chomp ($exit = <STDIN>);
+    $exit = lc $exit;
+    if ($exit ne 'y' && $exit ne 'n') {
+        print "y or n, please\n";
+    }
+    else { last; }
+}
+
+There's actually nothing terribly wrong with this version, but since this is the pattern matching lesson, let's use pattern matching here, too:
+
+while () {
+        print 'Try another number (y/n)?: ';
+        chomp ($exit = <STDIN>);
+        $exit = lc $exit;
+        if ($exit =~ /^[yn]/) {
+            last;
+        }
+        else {
+            print "y or n, please\n";
+        }
+    }
+
+Note the differences between this loop and the input loop. In the input loop, we stored the input in the $_ variable, so we could just put the pattern into the test itself. Here we're matching against the string in the $exit variable, so we have to use the =~ operator instead. In the pattern itself, we test to see if what was typed was either y or n (Y an N will get converted to lowercase with the lc function), and if so, exit the loop and return to the outer loop, which repeats the script if necessary.
+
+Note: In this example, I've used quite a few regular expressions, many of them gratuitous. It’s worth mentioning at this point that you shouldn't necessarily use regular expressions everywhere simply because they're cool. The Perl regular expression engine is really powerful for really powerful things, but there is some overhead in terms of efficiency if you use it for simple things. Simple tests and if statements will often execute faster than regular expressions. If you're concerned about the efficiency of your code, keep that in mind.
+
+Listing 9.1 shows the full code for the new version of numspeller.pl:
+
+Listing 9.1. The numspeller2.pl Script.
+
+#!/usr/bin/perl -w
+# numberspeller:  prints out word approximations of numbers
+# simple version, only does single-digits
+
+$exit = "";  # whether or not to exit the script.
+
+while ($exit ne "n") {
+
+    while () {
+        print 'Enter the number you want to spell(0-9): ';
+        chomp($_ = <STDIN>);
+        if (/^\d$/) {
+            print "Thanks!\n";
+            last;
+        } elsif (/^$/) {
+            print "You didn't enter anything.\n";
+        } elsif (/\D/) {        # nonnummbers
+            if (/[a-zA-z]/) { # letters
+                print "You can't fool me.  There are letters in there.\n";
+            } elsif (/^-\d/) { # negative numbers
+                print "That's a negative number.  Positive only, please!\n";
+            } elsif (/\./) { # decimals
+                print "That looks like it could be a floating-point number.\n";
+                print "I can't spell a floating-point number.  Try again.\n";
+            } elsif (/[\W_]/) {  # other chars
+                print "huh?  That *really* doesn't look like a number\n";
+            }
+        } elsif ($_ > 9) {
+            print "Too big!  0 through 9, please.\n";
+        }
+    }
+
+    print "Number $_ is ";
+    /1/ && print 'one';
+    /2/ && print 'two';
+    /3/ && print 'three';
+    /4/ && print 'four';
+    /5/ && print 'five';
+    /6/ && print 'six';
+    /7/ && print 'seven';
+    /8/ && print 'eight';
+    /9/ && print 'nine';
+    /0/ && print 'zero';
+    print "\n";
+
+    while () {
+        print 'Try another number (y/n)?: ';
+        chomp ($exit = <STDIN>);
+        $exit = lc $exit;
+        if ($exit =~ /^[yn]/) {
+            last;
+        }
+        else {
+            print "y or n, please\n";
+        }
+    }
+}
+

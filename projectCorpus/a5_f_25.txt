@@ -1,0 +1,1079 @@
+Brain and Language 70, 309–335 (1999)
+Article ID brln.1999.2143, available online at http://www.idealibrary.com on
+Is a Picture Worth a Thousand Words? Evidence from
+Concept Definitions by Patients with
+Semantic Dementia
+Matthew A. Lambon Ralph, Kim S. Graham, and Karalyn Patterson
+MRC Cognition and Brain Sciences Unit, Cambridge, United Kingdom
+and
+John R. Hodges
+MRC Cognition and Brain Sciences Unit, Cambridge, United Kingdom; and University
+Neurology Unit, Addenbrooke’s Hospital, Cambridge, United Kingdom
+Nine patients with semantic dementia (the temporal lobe variant of frontotemporal
+dementia) were asked to define concrete concepts either from presentation of a picture
+of the object or from its spoken name. As expected, the patients with the most
+severe semantic impairment produced the least detailed definitions, and the quality
+of the definitions overall was significantly related to concept familiarity. Further
+analyses of the definitions were designed to assess two key theoretical aspects of
+semantic organization. (i) Do objects and their corresponding names activate conceptual
+information in two neuroanatomically separable (modality-specific) semantic
+systems? If so, then—apart from any expected commonality in performance
+attributable to factors such as concept familiarity—one would not predict striking
+item-specific similarities in a patient’s picture- and word-elicited definitions. (ii) Do
+sensory/perceptual features and more associative/functional attributes of conceptual
+knowledge form two neuroanatomically separable subsystems? If so, then one
+would predict significant dissociations in the prominence of these two types of information
+in the patients’ definitions. The results lead us to favor a model of the semantic
+system that is divided by attribute type but not by modality. ã 1999 Academic
+Press
+We are indebted to the continuing participation of the patients included in this paper; to
+Jim Becker, Kellie Doyle, and Steve DeKoskey (University of Pittsburgh) for allowing us to
+report GC’s data; and to Marge Eldridge for her assistance with scoring the patients’ definitions.
+The research was supported by funding from the National Institutes of Health (USA)
+and the Medical Research Council (UK). Address correspondence and reprint requests to Dr.
+M. A. Lambon Ralph, MRC Cognition and Brain Sciences Unit, 15 Chaucer Road, Cambridge
+CB1 2EF, United Kingdom. E-mail: matt.lambon.ralph@msc-cbu.cam.ac.uk.
+309
+0093-934X/99 $30.00
+Copyright ã 1999 by Academic Press
+All rights of reproduction in any form reserved.
+310 LAMBON RALPH ET AL.
+INTRODUCTION
+Semantic dementia or progressive fluent aphasia arises from a neurodegenerative
+disease that, at least in early to moderate stages, is associated with
+highly circumscribed atrophy of the inferior and lateral aspects of the temporal
+neocortex (Hodges & Patterson, 1996; Hodges, Patterson, Oxbury, &
+Funnell, 1992; Mummery, Patterson, Wise, Price, & Hodges, 1999; Snowden,
+Goulding, & Neary, 1989). The cognitive decline in this form of frontotemporal
+dementia is characterized by a progressive loss of conceptual
+knowledge leading to poor comprehension and pronounced word-finding difficulties.
+Performance on tasks that tap other aspects of perceptual and cognitive
+processing—for example, those that assess day-to-day memory, syntax,
+single word phonology, spatial abilities, and nonverbal reasoning—remains
+relatively intact (Hodges et al., 1992; Hodges, Patterson, & Tyler, 1994). As
+noted initially by Warrington (1975) and Schwartz, Marin, and Saffran
+(1979), the selective impairment of semantic memory in these patients allows
+researchers to observe the nature and consequences of degraded conceptual
+knowledge without the cooccurring symptoms in other disorders that also
+lead to semantic impairment, such as dementia of Alzheimer’s type (DAT)
+or herpes simplex virus encephalitis (HSVE).
+In this study nine patients with semantic dementia were asked to provide
+definitions of 48 concepts, presented (on separate occasions) as both pictures
+and spoken names of the concepts. The analyses of these definitions were
+designed to assess two theoretical aspects of semantic organization: whether
+patterns of selective impairment require theorists to postulate (i) separate
+conceptual representations accessed by objects (pictures) and words and (ii)
+separate subsets of semantic attributes differentiated by feature type. Note
+that by separable subsystems we mean two component processes that need
+not be completely independent when functioning normally, but nevertheless
+have sufficiently separate neuroanatomical bases as to be selectively disruptable
+by circumscribed lesions (Shallice, 1988a). For example, as we shall
+argue later, sensory/perceptual and associative/functional attributes may be
+underpinned by different neuroanatomical regions and therefore differentially
+vulnerable to lesion. Under normal circumstances, however, these separate
+brain regions are mutually active and interactive, giving rise to the multifaceted
+representations of semantic memory.
+Modality-Specific Semantic Organization?
+Some theorists have argued for separate sets of conceptual representations
+associated with different input modalities (McCarthy & Warrington, 1986;
+McCarthy & Warrington, 1988; Shallice, 1988b; Shallice, 1993; Warrington
+& McCarthy, 1994). We should note at the outset that, by modality,
+these theorists mean not sensory systems of input (vision, hearing, touch)
+but rather objects (or pictures of them) versus words (spoken or written).
+IS A PICTURE WORTH A THOUSAND WORDS? 311
+According to this view, it should be possible to identify patients who form
+a double dissociation between picture and word comprehension. At least a
+single dissociation in this regard seems well established, as a number of
+patients have been documented with poor comprehension of words relative
+to pictures (e.g., Bub, Black, Hampson, & Kertesz, 1988; Graham, Becker,
+Patterson, & Hodges, 1997a; Lambon Ralph, Howard, Nightingale, & Ellis,
+1998b; Lauro-Grotto, Piccini, & Shallice, 1997; McCarthy & Warrington,
+1988; Tanabe, Nakagawa, Ikeda, Hashimoto, Yamada, Kazui, Nishikawa, &
+Okuda, 1996).
+The opposite pattern, impaired visual semantics but intact verbal comprehension,
+has also been reported. For example McCarthy and Warrington
+(1986) described patient FRA who was able to define spoken words but could
+not mime or name some of the same items when presented as pictures. Mc-
+Carthy and Warrington argued for a semantic locus for this effect on two
+grounds. First, FRA made semantic errors in naming/defining pictures; second,
+the patient demonstrated a category-specific advantage for the naming
+of actions (83%) over objects (50%). In another case described by Warrington
+and McCarthy (1994), patient DRS was error-free (15/15) in naming
+from description but had a degree of anomia for object pictures (Graded
+Naming Test—11/30: McKenna & Warrington, 1980). Although he failed to
+show a category-specific deficit on naming colored photographs of manmade
+objects and animals, DRS exhibited significantly worse performance for
+common objects than for animals when required to match the same item
+across two different views (visual–visual matching) or in word-to-picture
+matching. Given the combination of a category-specific pattern and a specific
+deficit in the recognition of visually presented items, Warrington and McCarthy
+concluded that DRS’s performance arose from a selective impairment
+of visual semantics.
+In contrast to the multiple semantics hypothesis, other researchers have
+proposed theories in which stimuli from each modality access the same set
+of conceptual representations (Caramazza, Hillis, Rapp, & Romani, 1990;
+Hillis, Rapp, & Caramazza, 1995; Lambon Ralph, Patterson, & Hodges,
+1997; Rapp, Hillis, & Caramazza, 1993; Riddoch, Humphreys, Coltheart, &
+Funnell, 1988). In a functional imaging study with normal subjects, Vandenberghe,
+Price, Wise, Josephs, and Frackowiak (1996) identified a large semantic
+network activated in common by both words and pictures that extended
+from the left superior occipital gyrus through the middle and inferior
+temporal cortex to the inferior frontal gyrus. In studies of semantic memory
+in patients with DAT, Hodges, Patterson, Graham, and Dawson (1996) and
+Lambon Ralph et al. (1997) found a clear relationship between the richness
+of semantic attributes given in definitions to concept names and the patients’
+success on the same items when presented as pictures for naming to confrontation.
+If the subsets of knowledge accessed by pictures and words are represented
+in separate systems, there is no reason to expect a reliable associa312
+LAMBON RALPH ET AL.
+tion across these two tasks in patients with a central semantic deficit. In a
+similar study of the semantic impairment in DAT, Chertkow, Bub, and
+Caplan (1992) also observed a strong association between performance
+on probe questions whether presented with a picture or the corresponding
+name.
+The item-by-item association reported in neuropsychological studies by
+Chertkow et al. (1992), Hodges et al. (1996), and Lambon Ralph et al. (1997),
+plus the common neural substrate for word and picture comprehension highlighted
+by the functional imaging study of Vandenberghe et al. (1996), seems
+to conflict with the apparent evidence for a double dissociation between visual
+and verbal semantic systems. We suggest, however, that there might be
+alternative explanations for the evidence presented in favor of the modalityspecific
+semantics view. For example, it is possible that FRA (McCarthy &
+Warrington, 1986) and/or DRS (Warrington & McCarthy, 1994) had a subtle
+perceptual deficit that might have contributed to the apparent disadvantage
+for visual comprehension. Although these patients succeeded on some perceptual
+assessments that required no verbal output, both had lesions to occipital
+or occipito-temporal regions, were completely alexic, and demonstrated
+better naming in response to a verbal description of an object than to a picture
+of it. Warrington and McCarthy argued for a semantic locus in these two
+cases, and thus for the existence of a separate visual semantic system, because
+performance in each was affected by semantic category and because
+FRA’s predominant error type was semantic. There are, however, other possible
+interpretations of the category-specific pattern. For example, a mild
+visual perceptual deficit and a mild category-specific deficit at the conceptual
+level could combine to form an apparent category-specific deficit in the visual
+domain. Alternatively, the category-specific deficits may relate in part
+to factors such as familiarity that can yield differential levels of difficulty for
+the two domains. Furthermore, with regard to the semantic errors observed in
+patient FRA, it is possible that a pre-semantic visual impairment might engender
+this type of error. In fact it is clear from implemented computational
+models that error type and locus of impairment do not have a one-to-one
+relationship (cf. Plaut & Shallice, 1993).
+Without additional evidence for a selective impairment of visual semantics,
+one-half of the double dissociation that underpins the modality-specific
+view remains in doubt. If we turn our attention to the opposite pattern, we
+could ask how do the amodal semantic theories account for the patients with
+disproportionately poor verbal comprehension? Many theorists have emphasized
+the underlying difference between words and objects in terms of their
+relationship with conceptual knowledge: the surface form of a word, unlike
+an object or picture, has an arbitrary relationship with its meaning. Morton
+(p. 223, 1985) noted that ‘‘if we recognize part of an object we can often
+say a great deal about what the object is’’ and invoked Gibson’s (1979)
+notion of affordance to refer to those properties of the whole object that can
+IS A PICTURE WORTH A THOUSAND WORDS? 313
+be determined without full recognition of its specific identity. Affordance
+seems similar in many ways to the processing assumptions adopted by Caramazza
+and colleagues (Caramazza et al., 1990; Hillis et al., 1995). They
+suggest that object stimuli, but not words, allow direct access to meaning
+(the assumption of privileged access) and that, because the relationship between
+form and function is not arbitrary, knowledge about the structural
+aspects of an object will be closely linked to the semantic properties that
+specify function (the assumption of privileged relationships). These two assumptions
+taken together imply that not only structural but also functional
+aspects of concept knowledge should be more readily accessed from the
+object (or a picture of it) than from its name.
+In addition to the notion of affordance, a number of additional observations
+are worthy of consideration with regard to the patients reported to have
+poorer comprehension of words than pictures. Graham et al. (1997a) analyzed
+the definitions given by a patient with semantic dementia (GC) to a
+set of concepts presented as either pictures or words. Although GC did produce
+better definitions in response to picture stimuli, Graham et al. argued
+that this extra information was largely attributable to the features that were
+visible in, or inferable from, the picture itself. Furthermore, GC’s definitions
+for picture stimuli (and comprehension assessed in other object-based tasks
+such as the Pyramids and Palm Trees test: Howard & Patterson, 1992) were
+not normal either. Other patients with selectively impaired verbal comprehension
+have had measurable deficits in picture comprehension, too, when this
+has been assessed in some detail. For example, the patient RM described by
+Lauro-Grotto et al. (1997) performed at chance when required to sort pictures
+at the level of subordinate features and was extremely impaired on the picture
+as well as the word version of the Pyramids and Palm Trees test. Although
+she exhibited a large advantage in demonstrating the appropriate cooking
+procedure for the real item relative to its name, she provided little or no
+information in response to a number of the foodstuffs, including two that,
+presumably, were premorbidly very familiar to this Italian subject (aubergine
+and gnocchi).
+In summary, it is not clear that there is compelling evidence for the modality-
+specific view of semantic organization. One of the lessons to be learned
+from connectionist models is that the underlying relationship between two
+sets of representations has a major impact on behavior. Performance is more
+robust to the effects of damage if the input and output representations have
+a principled relationship (quasi-regular systems, cf. Plaut, McClelland,
+Seidenberg, & Patterson, 1996). Within this framework verbal comprehension
+suffers from the arbitrary relationship between the surface form
+(phonology/orthography) and meaning. For pictures, however, there is a degree
+of systematicity in the mapping from the surface form to meaning and
+it is this systematicity that leads to the affordances enjoyed by object comprehension.
+314 LAMBON RALPH ET AL.
+Selective Impairment to a Subset of Semantic Attributes
+A number of theorists have proposed that conceptual representations are
+made up from a distributed pattern of sensory and associative/functional
+attributes (e.g., Allport, 1985; Lambon Ralph et al., 1997; Saffran &
+Schwartz, 1994; Saffran & Sholl, in press; Warrington & McCarthy, 1987).
+These different types of attribute will contribute, in general, to each and
+every conceptual representation, but the relative weighting will vary across
+objects and possibly across different semantic categories. If we assume that,
+because they are linked to different sources of input and are learned in different
+ways, these types of attribute are underpinned by different brain regions,
+then it should be possible to find patients for whom certain types of knowledge
+have been selectively compromised. Relatively impaired visuo-perceptual
+information has been reported in a number of patients (e.g., Basso, Capitani,
+& Laiacona, 1988; Breedin, Saffran, & Coslett, 1994b; Carbonnel,
+Charnallet, David, & Pellat, 1997; Cardebat, Demonet, Celsis, & Puel, 1996;
+Coltheart, Inglis, Cupples, Michie, Bates, & Budd, 1998; Lambon Ralph et
+al., 1998b; Marshall, Pring, Chiat, & Robson, 1996; Moss, Tyler, Hodges, &
+Patterson, 1995; Sirigu, Duhamel, & Poncet, 1991; Srinivas, Breedin, Coslett,
+& Saffran, 1997; Tyler & Moss, 1997).
+The possibility that it is particularly knowledge of the visuo-perceptual
+features of concepts that is degraded in semantic dementia takes on special
+interest given that the disorder is associated with progressive atrophy of the
+inferolateral temporal lobe (Hodges et al., 1992; Mummery et al., 1999)—
+a region that is commonly linked to high-order visual processing and object
+recognition (Milner & Goodale, 1995; Ungerleider & Mishkin, 1982). Although
+not the main focus of many existing papers in the literature, poor
+knowledge of sensory/visual attributes has been noted in a number of studies
+of semantic dementia. For example, patient DM (Breedin, Martin, & Saffran,
+1994b; Srinivas et al., 1997) was less successful at answering perceptual
+questions about animals and objects (perceptual questions, 69%; nonperceptual
+questions, 86%). Furthermore, although he achieved respectable performance
+on many aspects of verb knowledge, he was poor at matching the
+meaning of verbs on the basis of manner for which, it is argued, sensorimotor
+features are critical. Tyler and her colleagues (Moss et al., 1995; Tyler &
+Moss, 1997, 1998) have reported several patients with significant semantic
+priming based on a functional relationship between prime and target (e.g.,
+fox–sly) but either no priming or reduced priming with regard to perceptual
+features (e.g., fox–red). The patient reported by Lambon Ralph et al. (1998b)
+was less likely to match a definition to the name of the correct concept if
+the definition contained perceptual rather than functional/associative information,
+was significantly worse at answering questions about sensory than
+nonsensory attributes, and produced significantly less perceptual than nonperceptual
+information in her definitions of words.
+IS A PICTURE WORTH A THOUSAND WORDS? 315
+In this case-series study we report the analyses of definitions given by
+nine patients with semantic dementia for a set of 48 different concepts. Patients
+were asked to give definitions (on different occasions) both to a picture
+and to the spoken name of each concept. The results are reported in two
+main sections designed to address the aspects of semantic organization noted
+above; namely, does the conceptual knowledge accessed by words and pictures
+form two separable components of the semantic system, and do visual/
+sensory and associative features of conceptual knowledge form two separable
+components of the semantic system?
+CASE REPORTS
+Some of the nine patients tested in this study have been described in previous
+papers (Graham & Hodges, 1997; Graham, Hodges, & Patterson, 1994;
+Graham, Lambon Ralph, & Hodges, 1997b; Graham, Murre, & Hodges, in
+press; Hodges & Graham, 1998; Knott, Patterson, & Hodges, 1997; Lambon
+Ralph, Graham, Ellis, & Hodges, 1998a; Mummery et al., 1999; Tyler &
+Moss, 1997, 1998), including an analysis of the definition data included here
+for one of the patients (GC, Graham et al., 1997a). Table 1 shows background
+neuropsychological and neuroanatomical information for the nine patients
+at the time that definitions of pictures and words were collected. Where available,
+scores for a group of 24 age-matched control subjects are also included
+in Table 1 (mainly from Hodges & Patterson, 1995). In Table 1 and the
+subsequent figures, the patients are ordered first by the relative laterality
+of their temporal lobe damage (see below) and then by comprehension (as
+measured by word–picture matching) with the least impaired patient on the
+left of each group.
+Although there was evidence of bilateral involvement in all nine cases,
+assessment of coronal T1-weighted MRI sections revealed predominantly
+left-sided temporal lobe atrophy in seven cases (JC through AM), with
+greater atrophy of the right temporal lobe in the remaining two patients (BM
+and DG). Most of the patients produced a good copy of the Rey Figure
+(Osterrieth, 1944) and some recalled as much after a 45-min delay as control
+subjects do (as the standard deviation on normal performance suggests, intact
+subjects’ performance varies a great deal). Forward and backward digit span
+was within the normal range for all nine patients. Nonverbal problem solving
+as assessed by Raven’s Coloured Progressive Matrices (Raven, 1962) was
+equal to or better than the age-appropriate norm in the patients tested.
+The patients’ semantic impairments and profound anomia were highlighted
+by a series of assessments. Fluency was reduced in all nine patients
+for eight different semantic categories (four living categories: land animals,
+birds, water creatures, and dogs; and four man-made classes: household
+items, vehicles, musical instruments, and boats). All patients were anomic,
+some profoundly so, as measured by naming of a set of 48 simple line draw316
+LAMBON RALPH ET AL.
+TABLE 1
+Background Neuropsychological Test Results
+Test Condition N JC GCB MS JH GC PS AM BM DG Controls (n 5 24)
+Pattern of temporal lobe damage L .R L.R L.R L. R Left L .R L.R R.L R. L
+Rey figure Copy /36 27 36 21.5 31 36 32 36 36 24 34.0 (2.9)
+Recall /36 10 9 5 12 8.5 3.5 0 16 0 15.2 (7.4)
+Digit Span Forward 8 5 6 7 6 5 8 8 5 6.8 (1.0)
+Backward 4 4 3 4 5 4 5 7 3 4.7 (1.2)
+Raven’s Coloured Progressive /36 26 NT NT 29 33 NT NT 31 NT 50th percentile 5
+Matrices 25/36
+Category Fluency (8 categories) 35 52 7 11 12 11 7 37 39 113.7 (19.4)
+Picture Naming /48 26 27 4 6 5 5 1 11 10 43.6 (2.3)
+Word-to-Picture Matching /48 40 37 26 26 23 23 19 28 23 47.4 (1.1)
+Pyramids and Palm Trees Pictures /52 47 43 36 33 47 42 37 30 22 51.2 (1.4)
+Words /52 44 32 39 35 NT 32 33 41 34 51.2 (1.4)
+Benton’s judgment of line /30 NT 30a NT NT NT 27b 27b 27b 14c —
+orientation
+BORB Foreshortened Match /20 NT NT NT NT NT 20 NT 19 9 19.3 (0.9)
+BORB Minimal Feature Match /20 NT NT NT NT NT 20 NT 17 16 19.7 (0.4)
+BORB Object Decision /64 NT NT NT NT NT 47 NT NT 32 57.4 (3.1)
+Note. NT, not tested; L . R, left temporal lobe damage greater than right; R . L, right temporal lobe damage greater than left.
+a Superior.
+b High average.
+c Severely defective.
+IS A PICTURE WORTH A THOUSAND WORDS? 317
+ings of common objects (24 animals and 24 artifacts drawn from Snodgrass
+& Vanderwart, 1980) and all performed outside the normal range when
+asked to match the spoken name to the corresponding picture for the same
+set of items (in this word-to-picture matching test the target is presented with
+seven other items from the same semantic category). Their poor comprehension
+was confirmed by performance on the Pyramids and Palm Trees test
+(Howard & Patterson, 1992). Two observations about this latter assessment
+are relevant to the current study. First, all nine patients were outside the
+normal range for both picture and word versions confirming impaired comprehension
+for both input modalities. Second, relative performance for pictures
+and words seems to align with the pattern of temporal lobe damage:
+the patients with predominantly left-sided atrophy produced either similar
+scores for the two versions or better performance for pictures over words;
+the two patients with relatively right-sided temporal lobe atrophy (BM and
+DG), however, achieved higher scores for words than for pictures. Indeed
+neither BM nor DG exceeded chance level (50%) with pictures.
+At the time that the definitions were collected, we did not systematically
+investigate perceptual functioning in these patients. The limited results available
+are shown at the bottom of Table 1. Four of the five patients assessed
+performed at the high average or superior range on Benton’s Judgement of
+Line Orientation (Benton, Hamsher, Varney, & Spreen, 1983), but DG’s
+score classifies as severely defective. On three tasks taken from the Birmingham
+Object Recognition Battery (BORB: Riddoch & Humphreys,
+1992), PS performed at ceiling on the two matching tests but outside the
+normal range for object decision. Patient BM was within the normal range
+for the Foreshortened Match assessment but fell outside the normal range
+on the simple Minimal Feature Match test. DG’s poor perceptual processing
+was confirmed with these tasks: she performed at chance on the Foreshortened
+Match and Object Decision tests and was outside the normal range on
+the Minimal Feature Match assessment. It is interesting to note at this point,
+prior to consideration of their definitions to pictures and words, that BM’s
+and DG’s better performance on the Pyramid and Palm Trees test with
+words than pictures coincided with poor matching of objects across different
+views.
+Definitions for the same 48 items used in the word-to-picture matching
+and naming tasks (reported in Table 1) were collected from each patient. On
+one occasion each patient was asked to define the 48 items presented as
+Snodgrass and Vanderwart (1980) line drawings, and on the other they were
+asked to define the spoken name of each concept. On both occasions the
+patients were encouraged to provide as rich a definition as possible, as though
+the listener was completely unfamiliar with all the items. Following the
+guidelines described in Hodges et al. (1996), each definition was scored for
+the following information: whether the information provided was sufficient
+to define the core meaning of the object, that is, contained enough informa318
+LAMBON RALPH ET AL.
+tion for another person to identify the concept from the definition; the total
+number of correct features produced with regard to physical/sensory attributes
+(e.g., a table has four legs, an ostrich has a long neck, etc.) and of an
+associative/functional nature (e.g., a table is used for eating at, ostriches live
+in Africa, etc.); and the presence or absence of a superordinate category label.
+An attribute was classified as physical/sensory if it referred to any physical
+feature that a person might know about an object, whether or not it can be
+perceived in a simple line drawing. The classification of associative/functional
+was used for all nonphysical information, encompassing knowledge
+about an object’s function, information that is associated with an item, and
+any encyclopedic facts. For definitions of pictures the number of physical
+attributes was further subdivided into the number of physical features that are
+included in the picture itself versus the number of novel physical attributes
+mentioned. When a specific feature was repeated in a definition, the attribute
+was only counted once; i.e., the value reported for each type of feature reflects
+the type count, and not a token count.
+We should note here that, for the sake of objective scoring, each definition
+was taken at face value—i.e., only those attributes mentioned by each patient
+were included. Additional knowledge that might be inferred from the definition
+was not credited. So, for example, when one patient (DG) initially responded
+‘‘Is that a fish?’’ to a picture of a crocodile, her scores for that item
+were not credited with additional features such as that she considered the
+target picture to represent a water creature. Our experience with these patients,
+both clinical and experimental, suggests that it is very easy to overestimate
+the degree of remaining comprehension by making this kind of inference
+from the patient’s responses. In fact, the conservative scoring scheme
+adopted here was justified by DG’s continuing definition of the crocodile in
+that she subsequently commented, ‘‘Ain’t a dog, is it?’’
+Preliminary Analyses
+Despite only having nine patients within this case series, we found a significant
+relationship between the quality of the patients’ definitions and the
+degree of their semantic impairment: that is, cross-sectionally, the total
+amount of information produced to words and pictures declined as comprehension
+decreased (correlation between the patients’ word-to-picture matching
+score and the total number of novel features produced for pictures: r 5
+.66, Pone-tailed 5 .03; correlation between the patients’ word-to-picture matching
+score and the total number of features produced for words: r 5 .63,
+Pone-tailed 5 .03). The familiarity of the concept also significantly affected the
+patients’ performance: the total number of features produced to words and
+pictures declined as the concepts became relatively less familiar (correlation
+between rated familiarity of each item and the number of features produced
+per word: r 5 .37, Pone-tailed , .001; correlation between rated familiarity of
+IS A PICTURE WORTH A THOUSAND WORDS? 319
+TABLE 2
+The Relationship between Core Definitions Given
+to Pictures and to Their Names
+Core word
+definition
+6 3
+6 247 41
+Core picture definition 3 55 89
+Note. C 5 .44, p , .001.
+each item and the number of novel features produced per picture: r 5 .20,
+Pone-tailed , .001). These two preliminary results confirm (a) that definitions
+are a sensitive measure of the deterioration of conceptual knowledge characteristic
+of semantic dementia (Warrington, 1975) and (b) that this deterioration
+is modulated by the frequency or familiarity of the concepts assessed,
+with less familiar items more vulnerable (Funnell, 1995).
+Modality-Specific Semantic Impairments?
+Table 2 shows the distribution of definitions for pictures and words collected
+from all nine patients, where each definition was scored for the presence
+of sufficient information to be categorized as a core definition. There
+was a clear and significant concordance between performance on the same
+items presented as words and pictures (C 5 .44, p , .001). As the patients
+had been asked, on a separate occasion, to name each of the 48 pictures (see
+Table 1), we were also able to compare naming accuracy against definitions
+to words. If the information produced was scored to the core definition criterion,
+there was also a significant item-specific concordance between picture
+naming and definitions of concept names (see Table 3, C 5 .50, p , .001).
+We have already demonstrated that the quality of the patients’ definitions
+was influenced by item familiarity, a fact that would—in and of itself—
+TABLE 3
+The Relationship between Picture Naming
+Accuracy and Core Definitions
+to Picture Names
+Core word
+definition
+6 3
+6 283 54
+Picture naming 3 19 76
+Note. C 5 .50, p , .001.
+320 LAMBON RALPH ET AL.
+yield some consistency (cf. Behrmann & Bub, 1992; Coltheart & Funnell,
+1987; Howard, 1995). That is, some items will always be hard, because of
+low familiarity (and any other item-specific properties affecting difficulty),
+and thus engender poor definitions and low naming scores. Other items will
+be easy and so produce consistently better performance. This alternative explanation
+for the item-specific associations was assessed via two simultaneous
+logistic regression analyses. Picture naming accuracy was predicted by
+word definition performance, and word definition by picture definition. In
+both analyses rated concept familiarity and a range of other psycholinguistic
+factors that might have influenced performance were included in the regression
+equation (name length in phonemes; combined frequency per million
+from Baayen, Piepenbrock, & van Rijn, 1993; and rated visual complexity,
+imageability, age-of-acquisition, and familiarity from Coltheart, 1981).
+Word definition performance was found to be a significant predictor of naming
+accuracy even after the influence of the six factors was taken into account
+(Wald 5 55.9, p , .0001). Likewise, success in picture definition was a
+significant predictor of word definition accuracy (Wald 5 50.2, p , .0001)
+with the influence of the other six factors removed.
+In the Introduction we noted two results from studies of patients with
+DAT—a significant association between picture naming success and quality
+of definitions to the picture names (Lambon Ralph et al., 1997) and a strong
+association between performance on probe questions whether presented with
+a picture or the corresponding name (Chertkow et al., 1992). These patterns
+are replicated by our data from nine patients with semantic dementia, where
+the association between quality of concept definition to word and picture,
+and also between picture naming and word definition, was significant over
+and above the influence of item familiarity and other variables. These reliable
+associations are a clear prediction from the hypothesis of an amodal semantic
+system that is addressed by both word and picture input.
+The patients’ definitions were compared further by studying the number
+of attributes produced to pictures and words, illustrated in Fig. 1. Two numbers
+are given for picture definitions. The first (Picture: Total) represents the
+total number of attributes produced, both associative and physical; the second
+(Picture: Novel) includes associative features and only those perceptual
+physical features that are not contained within the stimulus picture itself.
+Thus the measure Picture: Novel is a more conservative estimate of what a
+subject knows about a pictured concept rather than of what he or she can
+find in the stimulus.
+Graham et al. (1997a) noted that patient GC tended to produce information
+in picture definitions that was visible in the drawing itself. This tendency
+can also be seen for a few of the cases in Fig. 1, as the difference between
+the total number of features produced in response to pictures and the number
+of novel attributes given (Picture: Total vs. Picture: Novel). This figure also
+demonstrates that, despite their impoverished semantic knowledge, the maIS
+A PICTURE WORTH A THOUSAND WORDS? 321
+FIG. 1. The number of attributes produced to pictures and words. Picture: Total—the
+total number of attributes produced to pictures. Picture: Novel—the total number of associative
+features and only those perceptual physical features that are not contained within the stimulus
+picture itself. Word: Total—the total number of attributes produced to words.
+jority of the patients did not resort to this kind of simple listing of the details
+contained in the pictures. The clear exception to this, apart from GC himself,
+was DG who produced 335 separate pieces of information to the 48 line
+drawings, of which 278 features (83%) were present in the picture. Returning
+to DG’s definition of a crocodile as an example, her full response was, ‘‘Is
+that a fish? I don’t know what it is? Got a head, four legs and a tail. Ain’t
+a dog is it? A bit flat, tail, four legs, head, two eyes, mouth, toes, several
+toes.’’ DG’s apparent strategy to list components of the item pictured is
+important for the comparison between word and picture definitions: based
+on total number of features produced, this comparison would suggest that
+DG provided more information to pictures than to words; but if only the
+novel physical information is counted, then DG’s performance was, in fact,
+substantially worse for pictures than for words.
+As a group, the patients with relatively greater left temporal lobe damage
+produced significantly more correct information in response to pictures
+(novel physical plus associative) than to words (Wilcoxon Z 5 5.45, p ,
+.001). The reverse was true for the two patients with greater right temporal
+lobe atrophy (combined data: Wilcoxon Z 5 5.97, P , .001). If each patient’s
+data are considered individually, then the advantage for pictures over
+words was significant in four of the patients with left-sided atrophy (by Wilcoxon,
+GCB: Z 5 2.15, p 5 .03; JH: Z 5 3.49, p , .001; GC: Z 5 5.41,
+p , .001; PS: Z 5 2.34, p 5 .02) but did not reach significance in the
+322 LAMBON RALPH ET AL.
+remaining three individuals (JC, for whom in fact the nonsignificant difference
+was in the opposite direction, MS, and AM). Both patients with relatively
+right-sided temporal atrophy produced significantly richer definitions
+to words than to pictures (BM: Z 5 3.77, p , .001; DG: Z 5 4.62, p ,
+.001).
+The notion of an inherent difference between pictures and words in the
+nature of their relationship to conceptual attributes—principled in the case
+of pictures, arbitrary for words—leads to the following prediction. When
+semantic knowledge is degraded, patients should still often be able to say
+something appropriate about concepts presented as pictures, at least with
+regard to properties of the correct semantic category, whereas for words there
+should be a much greater proportion of occasions on which the patient is
+unable to say anything appropriate about the concept. This prediction was
+supported by the patients’ definition data. Combining across all nine patients
+the number of items for which absolutely no appropriate attributes were produced
+was much greater for words (46% of the items) than for the corresponding
+pictures, whether the picture definitions were scored to include all
+the information produced (18% of the items: a significant difference: Sign
+test, p , .001) or to disregard description of the physical information included
+within the picture (27% of the items: Sign test, p , .001). If each
+patient’s data are considered individually, then for six of the patients (JC,
+GCB, JH, GC, PS, and DG) the number of items for which absolutely no
+appropriate attributes were produced was significantly greater for words (the
+proportion for individual patients ranged from 19 to 77% of the concepts)
+than for the corresponding pictures scored to include all the information produced
+(the proportions ranged from 0 to 23%: individual patient Sign tests,
+p values ranged from p , .001 to p 5 .02). The difference failed to reach
+significance for three patients (AM, MS, and BM). With one exception, the
+pattern for each patient was unchanged if the Picture: Novel data were substituted
+for Picture: Total. The exception was DG who failed to produce any
+appropriate attributes for 33% of the words. If her picture definitions are
+scored by the lenient criterion, then she produced some information for every
+picture (a significant difference: Sign test, p , .001) but if the physical information
+included within the stimulus picture itself is discounted there is no
+significant difference (DG failed to produce any novel information for 38%
+of the pictures).
+In summary of this aspect of the results, there was an impressive degree
+of item-specific consistency between the patients’ definitions to pictures and
+words (and also between their definitions and naming to confrontation) that
+could not be attributed to factors such as concept familiarity. Furthermore,
+although some of the patients achieved significantly better definitions to either
+pictures or words (relative to the other modality), we claim that these
+differences can be explained without recourse to modality specific semantic
+subsystems. In particular, (a) the superiority in picture definitions is almost
+IS A PICTURE WORTH A THOUSAND WORDS? 323
+certainly explicable in terms of information afforded by picture stimuli, and
+(b) the less frequently observed advantage for words is most likely to reflect
+a presemantic visuo-perceptual deficit cooccurring with degraded conceptual
+knowledge. These views are expanded in the General Discussion.
+Selective Impairment to a Subset of Semantic Attributes?
+Figures 2a and 2b illustrate how the total number of features produced by
+each patient divides into associative and physical attributes, for picture and
+word definitions respectively.1 In nearly all cases the overwhelming proportion
+of information provided, for both picture and word stimuli, was associative.
+In some cases the amount of physical information produced was extremely
+small (all nine patients, on average, produced less than one novel
+physical attribute per item for pictures, and the same is true for seven of the
+nine patients in the word definitions; recall that the values in Fig. 2 are total
+number of features across all 48 target items). If all nine patients are included
+in a group analysis then significantly more associative than physical information
+was produced in both picture definition (Wilcoxon Z 5 13.0, p , .001)
+and word definition (Z 5 9.57, p , .001). This pattern is repeated for each
+individual patient’s results (Wilcoxon Z ranges from 2.68 to 4.47, all p ,
+.01) with the exception of DG for whom there was no significant difference
+between the number of physical and associative features produced, for either
+pictures or words.
+The final analyses of the patients’ definitions assessed any potential differences
+in performance for concepts related to living things and artifacts. The
+mean numbers of novel physical and associative attributes produced for the
+24 living things and 24 artifacts are illustrated in Tables 4a and 4b for picture
+and word definitions, respectively. Two ANOVAs revealed significant main
+effects of attribute type (picture definitions: F(1, 430) 5 315.8, p , .001;
+word definitions: F(1, 430) 5 113.0, p , .001), semantic category (picture
+definitions: F(1, 430) 5 5.3, p 5 .02; word definitions: F(1, 430) 5 9.3,
+p 5 .002), and feature type 3 semantic category interactions (picture definitions:
+F(1, 430) 5 62.6, p , .001; word definitions: F(1, 430) 5 28.4, p ,
+.001). Post-hoc t tests confirm that the interactions arose because a significantly
+greater number of associative features were produced for artifacts than
+for living things (picture definition: t 5 5.45, p , .001; word definition: t 5
+4.84, p , .001), but there was no difference across category for physical
+attributes produced in word definition (t , 1), and the patients gave a smaller
+number of novel physical features for artifacts in picture definition (t 5 6.94,
+p , .001).
+The influence of semantic category noted in these analyses raises the possi-
+1 Note that in Fig. 2a the bars corresponding to Total are the same figures as Picture: Novel
+in Fig. 1, likewise the Total bars in Fig. 2b are the same as Word: Total in Fig. 1.
+324 LAMBON RALPH ET AL.
+FIG. 2. (a) The number of novel physical and associative features produced in picture
+definitions. (b) The number of physical and associative features produced in word definitions.
+IS A PICTURE WORTH A THOUSAND WORDS? 325
+TABLE 4a
+The Mean Number of Features Produced in Each Picture Definition Split by Attribute
+Type and Semantic Domain
+Attribute type
+Semantic domain Physical (Novel) Associative Overall
+Living things 0.49 (0.82) 1.23 (1.38) 1.72 (1.67)
+Artifacts 0.08 (0.29) 2.01 (1.58) 2.09 (1.63)
+Note. Standard deviations are in parentheses.
+bility that some or all of these patients were demonstrating a category-specific
+deficit for living things. The nine patients did produce more featurerich
+definitions to artifact concepts than to living things both for words and
+pictures (see Tables 4a and 4b). If the number of features produced per item
+is predicted in a linear regression model by category, then the difference
+favoring artifacts is significant for both words (t 5 3.05, p 5 .002) and
+pictures (t52.30, p5.02). We have noted above, however, that the patients’
+definition performance was significantly modulated by concept familiarity,
+and there is a significant discrepancy between the two categories on this
+dimension (mean rated familiarity: artifacts 5 3.25, living things 5 2.28;
+t 5 4.07, p , .001). If rated familiarity and category are included in the
+simultaneous linear regression model, the patients produced the greatest
+amount of information for the most familiar concepts both for words (t 5
+7.54, p ,.001) and for pictures (t5 3.63, p, .001), but no effect of category
+remains once familiarity is taken into account (words: t , 1; pictures: t 5
+21.15, n.s.).
+In summary of the results presented in this section, although the patients’
+performances were not significantly affected by semantic category once concept
+familiarity was taken into account, the clear and striking finding was
+TABLE 4b
+The Mean Number of Features Produced in Each Word Definition
+Split by Attribute Type and Semantic Domain
+Attribute type
+Semantic domain Physical Associative Overall
+Living things 0.54 (1.07) 0.94 (1.41) 1.48 (2.11)
+Artifacts 0.45 (1.16) 1.68 (1.73) 2.13 (2.33)
+Note. Standard deviations are in parentheses.
+326 LAMBON RALPH ET AL.
+that each and every patient produced more (in eight of nine cases, significantly
+more) associative than physical features in both word and picture
+definitions. This result implies a substantial degree of functional localization
+of these two aspects of conceptual knowledge, with the physical attributes
+of object knowledge particularly reliant on the inferior temporal regions that
+are compromised in semantic dementia.
+GENERAL DISCUSSION
+As described in previous reports of semantic dementia (Hodges et al.,
+1992; Snowden et al., 1989), the patients in this study presented with a relatively
+selective progressive semantic impairment resulting in poor comprehension
+and profound word-finding difficulties. Not surprisingly, the patients
+with the severest impairment produced the least detailed definitions in response
+to both words and pictures. Our analyses were designed to assess
+two key theoretical aspects of semantic organization: first, whether there are
+separate central semantic subsystems accessed by objects (or in this case,
+pictures of them) and words and, second, whether there are separate semantic
+subsystems for different classes of conceptual knowledge, namely, sensory/
+physical and functional/associative attributes.
+In the Introduction we reviewed some of the evidence taken for and against
+a modality-specific organization of semantic knowledge. One of the difficulties
+for research in this area is that a number of key assumptions underlying
+this view are still underspecified. Deriving an exact set of empirical predictions
+is, consequently, rather difficult. One approach to this problem is to
+treat the amodal single semantic hypothesis as the default, because it is the
+more parsimonious, theoretical position, and to ask whether there is any evidence
+that compels us to accept more than one system for semantic representations
+of concrete concepts.
+The comparison of definitions in response to words and pictures for the
+nine patients presented here seems, in many ways, to reflect the existing
+claims in the literature for separate verbal and visual semantic systems. All
+these patients make confusions between exemplars drawn from the same
+category in comprehension tasks like word-to-picture matching and make
+frank semantic errors in naming. Such data provide converging evidence for
+a semantic locus to the functional impairment in all nine cases. Some of the
+patients (four out of nine) produced significantly better definitions to pictures
+than to words and likewise achieved higher scores in comprehension tasks
+like the Pyramids and Palm Trees test with picture stimuli than with word
+stimuli. Two other patients exhibited the reverse pattern. Consequently, at
+this level of analysis the data seem to reinforce the apparent double dissociation
+formed by individual cases reported in the literature, e.g., patients RM
+(Lauro-Grotto et al., 1997) vs. FRA and DRS (McCarthy & Warrington,
+1986; Warrington & McCarthy, 1994).
+IS A PICTURE WORTH A THOUSAND WORDS? 327
+The point that we wish to emphasize is that this double dissociation in
+performance does not necessarily demonstrate multiple semantic systems. In
+fact, as we intimated in the Introduction, the evidence taken as favoring the
+modality-specific hypothesis has legitimate alternative interpretations. First,
+it is important to note that, although some of the patients exhibited a degree
+of differential word/picture performance, in no case could this be considered
+to approach a classical dissociation (Shallice, 1988a). That is, all nine subjects
+displayed impaired comprehension of both pictures and words. This
+means that, with a modality-specific theory, we would need to postulate damage
+to both semantic systems albeit to different degrees. The amodal theory,
+on the other hand, predicts an impact of a semantic deficit on comprehension
+in all modalities. The fact that many patients achieve poorer scores on tests
+of word relative to picture comprehension could result from the fact that the
+surface form of a word has an arbitrary relationship with its meaning whereas
+the meaning of an object is signaled substantially more by features present
+in the stimulus. The systematicity in the mapping, or the affordance, from
+objects or pictures to semantics means that comprehension of these should
+be relatively resistant to disruption.
+This notion of an inherent bias toward an advantage for objects or pictures
+requires us to explain how there can be any patients who present with relatively
+better comprehension of words than of pictures (patients BM and DG
+in the present study. Our response is that it is not clear that the less-detailed
+definitions produced by BM and DG for pictures than for words do constitute
+evidence for a dissociation within central conceptual knowledge. Although
+there is no doubt that both patients had a central semantic impairment, both
+also performed poorly and well below both the normal range and the other
+patients with semantic dementia on simple assessments of presemantic perceptual
+processing (e.g., matching the same object across two different
+views). Given a combination of impaired conceptual knowledge and a visuoperceptual
+deficit, it is unsurprising that these patients produce relatively
+poor definitions of picture input and are disproportionately impaired on other
+tests of picture comprehension.
+In addition to the fact that a single amodal semantic system may sensibly
+be considered the theoretical default, we have reported some data in this
+study that seem to argue positively in favor of this hypothesis. In line with
+the results of three previous studies of the semantic impairment in dementia
+of Alzheimer’s type (Chertkow et al., 1992; Hodges et al., 1996; Lambon
+Ralph et al., 1997), we identified significant associations between word and
+picture definitions and between picture naming and word definitions. Furthermore,
+these reliable associations were not explicable by the influence of additional
+factors such as concept familiarity on the patients’ performance. The
+associations indicate that the status of conceptual information when probed
+from verbal input (the concept name) is a good predictor of the quality of
+328 LAMBON RALPH ET AL.
+semantic knowledge when accessed from pictorial input, either for comprehension
+or for naming.2
+The functional imaging study reported by Vandenberghe et al. (1996) also
+points toward a common distributed semantic system for words and pictures.
+In addition, however, these authors reported increased regional cerebral
+blood flow (rCBF) specifically for word comprehension in the left superior
+temporal sulcus, left anterior middle temporal gyrus, and left inferior frontal
+sulcus and for the picture semantic tasks in the left posterior inferior temporal
+sulcus. Vandenberghe et al. suggested that rCBF increases in these regions
+may be attributable either to activation of modality-specific input representations
+(structural descriptions in the case of pictures, form-based representations
+for words) or to the transmission of activation from these input representations
+to shared conceptual knowledge. The results from this functional
+imaging study are consistent with the view proposed here, in which we attribute
+the extra-poor definitions provided by DG and BM for pictures to the
+additional presemantic visuo-perceptual deficits observed in these two patients.
+Our assessment is that there is currently no empirical evidence, either
+from studies of behavioral deficits in patients or from functional imaging of
+intact subjects, that necessitates a modality-specific viewpoint. If anything,
+the item consistency noted in this and previous studies would seem to favor
+the single, amodal hypothesis.
+Semantic dementia arises from progressive atrophy of the inferior and
+lateral aspects of the temporal lobes (Hodges & Patterson, 1996; Hodges et
+al., 1992; Mummery et al., 1999), areas assumed to underpin knowledge
+about the physical form of objects and animals (Ungerleider & Mishkin,
+1982). This anatomical specificity would suggest that, on top of their generalized
+semantic degradation, these patients should exhibit disproportionate loss
+of conceptual knowledge with respect to this specific type of semantic feature.
+We noted in the Introduction that previously studied patients had demonstrated
+this effect across a variety of tasks (Basso et al., 1988; Breedin et
+al., 1994b; Cardebat et al., 1996; Lambon Ralph et al., 1998b; Moss et al.,
+1995; Tyler & Moss, 1997). The analyses of the definitions provided by the
+nine patients included in this study replicate these previous findings: whether
+2 The problem of resolving empirical predictions from the modality-specific hypothesis is
+highlighted here. If we consider the verbal and visual semantics as distinct, independent entities,
+then there would be no reason to expect that damage to one or both modalities should
+produce the type of item consistency that has been observed here (i.e., consistency greater
+than that expected on the basis of concept familiarity and other variables). If the two systems
+are linked, or coupled (Shallice, 1988a), in some way, such that activation can pass between
+corresponding semantic representations, then the prediction is less than clear. In the limit,
+damage affecting a representation in one modality may make it less likely for the corresponding
+concept to be activated in the other. At a functional level of description, therefore, a highly
+interactive modality-specific view of this sort may well behave in exactly the same way as
+an impaired amodal semantic system.
+IS A PICTURE WORTH A THOUSAND WORDS? 329
+defining pictures or words, all patients produced strikingly less physical/
+sensory than associative/functional information. This pattern is not true of
+normal control subjects who, if anything, produce more physical than associative
+information (Hodges et al., 1996). In some cases the patients’ definitions
+contained almost no physical/sensory attributes. These results, as well
+as data from a recent PET imaging study of normal subjects (Cappa, Perani,
+Schmur, Tettamanti, & Fazio, 1998; Mummery, Patterson, Hodges, & Price,
+1998), support models of semantic memory in which distributed conceptual
+representations are composed of subsets of sensory and associative/functional
+attributes based on partially different cortical regions (e.g., Allport,
+1985; Lambon Ralph et al., 1997; Saffran & Sholl, in press; Warrington &
+McCarthy, 1987).
+A popular hypothesis of category structure in semantic memory views
+living things as primarily differentiated on the basis of sensory features,
+while function is thought to be the key distinguishing aspect of artifacts (Farah
+& McClelland, 1991; Lambon Ralph et al., 1997; Saffran & Schwartz,
+1994; Saffran & Sholl, in press; Warrington & Shallice, 1984). Farah and
+McClelland demonstrated that, if this asymmetric weighting of sensory and
+functional features were encoded within a connectionist model of semantic
+memory, then apparent category-specific deficits for living things would
+arise from a selective ‘lesion’ of sensory attributes. Given the apparently
+sparse knowledge of patients with semantic dementia about the physical form
+of objects and animals, one might predict that the great majority of these
+patients should exhibit disproportionately poor performance on living things.
+Category-specific deficits for natural kinds have been reported for a few individual
+patients with semantic dementia (Barbarotto, Capitani, Spinnler, &
+Trivelli, 1995; Basso et al., 1988; Breedin, Martin, & Saffran, 1994a; Cardebat
+et al., 1996; McCarthy & Warrington, 1988); but with the exception of
+the study by Barbarotto et al., it is unclear whether these effects could be
+explained by a difference between categories on factors such as familiarity
+and frequency which are known to have a significant impact on performance
+(Funnell, 1995; Lambon Ralph et al., 1998a). Patient MF, reported by Barbarotto
+et al. (1995), did demonstrate a significant category-specific effect
+after various other pertinent factors were taken into account; conversely, MF
+did not exhibit a significant difference between sensory and associative
+knowledge—a pattern also reported in several other recent papers on category-
+specific deficits (Caramazza & Shelton, 1998; Funnell & De Mornay
+Davies, 1996; Laiacona, Barbarotto, & Capitani, 1993; Laiacona, Capitani, &
+Barbarotto, 1997; Lambon Ralph et al., 1998b; Moss, Tyler, Durrant-Peatfield,
+& Bunn, 1998; Samson, De Wilde, & Pillon, 1998).
+Do the patients described here exhibit significant category specific effects?
+There are three sets of relevant results. Analyses of the definition data from
+the present study revealed that the patients as a group did produce richer
+definitions for artifact concepts than for living things both to words and pic330
+LAMBON RALPH ET AL.
+tures. The patients’ definition performance was also significantly modulated
+by concept familiarity, however, and when this factor is taken into account,
+no category effect remains. Hodges, Garrard, and Patterson (1998) analyzed
+data from the word-to-picture matching and naming tasks (Hodges & Patterson,
+1996) for a set of eight patients, including a number of the cases
+reported here. With rated familiarity controlled, there was a significant advantage
+for artifacts relative to natural kinds in the word-to-picture matching
+task, but no effect of category type on naming to confrontation. Six of the
+patients were also included in a case-series study of the factors that affect
+naming accuracy for a set of 132 pictures from the Snodgrass and Vanderwart
+corpus (Lambon Ralph et al., 1998a). As a group there was no effect
+of category on naming accuracy and in the individual analyses only one
+patient exhibited significantly better performance for the artifacts.
+In summary, the weight of evidence appears not to favor models of semantic
+memory in which category-specific deficits arise from a differential
+weighting of sensory and functional features for living kinds and artifacts.
+On the other hand it is, of course, difficult to draw firm conclusions from
+a set of null results. All the patients reported here produced impoverished
+definitions overall, and although they gave strikingly little sensory/physical
+information, they also only tended to produce, on average, between one and
+three pieces of associative information per item (see Figs. 2a and 2b). With
+such a severe reduction in both physical and associative aspects of conceptual
+knowledge, one might not expect a measurable category effect.
+CONCLUSIONS
+Analysis of word and picture definitions given by nine patients with semantic
+dementia revealed (a) that the quality of the information produced
+by the patients declined with disease severity, (b) that more satisfactory
+(though still impoverished) definitions were given to the most familiar concepts,
+and (c) that once concept familiarity was taken into account the patients’
+performance was equivalent for artifacts and living things. With regard
+to the specific theoretical questions to which the study was addressed,
+we found a striking reduction in the physical attributes of conceptual knowledge
+produced by all nine patients to both words and pictures. In addition,
+the ability to give a core definition to a specific word was highly predictive
+of the patients’ success in both picture comprehension and confrontation
+naming for the same item, suggesting impairment of a single amodal semantic
+system. The relatively poorer definitions to pictures than to words produced
+by two of the nine patients was explicable by their combined conceptual
+and presemantic, visuo-perceptual deficits. It is our contention, therefore,
+that there is no evidence from this study (or perhaps in the literature as a
+whole) that necessitates a modality-specific semantic organization. Rather
+than positing impairment to a separate conceptual system for verbal compreIS
+A PICTURE WORTH A THOUSAND WORDS? 331
+hension as an explanation for the relatively common pattern of poorer performance
+with words than with pictures, we would argue that this pattern arises
+from the underlying difference in mapping to meaning that makes a picture
+worth a thousand words.
+REFERENCES
+Allport, D. A. 1985. Distributed memory, modular subsystems and dysphasia. In S. Newman &
+R. Epstein (Eds.), Current perspectives in dysphasia. Edinburgh: Churchill Livingstone.
+Baayen, R. H., Piepenbrock, R., & van Rijn, H. 1993. The CELEX lexical database [CDROM].
+Philadelphia, PA: Linguistics Data Consortium, Univ. of Pennsylvania.
+Barbarotto, R., Capitani, E., Spinnler, H., & Trivelli, C. 1995. Slowly progressive semantic
+impairment with category specificity. Neurocase, 1, 107–119.
+Basso, A., Capitani, E., & Laiacona, M. 1988. Progressive language impairment without dementia:
+A case with isolated category specific semantic defect. Journal of Neurology,
+Neurosurgery and Psychiatry, 51, 1201–1207.
+Behrmann, M., & Bub, D. 1992. Surface dyslexia and dysgraphia: Dual routes, single lexicon.
+Cognitive Neuropsychology, 9, 209–251.
+Benton, A. L., Hamsher, K., Varney, N., &Spreen, O. 1983. Contributions to neuropsychological
+assessment. Oxford: Oxford Univ. Press.
+Breedin, S. D., Martin, N., & Saffran, E. M. 1994a. Category-specific semantic impairments:
+An infrequent occurrence. Brain and Language, 47, 383–386.
+Breedin, S. D., Saffran, E. M., & Coslett, H. B. 1994b. Reversal of the concreteness effect
+in a patient with semantic dementia. Cognitive Neuropsychology, 11, 617–660.
+Bub, D., Black, S., Hampson, E., & Kertesz, A. 1988. Semantic encoding of pictures and
+words: Some neuropsychological observations. Cognitive Neuropsychology, 5, 27–66.
+Cappa, S. F., Perani, D., Schmur, T., Tettamanti, M., & Fazio, F. 1998. The effects of semantic
+category and knowledge type on lexical-semantic access: A PET study. Neuroimage, 8,
+350–359.
+Caramazza, A., Hills, A. E., Rapp, B. C., & Romani, C. 1990. Multiple semantics or multiple
+confusions? Cognitive Neuropsychology, 7, 161–168.
+Caramazza, A., & Shelton, J. R. 1998. Domain-specific knowledge systems in the brain: The
+animate–inanimate distinction. Journal of Cognitive Neuroscience, 10, 1–34.
+Carbonnel, S., Charnallet, A., David, D., & Pellat, J. 1997. One or several semantic systems(s)?
+Maybe none: Evidence from a case of modality and category-specific ‘‘semantic’’ impairment.
+Cortex, 33, 391–417.
+Cardebat, D., Demonet, J. F., Celsis, P., & Puel, M. 1996. Living/non-living dissociation in
+a case of semantic dementia: A SPECT activation study. Neuropsychologia, 34, 1175–
+1179.
+Chertkow, H., Bub, D., & Caplan, D. 1992. Constraining theories of semantic memory processing:
+Evidence from dementia. Cognitive Neuropsychology, 9, 327–365.
+Coltheart, M. 1981. The MRC psycholinguistic database. Quarterly Journal of Experimental
+Psychology, 33, 497–505.
+Coltheart, M., & Funnell, E. 1987. Reading and writing: One lexicon or two? In D. A. Allport,
+D. G. MacKay, W. Prinz, & E. Scheerer (Eds.), Language perception and production:
+Shared mechanisms in listening, reading and writing. London: Academic Press.
+Coltheart, M., Inglis, L., Cupples, L., Michie, P., Bates, A., & Budd, B. 1998. A semantic
+332 LAMBON RALPH ET AL.
+subsystem specific to the storage of information about visual attributes of animate and
+inanimate objects. Neurocase, 4, 353–370.
+Farah, M. J., & McClelland, J. L. 1991. A computational model of semantic memory impairment:
+Modality specificity and emergent category specificity. Journal of Experimental
+Psychology General, 120, 339–357.
+Funnell, E. 1995. Objects and properties: A study of the breakdown of semantic memory.
+Memory, 3, 497–518.
+Funnell, E., & De Mornay Davies, P. 1996. JBR: A reassessment of concept familiarity and
+a category-specific disorder for living things. Neurocase, 2, 461–474.
+Gibson, J. J. 1979. The ecological approach to visual perception. Boston: Houghton Mifflin.
+Graham, K. S., Becker, J. T., Patterson, K., & Hodges, J. R. 1997a. Lost for words: A case
+of primary progressive aphasia? In A. J. Parkin (Ed.), Case studies in the neuropsychology
+of memory. Hove: Erlbaum.
+Graham, K. S., & Hodges, J. R. 1997. Differentiating the roles of the hippocampal complex
+and the neocortex in long-term memory storage: Evidence from the study of semantic
+dementia and Alzheimer’s disease. Neuropsychology, 11, 77–89.
+Graham, K. S., Hodges, J. R., & Patterson, K. E. 1994. The relationship between comprehension
+and oral reading in progressive fluent aphasia. Neuropsychologia, 32, 299–316.
+Graham, K. S., Lambon Ralph, M. A., & Hodges, J. R. 1997b. Determining the impact of
+autobiographical experience on ‘meaning’: New insights from investigating sports-related
+vocabulary and knowledge in two cases with semantic dementia. Cognitive Neuropsychology,
+14, 801–837.
+Graham, K. S., Murre, J. M. J., & Hodges, J. R. in press. Episodic memory in semantic
+dementia: A computational approach based on the TraceLink model. In J. Reggia, E.
+Ruppin, & D. Glanzman (Eds.), Neural modelling in brain disorders. Oxford: Elsevier.
+Hillis, A. E., Rapp, B., & Caramazza, A. 1995. Constraining claims about theories of semantic
+memory: More on unitary versus multiple semantics. Cognitive Neuropsychology, 12,
+175–186.
+Hodges, J. R., Garrard, P., & Patterson, K. 1998. Semantic dementia. In A. Kertesz & D. G.
+Munoz (Eds.), Pick’s disease and Pick complex. New York: Wylie–Liss.
+Hodges, J. R., & Graham, K. S. 1998. A reversal of the temporal gradient for famous person
+knowledge in semantic dementia: Implications for the neural organisation of long-term
+memory. Neuropsychologia, 36, 803–825.
+Hodges, J. R., & Patterson, K. 1995. Is semantic memory consistently impaired early in the
+course of Alzheimer’s disease? Neuroanatomical and diagnostic implications. Neuropsychologia,
+33, 441–459.
+Hodges, J. R., & Patterson, K. 1996. Nonfluent progressive aphasia and semantic dementia: A
+comparative neuropsychological study. Journal of the International Neuropsychological
+Society, 2, 511–524.
+Hodges, J. R., Patterson, K., Graham, N., & Dawson, K. 1996. Naming and knowing in dementia
+of Alzheimer’s type. Brain and Language, 54, 302–325.
+Hodges, J. R., Patterson, K., Oxbury, S., & Funnell, E. 1992. Semantic dementia: Progressive
+fluent aphasia with temporal lobe atrophy. Brain, 115, 1783–1806.
+Hodges, J. R., Patterson, K., & Tyler, L. K. 1994. Loss of semantic memory: Implications
+for the modularity of mind. Cognitive Neuropsychology, 11, 505–542.
+Howard, D. 1995. Lexical anomia: Or the case of the missing lexical entries. Quarterly Journal
+of Experimental Psychology Human Experimental Psychology, 48a, 999–1023.
+Howard, D., & Patterson, K. 1992. The Pyramids and Palm Trees Test: A test of semantic
+access from words and pictures. Bury St. Edmunds: Thames Valley Test Company.
+IS A PICTURE WORTH A THOUSAND WORDS? 333
+Knott, R., Patterson, K., & Hodges, J. R. 1997. Lexical and semantic binding effects in shortterm
+memory: Evidence from semantic memory Cognitive Neuropsychology, 8, 1165–
+1216.
+Laiacona, M., Barbarotto, R., & Capitani, E. 1993. Perceptual and associative knowledge in
+category specific impairment of semantic memory: A study of two cases. Cortex, 29,
+727–740.
+Laiacona, M., Capitani, E., & Barbarotto, R. 1997. Semantic category dissociations: A longitudinal
+study of two cases. Cortex, 33, 441–461.
+Lambon Ralph, M. A., Graham, K. S., Ellis, A. W., & Hodges, J. R. 1998a. Naming in semantic
+dementia—What matters? Neuropsychologia, 36, 775–784.
+Lambon Ralph, M. A., Howard, D., Nightingale, G., & Ellis, A. W. 1998b. Are living and
+non-living category-specific deficits causally linked to impaired perceptual or associative
+knowledge? Evidence from a category-specific double dissociation. Neurocase, 4, 311–
+338.
+Lambon Ralph, M. A., Patterson, K., & Hodges, J. R. 1997. The relationship between naming
+and semantic knowledge for different categories in dementia of Alzheimer’s type. Neuropsychologia,
+35, 1251–1260.
+Lauro-Grotto, R., Piccini, C., & Shallice, T. 1997. Modality-specific operations in semantic
+dementia. Cortex, 33, 593–622.
+Marshall, J., Pring, T., Chiat, S., & Robson, J. 1996. Calling a salad a federation: An investigation
+of semantic jargon. Part 1—Nouns. Journal of Neurolinguistics, 9, 237–250.
+McCarthy, R. A., & Warrington, E. K. 1986. Visual associative agnosia: A clinico-anatomical
+study of a single case. Journal of Neurology, Neurosurgery and Psychiatry, 49, 1233–
+1240.
+McCarthy, R. A., & Warrington, E. K. 1988. Evidence for modality-specific meaning systems
+in the brain. Nature, 334, 428–430.
+McKenna, P., & Warrington, E. K. 1980. A test for nominal dysphasia. Journal of Neurology,
+Neurosurgery and Psychiatry, 43, 781–788.
+Milner, A. D., & Goodale, M. A. 1995. The visual brain in action. Oxford: Oxford Univ.
+Press.
+Morton, J. 1985. Naming. In S. Newman & R. Epstein (Eds.), Current perspectives in dysphasia.
+Edinburgh: Churchill Livingstone.
+Moss, H. E., Tyler, L. K., Durrant-Peatfield, M., & Bunn, E. M. 1998. Two eyes of a seethrough:
+Impaired and intact semantic knowledge in a case of selective deficit for living
+things. Neurocase, 4, 291–310.
+Moss, H. E., Tyler, L. K., Hodges, J. R., & Patterson, K. 1995. Exploring the loss of semantic
+memory in semantic dementia: Evidence from a primed monitoring study. Neuropsychology,
+9, 16–26.
+Mummery, C. J., Patterson, K., Hodges, J. R., & Price, C. J. 1998. Functional neuroanatomy
+of the semantic system: Divisible by what? Journal of Cognitive Neuroscience, 10, 766–
+777.
+Mummery, C. J., Patterson, K., Wise, R. J. S., Price, C. J., & Hodges, J. R. 1999. Disrupted
+temporal lobe connections in semantic dementia. Brain, 122, 61–73.
+Osterrieth, P. 1944. Le test de copie d’une figure complexe. Archives de Psychologie, 30,
+205–550.
+Plaut, D. C., McClelland, J. L., Seidenberg, M. S., & Patterson, K. 1996. Understanding normal
+and impaired word reading: Computational principles in quasi-regular domains. Psychological
+Review, 103, 56–115.
+334 LAMBON RALPH ET AL.
+Plaut, D. C., & Shallice, T. 1993. Deep dyslexia: A case study of connectionist neuropsychology.
+Cognitive Neuropsychology, 10, 377–500.
+Rapp, B. C., Hillis, A. E., & Caramazza, A. 1993. The role of representations in cognitive
+theory: More on multiple semantics and the agnosias. Cognitive Neuropsychology, 10,
+235–249.
+Raven, J. C. 1962. Coloured progressive matrices: Sets A, AB, B. London: HK Lewis.
+Riddoch, M. J., & Humphreys, G. W. 1992. The Birmingham Object Recognition Battery
+(BORB). Hove: Erlbaum.
+Riddoch, M. J., Humphreys, G. W., Coltheart, M., & Funnell, E. 1988. Semantic systems or
+system? Neuropsychological evidence re-examined. Cognitive Neuropsychology, 5, 3–
+25.
+Saffran, E. M., & Schwartz, M. F. 1994. Of cabbages and things: Semantic memory from a
+neuropsychological perspective—A tutorial review. Attention and Performance, 25, 507–
+536.
+Saffran, E. M., & Sholl, A. in press. Clues to the functional and neural architecture of word
+meaning. In P. Hagoort & C. Brown (Eds.), Neurocognition of language. Oxford: Oxford
+Univ. Press.
+Samson, D., De Wilde, V., & Pillon, A. 1998. Impaired knowledge of visual and nonvisual
+attributes in a patient with a naming impairment for living entities: A case of a true
+category-specific deficit. Neurocase, 4, 273–290.
+Schwartz, M. F., Marin, O. S. M., & Saffran, E. M. 1979. Dissociations of language function
+in dementia: A case study. Brain and Language, 7, 277–306.
+Shallice, T. 1988a. From neuropsychology to mental structure. Cambridge: Cambridge Univ.
+Press.
+Shallice, T. 1988b. Specialisation within the semantic system. Cognitive Neuropsychology, 5,
+133–142.
+Shallice, T. 1993. Multiple semantics: Whose confusions? Cognitive Neuropsychology, 10,
+251–261.
+Sirigu, A., Duhamel, J.-R., & Poncet, M. 1991. The role of sensorimotor experience in object
+recognition. Brain, 1991, 2555–2573.
+Snodgrass, J. G., & Vanderwart, M. 1980. A standardised set of 260 pictures: Norms for name
+agreement, image agreement, familiarity, and visual complexity. Journal of Experimental
+Psychology: Human Learning and Memory, 6, 174–215.
+Snowden, J. S., Goulding, P. J., & Neary, D. 1989. Semantic dementia: A form of circumscribed
+cerebral atrophy. Behavioural Neurology, 2, 167–182.
+Srinivas, K., Breedin, S. D., Coslett, H. B., & Saffran, E. M. 1997. Intact perceptual priming
+in a patient with damage to the anterior inferior temporal lobes. Journal of Cognitive
+Neuroscience, 9, 490–511.
+Tanabe, H., Nakagawa, Y., Ikeda, M., Hashimoto, M., Yamada, N., Kazui, H., Nishikawa,
+T., & Okuda, J. 1996. Selective loss of semantic memory for words. In K. Ishikawa,
+J. L. McGaugh, & H. Sakata (Eds.), Brain Processes and Memory. B. V.: Elsevier.
+Tyler, L. K., & Moss, H. E. 1997. Functional properties of concepts: Studies of normal and
+brain-damaged patients. Cognitive Neuropsychology, 14, 511–545.
+Tyler, L. K., & Moss, H. E. 1998. Going, going, gone? . . . Implicit and explicit tests of
+conceptual knowledge in longitudinal study of semantic dementia. Neuropsychologia,
+36, 1313–1323.
+Ungerleider, L. G., & Mishkin, M. 1982. Two cortical visual systems. In D. J. Ingle, M. A.
+Goodale, & R. J. W. Mansfield (Eds.), Analysis of visual behaviour. Cambridge, MA:
+MIT Press.
+IS A PICTURE WORTH A THOUSAND WORDS? 335
+Vandenberghe, R., Price, C., Wise, R., Josephs, O., & Frackowiak, R. S. J. 1996. Functionalanatomy
+of a common semantic system for words and pictures. Nature, 383, 254–256.
+Warrington, E. K. 1975. The selective impairment of semantic memory. Quarterly Journal
+of Experimental Psychology, 27, 635–657.
+Warrington, E. K., & McCarthy, R. 1987. Categories of knowledge: Further fractionations
+and an attempted integration. Brain, 110, 1273–1296.
+Warrington, E. K., & McCarthy, R. A. 1994. Multiple meaning systems in the brain: A case
+for visual semantics. Neuropsychologia, 32, 1465–1473.
+Warrington, E. K., & Shallice, T. 1984. Category specific semantic impairments. Brain, 107,
+829–854.

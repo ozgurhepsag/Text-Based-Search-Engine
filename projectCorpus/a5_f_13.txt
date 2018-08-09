@@ -1,0 +1,1190 @@
+1. What are Design Patterns?
+Sitting at your desk in front of your workstation, you stare into space,
+trying to figure out how to write a new program feature. You know
+intuitively what must be done, what data and what objects come into play,
+but you have this underlying feeling that there is a more elegant and
+general way to write this program.
+In fact, you probably don’t write any code until you can build a picture in
+your mind of what the code does and how the pieces of the code interact.
+The more that you can picture this “organic whole,” or gestalt, the more
+likely you are to feel comfortable that you have developed the best
+solution to the problem. If you don’t grasp this whole right away, you may
+keep staring out the window for a time, even though the basic solution to
+the problem is quite obvious.
+In one sense you feel that the more elegant solution will be more reusable
+and more maintainable, but even if you are the sole likely programmer,
+you feel reassured once you have designed a solution that is relatively
+elegant and that doesn’t expose too many internal inelegancies.
+One of the main reasons that computer science researchers began to
+recognize design patterns is to satisfy this need for elegant, but simple,
+reusable solutions. The term “design patterns” sounds a bit formal to the
+uninitiated and can be somewhat offputting when you first encounter it.
+But, in fact, design patterns are just convenient ways of reusing objectoriented
+code between projects and between programmers. The idea
+behind design patterns is simple—write down and catalog common
+interactions between objects that programmers have frequently found
+useful.
+One of the frequently cited patterns from early literature on programming
+frameworks is the Model-View-Controller framework for Smalltalk
+(Krasner and Pope 1988), which divided the user interface problem into
+three parts, as shown in Figure 1-1. The parts were referred to as a data
+Copyright © , 2002 by James W Cooper
+22
+model, which contains the computational parts of the program; the view,
+which presented the user interface; and the controller, which interacted
+between the user and the view.
+Controller View
+Data Model
+Figure 1-1 – The Model-View-Controller framework
+Each of these aspects of the problem is a separate object, and each has its
+own rules for managing its data. Communication among the user, the GUI,
+and the data should be carefully controlled, and this separation of
+functions accomplished that very nicely. Three objects talking to each
+other using this restrained set of connections is an example of a powerful
+design pattern.
+In other words, design patterns describe how objects communicate without
+become entangled in each other’s data models and methods. Keeping this
+separation has always been an objective of good OO programming, and if
+you have been trying to keep objects minding their own business, you are
+probably using some of the common design patterns already.
+Design patterns began to be recognized more formally in the early 1990s
+by Erich Gamma (1992), who described patterns incorporated in the GUI
+application framework, ET++. The culmination of these discussions and a
+number of technical meetings was the publication of the parent book in
+this series, Design Patterns—Elements of Reusable Software, by Gamma,
+Helm, Johnson, and Vlissides (1995). This book, commonly referred to as
+the Gang of Four, or “GoF,” book, has had a powerful impact on those
+seeking to understand how to use design patterns and has become an allCopyright
+© , 2002 by James W Cooper
+23
+time bestseller. It describes 23 commonly occurring and generally useful
+patterns and comments on how and when you might apply them. We will
+refer to this groundbreaking book as Design Patterns throughout this
+book.
+Since the publication of the original Design Patterns text, there have been
+a number of other useful books published. One closely related book is The
+Design Patterns Smalltalk Companion (Alpert, Brown, and Woolf 1998),
+which covers the same 23 patterns from the Smalltalk point of view. We’ll
+refer to this book throughout as the Smalltalk Companion. Finally, we
+recently published Java Design Patterns: a Tutorial, and Visual Basic
+Design Patterns, which illustrate all of these patterns in those languages.
+Defining Design Patterns
+We all talk about the way we do things in our jobs, hobbies, and home life,
+and we recognize repeating patterns all the time.
+·  Sticky buns are like dinner rolls, but I add brown sugar and nut filling
+to them.
+·  Her front garden is like mine, but I grow astilbe in my garden.
+·  This end table is constructed like that one, but in this one, there are
+doors instead of drawers.
+We see the same thing in programming when we tell a colleague how we
+accomplished a tricky bit of programming so he doesn’t have to recreate it
+from scratch. We simply recognize effective ways for objects to
+communicate while maintaining their own separate existences.
+Some useful definitions of design patterns have emerged as the literature
+in this field has expanded.
+·  “Design patterns are recurring solutions to design problems you see
+over and over.” (The Smalltalk Companion)
+Copyright © , 2002 by James W Cooper
+24
+·  “Design patterns constitute a set of rules describing how to accomplish
+certain tasks in the realm of software development.” (Pree 1994)
+·  “Design patterns focus more on reuse of recurring architectural design
+themes, while frameworks focus on detailed design and
+implementation.” (Coplien and Schmidt 1995)
+·  “A pattern addresses a recurring design problem that arises in specific
+design situations and presents a solution to it.” (Buschmann et al.
+1996)
+·  “Patterns identify and specify abstractions that are above the level of
+single classes and instances, or of components.” (Gamma et al., 1993)
+But while it is helpful to draw analogies to architecture, cabinet making,
+and logic, design patterns are not just about the design of objects but about
+the interaction between objects. One possible view of some of these
+patterns is to consider them as communication patterns.
+Some other patterns deal not just with object communication but with
+strategies for object inheritance and containment. It is the design of
+simple, but elegant, methods of interaction that makes many design
+patterns so important.
+Design patterns can exist at many levels from very low-level specific
+solutions to broadly generalized system issues. There are now hundreds of
+patterns in the literature. They have been discussed in articles and at
+conferences of all levels of granularity. Some are examples that apply
+widely, and a few writers have ascribed pattern behavior to class
+groupings that apply to just a single problem (Kurata 1998).
+It has become apparent that you don’t just write a design pattern off the
+top of your head. In fact, most such patterns are discovered rather than
+written. The process of looking for these patterns is called “pattern
+mining,” and it is worthy of a book of its own.
+The 23 design patterns selected for inclusion in the original Design
+Patterns book were those that had several known applications and that
+Copyright © , 2002 by James W Cooper
+25
+were on a middle level of generality, where they could easily cross
+application areas and encompass several objects.
+The authors divided these patterns into three types: creational, structural,
+and behavioral.
+·  Creational patterns create objects for you rather than having you
+instantiate objects directly. This gives your program more flexibility in
+deciding which objects need to be created for a given case.
+·  Structural patterns help you compose groups of objects into larger
+structures, such as complex user interfaces or accounting data.
+·  Behavioral patterns help you define the communication between
+objects in your system and how the flow is controlled in a complex
+program.
+We’ll be looking at C# versions of these patterns in the chapters that
+follow, and we will provide at least one complete C# program for each of
+the 23 patterns. This way yo u can examine the code snippets we provide
+and also run, edit, and modify the complete working programs on the
+accompanying CD-ROM. You’ll find a list of all the programs on the CDROM
+at the end of each pattern description.
+The Learning Process
+We have found that regardless of the language, learning design patterns is
+a multiple-step process.
+1. Acceptance
+2. Recognition
+3. Internalization
+First, you accept the premise that design patterns are important in your
+work. Then, you recognize that you need to read about design patterns in
+order to know when you might use them. Finally, you internalize the
+Copyright © , 2002 by James W Cooper
+26
+patterns in sufficient detail that you know which ones might help you
+solve a given design problem.
+For some lucky people, design patterns are obvious tools, and these people
+can grasp their essential utility just by reading summaries of the patterns.
+For many of the rest of us, there is a slow induction period after we’ve
+read about a pattern followed by the proverbial “Aha!” when we see how
+we can apply them in our work. This book helps to take you to that final
+stage of internalization by providing complete, working programs that you
+can try out for yourself.
+The examples in Design Patterns are brief and are in C++ or, in some
+cases, Smalltalk. If you are working in another language, it is helpful to
+have the pattern examples in your language of choice. This book attempts
+to fill that need for C# programmers.
+Studying Design Patterns
+There are several alternate ways to become familiar with these patterns. In
+each approach, you should read this book and the parent Design Patterns
+book in one order or the other. We also strongly urge you to read the
+Smalltalk Companion for completeness, since it provides alternative
+descriptions of each of the patterns. Finally, there are a number of Web
+sites on learning and discussing design patterns for you to peruse.
+Notes on Object-Oriented Approaches
+The fundamental reason for using design patterns is to keep classes
+separated and prevent them from having to know too much about one
+another. Equally important, using these patterns helps you avoid
+reinventing the wheel and allows you to describe your programming
+approach succinctly in terms other programmers can easily understand.
+There are a number of strategies that OO programmers use to achieve this
+separation, among them encapsulation and inheritance. Nearly all
+languages that have OO capabilities support inheritance. A class that
+inherits from a parent class has access to all of the methods of that parent
+Copyright © , 2002 by James W Cooper
+27
+class. It also has access to all of its nonprivate variables. However, by
+starting your inheritance hierarchy with a complete, working class, you
+may be unduly restricting yourself as well as carrying along specific
+method implementation baggage. Instead, Design Patterns suggests that
+you always
+Program to an interface and not to an implementation.
+Putting this more succinctly, you should define the top of any class
+hierarchy with an abstract class or an interface, which implements no
+methods but simply defines the methods that class will support. Then in all
+of your derived classes you have more freedom to implement these
+methods as most suits your purposes. And since C#6 only supports
+interfaces and does not support inheritance, this is obviously very good
+advice in the C# context.
+The other major concept you should recognize is that of object
+composition. This is simply the construction of objects that contain others:
+encapsulation of several objects inside another one. While many beginning
+OO programmers use inheritance to solve every problem, as you begin to
+write more elaborate programs, you will begin to appreciate the merits of
+object composition.Your new object can have the interface that is best for
+what you want to accomplish without having all the methods of the parent
+classes. Thus, the second major precept suggested by Design Patterns is
+Favor object composition over inheritance.
+C# Design Patterns
+Each of the 23 patterns in Design Patterns is discussed, at least one
+working program example for that pattern is supplied. All of the programs
+have some sort of visual interface to make them that much more
+immediate to you. All of them also use class, interfaces, and object
+composition, but the programs themselves are of necessity quite simple so
+that the coding doesn’t obscure the fundamental elegance of the patterns
+we are describing.
+Copyright © , 2002 by James W Cooper
+28
+However, even though C# is our target language, this isn’t specifically a
+book on the C# language. There are lots of features in C# that we don’t
+cover, but we do cover most of what is central to C#. You will find,
+however, that this is a fairly useful tutorial in object-oriented
+programming in C# and provides good overview of how to program in
+C#.NET.
+How This Book Is Organized
+We take up each of the 23 patterns, grouped into the general categories of
+creational, structural, and behavioral patterns. Many of the patterns stand
+more or less independently, but we do take advantage of already discussed
+patterns from time to time. For example, we use the Factory and
+Command patterns extensively after introducing them, and we use the
+Mediator pattern several times after we introduce it. We use the Memento
+again in the State pattern, the Chain of Responsibility in the Interpreter
+pattern discussion, and the Singleton pattern in the Flyweight pattern
+discussion. In no case do we use a pattern before we have introduced it
+formally.
+We also take some advantage of the sophistication of later patterns to
+introduce new features of C#. For example, the Listbox, DataGrid, and
+TreeView are introduced in the Adapter and Bridge patterns. We show
+how to paint graphics objects in the Abstract Factory, We introduce the
+Enumeration interface in the Iterator and in the Composite, where we also
+take up formatting. We use exceptions in the Singleton pattern and discuss
+ADO.NET database connections in the Façade pattern. And we show how
+to use C# timers in the Proxy pattern.
+The overall .NET system is designed for fairly elaborate web-based clientserver
+interactions. However, in this book, concentrate on object-oriented
+programming issues in general rather than how to write Web-based
+systems. We cover the core issues of C# programming and show simple
+examples of how Design Patterns can help write better programs.
+Copyright © , 2002 by James W Cooper
+29
+2. Syntax of the C# Language
+C# has all the features of any powerful, modern language. If you are
+familiar with Java, C or C++, you’ll find most of C#’s syntax very
+familiar. If you have been working in Visual Basic or related areas, you
+should read this chapter to see how C# differs from VB. You’ll quickly
+see that every major operation you can carry out in Visual Basic.NET has
+a similar operation in C#.
+The two major differences between C# and Visual Basic are that C# is
+case sensitive (most of its syntax is written in lowercase) and that every
+statement in C# is terminated with a semicolon (;). Thus C# statements are
+not constrained to a single line and there is no line continuation character.
+In Visual Basic, we could write:
+y = m * x + b ‘compute y for given x
+or we could write:
+Y = M * X + b ‘compute y for given x
+and both would be treated as the same. The variables Y, M, and X are the
+same whether written in upper- or lowercase. In C#, however, case is
+significant, and if we write:
+y = m * x + b; //all lowercase
+or:
+Y = m * x + b; //Y differs from y
+we mean two different variables: Y and y. While this may seem awkward
+at first, having the ability to use case to make distinctions is sometimes
+very useful. For example, programmers often capitalize symbols referring
+to constants:
+Const PI = 3.1416 As Single ‘ in VB
+const float PI = 3.1416; // in C#
+Copyright © , 2002 by James W Cooper
+30
+The const modifier in C# means that the named value is a constant and
+cannot be modified.
+Programmers also sometimes define data types using mixed case and
+variables of that data type in lowercase:
+class Temperature { //begin definition of
+//new data type
+Temperature temp; //temp is of this new type
+We’ll classes in much more detail in the chapters that follow.
+Data Types
+The major data types in C# are shown in Table 2-1.
+Table 2-1 - Data types in C#
+bool true or false
+byte unsigned 8-bit value
+short 16-bit integer
+int 32-bit integer
+long 64-bit integer
+float 32-bit floating point
+double 64-bit floating point
+char 16-bit character
+string 16-bit characters
+Note that the lengths of these basic types are irrespective of the computer
+type or operating system. Characters and strings in C# are always 16 bits
+wide: to allow for representation of characters in non-Latin languages. It
+uses a character coding system called Unicode, in which thousands of
+characters for most major written languages have been defined. You can
+convert between variable types in the usual simple ways:
+Copyright © , 2002 by James W Cooper
+31
+·  Any wider data type can have a narrower data type (having fewer
+bytes) assigned directly to it, and the promotion to the new type will
+occur automatically. If y is of type float and j is of type int, then you
+can write:
+float y = 7.0f; //y is of type float
+int j; //j is of type int
+y = j; //convert int to float
+to promote an integer to a float.
+·  You can reduce a wider type (more bytes) to a narrower type by
+casting it. You do this by putting the data type name in parentheses
+and putting it in front of the value you wish to convert:
+j = (int)y; //convert float to integer
+You can also write legal statements that contain casts that might fail, such
+as
+float x = 1.0E45;
+int k = (int) x;
+If the cast fails, an exception error will occur when the program is
+executed.
+Boolean variables can only take on the values represented by the reserved
+words true and false. Boolean variables also commonly receive values as a
+result of comparisons and other logical operations:
+int k;
+boolean gtnum;
+gtnum = (k > 6); //true if k is greater than 6
+Unlike C or C++, you cannot assign numeric values to a boolean variable
+and you cannot convert between boolean and any other type.
+Copyright © , 2002 by James W Cooper
+32
+Converting Between Numbers and Strings
+To make a string from a number or a number from a string, yo u can use
+the Convert methods. You can usually find the right one by simply typing
+Convert and a dot in the development enviroment, and the system will
+provide you with a list of likely methods.
+string s = Convert.ToString (x);
+float y = Convert.ToSingle (s);
+Note that “Single” means a single-precision floating point number.
+Numeric objects also provide various kinds of formatting options to
+specify the number of decimal places:
+float x = 12.341514325f;
+string s =x.ToString ("###.###"); //gives 12.342
+Declaring Multiple Variables
+You should note that in C#, you can declare a number of variables of the
+same type in a single statement:
+int i, j;
+float x, y, z;
+This is unlike VB6, where you had to specify the type of each variable as
+you declare it:
+Dim i As Integer, j As Integer
+Dim x As Single, y As Single, z As Single
+Numeric Constants
+Any number you type into your program is automatically of type int if it
+has no fractional part or type double if it does. If you want to indicate that
+it is a different type, you can use various suffix and prefix characters:
+float loan = 1.23f; //float
+long pig = 45L; //long
+int color = 0x12345; //hexadecimal
+Copyright © , 2002 by James W Cooper
+33
+C# also has three reserved word constants: true, false, and null, where null
+means an object variable that does not yet refer to any object. We’ll learn
+more about objects in the following chapters
+Character Constants
+You can represent individual characters by enclosing them in single
+quotes:
+char c = ‘q’;
+C# follows the C convention that the white space characters (non printing
+characters that cause the printing position to change) can be represented
+by preceding special characters with a backslash, as shown in Table 2-2.
+Since the backslash itself is thus a special character, it can be represented
+by using a double backslash
+‘\n’ newline (line feed)
+‘\r’ carriage return
+‘\t’ tab character
+‘\b’ backspace
+‘\f’ form feed
+‘\0’ null character
+‘\”’ double quote
+‘\’’ single quote
+‘\\’ backslash
+Table 2-2 Representations of white space and special characters.
+Variables
+Variable names in C# can be of any length and can be of any combination
+of upper- and lowercase letters and numbers, but like VB, the first
+character must be a letter. Note that since case is significant in C#, the
+following variable names all refer to different variables:
+temperature
+Copyright © , 2002 by James W Cooper
+34
+Temperature
+TEMPERATURE
+You must declare all C# variables that you use in a program before you
+use them:
+int j;
+float temperature;
+boolean quit;
+Declaring Variables as You Use Them
+C# also allows you to declare variables just as you need them rather than
+requiring that they be declared at the top of a procedure:
+int k = 5;
+float x = k + 3 * y;
+This is very common in the object-oriented programming style, where we
+might declare a variable inside a loop that has no existence or scope
+outside that local spot in the program.
+Multiple Equals Signs for Initialization
+C#, like C, allows you to initialize a series of variables to the same value
+in a single statement
+i = j = k = 0;
+This can be confusing, so don’t overuse this feature. The compiler will
+generate the same code for:
+i = 0; j = 0; k = 0;
+whether the statements are on the same or successive lines.
+A Simple C# Program
+Now let’s look at a very simple C# program for adding two numbers
+together. This program is a stand-alone program, or application.
+using System;
+class add2
+{
+Copyright © , 2002 by James W Cooper
+35
+static void Main(string[] args)
+{
+double a, b, c; //declare variables
+a = 1.75; //assign values
+b = 3.46;
+c = a + b; //add together
+//print out sum
+Console.WriteLine ("sum = " + c);
+}
+}
+This is a complete program as it stands, and if you compile it with the C#
+compiler and run it, it will print out the result:
+sum = 5.21
+Let’s see what observations we can make about this simple program: This
+is the way I want it.
+1. You must use the using statement to define libraries of C# code
+that you want to use in your program. This is similar to the imports
+statement in VB, and similar to the C and C++ #include directive.
+2. The program starts from a function called main and it must have
+exactly the form shown here:
+static void Main(string[] args)
+3. Every program module must contain one or more classes.
+4. The class and each function within the class is surrounded by
+braces { }.
+5. Every variable must be declared by type before or by the time it is
+used. You could just as well have written:
+double a = 1.75;
+double b = 3.46;
+double c = a + b;
+Copyright © , 2002 by James W Cooper
+36
+6. Every statement must terminate with a semicolon. Statements can
+go on for several lines but they must terminate with the semicolon.
+7. Comments start with // and terminate at the end of the line.
+8. Like most other languages (except Pascal), the equals sign is used
+to represent assignment of data.
+9. You can use the + sign to combine two strings. The string “sum =”
+is concatenated with the string automatically converted from the
+double precision variable c.
+10. The writeLine function, which is a member of the Console class in
+the System namespace, can be used to print values on the screen.
+Compiling & Running This Program
+This simple program is called add2.cs. You can compile and execute it by
+in the development enviroment by just pressing F5.
+Arithmetic Operators
+The fundamental operators in C# are much the same as they are in most
+other modern languages. Table 2-3 lists the fundamental operators in C#
++ addition
+- subtraction, unary minus
+* multiplication
+/ division
+% modulo (remainder after integer division)
+Table 2-3: C# arithmetic operators
+The bitwise and logical operators are derived from C rather (see Table
+2-4). Bitwise operators operate on individual bits of two words, producing
+a result based on an AND, OR or NOT operation. These are distinct from
+the Boolean operators, because they operate on a logical condition which
+evaluates to true or false.
+Copyright © , 2002 by James W Cooper
+37
+& bitwise And
+| bitwise Or
+^ bitwise exclusive Or
+~ one’s complement
+>> n right shift n places
+<< n left shift n places
+Table 2-4 Logical Operators in C#
+Increment and Decrement Operators
+Like Java and C/C++ , C# allows you to express incrementing and
+decrementing of integer variables using the ++and -- operators. You can
+apply these to the variable before or after you use it:
+i = 5;
+j = 10;
+x = i++; //x = 5, then i = 6
+y = --j; //y = 9 and j = 9
+z = ++i; //z = 7 and i = 7
+Combining Arithmetic and Assignment Statements
+C# allows you to combine addition, subtraction, multiplication, and
+division with the assignment of the result to a new variable:
+x = x + 3; //can also be written as:
+x += 3; //add 3 to x; store result in x
+//also with the other basic operations:
+temp *= 1.80; //mult temp by 1.80
+z -= 7; //subtract 7 from z
+y /= 1.3; //divide y by 1.3
+This is used primarily to save typing; it is unlikely to generate any
+different code. Of course, these compound operators (as well as the ++
+and – operators) cannot have spaces between them.
+Copyright © , 2002 by James W Cooper
+38
+Making Decisions in C#
+The familiar if-then-else of Visual Basic, Pascal and Fortran has its analog
+in C#. Note that in C#, however, we do not use the then keyword:
+if ( y > 0 )
+z = x / y;
+Parentheses around the condition are required in C#. This format can be
+somewhat deceptive; as written, only the single statement following the if
+is operated on by the if statement. If you want to have several statements
+as part of the condition, you must enclose them in braces:
+if ( y > 0 )
+{
+z = x / y;
+Console.writeLine(“z = “ + z);
+}
+By contrast, if you write:
+if ( y > 0 )
+z = x / y;
+Console.writeLine(“z = “ + z);
+the C# program will always print out z= and some number, because the if
+clause only operates on the single statement that follows. As you can see,
+indenting does not affect the program; it does what you say, not what you
+mean.
+If you want to carry out either one set of statements or another depending
+on a single condition, you should use the else clause along with the if
+statement:
+if ( y > 0 )
+z = x / y;
+else
+z = 0;
+and if the else clause contains multiple statements, they must be enclosed
+in braces, as in the code above.
+Copyright © , 2002 by James W Cooper
+39
+There are two or more accepted indentation styles for braces in C#
+programs:
+if (y >0 )
+{
+z = x / y;
+}
+The other style, popular among C programmers, places the brace at the
+end of the if statement and the ending brace directly under the if:
+if ( y > 0 ) {
+z = x / y;
+Console.writeLine(“z=” + z);
+}
+You will see both styles widely used, and of course, they compile to
+produce the same result.
+Comparison Operators
+Above, we used the > operator to mean “greater than.” Most of these
+operators are the same in C# as they are in C and other languages. In Table
+2-5, note particularly that “is equal to” requires two equal signs and that
+“not equal” is different than in FORTRAN or VB.
+> greater than
+< less than
+== is equal to
+!= is not equal to
+>= greater than or equal to
+<= less than or equal to
+Table 2-5: Comparison Operators in C#
+Combining Conditions
+When you need to combine two or more conditions in a single if or other
+logical statement, you use the symbols for the logical and, or, and not
+operators (see Table 3-6). These are totally different than any other
+Copyright © , 2002 by James W Cooper
+40
+languages except C/C++ and are confusingly like the bitwise operators
+shown in Table 2-6.
+&& logical And
+|| logical Or
+~ logical Not
+Table 2-6 Boolean operators in C#
+So, while in VB.Net we would write:
+If ( 0 < x) And (x <= 24) Then
+Console.writeLine (“Time is up”)
+in C# we would write:
+if ( (0 < x) && ( x <= 24) )
+Console.writeLine(“Time is up”);
+The Most Common Mistake
+Since the is equal to operator is == and the assignment operator is = they
+can easily be misused. If you write
+if (x = 0)
+Console.writeLine(“x is zero”);
+instead of:
+if (x == 0)
+Console.writeLine(“x is zero”);
+you will get the confusing compilation error, “Cannot implcitly convert
+double to bool,” because the result of the fragment:
+(x = 0)
+is the double precision number 0, rather than a Boolean true or false. Of
+course, the result of the fragment:
+(x == 0)
+is indeed a Boolean quantity and the compiler does not print any error
+message.
+Copyright © , 2002 by James W Cooper
+41
+The switch Statement
+The switch statement allows you to provide a list of possible values for a
+variable and code to execute if each is true. In C#, however, the variable
+you compare in a switch statement must be either an integer or a character
+type and must be enclosed in parentheses:
+switch ( j ) {
+case 12:
+System.out.println(“Noon”);
+break;
+case 13:
+System.out.println(“1 PM”); ”
+break;
+default:
+System.out.println(“some other time...”);
+}
+Note particularly that a break statement must follow each case in the
+switch statement. This is very important, as it says “go to the end of the
+switch statement.” If you leave out the break statement, the code in the
+next case statement is executed as well.
+C# Comments
+As you have already seen, comments in C# start with a double forward
+slash and continue to the end of the current line. C# also recognizes Cstyle
+comments which begin with /* and continue through any number of
+lines until the */ symbols are found.
+//C# single-line comment
+/*other C# comment style*/
+/* also can go on
+for any number of lines*/
+You can’t nest C# comments; once a comment begins in one style it
+continues until that style concludes.
+Your initial reaction as you are learning a new language may be to ignore
+comments, but they are just as important at the outset as they are later. A
+program never gets commented at all unless you do it as you write it, and
+Copyright © , 2002 by James W Cooper
+42
+if you ever want to use that code again, you’ll find it very helpful to have
+some comments to help you in deciphering what you meant for it to do.
+For this reason, many programming instructors refuse to accept programs
+that are not thoroughly commented.
+The Ornery Ternary Operator
+C# has unfortunately inherited one of C/C++ and Java’s most opaque
+constructions, the ternary operator. The statement:
+if ( a > b )
+z = a;
+else
+z = b;
+can be written extremely compactly as:
+z = (a > b) ? a : b;
+The reason for the original introduction of this statement into the C
+language was, like the post- increment operators, to give hints to the
+compiler to allow it to produce more efficient code, and to reduce typing
+when terminals were very slow. Today, modern compilers produce
+identical code for both forms given above, and the necessity for this
+turgidity is long gone. Some C programmers coming to C# find this an
+“elegant” abbreviation, but we don’t agree and will not be using it in this
+book.
+Looping Statements in C#
+C# has four looping statements: while, do-while, for and foreach. Each of
+them provides ways for you to specify that a group of statements should
+be executed until some condition is satisfied.
+The while Loop
+The while loop is easy to understand. All of the statements inside the
+braces are executed repeated as long as the condition is true.
+i = 0;
+while ( i < 100)
+Copyright © , 2002 by James W Cooper
+43
+{
+x = x + i++;
+}
+Since the loop is executed as long as the condition is true, it is possible
+that such a loop may never be executed at all, and of course, if you are not
+careful, that such a while loop will never be completed.
+The do-while Statement
+The C# do-while statement is quite analogous, except that in this case the
+loop must always be executed at least once, since the test is at the bottom
+of the loop:
+i = 0;
+do {
+x += i++;
+}
+while (i < 100);
+The for Loop
+The for loop is the most structured. It has three parts: an initializer, a
+condition, and an operation that takes place each time through the loop.
+Each of these sections are separated by semicolons:
+for (i = 0; i< 100; i++) {
+x += i;
+}
+Let’s take this statement apart:
+for (i = 0; //initialize i to 0
+i < 100 ; //continue as long as i < 100
+i++) //increment i after every pass
+In the loop above, i starts the first pass through the loop set to zero. A test
+is made to make sure that i is less than 100 and then the loop is executed.
+After the execution of the loop, the program returns to the top, increments
+i and again tests to see if it is less than 100. If it is, the loop is again
+executed.
+Copyright © , 2002 by James W Cooper
+44
+Note that this for loop carries out exactly the same operations as the while
+loop illustrated above. It may never be executed and it is possible to write
+a for loop that never exits.
+Declaring Variables as Needed in For Loops
+One very common place to declare variables on the spot is when you need
+an iterator variable for a for loop. You can simply declare that variable
+right in the for statement, as follows:
+for (int i = 0; i < 100; i++)
+Such a loop variable exists or has scope only within the loop. It vanishes
+once the loop is complete. This is important because any attempt to
+reference such a variable once the loop is complete will lead to a compiler
+error message. The following code is incorrect:
+for (int i =0; i< 5; i++) {
+x[i] = i;
+}
+//the following statement is in error
+//because i is now out of scope
+System.out.println(“i=” + i);
+Commas in for Loop Statements
+You can initialize more than one variable in the initializer section of the
+C# for statement, and you can carry out more than one operation in the
+operation section of the statement. You separate these statements with
+commas:
+for (x=0, y= 0, i =0; i < 100; i++, y +=2)
+{
+x = i + y;
+}
+It has no effect on the loop’s efficiency, and it is far clearer to write:
+x = 0;
+y = 0;
+for ( i = 0; i < 100; i++)
+{
+Copyright © , 2002 by James W Cooper
+45
+x = i + y;
+y += 2;
+}
+It is possible to write entire programs inside an overstuffed for statement
+using these comma operators, but this is only a way of obfuscating the
+intent of your program.
+How C# Differs From C
+If you have been exposed to C, or if you are an experienced C
+programmer, you might be interested in the main differences between C#
+and C:
+1. C# does not usually make use of pointers. You can only increment,
+or decrement a variable as if it were an actual memory pointer
+inside a special unsafe block.
+2. You can declare variables anywhere inside a method you want to;
+they don’t have to be at the beginning of the method.
+3. You don’t have to declare an object before you use it; you can
+define it just as you need it.
+4. C# has a somewhat different definition of the struct types, and does
+not support the idea of a union at all.
+5. C# has enumerated types, which allow a series of named values,
+such as colors or day names, to be assigned sequential numbers, but
+the syntax is rather different.
+6. C# does not have bitfields: variables that take up less than a byte of
+storage.
+7. C# does not allow variable length argument lists. You have to
+define a method for each number and type of argument. However
+Copyright © , 2002 by James W Cooper
+46
+C# allows for the last argument of a function to be a variable
+parameter array.
+Summary
+In this brief chapter, we have seen the fundamental syntax elements of the
+C# language. Now that we understand the tools, we need to see how to use
+them. In the chapters that follow, we’ll take up objects and show how to
+use them and how powerful they can be.
+Copyright © , 2002 by James W Cooper
+47
+3. Writing Windows C# Programs
+The C# language has its roots in C++, Visual Basic and Java. Both C# and
+VB.Net utilize the same libraries and compile to the same underlying
+code. Both are managed languages with garbage collection of unused
+variable space and both can be used interchangeably. Both also use classes
+with method names that are very similar to those in Java, so if you are
+familiar with Java, you will have no trouble with C#.
+Objects in C#
+In C#, everything is treated as an object. Objects contain data and have
+methods that operate on them. For example, strings are now objects. They
+have methods such as
+Substring
+ToLowerCase
+ToUpperCase
+IndexOf
+Insert
+and so forth.
+Integers, float and double variables are also objects, and have methods.
+string s;
+float x;
+x = 12.3;
+s = x.ToString();
+Note that conversion from numerical types is done using these methods
+rather than external functions. If you want to format a number as a
+particular kind of string, each numeric type has a Format method.
+Copyright © , 2002 by James W Cooper
+48
+Managed Languages and Garbage Collection
+C# and VB.Net are both managed languages. This has two major
+implications. First, both are compiled to an intermediate low-level
+language, and a common language runtime (CLR) is used to execute this
+compiled code, perhaps compiling it further first. So, not only do C# and
+VB.Net share the same runtime libraries, they are to a large degree two
+sides of the same coin and two aspects of the same language system. The
+differences are that VB7 is more Visual Basic like and a bit easier for VB
+programmers to learn and use. C# on the other hand is more C++ and
+Java- like, and may appeal more to programmers already experienced in
+those languages.
+The other major implication is that managed languages are garbagecollected.
+Garbage collected languages take care of releasing unused
+memory: you never have to be concerned with this. As soon as the garbage
+collection system detects that there are no more active references to a
+variable, array or object, the memory is released back to the system. So
+you no longer need to worry as much about running out of memory
+because you allocated memory and never released it. Of course, it is still
+possible to write memory-eating code, but for the most part you do not
+have to worry about memory allocation and release problems.
+Classes and Namespaces in C#
+All C# programs are composed entirely of classes. Visual windows forms
+are a type of class, as we will see that all the program features we’ll write
+are composed of classes. Since everything is a class, the number of names
+of class objects can get to be pretty overwhelming. They have therefore
+been grouped into various functional libraries that you must specifically
+mention in order to use the functions in these libraries.
+Under the covers these libraries are each individual DLLs. However, you
+need only refer to them by their base names using the using statement, and
+the functions in that library are available to you.
+using System;
+Copyright © , 2002 by James W Cooper
+49
+using System.Drawing;
+using System.Collections;
+Logically, each of these libraries represents a different namespace. Each
+namespace is a separate group of class and method names which the
+compiler will recognize after you declare that name space. You can use
+namespaces that contain identically named classes or methods, but you
+will only be notified of a conflict if you try to use a class or method that is
+duplicated in more than one namespace.
+The most common namespace is the System namespace, and it is imported
+by default without your needing to declare it. It contains many of the most
+fundamental classes and methods that C# uses for access to basic classes
+such as Application, Array, Console, Exceptions, Objects, and standard
+objects such as byte, bool, string. In the simplest C# program we can
+simply write a message out to the console without ever bringing up a
+window or form:
+class Hello {
+static void Main(string[] args) {
+Console.WriteLine ("Hello C# World");
+}
+}
+This program just writes the text “Hello C# World” to a command (DOS)
+window. The entry point of any program must be a Main method, and it
+must be declared as static.
+Building a C# Application
+Let’s start by creating a simple console application: that is, one without
+any windows, that just runs from the command line. Start the Visual
+Studio.NET program, and select File |New Project. From the selection
+box, choose C# Console application as shown in Figure 3-1.
+Copyright © , 2002 by James W Cooper
+50
+Figure 3-1 – The New Project selection window. Selecting a console application.
+This will bring up a module, with Main already filled in. You can type in
+the rest of the code as follows:
+Console.WriteLine ("Hello C# World");
+You can compile this and run it by pressing F5.
+When you compile and run the program by pressing F5, a DOS window
+will appear and print out the message “Hello C# World” and exit.
+The Simplest Window Program in C#
+C# makes it very easy to create Windows GUI programs. In fact, you can
+create most of it using the Windows Designer. To do this, start Visual
+Studio.NET and select File|New project, and select C# Windows
+Application. The default name (and filename) is WindowsApplication1,
+but you can change this before you close the New dialog box. This brings
+up a single form project, initially called Form1.cs. You can then use the
+Toolbox to insert controls, just as you can in Visual Basic.
+Copyright © , 2002 by James W Cooper
+51
+The Windows Designer for a simple form with one text field and one
+button is shown in Figure 3-2.
+Figure 3-2 – The Windows designer in Visual Studio.NET
+You can draw the controls on the form by selecting the TextBox from the
+Toolbox and dragging it onto the form, and then doing the same with the
+button. Then to create program code, we need only double click on the
+controls. In this simple form, we want to click on the “Hello” button and
+it copies the text from the text field to the textbox we called txHi, and
+clears the text field. So, in the designer, we double click on that button and
+the code below is automatically generated:
+private void btHello_Click(object sender, EventArgs e) {
+txHi.Text ="Hello there";
+}
+Note that the Click routine passes in a sender object and an event object
+that you can query for further information. Under the covers, it also
+connects the event to this method. The running program is shown in
+Figure 3-3.
+Copyright © , 2002 by James W Cooper
+52
+Figure 3-3 – The SimpleHello form after clicking the Say Hello button.
+While we only had to write one line of code inside the above subroutine, it
+is instructive to see how different the rest of the code is for this program.
+We first see that several libraries of classes are imported so the program
+can use them:
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Data;
+Most significant is the Windows.Forms library, which is common to all
+the .Net languages.
+The code the designer generates for the controls is illuminating. And it is
+right there in the open for you to change if you want. Essentially, each
+control is declared as a variable and added to a container. Here are the
+control declarations. Note the event handler added to the btHello.Click
+event.
+private System.Windows.Forms.TextBox txHi;
+private System.Windows.Forms.Button btHello;
+private void InitializeComponent() {
+this.btHello = new System.Windows.Forms.Button();
+this.txHi = new System.Windows.Forms.TextBox();
+Copyright © , 2002 by James W Cooper
+53
+this.SuspendLayout();
+//
+// btHello
+//
+this.btHello.Location = new System.Drawing.Point(80,
+112);
+this.btHello.Name = "btHello";
+this.btHello.Size = new System.Drawing.Size(64, 24);
+this.btHello.TabIndex = 1;
+this.btHello.Text = "Hello";
+this.btHello.Click += new
+EventHandler(this.btHello_Click);
+//
+// txHi
+//
+this.txHi.Location = new System.Drawing.Point(64,
+48);
+this.txHi.Name = "txHi";
+this.txHi.Size = new System.Drawing.Size(104, 20);
+this.txHi.TabIndex = 0;
+this.txHi.Text = "";
+//
+// Form1
+//
+this.AutoScaleBaseSize = new System.Drawing.Size(5,
+13);
+this.ClientSize = new System.Drawing.Size(240, 213);
+this.Controls.AddRange(
+new System.Windows.Forms.Control[] {
+this.btHello,
+this.txHi});
+this.Name = "Form1";
+this.Text = "Hello window";
+this.ResumeLayout(false);
+}
+If you change this code manually instead of using the property page, the
+window designer may not work any more. We’ll look more at the power
+of this system after we discuss objects and classes in the following
+chapter.
+Copyright © , 2002 by James W Cooper
+54
+Windows Controls
+All of the basic Windows controls work in much the same way as the
+TextBox and Button we have used so far. Many of the more common ones
+are shown in the Windows Controls program in Figure 3-4.
+Figure 3-4 – A selection of basic Windows controls.
+Each of these controls has properties such as Name, Text, Font, Forecolor
+and Borderstyle that you can change most conveniently using the
+properties window shown at the right of Figure 3-2. You can also change
+these properties in your program code as well. The Windows Form class
+that the designer generates always creates a Form1 constructor that calls
+an InitializeComponent method like the one above. One that method has
+been called, the rest of the controls have been created and you can change
+their properties in code. Generally, we will create a private init() method
+that is called right after the InitializeComponent method, in which we add
+any such additional initialization code.
+Copyright © , 2002 by James W Cooper
+55
+Labels
+A label is a field on the window form that simply displays text. Usually
+programmers use this to label the purpose of text boxes next to them. You
+can’t click on a label or tab to it so it obtains the focus. However, if you
+want, you can change the major properties in Table 3-1 either in the
+designer or at runtime.
+Property Value
+Name At design time only
+BackColor A Color object
+BorderStyle None, FixedSingle or Fixed3D
+Enabled true or false. If false , grayed out.
+Font Set to a new Font object
+ForeColor A Color object
+Image An image to be displayed within the label
+ImageAlign Where in the label to place the image
+Text Text of the label
+Visible true or false
+Table 3-1 –Properties for the Label Control
+TextBox
+The TextBox is a single line or multiline editable control. You can set or
+get the contents of that box using its Text property:
+TextBox tbox = new TextBox();
+tbox.Text = "Hello there";
+In addition to the properties in Table 3-1, the TextBox also supports the
+properties in Table 3-2.
+Property Value
+Lines An array of strings, one per line
+Locked If true, you can’t type into the text box
+Multiline true or false
+ReadOnly Same as locked. If true, you can still
+select the text and copy it, or set values
+from within code.
+Copyright © , 2002 by James W Cooper
+56
+from within code.
+WordWrap true or false
+Table 3-2 – TextBox properties
+CheckBox
+A CheckBox can either be checked or not, depending on the value of the
+Checked property. You can set or interrogate this property in code as well
+as in the designer. You can create an event handler to catch the event
+when the box is checked or unchecked, by double clicking on the
+checkbox in the design mode.
+CheckBoxes have a Appearance property which can be set to
+Appearance.Normal or Appearance.Button. When the appearance is set to
+the Button value, the control appears acts like a toggle button that stays
+depressed when you click on it and becomes raised when you click on it
+again. All the properties in Table 3-1 apply as well.
+Buttons
+A Button is usually used to send a command to a program. When you
+click on it, it causes an event that you usually catch with an event handler.
+Like the CheckBox, you create this event handler by double clicking on
+the button in the designer. All of the properties in Table 3-1 can be used as
+well.
+Buttons are also frequently shown with images on them. You can set the
+button image in the designer or at run time. The images can be in bmp, gif,
+jpeg or icon files.
+Radio buttons
+Radio buttons or option buttons are round buttons that can be selected by
+clicking on them. Only one of a group of radio buttons can be selected at a
+time. If there is more than one group of radio buttons on a window form,
+you should put each set of buttons inside a Group box as we did in the
+program in Figure 3-1. As with checkboxes and buttons, you can attach
+Copyright © , 2002 by James W Cooper
+57
+events to clicking on these buttons by double clicking on them in the
+designer. Radio buttons do not always have events associated with them.
+Instead, programmers check the Checked property of radio buttons when
+some other event, like an OK button click occurs.
+Listboxes and Combo Boxes
+Both list boxes and Combo boxes contain an Items array of the elements
+in that list. A ComboBox is a single line drop-down, that programmers use
+to save space when selections are changed less frequently. ListBoxes
+allow you to ser properties that allow multiple selections, but
+ComboBoxes do not. Some of their properties include those in Table 3-3.
+Property Value
+Items A collection of items in the list
+MultiColumn If true, the ColumnWidth property
+describes the width of each column.
+SelectionMode One, MultiSimple or MultiExtended. If
+set to MultiSimple, you can select or
+deselect multiple items with a mouse
+click. If set to MultiExtended, you can
+select groups of adjacent items with a
+mouse.
+SelectedIndex Index of selected item
+SelectedIndices Returns collection of selections when
+list box selection mode is multiple.
+SelectedItem Returns the item selected
+Table 3-3 –The ListBox and ComboBox properties. SelectionMode and
+MultiColumn do not apply to combo boxes.
+The Items Collection
+You use the Items collection in the ListBox and ComboBox to add and
+remove elements in the displayed list. It is essentially an ArrayList, as we
+discuss in Chapter 8. The basic methods are shown in Table 3-4.
+Method Value
+Copyright © , 2002 by James W Cooper
+58
+Add Add object to list
+Count Number in list
+Item[i] Element in collection
+RemoveAt(i) Remove element i
+Table 3-4 – Methods for the Items Collection
+If you set a ListBox to a multiple selection mode, you can obtain a
+collection of the selected items or the selected indexes by
+ListBox.SelectedIndexCollection it =
+new ListBox.SelectedIndexCollection (lsCommands);
+ListBox.SelectedObjectCollection so =
+new ListBox.SelectedObjectCollection (lsCommands);
+where lsCommands is the list box name.
+Menus
+You add menus to a window by adding a MainMenu controls to the
+window form. Then, you can the menu control and edit its drop-down
+names and new main item entries as you see in Figure 3-5.
+Figure 3-5 – Adding a menu to a form.
+As with other clickable controls, double clicking on one in the designer
+creates an event whose code you can fill in.
+ToolTips
+A ToolTip is a box that appears when your mouse pointer hovers over a
+control in a window. This feature is activated by adding an (invisible)
+ToolTip control to the form, and then adding specific tool tips control and
+Copyright © , 2002 by James W Cooper
+59
+text combinations to the control. In our example in Figure 3-4, we add
+tooltips text to the button and list box using the tips control we have added
+to the window.
+tips.SetToolTip (btPush, "Press to add text to list box");
+tips.SetToolTip (lsCommands, "Click to copy to text box");
+This is illustrated in Figure 3-6.
+Figure 3-6 – A ToolTip over a button.
+Other Windows Controls
+We discuss how to use the Datagr id and TreeList in the Adapter and
+Bridge pattern chapters, and the Toolbar in the State and Strategey pattern
+chapters.
+The Windows Controls Program
+This program, shown in Figure 3-4, has the following features. The text in
+the label changes whenever you change the
+·  Font size from the combo box
+·  Font color from the radio buttons
+·  Font bold from the check box.
+For the check box, we create a new font which is either bold or not
+depending on the state of the check box:
+private void ckBold_CheckedChanged(object sender, EventArgs e) {
+if (ckBold.Checked ) {
+lbText.Font =new Font ("Arial",
+fontSize,FontStyle.Bold );
+}
+Copyright © , 2002 by James W Cooper
+60
+else {
+lbText.Font = new Font ("Arial", fontSize);
+}
+}
+When we create the form, we add the list of font sizes to the combo box:
+private void init() {
+fontSize = 12;
+cbFont.Items.Add ("8");
+cbFont.Items.Add ("10");
+cbFont.Items.Add ("12");
+cbFont.Items.Add ("14");
+cbFont.Items.Add ("18");
+lbText.Text ="Greetings";
+tips.SetToolTip (btPush, "Press to add text to list box");
+tips.SetToolTip (lsCommands, "Click to copy to text box");
+}
+When someone clicks on a font size in the combo box, we convert that
+text to a number and create a font of that size. Note that we just call the
+check box changing code so we don’t have to duplicate anything.
+private void cbFont_SelectedIndexChanged(
+object sender, EventArgs e) {
+fontSize= Convert.ToInt16 (cbFont.SelectedItem );
+ckBold_CheckedChanged(null, null);
+}
+For each radio button, we click on it and insert color-changing code:
+private void opGreen_CheckedChanged(object sender, EventArgs e) {
+lbText.ForeColor =Color.Green;
+}
+private void opRed_CheckedChanged(object sender, EventArgs e) {
+lbText.ForeColor =Color.Red ;
+}
+private void opBlack_CheckedChanged(object sender, EventArgs e) {
+lbText.ForeColor =Color.Black ;
+}
+When you click on the ListBox, it copies that text into the text box, by
+getting the selected item as an object and converting it to a string.
+Copyright © , 2002 by James W Cooper
+61
+private void lsCommands_SelectedIndexChanged(
+object sender, EventArgs e) {
+txBox.Text = lsCommands.SelectedItem.ToString () ;
+}
+Finally, when you click on the File | Exit menu item, it closes the form,
+and hence the program:
+private void menuItem2_Click(object sender, EventArgs e) {
+this.Close ();
+}
+Summary
+Now that we’ve seen the basics of how you write programs in C#, we are
+ready to talk more about objects and OO programming in the chapters that
+follow.
+Programs on the CD-ROM
+Console Hello \IntroCSharp\Hello
+Windows hello \IntroCSharp\SayHello
+Windows controls \IntroCSharp\WinControls

@@ -1,0 +1,684 @@
+The Open Group Base Specifications Issue 6
+IEEE Std 1003.1, 2004 Edition
+Copyright © 2001-2004 The IEEE and The Open Group, All Rights reserved.
+2. Shell Command Language
+
+This chapter contains the definition of the Shell Command Language.
+2.1 Shell Introduction
+
+The shell is a command language interpreter. This chapter describes the syntax of that command language as it is used by the sh utility and the system() and popen() functions defined in the System Interfaces volume of IEEE Std 1003.1-2001.
+
+The shell operates according to the following general overview of operations. The specific details are included in the cited sections of this chapter.
+
+    The shell reads its input from a file (see sh), from the -c option or from the system() and popen() functions defined in the System Interfaces volume of IEEE Std 1003.1-2001. If the first line of a file of shell commands starts with the characters "#!", the results are unspecified.
+
+    The shell breaks the input into tokens: words and operators; see Token Recognition.
+
+    The shell parses the input into simple commands (see Simple Commands) and compound commands (see Compound Commands).
+
+    The shell performs various expansions (separately) on different parts of each command, resulting in a list of pathnames and fields to be treated as a command and arguments; see Word Expansions.
+
+    The shell performs redirection (see Redirection) and removes redirection operators and their operands from the parameter list.
+
+    The shell executes a function (see Function Definition Command), built-in (see Special Built-In Utilities), executable file, or script, giving the names of the arguments as positional parameters numbered 1 to n, and the name of the command (or in the case of a function within a script, the name of the script) as the positional parameter numbered 0 (see Command Search and Execution).
+
+    The shell optionally waits for the command to complete and collects the exit status (see Exit Status for Commands).
+
+2.2 Quoting
+
+Quoting is used to remove the special meaning of certain characters or words to the shell. Quoting can be used to preserve the literal meaning of the special characters in the next paragraph, prevent reserved words from being recognized as such, and prevent parameter expansion and command substitution within here-document processing (see Here-Document).
+
+The application shall quote the following characters if they are to represent themselves:
+
+    |  &  ;  <  >  (  )  $  `  \  "  '  <space>  <tab>  <newline>
+
+and the following may need to be quoted under certain circumstances. That is, these characters may be special depending on conditions described elsewhere in this volume of IEEE Std 1003.1-2001:
+
+    *   ?   [   #   ˜   =   %
+
+The various quoting mechanisms are the escape character, single-quotes, and double-quotes. The here-document represents another form of quoting; see Here-Document.
+2.2.1 Escape Character (Backslash)
+
+A backslash that is not quoted shall preserve the literal value of the following character, with the exception of a <newline>. If a <newline> follows the backslash, the shell shall interpret this as line continuation. The backslash and <newline>s shall be removed before splitting the input into tokens. Since the escaped <newline> is removed entirely from the input and is not replaced by any white space, it cannot serve as a token separator.
+2.2.2 Single-Quotes
+
+Enclosing characters in single-quotes ( '' ) shall preserve the literal value of each character within the single-quotes. A single-quote cannot occur within single-quotes.
+2.2.3 Double-Quotes
+
+Enclosing characters in double-quotes ( "" ) shall preserve the literal value of all characters within the double-quotes, with the exception of the characters dollar sign, backquote, and backslash, as follows:
+
+$
+    The dollar sign shall retain its special meaning introducing parameter expansion (see Parameter Expansion), a form of command substitution (see Command Substitution), and arithmetic expansion (see Arithmetic Expansion).
+
+    The input characters within the quoted string that are also enclosed between "$(" and the matching ')' shall not be affected by the double-quotes, but rather shall define that command whose output replaces the "$(...)" when the word is expanded. The tokenizing rules in Token Recognition , not including the alias substitutions in Alias Substitution , shall be applied recursively to find the matching ')'.
+
+    Within the string of characters from an enclosed "${" to the matching '}', an even number of unescaped double-quotes or single-quotes, if any, shall occur. A preceding backslash character shall be used to escape a literal '{' or '}'. The rule in Parameter Expansion shall be used to determine the matching '}' .
+`
+    The backquote shall retain its special meaning introducing the other form of command substitution (see Command Substitution). The portion of the quoted string from the initial backquote and the characters up to the next backquote that is not preceded by a backslash, having escape characters removed, defines that command whose output replaces "`...`" when the word is expanded. Either of the following cases produces undefined results:
+
+        A single-quoted or double-quoted string that begins, but does not end, within the "`...`" sequence
+
+        A "`...`" sequence that begins, but does not end, within the same double-quoted string
+
+\
+    The backslash shall retain its special meaning as an escape character (see Escape Character (Backslash)) only when followed by one of the following characters when considered special:
+
+        $   `   "   \   <newline>
+
+The application shall ensure that a double-quote is preceded by a backslash to be included within double-quotes. The parameter '@' has special meaning inside double-quotes and is described in Special Parameters.
+2.3 Token Recognition
+
+The shell shall read its input in terms of lines from a file, from a terminal in the case of an interactive shell, or from a string in the case of sh -c or system(). The input lines can be of unlimited length. These lines shall be parsed using two major modes: ordinary token recognition and processing of here-documents.
+
+When an io_here token has been recognized by the grammar (see Shell Grammar), one or more of the subsequent lines immediately following the next NEWLINE token form the body of one or more here-documents and shall be parsed according to the rules of Here-Document.
+
+When it is not processing an io_here, the shell shall break its input into tokens by applying the first applicable rule below to the next character in its input. The token shall be from the current position in the input until a token is delimited according to one of the rules below; the characters forming the token are exactly those in the input, including any quoting characters. If it is indicated that a token is delimited, and no characters have been included in a token, processing shall continue until an actual token is delimited.
+
+    If the end of input is recognized, the current token shall be delimited. If there is no current token, the end-of-input indicator shall be returned as the token.
+
+    If the previous character was used as part of an operator and the current character is not quoted and can be used with the current characters to form an operator, it shall be used as part of that (operator) token.
+
+    If the previous character was used as part of an operator and the current character cannot be used with the current characters to form an operator, the operator containing the previous character shall be delimited.
+
+    If the current character is backslash, single-quote, or double-quote ( '\', '", or ' )' and it is not quoted, it shall affect quoting for subsequent characters up to the end of the quoted text. The rules for quoting are as described in Quoting. During token recognition no substitutions shall be actually performed, and the result token shall contain exactly the characters that appear in the input (except for <newline> joining), unmodified, including any embedded or enclosing quotes or substitution operators, between the quote mark and the end of the quoted text. The token shall not be delimited by the end of the quoted field.
+
+    If the current character is an unquoted '$' or '`', the shell shall identify the start of any candidates for parameter expansion ( Parameter Expansion), command substitution ( Command Substitution), or arithmetic expansion ( Arithmetic Expansion) from their introductory unquoted character sequences: '$' or "${", "$(" or '`', and "$((", respectively. The shell shall read sufficient input to determine the end of the unit to be expanded (as explained in the cited sections). While processing the characters, if instances of expansions or quoting are found nested within the substitution, the shell shall recursively process them in the manner specified for the construct that is found. The characters found from the beginning of the substitution to its end, allowing for any recursion necessary to recognize embedded constructs, shall be included unmodified in the result token, including any embedded or enclosing substitution operators or quotes. The token shall not be delimited by the end of the substitution.
+
+    If the current character is not quoted and can be used as the first character of a new operator, the current token (if any) shall be delimited. The current character shall be used as the beginning of the next (operator) token.
+
+    If the current character is an unquoted <newline>, the current token shall be delimited.
+
+    If the current character is an unquoted <blank>, any token containing the previous character is delimited and the current character shall be discarded.
+
+    If the previous character was part of a word, the current character shall be appended to that word.
+
+    If the current character is a '#', it and all subsequent characters up to, but excluding, the next <newline> shall be discarded as a comment. The <newline> that ends the line is not considered part of the comment.
+
+    The current character is used as the start of a new word.
+
+Once a token is delimited, it is categorized as required by the grammar in Shell Grammar.
+2.3.1 Alias Substitution
+
+[UP XSI] [Option Start] The processing of aliases shall be supported on all XSI-conformant systems or if the system supports the User Portability Utilities option (and the rest of this section is not further marked for these options). [Option End]
+
+After a token has been delimited, but before applying the grammatical rules in Shell Grammar , a resulting word that is identified to be the command name word of a simple command shall be examined to determine whether it is an unquoted, valid alias name. However, reserved words in correct grammatical context shall not be candidates for alias substitution. A valid alias name (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.10, Alias Name) shall be one that has been defined by the alias utility and not subsequently undefined using unalias. Implementations also may provide predefined valid aliases that are in effect when the shell is invoked. To prevent infinite loops in recursive aliasing, if the shell is not currently processing an alias of the same name, the word shall be replaced by the value of the alias; otherwise, it shall not be replaced.
+
+If the value of the alias replacing the word ends in a <blank>, the shell shall check the next command word for alias substitution; this process shall continue until a word is found that is not a valid alias or an alias value does not end in a <blank>.
+
+When used as specified by this volume of IEEE Std 1003.1-2001, alias definitions shall not be inherited by separate invocations of the shell or by the utility execution environments invoked by the shell; see Shell Execution Environment.
+2.4 Reserved Words
+
+Reserved words are words that have special meaning to the shell; see Shell Commands. The following words shall be recognized as reserved words:
+
+
+    !
+    {
+    }
+    case
+    	
+
+
+    do
+    done
+    elif
+    else
+    	
+
+
+    esac
+    fi
+    for
+    if
+    	
+
+
+    in
+    then
+    until
+    while
+
+This recognition shall only occur when none of the characters is quoted and when the word is used as:
+
+    The first word of a command
+
+    The first word following one of the reserved words other than case, for, or in
+
+    The third word in a case command (only in is valid in this case)
+
+    The third word in a for command (only in and do are valid in this case)
+
+See the grammar in Shell Grammar.
+
+The following words may be recognized as reserved words on some implementations (when none of the characters are quoted), causing unspecified results:
+
+    [[
+    	
+
+    ]]
+    	
+
+    function
+    	
+
+    select
+
+Words that are the concatenation of a name and a colon ( ':' ) are reserved; their use produces unspecified results.
+2.5 Parameters and Variables
+
+A parameter can be denoted by a name, a number, or one of the special characters listed in Special Parameters. A variable is a parameter denoted by a name.
+
+A parameter is set if it has an assigned value (null is a valid value). Once a variable is set, it can only be unset by using the unset special built-in command.
+2.5.1 Positional Parameters
+
+A positional parameter is a parameter denoted by the decimal value represented by one or more digits, other than the single digit 0. The digits denoting the positional parameters shall always be interpreted as a decimal value, even if there is a leading zero. When a positional parameter with more than one digit is specified, the application shall enclose the digits in braces (see Parameter Expansion). Positional parameters are initially assigned when the shell is invoked (see sh), temporarily replaced when a shell function is invoked (see Function Definition Command), and can be reassigned with the set special built-in command.
+2.5.2 Special Parameters
+
+Listed below are the special parameters and the values to which they shall expand. Only the values of the special parameters are listed; see Word Expansions for a detailed summary of all the stages involved in expanding words.
+
+@
+    Expands to the positional parameters, starting from one. When the expansion occurs within double-quotes, and where field splitting (see Field Splitting) is performed, each positional parameter shall expand as a separate field, with the provision that the expansion of the first parameter shall still be joined with the beginning part of the original word (assuming that the expanded parameter was embedded within a word), and the expansion of the last parameter shall still be joined with the last part of the original word. If there are no positional parameters, the expansion of '@' shall generate zero fields, even when '@' is double-quoted.
+*
+    Expands to the positional parameters, starting from one. When the expansion occurs within a double-quoted string (see Double-Quotes), it shall expand to a single field with the value of each parameter separated by the first character of the IFS variable, or by a <space> if IFS is unset. If IFS is set to a null string, this is not equivalent to unsetting it; its first character does not exist, so the parameter values are concatenated.
+#
+    Expands to the decimal number of positional parameters. The command name (parameter 0) shall not be counted in the number given by '#' because it is a special parameter, not a positional parameter.
+?
+    Expands to the decimal exit status of the most recent pipeline (see Pipelines).
+-
+    (Hyphen.) Expands to the current option flags (the single-letter option names concatenated into a string) as specified on invocation, by the set special built-in command, or implicitly by the shell.
+$
+    Expands to the decimal process ID of the invoked shell. In a subshell (see Shell Execution Environment ), '$' shall expand to the same value as that of the current shell.
+!
+    Expands to the decimal process ID of the most recent background command (see Lists) executed from the current shell. (For example, background commands executed from subshells do not affect the value of "$!" in the current shell environment.) For a pipeline, the process ID is that of the last command in the pipeline.
+0
+    (Zero.) Expands to the name of the shell or shell script. See sh for a detailed description of how this name is derived.
+
+See the description of the IFS variable in Shell Variables.
+2.5.3 Shell Variables
+
+Variables shall be initialized from the environment (as defined by the Base Definitions volume of IEEE Std 1003.1-2001, Chapter 8, Environment Variables and the exec function in the System Interfaces volume of IEEE Std 1003.1-2001) and can be given new values with variable assignment commands. If a variable is initialized from the environment, it shall be marked for export immediately; see the export special built-in. New variables can be defined and initialized with variable assignments, with the read or getopts utilities, with the name parameter in a for loop, with the ${ name= word} expansion, or with other mechanisms provided as implementation extensions.
+
+The following variables shall affect the execution of the shell:
+
+ENV
+    [UP XSI] [Option Start] The processing of the ENV shell variable shall be supported on all XSI-conformant systems or if the system supports the User Portability Utilities option. [Option End]
+
+    This variable, when and only when an interactive shell is invoked, shall be subjected to parameter expansion (see Parameter Expansion) by the shell and the resulting value shall be used as a pathname of a file containing shell commands to execute in the current environment. The file need not be executable. If the expanded value of ENV is not an absolute pathname, the results are unspecified. ENV shall be ignored if the user's real and effective user IDs or real and effective group IDs are different.
+HOME
+    The pathname of the user's home directory. The contents of HOME are used in tilde expansion (see Tilde Expansion).
+IFS
+    (Input Field Separators.) A string treated as a list of characters that is used for field splitting and to split lines into fields with the read command. If IFS is not set, the shell shall behave as if the value of IFS is <space>, <tab>, and <newline>; see Field Splitting. Implementations may ignore the value of IFS in the environment at the time the shell is invoked, treating IFS as if it were not set.
+LANG
+    Provide a default value for the internationalization variables that are unset or null. (See the Base Definitions volume of IEEE Std 1003.1-2001, Section 8.2, Internationalization Variables for the precedence of internationalization variables used to determine the values of locale categories.)
+LC_ALL
+    The value of this variable overrides the LC_* variables and LANG , as described in the Base Definitions volume of IEEE Std 1003.1-2001, Chapter 8, Environment Variables.
+LC_COLLATE
+    Determine the behavior of range expressions, equivalence classes, and multi-character collating elements within pattern matching.
+LC_CTYPE
+    Determine the interpretation of sequences of bytes of text data as characters (for example, single-byte as opposed to multi-byte characters), which characters are defined as letters (character class alpha) and <blank>s (character class blank), and the behavior of character classes within pattern matching. Changing the value of LC_CTYPE after the shell has started shall not affect the lexical processing of shell commands in the current shell execution environment or its subshells. Invoking a shell script or performing exec sh subjects the new shell to the changes in LC_CTYPE .
+LC_MESSAGES
+    Determine the language in which messages should be written.
+LINENO
+    Set by the shell to a decimal number representing the current sequential line number (numbered starting with 1) within a script or function before it executes each command. If the user unsets or resets LINENO , the variable may lose its special meaning for the life of the shell. If the shell is not currently executing a script or function, the value of LINENO is unspecified. This volume of IEEE Std 1003.1-2001 specifies the effects of the variable only for systems supporting the User Portability Utilities option.
+NLSPATH
+    [XSI] [Option Start] Determine the location of message catalogs for the processing of LC_MESSAGES . [Option End]
+PATH
+    A string formatted as described in the Base Definitions volume of IEEE Std 1003.1-2001, Chapter 8, Environment Variables, used to effect command interpretation; see Command Search and Execution.
+PPID
+    Set by the shell to the decimal process ID of the process that invoked this shell. In a subshell (see Shell Execution Environment), PPID shall be set to the same value as that of the parent of the current shell. For example, echo $ PPID and ( echo $ PPID ) would produce the same value. This volume of IEEE Std 1003.1-2001 specifies the effects of the variable only for systems supporting the User Portability Utilities option.
+PS1
+    Each time an interactive shell is ready to read a command, the value of this variable shall be subjected to parameter expansion and written to standard error. The default value shall be "$ ". For users who have specific additional implementation-defined privileges, the default may be another, implementation-defined value. The shell shall replace each instance of the character '!' in PS1 with the history file number of the next command to be typed. Escaping the '!' with another '!' (that is, "!!" ) shall place the literal character '!' in the prompt. This volume of IEEE Std 1003.1-2001 specifies the effects of the variable only for systems supporting the User Portability Utilities option.
+PS2
+    Each time the user enters a <newline> prior to completing a command line in an interactive shell, the value of this variable shall be subjected to parameter expansion and written to standard error. The default value is "> ". This volume of IEEE Std 1003.1-2001 specifies the effects of the variable only for systems supporting the User Portability Utilities option.
+PS4
+    When an execution trace ( set -x) is being performed in an interactive shell, before each line in the execution trace, the value of this variable shall be subjected to parameter expansion and written to standard error. The default value is "+ ". This volume of IEEE Std 1003.1-2001 specifies the effects of the variable only for systems supporting the User Portability Utilities option.
+PWD
+    Set by the shell to be an absolute pathname of the current working directory, containing no components of type symbolic link, no components that are dot, and no components that are dot-dot when the shell is initialized. If an application sets or unsets the value of PWD , the behaviors of the cd and pwd utilities are unspecified.
+
+2.6 Word Expansions
+
+This section describes the various expansions that are performed on words. Not all expansions are performed on every word, as explained in the following sections.
+
+Tilde expansions, parameter expansions, command substitutions, arithmetic expansions, and quote removals that occur within a single word expand to a single field. It is only field splitting or pathname expansion that can create multiple fields from a single word. The single exception to this rule is the expansion of the special parameter '@' within double-quotes, as described in Special Parameters.
+
+The order of word expansion shall be as follows:
+
+    Tilde expansion (see Tilde Expansion), parameter expansion (see Parameter Expansion), command substitution (see Command Substitution), and arithmetic expansion (see Arithmetic Expansion) shall be performed, beginning to end. See item 5 in Token Recognition.
+
+    Field splitting (see Field Splitting) shall be performed on the portions of the fields generated by step 1, unless IFS is null.
+
+    Pathname expansion (see Pathname Expansion) shall be performed, unless set -f is in effect.
+
+    Quote removal (see Quote Removal) shall always be performed last.
+
+The expansions described in this section shall occur in the same shell environment as that in which the command is executed.
+
+If the complete expansion appropriate for a word results in an empty field, that empty field shall be deleted from the list of fields that form the completely expanded command, unless the original word contained single-quote or double-quote characters.
+
+The '$' character is used to introduce parameter expansion, command substitution, or arithmetic evaluation. If an unquoted '$' is followed by a character that is either not numeric, the name of one of the special parameters (see Special Parameters), a valid first character of a variable name, a left curly brace ( '{' ) or a left parenthesis, the result is unspecified.
+2.6.1 Tilde Expansion
+
+A "tilde-prefix" consists of an unquoted tilde character at the beginning of a word, followed by all of the characters preceding the first unquoted slash in the word, or all the characters in the word if there is no slash. In an assignment (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 4.21, Variable Assignment), multiple tilde-prefixes can be used: at the beginning of the word (that is, following the equal sign of the assignment), following any unquoted colon, or both. A tilde-prefix in an assignment is terminated by the first unquoted colon or slash. If none of the characters in the tilde-prefix are quoted, the characters in the tilde-prefix following the tilde are treated as a possible login name from the user database. A portable login name cannot contain characters outside the set given in the description of the LOGNAME environment variable in the Base Definitions volume of IEEE Std 1003.1-2001, Section 8.3, Other Environment Variables. If the login name is null (that is, the tilde-prefix contains only the tilde), the tilde-prefix is replaced by the value of the variable HOME . If HOME is unset, the results are unspecified. Otherwise, the tilde-prefix shall be replaced by a pathname of the initial working directory associated with the login name obtained using the getpwnam() function as defined in the System Interfaces volume of IEEE Std 1003.1-2001. If the system does not recognize the login name, the results are undefined.
+2.6.2 Parameter Expansion
+
+The format for parameter expansion is as follows:
+
+    ${expression}
+
+where expression consists of all characters until the matching '}'. Any '}' escaped by a backslash or within a quoted string, and characters in embedded arithmetic expansions, command substitutions, and variable expansions, shall not be examined in determining the matching '}'.
+
+The simplest form for parameter expansion is:
+
+    ${parameter}
+
+The value, if any, of parameter shall be substituted.
+
+The parameter name or symbol can be enclosed in braces, which are optional except for positional parameters with more than one digit or when parameter is followed by a character that could be interpreted as part of the name. The matching closing brace shall be determined by counting brace levels, skipping over enclosed quoted strings, and command substitutions.
+
+If the parameter name or symbol is not enclosed in braces, the expansion shall use the longest valid name (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.230, Name), whether or not the symbol represented by that name exists.
+
+If a parameter expansion occurs inside double-quotes:
+
+    Pathname expansion shall not be performed on the results of the expansion.
+
+    Field splitting shall not be performed on the results of the expansion, with the exception of '@' ; see Special Parameters.
+
+In addition, a parameter expansion can be modified by using one of the following formats. In each case that a value of word is needed (based on the state of parameter, as described below), word shall be subjected to tilde expansion, parameter expansion, command substitution, and arithmetic expansion. If word is not needed, it shall not be expanded. The '}' character that delimits the following parameter expansion modifications shall be determined as described previously in this section and in Double-Quotes. (For example, ${ foo-bar} xyz} would result in the expansion of foo followed by the string xyz} if foo is set, else the string "barxyz}" ).
+
+${parameter:-word}
+    Use Default Values. If parameter is unset or null, the expansion of word shall be substituted; otherwise, the value of parameter shall be substituted.
+${parameter:=word}
+    Assign Default Values. If parameter is unset or null, the expansion of word shall be assigned to parameter. In all cases, the final value of parameter shall be substituted. Only variables, not positional parameters or special parameters, can be assigned in this way.
+${parameter:?[word]}
+    Indicate Error if Null or Unset. If parameter is unset or null, the expansion of word (or a message indicating it is unset if word is omitted) shall be written to standard error and the shell exits with a non-zero exit status. Otherwise, the value of parameter shall be substituted. An interactive shell need not exit.
+${parameter:+word}
+    Use Alternative Value. If parameter is unset or null, null shall be substituted; otherwise, the expansion of word shall be substituted.
+
+In the parameter expansions shown previously, use of the colon in the format shall result in a test for a parameter that is unset or null; omission of the colon shall result in a test for a parameter that is only unset. The following table summarizes the effect of the colon:
+
+ 
+	
+
+parameter
+	
+
+parameter
+	
+
+parameter
+
+ 
+	
+
+Set and Not Null
+	
+
+Set But Null
+	
+
+Unset
+
+${parameter:-word}
+	
+
+substitute parameter
+	
+
+substitute word
+	
+
+substitute word
+
+${parameter-word}
+	
+
+substitute parameter
+	
+
+substitute null
+	
+
+substitute word
+
+${parameter:=word}
+	
+
+substitute parameter
+	
+
+assign word
+	
+
+assign word
+
+${parameter=word}
+	
+
+substitute parameter
+	
+
+substitute null
+	
+
+assign word
+
+${parameter:?word}
+	
+
+substitute parameter
+	
+
+error, exit
+	
+
+error, exit
+
+${parameter?word}
+	
+
+substitute parameter
+	
+
+substitute null
+	
+
+error, exit
+
+${parameter:+word}
+	
+
+substitute word
+	
+
+substitute null
+	
+
+substitute null
+
+${parameter+word}
+	
+
+substitute word
+	
+
+substitute word
+	
+
+substitute null
+
+In all cases shown with "substitute", the expression is replaced with the value shown. In all cases shown with "assign", parameter is assigned that value, which also replaces the expression.
+
+${#parameter}
+    String Length. The length in characters of the value of parameter shall be substituted. If parameter is '*' or '@', the result of the expansion is unspecified.
+
+The following four varieties of parameter expansion provide for substring processing. In each case, pattern matching notation (see Pattern Matching Notation), rather than regular expression notation, shall be used to evaluate the patterns. If parameter is '*' or '@', the result of the expansion is unspecified. Enclosing the full parameter expansion string in double-quotes shall not cause the following four varieties of pattern characters to be quoted, whereas quoting characters within the braces shall have this effect.
+
+${parameter%word}
+    Remove Smallest Suffix Pattern. The word shall be expanded to produce a pattern. The parameter expansion shall then result in parameter, with the smallest portion of the suffix matched by the pattern deleted.
+${parameter%%word}
+    Remove Largest Suffix Pattern. The word shall be expanded to produce a pattern. The parameter expansion shall then result in parameter, with the largest portion of the suffix matched by the pattern deleted.
+${parameter#word}
+    Remove Smallest Prefix Pattern. The word shall be expanded to produce a pattern. The parameter expansion shall then result in parameter, with the smallest portion of the prefix matched by the pattern deleted.
+${parameter##word}
+    Remove Largest Prefix Pattern. The word shall be expanded to produce a pattern. The parameter expansion shall then result in parameter, with the largest portion of the prefix matched by the pattern deleted.
+
+The following sections are informative.
+Examples
+
+${parameter:-word}
+    In this example, ls is executed only if x is null or unset. (The $( ls) command substitution notation is explained in Command Substitution.)
+
+        ${x:-$(ls)}
+
+${parameter:=word}
+
+    unset X
+    echo ${X:=abc}
+    abc
+
+${parameter:?word}
+
+    unset posix
+    echo ${posix:?}
+    sh: posix: parameter null or not set
+
+${parameter:+word}
+
+    set a b c
+    echo ${3:+posix}
+    posix
+
+${#parameter}
+
+    HOME=/usr/posix
+    echo ${#HOME}
+    10
+
+${parameter%word}
+
+    x=file.c
+    echo ${x%.c}.o
+    file.o
+
+${parameter%%word}
+
+    x=posix/src/std
+    echo ${x%%/*}
+    posix
+
+${parameter#word}
+
+    x=$HOME/src/cmd
+    echo ${x#$HOME}
+    /src/cmd
+
+${parameter##word}
+
+    x=/one/two/three
+    echo ${x##*/}
+    three
+
+The double-quoting of patterns is different depending on where the double-quotes are placed:
+
+"${x#*}"
+    The asterisk is a pattern character.
+${x#"*"}
+    The literal asterisk is quoted and not special.
+
+End of informative text.
+2.6.3 Command Substitution
+
+Command substitution allows the output of a command to be substituted in place of the command name itself. Command substitution shall occur when the command is enclosed as follows:
+
+    $(command)
+
+or (backquoted version):
+
+    `command`
+
+The shell shall expand the command substitution by executing command in a subshell environment (see Shell Execution Environment) and replacing the command substitution (the text of command plus the enclosing "$()" or backquotes) with the standard output of the command, removing sequences of one or more <newline>s at the end of the substitution. Embedded <newline>s before the end of the output shall not be removed; however, they may be treated as field delimiters and eliminated during field splitting, depending on the value of IFS and quoting that is in effect.
+
+Within the backquoted style of command substitution, backslash shall retain its literal meaning, except when followed by: '$', '`', or '\' (dollar sign, backquote, backslash). The search for the matching backquote shall be satisfied by the first backquote found without a preceding backslash; during this search, if a non-escaped backquote is encountered within a shell comment, a here-document, an embedded command substitution of the $( command) form, or a quoted string, undefined results occur. A single-quoted or double-quoted string that begins, but does not end, within the "`...`" sequence produces undefined results.
+
+With the $( command) form, all characters following the open parenthesis to the matching closing parenthesis constitute the command. Any valid shell script can be used for command, except a script consisting solely of redirections which produces unspecified results.
+
+The results of command substitution shall not be processed for further tilde expansion, parameter expansion, command substitution, or arithmetic expansion. If a command substitution occurs inside double-quotes, field splitting and pathname expansion shall not be performed on the results of the substitution.
+
+Command substitution can be nested. To specify nesting within the backquoted version, the application shall precede the inner backquotes with backslashes, for example:
+
+    \`command\`
+
+If the command substitution consists of a single subshell, such as:
+
+    $( (command) )
+
+a conforming application shall separate the "$(" and '(' into two tokens (that is, separate them with white space). This is required to avoid any ambiguities with arithmetic expansion.
+2.6.4 Arithmetic Expansion
+
+Arithmetic expansion provides a mechanism for evaluating an arithmetic expression and substituting its value. The format for arithmetic expansion shall be as follows:
+
+    $((expression))
+
+The expression shall be treated as if it were in double-quotes, except that a double-quote inside the expression is not treated specially. The shell shall expand all tokens in the expression for parameter expansion, command substitution, and quote removal.
+
+Next, the shell shall treat this as an arithmetic expression and substitute the value of the expression. The arithmetic expression shall be processed according to the rules given in Arithmetic Precision and Operations , with the following exceptions:
+
+    Only signed long integer arithmetic is required.
+
+    Only the decimal-constant, octal-constant, and hexadecimal-constant constants specified in the ISO C standard, Section 6.4.4.1 are required to be recognized as constants.
+
+    The sizeof() operator and the prefix and postfix "++" and "--" operators are not required.
+
+    Selection, iteration, and jump statements are not supported.
+
+All changes to variables in an arithmetic expression shall be in effect after the arithmetic expansion, as in the parameter expansion "${x=value}".
+
+If the shell variable x contains a value that forms a valid integer constant, then the arithmetic expansions "$((x))" and "$(($x))" shall return the same value.
+
+As an extension, the shell may recognize arithmetic expressions beyond those listed. The shell may use a signed integer type with a rank larger than the rank of signed long. The shell may use a real-floating type instead of signed long as long as it does not affect the results in cases where there is no overflow. If the expression is invalid, the expansion fails and the shell shall write a message to standard error indicating the failure.
+The following sections are informative.
+Examples
+
+A simple example using arithmetic expansion:
+
+    # repeat a command 100 times
+    x=100
+    while [ $x -gt 0 ]
+    do
+        command    x=$(($x-1))
+    done
+
+End of informative text.
+2.6.5 Field Splitting
+
+After parameter expansion ( Parameter Expansion), command substitution ( Command Substitution), and arithmetic expansion ( Arithmetic Expansion), the shell shall scan the results of expansions and substitutions that did not occur in double-quotes for field splitting and multiple fields can result.
+
+The shell shall treat each character of the IFS as a delimiter and use the delimiters to split the results of parameter expansion and command substitution into fields.
+
+    If the value of IFS is a <space>, <tab>, and <newline>, or if it is unset, any sequence of <space>s, <tab>s, or <newline>s at the beginning or end of the input shall be ignored and any sequence of those characters within the input shall delimit a field. For example, the input:
+
+        <newline><space><tab>foo<tab><tab>bar<space>
+
+    yields two fields, foo and bar.
+
+    If the value of IFS is null, no field splitting shall be performed.
+
+    Otherwise, the following rules shall be applied in sequence. The term " IFS white space" is used to mean any sequence (zero or more instances) of white space characters that are in the IFS value (for example, if IFS contains <space>/ <comma>/ <tab>, any sequence of <space>s and <tab>s is considered IFS white space).
+
+        IFS white space shall be ignored at the beginning and end of the input.
+
+        Each occurrence in the input of an IFS character that is not IFS white space, along with any adjacent IFS white space, shall delimit a field, as described previously.
+
+        Non-zero-length IFS white space shall delimit a field.
+
+2.6.6 Pathname Expansion
+
+After field splitting, if set -f is not in effect, each field in the resulting command line shall be expanded using the algorithm described in Pattern Matching Notation , qualified by the rules in Patterns Used for Filename Expansion.
+2.6.7 Quote Removal
+
+The quote characters: '\', '", and '' (backslash, single-quote, double-quote) that were present in the original word shall be removed unless they have themselves been quoted.
+2.7 Redirection
+
+Redirection is used to open and close files for the current shell execution environment (see Shell Execution Environment) or for any command. Redirection operators can be used with numbers representing file descriptors (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.165, File Descriptor) as described below.
+
+The overall format used for redirection is:
+
+    [n]redir-op word
+
+The number n is an optional decimal number designating the file descriptor number; the application shall ensure it is delimited from any preceding text and immediately precede the redirection operator redir-op. If n is quoted, the number shall not be recognized as part of the redirection expression. For example:
+
+    echo \2>a
+
+writes the character 2 into file a. If any part of redir-op is quoted, no redirection expression is recognized. For example:
+
+    echo 2\>a
+
+writes the characters 2>a to standard output. The optional number, redirection operator, and word shall not appear in the arguments provided to the command to be executed (if any).
+
+Open files are represented by decimal numbers starting with zero. The largest possible value is implementation-defined; however, all implementations shall support at least 0 to 9, inclusive, for use by the application. These numbers are called "file descriptors". The values 0, 1, and 2 have special meaning and conventional uses and are implied by certain redirection operations; they are referred to as standard input, standard output, and standard error, respectively. Programs usually take their input from standard input, and write output on standard output. Error messages are usually written on standard error. The redirection operators can be preceded by one or more digits (with no intervening <blank>s allowed) to designate the file descriptor number.
+
+If the redirection operator is "<<" or "<<-", the word that follows the redirection operator shall be subjected to quote removal; it is unspecified whether any of the other expansions occur. For the other redirection operators, the word that follows the redirection operator shall be subjected to tilde expansion, parameter expansion, command substitution, arithmetic expansion, and quote removal. Pathname expansion shall not be performed on the word by a non-interactive shell; an interactive shell may perform it, but shall do so only when the expansion would result in one word.
+
+If more than one redirection operator is specified with a command, the order of evaluation is from beginning to end.
+
+A failure to open or create a file shall cause a redirection to fail.
+2.7.1 Redirecting Input
+
+Input redirection shall cause the file whose name results from the expansion of word to be opened for reading on the designated file descriptor, or standard input if the file descriptor is not specified.
+
+The general format for redirecting input is:
+
+    [n]<word
+
+where the optional n represents the file descriptor number. If the number is omitted, the redirection shall refer to standard input (file descriptor 0).
+2.7.2 Redirecting Output
+
+The two general formats for redirecting output are:
+
+    [n]>word
+    [n]>|word
+
+where the optional n represents the file descriptor number. If the number is omitted, the redirection shall refer to standard output (file descriptor 1).
+
+Output redirection using the '>' format shall fail if the noclobber option is set (see the description of set -C) and the file named by the expansion of word exists and is a regular file. Otherwise, redirection using the '>' or ">|" formats shall cause the file whose name results from the expansion of word to be created and opened for output on the designated file descriptor, or standard output if none is specified. If the file does not exist, it shall be created; otherwise, it shall be truncated to be an empty file after being opened.
+2.7.3 Appending Redirected Output
+
+Appended output redirection shall cause the file whose name results from the expansion of word to be opened for output on the designated file descriptor. The file is opened as if the open() function as defined in the System Interfaces volume of IEEE Std 1003.1-2001 was called with the O_APPEND flag. If the file does not exist, it shall be created.
+
+The general format for appending redirected output is as follows:
+
+    [n]>>word
+
+where the optional n represents the file descriptor number. If the number is omitted, the redirection refers to standard output (file descriptor 1).
+2.7.4 Here-Document
+
+The redirection operators "<<" and "<<-" both allow redirection of lines contained in a shell input file, known as a "here-document", to the input of a command.
+
+The here-document shall be treated as a single word that begins after the next <newline> and continues until there is a line containing only the delimiter and a <newline>, with no <blank>s in between. Then the next here-document starts, if there is one. The format is as follows:
+
+    [n]<<word
+        here-document
+    delimiter
+
+where the optional n represents the file descriptor number. If the number is omitted, the here-document refers to standard input (file descriptor 0).
+
+If any character in word is quoted, the delimiter shall be formed by performing quote removal on word, and the here-document lines shall not be expanded. Otherwise, the delimiter shall be the word itself.
+
+If no characters in word are quoted, all lines of the here-document shall be expanded for parameter expansion, command substitution, and arithmetic expansion. In this case, the backslash in the input behaves as the backslash inside double-quotes (see Double-Quotes). However, the double-quote character ( '"' ) shall not be treated specially within a here-document, except when the double-quote appears within "$()", "``", or "${}".
+
+If the redirection symbol is "<<-", all leading <tab>s shall be stripped from input lines and the line containing the trailing delimiter. If more than one "<<" or "<<-" operator is specified on a line, the here-document associated with the first operator shall be supplied first by the application and shall be read first by the shell.
+The following sections are informative.
+Examples
+
+An example of a here-document follows:
+
+    cat <<eof1; cat <<eof2
+    Hi,
+    eof1
+    Helene.
+    eof2
+
+End of informative text.
+2.7.5 Duplicating an Input File Descriptor
+
+The redirection operator:
+
+    [n]<&word
+
+shall duplicate one input file descriptor from another, or shall close one. If word evaluates to one or more digits, the file descriptor denoted by n, or standard input if n is not specified, shall be made to be a copy of the file descriptor denoted by word; if the digits in word do not represent a file descriptor already open for input, a redirection error shall result; see Consequences of Shell Errors. If word evaluates to '-', file descriptor n, or standard input if n is not specified, shall be closed. Attempts to close a file descriptor that is not open shall not constitute an error. If word evaluates to something else, the behavior is unspecified.
+2.7.6 Duplicating an Output File Descriptor
+
+The redirection operator:
+
+    [n]>&word
+
+shall duplicate one output file descriptor from another, or shall close one. If word evaluates to one or more digits, the file descriptor denoted by n, or standard output if n is not specified, shall be made to be a copy of the file descriptor denoted by word; if the digits in word do not represent a file descriptor already open for output, a redirection error shall result; see Consequences of Shell Errors. If word evaluates to '-', file descriptor n, or standard output if n is not specified, is closed. Attempts to close a file descriptor that is not open shall not constitute an error. If word evaluates to something else, the behavior is unspecified.
+2.7.7 Open File Descriptors for Reading and Writing
+
+The redirection operator:
+
+    [n]<>word
+
+shall cause the file whose name is the expansion of word to be opened for both reading and writing on the file descriptor denoted by n, or standard input if n is not specified. If the file does not exist, it shall be created.
+2.8 Exit Status and Errors
+2.8.1 Consequences of Shell Errors
+

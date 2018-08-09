@@ -1,0 +1,951 @@
+Modern Atomic Theory
+cientists’ attempts to understand the atom have led them into the unfamiliar world of the unimaginably small, where the rules of physics seem to be different from the rules in the world we can see and touch. Scientists explore this world through the use of mathematics. Perhaps this is similar to the way a writer uses poetry to express ideas and feelings beyond the reach of everyday language. Mathematics allows the scientist to explore beyond the boundaries of the world we can experience directly. Just as scholars then try to analyze the poems and share ideas about them in everyday language, scientists try to translate the mathematical description of the atom into words that more of us can understand. Although both kinds of translation are fated to fall short of capturing the fundamental truths of human nature and the physical world, the attempt is worthwhile for the occasional glimpse of those truths that it provides.
+This chapter offers a brief, qualitative introduction to the mathematical description of electrons and describes the highly utilitarian model of atomic structure that chemists have constructed from it. Because we are reaching beyond the world of our senses, we should not be surprised that the model we create is uncertain and, when described in normal language, a bit vague. In spite of these limitations, however, you will return from your journey into the strange, new world of the extremely small with a useful tool for explaining and predicting the behavior of matter.
+11.1 The Mysterious Electron
+11.2 Multi-Electron Atoms
+To see a World in a Grain of Sand
+And a Heaven in a Wild Flower
+Hold Infinity in the palm of your hand
+And Eternity in an hour
+William Blake (1757-1827)
+Auguries of Innocence Describe the nuclear model of the atom.
+(Section 2.4) Describe the relationship between stability and potential energy. (Section 7.1)
+Review Skills
+The presentation of information in this chapter assumes that you can already perform the tasks listed below. You can test your readiness to proceed by answering the Review Questions at the end of the chapter. This might also be a good time to read the Chapter Objectives, which precede the Review Questions.
+Chemists try to “see” the structure of matter even more closely than can be seen in any photograph.
+11.1 The Mysterious Electron
+Where there is an open mind, there will always be a frontier.
+Charles F. Kettering (1876-1958)
+American engineer and inventor
+Scientists have known for a long time that it is incorrect to think of electrons as tiny particles orbiting the nucleus like planets around the sun. Nevertheless, nonscientists have become used to picturing them in this way. In some circumstances, this “solar system” model of the atom may be useful, but you should know that the electron is much more unusual than that model suggests. The electron is extremely tiny, and modern physics tells us that strange things happen in the realm of the very, very small.
+The modern description of the electron is based on complex mathematics and on the discoveries of modern physics. The mathematical complexity alone makes an accurate verbal portrayal of the electron challenging, but our difficulty in describing the electron goes beyond complexity. Modern physics tells us that it is impossible to know exactly where an electron is and what it is doing. As your mathematical and scientific knowledge increases, you will be able to understand more sophisticated descriptions of the electron, but the problem of describing exactly where the electron is and what it is doing never goes away. It is a problem fundamental to very tiny objects. Thus complete confidence in our description of the nature of the electron is beyond our reach.
+There are two ways that scientists deal with the problems associated with the complexity and fundamental uncertainty of the modern description of the electron:
+Analogies In order to communicate something of the nature of the electron, scientists often use analogies, comparing the electron to objects with which we are more familiar. For example, in this chapter we will be looking at the ways in which electrons are like vibrating guitar strings.
+Probabilities In order to accommodate the uncertainty of the electron’s position and motion, scientists talk about where the electron probably is within the atom, instead of where it definitely is.
+Through the use of analogies and a discussion of probabilities, this chapter attempts to give you a glimpse of what scientists are learning about the electron’s character.
+Standing Waves and Guitar Strings
+Each electron seems to have a dual nature in which both particle and wave characteristics are apparent. It is difficult to describe these two aspects of an electron at the same time, so sometimes we focus on its particle nature and sometimes on its wave character, depending on which is more suitable in a given context. In the particle view, electrons are tiny, negatively charged particles with a mass of about 9.1096 × 10-28 grams. In the wave view, an electron has an effect on the space around it that can be described as a wave of varying negative charge intensity. To gain a better understanding of this electron-wave character, let’s compare it to the wave character of guitar strings. Because a guitar string is easier to visualize than an electron, its vibrations serve as a useful analogy of the wave character of electrons.
+414 Chapter 11 Modern Atomic Theory
+11.1 The Mysterious Electron 415
+When a guitar string is plucked, the string vibrates up and down in a wave pattern. Figure 11.1 shows one way that it can vibrate; the seven images on the left represent the position of the string at various isolated moments, and the final image on the right shows all those positions combined. If you squint a bit while looking at a vibrating guitar string, what you see is a blur with a shape determined by the varying intensity of the vibration along the string. This blur, which we will call the waveform, appears to be stationary. Although the string is constantly moving, the waveform is not, so this wave pattern is called a standing or stationary wave. Note that as your eye moves along the string, the intensity, or amount, of the string’s movement varies. The points in the waveform where there is no motion are called nodes.
+7 possible configurations for the vibration of a guitar stringWaveformSuperimposing the configurationsproduces the waveform of theguitar string's standing wave. Nodes
+Figure 11.1
+Waveform of a Standing Wave
+The waveform shows the variation in the intensity of motion at every position along the string.
+Photo by Jack Spira
+www.jackspiraguitars.com
+Although many waveforms are possible, the possibilities are limited by the fact that the string is tied down and cannot move at the ends. In theory, there are an infinite number of possible waveforms, but they all allow the string to remain stationary at the ends. Figure 11.2 shows various allowed waveforms.
+O
+bjective 2
+Figure 11.2
+Some Possible Waveforms for a Vibrating Guitar String
+Electrons as Standing Waves
+The wave character of the guitar string is represented by the movement of the string.
+We can focus our attention on the blur of the waveform and forget the material the
+string is made of. The waveform describes the motion of the string over time, not the
+string itself.
+In a similar way, the wave character of the electron is represented by the waveform
+of its negative charge, on which we can focus without concerning ourselves about the
+electron’s particle nature. This frees us from asking questions about where the electrons
+are in the atom and how they are moving—questions that we are unable to answer. The
+waveforms for electrons in an atom describe the variation in intensity of negative charge
+within the atom, with respect to the location of the nucleus. This can be described
+without mentioning the positions and motion of the electron particle itself.
+The following statements represent the core of the modern description of the wave
+character of the electron:
+Just as the intensity of the movement of a guitar string can vary, so can the
+intensity of the negative charge of the electron vary at different positions
+outside the nucleus.
+The variation in the intensity of the electron charge can be described in
+terms of a three-dimensional standing wave like the standing wave of the
+guitar string.
+As in the case of the guitar string, only certain waveforms are possible for
+the electron in an atom.
+We can focus our attention on the waveform of varying charge intensity
+without having to think about the actual physical nature of the electron.
+Waveforms for Hydrogen Atoms
+Most of the general descriptions of electrons found in the rest of this chapter are based
+on the wave mathematics for the one electron in a hydrogen atom. The comparable
+calculations for other elements are too difficult to lead to useful results, so as you will
+see in the next section, the information calculated for the hydrogen electron is used to
+describe the other elements as well. Fortunately, this approximation works quite well.
+The wave equation for the one electron of a hydrogen atom predicts waveforms for
+the electron that are similar to the allowed waveforms for a vibrating guitar string. For
+example, the simplest allowed waveform for the guitar string looks something like
+The simplest allowed waveform for an electron in a hydrogen atom looks like the
+image in Figure 11.3. The cloud that you see surrounds the nucleus and represents
+the variation in the intensity of the negative charge at different positions outside
+the nucleus. The negative charge is most intense at the nucleus and diminishes with
+increasing distance from the nucleus. The variation in charge intensity for this waveform
+is the same in all directions, so the waveform is a sphere. The allowed waveforms for
+Thus, the task is not
+so much to see what
+no one has yet seen,
+but to think what
+nobody has yet
+thought, about that
+which everybody
+sees.
+Erwin Schrodinger
+(1887-1961)
+Austrian physicist and
+Nobel laureate
+Objective 4
+416 Chapter 11 Modern Atomic Theory
+Objective 3
+11.1 The Mysterious Electron 417
+the electron are also called orbitals. The orbital shown in Figure 11.3 is called the 1s orbital.
+e negative charge is most intense at the nucleusand decreases in intensity with distance outward.Nucleus, about 0.00001the diameter of the atom
+Figure 11.3
+Waveform of the 1s Electron
+Theoretically, the charge intensity depicted in Figure 11.3 decreases toward zero as the distance from the nucleus approaches infinity. This suggests the amusing possibility that some of the negative charge created by an electron in a hydrogen atom is felt an infinite distance from the atom’s nucleus. The more practical approach taken by chemists, however, is to specify a volume that contains most of the electron charge and focus their attention on that, forgetting about the small negative charge felt outside the specified volume. For example, we can focus on a sphere containing 90% of the charge of the 1s electron. If we wanted to include more of the electron charge, we enlarge the sphere so that it encloses 99% (or 99.9%) of the electron charge (Figure 11.4). This leads us to another definition of orbital as the volume that contains a given high percentage of the electron charge.
+Most of the pictures you will see of orbitals represent the hypothetical surfaces that surround a high percentage of the negative charge of an electron of a given waveform. The 1s orbital, for example, can either be represented by a fuzzy sphere depicting the varying intensity of the negative charge (Figure 11.3) or by a smooth spherical surface depicting the boundary within which most of the charge is to be found (Figure 11.4).
+Sphere enclosing almost all of the electron's negative chargeAlmost all of the electron's charge lies within a spherical shellwith the diameter of this circle.
+Figure 11.4
+1s Orbital
+Is the sphere in Figure 11.3 the 1s electron? This is like asking if the guitar string is the blur that you see when the string vibrates. When we describe the standing wave that represents the motion of a guitar string, we generally do not refer to the material composition of the string. The situation is very similar for the electron. We are able to describe the variation in intensity of the negative charge created by the electron without thinking too much about what the electron is and what it is doing.
+O
+bjective 4
+O
+bjective 4
+O
+bjective 4
+Particle Interpretation of the Wave Character of the Electron
+So, where is the electron and what is it doing? We do not really know, and modern physics tells us that we never will know with 100% certainty. However, with information derived from wave mathematics for an electron, we can predict where the electron probably is. According to the particle interpretation of the wave character of the electron, the surface that surrounds 90% of an electron’s charge is the surface within which we have a 90% probability of finding the electron. We could say that the electron spends 90% of its time within the space enclosed by that surface. Thus an orbital can also be defined as the volume within which an electron has a high probability of being found.
+It is not difficult to visualize a reasonable path for an electron in a 1s orbital, but as you will see later in this section, the shapes of orbitals get much more complex than the simple sphere of the 1s orbital. For this reason, we do not attempt to visualize the path an electron follows in an orbital.
+How should we picture the electron? Perhaps the best image is the one we used in Chapter 2: a cloud. Our interpretation of the nature of the electron cloud will differ, however, depending on whether we are considering the charge of the electron or its particle nature.
+If we wish to consider the charge of the electron, the electron cloud represents the continuous variation in the intensity of the negative charge; it is stronger near the nucleus and weaker with increasing distance away from the nucleus, like the fuzzy sphere pictured in Figure 11.3.
+In the particle view, the electron cloud can be compared to a multiple-exposure photograph of the electron. (Once again, we must resort to an analogy to describe electron behavior.) If we were able to take a series of sharply focused photos of an electron over a period of time without advancing the film, our final picture would look like Figure 11.5. We would find a high density of dots near the nucleus and a decrease in density with increasing distance from the nucleus (because there is a higher probability of finding the electron in a volume near the nucleus than in the same volume farther away). This arrangement of dots would illustrate the wave equation’s prediction of the probability of finding the electron at any given distance from the nucleus.
+Scientific knowledge is a body of statements of varying certainty–about some of them we are mostly unsure, some are nearly certain, none are absolutely certain.
+Richard Feynman, 1965 Winner of the Nobel Prize in Physics
+A multiple exposure pictureof the electron in a 1s orbital of a hydrogen atom might look like this.
+Figure 11.5
+Particle Interpretation of a 1s Orbital
+If enough photos of this dancer are combined, we see a blur instead of an individual dancer. This dancer-blur is like an electron cloud.
+O
+bjective 5
+O
+bjective 4
+418 Chapter 11 Modern Atomic Theory
+11.1 The Mysterious Electron 419
+Other Important Orbitals
+Just like the guitar string can have different waveforms, the one electron in a hydrogen atom can also have different waveforms, or orbitals. The shapes and sizes for these orbitals are predicted by the mathematics associated with the wave character of the hydrogen electron. Figure 11.6 shows some of them.
+3dz23dxz3dyz3dxy3s3px3py3pz2s1s2px2py2pz3dx2 - y2
+Figure 11.6
+Some Possible Waveforms, or Orbitals, for an Electron in a Hydrogen Atom
+Before considering the second possible orbital for the electron of a hydrogen atom, let’s look at another of the possible ways a guitar string can vibrate. The guitar string waveform below has a node in the center where there is no movement of the string.
+Node
+The electron-wave calculations predict that an electron in a hydrogen atom can have a waveform called the 2s orbital that is analogous to the guitar string waveform above. The 2s orbital for an electron in a hydrogen atom is spherical like the 1s orbital, but it is a larger sphere. All spherical electron waveforms are called s orbitals. For an electron in the 2s orbital, the charge is most intense at the nucleus. With increasing distance from the nucleus, the charge diminishes in intensity until it reaches a minimum at a certain distance from the nucleus; it then increases again to a maximum, and finally it
+O
+bjective 6
+diminishes again. The region within the 2s orbital where the charge intensity decreases to zero is called a node. Figure 11.7 shows cutaway, quarter-section views of the 1s and 2s orbitals.
+1se 2s orbital is largerand has a node.
+Figure 11.7
+Quarter Sections of the 1s and 2s Orbitals
+The average distance between the positive charge of the nucleus and the negative charge of a 2s electron cloud is greater than the average distance between the nucleus and the charge of a 1s electron cloud. Because the strength of the attraction between positive and negative charges decreases with increasing distance between the charges, an electron is more strongly attracted to the nucleus and therefore is more stable when it has the smaller 1s waveform than when it has the larger 2s waveform. As you discovered in Section 7.1, increased stability is associated with decreased potential energy, so a 1s electron has lower potential energy than a 2s electron1. We describe this energy difference by saying the 1s electron is in the first principal energy level, and the 2s electron is in the second principal energy level. All of the orbitals that have the same potential energy for a hydrogen atom are said to be in the same principal energy level. The principal energy levels are often called shells. The 1 in 1s and the 2 in 2s show the principal energy levels, or shells, for these orbitals.
+Chemists sometimes draw orbital diagrams, such as the following, with lines to represent the orbitals in an atom and arrows (which we will be adding later) to represent electrons:
+2s1s
+The line representing the 2s orbital is higher on the page to indicate its higher potential energy.
+Because electrons seek the lowest energy level possible, we expect the electron in a hydrogen atom to have the 1s waveform, or electron cloud. We say that the electron is in the 1s orbital. But the electron in a hydrogen atom does not need to stay in the 1s orbital at all times. Just as an input of energy (a little arm work on our part) can lift a book resting on a table and raise it to a position that has greater potential energy, so can the waveform of an electron in a hydrogen atom be changed from the 1s shape to the 2s shape by the addition of energy to the atom. We say that the electron can be excited from the 1s orbital to the 2s orbital. Hydrogen atoms with their electron in the
+1 If you are reading this chapter before studying Chapter 7, you might want to read the portions of Section 7.1 that describe energy, kinetic energy, and potential energy.
+O
+bjective 6
+O
+bjective 7
+420 Chapter 11 Modern Atomic Theory
+11.1 The Mysterious Electron 421
+1s orbital are said to be in their ground state. A hydrogen atom with
+its electron in the 2s orbital is in an excited state.
+If you lift a book from a table to above the table and then release it,
+it falls back down to its lower-energy position on the table. The same
+is true for the electron. After the electron is excited from the 1s orbital
+to the 2s orbital, it spontaneously returns to its lower-energy 1s form.
+An electron in a hydrogen atom can be excited to orbitals other
+than the 2s. For example, an electron in a hydrogen atom can be
+excited from the 1s to a 2p orbital. There are actually three possible
+2p orbitals. They are identical in shape and size, but each lies at a 90°
+angle to the other two. Because they can be viewed as lying on the x,
+y and z axes of a three-dimensional coordinate system, they are often
+called the 2px, 2py, and 2pz orbitals. An electron with a 2p waveform
+has its negative charge distributed in two lobes on opposite sides of the
+nucleus. Figure 11.8 shows the shape of a 2pz orbital.
+In order to more easily show how the 2p orbitals fit together, they
+are often drawn in a more elongated and stylized form (Figures 11.9
+and 11.10).
+z
+x
+y
+2pz
+z
+x
+y
+2pz 2py
+2px
+2pz
+Figure 11.8
+Realistic View of a
+2pz Orbital
+Figure 11.9
+Stylized View of a
+2pz Orbital
+Figure 11.10
+Stylized View of a
+2px, 2py, and 2pz
+Orbitals Combined
+In a hydrogen atom, the average distance between the negative charge of a 2p electron
+cloud and the nucleus is the same as for a 2s electron cloud. Therefore, an electron in
+a hydrogen atom has the same attraction to the nucleus and the same stability when it
+has a 2p form as when it has the 2s form. Therefore, a 2s electron has the same potential
+energy as a 2p electron. These orbitals are in the same principal energy level.
+Because the shapes of the 2s and 2p electron clouds are different, we distinguish
+between them by saying that an electron with the 2s waveform is in the 2s sublevel,
+and an electron with any of the three 2p waveforms is in the 2p sublevel. Orbitals
+that have the same potential energy, the same size, and the same shape are in the same
+sublevel. The sublevels are sometimes called subshells. Thus there is one orbital in the
+1s sublevel, one orbital in the 2s sublevel, and three orbitals in the 2p sublevel. The
+following orbital diagram shows these orbitals and sublevels.
+2s
+1s
+2p
+The lines for the 2s and 2p orbitals are drawn side by side to show that they have
+the same potential energy for the one electron in a hydrogen atom. You will see in the
+next section that the 2s and 2p orbitals have different potential energies for atoms larger
+than hydrogen atoms.
+Objective 8
+The energy generated by the explosives
+in fireworks supplies the energy to excite
+electrons to higher energy levels. When
+the electrons return to their ground state,
+they give off energy in the form of light.
+In the third principal energy level, there are nine possible waveforms for an electron,
+in three different sublevels (Figure 11.6). The 3s sublevel has one orbital that has a
+spherical shape, like the 1s and the 2s, but it has a larger average radius and two nodes.
+Its greater average distance from the positive charge of the nucleus makes it less stable
+and higher in energy than the 1s or 2s orbitals. The calculations predict that the third
+principal energy level has a 3p sublevel, with three 3p orbitals. They have the same
+general shape as the 2p orbitals, but they are larger, which leads to less attraction to
+the nucleus, less stability, and higher potential energy than for a 2p orbital. The third
+principal energy level also has a 3d sublevel, with five 3d orbitals. Four of these orbitals
+have four lobes whose shape is similar to the lobes of a 3p orbital. We will call these
+“double dumbbells.” An electron in a 3d orbital has its negative charge spread out in
+these four lobes. The fifth 3d orbital has a different shape, as shown in Figure 11.11.
+Four of the five 3d orbitals
+have a double dumbbell
+shape like this one.
+e fifth 3d orbital is
+shaped like a dumbell
+and a donut.
+Figure 11.11
+3d Orbitals
+When an electron in a hydrogen atom is excited to the fourth principal energy level,
+it can be in any one of four sublevels: 4s, 4p, 4d, or 4f. There is one 4s orbital, with a
+spherical shape and a larger volume than the 3s. There are three 4p orbitals, similar in
+shape to the 3p orbitals but with a larger volume than the 3p orbitals. There are five 4d
+orbitals, similar to but larger than the 3d orbitals. The 4f sublevel has seven possible
+orbitals.
+Overall Organization of Principal Energy Levels, Sublevels, and
+Orbitals
+Table 11.1 shows all the orbitals predicted for the first seven principal energy levels.
+Notice that the first principal energy level has one sublevel, the second has two sublevels,
+the third has three sublevels, and the fourth has four. If n is the number associated with
+the principal energy level, each principal energy level has n sublevels. Thus there are
+five sublevels on the fifth principal energy level: 5s, 5p, 5d, 5f, and 5g. The 5s, 5p, 5d,
+and 5f orbitals have shapes similar to the 4s, 4p, 4d, and 4f orbitals, but they are larger
+and have higher potential energy.
+Each s sublevel has one orbital, each p sublevel has three orbitals, each d has five
+orbitals, and each f sublevel has seven orbitals. Thus there are one 5s orbital, three 5p
+orbitals, five 5d orbitals, and seven 5f orbitals. The trend of increasing the number of
+orbitals by two for each succeeding sublevel continues for 5g and beyond. There are
+nine 5g orbitals with shapes more complex than the shapes of the 4f orbitals.
+Objective 9
+Objective 9
+422 Chapter 11 Modern Atomic Theory
+11.1 The Mysterious Electron 423
+Sublevels (subshells)
+Number of orbitals
+6s
+6p
+6d
+(6f)
+(6g)
+(6h)
+1
+3
+5
+7
+9
+11
+7s
+7p
+(7d)
+(7f)
+(7g)
+(7h)
+(7i)
+1
+3
+5
+7
+9
+11
+13
+In the next section, where we use the orbitals predicted for hydrogen to describe atoms of other elements, you will see that none of the known elements has electrons in the 5g sublevel for their most stable state (ground state). Thus we are not very interested in describing the 5g orbitals. Likewise, although the sixth principal energy level has six sublevels and the seventh has seven, only the 6s, 6p, 6d, 7s, and 7p are important for describing the ground states of the known elements. The reason for this will be explained in the next section.
+None of the known elements in its ground state has any electrons in a principal energy level higher than the seventh, so we are not concerned with the principal energy levels above seven. The orbital diagram in Figure 11.12 shows only the sublevels (or subshells) and orbitals that are necessary for describing the ground states of the known elements.
+2s1s2p5p4p3p3s4s5s4d3d5d6s6p6d7p7s4f5fNo other orbitals are necessary for describing the electrons ofthe known elements in their ground states.
+Figure 11.12
+Diagram of the Orbitals for an Electron in a Hydrogen Atom
+Table 11.1 Possible Sublevels and Orbitals for the First Seven Principal Energy Levels (The sublevels in parentheses are not necessary for describing any of the known elements.)
+Sublevels (subshells)
+Number of orbitals
+1s
+1
+2s
+2p
+1
+3
+3s
+3p
+3d
+1
+3
+5
+4s
+4p
+4d
+4f
+1
+3
+5
+7
+5s
+5p
+5d
+5f
+(5g)
+1
+3
+5
+7
+9
+It is possible to solve the wave equation and determine the shapes and sizes of electron orbitals for the hydrogen atom and for any one electron ion (for example He+ or Li2+), but the calculations for any atom with two or more electrons are extremely complex. Fortunately, scientists have found that when they take the information derived from solving the wave equation for hydrogen atoms and apply it to other atoms, the resulting descriptions are sufficiently accurate to explain many of the chemical characteristics of those elements. Thus the following assumption lies at the core of the modern description of atoms other than hydrogen. All of the elements have the same set of possible principal energy levels, sublevels, and orbitals that has been calculated for hydrogen. In other words, we assume that all atoms can have the sublevels and orbitals listed on Table 11.1. Now let us look at how the electrons of elements other than hydrogen are distributed in those hydrogen-like orbitals.
+Helium and Electron Spin
+Helium, with atomic number 2 and two electrons, is the next element after hydrogen in the periodic table. Both of helium’s electrons are in the 1s orbital. This allows them to be as close to the positive charge of the nucleus as possible. Even though the two electron charge clouds occupy the same space, the two electrons are not identical. The property in which they differ is called electron spin. Although the true nature of electron spin is uncertain, it is useful to think of it as if electrons can spin on their axis. We can visualize the two electrons in a helium atom as spinning in opposite directions (Figure 11.13).
+Arrows are added to an orbital diagram to show the distribution of electrons in the possible orbitals and the relative spin of each electron. The following is an orbital diagram for a helium atom.
+1s
+The orbital distribution of electrons can also be described with a shorthand notation that describes the arrangement of electrons in the sublevels without reference to their spin. This shorthand for helium’s configuration is written 1s2 and is commonly called an electron configuration. The 1 represents the first principal energy level, the s indicates an electron cloud with a spherical shape, and the 2 shows that there are two electrons in that 1s sublevel.
+1s2Represents the principal energy levelIndicates the shapeof the orbitalShows the number of electrons in the orbital
+In the broadest sense, an electron configuration is any description of the complete distribution of electrons in atomic orbitals. Although this can mean either an orbital diagram or the shorthand notation, this text will follow the common convention of referring to only the shorthand notation as an electron configuration. For example,
+11.2 Multi-Electron Atoms
+Figure 11.13
+Electron Spin
+O
+bjective 10
+O
+bjective 10
+O
+bjective 11
+424 Chapter 11 Modern Atomic Theory
+11.2 Multi-Electron Atoms 425
+if you are asked for an electron configuration for helium, you will write 1s2. If you are expected to describe the orbitals with lines and the electrons with arrows, you will be asked to draw an orbital diagram.
+The Second Period Elements
+Electrons do not fill the available sublevels in the order we might expect. Thus, to predict the electron configurations of elements larger than helium, we need a way of remembering the actual order of sublevel filling. Probably the least reliable method is to memorize the following list that shows the order of filling of all the orbitals necessary for describing the ground state electron configurations of all of the known elements.
+1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p
+Instead of relying on memorization, you can use the memory aid shown in Figure 11.14 to remind you of the correct order of filling of the sublevels. The following steps explain how to write it and use it yourself. Write the possible sublevels for each energy level in organized rows and columns like in Figure 11.14. To do this, you need to remember that there is one sublevel on the first principal energy level, two on the second, three on the third, etc. Every principal energy level has an s orbital. The second principal energy and all higher energy levels have a p sublevel. The d sublevels start on the third principal energy level, the f sublevels start on the fourth principal energy level, etc. Draw arrows like those you see in Figure 11.14. Starting with the top arrow, follow the arrows one by one in the direction they point, listing the sublevels as you pass through them.
+The sublevels that are not needed for describing the known elements are enclosed in parentheses in Figure 11.14. Later in this section, you will see how to determine the order of filling of the sublevels using a periodic table.
+1s5p4p3p3s4s5s4d3d5d6s6p6d(7d7p7s4f5f2s2p(5g)(6f6g6h)7f7g7h7i)Start here and move along the arrows one by one.
+Figure 11.14
+Aid for Remembering the Order of Sublevel Filling
+O
+bjective 11
+O
+bjective 11
+O
+bjective 11
+An atomic orbital may contain two electrons at most, and the electrons must have different spins. Because each s sublevel has one orbital and each orbital contains a maximum of two electrons, each s sublevel contains a maximum of two electrons. Because each p sublevel has three orbitals and each orbital contains a maximum of two electrons, each p sublevel contains a maximum of six electrons. Using similar reasoning, we can determine that each d sublevel contains a maximum of ten electrons, and each f sublevel contains a maximum of 14 electrons (Table 11.2).
+Table 11.2 General Information About Sublevels
+Type of sublevel
+Number of orbitals
+Maximum number of electrons
+s
+1
+2
+p
+3
+6
+d
+5
+10
+f
+7
+14
+We can now predict the electron configurations and orbital diagrams for the ground state of lithium, which has three electrons, and beryllium, which has four electrons:
+Lithium 1s2 2s1 Beryllium 1s2 2s2
+2s1s 2s1s
+A boron atom has five electrons. The first four fill the 1s and 2s orbitals, and the fifth electron goes into a 2p orbital. The electron configuration and orbital diagram for the ground state of boron atoms are below. Even though only one of three possible 2p orbitals contains an electron, we show all three 2p orbitals in the orbital diagram. The lines for the 2p orbitals are drawn higher on the page than the line for the 2s orbital to show that electrons in the 2p orbitals have a higher potential energy than electrons in the 2s orbital of the same atom.2
+Boron 1s2 2s2 2p1
+2s1s2p
+When electrons are filling orbitals of the same energy, they enter orbitals in such a way as to maximize the number of unpaired electrons, all with the same spin. In other words, they enter empty orbitals first, and all electrons in half filled orbitals have the same spin. The orbital diagram for the ground state of carbon atoms is
+2s1s2p
+O
+bjective 12
+2 The 2s and 2p orbitals available for the one electron of a hydrogen atom have the same potential energy. However, for reasons that are beyond the scope of this discussion, when an atom has more than one electron, the 2s orbital is lower in potential energy than the 2p orbitals.
+O
+bjective 11
+O
+bjective 12
+O
+bjective 12
+426 Chapter 11 Modern Atomic Theory
+11.2 Multi-Electron Atoms 427
+There are two ways to write the electron configuration of carbon atoms. One way
+emphasizes that the two electrons in the 2p sublevel are in different orbitals:
+1s2 2s2 2px
+1 2py
+1
+Often, however, the arrangement of the 2p electrons is taken for granted, and the
+following notation is used:
+1s2 2s2 2p2
+Unless you are told otherwise, you may assume that a “complete electron configuration”
+means a configuration written in the second form, without the subscripts x, y, and z.
+The electron configurations and orbital diagrams for the rest of the elements of the
+second period show the sequential filling of the 2p orbitals:
+Nitrogen 1s2 2s2 2p3 Oxygen 1s2 2s2 2p4
+2s
+1s
+2p
+2s
+1s
+2p
+Fluorine 1s2 2s2 2p5 Neon 1s2 2s2 2p6
+2s
+1s
+2p
+2s
+1s
+2p
+Figure 11.15 shows how the electron clouds for the electrons of the atoms of first
+and second period elements are envisioned. Note that the electron charge waveforms
+for the electrons in different orbitals of each atom are all superimposed on each other.
+10
+Ne
+1s2 2s2 2p6
+1H
+1s1
+2
+He
+1s2
+8O
+9F
+1s2 2s2 2p5
+7N
+6C
+5B
+4
+Be
+3
+Li
+1s 2s
+2px 2pz
+2py
+1s2 2s1 1s2 2s2 1s2 2s2 2p1 1s2 2s2 2p2 1s2 2s2 2p3 1s2 2s2 2p4
+Figure 11.15
+Electron Configurations and Orbital
+Models for the First Ten Elements
+Objective 11
+Objective 11
+Objective 12
+Objective 11
+Objective 12
+Objective 11
+The Periodic Table and the Modern Model of the Atom
+The periodic table itself can be used as a guide for predicting the electron configurations of most of the elements. Conversely, the electron configurations of the elements can be used to explain the table’s structure and the similarities and differences that were the basis for the table’s creation.
+The organization of the periodic table reflects the modern model of the atom. For example, the highest-energy electrons for all of the elements in groups 1 (1A) and 2 (2A)
+2s3s4s5s6s7s1234567891011121314151617181A8A7A6A5A4A3A2A3B2B1B8B8B8B7B6B5B4B5678913141516173132333435495051525381828384851141161304880112272829454647777879109110111242526424344747576106107108212223394041717273103104105341112192037385556878857585960616263646566676869708990919293949596979899100101102210183654861183d4d5d6d4f5f2p3p4p5p6p7p1171151131ss blockd blockp blockf block2345676711234567891011121314151617181A8A7A6A5A4A3A2A3B2B1B8B8B8B7B6B5B4B115Uup56789131415161731323334354950515253BCNOFAlSiPSClGaGeAsSeBrInSnSbTeI8182838485TlPbBiPoAt114Uuq116Uuh13048HZnCd80112HgCn272829454647CoNiCuRhPdAg777879109110111IrPtAuMtDsRg242526424344CrMnFeMoTcRu747576106107108WReOsSgBhHs212223394041ScTiVYZrNb717273103104105LuHfTaLrRfDb34111219203738LiBeNaMgKCaRbSr55568788CsBaFrRa57585960616263646566676869708990919293949596979899100101102LaCePrNdPmSmEuGdTbDyHoErTmYbAcPaUNpPuAmCmBkCfEsFmMdNo210183654HeNeArKrXe86Rn113Uut118Uuo
+Figure 11.16
+The Periodic Table and the Modern Model of the Atom
+428 Chapter 11 Modern Atomic Theory
+11.2 Multi-Electron Atoms 429
+in the periodic table are in s orbitals. That is, the highest-energy electrons for lithium, Li, and beryllium, Be, atoms are in the 2s orbital, and the highest-energy electrons for sodium, Na, and magnesium, Mg, atoms are in the 3s orbital. This continues down to francium, Fr, and radium, Ra, which have their highest-energy electrons in the 7s orbital. Therefore, the first two columns on the periodic table are called the s block. Because hydrogen and helium have their electrons in the 1s orbital, they belong in the s block too (Figure 11.16).
+All of the elements in the block with boron, B, neon, Ne, thallium, Tl, and radon, Rn, at the corners have their highest energy electrons in p orbitals, so this is called the p block (Figure 11.16). The second principal energy level is the first to contain p orbitals, so atoms of elements in the first row of the p block have their highest-energy electrons in the 2p sublevel. The highest-energy electrons for elements in the second row of the p block are in the 3p sublevel. This trend continues, so we can predict that the 81st through the 86th electrons for the elements thallium, Tl, through radon, Rn, are added to the 6p sublevel. Moreover, we can predict that the new elements that have been made with atoms larger than element 112 have their highest-energy electrons in the 7p sublevel.
+The last electrons to be added to an orbital diagram for the atoms of the transition metal elements go into d orbitals. For example, the last electrons added to atoms of scandium, Sc, through zinc, Zn, are added to 3d orbitals. The elements yttrium, Y, through cadmium, Cd, have their highest-energy electrons in the 4d sublevel. The elements directly below them in rows 6 and 7 add electrons to the 5d and 6d orbitals. The transition metals can be called the d block. (Figure 11.16).
+The section of the periodic table that contains the inner transition metals is called the f block. Thus we can predict that the last electrons added to the orbital diagrams of elements with atomic numbers 57 through 70 would go into the 4f sublevel. Elements 89 through 102 are in the second row of the f block. Because the fourth principal energy level is the first to have an f sublevel, we can predict that the highest energy-electrons for these elements go to the 5f sublevel.
+We can also use the block organization of the periodic table, as shown in Figure 11.16, to remind us of the order in which sublevels are filled. To do this, we move through the elements in the order of increasing atomic number, listing new sublevels as we come to them. The type of sublevel (s, p, d, or f) is determined from the block in which the atomic number is found. The number for the principal energy level (for example, the 3 in 3p) is determined from the row in which the element is found and the knowledge that the s sublevels start on the first principal energy level, the p sublevels start on the second principal energy level, the d sublevels start on the third principal energy level, and the f sublevels start on the fourth principal energy level. We know that the first two electrons added to an atom go to the 1s sublevel. Atomic numbers 3 and 4 are in the second row of the s block (look for them in the bottom half of Figure 11.16), signifying that the 3rd and 4th electrons are in the 2s sublevel.
+Atomic numbers 5 through 10 are in the first row of the p block, and the p sublevels start on the second energy level. Therefore, the 5th through 10th electrons go into the 2p sublevel. Atomic numbers 11 and 12 are in the third row of the s block, so the 11th and 12th electrons go into the 3s sublevel. Because atomic numbers 13 through 18 are in the p block, we know they go into a p sublevel. Because the p sublevels begin on the second principal energy level and atomic numbers 13 through l8 are in the second row of the p block, the 13th through 18th electrons must go into the 3p sublevel. The position of atomic numbers 19 and 20 in the fourth row of the s block and the position of atomic numbers 21 through 30 in the first row of the d block show that the 4s sublevel fills before the 3d sublevel.
+Moving through the periodic table in this fashion produces the following order of sublevels up through 6s:
+1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s
+Note that atomic numbers 57 through 70 on the periodic table in Figure 11.16 are in the 4f portion of the table. It is a common mistake to forget that the 4f sublevel is filled after the 6s sublevel and before the 5d sublevel. In order to make the overall shape of the table more compact and convenient to display, scientists have adopted the convention of removing the elements with atomic number 57 through 70 and 89 through 102 (the latter being the 5f portion of the table) from their natural position between the s and d blocks and placing them at the bottom of the table. Electrons go into the 5f sublevel after the 7s sublevel and before the 6d sublevel. The periodic table in Figure 11.17 shows how the blocks on the periodic table would fit together if the inner transition metals—the f block—were left in their natural position.
+121A2A34111219203738555687885758596061626364656667686970899091929394959697989910010110234567891011121314151617188A7A6A5A4A3A3B2B1B8B8B8B7B6B5B4B5678913141516173132333435495051525381828384851141161304880112272829454647777879109110111242526424344747576106107108212223394041717273103104105210183654861181171151131ss blockd blockp blockf block2s3s4s5s6s7s3d4d5d6d4f5f2p3p4p5p6p7p
+The following sample study sheet shows the general steps for writing complete electron configurations and orbital diagrams for uncharged atoms.
+Figure 11.17
+Periodic Table with the Inner Transition Metals in Their Natural Position
+430 Chapter 11 Modern Atomic Theory
+11.2 Multi-Electron Atoms 431
+Sample Study Sheet 11.1
+Writing Complete Electron Configurations and Orbital Diagrams for Uncharged Atoms
+O
+bjective 11
+Tip-off If you are asked to write a complete electron configuration or an orbital diagram, you can use the following guidelines.
+General Steps
+To write a complete electron configuration for an uncharged atom:
+Step 1 Determine the number of electrons in the atom from its atomic number.
+Step 2 Add electrons to the sublevels in the correct order of filling. Add two electrons to each s sublevel, 6 to each p sublevel, 10 to each d sublevel, and 14 to each f sublevel.
+Step 3 To check your complete electron configuration, look to see whether the location of the last electron added corresponds to the element’s position on the periodic table. (See Example 11.1.)
+To draw an orbital diagram for an uncharged atom,
+Step 1 Write the complete electron configuration for the atom. (This step is not absolutely necessary, but it can help guide you to the correct orbital diagram.)
+Step 2 Draw a line for each orbital of each sublevel mentioned in the complete electron configuration.
+Draw one line for each s sublevel, three lines for each p sublevel, five lines for each d sublevel, and seven lines for each f sublevel.
+As a guide to the order of filling, draw your lines so that the orbitals that fill first are lower on the page than the orbitals that fill later.
+Label each sublevel.
+Step 3 For orbitals containing two electrons, draw one arrow up and one arrow down to indicate the electrons’ opposite spin.
+Step 4 For unfilled sublevels, add electrons to empty orbitals whenever possible, giving them the same spin.
+The arrows for the first three electrons to enter a p sublevel should each be placed pointing up in different orbitals. The fourth, fifth, and sixth are then placed, pointing down, in the same sequence, so as to fill these orbitals.
+The first five electrons to enter a d sublevel should be drawn pointing up in different orbitals. The next five electrons are drawn as arrows pointing down and fill these orbitals (again, following the same sequence as the first five d electrons).
+The first seven electrons to enter an f sublevel should be drawn as arrows pointing up in different orbitals. The next seven electrons are paired with the first seven (in the same order of filling) and are drawn as arrows pointing down.
+E
+xample See Example 11.1.
+O
+bjective 12
+E
+xample 11.1 - Electron Configurations and Orbital Diagrams
+Write the complete electron configuration and draw an orbital diagram for iron, Fe.
+Solution
+We follow the steps described in Study Sheet 11.1 to write the complete electron configuration:
+Determine the number of electrons in the atom from its atomic number.
+The periodic table shows us that iron, Fe, has an atomic number of 26, so an uncharged atom of iron has 26 electrons.
+Add electrons to the sublevels in the correct order of filling.
+We can determine the order of filling by either memorizing it, figuring it out from the memory aid shown in Figure 11.14, or using the periodic table and our knowledge of s, p, d, and f blocks. The order of filling is
+1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p
+Next, we fill the orbitals according to this sequence, putting two electrons in each s sublevel, six in each p sublevel, 10 in each d sublevel, and 14 in each f sublevel until we reach the desired number of electrons. For iron, we get the following complete electron configuration:
+1s2 2s2 2p6 3s2 3p6 4s2 3d6
+To check your complete electron configuration, look to see whether the location of the last electron added corresponds to the element’s position on the periodic table.
+Because it is fairly easy to forget a sublevel or miscount the number of electrons added, it is a good idea to quickly check your complete electron configuration by looking to see if the last electrons added correspond to the element’s location on the periodic table. The symbol for iron, Fe, is found in the sixth column of the d block. This shows that there are six electrons in a d sublevel. Because iron is in the first row of the d block, and because the d sublevels begin on the third principal energy level, these six electrons are correctly described as 3d6.
+To draw the orbital diagram, we draw a line for each orbital of each sublevel mentioned in the complete electron configuration above. For orbitals containing two electrons, we draw one arrow up and one arrow down to indicate the electrons’ opposite spin. For unfilled sublevels, we add electrons to empty orbitals first with the same spin. The orbital diagram for iron atoms is displayed below. Note that four of the six electrons in the 3d sublevel are in different orbitals and have the same spin.
+1s2s2p3s3p4s3d
+O
+bjective 11
+O
+bjective 12
+432 Chapter 11 Modern Atomic Theory
+You can get some practice writing electron configurations on the textbook’s Web site.
+11.2 Multi-Electron Atoms 433
+O
+bjective 11
+O
+bjective 12
+Exercise 11.1 - Electron Configurations and Orbital Diagrams
+Write the complete electron configuration and draw an orbital diagram for antimony, Sb.
+Abbreviated Electron Configurations
+We learned in Chapter 2 that the noble gases rarely form chemical bonds. This can now be explained in terms of the stability of their electron configurations. The formation of chemical bonds requires atoms to gain, lose, or share electrons, and the electron configurations of the noble gases (displayed below) are so stable that their atoms do not easily undergo any of those changes.
+He
+1s2
+Ne
+1s2 2s2 2p6
+Ar
+1s2 2s2 2p6 3s2 3p6
+Kr
+1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6
+Xe
+1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6
+Rn
+1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6
+The atoms of other elements (other than hydrogen) contain noble gas configurations as part of their own electron configurations. For example, the configuration of a sodium atom is the same as neon’s configuration with the addition of one more electron to the 3s orbital.
+Ne
+1s2 2s2 2p6
+Na
+1s2 2s2 2p6 3s1
+The 3s electron of sodium is much more important in the description of sodium’s chemical reactions than the other electrons are. There are two reasons why this is true. We know from the stability of neon atoms that the 1s2 2s2 2p6 configuration is very stable, so these electrons are not lost or shared in chemical reactions involving sodium. These electrons are called the noble gas inner core of sodium. Another reason is that an electron in the larger 3s orbital is less strongly attracted to the nuclear charge than electrons in smaller orbitals in the first and second principal energy levels. As a result, the 3s electron is easier to remove.
+Because we are not as interested in the noble gas inner core of electrons for sodium atoms as we are in the 3s electron, sodium atoms are often described with the following abbreviated electron configuration, in which [Ne] represents the electron configuration of neon:
+Na [Ne] 3s1
+Sometimes the symbol for the noble gas is left out of abbreviated electron configurations,
+but in this text, all abbreviated electron configurations will consist of the symbol, in
+brackets, for the noble gas element at the end of the previous row, followed by the
+electron configuration of the remaining electrons (Figure 11.18).
+Abbreviated electron configurations are especially useful for describing the chemistry
+of larger atoms. For example, atoms of cesium, Cs, have one more electron than xenon,
+Xe. Therefore, the 55th electron of a cesium atom is the only electron that is likely to
+participate in the formation of chemical bonds. Because atomic number 55 is in the
+sixth horizontal row of the s block, the 55th electron must be in the 6s sublevel, making
+the abbreviated electron configuration for cesium atoms
+Cs [Xe] 6s1
+This is much easier to determine and much less time consuming to write than the
+complete electron configuration:
+1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s1
+Na
+11
+[Ne] 3s1
+He
+Ne
+Ar
+Kr
+Xe
+Rn
+Li
+3
+[He] 2s1
+Rb
+37
+[Kr] 5s1
+K
+19
+[Ar] 4s1
+Cs
+55
+[Xe] 6s1
+Figure 11.18
+Group 1 Abbreviated Electron
+Configurations
+The following sample study sheet shows the steps for writing abbreviated electron
+configurations.
+434 Chapter 11 Modern Atomic Theory
+11.2 Multi-Electron Atoms 435
+Sample Study Sheet 11.2
+Abbreviated Electron Configurations
+O
+bjective 13
+Tip-off If you are asked to write an abbreviated electron configuration, you can use the following steps.
+General Steps
+Step 1 Find the symbol for the element on a periodic table.
+For example, to write an abbreviated electron configuration for zinc atoms, we first find Zn on the periodic table (Figure 11.19).
+Step 2 Write the symbol in brackets for the noble gas located at the far right of the preceding horizontal row on the table.
+For zinc, we move up to the third period and across to Ar (Figure 11.19). To describe the first 18 electrons of a zinc atom, we write
+[Ar]
+Step 3 Move back down a row (to the row containing the element you wish to describe) and to the far left. Following the elements in the row from left to right, write the outer-electron configuration associated with each column until you reach the element you are describing.
+For zinc, we need to describe the 19th through the 30th electrons. The atomic numbers 19 and 20 are in the fourth row of the s block, so the 19th and 20th electrons for each zinc atom enter the 4s2 sublevel. The atomic numbers 21 through 30 are in the first row of the d block, so the 21st to the 30th electrons for each zinc atom fill the 3d sublevel (Figure 11.19). Zinc, with atomic number 30, has the abbreviated configuration
+[Ar] 4s2 3d10
+E
+xample See Example 11.2.
+2345676711234567891011121314151617181A8A7A6A5A4A3A2A3B2B1B8B8B8B7B6B5B4B56789131415161731323334354950515253BCNOFAlSiPSClGaGeAsSeBrInSnSbTeI8182838485TlPbBiPoAt13048HZnCd80112HgCn272829454647CoNiCuRhPdAg777879109110111IrPtAuMtDsRg242526424344CrMnFeMoTcRu747576106107108WReOsSgBhHs212223394041ScTiVYZrNb717273103104105LuHfTaLrRfDb34111219203738LiBeNaMgKCaRbSr55568788CsBaFrRa57585960616263646566676869708990919293949596979899100101102LaCePrNdPmSmEuGdTbDyHoErTmYbAcPaUNpPuAmCmBkCfEsFmMdNo210183654HeNeArKrXe86RnStep 1 Find the symbolfor the element (zinc).Step 2 Write the symbol in brackets for the nearest, smaller noble gas. [Ar]Step 3 Write the outer electronconfiguration for the remainingelectrons. [Ar] 4s2 3d10115Uup116114UuqUuh113Uut118Uuo
+Figure 11.19
+Steps for Writing Abbreviated Electron Configurations for a Zinc Atom
+E
+xample 11.2 - Abbreviated Electron Configurations
+Write abbreviated electron configurations for (a) strontium, Sr, (b) germanium, Ge, and (c) thallium, Tl.
+Solution
+a. With an atomic number of 38, strontium has 38 electrons. The noble gas element at the end of the previous row is krypton, so putting Kr in brackets describes strontium’s first 36 electrons. The atomic numbers 37 and 38 are in the fifth row of the s block, indicating that the 37th and 38th electrons enter and fill the 5s sublevel.
+[Kr] 5s2
+b. With an atomic number of 32, germanium has 32 electrons. The noble gas element at the end of the previous row is argon, so putting Ar in brackets describes germanium’s first 18 electrons. The atomic numbers 19 and 20 are in the fourth row of the s block, so the 19th and 20th electrons enter the 4s sublevel. The atomic numbers 21 through 30 are in the first row of the d block. Because the d sublevels start on the third principal energy level, the 21st through 30th electrons are in the 3d sublevel. The atomic numbers 31 and 32 are in the third row of the p block, or the 4p sublevel (because the p sublevels start on the second principal energy level). Thus the last two electrons for a germanium atom are in the 4p sublevel.
+[Ar] 4s2 3d10 4p2
+c. With an atomic number of 81, thallium has 81 electrons. Its noble gas inner core of electrons has the xenon, Xe, configuration, and its 55th and the 56th electrons are in the 6s sublevel. The atomic numbers 57 through 70 are in the first row of the f block, so the next 14 electrons are in the 4f sublevel. (Remember that the sixth and seventh rows contain an f sublevel; this is commonly forgotten.) Electrons 71 through 80 are in the 5d sublevel. The atomic number 81 is in the fifth row of the p block, or the 6p sublevel (because the p sublevels start on the second principal energy level). Thus the 81st electron is in a 6p orbital.
+[Xe] 6s2 4f14 5d10 6p1
+O
+bjective 13
+E
+xercise 11.2 - Electron Configurations and Orbital Diagrams
+Write abbreviated electron configurations for (a) rubidium, Rb, (b) nickel, Ni, and
+(c) bismuth, Bi.
+O
+bjective 13
+Some of the elements have electron configurations that differ slightly from what our general procedure would lead us to predict. You can read more about these at the textbook’s Web site. The Web site also shows you how to predict charges on monatomic ions and how to write their electron configurations.
+Now that you have learned something about the elements’ electron configurations (even though you cannot say precisely what an electron is), Chapter 12 will show you how the configurations can be used to explain patterns of bonding and the structure of molecules.
+436 Chapter 11 Modern Atomic Theory
+You can get some practice writing abbreviated electron configurations on the textbook’s Web site.
+11.2 Multi-Electron Atoms 437
+A great deal of money, time, and scientific expertise are spent on trying to answer questions such as, “What is the nature of matter, and why does it exist?” When it comes time for lawmakers to distribute tax money and for executives in industry or academia to plan their research goals, it is natural for them, in turn, to wonder, “Shouldn’t we direct our energies and money toward more practical goals? Isn’t it much more important to develop procedures for early diagnosis and treatment of Alzheimer’s disease rather than spend our limited resources on understanding how the universe came to be?” These sorts of questions are at the core of an on-going debate between people who believe strongly in basic research, the seeking of knowledge for its own sake without a specific application in mind, and those who prefer to focus on applied research, the attempt to develop a specific procedure or product.
+Often, basic research leads to unforeseen practical applications. Quantum mechanics, the wave mathematics used to predict the shapes and sizes of atomic orbitals, provides an example. In 1931 Paul Adrien Dirac, one of the pioneers of quantum mechanics, found an unexpected minus sign in the equations he was developing to describe the nature of matter. He could have ignored this problem in the hope that it would disappear with further refinement of the equations, but Dirac took a much bolder approach instead. He suggested that the minus sign indicated the existence of a particle identical to the electron except that it has a positive charge instead of a negative charge. This “anti-electron,” which was detected in the laboratory by Carl Anderson in 1932, came to be called a positron, e+.
+Apparently, every particle has a twin antiparticle, and they are formed together from very concentrated energy. In 1955 and 1956, antiprotons and antineutrons were created and detected. The general name for antiparticles is antimatter. As the terminology suggests, when a particle meets its antimatter counterpart, they annihilate each other, leaving pure energy in their place. For example, when a positron collides with an electron, they both disappear, sending out two gamma ray photons (?-ray) in opposite directions.
+Originally, there was no practical application for the discovery of antimatter, although its existence suggested possible answers to some very big questions. Perhaps the universe was originally created from the conversion of some extremely concentrated energy source into matter and antimatter. However, while some scientists continue to do basic research on the nature of matter and antimatter, others are using the knowledge and techniques developed through this basic research to actively seek practical applications. One use of the antimatter created in the laboratory is called positron emission tomography (PET). With the help of a large team of scientists and computer experts, physicians use PET to scan the brain in search of biochemical abnormalities that signal the presence of Alzheimer’s disease, schizophrenia, epilepsy, brain tumors, and other brain disorders.
+In PET, radioactive substances that emit positrons are introduced into a patient’s bloodstream. As the radioactive atoms decay, the positrons they emit collide with electrons, producing gamma rays that escape from the body and are detected by an array of instruments surrounding the patient. Computer analysis of the amount and direction of gamma ray production, and comparison of the data collected for people with and without certain brain disorders provides doctors with valuable information. For example, PET scans of the brain have been used to study the movement of the medication L-dopa in the brains of people suffering from Parkinson’s disease. In these procedures, fluorine-18 atoms are attached to L-dopa molecules, which are then injected into a patient. Each flourine-18 decays and emits a positron that generates gamma rays when it meets an electron.
+Similar experiments are providing information about physiological processes such as glucose metabolism, the effects of opiate drugs, and the mechanisms of memory retrieval. Without the basic research, PET technology could never have been imagined, and it is just one of the many reasons why we should continue to ask fundamental questions such as, “Why are we here?” and “How do things work?”
+SPECIAL TOPIC 11.1 Why Does Matter Exist, and Why
+Should We Care About This Question?
+e+ e-?-ray ?-raypositron-electron collisionfollowed by the creation oftwo gamma ray photons
+Chapter Glossary
+You can test yourself on the glossary terms at the textbook’s Web site.
+Chapter
+Objectives
+Waveform A representation of the shape of a wave.
+Nodes The locations in a waveform where the intensity of the wave is always zero.
+Orbitals The allowed waveforms for the electron. This term can also be defined as a volume that contains a high percentage of the electron charge or as a volume within which an electron has a high probability of being found.
+Principal energy level or shell A collection of orbitals that have the same potential energy for a hydrogen atom, except for the first (lowest) principal energy level, which contains only one orbital (1s). For example, the 2s and 2p orbitals are in the second principal energy level.
+Ground state The condition of an atom whose electrons are in the orbitals that give it the lowest possible potential energy.
+Excited state The condition of an atom that has at least one of its electrons in orbitals that do not represent the lowest possible potential energy.
+Sublevel or Subshell One or more orbitals that have the same potential energy, the same size, and the same shape. For example, the second principal energy level contains a 2s sublevel (with one spherical orbital) and a 2p sublevel (with three dumbbell-shaped orbitals).
+Orbital diagram A drawing that uses lines or squares to show the distribution of electrons in orbitals and arrows to show the relative spin of each electron.
+Electron configuration A description of the complete distribution of an element’s electrons in atomic orbitals. Although a configuration can be described either with an orbital diagram or with its shorthand notation, this text will follow the common convention of referring to the shorthand notation that describes the distribution of electrons in sublevels without reference to the spin of the electrons as an electron configuration.
+The goal of this chapter is to teach you to do the following.
+1. Define all of the terms in the Chapter Glossary.
+Section 11.1 The Mysterious Electron
+2. Explain why, in theory, a guitar string can vibrate with an infinite number of possible waveforms, but why not all waveforms are possible.
+3. Describe how electrons are like vibrating guitar strings.
+4. Describe the 1s orbital in a hydrogen atom in terms of negative charge and in terms of the electron as a particle.
+5. Explain why electrons in atoms are often described in terms of electron clouds.
+6. Describe a 2s orbital for a hydrogen atom.
+7. Explain why an electron in a hydrogen atom has lower potential energy in the 1s orbital than the 2s orbital.
+8. Describe the three 2p orbitals for a hydrogen atom.
+9. Draw, describe, or recognize descriptions or representations of the 3s, 3p, and 3d orbitals.
+438 Chapter 11 Modern Atomic Theory
+Review Questions and Key Ideas 439
+Section 11.2 Multi-Electron Atoms
+10. Describe the difference between any two electrons in the same atomic orbital.
+11. Write complete electron configurations for all of the elements on the periodic table that follow the normal order of filling of the sublevels.
+12. Draw orbital diagrams for all of the elements on the periodic table that follow the normal order of filling of the sublevels.
+13. Write abbreviated electron configurations for all of the elements on the periodic table that follow the normal order of filling of the sublevels.
+Review Questions
+1. Describe the nuclear model of the atom.
+2. Describe the relationship between stability and potential energy.
+Complete the following statements by writing one of these words or phrases in each blank.
+analogies
+particle
+calculated for hydrogen
+particle interpretation
+cloud
+positions
+d
+possible
+decreased
+principal
+definitely
+probabilities
+diminishes
+probably
+electron configuration
+s orbitals
+exactly
+seven
+five
+seventh
+high percentage
+spherical
+hydrogen
+spinning
+impossible
+spins
+inner transition metals
+spontaneously returns
+intense
+strange
+intensity of the movement
+strength
+intensity of the negative charge
+sublevel
+mathematics
+three
+modern physics
+three-dimensional
+motion
+two
+n
+unpaired
+negative charge
+volume
+nine
+wave
+other elements
+waveforms
+p block
+3. The electron is extremely tiny, and modern physics tells us that
+_____________ things happen in the realm of the very, very small.
+4. The modern description of the electron is based on complex _____________ and on the discoveries of _____________.
+5. Modern physics tells us that it is _____________ to know _____________ where an electron is and what it is doing.
+Key Ideas
+6. There are two ways in which scientists deal with the problems associated with the complexity and fundamental uncertainty of the modern description of the electron, _____________ and _____________.
+7. In order to accommodate the uncertainty of the electron’s position and motion, scientists talk about where the electron _____________ is within the atom, instead of where it _____________ is.
+8. Each electron seems to have a dual nature in which both _____________ and _____________ characteristics are apparent.
+9. In the wave view, an electron has an effect on the space around it that can be described as a wave of _____________ varying in its intensity.
+10. The _____________ for electrons in an atom describe the variation in intensity of negative charge within the atom, with respect to the location of the nucleus. This can be described without mentioning the _____________ and
+_____________ of the electron particle itself.
+11. Just as the _____________ of a guitar string can vary, so can the
+_____________ of the electron vary at different positions outside the nucleus.
+12. The variation in the intensity of the electron charge can be described in terms of a(n) _____________ standing wave like the standing wave of the guitar string.
+13. As in the case of the guitar string, only certain waveforms are ____________ for the electron in an atom.
+14. Most of the general descriptions of electrons found in this chapter are based on the wave mathematics for the one electron in a(n) _____________ atom.
+15. The information calculated for the hydrogen electron is used to describe the _____________ as well.
+16. For the 1s orbital, the negative charge is most _____________ at the nucleus and _____________ with increasing distance from the nucleus.
+17. The allowed waveforms for the electron are also called orbitals. Another definition of orbital is as the volume that contains a given _____________ of the electron charge. An orbital can also be defined as the _____________ within which an electron has a high probability of being found.
+18. According to the _____________ of the wave character of the electron, the surface that surrounds 90% of an electron’s charge is the surface within which we have a 90% probability of finding the electron.
+19. In the particle view, the electron _____________ can be compared to a multiple exposure photograph of the electron.
+20. All _____________ electron waveforms are called s orbitals.
+21. Because the _____________ of the attraction between positive and negative charges decreases with increasing distance between the charges, an electron is more strongly attracted to the nucleus and therefore is more stable when it has the smaller 1s waveform than when it has the larger 2s waveform. Increased stability is associated with _____________ potential energy, so a 1s electron has lower potential energy than a 2s electron.
+22. All of the orbitals that have the same potential energy for a hydrogen atom are said to be in the same _____________ energy level.
+23. After the electron is excited from the 1s orbital to the 2s orbital, it
+_____________ to its lower-energy 1s form.
+24. There are _____________ possible 2p orbitals.
+440 Chapter 11 Modern Atomic Theory
+Chapter Problems 441
+25. Orbitals that have the same potential energy, the same size, and the same shape are in the same _____________.
+26. In the third principal energy level, there are _____________ possible orbitals for an electron, in three different sublevels.
+27. Note that the first principal energy level has one sublevel, the second has two, the third has three, and the fourth has four. If _____________ is the number associated with the principal energy level, each principal energy level has n sublevels.
+28. Each s sublevel has one orbital, each p sublevel has three orbitals, each d sublevel has _____________ orbitals, and each f sublevel has _____________ orbitals.
+29. None of the known elements in its ground state has any electrons in a principal energy level higher than the _____________.
+30. Scientist assume that all of the elements have the same set of possible principal energy levels, sublevels, and orbitals that has been _____________.
+31. We can visualize the two electrons in a helium atom as _____________ in opposite directions.
+32. In the broadest sense, a(n) _____________ is any description of the complete distribution of electrons in atomic orbitals.
+33. An atomic orbital may contain _____________ electrons at most, and the electrons must have different _____________.
+34. When electrons are filling orbitals of the same energy, they enter orbitals in such a way as to maximize the number of _____________ electrons, all with the same spin. In other words, they enter empty orbitals first, and all electrons in half-filled orbitals have the same spin.
+35. The highest-energy electrons for all of the elements in groups 1 (1A) and 2 (2A) in the periodic table are in _____________.
+36. All of the elements in the block with boron, B, neon, Ne, thallium, Tl, and radon, Rn, at the corners have their highest-energy electrons in p orbitals, so this is called the _____________.
+37. The last electrons to be added to an orbital diagram for the atoms of the transition metal elements go into _____________ orbitals.
+38. The section of the periodic table that contains the _____________ is called the f block.
+Chapter
+Problems
+Section 11.1 The Mysterious Electron
+39. Explain why, in theory, a guitar string can vibrate with an infinite number of possible waveforms, but why not all waveforms are possible.
+40. Describe how electrons are like vibrating guitar strings.
+41. Describe the 1s orbital in a hydrogen atom in terms of negative charge and in terms of the electron as a particle.
+42. Explain why electrons in atoms are often described in terms of electron clouds.
+43. Describe a 2s orbital for a hydrogen atom.
+44. Explain why an electron has lower potential energy in the 1s orbital than the 2s orbital for a hydrogen atom.
+O
+bjective 2
+O
+bjective 4
+O
+bjective 3
+O
+bjective 5
+O
+bjective 7
+O
+bjective 6
+45. Which is larger, a 2p orbital or a 3p orbital? Would the one electron in a hydrogen atom be more strongly attracted to the nucleus in a 2p orbital or in a 3p orbital? Would the electron be more stable in a 2p orbital or in a 3p orbital? Would the electron have higher potential energy when it is in a 2p orbital or a 3p orbital?
+46. Which is larger, a 3d orbital or a 4d orbital? Would the one electron in a hydrogen atom be more strongly attracted to the nucleus in a 3d orbital or in a 4d orbital? Would the electron be more stable in a 3d orbital or in a 4d orbital? Would the electron have higher potential energy when it is in a 3d orbital or a 4d orbital?
+47. Describe the three 2p orbitals for a hydrogen atom.
+48. Write descriptions of the 3s, 3p, and 3d orbitals.
+49. How many sublevels are in the fourth principal energy level for the hydrogen atom? What is the shorthand notation used to describe them? (For example, there is one sublevel in the first principal energy level, and it is described as 1s.)
+50. How many orbitals are there in the 3p sublevel for the hydrogen atom?
+51. How many orbitals are there in the 4d sublevel for the hydrogen atom?
+52. How many orbitals are there in the third principal energy level for the hydrogen atom?
+53. How many orbitals are there in the fourth principal energy level for the hydrogen atom?
+54. Which of the following sublevels do not exist?
+a. 5p
+b. 2s
+c. 3f
+d. 6d
+55. Which of the following sublevels do not exist?
+a. 1p
+b. 5d
+c. 6f
+d. 1s
+Section 11.2: Multi Electron Atoms
+56. Describe the difference between any two electrons in the same atomic orbital.
+57. What is the maximum number of electrons that can be placed in a 3p orbital?…in a 3d orbital?
+58. What is the maximum number of electrons that can be placed in a 5s orbital?…in a 5f orbital?
+59. What is the maximum number of electrons that can be placed in a 3p sublevel?…in a 3d sublevel?
+60. What is the maximum number of electrons that can be placed in a 5s sublevel?…in a 5f sublevel?
+61. What is the maximum number of electrons that can be placed in the third principal energy level?
+62. What is the maximum number of electrons that can be placed in the fourth principal energy level?
+63. For each of the following pairs, identify the sublevel that is filled first.
+a. 2s or 3s
+b. 3p or 3s
+c. 3d or 4s
+d. 4f or 6s
+64. For each of the following pairs, identify the sublevel that is filled first.
+a. 2p or 3p
+b. 5s or 5d
+c. 4d or 5s
+d. 4f or 5d
+O
+bjective 8
+O
+bjective 9
+O
+bjective 10
+442 Chapter 11 Modern Atomic Theory
+Key Ideas 443
+65. Write the complete electron configuration and orbital diagram for each of the following.
+a. carbon, C
+b. phosphorus, P
+c. vanadium, V
+d. iodine, I
+e. mercury, Hg
+66. Write the complete electron configuration and orbital diagram for each of the following.
+a. oxygen, O
+b. sulfur, S
+c. manganese, Mn
+d. tellurium, Te
+e. radon, Rn
+67. Which element is associated with each of the ground state electron configurations listed below?
+a. 1s2 2s2
+b. 1s2 2s2 2p6 3s1
+c. 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p5
+d. 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p2
+68. Which element is associated with each of the ground state electron configurations listed below?
+a. 1s2 2s2 2p3
+b. 1s2 2s2 2p6 3s2 3p6
+c. 1s2 2s2 2p6 3s2 3p6 4s2 3d10
+d. 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2
+69. Would the following electron configurations represent ground states or excited states?
+a. 1s2 2s1 2p5
+b. 1s2 2s2 2p4
+c. 1s2 2s2 2p4 3s1
+d. 1s2 2s2 2p5
+70. Would the following electron configurations represent ground states or excited states?
+a. 1s2 2s2 2p6 3s2
+b. 1s2 2s2 2p6 3s1 3p1
+c. 1s2 2s2 2p6 3s2 3p6 4s2 3d8 4p1
+d. 1s2 2s2 2p6 3s2 3p6 4s2 3d9
+71. Write the abbreviated electron configurations for each of the following.
+a. fluorine, F
+b. silicon, Si
+c. cobalt, Co
+d. indium, In
+e. polonium, Po
+f. palladium, Pd
+O
+bjective 11
+O
+bjective 12
+O
+bjective 11
+O
+bjective 12
+O
+bjective 13
+O
+bjective 13
+72. Write the abbreviated electron configurations for each of the following.
+a. chlorine, Cl
+b. boron, B
+c. scandium, Sc
+d. yttrium, Y
+e. astatine, At
+Additional Problems
+73. Which sublevel contains:
+a. the highest-energy electron for francium, Fr?
+b. the 25th electron added to an orbital diagram for elements larger than chromium, Cr?
+c. the 93rd electron added to an orbital diagram for elements larger than uranium, U?
+d. the 82nd electron added to an orbital diagram for elements larger than lead, Pb?
+74. Which sublevel contains:
+a. the highest-energy electron for strontium, Sr?
+b. the 63rd electron added to an orbital diagram for elements larger than samarium, Sm?
+c. the 33rd electron added to an orbital diagram for elements larger than germanium, Ge?
+d. the 75th electron added to an orbital diagram for elements larger than tungsten, W?
+75. What is the first element on the periodic table to have
+a. an electron in the 3p sublevel.
+b. a filled 4s sublevel.
+c. a half-filled 3d sublevel.
+76. What is the first element on the periodic table to have
+a. an electron in the 5s sublevel.
+b. a filled 4d sublevel.
+c. a half-filled 6p sublevel.
+77. Which pair of the following ground-state, abbreviated electron configurations corresponds to elements in the same group on the periodic table? What elements are they? What is the name of the group to which they belong?
+a. [Ne] 3s2
+b. [Ar] 4s2 3d10
+c. [Kr] 5s2
+d. [Xe] 6s2 4f14 5d10 6p1
+78. Which pair of the following ground-state, abbreviated electron configurations corresponds to elements in the same group on the periodic table? What elements are they? What is the name of the group to which they belong?
+a. [Ar] 4s2 3d10 4p3
+b. [Ne] 3s2 3p5
+c. [Xe] 6s2
+d. [Kr] 5s2 4d10 5p5
+444 Chapter 11 Modern Atomic Theory
+Chapter Problems 445
+79. What is the maximum number of electrons in each of the following?
+a. the 8j sublevel
+b. a 6h orbital
+c. the n = 8 principal energy level
+80. What is the maximum number of electrons in each of the following?
+a. the 9k sublevel
+b. a 12n orbital
+c. the n = 9 principal energy level
+81. Draw a sketch of how the orbitals for the electron clouds for all of the electrons in a phosphorus atom are superimposed on each other.
+82. Write the expected abbreviated electron configuration for the as-yet-undiscovered element with an atomic number of 121. Use Uuo for the symbol of the noble gas below xenon, Xe. (Hint: See Figure 11.17.)
+83. Write the expected abbreviated electron configuration for the as-yet-undiscovered element with an atomic number of 139. Use Uuo for the symbol of the noble gas below xenon, Xe. (Hint: See Figure 11.17.)
+84. Draw a periodic table like the one in Figure 11.17 but showing the 5g sublevel in its correct position.
+Discussion Topics
+85. Do you think electrons are more like baseballs or guitar strings?
+86. What do you think of the following statement? “We will never know about the true nature of the electron.”
+87. Do you think that there is some understanding of nature that is just beyond our ability to attain? What do you think about the following statement? “Just as all dogs have a limit to their ability to understand things, humans also have a limit.”
+88. With which of the following two statements do you most agree?
+“The main criterion for accepting a scientific model, such as our model for the electron, is whether or not it is true.”
+“The main criterion for accepting a scientific model, such as our model for the electron, is whether or not it is useful.”

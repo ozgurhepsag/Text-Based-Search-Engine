@@ -1,0 +1,823 @@
+For a non-interactive shell, an error condition encountered by a special built-in (see Special Built-In Utilities) or other type of utility shall cause the shell to write a diagnostic message to standard error and exit as shown in the following table:
+
+Error
+	
+
+Special Built-In
+	
+
+Other Utilities
+
+Shell language syntax error
+	
+
+Shall exit
+	
+
+Shall exit
+
+Utility syntax error (option or operand error)
+	
+
+Shall exit
+	
+
+Shall not exit
+
+Redirection error
+	
+
+Shall exit
+	
+
+Shall not exit
+
+Variable assignment error
+	
+
+Shall exit
+	
+
+Shall not exit
+
+Expansion error
+	
+
+Shall exit
+	
+
+Shall exit
+
+Command not found
+	
+
+N/A
+	
+
+May exit
+
+Dot script not found
+	
+
+Shall exit
+	
+
+N/A
+
+An expansion error is one that occurs when the shell expansions defined in Word Expansions are carried out (for example, "${x!y}", because '!' is not a valid operator); an implementation may treat these as syntax errors if it is able to detect them during tokenization, rather than during expansion.
+
+If any of the errors shown as "shall exit" or "(may) exit" occur in a subshell, the subshell shall (respectively may) exit with a non-zero status, but the script containing the subshell shall not exit because of the error.
+
+In all of the cases shown in the table, an interactive shell shall write a diagnostic message to standard error without exiting.
+2.8.2 Exit Status for Commands
+
+Each command has an exit status that can influence the behavior of other shell commands. The exit status of commands that are not utilities is documented in this section. The exit status of the standard utilities is documented in their respective sections.
+
+If a command is not found, the exit status shall be 127. If the command name is found, but it is not an executable utility, the exit status shall be 126. Applications that invoke utilities without using the shell should use these exit status values to report similar errors.
+
+If a command fails during word expansion or redirection, its exit status shall be greater than zero.
+
+Internally, for purposes of deciding whether a command exits with a non-zero exit status, the shell shall recognize the entire status value retrieved for the command by the equivalent of the wait() function WEXITSTATUS macro (as defined in the System Interfaces volume of IEEE Std 1003.1-2001). When reporting the exit status with the special parameter '?', the shell shall report the full eight bits of exit status available. The exit status of a command that terminated because it received a signal shall be reported as greater than 128.
+2.9 Shell Commands
+
+This section describes the basic structure of shell commands. The following command descriptions each describe a format of the command that is only used to aid the reader in recognizing the command type, and does not formally represent the syntax. Each description discusses the semantics of the command; for a formal definition of the command language, consult Shell Grammar.
+
+A command is one of the following:
+
+    Simple command (see Simple Commands)
+
+    Pipeline (see Pipelines)
+
+    List compound-list (see Lists)
+
+    Compound command (see Compound Commands)
+
+    Function definition (see Function Definition Command)
+
+Unless otherwise stated, the exit status of a command shall be that of the last simple command executed by the command. There shall be no limit on the size of any shell command other than that imposed by the underlying system (memory constraints, {ARG_MAX}, and so on).
+2.9.1 Simple Commands
+
+A "simple command" is a sequence of optional variable assignments and redirections, in any sequence, optionally followed by words and redirections, terminated by a control operator.
+
+When a given simple command is required to be executed (that is, when any conditional construct such as an AND-OR list or a case statement has not bypassed the simple command), the following expansions, assignments, and redirections shall all be performed from the beginning of the command text to the end:
+
+    The words that are recognized as variable assignments or redirections according to Shell Grammar Rules are saved for processing in steps 3 and 4.
+
+    The words that are not variable assignments or redirections shall be expanded. If any fields remain following their expansion, the first field shall be considered the command name and remaining fields are the arguments for the command.
+
+    Redirections shall be performed as described in Redirection.
+
+    Each variable assignment shall be expanded for tilde expansion, parameter expansion, command substitution, arithmetic expansion, and quote removal prior to assigning the value.
+
+In the preceding list, the order of steps 3 and 4 may be reversed for the processing of special built-in utilities; see Special Built-In Utilities.
+
+If no command name results, variable assignments shall affect the current execution environment. Otherwise, the variable assignments shall be exported for the execution environment of the command and shall not affect the current execution environment (except for special built-ins). If any of the variable assignments attempt to assign a value to a read-only variable, a variable assignment error shall occur. See Consequences of Shell Errors for the consequences of these errors.
+
+If there is no command name, any redirections shall be performed in a subshell environment; it is unspecified whether this subshell environment is the same one as that used for a command substitution within the command. (To affect the current execution environment, see the exec() special built-in.) If any of the redirections performed in the current shell execution environment fail, the command shall immediately fail with an exit status greater than zero, and the shell shall write an error message indicating the failure. See Consequences of Shell Errors for the consequences of these failures on interactive and non-interactive shells.
+
+If there is a command name, execution shall continue as described in Command Search and Execution . If there is no command name, but the command contained a command substitution, the command shall complete with the exit status of the last command substitution performed. Otherwise, the command shall complete with a zero exit status.
+Command Search and Execution
+
+If a simple command results in a command name and an optional list of arguments, the following actions shall be performed:
+
+    If the command name does not contain any slashes, the first successful step in the following sequence shall occur:
+
+        If the command name matches the name of a special built-in utility, that special built-in utility shall be invoked.
+
+        If the command name matches the name of a function known to this shell, the function shall be invoked as described in Function Definition Command. If the implementation has provided a standard utility in the form of a function, it shall not be recognized at this point. It shall be invoked in conjunction with the path search in step 1d.
+
+        If the command name matches the name of a utility listed in the following table, that utility shall be invoked.
+
+
+        alias
+        bg
+        cd
+        command
+         
+        	
+
+
+        false
+        fc
+        fg
+        getopts
+         
+        	
+
+
+        jobs
+        kill
+        newgrp
+        pwd
+         
+        	
+
+
+        read
+        true
+        umask
+        unalias
+         
+        	
+
+
+        wait
+         
+
+        Otherwise, the command shall be searched for using the PATH environment variable as described in the Base Definitions volume of IEEE Std 1003.1-2001, Chapter 8, Environment Variables:
+
+            If the search is successful:
+
+                If the system has implemented the utility as a regular built-in or as a shell function, it shall be invoked at this point in the path search.
+
+                Otherwise, the shell executes the utility in a separate utility environment (see Shell Execution Environment) with actions equivalent to calling the execve() function as defined in the System Interfaces volume of IEEE Std 1003.1-2001 with the path argument set to the pathname resulting from the search, arg0 set to the command name, and the remaining arguments set to the operands, if any.
+
+                If the execve() function fails due to an error equivalent to the [ENOEXEC] error defined in the System Interfaces volume of IEEE Std 1003.1-2001, the shell shall execute a command equivalent to having a shell invoked with the pathname resulting from the search as its first operand, with any remaining arguments passed to the new shell, except that the value of "$0" in the new shell may be set to the command name. If the executable file is not a text file, the shell may bypass this command execution. In this case, it shall write an error message, and shall return an exit status of 126.
+
+            Once a utility has been searched for and found (either as a result of this specific search or as part of an unspecified shell start-up activity), an implementation may remember its location and need not search for the utility again unless the PATH variable has been the subject of an assignment. If the remembered location fails for a subsequent invocation, the shell shall repeat the search to find the new location for the utility, if any.
+
+            If the search is unsuccessful, the command shall fail with an exit status of 127 and the shell shall write an error message.
+
+    If the command name contains at least one slash, the shell shall execute the utility in a separate utility environment with actions equivalent to calling the execve() function defined in the System Interfaces volume of IEEE Std 1003.1-2001 with the path and arg0 arguments set to the command name, and the remaining arguments set to the operands, if any.
+
+    If the execve() function fails due to an error equivalent to the [ENOEXEC] error, the shell shall execute a command equivalent to having a shell invoked with the command name as its first operand, with any remaining arguments passed to the new shell. If the executable file is not a text file, the shell may bypass this command execution. In this case, it shall write an error message and shall return an exit status of 126.
+
+2.9.2 Pipelines
+
+A pipeline is a sequence of one or more commands separated by the control operator '|'. The standard output of all but the last command shall be connected to the standard input of the next command.
+
+The format for a pipeline is:
+
+    [!] command1 [ | command2 ...]
+
+The standard output of command1 shall be connected to the standard input of command2. The standard input, standard output, or both of a command shall be considered to be assigned by the pipeline before any redirection specified by redirection operators that are part of the command (see Redirection).
+
+If the pipeline is not in the background (see Asynchronous Lists), the shell shall wait for the last command specified in the pipeline to complete, and may also wait for all commands to complete.
+Exit Status
+
+If the reserved word ! does not precede the pipeline, the exit status shall be the exit status of the last command specified in the pipeline. Otherwise, the exit status shall be the logical NOT of the exit status of the last command. That is, if the last command returns zero, the exit status shall be 1; if the last command returns greater than zero, the exit status shall be zero.
+2.9.3 Lists
+
+An AND-OR list is a sequence of one or more pipelines separated by the operators "&&" and "||" .
+
+A list is a sequence of one or more AND-OR lists separated by the operators ';' and '&' and optionally terminated by ';', '&', or <newline>.
+
+The operators "&&" and "||" shall have equal precedence and shall be evaluated with left associativity. For example, both of the following commands write solely bar to standard output:
+
+    false && echo foo || echo bar
+    true || echo foo && echo bar
+
+A ';' or <newline> terminator shall cause the preceding AND-OR list to be executed sequentially; an '&' shall cause asynchronous execution of the preceding AND-OR list.
+
+The term "compound-list" is derived from the grammar in Shell Grammar; it is equivalent to a sequence of lists, separated by <newline>s, that can be preceded or followed by an arbitrary number of <newline>s.
+The following sections are informative.
+Examples
+
+The following is an example that illustrates <newline>s in compound-lists:
+
+    while
+        # a couple of <newline>s
+
+
+        # a list
+        date && who || ls; cat file
+        # a couple of <newline>s
+
+
+        # another list
+        wc file > output & true
+
+
+    do
+        # 2 lists
+        ls
+        cat file
+    done
+
+End of informative text.
+Asynchronous Lists
+
+If a command is terminated by the control operator ampersand ( '&' ), the shell shall execute the command asynchronously in a subshell. This means that the shell shall not wait for the command to finish before executing the next command.
+
+The format for running a command in the background is:
+
+    command1 & [command2 & ... ]
+
+The standard input for an asynchronous list, before any explicit redirections are performed, shall be considered to be assigned to a file that has the same properties as /dev/null. If it is an interactive shell, this need not happen. In all cases, explicit redirection of standard input shall override this activity.
+
+When an element of an asynchronous list (the portion of the list ended by an ampersand, such as command1, above) is started by the shell, the process ID of the last command in the asynchronous list element shall become known in the current shell execution environment; see Shell Execution Environment. This process ID shall remain known until:
+
+    The command terminates and the application waits for the process ID.
+
+    Another asynchronous list invoked before "$!" (corresponding to the previous asynchronous list) is expanded in the current execution environment.
+
+The implementation need not retain more than the {CHILD_MAX} most recent entries in its list of known process IDs in the current shell execution environment.
+Exit Status
+
+The exit status of an asynchronous list shall be zero.
+Sequential Lists
+
+Commands that are separated by a semicolon ( ';' ) shall be executed sequentially.
+
+The format for executing commands sequentially shall be:
+
+    command1 [; command2] ...
+
+Each command shall be expanded and executed in the order specified.
+Exit Status
+
+The exit status of a sequential list shall be the exit status of the last command in the list.
+AND Lists
+
+The control operator "&&" denotes an AND list. The format shall be:
+
+    command1 [ && command2] ...
+
+First command1 shall be executed. If its exit status is zero, command2 shall be executed, and so on, until a command has a non-zero exit status or there are no more commands left to execute. The commands are expanded only if they are executed.
+Exit Status
+
+The exit status of an AND list shall be the exit status of the last command that is executed in the list.
+OR Lists
+
+The control operator "||" denotes an OR List. The format shall be:
+
+    command1 [ || command2] ...
+
+First, command1 shall be executed. If its exit status is non-zero, command2 shall be executed, and so on, until a command has a zero exit status or there are no more commands left to execute.
+Exit Status
+
+The exit status of an OR list shall be the exit status of the last command that is executed in the list.
+2.9.4 Compound Commands
+
+The shell has several programming constructs that are "compound commands", which provide control flow for commands. Each of these compound commands has a reserved word or control operator at the beginning, and a corresponding terminator reserved word or operator at the end. In addition, each can be followed by redirections on the same line as the terminator. Each redirection shall apply to all the commands within the compound command that do not explicitly override that redirection.
+Grouping Commands
+
+The format for grouping commands is as follows:
+
+(compound-list)
+    Execute compound-list in a subshell environment; see Shell Execution Environment. Variable assignments and built-in commands that affect the environment shall not remain in effect after the list finishes.
+{ compound-list;}
+    Execute compound-list in the current process environment. The semicolon shown here is an example of a control operator delimiting the } reserved word. Other delimiters are possible, as shown in Shell Grammar; a <newline> is frequently used.
+
+Exit Status
+
+The exit status of a grouping command shall be the exit status of compound-list.
+The for Loop
+
+The for loop shall execute a sequence of commands for each member in a list of items. The for loop requires that the reserved words do and done be used to delimit the sequence of commands.
+
+The format for the for loop is as follows:
+
+    for name [ in [word ... ]]do
+        compound-list
+
+
+    done
+
+First, the list of words following in shall be expanded to generate a list of items. Then, the variable name shall be set to each item, in turn, and the compound-list executed each time. If no items result from the expansion, the compound-list shall not be executed. Omitting:
+
+    in word ...
+
+shall be equivalent to:
+
+    in "$@"
+
+Exit Status
+
+The exit status of a for command shall be the exit status of the last command that executes. If there are no items, the exit status shall be zero.
+Case Conditional Construct
+
+The conditional construct case shall execute the compound-list corresponding to the first one of several patterns (see Pattern Matching Notation) that is matched by the string resulting from the tilde expansion, parameter expansion, command substitution, arithmetic expansion, and quote removal of the given word. The reserved word in shall denote the beginning of the patterns to be matched. Multiple patterns with the same compound-list shall be delimited by the '|' symbol. The control operator ')' terminates a list of patterns corresponding to a given action. The compound-list for each list of patterns, with the possible exception of the last, shall be terminated with ";;". The case construct terminates with the reserved word esac ( case reversed).
+
+The format for the case construct is as follows:
+
+    case word in
+        [(]pattern1) compound-list;;
+        [[(]pattern[ | pattern] ... ) compound-list;;] ...
+        [[(]pattern[ | pattern] ... ) compound-list]
+
+
+    esac
+
+The ";;" is optional for the last compound-list.
+
+In order from the beginning to the end of the case statement, each pattern that labels a compound-list shall be subjected to tilde expansion, parameter expansion, command substitution, and arithmetic expansion, and the result of these expansions shall be compared against the expansion of word, according to the rules described in Pattern Matching Notation (which also describes the effect of quoting parts of the pattern). After the first match, no more patterns shall be expanded, and the compound-list shall be executed. The order of expansion and comparison of multiple patterns that label a compound-list statement is unspecified.
+Exit Status
+
+The exit status of case shall be zero if no patterns are matched. Otherwise, the exit status shall be the exit status of the last command executed in the compound-list.
+The if Conditional Construct
+
+The if command shall execute a compound-list and use its exit status to determine whether to execute another compound-list.
+
+The format for the if construct is as follows:
+
+    if compound-listthen
+        compound-list[elif compound-listthen
+        compound-list] ...
+    [else
+        compound-list]
+
+
+    fi
+
+The if compound-list shall be executed; if its exit status is zero, the then compound-list shall be executed and the command shall complete. Otherwise, each elif compound-list shall be executed, in turn, and if its exit status is zero, the then compound-list shall be executed and the command shall complete. Otherwise, the else compound-list shall be executed.
+Exit Status
+
+The exit status of the if command shall be the exit status of the then or else compound-list that was executed, or zero, if none was executed.
+The while Loop
+
+The while loop shall continuously execute one compound-list as long as another compound-list has a zero exit status.
+
+The format of the while loop is as follows:
+
+    while compound-list-1do
+        compound-list-2
+
+
+    done
+
+The compound-list-1 shall be executed, and if it has a non-zero exit status, the while command shall complete. Otherwise, the compound-list-2 shall be executed, and the process shall repeat.
+Exit Status
+
+The exit status of the while loop shall be the exit status of the last compound-list-2 executed, or zero if none was executed.
+The until Loop
+
+The until loop shall continuously execute one compound-list as long as another compound-list has a non-zero exit status.
+
+The format of the until loop is as follows:
+
+    until compound-list-1do
+        compound-list-2
+
+
+    done
+
+The compound-list-1 shall be executed, and if it has a zero exit status, the until command completes. Otherwise, the compound-list-2 shall be executed, and the process repeats.
+Exit Status
+
+The exit status of the until loop shall be the exit status of the last compound-list-2 executed, or zero if none was executed.
+2.9.5 Function Definition Command
+
+A function is a user-defined name that is used as a simple command to call a compound command with new positional parameters. A function is defined with a "function definition command".
+
+The format of a function definition command is as follows:
+
+    fname() compound-command[io-redirect ...]
+
+The function is named fname; the application shall ensure that it is a name (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.230, Name). An implementation may allow other characters in a function name as an extension. The implementation shall maintain separate name spaces for functions and variables.
+
+The argument compound-command represents a compound command, as described in Compound Commands.
+
+When the function is declared, none of the expansions in Word Expansions shall be performed on the text in compound-command or io-redirect; all expansions shall be performed as normal each time the function is called. Similarly, the optional io-redirect redirections and any variable assignments within compound-command shall be performed during the execution of the function itself, not the function definition. See Consequences of Shell Errors for the consequences of failures of these operations on interactive and non-interactive shells.
+
+When a function is executed, it shall have the syntax-error and variable-assignment properties described for special built-in utilities in the enumerated list at the beginning of Special Built-In Utilities.
+
+The compound-command shall be executed whenever the function name is specified as the name of a simple command (see Command Search and Execution). The operands to the command temporarily shall become the positional parameters during the execution of the compound-command; the special parameter '#' also shall be changed to reflect the number of operands. The special parameter 0 shall be unchanged. When the function completes, the values of the positional parameters and the special parameter '#' shall be restored to the values they had before the function was executed. If the special built-in return is executed in the compound-command, the function completes and execution shall resume with the next command after the function call.
+Exit Status
+
+The exit status of a function definition shall be zero if the function was declared successfully; otherwise, it shall be greater than zero. The exit status of a function invocation shall be the exit status of the last command executed by the function.
+2.10 Shell Grammar
+
+The following grammar defines the Shell Command Language. This formal syntax shall take precedence over the preceding text syntax description.
+2.10.1 Shell Grammar Lexical Conventions
+
+The input language to the shell must be first recognized at the character level. The resulting tokens shall be classified by their immediate context according to the following rules (applied in order). These rules shall be used to determine what a "token" is that is subject to parsing at the token level. The rules for token recognition in Token Recognition shall apply.
+
+    A <newline> shall be returned as the token identifier NEWLINE.
+
+    If the token is an operator, the token identifier for that operator shall result.
+
+    If the string consists solely of digits and the delimiter character is one of '<' or '>', the token identifier IO_NUMBER shall be returned.
+
+    Otherwise, the token identifier TOKEN results.
+
+Further distinction on TOKEN is context-dependent. It may be that the same TOKEN yields WORD, a NAME, an ASSIGNMENT, or one of the reserved words below, dependent upon the context. Some of the productions in the grammar below are annotated with a rule number from the following list. When a TOKEN is seen where one of those annotated productions could be used to reduce the symbol, the applicable rule shall be applied to convert the token identifier type of the TOKEN to a token identifier acceptable at that point in the grammar. The reduction shall then proceed based upon the token identifier type yielded by the rule applied. When more than one rule applies, the highest numbered rule shall apply (which in turn may refer to another rule). (Note that except in rule 7, the presence of an '=' in the token has no effect.)
+
+The WORD tokens shall have the word expansion rules applied to them immediately before the associated command is executed, not at the time the command is parsed.
+2.10.2 Shell Grammar Rules
+
+    [Command Name]
+
+    When the TOKEN is exactly a reserved word, the token identifier for that reserved word shall result. Otherwise, the token WORD shall be returned. Also, if the parser is in any state where only a reserved word could be the next correct token, proceed as above.
+
+    Note:
+        Because at this point quote marks are retained in the token, quoted strings cannot be recognized as reserved words. This rule also implies that reserved words are not recognized except in certain positions in the input, such as after a <newline> or semicolon; the grammar presumes that if the reserved word is intended, it is properly delimited by the user, and does not attempt to reflect that requirement directly. Also note that line joining is done before tokenization, as described in Escape Character (Backslash) , so escaped <newline>s are already removed at this point.
+
+    Rule 1 is not directly referenced in the grammar, but is referred to by other rules, or applies globally.
+
+    [Redirection to or from filename]
+
+    The expansions specified in Redirection shall occur. As specified there, exactly one field can result (or the result is unspecified), and there are additional requirements on pathname expansion.
+
+    [Redirection from here-document]
+
+    Quote removal shall be applied to the word to determine the delimiter that is used to find the end of the here-document that begins after the next <newline>.
+
+    [Case statement termination]
+
+    When the TOKEN is exactly the reserved word esac, the token identifier for esac shall result. Otherwise, the token WORD shall be returned.
+
+    [ NAME in for]
+
+    When the TOKEN meets the requirements for a name (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.230, Name), the token identifier NAME shall result. Otherwise, the token WORD shall be returned.
+
+    [Third word of for and case]
+
+        [ case only]
+
+        When the TOKEN is exactly the reserved word in, the token identifier for in shall result. Otherwise, the token WORD shall be returned.
+
+        [ for only]
+
+        When the TOKEN is exactly the reserved word in or do, the token identifier for in or do shall result, respectively. Otherwise, the token WORD shall be returned.
+
+    (For a. and b.: As indicated in the grammar, a linebreak precedes the tokens in and do. If <newline>s are present at the indicated location, it is the token after them that is treated in this fashion.)
+
+    [Assignment preceding command name]
+
+        [When the first word]
+
+        If the TOKEN does not contain the character '=', rule 1 is applied. Otherwise, 7b shall be applied.
+
+        [Not the first word]
+
+        If the TOKEN contains the equal sign character:
+
+            If it begins with '=', the token WORD shall be returned.
+
+            If all the characters preceding '=' form a valid name (see the Base Definitions volume of IEEE Std 1003.1-2001, Section 3.230, Name), the token ASSIGNMENT_WORD shall be returned. (Quoted characters cannot participate in forming a valid name.)
+
+            Otherwise, it is unspecified whether it is ASSIGNMENT_WORD or WORD that is returned.
+
+    Assignment to the NAME shall occur as specified in Simple Commands.
+
+    [ NAME in function]
+
+    When the TOKEN is exactly a reserved word, the token identifier for that reserved word shall result. Otherwise, when the TOKEN meets the requirements for a name, the token identifier NAME shall result. Otherwise, rule 7 applies.
+
+    [Body of function]
+
+    Word expansion and assignment shall never occur, even when required by the rules above, when this rule is being parsed. Each TOKEN that might either be expanded or have assignment applied to it shall instead be returned as a single WORD consisting only of characters that are exactly the token described in Token Recognition.
+
+
+/* -------------------------------------------------------
+   The grammar symbols
+   ------------------------------------------------------- */
+
+
+%token  WORD
+%token  ASSIGNMENT_WORD
+%token  NAME
+%token  NEWLINE
+%token  IO_NUMBER
+
+
+/* The following are the operators mentioned above. */
+
+
+%token  AND_IF    OR_IF    DSEMI
+/*      '&&'      '||'     ';;'    */
+
+
+%token  DLESS  DGREAT  LESSAND  GREATAND  LESSGREAT  DLESSDASH
+/*      '<<'   '>>'    '<&'     '>&'      '<>'       '<<-'   */
+
+
+%token  CLOBBER
+/*      '>|'   */
+
+
+/* The following are the reserved words. */
+
+
+%token  If    Then    Else    Elif    Fi    Do    Done
+/*      'if'  'then'  'else'  'elif'  'fi'  'do'  'done'   */
+
+
+%token  Case    Esac    While    Until    For
+/*      'case'  'esac'  'while'  'until'  'for'   */
+
+
+/* These are reserved words, not operator tokens, and are
+   recognized when reserved words are recognized. */
+
+
+%token  Lbrace    Rbrace    Bang
+/*      '{'       '}'       '!'   */
+
+
+%token  In
+/*      'in'   */
+
+
+/* -------------------------------------------------------
+   The Grammar
+   ------------------------------------------------------- */
+
+
+%start  complete_command
+%%
+complete_command : list separator
+                 | list
+                 ;
+list             : list separator_op and_or
+                 |                   and_or
+                 ;
+and_or           :                         pipeline
+                 | and_or AND_IF linebreak pipeline
+                 | and_or OR_IF  linebreak pipeline
+                 ;
+pipeline         :      pipe_sequence
+                 | Bang pipe_sequence
+                 ;
+pipe_sequence    :                             command
+                 | pipe_sequence '|' linebreak command
+                 ;
+command          : simple_command
+                 | compound_command
+                 | compound_command redirect_list
+                 | function_definition
+                 ;
+compound_command : brace_group
+                 | subshell
+                 | for_clause
+                 | case_clause
+                 | if_clause
+                 | while_clause
+                 | until_clause
+                 ;
+subshell         : '(' compound_list ')'
+                 ;
+compound_list    :              term
+                 | newline_list term
+                 |              term separator
+                 | newline_list term separator
+                 ;
+term             : term separator and_or
+                 |                and_or
+                 ;
+for_clause       : For name linebreak                            do_group
+                 | For name linebreak in          sequential_sep do_group
+                 | For name linebreak in wordlist sequential_sep do_group
+                 ;
+name             : NAME                     /* Apply rule 5 */
+                 ;
+in               : In                       /* Apply rule 6 */
+                 ;
+wordlist         : wordlist WORD
+                 |          WORD
+                 ;
+case_clause      : Case WORD linebreak in linebreak case_list    Esac
+                 | Case WORD linebreak in linebreak case_list_ns Esac
+                 | Case WORD linebreak in linebreak              Esac
+                 ;
+case_list_ns     : case_list case_item_ns
+                 |           case_item_ns
+                 ;
+case_list        : case_list case_item
+                 |           case_item
+                 ;
+case_item_ns     :     pattern ')'               linebreak
+                 |     pattern ')' compound_list linebreak
+                 | '(' pattern ')'               linebreak
+                 | '(' pattern ')' compound_list linebreak
+                 ;
+case_item        :     pattern ')' linebreak     DSEMI linebreak
+                 |     pattern ')' compound_list DSEMI linebreak
+                 | '(' pattern ')' linebreak     DSEMI linebreak
+                 | '(' pattern ')' compound_list DSEMI linebreak
+                 ;
+pattern          :             WORD         /* Apply rule 4 */
+                 | pattern '|' WORD         /* Do not apply rule 4 */
+                 ;
+if_clause        : If compound_list Then compound_list else_part Fi
+                 | If compound_list Then compound_list           Fi
+                 ;
+else_part        : Elif compound_list Then else_part
+                 | Else compound_list
+                 ;
+while_clause     : While compound_list do_group
+                 ;
+until_clause     : Until compound_list do_group
+                 ;
+function_definition : fname '(' ')' linebreak function_body
+                 ;
+function_body    : compound_command                /* Apply rule 9 */
+                 | compound_command redirect_list  /* Apply rule 9 */
+                 ;
+fname            : NAME                            /* Apply rule 8 */
+                 ;
+brace_group      : Lbrace compound_list Rbrace
+                 ;
+do_group         : Do compound_list Done           /* Apply rule 6 */
+                 ;
+simple_command   : cmd_prefix cmd_word cmd_suffix
+                 | cmd_prefix cmd_word
+                 | cmd_prefix
+                 | cmd_name cmd_suffix
+                 | cmd_name
+                 ;
+cmd_name         : WORD                   /* Apply rule 7a */
+                 ;
+cmd_word         : WORD                   /* Apply rule 7b */
+                 ;
+cmd_prefix       :            io_redirect
+                 | cmd_prefix io_redirect
+                 |            ASSIGNMENT_WORD
+                 | cmd_prefix ASSIGNMENT_WORD
+                 ;
+cmd_suffix       :            io_redirect
+                 | cmd_suffix io_redirect
+                 |            WORD
+                 | cmd_suffix WORD
+                 ;
+redirect_list    :               io_redirect
+                 | redirect_list io_redirect
+                 ;
+io_redirect      :           io_file
+                 | IO_NUMBER io_file
+                 |           io_here
+                 | IO_NUMBER io_here
+                 ;
+io_file          : '<'       filename
+                 | LESSAND   filename
+                 | '>'       filename
+                 | GREATAND  filename
+                 | DGREAT    filename
+                 | LESSGREAT filename
+                 | CLOBBER   filename
+                 ;
+filename         : WORD                      /* Apply rule 2 */
+                 ;
+io_here          : DLESS     here_end
+                 | DLESSDASH here_end
+                 ;
+here_end         : WORD                      /* Apply rule 3 */
+                 ;
+newline_list     :              NEWLINE
+                 | newline_list NEWLINE
+                 ;
+linebreak        : newline_list
+                 | /* empty */
+                 ;
+separator_op     : '&'
+                 | ';'
+                 ;
+separator        : separator_op linebreak
+                 | newline_list
+                 ;
+sequential_sep   : ';' linebreak
+                 | newline_list
+                 ;
+
+2.11 Signals and Error Handling
+
+When a command is in an asynchronous list, the shell shall prevent SIGQUIT and SIGINT signals from the keyboard from interrupting the command. Otherwise, signals shall have the values inherited by the shell from its parent (see also the trap special built-in).
+
+When a signal for which a trap has been set is received while the shell is waiting for the completion of a utility executing a foreground command, the trap associated with that signal shall not be executed until after the foreground command has completed. When the shell is waiting, by means of the wait utility, for asynchronous commands to complete, the reception of a signal for which a trap has been set shall cause the wait utility to return immediately with an exit status >128, immediately after which the trap associated with that signal shall be taken.
+
+If multiple signals are pending for the shell for which there are associated trap actions, the order of execution of trap actions is unspecified.
+2.12 Shell Execution Environment
+
+A shell execution environment consists of the following:
+
+    Open files inherited upon invocation of the shell, plus open files controlled by exec
+
+    Working directory as set by cd
+
+    File creation mask set by umask
+
+    Current traps set by trap
+
+    Shell parameters that are set by variable assignment (see the set special built-in) or from the System Interfaces volume of IEEE Std 1003.1-2001 environment inherited by the shell when it begins (see the export special built-in)
+
+    Shell functions; see Function Definition Command
+
+    Options turned on at invocation or by set
+
+    Process IDs of the last commands in asynchronous lists known to this shell environment; see Asynchronous Lists
+
+    Shell aliases; see Alias Substitution
+
+Utilities other than the special built-ins (see Special Built-In Utilities) shall be invoked in a separate environment that consists of the following. The initial value of these objects shall be the same as that for the parent shell, except as noted below.
+
+    Open files inherited on invocation of the shell, open files controlled by the exec special built-in plus any modifications, and additions specified by any redirections to the utility
+
+    Current working directory
+
+    File creation mask
+
+    If the utility is a shell script, traps caught by the shell shall be set to the default values and traps ignored by the shell shall be set to be ignored by the utility; if the utility is not a shell script, the trap actions (default or ignore) shall be mapped into the appropriate signal handling actions for the utility
+
+    Variables with the export attribute, along with those explicitly exported for the duration of the command, shall be passed to the utility environment variables
+
+The environment of the shell process shall not be changed by the utility unless explicitly specified by the utility description (for example, cd and umask).
+
+A subshell environment shall be created as a duplicate of the shell environment, except that signal traps set by that shell environment shall be set to the default values. Changes made to the subshell environment shall not affect the shell environment. Command substitution, commands that are grouped with parentheses, and asynchronous lists shall be executed in a subshell environment. Additionally, each command of a multi-command pipeline is in a subshell environment; as an extension, however, any or all commands in a pipeline may be executed in the current environment. All other commands shall be executed in the current shell environment.
+2.13 Pattern Matching Notation
+
+The pattern matching notation described in this section is used to specify patterns for matching strings in the shell. Historically, pattern matching notation is related to, but slightly different from, the regular expression notation described in the Base Definitions volume of IEEE Std 1003.1-2001, Chapter 9, Regular Expressions. For this reason, the description of the rules for this pattern matching notation are based on the description of regular expression notation, modified to include backslash escape processing.
+2.13.1 Patterns Matching a Single Character
+
+The following patterns matching a single character shall match a single character: ordinary characters, special pattern characters, and pattern bracket expressions. The pattern bracket expression also shall match a single collating element. A backslash character shall escape the following character. The escaping backslash shall be discarded.
+
+An ordinary character is a pattern that shall match itself. It can be any character in the supported character set except for NUL, those special shell characters in Quoting that require quoting, and the following three special pattern characters. Matching shall be based on the bit pattern used for encoding the character, not on the graphic representation of the character. If any character (ordinary, shell special, or pattern special) is quoted, that pattern shall match the character itself. The shell special characters always require quoting.
+
+When unquoted and outside a bracket expression, the following three characters shall have special meaning in the specification of patterns:
+
+?
+    A question-mark is a pattern that shall match any character.
+*
+    An asterisk is a pattern that shall match multiple characters, as described in Patterns Matching Multiple Characters.
+[
+    The open bracket shall introduce a pattern bracket expression.
+
+The description of basic regular expression bracket expressions in the Base Definitions volume of IEEE Std 1003.1-2001, Section 9.3.5, RE Bracket Expression shall also apply to the pattern bracket expression, except that the exclamation mark character ( '!' ) shall replace the circumflex character ( '^' ) in its role in a "non-matching list" in the regular expression notation. A bracket expression starting with an unquoted circumflex character produces unspecified results.
+
+When pattern matching is used where shell quote removal is not performed (such as in the argument to the find - name primary when find is being called using one of the exec functions as defined in the System Interfaces volume of IEEE Std 1003.1-2001, or in the pattern argument to the fnmatch() function), special characters can be escaped to remove their special meaning by preceding them with a backslash character. This escaping backslash is discarded. The sequence "\\" represents one literal backslash. All of the requirements and effects of quoting on ordinary, shell special, and special pattern characters shall apply to escaping in this context.
+2.13.2 Patterns Matching Multiple Characters
+
+The following rules are used to construct patterns matching multiple characters from patterns matching a single character:
+
+    The asterisk ( '*' ) is a pattern that shall match any string, including the null string.
+
+    The concatenation of patterns matching a single character is a valid pattern that shall match the concatenation of the single characters or collating elements matched by each of the concatenated patterns.
+
+    The concatenation of one or more patterns matching a single character with one or more asterisks is a valid pattern. In such patterns, each asterisk shall match a string of zero or more characters, matching the greatest possible number of characters that still allows the remainder of the pattern to match the string.
+
+2.13.3 Patterns Used for Filename Expansion
+
+The rules described so far in Patterns Matching a Single Character and Patterns Matching Multiple Characters are qualified by the following rules that apply when pattern matching notation is used for filename expansion:
+
+    The slash character in a pathname shall be explicitly matched by using one or more slashes in the pattern; it shall neither be matched by the asterisk or question-mark special characters nor by a bracket expression. Slashes in the pattern shall be identified before bracket expressions; thus, a slash cannot be included in a pattern bracket expression used for filename expansion. If a slash character is found following an unescaped open square bracket character before a corresponding closing square bracket is found, the open bracket shall be treated as an ordinary character. For example, the pattern "a[b/c]d" does not match such pathnames as abd or a/d. It only matches a pathname of literally a[b/c]d.
+
+    If a filename begins with a period ( '.' ), the period shall be explicitly matched by using a period as the first character of the pattern or immediately following a slash character. The leading period shall not be matched by:
+
+        The asterisk or question-mark special characters
+
+        A bracket expression containing a non-matching list, such as "[!a]", a range expression, such as "[%-0]", or a character class expression, such as "[[:punct:]]"
+
+    It is unspecified whether an explicit period in a bracket expression matching list, such as "[.abc]", can match a leading period in a filename.
+
+    Specified patterns shall be matched against existing filenames and pathnames, as appropriate. Each component that contains a pattern character shall require read permission in the directory containing that component. Any component, except the last, that does not contain a pattern character shall require search permission. For example, given the pattern:
+
+        /foo/bar/x*/bam
+
+    search permission is needed for directories / and foo, search and read permissions are needed for directory bar, and search permission is needed for each x* directory. If the pattern matches any existing filenames or pathnames, the pattern shall be replaced with those filenames and pathnames, sorted according to the collating sequence in effect in the current locale. If the pattern contains an invalid bracket expression or does not match any existing filenames or pathnames, the pattern string shall be left unchanged.
+
+2.14 Special Built-In Utilities
+
+The following "special built-in" utilities shall be supported in the shell command language. The output of each command, if any, shall be written to standard output, subject to the normal redirection and piping possible with all commands.
+
+The term "built-in" implies that the shell can execute the utility directly and does not need to search for it. An implementation may choose to make any utility a built-in; however, the special built-in utilities described here differ from regular built-in utilities in two respects:
+
+    A syntax error in a special built-in utility may cause a shell executing that utility to abort, while a syntax error in a regular built-in utility shall not cause a shell executing that utility to abort. (See Consequences of Shell Errors for the consequences of errors on interactive and non-interactive shells.) If a special built-in utility encountering a syntax error does not abort the shell, its exit value shall be non-zero.
+
+    Variable assignments specified with special built-in utilities remain in effect after the built-in completes; this shall not be the case with a regular built-in or other utility.
+
+The special built-in utilities in this section need not be provided in a manner accessible via the exec family of functions defined in the System Interfaces volume of IEEE Std 1003.1-2001.
+
+Some of the special built-ins are described as conforming to the Base Definitions volume of IEEE Std 1003.1-2001, Section 12.2, Utility Syntax Guidelines. For those that are not, the requirement in Utility Description Defaults that "--" be recognized as a first argument to be discarded does not apply and a conforming application shall not use that argument.
+UNIX ® is a registered Trademark of The Open Group.
+POSIX ® is a registered Trademark of The IEEE.
+[ Main Index | XBD | XCU | XSH | XRAT ]

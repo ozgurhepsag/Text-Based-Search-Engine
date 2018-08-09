@@ -1,0 +1,1508 @@
+Introduction
+Welcome to ASP.NET 2.0 All-in-One Desk Reference For Dummies, the
+one ASP.NET programming book that’s designed to replace an entire
+shelf full of the dull and tedious ASP.NET books you’d otherwise have to
+buy. This book contains all the basic and not-so-basic information you need
+to know to get going with ASP.NET Web programming, including the basics
+of working with Visual Studio or Visual Web Developer Express, using Web
+controls, working with databases, and learning the basics of both C# and
+Visual Basic .NET.
+Of course, you can — and probably should — eventually buy separate
+books on each of these topics. It won’t take long before your bookshelf is
+bulging with 10,000 or more pages of detailed information about every imaginable
+nuance of ASP.NET programming. But before you’re ready to tackle
+each of those topics in depth, you need a birds-eye picture. That’s what this
+book is about.
+And if you already own 10,000 pages or more of ASP.NET information, you
+may be overwhelmed by the amount of detail and wonder, do I really need to
+read 1,200 pages about the .NET Framework classes just to create a simple
+Web page? And do I really need a five pound book on ADO.NET?
+Truth is, most 1,200 page programming books have about 200 pages of really
+useful information — the kind you use every day — and about 1,000 pages
+of excruciating details that apply mostly if you’re writing guidance-control
+programs for nuclear missiles or trading systems for the New York Stock
+Exchange.
+The basic idea here is that we’ve tried to wring out the 100 or so most useful
+pages of information on eight different ASP.NET programming topics: basic
+programming, Web controls, HTML, C#, Visual Basic, database programming,
+the .NET Framework, and advanced programming topics. Thus, here’s
+a nice, trim 900-or-so-page book that’s really eight 100-page books. (Well,
+they didn’t all come out to 100 pages each. But close!)
+So whether you’re just getting started with ASP.NET programming or you’re
+a seasoned pro, you’ve found the right book.
+2 About This Book
+About This Book
+ASP.NET 2.0 All-in-One Desk Reference For Dummies is intended to be a reference
+for all the great things (and maybe a few not-so-great things) that you may
+need to know when you’re writing ASP.NET programs. You can, of course, buy a
+huge 1,200-page book on each of the programming topics covered in this book.
+But then, who would carry them home from the bookstore for you? And where
+would you find the shelf space to store them? In this book, you get the information
+you need all conveniently packaged for you in between one set of covers.
+This book doesn’t pretend to be a comprehensive reference for every detail
+on these topics. Instead, it shows you how to get up and running fast so you
+have more time to do the things you really want to do. Designed using the
+easy-to-follow For Dummies format, this book helps you get the information
+you need without laboring to find it.
+ASP.NET 2.0 All-in-One Desk Reference For Dummies is a big book made up
+of several smaller books — mini-books, if you will. Each of these mini-books
+covers the basics of one key element of programming, such as installing
+ASP.NET and compiling and running programs, or using basic ASP.NET
+statements, or using ADO.NET to write database programs.
+Whenever one big thing is made up of several smaller things, confusion is
+always a possibility. That’s why this book is designed to have multiple access
+points to help you find what you want. At the beginning of the book is a
+detailed table of contents that covers the entire book. Then, each mini-book
+begins with its own mini-table of contents that shows you at a mini-glance
+what chapters are included in that mini-book. Useful running heads appear at
+the top of each page to point out the topic discussed on that page. And handy
+thumbtabs run down the side of the pages to help you quickly find each minibook.
+Finally, a comprehensive index lets you find information anywhere in
+the entire book.
+This isn’t the kind of book you pick up and read from start to finish, as if it
+were a cheap novel. If we ever see you reading it at the beach, we’ll kick sand
+in your face or toss you an inflatable shark in a Hawaiian shirt. This book is
+more like a reference, the kind of book you can pick up, turn to just about any
+page, and start reading. You don’t have to memorize anything in this book.
+It’s a “need-to-know” book: You pick it up when you need to know something.
+Need a reminder on the properties for the ListBox control? Pick up the book.
+Can’t remember the goofy syntax for C# foreach loops? Pick up the book.
+After you find what you need, put the book down and get on with your life.
+All code listings used in this book are available for download at www.dummies.
+com/go/aspnetaiofd.
+How This Book Is Organized 3
+How to Use This Book
+This book works like a reference. Start with the topic you want to find out
+about. Look for it in the table of contents or in the index to get going. The
+table of contents is detailed enough that you can find most of the topics
+you’re looking for. If not, turn to the index, where you can find even more
+details — and (just as important) what pages they’re on.
+Of course, the book is loaded with information, so if you want to take a brief
+excursion into your topic, you’re more than welcome. If you want to know
+(for example) the big picture on database programming, read all of Book 6.
+But if you just want the details on using the GridView control, go straight to
+Book 6, Chapter 3.
+How This Book Is Organized
+Each of the eight mini-books contained in ASP.NET 2.0 All-in-One Desk
+Reference For Dummies can stand alone. Here is a brief description of
+what you find in each mini-book.
+Book I: ASP.NET Basics
+This mini-book contains the information you need to get started with ASP.NET.
+It includes a brief introduction to what ASP.NET is and why it’s so popular, provides
+instructions on how to install Visual Studio .NET, and serves up the
+basics you need to know to create simple applications.
+Book II: Web Controls
+This mini-book covers all the basic server controls you’ll use in your ASP.NET
+Web pages. You get familiar with basic controls such as labels and text boxes,
+and get the word on how to use validation controls to make sure the users of
+your application don’t enter bad data. You’ll also learn about more advanced
+controls such as list boxes, calendars, and wizards.
+Book III: HTML
+You can’t do any serious ASP.NET programming without diving into the guts
+of HTML. The chapters in this mini-book show you how to code correct
+standards-based HTML markup and how to use advanced features such
+as CSS and client-side scripting.
+4 Icons Used in This Book
+Book IV: C#
+This mini-book focuses on the C# programming language. You’ll get a handle
+on data types, basic statements, and how to create classes that include features
+such as inheritance and polymorphism.
+Book V: Visual Basic
+If you don’t want to use C#, you can turn to this mini-book to learn the alternative:
+Visual Basic. Here you find all the important details about how to
+code Visual Basic statements, how to work with classes, how to use arrays,
+and so on.
+Book VI: Database Programming
+Database programming is the heart of most ASP.NET applications. In this
+mini-book, you’ll learn how to work with ASP.NET’s powerful data sources
+and database controls, including the GridView, FormView, DetailsView,
+and Repeater controls. You also sneak up on a bit of XML in its native habitat,
+just for good measure.
+Book VII: Using the .NET Framework
+ASP.NET is a part of the .NET Framework, which provides thousands of
+classes that you can use as you develop your programs. The books in this
+part cover the .NET classes that are most useful for ASP.NET programming.
+You’ll learn how to use classes that manipulate strings, dates, and collections.
+In addition, you’ll learn how to use the new generic collection classes
+that were added for version 2.0 of ASP.NET and the .NET Framework.
+Book VIII: Advanced ASP.NET Programming
+This last mini-book gets into some of the more interesting aspects of
+ASP.NET programming, many of them new with version 2.0. Specifically, you
+get a shot at working with login controls, site navigation, themes, portals,
+and much more.
+Icons Used in This Book
+Like any For Dummies book, this book is chock-full of helpful icons that draw
+your attention to items of particular importance. You find the following icons
+throughout this book:
+Pay special attention to this icon; it lets you know that some particularly
+useful tidbit is at hand.
+Where to Go from Here 5
+Danger, Will Robinson! This icon highlights information that may help you
+avert disaster.
+Did we tell you about the memory course we took?
+Hold it — overly technical stuff is just around the corner. Obviously, because
+this is a programming book, almost every paragraph of the next 900 or so
+pages could get this icon. So we reserve it for those paragraphs that go into
+detail explaining how something works under the hood — probably deeper
+than you really need to know to use a feature, but often enlightening.
+You also sometimes find this icon when we want to illustrate a point with an
+example that uses some ASP.NET feature that hasn’t been covered so far in
+the book, but that is covered later. In those cases, the icon is just a reminder
+that you shouldn’t get bogged down in the details of the illustration, and
+instead focus on the larger point.
+Where to Go from Here
+Yes, you can get there from here. With this book in hand, you’re ready to
+plow right through the rugged ASP.NET terrain. Browse through the table of
+contents and decide where you want to start. Be bold! Be courageous! Be
+adventurous! And above all, have fun!
+6 ASP.NET 2.0 All-in-One Desk Reference For Dummies
+Book I
+ASP.NET Basics
+Contents at a Glance
+Chapter 1: Welcome to ASP.NET Programming....................................................................9
+Chapter 2: Installing Visual Studio Web Developer 2005 Express Edition
+or Visual Studio 2005 ........................................................................................21
+Chapter 3: Creating Your First ASP.NET 2.0 Application ..................................................35
+Chapter 4: Understanding Postback, Events, and Code-Behind ......................................53
+Chapter 5: Creating Multipage Applications ......................................................................63
+Chapter 6: Testing and Debugging Your ASP.NET Applications ......................................87
+Chapter 1: Welcome to
+ASP.NET Programming
+In This Chapter
+ Zeroing in on the advantages of ASP.NET
+ Getting the hang of Web servers and Web browsers
+ Comparing static and dynamic Web pages
+ Dissecting a typical ASP.NET application
+This chapter is a gentle introduction to the world of ASP.NET programming.
+In the next few pages, you’ll learn what ASP.NET is and how it can
+be used to create Web applications. You’ll also learn about the various versions
+of Visual Studio 2005 used to create ASP.NET applications. And, you’ll
+also discover some features unique to the newest version of ASP.NET, known
+as ASP.NET 2.0.
+Throughout this chapter, you’ll find little snippets of ASP.NET program code.
+Some of this code will be in C# and some will be in Visual Basic. These are
+the two most commonly used programming languages for ASP.NET. If you
+aren’t experienced with either of these languages, don’t worry. The code
+shown here is pretty simple and straight forward, and you can always turn
+to Book 4 for more information about C# or Book 5 for more information
+about Visual Basic.
+All code listings used in this book are available for download at www.dummies.
+com/go/aspnetaiofd.
+What Is ASP.NET, and Why Is It So Great?
+ASP.NET is a platform for developing Web-based applications. It lets you
+create sophisticated Web applications that can interact with users. For example,
+ASP.NET applications can use data-entry controls (such as text boxes
+and buttons) to accept input data from a user; process, retrieve, or update
+database data; and send the results of these operations back to the user.
+10 What Is ASP.NET, and Why Is It So Great?
+ASP.NET isn’t the only platform available for creating Web applications.
+Popular alternatives to ASP.NET include PHP, ColdFusion, and several
+Java-based tools such as Java Server Pages and Java Servlets. ASP.NET
+differs from these alternatives in several significant ways. The following
+sections describe the most important distinguishing features of ASP.NET.
+Windows and IIS dependence
+Unlike most alternatives, ASP.NET will only work on Microsoft Windows–
+based Web servers. That means the operating system must be a recent version
+of Windows, and the HTTP server software must be Microsoft’s Internet
+Information Services, also known as IIS.
+Specifically, ASP.NET 2.0 requires the following support software:
+? Windows 2000 Server (with Service Pack 3) or Windows Server 2003.
+(For development systems, Windows 2000 with SP3 or Windows XP
+Professional is required.)
+? Internet Information Services 5.0 or later. (IIS 6.0 is recommended.)
+? Microsoft .NET Framework 2.0.
+One practical advantage of ASP.NET is that it works entirely on Microsoft
+software — you don’t have to fuss with installing and configuring software
+from multiple suppliers. However, the flipside of that advantage is that
+ASP.NET locks you into using the Microsoft platform. (Most of ASP.NET’s
+alternatives will run on Linux, which is available from a variety of sources.)
+But if yours is already a Microsoft shop, you should be in good shape.
+Note that although ASP.NET is tied to Windows and IIS, you do have alternatives
+to the Microsoft platform in two areas:
+? You don’t have to use Microsoft’s SQL Server as your database engine.
+ASP.NET works well with Oracle and other database servers. (For more
+information, refer to Book 6.)
+? Your users don’t have to use Internet Explorer as the default browser.
+Users can access ASP.NET applications using other browsers such as
+Netscape and Mozilla’s Firefox.
+There is an open-source effort to run ASP.NET applications on Apache and
+other Web servers. For more information, refer to www.mono-project.com.
+Book I
+Chapter 1
+Welcome to
+ASP.NET
+Programming
+What Is ASP.NET, and Why Is It So Great? 11
+Object orientation
+ASP.NET is inherently object-oriented. If you’re new to programming, that
+probably doesn’t mean much. But if you’re familiar with programming and
+have worked with object-oriented programming languages such as C++ or
+Java, you’ll appreciate the benefits immediately.
+ASP.NET applications are made up from self-contained programming elements
+called objects. Simply put (don’t you love it when you read that in a
+computer book?), an object is a programming entity that represents either
+some real-world object or an abstract concept. In ASP.NET, the most
+common type of object is a Page, which represents (you guessed it) an
+HTML page that can be displayed in a Web browser. Each ASP.NET page is
+derived from a class called System.Web.Page. (The term class refers to the
+code you write to define an object such as a page. For more information
+about what this means, refer to Chapter 3 of this mini-book.)
+A major attraction of ASP.NET’s object orientation is that it allows you to take
+advantage of a vast library of predefined classes known as the .NET Framework.
+(The part with the extra period is pronounced “DOT-net.”) Many .NET Framework
+classes are designed specifically for working with ASP.NET — for example,
+those that represent controls such as text boxes, radio buttons, and
+drop-down lists. You’ll also find classes that simplify the task of accessing
+data in a database. Plus, you’ll find a host of useful, general-purpose classes
+that aren’t specifically related to Web applications. (For more information
+about such classes, refer to Book 7.)
+Choice of languages
+Most Web-development platforms tie you to a specific language. For example,
+Java-based tools such as Java Server Pages tie you to the Java language;
+other tools, such as ColdFusion, use their own proprietary languages. But
+ASP.NET gives you the choice of two languages to use for your Web pages:
+? Visual Basic .NET: Visual Basic .NET (VB.NET) is a modern version
+of the venerable Basic programming language. Basic was originally
+intended as a limited language designed for beginners, but the current
+version of Visual Basic is as powerful a language as you’ll find.
+? C#: C# (pronounced C-Sharp) is a relatively new language designed by
+Microsoft specifically for .NET. Its syntax is similar to Java, so if you’re an
+experienced Java programmer, you won’t have much trouble learning C#.
+? J#: Microsoft’s version of Java. This language isn’t covered in this book,
+as it isn’t used much for ASP.NET development.
+12 Understanding Web Servers and Browsers
+Visual Studio
+One of the best features of ASP.NET is Visual Studio, the integrated development
+environment that combines a Web-page editor, a code editor, a debugger,
+and several other development tools into one easy-to-use program. The
+more you work with Visual Studio, the more you come to appreciate the
+many ways it simplifies the job of creating ASP.NET Web applications.
+Figure 1-1 shows an ASP.NET Web application being developed in Visual
+Studio, using a what-you-see-is-what-you-get Web-page editor. This approach
+is especially useful for designing Web pages by dragging and dropping controls
+such as labels, text boxes, and buttons onto the page. If you prefer to
+work directly with code, you can switch to Source view, call up the HTML
+that defines the application’s pages, and edit it directly.
+For more about how Visual Studio works, dig into Chapter 3 of this minibook;
+no need to obsess over it just now.
+Understanding Web Servers and Browsers
+One crucial point to understand about Web applications is that they work by
+using both client and server software:
+Figure 1-1:
+Visual
+Studio
+makes it
+easy to
+create
+ASP.NET
+Web
+applications.
+Book I
+Chapter 1
+Welcome to
+ASP.NET
+Programming
+Understanding Static Web Pages 13
+? The client is a Web browser that runs on the end-user’s computer. In
+most cases, the Web browser is Microsoft Internet Explorer, but other
+programs such as Mozilla Firefox can be used as the client.
+? The server is software that runs on the server computer that hosts the
+Web application. For ASP.NET applications, the server software is always
+Microsoft Internet Information Services (also known as IIS). The server
+computer must also have Microsoft .NET Framework software installed,
+as ASP.NET is a part of the .NET Framework.
+The server computer also typically has database server software (such as
+Microsoft SQL Server) installed. In some cases, the database server may run
+on a separate computer to improve the main server machine’s performance.
+You’ll run into these two other alphabet-soup buzzwords constantly as you
+develop ASP.NET applications:
+? HTML (short for Hypertext Markup Language) is a standardized set of
+markup tags used to format the Web pages displayed by a Web browser.
+? HTTP (short for Hypertext Transfer Protocol) is the standardized protocol
+that Web browsers and Web servers use to communicate with each
+other. You’ll learn more about how HTTP works in the next section.
+Understanding Static Web Pages
+The World Wide Web was originally designed to display static pages — that
+is, pages that are the same every time they are displayed. In fact, many
+pages available on the Internet today are still static pages.
+A typical way to initiate display of a static Web page is for a user to enter the
+Web address of the page in a browser’s address bar, or for a user to click a
+link that leads to the page. Either way, the browser sends an HTTP message
+called an HTTP request to the server specified by the Web address. This
+request message includes the name of the HTML file that defines the page
+being requested by the user. In addition, the request message includes the
+address of the browser that’s requesting the file.
+When the server machine receives the request, it locates the HTML file on its
+disk and sends the HTML back to the browser by way of an HTTP Response
+message. Then, when the browser receives the response, it decodes the HTML
+file and displays the Web page. Figure 1-2 shows how static pages work.
+14 Understanding Dynamic Web Pages
+Understanding Dynamic Web Pages
+Although the World Wide Web was originally designed for static Web pages,
+most Web pages these days display dynamic content — that is, content that
+changes each time the page is retrieved. Instead of retrieving HTML data
+from a file, dynamic Web pages work by running a program that generates
+the HTML sent back to the browser. The program can generate different
+HTML each time the page is requested.
+Figure 1-3 shows how dynamic HTML pages work. As you can see, the first
+and last steps are the same as for static Web pages: The browser sends an
+HTTP request to the server to request the page, and when the browser
+receives the HTTP response, it displays the page. However, what goes on
+at the server is different: Instead of locating an HTML file on the disk, the
+server runs a program to generate the HTML for the requested page — and
+that’s what returns to the user via an HTTP response.
+Browser displays
+the HTML page
+4
+Client sends
+HTTP Request
+to server
+1
+Server sends the
+HTML file as an
+HTTP Response
+message
+3
+Server finds the
+HTML file on its
+disk
+2
+Figure 1-2:
+Static Web
+pages
+display
+pages that
+are the
+same every
+time.
+Book I
+Chapter 1
+Welcome to
+ASP.NET
+Programming
+Looking at a Simple ASP.NET Application 15
+The usefulness of dynamic Web pages is that the program that generates
+them can do just about anything necessary to generate the requested page.
+In some cases, this might be simple. For example, the requested page might
+consist mostly of static data, but might include the current date in a header
+or footer. Then, the program that generates the page simply reads the static
+part of the page from an HTML file, adds the current date, and sends the
+page on to the user.
+Sometimes the page consists almost entirely of dynamic data. For example,
+the result page displayed by a search engine is mostly a set of search results
+generated to show data retrieved from a database.
+Looking at a Simple ASP.NET Application
+To help you understand how a typical ASP.NET application works, Figure 1-4
+presents a simple calculator application: It lets the user enter two numbers,
+and when the user then clicks the Add button, the application adds up the
+two numbers and displays the result.
+Browser displays
+the HTML page
+5
+Client sends
+HTTP Request
+to server
+1
+Server sends the
+HTML file as an
+HTTP Response
+4
+Program
+generates the
+HTML for the
+requested page
+3
+Server executes
+the program
+responsible for
+generating the
+requested page
+2
+Figure 1-3:
+Dynamic
+Web pages
+display
+pages
+generated
+by a
+program.
+16 Looking at a Simple ASP.NET Application
+Although this application is simple enough, it illustrates many basic notions
+that underlie ASP.NET programming. Most importantly, the Simple Calculator
+application demonstrates how you can use ASP.NET controls on a Web page
+to retrieve data entered by a user, write code that processes the data, and
+modify the page that’s sent back to the user so it shows the results of the
+page processing.
+The Simple Calculator page includes four controls:
+? A text box that lets the user enter the first number to be added.
+? Another text box that lets the user enter the second number to be added.
+? A button the user can click to submit the page and calculate the sum of
+the two numbers.
+? A label that displays the result of the addition.
+Of course, this sample ASP.NET application is trivial. More realistic ASP.NET
+applications consist of more than one page and usually retrieve information
+from a database. Still, this simple application is a good place to start learning
+about ASP.NET.
+To develop a single-page ASP.NET application such as the Simple Calculator
+application, you create two source files:
+? The markup file (or the .aspx file) defines the appearance of the
+Web page.
+? The code-behind file provides the code that’s executed when the user
+submits the page.
+Figure 1-4:
+A simple
+calculator
+application.
+Book I
+Chapter 1
+Welcome to
+ASP.NET
+Programming
+The .aspx (Markup) File for the Simple Calculator Application 17
+Separating the code that defines the appearance of the page from the code
+that defines the processing performed for the page is called code separation,
+and is considered by most programming gurus to be a good idea.
+Although it’s possible to write ASP.NET applications that combine the two
+types of code into a single file, Visual Studio uses a separate code-behind by
+default. Chapter 4 of this mini-book tells you more about how code separation
+works in ASP.NET.
+The .aspx (Markup) File for the
+Simple Calculator Application
+Listing 1-1 shows the file that defines the appearance of the Simple Calculator
+page in the previous section. (Note that this file assumes that the application
+is written using C#. If you’re using Visual Basic, you’ll see a few minor
+differences.)
+Listing 1-1: The appearance of the Simple Calculator (C#)
+<%@ Page Language=”C#” AutoEventWireup=”true”
+CodeFile=”Default.aspx.cs” Inherits=”_Default” %>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0
+Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+transitional.dtd”>
+<html xmlns=”http://www.w3.org/1999/xhtml” >
+<head runat=”server”>
+<title>Simple Calculator</title>
+</head>
+<body>
+<form id=”form1” runat=”server”>
+<div>
+<h1>The Simple Calculator</h1>
+First number:
+<asp:TextBox ID=”txtFirst” runat=”server” /> ›1
+<br /><br />
+Second number:
+<asp:TextBox ID=”txtSecond” runat=”server” /> ›2
+<br /><br />
+<asp:Button ID=”btnAdd” runat=”server” ›3
+OnClick=”btnAdd_Click” Text=”Add” />
+<br /><br />
+The answer is:
+<asp:Label ID=”lblAnswer” runat=”server” /> ›4
+</div>
+</form>
+</body>
+</html>
+18 The Code-Behind File of the Simple Calculator Application
+I don’t expect you to leap to instant mastery of all (or even any) details of
+this file at this early stage, but take a look at this code now so you’ll have an
+idea of what ASP.NET coding looks like. You’ll be writing a lot of code that
+looks like this as you develop ASP.NET applications.
+I would like to draw your attention to a few sections of this listing:
+? ›1: This line defines the text box for the first number to be entered by
+the user. This text box is named txtFirst.
+? ›2: This line defines the text box for the second number. This text box
+is named txtSecond.
+? ›3: This line and the next line define the button the user clicks to add
+the number. The name of the button is btnAdd, the text displayed on the
+button is “Add” and the C# code that’s run when the user clicks the
+button is called btnAdd_Click.
+? ›4: This line defines the label that displays the result of the addition.
+The label is named lblAnswer.
+The Code-Behind File of the Simple
+Calculator Application
+After a look at the markup file for the Simple Calculator application, check
+out Listing 1-2: It shows the C# code-behind file. Don’t be concerned if the
+details of this listing seem arcane at the moment; it’s an early glimpse of
+what C# coding looks like for a simple ASP.NET Web page.
+Listing 1-2: The code-behind file of the Simple Calculator (C#)
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+public partial class _Default : System.Web.UI.Page
+{
+protected void btnAdd_Click(object sender, ›1
+EventArgs e)
+Book I
+Chapter 1
+Welcome to
+ASP.NET
+Programming
+The Code-Behind File of the Simple Calculator Application 19
+{
+decimal a = decimal.Parse(txtFirst.Text);
+decimal b = decimal.Parse(txtSecond.Text);
+decimal c = a + b;
+lblAnswer.Text = c.ToString();
+}
+}
+The part of this code you should focus on is identified with the btnAdd_
+Click routine (properly called a method in C#), marked by the ›1 in the listing.
+This code converts the values entered by the user in the two text boxes
+to decimal values, adds the two values together, and displays the result in
+the label.
+If you have done some C# (or perhaps Java) programming, you may be
+alarmed to notice that this code doesn’t do any error checking. As a result,
+if the user doesn’t enter a valid number in both text boxes, the program
+will crash with what’s called an unhandled exception in .NET lingo.
+Don’t be concerned — this time. I didn’t fall asleep while I was writing this
+program; I left out the error checkout on purpose, for two reasons. First, it
+keeps the example program simple; second, it provides a natural way to
+introduce the basic concepts of debugging in Chapter 4 of this mini-book.
+That’s enough of a quick look to provide a simple introduction to ASP.NET.
+Of course, there’s a lot about ASP.NET that goes way beyond the basics of
+this chapter. If you’re itching to get at it, okay — all in good time — but first
+things first: Make sure you’ve successfully installed Visual Studio on your
+computer (covered in the next chapter) and have taken a crack at developing
+simple ASP.NET applications (described in Chapter 3 of this mini-book).
+Chapter 2: Installing Visual Studio
+Web Developer 2005 Express
+Edition or Visual Studio 2005
+In This Chapter
+ Comparing the editions of Visual Studio
+ Registering and test-driving Visual Web Developer Express
+ Installing Visual Studio successfully
+Before you can use Visual Studio to develop ASP.NET 2.0 applications,
+you must install the Visual Studio software. This chapter introduces
+you to the various versions of Visual Studio available for you to choose from,
+and then walks you through the process of installing the most popular version
+for ASP.NET Web development — Visual Studio Web Developer Express
+Edition. (The setup process for other versions of Visual Studio is similar.)
+Looking at Visual Studio 2005 Editions
+Like most Microsoft software, Visual Studio 2005 comes in several different
+versions. Here’s the rundown on each one:
+? Visual Studio 2005 Standard Edition: This is the basic version of Visual
+Studio 2005. It includes everything you need to develop Windows applications
+using Visual Basic, C#, or C++, or ASP.NET 2.0 Web applications
+using Visual Basic or C#. It also comes with SQL Server Express Edition,
+a scaled-back version of SQL Server that’s designed to use while you’re
+developing applications that access a database.
+? Visual Studio 2005 Professional Edition: This is a beefed-up version of
+the Standard Edition, with added features that are useful for professional
+developers — in particular, advanced debugging features and the capability
+to create complex Setup projects for deploying your applications.
+? Visual Studio 2005 Team Edition: This is the top-of-the-line Visual
+Studio edition. It includes all the features of the Professional Edition, plus
+advanced features designed specifically for large development projects,
+such as built-in code profiling, unit testing, and project management
+features.
+? Visual Studio Web Developer 2005 Express Edition: This is a low-cost
+version of Visual Studio that’s designed for beginning and casual ASP.NET
+22 Considering Visual Web Developer 2005 Express Edition
+Web developers. This edition of Visual Studio is sometimes referred to
+as VWD Express or even just VWD. VWD is described in greater detail in
+the next section.
+Considering Visual Web Developer
+2005 Express Edition
+For most people getting started with ASP.NET 2.0, Visual Web Developer 2005
+Express Edition (VWD) is the tool of choice. It includes everything you need
+to create basic Web applications in Visual Basic or C#. We recommend using
+this version while you’re learning ASP.NET Web programming, for two reasons.
+First, it’s simpler to use because it isn’t cluttered up with features that
+aren’t related to ASP.NET Web development. Second, it’s cheap. In fact, you
+can download it for free from Microsoft until November 7, 2006. After that, it
+will cost a mere $49. That means major savings over the other editions, as
+summarized in Table 2-1.
+Table 2-1 Pricing for Visual Studio 2005 Editions
+Edition Price
+Visual Web Developer Free download until November 7, 2006.
+2005 Express Edition After that, $49.
+Visual Studio 2005 Standard Edition $299
+Visual Studio 2005 Professional Edition $799
+Visual Studio 2005 Team Edition $5,469
+The following are some important things you need to know about VWD:
+? VWD supports Web applications developed in either Visual Basic or C#.
+? VWD includes SQL Server Express Edition, so you can use it to develop
+sophisticated database applications.
+? Microsoft does not place any limits on how you can use VWD. Thus you
+can use VWD to develop commercial applications.
+? VWD provides most of the same features as other editions of Visual
+Studio 2005 for Web development. However, there are a few features
+missing, such as advanced deployment tools.
+Installing Visual Web Developer 2005 Express Edition
+The following procedure shows you how to download and install the free
+version of Visual Web Developer 2005 Express Edition (VWD):
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Installing Visual Web Developer 2005 Express Edition 23
+1. Go to Microsoft’s Web site and locate the Visual Web Developer 2005
+Express Edition download page.
+At the time we wrote this, the download page was located at
+http://msdn.microsoft.com/vstudio/express/vwd/download/
+Microsoft has been known to change things around on its Web site, so if
+this address doesn’t get you there, poke around a bit until you find it.
+2. Click the Download link.
+Opening the link begins the download. If a Security Warning dialog box
+appears, click Run to allow the download.
+The initial download may take a minute or two, so please be patient.
+Eventually the Setup program shown in Figure 2-1 appears.
+You can download Visual Web Developer 2005 Express Edition for free
+from Microsoft until November 7, 2006. After that, it will cost $49.
+3. Click Next.
+A screen displaying the license agreement appears. The license agreement
+was written by and for lawyers. Read it if you enjoy such things.
+4. Check the “I accept the terms of the License Agreement” check box,
+then click Next.
+The next dialog box asks whether you want to install two optional components:
+the product documentation and SQL Server 2005 Express
+Edition, as shown in Figure 2-2.
+Figure 2-1:
+The Visual
+Web
+Developer
+2005
+Express
+Edition
+Setup
+program
+comes
+to life.
+24 Installing Visual Web Developer 2005 Express Edition
+5. Check both options, then click Next.
+Doing so indicates that you want to install both the product documentation
+and SQL Server 2005 Express Edition.
+The next dialog box, shown in Figure 2-3, lets you specify where you
+want the software installed on your hard drive. We suggest you accept
+the default.
+Figure 2-3:
+Choose
+where to
+install the
+software.
+Figure 2-2:
+What do
+you want to
+install?
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Installing Visual Web Developer 2005 Express Edition 25
+6. Click Next.
+Now comes the l-o-n-g download and installation process, as shown in
+Figure 2-4. The download is well over 300 MB, so it will take awhile, even
+with a high-speed Internet connection.
+After everything has been downloaded and installed, the screen shown
+in Figure 2-5 appears and congratulates you on your success, if a little
+prematurely. You’re not really done yet.
+Figure 2-5:
+Almost
+done!
+Figure 2-4:
+Zzz.
+26 Installing Visual Web Developer 2005 Express Edition
+Although the screen shown in Figure 2-5 has a Register Now link that lets
+you register the product, don’t click it just yet. If you do, you’ll have to
+follow a somewhat awkward registration procedure. Instead, follow the
+steps listed in the next section (“Registering Visual Web Developer 2005
+Express Edition) to register the software.
+7. Click the Windows Update link.
+This action takes you to the Windows Update Web site, where you can
+download any late-breaking updates to VWD, the .NET Framework, or
+Windows itself.
+8. Follow the steps at the Windows Update Web site to update your
+computer.
+This process takes a few minutes to complete, but the safety of having
+the latest security updates applied to your system is well worth the
+wait. Figure 2-6 shows the Windows Update Web site in action. Here,
+Windows Update has detected a few updates that need to be applied to
+our system.
+If you use Internet Explorer and have blocked pop-up advertising, you’ll
+need to watch for the yellow bar at the top of the window and enable
+any pop-ups that might try to open from the Windows Update site.
+Otherwise Windows Update won’t work properly.
+Figure 2-6:
+Windows
+Update
+automatically
+updates
+your system
+with the
+latest
+improvements
+to
+Windows
+and other
+components.
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Registering Visual Web Developer 2005 Express Edition 27
+9. Continue with the next step in the installation, and then register
+VWD by following the procedure described in the next section.
+10. Click Exit.
+The Setup program graciously allows you to exit.
+Registering Visual Web Developer
+2005 Express Edition
+After you’ve installed Visual Web Developer 2005 Express Edition (VWD),
+you have 30 days to register it. We suggest you don’t put that off, especially
+since it takes only a few minutes. Here are the steps:
+1. Start Visual Web Developer 2005 Express Edition.
+To do so, click the Windows Start button, and then choose All Programs?
+Microsoft Visual Web Developer 2005 Express Edition. Visual Web
+Developer springs to life, as shown in Figure 2-7.
+Figure 2-7:
+Visual Web
+Developer
+2005
+Express
+Edition
+comes
+to life!
+28 Registering Visual Web Developer 2005 Express Edition
+The first time you start Visual Web Developer, it spends a few minutes
+setting up its initial configuration. Don’t worry: VWD will start much
+faster after this initial configuration is done.
+2. Choose Help?Register Product.
+This brings up the dialog box shown in Figure 2-8.
+3. Click the Register Now link.
+This takes you to a Web page where you can register your copy of VWD.
+4. Follow the steps at the registration Web site to register your copy of
+VWD; the following procedures get you started:
+a. The VWD registration page requires you to create a Microsoft
+Passport account if you don’t already have one.
+b. After you sign in with Passport, the registration Web site asks for
+your name, e-mail address, and Zip code. You can also complete a
+little survey about the programming and technology topics you’re
+interested in.
+c. Eventually the registration Web site displays a page similar to the
+one shown in Figure 2-9. This page includes a 14-character registration
+key that you should copy and paste into the Registration dialog
+box in Visual Studio.
+5. Highlight the registration key in the Registration Web page, press
+Ctrl+C to copy it to the clipboard, and then close the browser window.
+Figure 2-8:
+This dialog
+box lets you
+register
+VWD.
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Registering Visual Web Developer 2005 Express Edition 29
+You’re returned to the VWD, where the Registration dialog box is still
+open, awaiting your registration key.
+6. Click in the Registration Key text box, and then press Ctrl+V.
+This pastes your registration key into the text box.
+7. Click Complete Registration.
+The dialog box shown in Figure 2-10 appears, thanking you for registering
+the product.
+Figure 2-9:
+The
+Registration
+Web site
+displays
+your
+registration
+key.
+30 Installing Visual Studio 2005
+8. Indicate whether you want to participate in the Customer Experience
+Improvement Program by selecting an option button.
+The Customer Experience Improvement Program is a fancy name that
+means Microsoft spies on you while you work with their products. That
+sounds a lot worse than it is — it’s really just an effort Microsoft is
+making to find out how users actually work with their products so they
+can try to focus development efforts on the most commonly performed
+tasks. If you’re paranoid or think that Bill Gates is trying to take over the
+world, feel free to opt out of this program.
+It’s not paranoia if they really are out to get you. Your call.
+9. Click Close.
+That’s it. VWD is now registered.
+Installing Visual Studio 2005
+The installation procedure for other editions of Visual Studio 2005 is similar,
+except that you install the software from a disk rather than downloading it
+from the Web. Here are the steps:
+1. Insert the Visual Studio 2005 disk in your CD-ROM or DVD-ROM drive.
+The Setup program comes to life automatically, as shown in Figure 2-11.
+As you can see, the Setup program allows you to install Visual Studio
+2005 — along with its documentation — and to check for updates.
+Figure 2-10:
+Registration
+is complete!
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Installing Visual Studio 2005 31
+2. Click the Install Visual Studio 2005 link.
+Setup grinds and whirs for a moment, and then displays the dialog box
+shown in Figure 2-12.
+3. Click Next.
+The screen shown in Figure 2-13 appears.
+Figure 2-12:
+Visual
+Studio 2005
+installation
+begins.
+Figure 2-11:
+The Visual
+Studio 2005
+Setup
+program.
+32 Installing Visual Studio 2005
+4. Check the box that indicates you agree to the license agreement; then
+enter your product key and name in the text boxes and click Next.
+You’ll find the product key number printed on the package that the installation
+disc comes in. Be sure to enter it exactly as it appears on the package.
+When you click Next, the screen shown in Figure 2-14 appears.
+Figure 2-14:
+Choosing
+the installation
+type.
+Figure 2-13:
+Entering
+your product
+key.
+Book I
+Chapter 2
+Installing Visual
+Studio 2005
+Editions
+Installing Visual Studio 2005 33
+5. Select the type of installation you want.
+You have three choices:
+• Default: Installs Visual Studio 2005 with the most commonly used
+features.
+• Complete: Installs all Visual Studio 2005 features. Unless you’re short
+on disk space, this is the option I recommend.
+• Custom: Lets you choose which features you want to install.
+6. Click Install.
+The installation begins.
+7. Take a nap.
+Hey, why not? The installation takes half an hour or so, even on a fast
+computer.
+8. Click the http://windowsupdate.microsoft.com link to update your
+computer.
+This takes you to the Windows Update site, where you can download the
+latest updates for your computer.
+9. Click Finish.
+You return to the Setup screen (refer to Figure 2-11).
+10. Click Install Product Documentation.
+This launches a Setup Wizard that installs the Visual Studio 2005
+documentation.
+11. Follow the steps of the Wizard to install the documentation.
+There’s a lot of documentation, so this will take a few minutes. When the
+documentation has been installed, you’re again returned to the Setup
+screen that was shown in Figure 2-11.
+12. Click Check for Service Releases.
+This takes you to Microsoft’s update site and checks for any updates
+that must be applied to Visual Studio.
+13. After you’ve installed any necessary updates, click Exit to close the
+Setup program.
+That’s all there is to it!
+After you install both Visual Studio 2005 and Visual Web Develop 2005
+Express Edition, your tools are in place; you’re ready to get into building
+your first Web application. For that, you are cordially invited to proceed to
+the next chapter. Good luck!
+Chapter 3: Creating Your First
+ASP.NET 2.0 Application
+In This Chapter
+ Planning a Visual Studio project
+ Building a Web site from scratch
+ Using Solution Explorer, controls, properties, and titles
+ Coding and running your application
+In this chapter, you get a crack at creating a simple, one-page Web application
+using Visual Studio 2005 Standard Edition. We walk you through the
+entire process step-by-step, so you’ll get a good idea for how Visual Studio
+works and how ASP.NET applications are built.
+Note that although this chapter uses a particular version of Visual Studio
+2005 — the Standard Edition — to build a Web site, the procedure is nearly
+identical for other editions of Visual Studio. That includes Visual Web
+Developer 2005 Express Edition; you shouldn’t have any trouble adapting
+the information in this chapter to other versions of Visual Studio.
+All code listings used in this book are available for download at www.dummies.
+com/go/aspnetaiofd.
+Understanding Visual Studio Projects
+Visual Studio organizes the files of an ASP.NET application by using logical
+containers called projects and solutions. Here’s a summary of the most
+important details you need to know concerning projects and solutions:
+? A project is a container that holds all files related to a single ASP.NET
+application — including the .aspx files that define the application’s
+Web pages, the code-behind files that provide the code executed when
+the application runs, and other files used by the application.
+? A solution is a container that can hold one or more projects. Solutions
+let you group related applications.
+? Most solutions contain just a single project. In fact, when you create a
+new Web application, Visual Studio creates two containers: a project to
+hold the application’s files and a solution to hold the project.
+36 Creating a New Web Site
+? Visual Studio includes a window called the Solution Explorer within which
+you work with the files in a project. The Solution Explorer lists all projects
+that make up a solution, as well as all files that make up each project
+in the solution. You can double-click a file in the Solution Explorer to
+open the file, or you can right-click a file to reveal a shortcut menu that
+provides quick access to common tasks. (For more about how all this
+works, see the section “Using the Solution Explorer” later in this chapter.)
+Previous versions of Visual Studio used separate project files (.prj) to store
+settings related to projects. In Visual Studio 2005, the project files have been
+eliminated.
+Creating a New Web Site
+To create a new Web site in Visual Studio 2005, follow these steps:
+1. Choose the File?New?Web Site command.
+Alternatively, you can click the New Web Site button shown in the
+margin. (Note that this button has a drop-down menu that lets you
+choose whether to display the New Web Site, New Project, Open Web
+Site, or Open Project buttons. If one of the other three buttons is visible
+instead of the New Web Site button, click the down arrow next to the
+icon and choose New Web Site from the menu that appears.)
+When you choose File?New?Web Site or click the New Web Site button,
+the New Web Site dialog box appears, as shown in Figure 3-1. This dialog
+box lets you select the language you want to use for the Web site, the name
+of the Web site, and the location where you want to create the Web site.
+Figure 3-1:
+The New
+Web Site
+dialog box.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Creating a New Web Site 37
+2. Choose ASP.NET Web Site from the list of available templates.
+In all likelihood, this template is already selected.
+3. Choose File System, HTTP, or FTP from the Location drop-down list.
+The Location drop-down list in the New Web Site dialog box offers you
+various ways to access the Web site:
+• File System: The simplest way to access a Web site in Visual Studio is
+to create a file-system Web site — a folder on your hard disk that contains
+all the files that the Web site needs — .aspx files that define
+the pages displayed by the application, .vb (Visual Basic) or .cs
+(C#) files that define the code that’s executed when the application
+runs, and other files that define the Web site’s configuration, provide
+it with data, or implement its other features. The Web site shown in
+this chapter is a file-system Web site.
+You can run a file-system Web site directly from within Visual Studio
+by using Visual Studio’s built-in Web server. However, you can’t run a
+file-system Web site directly from Internet Information Services (IIS)
+without first configuring the Web site from within IIS (which Chapter
+5 of this mini-book shows you how to do).
+• HTTP: Another way to access a Web site from within Visual Studio is
+to use the HTTP protocol to access a Web site that’s under the control
+of an IIS server. When you use this option to create a Web site,
+Visual Studio uses HTTP to connect to an IIS server and create a Web
+application. The benefit of creating an HTTP Web site is that you
+don’t have to later configure IIS to run the application as you do with
+a file-system Web site. The disadvantage is that you must have
+access to an IIS server to create this type of Web site.
+Note that to create an HTTP Web site on a remote IIS server, the
+server must have the FrontPage 2002 Server Extensions installed. If
+the IIS server doesn’t have the extensions installed, you’ll have to
+create an FTP site instead, as described next.
+• FTP: The third way to create a Web site is to use the almost-ancient
+FTP protocol to access a remote server. This option is best when
+you’re creating a Web site on a remote server that doesn’t have
+FrontPage 2002 Server Extensions installed.
+4. Enter the location for the Web site in the combo box that’s to the right
+of the Location drop-down list.
+How you specify the location depends on which option you choose for
+the Location drop-down, as follows:
+• File System: Enter the path to the main folder for the application.
+The path defaults to
+My Documents\Visual Studio 2005\Websites\WebSite1
+38 Creating a New Web Site
+You should change WebSite1 to the name you want to use for your
+Web site.
+• HTTP: Enter the Web address of the Web site you want to create. For
+example, to create a Web site named SimpleCalc at an IIS server
+named www.myserver.com, enter
+http://www.myserver.com/SimpleCalc
+If you’re using a local IIS server (that is, a server running on your
+own computer rather than on a remote computer), use localhost as
+the hostname. For example: http://localhost/SimpleCalc.
+• FTP: Enter the FTP address for the application — for example,
+ftp://ftp.myhost.com.
+5. Choose the language you want to use to create the site.
+The options are Visual Basic, Visual C#, and Visual J#.
+To create the Simple Calculator application (described in Chapter 2 of
+this mini-book), choose File System for the Location drop-down list,
+replace WebSite1 with SimpleCalc as the file location, and choose
+Visual C# for the language.
+6. Click OK.
+Visual Studio creates the project and awaits your command, as shown in
+Figure 3-2.
+Figure 3-2:
+A new
+project in
+Visual
+Studio.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Using the Solution Explorer 39
+Here are a few other pointers about creating Web sites in Visual Studio:
+? Visual Studio creates a default page for the application named default.
+aspx and opens that page in the editor window. If you select Visual C#
+for the application’s language, the default.aspx file is opened in Source
+view as shown in Figure 3-2. That way, you can directly edit the markup
+code for the page. However, if you select Visual Basic as the language, the
+page is initially opened in Design view, which shows a what-you-see-iswhat-
+you-get view of the page. As you’ll learn later in this chapter, you
+can switch between Design and Source view simply by clicking the
+Design and Source buttons at the bottom of the editor window.
+? Although Visual Studio 2005 doesn’t create a Project file for each project,
+it does create a Solution file for each solution. The Solution file is created
+in My Documents\Visual Studio 2005\Projects.
+Using the Solution Explorer
+The Solution Explorer is a window — normally located on the right side of
+the Visual Studio 2005 screen — in which you work with the files and subfolders
+that make up a project. In Figure 3-2, the Solution Explorer indicates
+that the SimpleCalc project has just one subfolder (named App_Data) and
+two files (named Default.aspx and Default.aspx.cs).
+ASP.NET applications can have any of several standard subfolders; here’s the
+rundown on what they do:
+? App_Data: This folder holds database files used by the application. For
+applications that use large databases managed by a database-server program
+(such as Microsoft SQL Server), you may prefer to forego the App_
+Data folder and store the database files in a separate location. (For more
+information, refer to Book 6, Chapter 1.) But for most applications, the
+App_Data folder is the preferred place to store database files. Visual
+Studio 2005 always creates this folder when you create a new Web project.
+? App_Code: If an application uses any program-code files other than the
+code-behind files associated with Web pages, those files are stored in
+the App_Code folder. Visual Studio 2005 creates this folder automatically
+whenever you add a new code file to a project.
+? App_Themes: This folder contains the files needed for applying themes
+to influence the appearance of the application — and it’s created automatically
+if you add a theme to a project. (For details, refer to Book 8,
+Chapter 4.)
+40 Working with Controls
+Note that a project can also contain other folders of your own choosing. For
+example, we like to create a folder named Images to store the images displayed
+by the application. You can add a folder to a project by right-clicking
+the project name in the Solution Explorer window and then choosing New
+Folder from the shortcut menu that appears.
+The Solution Explorer also has a nice row of buttons at the top — but they’re
+more than just decorative. Table 3-1 describes their functions.
+Table 3-1 Solution Explorer Buttons
+Button Name What It Does
+Properties Displays the Properties window for the
+selected item.
+Refresh Refreshes the Solution Explorer — sometimes
+useful if you’ve added files to the project from
+outside Visual Studio.
+Nest Related Files Indicates whether related files (such as
+Default.aspx and Default.aspx.cs)
+should be nested in the Solution Explorer
+window.
+View Code Opens the file in the code editor.
+View Designer Opens the file in a Designer window.
+Copy Web Site Copies the entire Web site to another location.
+ASP.NET Configuration Calls up the ASP.NET Web-based configuration
+tool, in which you set various options for the Web
+site (as detailed in Book 8, Chapter 1).
+Working with Controls
+When you create an ASP.NET Web site, Visual Studio adds a blank Web page
+named Default.aspx to the project. The first step in developing the application
+is to add some controls to this blank page.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Working with Controls 41
+ASP.NET comes with dozens of controls you can add to your Web pages.
+Table 3-2 lists the eight ASP.NET controls used most commonly — and outlines
+their basic functions. (There’s much more about them in Book 2.)
+Table 3-2 Eight Commonly Used ASP.NET Controls
+Toolbox Icon Control Name What It Does
+Label Displays text on the page.
+TextBox Creates a text box in which the user can enter data.
+Button Creates a button the user can click to submit the page.
+DropDownList Creates a drop-down list.
+ListBox Creates a list box.
+CheckBox Creates a check box.
+RadioButton Creates a radio button.
+Image Displays an image.
+The Simple Calculator application created in this chapter uses several of
+these controls, as shown in Figure 3-3. As you can see, this page uses four
+labels, two text boxes, and one button control. The first two text boxes let
+the user enter the two numbers to be added. (Actually, there’s a third text
+box that isn’t visible in the figure. It displays the the result of the calculation
+after the user clicks the button. This particular text box is set to read-only so
+it can display a text value, but the user can’t enter a text value into it. More
+about why in a moment.)
+42 Working with Controls
+The easiest way to add controls to a Web page is in Design view:
+? If you’re using C# as your application’s language, you switch to Design
+view by clicking the Design button at the bottom of the code editor’s
+window.
+? If you chose Visual Basic as the application’s language rather than C#,
+you’re already in Design view.
+Figure 3-4 shows the SimpleCalc project with the Default.aspx page open
+in Design view. As you can see, Design view gives you a blank slate on which
+you can create a usable Web page.
+In Design view, you can add a control to a page simply by dragging the icon
+for the control from the Toolbox (the narrow strip of controls that appears
+at the left of the Visual Studio window) onto the editor window. Alternatively,
+you can position the cursor in the window where you want a control to
+appear, and then double-click the control in the Toolbox to add the control
+at the current location.
+Labels Text boxes
+Button
+Figure 3-3:
+Controls
+used by
+the Simple
+Calculator
+application.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Working with Controls 43
+Figure 3-5 shows how the Default.aspx page looks after we’ve dragged
+controls onto it. To create this page, follow these steps:
+1. Double-click the Label tool in the Toolbox to create a label.
+2. Click End, and then press Enter twice.
+3. Double-click the Label tool to create another label.
+4. Double-click the TextBox control to create a text box on the same line.
+5. Repeat Steps 2, 3, and 4 to create another line with a label and a
+text box.
+6. Click End, then press Enter twice.
+7. Double-click the Button control to create a button.
+8. Repeat Steps 2, 3, and 4 to create a third line with a label and a
+text box.
+Figure 3-4:
+The
+Default.aspx
+page in
+Design view.
+44 Setting Properties
+Although the Web page now has the controls it needs, those controls don’t
+look anything like the controls on the page shown in Figure 3-2. To get the
+look of those controls, you have to set properties for each control, as
+described in the next section.
+Setting Properties
+Properties are what give a control its distinctive look and behavior. Without
+properties, all labels will look alike — as will all text boxes, buttons, and
+other controls. If you want to create a really useful (and easy-to-use) Web
+page, you have to set the properties of each control on the page.
+To set the properties of a control, first select the control by clicking it. Then,
+use the Properties window located at the bottom-right corner of the Visual
+Studio screen to set the various properties that are available for the control.
+Each different type of control has its own collection of properties you can
+set, but some properties are common to most controls. These include
+? ID: This property specifies the name of the control. Visual Studio picks a
+generic name for each control you create, such as Label1 or TextBox2.
+You can leave these default values as they are, but if you plan on writing
+C# or Visual Basic code that will refer to the control, it’s a good idea to
+give the control an ID that has a clearer functional meaning.
+Figure 3-5:
+The
+Default.aspx
+page with
+some
+controls
+whose
+properties
+have not yet
+been set.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Setting Properties 45
+When you set the ID property of a control, a common practice is to
+begin the ID with a two- or three-character prefix that indicates the control’s
+type. In the Simple Calculator application, for example, you might
+use txtNumber1 and txtNumber2 for the two input text boxes, and
+txtAnswer for the text box that displays the answer. (The txt will
+remind you that the control is a text box.)
+? Text: Most controls that display a text value have a Text property you can
+use to set the value to display. Depending on the type of control, you’ll
+often want to set this value to something other than the default. For example,
+Visual Studio sets the Text property of Label and Button controls to
+the ID of the control. As a result, you’ll almost always have to set the Text
+property for Label and Button controls. The text property for TextBox
+controls is blank by default, which is usually what you want.
+? Font: Controls that display text also have a set of Font properties you
+can use to specify how the text should be displayed. In the Properties
+window, you can click the + sign next to the Font property to reveal a
+whole list of font-related properties you can set — font name, size, and
+bold or italic formatting.
+? TabIndex: The TabIndex property determines the order that controls
+are activated when the user presses the Tab key. You can use this property
+to make sure the Tab key moves the cursor as expected among the
+controls on your page.
+Besides these common properties, most controls have their own unique
+properties as well. For example, TextBox controls have a ReadOnly property
+you can use to prevent the user from entering data in the text box.
+(Book 2 delves deeper into these.)
+To get the SimpleCalc application closer to its final form, set the properties
+for its controls, as indicated in Table 3-3.
+Table 3-3 Control Properties for the SimpleCalc Application
+Original ID of Control Property Value
+Label1 Text The Simple Calculator
+Font-Size X-Large
+Font-Bold True
+Label2 Text First Number:
+TextBox1 ID txtNumber1
+Label3 Text Second Number:
+TextBox2 ID txtNumber2
+Button1 ID btnAdd
+Text Add
+(continued)
+46 Setting the Page Title
+Table 3-3 (continued)
+Original ID of Control Property Value
+Label4 Text The answer is:
+TextBox3 ID txtAnswer
+ReadOnly True
+After you set the control properties as indicated in the table, the page
+should look like the page shown in Figure 3-6.
+Setting the Page Title
+In addition to setting property values for the individual controls on a page,
+you can also set property values for the page itself. To do so, click somewhere
+on the page away from any of the controls; doing so selects the page.
+Then you use the Properties window to set the page-property values.
+The property you’re most likely to set for the page itself is the Title property,
+which specifies the text that appears in the title bar when the page is
+displayed in a browser window. For the Simple Calculator application, set
+the Title property to Simple Calculator.
+Figure 3-6:
+The
+Default.aspx
+page with
+its control
+properties
+set.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Looking at the Source Code 47
+Looking at the Source Code
+When you’ve added some controls and set their property values, click the
+Source button at the bottom of the Designer window to see the actual HTML
+source code for the page you’ve created. It should resemble the C# code
+shown in Listing 3-1.
+Listing 3-1: The Default.aspx file (C#)
+<%@ Page Language=”C#” AutoEventWireup=”true” CodeFile=”Default.aspx.cs”
+Inherits=”_Default” %>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html xmlns=”http://www.w3.org/1999/xhtml” >
+<head runat=”server”>
+<title>Simple Calculator</title>
+</head>
+<body>
+<form id=”form1” runat=”server”>
+<asp:Label ID=”Label1” runat=”server” Font-Bold=”True” Font-Size=”XLarge”
+Text=”The Simple Calculator”></asp:Label><br />
+<br />
+<asp:Label ID=”Label2” runat=”server” Text=”First Number:”></asp:Label>
+<asp:TextBox ID=”txtNumber1” runat=”server”></asp:TextBox><br />
+<br />
+<asp:Label ID=”Label3” runat=”server” Text=”Second Number:”></asp:Label>
+<asp:TextBox ID=”txtNumber2” runat=”server”></asp:TextBox><br />
+<br />
+<asp:Button ID=”btnAdd” runat=”server” Text=”Add” /><br />
+<br />
+<asp:Label ID=”Label4” runat=”server” Text=”The answer is:”></asp:Label>
+<asp:TextBox ID=”txtAnswer” runat=”server” ReadOnly=”True”></asp:TextBox>
+</form>
+</body>
+</html>
+If you’ll look through this listing, you’ll see that Visual Studio has generated
+a set of lines that begin with asp:control for each control you create.
+These lines contain the property settings you specified for each control.
+For example, here’s the code for the first label:
+<asp:Label ID=”Label1” runat=”server”
+Font-Bold=”True”
+Font-Size=”X-Large”
+Text=”The Simple Calculator”>
+</asp:Label>
+48 Adding Some Code
+Note that we formatted it a little differently by putting each property on its
+own line, but the code is the same as in the listing.
+Because the .aspx file is actually coded in HTML, the term attribute is usually
+used when referring to property names as they appear in the .aspx file.
+Throughout this book, we use those terms somewhat interchangeably. Thus
+if we say “Text attribute” or “Text property” we’re referring to the same
+thing. You’ll encounter both terms in software development.
+Notice also that each control includes a runat attribute that specifies
+server as its value. This is a required attribute setting for all ASP.NET Web
+controls. It simply indicates that the control is to be processed by the Web
+server after the user submits the page.
+All code shown in Listing 3-1 is generated automatically by Visual Studio, in
+response to the editing done in Design view. As a result, you don’t have to
+worry too much about the nuances of this code — at least for now. After you
+get a handle on the basics of creating simple ASP.NET applications, you can
+turn your attention to directly editing the .aspx code. Until then, there’s not
+too much shame (kidding!) in letting Visual Studio generate the code for you.
+Adding Some Code
+At this point, you could run the Simple Calculator application — sorta. It
+wouldn’t actually do anything: If you entered numbers in both text boxes
+and clicked the Add button, nothing would happen; it doesn’t know how
+to add the numbers yet. (D’oh!) To make the application add the two numbers
+together and display the result, you have to write some C# (or Visual
+Basic) code.
+The easiest way to write code for an ASP.NET application is to double-click
+one of the controls while in Design view. This creates a routine (called a
+method in programmer-speak) that’s executed when the user performs the
+default action for the control. For a Button control, the default action is
+clicking the control. As a result, you can write code that’s executed when the
+user clicks a button by doing no more than double-clicking the appropriate
+button in Design view.
+Figure 3-7 shows the Code Editor window that’s displayed when you doubleclick
+the Add button for the Simple Calculator application. As you can see,
+Visual Studio has created a method named btnAdd_Click and positioned
+the insertion point right in the middle of this method. So you can start
+typing the code you want to execute when the user clicks the Add button.
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Adding Some Code 49
+When the user clicks the Add button, we want to add the values that the
+user has entered into the first two text boxes and display the result in the
+third text box. At first glance, you might expect that the code would look
+something like this:
+txtAnswer.Text = txtNumber1.Text + txtNumber2.Text;
+If you’re new to C# programming, there’s a lot going on here that needs
+explaining. First, every statement must end with a semicolon. And second,
+the periods are used to separate object names from property names. Thus
+txtAnswer.Text refers to the Text property of the txtAnswer control.
+Okay, maybe all this seems straightforward enough — but (unfortunately) it
+doesn’t work at all the way you’d expect it to. If you were to run the application
+with this code and enter (say) 12 for the first number and 2 for the second
+number, you’d expect the answer to be 14. Instead, the answer displayed is
+122. That’s because the Text property represents string values, not numeric
+values. And in C# (as well as in Visual Basic), the + symbol when applied to
+strings simply means to combine the strings.
+So what we need to do is first convert the Text property values to numbers
+so we can add them and display the result. Here’s the code that will do that:
+decimal num1 = Decimal.Parse(txtNumber1.Text);
+decimal num2 = Decimal.Parse(txtNumber2.Text);
+decimal ans = num1 + num2;
+txtAnswer.Text = ans.ToString();
+Figure 3-7:
+Adding
+code to an
+ASP.NET
+application.
+50 Adding Some Code
+Here’s what’s going on in the code:
+? The first line begins by creating a variable named num1. The decimal
+keyword allows this variable to store decimal numbers. Then, it uses a
+built-in routine called Decimal.Parse to convert the string value of the
+Text property for txtNumber1 to a decimal value. Finally, the converted
+value is assigned to the num1 variable.
+? The second line does the same thing for the second text box.
+? The third line creates a variable named ans, adds num1 and num2
+together, and sets the ans variable to the result.
+? Finally, the fourth line sets the Text property of the third text box to the
+ans variable after converting its value to a string.
+Note that the code you write to handle button clicks and other similar occurrences
+isn’t stored in the same file with the .aspx tags that define the page.
+Instead, the code is stored in a separate file called the code-behind file — and
+that’s where the application looks for it. This file has the same name as the
+.aspx file for the page, but adds the extension .cs (for C#) or .vb (for
+Visual Basic). Thus, the C# code-behind file for the Default.aspx page is
+named Default.aspx.cs.
+The next chapter of this mini-book delves into how all this works. For now,
+have a look at Listing 3-2 — the complete C# code-behind file for the Simple
+Calculator program — and notice that the btnAdd_Click method contains
+the code that’s executed when the user clicks the btnAdd button.
+If all this talk of variables and conversion and built-in routines is giving you a
+serious headache, take heart: You can find help for C# in Book 4 and Visual
+Basic in Book 5.
+Listing 3-2: The code-behind file for the Simple Calculator application (C#)
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+public partial class _Default : System.Web.UI.Page
+Book I
+Chapter 3
+Creating Your First
+ASP.NET 2.0
+Application
+Running the Application 51
+{
+protected void btnAdd_Click(object sender, EventArgs e)
+{
+decimal num1 = Decimal.Parse(txtNumber1.Text);
+decimal num2 = Decimal.Parse(txtNumber2.Text);
+decimal ans = num1 + num2;
+txtAnswer.Text = ans.ToString();
+}
+}
+Running the Application
+Aha, the moment of truth: When you’ve created the Default.aspx page and
+the code-behind file, you can run the application to see how it works — and
+still be able to tinker with it if it doesn’t. To do so, click the Start Debugging
+button (shown in the margin), choose Debug?Start Debugging, or press F5.
+Whichever way you go about it, Visual Studio builds the application, starts
+the built-in Web server, runs the application, and opens a browser window to
+display the page.
+The first time you run an application from Visual Studio, you’ll see the dialog
+box shown in Figure 3-8. This dialog box is simply informing you that debugging
+has not yet been enabled for the application. Debugging must be
+enabled via a configuration file named web.config. The first option in this
+dialog box automatically generates a web.config file so you can run the
+application with the debugger enabled. Select this option and then click OK.
+Note that this dialog box only appears the first time you run the application.
+If you made a mistake when you entered the code for the code-behind file,
+Visual Studio will display a message indicating that the build failed and the
+application can’t be run. In that case, Visual Studio will display an Error List
+window that lists each error. You can then examine each error message and
+correct your code accordingly.
+Figure 3-8:
+Enabling
+debugging
+for a new
+ASP.NET
+application.
+52 Running the Application
+Assuming your code doesn’t contain any errors that prevent it from building
+successfully, the application will appear in a browser window as shown in
+Figure 3-9. Then, when you enter a number in each text box and follow each
+entry with a click of the Add button, the numbers are added and the result is
+displayed in the third text box.
+Of course, just because the application builds successfully and runs doesn’t
+mean the application is free from errors. Try clicking the Add button without
+entering any numbers in the text boxes. The result will be a cryptic error
+message such as Input string not in the correct format. That’s
+because this program doesn’t do any checking to make sure the user actually
+enters a value number as a value before it attempts to add the numbers.
+The user might have entered a word, or dropped something on a random
+key. Fortunately, Chapter 6 of this mini-book gives you the lowdown about
+finding and correcting problems like this in your ASP.NET applications. (And
+Book 2, Chapter 2 shows you how to add validation controls to ensure that
+the user does enter correct values.)

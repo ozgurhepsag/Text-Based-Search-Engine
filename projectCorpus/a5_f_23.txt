@@ -1,0 +1,900 @@
+122
+Science Communication
+Volume 28 Number 1
+September 2006 122-143
+© 2006 Sage Publications
+10.1177/1075547006291990
+http://scx.sagepub.com
+hosted at
+http://online.sagepub.com
+Authors’ Note: This research was supported by The Greenwall Foundation, National Institutes of
+Health/National Institute of Neurological Disorders and Stroke grant R01 #NS045831, and Fonds
+Québécois de la Recherche sur la Société et la Culture and Social Sciences and Humanities
+Research Council. We extend our thanks to Dr. Charles Jennings for inspiring this project and to
+Dr. Scott W. Atlas, Dr. Thomas A. Raffin, Dr. Pamela Schraedley-Desmond, Marisa Gallo, and
+Sarah Waldman. Correspondence concerning this article should be addressed to Judy Illes,
+Program in Neuroethics, Stanford Center for Biomedical Ethics and Department of Radiology,
+Stanford University, 701 Welch Road, Suite A1105, Palo Alto, CA 94304-5748; phone: (650) 724-
+6393; fax: (650) 725-6131; e-mail: illes@stanford.edu.
+Brain Imaging
+A Decade of Coverage in
+the Print Media
+Eric Racine
+Institut de Recherches Cliniques de Montréal
+Québec, Canada
+Ofek Bar-Ilan
+Stanford University, Palo Alto, California
+Dominican University of California, San Rafael
+Judy Illes
+Stanford University, Palo Alto, California
+Advances in neuroscience are increasingly intersecting with issues of ethical,
+legal, and social interest. This study is an analysis of press coverage of an
+advanced technology for brain imaging, functional magnetic resonance imaging,
+that has gained significant public visibility over the past ten years.
+Discussion of issues of scientific validity and interpretation dominated over
+ethical content in both the popular and specialized press. Coverage of research
+on higher order cognitive phenomena specifically attributed broad personal
+and societal meaning to neuroimages. The authors conclude that neuroscience
+provides an ideal model for exploring science communication and ethics in a
+multicultural context.
+Keywords: neuroethics; functional magnetic resonance imaging; press;
+neuroscience; content analysis; bioethics
+Racine et al. / Brain Imaging 123
+Advances in neuroscience are intersecting with ethical, legal, and social
+issues. Some issues concern clinical applications such as the early
+diagnosis of disease, while others relate to the growing number of studies
+using frontier neurotechnologies such as functional magnetic resonance
+imaging (fMRI) of social behaviors. Here, we present a study on how
+fMRI, one model of neurotechnology that has diffused rapidly in the
+research environment and gained substantial visibility, has been covered in
+the print media. Drawing on lessons learned from press coverage of other
+scientific domains, we examined the complexity of communication of brain
+findings and the need for their consideration in a multicultural context.
+In the past, press coverage of genetics and genomics has brought ethical,
+social, and legal issues to the forefront. Scholars of bioethics, social sciences,
+and law, for example, have investigated informed consent, risks of “geneticization,”
+and breaches of confidentiality extensively. Vast interdisciplinary
+programs in numerous countries have addressed these issues and others.
+Scholars of science communication and other social scientists have played an
+important role in disseminating the information resulting from this research.
+For more than two decades, they have attended to the issues of the new genetics,
+and their contributions have been instrumental in broadening the debate
+and in bringing attention to marginal points of views (Conrad and Gabe
+1999). The outcome is that the genomics community has a solid base of
+knowledge and discussion for informed and responsible science communication
+(Cardinal et al. 2003; Condit 2001; Condit, Parrott, and O’Grady 2000;
+Racine 2003).
+Stem-cell research and embryo research have also been a focus of communication
+research, albeit on a smaller scale (Mulkay 1994; Williams,
+Kitzinger, and Henderson 2003). The academic community and the larger
+public are probably less aware, however, that similar issues are pending in
+contemporary neuroscience research. In fact, some argue that far more than
+our genome, the brain constitutes an integral part of our concept of the self
+(Greely 2002; Kennedy 2003; Mauron 2003). Consequently, we may speak
+of a “neuroscience revolution” (Wolpe 2002). In this article, we provide background
+to support these claims and explore them through the lens of press
+coverage of functional neuroimaging studies.
+Contemporary Neuroscience
+The study of the nervous system has been an enduring medical research
+tradition led by preeminent physicians and researchers. Contemporary neuroscience
+feeds on this tradition and draws on a vast and interdisciplinary
+history to study the nervous system. Subspecialties of neuroscience include
+neurophysiology, which studies the detailed electrical activity of neurons
+and other neuronal structure; neurobiology, which focuses on the molecular
+and cellular understanding of the nervous system; and cognitive neuroscience,
+which tries to understand correlations between cognitive
+phenomena and biological patterns. These may be measured as electrical
+signals using electroencephalography, for example, as blood flow using
+positron emission tomography or single photon emission tomography or as
+changing blood oxygenation levels in stimulus-response paradigms using
+fMRI, our focus here. Resulting information from these different imaging
+modalities is sometimes complementary; at other times, it may provide
+competing explanations of similar phenomena. Nevertheless, the integration
+of knowledge stemming from multiple levels of inquiry has yielded
+new insights into neurological and psychiatric diseases.
+The study of human brain function has been greatly facilitated by neuroimaging
+techniques that have made possible research on increasingly
+complex cognitive phenomena, including emotions, personality traits, and
+real-world behaviors. fMRI is of particular interest because of its noninvasiveness
+(therefore allowing a greater degree of repeatability than before)
+and widespread use by the research community. Between 1991, when the
+results of the technique were first reported, and 2004, tens of thousands of
+studies were cited in PubMed (Raichle 2004). There has also been a steady
+expansion of studies with social and policy implications (Illes, Kirschen,
+and Gabrieli 2003). Among this research are studies specifically of thought
+processes, emotions, racial attitudes, personality traits, religious experience,
+deception, and moral reasoning (Illes, Racine, and Kirschen 2005).
+Research results are already permeating the public sphere. Neuroimaging
+data have been admitted in courts,1 and in one case, a homicide conviction
+was reversed because the state failed to provide brain scans (People v.
+Weinstein 1992). Studies of consumer preferences using fMRI to inform
+marketing strategies—“neuromarketing”—have been discussed by the neuroscience
+community and the wider public (“Brain Scam?” 2004; “Open
+Your Mind” 2002). As the power of imaging technologies increases, novel
+studies may yield novel applications such as mind reading (Ross 2003).
+Some new imaging technologies, such as functional near-infrared imaging
+of the brain, promise to deliver inexpensive, reliable, and portable imaging
+neurotechnologies that are as accurate as the current costly and equipmentcumbersome
+functional imaging based on magnetic resonance technology.
+For example, a wearable headband functional near-infrared tool is being
+developed to investigate real-world behaviors, with possible uses such as lie
+124 Science Communication
+detection (Izzetoglu et al. 2004). Hence, as the power of brain imaging technologies
+increases, so will the magnitude of the issues it raises.
+A Convergence of the New Field of
+Neuroethics and Science Communication
+Debate on these studies and their projected applications is starting, mainly
+under the impetus of a new interdisciplinary field, neuroethics, that specifically
+focuses on the ethical implications of contemporary neuroscience (Illes
+and Raffin 2002; Moreno 2003). Neuroethics includes both the “ethics of
+neuroscience” (i.e., ethical issues raised by emerging neurotechnology such
+as neuropharmaceutical enhancement) and the “neuroscience of ethics” (i.e.,
+understanding moral reasoning with the help of neuroscience methods;
+Roskies 2002). Given its expanding use and related challenges, fMRI represents
+a model for discussing implications of modern neurotechnologies. In
+this context, media coverage constitutes one important pathway to assess
+what the issues surrounding fMRI are and how the technology is portrayed
+outside the peer-reviewed literature. At this point in the neuroethics debate,
+press analysis constitutes an invaluable source of information for neuroscientists,
+social scientists, policy makers, and bioethicists. To our knowledge,
+apart from a theoretical article on this topic that we published (Racine, Bar-
+Ilan, and Illes 2005), this exploratory study was the first study of how fMRI
+has been featured in the print media. It was a detailed examination of the
+characteristics of the coverage to date and an outlook on ethical and social
+challenges associated with brain imaging introduced by the press.
+Methods
+Sample
+We generated the sample for this work using LexisNexis Academic, a database
+consisting of full-text news, business, and law resources. We searched for
+English-language articles from January 1, 1991 (Illes, Kirschen, and Gabrieli
+2003), to June 1, 2004, using the “Guided News Search” with the keywords
+“neuro* AND imaging” and “functional magnetic resonance imaging” or
+“fMRI.” The following news categories as defined by the LexisNexis
+Academic database were searched in headlines, lead paragraphs, and terms:
+general news (major newspapers), general news (magazines and journals),
+medical news (medical and health news), university news (The Chronicle of
+Racine et al. / Brain Imaging 125
+Higher Education, University Wire), and legal news. After all the articles
+(N = 442) were gathered, we examined them for relevance and removed the
+many duplicates arising from the frequent republication of articles. Individual
+articles were the sampling units, sorted according to whether they originated
+in general newspapers such as the New York Times and news magazines such
+as Newsweek or in specialized medical and science magazines such as Biotech
+Week and Medical Imaging Week.
+Coding
+Two independent coders (Racine and Bar-Ilan) analyzed all articles according
+to a detailed coding sheet. The units of analysis were the individual codes.
+Key codes were derived through an inductive process (Neuendorf 2002) in
+which previously used coding categories for content analysis of genomics
+research (Racine et al. 2006) were refined and adjusted to the context of neuroimaging
+research. Modifications included the addition of epistemological
+challenges and a refinement of the ethical issues section to take into account
+the specifics of fMRI. In addition, some new codes, such as target cohort and
+levels of explanation (simple or detailed), were added to the genomic coding
+scheme. This process culminated in the creation of a complete coding guide in
+which definitions for codes as well as instructions and examples were featured.
+Coders were trained to apply this coding system through a series of
+practice runs. A reliability pretest was conducted to ensure consistency and
+reliability as well as training adequacy. Table 1 presents details on the codes
+used for this study.
+We also performed independent intercoder reliability tests on a randomly
+selected subsample of twenty-five articles. Results for reliability were calculated
+in terms of percentage agreement for the twenty-two codes2 (Table 1).
+A single code, “diffusion of technology,” had a percentage agreement below
+.70 and was dropped out to ensure sufficient data reliability and reproducibility
+for this exploratory study.
+Data Analysis
+We used descriptive statistics to characterize the composition and properties
+of the sample and the chi-square statistic to test for main effects (p < .05)
+between general and specialized sources and between health research and
+non-health-related research. In the comparison between general and specialized
+sources, codes for balanced and critical tone were combined because
+figures were individually too small for meaningful statistical comparison.
+126 Science Communication
+Racine et al. / Brain Imaging 127
+Table 1
+Coding Structure and Reliability
+Code
+Target
+cohort
+Explanation
+of fMRI
+Research
+Prospects
+Tone
+Issues
+Subcode
+Infants
+School aged or
+adolescents
+Adults
+Aging
+Animals
+Simplifiedb
+Detailedb
+Health-relatedc
+Non-health-relatedc
+Health-relatedc
+Non-health-relatedc
+Uncriticalb
+Balancedb
+Criticalb
+Scientificd
+Ethicald
+Definition
+Stated or individuals aged under three
+Stated or individuals aged between three
+and seventeen
+Stated or individuals aged between
+eighteen and sixty-five
+Stated or individuals aged over sixty-five
+Research done on animals
+Article includes some technical details
+about fMRI (less than two sentences)
+Article includes extensive technical details
+about the mechanics of fMRI (more than
+two sentences)
+Research is performed on disease
+mechanisms or treatments
+Research is performed without the aim of
+obtaining insights on disease mechanisms
+or treatments (e.g., fundamental
+brain processes and systems)
+Prospects of study and benefits of study to
+improve health either in preventing disease
+or improving treatments or cures
+Prospects of study and benefits of study
+are not related to health improvement
+Article presents no risks
+Article presents as many benefits
+concerning fMRI as it does risks; pros
+and cons of fMRI are presented
+Article presents more risks associated with
+fMRI than benefits
+Potential harms and risks of
+neurotechnology from scientific and
+medical standpoints
+Potential harms and risks of fMRI from
+ethical, social, and legal standpoints
+Reliabilitya
+100
+92
+100
+100
+88
+84
+96
+84
+88
+76
+88
+100
+100
+100
+100e
+100f
+Note: fMRI = functional magnetic resonance imaging.
+a. Percentage agreement. One code identifying the diffusion of fMRI technology was discarded
+because of low reliability.
+b. Mutually exclusive subcodes.
+c. Further analyzed to identify specific areas of research or application.
+d. Code further analyzed for qualitative features. See Table 4 for definitions.
+e. Includes the following subcodes, each with 100 percent agreement: limitations, interpretation,
+and validity. See Table 4 for definitions.
+f. Includes the following subcodes, each with 100 percent agreement: human nature, confidentiality,
+troubling findings, and recruitment. See Table 4 for definitions.
+128 Science Communication
+This exception was justified inasmuch as it provided results for uncritical articles
+featuring no scientific or ethical concerns, on the one hand, and articles
+presenting at least one scientific or ethical issue, on the other hand. We used
+the qualitative features of the data to elaborate on scientific and ethical issues
+and to illustrate salient points.
+Results
+General Sample Characteristics
+Our search returned 132 unique articles appearing in the press between
+1994 and 2004, none having been found prior to 1994. Seventy-nine articles
+(60 percent) represented general source articles, and 53 articles (40
+percent) represented specialized sources. When applicable, results for both
+types of press are presented to provide further analytic insight.
+Quantitative Analyses
+Focus of the research and level of technical detail. The majority of articles
+featured research on adults (n = 111, 84 percent). The minority presented
+research on school-aged children and adolescents (n = 19, 14 percent), on the
+aging (n = 4, 3 percent), and on infants (n = 3, 2 percent). Nine articles (7 percent)
+discussed animal studies.
+We found no explanation of the technical details of fMRI in the majority
+of articles (n = 89, 67 percent), simplified explanations in twenty-two
+articles (17 percent), and more detailed information in twenty-one articles
+(16 percent). An example of a simple explanation is as follows:
+Ogawa’s research focused on certain magnetic changes that occur in blood
+hemoglobin when it binds to oxygen. This use of a physiologically dependent
+signal has contributed greatly to the development of technology for creating
+images of the functioning of the human body, particularly the brain. (“2003
+Japan Prizes” 2003, 10)
+Health-related and non-health-related research. Health-related research
+was featured in roughly a third of the articles (n = 46, 35 percent) and nonhealth-
+related research in 58 articles (44 percent).3 One-fifth of the articles
+(n = 27, 20 percent) presented both types of research.
+Coverage of health-related research featured neurodegenerative diseases
+such as Alzheimer’s and Parkinson’s diseases (n = 15, 11 percent) and psychiatric
+conditions such as depression and schizophrenia (n = 15, 11 percent).
+Racine et al. / Brain Imaging 129
+Coverage of non-health-related research focused principally on higher order
+cognitive systems such as decision making and motivation (n = 42, 32 percent),
+other cognitive behaviors that have emotional and potential social impacts
+(n = 33, 25 percent), and basic cognitive systems such as attention and
+memory. Integrative sensory systems (e.g., visual perception), basic sensory
+systems (e.g., vision), and motor systems were of a lesser focus.
+Practical prospects and benefits of research. Prospective health-related
+benefits of fMRI were featured in half of the articles (n = 65, 49 percent)
+and non-health-related prospects in many fewer (n = 17, 13 percent).
+Health-related prospects were principally linked to hopes of better treatment
+(n = 39, 30 percent) or diagnosis (n = 28, 21 percent). Health intervention
+monitoring was also featured in a small number of articles (n = 12,
+9 percent). With respect to non-health-related benefits, a small number of
+articles (n = 5, 4 percent) featured early childhood intervention learning and
+teaching improvements. Other equally infrequent benefits (2 percent each)
+were neuromarketing, lie detection, and technical improvements to fMRI.
+Benefits were often highlighted in news headlines or lead paragraphs, even
+if findings suggesting them were tentative.
+Tone of articles. The vast majority of the articles (n = 104, 79 percent)
+were uncritical in tone, whereas twenty-eight (21 percent) were balanced or
+critical (Table 2; ?2 = 5.184, p = .023). The uncritical articles ranged from
+optimistic to neutral reporting of fMRI.
+Articles that featured health-related research, non-health-related
+research, or both yielded significant differences in terms of tone. Of articles
+Table 2
+Tone and Concerns Identified in General and
+Specialized News Sources (in percentages)
+Code Sample General Sources Specialized Sources
+Tone
+Uncritical 79 72 89
+Balanced 16 22 8
+Critical 5 6 4
+Issues
+At least one issue 23 32 9
+Scientific issue 18 23 9
+Ethical issue 9 11 0
+130 Science Communication
+presenting health-related research, four (9 percent) contained references to
+an ethical risk; this increased to fourteen of fifty-eight articles (24 percent)
+for non-health-related research and to eleven of twenty-seven articles (41
+percent) presenting both (?2 = 10.378, p = .006). Health-related research
+articles were less critical than articles featuring non-health-related research,
+but articles containing both types of research were more critical ( ?2 =
+10.635, p = .031) (Table 3).
+Scientific and ethical concerns. Overall, a quarter of the sample (n = 30,
+23 percent) contained at least one of the seven identified concerns related
+to science or ethics. We found significant differences between general
+sources and science and health sources in the frequency of ethical issues.
+Of the general sources, a third (n = 25, 32 percent) presented at least one
+issue; this was the case, however, in only a few (n = 5, 9 percent) of the specialized
+science and health sources (?2 = 8.911, p = .003; Table 2). Even
+though the small number does not permit statistical comparison on this
+aspect of press coverage, we found that six of the issues were more frequently
+found in general sources. Only the issue of validity occurred with
+common frequency (see Table 4). When we grouped limitations, interpretation,
+and validity to analyze scientific issues broadly, this cluster occurred
+in twenty-four articles (18 percent).
+The other concerns that are ethical in nature (human nature, confidentiality,
+troubling findings, and recruitment) appeared in nine articles (7 percent).
+Table 3
+Tone and Concerns Identified in Press Coverage of Health
+and Non-Health-Related Research (in percentages)
+Code Health-Related Research Non-Health-Related Research Both
+Tone
+Uncritical 91 78 63
+Balanced 9 14 30
+Critical 0 9 7
+Issues
+At least one issue 9 24 41
+Scientific issue 9 21 30
+Ethical issue 0 5 19
+Benefits
+Health benefit 63 29 70
+Non-health-related benefit 2 19 19
+Racine et al. / Brain Imaging 131
+We found scientific issues featured in eighteen of the general sources
+(23 percent) but only in five of the science and health literature (9 percent;
+?2 = 3.930, p = .047). Ethical issues were present in only nine articles
+(11 percent) of the general sources and absent in the science and health
+literature (?2 = 6.480, p = .011; Table 2).
+We also examined ethical and social concerns according to the type of
+research featured. We found that ethical issues were most frequent in articles
+that presented both health-related and non-health-related research (five of
+twenty-seven, 19 percent). Ethical concerns were featured in three of fiftyeight
+non-health-related articles (5 percent), and none were found in articles
+presenting only health-related research (?2 = 10.334, p = .006). Health-related
+benefits were found more often in articles that presented both types of research
+(nineteen of twenty-seven, 70 percent) than in articles presenting health-related
+Table 4
+Qualitative Features of the Press Coverage Sample (in percentages)
+General Specialized
+Issue Description Sample Sources Sources
+Limitations Risks and concerns related to the 14 19 8
+limitations of knowledge
+gained by fMRI
+Interpretation Risks and concerns related to 8 10 4
+interpretation/meaning of
+findings by the public and
+researchers
+Validity Risks and concerns related to 6 6 6
+scientific research design
+Human nature Risks and concerns related to 5 8 0
+transformation of human nature
+conducing to see humans as
+mere means, misuses
+Confidentiality Risks and concerns related to 2 4 0
+potential harms due to sharing
+of confidential information
+Troubling findings Risks and concerns related to 2 4 0
+potential individual or social
+harms of findings
+Recruitment Risks and concerns related to 1 1 0
+recruitment of research subjects,
+protection of subjects enrolled
+in protocols
+Note: fMRI = functional magnetic resonance imaging.
+research (n = 29, 63 percent) or non-health-related research (n = 17, 29 percent;
+?2 = 17.536, p < .001). Non-health-related benefits were found significantly less
+often in health-related research (n = 1, 2 percent) than in non-health-related
+research (n = 11, 19 percent) or articles presenting both types (n = 5, 19 percent;
+?2 = 7.330, p = .026; Table 3).
+Qualitative Analyses
+To enrich our understanding of the distribution and other quantitative
+characteristics of the data, we turn our attention now to qualitative features
+of the sample (see Table 4).
+Limitations of the technology. We found references to the expression or
+appreciation of the limitations of the technology in nineteen of the articles
+(14 percent) in the sample. Three classes of limitations emerged:
+1. Emphasis on the preliminary nature of findings or their limited generalizability
+by neuroimagers themselves (e.g., “It is far too early to take
+these findings as gospel” [Hall 1998, 22] and “Gabrieli warns to wait for
+further studies before putting too much faith in this one test” [“Study
+May Have Found Test” 1999])
+2. Challenges to the basic assumption that levels of blood oxygenation are
+indicators of neuronal activity (e.g., “Increased blood flow, as shown in
+splotches of light, may not be an accurate surrogate for brain cell function”
+[Blakeslee 2000, 6])
+3. Worries associated with the wider social usefulness of fMRI research and
+findings (e.g., “The results of experiments, undeniably exciting but
+nonetheless limited and preliminary, are being used by nonexperts to
+inform everything from the style of a mother’s nurturing to the organization
+of day-care centers to public policy on child rearing, with precious
+little scientific data to support ambitious, even aggressive leaps into
+future education policy” [Hall 1998, 22])
+Interpretation. We identified interpretation issues in ten of the articles
+(8 percent). Interpretation issues are reminiscent of limitations, but focus on
+the nature of the scientific and social conclusions drawn from the findings.
+We could further break down interpretation issues into two classes:
+1. Technical and scientific issues, including the overinterpretation of results
+and concerns about statistical methods, many of which related specifically
+to the possibility of correlating brain activation to neurocognitive function
+(e.g., “Just because an area of a patient’s brain ‘lights up’ during an fMRI
+132 Science Communication
+Racine et al. / Brain Imaging 133
+scan doesn’t mean it’s the seat of the behaviour being studied” [Spinney
+2002, 38])
+2. Social interpretation issues, including the wider meaning of fMRI findings
+in the public arena (e.g., “When the results . . . come out, they are
+bound to cause a stir—and they are also bound to be misinterpreted”
+[Hall 1998, 22])
+Validity. Like limitations and interpretation issues, validity issues are also
+tightly interwoven in the technical and scientific aspects of fMRI. Validity
+issues, highlighted in eight of the articles (6 percent) in the sample, focused
+on the risks of and concerns about poor scientific research design or lack of
+standardized practice. For example, “That is an example of a bad imaging
+experiment. . . . scientifically, it tells you nothing. The study suffers from a
+lack of theoretical context . . . we don’t have a theory of what it takes to make
+a moral judgment” (Monasterky 2001, 20). Some questioned the validity of
+fMRI research itself more broadly: “There is nothing particularly interesting
+coming out of imaging” and “imaging studies that purport to find localization
+of mental abilities in the brain suffer from a number of flaws that invalidate
+such discoveries” (Monasterky 2001, 20).
+Human nature. We found references to issues bearing on human nature in
+six of the articles (5 percent) in the sample. Most of these related to neuromarketing
+(i.e., possible misuses in the study of consumer preferences and its
+corollary implications of reducing persons to means): “It raises serious philosophical
+questions, because it reduces us to a machine” (Sample and Adam
+2003, 4) and “it’s wrong to use a medical technology for marketing, not healing”
+(Hamilton 2004, 78). Other examples related to misuses of fMRI as a
+surveillance technique:
+Like a fingerprint . . . the brain is always there, storing a record of the actions
+and even the thoughts involved in our actions. No matter how cleverly we
+might try to deceive, in the future, our brains could be used as evidence
+against us. (Persaud 2001, 21)
+Other ethical issues. We also infrequently found other ethical issues,
+such as confidentiality and privacy issues, troubling findings, and the protection
+of human subjects enrolled in research. Thought privacy was a significant
+theme, because the nature of fMRI findings may reveal private and
+personal information on neurocognitive processes. For example,
+The suggestion that brain scans could reveal not just our future health, but the
+intricacies of our personalities and how we might behave in a given situation
+134 Science Communication
+is unsettling enough to some scientists that they want legislation to stop
+brain-scan records falling into the wrong hands. (Sample and Adam 2003, 4)
+Troubling findings involved clinical findings detected unexpectedly in the
+research setting. For example,
+Very occasionally, the structural scans of volunteers in research projects do
+reveal tumours. And as a researcher, rather than clinician, [name of investigator]
+is not allowed to break bad news. ‘I tell them the scan hasn’t worked
+properly and I can’t show them it,’ he says. ‘And then I contact their GP [general
+practitioner] and tell them to arrange a medical scan.’” (Adam 2003, 5)
+Discussion
+Our analysis of coverage of fMRI in the print media suggests an overall
+optimism for this frontier neurotechnology that is especially marked in
+reports originating from specialized news sources. Overall, clinical
+research is presented more optimistically than nonclinical research, and scientific
+concerns are featured more often than ethical ones. The qualitative
+data further show that scientific issues include both technical and social
+concerns and outweigh ethical issues in sheer numbers.
+No doubt, limitations are inherent to our search strategies and the
+LexisNexis Academic database itself, and small numbers in certain areas
+limit the depth of the present analysis. Certainly, more research is needed to
+fully understand how the ethical issues of emerging neurotechnologies are
+discussed in the press. Nonetheless, this exploratory study yielded powerful
+insights into the portrayal of this technology by the press.
+Improving Health or Unraveling Mysteries of the Mind?
+The results of our study suggest that press coverage is greater for studies
+of non-health-related phenomena, in particular higher order cognition,
+emotion, and social behaviors studies. However, even if such research is
+more frequent in number, health benefits are emphasized most. This suggests
+that the depiction of fMRI as a health technology is unrelenting, even
+if non-health-related research is the prevailing focus. The interpretation of
+this disequilibrium is open. Because structural magnetic resonance imaging,
+as the precursor to fMRI, was realized initially as a clinical tool, the
+portrayal of the health benefits of the technology could simply be a natural
+Racine et al. / Brain Imaging 135
+segue from the known historical uses of imaging methods (Lentle and
+Aldrich 1997). We noted, however, that the treatment of disease is the most
+frequently featured benefit, even though diagnosis and monitoring more
+appropriately define the likely contributions of fMRI to health care
+(Desmond and Chen 2002; Mazziotta 2000).
+A competing interpretation is that health content may be used to facilitate
+social acceptance of fMRI. Conrad (2001) suggested that researchers
+have an interest in promoting the benefits from their research to gather support,
+and health benefits are undoubtedly one of the most appreciated outcomes
+of scientific research and biotechnology. In keeping with this
+alternative explanation, we note that reporting of health-related research is
+less critical than reporting of its non-health-related counterpart. Even if our
+study does not provide data that informs us about motivations, we also note
+corresponding differences in terms of tone and presence of ethical issues.
+A third possible interpretation of the disequilibrium is that while the
+reporting of health research tends to promote optimism on the part of readers,
+the reporting of non-health-related research can elicit skepticism. For
+example, neuromarketing studies or possible truth-technology improvements
+received a fair deal of critical attention in our sample of print media. This tendency
+corresponds to debates taking place in highly visible peer-reviewed
+journals in the neuroscience literature (“Brain Scam?” 2004; “Does
+Neuroscience Threaten Human Values?” 1998; Hoag 2003; Jaffe 2004;
+“Silence of the Neuroengineers” 2003). In fact, the journey of fMRI to the
+social domain appears to be in large part fueling ethical discussions in the
+media. We have suggested, in fact, that senses of neurorealism, neuroessentialism,
+and neuropolicy are commonly conveyed in media coverage of fMRI
+(Racine, Bar-Ilan, and Illes 2005). More precisely, fMRI seems to imply
+visual proof of the fundamental nature of reality and subjectivity, which propels
+the use of fMRI findings in policy making. Such powerful representations
+are bound to bring reactions from the public and the scientific
+community, especially when the applications are provocative.
+In addition to this evidence, previous press studies of genomics have
+reported that the media preferentially cover high-profile examples of scientific
+attempts or progress, such as human cloning, rather than potentially
+more mundane ethical issues, such as those associated with clinical applications
+of genetic testing and screening (Geller, Bernhardt, and Holtzman
+2002). Another study has shown that more than one-third of articles dealing
+with genomics present ethical issues. This proportion increases when
+other biotechnological sectors, especially controversial ones such as stemcell
+research, reproductive cloning, or new reproductive technologies,
+136 Science Communication
+figure in the articles (Racine et al. 2006). This may be consistent with
+increased pressures for fast journalism and highly visible stories (Gardner,
+Csikszentmihalyi, and Damon 2001; Nelkin 1995). Unfortunately, the
+downside of this dynamic is that it can overshadow relevant ethical issues
+related to less spectacular health care applications of fMRI. Consequently,
+many important and pressing neuroethical issues, such as the use of fMRI
+for the early diagnosis of late-onset diseases (Rosen et al. 2002), are left
+unattended. Even if they are of great public interest and may affect people’s
+lives directly, these go practically unnoticed in our sample.
+Unattended Ethical Controversies
+We observed that the majority of articles were uncritical of fMRI. Other
+press studies of research such as genomics and genetics and biotechnologies
+have frequently observed similar optimistic reporting (Conrad 2001; Kohring
+and Matthes 2002; Moreno, Lujan, and Moreno 1996; Mulkay 1994; Priest and
+Talbert 1994; Racine et al. 2006). A small number of media reports are highly
+critical (Conrad 2001; Moreno, Lujan, and Moreno 1996; Racine et al. 2006).
+Reporting of fMRI conforms to the majority of these patterns and further illustrates
+how the expectation of balanced scientific reporting (Rose 2003;
+Thompson and Nelson 2001) can collide with the social demand for research.
+In contrast to the optimism for fMRI research, we did find substantial content
+related to specific scientific and ethical concerns. The presence of ethical
+issues in fMRI reporting is still lower, however, than media coverage of
+genomics and genetics, for which figures around 40 percent have been identified
+in the general press (Conrad 2001; Craig 2000; Petersen 2001; Racine
+et al. 2006). Although there are differences in the samples, this comparison
+sustains the point of view that the issues of neuroscience have not yet been
+brought to the public eye as frequently as issues of genomics (Illes and Racine
+2005; Wolpe 2002). One explanation for this phenomenon may lie in the
+legacy of eugenics and discrimination in genetics, which still has a significant
+impact on public understanding of genetics (Geller, Bernhardt, and Holtzman
+2002). A second explanation bears on the vast interdisciplinary research networks
+that have been supported by funding agencies to investigate the ethical,
+legal, and social issues of genomics. These scholarly activities contribute to
+the sustained attention to risks and concerns related to genomics. Equivalent
+institutional support of this nature does not yet exist for the ethics of contemporary
+neuroscience. Nonetheless, the overall lesser attention to these
+issues in fMRI research and maybe more broadly to neuroscience remains an
+Racine et al. / Brain Imaging 137
+interesting puzzle in the communication of the ethical dimensions of science.
+Why have the issues of neuroscience gone largely unnoticed in comparison
+with genomics?
+Communicating with Specialized and Lay Audiences
+Our data indicate that specialized sources are less critical of fMRI than
+general sources. This suggests that ethical discussion is taking place in the
+public domain and that scientists are brought to discuss these issues in wider
+forums rather than in specialized ones. The same observation applies to scientific
+issues. The reasons for the differences, however, are unclear. One possible
+explanation is that specialized science and medical magazines are
+geared to showcase technology. To be fair, there has also been some ethical
+discussion within the neuroscience community concerning, for example, the
+use of functional neuroimaging markers as a diagnostic tool (Desmond and
+Chen 2002; Rosen et al. 2002) or the extension of neuroimaging to social
+behavior (“Brain Scam?” 2004; Jaffe 2004). However, the increasing advances
+in neuroscience merit broader discussion.
+Researcher responsibility is also called on by the fact that two-thirds
+of articles presented no explanation of what fMRI achieves technically.
+A Brazilian survey of “neuroscience literacy” showed that the public is uninformed
+about major research methodologies such as electroencephalography,
+positron emission tomography, and fMRI (Herculano-Houzel 2002). Many
+researchers and scholars have voiced concerns that simplistic understanding
+of such neuroimaging modalities may increase the risk for misuse and
+the possibility of the abuse of consumers who are lured by the high-tech
+profile of the technology (Farah and Wolpe 2004; Gura 2005; Hinton 2002;
+Kulynych 2002; Stufflebaum and Bechtel 1997). Our study, therefore, further
+grounds repeated calls for increased neuroscientist involvement in the
+popularization of research findings (Bruer 1998; DiPietro 2000; Hall,
+Carter, and Morley 2004; Hinton 2002; Kulynych 2002; Racine, Bar-Ilan,
+and Illes 2005; Rose 2003), as well as particular attention to the epistemological
+issues of neuroimaging in public communication (Illes and Racine
+2005; Illes, Racine, and Kirschen 2005).
+Scientific and Manifest Images: A Philosophical Dilemma
+We noticed that scientific issues such as limitations, interpretation, and
+validity are double-headed, because they include both technical and social
+138 Science Communication
+concerns. Technical concerns are mostly reported with the aim of presenting
+qualified results. However, we observed deeper debate within the scientific
+community, especially when researchers question the assumptions underlying
+fMRI or criticize colleagues for not taking into account the limits of their findings.
+Social concerns occur when results are invested with broader cultural
+meaning that can lead to social tensions (Racine, Bar-Ilan, and Illes 2005).
+We may analyze the interaction between scientific dimensions of these
+issues and their wider social depiction following philosopher Wilfred
+Sellars (1963), who distinguished the “manifest” and the “scientific” views
+of the world. The manifest image of the world is the common view of
+humans. It is the way we see ourselves in ordinary life on the basis of free
+will and other cultural assumptions. Exploring the structure of the manifest
+image is largely the concern of the humanities, even though this is changing
+with the advent of social neuroscience (Cacioppo et al. 2000). The scientific
+image of the world is the scientific view of ourselves. This scientific
+image can put in question the manifest image and beliefs underlying it,
+such as free will and responsibility. While neuroscience studies of moral
+emotions and cooperation, for example, are in many ways enriching our
+scientific view of the world, some may interpret this trend as an impoverishment
+or a threat (“Does Neuroscience Threaten Human Values?” 1998)
+to our manifest image of the world (i.e., our common view of human phenomena
+on the basis of existing human cultures).
+A parallel can be drawn here with the concept of geneticization, which
+was used to criticize the uncritical acceptance of health framed predominantly
+in the language of genetics (Lippman 1991, 1992). Our data suggest
+that a similar phenomenon of biologization could occur in neuroscience.
+Researchers engaged in affective neuroscience (Dalgleish 2004), social
+neuroscience, and neurophilosophy (Churchland 2002) are exploring new
+interactions between neuroscience and the social sciences and the humanities.
+Hence, concerns over biologization could easily increase if the manifest
+image is depicted in media as being jeopardized by the new
+neuroscientific image. We predict that this turn in the potential impact of
+neuroscience will surface as a key challenge in science communication.
+Conclusion
+The results of this study indicate that fMRI reporting follows general
+patterns observed in past reporting of genomics and biotechnologies.
+Disequilibrium between coverage of non-health-related research and clinical
+benefits suggests that non-health-related research is galvanizing the ethical
+debates surrounding neuroimaging. Analysis of the scientific issues indicates
+that neuroscience may bring concerns of biologization of thought and culture
+to the public foreground.
+Given that the scientific complexity of the brain is overwhelming and, as
+we suggest, that its social meaning is part of a wider debate, approaches to
+science communication will need to be informed accordingly. In this
+respect, neuroscience can be a model for further exploring principles of
+multicultural communication (van Dijck 2003) and mechanisms that foster
+open science communication. From the public’s point of view, when
+research results are publicized and concern personality and concepts related
+to self-identity, they are bound to interact with the various cultural, religious,
+and secular sources of our self-identity (Taylor 1989). Broad interdisciplinary
+and public dialogue is an essential element, therefore, in
+ensuring the responsible communication and social impact of neuroscience.
+Notes
+1. Some studies have investigated neuronal differences between false and truthful memory
+(Schacter, Buckner, and Koutstaal 1998) or deception (Langleben et al. 2002), while others
+focus on neural mechanisms involved in the active suppression of memory (Anderson et al.
+2004). Electroencephalographically derived “brain fingerprinting” has been recently promoted
+as a tool for determining whether an individual is in possession of certain knowledge of a
+crime (Farwell and Smith 2001). The brain exhibits specific responses when a person recognizes
+significant information, such as crime scene details (Farwell and Smith 2001).
+2. The use of a reliability measure that takes into account chance agreements, such as
+Cohen’s ? or Krippendorff’s ?, was considered. Unfortunately, the application of these measures
+to our reliability scores transformed high agreement into low ?. This is caused by the fact
+that these measures imply that expected values for agreement should depend on marginal totals.
+In this study, because we used mostly nonexclusive coding categories with individually low
+occurrence, we were subject to the disadvantage of the assumptions built into chance correction
+measures. Feinstein and Cicchetti (1990) previously demonstrated the effect of highly symmetrical
+imbalances (i.e., when f1 > f2). The implications of this demonstration are sometimes
+underappreciated in the literature on press content analysis. In the case in which prevalence is
+unknown (such as in our case), there is no effective way to correct for the discrepancy between
+the symmetrical imbalance between (0, 0) scores and (1, 1) scores. We therefore believe that
+percentage agreement, with its shortcomings that we acknowledge, better reflects the reliability
+of the coding for this study given the assumptions of current chance correction reliability
+measures.
+3. One article out of 132 described research participation and recruitment without revealing
+the type of research involved.
+Racine et al. / Brain Imaging 139
+140 Science Communication
+References
+Adam, D. 2003. I feel as if I’ve been entombed: Getting your head examined. The Guardian
+November 20:5.
+Anderson, M. C., K. N. Ochsner, B. Kuhl, J. Cooper, E. Robertson, S. W. Gabrieli, G. H. Glover,
+and J. D. E. Gabrieli. 2004. Neural systems underlying the suppression of unwanted memories.
+Science 303 (5655): 232-35.
+Blakeslee, S. 2000. Just what’s going on inside that head of yours? The New York Times March
+14:6.
+Brain scam? 2004. Nature Neuroscience 7 (7): 683.
+Bruer, J. T. 1998. The brain and child development: Time for some critical thinking. Public
+Health Reports 113 (5): 388-98.
+Cacioppo, J. T., G. G. Berntson, J. F. Sheridan, and M. K. McClintock. 2000. Multi-level integrative
+analyses of human behavior: Social neuroscience and the complementing nature of
+social and biological approaches. Psychological Bulletin 126 (6): 829-43.
+Cardinal, G., M. Deschênes, B. M. Knoppers, T. Hudson, D. Labuda, G. Bouchard, E. Racine,
+C. Fecteau, S. Truong, and C. Laberge. 2003. Statement of principles on the ethical conduct of
+human genetic research involving populations. http://www.rmga.qc.ca/doc/pop/statement_
+ANG_.pdf.
+Churchland, P. S. 2002. Brain-wise: Studies in neurophilosophy. Cambridge, MA: MIT Press.
+Condit, C. M. 2001. What is “public opinion” about genetics? Nature Reviews Genetics 2:811-15.
+Condit, C. M., R. L. Parrott, and B. O’Grady. 2000. Principles and practices of communication
+processes for genetics in public health. In Genetics and public health in the 21st
+century: Using genetic information to improve health and prevent disease, edited by M. J.
+Koury, W. Burke, and E. J. Thomson. Oxford, UK: Oxford University Press.
+Conrad, P. 2001. Genetic optimism: Framing genes and mental illness in the news. Culture,
+Medicine, and Psychiatry 25 (2): 225-47.
+Conrad, P., and J. Gabe. 1999. Introduction: Sociological perspectives on the new genetics: An
+overview. Sociology of Health & Illness 21 (5): 505-16.
+Craig, D. A. 2000. Ethical language and themes in news coverage of genetic testing.
+Journalism and Mass Communication Quarterly 77 (1): 160-74.
+Dalgleish, T. 2004. The emotional brain. Nature Reviews Neuroscience 5 (7): 582-89.
+Desmond, J. E., and S.H.A. Chen. 2002. Ethical issues in the clinical application of fMRI:
+Factors affecting the validity and interpretation of activations. Brain and Cognition 50 (3):
+482-97.
+DiPietro, J. A. 2000. Baby and the brain: Advances in child development. Annual Review of
+Public Health 21:455-71.
+Does neuroscience threaten human values? 1998. Nature Neuroscience 1 (7): 535-36.
+Farah, M. J., and P. R. Wolpe. 2004. Monitoring and manipulating brain function: New neuroscience
+technologies and their ethical implications. Hastings Center Report 34 (3): 35-45.
+Farwell, L. A., and S. S. Smith. 2001. Using brain MERMER testing to detect concealed
+knowledge despite efforts to conceal. Journal of Forensic Sciences 46 (1): 1-9.
+Feinstein, A. R., and D. Cicchetti. 1990. High agreement but low kappa: I. The problems of
+two paradoxes. Journal of Clinical Epidemiology 43 (6): 543-49.
+Gardner, H., M. Csikszentmihalyi, and W. Damon. 2001. Good work: When excellence and
+ethics meet. New York: Basic Books.
+Geller, G., B. A. Bernhardt, and N. A. Holtzman. 2002. The media and the public reaction to
+genetic research. JAMA 287:773.
+Greely, H. T. 2002. Neuroethics and ELSI: Some comparisons and considerations. Presented
+at Neuroethics: Mapping the Field, San Francisco, CA.
+Gura, T. 2005. Big plans for little brains. Nature 435 (7046): 1156-58.
+Hall, S. S. 1998. The scientific method: Test-tube moms. The New York Times April 5:22.
+Hall, W., L. Carter, and K. I. Morley. 2004. Neuroscience research on the addictions:
+A prospectus for future ethical and policy analysis. Addictive Behaviors 29 (7): 1481-95.
+Hamilton, J. O. 2004. Journey to the center of the mind. BusinessWeek April 19:78.
+Herculano-Houzel, S. 2002. Do you know your brain? A survey on public neuroscience literacy
+at the closing of the decade of the brain. Neuroscientist 8 (2): 98-110.
+Hinton, V. J. 2002. Ethics of neuroimaging in pediatric development. Brain and Cognition
+50 (3): 455-68.
+Hoag, H. 2003. Neuroengineering: Remote control. Nature 423 (6942): 796-98.
+Illes, J., M. P. Kirschen, and J. D. Gabrieli. 2003. From neuroimaging to neuroethics. Nature
+Neuroscience 6 (3): 205.
+Illes, J., and E. Racine. 2005. Imaging or imagining? A neuroethics challenge informed by
+genetics. American Journal of Bioethics 5 (2): 5-18.
+Illes, J., E. Racine, and M. Kirschen. 2005. A picture is worth 1000 words, but which 1000?
+In Neuroethics: Defining the issues in theory, practice and policy, edited by J. Illes.
+Oxford, UK: Oxford University Press.
+Illes, J., and T. A. Raffin. 2002. Neuroethics: An emerging new discipline in the study of brain
+and cognition. Brain and Cognition 50 (3): 341-44.
+Izzetoglu, K., S. Bunce, M. Izzetoglu, B. Onaral, and K. Pourrezaei. 2004. Functional nearinfrared
+neuroimaging. Presented at the 26th annual international conference of the IEEE
+Engineering in Medicine and Biology Society, San Francisco, CA.
+Jaffe, S. 2004. Fake method for research impartiality (fMRI). The Scientist July 19:64.
+Kennedy, D. 2003. Neuroethics: An uncertain future. Presented at the annual meeting of the
+Society for Neuroscience, New Orleans, LA, November 10.
+Kohring, M., and J. Matthes. 2002. The face(t)s of biotech in the nineties: How the German
+press framed modern biotechnology. Public Understanding of Science 11 (2): 143-54.
+Kulynych, J. 2002. Legal and ethical issues in neuroimaging research: Human subjects protection,
+medical privacy, and the public communication of research results. Brain and
+Cognition 50 (3): 345-57.
+Langleben, D. D., L. Schroeder, J. A. Maldjian, R. C. Gur, S. McDonald, J. D. Ragland, C. P.
+O’Brien, and A. R. Childress. 2002. Brain activity during simulated deception: An eventrelated
+functional magnetic resonance study. NeuroImage 15 (3): 727-32.
+Lentle, B., and J. Aldrich. 1997. Radiological sciences, past and present. The Lancet 350
+(9073): 280-85.
+Lippman, A. 1991. Prenatal genetic testing and screening: Constructing needs and reinforcing
+inequalities. American Journal of Law and Medicine 17 (1/2): 15-50.
+———. 1992. Led (astray) by genetic maps: The cartography of the human genome and health
+care. Social Science and Medicine 35 (12): 1469-76.
+Mauron, A. 2003. Renovating the house of being. Annals of the New York Academy of Science
+1001:240-52.
+Mazziotta, J. C. 2000. Window on the brain. Archives of Neurology 57 (10): 1413-21.
+Monasterky, R. 2001. Land mines in the world of mental maps. Chronicle of Higher Education
+November 2:20.
+Racine et al. / Brain Imaging 141
+Moreno, C., J. Lujan, and L. Moreno. 1996. La ingeniera genética humana en la prensa:
+Analísis de contenido de ABC, El Pais y La Vanguardia (1988-1993). Madrid, Spain:
+Instituto de Estudios Avanzados (CSIC).
+Moreno, J. D. 2003. Neuroethics: An agenda for neuroscience and society. Nature Reviews
+Neuroscience 4 (2): 149-53.
+Mulkay, M. 1994. Embryos in the news. Public Understanding of Science 3 (1): 33-51.
+Nelkin, D. 1995. Selling science: How the press covers science and technology. Rev. ed. New
+York: W. H. Freeman.
+Neuendorf, K. A. 2002. The content analysis guidebook. Thousand Oaks, CA: Sage.
+Open your mind. 2002. The Economist May 25.
+People v. Weinstein (591 NYS 2d 715) (Sup. Ct. 1992).
+Persaud, R. 2001. Who’s telling porkies about racism? Refinements in brain-scanning could
+soon make the thought police a reality. The Daily Telegraph April 25:21.
+Petersen, A. 2001. Biofantasies: Genetics and medicine in the print news media. Social
+Science and Medicine 52 (8): 1255-68.
+Priest, S. H., and J. Talbert. 1994. Mass media and the ultimate technological fix: Newspaper
+coverage of biotechnology. Southwestern Mass Communication Journal 10 (1): 76-85.
+Racine, E. 2003. Discourse ethics as an ethics of responsibility: Comparison and evaluation of citizen
+involvement in population genomics. Journal of Law, Medicine & Ethics 31 (3): 390-97.
+Racine, E., O. Bar-Ilan, and J. Illes. 2005. fMRI in the public eye. Nature Reviews Neuroscience
+6 (2): 159-64.
+Racine, E., I. Gareau, H. Doucet, G. Jobin, D. Laudy, G. Jobin, and P. Schraedley-Desmond.
+2006. Hyped biomedical science or uncritical reporting? Press coverage of genomics
+(1992-2001) in Québec. Social Science & Medicine 62 (5): 1278-90.
+Raichle, M. 2004. Neuroethics: Emerging ethical issues in neuroscience. Presented at the
+annual meeting of the Society for Neuroscience, San Diego, CA, October 27.
+Rose, S. P. R. 2003. How to (or not to) communicate science. Biochemical Society
+Transactions 31 (2): 307-12.
+Rosen, A. C., A.L.W. Bodke, A. Pearl, and J. A. Yesavage. 2002. Ethical and practical issues
+in applying functional imaging to the clinical management of Alzheimer’s disease. Brain
+and Cognition 50 (3): 498-519.
+Roskies, A. 2002. Neuroethics for the new millennium. Neuron 35 (1): 21-23.
+Ross, P. 2003. Mind readers. Scientific American September:74-77.
+Sample, I., and D. Adam. 2003. The brain can’t lie: Brain scans reveal how you think and feel
+and even how you might behave. The Guardian November 20:4.
+Schacter D. L., R. L. Buckner, and W. Koutstaal. 1998. Memory, consciousness and neuroimaging.
+Philosophical Transactions of the Royal Society of London B 353:1861-1978.
+Sellars, W. 1963. Science, perception, and reality. New York: Humanities Press.
+Silence of the neuroengineers. 2003. Nature 423:787.
+Spinney, L. 2002. The mind readers. New Scientist September 21:38.
+Study may have found test to scientifically diagnose ADHD. 1999. LRP Publications,
+February.
+Stufflebaum, R. S., and W. Bechtel. 1997. PET: Exploring the myth and the method.
+Philosophy of Science 64 (Suppl.): S95-106.
+Taylor, C. 1989. Sources of the self: The making of modern identity. Cambridge, MA: Harvard
+University Press.
+Thompson, R. A., and C. A. Nelson. 2001. Developmental science and the media. American
+Psychologist 56 (1): 5-15.
+142 Science Communication
+2003 Japan Prizes on fMRI, chaos, fractals. 2003. The Daily Yomiuri January 15:10.
+van Dijck, J. 2003. After the “two cultures”: Toward a “(multi)cultural” practice of science
+communication. Science Communication 25:177-90.
+Williams, C., J. Kitzinger, and L. Henderson. 2003. Envisaging the embryo in stem cell
+research: Rhetorical strategies and media reporting of the ethical debates. Sociology of
+Health & Illness 25 (7): 793-814.
+Wolpe, P. R. 2002. The neuroscience revolution. The Hastings Center Report 32 (4): 8.
+Eric Racine is director of the Neuroethics Research Unit at the Institut de Recherches
+Cliniques de Montréal. Previously, he was a postdoctoral fellow in the Program in Neuroethics
+at the Center for Biomedical Ethics, Stanford University.
+Ofek Bar-Ilan holds a bachelor of science degree in biology from the Dominican University
+of California. Previously, she was a research assistant in the Program in Neuroethics at the
+Center for Biomedical Ethics, Stanford University.
+Judy Illes is the director of the Program in Neuroethics and a senior research scholar at Stanford
+University, where she holds a joint appointment in the Stanford Center for Biomedical Ethics and
+the Department of Radiology.
+Racine et al. / Brain Imaging 143

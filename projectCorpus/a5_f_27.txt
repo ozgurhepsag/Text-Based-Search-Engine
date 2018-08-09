@@ -1,0 +1,1054 @@
+Introduction to Quantum Mechanics
+Planck's constant in action
+Classical physics is dominated by two fundamental concepts. The first is the
+concept of a particle, a discrete entity with definite position and momentum
+which moves in accordance with Newton's laws of motion. The second is the
+concept of an electromagnetic wave, an extended physical entity with a presence
+at every point in space that is provided by electric and magnetic fields
+which change in accordance with Maxwell's laws of electromagnetism. The
+classical world picture is neat and tidy: the laws of particle motion account for
+the material world around us and the laws of electromagnetic fields account
+for the light waves which illuminate this world.
+This classical picture began to crumble in 1900 whenMax Planck published a
+theory of black-body radiation; i.e. a theory of thermal radiation in equilibrium
+with a perfectly absorbing body. Planck provided an explanation of the observed
+properties of black-body radiation by assuming that atoms emit and
+absorb discrete quanta of radiation with energy E ? hn, where n is the frequency
+of the radiation and h is a fundamental constant of nature with value
+h ? 6:626  10
+ÿ34 J s:
+This constant is now called Planck's constant.
+In this chapter we shall see that Planck's constant has a strange role of
+linking wave-like and particle-like properties. In so doing it reveals that physics
+cannot be based on two distinct, unrelated concepts, the concept of a particle
+and the concept of a wave. These classical concepts, it seems, are at best
+approximate descriptions of reality.
+1.1 PHOTONS
+Photons are particle-like quanta of electromagnetic radiation. They travel at
+the speed of light c with momentum p and energy E given by
+p ? h
+l
+and E ? hc
+l
+, (1:1)
+where l is the wavelength of the electromagnetic radiation. In comparison with
+macroscopic standards, the momentum and energy of a photon are tiny. For
+example, the momentum and energy of a visible photon with wavelength
+l ? 663nm are
+p ? 10
+ÿ27 J s and E ? 3  10
+ÿ19 J:
+We note that an electronvolt, 1 eV ? 1:602  10ÿ19 J, is a useful unit for the
+energy of a photon: visible photons have energies of the order of an eV and
+X-ray photons have energies of the order of 10 keV.
+The evidence for the existence of photons emerged during the early years
+of the twentieth century. In 1923 the evidence became compelling when
+A. H. Compton showed that the wavelength of an X-ray increases when it is
+scattered by an atomic electron. This effect, which is now called the Compton
+effect, can be understood by assuming that the scattering process is a photon±
+electron collision in which energy and momentum are conserved. As illustrated
+in Fig. 1.1, the incident photon transfers momentum to a stationary electron so
+that the scattered photon has a lower momentum and hence a longer wavelength.
+In fact, when the photon is scattered through an angle y by a stationary
+electron of mass me, the increase in wavelength is given by
+Dl ? h
+mec
+(1 ÿ cos y): (1:2)
+We note that the magnitude of this increase in wavelength is set by
+Pf
+p
+i
+p
+f
+q
+Fig. 1.1 A photon±electron collision in which a photon is scattered by a stationary
+electron through an angle y. Because the electron recoils with momentum Pf , the
+magnitude of the photon momentum decreases from pi to pf and the photon wavelength
+increases.
+2 Planck's constant in action Chap. 1
+h
+mec
+? 2:43  10
+ÿ12 m,
+a fundamental length called the Compton wavelength of the electron.
+The concept of a photon provides a natural explanation of the Compton
+effect and of other particle-like electromagnetic phenomena such as the photoelectric
+effect. However, it is not clear how the photon can account for the
+wave-like properties of electromagnetic radiation. We shall illustrate this difficulty
+by considering the two-slit interference experiment which was first used by
+Thomas Young in 1801 to measure the wavelength of light.
+The essential elements of a two-slit interference are shown in Fig. 1.2. When
+electromagnetic radiation passes through the two slits it forms a pattern of
+interference fringes on a screen. These fringes arise because wave-like disturbances
+from each slit interfere constructively or destructively when they arrive at
+the screen. But a close examination of the interference pattern reveals that it is
+the result of innumerable photons which arrive at different points on the screen,
+as illustrated in Fig. 1.3. In fact, when the intensity of the light is very low, the
+interference pattern builds up slowly as photons arrive, one by one, at random
+points on the screen after seemingly passing through both slits in a wave-like
+way. These photons are not behaving like classical particles with well-defined
+trajectories. Instead, when presented with two possible trajectories, one for
+each slit, they seem to pass along both trajectories, arrive at a random point
+on the screen and build up an interference pattern.
+D
+R2
+R1
+P
+X
+d
+Wave-like entity
+incident on two slits
+Fig. 1.2 A schematic illustration of a two-slit interference experiment consisting of two
+slits with separation d and an observation screen at distance D. Equally spaced bright
+and dark fringes are observed when wave-like disturbances from the two slits interfere
+constructively and destructively on the screen. Constructive interference occurs at the
+point P, at a distance x from the centre of the screen, when the path difference R1 ÿ R2 is
+an integer number of wavelengths. This path difference is equal to xd=D if d << D.
+1.1 Photons 3
+Pattern formed by 100 quantum particles
+Pattern formed by 1000 quantum particles
+Pattern formed by 10 000 quantum particles
+Fig. 1.3 A computer generated simulation of the build-up of a two-slit interference
+pattern. Each dot records the detection of a quantum particle on a screen positioned
+behind two slits. Patterns formed by 100, 1000 and 10 000 quantum particles are
+illustrated.
+At first sight the particle-like and wave-like properties of the photon are
+strange. But they are not peculiar. We shall soon see that electrons, neutrons,
+atoms and molecules also behave in this strange way.
+1.2 DE BROGLIE WAVES
+The possibility that particles of matter like electrons could be both particle-like
+and wave-like was first proposed by Louis de Broglie in 1923. Specifically he
+proposed that a particle of matter with momentum p could act as a wave with
+wavelength
+l ? h
+p
+: (1:3)
+This wavelength is now called the de Broglie wavelength.
+4 Planck's constant in action Chap. 1
+It is often useful to write the de Broglie wavelength in terms of the energy of
+the particle. The general relation between the relativistic energy E and the
+momentum p of a particle of mass m is
+E2 ÿ p2c2 ? m2c4: (1:4)
+This implies that the de Broglie wavelength of a particle with relativistic energy
+E is given by
+l ? hc 
+(E ÿ mc2)(E ? mc2)
+p : (1:5)
+When the particle is ultra-relativistic we can neglect mass energy mc2 and obtain
+l ? hc
+E
+, (1:6)
+an expression which agrees with the relation between energy and wavelength for
+a photon given in Eq. (1.1). When the particle is non-relativistic, we can set
+E ? mc2 ? E,
+where E ? p2=2m is the kinetic energy of a non-relativistic particle, and obtain
+l ? h 
+2mE
+p : (1:7)
+In practice, the de Broglie wavelength of a particle of matter is small and
+difficult to measure. However, we see from Eq. (1.7) that particles of lower
+mass have longer wavelengths, which implies that the wave properties of the
+lightest particle of matter, the electron, should be the easiest to detect. The
+wavelength of a non-relativistic electron is obtained by substituting
+m ? me ? 9:109  10ÿ31kg into Eq. (1.7). If we express the kinetic energy E
+in electron volts, we obtain
+l ?
+
+1:5
+E
+r
+nm: (1:8)
+From this equation we immediately see that an electron with energy of 1.5 eV
+has a wavelength of 1 nm and that an electron with energy of 15 keV has a
+wavelength of 0.01 nm.
+Because these wavelengths are comparable with the distances between atoms
+in crystalline solids, electrons with energies in the eV to keV range are diffracted
+1.2 De Broglie Waves 5
+by crystal lattices. Indeed, the first experiments to demonstrate the wave
+properties of electrons were crystal diffraction experiments by C. J. Davisson
+and L. H. Germer and by G. P. Thomson in 1927. Davisson's experiment
+involved electrons with energy around 54 eV and wavelength 0.17nm which
+were diffracted by the regular array of atoms on the surface of a crystal of
+nickel. In Thomson's experiment, electrons with energy around 40 keV and
+wavelength 0.006nm were passed through a polycrystalline target and diffracted
+by randomly orientated microcrystals. These experiments showed
+beyond doubt that electrons can behave like waves with a wavelength given
+by the de Broglie relation Eq. (1.3).
+Since 1927, many experiments have shown that protons, neutrons, atoms and
+molecules also have wave-like properties. However, the conceptual implications
+of these properties are best explored by reconsidering the two-slit interference
+experiment illustrated in Fig. 1.2. We recall that a photon passing through two
+slits gives rise to wave-like disturbances which interfere constructively and
+destructively when the photon is detected on a screen positioned behind the
+slits. Particles of matter behave in a similar way. A particle of matter, like a
+photon, gives rise to wave-like disturbances which interfere constructively and
+destructively when the particle is detected on a screen. As more and more
+particles pass through the slits, an interference pattern builds up on the observation
+screen. This remarkable behaviour is illustrated in Fig. 1.3.
+Interference patterns formed by a variety of particles passing through two
+slits have been observed experimentally. For example, two-slit interference patterns
+formed by electrons have been observed by A. Tonomura, J. Endo,
+T. Matsuda, T. Kawasaki and H. Exawa (American Journal of Physics, vol. 57,
+p. 117 (1989)). They also demonstrated that a pattern still emerges even when the
+source is so weak that only one electron is in transit at any one time, confirming
+that each electron seems to pass through both slits in a wave-like way before
+detection at a random point on the observation screen. Two-slit interference
+experiments have been carried out using neutrons by R. GaÈhler and A. Zeilinger
+(American Journal of Physics, vol. 59, p. 316 (1991) ), and using atoms by
+O. Carnal and J. Mlynek (Physical Review Letters, vol. 66, p. 2689 (1991) ).
+Even molecules as complicated as C60 molecules have been observed to exhibit
+similar interference effects as seen by M. Arndt et al. (Nature, vol. 401, p. 680
+(1999) ).
+These experiments demonstrate that particles of matter, like photons, are not
+classical particles with well-defined trajectories. Instead, when presented with
+two possible trajectories, one for each slit, they seem to pass along both
+trajectories in a wave-like way, arrive at a random point on the screen and
+build up an interference pattern. In all cases the pattern consists of fringes
+with a spacing of lD=d, where d is the slit separation, D is the screen distance
+and l is the de Broglie wavelength given by Eq. (1.3).
+Physicists have continued to use the ambiguous word particle to describe
+these remarkable microscopic objects. We shall live with this ambiguity, but we
+6 Planck's constant in action Chap. 1
+shall occasionally use the term quantum particle to remind the reader that the
+object under consideration has particle and wave-like properties. We have used
+this term in Fig. 1.3 because this figure provides a compelling illustration of
+particle and wave-like properties. Finally, we emphasize the role of Planck's
+constant in linking the particle and wave-like properties of a quantum particle.
+If Planck's constant were zero, all de Broglie wavelengths would be zero and
+particles of matter would only exhibit classical, particle-like properties.
+1.3 ATOMS
+It is well known that atoms can exist in states with discrete or quantized energy.
+For example, the energy levels for the hydrogen atom, consisting of an electron
+and a proton, are shown in Fig. 1.4. Later in this book we shall show that
+bound states of an electron and a proton have quantized energies given by
+Continuum
+of unbound
+energy levels E` = 0
+E3 = - 13.6
+32
+eV
+E2 = - 13.6
+22
+eV
+E1 = - 13.6
+12
+eV
+Fig. 1.4 A simplified energy level diagram for the hydrogen atom. To a good approximation
+the bound states have quantized energies given by En ? ÿ13:6=n2 eV where n, the
+principal quantum number, can equal 1, 2, 3, . . . . When the excitation energy is above
+13.6 eV, the atom is ionized and its energy can, in principle, take on any value in the
+continuum between E ? 0 and E ? 1.
+1.3 Atoms 7
+En ? ÿ13:6
+n2
+eV, (1:9)
+where n is a number, called the principal quantum number, which can take on an
+infinite number of the values, n ? 1, 2, 3, . . . . The ground state of the hydrogen
+atom has n ? 1, a first excited state has n ? 2 and so on. When the excitation
+energy is above 13.6 eV, the electron is no longer bound to the proton; the atom
+is ionized and its energy can, in principle, take on any value in the continuum
+between E ? 0 and E ? 1.
+The existence of quantized atomic energy levels is demonstrated by the
+observation of electromagnetic spectra with sharp spectral lines that arise
+when an atom makes a transition between two quantized energy levels. For
+example, a transition between hydrogen-atom states with ni and nf leads to a
+spectral line with a wavelength l given by
+hc
+l
+? jEni
+ÿ Enf
+j:
+Some of the spectral lines of atomic hydrogen are illustrated in Fig. 1.5.
+Quantized energy levels of atoms may also be revealed by scattering processes.
+For example, when an electron passes through mercury vapour it has a
+high probability of losing energy when its energy exceeds 4.2 eV, which is the
+quantized energy difference between the ground and first excited state of a
+mercury atom. Moreover, when this happens the excited mercury atoms subsequently
+emit photons with energy E ? 4:2 eV and wavelength
+l ? hc
+E
+? 254 nm:
+200 nm 400 nm 600 nm
+Fig. 1.5 Spectral lines of atomic hydrogen. The series of lines in the visible part of the
+electromagnetic spectrum, called the Balmer series, arises from transitions between
+states with principal quantum number n ? 3, 4, 5, . . . and a state with n ? 2. The series
+of lines in the ultraviolet, called the Lyman series, arises from transitions between states
+with principal quantum number n ? 2, 3, . . . and the ground state with n ? 1.
+8 Planck's constant in action Chap. 1
+But quantized energy levels are not the most amazing property of atoms.
+Atoms are surprisingly resilient: in most situations they are unaffected when
+they collide with neighbouring atoms, but if they are excited by such encounters
+they quickly return to their original pristine condition. In addition, atoms of the
+same chemical element are identical: somehow the atomic number Z, the
+number of electrons in the atom, fixes a specific identity which is common to
+all atoms with this number of electrons. Finally, there is a wide variation in
+chemical properties, but there is a surprisingly small variation in size; for
+example, an atom of mercury with 80 electrons is only three times bigger than
+a hydrogen atom with one electron.
+These remarkable properties show that atoms are not mini solar systems in
+which particle-like electrons trace well-defined, classical orbits around a nucleus.
+Such an atom would be unstable because the orbiting electrons would
+radiate electromagnetic energy and fall into the nucleus. Even in the absence of
+electromagnetic radiation, the pattern of orbits in such an atom would change
+whenever the atom collided with another atom. Thus, this classical picture
+cannot explain why atoms are stable, why atoms of the same chemical element
+are always identical or why atoms have a surprisingly small variation in
+size.
+In fact, atoms can only be understood by focussing on the wave-like properties
+of atomic electrons. To some extent atoms behave like musical instruments.
+When a violin string vibrates with definite frequency, it forms a standing wave
+pattern of specific shape. When wave-like electrons, with definite energy, are
+confined inside an atom, they form a wave pattern of specific shape. An atom is
+resilient because, when left alone, it assumes the shape of the electron wave
+pattern of lowest energy, and when the atom is in this state of lowest energy
+there is no tendency for the electrons to radiate energy and fall into the nucleus.
+However, atomic electrons can be excited and assume the shapes of wave
+patterns of higher quantized energy.
+One of the most surprising characteristics of electron waves in an atom is that
+they are entangled so that it is not possible to tell which electron is which. As a
+result, the possible electron wave patterns are limited to those that are compatible
+with a principle called the Pauli exclusion principle. These patterns, for an
+atom with an atomic number Z, uniquely determine the chemical properties of
+all atoms with this atomic number.
+All these ideas will be considered in more detail in subsequent chapters, but
+at this stage we can show that the wave nature of atomic electrons provides a
+natural explanation for the typical size of atoms. Because the de Broglie
+wavelength of an electron depends upon the magnitude of Planck's constant
+h and the electron mass me, the size of an atom consisting of wave-like electrons
+also depends upon h and me. We also expect a dependence on the strength of
+the force which binds an electron to a nucleus; this is proportional to e2=4pE0,
+where e is the magnitude of the charge on an electron and on a proton. Thus,
+the order of magnitude of the size of atoms is expected to be a function of
+1.3 Atoms 9
+e2=4pE0, me and h (or h ? h=2p). In fact, the natural unit of length for atomic
+size is the Bohr radius which is given by1
+a0 ? 4pE0
+e2
+ 
+h2
+me
+? 0:529  10
+ÿ10 m: (1:10)
+Given this natural length, we can write down a natural unit for atomic
+binding energies. This is called the Rydberg energy and it is given by
+ER ? e2
+8pE0a0
+? 13:6 eV: (1:11)
+We note, that the binding energy of a hydrogen-atom state with principal
+quantum number n is ER=n2.
+The Bohr radius was introduced by Niels Bohr in 1913 in a paper which
+presented a very successful model of the atom. Even though the Bohr model is
+an out-dated mixture of classical physics and ad-hoc postulates, the central idea
+of the model is still relevant. This idea is that Planck's constant has a key role in
+the mechanics of atomic electrons. Bohr expressed the idea in the following way:
+The result of the discussion of these questions seems to be the general
+acknowledgment of the inadequacy of the classical electrodynamics in
+describing the behaviour of systems of atomic size. Whatever alteration in
+the laws of motion of electrons may be, it seems necessary to introduce in
+the laws in question a quantity foreign to the classical electrodynamics;
+i.e., Planck's constant, or as it is often called, the elementary quantum of
+action. By introduction of this quantity the question of the stable configuration
+of the electrons in atoms is essentially changed, as this constant is
+of such dimensions and magnitude that it, together with the mass and the
+charge of the particles, can determine a length of the order of the magnitude
+required.
+Ten years after this was written, it was realised that Planck's constant has a role
+in atoms because it links the particle-like and wave-like properties of atomic
+electrons.
+1.4 MEASUREMENT
+In classical physics, the act of measurement need not affect the object under
+observation because the disturbance associated with the measurement can be
+1 In this dimensional analysis argument we have not included a dependence on the velocity of light c
+because electrons in atoms are, to a good approximation, non-relativistic.
+10 Planck's constant in action Chap. 1
+made arbitrarily small. Accordingly, the properties of a classical object can be
+specified with precision and without reference to the process of measurement.
+This is not the case in quantum physics. Here measurement plays an active and
+disturbing role. Because of this, quantum particles are best described within the
+context of the possible outcomes of measurements. We shall illustrate the role
+of measurement in quantum mechanics by introducing the Heisenberg uncertainty
+principle and then use this principle to show how measurement provides
+a framework for describing particle-like and wave-like quantum particles.
+The uncertainty principle
+We shall introduce the uncertainty principle for the position and momentum of
+a particle by considering a famous thought experiment due to Werner Heisenberg
+in which the position of a particle is measured using a microscope. The
+particle is illuminated and the scattered light is collected by the lens of a
+microscope as shown in Fig. 1.6.
+Because of the wave-like properties of light, the microscope has a finite
+spatial resolving power. This means that the position of the observed particle
+has an uncertainty given approximately by
+Dx  l
+sin a
+, (1:12)
+where l is the wavelength of the illumination and 2a is the angle subtended
+by the lens at the particle. We note that the resolution can be improved by
+reducing the wavelength of the radiation illuminating the particle; visible
+light waves are better than microwaves, and X-rays are better than visible light
+waves.
+Scattered
+radiation
+Observed
+particle
+2a
+Microscope
+lens
+Incident
+radiation
+Fig. 1.6 A schematic illustration of the observation of a particle using the Heisenberg
+microscope. The particle scatters electromagnetic radiation with wavelength l into a lens
+with angular aperture 2a and its position is determined with an uncertainty of
+Dx  l= sin a.
+1.4 Measurement 11
+However, because of the particle-like properties of light, the process of
+observation involves innumerable photon±particle collisions, with the scattered
+photons entering the lens of the microscope. To enter the lens, a scattered
+photon with wavelength l and momentum h=l must have a sideways momentum
+between
+ÿ h
+l
+sin a and ? h
+l
+sin a:
+Thus the sideways momentum of the scattered photon is uncertain to the degree
+Dp  h
+l
+sin a: (1:13)
+The sideways momentum of the observed particle has a similar uncertainty,
+because momentum is conserved when the photon scatters.
+We note that we can reduce the uncertainty in the momentum of the observed
+particle by increasing the wavelength of the radiation illuminating the particle,
+but this would result in a poorer spatial resolution of the microscope and an
+increase in the uncertainty in the position of the particle. Indeed, by combining
+Eq. (1.12) and Eq. (1.13), we find that the uncertainties in the position and in the
+momentum of the observed particle are approximately related by
+Dx Dp  h: (1:14)
+This result is called the Heisenberg uncertainty principle. It asserts that greater
+accuracy in position is possible only at the expense of greater uncertainty in
+momentum, and vice versa. The precise statement of the principle is that the
+fundamental uncertainties in the simultaneous knowledge of the position and
+momentum of a particle obey the inequality
+DxDp  h
+2
+, where h ? h
+2p
+: (1:15)
+We shall derive this inequality in Section 7.4 of Chapter 7.
+The Heisenberg uncertainty principle suggests that a precise determination of
+position, one with Dx ? 0, is possible at the expense of total uncertainty in
+momentum. In fact, an analysis of the microscope experiment, which takes into
+account the Compton effect, shows that a completely precise determination of
+position is impossible. According to the Compton effect, Eq. (1.2), the wavelength
+of a scattered photon is increased by
+Dl ? h
+mc
+(1 ÿ cos y),
+12 Planck's constant in action Chap. 1
+where m is the mass of the observed particle and y is an angle of scatter which
+will take the photon into the microscope lens. This implies that, even if we
+illuminate the particle with radiation of zero wavelength to get the best possible
+spatial resolution, the radiation entering the microscope lens has a wavelength
+of the order of h=mc. It follows that the resolution given by Eq. (1.12) is at best
+Dx  l
+sin a
+ h
+mc sin a
+, (1:16)
+which means that the minimum uncertainty in the position of an observed
+particle of mass m is of the order of h=mc.
+Our analysis of Heisenberg's microscope experiment has illustrated the role
+of Planck's constant in a measurement: The minimum uncertainties in the
+position and momentum of an observed particle are related by DxDp  h, and
+the minimum uncertainty in position is not zero but of the order of h=mc.
+However, readers are warned that Heisenberg's microscope experiment can be
+misleading. In particular, readers should resist the temptation to believe that a
+particle can really have a definite position and momentum, which, because of
+the clumsy nature of the observation, cannot be measured. In fact, there is no
+evidence for the existence of particles with definite position and momentum.
+This concept is an unobservable idealization or a figment of the imagination of
+classical physicists. Indeed, the Heisenberg uncertainty principle can be considered
+as a danger signal which tells us how far we can go in using the classical
+concepts of position and momentum without getting into trouble with reality.
+Measurement and wave±particle duality
+In practice, the particle-like properties of a quantum particle are observed when
+it is detected, whereas its wave-like properties are inferred from the random
+nature of the observed particle-like properties. For example, in a two-slit
+experiment, particle-like properties are observed when the position of a quantum
+particle is measured on the screen, but the wave-like passage of the
+quantum particle through both the slits is not observed. It is inferred from a
+pattern of arrival at the screen which could only arise from the interference of
+two wave-like disturbances from the two slits.
+However, the inferred properties of a quantum particle depend on the experiment
+and on the measurements that can take place in this experiment. We shall
+illustrate this subjective characteristic of a quantum particle by considering a
+modification of the two-slit experiment in which the screen can either be held
+fixed or be allowed to move as shown in Fig. 1.7.
+When the pin in Fig. 1.7 is inserted, detectors on a fixed screen precisely
+measure the position of each arriving particle and an interference pattern builds
+with fringes separated by a distance of lD=d.
+1.4 Measurement 13
+d
+Quantum particles
+incident on two slits
+Pin which
+holds or
+releases screen
+Vertical
+momentum
+sensor
+D
+Fig. 1.7 A modified two-slit experiment in which the screen may move vertically and
+become a part of a detection system which identifies the slit through which each particle
+passes.
+When the pin is withdrawn, the screen becomes a mobile detection system
+which is sensitive to the momentum p ? h=l of the particles hitting the screen.
+It recoils when a particle arrives and, by measuring this recoil accurately, we
+can measure the vertical momentum of the particle detected at the screen and
+hence identify the slit from which the particle came. For example, near the
+centre of the screen, a particle from the upper slit has a downward momentum
+of pd=2D and a particle from the lower slit has an upward momentum of
+pd=2D. In general, the difference in vertical momenta of particles from the
+two slits is approximately Dp  pd=D. Thus, if the momentum of the recoiling
+screen is measured with an accuracy of
+Dp  pd
+D
+, (1:17)
+we can identify the slit from which each particle emerges. When this is the case,
+a wave-like passage through both slits is not possible and an interference
+pattern should not build up. This statement can be verified by considering the
+uncertainties involved in the measurement of the momentum of the screen.
+The screen is governed by the Heisenberg uncertainty principle and an
+accurate measurement of its momentum is only possible at the expense of an
+uncertainty in its position. In particular, if the uncertainty in the vertical
+momentum of the screen is Dp  pd=D, so that we can just identify the slit
+through which each particle passes, then the minimum uncertainty in the
+vertical position of the screen is
+Dx  h
+Dp
+ hD
+pd
+: (1:18)
+14 Planck's constant in action Chap. 1
+This uncertainty in position can be rewritten in terms of the wavelength of the
+particle. Using p ? h=l, we obtain
+Dx  lD
+d
+: (1:19)
+We note that this uncertainty in the vertical position of the screen is sufficient to
+wash out the interference fringes which would have a spacing of lD=d. Hence,
+when the pin in Fig. 1.7 is withdrawn so that the recoiling screen can signal the
+slit from which a particle comes, no interference pattern builds up and no wavelike
+passage through both slits is inferred.
+This thought experiment illustrates how the concepts of measurement and
+uncertainty can be used to provide a logical and consistent description of the
+wave-particle properties of quantum particles. In particular, it shows that,
+when it is possible to identify the slit through which a particle passes, there is
+no wave-like passage through both slits, but when there is no possibility of
+identifying the slit, the particle covertly passes through both slits in a wave-like
+way. In fact, the wave-like behaviour of quantum particles is always covert.
+Unlike a classical electromagnetic wave, the wave describing a quantum particle
+cannot be directly observed.2
+Finally, some readers may find it instructively disturbing to consider a
+further variation of the two-slit experiment which was pointed out by Wheeler
+in 1978. In this variation, we imagine a situation in which the choice of the
+experimental arrangement in Fig. 1.7 is delayed until after the particle has
+passed the slits. We could, for example, insert the pin and fix the position of
+the screen just before each particle arrives at the screen. In this case an
+interference pattern builds up, which is characteristic of wave-like particles
+which pass through both slits. Alternatively, just before each particle arrives
+at the screen, we could withdraw the pin so as to allow the screen to recoil and
+determine the slit from which the particle comes. In this case, no interference
+pattern builds up.
+Thus, a delayed choice of the experimental arrangement seems to influence
+the behaviour of the particle at an earlier time. The choice of arrangement
+seems to make history, either a history in which the particle passes through
+both slits or a history in which it passes through one or other of the slits. Before
+you dismiss this as unacceptable behaviour, note that the history created in this
+experiment is not classical history. The particles concerned are not classical
+2 A real experiment of this kind is described by Greenberger (Reviews of Modern Physics vol. 55,
+1983). In this experiment polarized neutrons, that is neutrons with their spin orientated in a
+specific direction, pass through two slits. The polarization of the neutrons which pass through one
+of the slits is reversed, and then the intensity of neutrons with a specific polarization is measured
+at the screen. If the specific polarization at the screen is chosen so that one cannot infer through
+which slit each neutron passes, an interference pattern builds up. If it is chosen so that one can
+infer through which slit each neutron passes, no interference pattern builds up.
+1.4 Measurement 15
+particles which pass through one slit or the other, nor are they classical waves
+which pass through both slits. They are quantum particles which have the
+capability to behave in both of these ways, but only one of these ways may
+be inferred in a particular experimental arrangement. The history created in a
+delayed choice experiment is an inferred history of a quantum particle.
+Measurement and non-locality
+The most important implication of this discussion of measurement is that
+quantum mechanics only describes what we can know about the world. For
+example, because we cannot know the position and momentum of an electron
+with precision, we cannot describe a world in which an electron has both a
+precise position and momentum. In the standard interpretation of quantum
+mechanics, a precise position or a precise momentum of an electron can be
+brought into existence by a measurement, but no attempt is made to explain
+how this occurs.
+That properties are brought into existence by measurement is not restricted
+to the measurement of the position or momentum of a single particle. It applies
+to other observable properties of a quantum particle and also to systems of
+quantum particles. Amazingly systems of quantum particles exist in which a
+measurement at one location can bring into existence a property at a remote
+location. In other words a measurement here can affect things over there. Thus,
+measurements can have a non-local impact on our knowledge of the world.
+The non-local nature of quantum mechanical measurement is best illustrated
+by considering a particular situation in which two photons are emitted by
+excited states of an atom. These photons may move off in opposite directions
+with the same polarization in the following meaning of the word same: If the
+photon moving to the East, say, is observed to have right-hand circular polarization,
+then the photon moving to the West is certain to be found to have
+right-hand circular polarization. But if the photon moving to the East is
+observed to have left-hand circular polarization, then the photon moving to
+the West is certain to be found to have left-hand circular polarization.
+This behaviour would be unremarkable if right and left-hand polarization
+were two alternatives which were created at the moment the two photons were
+emitted. But this is not the case. At the moment of emission an entangled state is
+created in which the photons are simultaneously right and left-handed, but only
+one of these two alternatives is brought into existence by a subsequent measurement.
+Amazingly, when this measurement is performed on one of the
+photons, say the photon moving East, there are two outcomes: The observed
+photon moving to the East has a specific polarization and the unobserved
+photon moving West immediately has the same polarization.
+This system of entangled photons is equivalent to having two ambidextrous
+gloves separated by a large distance but linked in such a way that if one glove
+16 Planck's constant in action Chap. 1
+becomes a right-hand glove, the other automatically becomes a right-hand
+glove. The quantum mechanical reasons for this unexpected togetherness of
+distant objects are that:
+(1) the initial state of the gloves is a superposition of right and left-handedness,
+in much the same way as the state of a quantum particle can be a linear
+superposition of two waves passing through two slits; and
+(2) a measurement not only disturbs what is measured but also brings into
+existence what is measured.
+Needless to say, it is not possible to fully justify these arguments at the
+beginning of a book whose aim is to introduce the theory of quantum particles.
+But these arguments form a part of a logically consistent theory and they are
+supported by experimental observations, particularly by Alain Aspect and his
+colleagues; see, for example, The Quantum Challenge by G. Greenstein and
+A. G. Zajonc, (Jones and Bartlett, 1997).
+The topics considered in this chapter provide the guidelines for a theory of
+quantum particles. Most importantly, the theory must provide a way of dealing
+with the particle and wave-like properties of quantum particles and in so doing it
+must involve the constant which links these properties, Planck's constant. In
+addition, the theory must recognize that measurement is not a passive act which
+has no effect on the observed system, but a way of creating a particular property
+of the system. The basic elements of such a theory will be developed in the next
+three chapters and then further developed by application in subsequent chapters.
+This development necessarily entails abstract mathematical concepts, but the
+results are not abstract because they describe what we can know about the world.
+However, we shall limit our dissussion to a world of non-relativistic particles
+Relativistic particles, like photons, will not be considered because this presents
+the additional challenge of dealing with the creation and destruction of particles.
+The SchroÈ dinger equation
+The first step in the development of a logically consistent theory of nonrelativistic
+quantum mechanics is to devise a wave equation which can describe
+the covert, wave-like behaviour of a quantum particle. This equation is called
+the SchroÈdinger equation.
+The role of the SchroÈdinger equation in quantum mechanics is analogous to
+that of Newton's Laws in classical mechanics. Both describe motion. Newton's
+Second Law is a differential equation which describes how a classical particle
+moves, whereas the SchroÈdinger equation is a partial differential equation
+which describes how the wave function representing a quantum particle ebbs
+and flows. In addition, both were postulated and then tested by experiment.
+2.1 WAVES
+As a prelude to the SchroÈdinger equation, we shall review how mathematics can
+be used to describe waves of various shapes and sizes.
+Sinusoidal waves
+The most elegant wave is a sinusoidal travelling wave with definite wavelength
+l and period t, or equivalently definite wave number, k ? 2p=l, and angular
+frequency, ! ? 2p=t. Such a wave may be represented by the mathematical
+function
+C(x, t) ? Acos (kx ÿ !t) (2:1)
+where A is a constant. At each point x, the function C(x, t) oscillates with
+amplitude A and period 2p=!. At each time t, the function C(x, t) undulates
+with amplitude A and wavelength 2p=k. Moreover, these undulations move,
+like a Mexican wave, in the direction of increasing x with velocity !=k; for
+example, the maximum of C(x, t) corresponding to kx ÿ !t ? 0 occurs at the
+position x ? !t=k, and the minimum corresponding to kx ÿ !t ? p occurs at
+the position x ? l=2 ? !t=k; in both cases the position moves with velocity
+!=k.
+The function sin (kx ÿ !t), like cos (kx ÿ !t), also represents a sinusoidal
+travelling wave with wave number k and angular frequency !. Because
+sin (kx ÿ !t) ? cos (kx ÿ !t ÿ p=2),
+the undulations and oscillations of sin (kx ÿ !t) are out of step with those of
+cos (kx ÿ !t); the waves sin (kx ÿ !t) and cos (kx ÿ !t) are said to have a phase
+difference of p=2. The most general sinusoidal travelling wave with wave
+number k and angular frequency ! is the linear superposition
+C(x, t) ? Acos (kx ÿ !t) ? B sin (kx ÿ !t), (2:2)
+where A and B are arbitrary constants.
+Very often in classical physics, and invariably in quantum physics, sinusoidal
+travelling waves are represented by complex exponential functions of the form
+C(x, t) ? Aei(kxÿ!t): (2:3)
+The representation of waves by complex exponentials in classical physics is
+merely a mathematical convenience. For example, the pressure in a sound wave
+may be described by the real function Acos (kx ÿ !t), but this real function
+may be taken to be the real part of a complex exponential function Aei(kxÿ!t)
+because
+ei(kxÿ!t) ? cos (kx ÿ !t) ? i sin (kx ÿ !t):
+Thus, in classical physics, we have the option of representing a real sinusoidal
+wave by the real part of a complex exponential. In quantum physics, however,
+the use of complex numbers is not an option and we shall see that a complex
+exponential provides a natural description of a de Broglie wave.
+Linear superpositions of sinusoidal waves
+Two sinusoidal waves moving in opposite directions may be combined to form
+standing waves. For example, the linear superposition
+Acos (kx ÿ !t) ? Acos (kx ? !t)
+22 The SchroÈdinger equation Chap. 2
+gives rise to the wave 2Acos kx cos !t. This wave oscillates with period 2p=!
+and undulates with wavelength 2p=k, but these oscillations and undulations do
+not propagate; it is a non-Mexican wave which merely stands and waves.
+Alternatively, many sinusoidal waves may be combined to form a wave
+packet. For example, the mathematical form of a wave packet formed by a
+linear superposition of sinusoidal waves with constant amplitude A and wave
+numbers in the range k ÿ Dk to k ? Dk is
+C(x, t) ?
+Z k?Dk
+kÿDk
+Acos (k
+0
+x ÿ !
+0
+t) dk
+0
+: (2:4)
+If k is positive, this wave packet travels in the positive x direction, and in the
+negative x direction if k is negative.
+The initial shape of the wave packet, i.e. the shape at t ? 0, may be obtained
+by evaluating the integral
+C(x, 0) ?
+Z k?Dk
+kÿDk
+Acos k
+0
+x dk
+0
+:
+This gives
+C(x, 0) ? S(x) cos kx, where S(x) ? 2ADk
+sin (Dkx)
+(Dkx)
+: (2:5)
+If Dk << k, we have a rapidly varying sinusoidal, cos kx, with an amplitude
+modulated by a slowly varying function S(x) which has a maximum at x ? 0
+and zeros when x is an integer multiple of p=Dk. The net result is a wave packet
+with an effective length of about 2p=Dk. Three such wave packets, with different
+values for Dk, are illustrated in Fig. 2.1. We note that the wave packets
+increase in length as the range of wave numbers decreases and that they would
+become `monochromatic' waves of infinite extent as Dk ! 0. Similar behaviour
+is exhibited by other types of wave packets.
+The velocity of propagation of a wave packet, and the possible change of
+shape as it propagates, depend crucially on the relation between the angular
+frequency and wave number. This relation, the function !(k), is called the
+dispersion relation because it determines whether the waves are dispersive or
+non-dispersive.
+Dispersive and non-dispersive waves
+The most familiar example of a non-dispersive wave is an electromagnetic wave
+in the vacuum. A non-dispersive wave has a dispersion relation of the form
+! ? ck, where c is a constant so that the velocity of a sinusoidal wave, !=k ? c,
+2.1 Waves 23
+(A)
+(B)
+(C)
+Fig. 2.1 The initial shapes of the wave packets given by a linear superposition of
+sinusoidal waves with constant amplitude A and wave numbers in the range k ÿ Dk to
+k ? Dk; see Eq. (2.5). The three diagrams show how the length of a wave packet increases
+as the range of wave numbers Dk decreases. The value of ADk is constant, but Dk equals
+k=8 in diagram (A), Dk equals k=16 in diagram (B) and Dk equals k=32 in diagram (C).
+In general, the length of a wave packet is inversely proportional to Dk and becomes
+infinite in extent as Dk ! 0:
+is independent of the wave number k. A wave packet formed from a linear
+superposition of such sinusoidal waves travels without change of shape because
+each sinusoidal component has the same velocity.
+Non-dispersive waves are governed by a partial differential equation called the
+classical wave equation. For waves travelling in three dimensions, it has the form
+r2C ÿ 1
+c2
+]2C
+]t2
+? 0, where r2 ? ]2
+]x2
+? ]2
+]y2
+? ]2
+]z2
+, (2:6)
+and for waves travelling in one dimension, the x direction say, it has the form
+]2C
+]x2
+ÿ 1
+c2
+]2C
+]t2
+? 0: (2:7)
+24 The SchroÈdinger equation Chap. 2
+The classical wave equation has an infinite number of solutions corresponding
+to an infinite variety of wave forms. For example, the sinusoidal waves,
+Acos (kx ÿ !t), Asin (kx ÿ !t), or Aei(kxÿ!t),
+are solutions provided !2 ? c2k2, as may be shown by direct substitution into
+Eq. (2.7); solutions with k ? ?!=c describe waves travelling in the positive x
+direction and solutions with k ? ÿ!=c describe waves travelling in the negative
+x direction. Because each term in the classical wave equation is linear in C, a
+linear superposition of sinusoidal waves is also a solution. For example, a
+superposition like Eq. (2.4) is a solution which describes a wave packet which
+propagates without change of shape.
+However, the majority of waves encountered in classical and in quantum
+physics are dispersive waves. A dispersive wave is governed by a partial differential
+equation which is more complicated than the classical wave equation,
+Eq. (2.7).1 The dispersion relation is more complicated than ! ? ck so that the
+velocity of propagation of a sinusoidal wave, !=k, depends upon the wave
+number k. Hence a packet of dispersive waves will, in general, change shape as
+it propagates. However, if the packet is composed of waves with a narrow range
+of wave numbers, it has a well-defined velocity of propagation. This velocity is
+called the group velocity and it is given by
+ugroup ? d!
+dk
+, (2:8)
+whereas the velocity of a simple sinusoidal wave, !=k, is called the phase
+velocity.
+To understand Eq. (2.8), we note that the group velocity describes the motion
+of a localized disturbance due to constructive interference of many sinusoidal
+waves. Let us focus on the point of constructive interference of two sinusoidal
+waves with wave numbers k1 and k2 and angular frequencies !1 and !2 which is
+formed when the waves are in phase; i.e. when
+k1x ÿ !1t ? k2x ÿ !2t:
+By rearranging this equation, we find that the position of this point of constructive
+interference is given by
+x ? !1 ÿ !2
+k1 ÿ k2
+ 
+t:
+1 In fact, Eq. (2.7) with the constant c replaced by a frequency-dependent velocity is often used to
+describe dispersive waves.
+2.1 Waves 25
+Thus our point of constructive interference is located at x ? 0 when t ? 0 and it
+moves with a velocity given by (!1 ÿ !2)=(k1 ÿ k2), or by Eq. (2.8) if jk1 ÿ k2j is
+small. Of course, with two sinusoidal waves, there are an infinite number of
+points of constructive interference, but many sinusoidal waves can form a
+localized region of constructive interference which moves with a velocity
+given by Eq. (2.8).
+To illustrate how a group velocity can be derived from Eq. (2.8), we consider
+the example of water waves of long wavelength which obey the dispersion
+relation
+! ?
+
+gk
+p
+,
+where g is the acceleration due to gravity. The velocity of a sinusoidal water
+wave, the so-called phase velocity, is
+uphase ? !
+k
+?
+
+g
+k
+r
+,
+and the velocity of a packet of water waves with a narrow range of wave
+numbers near k is
+ugroup ? d!
+dk
+? 1
+2
+
+g
+k
+r
+:
+Thus, for water waves, the group velocity is exactly one-half of the phase
+velocity. In other words, the sinusoidal waves forming the packet, travel at
+twice the speed of the region of maximum disturbance formed by the interference
+of these waves. However, the shape of the disturbance will change as it
+propagates; in general it will tend to spread out.
+2.2 PARTICLE WAVE EQUATIONS
+In classical physics, fundamental laws of physics are used to derive the wave
+equations which describe wave-like phenomena; for example, Maxwell's laws of
+electromagnetism can be used to derive the classical wave equation (2.6) which
+governs electromagnetic waves in the vacuum. In contrast, we shall view the
+wave equation governing the wave-like properties of a quantum particle as
+a fundamental equation which cannot be derived from underlying basic physical
+principles. We, like the inventors of quantum theory, can only guess the
+form of this wave equation and then test for consistency and agreement with
+experiment.
+26 The SchroÈdinger equation Chap. 2
+A wave equation for a free particle
+We shall construct a possible wave equation for a freely moving non-relativistic
+particle by considering the properties of the de Broglie waves describing the
+particle.
+According to Eq. (1.3) a particle with momentum p has a de Broglie wavelength
+given by l ? h=p. This implies that a de Broglie wave with wave number
+k ? 2p=l describes a particle with momentum
+p ? hk, where h ? h
+2p
+: (2:9)
+We shall extend this idea by assuming that a de Broglie wave packet with a
+range of wave numbers between k ÿ Dk and k ? Dk describes a particle with an
+uncertain momentum
+Dp  hDk: (2:10)
+We shall also assume that the length of this wave packet is a measure of Dx, the
+uncertainty in the position of the particle. Using Eq. (2.5) and Fig. 2.1 as a
+guide, we write
+Dx  2p
+Dk
+: (2:11)
+If we multiply these uncertainties, we obtain
+Dx Dp  h,
+in agreement with the Heisenberg uncertainty principle, Eq. (1.14). Thus, a de
+Broglie wave packet can account for the uncertainties in the position and
+momentum of a quantum particle.
+However, we note that a de Broglie wave must be transformed by a measurement.
+If a precise measurement of the position is made, the new wave packet
+describing the particle must be very short, a superposition of sinusoidal waves
+with a very wide range of wavelengths. Similarly, if a precise measurement of
+the momentum is made, the new wave packet is very long with a sharply
+defined wavelength. This implies that the wave packet is a fragile entity which
+is transformed by a measurement. No one knows how this happens.
+We shall now impose the condition that the wave packet represents a moving
+quantum particle. Specifically, we shall require that the group velocity of the
+packet is equal to the velocity of a particle with mass m and momentum p ? hk;
+i.e. we shall require that
+2.2 Particle Wave Equations 27
+d!
+dk
+? hk
+m
+: (2:12)
+This equation may be integrated to give the following dispersion relation for
+the de Broglie waves describing a freely moving quantum particle of mass m:
+! ? hk2
+2m
+: (2:13)
+In obtaining this relation we have set the constant of integration to zero
+because this constant gives rise to no observable consequences in non-relativistic
+quantum mechanics.
+Our task is to find a wave equation which has sinusoidal solutions which
+obey this dispersion relation. The simplest such wave equation is called the
+SchroÈdinger equation. For a free particle moving in one dimension, it has the
+form
+ih
+]C
+]t
+? ÿ h2
+2m
+]2C
+]x2 : (2:14)
+It is easy to verify that the complex exponential
+C(x, t) ? Aei(kxÿ!t) (2:15)
+is a solution of this equation provided ! and k obey the dispersion relation
+Eq. (2.13). If we substitute into Eq. (2.14), the left-hand side yields
+ih
+]C
+]t
+? ih( ÿ i!)Aei(kxÿ!t) ? h!Aei(kxÿ!t),
+and the right-hand side yields
+ÿ h2
+2m
+]2C
+]x2
+? h2k2
+2m
+Aei(kxÿ!t),
+and we have a solution provided h! ? h2k2=2m.
+Because the sinusoidal solution, Eq. (2.15), describes a wave moving in the x
+direction with wave number k and angular velocity !, we shall assume that it
+represents a free particle moving in the x direction with a sharply defined
+momentum p ? hk and energy E ? p2=2m ? h!. There are, of course, many
+other solutions of the SchroÈdinger equation which represent other states of
+motion of the particle.
+We emphasize that in order to accommodate the dispersion relation for de
+Broglie waves, Eq. (2.13), we have arrived at a wave equation, the free-particle
+28 The SchroÈdinger equation Chap. 2
+SchroÈdinger equation Eq. (2.14), whose solutions are necessarily complex
+functions of space and time. These complex functions are called wave functions.
+We recall that classical waves are often represented by complex functions, but
+this representation is purely a matter of mathematical convenience; classical
+waves are real functions of space and time. In contrast, SchroÈdinger wave
+functions are not real functions of space and time. They are complex functions
+which describe the covert wave-like behaviour of a quantum particle.
+So far we have only considered sinusoidal solutions of the SchroÈdinger
+equation, but given these solutions we can construct other types of solutions.
+Because each term in the SchroÈdinger equation is linear in the wave function C,
+a superposition of solutions is also a solution. For example,
+C(x, t) ? A1 ei(k1xÿ!1t) ? A2 ei(k2xÿ!2t),
+with
+h!1 ? h2k21
+2m
+and h!2 ? h2k22
+2m
+,
+where A1 and A2 are arbitrary complex constants, is a solution of Eq. (2.14);
+this may easily be confirmed by direct substitution. Indeed, the most general
+solution is a superposition of sinusoidal waves with all possible angular frequencies
+and wave numbers; i.e.
+C(x, t) ?
+Z ?1
+ÿ1
+A(k
+0
+) ei(k0xÿ!0t) dk
+0
+with h!
+0 ? h2k02
+2m
+: (2:16)
+In this superposition, A(k0) is an arbitrary complex function of k0 and the
+integral represents a sum over all possible values of k0. If the function A(k0) is
+such that the sum involves a narrow range of wave numbers around a positive
+value k, this superposition yields a wave packet moving in the positive x
+direction with a group velocity hk=m. Such a wave packet represents a quantum
+particle which moves with velocity hk=m, but with position and momentum in
+accordance with the Heisenberg uncertainty principle.
+Wave equation for a particle in a potential energy field
+The interactions of a non-relativistic particle can usually be described in terms
+of a potential energy field. For example, an electron in a hydrogen atom can be
+thought of as moving in the potential energy field V(r) ? ÿe2=4pE0r of a
+nucleus. In classical mechanics, this field implies that an electron at a distance
+r from the nucleus experiences an attractive force of magnitude e2=4pE0r2. In
+2.2 Particle Wave Equations 29
+quantum mechanics, it implies that the wave equation for the electron is not the
+simple free-particle wave equation given by Eq. (2.14).
+In 1926, Erwin SchroÈdinger invented a wave equation for a quantum particle
+in a potential energy field which led to a successful description of atoms and
+other microscopic systems. It is a generalization of the wave equation for a free
+particle given by Eq. (2.14). The SchroÈdinger equation for a particle moving in
+the three-dimensional potential energy field V(r) is
+ih
+]C
+]t
+? ÿ h2
+2m
+r2 ? V(r)
+" #
+C: (2:17)
+When the particle moves in a one-dimensional potential V(x) the SchroÈdinger
+equation simplifies to
+ih
+]C
+]t
+? ÿ h2
+2m
+]2
+]x2
+? V(x)
+" #
+C: (2:18)
+It is easy to find solutions of the SchroÈdinger equation when the potential
+energy is a constant. For example, when a particle moves along the x axis with
+constant potential energy V0, the wave function
+C(x, t) ? Aei(kxÿ!t)
+is a solution of Eq. (2.18) provided
+h! ? h2k2
+2m
+? V0:
+This wave function represents a particle with sharply defined total energy E and
+momentum p given by
+E ? p2
+2m
+? V0 and p ? hk:
+In later chapters we shall find solutions of the SchroÈdinger equation for a
+variety of potential energy fields, including the most important case of the
+Coulomb potential energy of an electron in an atom. But our next task is to
+explore the meaning of the SchroÈdinger equation

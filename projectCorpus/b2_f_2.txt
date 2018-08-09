@@ -1,0 +1,1084 @@
+Indexed Files
+
+Hashing is a computational technique for organizing files. Records in hashed files can be stored and retrieved quickly. However the difficulty in hashed files is that they are difficult to process in key order, which is important if you want to access all records with keys in a certain range.
+
+Indexing is a data structure based technique for accessing records in a file.  Indexes are auxiliary access structures which are used to speed up the retrieval of records in response to certain search conditions.  A main file of records can be supplemented by one or more indexes.
+
+Index structures provide secondary access paths, which provide alternative ways of accessing the records without affecting the physical placement of records on the disk. Indexes may be part of the main file or be separate files and may be created and destroyed as required without affecting the main file.
+
+Indexes allow for efficient access to records based on the indexing fields that are used to construct the index.   Any field of the file can be used to create an index, and multiple indexes on different fields can be constructed on the same file.
+
+Single Level Ordered Indexes
+
+Ordered access structures are similar to indexes in textbooks.  The indexes or tables of contents list the important terms in alphabetical order, along with page numbers where the information can be found.   
+
+You can search an index to find the address (page numbers in this case),  and locate the term by searching the appropriate page.  The alternative is to complete a linear search of the textbook, looking through each page one at a time.
+
+For a file consisting of several fields, and index access structure is usually defined on a single field, called an indexing field.  An index usually is composed of two components,  the index field value and a list of pointers to all disk blocks that contain records with that field value.  The values in the index are ordered, so we can do a binary search on the index.  The index file is much smaller than the data file, so the binary search is much faster.
+
+There are different types of indexes, these include:
+-	Primary Indexes
+-	Clustering index
+-	Secondary index
+
+
+Primary Indexes
+
+A primary index is an ordered file whose records are of fixed length with two fields.  The first field is the primary key of the main data file, and the second is a pointer to a disk block.  There is one index entry in the index file for each block in the data file.  Each index entry has the value of the primary key field for the first record in the block, and a pointer to the block.
+Each entry in the index has an employee id value and a pointer.  The total number of entries in the index is the same as the number of disk blocks in the ordered data file.  
+
+<K(1) = (125-777), P(1) = address of block 1>
+
+The first record in each block of the data file is called the anchor record or the block anchor.
+
+Indexes can be characterised as dense or sparse:  
+
+Dense Index – has an index entry for every search key value (ie. every record) in the 
+data file.
+
+Sparse(non dense) Index – has index entries for only some of the search key values.  A primary index is a sparse (non dense) index because it includes an entry for each disk block of the data file rather than for every search value.
+
+The index file for a primary index needs fewer blocks than the data file, because a) There are fewer index entries than there are records of data, and b) each index entry is smaller in size than a data record because it has only two fields, therefore more index entries than data records can fit in one block.  This means that a binary search on the index file requires fewer block accesses than a binary search on the data file.
+
+
+Block Accesses Required
+
+Remember a binary search for an ordered data file requires log2b block accesses.  If the primary index file contains bi blocks, then to locate a record with a search key value, it requires a binary search of the index (bI blocks), plus an access to the block containing the record: log2 bi +1 block accesses.
+
+A record whose primary key value is K, is in the block with the address P, where K(i)<=K(i+1).  To retrieve a record, we do a binary search of the index file, to find the appropriate entry, then retrieve the data block whose address is P(i).
+
+Example from Text:
+
+We have an ordered file with r = 30,000 records with block size B = 1024 bytes.  Records are fixed and unspanned with R = 100 bytes.  
+
+•	What is the bfr?
+•	How many blocks are needed?
+•	How many block accesses needed to locate a record?
+
+Now assume the ordering key field of the file is V = 9bytes, and a block pointer is P=6 bytes and a primary index has been constructed for the file.  
+
+What is the size of each index entry?
+What is the blocking factor?
+How many blocks are needed?
+How many block accesses are needed to locate a record?
+
+Insertion and deletion of records are a problem with primary indexes, because they are ordered files.  The problem increases with primary indexes because when we insert a record into the correct position in the data file, not only does space have to be made in the blocks for the new record, but index entries may also need to be changed because the anchor records of some blocks will change.  
+
+Problems can be overcome as seen previously using an unordered overflow file, or a linked list of overflow records for each block in the data file.
+
+Clustering Indexes
+Occurs when records are physically ordered on a nonkey field, which does not have a distinct value for each record.  The field is called the clustering field.  A clustering index can be created to speed the retrieval of records that have the same value for the clustering field.  
+
+Clustering indexes are different from a primary index, because a primary index requires that the ordering field of the data file has a distinct value for each record. 
+
+A clustering index is an ordered file with two fields, the first is of the same type as the clustering field of the data file, and the second is a block pointer.  There is one entry in the clustering index for each distinct value of the clustering field containing the value and a pointer to the first block in the data file that has a record with that value. For its clustering field.
+Clustering Example with indexing fields with different values being stored in the same block:
+A clustering index is a nondense index, because there is an entry for every distinct value of the indexing field (which is nonkey by definition) and has duplicate values, rather than for every record in the file.
+
+An index is similar to the directory structures used for extendible hashing.  Both are searched to find a pointer to the data block containing desired record.  The main difference is that an index search uses the values of the search field itself, where a hash directory search uses the hash value that is calculated by applying the hash function to the search field.
+
+Secondary Indexes
+A secondary index provides a secondary means of accessing a file for which some primary access already exists.  The secondary index may be on a field which is a candidate key and has a unique value in every record, or a nonkey with duplicate values.  
+
+The index is an ordered file with two fields.  The first field is of the same data type as the nonordering field of the data file that is an indexing field.  The second is either a block pointer or a record pointer.  There can be many secondary indexes for the same file.
+
+A secondary index access structure on a key field that has a distinct value for every record is called a secondary key.  There is one index entry for each record in the data file, therefore it is dense.
+
+The index entries are ordered by value K(i), so a binary search can be performed.  Because the records in the data file are not physically ordered by the values of the secondary key field, block anchors cannot be used.  An index entry is created for each record in the data file rather than for each block.
+
+A block pointer is used to point to the block containing the record with the desired key value.  The appropriate block is transferred to main memory and a search for the desired record within the block can be performed.
+
+A secondary index needs more storage space and longer search time than a primary index, because there is a larger number of entries.  However the improvement in the search time for a secondary index is greater than for a primary index since a linear search would have to be performed if the secondary index did not exist.
+
+SEE DIAGRAM FROM TEXT (14.4)
+
+Example from Text
+
+Consider the file from the previous example, with r=30,000 fixed length records of size R=100 bytes, stored on a disk with block size B = 1024 bytes.  The file has b = 3000 blocks.  
+
+How many block accesses would be required to do a linear search on the file?
+
+If we construct a secondary index on a nonordering key field of the file that is V = 9 bytes long.  A block pointer is P = 6 bytes long.
+
+How big is each index entry?
+What is the blocking factor? 
+
+In a dense secondary index, the total number of index entries is equal to the number of records in the data file.  
+
+How many blocks are needed for the index?
+How many block accesses are needed to do a binary search?
+
+As you can see, there is a large improvement over the number of block accesses needed for the average linear search, but it is slightly worse than the seven block accesses required for the primary index.
+
+Non Key Secondary Indexes
+
+A secondary index can be created on a nonkey field of a file.  In this case, many records in the data file can have the same value for the indexing field. There are several ways an index like this can be created:
+
+•	Include several index entries with the same key value, one for each record.  It would be a dense index.
+•	Have variable length records for the index entries, with a repeating field for the pointer.  A list of pointers can be kept in the index for the key, one to each block that contains a record whose indexing field is equal to the key value.   Binary search can be used,  but must be modified.
+•	Keep the index entries are a fixed length, and have a single entry for each index field value, but create a level of indirection to handle the multiple pointers.  This is a non dense scheme.  
+o	The pointer P in the index entry, points to a block of record pointers,
+o	Each record pointer in the block points to one of the data file records with the key value K for the indexing field.  
+o	If a value of K occurs in too many  records, so the record pointers can’t fit in a single disk block, a cluster or linked list of blocks is used. 
+o	Retrieval using the index requires one or more additional block accesses because of the  extra level, but searching and inserting more records is straightforward. 
+o	SEE DIAGRAM FROM TEXT (14.5)
+
+A secondary index provides a logical ordering on the records by the indexing field.
+For texting language, see SMS language.
+A stylized iconic depiction of a CSV-formatted text file.
+
+A text file (sometimes spelled "textfile": an old alternate name is "flatfile") is a kind of computer file that is structured as a sequence of lines. A text file exists within a computer file system. The end of a text file is often denoted by placing one or more special characters, known as an end-of-file marker, after the last line in a text file.
+
+"Text file" refers to a type of container, while plain text refers to a type of content. Text files can contain plain text, but they are not limited to such.
+
+At a generic level of description, there are two kinds of computer files: text files and binary files.[1]
+Contents
+[hide]
+
+    1 Data storage
+    2 Formats
+        2.1 ASCII
+        2.2 MIME
+        2.3 .TXT
+        2.4 Standard Windows .txt files
+    3 Rendering
+    4 See also
+    5 Notes and references
+    6 External links
+
+[edit] Data storage
+
+Because of their simplicity, text files are commonly used for storage of information. They avoid some of the problems encountered with other file formats, such as endianness, padding bytes, or differences in the number of bytes in a machine word. Further, when data corruption occurs in a text file, it is often easier to recover and continue processing the remaining contents. A disadvantage of text files is that they usually have a low entropy, meaning that the information occupies more storage than is strictly necessary.
+
+A simple text file needs no additional metadata to assist the reader in interpretation, and therefore may contain no data at all, which is a case of zero byte file.
+[edit] Formats
+[edit] ASCII
+
+The ASCII standard allows ASCII-only text files (unlike most other file types) to be freely interchanged and readable on Unix, Macintosh, Microsoft Windows, DOS, and other systems. These differ in their preferred line ending convention and their interpretation of values outside the ASCII range (their character encoding).
+[edit] MIME
+
+Text files usually have the MIME type "text/plain", usually with additional information indicating an encoding. Prior to the advent of Mac OS X, the Mac OS system regarded the content of a file (the data fork) to be a text file when its resource fork indicated that the type of the file was "TEXT". Under the Microsoft Windows operating system, a file is regarded as a text file if the suffix of the name of the file (the "extension") is "txt". However, many other suffixes are used for text files with specific purposes. For example, source code for computer programs is usually kept in text files that have file name suffixes indicating the programming language in which the source is written.
+[edit] .TXT
+
+.txt is a file format for files consisting of text usually containing very little formatting (ex: no bolding or italics). The precise definition of the .txt format is not specified, but typically matches the format accepted by the system terminal or simple text editor. Files with the .txt extension can easily be read or opened by any program that reads text and, for that reason, are considered universal (or platform independent).
+
+The ASCII character set is the most common format for English-language text files, and is generally assumed to be the default file format in many situations. For accented and other non-ASCII characters, it is necessary to choose a character encoding. In many systems, this is chosen on the basis of the default locale setting on the computer it is read on. Common character encodings include ISO 8859-1 for many European languages.
+
+Because many encodings have only a limited repertoire of characters, they are often only usable to represent text in a limited subset of human languages. Unicode is an attempt to create a common standard for representing all known languages, and most known character sets are subsets of the very large Unicode character set. Although there are multiple character encodings available for Unicode, the most common is UTF-8, which has the advantage of being backwards-compatible with ASCII: that is, every ASCII text file is also a UTF-8 text file with identical meaning.
+[edit] Standard Windows .txt files
+
+MS-DOS and Windows use a common text file format, with each line of text separated by a two character combination: CR and LF, which have ASCII codes 13 and 10. It is common for the last line of text not to be terminated with a CR-LF marker, and many text editors (including Notepad) do not automatically insert one on the last line.
+
+Most Windows text files use a form of ANSI, OEM or Unicode encoding. What Windows terminology calls "ANSI encodings" are usually single-byte ISO-8859 encodings, except for in locales such as Chinese, Japanese and Korean that require double-byte character sets. ANSI encodings were traditionally used as default system locales within Windows, before the transition to Unicode. By contrast, OEM encodings, also known as MS-DOS code pages, were defined by IBM for use in the original IBM PC text mode display system. They typically include graphical and line-drawing characters common in full-screen MS-DOS applications. Newer Windows text files may use a Unicode encoding such as UTF-16LE or UTF-8.
+[edit] Rendering
+
+When opened by a text editor, human-readable content is presented to the user. This often consists of the file's plain text visible to the user. Depending on the application, control codes may be rendered either as literal instructions acted upon by the editor, or as visible escape characters that can be edited as p
+7 Expressions
+
+In this chapter, all valid Erlang expressions are listed. When writing Erlang programs, it is also allowed to use macro- and record expressions. However, these expressions are expanded during compilation and are in that sense not true Erlang expressions. Macro- and record expressions are covered in separate chapters: Macros and Records.
+7.1  Expression Evaluation
+
+All subexpressions are evaluated before an expression itself is evaluated, unless explicitly stated otherwise. For example, consider the expression:
+
+Expr1 + Expr2
+
+Expr1 and Expr2, which are also expressions, are evaluated first - in any order - before the addition is performed.
+
+Many of the operators can only be applied to arguments of a certain type. For example, arithmetic operators can only be applied to numbers. An argument of the wrong type will cause a badarg run-time error.
+7.2  Terms
+
+The simplest form of expression is a term, that is an integer, float, atom, string, list or tuple. The return value is the term itself.
+7.3  Variables
+
+A variable is an expression. If a variable is bound to a value, the return value is this value. Unbound variables are only allowed in patterns.
+
+Variables start with an uppercase letter or underscore (_) and may contain alphanumeric characters, underscore and @. Examples:
+
+X
+Name1
+PhoneNumber
+Phone_number
+_
+_Height
+
+Variables are bound to values using pattern matching. Erlang uses single assignment, a variable can only be bound once.
+
+The anonymous variable is denoted by underscore (_) and can be used when a variable is required but its value can be ignored. Example:
+
+[H|_] = [1,2,3]
+
+Variables starting with underscore (_), for example _Height, are normal variables, not anonymous. They are however ignored by the compiler in the sense that they will not generate any warnings for unused variables. Example: The following code
+
+member(_, []) ->
+    [].
+
+can be rewritten to be more readable:
+
+member(Elem, []) ->
+    [].
+
+This will however cause a warning for an unused variable Elem, if the code is compiled with the flag warn_unused_vars set. Instead, the code can be rewritten to:
+
+member(_Elem, []) ->
+    [].
+
+Note that since variables starting with an underscore are not anonymous, this will match:
+
+{_,_} = {1,2}
+
+But this will fail:
+
+{_N,_N} = {1,2}
+
+The scope for a variable is its function clause. Variables bound in a branch of an if, case, or receive expression must be bound in all branches to have a value outside the expression, otherwise they will be regarded as 'unsafe' outside the expression.
+
+For the try expression introduced in Erlang 5.4/OTP-R10B, variable scoping is limited so that variables bound in the expression are always 'unsafe' outside the expression. This will be improved.
+7.4  Patterns
+
+A pattern has the same structure as a term but may contain unbound variables. Example:
+
+Name1
+[H|T]
+{error,Reason}
+
+Patterns are allowed in clause heads, case and receive expressions, and match expressions.
+Match Operator = in Patterns
+
+If Pattern1 and Pattern2 are valid patterns, then the following is also a valid pattern:
+
+Pattern1 = Pattern2
+
+When matched against a term, both Pattern1 and Pattern2 will be matched against the term. The idea behind this feature is to avoid reconstruction of terms. Example:
+
+f({connect,From,To,Number,Options}, To) ->
+    Signal = {connect,From,To,Number,Options},
+    ...;
+f(Signal, To) ->
+    ignore.
+
+can instead be written as
+
+f({connect,_,To,_,_} = Signal, To) ->
+    ...;
+f(Signal, To) ->
+    ignore.
+
+String Prefix in Patterns
+
+When matching strings, the following is a valid pattern:
+
+f("prefix" ++ Str) -> ...
+
+This is syntactic sugar for the equivalent, but harder to read
+
+f([$p,$r,$e,$f,$i,$x | Str]) -> ...
+
+Expressions in Patterns
+
+An arithmetic expression can be used within a pattern, if it uses only numeric or bitwise operators, and if its value can be evaluated to a constant at compile-time. Example:
+
+case {Value, Result} of
+    {?THRESHOLD+1, ok} -> ...
+
+This feature was added in Erlang 5.0/OTP R7.
+7.5  Match
+
+Expr1 = Expr2
+
+Matches Expr1, a pattern, against Expr2. If the matching succeeds, any unbound variable in the pattern becomes bound and the value of Expr2 is returned.
+
+If the matching fails, a badmatch run-time error will occur.
+
+Examples:
+
+1> {A, B} = {answer, 42}.
+{answer,42}
+2> A.
+answer
+3> {C, D} = [1, 2].
+** exception error: no match of right hand side value [1,2]
+
+7.6  Function Calls
+
+ExprF(Expr1,...,ExprN)
+ExprM:ExprF(Expr1,...,ExprN)
+
+In the first form of function calls, ExprM:ExprF(Expr1,...,ExprN), each of ExprM and ExprF must be an atom or an expression that evaluates to an atom. The function is said to be called by using the fully qualified function name. This is often referred to as a remote or external function call. Example:
+
+lists:keysearch(Name, 1, List)
+
+In the second form of function calls, ExprF(Expr1,...,ExprN), ExprF must be an atom or evaluate to a fun.
+
+If ExprF is an atom the function is said to be called by using the implicitly qualified function name. If the function ExprF is locally defined, it is called. Alternatively if ExprF is explicitly imported from module M, M:ExprF(Expr1,...,ExprN) is called. If ExprF is neither declared locally nor explicitly imported, ExprF must be the name of an automatically imported BIF. Examples:
+
+handle(Msg, State)
+spawn(m, init, [])
+
+Examples where ExprF is a fun:
+
+Fun1 = fun(X) -> X+1 end
+Fun1(3)
+=> 4
+Fun2 = {lists,append}
+Fun2([1,2], [3,4])
+=> [1,2,3,4]
+fun lists:append/2([1,2], [3,4])
+=> [1,2,3,4]
+
+Note that when calling a local function, there is a difference between using the implicitly or fully qualified function name, as the latter always refers to the latest version of the module. See Compilation and Code Loading.
+
+See also the chapter about Function Evaluation.
+Local Function Names Clashing With Auto-imported BIFs
+
+If a local function has the same name as an auto-imported BIF, the semantics is that implicitly qualified function calls are directed to the locally defined function, not to the BIF. To avoid confusion, there is a compiler directive available, -compile({no_auto_import,[F/A]}), that makes a BIF not being auto-imported. In certain situations, such a compile-directive is mandatory.
+Warning
+
+Before OTP R14A (ERTS version 5.8), an implicitly qualified function call to a function having the same name as an auto-imported BIF always resulted in the BIF being called. In newer versions of the compiler the local function is instead called. The change is there to avoid that future additions to the set of auto-imported BIFs does not silently change the behavior of old code.
+
+However, to avoid that old (pre R14) code changed its behavior when compiled with OTP version R14A or later, the following restriction applies: If you override the name of a BIF that was auto-imported in OTP versions prior to R14A (ERTS version 5.8) and have an implicitly qualified call to that function in your code, you either need to explicitly remove the auto-import using a compiler directive, or replace the call with a fully qualified function call, otherwise you will get a compilation error. See example below:
+
+-export([length/1,f/1]).
+-compile({no_auto_import,[length/1]}). % erlang:length/1 no longer autoimported
+length([]) ->
+    0;
+length([H|T]) ->
+    1 + length(T). %% Calls the local funtion length/1
+f(X) when erlang:length(X) > 3 -> %% Calls erlang:length/1,
+                                  %% which is allowed in guards
+    long.
+
+The same logic applies to explicitly imported functions from other modules as to locally defined functions. To both import a function from another module and have the function declared in the module at the same time is not allowed.
+
+-export([f/1]).
+-compile({no_auto_import,[length/1]}). % erlang:length/1 no longer autoimported
+-import(mod,[length/1]).
+f(X) when erlang:length(X) > 33 -> %% Calls erlang:lenght/1,
+                                   %% which is allowed in guards
+    erlang:length(X);              %% Explicit call to erlang:length in body
+f(X) ->
+    length(X).                     %% mod:length/1 is called
+
+For auto-imported BIFs added to Erlang in release R14A and thereafter, overriding the name with a local function or explicit import is always allowed. However, if the -compile({no_auto_import,[F/A]) directive is not used, the compiler will issue a warning whenever the function is called in the module using the implicitly qualified function name.
+7.7  If
+
+if
+    GuardSeq1 ->
+        Body1;
+    ...;
+    GuardSeqN ->
+        BodyN
+end
+
+The branches of an if-expression are scanned sequentially until a guard sequence GuardSeq which evaluates to true is found. Then the corresponding Body (sequence of expressions separated by ',') is evaluated.
+
+The return value of Body is the return value of the if expression.
+
+If no guard sequence is true, an if_clause run-time error will occur. If necessary, the guard expression true can be used in the last branch, as that guard sequence is always true.
+
+Example:
+
+is_greater_than(X, Y) ->
+    if
+        X>Y ->
+            true;
+        true -> % works as an 'else' branch
+            false
+    end
+
+7.8  Case
+
+case Expr of
+    Pattern1 [when GuardSeq1] ->
+        Body1;
+    ...;
+    PatternN [when GuardSeqN] ->
+        BodyN
+end
+
+The expression Expr is evaluated and the patterns Pattern are sequentially matched against the result. If a match succeeds and the optional guard sequence GuardSeq is true, the corresponding Body is evaluated.
+
+The return value of Body is the return value of the case expression.
+
+If there is no matching pattern with a true guard sequence, a case_clause run-time error will occur.
+
+Example:
+
+is_valid_signal(Signal) ->
+    case Signal of
+        {signal, _What, _From, _To} ->
+            true;
+        {signal, _What, _To} ->
+            true;
+        _Else ->
+            false
+    end.
+
+7.9  Send
+
+Expr1 ! Expr2
+
+Sends the value of Expr2 as a message to the process specified by Expr1. The value of Expr2 is also the return value of the expression.
+
+Expr1 must evaluate to a pid, a registered name (atom) or a tuple {Name,Node}, where Name is an atom and Node a node name, also an atom.
+
+    If Expr1 evaluates to a name, but this name is not registered, a badarg run-time error will occur.
+    Sending a message to a pid never fails, even if the pid identifies a non-existing process.
+    Distributed message sending, that is if Expr1 evaluates to a tuple {Name,Node} (or a pid located at another node), also never fails.
+
+7.10  Receive
+
+receive
+    Pattern1 [when GuardSeq1] ->
+        Body1;
+    ...;
+    PatternN [when GuardSeqN] ->
+        BodyN
+end
+
+Receives messages sent to the process using the send operator (!). The patterns Pattern are sequentially matched against the first message in time order in the mailbox, then the second, and so on. If a match succeeds and the optional guard sequence GuardSeq is true, the corresponding Body is evaluated. The matching message is consumed, that is removed from the mailbox, while any other messages in the mailbox remain unchanged.
+
+The return value of Body is the return value of the receive expression.
+
+receive never fails. Execution is suspended, possibly indefinitely, until a message arrives that does match one of the patterns and with a true guard sequence.
+
+Example:
+
+wait_for_onhook() ->
+    receive
+        onhook ->
+            disconnect(),
+            idle();
+        {connect, B} ->
+            B ! {busy, self()},
+            wait_for_onhook()
+    end.
+
+It is possible to augment the receive expression with a timeout:
+
+receive
+    Pattern1 [when GuardSeq1] ->
+        Body1;
+    ...;
+    PatternN [when GuardSeqN] ->
+        BodyN
+after
+    ExprT ->
+        BodyT
+end
+
+ExprT should evaluate to an integer. The highest allowed value is 16#ffffffff, that is, the value must fit in 32 bits. receive..after works exactly as receive, except that if no matching message has arrived within ExprT milliseconds, then BodyT is evaluated instead and its return value becomes the return value of the receive..after expression.
+
+Example:
+
+wait_for_onhook() ->
+    receive
+        onhook ->
+            disconnect(),
+            idle();
+        {connect, B} ->
+            B ! {busy, self()},
+            wait_for_onhook()
+    after
+        60000 ->
+            disconnect(),
+            error()
+    end.
+
+It is legal to use a receive..after expression with no branches:
+
+receive
+after
+    ExprT ->
+        BodyT
+end
+
+This construction will not consume any messages, only suspend execution in the process for ExprT milliseconds and can be used to implement simple timers.
+
+Example:
+
+timer() ->
+    spawn(m, timer, [self()]).
+timer(Pid) ->
+    receive
+    after
+        5000 ->
+            Pid ! timeout
+    end.
+
+There are two special cases for the timeout value ExprT:
+
+infinity
+    The process should wait indefinitely for a matching message -- this is the same as not using a timeout. Can be useful for timeout values that are calculated at run-time.
+0
+    If there is no matching message in the mailbox, the timeout will occur immediately.
+
+7.11  Term Comparisons
+
+Expr1 op Expr2
+
+op 	Description
+== 	equal to
+/= 	not equal to
+=< 	less than or equal to
+< 	less than
+>= 	greater than or equal to
+> 	greater than
+=:= 	exactly equal to
+=/= 	exactly not equal to
+Table 7.1:   Term Comparison Operators.
+
+The arguments may be of different data types. The following order is defined:
+
+number < atom < reference < fun < port < pid < tuple < list < bit string
+
+Lists are compared element by element. Tuples are ordered by size, two tuples with the same size are compared element by element.
+
+If one of the compared terms is an integer and the other a float, the integer is first converted into a float, unless the operator is one of =:= and =/=. If the integer is too big to fit in a float no conversion is done, but the order is determined by inspecting the sign of the numbers.
+
+Returns the Boolean value of the expression, true or false.
+
+Examples:
+
+1> 1==1.0.
+true
+2> 1=:=1.0.
+false
+3> 1 > a.
+false
+
+7.12  Arithmetic Expressions
+
+op Expr
+Expr1 op Expr2
+
+op 	Description 	Argument type
++ 	unary + 	number
+- 	unary - 	number
++ 	  	number
+- 	  	number
+* 	  	number
+/ 	floating point division 	number
+bnot 	unary bitwise not 	integer
+div 	integer division 	integer
+rem 	integer remainder of X/Y 	integer
+band 	bitwise and 	integer
+bor 	bitwise or 	integer
+bxor 	arithmetic bitwise xor 	integer
+bsl 	arithmetic bitshift left 	integer
+bsr 	bitshift right 	integer
+Table 7.2:   Arithmetic Operators.
+
+Examples:
+
+1> +1.
+1
+2> -1.
+-1
+3> 1+1.
+2
+4> 4/2.
+2.0
+5> 5 div 2.
+2
+6> 5 rem 2.
+1
+7> 2#10 band 2#01.
+0
+8> 2#10 bor 2#01.
+3
+9> a + 10.
+** exception error: bad argument in an arithmetic expression
+     in operator  +/2
+        called as a + 10
+10> 1 bsl (1 bsl 64).
+** exception error: a system limit has been reached
+     in operator  bsl/2
+        called as 1 bsl 18446744073709551616
+
+7.13  Boolean Expressions
+
+op Expr
+Expr1 op Expr2
+
+op 	Description
+not 	unary logical not
+and 	logical and
+or 	logical or
+xor 	logical xor
+Table 7.3:   Logical Operators.
+
+Examples:
+
+1> not true.
+false
+2> true and false.
+false
+3> true xor false.
+true
+4> true or garbage.
+** exception error: bad argument
+     in operator  or/2
+        called as true or garbage
+
+7.14  Short-Circuit Expressions
+
+Expr1 orelse Expr2
+Expr1 andalso Expr2
+
+Expressions where Expr2 is evaluated only if necessary. That is, Expr2 is evaluated only if Expr1 evaluates to false in an orelse expression, or only if Expr1 evaluates to true in an andalso expression. Returns either the value of Expr1 (that is, true or false) or the value of Expr2 (if Expr2 was evaluated).
+
+Example 1:
+
+case A >= -1.0 andalso math:sqrt(A+1) > B of
+
+This will work even if A is less than -1.0, since in that case, math:sqrt/1 is never evaluated.
+
+Example 2:
+
+OnlyOne = is_atom(L) orelse
+         (is_list(L) andalso length(L) == 1),
+
+From R13A, Expr2 is no longer required to evaluate to a boolean value. As a consequence, andalso and orelse are now tail-recursive. For instance, the following function is tail-recursive in R13A and later:
+
+all(Pred, [Hd|Tail]) ->
+    Pred(Hd) andalso all(Pred, Tail);
+all(_, []) ->
+    true.
+
+7.15  List Operations
+
+Expr1 ++ Expr2
+Expr1 -- Expr2
+
+The list concatenation operator ++ appends its second argument to its first and returns the resulting list.
+
+The list subtraction operator -- produces a list which is a copy of the first argument, subjected to the following procedure: for each element in the second argument, the first occurrence of this element (if any) is removed.
+
+Example:
+
+1> [1,2,3]++[4,5].
+[1,2,3,4,5]
+2> [1,2,3,2,1,2]--[2,1,2].
+[3,1,2]
+
+Warning
+
+The complexity of A -- B is proportional to length(A)*length(B), meaning that it will be very slow if both A and B are long lists.
+
+7.16  Bit Syntax Expressions
+
+<<>>
+<<E1,...,En>>
+
+Each element Ei specifies a segment of the bit string. Each element Ei is a value, followed by an optional size expression and an optional type specifier list.
+
+Ei = Value |
+     Value:Size |
+     Value/TypeSpecifierList |
+     Value:Size/TypeSpecifierList
+
+Used in a bit string construction, Value is an expression which should evaluate to an integer, float or bit string. If the expression is something else than a single literal or variable, it should be enclosed in parenthesis.
+
+Used in a bit string matching, Value must be a variable, or an integer, float or string.
+
+Note that, for example, using a string literal as in <<"abc">> is syntactic sugar for <<$a,$b,$c>>.
+
+Used in a bit string construction, Size is an expression which should evaluate to an integer.
+
+Used in a bit string matching, Size must be an integer or a variable bound to an integer.
+
+The value of Size specifies the size of the segment in units (see below). The default value depends on the type (see below). For integer it is 8, for float it is 64, for binary and bitstring it is the whole binary or bit string. In matching, this default value is only valid for the very last element. All other bit string or binary elements in the matching must have a size specification.
+
+For the utf8, utf16, and utf32 types, Size must not be given. The size of the segment is implicitly determined by the type and value itself.
+
+TypeSpecifierList is a list of type specifiers, in any order, separated by hyphens (-). Default values are used for any omitted type specifiers.
+
+Type= integer | float | binary | bytes | bitstring | bits | utf8 | utf16 | utf32
+    The default is integer. bytes is a shorthand for binary and bits is a shorthand for bitstring. See below for more information about the utf types. 
+Signedness= signed | unsigned
+    Only matters for matching and when the type is integer. The default is unsigned.
+Endianness= big | little | native
+    Native-endian means that the endianness will be resolved at load time to be either big-endian or little-endian, depending on what is native for the CPU that the Erlang machine is run on. Endianness only matters when the Type is either integer, utf16, utf32, or float. The default is big. 
+Unit= unit:IntegerLiteral
+    The allowed range is 1..256. Defaults to 1 for integer, float and bitstring, and to 8 for binary. No unit specifier must be given for the types utf8, utf16, and utf32. 
+
+The value of Size multiplied with the unit gives the number of bits. A segment of type binary must have a size that is evenly divisible by 8.
+Note
+
+When constructing binaries, if the size N of an integer segment is too small to contain the given integer, the most significant bits of the integer will be silently discarded and only the N least significant bits will be put into the binary.
+
+The types utf8, utf16, and utf32 specifies encoding/decoding of the Unicode Transformation Formats UTF-8, UTF-16, and UTF-32, respectively.
+
+When constructing a segment of a utf type, Value must be an integer in one of the ranges 0..16#D7FF, 16#E000..16#FFFD, or 16#10000..16#10FFFF (i.e. a valid Unicode code point). Construction will fail with a badarg exception if Value is outside the allowed ranges. The size of the resulting binary segment depends on the type and/or Value. For utf8, Value will be encoded in 1 through 4 bytes. For utf16, Value will be encoded in 2 or 4 bytes. Finally, for utf32, Value will always be encoded in 4 bytes.
+
+When constructing, a literal string may be given followed by one of the UTF types, for example: <<"abc"/utf8>> which is syntatic sugar for <<$a/utf8,$b/utf8,$c/utf8>>.
+
+A successful match of a segment of a utf type results in an integer in one of the ranges 0..16#D7FF, 16#E000..16#FFFD, or 16#10000..16#10FFFF (i.e. a valid Unicode code point). The match will fail if returned value would fall outside those ranges.
+
+A segment of type utf8 will match 1 to 4 bytes in the binary, if the binary at the match position contains a valid UTF-8 sequence. (See RFC-2279 or the Unicode standard.)
+
+A segment of type utf16 may match 2 or 4 bytes in the binary. The match will fail if the binary at the match position does not contain a legal UTF-16 encoding of a Unicode code point. (See RFC-2781 or the Unicode standard.)
+
+A segment of type utf32 may match 4 bytes in the binary in the same way as an integer segment matching 32 bits. The match will fail if the resulting integer is outside the legal ranges mentioned above.
+
+Examples:
+
+1> Bin1 = <<1,17,42>>.
+<<1,17,42>>
+2> Bin2 = <<"abc">>.
+<<97,98,99>>
+3> Bin3 = <<1,17,42:16>>.
+<<1,17,0,42>>
+4> <<A,B,C:16>> = <<1,17,42:16>>.
+<<1,17,0,42>>
+5> C.
+42
+6> <<D:16,E,F>> = <<1,17,42:16>>.
+<<1,17,0,42>>
+7> D.
+273
+8> F.
+42
+9> <<G,H/binary>> = <<1,17,42:16>>.
+<<1,17,0,42>>
+10> H.
+<<17,0,42>>
+11> <<G,H/bitstring>> = <<1,17,42:12>>.
+<<1,17,1,10:4>>
+12> H.
+<<17,1,10:4>>
+13> <<1024/utf8>>.
+<<208,128>>
+
+Note that bit string patterns cannot be nested.
+
+Note also that "B=<<1>>" is interpreted as "B =<<1>>" which is a syntax error. The correct way is to write a space after '=': "B= <<1>>.
+
+More examples can be found in Programming Examples.
+7.17  Fun Expressions
+
+fun
+    (Pattern11,...,Pattern1N) [when GuardSeq1] ->
+        Body1;
+    ...;
+    (PatternK1,...,PatternKN) [when GuardSeqK] ->
+        BodyK
+end
+
+A fun expression begins with the keyword fun and ends with the keyword end. Between them should be a function declaration, similar to a regular function declaration, except that no function name is specified.
+
+Variables in a fun head shadow variables in the function clause surrounding the fun expression, and variables bound in a fun body are local to the fun body.
+
+The return value of the expression is the resulting fun.
+
+Examples:
+
+1> Fun1 = fun (X) -> X+1 end.
+#Fun<erl_eval.6.39074546>
+2> Fun1(2).
+3
+3> Fun2 = fun (X) when X>=5 -> gt; (X) -> lt end.
+#Fun<erl_eval.6.39074546>
+4> Fun2(7).
+gt
+
+The following fun expressions are also allowed:
+
+fun Name/Arity
+fun Module:Name/Arity
+
+In Name/Arity, Name is an atom and Arity is an integer. Name/Arity must specify an existing local function. The expression is syntactic sugar for:
+
+fun (Arg1,...,ArgN) -> Name(Arg1,...,ArgN) end
+
+In Module:Name/Arity, Module and Name are atoms and Arity is an integer. A fun defined in this way will refer to the function Name with arity Arity in the latest version of module Module.
+
+When applied to a number N of arguments, a tuple {Module,FunctionName} is interpreted as a fun, referring to the function FunctionName with arity N in the module Module. The function must be exported. This usage is deprecated. See Function Calls for an example.
+
+More examples can be found in Programming Examples.
+7.18  Catch and Throw
+
+catch Expr
+
+Returns the value of Expr unless an exception occurs during the evaluation. In that case, the exception is caught. For exceptions of class error, that is run-time errors: {'EXIT',{Reason,Stack}} is returned. For exceptions of class exit, that is the code called exit(Term): {'EXIT',Term} is returned. For exceptions of class throw, that is the code called throw(Term): Term is returned.
+
+Reason depends on the type of error that occurred, and Stack is the stack of recent function calls, see Errors and Error Handling.
+
+Examples:
+
+1> catch 1+2.
+3
+2> catch 1+a.
+{'EXIT',{badarith,[...]}}
+
+Note that catch has low precedence and catch subexpressions often needs to be enclosed in a block expression or in parenthesis:
+
+3> A = catch 1+2.
+** 1: syntax error before: 'catch' **
+4> A = (catch 1+2).
+3
+
+The BIF throw(Any) can be used for non-local return from a function. It must be evaluated within a catch, which will return the value Any. Example:
+
+5> catch throw(hello).
+hello
+
+If throw/1 is not evaluated within a catch, a nocatch run-time error will occur.
+7.19  Try
+
+try Exprs
+catch
+    [Class1:]ExceptionPattern1 [when ExceptionGuardSeq1] ->
+        ExceptionBody1;
+    [ClassN:]ExceptionPatternN [when ExceptionGuardSeqN] ->
+        ExceptionBodyN
+end
+
+This is an enhancement of catch that appeared in Erlang 5.4/OTP-R10B. It gives the possibility do distinguish between different exception classes, and to choose to handle only the desired ones, passing the others on to an enclosing try or catch or to default error handling.
+
+Note that although the keyword catch is used in the try expression, there is not a catch expression within the try expression.
+
+Returns the value of Exprs (a sequence of expressions Expr1, ..., ExprN) unless an exception occurs during the evaluation. In that case the exception is caught and the patterns ExceptionPattern with the right exception class Class are sequentially matched against the caught exception. An omitted Class is shorthand for throw. If a match succeeds and the optional guard sequence ExceptionGuardSeq is true, the corresponding ExceptionBody is evaluated to become the return value.
+
+If an exception occurs during evaluation of Exprs but there is no matching ExceptionPattern of the right Class with a true guard sequence, the exception is passed on as if Exprs had not been enclosed in a try expression.
+
+If an exception occurs during evaluation of ExceptionBody it is not caught.
+
+The try expression can have an of section:
+
+try Exprs of
+    Pattern1 [when GuardSeq1] ->
+        Body1;
+    ...;
+    PatternN [when GuardSeqN] ->
+        BodyN
+catch
+    [Class1:]ExceptionPattern1 [when ExceptionGuardSeq1] ->
+        ExceptionBody1;
+    ...;
+    [ClassN:]ExceptionPatternN [when ExceptionGuardSeqN] ->
+        ExceptionBodyN
+end
+
+If the evaluation of Exprs succeeds without an exception, the patterns Pattern are sequentially matched against the result in the same way as for a case expression, except that if the matching fails, a try_clause run-time error will occur.
+
+An exception occurring during the evaluation of Body is not caught.
+
+The try expression can also be augmented with an after section, intended to be used for cleanup with side effects:
+
+try Exprs of
+    Pattern1 [when GuardSeq1] ->
+        Body1;
+    ...;
+    PatternN [when GuardSeqN] ->
+        BodyN
+catch
+    [Class1:]ExceptionPattern1 [when ExceptionGuardSeq1] ->
+        ExceptionBody1;
+    ...;
+    [ClassN:]ExceptionPatternN [when ExceptionGuardSeqN] ->
+        ExceptionBodyN
+after
+    AfterBody
+end
+
+AfterBody is evaluated after either Body or ExceptionBody no matter which one. The evaluated value of AfterBody is lost; the return value of the try expression is the same with an after section as without.
+
+Even if an exception occurs during evaluation of Body or ExceptionBody, AfterBody is evaluated. In this case the exception is passed on after AfterBody has been evaluated, so the exception from the try expression is the same with an after section as without.
+
+If an exception occurs during evaluation of AfterBody itself it is not caught, so if AfterBody is evaluated after an exception in Exprs, Body or ExceptionBody, that exception is lost and masked by the exception in AfterBody.
+
+The of, catch and after sections are all optional, as long as there is at least a catch or an after section, so the following are valid try expressions:
+
+try Exprs of 
+    Pattern when GuardSeq -> 
+        Body 
+after 
+    AfterBody 
+end
+try Exprs
+catch 
+    ExpressionPattern -> 
+        ExpressionBody
+after
+    AfterBody
+end
+try Exprs after AfterBody end
+
+Example of using after, this code will close the file even in the event of exceptions in file:read/2 or in binary_to_term/1, and exceptions will be the same as without the try...after...end expression:
+
+termize_file(Name) ->
+    {ok,F} = file:open(Name, [read,binary]),
+    try
+        {ok,Bin} = file:read(F, 1024*1024),
+        binary_to_term(Bin)
+    after
+        file:close(F)
+    end.
+
+Example: Using try to emulate catch Expr.
+
+try Expr
+catch
+    throw:Term -> Term;
+    exit:Reason -> {'EXIT',Reason}
+    error:Reason -> {'EXIT',{Reason,erlang:get_stacktrace()}}
+end
+
+7.20  Parenthesized Expressions
+
+(Expr)
+
+Parenthesized expressions are useful to override operator precedences, for example in arithmetic expressions:
+
+1> 1 + 2 * 3.
+7
+2> (1 + 2) * 3.
+9
+
+7.21  Block Expressions
+
+begin
+   Expr1,
+   ...,
+   ExprN
+end
+
+Block expressions provide a way to group a sequence of expressions, similar to a clause body. The return value is the value of the last expression ExprN.
+7.22  List Comprehensions
+
+List comprehensions are a feature of many modern functional programming languages. Subject to certain rules, they provide a succinct notation for generating elements in a list.
+
+List comprehensions are analogous to set comprehensions in Zermelo-Frankel set theory and are called ZF expressions in Miranda. They are analogous to the setof and findall predicates in Prolog.
+
+List comprehensions are written with the following syntax:
+
+[Expr || Qualifier1,...,QualifierN]
+
+Expr is an arbitrary expression, and each Qualifier is either a generator or a filter.
+
+    A generator is written as:
+      Pattern <- ListExpr.
+    ListExpr must be an expression which evaluates to a list of terms.
+    A bit string generator is written as:
+      BitstringPattern <= BitStringExpr.
+    BitStringExpr must be an expression which evaluates to a bitstring.
+    A filter is an expression which evaluates to true or false.
+
+The variables in the generator patterns shadow variables in the function clause surrounding the list comprehensions.
+
+A list comprehension returns a list, where the elements are the result of evaluating Expr for each combination of generator list elements and bit string generator elements for which all filters are true.
+
+Example:
+
+1> [X*2 || X <- [1,2,3]].
+[2,4,6]
+
+More examples can be found in Programming Examples.
+7.23  Bit String Comprehensions
+
+Bit string comprehensions are analogous to List Comprehensions. They are used to generate bit strings efficiently and succinctly.
+
+Bit string comprehensions are written with the following syntax:
+
+<< BitString || Qualifier1,...,QualifierN >>
+
+BitString is a bit string expression, and each Qualifier is either a generator, a bit string generator or a filter.
+
+    A generator is written as:
+      Pattern <- ListExpr.
+    ListExpr must be an expression which evaluates to a list of terms.
+    A bit string generator is written as:
+      BitstringPattern <= BitStringExpr.
+    BitStringExpr must be an expression which evaluates to a bitstring.
+    A filter is an expression which evaluates to true or false.
+
+The variables in the generator patterns shadow variables in the function clause surrounding the bit string comprehensions.
+
+A bit string comprehension returns a bit string, which is created by concatenating the results of evaluating BitString for each combination of bit string generator elements for which all filters are true.
+
+Example:
+
+1> << << (X*2) >> || 
+<<X>> <= << 1,2,3 >> >>.
+<<2,4,6>>
+
+More examples can be found in Programming Examples.
+7.24  Guard Sequences
+
+A guard sequence is a sequence of guards, separated by semicolon (;). The guard sequence is true if at least one of the guards is true. (The remaining guards, if any, will not be evaluated.)
+Guard1;...;GuardK
+
+A guard is a sequence of guard expressions, separated by comma (,). The guard is true if all guard expressions evaluate to true.
+GuardExpr1,...,GuardExprN
+
+The set of valid guard expressions (sometimes called guard tests) is a subset of the set of valid Erlang expressions. The reason for restricting the set of valid expressions is that evaluation of a guard expression must be guaranteed to be free of side effects. Valid guard expressions are:
+
+    the atom true,
+    other constants (terms and bound variables), all regarded as false,
+    calls to the BIFs specified below,
+    term comparisons,
+    arithmetic expressions,
+    boolean expressions, and
+    short-circuit expressions (andalso/orelse).
+
+is_atom/1
+is_binary/1
+is_bitstring/1
+is_boolean/1
+is_float/1
+is_function/1
+is_function/2
+is_integer/1
+is_list/1
+is_number/1
+is_pid/1
+is_port/1
+is_record/2
+is_record/3
+is_reference/1
+is_tuple/1
+Table 7.4:   Type Test BIFs.
+
+Note that most type test BIFs have older equivalents, without the is_ prefix. These old BIFs are retained for backwards compatibility only and should not be used in new code. They are also only allowed at top level. For example, they are not allowed in boolean expressions in guards.
+abs(Number)
+bit_size(Bitstring)
+byte_size(Bitstring)
+element(N, Tuple)
+float(Term)
+hd(List)
+length(List)
+node()
+node(Pid|Ref|Port)
+round(Number)
+self()
+size(Tuple|Bitstring)
+tl(List)
+trunc(Number)
+tuple_size(Tuple)
+Table 7.5:   Other BIFs Allowed in Guard Expressions.
+
+If an arithmetic expression, a boolean expression, a short-circuit expression, or a call to a guard BIF fails (because of invalid arguments), the entire guard fails. If the guard was part of a guard sequence, the next guard in the sequence (that is, the guard following the next semicolon) will be evaluated.
+7.25  Operator Precedence
+
+Operator precedence in falling priority:
+: 	 
+# 	 
+Unary + - bnot not 	 
+/ * div rem band and 	Left associative
++ - bor bxor bsl bsr or xor 	Left associative
+++ -- 	Right associative
+== /= =< < >= > =:= =/= 	 
+andalso 	 
+orelse 	 
+= ! 	Right associative
+catch 	 
+Table 7.6:   Operator Precedence.
+
+When evaluating an expression, the operator with the highest priority is evaluated first. Operators with the same priority are evaluated according to their associativity. Example: The left associative arithmetic operators are evaluated left to right:
+
+6 + 5 * 4 - 3 / 2 evaluates to
+6 + 20 - 1.5 evaluates to
+26 - 1.5 evaluates to
+24.5
+

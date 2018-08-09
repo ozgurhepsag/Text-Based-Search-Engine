@@ -1,0 +1,430 @@
+
+Apple Inc.
+From Wikipedia, the free encyclopedia
+This article is about the technology company. For other companies named "Apple", see Apple (disambiguation).
+
+Apple Inc.
+
+Type	Public
+Traded as	NASDAQ: AAPL
+NASDAQ-100 Component
+S&P 500 Component
+Industry	Computer hardware
+Computer software
+Consumer electronics
+Digital distribution
+Founded	April 1, 1976
+Founder(s)	Steve Jobs
+Steve Wozniak
+Ronald Wayne[1]
+Headquarters	Apple Campus
+1 Infinite Loop
+Cupertino, California, U.S.
+Number of locations	317 retail stores (as of October 2010)[2]
+Area served	Worldwide
+Key people	
+Tim Cook
+(CEO)
+Steve Jobs
+(Chairman)
+Senior Vice Presidents[show]
+Products	
+Products list[show]
+Services	
+Services list[show]
+Revenue	 US$ 65.23 billion (FY 2010)[2]
+Operating income	 US$ 18.39 billion (FY 2010)[2]
+Profit	 US$ 14.01 billion (FY 2010)[2]
+Total assets	 US$ 75.18 billion (FY 2010)[2]
+Total equity	 US$ 47.79 billion (FY 2010)[2]
+Employees	49,400 (2010)[2]
+Subsidiaries	Braeburn Capital
+FileMaker Inc.
+Website	Apple.com
+Apple Inc. (NASDAQ: AAPL; previously Apple Computer, Inc.) is an American multinational corporation that designs and markets consumer electronics, computer software, and personal computers. The company's best-known hardware products include the Macintosh line of computers, the iPod, the iPhone and the iPad. Apple software includes the Mac OS X operating system; the iTunes media browser; the iLife suite of multimedia and creativity software; the iWork suite of productivity software; Aperture, a professional photography package; Final Cut Studio, a suite of professional audio and film-industry software products; Logic Studio, a suite of music production tools; the Safari web browser; and iOS, a mobile operating system. As of October 2010, the company operates 317 retail stores[3] in ten countries,[4] and an online store where hardware and software products are sold.[5] As of September 2011, Apple is the largest publicly traded company in the world by market capitalization and the largest technology company in the world by revenue and profit.[6]
+Established on April 1, 1976 in Cupertino, California, and incorporated January 3, 1977,[7] the company was previously named Apple Computer, Inc., for its first 30 years, but removed the word "Computer" on January 9, 2007,[8] to reflect the company's ongoing expansion into the consumer electronics market in addition to its traditional focus on personal computers.[9] As of September 2010, Apple had 46,600 full time employees and 2,800 temporary full time employees worldwide[2] and had worldwide annual sales of $65.23 billion.[2]
+For reasons as various as its philosophy of comprehensive aesthetic design to its distinctive advertising campaigns, Apple has established a unique reputation in the consumer electronics industry. This includes a customer base that is devoted to the company and its brand, particularly in the United States.[10] Fortune magazine named Apple the most admired company in the United States in 2008, and in the world in 2008, 2009, and 2010.[11][12][13] The company has also received widespread criticism for its contractors' labor, environmental, and business practices.[14][15]
+Contents [show]
+History
+
+Main article: History of Apple Inc.
+1976–1980: The early years
+
+
+The Apple I, Apple's first product, was sold as an assembled circuit board and lacked basic features such as a keyboard, monitor, and case. The owner of this unit added a keyboard and a wooden case.
+Apple was established on April 1, 1976 by Steve Jobs, Steve Wozniak, and Ronald Wayne,[1] to sell the Apple I personal computer kit. They were hand-built by Wozniak[16][17] and first shown to the public at the Homebrew Computer Club.[18] The Apple I was sold as a motherboard (with CPU, RAM, and basic textual-video chips)—less than what is today considered a complete personal computer.[19] The Apple I went on sale in July 1976 and was market-priced at $666.66 ($2,572 in 2011 dollars, adjusted for inflation.)[20][21][22][23][24][25]
+Apple was incorporated January 3, 1977[7] without Wayne, who sold his share of the company back to Jobs and Wozniak for $800. Multi-millionaire Mike Markkula provided essential business expertise and funding of $250,000 during the incorporation of Apple.[26][27]
+The Apple II was introduced on April 16, 1977 at the first West Coast Computer Faire. It differed from its major rivals, the TRS-80 and Commodore PET, because it came with color graphics and an open architecture. While early models used ordinary cassette tapes as storage devices, they were superseded by the introduction of a 5 1/4 inch floppy disk drive and interface, the Disk II.[28]
+The Apple II was chosen to be the desktop platform for the first "killer app" of the business world—the VisiCalc spreadsheet program.[29] VisiCalc created a business market for the Apple II, and gave home users an additional reason to buy an Apple II—compatibility with the office.[29] According to Brian Bagnall, Apple exaggerated its sales figures and was a distant third place to Commodore and Tandy until VisiCalc came along.[30][31]
+By the end of the 1970s, Apple had a staff of computer designers and a production line. The company introduced the ill-fated Apple III in May 1980 in an attempt to compete with IBM and Microsoft in the business and corporate computing market.[32]
+Jobs and several Apple employees including Jef Raskin visited Xerox PARC in December 1979 to see the Xerox Alto. Xerox granted Apple engineers three days of access to the PARC facilities in return for the option to buy 100,000 shares (800,000 split-adjusted shares) of Apple at the pre-IPO price of $10 a share.[33] Jobs was immediately convinced that all future computers would use a graphical user interface (GUI), and development of a GUI began for the Apple Lisa.[34]
+When Apple went public, it generated more capital than any IPO since Ford Motor Company in 1956 and instantly created more millionaires (about 300) than any company in history.
+1981–1985: Lisa and Macintosh
+
+
+The Model from Apple's "1984" ad, set in a dystopian future modeled after the George Orwell novel Nineteen Eighty-Four, set the tone for the introduction of the Macintosh.
+Steve Jobs began working on the Apple Lisa in 1978 but in 1982 he was pushed from the Lisa team due to infighting, and took over Jef Raskin's low-cost-computer project, the Macintosh. A turf war broke out between Lisa's "corporate shirts" and Jobs' "pirates" over which product would ship first and save Apple. Lisa won the race in 1983 and became the first personal computer sold to the public with a GUI, but was a commercial failure due to its high price tag and limited software titles.[35]
+
+
+The first Macintosh, released in 1984
+In 1984, Apple next launched the Macintosh. Its debut was announced by the now famous $1.5 million television commercial "1984". It was directed by Ridley Scott, aired during the third quarter of Super Bowl XVIII on January 22, 1984,[36] and is now considered a watershed event for Apple's success[37] and a "masterpiece".[38][39]
+The Macintosh initially sold well, but follow-up sales were not strong[40] due to its high price and limited range of software titles. The machine's fortunes changed with the introduction of the LaserWriter, the first PostScript laser printer to be offered at a reasonable price, and PageMaker, an early desktop publishing package. The Mac was particularly powerful in this market due to its advanced graphics capabilities, which had necessarily been built in to create the intuitive Macintosh GUI. It has been suggested that the combination of these three products was responsible for the creation of the desktop publishing market.[41]
+In 1985 a power struggle developed between Jobs and CEO John Sculley, who had been hired two years earlier.[42] The Apple board of directors instructed Sculley to "contain" Jobs and limit his ability to launch expensive forays into untested products. Rather than submit to Sculley's direction, Jobs attempted to oust him from his leadership role at Apple. Sculley found out that Jobs had been attempting to organize a putsch and called a board meeting at which Apple's board of directors sided with Sculley and removed Jobs from his managerial duties.[40] Jobs resigned from Apple and founded NeXT Inc. the same year.[43]
+1986–1993: Rise and fall
+See also: Timeline of Apple II family and Timeline of Macintosh models
+
+
+The Macintosh Portable was Apple's first "portable" Macintosh computer, released in 1989.
+Having learned several painful lessons after introducing the bulky Macintosh Portable in 1989, Apple introduced the PowerBook in 1991, which established the modern form factor and ergonomic layout of the laptop computer.[44] The Macintosh Portable was designed to be just as powerful as a desktop Macintosh, but weighed 7.5 kilograms (17 lb) with a 12-hour battery life. The same year, Apple introduced System 7, a major upgrade to the operating system, which added color to the interface and introduced new networking capabilities. It remained the architectural basis for Mac OS until 2001.
+The success of the PowerBook and other products brought increasing revenue.[42] For some time, it appeared that Apple could do no wrong, introducing fresh new products and generating increasing profits in the process. The magazine MacAddict named the period between 1989 and 1991 as the "first golden age" of the Macintosh.
+Following the success of the Macintosh LC, Apple introduced the Centris line, a low-end Quadra offering, and the ill-fated Performa line that was sold in several confusing configurations and software bundles to avoid competing with the various consumer outlets such as Sears, Price Club, and Wal-Mart, the primary dealers for these models. The result was disastrous for Apple as consumers did not understand the difference between models.[45]
+During this time Apple experimented with a number of other failed consumer targeted products including digital cameras, portable CD audio players, speakers, video consoles, and TV appliances. Enormous resources were also invested in the problem-plagued Newton division based on John Sculley's unrealistic market forecasts.[citation needed] Ultimately, all of this proved too-little-too-late for Apple as their market share and stock prices continued to slide.[citation needed]
+Apple saw the Apple II series as too expensive to produce, while taking away sales from the low end Macintosh.[46] In 1990, Apple released the Macintosh LC with a single expansion slot for the Apple IIe Card to migrate Apple II users to the Macintosh platform.[46] Apple stopped selling the Apple IIe in 1993.
+Microsoft continued to gain market share with Windows, focusing on delivering software to cheap commodity personal computers while Apple was delivering a richly engineered, but expensive, experience.[47] Apple relied on high profit margins and never developed a clear response. Instead they sued Microsoft for using a graphical user interface similar to the Apple Lisa in Apple Computer, Inc. v. Microsoft Corporation.[48] The lawsuit dragged on for years before it was finally dismissed. At the same time, a series of major product flops and missed deadlines sullied Apple's reputation, and Sculley was replaced by Michael Spindler.[49]
+1994–1997: Attempts at reinvention
+
+
+The Newton was Apple's first foray into the PDA markets, as well as one of the first in the industry. Despite being a financial flop at the time of its release, it helped pave the way for the Palm Pilot and Apple's own iPhone and iPad in the future.
+By the early 1990s, Apple was developing alternative platforms to the Macintosh, such as the A/UX. Apple had also begun to experiment in providing a Mac-only online portal which they called eWorld, developed in collaboration with America Online and designed as a Mac-friendly alternative to other online services such as CompuServe. The Macintosh platform was itself becoming outdated because it was not built for multitasking, and several important software routines were programmed directly into the hardware. In addition, Apple was facing competition from OS/2 and UNIX vendors like Sun Microsystems. The Macintosh would need to be replaced by a new platform, or reworked to run on more powerful hardware.[50]
+In 1994, Apple allied with IBM and Motorola in the AIM alliance. The goal was to create a new computing platform (the PowerPC Reference Platform), which would use IBM and Motorola hardware coupled with Apple's software. The AIM alliance hoped that PReP's performance and Apple's software would leave the PC far behind, thus countering Microsoft. The same year, Apple introduced the Power Macintosh, the first of many Apple computers to use IBM's PowerPC processor.[51]
+In 1996, Michael Spindler was replaced by Gil Amelio as CEO. Gil Amelio made many changes at Apple, including massive layoffs.[52] After multiple failed attempts to improve Mac OS, first with the Taligent project, then later with Copland and Gershwin, Amelio chose to purchase NeXT and its NeXTSTEP operating system, bringing Steve Jobs back to Apple as an advisor.[53] On July 9, 1997, Gil Amelio was ousted by the board of directors after overseeing a three-year record-low stock price and crippling financial losses. Jobs became the interim CEO and began restructuring the company's product line.
+At the 1997 Macworld Expo, Steve Jobs announced that Apple would join Microsoft to release new versions of Microsoft Office for the Macintosh, and that Microsoft made a $150 million investment in non-voting Apple stock.[54]
+On November 10, 1997, Apple introduced the Apple Store, tied to a new build-to-order manufacturing strategy.[55][56]
+1998–2005: Return to profitability
+On August 15, 1998, Apple introduced a new all-in-one computer reminiscent of the Macintosh 128K: the iMac. The iMac design team was led by Jonathan Ive, who would later design the iPod and the iPhone.[57][58] The iMac featured modern technology and a unique design, and sold almost 800,000 units in its first five months.[59]
+Through this period, Apple purchased several companies to create a portfolio of professional and consumer-oriented digital production software. In 1998, Apple announced the purchase of Macromedia's Final Cut software, signaling its expansion into the digital video editing market.[60] The following year, Apple released two video editing products: iMovie for consumers and, for professionals, Final Cut Pro, which has gone on to be a significant video-editing program, with 800,000 registered users in early 2007.[61] In 2002 Apple purchased Nothing Real for their advanced digital compositing application Shake,[62] as well as Emagic for their music productivity application Logic, which led to the development of their consumer-level GarageBand application.[63][64] iPhoto's release the same year completed the iLife suite.[65]
+
+
+Apple retail stores allow potential customers to use floor models without making a purchase.
+Mac OS X, based on NeXT's OPENSTEP and BSD Unix was released on March 24, 2001, after several years of development. Aimed at consumers and professionals alike, Mac OS X aimed to combine the stability, reliability and security of Unix with the ease of use afforded by an overhauled user interface. To aid users in migrating from Mac OS 9, the new operating system allowed the use of OS 9 applications through Mac OS X's Classic environment.[66]
+On May 19, 2001, Apple opened the first official Apple Retail Stores in Virginia and California.[67] later on July 9 they bought Spruce Technologies, a DVD authoring company. On October 23 of the same year, Apple announced the iPod portable digital audio player, and started selling it on November 10. The product was phenomenally successful — over 100 million units were sold within six years.[68][69] In 2003, Apple's iTunes Store was introduced, offering online music downloads for $0.99 a song and integration with the iPod. The service quickly became the market leader in online music services, with over 5 billion downloads by June 19, 2008.[70]
+Since 2001 Apple's design team has progressively abandoned the use of translucent colored plastics first used in the iMac G3. This began with the titanium PowerBook and was followed by the white polycarbonate iBook and the flat-panel iMac.[71][72]
+2005–2007: The Intel transition
+Main article: Apple–Intel transition
+
+
+The MacBook Pro (15.4" widescreen) was Apple's first laptop with an Intel microprocessor. It was announced in January 2006 and is aimed at the professional market.
+At the Worldwide Developers Conference keynote address on June 6, 2005, Steve Jobs announced that Apple would begin producing Intel-based Mac computers in 2006.[73] On January 10, 2006, the new MacBook Pro and iMac became the first Apple computers to use Intel's Core Duo CPU. By August 7, 2006 Apple had transitioned the entire Mac product line to Intel chips, over one year sooner than announced.[73] The Power Mac, iBook, and PowerBook brands were retired during the transition; the Mac Pro, MacBook, and MacBook Pro became their respective successors.[74][75] On April 29, 2009, The Wall Street Journal reported that Apple was building its own team of engineers to design microchips.[76]
+Apple also introduced Boot Camp to help users install Windows XP or Windows Vista on their Intel Macs alongside Mac OS X.[77]
+Apple's success during this period was evident in its stock price. Between early 2003 and 2006, the price of Apple's stock increased more than tenfold, from around $6 per share (split-adjusted) to over $80. In January 2006, Apple's market cap surpassed that of Dell.[78] Nine years prior, Dell's CEO Michael Dell said that if he ran Apple he would "shut it down and give the money back to the shareholders."[79]
+Although Apple's market share in computers has grown, it remains far behind competitors using Microsoft Windows, with only about 8% of desktops and laptops in the U.S.[80]
+2007–present: iPhone and iPad
+Delivering his keynote speech at the Macworld Expo on January 9, 2007, Jobs announced that Apple Computer, Inc. would from that point on be known as Apple Inc., because computers were no longer the main focus of the company, which had shifted its emphasis to mobile electronic devices. The event also saw the announcement of the iPhone and the Apple TV.[81] The following day, Apple shares hit $97.80, an all-time high at that point. In May, Apple's share price passed the $100 mark.[82]
+In an article posted on Apple's website on February 6, 2007, Steve Jobs wrote that Apple would be willing to sell music on the iTunes Store without DRM (which would allow tracks to be played on third-party players) if record labels would agree to drop the technology.[83] On April 2, 2007, Apple and EMI jointly announced the removal of DRM technology from EMI's catalog in the iTunes Store, effective in May.[84] Other record labels followed later that year.
+In July of the following year, Apple launched the App Store to sell third-party applications for the iPhone and iPod Touch.[85] Within a month, the store sold 60 million applications and brought in $1 million daily on average, with Jobs speculating that the App Store could become a billion-dollar business for Apple.[86] Three months later, it was announced that Apple had become the third-largest mobile handset supplier in the world due to the popularity of the iPhone.[87]
+On December 16, 2008, Apple announced that after over 20 years of attending Macworld, 2009 would be the last year Apple would be attending the Macworld Expo, and that Phil Schiller would deliver the 2009 keynote in lieu of the expected Jobs.[88] Almost exactly one month later, on January 14, 2009, an internal Apple memo from Jobs announced that he would be taking a six-month leave of absence, until the end of June 2009, to allow him to better focus on his health and to allow the company to better focus on its products without having the rampant media speculating about his health.[89] Despite Jobs' absence, Apple recorded its best non-holiday quarter (Q1 FY 2009) during the recession with a revenue of $8.16 billion and a profit of $1.21 billion.[90]
+	Wikinews has related news:
+Apple unveils iPhone 4, iOS 4 at Worldwide Developers Conference 2010
+Apple to give free cases, refunds to iPhone 4 owners
+Apple unveils new iPods, Apple TV; updates iOS, iTunes
+Apple unveils new MacBook Air laptops, iLife '11 software suite
+After years of speculation and multiple rumored "leaks" Apple announced a large screen, tablet-like media device known as the iPad on January 27, 2010. The iPad runs the same touch based operating system that the iPhone uses and many of the same iPhone apps are compatible with the iPad. This gave the iPad a large app catalog on launch even with very little development time before the release. Later that year on April 3, 2010, the iPad was launched in the US and sold more than 300,000 units on that day and reaching 500,000 by the end of the first week.[91] In May of the same year, Apple's market cap exceeded that of competitor Microsoft for the first time since 1989.[92]
+Apple released the fourth generation iPhone, which introduced video calling, multitasking, and a new uninsulated stainless steel design, which acts as the phone's antenna. Because of this antenna implementation, some iPhone 4 users reported a reduction in signal strength when the phone is held in specific ways. After a large amount of media coverage including mainstream news organizations, Apple held a press conference where they offered buyers a free rubber 'bumper' case, which had been proven to eliminate the signal reduction issue. Later that year Apple again refreshed its iPod line of MP3 players which introduced a multi-touch iPod Nano, iPod Touch with FaceTime, and iPod Shuffle with buttons which brought back the buttons of earlier generations.[93][94][95]
+In October 2010, Apple shares hit an all-time high, eclipsing $300.[96] Additionally, on October 20, Apple updated their MacBook Air laptop, iLife suite of applications, and unveiled Mac OS X Lion, the latest installment in their Mac OS X operating system.[97] On January 6, 2011, the company opened their Mac App Store, a digital software distribution platform, similar to the existing iOS App Store.[98] Apple was featured in the documentary Something Ventured which premiered in 2011.
+On January 17, 2011, an internal Apple memo from Jobs announced that he will once again take a medical leave of absence, for an indefinite period, to allow him to focus on his health. Then chief operating officer Timothy D. Cook took up Jobs' day-to-day operations at Apple, although Jobs would still remain "involved in major strategic decisions for the company."[99]
+After Apple Inc. surpassed Microsoft in market capitalization in 2010, it also become the most valuable consumer-facing brand in the world with an 84 percent increase to $153.3 billion.[100]
+In June of 2011, Apple unveiled its new online storage and syncing service for music, photos, files and software—iCloud. [101]
+It has been argued that Apple has achieved such efficiency in their supply chain[102] that they have something like a monopsony (one buyer, many sellers) in that it can dictate terms to its suppliers[103].
+Briefly in July 2011, due to the debt-ceiling crisis, Apple's financial reserves were greater than those of the US Government.[104]
+On August 24, 2011 Steve Jobs resigned his position as Chief Executive Officer of Apple.[105] He has been replaced by longtime Chief Operating Officer Tim Cook, and Jobs is now Apple's chairman. Prior to this, Apple did not have a chairman and instead had two co-lead directors, Andrea Jung and Arthur D. Levinson, who continue with those titles.[106]
+Products
+
+See also: Timeline of Apple products and List of products discontinued by Apple Inc.
+Mac and accessories
+See also: Timeline of Macintosh models, List of Macintosh models grouped by CPU type, and List of Macintosh models by case type
+
+
+The Mac mini
+Mac mini, consumer sub-desktop computer and server introduced in 2005.
+iMac, consumer all-in-one desktop computer introduced in 1998.
+Mac Pro, workstation-class desktop computer introduced in 2006, replacing the Power Macintosh.
+MacBook, consumer notebook introduced in 2006, replacing the iBook, now only being sold to educational institutions.
+MacBook Pro, professional notebook introduced in 2006, replacing the PowerBook.
+MacBook Air, ultra-thin, ultra-portable notebook introduced in 2008.
+Apple also sells a variety of computer accessories for Mac computers including the AirPort wireless networking products, Time Capsule, Thunderbolt Display, Magic Mouse, Magic Trackpad, Wireless Keyboard, and the Apple Battery Charger.
+iPad
+Main article: iPad
+On January 27, 2010, Apple introduced their much-anticipated media tablet, the iPad running a modified version of iOS. It offers multi-touch interaction with multimedia formats including newspapers, magazines, ebooks, textbooks, photos, movies, TV shows videos, music, word processing documents, spreadsheets, video games, and most existing iPhone apps.[107] It also includes a mobile version of Safari for web browsing, as well as access to the App Store, iTunes Library, iBooks Store, contacts, and notepad. Content is downloadable via Wi-Fi and optional 3G service or synced through the user's computer.[108] AT&T was initially the sole US provider of 3G wireless access for the iPad.[109]
+On March 2, 2011, Apple introduced an updated iPad model which had a faster processor and two cameras on the front and back respectively. The iPad 2 also added support for optional 3G service provided by Verizon in addition to the existing offering by AT&T.[110] However, the availability of the iPad 2 has been limited as a result of the devastating tsunami and ensuing earthquake in Japan in March 2011.[111]
+iPod
+Main article: iPod
+
+
+The current iPod family, featuring the iPod Shuffle, iPod Nano, iPod Classic, and iPod Touch
+On October 23, 2001, Apple introduced the iPod digital music player. It has evolved to include various models targeting the wants of different users. The iPod is the market leader in portable music players by a significant margin, with more than 220 million units shipped as of September 2009.[112] Apple has partnered with Nike to offer the Nike+iPod Sports Kit enabling runners to synchronize and monitor their runs with iTunes and the Nike+ website. Apple currently sells four variants of the iPod.
+iPod Classic (previously named iPod from 2001 to 2007), portable media player first introduced in 2001, currently available in a 160 GB model.
+iPod Nano, portable media player first introduced in 2005, currently available in 8 and 16 GB models. The newest generation has a FM radio, a pedometer, and a new multi-touch interface that replaced the traditional iPod click wheel.
+iPod Shuffle, digital audio player first introduced in 2005, currently available in 2 and 4 GB models.
+iPod Touch, portable media player that runs iOS, first introduced in September 2007 after the iPhone went on sale. Currently available in 8, 32, and 64 GB models. The latest generation features the Apple A4 processor, a Retina Display, and dual cameras on the front and back. The back camera allows video recording at 720p.
+iPhone
+Main article: iPhone
+At the Macworld Conference & Expo in January 2007, Steve Jobs revealed the long anticipated[113] iPhone, a convergence of an Internet-enabled smartphone and iPod.[114] The original iPhone combined a 2.5G quad band GSM and EDGE cellular phone with features found in hand held devices, running scaled-down versions of Apple's Mac OS X (dubbed iOS, formerly iPhone OS), with various Mac OS X applications such as Safari and Mail. It also includes web-based and Dashboard apps such as Google Maps and Weather. The iPhone features a 3.5-inch (89 mm) touch screen display, 4, 8, or 16 GB of memory, Bluetooth, and Wi-Fi (both "b" and "g").[114] The iPhone first became available on June 29, 2007 for $499 (4 GB) and $599 (8 GB) with an AT&T contract.[115] On February 5, 2008, Apple updated the original iPhone to have 16 GB of memory, in addition to the 8 GB and 4 GB models.[116] On June 9, 2008, at WWDC 2008, Steve Jobs announced that the iPhone 3G would be available on July 11, 2008.[117] This version added support for 3G networking, assisted-GPS navigation, and a price cut to $199 for the 8 GB version, and $299 for the 16 GB version, which was available in both black and white. The new version was visually different from its predecessor in that it eliminated the flat silver back, and large antenna square for a curved glossy black or white back. Following complaints from many people, the headphone jack was changed from a recessed jack to a flush jack to be compatible with more styles of headphones. The software capabilities changed as well, with the release of the new iPhone came the release of Apple's App Store; the store provided applications for download that were compatible with the iPhone. On April 24, 2009, the App Store surpassed one billion downloads.[118] On June 8, 2009, at Apple's annual worldwide developers conference, the iPhone 3GS was announced, providing an incremental update to the device including faster internal components, support for faster 3G speeds, video recording capability, and voice control. On June 7, 2010, at WWDC 2010, the iPhone 4 was announced, which Apple says is its "'biggest leap we've taken" since the original iPhone.[119] The phone includes an all-new design, 960x640 display, Apple's A4 processor used in the iPad, a gyroscope for enhanced gaming, 5MP camera with LED flash, front-facing VGA camera and FaceTime video calling. Shortly after the release of the iPhone 4, it was realized by consumers that the new iPhone had reception issues. This is due to the stainless steel band around the edge of the device, which also serves as the phones cellular signal and Wi-Fi antenna. The current fix for this issue was a "Bumper Case" for the phone distributed for free to all iPhone 4 owners for a few months. In June 2011, Apple overtook Nokia to become the world's biggest smartphone maker by volume.[120]
+Apple TV
+Main article: Apple TV
+
+
+The Apple TV, in its most recent revision
+At the 2007 Macworld conference, Jobs demonstrated the Apple TV, (previously known as the iTV),[121] a set-top video device intended to bridge the sale of content from iTunes with high-definition televisions. The device links up to a user's TV and syncs, either via Wi-Fi or a wired network, with one computer's iTunes library and streams from an additional four. The Apple TV originally incorporated a 40 GB hard drive for storage, includes outputs for HDMI and component video, and plays video at a maximum resolution of 720p.[122] On May 31, 2007 a 160 GB drive was released alongside the existing 40 GB model[123] and on January 15, 2008 a software update was released, which allowed media to be purchased directly from the Apple TV.[124] In September 2009, Apple discontinued the original 40 GB Apple TV and now continues to produce and sell the 160 GB Apple TV. On September 1, 2010, alongside the release of the new line of iPod devices for the year, Apple released a completely redesigned Apple TV. The new device is 1/4 the size, runs quieter, and replaces the need for a hard drive with media streaming from any iTunes library on the network along with 8 GB of flash memory to cache media downloaded. Apple with the Apple TV has added another device to its portfolio that runs on its A4 processor along with the iPad and the iPhone. The memory included in the device is the half of the iPhone 4 at 256 MB; the same as the iPad, iPhone 3GS, iPod touch 3G, and iPod touch 4G.[125] It has HDMI out as the only video out source. Features include access to the iTunes Store to rent movies and TV shows (purchasing has been discontinued), streaming from internet video sources, including YouTube and Netflix, and media streaming from an iTunes library. Apple also reduced the price of the device to $99.
+Software
+See also: List of Macintosh software
+Apple develops its own operating system to run on Macs, Mac OS X, the latest version being Mac OS X Lion (version 10.7). Apple also independently develops computer software titles for its Mac OS X operating system. Much of the software Apple develops is bundled with its computers. An example of this is the consumer-oriented iLife software package that bundles iDVD, iMovie, iPhoto, iTunes, GarageBand, and iWeb. For presentation, page layout and word processing, iWork is available, which includes Keynote, Pages, and Numbers. iTunes, QuickTime media player, Safari web browser, and Software Update are available as free downloads for both Mac OS X and Windows.
+Apple also offers a range of professional software titles. Their range of server software includes the operating system Mac OS X Server; Apple Remote Desktop, a remote systems management application; WebObjects, Java EE Web application server; and Xsan, a Storage Area Network file system. For the professional creative market, there is Aperture for professional RAW-format photo processing; Final Cut Studio, a video production suite; Logic, a comprehensive music toolkit and Shake, an advanced effects composition program.
+Apple also offers online services with MobileMe (formerly .Mac) that bundles personal web pages, email, Groups, iDisk, backup, iSync, and Learning Center online tutorials. MobileMe is a subscription-based internet suite that capitalizes on the ability to store personal data on an online server and thereby keep all web-connected devices in sync.[126] Announced at MacWorld Expo 2009, iWork.com allows iWork users to upload documents for sharing and collaboration.
+Timeline of Apple products
+
+See also: Timeline of Apple Inc. products, Timeline of Apple II family, and Timeline of Macintosh models
+ 
+Products on this timeline indicate introduction dates only and not necessarily discontinued dates, as new products begin on a contiguous product line.
+Culture
+
+Corporate
+Apple was one of several highly successful companies founded in the 1970s that bucked the traditional notions of what a corporate culture should look like in organizational hierarchy (flat versus tall, casual versus formal attire, etc.). Other highly successful firms with similar cultural aspects from the same period include Southwest Airlines and Microsoft. Originally, the company stood in opposition to staid competitors like IBM by default, thanks to the influence of its founders; Steve Jobs often walked around the office barefoot even after Apple was a Fortune 500 company. By the time of the "1984" TV ad, this trait had become a key way the company attempts to differentiate itself from its competitors.[127]
+As the company has grown and been led by a series of chief executives, each with his own idea of what Apple should be, some of its original character has arguably been lost, but Apple still has a reputation for fostering individuality and excellence that reliably draws talented people into its employ, especially after Jobs' return. To recognize the best of its employees, Apple created the Apple Fellows program, awarding individuals who made extraordinary technical or leadership contributions to personal computing while at the company. The Apple Fellowship has so far been awarded to a few individuals including Bill Atkinson,[128] Steve Capps,[129] Rod Holt,[128] Alan Kay,[130][131] Guy Kawasaki,[130][132] Al Alcorn,[133] Don Norman,[130] Rich Page,[128] and Steve Wozniak.[128]
+Numerous employees of Apple have cited that projects without Jobs' involvement often take longer than projects with his involvement.[134] Another presents the image of Jobs "wandering the hall with a flame thrower in hand, asking random people 'do you work on MobileMe?'".[135]
+Users
+
+
+Apple aficionados wait in line around an Apple retail store in anticipation of a new product. This branch is located on Fifth Avenue in New York City, with a glass cube housing a cylindrical elevator and a spiral staircase that lead into the subterranean store.
+While this brand loyalty is considered unusual for any product, Apple appears not to have gone out of its way to create it. At one time, Apple evangelists were actively engaged by the company, but this was after the phenomenon was already firmly established. Apple evangelist Guy Kawasaki has called the brand fanaticism "something that was stumbled upon".[136] Apple has, however, supported the continuing existence of a network of Mac User Groups in most major and many minor centers of population where Mac computers are available.
+Mac users would meet at the European Apple Expo and the San Francisco Macworld Conference & Expo trade shows where Apple traditionally introduced new products each year to the industry and public until Apple pulled out of both events. While the conferences continue, Apple does not have official representation there. Mac developers, in turn, continue to gather at the annual Apple Worldwide Developers Conference.
+Apple Store openings can draw crowds of thousands, with some waiting in line as much as a day before the opening or flying in from other countries for the event.[137] The New York City Fifth Avenue "Cube" store had a line as long as half a mile; a few Mac fans took the opportunity of the setting to propose marriage.[138] The Ginza opening in Tokyo was estimated in the thousands with a line exceeding eight city blocks.[139]
+John Sculley told The Guardian newspaper in 1997: "People talk about technology, but Apple was a marketing company. It was the marketing company of the decade."[140]
+Research in 2002 by NetRatings indicate that the average Apple consumer was usually more affluent and more well-educated than other PC company consumers. The research indicated that this correlation could stem from the fact that on average Apple Inc. products are more expensive than other PC products.[141][142]
+Corporate affairs
+
+See also: List of mergers and acquisitions by Apple, Braeburn Capital, and FileMaker Inc.
+During the Mac's early history Apple generally refused to adopt prevailing industry standards for hardware, instead creating their own.[143] This trend was largely reversed in the late 1990s beginning with Apple's adoption of the PCI bus in the 7500/8500/9500 Power Macs. Apple has since adopted USB, AGP, HyperTransport, Wi-Fi, and other industry standards in its computers and was in some cases a leader in the adoption of standards such as USB.[144] FireWire is an Apple-originated standard that has seen widespread industry adoption after it was standardized as IEEE 1394.[145]
+Ever since the first Apple Store opened, Apple has sold third party accessories.[146] This allows, for instance, Nikon and Canon to sell their Mac-compatible digital cameras and camcorders inside the store. Adobe, one of Apple's oldest software partners,[147] also sells its Mac-compatible software, as does Microsoft, who sells Microsoft Office for the Mac. Books from John Wiley & Sons, who publishes the For Dummies series of instructional books, are a notable exception, however. The publisher's line of books were banned from Apple Stores in 2005 because Steve Jobs disagreed with their decision to publish an unauthorized Jobs biography, iCon.[148]
+Headquarters
+Main article: Apple campus
+
+
+Company headquarters on Infinite Loop in Cupertino, California
+Apple Inc.'s world corporate headquarters are located in the middle of Silicon Valley, at 1-6 Infinite Loop, Cupertino, California. This Apple campus has six buildings that total 850,000 square feet (79,000 m2) and was built in 1993 by Sobrato Development Cos.[149]
+Future plans
+In 2006, Apple announced its intention to build a second campus on 50 acres (200,000 m2) assembled from various contiguous plots (east of N Wolfe Road between Pruneridge Avenue and Vallco Parkway). Later aquisitions increased this to 175 acres. The new campus, also in Cupertino, will be about 1 mile (1.6 km) east of the current campus.[150] The new campus building will be designed by Norman Foster.[151]
+On June 7, 2011, Steve Jobs gave a presentation to Cupertino City Council, detailing the architectural design of the new building and its environs. The new campus is planned to house up to 13,000 employees in one central four-storied circular building (with a café for 3,000 sitting people integrated) surrounded by extensive landscape (with parking mainly underground and the rest centralized in a parking structure). There will be additional buildings such as an auditorium, R&D facilities, a fitness center and a dedicated generating plant as primary source of electricity (powered by natural gas and other more environmentally sound means).
+Advertising
+Main article: Apple Inc. advertising
+Further information: Think Different, Get a Mac, and Apple Switch ad campaign
+Since the introduction of the Macintosh in 1984 with the 1984 Super Bowl commercial to the more modern 'Get a Mac' adverts, Apple has been recognized in the past for its efforts towards effective advertising and marketing for its products, though its advertising has been criticized for the claims of some more recent campaigns, particularly 2005 Power Mac ads[152][153][154] and iPhone ads in Britain.
+Logos
+The original logo with Isaac Newton under an apple tree
+The rainbow "bitten" logo, used from late 1976 to 1998
+The monochrome logo, used since 1998
+Apple's first logo, Wayne, depicts Sir Isaac Newton sitting under an apple tree.
+Almost immediately, though, this was replaced by Rob Janoff's "rainbow Apple", the now-familiar rainbow-colored silhouette of an apple with a bite taken out of it. Janoff presented Jobs with several different monochromatic themes for the "bitten" logo, and Jobs immediately took a liking to it. While Jobs liked the logo, he insisted it be in color to humanize the company.[155][156] The Apple logo was designed with a bite so that it wouldn't be recognized as another fruit. The colored stripes were conceived to make the logo more accessible, and to represent the fact the monitor could reproduce images in color.[157] The logo is often erroneously referred to as a tribute to Alan Turing, with the bite mark a reference to his method of suicide.[158][159] Both the designer of the logo and the company deny that there is any homage to Turing in the design of the logo.[157][160]
+In 1998, with the roll-out of the new iMac, Apple discontinued the rainbow theme and began to use monochromatic themes, nearly identical in shape to its previous rainbow incarnation, on various products, packaging and advertising. An Aqua-themed version of the monochrome logo was used from 2001–2003, and a Glass-themed version has been used since 2003.
+In the past, Apple Inc. has had trademark issues between themselves and Apple Corps ltd., a multimedia company started by the Beatles in 1967, involving their name and logo. This resulted in a series of lawsuits and tension between the two companies. These issues finally ended with their most recent law suit in 2007.
+Slogans
+Main article: List of Apple Inc. slogans
+Apple's first slogan, "Byte into an Apple", was coined in the late 1970s.[161] From 1997–2002, Apple used the slogan Think Different in advertising campaigns. The slogan had a lasting impact on their image and revived their popularity with the media and customers.[citation needed] Although the slogan has been retired, it is still closely associated with Apple.[162] Apple also has slogans for specific product lines — for example, "iThink, therefore iMac" was used in 1998 to promote the iMac,[163] and "Say hello to iPhone" has been used in iPhone advertisements.[164] "Hello" was also used to introduce the original Macintosh, Newton, iMac ("hello (again)"), and iPod.[165]
+Commercials
+See also: 1984 (advertisement), Lemmings (advertisement), iPod advertising, and music used by Apple Inc.
+Apple's product commercials gained fame for launching musicians into stardom as a result of their eye-popping graphics and catchy tunes.[166] First, the company popularized Canadian singer Feist's "1234" song in its ad campaign.[166] Later, Apple used the song "New Soul" by French-Israeli singer-songwriter Yael Naïm to promote the MacBook Air.[166] The debut single shot to the top of the charts and sold hundreds of thousands of copies in a span of weeks.[166]
+Environmental record
+
+Greenpeace has campaigned against Apple on various environmental issues, including a global end-of-life take-back plan, non-recyclable hardware components and toxins within iPhone hardware.[167][168] Since 2003 Greenpeace has campaigned against Apple regarding their chemical policies, in particular the inclusion of PVC and BFRs in their products.[167] On May 2, 2007, Steve Jobs released a report announcing plans to eliminate PVC and BFRs by the end of 2008.[169][170] Apple has since eliminated PVC and BFRs across its product range,[171] becoming the first laptop maker to remove PVC and BFRs.[172]
+In Greenpeace's Guide to Greener Electronics that scores electronics manufacturers on their policies regarding toxic chemicals, recycling and climate change, Apple ranked 9th out of 18 leading electronic makers in October 2010 with a score of 4.9/10 (securing the same score as in the previous version of the guide, however slipping 4 places down the ranking).[173] Greenpeace criticizes for example that Apple does not provide information about its management of chemicals and its supply chain communications. Apple also continues to score poorly in the Greenpeace's guide for the minimal information it provides about its future toxic chemical phase-out plans.[174] In the first edition, released in August 2006, Apple scored 2.7/10.[175]
+In 2010, Climate Counts, a nonprofit organization dedicated to directing consumers toward the greenest companies, gave Apple a score of 52 points out of a possible 100, which puts Apple in their top category "Striding".[176] This was an increase from May 2008, when Climate Counts only gave Apple 11 points out of a 100, which placed the company last among electronics companies, at which time Climate Counts also labeled Apple with a "stuck icon", adding that Apple at the time was "a choice to avoid for the climate conscious consumer".[15]
+The Environmental Protection Agency rates Apple highest amongst producers of notebook computers, and fairly well compared to producers of desktop computers and LCD displays.[177][178]
+In June 2007, Apple upgraded the MacBook Pro, replacing cold cathode fluorescent lamp (CCFL) backlit LCD displays with mercury-free LED backlit LCD displays and arsenic-free glass,[179] and has since done this for all notebooks. Apple has also phased out BFRs and PVCs from various internal components.[169][180][181] Apple also offers detailed information about the emissions, materials, and electrical usage of each product.[182]
+In June 2009, Apple's iPhone 3GS was free of PVC, arsenic, BFRs and had an efficient power adapter.[179]
+In October 2009, Apple upgraded the iMac and MacBook, replacing the cold cathode fluorescent lamp (CCFL) backlit LCD displays with mercury-free LED backlit LCD displays and arsenic-free glass.[183] This means all Apple computers have mercury free LED backlit displays, arsenic-free glass and are without PVC cables. All Apple computers also have EPEAT Gold status.[179]
+Labor practices
+
+Further information: Apple labor practices
+In 2006, the Mail on Sunday reported that sweatshop conditions existed in some factories in China, where the contract manufacturers, Foxconn and Inventec, operate the factories that produce the iPod.[184] The article stated that one complex of factories that assembles the iPod (among other items), for instance, had over 200,000 workers that lived and worked in the factory, with employees regularly working more than 60 hours per week. The article also reported that workers made around $100 per month and were required to live on the premises and pay for rent and food from the company, which generally amounted to a little over half of workers' earnings.[14][185][186][187]
+Immediately after the allegations, Apple launched an investigation and worked with their manufacturers to ensure that conditions were acceptable to Apple.[188] In 2007, Apple started yearly audits of all its suppliers regarding worker's rights, slowly raising standards and pruning suppliers that did not comply. Yearly progress reports have been published since 2008.[189] In 2010, workers in China planned to sue iPhone contractors over poisoning by a cleaner used to clean LCD screens. One worker claimed that he and his coworkers had not been informed of possible occupational illnesses
+Notes
+
+^ a b Linzmayer, Ronald W. (1999). Apple Confidential: The Real Story of Apple Computer, Inc.. No Starch Press.
+^ a b c d e f g h i 2010 Apple Form 10-K
+^ "Macworld UK – Grand opening of Apple's 300th retail store brings Covent Garden to a standstill". Macworld UK. Retrieved August 7, 2010.
+^ (USA) "Apple Retail Store - Store List". Apple Inc.. Retrieved August 7, 2010.
+^ A US version of this online store is located at http://store.apple.com/us
+^ Miguel Helft; Ashlee Vance (May 26, 2010). "Apple Passes Microsoft as No. 1 in Tech". The New York Times.
+^ a b Apple Investor Relations FAQ, Apple inc. Retrieved on March 2, 2007.
+^ "Form 8-K SEC Filing" (PDF). January 10, 2007. Retrieved December 8, 2007.
+^ Markoff, John (January 9, 2007). "New Mobile Phone Signals Apple's Ambition". The New York Times. Retrieved January 9, 2007.
+^ "Apple, Google tops in loyalty survey". MacNN. July 11, 2006. Retrieved August 18, 2008.
+^ Fisher, Anne (March 17, 2008). "America's Most Admired Companies". Fortune 157 (5): 65–67.
+^ Colvin, Geoff (March 16, 2009). "The World's Most Admired Companies 2009". Fortune 159 (5): 76.
+^ "World's Most Admired Companies". Fortune. March 2010. Retrieved March 7, 2010.
+^ a b Musgrove, Mike (June 16, 2006). Sweatshop Conditions at IPod Factory Reported. The Washington Post
+^ a b "Environmental Group Hits Apple".
+^ Apple co-founder tells his side of the story
+^ A Chat with Computing Pioneer Steve Wozniak NPR. September 29, 2006.
+^ Wozniak, Stephen. Homebrew and How the Apple Came to Be, Digital Deli. Retrieved on March 2, 2007.
+^ Kahney, Leander. Rebuilding an Apple From the Past, Wired, November 19, 2002.
+^ Consumer Price Index (estimate) 1800–2008. Federal Reserve Bank of Minneapolis. Retrieved December 7, 2010.
+^ "BBC News: History of Technology". November 15, 2007. Retrieved January 19, 2008.
+^ "Computer History Museum (ComputerHistory.org)". Archived from the original on 2007-03-26. Retrieved January 19, 2008.
+^ Game Makers (TV Show): Apple II. Originally aired January 6, 2005.
+^ "Picture of original ad featuring US666.66 price".
+^ Wozniak, Steven: "iWoz", page 180. W. W. Norton, 2006. ISBN 978-0-393-06143-7
+^ "Apple Chronology". Fortune (CNN). January 6, 1998. Retrieved September 11, 2008.
+^ "Apple Inc.". MSN Encarta. Archived from the original on October 31, 2009. Retrieved March 2, 2007.
+^ Steven Weyhrich (April 21, 2002). "Apple II History Chapter 4". Retrieved August 18, 2008.
+^ a b Hormby, Thomas. VisiCalc and the rise of the Apple II, Low End Mac, September 22, 2006. Retrieved on March 2, 2007.
+^ Bagnall, Brian (2005). On the Edge: The Spectacular Rise and Fall of Commodore. Variant Press. pp. 109–112. ISBN 978-0-9738649-0-8.
+^ Personal Computer Market Share: 1975–2004 The figures show Mac higher, but that is not a single model.
+^ Coventry, Joshua. Apple III Chaos: What Happened When Apple Tried to Enter the Business Market, Low End Mac, September 1, 2006. Retrieved on March 2, 2007.
+^ Landley, Rob (September 18, 2000). "Fool.com: How Xerox Forfeited the PC War". The Motley Fool. Retrieved August 12, 2008.
+^ "Apple at 30 – 1976 to 1986". Retrieved August 12, 2008.
+^ Hormby, Thomas. A history of Apple's Lisa, 1979–1986, Low End Mac, October 6, 2005. Retrieved on March 2, 2007.
+^ "Apple's 1984: The Introduction of the Macintosh in the Cultural History of Personal Computers".
+^ "Apple's '1984' Super Bowl commercial still stands as watershed event". USA Today. January 28, 2004.
+^ Leopold, Todd (February 3, 2006). "Why 2006 is not like '1984'". CNN. Retrieved May 10, 2008.
+^ Cellini, Adelia (January 2004). "The Story Behind Apple's '1984' TV commercial: Big Brother at 20". Macworld 21.1, page 18. Archived from the original on June 26, 2008. Retrieved May 9, 2008.
+^ a b Hormby, Thomas. Good-bye Woz and Jobs: How the first Apple era ended in 1985, Low End Mac, October 2, 2006. Retrieved on March 2, 2007.
+^ "When was desktop publishing invented?". Retrieved April 30, 2007.
+^ a b Hormby, Thomas. Growing Apple with the Macintosh: The Sculley years, Low End Mac, February 22, 2006. Retrieved on March 2, 2007.
+^ Spector, G (September 24, 1985). "Apple's Jobs Starts New Firm, Targets Education Market". PC Week: p. 109.
+^ Hormby, Thomas. Birth of the PowerBook: How Apple took over the portable market in 1991, Low End Mac, November 23, 2005. Retrieved on March 2, 2007.
+^ "Macintosh Performa". Vectronics Apple World. Retrieved November 29, 2010.
+^ a b "Apple II History Chap 11". Retrieved August 12, 2008.
+^ "1990–1995: Why the World Went Windows". Retrieved August 12, 2008.
+^ Hormby, Thomas. The Apple vs. Microsoft GUI lawsuit, Low End Mac, August 25, 2006. Retrieved on March 2, 2007.
+^ "Michael Spindler: The Peter Principle at Apple". Retrieved August 12, 2008.
+^ "1990–1995: Hitting the Wall". Retrieved August 14, 2008.
+^ "Power Macintosh 6100". Retrieved August 12, 2008.
+^ Chaffin, Bryan. "Former Apple CEO Gil Amelio Lands A New CEO Job | The Mac Observer", The Mac Observer, February 6, 2001. Retrieved August 15, 2008.
+^ "Apple Computer, Inc. Finalizes Acquisition of NeXT Software Inc.". Apple Inc.. February 7, 1997. Archived from the original on July 24, 2001. Retrieved June 25, 2006.
+^ Microsoft and Apple Affirm Commitment to Build Next Generation Software for Macintosh, Apple Inc., August 6, 1997.
+^ Harreld, Heather. "Apple gains tech, agency customers in Next deal", Federal Computer Week, January 5, 1997. Retrieved August 15, 2008.
+^ "Apple unveils new marketing strategy". Knight Ridder/Tribune News Service. November 10, 1997. Retrieved August 15, 2008.
+^ Grossman, Lev. The Apple Of Your Ear, Time, January 12, 2007. Retrieved on February 1, 2007.
+^ Wilson, Greg. Private iCreator is genius behind Apple's polish, New York Daily News, January 14, 2007. Retrieved on February 1, 2007.
+^ "800,000 iMacs Sold in First 139 Days". Apple Inc.. Retrieved August 15, 2008.
+^ Sarkar, Pia. "Friends and Foes/ Despite squabbles, Apple and Adobe have benefited from one another", SFGate, February 25, 2002. Retrieved August 15, 2008.
+^ Sandoval, Greg (April 15, 2007). "Apple exhibits Final Cut Studio 2". CNET. Retrieved December 4, 2007.
+^ Chaffin, Bryan. "Apple Shake: Apple Buys Nothing Real, A High End Compositing Software Maker | The Mac Observer", The Mac Observer, February 7, 2002. Retrieved August 15, 2008.
+^ Apple Acquires Emagic, Apple, July 1, 2002. Retrieved August 15, 2008.
+^ Deitrich, Andy. Garage Band: Part 1, ars technica, February 2, 2004. Retrieved August 15, 2008.
+^ Apple Introduces iPhoto, Apple Inc., January 7, 2002. Retrieved August 15, 2008.
+^ Mac OS X v10.4 Tiger Classic Environment Apple Inc.
+^ ifo Apple Store – Apple Stores 2001–2003
+^ Apple enjoys ongoing iPod demand, BBC News, January 18, 2006. Retrieved on April 27, 2007.
+^ Cantrell, Amanda. Apple's remarkable comeback story, CNN, March 29, 2006. Retrieved on March 2, 2007.
+^ iTunes Store Tops Five Billion Songs, Apple Inc., June 19, 2008. Retrieved on September 3, 2008.
+^ "Apple revamps iBook. Network World (May, 2001)", Network World, May 2, 2001. Retrieved August 19, 2008.
+^ Magee, Mike. "iMac "All-in-One" is a trinity – The INQUIRER", The Inquirer, January 26, 2002. Retrieved August 19, 2008.
+^ a b Apple to Use Intel Microprocessors Beginning in 2006, Apple Inc., June 6, 2005. Retrieved on March 2, 2007.
+^ Power Mac to Mac Pro
+^ "Apple Unveils New MacBook Featuring Intel Core Duo Processors".
+^ "In Major Shift, Apple Builds Its Own Team to Design Chips – WSJ.com". The Wall Street Journal. April 30, 2009.
+^ Hesseldahl, Arik (April 5, 2006). "News Flash: Apple Introduces "Boot Camp" To Run Windows XP on Macs". BusinessWeek. Retrieved August 18, 2008.
+^ Gamet, Jeff. Apple Passes Dell's Market Cap, MacObserver, January 16, 2006. Retrieved on March 2, 2007.
+^ Singh, Jal. Dell: Apple should close shop, CNET News, October 6, 1997. Retrieved on March 2, 2007.
+^ Leonard, Devin (August 30, 2009). "Hey, PC, Who Taught You to Fight Back?". The New York Times. Retrieved March 30, 2010.
+^ Apple – Hot News – Macworld 2007
+^ AAPL surges past $100, target at $140, MacNN, April 26, 2007. Retrieved on July 10, 2007.
+^ Jobs, Steve. Thoughts on Music, Apple Inc., February 6, 2007. Retrieved on March 2, 2007.
+^ Dalrymple, Jim (April 2, 2007). "Apple, EMI offer higher-quality DRM free downloads". Playlist Magazine. Retrieved November 29, 2010.
+^ Flandez, Raymund. "Programmers Jockey for iPhone Users at Apple Site", The Wall Street Journal. Retrieved August 16, 2008.
+^ McLaughlin, Kevin. "Apple's Jobs Gushes Over App Store Success – The Channel Wire – IT Channel News And Views by CRN and VARBusiness", ChannelWeb, August 11, 2008. Retrieved August 16, 2008.
+^ Chen, Brian (February 26, 2009). "Jobs: Apple Is Third Largest Handset Supplier". Mac Life. Retrieved March 1, 2009.
+^ "Chunkier sidekick to replace Jobs at Macworld", DoesWhat. Retrieved December 16, 2008.
+^ "Apple Media Advisory". Apple. January 14, 2009. Retrieved January 14, 2009.
+^ "Apple reports the best non-holiday quarter in its history". Betanews. April 22, 2009. Retrieved November 22, 2010.
+^ Apple Sells Over 300,000 iPads First Day (Press release). Apple Inc. Retrieved April 10, 2010.
+^ "Apple passes Microsoft to be biggest tech company". BBC News online (BBC). May 27, 2010. Retrieved May 29, 2010.
+^ "CNET review of iPod Touch".
+^ "Apple unveils new TV box for renting movies, shows – Yahoo! News". News.yahoo.com. Retrieved 2010-09-02.[dead link]
+^ Apple Computer, Inc. (2010-09-01). "Apple Reinvents iPod nano With Multi-Touch Interface". Apple.com. Retrieved 2010-11-11.
+^ "Apple Shares Hit $300". Mashable. October 13, 2010. Retrieved Oct 13, 2010.
+^ Albanesius, Chloe (October 20, 2010). "Apple Unveils iLife 11 with New iPhoto, iMovie, GarageBand". PC Magazine (PC Magazine). Retrieved 2010-10-20.
+^ "Apple's Mac App Store: Hands On". PC Magazine. PC Magazine. 2011-01-06. Retrieved 2011-01-06.
+^ "Apple boss Steve Jobs takes 'medical leave'". BBC News. 2011-01-17. Retrieved 2011-01-17.
+^ http://mashable.com/2011/05/09/apple-google-brandz-study
+^ Miguel Helft, The New York Times. "Apple Unveils ‘Cloud’ Music and Storage Service." June 6, 2011. Retrieved June 7, 2011.
+^ http://www.businessinsider.com/apple-supply-chain-2011-7
+^ http://tech.fortune.cnn.com/2011/07/05/how-apple-became-a-monopsonist/
+^ http://www.bbc.co.uk/news/technology-14340470
+^ Primack, Doug. "Fallen Apple: Steve Jobs resigns". Retrieved August 24, 2011.
+^ http://www.ethiopianreview.com/index/20113/?p=25598
+^ "Apple Launches iPad". January 27, 2010. Retrieved January 27, 2010.
+^ "Apple Tablet Media Event Today: "Come See Our Latest Creation"". MacRumors. January 27, 2010. Retrieved January 27, 2010.
+^ Tony Bradley (January 29, 2010). "AT&T Beefing Up Network for iPad and iPhone". PC World. Retrieved January 29, 2010.
+^ Helft, Miguel (2 March 2011). "Jobs Returns to Introduce a New iPad". The New York Times. Retrieved 23 March 2011.
+^ http://www.tuaw.com/2011/03/18/ipad-2-supply-line-affected-by-japan-disaster/
+^ "Liveblog: "Rock and Roll" Apple iPod Event". Ars Technica. September 9, 2009. Retrieved September 9, 2009.
+^ Apple's Chief in the Risky Land of the Handhelds The New York Times
+^ a b Apple Reinvents the Phone with iPhone
+^ iPhone Premieres This Friday Night at Apple Retail Stores
+^ "Apple Adds New iPhone & iPod touch Models". Apple Inc.. February 5, 2008. Retrieved September 8, 2009.
+^ Apple Introduces the New iPhone 3G
+^ Apple's Revolutionary App Store Downloads Top One Billion in Just Nine Months
+^ Brandon Griggs, John D. Sutter (June 8, 2010). "Apple unveils iPhone 4, 'biggest leap we've taken' since first model". CNN. Retrieved July 5, 2010.
+^ Ward, Andrew (07-21-2011). "Apple overtakes Nokia in smartphone stakes". Financial Times. Retrieved 21 July 2011.
+^ Apple Announces iTunes 7 with Amazing New Features
+^ Apple TV Coming to Your Living Room
+^ YouTube Coming to Apple TV
+^ Apple Introduces New Apple TV Software & Lowers Price to $229
+^ "Apple TV teardown reveals 8GB flash storage, 256MB RAM, leftover iPad parts". Engadget. September 29, 2010. Retrieved October 31, 2010.
+^ "Apple.com — MobileMe — Features". Retrieved August 31, 2008.
+^ Deutschman, Alan. "The once and future Steve Jobs". Salon.com. Retrieved November 22, 2010.
+^ a b c d Hertzfeld, Andy. Credit Where Due,Folklore.org, January 1983. Retrieved on May 26, 2006.
+^ "Newton Hall of Fame!".
+^ a b c Eisenhart, Mary. Fighting Back For Mac, MicroTimes, 1997. Retrieved on May 26, 2006.
+^ Hertzfeld, Andy. Leave of Absence,Folklore.org, March 1984. Retrieved on May 26, 2006.
+^ Kawakami, John. Apple Taps Guy Kawasaki For Apple Fellows Program, MacTech, September 1995. Retrieved on May 26, 2006.
+^ "Wired 4.10: Spawn of Atari".
+^ Brownlee, John (7 July 2010). "What It's Like To Work At Apple".
+^ von Rospach, Chuq (2 January 2009). "Enjoying the show, avoiding the flamethrower: life inside Apple". The Guardian (London).
+^ Huba, Jackie; McConnell, Ben. The father of evangelism marketing.
+^ Kahney, Leander (December 10, 2003). "Apple Store: Chain of Devotion". Wired. Retrieved November 29, 2010.
+^ ifo Apple Store – Fifth Avenue Grand Opening
+^ "Apple in Osaka: another huge opening". JapanConsuming. Archived from the original on May 28, 2008.
+^ "Wired News: Apple: It's All About the Brand".
+^ Fried, Ian. Are Mac users smarter?, news.com, July 12, 2002. Retrieved on April 24, 2006.
+^ "Computer Ownership Statistics". The NPD Group. October 5, 2009. Retrieved November 22, 2010.
+^ Mac Ports
+^ Seebach, Peter (April 26, 2005). "Standards and specs: The ins and outs of USB". IBM. Retrieved November 29, 2010.[dead link]
+^ "1394 Trade Association: What is 1394?".
+^ Apple Marks Second Anniversary of Retail Stores
+^ Opinion: Adobe's DNA is part of Apple | Macworld
+^ Hafner, Katie: Steve Jobs's Review of His Biography: Ban It, The New York Times, April 30, 2005.
+^ Simonson, Sharon (October 2, 2005). "Apple gobbles up Cupertino office space".
+^ "The Bay Area: Apple Inc.". traveldk.com. Dorling Kindersley Limited. Retrieved May 7, 2008.
+^ "Apple’s New Headquarters Will Be Designed by Norman Foster Read more: Apple's New Headquarters to be Designed by Norman Foster". Retrieved June 9, 2010.
+^ "BBB Tells Apple to Halt Misleading Ads".
+^ "Apple Power Mac ads 'misleading'". BBC News. June 11, 2004.
+^ "UK watchdog clears Apple ads".[dead link]
+^ "Wired News: Apple Doin' the Logo-Motion".
+^ "ZLOK Logo Design Blog: I Invented ... the Apple Logo".
+^ a b Raszl, Ivan. "Interview with Rob Janoff, designer of the Apple logo".
+^ "Logos that became legends: Icons from the world of advertising". The Independent (London: www.independent.co.uk). January 4, 2008. Retrieved September 14, 2009.
+^ "Archived Interview with Rob Janoff". March 14, 2005.
+^ Leavitt 2007, p. 280
+^ "Apple Company". Operating System Documentation Project. Operating System Documentation Project. December 10, 2007. Retrieved August 18, 2008.
+^ "Apple Think Different Campaign". Retrieved August 12, 2008.
+^ "MacWorld New York: I think, therefore iMac". Retrieved August 13, 2008.
+^ "BillDay.com » Say hello to iPhone". Retrieved August 13, 2008.
+^ IMac: What's in a Design, Anyway?. Wired Magazine. Retrieved February 15, 2010.
+^ a b c d Farber, Jim. Apple ad creates recognition for Yael Naim, New York Daily News, March 11, 2008.
+^ a b "iTox + iWaste". Retrieved August 12, 2008.
+^ "Greenpeace Slams iPhone". ABC News. Retrieved November 22, 2010.
+^ a b "Apple – A Greener Apple". Retrieved August 12, 2008.
+^ Tasty news from Apple!. Greenpeace International. Retrieved August 12, 2008.
+^ "Apple – Environment – Update". Apple Inc.. Retrieved 2010-11-22.
+^ "Which companies are phasing out PVC and BFRs". Greenpeace International. Retrieved 2011-01-13.
+^ "Guide to Greener Electronics". Greenpeace International. Retrieved 2011-01-13.
+^ "Ranking tables October 2010-Apple.pdf". Greenpeace International. Retrieved 2011-01-13.
+^ "How the companies line up". Greenpeace International. Retrieved 2011-01-13.
+^ Climate Counts scorecard
+^ EPA Gives Apple Silver Rating on Environment The Mac Observer.
+^ EPA information should make GreenPeace red-faced over Apple targeting, Ars Technica. Retrieved on January 8, 2007.
+^ a b c "Apple – Environment – Environmental Progress". Retrieved November 22, 2010.
+^ "Apple — Mac — Green Notebooks". Apple Inc.. 2008. Retrieved December 24, 2008.
+^ "Apple: MacBook Pro Graphics". Retrieved June 8, 2007.
+^ "Apple – Environment – Reports". Apple Inc..
+^ "iMac and the Environment". Apple Inc.. Retrieved November 29, 2010.
+^ The Stark Reality of iPod's Chinese Factories. Mail Online. August 18, 2006
+^ Kahney, Leander (June 13, 2006). Judging Apple Sweatshop Charge. Wired
+^ Dean (August 11, 2007). The Forbidden City of Terry Gou. The Wall Street Journal
+^ Johnson, Joel (2 November 2010). "Where the Workers Who Made Your iPhone Sleep at Night". Wired. Retrieved 13 November 2010.
+^ Morphy, Ericka (January 31, 2008). Apple, IT and the Specter of Sweatshop Labor. Mac New World
+^ "Apple 2010 Supplier Responsibility Report." (PDF).
+^ Chen, Brian X. (May 14, 2010). Workers Plan to Sue iPhone Contractor Over Poisoning. Wired
