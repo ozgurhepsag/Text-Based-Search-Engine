@@ -1,0 +1,1208 @@
+
+
+Fiction, Fantasy, and Fact:
+
+"The Mad Scramble for the Elusive Silver Bullet and the Clock Ticks Away."
+
+
+
+Wayne Anderson
+November 7, 1996
+The year 2000 is practically around the corner, promising a new era of greatness and
+wonder . . . as long as you don't own a computer or work with one.  The year 2000 is bringing a
+Pandora's Box of gifts to the computer world, and the latch is slowly coming undone.
+The year 2000 bug is not really a "bug" or "virus," but is more a computer industry
+mistake.  Many of the PC's, mainframes, and software out there are not designed  or
+programmed to compute a future year ending in double zeros.  This is going to be a costly "fix"
+for the industry to absorb.  In fact, Mike Elgan who is the editor of Windows Magazine, says " . .
+. the problem could cost businesses a total of $600 billion to remedy." (p. 1)
+The fallacy that mainframes were the only machines to be affected was short lived as industry
+realized that 60 to 80 million home and small business users doing math or accounting etc. on
+Windows 3.1 or older software, are just as susceptible to this "bug."  Can this be repaired in
+time?  For some, it is already too late.  A system that is devised to cut an annual federal deficit to
+0 by the year 2002 is already in "hot water."  Data will become erroneous as the numbers "just
+don't add up" anymore.  Some PC owners can upgrade their computer's BIOS (or complete
+operating system) and upgrade the OS  (operating system) to Windows 95, this will set them up
+for another 99 years.  Older software however, may very well have to be replaced or at the very
+least, upgraded.
+The year 2000 has become a two-fold problem.  One is the inability of the computer to
+adapt to the MM/DD/YY issue, while the second problem is the reluctance to which we seem to
+be willing to address the impact it will have.  Most IS (information system) people are either
+unconcerned or unprepared.
+Let me give you a "short take" on the problem we all are facing.  To save storage space
+-and perhaps reduce the amount of keystrokes necessary in order to enter the year to date-most
+IS groups have allocated two digits to represent the year.  For example, "1996" is stored as "96"
+in data files and "2000" will be stored as "00."  These two-digit dates will be on millions of files
+used as input for millions of applications.  This two digit date affects data manipulation,
+primarily subtractions and comparisons. (Jager, p. 1)  For instance, I was born in 1957.  If I ask
+the computer to calculate how old I am today, it subtracts 57 from 96 and announces that I'm 39.
+So far so good.  In the year 2000 however, the computer will subtract 57 from 00 and say that I
+am -57 years old.  This error will affect any calculation that produces or uses time spans, such as
+an interest calculation.  Banker's beware!!!
+Bringing the problem closer to the home-front, let's examine how the CAPS system is
+going to be affected.  As CAPS is a multifaceted system, I will focus on one area in particular,
+ISIS.  ISIS (Integrated Student Information System) has the ability to admit students, register
+them, bill them, and maintain an academic history of each student (grades, transcripts, transfer
+information, etc.) inside of one system.  This student information system has hundreds and
+hundreds of references to dates within it's OS.  This is a COBOL system accessing a ADABAS
+database. ADABAS is the file and file access method used by ISIS to store student records on
+and retrieve them from. (Shufelt, p.1)  ADABAS has a set of rules for setting up keys to specify
+which record to access and what type of action (read, write, delete) is to be performed.  The
+dates will have to have centuries appended to them in order to remain correct.  Their (CAPS)
+"fix" is to change the code in the Procedure Division (using 30 as the cutoff  >30 century = "19"
+<30 century = "20").   In other words, if the year in question is greater than 30 (>30) then it can
+be assumed that you are referring to a year in the 20th century and a "19" will be moved to the
+century field.  If the year is less than 30 (<30) then it will move a "20" to the century field.  If
+absolutely necessary, ISIS will add a field and a superdescriptor index in order to keep record
+retrieval in the order that the program code expects.  The current compiler at CAPS will not
+work beyond the year 2000 and will have to be replaced.  The "temporary fix" (Kludge)  just
+discussed (<30 or >30) will allow ISIS to operate until the year 2030, when they hope to have
+replaced the current system by then.
+For those of you with your own home computers, let's get up close and personal.  This
+problem will affect you as well!  Up to 80% of all personal PCs will fail when the year 2000
+arrives.  More than 80,000,000 PCs will be shut down December 31, 1999 with no problems.
+On January 1, 2000, some 80,000,000 PCs will go "belly up!"  (Jager, p. 1)  These computers
+will think the Berlin Wall is still standing and that Nixon was just elected President!  There is
+however, a test that you can perform in order to see if you are on of the "lucky" minority that do
+not have a problem with the year 2000 affecting their PC.
+First, set the date on your computer to December 31, 1999.  Next, set the time to 23:58
+hours (if you use a 24 hour clock (Zulu time)) or 11:58 p.m. for 12 hour clocks.  Now, Power Off
+the computer for at least 3 to 5 minutes.  Note: ( It is appropriate at this time to utter whatever
+mantras or religious chants you feel may be beneficial to your psyche ).  Next, Power On the
+computer, and check your time and date.  If it reads January 1, 2000 and about a minute or two
+past midnight, breathe a sigh of relief, your OS is free from the year 2000 "bug."  If however,
+your computer gives you wrong information, such as my own PC did (March 12, 1945 at 10:22
+a.m.) welcome to the overwhelming majority of the population that has been found "infected."
+All applications, from spreadsheets to e-mail, will be adversely affected.  What can you
+do?  Maybe you can replace your computer with one that is Year 2000 compatible.  Is the
+problem in the RTC (Real Time Clock), the BIOS, the OS?  Even if you fix the hardware
+problem, is all the software you use going to make the "transition" safely or is it going to corrupt
+as well?!
+The answers to these questions and others like them are not answerable with a yes or a
+no.  For one thing, the "leading experts" in the computer world cannot agree that there is even a
+problem, let alone discuss the magnitude upon which it will impact society and the business
+world.  CNN correspondant Jed Duvall illustrates another possible "problem" scenario.  Suppose
+an individual on the East Coast, at 2 minutes after midnight in New York City on January 1,
+2000 decides to mark the year and the century by calling a friend in California, where because of
+the time zone difference, it is still 1999.  With the current configurations in the phone company
+computers, the NewYorker will be billed from 00 to 99, a phone call some 99 years long!!! (p. 1)
+What if you deposit $100 into a savings account that pays 5% interest annually.  The
+following year you decide to close your account.  The bank computer figures your $100 was
+there for one year at 5% interest, so you get $105 back, simple enough.  What happens though, if
+you don't take your money out before the year 2000?  The computer will re-do the calculation
+exactly the same way.  Your money was in the bank from '95 to '00.  That's '00 minus '95, which
+equals a negative 95 (-95).  That's -95 years at 5% interest.  That's a little bit more than $10,000,
+and because of the minus sign, it's going to subtract that amount from your account.  You now
+owe the bank $9,900.  Do I have your attention yet??!!
+There is no industry that is immune to this problem, it is a cross-platform problem.  This
+is a problem that will affect PCs, minis, and mainframes.  There are no "quick fixes" or what
+everyone refers to as the "Silver Bullet."  The Silver Bullet is the terminology used to represent
+the creation of an automatic fix for the Yk2 problem.  There are two major problems with this
+philosophy.  First, there are too many variables from hardware to software of different types to
+think that a "cure-all" can be found that will create an "across-the-board" type of fix.  Secondly,
+the mentality of the general population that there is such a "fix" or that one can be created rather
+quickly and easily, is creating situations where people are putting off addressing the problem due
+to reliance on the "cure-all."  The " . . . sure someone will fix it."  type attitude pervades the
+industry and the population, making this problem more serious than it already is.   (Jager, p. 1)
+People actually think that there is a program that you can start running on Friday night . . .
+everybody goes home, and Monday morning the problem has been fixed.  Nobody has to do
+anything else, the Yk2 problem poses no more threat, it has been solved.  To quote Peter de
+Jager,
+"Such a tool, would be wonderful.
+Such a tool, would be worth Billions of dollars.
+Such a tool, is a na ve pipe dream.
+Could someone come close?  Not very . . .
+Could something reduce this problem by 90%?  I don't believe so.
+Could it reduce the problem by 50%?  Possibly . . . but I still don't believe so.
+Could it reduce the workload by 30%?  Quite likely."
+(p. 2)
+
+Tools are available, but are only tools, not cures or quick fixes.
+How will this affect society and the industry in 2000?  How stable will software design
+companies be as more and more competitors offer huge "incentives" for people to "jump ship"
+and come work for them on their problems!?  Cash flow problems will put people out of
+business.  Computer programmers will make big bucks from now until 2000, as demand
+increases for their expertise.  What about liability issues that arise because company "A" reneged
+on a deal because of a computer glitch. Sue! Sue! Sue!  What about ATM lockups, or credit card
+failures, medical emergencies, downed phone systems.  This is a wide spread scenario because
+the Yk2 problem will affect all these elements and more.
+As is obvious, the dimensions to this challenge are apparent.  Given society's reliance on
+computers, the failure of the systems to operate properly can mean anything from minor
+inconveniences to major problems: Licenses and permits not issued, payroll and social service
+checks not cut, personnel, medical and academic records malfunctioning, errors in banking and
+finance, accounts not paid or received, inventory not maintained, weapon systems
+malfunctioning (shudder!), constituent services not provided, and so on, and so on, and so on.
+Still think you'll be unaffected . . . highly unlikely.  This problem will affect computations which
+calculate age, sort by date, compare dates, or perform some other type of specialized task.  The
+Gartner Group has made the following approximations:
+At $450 to $600 per affected computer program, it is estimated that a medium size company will
+spend from $3.6 to $4.2 million to make the software conversion.  The cost per line of code is
+estimated to be $.80 to $1.  VIASOFT has seen program conversion cost rise to $572 to $1,204.
+ANDERSEN  CONSULTING estimates that it will take them more than 12,000 working days to
+correct its existing applications.  YELLOW CORPORATION estimates it will spend
+approximately 10,000 working days to make the change.  Estimates for the correction of this
+problem in the United States alone is upward of $50 to $75 Billion dollars.
+(ITAA, p. 1)
+
+Is it possible to eliminate the problem?  Probably not, but we can make the transition
+much smoother with cooperation and the right approach.  Companies and government agencies
+must understand the nature of the problem.  Unfortunately, the spending you find for new
+software development will not be found in Yk2 research.  Ignoring the obvious is not the way to
+approach this problem.  To assume that the problem will be corrected when the system is
+replaced can be a costly misjudgment.  Priorities change, development schedules slip, and
+system components will be reused, causing the problem to be even more widespread.
+Correcting the situation may not be so difficult as it will be time consuming.  For
+instance, the Social Security Administration estimates that it will spend 300 man-years finding
+and correcting these date references in their information systems - systems representing a total of
+30 million lines of code.  (ITAA, p. 3)  Common sense dictates that a comprehensive conversion
+plan be developed to address the more immediate functions of an organization (such as invoices,
+pay benefits, collect taxes, or other critical organization functions), and continue from there to
+finish addressing the less critical aspects of operation.  Some of the automated tools may help to
+promote the "repair" of the systems, such as in:
+* line by line impact analysis of all date references within a system, both in terms of data and
+procedures;
+* project cost estimating and modeling;
+* identification and listing of affected locations;
+* editing support to make the actual changes required;
+* change management;
+* and testing to verify and validate the changed system.
+(ITAA, p. 3)
+Clock simulators can run a system with a simulated clock date and can use applications that
+append or produce errors when the year 2000 arrives while date finders search across
+applications on specific date criteria, and browsers can help users perform large volume code
+inspection.  As good as all these "automated tools" are, there are NO "Silver Bullets" out there.
+There are no quick fixes.  It will take old fashioned work-hours by personnel in order to make
+this "rollover" smooth and efficient.
+Another area to look at are the implications for public health information.  Public health
+information and surveillance at all levels of  local, state, federal, and international public health
+are especially sensitive to and dependent upon dates for epidemiological (study of disease
+occurrence, location, and duration) and health statistics reasons.  The date of events, duration
+between events, and other calculations such as age of people are core epidemiologic and health
+statistic requirements. (Seligman, p. 1)   Along with this, public health authorities are usually
+dependent upon the primary data providers such as physician practices, laboratories, hospitals,
+managed care organizations, and out-patient centers etc., as the source for original data upon
+which public health decisions are based.  The CDC (Centers for Disease Control and Prevention)
+for example, maintains over 100 public health surveillance systems all of which are dependent
+upon external sources of data. (Issa, p. 5)  This basically means that it is not going to be
+sufficient to make the internal systems compliant to the year 2000 in order to address all of the
+ramifications of this issue.  To illustrate this point, consider the following scenario: in April
+2000, a hospital sends an electronic surveillance record to the local or state health department
+reporting the death of an individual who was born in the year "00"; is this going to be a case of
+infant mortality or a geriatric case??
+Finally, let's look at one of the largest software manufacturing corporations and see what
+the implications of the year 2000 will be for Microsoft products.  Microsoft states that Windows
+95 and Windows NT are capable of supporting dates up until the year 2099.  They also make the
+statement however:
+"It is important to note that when short, assumed dates (mm/dd/yy) are entered, it is impossible
+for the computer to tell the difference between a day in 1905 and 2005.  Microsoft's products,
+that assume the year from these short dates, will be updated in 1997 to make it easier to assume
+a 2000-based year.  As a result, Microsoft recommends that by the end of the century, all PC
+software be upgraded to versions from 1997 or later."
+(Microsoft, p. 1)
+
+PRODUCT NAME
+DATE LIMIT
+DATE FORMAT
+Microsoft Access 95
+1999
+assumed "yy" dates
+Microsoft Access 95
+9999
+long dates ("yyyy")
+Microsoft Access (next version)
+2029
+assumed "yy" dates
+Microsoft Excel 95
+2019
+assumed "yy" dates
+Microsoft Excel 95
+2078
+long dates ("yyyy")
+Microsoft Excel (next version)
+2029
+assumed "yy" dates
+Microsoft Excel (next version)
+9999
+long dates ("yyyy")
+Microsoft Project 95
+2049
+32 bits
+Microsoft SQL Server
+9999
+"datetime"
+MS-DOS(r) file system (FAT16)
+2099
+16 bits
+Visual C++(r) (4.x) runtime library
+2036
+32 bits
+Visual FoxPro
+9999
+long dates ("yyyy")
+Windows 3.x file system (FAT16)
+2099
+16 bits
+Windows 95 file system (FAT16)
+2099
+16 bits
+Windows 95 file system (FAT32)
+2108
+32 bits
+Windows 95 runtime library (WIN32)
+2099
+16 bits
+Windows for Workgroups (FAT16)
+2099
+16 bits
+Windows NT file system (FAT16)
+2099
+16 bits
+Windows NT file system (NTFS)
+future centuries
+64 bits
+Windows NT runtime library (WIN32)
+2099
+16 bits
+Microsoft further states that its development tools and database management systems provide
+the flexibility for the user to represent dates in many different ways.  Proper training of
+developers to use date formats that accommodate the transition to the year 2000 is of the utmost
+importance.  For informational purposes,  I have included a chart that represents the more
+popular Microsoft products, their date limits, and date formats.  (Chart on previous page)
+(Microsoft, p. 3)
+So . . .  is everyone affected?  Apparently not.  In speaking with the owners of St. John
+Valley Communications, an Internet-Access provider based in Fort Kent, they are eagerly
+awaiting the coming of 2000.  They, Alan Susee and Dawn Martin had enough foresight to make
+sure that when they purchased their equipment and related software, that it would all be year
+2000 compliant.  It can be done, as evidenced by this industrious couple of individuals.  The key
+is to get informed and to stay informed.  Effect the changes you can now, and look to remedy the
+one's that you can't.  The year 2000 will be a shocker and thriller for many businesses, but St.
+John Valley Communications seem to have it under control and are holding their partry hats in
+one hand and the mouse in the other.
+As is obviously clear from the information presented, Yk2 is a problem to be reckoned
+with.  The wide ranging systems (OS) and  software on the market lend credence to the idea that
+a "silver bullet" fix is a pipe dream in the extreme.  This is not however, an insurmountable
+problem.  Efficient training and design is needed, as well as a multitude of man-hours to effect
+the "repairs" needed to quell the ramifications and repercussions that will inevitably occur
+without intervention from within.  The sit back and wait for a cure-all approach will not work,
+nor is it even imaginable that some people (IS people) with advanced knowledge to the contrary,
+would buy into this propaganda of slow technological death.  To misquote an old adage, "The
+time for action was 10 years ago."  Whatever may happen, January 1, 2000 will be a very
+interesting time for some, a relief for others  . . . and a cyanide capsule for the "slackers."  What
+will you do now that you are better "informed?"  Hopefully you will effect the necessary "repairs
+and pass the word to the others who may be taking this a little too lightly.  It may not be a matter
+of life or death, but it sure as heck could mean your job and financial future.
+
+WORKS  CITED
+
+Elgan, Mike.   "Experts bemoan the denial of "2000 bug"."
+Http://www.cnn.com/2000.  ( 31 October 1996).
+
+Jager, Peter de.   "DOOMSDAY."  Http://www.year2000.com/doom
+(2 November 1996).
+*       " Believe me it's real ! Early Warning." Http://www.year2000.com
+(4 November 1996).
+*       " Biting the Silver Bullet."  Http://www.year2000.com/bullet
+(2 November 1996).
+
+Shufelt, Ursula.   "Yk2."   Ursula@maine.maine.edu.  ( 7 November 1996).
+
+Duvall, Jed.   "The year 2000 does not compute."  Http://www.cnn.com/news
+(3 November 1996).
+
+ITAA.             "The Year 2000 Software Conversion: Issues and Observations."
+Http://www.itaa.org/yr2000-1.htm        ( 7 November 1996).
+
+Seligman, James & Issa, Nabil.    "The Year 2000 Issue: Implications for Public
+Health Information and Surveillance Systems."
+Http://www.cdc.gov/year2000.htm   (9 November 1996).
+
+Microsoft.     "Implications of the Year 2000 on Microsoft Products."
+Http://army.mil/army-yk2/articles/y2k.htm    (9 November 1996).
+
+2
+
+Brief History Of Data Bases
+
+In the 1960's, the use of main frame computers became widespread in many companies.  To access vast amounts of stored information, these companies started to use computer programs like COBOL and FORTRAN.  Data accessibility and data sharing soon became an important feature because of the large amount of information recquired by different departments within certain companies.  With this system, each application owns its own data files.  The problems thus associated with this type of file processing  was uncontrolled redundancy, inconsistent data, inflexibility, poor enforcement of standards, and low programmer maintenance.
+In 1964, MIS (Management Information Systems) was introduced.  This would prove to be very influential towards future designs of computer systems and the methods they will use in manipulating data.
+In 1966, Philip Kotler had the first description of how managers could benefit from the powerful capabilities of the electronic computer as a management tool.
+In 1969, Berson developed a marketing information system for marketing research.  In 1970,  the Montgomery urban model was developed stressing the quantitative aspect of management by highlighting a data bank, a model bank, and a measurement statistics bank.  All of these factors will be influential on future models of storing data in a pool.
+According to Martine, in 1981, a database is a shared collection of interrelated data designed to meet the needs of multiple types of end users.  The data is stored in one location so that they are independent of the programs that use them, keeping in mind data integrity with respect to the approaches to adding new data, modifying data, and retrieving existing data.  A database is shared and perceived differently by multiple users.  This leads to the arrival of Database Management Systems.
+These systems first appeared around the 1970=s as solutions to problems associated with mainframe computers.  Originally, pre-database programs accessed their own data files.  Consequently, similar data had to be stored in other areas where that certain piece of information was relevant.  Simple things like addresses were stored in customer information files, accounts receivable records, and so on.  This created redundancy and inefficiency.  Updating files, like storing files, was also a problem.  When a customer=s address changed, all the fields where that customer=s address was stored had to be changed.  If a field happened to be missed, then an inconsistency was created.  When requests to develop new ways to manipulate and summarize data arose, it only added to the problem of having files attached to specific applications.  New system design had to be done, including new programs and new data file storage methods.  The close connection between data files and programs sent the costs for storage and maintenance soaring.  This combined with an inflexible method of the kinds of data that could be extracted, arose the need to design an effective and efficient system.
+Here is where Database Management Systems helped restore order to a system of inefficiency.  Instead of having separate files for each program, one single collection of information was kept, a database.  Now, many programs, known as a database manager, could access one database with the confidence of knowing that it is accessing up to date and exclusive information.
+
+
+
+Some early DBMS=s consisted of:
+Condor 3
+dBaseIII
+Knowledgeman
+Omnifile
+Please
+Power-Base
+R-Base 4000
+Condor 3, dBaseIII, and Omnifile will be examined more closely.
+
+Condor 3
+Is a relational database management system that evolved in the microcomputer environment since 1977.  Condor provides multi-file, menu-driven relational capabilities and a flexible command language.  By using a word processor, due to the absence of a text editor, frequently used commands can automated.
+Condor 3 is an application development tool for multiple-file databases.  Although it lacks some of the capabilities like procedure repetition, it makes up for it with its ease to use and quick decent speed.
+Condor 3 utilizes the advantages of menu-driven design.  Its portability enables it to import and export data files in five different ASCII formats.  Defining file structures is a relatively straightforward method by typing the field names and their length, the main part of designing the structure is about complete.  Condor uses six data types:
+
+alphabetic
+alphanumeric
+C.	numeric
+C.	decimal numeric
+C.	Julian date
+C.	dollar
+Once the fields have been designed, data entry is as easy as pressing enter and inputting the respective values to the appropriate fields and like the newer databases, Condor too can use the Update, Delete, Insert, and Backspace commands.  Accessing data is done by creating an index.  The index can be used to perform sorts and arithmetic.
+
+dBaseIII
+DbaseIII is a relational DBMS which was partially built on dbaseII.  Like Condor 3, dbaseIII is menu-driven and has its menus built in several levels.  One of the problems discovered, was that higher level commands were not included in all menu levels.  That is, dBaseIII is limited to only basic commands and anything above that is not supported.
+Many of the basic capabilities are easy to use, but like Condor, dBaseIII has inconsistencies and inefficiency.  The keys used to move and select items in specific menus are not always consistent through out.  If you mark an item to be selected from a list, once it=s marked it can not be unmarked.  The only way to correct this is to start over and enter everything again.  This is time consuming and obviously inefficient.  Although the menus are helpful and guide you through the stages or levels, there is the option to turn off the menus and work at a little faster rate.
+DBaseIII=s command are procedural (function oriented) and flexible.  It utilizes many of the common functions like:
+select records
+C.	select fields
+C.	include expressions ( such as calculations)
+C.	redirect output to the screen or to the printer
+C.	store results separately from the application
+Included in dBaseIII is a limited editor which will let you create commands using the editor or a word processor.  Unfortunately, it is still limited to certain commands, for example, it can not create move or copy commands.  It also has a screen design package which enables you to design how you want your screen to look.  The minimum RAM requirement of 256k  for this package really illustrates how old this application is.  The most noticeable problem documented about dBaseIII is inability to edit command lines.  If, for example, an error was made entering the name and address of a customer, simply backing up and correcting the wrong character is impossible without deleting everything up to the correction and re-entering everything again.
+DBaseIII is portable and straightforward to work with.  It allows users to import and export files in two forms: fixed-length fields and delimited fields.  It can also perform dBaseII conversions.  Creating file structures are simple using the menus or the create command.  It has field types that are still being used today by applications such as Microsoft  Access, for example, numeric fields and memo fields which let you enter sentences or pieces of information, like a customer=s address, which might vary in length from record to record.  Unlike Condor 3, dBaseIII is able to edit fields without having to start over.  Inserting new fields or deleting old fields can be done quite easily.
+Data manipulation and query is very accessible through a number of built-in functions.  The list and display commands enable you to see the entire file, selected records, and selected files.  The browse command allows you to scroll through all the fields inserting or editing records at the same time.  Calculation functions like sum, average, count, and total allow you to perform arithmetic operations on data in a file.  There are other functions available like date and time functions, rounding, and formatting.
+
+Omnifile
+Omnifile is a single-file database system.  This database is form oriented meaning that it has a master form with alternate forms attached to it.  Therefore, you can work with one file and all of its subsets at the same time.  The idea of alternating forms provides for a greater level of security, for example, if a user needed to update an address field, they would not be able to access any fields which displayed confidential information.  The field in need of updating would only display the necessary or relevant information.
+Menus are once again present and used as a guide.  The use of function keys allows the user to move about screens or forms quite easily.  Menus are also used for transferring information, either for importing or for exporting.  One inflexibility noted was that when copying files the two files must have the exact same fields in the same order as the master file.  This can be problem if you want to copy identical fields from different files.
+
+Forms design is simple but tedious.  Although it may seem flexible to be able to paint the screen in any manner that you wish, it can be time consuming because no default screen is available.  Like other database management systems, the usual syntax for defining fields apply, field name followed by the length of the field in braces.  However, editing is a little more difficult.  Changing the form can be done by inserting and deleting, one character at a time.  Omnifile does not support moving fields around, nor inserting blank lines.  This means that if a field was to be added at the beginning of the record, the entire record would have to be re-entered.
+Records are added and viewed in the format that the user first designed it.  Invalid entries are not handled very well.  Entering an illegal value in a certain field results in a beep and no message, the user is left there to try and decide what the error is.  Omnifile does support the ability to insert new records while viewing existing records and to make global or local changes.
+Querying can be performed by using an index or using a non-indexed search.  If a search for a partial entry is made like ARob@ instead of ARobinson@, a message is then displayed stating that not an exact match was found.
+Overall
+These are just a few of the database programs that help start the whole database management system era.  It is apparent that DBMS=s today still use some of the fundamentals first implemented by these >old= systems.  Items like menus, forms, and portability are still key parts to current applications.  However, programs have come along since then, but still have as their bases the same fundamental principles.
+
+
+
+An automated library is one where a computer system is used to
+manage one or several of the library's key functions such as
+acquisitions, serials control, cataloging, circulation and the public
+access catalog. When exploring the history of library automation,  it
+is possible to return to past centuries when visionaries well before
+the computer age created devices to assist with their book lending
+systems. Even as far back as 1588, the invention of the French "Book
+Wheel" allowed scholars to rotate between books by stepping on a pedal
+that turned a book table. Another interesting example was the "Book
+Indicator", developed by Albert Cotgreave in 1863. It housed miniature
+books to represent books in the library's collection. The miniature
+books were part of a design that made it possible to determine if a
+book was in, out or overdue. These and many more examples of early
+ingenuity in library systems exist, however, this paper will focus on
+the more recent computer automation beginning in the early twentieth
+century.
+
+The Beginnings of Library Automation: 1930-1960
+It could be said that library automation development began in the
+1930's when punch card equipment was implemented for use in library
+circulation and acquisitions. During the 30's and early 40's progress
+on computer systems was slow which is not surprising, given the
+Depression and World War II. In 1945, Vannevar Bush envisioned an
+automated system that would store information, including books,
+personal records and articles. Bush(1945) wrote about a hypothetical
+"memex" system which he described as a mechanical library that would
+allow a user to view stored information from several different access
+points and look at several items simultaneously. His ideas are well
+known as the basis for hypertext and mputers for their operations. The
+first appeared at MIT, in 1957, with the development of COMIT,
+managing linguistic computations, natural language and the ability to
+search for a particular string of information. Librarians then moved
+beyond a vision or idea for the use of computers, given the
+technology, they were able make great advances in the use of computers
+for library systems. This lead to an explosion of library automation
+in the 60's and 70's.
+
+Library Automation Officially is Underway: 1960-1980
+The advancement of technology lead to increases in the use of
+computers in libraries. In 1961, a significant invention by both
+Robert Noyce of Intel and Jack Kirby of Texas Instruments, working
+independently, was the integrated circuit. All the components of an
+electronic circuit were placed onto a single "chip" of silicon. This
+invention of the integrated circuit and newly developed disk and tape
+storage devices gave computers the speed, storage and ability needed
+for on-line interactive processing and telecommunications.
+The new potential for computer use guided one librarian to develop a
+new indexing technique. HP. Luhn, in 1961, used a computer to produce
+the "keyword in context" or KWIC index for articles appearing in
+Chemical Abstracts. Although keyword indexing was not new, it was
+found to be very suitable for the computer as it was inexpensive and
+it presented multiple access points. Through the use of Luhn's keyword
+indexing, it was found that librarians had the ability to put
+controlled language index terms on the computer.
+By the mid-60's, computers were being used for the production of
+machine readable catalog records by the Library of Congress. Between
+1965 and 1968, LOC began the MARC I project, followed quickly by MARC
+II. MARC was designed as way of "tagging" bibliographic records using
+3-digit numbers to identify fields. For example, a tag might indicate
+"ISBN," while another tag indicates "publication date," and yet
+another indicates "Library of Congress subject headings" and so on. In
+1974, the MARC II format became the basis of a standard incorporated
+by NISO (National Information Standards Organization). This was a
+significant development because the standards created meant that a
+bibliographic record could be read and transferred by the computer
+between different library systems.
+ARPANET, a network established by the  Defense Advanced Research
+Projects Agency in 1969 brought into existence the use of e-mail,
+telnet and ftp. By 1980, a sub-net of ARPANET made MELVYL, the
+University of Californiaís on-line public access catalog, available on
+a national level. ARPANET, would become the prototype for other
+networks such as CSNET, BITNET, and EDUCOM. These networks have almost
+disappeared with the evolution of ARPANET to NSFNET which has become
+the present day Internet.
+During the 1970's the inventions of the integrated computer chip
+and storage devices caused the use of minicomputers and microcomputers
+to grow substantially. The use of commercial systems for searching
+reference databases (such as DIALOG) began. BALLOTS (Bibliographical
+Automation of Large Library Operations) in the late 1970's was one of
+the first and later became the foundation for RLIN (the Research
+Libraries Information Network). BALLOTS was designed to integrate
+closely with the technical processing functions of the library and
+contained four main files: (1)MARC records from LOC; (2) an in-process
+file containing information on items in the processing stage; (3) a
+catalog data file containing an on-line record for each item; and (4)
+a reference file. Further, it contained a wide search retrieval
+capability with the ability to search on truncated words, keywords,
+and LC subject headings, for example.
+OCLC, the On-line Computer Library Center began in 1967, chartered in
+the state of Ohio. This significant project facilitated technical
+processing in library systems when it started it's first cooperative
+cataloging venture in 1970. It went on-line in 1971. Since that time
+it has grown considerably, providing research and utihypermedia.
+In order to have automation, there must first be a computer. The
+development of the computer progressed substantially from 1946 to
+1961, moving quickly though a succession of vacuum tubes, transistors
+and finally to silicon chips. From 1946 to 1947 two significant
+computers were built. The ENIAC I (Electronic Numerical Integrator and
+Calculator) computer was developed by John Mauchly and J. Presper
+Eckert at the University of Pennsylvania. It contained over 18,000
+vacuum tubes, weighed thirty tons and was housed in two stories of a
+building.  It was intended for use during World War II but was not
+completed in time. Instead, it was used to assist the development of
+the hydrogen bomb. Another computer, EDVAC, was designed to store two
+programs at once and switch between the sets of instructions. A major
+breakthrough occurred in 1947 when Bell Laboratories  replaced vacuum
+tubes with the invention of the transistor. The transistors decreased
+the size of the computer, and at the same time increased the speed and
+capacity.  The UNIVAC I (Universal Automatic Computer) became the
+first computer using transistors and was used at the U.S. Bureau of
+the Census from 1951 until 1963.
+Software development also was in progress during this time.
+Operating systems and programming languages were developed for the
+computers being built. Librarians needed text-based computer
+languages, different from the first numerical languages invented for
+the number crunching "monster computers", in order to be able to use
+colities designed to provide users with the ability to access
+bibliographic records, scientific and literary information which
+continues to the present .
+
+Library Automation 1980-present
+The 70's were the era of the dummy terminal that were used to gain
+access to mainframe on-line databases. The 80's gave birth to a new
+revolution. The size of computers decreased, at the same time,
+technology  provided faster chips, additional RAM and greater storage
+capacity. The use of microcomputers during the 1980's expanded
+tremendously into the homes, schools, libraries and offices of many
+Americans.  The microcomputer of the 80's became a useful tool for
+librarians who put to them to use for everything from word processing
+to  reference, circulation and serials.
+On-line Public Access Catalogs began to be used extensively the
+1980's. Libraries started to set-up and purchase their own computer
+systems as well as connect with other established library networks.
+Many of these were not developed by the librarians themselves, but by
+vendors who supplied libraries with systems for everything from
+cataloging to circulation. One such on-line catalog system is the CARL
+(Colorado Alliance of Research Libraries) system.  Various other
+software became available to librarians, such as spreadsheets and
+databases for help in library administration and information
+dissemination.
+The introduction of  CD-ROMs in the late 80ís has changed the way
+libraries operate.  CD-ROMs became available containing databases,
+software, and information previously only available through print,
+making the information more accessible. Connections to "outside"
+databases such as OCLC, DIALOG, and RLIN continued, however, in the
+early 90's the databases that were previously available on-line became
+available on CD-ROM, either in parts or in their entirety.  Libraries
+could then gain information through a variety of options.
+The nineties are giving rise to yet another era in library
+automation. The use of networks for e-mail, ftp, telnet, Internet, and
+connections to on-line commercial systems has grown. It is now
+possible for users to connect to the libraries from their home or
+office.  The world wide web which had it's official start date as
+April of 1993 is becoming the fastest growing new provider of
+information. It is also possible, to connect to international library
+systems and information through the Internet and with ever improving
+telecommunications.  Expert systems and knowledge systems have become
+available in the 90ís as both software and hardware capabilities have
+improved. The technology used for the processing of information has
+grown considerably since the beginnings of the thirty ton computer.
+With the development of more advanced silicon computer chips, enlarged
+storage space and faster, increased capacity telecommunication lines,
+the ability to quickly process, store, send and retrieve information
+is causing the current information delivery services to flourish.
+
+
+
+Bibliography
+
+Bush, V. (1945).As we may think. Atlantic Monthly. 176(1), 101-8.
+
+Duval, B.K. & Main, L. (1992). Automated Library Systems: A Librarians
+Guide and Teaching Manual. London: Meckler
+
+Nelson, N.M., (Ed.) (1990). Library Technology 1970-1990: Shaping the
+Library of the Future. Research Contributions from the 1990 Computers
+in Libraries Conference. London: Meckler.
+
+Pitkin, G.M. (Ed.) (1991). The Evolution of Library Automation:
+Management Issues and Future Perspectives. London: Meckler.
+
+
+
+
+
+
+
+
+
+Title:
+A Brief History of Library Automation: 1930-1996
+
+
+=================================================================== WIRED HANDS - A Brief Look at Robotics                   NEWSCIENCE -------------------------------------------------------------------  Two years ago, the Chrysler corporation completely gutted its Windsor, Ontario, car assembly plant and within six weeks had installed an entirely new factory inside the building.  It was a marvel of engineering.  When it came time to go to work, a whole new work force marched onto the assembly line.  There on opening day was a crew of 150 industrial robots.  Industrial robots don't look anything like the androids from sci-fi books and movies.  They don't act like the evil Daleks or a fusspot C-3P0.  If anything, the industrial robots toiling on the Chrysler line resemble elegant swans or baby brontosauruses with their fat, squat bodies, long arched necks and small heads.  An industrial robot is essentially a long manipulator arm that holds tools such as welding guns or motorized screwdrivers or grippers for picking up objects.  The robots working at Chrysler and in numerous other modern factories are extremely adept at performing highly specialized tasks - one robot may spray paint car parts while another does spots welds while another pours radioactive chemicals.  Robots are ideal workers: they never get bored and they work around the clock.  What's even more important, they're flexible.  By altering its programming you can instruct a robot to take on different tasks. This is largely what sets robots apart from other machines; try as you might you can't make your washing machine do the dishes.  Although some critics complain that robots are stealing much-needed jobs away from people, so far they've been given only the dreariest, dirtiest, most soul-destroying work.  The word robot is Slav in origin and is related to the words for work and worker.  Robots first appeared in a play, Rossum's Universal Robots, written in 1920 by the Czech playwright, Karel Capek.  The play tells of an engineer who designs man-like machines that have no human weakness and become immensely popular.  However, when the robots are used for war they rebel against their human masters.  Though industrial robots do dull, dehumanizing work, they are nevertheless a delight to watch as they crane their long necks, swivel their heads and poke about the area where they work.  They satisfy "that vague longing to see the human body reflected in a machine, to see a living function translated into mechanical parts", as one writer has said.  Just as much fun are the numerous "personal" robots now on the market, the most popular of which is HERO, manufactured by Heathkit.  Looking like a plastic step-stool on wheels, HERO can lift objects with its one clawed arm and utter computer-synthesized speech.  There's Hubot, too, which comes with a television screen face, flashing lights and a computer keyboard that pulls out from its stomach.  Hubot moves at a pace of 30 cm per second and can function as a burglar alarm and a wake up service.  Several years ago, the swank department store Neiman-Marcus sold a robot pet, named Wires.  When you boil all the feathers out of the hype, HERO, Hubot, Wires et. al. are really just super toys.  You may dream of living like a slothful sultan surrounded by a coterie of metal maids, but any further automation in your home will instead include things like lights that switch on automatically when the natural light dims or carpets with permanent suction systems built into them.  One of the earliest attempts at a robot design was a machine, nicknamed Shakey by its inventor because it was so wobbly on its feet.  Today, poor Shakey is a rusting pile of metal sitting in the corner of a California laboratory.  Robot engineers have since realized that the greater challenge is not in putting together the nuts and bolts, but rather in devising the lists of instructions - the "software - that tell robots what to do".      Software has indeed become increasingly sophisticated year by  year.  The Canadian weather service now employs a program  called METEO which translates weather reports from English to  French.  There are computer programs that diagnose medical  ailments and locate valuable ore deposits.  Still other computer  programs play and win at chess, checkers and go.     As a results, robots are undoubtedly getting "smarter".  The  Diffracto company in Windsor is one of the world's leading  designers and makers of machine vision.  A robot outfitted with  Diffracto "eyes" can find a part, distinguish it from another part  and even examine it for flaws.  Diffracto is now working on a  tomato sorter which examines colour, looking for no-red - i.e.   unripe - tomatoes as they roll past its TV camera eye.  When an  unripe tomato is spotted, a computer directs a robot arm to pick  out the pale fruit.   Another Diffracto system helps the space shuttle's Canadarm pick up satellites from space.  This sensor looks for reflections on a satellites gleaming surface and can determine the position and speed of the satellite as it whirls through the sky.  It tells the astronaut when the satellite is in the right position to be snatched up by the space arm.      The biggest challenge in robotics today is making software that can help robots find their way around a complex and chaotic world.  Seemingly sophisticated tasks such as robots do in the factories can often be relatively easy to program, while the ordinary, everyday things people do - walking, reading a letter, planning a trip to the grocery store - turn out to be incredibly difficult.  The day has still to come when a computer program can do anything more than a highly specialized and very orderly task.  The trouble with having a robot in the house for example, is that life there is so unpredictable, as it is everywhere else outside the assembly line.  In a house, chairs get moved around, there is invariably some clutter on the floor, kids and pets are always running around.  Robots work efficiently on the assembly line where there is no variation, but they are not good at improvisation.  Robots are disco, not jazz.  The irony in having a robot housekeeper is that you would have to keep your house perfectly tidy with every item in the same place all the time so that your metal maid could get around.  Many of the computer scientists who are attempting to make robots brighter are said to working in the field of Artificial Intelligence, or AI.  These researchers face a huge dilemma because there is no real consensus as to what intelligence is.  Many in AI hold the view that the human mind works according to a set of formal rules.  They believe that the mind is a clockwork mechanism and that human judgement is simply calculation.  Once these formal rules of thought can be discovered, they will simply be applied to machines.  On the other hand, there are those critics of AI who contend that thought  is intuition, insight, inspiration.  Human consciousness is a stream in which ideas bubble up from the bottom or jump into the air like fish.    This debate over intelligence and mind is, of course, one that has gone on for thousands of years.  Perhaps the outcome of the  "robolution" will be to make us that much wiser.
+
+
+
+A Hacker
+A hacker is a person obsessed with computers.
+At the heart of the obsession is a drive master the
+computer. The classic hacker was simply a
+compulsive programmer. It is only recently that the
+term hacker became associated with the computerized
+vandalism.
+Great description of Hackers:
+Bright young men of disheveled apperance,Often with
+sunken, glowing eyes.Seen sitting at computer
+consoles, their arms tense and waitingTo fire their
+fingers which are already posed to strike at the
+buttons and keys on which their attention seems to
+dice.They work until they nearly drop,twenty or
+thirty hours at a time if possible.They sleep on
+cots near the computer,but only a few hours-then
+back to the console, or printouts.Their crumpled
+clothes, their unwashed, unsheven faces, and
+uncombed hair, testify that they are oblivious to
+their bodies and to the word in which they move.
+They exist, at least when so gaged, only through
+and for the computers.
+
+The majority of hackers are mostly young men,
+often teenagers who have found within the computer
+world, something into which they can mold their
+desires.
+Another definition
+-a person totally engrossed in computer
+programming and computer technology. In the
+1980s, with the advent of personal computers
+and dial-up computer networks, hacker
+acquired a pejorative connotation, often
+referring to someone who secretively invades
+others' computers, inspecting or tampering
+with the programs or data stored on them.
+(More accurately, though, such a person would
+be called a "cracker.") Hacker also means
+someone who, beyond mere programming, likes
+to take apart operating systems and programs
+to see what makes them tick
+
+
+
+
+
+
+Adv. Eng. 9
+Computers
+A Long Way From Univac
+Can you imagine a world without computers?  You most probably interact with some form of a computer every day of your life.  Computers are the most important advancement our society has ever seen.  They have an interesting history, many interesting inner components, they are used nearly everywhere, and continue to advance incredibly fast.  Because the field of computers is so broad, this paper will focus mainly on personal computers.
+
+Although computers have been evolving for quite some time, they really didn¹t gain popularity until the introduction of the personal computer.  In 1977, Steve Jobs, co-founder of  the Apple Computer Company, unveiled what is generally considered to be the first personal computer, the Apple II.  This computer was introduced on April 16, 1977, at the First West Coast Computer Faire, in San Francisco.  In 1981, the International Business Machines Company introduced the first IBM PC.  Unlike Apple, IBM used a policy of open architecture for their computer.  They bought all of their components from the lowest bidder, such as the 8086 and 8088 microprocessor chips, made by a Intel, a Hillsboro, Oregon company.   When IBM¹s computer¹s design had been finalized, they shared most of the inner workings of the computer with everyone.  IBM hoped that this would encourage companies to manufacture computers that were compatible
+
+with theirs, and that in turn, would cause software companies to create operating systems, or OS, and other programs for the ³IBM Compatible² line of computers.  One of the computer manufacturers was a Texas company called Compaq.  A company called Dell Computers was the first ³factory direct² computer seller.  A small Redmond, Washington company called Microsoft made a large amount of software for the ³IBM Compatible² line of computers.  This open architecture policy of IBM was not without it¹s flaws, however.  IBM lost some business to the ³clones² who could offer more speed, more memory, or a smaller price tag.  IBM had considered this an acceptable loss.  One of the few components of the IBM PC that was kept from the clone manufacturers was the Basic Input Output System, or BIOS.  This program, which was usually etched permanently on a chip, controlled the interactions between the internal hard and floppy drives, the external drives, printers, and monitors, etc.  Clone manufactures had to make their own versions of an input output system.  Some manufacturers copied the IBM BIOS exactly, such as Eagle Computers, and Corona Data Systems.  This is one adverse affect that IBM had not thought of.  However, all of IBM¹s copyright violation lawsuits against these companies ended in IBM¹s favor.  IBM has continued to grow to this day, however, the clone manufacturers make far more personal computers than IBM, while IBM makes more business machines, and the Power PC microprocessor, used in Macintosh computers.  IBM clone are now made by Packard Bell, Sony, Acer, Gateway 2000, and more.  The clones have continued to use software and operating systems made by Microsoft, including: DOS (Disk
+
+Operating System), Windows, Windows 95, and Windows NT.  The clones also primarily use microprocessors manufactured by Intel, including the 8086, 8088, 80286, 80386, 80486, Pentium and Pentium Pro, which offer speeds over 200 megahertz, and will be even faster in the near future (Silver 7-28).
+
+Apple took a somewhat different course during this period.  Not willing to enter the IBM clone manufacturing market, Apple continued to make their own kind of computers.  They made minor improvements on the Apple II line, but eventually decided they needed to make a new type of computer.  They first introduced the Apple III in September of 1980.  It was a dismal failure.  The first buyers encountered numerous system errors and failures, because of a poor OS.  Besides that, it was poorly manufactured, with improperly fitting circuitry, loose wires and screws, etc.  The later released Apple III+ did poorly because of it¹s brother¹s poor debut.  The next big release was the Lisa in January of 1983.  It was the first personal computer with a mouse, and nice graphic capabilities.  Experiments showed that it was 20 times as easy to use as the IBM PC, and it drew enormous praise from computer magazines.  It had flaws too, however.  It strained the power of the aging Motorola 68000 microprocessor, so it lost in speed tests to the IBM PC.  It also came with a $10,000 price tag, over twice as much as most IBM clones.  The Lisa failed, not as catastrophically as the Apple III, but failed, nevertheless.  Apple had but one more ace up their sleeve, and they released it in January of 1984.  They called it the Macintosh, and it was very
+
+popular.  Apple still uses the Macintosh series of computers to this day.  In 1995, Apple finally allowed other companies to use their OS, and manufacture clones.  Some clone manufacturers include: Power Computing, Umax, Radius, and Motorola.  Unlike IBM, Apple still sells more computers than it¹s clones, but Power Computing is steadily gaining in sales.  Macintoshes and Mac clones use System 6, System 7, System 7.1, System 7.5, and System 7.6, all made by Apple.  Macintoshes and their clones use microprocessors manufactured by Motorola, including, 68000, 68881, 68020, 68030, 68040, and the Power PC 601, 603, and 604, made by Motorola and IBM, with speeds up to 225 megahertz, and a 603e, available in January of 1997, operating at 300 megahertz (Hassig 45-68)
+
+Computers have many interesting components, including: motherboards, microprocessors, FPUs (Floating Point Unit), hard disk drives, floppy disk drives (5.25² and 3.5²), CD ROM drives (Compact Disc Read Only Memory), cartridge drives, ROM chips (Read Only Memory), RAM (Random Access Memory), VRAM (Video Random Access Memory), NuBus or PCI expansion cards (Peripheral Complement Interface), monitors, keyboards, mice, speakers, microphones, printers, network systems, and modems.  The motherboard is what the microprocessor, FPU, ROM, RAM, VRAM and all the circuitry are attached to.  The microprocessor, also called a CPU (Central Processing Unit) and FPU are what everything goes through, and tell what to do with data.  Most CPUs operate from 2.5 megahertz (MHz, millions of cycles per second) to 300
+
+MHz.  The hard disk holds large amounts of data for a long time.  Most hard disks can hold from 1 megabyte (MB) to 10 gigabytes (GB).  *NOTE: (1 GB is 1,024 MB, 1 MB is 1,024 kilobytes (K), 1 K is 1,024 bytes, 1 byte is 8 bits, and a bit is an on/off code (binary code uses 0 for off and 1 for on), therefore a 10 GB hard disk can have 8,589,934,592 bits!).  Floppy disks are for putting small amounts data on, and being able to take them with you. The old 5.25² disks held a few K of data, while the new 3.5² type holds 800 K or 1.4 MB.  CD ROMs are relatively new.  They have very fine lines on their surface read by a laser, and can usually hold 650 MB of data (which is unchangeable).  CD ROM drives range in disc reading time from 1X (real time, 150 K/sec) to 15X (2.2 MB/sec).  Cartridges store large amounts of data and are removable, like floppy disks.  They can store up to 1 GB, and come in all shapes and sizes, each type with a different drive.  ROM is unchangeable data soldered on the motherboard.  RAM is memory the computer uses for immediate access, such as open applications.  Everything on the RAM is lost when the computer is shut down.  VRAM is used to display a higher resolution or greater color depth on the monitor. 512 K or 1 MB is the standard amount on most computers, and 8 MB is the most available.  The resolution ranges from 400 by 300 pixels to 1,920 by 1,440 pixels.  The color depth ranges from 1 bit (black and white) to 36 bit (68,719,476,470 colors).  NuBus and PCI expansion cards add special features to computers, such as receiving TV transmissions.  Monitors display images given to them by VRAM.  They range in size from 9 to 21 inches diagonally.  Keyboards input data into the computer.  Mice have a
+
+track ball that moves around inside, causing a cursor to move across the screen.  Speakers amplify the sound output of a computer.  Microphones allow sounds to be recorded on a computer.  Printers allow computers to put data on paper.  Network systems allow data to be easily transmitted from one computer to another.  Modems allow data to be transmitted through telephone wires.  They have variable speeds from 300 bytes per second (BPS) to 57,600 BPS (Rizzo 5-21).
+
+Today, computers are utilized in just about every field imaginable.  A caution for the future of computers is that they could go berserk or, if they had a working artificial intelligence, they could make mankind completely obsolete.  Computers have evolved, and will continue to evolve faster than any tech technology to date.  Therefore, it is impossible to fathom where computers will be in a thousand, or even a hundred years.  One thing, however, is certain: computers are the most important advancement our society has ever seen.
+
+BIBLIOGRAPHY
+Rizzo, John and K. Daniel Clarke. How Macs Work. New York: Ziff-Davis 		Press, 1996.
+
+Hassig, Lee, Margery A. duMond, Esther Ferrington, et al. The Personal 		Computer. Richmond: Time Life, 1989.
+
+Silver, Gerald A.  and Myrna L. Silver. Computers and Information 			Processing. New York: HarperCollins Publishers, 1993.
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+Microsoft Windows 95 README for Microsoft Windows
+August l995
+--------------------------------------------------------
+(c) Copyright Microsoft Corporation, 1995
+
+
+------------------------
+HOW TO USE THIS DOCUMENT
+------------------------
+
+To view Readme.txt on screen in Notepad, maximize the Notepad window.
+
+To print Readme.txt, open it in Notepad or another word processor,
+then use the Print command on the File menu.
+
+
+--------
+CONTENTS
+--------
+
+IF YOU HAVEN'T INSTALLED WINDOWS 95
+LIST OF WINDOWS 95 README FILES
+HOW TO READ README FILES
+UNINSTALLING WINDOWS 95
+--------
+
+
+IF YOU HAVEN'T INSTALLED WINDOWS 95
+===================================
+
+Additional setup information is available in Setup.txt. You can view
+Setup.txt using Notepad with Windows 3.1. You can find the file on
+Windows 95 installation disk 1. If you purchased Windows 95 on a CD-ROM,
+you can find Setup.txt in the \Win95 directory.
+
+
+LIST OF WINDOWS 95 README FILES
+===============================
+In addition to Readme.txt, Windows 95 provides the following readme
+files:
+
+Config.txt	Contains syntax information for commands you use
+with your Config.sys file.
+
+Display.txt	Provides information about how to configure
+and correct problems for available drivers
+and how to obtain additional display drivers.
+
+Exchange.txt	Provides information to help you set up and
+run Microsoft Exchange.
+
+Extra.txt	Provides information about where to find
+additional Windows 95 files, such as updates
+and drivers, in addition to files available
+only in the CD-ROM version of Windows 95.
+
+Faq.txt		Answers frequently asked questions about
+Windows 95.
+
+General.txt	Provides information about startup problems,
+the programs that come with Windows 95, disk
+tools, disks and CDs, drivers, removable media,
+Microsoft FAX, and pen services.
+
+This file also contains last-minute information
+received too late to include in the other readme
+files. For example, if you have a question about
+a printer, it would be helpful to look in
+General.txt as well as in Printers.txt.
+
+Hardware.txt	Provides information about known problems and
+workarounds for hardware. You may also need
+to refer to Printers.txt or Mouse.txt for
+specific problems.
+
+Internet.txt	Provides information to help you connect to
+the Internet if you haven't done so already.
+Also provides information about where to
+download Microsoft's new Web browser,
+Internet Explorer.
+
+Mouse.txt	Provides information about known problems
+and workarounds specifically for mouse and
+keyboard problems.
+
+Msdosdrv.txt	Contains syntax information for MS-DOS
+device drivers. For additional help on MS-DOS
+commands, see Config.txt. You can also use
+command-line help at the command prompt by
+typing /? following the command name.
+
+Msn.txt		Provides information to help you connect to
+The Microsoft Network.
+
+Network.txt	Provides information about installing and
+running network servers.
+
+Printers.txt	Provides information about known problems
+and workarounds for printers.
+
+Programs.txt	Provides information and workarounds for
+running some specific Windows-based and
+MS-DOS-based programs with Windows 95.
+
+Support.txt	Provides Information about how to get
+additional support for Windows 95.
+
+Tips.txt	Contains an assortment of tips and tricks
+for using Windows 95, most of which are not
+documented in online Help or the printed book.
+
+
+HOW TO READ README FILES
+========================
+
+When you install Windows 95, all the readme files are copied to the
+\Windows directory.
+
+To open a readme file after you install Windows 95:
+1. Click the Start menu.
+2. Click Run.
+3. Type the name of the readme file.
+
+Even if you haven't installed Windows 95 yet, you can still open a
+readme file.
+
+To open a readme file before you install Windows 95:
+
+If you purchased Windows 95 on floppy disks:
+--------------------------------------------
+1. Insert Disk 1 into drive A (or whatever drive you prefer).
+2. At the MS-DOS command prompt, type the following:
+
+a:extract.exe /a /l c:\windows win95_02.cab filename.txt
+
+For example, if you want to open General.txt, you would type:
+
+a:extract.exe /a /l c:\windows win95_02.cab general.txt
+
+3. Change to the \Windows directory.
+4. At the command prompt, type the following:
+
+edit filename.txt
+
+If you purchased Windows 95 on a CD-ROM:
+----------------------------------------
+1. Insert the CD into your CD-ROM drive (drive x in this example).
+2. Change to the \Win95 directory on your CD-ROM drive.
+2. At the MS-DOS command prompt, type the following:
+
+extract.exe /a /l c:\windows win95_02.cab filename.txt
+
+For example, if you want to open General.txt, you would type:
+
+extract.exe /a /l c:\windows win95_02.cab general.txt
+
+3. Change to the Windows directory on your C drive.
+4. At the command prompt, type the following:
+
+edit filename.txt
+
+
+UNINSTALLING WINDOWS 95
+=======================
+
+During Setup, you have the option of saving your system files so
+that you can uninstall Windows 95 later. If you want to be able to
+uninstall Windows 95 later, choose Yes. Setup will save your system
+files in a hidden, compressed file. If you don't need to be able to
+uninstall Windows 95 later, choose No.
+
+You will not see this Setup option if:
+- You are upgrading over an earlier version of Windows 95.
+- You are installing to a new directory.
+- You are running a version of MS-DOS earlier than 5.0.
+
+NOTE:The uninstall files must be saved on a local hard drive. You
+can't save them to a network drive or a floppy disk. If you have
+multiple local drives, you will be able to select the one you want
+to save the uninstall information on.
+
+To uninstall Windows 95 and completely restore your computer to its
+previous versions of MS-DOS and Windows 3.x, carry out the following
+procedure:
+
+1. Click the Start button, point to Settings, and then click
+Control Panel.
+2. Double-click the Add/Remove Programs icon.
+3. On the Install/Uninstall tab, click Windows 95, and then click
+Remove.
+
+Or, if you are having problems starting Windows 95, use your startup
+disk to start your computer, and then run UNINSTAL from the startup
+disk.
+
+NOTE: The uninstall program needs to shut down Windows 95. If there is
+a problem with this on your computer, restart your computer and press
+F8 when you see the message "Starting Windows 95." Then choose Command
+Prompt Only, and run UNINSTAL from the command prompt.
+
+If Windows 95 is running and you want to remove the uninstall files to
+free up 6 to 9 MB of disk space, carry out the following procedure:
+
+1. Click the Start button, point to Settings, and then click
+Control Panel.
+2. Double-click the Add/Remove Programs icon.
+3. On the Install/Uninstall tab, click Old Windows 3.x/MS-DOS System
+Files, and then click Remove.
+
+You will no longer be able to uninstall Windows 95.
+
+
+
+
+
+
+Whether you know it or not you depend on computers for almost every thing you do in modern day life. From the second you get up in the morning to the second you go to sleep computer are tied into what you do and use in some way.  It is tied in to you life in the most obvious and obscure ways.  Take for example you wake up in the morning usually to a digital alarm clock. You start you car it uses computers the second you turn the key (General Motors is the largest buyers of computer components in the world). You pick up the phone it uses computers. No mater how hard you try you can get away from them you can't. It is inevitable.
+Many people think of computers as a new invention, and in reality it is very old.  It is about 2000 years old .1 The first computer was the abacus. This invention was constructed of wood, two wires, and beads.  It was a wooden rack with the two wires strung across it horizontally and the beads were strung across the wires.  This was used for normal arithmetic uses. These type of computers are considered analog computers. Another analog computer was the circular slide rule.  This was invented in 1621 by William Oughtred who was an English mathematician. This slid ruler was a mechanical device made of two rules, one sliding inside the other, and marked with many number scales. This slide ruler could do such calculations as division, multiplication, roots, and logarithms.
+Soon after came some more advanced computers. In 1642 came Blaise Pascal's computer, the Pascaline. It was considered to be the first automatic calculator.  It consisted of gears and interlocking cogs. It was so that you entered the numbers with dials.  It was originally made for his father, a tax  collector.2 Then he went on to build 50 more of these Pascaline's, but clerks would not uses them.3 They did this in fear that they would loose their jobs.4
+Soon after there were many similar inventions. There was the Leibniz wheel that was invented by Gottfried Leibniz. It got its name because of the way it was designed with a cylinder with stepped teeth. 5 This did the same functions of the other computers of its time.
+Computers, such as the Leibniz wheel and the Pascaline, were not used widely until the invention made by Thomas of Colmar (A.K.A Charles Xavier Thomas).6 It was the first successful mechanical calculator that could do all the normal arithmetic functions. This type of calculator was improved by many other inventors so it could do a number of many other things by 1890. The improvements were they could collect partial results, a memory function (could store information), and output information to a printer. These improvement were made for commercial uses mainly, and also required manual installation.
+Around 1812 in Cambridge, England, new advancements in computers was made by Charles Babbage. His idea was that long calculations could be done in a series of steps the were repeated over many times.7 Ten years later in 1822 he had a working model and in 1823 he had fabrication of his invention. He had called his invention the Difference Engine.
+In 1833 he had stopped working on his Difference Engine because he had another idea. It was to Build a Analytical Engine.  This would have been a the first digital computer that would be full program controlled. His invention was to do all the general- purposes of modern computers. This computer was to use punch cards for storage, steam power, and operated by one person.8  This computer was never finished for many reasons. Some of the reasons were not having precision mechanics and  could solve problems not needed to be solved at that time.9 After Babbage's computer people lost interest in this type of  inventions.10 Eventually inventions afterwards would cause a demand for calculations capability that computers like Babbage's would capable of doing.
+In 1890 an new era of business computing had evolved. This was a development in punch card use to make a step towards automated computing, which was first used in 1890 by Herman Holler. Because of this human error was reduced dramatically.11 Punch Cards could hold 80 charters per card and the machines could process about 50 -220 cards a minuet.  This was a means of easily accessible me memory of unlimited size.12  In 1896 Hollerith had founded his company Tabulating Machine Company, but later in 1924 after several mergers and take-overs International Business Machines (IBM) was formed.
+An invention during this time ,1906, would influence the way that computers were built in the future, it is the first vacuum, and a paper was wrote by Alan Turingthat described a hypothetical digital computer.13
+In 1939 there was the first true digital computer. It was called the ABC, and was designed by Dr. John Astanasoff.
+In 1942 John O. Eckert, John W. Mauchly, and associates had decided to build a high speed computer. The computer they were to build would become to be known as the ENIAC (Electrical Numerical Integration And Calculator). The reason for building this was there was a demand for high computer capacity at the beginning of World War two.
+The ENIAC after being built would take up 1,800 square feet of floor space.14 It would consist of 18,000 vacuum tubes, and would take up 180,000 watts of power.15  The ENIAC was rated to be 1000 times faster than any other previous computer. The ENIAC was accepted as the first successful high speed computer, and was used from 1946 to 1955.16
+Around the same time there was a new computer built was more popular. It was more popular because it not only had the ability to do calculations but it could also could do the dissension make power of the human brain. When it was finished in 1950 it became the fastest computer in the world.17 It was built by the National Bureau of standards on the campus of UCLA. It was names the National Bureau of Standards Western Automatic Computer or the SWAC. It could be said that the SWAC set the standards for computers for later up to present times.18 It was because the had all the same primary units. It had a storage device, a internal clock, an input output device, and arithmetic logic unit that consisting of a control and arithmetic unit.
+These computers were considered first generation computers (1942 - 1958).
+In 1948 John Bardeen, Walter Brattain, and William Schockley of Bell labs file for the firs patent on the transistor.19 This invention would foundation for second generation computers (1958 - 1964).
+Computers of the second generation were smaller(about the size of a piano now) and much more quicker because of the new inventions of its time. Computers used the much smaller transistor over the bulky vacuum tubes. Another invention which influenced second generation computers and every generation after it was the discovery of magnetic core memory. Now magnetic tapes and disks were used to store programs instead of being stored in the computer. This way the computer could be used for many operations without totally being reprogrammed or rewired to do another task. All you had to do was pop in another disk.
+The third generation(1964 - 1970) was when computers were commercialized then ever before. This was because they were getting smaller and more dependable.20 Also the cost went down and power requirements were less.21 This was probably because of the invention of the silicon semiconductor. These computers were used in mainly medical places and libraries for keep track of records and various other reasons. These computer of the third generation were the first micro computers.
+The generation of computers we are in now is the forth generation it started in 1970. The forth generation really started with an idea by Ted Hoff, an employ of Intel, that all the processing units of a computer could be placed on one single chip. This Idea that he had was not bought by many people.22 I believe that with out this idea upgradeable computers would never have been designed. Today, every thing has a microprocessor built into it.23
+The microcomputer was changed forever in 1976 when Steve Jobs and Steve Wozniak had sold a Volkswagen and a calculator for $1300 to build the first Apple.24 The work the did was in their garage. They Had founded their company 1983, and had successfully mad the fortune 500 list.25
+Two  years before Apple was founded IBM had announced the release of the IBM PC. Over the next 18 months the IBM would become an industry standard.26
+From the 1980 on there was a was a large demand for microcomputers Suck as the IBM PC and Apple not only in industry but in the homes of many people. Many other computers appeared during the 80's. Some were the Commodore, Tandy, Atari, and game systems such as the nintendo and many others. There was aslo a large demand for computer games for the home PC. Because of these many demands many companies were getting very competitive. They were pushing for the faster better computer. Buy the late 80's because of this demand microprocessors could handle 32 bits of data at a time pushing over 4 million instructions processed a second.27
+It seem as if over time computers have evolved in to totally different machines but if you put it in to perspective they are also much alike. But on the other hand With almost every business and many families today are in demand of better and newer computers it seems that if you buy a new computer today industry had made it obsolete before you  it. This is probably because the better you make a computer and quicker it can do calculations the quicker it can help you in designing an new computer that is even faster. It is a domino effect that was started back 2000 years ago and will probably never end. Who knows what's in store for the future or you could say the fifth generation of computers.
+
+
+
+
+
+National Diploma In Engineering
+Data Communications
+
+
+Electronics B NIII
+
+Assignment no. 2
+
+A/D and D/A Convertors and Display Devices
+
+
+Weighting 20%
+
+
+Name: Malcolm Brown
+
+
+Class: NDD2
+
+
+Tutor:	Ken Hughs
+
+
+Contents Page
+
+Task 	3
+A/D and D/A Convertors 	4
+Analogue and Digital Signals	 4
+Analogue / Digital Conversions 	5
+Analogue to Digital Convertors 	6
+Digital To Analogue Converter 	8
+Glossary Of Terms 	10
+Visual Display Devices 	11
+Seven-Segment Displays 	14
+Dot Matrix Displays 	16
+Bibliology 	18
+
+
+
+
+
+Task
+
+A/D and D/A Convertors
+Explain two methods of converting analog signals to digital signals and compare them. Explain one method of digital to analog conversion. Choose two A/D convertor devices from the catalogue and list their characteristics, performance, cost, applications etc.
+
+Display Devices
+Describe how LED and LCD display devices operate - ie explain the principle behind their operation. Describe the features of the 7-segment, star-burst and dot matrix displays. Choose some devices from the catalogues and describe them.
+
+You are required to produce a written report on your work. The report should be in standard report format and comprise of a front page with title, contents page summary, introduction, main body of the report describing the task and how you met the requirements of the task, circuit diagrams etc. and conclusions. Appendices may be placed in the report if necessary.
+
+The report should be word processed and presented in a plastic folder. Your name class and subject should be clearly visible.
+
+
+
+A/D and D/A Convertors
+
+Analogue and Digital Signals
+
+Analogue Signals - Signals whose amplitude and/or frequency vary continuously eg. sound. Fig 1.1 illustrates an analogue signal:-
+
+
+
+Fig 1.1 Illustration of an analogue signal
+
+
+Digital Signals - Signals which are not continous in nature but consist of discrete pulses of voltage or current known as bits which represent the information to be processed. Digital voltages can vary only in discrete steps. Normally only two levels are used ( 0 and 1 ).Fig 1.2 illustrates a digital signal.
+
+
+
+
+
+
+Fig 1.2 Illustration of a digital signal
+
+Analogue / Digital Conversions
+
+In todays electronic system it is often necessary that the overall system may not be entirely analogue or entirely digital in nature. Thus a digital system may be controlled by input signals which are the amplified analogue outputs, perhaps of some measuring transducer (termister, LDR). Similarly a digital system output may be required to control the measured analogue system via analogue control values.Interfacing is therefore required between the analogue and digital subsystems and it is necessary to be able to convert an analogue signal into a digital equivalent signal and visa versa. A/D and D/A convertors are therefore used.
+An analogue signal cannot be represented exactly by a digital signal and must be sampled at sufficient intervals for all relevant information to be retained. Sampling theory states that at least two samples must be obtained per period of the highest frequency component. If the highest frequency component is fs then the period of the sampling signal is given by:-
+T < 1/2 fs
+
+
+
+Fig. 2 Sample and Hold
+
+Fig.2 shows a basic sample and hold circuit. The capacitor C is used  as a store or memory to hold the value of the sample. It is connected to the analogue signal input via the resistor R. The time constant CR is chosen to be sufficiently short so that the capacitor voltage can follow the required analogue signal variations. At the instant that the sample is to be taken switch S is changed into the hold position and the sample voltage is available to the succeeding analogue to digital convertor.
+The main disadvantage with this simple circuit lies in the voltage drift which occurs in the capacitor during the hold period. This is mainly due to the load placed upon the capacitor by the following circuitry and can be minimized by using a larger capacitor or by the use of a high impedance buffer amplifier.
+
+
+
+Analogue to Digital Convertors
+
+The two A/D convertors described below are known as the Ramp and Successive Approximation types.
+
+
+Ramp A/D Convertor-
+
+
+analogue
+input 			  Output			     Control
+sample			0 if Va > Vc                                  Logic
+Va			1 if Va < Vc
+
+Count up if input = 0
+Count down if input = 1
+
+VRef
+n-bit Counter
+Cloc
+n-bit D/A
+Convertor
+
+
+
+
+
+
+n bit parallel digital output
+Fig 3.1 Block Diagram of Ramp A/D Convertor
+
+Fig 3.1 shows the block diagram for a Staircase Ramp analogue to digital convertor. This diagram consists of a clock pulse generator which sends clock pulses into the n-bit counter. The counter produces a parallel digital output which is converted into its analogue equivalent by the D/A convertor. The output of the D/A convertor is compared with the analogue input sample by the comparator. The output of the comparator is then fed into the control logic which in turn controls the counter.
+The circuit operates as follows, the counter is emptied by resetting all bits to zero before a conversion is started. When the new analogue sample is present the control logic starts the count, ie clock pulses are fed into the counter. The counter digital output thus increases bit by bit at the clock frequency. The output from the digital to analogue convertor is a linear ramp made up of equal incremental steps. The count continues until the generated staircase ramp exceeds the value of the analogue sample voltage, when the capacitor output goes to logic 1 and stops the count.The counter output is at this time the digital equivalent of the analogue voltage.
+
+
+Successive Approximation A/D Convertor
+
+
+
+Fig 3.2 Block Diagram for a Successive Approximation A/D Convertor
+
+Fig 3.2 shows the block diagram for a successive approximation A/D convertor. The diagram consists of a shift register to store the digital output connected to a D/A convertor whose output is compared with the analogue input sample by use of a comparator. The output of the comparator is then fed is then fed into the shift register.
+The circuit operates by repeatedly comparing the analogue signal voltage with a number of approximate voltages which are generated at the D/A convertor.
+Initially the shift register is cleared and then the D/A convertor output is zero. The first clock pulse applies the MSB to the register to the D/A convertor. The output of the D/A convertor is then one-half of its full scale voltage range (FSR). If the analogue voltage is greater than FSR/2 the MSB is retained (stored by a latch), if it is less than the FSR/2 the MSB is lost. The next clock pulse applies the next lower MSB to the D/A convertor producing a D/A convertor output of  FSR/4 . If the MSB has been retained the total D/A convertor output voltage is now 3FSR/4. If the MSB has been lost the output of the D/A convertor is now FSR/4. In either case the analogue and D/A convertor voltages are again compared. If the analogue voltage is the larger of the two the second MSB is retained (latched), if not it is not the MSB is lost.
+A succession of similar triats are carried out and after each the shift register output bit is either retained by a latch or is not. Once n+1 clock pulses have been supplied to the register the conversion has been completed and the register output gives the digital word that represents the analogue input sample voltage.
+
+The characterics of two A/D convertors are shown in Appendices 1 +2
+Digital To Analogue Converter
+
+
+A typical 4-bit D/A converter is shown in fig 4.1. The circuit uses precision resistors that are weighted in digital progression ie 1,2,3,4. Vref is an accurate reference voltage. The circuit has 4 inputs (d0,d1,d2,d3) and 1 output Vout. When a bit is high it produces enough base current to saturate its transistor this acts as a closed switch. When a bit is low the transistor is cut off  (open switch). By saturating and cutting off the transistor (opening and closing switch ) 16 different output currents from 0 to 1.875 Vref/R can be produced. If for example Vref =5V and R=5KW  then the total output current varies from 0 to 1.875 mA as shown in table 1.
+
+
+Fig 4.1 D/A converter using switching transistors
+
+D3	D2	D1	D0	Output current mA	Fraction of maximum
+0	0	0	0	0	0
+0	0	0	1	0.125	1/15
+0	0	1	0	0.25	2/15
+0	0	1	1	0.375	3/15
+0	1	0	0	0.5	4/.15
+0	1	0	1	0.625	5/15
+0	1	1	0	0.75	6/15
+0	1	1	1	0.875	7/15
+1	0	0	0	1	8/15
+1	0	0	1	1.125	9/15
+1	0	1	0	1.25	10/15
+1	0	1	1	1.375	11/15
+1	1	0	0	1.5	12/15
+1	1	0	1	1.625	13/15
+1	1	1	0	1.75	14/15
+1	1	1	1	1.875	15/15
+
+Table 1 Output Current
+
+
+By sending out a nibble to D3 - D0 in ascending levels ie. 0000 , 0001 , 0011 etc. the output current of the D/A converter is shown in fig 4.2. The output moves one step higher until reaching the maximum current. Then the cycle repeats. If all resistors are exact and all transistors matched all steps are identical in size.
+
+Fig 4.2 Output current of D/A convertor
+
+
+
+
+Glossary Of Terms
+
+Resolution - One way to measure the quality of a D/A converter is by its resolution. The resolution is the ratio of the LSB increment to the maximum output. Resolution can be calculated by the formula.-
+
+Resolution = 1 / 2n - 1         where n = number of bits
+
+Percentage resolution = 1 / resolution * 100%
+
+The greater the number of bits the better the resolution table 2 is a summary of the resolution for converters with 4 to 18 bits.
+
+Bit	Resolution	Percent
+4	1 part in 15	6.67
+6	1 part in 63	1.54
+8	1 part in 255 	0.392
+10	1 part in 1,023	0.0978
+12	1 part in 4095	0.0244
+14	1 part in 16,383	0.0061
+16	1 part in 65,535	0.00153
+18	1 part in 262,143	0.000381
+
+Table 2 Resolution table
+
+Accuracy - The conformance of a measured value with its true value; the maximum error of a device such as a data converter from the true value.
+
+Absolute Accuracy - The worst case input to output error of a data converter referred to the NDS (National Bureau Of Standards) , standard volt.
+
+Relative Accuracy - The worst case input to output error of a data converter as a percent of full scale referred to the converter reference. The error consists of offset gain and linearity components.
+
+Conversion Rate - The number of repetitive A/D or D/A conversions per second for a full scale change to specified resolution and linearity.
+
+
+
+Visual Display Devices
+
+Visual displays are often employed in electronic equipment to indicate the numerical value of some quantity eg. digital watches, electronic calculators and digital voltmeters. A variety of display devices are available but the most common are the Light Emitting Diode (LED) and the Liquid Crystal Display (LCD).
+
+Light Emitting Diode (LED)- The majority of Light Emitting Diodes are either gallium phosphide (GaP) or gallium-arsenide-phosphide (GaAsP) devices. An LED radiates energy in the visible part of the electromagnetic spectrum when the forward bias voltage applied across the diode exceeds the voltage that turns it ON. This voltage depends upon the type of LED and the light it emits. Table 3 displays information on different LED types and fig.5.1 the electronic symbol for a LED.
+
+
+
+Colour	Material	Wavelength (peak radiation) nm	Forward voltage at 10mA current (V)
+Red	GaAsp	650	1.6
+Green	GaP	565	2.1
+Yellow	GaAsP	590	2.0
+Orange	GaAsP	625	1.8
+Blue	SiC	480	3.0
+
+Table 3 LED Types
+
+Blue LEDs are a fairly recent development and these devices use silicon carbide (SiC)
+
+
+
+Fig 5.1 LED Symbol
+
+The current flowing in a LED must not be allowed to exceed a safe figure, generally 20-60 mA, and if necessary a resistor of suitable value must be connected in series with the diode to limit the current.
+Often a LED is connected between one of the outputs of a TTL device and either earth or +5V depending upon when the LED is required to glow visibly. If for example, a LED is expected to glow when the output to which it is connected is low, the device should be connected as in fig 5.2 . Suppose the low voltage to be 0.4V and the sink current to be 16mA. Then if the LED voltage drop is 1.6V  and the value of the series resistor will be
+
+( 5 - 1.6 - 0.4 ) / ( 16 * 10 -3 ) = 188 W
+
+When the output of the device is high (@ 4V), no current flows and the LED remains dark. When the LED is to glow to indicate the high output condition, the circuit shown in fig.5.3  must be used.
+
+R1 = ( 5 - 1.6 ) / (16 * 10-3 ) = 213 W
+
+When a LED is reverse biased it acts very much like a zenar diode with a low breakdown voltage (@ 4 V ).
+Light Emitting Diodes are commonly used because they are cheap, reliable, easy to interface and are readily available from a number of sources. Their main disadvantage is that their luminous efficiency is low, typically 1.5 lumens/watt.
+
+
+ig 5.3
+
+The characteristics of a LED Display is displayed in Appendix 3
+Liquid Crystal Displays (LDR)-
+
+A solid crystal is a material in which the molecules are arranged in a rigid lattice structure. If the temperture of the material is increased above it melting point, the liquid that is formed will tend to retain much of the orderly molecular structure. The material is then said to be in its liquid crystalline phase. There are two classes of liquid crystal known, respectively as nematic and smetic but only the former is used for display devices.
+A nematic liquid crystal does not radiate light but instead it interferes with the passage of light whenever it is under the influence of an applied electric field. There are two ways in which the optical properties of a crystal can be influenced by an electric field. These are dynamic scattering and twisted nematic. The former was commonly employed in the past but now its application is mainly resisted to large-sized displays. The commonly met liquid crystal displays, eg. those in digital watches and hand calculators, ars all of the twisted nematic type.
+
+Incident Light
+
+
+Transmitted Light
+
+Fig 6 (B)
+
+
+Incident light
+Fig 6 (A)
+
+V				 Fig 6 (A) A liquid crystal cell
+(B) and (C) operation of a									      liquid crystal cell			  No transmitted light
+
+Fig 6 (C)
+
+
+
+The construction of a Liquid Crystal cell is shown in fig. 6 (A) . A layer of a liquid crystal is placed in between two glass plates that have transparent metal film electrodes deposited on to their interior faces. A reflective surface, or mirror, is situated on the outer side of the lower glass plate (it may be deposited on its surface) . The conductive material is generally either tin oxide or a tin oxide or a tin oxide/indium oxide mixture and it will transmit light with about 90% efficiency. The incident light upon the upper glass plate is polarized in such a way that, if there is zero electric field between the plates, the light is able to pass right through and arrive at the reflective surface. Here it is reflected back and the reflected light travels through the cell and emerges from the upper plate (fig.6 (B). If a voltage is applied across the plates (fig.6  (C) the polarization of the light entering the cell is altered and it is no longer able to propagate as far as the reflective surface. Therfore no light returns from the upper surface of the cell and the display appears to be dark. Because the LDR does not emit light, it dissipates little power.
+Liquid Crystal Displays, unlike LEDs, are not available as signal units and are generally manufactured in the form of a 7-segment display. The metal oxide film electrode on the surface of the upper glass plate is formed into the shape of the required 7 segments, each of which is taken to a separate contact, and the lower glass plate has a common electrode or backplate deposited on it. The idea is shown by fig 7 With this arrangement a voltage can be applied between the backplate and any one, or more of the seven segments to make that, or those particular segment(s) appear to be dark and thereby display the required number.
+Nematic liquid crystal displays posses a number of advantages which have led to their widespread use in battery operated equipment. First, their power consumation is very small, about 1 m W per segment (much less than the LED); secondly their visibility is not affected by bright incident light (such as sunlight ); and third, they are compatible with the low-power NMOS/CMOS circuitry.
+
+
+
+Fig 7 LCD 7-segment Display
+
+The charactics of LCD display are displayed in appendix 4
+Seven Segment Displays
+
+Seven Segment displays are generally used as numerical indicators and consist of a number of LEDS arranged in seven segments as shown in Fig 8 (A). Any number between 0 and 9 can be indicated by lighting the appropriate segments ass shown in Fig 8 (B). A typical            7-segment display is manufactured in a 14-pin dil package with the cathode of each LED being brought out to each terminal with the common anode.
+
+
+Fig.8 (A)
+Fig 8 (B)
+
+Clearly, the 7-seqment display needs a 7-bit input signal and so a decoder is required to convert the digital signal to be displayed into the corresponding 7-segment signal. Decoder/driver circuits can be made using SSI devices but more usually a ROM or a custom-built IC would be used. Fig.9 (A)  shows one arrangement, in which the BCD output of a decade counter is converted to a 7-segment signal by a decoder.
+When a count in excess of 9 is required, a second counter must be used and be connected in the manner shown by fig 10 (B).The tens counter is connected to the output of the final flip-flop of the units counter in the same way as the flip-flops inside the counters are connected.
+
+Decade	                                             BCD to                               7-segment
+Counter		         7-segment decoder                        display
+
+Fig 10 (A)
+Fig 10 (B)
+Decade                                  Decoder                              7-segment
+counter                             			         display
+
+
+Dot Matrix Displays
+
+A dot matrix display allows each alphanumeric character to be indicated by illuminating a number of dots in a 5 * 7 dot matrix. To allow for lower case letters and for spaces in between adjacent rows and columns each character fount is allocated a 6 * 12 space. Fig.11.1 shows 6 * 12 dot matrix. Every location in the dot matrix has a LED connected, as shown by Fig 11.2  for the top two rows of the matrix only. All  the cathodes of the LEDs in one row, and all the anodes in one column are connected together. By addressing the appropriate locations in the diode and making the LEDs at those points to glow visibly any number or character in the set can be illuminated. Some examples are given in Fig.???
+The circuitry required to drive a dot matrix display is too complex to be implemented using SSI devices. One 3-chip LSI dot matrix display controller, the Rockwell 10939, 10942 and 10943, is a general-purpose controller which is able to interface with other kinds of dot matrix as well as LED type.The controller can drive up to 46 dots and up to 20 characters selected out of the full 96 character ASCII code.
+

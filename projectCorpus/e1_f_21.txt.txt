@@ -1,0 +1,456 @@
+
+Edison, His Life and Inventions
+The Age Of Electricity
+THE year 1847 marked a period of great territorial acquisition by the American people,
+with incalculable additions to their actual and potential wealth. By the rational
+compromise with England in the dispute over the Oregon region, President Polk had
+secured during 1846, for undisturbed settlement, three hundred thousand square miles of
+forest, fertile land, and fisheries, including the whole fair Columbia Valley. Our active
+"policy of the Pacific" dated from that hour. With swift and clinching succession came
+the melodramatic Mexican War, and February, 1848, saw another vast territory south of
+Oregon and west of the Rocky Mountains added by treaty to the United States. Thus in
+about eighteen months there had been pieced into the national domain for quick
+development and exploitation a region as large as the entire Union of Thirteen States at
+the close of the War of Independence. Moreover, within its boundaries was embraced all
+the great American gold-field, just on the eve of discovery, for Marshall had detected the
+shining particles in the mill-race at the foot of the Sierra Nevada nine days before Mexico
+signed away her rights in California and in all the vague, remote hinterland facing
+Cathayward.
+Equally momentous were the times in Europe, where the attempt to secure opportunities
+of expansion as well as larger liberty for the individual took quite different form. The old
+absolutist system of government was fast breaking up, and ancient thrones were tottering.
+The red lava of deep revolutionary fires oozed up through many glowing cracks in the
+political crust, and all the social strata were shaken. That the wild outbursts of
+insurrection midway in the fifth decade failed and died away was not surprising, for the
+superincumbent deposits of tradition and convention were thick. But the retrospect
+indicates that many reforms and political changes were accomplished, although the
+process involved the exile of not a few ardent spirits to America, to become leading
+statesmen, inventors, journalists, and financiers. In 1847, too, Russia began her
+tremendous march eastward into Central Asia, just as France was solidifying her first
+gains on the littoral of northern Africa. In England the fierce fervor of the Chartist
+movement, with its violent rhetoric as to the rights of man, was sobering down and
+passing pervasively into numerous practical schemes for social and political amelioration,
+constituting in their entirety a most profound change throughout every part of the national
+life.
+Into such times Thomas Alva Edison was born, and his relations to them and to the
+events of the past sixty years are the subject of this narrative. Aside from the personal
+interest that attaches to the picturesque career, so typically American, there is a broader
+aspect in which the work of the "Franklin of the Nineteenth Century" touches the welfare
+and progress of the race. It is difficult at any time to determine the effect of any single
+invention, and the investigation becomes more difficult where inventions of the first class
+have been crowded upon each other in rapid and bewildering succession. But it will be
+admitted that in Edison one deals with a central figure of the great age that saw the
+invention and introduction in practical form of the telegraph, the submarine cable, the
+telephone, the electric light, the electric railway, the electric trolley-car, the storage
+battery, the electric motor, the phonograph, the wireless telegraph; and that the influence
+of these on the world's affairs has not been excelled at any time by that of any other
+corresponding advances in the arts and sciences. These pages deal with Edison's share in
+the great work of the last half century in abridging distance, communicating intelligence,
+lessening toil, improving illumination, recording forever the human voice; and on behalf
+of inventive genius it may be urged that its beneficent results and gifts to mankind
+compare with any to be credited to statesman, warrior, or creative writer of the same
+period.
+Viewed from the standpoint of inventive progress, the first half of the nineteenth century
+had passed very profitably when Edison appeared--every year marked by some notable
+achievement in the arts and sciences, with promise of its early and abundant fruition in
+commerce and industry. There had been exactly four decades of steam navigation on
+American waters. Railways were growing at the rate of nearly one thousand miles
+annually. Gas had become familiar as a means of illumination in large cities. Looms and
+tools and printing-presses were everywhere being liberated from the slow toil of man-
+power. The first photographs had been taken. Chloroform, nitrous oxide gas, and ether
+had been placed at the service of the physician in saving life, and the revolver, guncotton,
+and nitroglycerine added to the agencies for slaughter. New metals, chemicals, and
+elements had become available in large numbers, gases had been liquefied and solidified,
+and the range of useful heat and cold indefinitely extended. The safety-lamp had been
+given to the miner, the caisson to the bridge- builder, the anti-friction metal to the
+mechanic for bearings. It was already known how to vulcanize rubber, and how to
+galvanize iron. The application of machinery in the harvest-field had begun with the
+embryonic reaper, while both the bicycle and the automobile were heralded in primitive
+prototypes. The gigantic expansion of the iron and steel industry was foreshadowed in the
+change from wood to coal in the smelting furnaces. The sewing-machine had brought
+with it, like the friction match, one of the most profound influences in modifying
+domestic life, and making it different from that of all preceding time.
+Even in 1847 few of these things had lost their novelty, most of them were in the earlier
+stages of development. But it is when we turn to electricity that the rich virgin condition
+of an illimitable new kingdom of discovery is seen. Perhaps the word "utilization" or
+"application" is better than discovery, for then, as now, an endless wealth of phenomena
+noted by experimenters from Gilbert to Franklin and Faraday awaited the invention that
+could alone render them useful to mankind. The eighteenth century, keenly curious and
+ceaselessly active in this fascinating field of investigation, had not, after all, left much of
+a legacy in either principles or appliances. The lodestone and the compass; the frictional
+machine; the Leyden jar; the nature of conductors and insulators; the identity of
+electricity and the thunder-storm flash; the use of lightning-rods; the physiological effects
+of an electrical shock--these constituted the bulk of the bequest to which philosophers
+were the only heirs. Pregnant with possibilities were many of the observations that had
+been recorded. But these few appliances made up the meagre kit of tools with which the
+nineteenth century entered upon its task of acquiring the arts and conveniences now such
+an intimate part of "human nature's daily food" that the average American to-day pays
+more for his electrical service than he does for bread.
+  
+With the first year of the new century came Volta's invention of the chemical battery as a
+means of producing electricity. A well-known Italian picture represents Volta exhibiting
+his apparatus before the young conqueror Napoleon, then ravishing from the Peninsula its
+treasure of ancient art and founding an ephemeral empire. At such a moment this gift of
+de- spoiled Italy to the world was a noble revenge, setting in motion incalculable
+beneficent forces and agencies. For the first time man had command of a steady supply of
+electricity without toil or effort. The useful results obtainable previously from the current
+of a frictional machine were not much greater than those to be derived from the flight of a
+rocket. While the frictional appliance is still employed in medicine, it ranks with the flint
+axe and the tinder-box in industrial obsolescence. No art or trade could be founded on it;
+no diminution of daily work or increase of daily comfort could be secured with it. But the
+little battery with its metal plates in a weak solution proved a perennial reservoir of
+electrical energy, safe and controllable, from which supplies could be drawn at will. That
+which was wild had become domesticated; regular crops took the place of haphazard
+gleanings from brake or prairie; the possibility of electrical starvation was forever left
+behind.
+Immediately new processes of inestimable value revealed themselves; new methods were
+suggested. Almost all the electrical arts now employed made their beginnings in the next
+twenty-five years, and while the more extensive of them depend to-day on the dynamo
+for electrical energy, some of the most important still remain in loyal allegiance to the
+older source. The battery itself soon underwent modifications, and new types were
+evolved--the storage, the double-fluid, and the dry. Various analogies next pointed to the
+use of heat, and the thermoelectric cell emerged, embodying the application of flame to
+the junction of two different metals. Davy, of the safety-lamp, threw a volume of current
+across the gap between two sticks of charcoal, and the voltaic arc, forerunner of electric
+lighting, shed its bright beams upon a dazzled world. The decomposition of water by
+electrolytic action was recognized and made the basis of communicating at a distance
+even before the days of the electromagnet. The ties that bind electricity and magnetism in
+twinship of relation and interaction were detected, and Faraday's work in induction gave
+the world at once the dynamo and the motor. "Hitch your wagon to a star," said Emerson.
+To all the coal-fields and all the waterfalls Faraday had directly hitched the wheels of
+industry. Not only was it now possible to convert mechanical energy into electricity
+cheaply and in illimitable quantities, but electricity at once showed its ubiquitous
+availability as a motive power. Boats were propelled by it, cars were hauled, and even
+papers printed. Electroplating became an art, and telegraphy sprang into active being on
+both sides of the Atlantic.
+At the time Edison was born, in 1847, telegraphy, upon which he was to leave so
+indelible an imprint, had barely struggled into acceptance by the public. In England,
+Wheatstone and Cooke had introduced a ponderous magnetic needle telegraph. In
+America, in 1840, Morse had taken out his first patent on an electromagnetic telegraph,
+the principle of which is dominating in the art to this day. Four years later the memorable
+message "What hath God wrought!" was sent by young Miss Ellsworth over his circuits,
+and incredulous Washington was advised by wire of the action of the Democratic
+Convention in Baltimore in nominating Polk. By 1847 circuits had been strung between
+Washington and New York, under private enterprise, the Government having declined to
+  
+buy the Morse system for $100,000. Everything was crude and primitive. The poles were
+two hundred feet apart and could barely hold up a wash-line. The slim, bare, copper wire
+snapped on the least provocation, and the circuit was "down" for thirty-six days in the
+first six months. The little glass-knob insulators made seductive targets for ignorant
+sportsmen. Attempts to insulate the line wire were limited to coating it with tar or
+smearing it with wax for the benefit of all the bees in the neighborhood. The farthest
+western reach of the telegraph lines in 1847 was Pittsburg, with three- ply iron wire
+mounted on square glass insulators with a little wooden pentroof for protection. In that
+office, where Andrew Carnegie was a messenger boy, the magnets in use to receive the
+signals sent with the aid of powerful nitric-acid batteries weighed as much as seventy-
+five pounds apiece. But the business was fortunately small at the outset, until the new
+device, patronized chiefly by lottery-men, had proved its utility. Then came the great
+outburst of activity. Within a score of years telegraph wires covered the whole occupied
+country with a network, and the first great electrical industry was a pronounced success,
+yielding to its pioneers the first great harvest of electrical fortunes. It had been a sharp
+struggle for bare existence, during which such a man as the founder of Cornell University
+had been glad to get breakfast in New York with a quarter-dollar picked up on Broadway.
+  
+Edison's Pedigree
+THOMAS ALVA EDISON was born at Milan Ohio, February 11, 1847. The State that
+rivals Virginia as a "Mother of Presidents" has evidently other titles to distinction of the
+same nature. For picturesque detail it would not be easy to find any story excelling that of
+the Edison family before it reached the Western Reserve. The story epitomizes American
+idealism, restlessness, freedom of individual opinion, and ready adjustment to the
+surrounding conditions of pioneer life. The ancestral Edisons who came over from
+Holland, as nearly as can be determined, in 1730, were descendants of extensive millers
+on the Zuyder Zee, and took up patents of land along the Passaic River, New Jersey,
+close to the home that Mr. Edison established in the Orange Mountains a hundred and
+sixty years later. They landed at Elizabethport, New Jersey, and first settled near
+Caldwell in that State, where some graves of the family may still be found. President
+Cleveland was born in that quiet hamlet. It is a curious fact that in the Edison family the
+pronunciation of the name has always been with the long "e" sound, as it would naturally
+be in the Dutch language. The family prospered and must have enjoyed public
+confidence, for we find the name of Thomas Edison, as a bank official on Manhattan
+Island, signed to Continental currency in 1778. According to the family records this
+Edison, great- grandfather of Thomas Alva, reached the extreme old age of 104 years.
+But all was not well, and, as has happened so often before, the politics of father and son
+were violently different. The Loyalist movement that took to Nova Scotia so many
+Americans after the War of Independence carried with it John, the son of this stalwart
+Continental. Thus it came about that Samuel Edison, son of John, was born at Digby,
+Nova Scotia, in 1804. Seven years later John Edison who, as a Loyalist or United Empire
+emigrant, had become entitled under the laws of Canada to a grant of six hundred acres of
+land, moved westward to take possession of this property. He made his way through the
+State of New York in wagons drawn by oxen to the remote and primitive township of
+Bayfield, in Upper Canada, on Lake Huron. Although the journey occurred in balmy
+June, it was necessarily attended with difficulty and privation; but the new home was
+situated in good farming country, and once again this interesting nomadic family settled
+down.
+John Edison moved from Bayfield to Vienna, Ontario, on the northern bank of Lake Erie.
+Mr. Edison supplies an interesting reminiscence of the old man and his environment in
+those early Canadian days. "When I was five years old I was taken by my father and
+mother on a visit to Vienna. We were driven by carriage from Milan, Ohio, to a railroad,
+then to a port on Lake Erie, thence by a canal-boat in a tow of several to Port Burwell, in
+Canada, across the lake, and from there we drove to Vienna, a short distance away. I
+remember my grandfather perfectly as he appeared, at 102 years of age, when he died. In
+the middle of the day he sat under a large tree in front of the house facing a well-travelled
+road. His head was covered completely with a large quantity of very white hair, and he
+chewed tobacco incessantly, nodding to friends as they passed by. He used a very large
+cane, and walked from the chair to the house, resenting any assistance. I viewed him from
+a distance, and could never get very close to him. I remember some large pipes, and
+especially a molasses jug, a trunk, and several other things that came from Holland."
+  
+John Edison was long-lived, like his father, and reached the ripe old age of 102, leaving
+his son Samuel charged with the care of the family destinies, but with no great burden of
+wealth. Little is known of the early manhood of this father of T. A. Edison until we find
+him keeping a hotel at Vienna, marrying a school-teacher there (Miss Nancy Elliott, in
+1828), and taking a lively share in the troublous politics of the time. He was six feet in
+height, of great bodily vigor, and of such personal dominance of character that he became
+a captain of the insurgent forces rallying under the banners of Papineau and Mackenzie.
+The opening years of Queen Victoria's reign witnessed a belated effort in Canada to
+emphasize the principle that there should not be taxation without representation; and this
+descendant of those who had left the United States from disapproval of such a doctrine,
+flung himself headlong into its support.
+It has been said of Earl Durham, who pacified Canada at this time and established the
+present system of government, that he made a country and marred a career. But the
+immediate measures of repression enforced before a liberal policy was adopted were
+sharp and severe, and Samuel Edison also found his own career marred on Canadian soil
+as one result of the Durham administration. Exile to Bermuda with other insurgents was
+not so attractive as the perils of a flight to the United States. A very hurried departure was
+effected in secret from the scene of trouble, and there are romantic traditions of his
+thrilling journey of one hundred and eighty-two miles toward safety, made almost
+entirely without food or sleep, through a wild country infested with Indians of unfriendly
+disposition. Thus was the Edison family repatriated by a picturesque political episode,
+and the great inventor given a birthplace on American soil, just as was Benjamin Franklin
+when his father came from England to Boston. Samuel Edison left behind him, however,
+in Canada, several brothers, all of whom lived to the age of ninety or more, and from
+whom there are descendants in the region.
+After some desultory wanderings for a year or two along the shores of Lake Erie, among
+the prosperous towns then springing up, the family, with its Canadian home forfeited, and
+in quest of another resting-place, came to Milan, Ohio, in 1842. That pretty little village
+offered at the moment many attractions as a possible Chicago. The railroad system of
+Ohio was still in the future, but the Western Reserve had already become a vast wheat-
+field, and huge quantities of grain from the central and northern counties sought shipment
+to Eastern ports. The Huron River, emptying into Lake Erie, was navigable within a few
+miles of the village, and provided an admirable outlet. Large granaries were established,
+and proved so successful that local capital was tempted into the project of making a tow-
+path canal from Lockwood Landing all the way to Milan itself. The quaint old Moravian
+mission and quondam Indian settlement of one hundred inhabitants found itself of a
+sudden one of the great grain ports of the world, and bidding fair to rival Russian Odessa.
+A number of grain warehouses, or primitive elevators, were built along the bank of the
+canal, and the produce of the region poured in immediately, arriving in wagons drawn by
+four or six horses with loads of a hundred bushels. No fewer than six hundred wagons
+came clattering in, and as many as twenty sail vessels were loaded with thirty-five
+thousand bushels of grain, during a single day. The canal was capable of being navigated
+by craft of from two hundred to two hundred and fifty tons burden, and the demand for
+such vessels soon led to the development of a brisk ship-building industry, for which the
+abundant forests of the region supplied the necessary lumber. An evidence of the activity
+  
+in this direction is furnished by the fact that six revenue cutters were launched at this port
+in these brisk days of its prime.
+Samuel Edison, versatile, buoyant of temper, and ever optimistic, would thus appear to
+have pitched his tent with shrewd judgment. There was plenty of occupation ready to his
+hand, and more than one enterprise received his attention; but he devoted his energies
+chiefly to the making of shingles, for which there was a large demand locally and along
+the lake. Canadian lumber was used principally in this industry. The wood was imported
+in "bolts" or pieces three feet long. A bolt made two shingles; it was sawn asunder by
+hand, then split and shaved. None but first-class timber was used, and such shingles
+outlasted far those made by machinery with their cross-grain cut. A house in Milan, on
+which some of those shingles were put in 1844, was still in excellent condition forty-two
+years later. Samuel Edison did well at this occupation, and employed several men, but
+there were other outlets from time to time for his business activity and speculative
+disposition.
+Edison's mother was an attractive and highly educated woman, whose influence upon his
+disposition and intellect has been profound and lasting. She was born in Chenango
+County, New York, in 1810, and was the daughter of the Rev. John Elliott, a Baptist
+minister and descendant of an old Revolutionary soldier, Capt. Ebenezer Elliott, of
+Scotch descent. The old captain was a fine and picturesque type. He fought all through
+the long War of Independence --seven years--and then appears to have settled down at
+Stonington, Connecticut. There, at any rate, he found his wife, "grandmother Elliott,"
+who was Mercy Peckham, daughter of a Scotch Quaker. Then came the residence in New
+York State, with final removal to Vienna, for the old soldier, while drawing his pension at
+Buffalo, lived in the little Canadian town, and there died, over 100 years old. The family
+was evidently one of considerable culture and deep religious feeling, for two of Mrs.
+Edison's uncles and two brothers were also in the same Baptist ministry. As a young
+woman she became a teacher in the public high school at Vienna, and thus met her
+husband, who was residing there. The family never consisted of more than three children,
+two boys and a girl. A trace of the Canadian environment is seen in the fact that Edison's
+elder brother was named William Pitt, after the great English statesman. Both his brother
+and the sister exhibited considerable ability. William Pitt Edison as a youth was so clever
+with his pencil that it was proposed to send him to Paris as an art student. In later life he
+was manager of the local street railway lines at Port Huron, Michigan, in which he was
+heavily interested. He also owned a good farm near that town, and during the ill-health at
+the close of his life, when compelled to spend much of the time indoors, he devoted
+himself almost entirely to sketching. It has been noted by intimate observers of Thomas
+A. Edison that in discussing any project or new idea his first impulse is to take up any
+piece of paper available and make drawings of it. His voluminous note-books are a mass
+of sketches. Mrs-Tannie Edison Bailey, the sister, had, on the other hand, a great deal of
+literary ability, and spent much of her time in writing.
+The great inventor, whose iron endurance and stern will have enabled him to wear down
+all his associates by work sustained through arduous days and sleepless nights, was not at
+all strong as a child, and was of fragile appearance. He had an abnormally large but well-
+shaped head, and it is said that the local doctors feared he might have brain trouble. In
+  
+fact, on account of his assumed delicacy, he was not allowed to go to school for some
+years, and even when he did attend for a short time the results were not encouraging--his
+mother being hotly indignant upon hearing that the teacher had spoken of him to an
+inspector as "addled." The youth was, indeed, fortunate far beyond the ordinary in having
+a mother at once loving, well-informed, and ambitious, capable herself, from her
+experience as a teacher, of undertaking and giving him an education better than could be
+secured in the local schools of the day. Certain it is that under this simple regime studious
+habits were formed and a taste for literature developed that have lasted to this day. If ever
+there was a man who tore the heart out of books it is Edison, and what has once been read
+by him is never forgotten if useful or worthy of submission to the test of experiment.
+But even thus early the stronger love of mechanical processes and of probing natural
+forces manifested itself. Edison has said that he never saw a statement in any book as to
+such things that he did not involuntarily challenge, and wish to demonstrate as either
+right or wrong. As a mere child the busy scenes of the canal and the grain warehouses
+were of consuming interest, but the work in the ship-building yards had an irresistible
+fascination. His questions were so ceaseless and innumerable that the penetrating
+curiosity of an unusually strong mind was regarded as deficiency in powers of
+comprehension, and the father himself, a man of no mean ingenuity and ability, reports
+that the child, although capable of reducing him to exhaustion by endless inquiries, was
+often spoken of as rather wanting in ordinary acumen. This apparent dulness is, however,
+a quite common incident to youthful genius.
+The constructive tendencies of this child of whom his father said once that he had never
+had any boyhood days in the ordinary sense, were early noted in his fondness for building
+little plank roads out of the debris of the yards and mills. His extraordinarily retentive
+memory was shown in his easy acquisition of all the songs of the lumber gangs and canal
+men before he was five years old. One incident tells how he was found one day in the
+village square copying laboriously the signs of the stores. A highly characteristic event at
+the age of six is described by his sister. He had noted a goose sitting on her eggs and the
+result. One day soon after, he was missing. By-and-by, after an anxious search, his father
+found him sitting in a nest he had made in the barn, filled with goose-eggs and hens' eggs
+he had collected, trying to hatch them out.
+One of Mr. Edison's most vivid recollections goes back to 1850, when as a child three of
+four years old he saw camped in front of his home six covered wagons, "prairie
+schooners," and witnessed their departure for California. The great excitement over the
+gold discoveries was thus felt in Milan, and these wagons, laden with all the worldly
+possessions of their owners, were watched out of sight on their long journey by this
+fascinated urchin, whose own discoveries in later years were to tempt many other
+argonauts into the auriferous realms of electricity.
+Another vivid memory of this period concerns his first realization of the grim mystery of
+death. He went off one day with the son of the wealthiest man in the town to bathe in the
+creek. Soon after they entered the water the other boy disappeared. Young Edison waited
+around the spot for half an hour or more, and then, as it was growing dark, went home
+puzzled and lonely, but silent as to the occurrence.
+War of currentsMain article: War of Currents
+ 
+Extravagant displays of electric lights quickly became a feature of public events, as in this picture from the 1897 Tennessee Centennial Exposition.Edison's true success, like that of his friend Henry Ford, was in his ability to maximize profits through establishment of mass-production systems and intellectual property rights. George Westinghouse and Edison became adversaries because of Edison's promotion of direct current (DC) for electric power distribution instead of the more easily transmitted alternating current (AC) system invented by Nikola Tesla and promoted by Westinghouse. Unlike DC, AC could be stepped up to very high voltages with transformers, sent over thinner and cheaper wires, and stepped down again at the destination for distribution to users.
+
+In 1887 there were 121 Edison power stations in the United States delivering DC electricity to customers. When the limitations of DC were discussed by the public, Edison launched a propaganda campaign to convince people that AC was far too dangerous to use. The problem with DC was that the power plants could economically deliver DC electricity only to customers within about one and a half miles (about 2.4 km) from the generating station, so that it was suitable only for central business districts. When George Westinghouse suggested using high-voltage AC instead, as it could carry electricity hundreds of miles with marginal loss of power, Edison waged a "War of Currents" to prevent AC from being adopted.
+
+The war against AC led him to become involved in the development and promotion of the electric chair (using AC) as an attempt to portray AC to have greater lethal potential than DC. Edison went on to carry out a brief but intense campaign to ban the use of AC or to limit the allowable voltage for safety purposes. As part of this campaign, Edison's employees publicly electrocuted animals to demonstrate the dangers of AC;[39][40] alternating electric currents are slightly more dangerous in that frequencies near 60 Hz have a markedly greater potential for inducing fatal "cardiac fibrillation" than do direct currents.[41] On one of the more notable occasions, in 1903, Edison's workers electrocuted Topsy the elephant at Luna Park, near Coney Island, after she had killed several men and her owners wanted her put to death.[42] His company filmed the electrocution.
+
+AC replaced DC in most instances of generation and power distribution, enormously extending the range and improving the efficiency of power distribution. Though widespread use of DC ultimately lost favor for distribution, it exists today primarily in long-distance high-voltage direct current (HVDC) transmission systems. Low voltage DC distribution continued to be used in high-density downtown areas for many years but was eventually replaced by AC low-voltage network distribution in many of them. DC had the advantage that large battery banks could maintain continuous power through brief interruptions of the electric supply from generators and the transmission system. Utilities such as Commonwealth Edison in Chicago had rotary converters or motor-generator sets, which could change DC to AC and AC to various frequencies in the early to mid-20th century. Utilities supplied rectifiers to convert the low voltage AC to DC for such DC loads as elevators, fans and pumps. There were still 1,600 DC customers in downtown New York City as of 2005, and service was finally discontinued only on November 14, 2007.[43] Most subway systems are still powered by direct current.
+
+FluoroscopyEdison is credited with designing and producing the first commercially available fluoroscope, a machine that uses X-rays to take radiographs. Until Edison discovered that calcium tungstate fluoroscopy screens produced brighter images than the barium platinocyanide screens originally used by Wilhelm Röntgen, the technology was capable of producing only very faint images. The fundamental design of Edison's fluoroscope is still in use today, despite the fact that Edison himself abandoned the project after nearly losing his own eyesight and seriously injuring his assistant, Clarence Dally. Dally had made himself an enthusiastic human guinea pig for the fluoroscopy project and in the process been exposed to a poisonous dose of radiation. He later died of injuries related to the exposure. In 1903, a shaken Edison said "Don't talk to me about X-rays, I am afraid of them."[44]
+
+Work relations 
+Photograph of Thomas Edison by Victor Daireaux, Paris, circa 1880sFrank J. Sprague, a competent mathematician and former naval officer, was recruited by Edward H. Johnson and joined the Edison organization in 1883. One of Sprague's significant contributions to the Edison Laboratory at Menlo Park was to expand Edison's mathematical methods. Despite the common belief that Edison did not use mathematics, analysis of his notebooks reveal that he was an astute user of mathematical analysis conducted by his assistants such as Francis Robbins Upton, for example, determining the critical parameters of his electric lighting system including lamp resistance by a sophisticated analysis of Ohm's Law, Joule's Law and economics.[45]
+
+Another of Edison's assistants was Nikola Tesla. Tesla claimed that Edison promised him $50,000 if he succeeded in making improvements to his DC generation plants. Several months later, when Tesla had finished the work and asked to be paid, he said that Edison replied, "When you become a full-fledged American you will appreciate an American joke."[46] Tesla immediately resigned. With Tesla's salary of $18 per week, the payment would have amounted to over 53 years' pay and the amount was equal to the initial capital of the company. Tesla resigned when he was refused a raise to $25 per week.[47] Although Tesla accepted an Edison Medal later in life, this and other negative series of events concerning Edison remained with Tesla. The day after Edison died, the New York Times contained extensive coverage of Edison's life, with the only negative opinion coming from Tesla who was quoted as saying:
+
+He had no hobby, cared for no sort of amusement of any kind and lived in utter disregard of the most elementary rules of hygiene. [...] His method was inefficient in the extreme, for an immense ground had to be covered to get anything at all unless blind chance intervened and, at first, I was almost a sorry witness of his doings, knowing that just a little theory and calculation would have saved him 90% of the labour. But he had a veritable contempt for book learning and mathematical knowledge, trusting himself entirely to his inventor's instinct and practical American sense.[48]
+—Nikola Tesla
+One of Edison's famous quotations regarding his attempts to make the light globe suggest that perhaps Tesla was right about Edison's methods of working: "If I find 10,000 ways something won't work, I haven't failed. I am not discouraged, because every wrong attempt discarded is another step forward."[49]
+
+When Edison was a very old man and close to death, he said, in looking back, that the biggest mistake he had made was that he never respected Tesla or his work.[50]
+
+There were 28 men recognized as Edison Pioneers.
+
+Media inventionsThe key to Edison's fortunes was telegraphy. With knowledge gained from years of working as a telegraph operator, he learned the basics of electricity. This allowed him to make his early fortune with the stock ticker, the first electricity-based broadcast system. Edison patented the sound recording and reproducing phonograph in 1878. Edison was also granted a patent for the motion picture camera or "Kinetograph". He did the electromechanical design, while his employee W.K.L. Dickson, a photographer, worked on the photographic and optical development. Much of the credit for the invention belongs to Dickson.[30] In 1891, Thomas Edison built a Kinetoscope, or peep-hole viewer. This device was installed in penny arcades, where people could watch short, simple films. The kinetograph and kinetoscope were both first publicly exhibited May 20, 1891.[51]
+
+On August 9, 1892, Edison received a patent for a two-way telegraph. In April 1896, Thomas Armat's Vitascope, manufactured by the Edison factory and marketed in Edison's name, was used to project motion pictures in public screenings in New York City. Later he exhibited motion pictures with voice soundtrack on cylinder recordings, mechanically synchronized with the film.
+
+
+
+The June 1894 Leonard–Cushing bout. Each of the six one-minute rounds recorded by the Kinetoscope was made available to exhibitors for $22.50.[52] Customers who watched the final round saw Leonard score a knockdown.Officially the kinetoscope entered Europe when the rich American Businessman Irving T. Bush (1869–1948) bought from the Continental Commerce Company of Franck Z. Maguire and Joseph D. Bachus a dozen machines. Bush placed from October 17, 1894, the first kinetoscopes in London. At the same time the French company Kinétoscope Edison Michel et Alexis Werner bought these machines for the market in France. In the last three months of 1894 The Continental Commerce Company sold hundreds of kinetoscopes in Europe (i.e. the Netherlands and Italy). In Germany and in Austria-Hungary the kinetoscope was introduced by the Deutsche-österreichische-Edison-Kinetoscop Gesellschaft, founded by the Ludwig Stollwerck[53] of the Schokoladen-Süsswarenfabrik Stollwerck & Co of Cologne. The first kinetoscopes arrived in Belgium at the Fairs in early 1895. The Edison's Kinétoscope Français, a Belgian company, was founded in Brussels on January 15, 1895, with the rights to sell the kinetoscopes in Monaco, France and the French colonies. The main investors in this company were Belgian industrialists. On May 14, 1895, the Edison's Kinétoscope Belge was founded in Brussels. The businessman Ladislas-Victor Lewitzki, living in London but active in Belgium and France, took the initiative in starting this business. He had contacts with Leon Gaumont and the American Mutoscope and Biograph Co. In 1898 he also became a shareholder of the Biograph and Mutoscope Company for France.[54]
+
+In 1901, he visited the Sudbury area in Ontario, Canada, as a mining prospector, and is credited with the original discovery of the Falconbridge ore body. His attempts to actually mine the ore body were not successful, however, and he abandoned his mining claim in 1903.[55] A street in Falconbridge, as well as the Edison Building, which served as the head office of Falconbridge Mines, are named for him.
+
+In 1902, agents of Thomas Edison bribed a theater owner in London for a copy of A Trip to the Moon by Georges Méliès. Edison then made hundreds of copies and showed them in New York City. Méliès received no compensation. He was counting on taking the film to the US and recapture its huge cost by showing it throughout the country when he realized it had already been shown there by Edison. This effectively bankrupted Méliès.[56] Other exhibitors similarly routinely copied and exhibited each others films.[57] To better protect the copyrights on his films, Edison deposited prints of them on long strips of photographic paper with the U.S. copyright office. Many of these paper prints survived longer and in better condition than the actual films of that era.[58]
+
+Edison's favorite movie was The Birth of a Nation. He thought that talkies had "spoiled everything" for him. "There isn't any good acting on the screen. They concentrate on the voice now and have forgotten how to act. I can sense it more than you because I am deaf."[59] His favorite stars were Mary Pickford and Clara Bow.[60]
+
+In 1908, Edison started the Motion Picture Patents Company, which was a conglomerate of nine major film studios (commonly known as the Edison Trust). Thomas Edison was the first honorary fellow of the Acoustical Society of America, which was founded in 1929.
+West Orange and Fort Myers (1886–1931) 
+Thomas A. Edison Industries Exhibit, Primary Battery section, 1915 
+Henry Ford, Thomas Edison, Harvey Firestone. Ft. Myers, Florida, February 11, 1929.Edison moved from Menlo Park after the death of Mary Stilwell and purchased a home known as "Glenmont" in 1886 as a wedding gift for Mina in Llewellyn Park in West Orange, New Jersey. In 1885, Thomas Edison bought property in Fort Myers, Florida, and built what was later called Seminole Lodge as a winter retreat. Edison and his wife Mina spent many winters in Fort Myers where they recreated and Edison tried to find a domestic source of natural rubber.
+
+Henry Ford, the automobile magnate, later lived a few hundred feet away from Edison at his winter retreat in Fort Myers, Florida. Edison even contributed technology to the automobile. They were friends until Edison's death.
+
+In 1928, Edison joined the Fort Myers Civitan Club. He believed strongly in the organization, writing that "The Civitan Club is doing things —big things— for the community, state, and nation, and I certainly consider it an honor to be numbered in its ranks."[61] He was an active member in the club until his death, sometimes bringing Henry Ford to the club's meetings.
+
+The final yearsEdison was active in business right up to the end. Just months before his death in 1931, the Lackawanna Railroad implemented electric trains in suburban service from Hoboken to Gladstone, Montclair and Dover in New Jersey. Transmission was by means of an overhead catenary system, with the entire project under Edison's guidance. To the surprise of many, he was at the throttle of the very first MU (Multiple-Unit) train to depart Lackawanna Terminal in Hoboken, driving the train all the way to Dover. As another tribute to his lasting legacy, the same fleet of cars Edison deployed on the Lackawanna in 1931 served commuters until their retirement in 1984, when some of them were purchased by the Berkshire Scenic Railway Museum in Lenox, Massachusetts. A special plaque commemorating the joint achievement of both the railway and Edison can be seen today in the waiting room of Lackawanna Terminal in Hoboken, presently operated by New Jersey Transit.[62]
+
+Edison was said to have been influenced by a popular fad diet in his last few years; "the only liquid he consumed was a pint of milk every three hours".[30] He is reported to have believed this diet would restore his health. However, this tale is doubtful. In 1930, the year before Edison died, Mina said in an interview about him that "Correct eating is one of his greatest hobbies." She also said that during one of his periodic "great scientific adventures", Edison would be up at 7:00, have breakfast at 8:00, and be rarely home for lunch or dinner, implying that he continued to have all three.[59]
+
+Edison became the owner of his Milan, Ohio, birthplace in 1906. On his last visit, in 1923, he was shocked to find his old home still lit by lamps and candles.
+
+Thomas Edison died of complications of diabetes on October 18, 1931, in his home, "Glenmont" in Llewellyn Park in West Orange, New Jersey, which he had purchased in 1886 as a wedding gift for Mina. He is buried behind the home.[63][64]
+
+Edison's last breath is reportedly contained in a test tube at the Henry Ford Museum. Ford reportedly convinced Charles Edison to seal a test tube of air in the inventor's room shortly after his death, as a memento. A plaster death mask was also made.[65]
+
+Mina died in 1947.
+
+Views on politics, religion and metaphysicsHistorian Paul Israel has characterized Edison as a "freethinker".[30] Edison was heavily influenced by Thomas Paine's The Age of Reason.[30] Edison defended Paine's "scientific deism", saying, "He has been called an atheist, but atheist he was not. Paine believed in a supreme intelligence, as representing the idea which other men often express by the name of deity."[30] In an October 2, 1910, interview in the New York Times Magazine, Edison stated:
+
+Nature is what we know. We do not know the gods of religions. And nature is not kind, or merciful, or loving. If God made me — the fabled God of the three qualities of which I spoke: mercy, kindness, love — He also made the fish I catch and eat. And where do His mercy, kindness, and love for that fish come in? No; nature made us — nature did it all — not the gods of the religions.[66]
+
+Edison was called an atheist for those remarks, and although he did not allow himself to be drawn into the controversy publicly, he clarified himself in a private letter: "You have misunderstood the whole article, because you jumped to the conclusion that it denies the existence of God. There is no such denial, what you call God I call Nature, the Supreme intelligence that rules matter. All the article states is that it is doubtful in my opinion if our intelligence or soul or whatever one may call it lives hereafter as an entity or disperses back again from whence it came, scattered amongst the cells of which we are made."[30]
+
+Nonviolence was key to Edison's moral views, and when asked to serve as a naval consultant for World War I, he specified he would work only on defensive weapons and later noted, "I am proud of the fact that I never invented weapons to kill." Edison's philosophy of nonviolence extended to animals as well, about which he stated: "Nonviolence leads to the highest ethics, which is the goal of all evolution. Until we stop harming all other living beings, we are still savages."[67] However, he is also notorious for having electrocuted a number of dogs in 1888, both by direct and alternating current, in an attempt to argue that the former (which he had a vested business interest in promoting) was safer than the latter (favored by his rival George Westinghouse).[68] Edison's success in promoting direct current as less lethal also led to alternating current being used in the electric chair adopted by New York in 1889 as a supposedly humane execution method; because Westinghouse was angered by the decision, he funded Eighth Amendment-based appeals for inmates set to die in the electric chair, ultimately resulting in Edison providing the generators which powered early electrocutions and testifying successfully on behalf of the state that electrocution was a painless method of execution.[69]
+
+TributesPlaces named for EdisonSeveral places have been named after Edison, most notably the town of Edison, New Jersey. Thomas Edison State College, a nationally known college for adult learners, is in Trenton, New Jersey. Two community colleges are named for him: Edison State College in Fort Myers, Florida, and Edison Community College in Piqua, Ohio.[70] There are numerous high schools named after Edison; see Edison High School.
+
+The City Hotel, in Sunbury, Pennsylvania, was the first building to be lit with Edison's three-wire system. The hotel was re-named The Hotel Edison, and retains that name today.
+
+Three bridges around the United States have been named in his honor (see Edison Bridge).
+
+In space, his name is commemorated in asteroid 742 Edisona.
+
+Museums and memorialsIn West Orange, New Jersey, the 13.5 acre (5.5 ha) Glenmont estate is maintained and operated by the National Park Service as the Edison National Historic Site.[71] The Thomas Alva Edison Memorial Tower and Museum is in the town of Edison, New Jersey.[72] In Beaumont, Texas, there is an Edison Museum, though Edison never visited there.[citation needed] The Port Huron Museum, in Port Huron, Michigan, restored the original depot that Thomas Edison worked out of as a young newsbutcher. The depot has been named the Thomas Edison Depot Museum.[73] The town has many Edison historical landmarks, including the graves of Edison's parents, and a monument along the St. Clair River. Edison's influence can be seen throughout this city of 32,000. In Detroit, the Edison Memorial Fountain in Grand Circus Park was created to honor his achievements. The limestone fountain was dedicated October 21, 1929, the fiftieth anniversary of the creation of the lightbulb.[74] On the same night, The Edison Institute was dedicated in nearby Dearborn.
+
+In early 2010, Edison was proposed by the Ohio Historical Society as a finalist in a statewide vote for inclusion in Statuary Hall at the United States Capitol.
+Honors and awards given to EdisonThe President of the Third French Republic, Jules Grévy, on the recommendation of his Minister of Foreign Affairs Jules Barthélemy-Saint-Hilaire and with the presentations of the Minister of Posts and Telegraphs Louis Cochery, designated Edison with the distinction of an 'Officer of the Legion of Honour' (Légion d'honneur) by decree on November 10, 1881;[76]
+
+In 1983, the United States Congress, pursuant to Senate Joint Resolution 140 (Public Law 97—198), designated February 11, Edison's birthday, as National Inventor's Day.
+
+In 1887, Edison won the Matteucci Medal. In 1890, he was elected a member of the Royal Swedish Academy of Sciences.
+
+In 1889, Edison was awarded the John Scott Medal.
+
+In 1899, Edison was awarded the Edward Longstreth Medal.
+
+Edison was awarded Franklin Medal of The Franklin Institute in 1915 for discoveries contributing to the foundation of industries and the well-being of the human race.
+
+Edison was ranked thirty-fifth on Michael H. Hart's 1978 book The 100, a list of the most influential figures in history. Life magazine (USA), in a special double issue in 1997, placed Edison first in the list of the "100 Most Important People in the Last 1000 Years", noting that the light bulb he promoted "lit up the world". In the 2005 television series The Greatest American, he was voted by viewers as the fifteenth-greatest.
+
+In 2008, Edison was inducted in the New Jersey Hall of Fame.
+
+On November 6, 1915 The New York Times announced that both Edison and Tesla were to jointly receive the 1915 Nobel Prize but it did not occur. [1] The details of what happened are not known but Tesla who had once worked for Edison quit when he was promised a large bonus for solving a problem and then after being successful was told the promise was a joke. [2] Telsa once said that if Edison had to find a needle in a haystack he would take apart the haystack one straw at a time. [3] The Prize was awarded to Sir William Henry Bragg and William Lawrence Bragg "for their services in the analysis of crystal structure by means of X-rays" .
+
+Other items named after EdisonThe United States Navy named the USS Edison (DD-439), a Gleaves class destroyer, in his honor in 1940. The ship was decommissioned a few months after the end of World War II. In 1962, the Navy commissioned USS Thomas A. Edison (SSBN-610), a fleet ballistic missile nuclear-powered submarine. Decommissioned on December 1, 1983, Thomas A. Edison was stricken from the Naval Vessel Register on April 30, 1986. She went through the Navy's Nuclear Powered Ship and Submarine Recycling Program at Bremerton, Washington, beginning on October 1, 1996. When she finished the program on December 1, 1997, she ceased to exist as a complete ship and was listed as scrapped.
+
+In popular cultureMain article: Thomas Edison in popular culture
+Thomas Edison has appeared in popular culture as a character in novels, films, comics and video games. His prolific inventing helped make him an icon and he has made appearances in popular culture during his lifetime down to the present day. His history with Nikola Tesla has also provided dramatic tension and is a theme returned to numerous times.
+
+On February 11, 2011, on Thomas Edison's 164th birthday, Google's homepage featured an animated Google Doodle commemorating his many inventions. When the cursor was hovered over the doodle, a series of mechanisms seemed to move, causing a lightbulb to glow.
+TelegrapherEdison became a telegraph operator after he saved three-year-old Jimmie MacKenzie from being struck by a runaway train. Jimmie's father, station agent J.U. MacKenzie of Mount Clemens, Michigan, was so grateful that he trained Edison as a telegraph operator. Edison's first telegraphy job away from Port Huron was at Stratford Junction, Ontario, on the Grand Trunk Railway.[10] In 1866, at the age of 19, Thomas Edison moved to Louisville, Kentucky, where, as an employee of Western Union, he worked the Associated Press bureau news wire. Edison requested the night shift, which allowed him plenty of time to spend at his two favorite pastimes—reading and experimenting. Eventually, the latter pre-occupation cost him his job. One night in 1867, he was working with a lead-acid battery when he spilled sulfuric acid onto the floor. It ran between the floorboards and onto his boss's desk below. The next morning Edison was fired.[11]
+
+One of his mentors during those early years was a fellow telegrapher and inventor named Franklin Leonard Pope, who allowed the impoverished youth to live and work in the basement of his Elizabeth, New Jersey home. Some of Edison's earliest inventions were related to telegraphy, including a stock ticker. His first patent was for the electric vote recorder, (U. S. Patent 90,646),[12] which was granted on June 1, 1869.[13]
+
+Marriages and children 
+Mina Edison in 1906On December 25, 1871, Edison married 16-year-old Mary Stilwell, whom he had met two months earlier as she was an employee at one of his shops. They had three children:
+
+Marion Estelle Edison (1873–1965), nicknamed "Dot"[14]
+Thomas Alva Edison, Jr. (1876–1935), nicknamed "Dash"[15]
+William Leslie Edison (1878–1937) Inventor, graduate of the Sheffield Scientific School at Yale, 1900.[16]
+Mary Edison died on August 9, 1884, possibly from a brain tumor.[17]
+
+On February 24, 1886, at the age of thirty nine, Edison married 20-year-old Mina Miller in Akron, Ohio.[18] She was the daughter of inventor Lewis Miller, co-founder of the Chautauqua Institution and a benefactor of Methodist charities. They also had three children:
+
+Madeleine Edison (1888–1979), who married John Eyre Sloane.[19][20]
+Charles Edison (1890–1969), who took over the company upon his father's death and who later was elected Governor of New Jersey.[21] He also took charge of his father's experimental laboratories in West Orange.
+Theodore Edison (1898–1992), (MIT Physics 1923), had over 80 patents to his credit.
+Mina outlived Thomas Edison, dying on August 24, 1947
+
+
+  
+
