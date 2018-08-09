@@ -1,0 +1,24 @@
+For files reading and eliminating stopwords total elapsed time ==> 35 Seconds.
+
+Chaining method:
+	HashTable-Size ==> 10.000
+	Total collusion ==> 311.014
+	Total elapsed time ==> 46 seconds. (46-35 = 11 seconds actually)	
+
+Linear Probing Method with Rehashing:
+	Initial HashTable-Size ==> 10.000
+	HashTable-Size ==> 640.663 (as a result of rehashing)
+	Total collusion ==> 920.171
+	Total Elapsed Time ==> 44 Seconds. (44-35 = 9 seconds actually)
+
+Quadratic Probing Method with Rehashing:
+	Initial HashTable-Size ==> 10.000
+	HashTable-Size ==> 640.663 (as a result of rehashing)
+	Total collusion ==> 803.665
+	Total Elapsed Time ==> 43 seconds. (43-35 = 8 seconds actually)
+
+Double Hashing Method with Rehashing:
+	Initial HashTable-Size ==> 10.000
+	HashTable-Size ==> 640.663 (as a result of rehashing)
+	Total collusion ==> 770.059
+	Total Elapsed Time ==> 43 seconds. (43-35 = 8 seconds actually)
