@@ -1,0 +1,811 @@
+The Forgotten Realms is a campaign setting for the Dungeons & Dragons (D&D) fantasy role-playing game. Commonly referred to by players and game designers alike as "The Realms", it was created by game designer Ed Greenwood around 1967 as a setting for his childhood stories.[1] Several years later, Greenwood brought the setting to the D&D game as a series of magazine articles, and the first Realms game products were released in 1987. Role-playing game products have been produced for the setting ever since, as have various licensed products including sword and sorcery novels, computer role-playing game adaptations (including the first massively multiplayer online role-playing game to use graphics), and comic books. The Forgotten Realms is one of the most popular D&D settings,[2][3] largely due to the success of novels by authors such as R. A. Salvatore and numerous computer role-playing games, including Pool of Radiance (1988), Baldur's Gate (1998), Icewind Dale (2000) and Neverwinter Nights (2002).
+
+According to the setting's creators, Forgotten Realms is the name of an imaginary fantasy world that exists somewhere beyond the real world. The setting is described as a world of strange lands, dangerous creatures, and mighty deities, where magic and seemingly supernatural phenomena are quite real. The premise is that, long ago, the Earth and the world of the Forgotten Realms were more closely connected. As time passed, the inhabitants of planet Earth have mostly forgotten about the existence of that other world—hence the term Forgotten Realms. On the original Forgotten Realms logo, which was used until 2000, small runic letters read "Herein lie the lost lands", an allusion to the connection between the two worlds.
+The world
+
+The focus of the Forgotten Realms setting is the continent of Faerûn, part of the fictional world of Abeir-Toril, usually called simply Toril, an Earth-like planet with many real-world influences. Unlike Earth, the lands of the Forgotten Realms are not all ruled by the human race: the planet Abeir-Toril is shared by humans, dwarves, elves, goblins, orcs, and other peoples and creatures. Technologically, the world of the Forgotten Realms is not nearly as advanced as that of Earth; in this respect, it resembles the pre-industrial Earth of the 13th or 14th century. However, the presence of magic provides an additional element of power to the societies. There are several nation states and many independent cities, with loose alliances being formed for defense or conquest. Trade is performed by ship or horse-drawn vehicle, and manufacturing is based upon cottage industry.
+[edit] Geography
+Main article: Abeir-Toril
+
+Abeir-Toril consists of several large continents, including Faerûn, the western part of a continent that was roughly modeled after the Eurasian continent on Earth.[4] Faerûn was first detailed in the original Forgotten Realms Campaign Set, published in 1987 by TSR.[5] The other continents include Kara-Tur, Zakhara, Maztica, and other yet unspecified landmasses. Kara-Tur, roughly corresponding to ancient East Asia, was later the focus of its own source book Kara-Tur: The Eastern Realms, published in 1988.[6]
+
+Various products detailing specific areas of Faerûn, such as the 2nd edition FR13 Anauroch (1991), FR15 Gold and Glory (1992), FR16 The Shining South (1993), and FRS1 The Dalelands (1993), have been released, and through these much of the continent has been heavily detailed and documented, creating a highly developed setting.
+
+In early editions of the setting, The Realms shared a unified cosmology with various other campaign settings called the Great Wheel. In this way each of the Dungeons & Dragons campaign settings were linked together to form one interwoven world connected by various planes of existence. With the release of the 2001 Forgotten Realms Campaign Setting, the setting was given its own distinct and separate cosmological arrangement, with unique planes not explicitly connected to those of the other settings.[7][8]
+[edit] Religion
+Main article: List of Forgotten Realms deities
+
+Religion plays a large part in the Forgotten Realms, with deities and their followers being an integral part of the world. They do not have a passive role, but in fact interact directly in mortal affairs, answer prayers, and have their own personal agendas. All deities must have worshipers to survive, and all mortals must worship a patron deity to secure a good afterlife. A huge number of diverse deities exist within several polytheistic pantheons; a large number of supplements have documented many of them, some in more detail than others.[9][10]
+
+Much of the history of The Realms detailed in novels and source books concerns the actions of various deities and The Chosen (mortal representatives with a portion of their deities' power) such as Elminster, Fzoul Chembryl, Midnight (who later became the new embodiment of the goddess of magic, Mystra), and the Seven Sisters. Above all other deities is Ao, the Overlord. Ao does not sanction worshipers and distances himself from mortals. He is single-handedly responsible for the Time of Troubles, or Godswar, as seen in The Avatar Trilogy.[11]
+[edit] Characters
+Main article: List of Forgotten Realms characters
+
+The setting is the home of several iconic characters popularized by authors, including Elminster the wizard, who has appeared in several series of novels created by Greenwood himself, and Drizzt Do'Urden, the highly popular Drow, or dark elf, ranger created by R. A. Salvatore.
+Early years
+
+Ed Greenwood began writing stories about the Forgotten Realms as a child, starting around 1967;[12] they were his "dream space for swords and sorcery stories".[12] Greenwood came up with the Forgotten Realms name from the notion of a multiverse of parallel worlds; Earth is one such world, and the Realms another. In Greenwood's original conception, the fantastic legends of Earth derive from a fantasy world, the way to which has been lost.[13] Greenwood discovered the Dungeons & Dragons game in 1975, and became a serious role-playing enthusiast with the first AD&D game releases in 1978.[13] The setting became the home of Greenwood's personal campaign.[14] Greenwood began a Realms campaign in the city of Waterdeep, then started another group known as the Knights of Myth Drannor in Shadowdale. Greenwood felt that his players' thirst for detail made the Realms what it is: "They want it to seem real, and work on ‘honest jobs’ and personal activities, until the whole thing grows into far more than a casual campaign. Roleplaying always governs over rules, and the adventures seem to develop themselves."[13] Greenwood has stated that his own version of the Forgotten Realms, as run in his personal campaign, is much darker than published versions.[15]
+
+Beginning with the periodical's 30th issue in 1979,[12][13] Greenwood published a series of short articles that detailed the setting in The Dragon magazine, the first of which was about a monster known as the curst.[12] Greenwood wrote voluminous entries to Dragon magazine, using the Realms as a setting for his descriptions of magic items, monsters, and spells.[14] In 1986, the American game publishing company TSR began looking for a new campaign setting for the Advanced Dungeons & Dragons game,[12] and assigned Jeff Grubb to find out more about the setting used by Greenwood as portrayed in his articles in Dragon.[14] According to Greenwood, Grubb asked him "Do you just make this stuff up as you go, or do you really have a huge campaign world?"; Greenwood answered "yes" to both questions.[13] TSR felt that the Forgotten Realms would be a more open-ended setting than the epic Dragonlance setting, and chose the Realms as a ready-made campaign setting upon deciding to publish AD&D 2nd Edition.[13] Greenwood agreed to work on the project, and began working to get the Forgotten Realms officially published.[12] Greenwood sent TSR a few dozen cardboard boxes stuffed with pencil notes and maps, and sold all rights to the Realms for a token fee.[13] Greenwood noted that TSR altered his original conception of the Realms being a place that we could travel to from our world, "Concerns over possible lawsuits (kids getting hurt while trying to 'find a gate') led TSR to de-emphasize this meaning".[13]
+[edit] Advanced Dungeons & Dragons 1st edition
+
+Although the Realms were yet to be an official campaign world, the module H1: Bloodstone Pass, released in 1985 by TSR, is now considered to be a part of the Forgotten Realms,[16] although it wasn't until module H3 The Bloodstone Wars was released that Forgotten Realms became the official setting for the module series.[17] The first official Forgotten Realms product was Douglas Niles's Darkwalker on Moonshae, the first book in The Moonshae Trilogy, which predates the Forgotten Realms Campaign Set by one month.[18] The Campaign Set (often referred to as the "Old Grey Box")[18] was later released in 1987[19][20] as a boxed set of two source books (Cyclopedia of the Realms and DM's Sourcebook of the Realms)[5] and four large maps, designed by Greenwood in collaboration with author Jeff Grubb. The Forgotten Realms became an instant hit.[19] The compilation module Desert of Desolation was reworked to fit into the Forgotten Realms.[21] The module N5: Under Illefarn bears the Forgotten Realms logo on the cover, as do the two modules released in 1988, H4: The Throne of Bloodstone and I14: Swords of the Iron Legion.
+
+The Crystal Shard was released in 1988,[22] and was the first novel to feature the successful character Drizzt Do'Urden, who has since appeared in more than seventeen subsequent novels, many of which have appeared on the New York Times Best Seller list.[23] In 1988, the first in a line of Forgotten Realms computer role-playing games, Pool of Radiance, was released by Strategic Simulations, Inc. The game was popular, winning the Origins Award for "Best Fantasy or Science Fiction Computer Game of 1988".[24] In 1992, the game was ported to the Nintendo Entertainment System.
+
+Several supplements to the original boxed set were released under the first edition rules, including FR1 Waterdeep and the North and FR2 Moonshae in 1987, and FR3 Empires of the Sands, FR4 The Magister, FR5 The Savage Frontier, FR6 Dreams of the Red Wizards, and REF5 Lords of Darkness in 1988. Also in 1988 came the City System boxed set, containing several maps of the city of Waterdeep. Ruins of Adventure, a module based on the computer game Pool of Radiance, was released in 1988.
+
+The boxed set Kara-Tur: The Eastern Realms was released in 1988, giving details of the lands of Kara-Tur which had previously appeared in the 1986 book Oriental Adventures, and were now officially placed in the Forgotten Realms world. The same year, the module OA5: Mad Monkey vs. the Dragon Claw was released for the Kara-Tur setting as a Forgotten Realms product.
+
+In 1989, DC Comics began publishing a series of Forgotten Realms comics written by Jeff Grubb. Each issue contained twenty-six pages, illustrated primarily by Rags Morales and Dave Simons. Twenty-five issues were published in total, with the last being released in 1991. A fifty-six page annual Forgotten Realms Comic Annual #1: Waterdhavian Nights, illustrated by various artists, was released in 1990.
+[edit] Advanced Dungeons & Dragons 2nd edition
+
+An eponymous module, based on the computer role-playing game Curse of the Azure Bonds, was released in 1989, as was the The Avatar Trilogy series of novels, consisting of Shadowdale, Tantras, and Waterdeep that detailed the storyline which became known as the "Time of Troubles". A series of module adaptations for these novels (Shadowdale, Tantras, and Waterdeep) were released in the same year, along with the Hall of Heroes accessory, detailing many of the major characters appearing in Forgotten Realms novels published up through that time. In early 1990, the hardcover Forgotten Realms Adventures by Jeff Grubb and Ed Greenwood was released, which introduced the Realms setting to the second edition of the Advanced Dungeons & Dragons game and detailed how the Time of Troubles had changed the setting.[14] The RPGA used the Forgotten Realms city of Ravens Bluff as the setting for their first living campaign. Official RPGA support for this product line included the Living City modules series. A number of sub-settings of the Forgotten Realms were briefly supported in the early 1990s. Three more modules were produced for the Kara-Tur setting. The Horde: Barbarian Campaign Setting, released in 1990, detailed The Hordelands, which also featured a series of three modules. The Maztica Campaign Set, released in 1991, detailed the continent of Maztica.
+
+The original gray boxed set received a revision in 1993 to update it to the second edition Advanced Dungeons & Dragons (AD&D) rules system, with the release of a new Forgotten Realms Campaign Setting boxed set, containing three books (A Grand Tour of the Realms, Running the Realms, and Shadowdale) and various "monster supplements",[25] with a new graphic look.[20] Additional material for the setting was released steadily throughout the 1990s. Forgotten Realms novels, such as the Legacy of the Drow series, the first three books of The Elminster Series, and numerous anthologies were also released throughout the 1990s, which lead to the setting being hailed as one of the most successful shared fantasy universes of the 1990s.[26] These novels in turn sparked interest in role-playing activity by new gamers.[27]
+
+Numerous Forgotten Realms video games were released Between 1990 and 2000. The Eye of the Beholder PC game was released in 1990.[28] This game was later followed by two sequels, the first in 1991,[29] and the second in 1992.[30] All three games were re-released for DOS on a single disk in 1995.[31] Another 1991 release was Neverwinter Nights on America Online, the first graphical Massively Multiplayer Online Role-Playing Game (MMORPG).[32] In 1998, Baldur's Gate was released, the first in a line of popular computer role-playing games[33] developed by BioWare and "considered by most pundits as the hands-down best PC roleplaying game ever".[1] The game was followed by a sequel, Baldur's Gate II: Shadows of Amn in 2000 as well as Icewind Dale, a separate game that utilized the same game engine as Baldur's Gate. Pool of Radiance: Ruins of Myth Drannor was released in 2001. Several popular Forgotten Realms characters such as Drizzt Do'Urden and Elminster made minor appearances in these games.
+[edit] Dungeons & Dragons 3rd edition
+
+With the release of the 3rd edition Dungeons & Dragons rules system in 2000 by Wizards of the Coast, the Forgotten Realms Campaign Setting was released as a hardcover, in 2001, updating the official material and advancing the timeline of the game world.[7] In 2002, the Forgotten Realms Campaign Setting won the Origins Award for Best Role-Playing Game Supplement of 2001.[34]
+
+Several additional rulebooks were released for the new edition, including Monster Compendium: Monsters of Faerûn (2001), Magic of Faerûn (2001), Lords of Darkness (2001), Faiths and Pantheons (2002), Silver Marches (2002), Races of Faerûn (2003), and Unapproachable East (2003). Adventure modules included Into the Dragon's Lair (2000), Pool of Radiance: Attack on Myth Drannor (2001), and City of the Spider Queen (2002).
+
+In 2002, Bioware released Neverwinter Nights, set in the northern reaches of Faerûn and operating on the revised 3.0 rules for D&D. It was followed by two expansion packs,Shadows of Undrentide and Hordes of the Underdark. A sequel was produced by Obsidian Entertainment in 2006, itself followed by the expansion sets Mask of the Betrayer and Storm of Zehir. The Forgotten Realms Deluxe Edition compilation was released in 2006, containing the Baldur's Gate series (excluding the Dark Alliance games), Icewind Dale series, and all Neverwinter Nights games before Neverwinter Nights 2.
+
+With the release of the version 3.5 update to the rules, the Forgotten Realms product line continued to expand. Accessories released included Underdark (2003), Player's Guide to Faerûn (2004), Serpent Kingdoms (2004), Shining South (2004), Lost Empires of Faerûn (2005), Champions of Ruin (2005), City of Splendors: Waterdeep (2005), Champions of Valor (2005), Power of Faerûn (2006), Mysteries of the Moonsea (2006), Dragons of Faerûn (2006), and Grand History of the Realms (2007). Adventure modules released included Sons of Gruumsh (2005), The Twilight Tomb (2006), Expedition to Undermountain (2007), Cormyr: The Tearing of the Weave (2007), Shadowdale: The Scouring of the Land (2007), and Anauroch: The Empire of Shade (2007).
+[edit] Dungeons & Dragons 4th edition
+
+With the release of the Dungeons & Dragons 4th Edition, the Forgotten Realms were updated again to the new rules system, featuring a very changed Realms and moving the fictional world's timeline 104 years into the future.[35][36] The Forgotten Realms Campaign Guide, released August 2008, is a 288-page book for Dungeon Masters. The Forgotten Realms Player's Guide was released the following month, and contains information for players to help create Forgotten Realms characters. An adventure, Scepter Tower of Spellgard, was also released in September 2008 and can be used in combination with the adventure in the Forgotten Realms Campaign Guide to start a Forgotten Realms campaign.[37] In 2008, the Forgotten Realms also became the setting for the RPGA's sole living campaign, Living Forgotten Realms, replacing Living Greyhawk.
+[edit] Reception
+
+In his book The Fantasy Roleplaying Gamer's Bible, Sean Patrick Fannon describes the Forgotten Realms as being "the most ambitious fantasy game setting published since Tekumel",[1] and that it "may be the most widely played-in game setting in RPG history."[1] Similarly, in literature, the novels written in the Forgotten Realms setting have formed one of "the industry's leading fantasy series".[38] Over time these novels have gained "unprecedented popularity",[39] which led, as Marc Oxoby noted in his book, The 1990s, to the novels having an "extraordinary shelf life", remaining in print for many years.[39] This popular reception has also been reflected in public libraries. For example, Joyce Saricks states in The Readers' Advisory Guide to Genre Fiction that the novels have been among the most requested books by fans of the fantasy genre.[40]
+Adon
+
+Adon first appears in the 1989 novel Shadowdale. He is the plain-looking only child of two beautiful, wealthy and devout followers of Sune. At 18, he became the youngest priest ever accepted into the clergy of Sune. After being assigned to the temple in Arabel, he met the adventurers Midnight, Kelemvor Lyonsbane, and Cyric, and joined them. The companions, set out on a quest to save the Lady of Mysteries, Mystra, who has been captured by the Lord of Strife Bane. Adon becomes wounded, leaving a long scar on the side of his face; disillusioned by the apparent lack of interest from Sune, he turns his back on her, refusing to worship so vain and uncaring a deity.[1]
+
+In the novel Tantras, Adon met an avatar of the god Torm the True, with whom he works to trick the overly-zealous clergy of Torm, who had brutally driven worshipers of all other faiths from the city and kept one of the two Tablets of Fate hidden from him. Torm and Bane defeat each other in a struggle over the city of Tantras, apparently killing both gods. Adon, Kelemvor and Midnight began their journey to take the one Tablet of Fate to the city of Waterdeep.[2]
+
+At the end of the Avatar Crisis, in the novel Waterdeep, the Overgod Ao uplifts Midnight and Cyric to godhood, Midnight becoming the new Mystra. Adon finds his vision restored by the symbol of the new Mystra, his former friend and companion, and he takes up her worship, starting the reborn faith of Mystra.[3]
+
+Adon first appeared in a Dungeons & Dragons game supplement in 1989's Hall of Heroes.[4]
+
+In the 1993 novel Prince of Lies, Adon is tricked by the new god Cyric, mad due to the effects of reading the Cyrinishad, and gazes into Cyric's mind. This causes Adon to see everything as Cyric does, driving Adon mad himself, seeing Mystra as a vicious beast. Adon eventually commits suicide in the chaos of Cyric and Mystra's call to worship them.[5]
+
+Adon appears again in the 1998 novel Crucible: The Trial of Cyric the Mad. Cyric is placed on trial by the other greater gods, and Adon had Kelemvor open his own soul to him, making him see everything as the god of death sees it. Adon finally saw Mystra as she truly is, and was received to her realm of Dweomerheart.[6]
+[edit] Akabar Bel Akash
+
+Akabar Bel Akash first appeared in the novel Azure Bonds, written by Jeff Grubb and Kate Novak. Akabar is a native from the southern lands of Turmish—a region of the Forgotten Realms roughly comparable in style and culture to the medieval middle-east. Initially, Akabar is conducting his affairs as a merchant but he also has training as a mage and inwardly yearns to prove himself as an adventurer. He is a sometimes companion to Alias of Westgate.
+[edit] Appearance
+
+Akabar is a tall man with dusky skin and brown hair. He wears a mustache and a beard cut straight across the bottom. He has blue eyes, three dots tattooed on his forehead (marking him as a scholar of religion, reading, and magic), and a sapphire earring denoting that he is married.
+[edit] Biography
+
+Akabar describes himself as a mage "of no small water," though Alias refers to him constantly as a "greengrocer," or a dabbler in the art. His work shown in the first book would tend to bear out Alias' disparagement, though he is clearly far more advanced during the third book. He does not have a part in the events of the second book.
+
+Akabar joined Alias almost from the first, being the one who reassured the ownership and clientele of the inn that Alias found herself in at the beginning of Azure Bonds that the unconscious woman was not a witch. His attempt to work a magic spell to confirm the origin of the blue tattoos resulted in a violent explosion of blue light. From much that point further, Akabar's destiny was ruled by that tattoo.
+
+He worked alongside Alias's other companions to free her from those who masterminded her creation, and returned to his lands thereafter. Akabar's life was far from finished with regard to Alias, however. During the time between the end of Azure Bonds and the beginning of Song of the Saurials, Akabar met and married a third wife, Zhara, a priestess of Tymora. It is revealed shortly after her first appearance that she, too, is a clone of Alias.
+
+Akabar is eventually taken by the dark god Moander, though he managed to retain his own will. In the end, his body overtaken by Moander's vines of possession, Akabar called to the gods he'd served through his life to take him into their hands, to teach Finder how an unselfish man dies.
+[edit] Appearances
+
+    The novels Azure Bonds, and Song of the Saurials, by Kate Novak and Jeff Grubb, TSR.
+    Grubb, Jeff, Kate Novak, David E. Martin, Jim Lowder, Bruce Nesmith, Steve Perrin, Mike Pondsmith, and R. A. Salvatore. Hall of Heroes (TSR, 1989).
+
+[edit] Akar Kessel
+Further information: The Icewind Dale Trilogy#Characters
+[edit] Alaundo
+
+Alaundo was the founder of Candlekeep, a long-dead prophet also known as the "sage of Candlekeep".[7] His prophecy played a prominent role in the Baldur's Gate series of computer games.
+[edit] Alias
+
+Alias is a female warrior, who first appears in Azure Bonds.
+
+Fearing the loss of his artistic works, Finder Wyvernspur attempted to create a human vessel to contain and perform them as he intended, but he failed in his first attempts. Afterward, Cassana and Zrie Praxis unite with the Cult of Moander, the Fire Knives, and Phalse to create their own clone in Cassana's image, Alias. Unfortunately for them, she has a will of her own, and with the help of her "father" she breaks free to become completely self-aware. She plays a part in destroying her creators and eventually is recognized as a "real person".
+[edit] Alicia Kendrick
+
+Alicia Kendrick, born in 1345 DR, is the present High Queen of the Moonshae Isles.
+[edit] History
+
+Born in 1345, Princess Alicia was the eldest daughter of High King Tristran Kendrick and the druid Robyn. Groomed during her early years by the kingdom's arch-mage Keane, Alicia became an adventurer in 1365, during the events of the Druidhome Saga.
+[edit] The Druidhome Saga
+
+When her father had left on a trading voyage and her mother had fallen ill soon thereafter, it fell to Alicia to journey to Fairheight to investigate reports of a new Moonwell, the first one that had been known to appear in years. Together with her friends, Alicia managed to defeat the schemes of the current Earl of Fairheight and minions of Talos the Destroyer.
+
+Malar the Beastlord had also loosed Ityak-Ortheel against the elves of Synnoria. Alicia and the elves went to battle the beast. Some of the elves fled through a gate to the elven realm of Evermeet, but more were trapped behind when the Elf-Eater destroyed the gate.
+
+Alicia then made the journey to Evermeet and met with the elves there. With their help she was able to then rescue her father from the sahuagin.
+
+Finally, an uprising of giants threatened the Isles as the forces of the evil Realmsian gods tried one more gambit to bring the Moonshaes under their sway. Throughout these events Alicia's sister, Deirdre, had become the pawn of these new gods, and it fell to Alicia to take the life of her only sister in order to save the Moonshaes for its people and the returned Earthmother.
+
+After this latest threat to the Moonshaes was quelled, Alicia's mother announced her intent to retire and live the life of a serene and solitary druid. Robyn was joined by King Tristan, who bequeathed the leadership of the Isles to his daughter, who took Keane as her consort.
+[edit] Aliisza
+
+Aliisza is an Alu-Fiend of no small power from the War of the Spider Queen series of novels. She takes a romantic interest in Phaurun and constantly visits him. After his death she finds his pinkie finger and takes it with her. It's later revealed that she is pregnant with Phaurun's child.
+[edit] Aoth Fezim
+
+Aoth Fezim is a war mage and captain of the Griffon Legion of Thay. He is infected by spellplague, and he now lives a very long life and sees a little of the future and danger before it happens.
+
+Aoth is of Mulan descent although he doesn't look like it with his blunt features and short, stocky frame. His body and hands show the intricate tattooing of a wizard. He wears badges revealing him as a rider of the elite Griffon Legion.
+
+His weapons of choice are his falchion, which he carries strapped across his back, and his long spear that serves as warrior's lance and wizard's staff.
+
+Aoth can summon a flare of silvery light from the head of his spear or a wall of violet flame. He has spells to sober himself on will. Aoth can enhance his nightvision through a spell and cast emerald darts from his fingertips. He can conjure darts of blue light from his fingertips that veer to compensate a victim's dodging movements and seldom miss their intended target. Aoth can also conjure a crackling, forking flare of lightning.
+
+Aoth shares a special bond with his familiar, the griffon Brightwing and then Brightwing's grandson Jet. Through their psychic link he can use Brightwing's enhanced senses like his own. Because the purity of his bloodline was suspect, none of the orders of the Red Wizards of Thay had ever thought to recruit him.
+
+Appears in The Haunted Lands Trilogy.
+[edit] Araevin Teshurr
+
+Araevin Teshurr is a sun elf of the ancient House of Floshin (the House of Long Silences). In his younger days in Faerûn (before he joined the wizards at Tower Reilloch) he formed the Company of the White Star with Grayth Holmfast (a human priest of Lathander), Baron Darthen Ironwright, Theleda Rost (now deceased), and the dwarf cleric of Moradin named Belmora (now deceased). Araevin also had a hawk familiar named Whyllwyst, whose cause of demise is not explained.
+
+Araevin returned from Faerûn to join the wizards at Tower Reilloch, where he broadened his already vast knowledge of the arcane arts. During this time he became engaged to Ilsevele Miritar, daughter of Seiveril Miritar (a sun elf lord of Elion and a high priest of Corellon Larethian), but they decided to wait twenty years before getting married.
+
+Around the time when the Dlaedrageths awoke from their ancient slumber, Araevin was two hundred and sixty-six years old. To find the Telkiira that led to the Nightstar, he returned to Faerûn with Ilsevele and attempted to reform the Company of the White Star. They were joined by Grayth, his apprentice Brant, and Maresa Rost (daughter of Theleda).
+[edit] Ardenor Crush
+
+Leader of The Chill, a hobgoblin mercenary group.[8] He is featured in the Forgotten Realms computer role-playing game of Baldur's Gate.
+[edit] Arilyn Moonblade
+
+Arilyn Moonblade is a half-elven "assassin" (although not of any assassin class, and certainly not evil) introduced in the Songs and Swords series of novels by Elaine Cunningham. She has a very youthful appearance despite her age, and pointed ears, because of her elvish lineage, and a slender body and beautiful face, and intense blue eyes with flecks of gold. She was raised in Evereska, but due to her half-human nature she was never fully accepted by the elves. After her mother, princess Amnestria of Evermeet, daughter of queen Amlaruil, was killed, she takes up her mother's moonblade and studies swordsmanship at the academy in the city. Adopting the surname Moonblade because of her sword (she was unaware of her royal family and true surname) she becomes an assassin for the Harpers (a challenger-to-combat, calling targets out and defeating them in honorable, open combat, not stalking and killing them from concealment.) She eventually leaves the group after deeming a mission to rescue a noblewoman to not be worth pursuing. She later marries Danilo Thann and connects with her family on Evermeet. Arilyn's father is Bran Skorlson, an influential Harper ranger with a personal grudge against Khelben Arunsun (who even eventually succeeded in driving Khelben from the Harper ranks.)
+
+Arilyn's moonblade is a powerful magical hereditary elven sword, used to determine the ruling family of Evermeet, which kills any unsuitable wielders and binds its wielders to it in service of the elven people, even after death (though for a time she lifted the killing restriction for Danillo, binding him to it, as well. She eventually released him from this, as she did not wish to curse him with being bound to the sword even after death, as she will be.) The moonstone in the hilt enables each successive wielder, signified by magical sigils, to grant a power to the sword over a period of time. It can produce abnormally fast swings, warn of danger by glowing or through dreams, disguise the wielder, open the elfgate (a magical portal to the gardens in the palace of Evermeet) and call forth a shadow version of herself wielding the sword. Arilyn's mark grants the blade the ability to warn her of when the wild elves of the Wealdath have need of a hero's sword.
+[edit] Arklem Greeth
+
+Arklem Greeth is a lich that appears in the book The Pirate King. Arklem is a former Archmage Arcane of the Arcane Brotherhood in Luskan. He was single-handedly defeated, though not without trouble, by the wizard Robillard in the hull of a sinking Sea Sprite.
+[edit] Artemis Entreri
+Further information: Artemis Entreri
+[edit] Arumn Gardpeck
+
+Arumn Gardpeck was first seen in Streams of Silver and later became more known in "The Spine of the World". He is a barkeeper that owns the Cutlass in the city of Luskan. As the barkeep in the Cutlass he served as a mentor and employer to Wulfgar. He also mentored a young woman, Delly Curtie, and employed her as a waitress.
+[edit] Athrogate
+
+Athrogate is a dwarven warrior of some repute in the Bloodstone Lands. Athrogate wears a broad belt depicted with metal lightning bolts which is rumored to be a belt of storm giant strength.
+
+He has the stout and powerful build of a typical dwarf. He wears his black beard parted in the middle, two long braids of straight hair running down to mid-chest, each tied off at the end with a band set with a trio of sparkling blue gemstones. His bushy eyebrows nearly cover his brown, almost black eyes. He has large ears. Athrogate is well beyond 300 years old.
+
+He wears a suit of armor, part leather, part plated, and covered with a myriad of buckles and straps, his twin morningstars tied in an "X" at his back, their handles reaching up and wide beyond the back of his bushy hair.
+
+He speaks the goblin tongue though heavily accented.
+
+He fights with twin gray Glassteel morningstars, their spiked metal heads whipping at the ends of adamantine chains. He calls these weapons Cracker and Whacker: on command the left-hand one of them, Cracker, emits a dark reddish and chalky fluid from the small nubs on the striking ball, the ichor of a rust monster, which on contact with other metal corrodes it. The right-hand morningstar, Whacker, coats itself with a clear, blue-gray and oily liquid known as oil of impact. Using thus enhanced weapons with first left then right strikes, Athrogate smashes anything from a portcullis to iron golems into rustflakes. He has faced Drizzt Do'Urden, and Artemis Entreri both highly capable warriors, in single combat once.
+
+He appears in books written by R.A. Salvatore.
+[edit] B
+[edit] Baenre
+Main article: House Baenre
+
+The Baenre family name is used by a number of characters in the books of R.A. Salvatore.
+[edit] Bareris Anskuld
+
+Bareris Anskuld is a human bard, later undead. As a bard he worshippes Oghma and Milil. He appears in The Haunted Lands trilogy.
+
+Though Bareris is truly Thayan, he stopped shaving the wheat blonde hair from his head. He can move with a duelist's catlike grace.
+
+Bareris weapon of choice is the sword swinging at his hip in a worn leather scabbard and, in a way, the silver-stringed yarting slung across his back. He also carries a small dagger.
+
+Bareris later gives his yarting to a band of gnolls as fee for their help in his pursuit of Tammith' captors.
+
+By singing a quick phrase and sketching an arcane figure in the air with a free hand, he can call forth a plume of noxious vapor to cloud an opponent. He can also sing a floating orb of light into being to light his way.
+
+He is killed in battle against Szass Tam.
+[edit] Belhifet
+
+Belhifet is a balor, one of the most powerful classes of demons. He is the antagonist of the Black Isle computer role-playing game Icewind Dale, voiced by David Ogden Stiers.
+
+In the events of the Icewind Dale story, Belhifet seeks to conquer the home plane from which he was banished. To do this, he assembles an army, in order to conquer Easthaven and re-open a nearby portal to the Abyss. He is confronted by the player, but manages to flee and, in the process, capture Easthaven in preparation for opening the portal. The player then penetrates the crystal tower surrounding the temple and defeat Belhifet before the gate is opened. According to the story, Belhifet is banished to the Abyss, not killed. He would not be able to walk Faerun again for a hundred years afterwards.
+
+In the story of Icewind Dale II, the legacy of Belhifet continues. During his time on Faerun, Belhifet managed to impregnate the elf Ilmadia, who gave birth to daemonfey twins, Isair and Madae.
+[edit] Belwar Dissengulp
+
+Belwar Dissengulp, a close friend of dark elf ranger Drizzt Do'Urden, appears in four novels set in the Forgotten Realms campaign setting based on the Dungeons & Dragons fantasy role-playing game. His first appearance is in Homeland, the first book of the Dark Elf Trilogy, and he reappears in Exile, the second book in the trilogy, as well as Starless Night and Siege of Darkness, both part of the Legacy of the Drow quartet. He belongs to a race called svirfneblin (deep gnome) and lives in the Underdark city Blingdenstone.
+[edit] C
+[edit] Cadderly Bonaduce
+
+Cadderly Bonaduce is the title protagonist of The Cleric Quintet series by R.A. Salvatore and a minor protagonist in the Drizzt Saga. He is a priest and a Chosen of Deneir, God of Literature and All Images.
+[edit] Creation
+
+The character was created specially for Cleric Quintet, after six Drizzt books were completed - as Salvatore wrote in his introduction, "We were done with Drizzt. Or at least, we thought we were". The new protagonist was originally planned to be a monk, but it rejected due to changes in Dungeons & Dragons 2nd Edition, where the class of monks was absent. Mary Kirchoff proposed that the protagonist should be a cleric. Salvatore invented a concept of spiritual journey for his character, who initially treats his religion as just a lifestyle, but gradually becomes more tied to his god, Deneir.[9]
+[edit] Appearance
+
+Standing 6 feet tall and weighing a bit less than 200 pounds, Cadderly is a man in his mid-20s with striking gray eyes and curly brown hair. He is handsome and has a sincere, warm smile on his boyish face. If he is angered, his glare can be unrelenting. Near the end of the series, a new cathedral called 'The Spirit Soaring' was being constructed. Cadderly channeled the power of his god to help the construction. This caused him to age rapidly. By the time the church was completed, his body was as that of a 100 year old man. But as a reward from Deneir, over the course of several years, Cadderly had gradually returned to his normal age.
+[edit] Personality
+
+As he was growing up at the Edificant Library in the Snowflake Mountains, Cadderly was a likable young man who was intensely curious about life, living, and things unusual. He was not particularly interested in learning spells or combat techniques; however he is quite good at wrestling. Now Cadderly is a changed person. He is so serious about being the Chosen of Deneir that he has made it his foremost commitment, greater even than that to his beloved Danica. He is still warm and gentle, and horrified by death and destruction, although his experiences have tempered this trait. For example, while he had nightmares about killing the priest who unleashed the chaos curse, he does not give the death of his father or the destruction of the vampire Kierkan Rufo a second thought. Cadderly believes in justice tempered with mercy, as evidenced by when the wizardess Dorigen was helpless before him. She had caused great destruction and his friends urged him to kill her, but the young priest could not. He broke her fingers with his walking stick instead, so that she could not cast spells. His act of compassion would prove to be for the better, as Dorigen later became a powerful ally and friend. Only the threat of the most potent evil can distract Cadderly from his task of completing the Spirit Soaring. He works hard at it and does not say much. Those who are evil or who have evil intentions, however, will be noticed. One of Cadderly's abilities is to see images on the shoulders of people; these images replicate the thoughts and desires of their owner. Hence an assassin will be seen as having devilish, snapping beings with dripping, wicked black claws. A man who is thinking about his beloved wife will be seen as having an image of a happy lady cuddling their child.
+[edit] Combat/Tactics
+
+Cadderly never intended to become embroiled in combat as a priest of Deneir. His spindle-disks, essentially primitive Yo-Yo's used as weapons, which he crafted after reading about in an old book, were originally intended for amusement. Similarly, his crossbow armed with Oil of Impact darts was meant to be used for blasting obstacles rather than for combat. The course of his adventures, however, made fighting a necessity.
+
+When he fought, he preferred to let allies who had a better grasp of strategy and tactics do their thing. This is not to say that he was a coward. He could use his spindle-disks to disarm or incapacitate opponents, and against undead he did not hesitate to use his explosive darts. When he killed the evil priest Barjin with a dart, it was an accident, and one that preyed on Cadderly's mind for a long time. As he got more experienced, Cadderly was forced more often to resort to melee weapons, such as his magical ram-headed walking stick.
+
+Eventually his connection with Deneir became so powerful that spells became his most potent weapon. As the Chosen of the Father of All Literature and Image, Cadderly does not need to acquire magic in conventional ways such as praying in advance. Through the Song of Universal Harmony, he can access any spell he so chooses at the casting time. He has faced foes such as drow, vampires, greater demons, ancient dragons (on two occasions), even evil artifacts such as Crenshinibon and Ghearufu, yet each time emerged victorious.
+[edit] Magical Items
+
+Cadderly's ram-headed walking stick was a multipurpose magical weapon. The head was made of silver and it served well in melee combat as a bo stick, or he can remove the ram-head end and use the hollow stick as a blowgun. It has been magically enchanted by a wizard friend of his; a blow with it can have bone-shattering results. The walking stick was destroyed, but could easily have been replaced. His bandolier holds a maximum of 50 unusual crossbow bolts: darts with a small vial of explosive Oil of Impact inside each one, constructed so that the vial is crushed and the oil explodes when the dart hits a target. Cadderly also has a tube with a continual light spell cast on a glass disk inside of it. An adjustable closure on one end of the tube allows him to focus the light into a narrow beam or expand it to brighten a large area (an invention of Cadderly's, a magic-based flashlight).
+[edit] History
+
+Cadderly was the son of Aballister Bonaduce and an unknown mother. Aballister was a highly talented wizard, but also obsessed, and held an unhealthy interest in dark magic. He drove his power to its limits, and his limits of control. One day, he finally went too far; he conjured a Mordenkainen's Sword that killed his wife and was driven from the then Edificant Library. Cadderly remembers his mother's face, but almost nothing else, including her name. The Headmaster, Avery, took Cadderly under his wing, being like a foster father to him. The Headmistress of the Deneir order, Pertelope, being like a foster mother to him. Thus Cadderly lived a carefree life at Edificant Library for his childhood.
+
+Now almost twenty years later came the Time of Troubles (1358 DR), and Cadderly's father Aballister encountered the avatar of the Goddess Talona, who gave to him the name of an imp of the abyss, Druzil, and told Aballister that he had information that would grant him great power. She was referring to the potion called the chaos curse (the Ultimate Poison), a recipe Druzil had found in an ancient tome while in the abyss. It became his obsession to create the potion to please Talona and grant him the ability to conquer the region. Aballister spent two years gathering ingredients for the potion, sacrificing many lives in his quest[citation needed]. When completed, after testing it on a member of the fighters sect of castle trinity (who then became enraged and challenged the leader of the sect in an unbelievable rage, and continued fighting even after his brain had been skewered with a dirk through the top of his skull; he ultimately lost the fight) he named it Tuanta Quiro Miancay, translated meaning the Most Fatal Horror, the title of the highest priest of Talona, mostly as an insult to Barjin, his primary rival in the priest sect of castle trinity, ranking the potion above the priest himself in Talona's eyes.
+
+When the potion was concocted, the chief priest of the evil Castle Trinity, Barjin, demanded the right to strike with the potion. After placing a clerical spell upon the bottle that made it impossible for someone who is not innocent to open it, he brought it to The Edificant Library and tricked Cadderly into opening it. He placed it in the cellars of the Edificant Library, where its vapors spread throughout the library, causing those inside to act without inhibition coupled with a Suggestion (magical charm) for each person to act on his or her most secret desire.
+
+Barjin made his way to the catacombs of the Edificant Library and loosed the potion. This caused an invisible mist to seep upward, affecting all of the library's residents and visitors, causing them to indulge in their most audacious fantasies. It took the combined efforts of Cadderly, Danica, the Bouldershoulder brothers, and a heroic druid named Newander to destroy Barjin and a host of undead that he had summoned to guard the cursed bottle. The bottle was neutralized by immersing it in holy water and warding it against further intrusion. In the final battle against Barjin, Cadderly accidentally killed the evil priest with a crossbow bolt anointed with Oil of Impact from his hand crossbow (which was a re-invention of his from the design of a drow hand crossbow). Due to Cadderly's innocent nature, the accidental murder brought him much guilt and inner turmoil which took him a great deal of time to resolve.
+
+Later on after Cadderly, Danica, Ivan and Pikel saved the elf kingdom Shilmista, they go their own ways, Danica, Ivan and Pikel to the Edificant Library, and Cadderly to Carradoon where the Night Masks( Book : Night Masks ) attempt to assassinate him. Several events take place where Rufo betrays his companions on three separate occasions, the third that costs the life of Avery Schell (Cadderly's mentor, and essentially his surrogate father). After Cadderly learns of the betrayal costing the life of Avery, he curses Rufo with a mark of Deneir: a symbol of an unlit candle above a closed eye, a variation of the holy symbol of Deneir. This brand caused a terrible smell. Rufo is informed that any attempt to cover the mark will cause it to burn through his skull until he is dead. Cadderly then follows the events and kills Aballister. Druzil, after feeling the pain of Aballister's death, stumbles upon Rufo and convinces him to return to the Edificant Library, telling him the chaos curse will give him power. Druzil unthinkingly called the mix a 'potion' and Rufo imbibed the potion and began vomiting up his blood until he was dead. He rises as a Master Vampire several days later, empowered by the potion as its personification: Tuanta Quiro Miancay, The Most Fatal Horror. He kills nearly everyone in the Edificant Library until Cadderly returns. After several encounters in which there is no clear winner, Cadderly finally rids the Edificant Library of the Chaos Curse, Rufo, and his minions. The Edificant Library is permanently desecrated. Cadderly calls upon Deneir and destroys the library, after retrieving all of the irreplaceable books and artifacts, and over the course of 5 years, creates The Spirit Soaring.
+
+Following the defeat of Barjin, Aballister's position in Castle Trinity was unchallenged. Aballister at first had mixed feelings about Barjin attacking the library, presumably at least in part because of his son's residence there, but as Cadderly grew in power and as a direct opponent to his own plans, Aballister became increasingly enraged with him as he became more and more of a threat.
+
+Cadderly was filled with remorse and revulsion after killing Barjin and for a time showed an aversion to any killing whatsoever, even of enemies. As he and his companions routed a major offensive by the armies of Castle Trinity in the elven wood of Shilmista he grappled with the moral questions that plagued him, choosing not to kill the powerful sorceress Dorigen, who had accompanied the evil host's assault, when he had the chance. Instead he merely stripped her of her magical items and broke her fingers to prevent her from performing the gestures that accompany most spellcasting.
+
+Never one who was overly concerned with the rituals or magical spellcasting of his order, Cadderly became ever more confused as new powers began to assert themselves to him in the battle for the elven home. After the battle was over, Cadderly left the forest to explore some of the questions assaulting him, and began to find his answers in the Tome of Universal Harmony, the holy book of his order, that of the god Deneir. While Cadderly's lax attitude toward the rituals of his order earned him much disapproval within the library's structured hierarchy, Deneir apparently approved of Cadderly's ever-questioning, ever-learning, ever-inventing nature, and had made him one of his Chosen. By continually reading from the tome, Cadderly began to tap into the raw power of Deneir, which came in the form of a constantly flowing melody in his mind, which he was able to access, first by singing along with it, and eventually by running it through his mind.
+
+Becoming increasingly concerned with the threat Cadderly posed to his plans, Aballister hired a savage and efficient band of assassins to kill him, to Dorigen's horror. As he and his friends dealt with the assassins, known as the Night Masks, after his life, Cadderly grew more and more in tune with the song of his god, and similarly grew in power, eventually killing nearly all of the assassin band, including an assassin named Ghost who would possess his victims using a powerful and evil magical device known as the Ghearufu. In so doing they freed from Ghost's possession a Firbolg named Vander who joined with them to exact vengeance and lead them to Castle Trinity.
+
+Making a stop back at the Edificant Library before proceeding in his quest to take on Aballister and Castle Trinity, Cadderly met with his mentor, who encouraged him that his path was the correct one. This, combined with his increasing faith in Deneir, as well as his own powers, led him to the drastic action of magically dominating the mind of the library's dean to prevent him from interfering with Cadderly's course. He decides also to take with him the Ghearufu, knowing that it must be destroyed rather than to risk the library's scholars from studying the evil artifact and being unable to resist its temptations.
+
+Crenshinibon is the true name of the crystal shard, first mentioned in R.A. Salavatore's "The Crystal Shard". Cadderly first learned of the artifact when Drizzt Do'Urden came to the Spirit Soaring in search of a priest, hoping to learn the whereabouts of his father Zaknafein. Cadderly assisted Drizzt by dragging the name of Errtu from his old enemy Druzil. After learning about Crenshinibon, the priest agreed that he would locate a way to destroy it in the event that Drizzt could bring it to him. However, it was later taken from Drizzt by Jarlaxle, leader of the drow mercenary band, Bregan D'aerthe.
+
+Ironically, two of the major villains, Jarlaxle and Artemis Entreri, took the Crystal Shard to Cadderly, and asked it to be destroyed. At first, Cadderly and Danica just wanted Entreri to hand the Crystal Shard over, but he claimed he is the only one that he knows can ignore the call of Crenshinibon. Together with Pikel, Ivan, Danica, Jarlaxle, and Entreri, the six formed a most unlikely temporary alliance, and bore Crenshinibon to the dragon Hephaestus to be destroyed by its breath. They also needed Jarlaxle because the sentient artifact had to be engulfed completely in a magical darkness, and then burned by the fire of an ancient and powerful Red Dragon. The dragon, of course, was not so easily manipulated, and at the same time, Jarlaxle's former mercenary underlings, Rai-Guy Teyachumet, from Ched Nasad, along with Berg'inyon Baenre and Kimmuriel Oblodra, both from Menzoberranzan, also wanted the shard. In the end, Artemis Entreri killed Berg'inyon, and, while Rai-Guy held the shard, he and an Ilithid, Yharaskrik, who had secretly been in league with Kimmuriel to destroy the evil artifact, were engulfed by a globe of darkness, created by Jarlaxle, and so, Rai-Guy and Yharaskrik were brutally burned, and Crenshinibon was destroyed, when Hephaestus blew his mighty fire. Subsequently, Hephaestus was blinded by the release of magical power that occurred when Crenshinibon was destroyed. After the fall of Mystra's Weave, the joining of Yharashrik, Hephaestus, and the liches of Crenshinibon into the Ghost King dracolich occurred. After Drizzt and Cadderly, gifted with divine magics of an unknown source but supposedly Deneir who is trapped in the breaking Weave, strike the Ghost King a blow that forces it to return to the Plane of Shadows, Cadderly uses Catti-brie as a conduit to the realm and fights the Ghost King, defeating the sentient force in the Plane, while absorbing its essence. To protect from the return of the dracolich, each night Cadderly as the new Ghost King circles Spirit Soaring in eternal service, creating an entire circuit many times each night, sustaining only until the next night, to keep the planar opening between the Prime Material Plane and the Plane of Shadows blocked and the dracolich trapped and unable to leave the area, though it has not return as of yet.
+
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+[edit] Captain Deudermont
+
+Captain Deudermont commands the ship Sea Sprite, and is a tall, refined man. By his look, you would expect to find him amongst the Lords and Ladies during his shore time, but he cares about his crew. He typically spends his time keeping an eye on them, and making sure they stayed out of trouble. He features in novels by R.A. Salvatore.
+
+Drizzt Do'Urden and Wulfgar first met him in Waterdeep when they were trying to secure passage to Calimishan looking for Regis. Several years later, Drizzt and Catti-Brie spent many years as part of Deudermont's crew. While being escorted by Drizzt and Catti-Brie, he is attacked by a doppelganger that attempts to take his place as the captain of his ship.
+
+Deudermont is almost unshakeably loyal to his crew, and expects that loyalty in return. When Drizzt arrives to sail with the Sea Sprite, it's under a mask which gives him the appearance of a surface elf. When Drizzt becomes unmasked during a battle Deudermont and his crew accept him with little hesitation seeing his true character. In Spine of The World Deudermont is nearly killed in an assassination attempt, in which Wulfgar is blamed. He survives however and speaks to free Wulfgar.
+
+Deudermont returns to action in The Pirate King where he attempts to eliminate the corruption found in Luskan at the hands of pirates and, most notably, Arklem Greeth, the lich who controls the Hosttower of the Arcane, aiding in their destruction only to have the high captains stage an attack on those loyal to his claim as governor of Luskan. Deudermont ultimately finds his end during the battle for the city against the high captains, killed by the most powerful, Kensidan, who uses his cloak to turn into a large crow with razor sharp talons and beak, and strikes a fatal blow before the pirate Maimun came to stop Kensidan from finishing the captain off. Though Maimun attempted to console the captain for what he believed damning choices made he had made for Luskan and its people, he ultimately dies with regret and guilt.
+[edit] Clacker
+Further information: The Dark Elf Trilogy#Characters
+[edit] Companions of the Hall
+Main article: Companions of the Hall
+
+The Companions of the Hall are created by R.A. Salvatore, and include Bruenor Battlehammer, Cattie-Brie, Drizzt Do'Urden, Regis and Wulfgar.
+[edit] D
+[edit] Danica Maupoissant
+
+Danica Maupoissant is a monk, and was created by author R.A. Salvatore.
+
+Danica has an unruly mop of strawberry blonde hair and soft brown almond-shaped eyes, the heritage of her oriental mother. She has a merry, twinkling smile. Standing only 5 feet tall and weighing just 100 pounds, she does not appear much of a threat. Those who have failed to notice her well-toned muscles have discovered otherwise.
+
+Danica is an interesting personality mix. She is quite rigid and lawful, as she must be to follow the disciplined training of Grandmaster Penpahg D'Ahn. And she absolutely loathes things that are evil, yet she also has a strong streak of independence and ruthlessness. It was Danica who urged Cadderly to kill the sorceress Dorigen when she was down and helpless, and who was upset when Cadderly did not do so. She wants to be loved by Cadderly as much as she loves him. Although she is physically attracted to him, she loves him most not for his appearance, but for the warmth of his heart and the truth of his soul. Unfortunately for her, it is those same qualities that have prompted Cadderly to devote his life to building his cathedral. He has elected to serve his deity before all other goals, including her. She respects his decision, but nonetheless feels a grievous sense of loss in her own life. If someone can befriend Danica, he will find no one more loyal or trusting. But she expects the same loyalty in return, and will deck a double-crosser without a second thought.
+
+Danica begins each morning with a series of stretching exercises and meditative techniques that clears her mind. If someone needs a shave, she can pull out her twin crystal daggers and whirl about in a series of fast, whipping motions that neatly slices off all stubble without a trace of bleeding.
+
+She has mixed feelings about the use of magic. Any magic that is used to control another being absolutely horrifies her. On the other hand, when Cadderly cast wind walk on her, she found the experience exhilarating and laughed like a schoolgirl. Someone who offers to cast a fly spell or similar magic on Danica could gain her favor quickly. Someone who gives her a magical item that enables her to fly could win a friend for life.
+
+In combat Danica is occasionally reckless, charging forward with abandon. Sometimes she laughs and shrieks, "There are only ten of them!" or something similar. It is unknown whether this is to embolden herself or to unnerve her enemies (or perhaps both). What is certain is that she can throw her enchanted daggers on the run and then get embroiled in melee with a whirling array of circle kicks, high kicks, back kicks, elbow smashes, and forceful hacks with the heels and sides of her hands. She can jab a finger into the limb of an opponent and paralyze it. This is known as "Withering Touch". Using her hands and feet is her preferred mode of combat, but against more powerful opponents, such as undead, she uses her enchanted crystal daggers.
+
+Even if prone, she can lash out with a vicious kick and spring to her feet in a flash. Foes using ranged weapons against her can get frustrated, as she can easily slap aside arrows, bolts, spears, and other missiles as long as she can see them coming.
+
+She has the monk skill of 'iron skull' which allows her to break a large block of solid stone using her head—she once shattered an ogre's ribcage by imagining it as a stone block.
+
+Her mastery of the monk's arts has long since been taken to what she saw as the ultimate expression of personal control—the ability to suspend one's own animation, without magical aid of any sort, and then revive at will.
+
+Danica was raised (in her early years) in Westgate, the daughter of a wagoneer and his wife of Eastern ancestry. Her parents were killed however by Night Masks assassins, and Danica underwent tutelage in combat arts under a disciple of Penpahg D'Ahn, and eventually found herself at the Edificant Library as well beside Cadderly Bonaduce to complete her training through the texts of the venerated master.
+
+Danica and Cadderly were in love almost from first sight, and consummated their love after the battle of Shilmista Forest when Cadderly arrived in Carradoon. Cadderly had left the war to find his own answers, and Danica quickly came after him. After a series of battles with the Night Masks, she joined him in seeking out Castle Trinity, source of the evil chaos curse. Facing magical monsters, the red dragon Fyrentennimar, and the soldiers of the castle, Danica accompanied Cadderly up until his confrontation with his father, Aballister Bonaduce.
+
+Returning to the Edificant Library, Danica found it under the control of Kierkan Rufo, who had become a vampire by ingesting the liquid form of the chaos curse. Beaten by Rufo and his undead horde, she was taken prisoner. Rufo attempted to turn her into his queen, but she was able to escape his thirst for blood by employing the ultimate technique of Penpahg D'Ahn: suspended animation. Sadly, Danica was then forced to watch for five years as Cadderly gave up his own life force to construct the Spirit Soaring cathedral, making him an old man. Her only comfort was that she conceived and bore twins during this time. Another bright side was that as time went on, she became pregnant again as Cadderly began growing younger again.
+
+Catti-brie found a kindred spirit in Danica when she and Drizzt Do'Urden came to the Spirit Soaring in search of Cadderly, needing his power to commune with the demon Errtu. The two talked, and became quite friendly before Catti-brie was forced to leave. Still later, Danica accompanied Cadderly on his quest to destroy Crenshinibon. She found a natural anti-thesis in the form of Artemis Entreri, who was in the company of Jarlaxle Baenre. After a grueling battle against both the red dragon Hephestus and the drow band Bregan D'aerthe, they succeeded, but shortly thereafter parted ways.
+[edit] Danilo Thann
+
+Danilo Thann was created by author Elaine Cunningham in the Song and Swords series of novels. He is often portrayed as an inept dandy, bard and nobleman that blunders into the most inopportune situations. However, in reality, he is a skilled magician and a crafty adversary, trained by none other than Khelben "Blackstaff" Arunsun himself.
+[edit] Appearance
+
+Danilo is a young (below thirty winters, during the events of Elfsong) Waterdhavian nobleman, and aspiring bard. At six feet tall, he stands about three inches taller than Arilyn Moonblade (as stated in Elfsong.) He has wavy shoulder-length pale blond hair. However, even among the nobles, Danilo's choice of clothing is considered "extravagantly ridiculous". He commonly wears clothes that suit his theme as a dandy and dilettante – from suits of purple which Arilyn Moonblade says make him look like a "walking grape", to the "Ruathym Adventurer garb" he once wore. Whatever he wears, he can consistently be found wearing the height of fashion among the nobles of Waterdeep. In addition, he carries a complete wardrobe's worth of clothing in his bag of holding, as well as "enough jewelry to bedeck a harem".
+[edit] Personality
+
+Danilo, when faced by the public, acts like a complete fool. There are moments of intelligence within his mask as a dandy, but very few notice the truth of the matter. Danilo, despite his canny intelligence and skill in subterfuge - is actually quite reckless, a fact brought to because of his alternate "dandy" ego (this is evidenced through his naughty pranks and reckless magical experiments). There are times when Danilo completely forgets his true self and fully reverts into the comfortable guise of the fool. However, when faced with the truly important, Danilo becomes a serious and calculating genius, and a very dangerous adversary.
+[edit] Talents and Abilities
+
+In 3.5 Edition Dungeons & Dragons game terms, Danilo is rated as a 3rd-level aristocrat/9th-level wizard/1st-level spellsinger. Danilo is a very skilled magician, one whom Khelben had considered his probable heir and his apprentice with the most potential. His skill with magic is such that he mastered the art of Spellsong in just a few days, he was able to charm a magically-resistant dragon to slumber, and his illusionary pranks that get his uncle Khelben each time. His magical skills include prismatic displays of light, fireballs, spells of invisibility, scrying and various charm spells.
+
+Aside from his magic, Danilo is also well versed with subterfuge, disguise, and manipulation. Although less of a pragmatist than his Uncle Khelben, Danilo is still skilled in manipulating the political and social threads in any given situation. His degree of expertise is as such that when he engaged the crime lord Elaith Craulnober in a verbal sparring match - it ended as a draw. His skill may arguably be even better than a drow's - since he once tricked the drow princess, Liriel Baenre (crafty even among her people) into revealing more than she wished to.
+[edit] History
+
+Danilo Thann was always considered the "young dandy" in the house of Thann - as such, even his mother and father never takes him seriously. Despite this reputation, Danilo has been trained by several bardic tutors around the world, one for each bardic tradition. He has also been secretly trained by his uncle, Khelben "Blackstaff" Arunsun.
+
+To the public, Danilo is a novice mage who never seemed to have progressed past some parlor tricks to amuse the nobility - and well known for many unintentional magical mishaps. The truth of the matter, however, is he is an extremely capable wizard - enough to make Khelben consider him as his most promising apprentice. He maintains the facade as a court dandy as a means to let others underestimate his abilities - thus he hears more information, and becomes a greater agent/informant for the Harpers.
+
+During the events of the Harper Assassin in the novel, Elfshadow, Danilo met the half-elven adventurer Arilyn Moonblade - inflicted by the unfortunate label of "assassin". Initially accepting the mission due to Arilyn's unsurpassed beauty - he soon grew more attached and involved in the events. He arranged to be kidnapped for his horses. The relationship that started as kidnapper (Arilyn) and captive (Danilo) soon fostered into true friendship, and later on, true love. It is also in this event that Danilo first met the rogue elf, and future enemy and friend, Elaith Craulnober.
+
+Danilo was initially gifted the shared use of Arilyn's moonblade, but in the events following Silver Shadows - it was taken back by Arilyn, after realizing the gift would also curse Danilo to eternal servitude to the sword.
+
+During the events of Elfsong, Danilo was forced to ally himself with his hated enemy, Elaith Craulnober - in order to answer a deadly riddle by the ancient green dragon, Grimnoshadrano. It is also here, that Danilo met and befriended Morgalla the Mirthful - one of those rare female dwarven bards, and Wyn Ashgrove, a powerful gold elven spellsinger who taught Danilo the sacred art of the Spellsong. The ragtag group, calling themselves Music and Mayhem, was from the very beginning a group with divided loyalties - split between Elaith's quest to reactivate his Moonblade, and Danilo's quest to save Waterdeep. However, in the very end, Elaith and Danilo worked together to finally defeat the deadly enchantment and saved Waterdeep from ruin.
+[edit] Relationships
+
+Danilo is foremost married to Arilyn Moonblade, a half-elven granddaughter of Queen Amlaruil of Evermeet. They have adventured together and Danilo has pushed and manipulated Arilyn considerably to reconcile with her elven family and come to terms with her roots.
+
+Danilo's father, Lord Thann, is largely impotent in the family business dealings, and prefers to live quietly off the proceeds that the Lady Cassandra Thann makes. The Lady is a formidable person in any respect, and disapproves of Danilo's various exploits to some degree. She has elven blood, but has never mentioned it, as there is some animosity towards elves in the Waterdhavian nobility. Danilo has five brothers, at least one sister named Judith, as well as a deceased half-sister, Lilly Thann.
+
+Danilo has been named an elf-friend by the rogue Elaith Craulnober, and befriended the drow wizard Liriel Baenre.
+[edit] Appearances
+
+    Cunningham, Elaine. Elfshadow (TSR, 1991).
+    Cunningham, Elaine. Elfsong (TSR, 1994).
+    Donovan, Dale and Paul Culotta. Heroes' Lorebook (TSR, 1996).
+    Greenwood, Ed. The Code of the Harpers (TSR, 1993).
+    Schend, Steven with Ed Greenwood. City of Splendors (TSR, 1994).
+
+[edit] Dendar the Night Serpent
+
+Dendar the Night Serpent is a giant and tyrannical extraplanar serpent that feeds upon the forgotten nightmares of mortals.
+[edit] Description
+
+The Night Serpent's slit-pupil eyes are the sickly yellow-black of rotten eggs. Her forked tongue flickers incessantly over her smooth lips. Her monstrous fangs are always coated with the viscous essence of lost dreams. She speaks with a sibilant, malignant voice that drips with ancient horrors. Midnight-black scales cover her colossal hide and serve as the physical embodiment of the most terrifying nightmares she has swallowed.
+[edit] History
+
+Dendar the Night Serpent came into existence shortly after the first being slept and had a nightmare. She has an uncountable horde of horrible dreams and foul visions in her gullet that she has been devouring since the dawn of time. She relishes the taste of particularly choice nightmares and savors the dreams of kings and deities alike. More horrifying, if she did not feed her insatiable appetite, every being, mortal or deity, would remember every nightmare he or she has ever dreamed in excruciating detail. Supposedly, she will be the harbinger of the end of the world and even the gods themselves.
+
+Although she can slither across the Barrens of Doom and Despair or any of the lower planes at will, the Night Serpent is almost always found in her lair. Dendar lives in a vast cave near the oozing river that surrounds much of the Fugue Plane. The hiss of the Night Serpent's breathing echoes through the plane as she sleeps, contentedly gorged on the world's unremembered nightmares. Anyone who approaches her cave finds her awake and awaiting them with anticipatory delight as she savors and relives their worst unremembered nightmares. Her cavernous maw is large enough to swallow a giant, and her tongue can knock an armored man to the ground with a single flick. Beneath her tongue is a foul mire of greasy spittle and half-devoured bones—the corporeal manifestations of her dream diet's remnants.
+[edit] Other Names
+
+To the ancient Rus, Dendar was known as Nidhogg, the serpent who gnaws at the roots of the world tree that connects all things (Yggdrasil). In Calimport, she is known (incorrectly) as the Mother of the Night Parade. In the Jungles of Chult, Dendar is known as the Eater of the World. Legends tell of how Ubtao, Creator of Chult, will battle the Night Serpent when she emerges through a gigantic iron door located beneath one of the Peaks of Flame and attempts to eat the sun. If Ubtao fails in his duty, the stories say Dendar will readily devour the sun and the doom of the world will finally arrive.
+[edit] Dorn Graybrook
+
+Dorn Graybrook is featured in the series The Year of Rogue Dragons, and created by author Richard Lee Byers. Dorn is a big person, but most of his left side is made up of metal plates and parts grafted on by the wizard who owned him when he was a boy, and this only contributes to his fiercesome look. He carries a bow and quiver of arrows, and a bastard sword, when he can get one.
+
+When Dorn was six, he and his parents were part of a merchant caravan traveling in the Moonsea region. The party was attacked by a red dragon, which killed both his parents and bit off his left arm and leg plus a goodly piece of the skin around them, and left him to die. The wizard who owned him and his parents transported to the site a few moments later to retrieve his merchandise. Upon finding Dorn, he saved his life by creating the golem parts that make up his left side. Dorn still had to serve the wizard, as well as the years of service his parents owed. As he grew up, the wizard trained him to be a fighter in the arena, and enchanted the golem parts for improved efficiency. After he had become a veteran arena competitor, Dorn found a way to kill the wizard and escape the city. Once he was out on his own, he began working as a mercenary, and looking for jobs that required him to kill dragons, because due to the incident when he was six, he hates dragons more than anything else, and dedicated his life to killing every dragon he could around the Moonsea. In the Year of Rogue Dragons, he has made a number of allies, and they have travelled with him in his eternal quest to kill dragons. All of them work to stop a plot by the insane wizard Sammaster from creating an army of dracoliches and descending upon the world.
+[edit] Do'Urden
+Main article: House Do'Urden
+
+The Do'Urden family name is used by a number of characters, particularly Drizzt, in the books of R.A. Salvatore.
+[edit] Dragonbait
+
+Dragonbait (also referred to as Champion) is a finhead saurial paladin most likely in the service of Tyr. He first appears in Azure Bonds by Kate Novak and Jeff Grubb.
+[edit] Appearance
+
+Dragonbait stands roughly five feet in height, not counting the troglodyte-like head fin, though that is only in consequence to his posture, being canted forward at the hips, and balanced by a tail near long as his torso. His mouth is thinner and more rounded than the lizard-men of Faerûn, lipless to show sharp teeth to the fore and rounded molars to the rear. His scales are small and smooth, like beadwork. On his chest was a ring of symbols identical to those originally sported by Alias on her arm, which resolved themselves into a ring of blue ivy at the end of the events of Azure Bonds.
+[edit] Biography
+
+Dragonbait received his current name the night he assisted Alias in disposing of some thugs in the service of her creators. Alias warned him that if he made a single false move, he'd be dragon bait. He immediately took it as his name, and is only referred to as Champion by Grypht (and presumably, therefore, other saurials).
+
+Dragonbait's near refutal of his previous name may have originated in the circumstances that brought him into the power of the creators of Alias.
+
+He had served Tyr single-mindedly, and had fallen in love with another saurial, who served Lady Luck (likely Tymora, or possibly her other incarnation of Tyche). Believing that Luck's fickle nature was in violation of the rigorous justice of Tyr, he demanded that his love leave her goddess' service and come to serve his god. The argument ended with no resolution, and apparently fearing his love for her would eventually taint his pure service to his god, he left for Tarterus to serve his god.
+
+There, he was captured by a fiend (likely Phalse, though that is never confirmed) to be used for a dark purpose. While imprisoned, he had a vision, or perhaps only a dream, in which he was visited by Lady Luck. He was told that she would rather not see him ever again, but that her aid had been asked by the god of justice to save his servant. Wishing to live and not offend his god who had intervened on his behalf, he accepted the task she charged him with: to fulfill the service laid on him by the human sent to him.
+
+Freed from his imprisonment by the Nameless Bard, Dragonbait became Alias' companion. He lives always to serve Tyr, but now he also pays homage to all other gods who can further the cause of justice.
+
+As he can not speak human tongues, after aiding Alias in destroying her evil creators, she taught him the thieves' hand cant, a fact that thoroughly irritated Olive when she learned of it. In the third book, Alias used the finder's stone to cast a permanent tongues spell on herself, enabling her to speak Dragonbait's own tongue, which is a combination of clicks and whistles pitched outside normal human hearing, and scents (see list below).
+
+Dragonbait frequently refers to Alias as his sister, something that has been borne out as being true from the gods' point of view when Alias becomes a soul singer, a saurial gift that apparently follows genealogical lines.
+
+Following the events of Song of the Saurials Dragonbait and Alias apparently settled in the Lost Vale with the displaced saurials to aid them in their new settlement. A short time later, however, they are adventuring again.
+[edit] Known Scents and Their Meanings
+
+    Earth = Frustration
+    Woodsmoke = Healing Power
+    Roses = Mourning/Sadness
+    Violets = Fear
+    Fresh Baked Bread = Anger
+    Lemons = Joy
+    Tar = Triumph/Victory
+    Garlic = Determination
+    Brimstone = Confusion
+    Chicken Soup = Impatience
+    Ham = Worry
+    Basil = Privacy
+    Honeysuckle = Tenderness
+    Mint = Remorse
+    Fresh Mown Hay = Arcane Spells
+    Cinnamon = Love
+    Vanilla = Shen Sight
+    Fish = Insulted
+
+[edit] Appearances
+
+    Donovan, Dale and Paul Culotta. Heroes' Lorebook (TSR, 1996).
+    Grubb, Jeff, Kate Novak, David E. Martin, Jim Lowder, Bruce Nesmith, Steve Perrin, Mike Pondsmith, and R. A. Salvatore. Hall of Heroes (TSR, 1989).
+    Novak, Kate and Jeff Grubb. Azure Bonds (TSR, 1988).
+    Novak, Kate and Jeff Grubb. The Wyvern's Spur (TSR, 1990).
+    Novak, Kate and Jeff Grubb. Song of the Saurials (TSR, 1991).
+    Novak, Kate and Jeff Grubb. Masquerades (TSR, 1995).
+
+[edit] E
+[edit] Elaith Craulnober
+Further information: Elaith Craulnober
+[edit] Elk Tribe
+
+The Elk Tribe is a nomadic group of barbarians living in the tundra that comprises Icewind Dale. It was the lead tribe ruled by Heafstaag. All tribes are named after animals of great power or prowess. After the battle with Ten-Towns few tribe members were left.
+
+Wulfgar assumed control of the tribes after being released form the servitude of Bruenor Battlehammer and extensive training by Drizzt Do'Urden. He convinced his tribe to join forces with the men of Ten-Towns against the army of Akar Kessel, wielder at the time of Crenshinibon, (The Crystal Shard). With the help of the barbarians they were successful. Thinking of what might be best for his people, he split the tribe into two groups. One remained in Icewind Dale(led by Revjak), the other followed him to the south where his adoptive father Bruenor Battlehammer had reclaimed his childhood home Mithral Hall. They lived in a town called Settlestone. Originally a Dwarven town they rebuilt it after two hundred years of its vacancy. They lived a prosperous life working as traders and merchants for the dwarves. After the death of their leader during the war with the Drow, Berkthgar the new leader decided to return to their old way of life on the tundra.
+[edit] Ellifain Tuuserail
+
+Ellifain is an elf who appears in a series of New York Times best-selling books by R.A. Salvatore. The character Ellifain appears in Homeland as a child and Starless Night and Sea of Swords as a young adult. She is also mentioned in all of the Hunter's Blades Trilogy books.
+[edit] Appearances
+[edit] Homeland
+
+Ellifain appears as a child when benign drow warrior Drizzt Do'Urden travels from the Underdark to the surface with a raiding party of other, not so benign drow, including Drizzt's brother Dinin Do'urden. While Ellifain's clan is dancing under the stars, the drow attack. All of the elves are massacred, except for Ellifain, who is saved when Drizzt Do'Urden covers the trembling and screaming Ellifain with her own mother's blood, making it look like she is also mortally wounded, and hiding her under her mother's body and forcing her to be quiet. This thoroughly fools the other drow, sparing Ellifain's life.[22]
+[edit] Starless Night
+
+Ellifain appears only briefly here. As a young adult, Ellifain is living in the Moonwood, fostering a powerful hate for drow, especially the local 'hero' Drizzt Do'Urden, who she falsely views to be a lie. Drizzt passes through the forest on his way to the Underdark, and Ellifain promptly attacks him. Drizzt does avoid getting hit by her sword and does not strike back at her. It then takes many elves to hold her back.[23]
+[edit] Sea of Swords
+
+Ellifain, now under the guise of Le'lorinel, a male elf, clearly remembers that fateful night when her clan was massacred, still fostering a huge hatred of drow. She is now out of the Moonwood and is serving a wizard somewhere else. Her reward for the work is an onyx ring containing 4 spells. She visits a local gnome seer to try to find Drizzt, who she has sworn to kill. The gnome divines with his crystal ball and shows 'him' two signs, one the combined symbols of Dwarven gods Moradin and Dumathoin, the other being the combined symbols of Dumathoin and Clangeddon. The seer tells Ellifain that these are the symbols on the twin heads of Aegis-Fang, a warhammer forged by dwarven king Bruenor Battlehammer and carried by Wulfgar, both of which are part of an adventuring band called the Companions of the Hall, which also includes Drizzt. The gnome tells her that the symbols will lead her to Drizzt.
+
+The elf then ventures to Luskan and eventually meets an agent of the infamous pirate Sheila Kree. She is knocked unconscious and is brought to Golden Cove, Sheila Kree's secret port that she shares with a clan of ogres. She is branded with Aegis-Fang, which Sheila received through Luskan's blackmarket. The Companions of the Hall eventually arrive in search of Aegis-Fang. Drizzt slides down a chimney and comes out in the hearth of a room containing Ellifain and a huge ogre. Ellifain promptly kills the behemoth to have Drizzt for herself. She fights him, using 3 spells, and when Drizzt summons a globe of magical darkness around she uses her last spell, the fire shield, which inflicts the same wounds given to the user of the spell to the giver of the wounds. Since they are in the globe of darkness, Drizzt cannot see the tell-tale flames. Drizzt punctures Ellifain's lung, which immediately does the same to Drizzt. Then, Catti-brie comes in with a healing potion. Drizzt, now recognizing Ellifain, pleads to Catti-brie to give it to Ellifain, but Bruenor, now in the room, tells Cattie-brie otherwise. Drizzt is saved, but Ellifain is not. Drizzt has her buried in the tunnel complex of Golden Cove.[24] Following her death, Tarathiel and Innovindil, two Moonwood elves seeking her fate, run across Drizzt, who admits to killing her, though he was unaware of who she was. Later, during the events of The Orc King, Drizzt and Innovindil travel to the Golden Cove to return Ellifain's body to the Moonwood. Whilst there, Drizzt is able to speak with her spirit and apologize, to which Ellifain accepts and by Drizzt's reasoning, is at peace.
+[edit] Elminster
+Further information: Elminster Aumar
+[edit] Erevis Cale
+Further information: Erevis Cale
+[edit] Errtu
+Further information: Errtu
+[edit] F
+[edit] The Four
+
+The Four were a band of adventurers whose members included: Mirt the Moneylender, Durnan, Asper and Randal Morn. Florin Falconhand was also a stand-in member at times.
+[edit] The Fox-at-Twilight
+
+The Fox-at-Twilight is a creation of author Erik Scott de Bie.
+
+A swashbuckler and con artist, the moon elf called the Fox-at-Twilight (or “Light”) is an enigma at best. She fights by trickery as much as by blade, luring her opponents into underestimating her by guile or plying her considerable charm to get what she wants. She is an accomplished duelist, extremely agile, and possesses powers akin to those of a divine seeker (a holy spy/thief who can sense the location of certain objects and call upon divine providence to save herself from mortal wounds) and a shadowdancer (able to teleport/"dance" through shadows and animate her own shadow).
+
+Her exact origins are unknown, and she has made a variety of outrageous claims about her past, including being a former lover of her divine patron, Erevan Ilesere. She is notable in that she appears both before the Spellplague and time-jump (in the novel Depths of Madness and the sourcebook Grand History of the Realms) as well as after, in the form of Lady Ilira Nathalan (in the novel Downshadow).
+[edit] Appearances
+
+    Erik Scott de Bie, “The Greater Treasure,” Realms of the Elves (Wizards of the Coast, 2006)
+    Erik Scott de Bie, Depths of Madness (Wizards of the Coast, 2007)
+    Erik Scott de Bie, Downshadow (Wizards of the Coast, 2009)
+    Erik Scott de Bie with Tom Costa, “The Fox and the Dispossessed” part 1 and 2, web articles (Candlekeep.com)
+    Brian R. James, Ed Greenwood, Grand History of the Realms (Wizards of the Coast 2007)
+
+[edit] Fzoul Chembryl
+
+Fzoul Chembryl is a major evil power player in Faerûn. He is head of the Zhentarim, chosen and arch-priest of Bane. Once a servitor of Manshoon, he managed to kill him and take his position of master of the Zhents. While Bane was dead, Fzoul became a reluctant cleric of Cyric, and later Iyachtu Xvim.
+
+Fzoul is a high-level adversary as his status as chosen and arch-priest of bane lends him considerable powers and the Zhentarim offers him considerable resources. He once had an understanding with Khelben "Blackstaff" Arunsun but whether he has to respect it since the archmage's death is doubtful at best. Formerly the mortal Chosen Tyrant of his dark overlord, Fzoul eventually was killed fighting the shadovar and was granted his current status as a Demi god as his reward for dying in Bane's service.
+[edit] G
+[edit] Galaeron Nihmedu
+
+Galaeron Nihmedu is the main character in Return of the Archwizards, a trilogy of novels by Troy Denning.
+
+Galaeron is an elf and a minor noble of Evereska, Lasthaven to the elves of Faerûn. He is the son of the moon elf Aubric Nihmedu, the Blademajor of the Swords of Evereska and Lord of Treetop in Starmeadow Tower. His mother, a wood elf named Morgwais Nightmeadow (known to the elves of the High Forest as Morgwais the Red, the Lady of the Wood, and the Red Lady), is the ruler of the Sy'Tel'Quess (wood elves) of the High Forest. Galaeron has a little sister named Keya, turquoise-haired and only about eighty years of age.
+
+Galaeron is tall and solidly built for a moon elf and has the pale skin and regal features common to his race; two decades of serving as a Tomb Guard along the Desert Border South have left his face mildly rugged and weather-beaten. He is skilled in both hand-to-hand combat and sorcery, having attended both academies of the College of Magic and Arms. As he is a sorcerer, he was often discriminated against in the academies (which favor regular wizards), being called arrogant and stubborn. Eventually, they accused him of using dark magics and demanded to see his spellbook; unfortunately, he never had one. (Unlike most mages, sorcerers do not forget spells after they use them; thus, they do not require spellbooks and the like or countless hours of relearning spells.) It took Lord Imesfor’s intervention to win Galaeron a place in the Tomb Guard, a militia of Evereska that guards the elven crypts in the area against (almost always human) thieves. He was assigned to the Desert Border South (which borders the Great Desert of Anauroch) as a patrol leader in the Tomb Guard, where he served for twenty years. His life was made harder by Kiinyon Colbathin, Tomb Master and Master of the Defenses of Evereska, who for some reason felt scornful of him.
+
+On 20 Nightal, the Year of the Unstrung Harp (1371 DR), Galaeron led his patrol into an ancient crypt housing seven Aryvandaaran nobles, high lords of the aggressive Vyshaan clan who had started the First Crown War, plunging the entire elven race into three thousand years of violent carnage. The patrol tracked down a band of Vaasans (a human ethnicity native to Vaasa) and followed them through a dwarven tunnel to where they were using a beholder to carve a path to the Sharn Wall, a silver-colored magical barrier that imprisons the phaerimm. The Vaasans were trying to locate Melegaunt Tanthul, an archwizard from the ancient Netherese city of Shade. The elves had a small skirmish with the crypt-breakers, and then Melegaunt himself appeared. Galaeron’s and Melegaunt’s magical bolts collided, creating an explosion that punctured a hole in the Sharn Wall. (Magic from the Weave and magic from the Shadow Weave mingle with disastrous effects.) This freed the phaerimm, an ancient, malevolent, and powerful race that were imprisoned beneath Anauroch by a mysterious race known as the sharn after the collapse of Netheril.
+
+The leader of the Vaasan band, Vala Thorsdotter, was loyal to Melegaunt through a debt made by her great grandfather, Bodvar. As more phaerimm escaped through the breach, they began gathering armies of bugbears, illithids, and beholders that they had enthralled through their mind magic. Melegaunt, Vala, and Galaeron went on a journey to stop the phaerimm, Melegaunt leading the way but not telling them where they were going. On their journey, they were eventually accompanied by a little man named Malik el Sami yn Nasser (actually the Seraph of Lies, the highest honor bestowed by Cyric) and Aris, a stone giant priest whom Galaeron rescued from beholders serving the phaerimm. Along the way, Melegaunt took advantage of Galaeron’s sorcery skills to teach him how to use the Shadow Weave, a mostly unknown source of magic now controlled by Shar that was split from the Weave in ancient times when Karsus temporarily usurped Mystryl’s power. It is also greatly effective against the phaerimm, who are highly resistant to magical attack except for the Shadow Weave, which they know nothing about.
+
+A side effect to Galaeron’s use of shadow magic was that he overindulged in it and came into conflict with his shadow self. A shadow is not opposite, but absence. In Galaeron’s case, it was the absence of kindness and loyalty. He slowly began losing some of his emotional self-control and compassion and lost the ability to go into Reverie, the elven method of deep meditation and subconscious connection with other elves, and had to sleep and have dreams like a human. For the first time in his life, Galaeron also felt jealousy (such as when he found his mother sitting in Elminster’s lap while he clutched her behind). He also lost his ability to tap into the Weave and had to solely rely on the Shadow Weave for magic. While drawing energy from the Weave feels somewhat like warmth coming into one’s body all at once, drawing upon the Shadow Weave feels as if a burst of coldness comes up from the ground through one’s feet and into the body. Galaeron eventually became used to it, however, and soon the coldness no longer bothered him. Melegaunt continuously warned Galaeron to not use the magic so often, lest Galaeron be consumed by his shadow.
+
+Melegaunt led his small entourage to the ruins of Karse in the High Forest. Keeping his true intent hidden, he only told his companions that in Karse there was something to defeat the phaerimm. In the temple of Karsus, Melegaunt was killed by a lich, but before he died, he imparted all of his knowledge of the phaerimm into Galaeron’s subconscious. Earlier, had also told of his past: he was the Twelfth Prince of Shade, and his people were able to defeat the phaerimm. On 1 Hammer, the Year of Wild Magic (1372 DR), Galaeron used the Karsestone (what was once Karsus’s heart), the only source of “whole” magic left before it was split by Karsus, to create a gate that transported the ancient floating city of Shade from the Plane of Shadows back to Faerûn. “Hear me now, people of Shade. Follow me now, for the Return is at hand!”
+
+With Melegaunt’s knowledge stored in his mind, Galaeron became a valuable asset to the ruler of Shade, Telamont Tanthul. Through a long series of events thereafter, Galaeron had a falling out with the Most High, and with the help of Khelben “Blackstaff” Arunsun, Laeral Silverhand, Alustriel Silverhand, Dove Falconhand, Storm Silverhand, and Aris, Galaeron managed to rescue Vala from Prince Escanor and deal a major blow to Shade Enclave. Also, during his imprisonment by Telamont, Galaeron joined with his shadow, filling in the gaps of his character and making him more whole while still being able to keep his will as his own.
+
+When Galaeron arrived back in Evereska, he helped the high mages repair the mythal, which had been unraveled by a phaerimm SpellGather. This inadvertently added something new to the mythal: after the golden meteors descended to blast apart the phaerimm, streaks of shadow were left in their wake.
+
+Due to his father’s death while fighting the phaerimm, Galaeron inherited his lordship. For his great exploits, Galaeron was offered the position of Master of the Defenses by Lord Duirsar (Kiinyon Colbathin had also died in the war.), but he turned it down, choosing instead to travel to Vala’s home, the Granite Tower, with Vala and his spirit-deep mate, the wood elf Takari Moonsnow.
+[edit] Appearances
+
+    The Return of the Archwizards trilogy by Troy Denning:
+        The Summoning (2001)
+        The Siege (2001)
+        The Sorcerer (2002)
+
+[edit] Gareth Dragonsbane
+
+Gareth Dragonsbane is a mighty paladin of the god Ilmater, and king of the Bloodstone Lands, the unification of his homeland, Damara, with the untamed territory of Vaasa.
+
+Gareth was crowned King of Damara in 1359 DR when he succeeded in forging key alliances with many minor nobles throughout the land after Zhengyi the Witch-King of Vaasa, whose armies had conquered Damara, was defeated by a band of adventurers braving Castle Perilous, his stronghold. He has since then devoted his reign to rebuilding Damara's economy, forging alliances with other nations, and attracting adventurers to Damara while keeping an eye to the still-troubled enemy to the North, Vaasa.
+
+During the events of the Year of the Rogue Dragons (1373 DR) Gareth Dragonsbane's soul had been imprisoned in the Plane of Shadow due to the treachery of some wizards who had been corrupted and were in reality Sammaster's agents. His absence left Damara briefly in disarray and prone to attack from orcs and goblinoids swarming from Vaasa. He was saved only thanks to the actions of dragonhunters Pavel Shermov and Will Turnstone, a handful of his trusted officers and companions, and (quite unbelievably) an ancient vampiric dragon by the name of Brimstone. Having recovered from his ordeal, he once more lead his troops to victory against the forces of Vaasa, apparently slaying the Witch-King (who had arisen again) in single combat. In reality, Brimstone had conjured the illusion of an undead riding on his back, and he and Dragonsbane had planned the fight all along. It had a demoralising effect for the Vaasans which made victory easier.
+
+His wife and Queen of Damara is Christine Dragonsbane, a druidess. His mount is an intelligent warhorse named Glenden. His six best friends are his old adventuring companions: the extremely skilled and powerful monk Grandmaster Kane (who landed the killing blow on Zhengyi); the ranger Duke Olwen Forest-friend, the "thief"/spy Celedon Kierney; the bard Riordan Parnell; the wizard Emelyn the Gray; and the priest of Ilmater and disciple of St. Dionysus, Friar Dugald.
+
+Gareth Dragonsbane was first published as a pre-generated player character in the 1985 module H1 Bloodstone Pass. Updated stats for him continued to appear in the other modules of this series. Christine was a NPC in the same series.
+
+He has appeared in Road of the Patriarch, where his friends captured the assassin Artemis Entreri for treasonous acts (actually a plan set up by Jarlaxle to help the king solidify his hold, without the king's knowledge). Entreri is less than impressed with Gareth's kingship, and classifies all the reasons Gareth and his friends give for Gareth's station as either a way of keeping commoners down or mere strength of arm. While Gareth's friends are furious at the disrespect the assassin shows, Gareth is uncomfortably aware there's more than a grain of truth to Entreri's reasoning, and resolves to deserve to rule by being a good king, rather than by dint of bloodline or force. He merely banishes the assassin from his realm rather than executing him (as many of Gareth's friends—even his wife—would prefer). Like Drizzt Do'Urden before him, Gareth saw Entreri as a mirror of himself, and strove to be above the reflection, making him a better man and a better king.
+[edit] Guenhwyvar
+
+Guenhwyvar is a magical black panther called from the Astral Plane by an onyx figurine, most recently in the possession of Drizzt Do'Urden. She is described as "ten feet long, at least, with muscled shoulders as high as a tall man's chest." Guenhwyvar is the high elvish word for shadow.[25] Guenhwyvar is the creation of Anders Beltgarden.[25] The onyx figurine is originally owned by Josidiah Starym, and has also been possessed by the Masoj of House Hun'ett, who is killed by Drizzt in battle. He does not wish for Guenhwyvar to be used for evil purposes, as it causes emotional damage. He summons Guenhwyvar as often as possible, to help combat loneliness, and to help him in battle. His companions, notably Wulfgar and Bruenor, are often suspicious of Guenhwyvar at first, though they eventually come to respect Guenhwyvar as a team member.
+
+Guenhwyvar can be summoned forth from the Astral plane up to twelve hours out of every forty-eight. Simply spending time on the Prime Material Plane slowly drains the panther's strength, but it is possible to ignore the limit at the cost of serious injury and pain. If the panther is seriously injured or even if she suffers injuries that should be fatal while on the Prime Material Plane, the panther transports back to the Astral plane. Spending a sufficient amount of time there regenerates the cat completely and she can be called forth again.
+
+She is friends with many characters, including all of the Companions of The Hall, however she is closest to Drizzt, Cattie-Brie and Regis. She's called Guen by Cattie-Brie, and has been sent to sleep on both Bruenor and Belwar Dissengulp.
+
+In the Icewind Dale trilogy Guenhwyvar is portrayed as a female. In The Legend of Drizzt series (printed after the Icewind Dale series) and to Starless Night the gender of Guenhwyvar is not touched upon. Later books portray Guenhwyvar as a female.
+[edit] H
+[edit] Halaster Blackcloak
+
+Halaster Blackcloak is known as the infamous and powerful Mad Mage of Undermountain. Within the game world, Halastar arrived with his seven apprentices to make his lair in an old abandoned dwarf fortress long ago, before Waterdeep existed. A wizard of undeniable prowess, he soon transformed the ancient caves into a fearsome dungeon, in fact the rumored deadliest and certainly most renowned of all Faerûn by “collecting” a huge number of extraplanar monsters and installing numerous traps and portals. Using his magical talents, he turned Undermountain into a quasi-mythal, gaining powerful abilities and immortality within his complex. The drawback, however, was this turned him also completely mad while he was in his dungeon.[26][27][28][29]
+
+The Dungeons & Dragons supplement Expedition to Undermountain states that Halaster died trying to prevent an unknown magical threat dwelling (or fated to dwell) in Undermountain. Remnants of his spirit haunt his old lair, not a ghost but rather memories.[30]
+
+Halaster is a prominent character in the Neverwinter Nights: Hordes of the Underdark PC game by Bioware, Inc. Halaster is prominent again in the Neverwinter Nights expansion pack entitled "Infinite Dungeons."[citation needed]
+[edit] Halisstra Melarn
+
+Halisstra Melarn is a character in the War of the Spider Queen series.
+[edit] Harkle Harpell
+
+Harkle Harpell is a wizard created by author R.A. Salvatore.
+[edit] Appearance
+
+Harkle is a little shorter than average, with an untidy mess of black hair. He wears a set of worn wizard's robes, and has an air of enthusiasm about him that somehow manages to be unnerving and unsettling.
+[edit] Biography
+
+Harkle and his fellow Harpells live in the small town of Longsaddle. The Harpell clan are all wizards, and better than average at having spells backfire (with spectacular results). Even so, the Harpells are powerful spellcasters, and their village is a good place to visit, if excessive use of magic does not frighten you. Harkle himself has traveled more than most of them, visiting Mithral Hall and helping to defend against the drow invasion, and traveling the Sword Coast with Drizzt Do'Urden and Catti-brie. One of his few accident-free success was when he created a spell called the Fog of Fate, which transports the user to wherever they need to be to accomplish their goals. Upon the initial casting of the spell, Harkle wound up in the middle of the Sea of Swords, but Drizzt was there with the crew of the Sea Sprite, and he was quickly rescued. Under the effects of this spell, the events of his journey with Drizzt and company were magically recorded meticulously in a journal. Upon revealing some significant details from this journey to aid Drizzt, he was magically whisked back to Longsaddle, wherein his memory of the previous adventure with Drizzt and his friends apparently erased. Harkle still resides at Longsaddle, working on any number of magical experiments.
+[edit] Appearances
+
+Passage to Dawn by R.A. Salvatore
+[edit] Heafstaag
+
+Heafstaag is the leader of the Elk Tribe, the most powerful tribe of barbarians in all of Icewind Dale, hence making him the king of the tribes. During the attack on Ten-Towns he fights Drizzt and is gravely wounded. After the battle he speaks for the tribes as a whole and joins with Akar Kessel. He is killed by Wulfgar after he accepts his challenge to lead the tribes and thus Wulfgar takes his place as king.
+[edit] I
+[edit] Ingeloakastimizilian
+
+Ingeloakastimizilian, more commonly known as Icingdeath, is a white dragon featured mainly in the Legend of Drizzt series book The Crystal Shard.
+
+It lives in an ice cave called Evermelt which is part of the Reghed glacier. The Reghed glacier is located on the Forgotten Realms planet Abeir-Toril on the continent Faerûn. In DR 1356, Wulfgar, an Icewind Dale Barbarian and adopted son of the dwarf Bruenor Battlehammer, set out to slay the infamous dragon in its ice cave so he could have enough heroic deeds to challenge Heafstaag, the current king of the Elk Tribe, the largest and most powerful of all of the barbarian tribes of Icewind Dale. With help from his friend and tutor Drizzt Do'Urden, he was able to defeat the dragon, once thought invincible . Through this ordeal, Drizzt claimed one of Ingeloakastimizilian's many treasures as his own, a magical sword called Icingdeath, which plays a large role in later stories.
+
+The Dungeons & Dragons Miniatures Game released a special boxed set entitled "The Legend of Drizzt", including minis of Drizzt and Wulfgar versus Icingdeath, depicted as a size Huge white dragon.[31]
+[edit] Innovindil
+
+Innovindil first appeared in the 2002 novel, The Thousand Orcs, by R. A. Salvatore as the beautiful and deadly moon elf companion of Tarathiel. The character has appeared again in subsequent novels of The Hunter's Blades Trilogy including the most recent, The Two Swords.
+
+In The Hunter's Blades Trilogy, Innovindil and her partner Tarathiel notice a pair of dwarves around a campfire in their home, Moonwood. The two take the dwarves, Ivan and Pikel Bouldershoulder, prisoner until discovering that their intentions are not to harm their woodland home. After realizing that the two dwarves plan on representing the priest Cadderly Bonaduce at the coronation of Bruenor Battlehammer in Mithral Hall, Innovindil and Tarathiel realize that the dark elf Drizzt Do'Urden will be returning to the area. This knowledge is of great importance to them because one of their clan, Ellifain Tuuserail, left the Moonwood to find and kill Drizzt due to the misconceived notion that Drizzt was responsible for the slaughter of her family years ago. Before they are able to meet with the dark elf, Innovindil and Tarathiel find the lands around Mithral Hall are ridden with thousands of orcs and scores of frost giants.
+
+After investigating more closely, Innovindil and Tarathiel begin watching over Drizzt Do'Urden as he recklessly slaughters countless orcs on his own out of rage and anger for the loss of his friends at the orc assault on the town of Shallows. After Drizzt finally gets himself into a situation with no escape, the moon elf pair come to the rescue. When they confront Drizzt and ask him to join them, he refuses, as he is still unable to cope with the apparent loss of his friends. After some time, he finally decides to meet the elves, but when he arrives at their cave, he finds two drow holding Innovindil and Tarathiel prisoner. Drizzt dispatches of the dark elves, Ad'non Kareese and Donnia Soldou, and frees the moon elves. In the conversation that ensues, Innovindil and Tarathiel learn of Ellifain's fate and how she attempted to kill both Drizzt and herself but failed in killing Drizzt. Despite hearing the sad news, they don't blame Drizzt for defending himself.
+
+Innovindil, Tarathiel, and Drizzt become a trio to be feared as they soon take it upon themselves to prevent the orc king Obould Many-Arrows from gaining any reinforcements by turning orc tribes emerging from the Spine of the World back into their holes. Unfortunately, Obould sets up a trap for Tarathiel and his pegasus, Sunrise, and in the fight to follow Obould kills Tarathiel while Innovindil and Drizzt, unable to help, witness the fight. Filled with grief and sorrow, Innovindil leaves with Drizzt, but they soon decide that they must save Sunrise and gain a measure of revenge. In the following days, Drizzt and Innovindil notice the importance of the orc shaman Arganth Snarrl to Obould and capture the shaman to glean some information, after which they go after Obould's son Urlgen Threefist, who is killed by Innovindil, dealing a huge blow to the orcs attacking Mithral Hall.
+
+During the days where Innovindil and Drizzt are together, Innovindil questions Drizzt as to whether he knows what it means to be an elf. She states that he left Menzoberranzan and the Underdark as a child by elf standards and was never trained in the perspectives of elven culture, which is why he does not know how to deal with his emotions towards Catti-brie. Drizzt enjoys her company and realizes he has never spent time with any elves like Innovindil who can give him advice.
+
+While Drizzt and Innovindil are able to kill Obould's lieutenant, their goal of rescuing Sunrise still remains. After a failed attempt to rescue Sunrise from Obould, Drizzt and Innovindil try once more after Sunrise is given to the frost giantess, Gerti Orelsdottr; however, Drizzt ends up in a stalemate with Gerti while Innovindil is able to escape on her pegasus, Sunset. Gerti offers Drizzt to let him go free with Sunrise if he promises to slay Obould and forge a truce between the home of the frost giants, known as Shining White, and the surrounding kingdoms after the orcs have been defeated. After making the deal, Drizzt takes Gerti's help in setting up a battle between him and Obould, but he is unable to defeat Obould and his impenetrable armor and retreats.
+
+Drizzt then meets up with Innovindil and explains how he escaped Shining White with Sunrise before the two return to their task of driving orcs back into their holes. On one such raid, Drizzt notices an orc carrying Catti-brie's sword, Khazid'hea and goes mad with grief at the almost indisputable evidence that Catti-brie died at Shallows; however, soon after retrieving Khazid'hea, Innovindil and Drizzt meet Ivan and Pikel Bouldershoulder who tell them that Drizzt's friends are alive. Innovindil and Drizzt are thrilled at the news, but before reuniting with them Drizzt decides to fight Obould once more with Khazid'hea, also known as "Cutter".
+
+After apparently defeating Obould, Drizzt reunites with Catti-brie and no longer holds any doubts as to what to make of his feelings for her, at which Innovindil comments, "That is what it is to be an elf, Drizzt Do'Urden." At the end of The Hunter's Blades Trilogy, Drizzt states that he and Innovindil will bring Ellifain's body back to the Moonwood so that she may be properly put to rest. During the events of The Orc King, Innovindil and her peagsus, Sunset, are murdered by the ruthless magician Jack the Gnome when an army of orcs invade the Moonwood.
+[edit] Ityak-Ortheel
+
+Ityak-Ortheel, commonly called the Elf Eater, dwells in the Abyss, waiting for Malar, the Beastlord, to summon it to Faerûn to destroy life. It is spawned after the blood left by Gruumsh and Corellon Larethian during a battle mixes together and seeps into the Abyss. It cannot travel voluntarily between the planes, so it initially relies on mortals to transport it to the Material Plane to punish the elves, wreaking havoc and destruction. Malar eventually favors it as an instrument of terror, allowing it to visit Faerûn at least once per century, where it rampages around elf communities. It is a large being with three legs and forty 100-foot-long (30 m) tentacles lined with suckers. It slowly digests the souls of those it devours, keeping it satisfied and tormenting those whom it devoured. This slow digestion lets the Elf Eater go for hundreds or thousands of years without eating.
+[edit] Malarite schemes
+
+A group of Malarites in the Forgotten Forest west of Evereska came across one of the Alamtine triangles that their god used to track down the portal of Fey-Alamtine. They do not understand the triangle’s significance and treat it as a holy relic, although it has lost all of its power. The Malarites are led by a cruel half-elf werewolf named Tagress. They worship the triangle and offer it blood sacrifices at least four times every moon cycle, hoping to summon Ityak-Ortheel so that it may destroy the lands of Evereska and its people.
+
+The group feverishly works to find out how the triangle is related to the summoning of Ityak-Ortheel. They kidnap mages and other masters of lore, torture information out of them, and then sacrifice them to the relic.
+
+In response to the group’s plots, elven leaders have launched a war against the followers of Malar. The Malarites are waging their own war against the elves in retaliation.
+[edit] Appearances
+
+    Boyd, Eric L., Jeff Crook, and Wil Upchurch. Champions of Ruin. Wizards of the Coast, 2005.
+
+[edit] Ivan and Pikel Bouldershoulder
+
+Residents of R.A. Salvatore's Forgotten Realms universe, these two span several of his storylines. Beyond their surname, and that they live in Vaasa, their clan is unknown, although Ivan and Pikel frequently ally themselves with the Battlehammer clan. At the start of The Cleric Quintet Ivan and Pikel were employed by the Edificant Library as cooks. The priests say that they were some of the best cooks that the library had ever seen.
+[edit] Ivan Bouldershoulder
+
+Ivan is a stereotypical dwarf. Surly, strong, and always ready for a fight, he has allied himself with both Cadderly Bonaduce and Drizzt Do'Urden, two other characters of R.A. Salvatore's creation. Though he attacks Drizzt in their first meeting despite hearing of him. However after learning the dark elf was Drizzt apologizes profusley. He mispronounces Drizzt's surname as Dudden. Ivan is described as roughly four feet tall, and about two hundred pounds. He is almost never seen without his brother Pikel, for whom he often serves as translator. Ivan's weapon of choice is a large two-bitted axe. He also carries a crossbow that Cadderly designed. The crossbow, which Ivan himself built, fires unique bolts which are designed to fold in upon themselves, compressing the oil of impact, inside to cause an explosion. Ivan also wears a helmet with the antlers from an eight-point buck attached to it, and lacquered with several metals (the deer having been felled by a hammer throw in a contest with an elf). Ivan can use the helmet as a weapon by headbutting his opponents. The antlers are screwed in place with a tight perfect fit, and sealed with lacquer.
+
+Under the influence of the chaos curse, Ivan did almost nothing except cook for the gluttons, and fight with his brother. But when Cadderly tried to talk to him, he and his brother were able to shake off the curse temporarily, on account of dwarves' natural resistance to enchantments. After he and Pikel came to their senses, they journeyed with Cadderly to the cellars of The Edificant Library to defeat the chaos curse, and the priest, Barjin, who brought it. Ivan is also shown to care deeply for his brother Pikel, especially when Pikel was apparently killed while fighting undead. After Pikel was struck down, Ivan only cared for hunting down the undead they were fighting, and almost attacked Cadderly when Cadderly was trying to calm Ivan down.
+[edit] Pikel Bouldershoulder
+
+Pikel is the antithesis of his brother; his hair is dyed green, and worn braided behind his ears, and a follower of the way of the druid. (which Pikel pronounces 'doo-dad'). Pikel's clothing is also unique among dwarves, preferring a green sleeveless robe and sandals over armor and heavy boots. When in battle, he often dons a cooking pot for a helmet. His weapon of choice is the shillelagh, a magical druid club. He always refers to this weapon as a "Sha-la-la!". Pikel's vocabulary is mostly restricted to "Hee Hee Hee", "Poof!", "Wee!", "Ooo," and "Boom", his brother usually translating for everyone else. He is often identified by his trademark "Oo oi!" Whenever Ivan refers to Pikel as "me brother", Pikel always echoes with "Me brudder". He also yells "Booner!" when he hears of Bruenor Battlehammer. He is often portrayed as childish and curious showing an odd sense of courage such as being unafraid of Drizzt's magic panther. He recently lost an arm during the War against Obould Many-Arrows. Pikel seems to have some druidic characteristics, for in the past, he has charmed animals, and talked to stone and tree. Pikel begins his druid training in the fallen foretress and then becomes a full-fledged druid.
+[edit] J
+[edit] Jack The Gnome
+
+Jack the Gnome was a moderately powerful spellcaster who appeared in the novel The Orc King.
+
+Jack lived in the Underdark for centuries and was at one time a student of illithids and demons in his search for greater magical knowledge. The illithids in particular taught him to escape the bounds of the corporeal and of the mortal. Apparently, Jack was highly skilled at shape changing. He often took the form of a winged snake (Jaculi) to carry on his mischief and manipulations of the shamans of the half-orc, half-ogre tribe Clan Karuck, who resided beneath the Spine of the World in the upper reaches of the Underdark.
+
+Jack felt he was a great rival of Lady Alustriel due to some undetailed slight he apparently made against her about a century before the year of his death.
+
+Jack the Gnome was slain by Drizzt Do'Urden in 1372 DR.
+
+Jack's silk wizard robe is a magical robe that cannot be soiled or dirtied in any way. It was taken from Jack's corpse by Drizzt as loot and given to Catti-brie.
+[edit] Jander Sunstar
+Further information: Jander Sunstar
+[edit] Jak Fleet
+
+Jak Fleet is the halfling friend and adventuring companion of Erevis Cale. In his early career, Jak served as a cleric/thief in the semi-secret organization known as the Harpers. He is a prominent character in The Erevis Cale Trilogy by author Paul S. Kemp.
+[edit] Jarlaxle
+Further information: Jarlaxle
+[edit] K
+[edit] Kaanyr Vhok
+
+Kaanyr Vhok is a half-demon cambion, general of a fiendish army of tanarukks known as the Scourged Legion. His base of operations in the game world is in the Underdark region of the Silver Marches. His consort is an alu-fiend named Aliisza.
+[edit] Karsus
+
+Karsus was the greatest arcanist that has ever lived. He was the mightiest archmage of fallen Netheril, and its de facto ruler. During its latter days, known as the Shadowed Age, he devised a spell known as Karsus' avatar that allowed him to steal the powers of a deity. Unfortunately, he decided to use it to replace the divinity of magic to stop the magical Phaerimm, only to discover that while he had her powers he could not control them. As he was bonded with the Weave, Mystryl ended her existence, sundering her connection to the Weave (and, by extension, Karsus').
+
+This event briefly unraveled the Weave, spelling the doom of the magic-rich Netheril, as this civilization dwelt on magic-fuelled flying cities. Karsus died in the process, and his soul was sundered into three parts - one infused in the Karse Stone, one in his petrified corpse in the Astral Plane, and one infused in the mindless Golem in the settlement of Karse. Those well-versed in magic remember Karsus as the most powerful archmage of all times.
+[edit] Appearances
+
+    Richard Baker; Ed Bonny; Travis Stout. Lost Empires of Faerûn (3.5 ed.). Wizards of the Coast.
+    Slade with Jim Butler. Netheril: Empire of Magic (Advanced Dungeons & Dragons ed.). TSR.
+    Matthew Sernett; Ari Marmell; David Noonan; Robert J. Schwalb. Tome of Magic (3.5 ed.). Wizards of the Coast.
+
+[edit] Kellindil
+Further information: The Dark Elf Trilogy#Characters
+[edit] Kesson Rel
+
+Kesson Rel is a former Chosen of Mask. He now serves Shar as her voice and hand. Kesson Rel has been imprisoned in the Plane of Shadow for thousands of years when a group of priests serving Mask, captured some of Kesson's life force and bound it to the shadow dragon known as Furlinastis. In the book Shadowstorm Erevis Cale kills Furlinastis and releases the bound essence of Kesson Rel and makes him whole and free to do his mistress' evil work.
+
+Kesson Rel is also known as Volumvax and Lord Sciagraph. He is killed in the book Shadowrealm.
+[edit] Kezef the Chaos Hound
+
+Kezef the Chaos Hound is based on Fenrir of Norse mythology (and in-game he appears to be an aspect of Fenris), although his name is taken from the first of the five Archangels of Punishment in Hebrew lore[original research?]. Kezef is a unique being who roams the Outer Planes constantly hunting the Faithful, which are the souls of those who have chosen to venerate one god above all others. He has no taste for the Faithless or the False and is sickened by the taste of the unripened spirits of the still-living. When Kezef destroys one of the Faithful, the maggots that make up his pelt swarm away from his jet-boned skeleton to devour the corpse. The gorged creatures then mill slowly over Kezef’s body, making him appear bloated. Any of the Faithful who are eaten in this fashion are forever and truly destroyed, beyond even the recall of the gods.
+
+The Ravager of the Heavens relishes the scent of hatred, and he sometimes pauses and becomes substantial so that he can savor a particularly juicy emotional scent. In his wake, he leaves screaming nightmares particularly cherished by Dendar the Night Serpent. He is nauseated by the scent of cloying, reckless happiness.
+
+Kezef appears as a huge mastiff with unearthly malevolent, red eyes and a ratty tail. Maggots teem in his fur, which makes the coat shift incessantly over barely covered sinews and bones. His flesh oozes like pus from an old sore, and his paws leave burning prints in the ground that spread into pools of burning ichor in his wake. Pointed teeth glitter like daggers of jet in the light. His blood is a dark, corrosive, liquid ooze, and he radiates a pestilent aura of decay. The fetid air of his breath extinguishes all nearby fires, and he reeks with the sweet stench of ancient death. Those with a sense of smell can catch this scent from many miles away. The Chaos Hound speaks in a low and rumbling growl[original research?].
+
+Kezef was imprisoned for centuries within the howling depths of Pandemonium by an alliance of Faerûnian gods when the Circle of Greater Powers forbade traffic by deity or mortal with the beast. After he was hunted down, the powers bet Kezef he could not break a leash forged by Gond the Wonderbringer. Kezef allowed Gond to place a short length of sturdy chain around his neck in exchange for Tyr placing his right hand in the Chaos Hound’s slavering jaws. Gond anchored the chain miles deep into the rock of Pandemonium, and Mystra wrapped the beast in an unbreakable, glowing curtain of magical energy that automatically repaired itself. From these two traps Kezef could not escape, and no one could reach him. When Kezef discovered he was truly fettered, he bit off Tyr’s hand and feasted on its divine essence for centuries as he strove to free himself. Kezef was eventually freed, by Cyric’s machinations, to once again hunt the souls of mortals and gods alike.
+[edit] Khelben "Blackstaff" Arunsun
+Further information: Khelben "Blackstaff" Arunsun
+[edit] Kierkan Rufo
+
+Kierkan Rufo appears in the The Cleric Quintet series, written by R.A. Salvatore.
+[edit] Biography
+
+Kierkan Rufo was originally a cleric at the Edificant Library, and the rival of Cadderly Bonaduce. Jealous of the attention his fellow devotee of Deneir received, Rufo was easily manipulated by the evil priest of Talona, Barjin, who hypnotized him in his efforts to unleash the chaos curse. So affected by the curse, Rufo was overtaken by his hatred for Cadderly and his lust for Danica Maupoissant. Despite becoming violent, he was subdued and freed from the effects of the curse.
+
+Later on, Rufo became repentant, seeking to redeem himself for his actions. He accompanied Cadderly, Danica, and the elf prince Elbereth to Shilmista, which had come under assault from Barjin's allies, among them Aballister Bonaduce. Once again, Rufo found himself manipulated, forced to obey the wizard Dorigen and her imp ally Druzil. A coward to the end, Rufo returned home before the conflict ended. Accompanying Headmaster Avery to Carradoon, he was once again used as a pawn by Castle Trinity. Inadvertently, his actions resulted in Avery's death, and he received a holy brand from Cadderly.
+
+Exiled and alone, Rufo met up with Druzil once again, returning to the Edificant Library to retrieve the chaos curse. Consumed by greed, Rufo consumed the elixir, transforming himself into a vampire. He proceeded to seize control of the library, making many of the other priests into lesser vampires or zombies-with the exception of Brother Chaunticleer. So prepared, he was lying in wait when Danica returned to the library. Rufo attempted to take her as his queen, but was denied by her use of suspended animation.
+
+Cadderly's return led to a confrontation between the old rivals, a battle of Rufo's evil magic against the clerical powers Cadderly possessed. So great was Rufo's power, he denied Deneir in Cadderly's face. However, with the combination of Cadderly's power and the light of the sun, Rufo was destroyed, followed shortly thereafter by the desecrated Library.
+[edit] Appearances
+
+    Donovan, Dale. Villains' Lorebook (TSR, 1998).
+    Salvatore, R. A. Canticle, Cleric Quintet Book 1 (TSR, 1991).
+    Salvatore, R. A. In Sylvan Shadows, Cleric Quintet Book 2 (TSR, 1992).
+    Salvatore, R. A. Night Masks, Cleric Quintet Book 3 (TSR, 1992).
+    Salvatore, R. A. The Fallen Fortress, Cleric Quintet Book 4 (TSR, 1993).
+    Salvatore, R. A. The Chaos Curse, Cleric Quintet Book 5 (TSR, 1994).
+
+[edit] Kimmuriel Oblodra
+
+Created by the famous Sci-fi fantasy author, R. A. Salvatore, Kimmuriel Oblodra is described as an intelligent and powerful drow psionicist of Menzoberranzan. A drow elf of few words, Kimmuriel rarely ever speaks when unnecessary and hardly ever shows any emotions at all. He always appears as calm and in control even during the most deadly situations. Smart and calculating, Kimmuriel is always one to use reasoning and logic to decide his actions as opposed to emotions. His intelligence is apparent through the use of his psionic mind powers and his actions which have gotten him to survive the fall of House Oblodra to become the leader of Bregan D'aerthe.
+[edit] Kymil Nimesin
+
+Kymil is a gold elf, and has a nobility of feature and character that previously earned him a spotless reputation as one of the finest teachers of swordsmanship and as an emiment person at the elven court. He is over six hundred years old, and has borne witness to the fall of Myth Drannor, and the rise of the Moonflower rulers of Evermeet. The latter detail he regards as an abomination that never should have happened, and considers the gold elves to be the true rulers of elvenkind. He has spent much of his life toiling endlessly to come up with a plan to kill off the royal family of Evermeet and restore the Council of Elders, which was the form of government in the days of Myth Drannor. Towards this end, he employed numerous agents and resources, including a group of gold elves he referred to as his Elite Guard, treasure taken from a dragon's hoard, and even the dark elven goddess Lolth. In the novel Elfshadow, his efforts had almost succeeded, and all members of the royal family but three were dead, including King Zaor Moonflower, and Princess Amnestria, the mother of Arilyn Moonblade. However, Arilyn and Danilo Thann managed to relocate the portal to Evermeet he planned to use, and she defeated him in hand-to-hand combat. He was tried by a Harper tribunal and sentenced to lifelong imprisonment in some remote dimensional plane, but escaped with the aid of Lolth, and renewed his plan by mounting a massive assault upon Evermeet that left many elves dead and the island scarred. He was again stopped, this time by Prince Lamruil, but again escaped through use of a magical ring. His current whereabouts are unknown, but he can only be pursuing the same goal, which he has come to believe in so fanatically that there are many who question his sanity.
+[edit] M
+[edit] Manshoon
+
+Manshoon is an extraordinarily powerful, intelligent, and evil wizard. He founded the Zhentarim and was once ruler of the black network, but was overthrown and killed by the traitorous Fzoul Chembryl in a coup. He is a dark-haired man.
+
+As Fzoul prepared to face a clone of Manshoon upon his death, he discovered that a dozen clones had in fact awakened. This spawned the "Manshoon wars" as each clone was programmed to destroy the other ones. To this day, only three clones survive, having overcome their impulse. The one who rejoined the Zhentarim (under the orders of Chembryl) is considered the true Manshoon.
+
+He is the archetype of the evil overlord: extremely intelligent, ruthless, and manipulative. He seems satisfied to be under the orders of Fzoul and to focus on his schemes to further the influence of the black network without having to suffer the day-to-day administration.
+
+Manshoon is an extremely dangerous adversary to have as he has full access to the resources of the Zhentarim and, if necessary, is an epic-level wizard.
+
+[26][32][33][34][35]
+[edit] Malark Springhill
+
+Malark Springhill is a monk and was a servant of Dmitra Flass. He appears in The Haunted Lands trilogy.
+
+Malark is not of Mulan descent but since he moved to Eltabbar he started to shave his head and put on tattoos like a Mulan born. He is compactly build and has a small wine-red birthmark on his chin. He doesn't look overly impressive or dangerous until one notices his graceful movements or the cool calculation in his eyes.
+
+Malark detests the undead, probably because of his attitude towards death. Since his decades with the Monks of the Long Death Malark believes death is a gift; that all deaths are desirable but some are better than others. He believes that in his duty as assassin, the really good deaths must take a form appropriate to the victim's life and come to him in the proper time. Malark believes it to be a duty and highest form of art to arrange such passings as opportunity allows. Centuries ago, Malark found a potion of eternal youth and drank it. When his family and friends died of age, Malark tried living with the long-lived races of dwarves and elves, although eventually they died as well. Malark tried to cling to causes and places until those died, too. He gave his affection for towns until they were sacked and all inhabitants massacred. The only constant in his life was death. He came to see death as a gift. When he stumbled across one of the hidden enclaves of the Monks of the Long Death, Malark became a novice. and learned all that he could. Then the monastery was run over by paladins and all the monks where slain, only Malark escaped.
+
+He became older than even Thay, having lived during the times when the Red Wizards formed a rebellion against Mulhorand and Thay was erected.
+
+Originating from Mulmaster, Malark came with Dmitra when she moved to Eltabbar. He headed Dmitra's spy network.
+
+He betrayed his friends and allies, became Szass Tam's apprentice and became a powerful Red Wizard.
+
+He was slain in battle by his former friends Aoth Fezim, Bareris Anskuld and Mirror in 1478 DR when he attempted to destroy the world and all life. Malark's last words before he died were "Thank you" "I wish you could see it too. It's everything I...".
+[edit] Melvos Hammerstars
+
+Melvos Hammerstars is a merchant operating in Sembia.
+[edit] Mirror
+
+Mirror is an ancient ghost, who appears in The Haunted Lands Trilogy. He helps Aoth and Bareris fight Szass Tam, his henchmen and his undead army. He was killed along with Bareris during a battle with Szass Tam.
+[edit] Montolio Debrouchee
+
+Montolio Debrouchee is a character created by R.A. Salvatore. Montolio was a ranger of great renown, having dedicated himself to the defense of all living things not evil in nature, and total dedication to the goddess of the forest, Mielikki, at an early age. He served as a ranger for many years, often as a scout for large armies, or working with small groups of rangers or by himself. Montolio was a good friend of Drizzt Do'Urden. He was blinded five years before he met Drizzt while serving with a ranger group known as the Range Watchers, when they encountered and came into battle against a vicious red dragon, which killed three rangers and melted Montolio's face. His face was healed by clerics, but his eyes were beyond repair. Being pitied even by the Range Watchers and thinking his life meaningless, he fell into despair and came to the grove to die there. Instead, he learned to survive by using his other senses to their fullest extent. He befriended the animals and made it a personal goal to keep watch on, and protect the caravans going near the grove from Graul, an orc leader, and his raiding bandhad. One of his animal companions was a Koukouvagia owl named Hooter, which helped him by hooting over targets that Mooshie would shoot with his mighty bow, or one of the many strategically placed crossbows in his grove.
+
+He was a teacher in the ways of the ranger to Drizzt, telling him of Mielikki. During Drizzt's short stay at Montolio's home in the forest, the two formed a strong friendship.
+
+Montolio eventually died of natural causes in his sleep, after having repelled a vicious orc attack with the aid of Drizzt and Guenhwyvar.
+[edit] N
+[edit] Narnra Shalace
+
+Narnra Shalace first appears in the fifth book of The Elminster Series, Elminster's Daughter.
+
+Narnra is the bastard daughter of Elminster, the most prized Chosen of Mystra.
+
+Since being orphaned as a child, Narnra, now in her early twenties, has made a scarce living as a mediocre thief in the streets of Waterdeep, all alone. Through a series of unlikely events she comes to learn that the father she never knew is the most powerful mage in all of Faerûn. Against her will she is pulled into an adventure where she eventually learns—for the first time in her life—about the meaning of friendship, trust, and love.
+[edit] Nasher Alagondar
+
+Lord Nasher Alagondar is the ruler of the city of Neverwinter, a position which he rose to after a successful decade as a member of the Northern Four Adventuring Troupe.
+
+Lord Nasher was an adventurer for a number of years, traveling with three companions. After the Troupe split up, Nasher came to rule Neverwinter, while his once-friend Kurth became a High Captain of Luskan, Neverwinter's archrival. Kurth's lover Ophala went with Nasher to Neverwinter as a member of the city's mages' guild, the Many-Starred Cloak. Neither Kurth nor Ophala ever forgave Nasher, though Ophala's loyalty to Neverwinter prevented her from doing anything about it.
+
+He plays prominent role in the popular Neverwinter Nights (NWN) and Neverwinter Nights 2 (NWN2) games.
+
+Lord Nasher suffered greatly when the Wailing Death struck Neverwinter (it was rumored that he had contracted the disease himself), leaving his right hand, Lady Aribeth de Tylmarande to organize the search for a cure.
+
+Following Aribeth's betrayal, Lord Nasher organized the defense of the city in the war, while Aarin Gend and the Hero of Neverwinter (the PC) searched for a set of mysterious artifacts theoretically capable of saving the city.
+
+He is the only major NPC, besides a brief appearance of Fenthick, from the original Neverwinter Nights to return for the sequel.
+
+Though Lord Nasher often refers to the city as "my Neverwinter," he does so because of his love for the city, rather than a sense of possession.
+[edit] Nimor Imphraezl
+Further information: Nimor Imphraezl
+[edit] O
+[edit] Obould Many-Arrows
+Further information: Obould Many-Arrows
+[edit] Olive Ruskettle
+
+Olive is a female halfling and is a sometime companion of Alias. Her first appearance is in the novel Azure Bonds, written by Jeff Grubb and Kate Novak. Olive is a typical female halfling, averaging the height of a human child, with curly red hair and green eyes. Her waistline is noticeably less than is average with female halflings, though.
+
+Though her birth name may indeed be Olive, the surname Ruskettle and the reputation as a bard came from someone else: Olav Ruskettle, who was referred to by Finder as a true bard. Olive won a game of dice (with unloaded dice, no less) from the apparently elderly Olav, who she described as being without a right hand and that his "voice was beginning to fade." This is in keeping with Finder's knowledge of the man, who himself describes Olav as having a bad habit for gambling and would have wagered his own mother on a roll of the dice. As her prize, she claimed his name.
+
+Despite her less-than-truthful claims to be a bard, Olive is actually a fairly talented musician. Additionally, as with many halflings, she is accomplished at having "lost" items turn up in her possession, that she's just been waiting to return to the proper owner.
+
+Olive first meets Alias when the latter is contracted to rescue the kidnapped "bard" from the red dragon commonly referred to as Mist. Olive quickly found herself mired in the mystery surrounding Alias, and traveled with the swordswoman for the remainder of the first book.
+
+In the second, Olive has parted company with the others and journeyed to Westgate, meeting up with one of the clones of Alias created by Phalse, named Jade More. Jade met a quick end at the hands of Flattery, who had mistaken her for another clone, Cat of Ordulin, who Flattery had enslaved in a plot to claim the Wyvernspur family treasure. In the course of that adventure, Olive found a picture of Nameless, and found on the back the name "Finder" after the blacking concealing it had been removed, thus providing Nameless with his own name.
+
+In the events of the third book, Song of the Saurials, Olive has reunited with Finder (giving him back his name in the progress), and eventually wound up being named a member of the Harpers organization, ironically something that she had occasionally claimed was truth to lend more credence to her words. Sadly for her, she was immediately given an assignment that suited someone "just like (her)," in the words of one of the senior members of that organization.
+[edit] P
+[edit] Pharaun Mizzrym
+
+Pharaun Mizzrym appears in the War of the Spider Queen series. He is a mage from House Mizzrym of Menzoberranzan. He is charismatic and is a fine example of a drow mage—well-dressed, eloquent, and never left standing on one foot. He employs a variety of tools to get the job done—magic and subterfuge are the two most often seen, but he will not hesitate to make a deal with a whore or murder seven apprentices to gain power. He is often contrasted with Ryld Argith, but the two share a steadfast friendship that is somewhat shaken at the end of Dissolution, the first book in the War of the Spider Queen hexad.
+
+Pharaun lived his early life as a typical young drow male—acting as servant for House Mizzrym, straining to master his natural abilities, and trying to stay out of sight. He soon left his House for Sorcere, the drow academy of magic. While he was gone, his two twin sisters continued a feud that ended with the humiliation and degradation of his sister Sabal. When he returned to House Mizzrym, he sided with Sabal because he preferred the challenge of supporting the losing sister.
+
+Pharaun remained loyal to Sabal, but eventually his other sister killed her. She sprung a trap for him, using an undead Sabal as bait, and nearly killed him, had he not thought quickly and escaped on a foulwing.
+
+During his time at Sorcere, Pharaun attempted to gain control of a powerful demon called Sarthos, but he had to use seven apprentices in the spell. He didn't want aid from other Masters of Sorcere, as they would also gain credit for the summoning, so he used apprentices. The Sarthos demon killed them all within a heartbeat, resulting in Gromph Baenre's ire.
+
+Pharaun was later chosen for a mission by Gromph Baenre (as punishment for his waste of apprentices) to investigate a matter of a large number of males eloping from their Houses. However, Gromph may have underestimated him, for Pharaun developed his own agenda by the end of the adventure.
+
+With the aid of his friend Ryld Argith, Pharaun discovered that the eloping drow males were being recruited to an organization led by an alhoon (also known as an illithilich). This organization was later discovered to be connected to the Jaezred Chaulssin.
+
+Due to their success in exposing the rebel group, Pharaun and Ryld were chosen to be members of an expedition led by Quenthel Baenre whose purpose was to discover the cause of Lolth's Silence and obtain some merchandise co-owned by House Baenre and House Melarn in Ched Nasad. The members of the party were Pharaun Mizzrym, Ryld Argith (weaponsmaster of House Argith and a Master of Melee Magtheree), Halistra Melarn and Danifae Yauntyrr (both of the now destroyed Ched Nasad), Valas Hune (scout of Bregan D'aerthe), and Quenthel Baenre.
+
+Pharaun had a volatile relationship with Quenthel. Quenthel is female and the second highest-ranking person in the matriarchal society of Menzoberranzan, but due to Lolth's Silence, she had no clerical powers. Pharaun is egotistical, cocky, and witty. Coupled with that personality (which is considered insubordinate to the drow females), and as he is the only mage in the small expedition, that left Pharaun with the most power, and the group depends on him for survival. Pharaun treats Quenthel with the proper respect after she regains her clerical powers.
+
+In Resurrection, the final novel of the War of the Spider Queen series, Pharaun is left to die on the blasted land of the Demonweb Pits, where he is devoured by a horde of spiders. His finger, still wearing a ring of Sorcere is later taken by his alu-fiend lover, Aliisza. This opens up the possibility that she may have him resurrected. In the novel, "The Gossamer Plain", by Thomas M. Reid, it is revealed that Pharaun is the father of Aliisza's child.
+[edit] R
+[edit] Rivalen Tanthul
+
+Rivalen Tanthul is the first of the twelve Princes of Shade. He is a tall man with incredible strength and has golden eyes. Rivalen is an accomplished wizard but also The Nightseer, a high priest of Shar, the goddess of loss and night. This makes him what the Netheril call a Theurge, blending the magic of the Art and the Power. Rivalen Tanthul is now a god, after absorbing some of Mask's power after helping Erevis Cale and Drasek Riven kill Kesson Rel.
+[edit] Robilliard
+
+Robillard is a powerful wizard and close ally of Deudermont. He serves as the second in command on Deudermont's vessel, the Sea Sprite. He's portrayed as grumpy in Passage to Dawn but with the company of Harkle Harple lightens up in a way. He has a featured role in Spine of The World and Sea of Swords, where he saves Deudermont's life and sets Wulfgar on the path to become the warrior he once was. He is a capable magic user and is even skilled in the art of healing, aiding Deudermont after an assassination attempt, an act which helped save the life of Wulfgar the barbarian; had Deudermont not woken, Wulfgar would have been falsely executed for the alleged assassination attempt, a crime which Deudermont confirmed he did not commit.
+
+Robilliard's power became even more evident in The Pirate King when he single-handedly defeated Arklem Greeth, a lich and the former Archmage Arcane of the Arcane Brotherhood. This battle, however, pulled the wizard from his Captain's side, allowing High Captain Kensidan of Luskan to bait and kill Captain Deudermont.
+
+He appears in R.A. Salvatore's Forgotten Realms novels.
+[edit] Roddy McGristle
+Further information: The Dark Elf Trilogy#Characters
+[edit] Ryld Argith
+
+Ryld Argith is a fictional character in the Forgotten Realms campaign setting based on the Dungeons & Dragons fantasy role-playing game. He appears in R.A. Salvatore's War of the Spider Queen Series, a six book series chronicling the war which besieges Menzoberranzan, and several drow cities as well as the search performed by a group of drow from Menzoberranzan to find out why Lolth is silent to her children.
+
+Ryld grew up on the streets of Menzoberranzan and saw throughout his childhood the many atrocities that the nobles brought down upon them as they hunted them often for sport. Growing into adolescence Ryld was accepted into the Academy of Fighters, Melee Magthere. It was there he trained in several drow fighting styles, the most prominent to him being that of the greatsword. During his years at the Academy, Ryld rose as high as was possible due to his non-noble status, due to his incredibly proficient skill with weapons. Ryld is unusual for a Drow because of his burly build. He stands about five and a half feet tall, but is more heavily muscled than the average Drow. He is also unusual because instead of wearing supple chain mail under the traditional Drow piwafwi, he is covered in entirely in black Dwarven plate armor.
+
+During his years at the Academy, Ryld befriended Pharaun Mizzrym, a mage from Sorcere of noble birth. They had a relationship as close to friendship as any Drow could have. Unfortunately, this didn't prevent Pharaun from leaving him to fend off and presumably die from pursuers while in a hideout that belonged to a branch of the Jaezred Chaulssin. Although Ryld survived the encounter, it set a deep rift between them next time they met.
+
+Ryld was then chosen as a member of a Drow party that was sent to find out why Lloth had fallen silent. Along the way the party met Hallistra Mellarn and Danifae, priestesses of Lloth from the destroyed Drow city of Ched Nasad. Hallistra befriended Ryld and the two eventually left to try and find a different life, devoid of Drow corruption. They eventually had to return to their former group as Hallistra was determined to destroy Lloth. Danifae later ordred the Draegloth Jeggred Baenre to hunt down and kill Ryld. Although Ryld put up a massive and prolonged fight, Jaeggred eventually killed him and ate his heart.
+
+Ryld wielded a magical greatsword known as Splitter, which is capable of shearing through nearly any armor.
+[edit] S
+[edit] Sammaster
+
+As one of Mystra's chosen, Sammaster possessed great power, in addition to his own skills he also possessed a fraction of Mystra's essence like Elminster and Khelben "Blackstaff" Arunsun. In Sammaster's case however, the additional power brought delusions of power and madness, which consumed him and triggered a series of events that in the end cost him his life. With help he rose from the dead and sought out knowledge. He came to believe in time that "dead dragons shall rule the world entirely" and spent his undeath working towards the realization of his goal. Often he has crossed paths with the Chosen of Mystra, worshipers of Mystra, and even the god Lathander in his quest.
+
+In the Year of Fell Pearls (887DR) Sammaster publishes his retranslations of many tomes including the Chronicles of Years to Come, of which was originally created by the oracle and seer Maglas. It is this tome that the Cult of the Dragon's sole purpose is founded upon.
+
+The original translation by Maglas stated, "And naught will be left save shattered thrones, with no rulers but the dead. Dragons shall rule the world entire, and...."
+
+Sammaster incorrectly translated this to read, "And naught will be left save shattered thrones with no rulers. But the dead dragons shall rule the world entire, and..."[citation needed]
+
+Simply by moving some punctuation around in these Chronicles, Sammaster was able to talk dragons into becoming a dracolich and at the same time, recruit followers of the Cult.
+
+It was also around this time that Algashon, a Priest of Bane, cast a spell upon Sammaster to bring him back life after a great battle Sammaster had with his former lover, Alustriel. When Sammaster returned from the dead, he no longer possessed the Silver Fire given to him by Mystra, but he did retain some qualities given to the Chosen of Mystra like fast healing and he was also able to remain ageless.
+
+Counting on the fact that he was not well known to the cult and thus he would be able to keep Shandril's location a secret from them, Gorstag stayed on in Deepingdale, raising her as a servant girl. When she was old enough, she helped him run the inn he had purchased.

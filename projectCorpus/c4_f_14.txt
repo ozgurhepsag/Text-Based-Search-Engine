@@ -1,0 +1,2309 @@
+3.1.3 Source Routing
+A third approach to switching that uses neither
+virtual circuits nor conventional datagrams
+is known as source routing. The name
+derives from the fact that all the information
+about network topology that is required to
+switch a packet across the network is provided
+by the source host.
+There are various ways to implement
+source routing. One would be to assign
+a number to each output of each switch
+and to place that number in the header of
+the packet. The switching function is then
+very simple: For each packet that arrives on
+an input, the switch would read the port
+178 3 Packet Switching
+0
+3 1
+2
+0
+1 3
+2
+0
+3 1
+2
+0
+3 1
+2
+3 0 1 1 3 0
+0 1 3
+Switch 3
+Host B
+Switch 2
+Host A
+Switch 1
+Figure 3.9 Source routing in a switched network (where the switch reads the right-
+most number).
+number in the header and transmit the packet on that output. However, since there will
+in general be more than one switch in the path between the sending and the receiving
+host, the header for the packet needs to contain enough information to allow every
+switch in the path to determine which output the packet needs to be placed on. One
+way to do this would be to put an ordered list of switch ports in the header and to
+rotate the list so that the next switch in the path is always at the front of the list.
+Figure 3.9 illustrates this idea.
+In this example, the packet needs to traverse three switches to get from host A
+to host B. At switch 1, it needs to exit on port 1, at the next switch it needs to exit
+at port 0, and at the third switch it needs to exit at port 3. Thus, the original header
+when the packet leaves host A contains the list of ports (3, 0, 1), where we assume
+that each switch reads the rightmost element of the list. To make sure that the next
+switch gets the appropriate information, each switch rotates the list after it has read
+its own entry. Thus, the packet header as it leaves switch 1 en route to switch 2 is now
+(1, 3, 0); switch 2 performs another rotation and sends out a packet with (0, 1, 3) in
+the header. Although not shown, switch 3 performs yet another rotation, restoring the
+header to what it was when host A sent it.
+There are several things to note about this approach. First, it assumes that host
+A knows enough about the topology of the network to form a header that has all
+the right directions in it for every switch in the path. This is somewhat analogous to
+the problem of building the forwarding tables in a datagram network or figuring out
+3.1 Switching and Forwarding 179
+Optical Switching
+To a casual observer of the networking
+industry around the year
+2000, it might have appeared that
+the most interesting sort of switching
+was optical switching. Indeed,
+optical switching did become an
+important technology in the late
+1990s, due to a confluence of several
+factors. One factor was the
+commercial availability of dense
+wavelength division multiplexing
+(DWDM) equipment, which makes
+it possible to send a great deal of
+information down a single fiber by
+transmitting on a large number of
+optical wavelengths (or colors) at
+once. Thus, for example, you might
+send data on 100 or more different
+wavelengths, and each wavelength
+might carry as much as 10 Gbps of
+data.
+A second factor was the commercial
+availability of optical amplifiers.
+Optical signals are attenuated
+as they pass through fiber,
+and after some distance (about 40
+km or so) they need to be made
+stronger in some way. Before optical
+amplifiers, it was necessary to
+place repeaters in the path to recover
+the optical signal, convert it
+to a digital electronic signal, and
+then convert it back to optical
+again. Before you could get the data
+into a repeater, you would have to
+where to send a setup packet in a virtual circuit
+network. Second, observe that we cannot
+predict how big the header needs to be,
+since it must be able to hold one word of
+information for every switch on the path.
+This implies that headers are probably of
+variable length with no upper bound, unless
+we can predict with absolute certainty
+the maximum number of switches through
+which a packet will ever need to pass. Third,
+there are some variations on this approach.
+For example, rather than rotate the header,
+each switch could just strip the first element
+as it uses it. Rotation has an advantage over
+stripping, however: Host B gets a copy of
+the complete header, which may help it figure
+out how to get back to host A. Yet another
+alternative is to have the header carry
+a pointer to the current “next port” entry,
+so that each switch just updates the pointer
+rather than rotating the header; this may
+be more efficient to implement. We show
+these three approaches in Figure 3.10. In
+each case, the entry that this switch needs to
+read is A, and the entry that the next switch
+needs to read is B.
+Source routing can be used in both
+datagram networks and virtual circuit networks.
+For example, the Internet Protocol,
+which is a datagram protocol, includes
+a source route option that allows selected
+packets to be source routed, while the majority
+are switched as conventional datagrams.
+Source routing is also used in some
+virtual circuit networks as the means to get
+the initial setup request along the path from
+source to destination.
+Finally, we note that source routing
+suffers from a scaling problem. In any
+180 3 Packet Switching
+Header entering
+switch
+Header leaving
+switch
+(a) (b) (c)
+D C B A D C B A
+A D C B D C B
+Ptr D C B A
+Ptr D C B A
+Figure 3.10 Three ways to handle headers for source routing: (a) rotation; (b) stripping;
+(c) pointer. The labels are read right to left.
+reasonably large network, it is very hard for
+a host to get the complete path information
+it needs to construct correct headers.
+3.2 Bridges and LAN
+Switches
+Having discussed some of the basic ideas behind
+switching, we now focus more closely
+on some specific switching technologies.We
+begin by considering a class of switches
+that is used to forward packets between
+shared-media LANs such as Ethernets. Such
+switches are sometimes known by the obvious
+name of LAN switches; historically they
+have also been referred to as bridges.
+Suppose you have a pair of Ethernets
+that you want to interconnect. One approach
+you might try is to put a repeater
+between them, as described in Chapter 2.
+This would not be a workable solution,
+however, if doing so exceeded the physical
+limitations of the Ethernet. (Recall that
+no more than two repeaters between any
+pair of hosts and no more than a total of
+2500 m in length is allowed.) An alternative
+demultiplex it using a DWDM terminal.
+Thus, a large number of
+DWDMterminals would be needed
+just to drive a single fiber pair for
+a long distance. Optical amplifiers,
+unlike repeaters, are analog devices
+that boost whatever signal is sent
+along the fiber, even if it is sent on
+a hundred different wavelengths.
+Optical amplifiers therefore made
+DWDM gear much more attractive,
+because now a pair ofDWDM
+terminals could talk to each other
+when separated by a distance of
+hundreds of kilometers. Furthermore,
+you could even upgrade the
+DWDM gear at the ends without
+touching the optical amplifiers in
+the middle of the path, because they
+will amplify 100 wavelengths as
+easily as 50 wavelengths.
+With DWDM and optical amplifiers,
+it became possible to build
+optical networks of huge capacity.
+But at least one more type
+3.2 Bridges and LAN Switches 181
+would be to put a node between the two Ethernets and have the node forward frames
+from one Ethernet to the other. This node would be in promiscuous mode, accepting
+all frames transmitted on either of the Ethernets, so it could forward them to the other.
+The node we have just described is typically called a bridge, and a collection of
+LANs connected by one or more bridges is usually said to form an extended LAN. In
+their simplest variants, bridges simply accept LAN frames on their inputs and forward
+them out on all other outputs. This simple strategy was used by early bridges, but has
+since been refined to make bridges a more effective mechanism for interconnecting a
+set of LANs. The rest of this section fills in the more interesting details.
+Note that a bridge meets our definition of a switch from the previous section:
+a multi-input, multi-output device, which transfers packets from an input to one or
+of device is needed to make
+these networks useful—the opti-
+cal switch. Most so-called optical
+switches today actually perform
+their switching function electronically,
+and from an architectural
+point of view they have more in
+common with the circuit switches
+of the telephone network than the
+packet switches described in this
+chapter. A typical optical switch
+has a large number of interfaces
+that understand SONET framing
+and is able to cross-connect a
+SONET channel from an incoming
+interface to an outgoing interface.
+Thus, with an optical switch, it becomes
+possible to provide SONET
+channels from point A to point B
+via point C even if there is no direct
+fiber path from A to B—there
+just needs to be a path from A to
+C, a switch at C, and a path from
+C to B. In this respect, an optical
+more outputs. And recall that this provides
+a way to increase the total bandwidth of
+a network. For example, while a single
+Ethernet segment can carry only 10 Mbps
+of total traffic, an Ethernet bridge can carry
+as much as 10n Mbps, where n is the number
+of ports (inputs and outputs) on the
+bridge.
+3.2.1 Learning Bridges
+The first optimization we can make to a
+bridge is to observe that it need not forward
+all frames that it receives. Consider
+the bridge in Figure 3.11. Whenever a frame
+from host A that is addressed to host B
+arrives on port 1, there is no need for the
+bridge to forward the frame out over port 2.
+The question, then, is, How does a bridge
+come to learn on which port the various
+hosts reside?
+One option would be to have a human
+download a table into the bridge similar to
+the one given in Table 3.3. Then, whenever
+the bridge receives a frame on port 1 that is
+addressed to host A, it would not forward
+182 3 Packet Switching
+the frame out on port 2; there would be no
+need because host A would have already directly
+received the frame on the LAN connected
+to port 1. Anytime a frame addressed
+to host A was received on port 2, the bridge
+would forward the frame out on port 1.
+Note that a bridge using such a table
+would be using the datagram (or connectionless)
+model of forwarding described in
+Section 3.1.1. Each packet carries a global
+address, and the bridge decides which output
+to send a packet on by looking up that
+address in a table.
+Having a human maintain this table is
+quite a burden, especially considering that
+there is a simple trick by which a bridge
+can learn this information for itself. The
+idea is for each bridge to inspect the source
+address in all the frames it receives. Thus,
+when host A sends a frame to a host on
+either side of the bridge, the bridge receives
+this frame and records the fact that a frame
+from host A was just received on port 1. In
+this way, the bridge can build a table just
+like Table 3.3.
+When a bridge first boots, this table is
+empty; entries are added over time. Also, a
+timeout is associated with each entry, and
+the bridge discards the entry after a specified
+period of time. This is to protect against
+the situation in which a host—and as a
+consequence, its LAN address—is moved
+from one network to another. Thus, this table
+is not necessarily complete. Should the
+bridge receive a frame that is addressed to
+a host not currently in the table, it goes
+ahead and forwards the frame out on all the
+switch bears some relationship to
+the switches in Figure 3.5, in that
+it creates the illusion of a connetion
+between two points even
+when there is no direct physical
+connection between them. However,
+optical switches do not provide
+virtual circuits; they provide
+“real” circuits (e.g., a SONET
+channel). There are even some
+newer types of optical switches
+that use microscopic mirrors to
+deflect all the light from one
+switch port to another, so that
+there could be an uninterrupted
+optical channel from point A to
+point B.
+We don’t cover optical networking
+extensively in this book,
+in part because of space considerations.
+For many practical purposes,
+you can think of optical networks
+as a piece of the infrastructure that
+enables telephone companies to
+provide SONET links or other
+types of circuits where and when
+you need them. However, it is
+worth noting that many of the technologies
+that are discussed later in
+this book, such as routing protocols
+and Multiprotocol Label Switching,
+do have application to the
+world of optical networking.
+3.2 Bridges and LAN Switches 183
+A
+Bridge
+B C
+X Y Z
+Port 1
+Port 2
+Figure 3.11 Illustration of a learning bridge.
+Host Port
+A 1
+B 1
+C 1
+X 2
+Y 2
+Z 2
+Table 3.3 Forwarding table maintained by a bridge.
+other ports. In other words, this table is simply an optimization that filters out some
+frames; it is not required for correctness.
+Implementation
+The code that implements the learning bridge algorithm is quite simple, and we sketch it
+here. Structure BridgeEntry defines a single entry in the bridge’s forwarding table; these
+are stored in a Map structure (which supports mapCreate, mapBind, and MapResolve
+operations) to enable entries to be efficiently located when packets arrive from sources
+already in the table. The constant MAX TTL specifies how long an entry is kept in the
+table before it is discarded.
+184 3 Packet Switching
+#define BRIDGE_TAB_SIZE 1024 /* max. size of bridging table */
+#define MAX_TTL 120 /* time (in seconds) before an
+entry is flushed */
+typedef struct {
+MacAddr destination; /* MAC address of a node */
+int ifnumber; /* interface to reach it */
+u_short TTL; /* time to live */
+Binding binding; /* binding in the Map */
+} BridgeEntry;
+int numEntries = 0;
+Map bridgeMap = mapCreate(BRIDGE_TAB_SIZE,
+sizeof(BridgeEntry));
+The routine that updates the forwarding table when a new packet arrives is
+given by updateTable. The arguments passed are the source MAC address contained
+in the packet and the interface number on which it was received. Another routine, not
+shown here, is invoked at regular intervals, scans the entries in the forwarding table,
+and decrements the TTL (time to live) field of each entry, discarding any entries whose
+TTL has reached 0. Note that the TTL is reset to MAX TTL every time a packet arrives
+to refresh an existing table entry, and that the interface on which the destination can
+be reached is updated to reflect the most recently received packet.
+void
+updateTable (MacAddr src, int inif)
+{
+BridgeEntry *b;
+if (mapResolve(bridgeMap, &src, (void **)&b) == FALSE)
+{
+/* this address is not in the table, so try to add it */
+if (numEntries < BRIDGE_TAB_SIZE)
+{
+b = NEW(BridgeEntry);
+b->binding = mapBind( bridgeMap, &src, b);
+/* use source address of packet as dest. address in
+table */
+b->destination = src;
+numEntries++;
+}
+else
+{
+/* can't fit this address in the table now, so give
+up */
+3.2 Bridges and LAN Switches 185
+return;
+}
+}
+/* reset TTL and use most recent input interface */
+b->TTL = MAX_TTL;
+b->ifnumber = inif;
+}
+Note that this implementation adopts a simple strategy in the case where the
+bridge table has become full to capacity—it simply fails to add the new address. Recall
+that completeness of the bridge table is not necessary for correct forwarding; it just
+optimizes performance. If there is some entry in the table that is not currently being
+used, it will eventually time out and be removed, creating space for a new entry. An
+alternative approach would be to invoke some sort of cache replacement algorithm
+on finding the table full; for example, we might locate and remove the entry with the
+smallest TTL to accommodate the new entry.
+3.2.2 Spanning Tree Algorithm
+The preceding strategy works just fine until the extended LAN has a loop in it, in
+which case it fails in a horrible way—frames potentially loop through the extended
+LAN forever. This is easy to see in the example depicted in Figure 3.12, where, for
+example, bridges B1, B4, and B6 form a loop. How does an extended LAN come to
+have a loop in it? One possibility is that the network is managed by more than one
+administrator, for example, because it spans multiple departments in an organization.
+In such a setting, it is possible that no single person knows the entire configuration of
+the network, meaning that a bridge that closes a loop might be added without anyone
+knowing. A second, more likely scenario is that loops are built into the network on
+purpose—to provide redundancy in case of failure.
+Whatever the cause, bridges must be able to correctly handle loops. This problem
+is addressed by having the bridges run a distributed spanning tree algorithm. If you
+think of the extended LAN as being represented by a graph that possibly has loops
+(cycles), then a spanning tree is a subgraph of this graph that covers (spans) all the
+vertices, but contains no cycles. That is, a spanning tree keeps all of the vertices of the
+original graph, but throws out some of the edges. For example, Figure 3.13 shows a
+cyclic graph on the left and one of possibly many spanning trees on the right.
+The spanning tree algorithm, which was developed by Radia Perlman at Digital,
+is a protocol used by a set of bridges to agree upon a spanning tree for a particular
+extended LAN. (The IEEE 802.1 specification for LAN bridges is based on this
+algorithm.) In practice, this means that each bridge decides the ports over which it
+186 3 Packet Switching
+A
+C
+E
+D
+B
+K
+F
+H
+J
+G
+I
+B3
+B7
+B4
+B2
+B5
+B1
+B6
+Figure 3.12 Extended LAN with loops.
+(a) (b)
+Figure 3.13 Example of (a) a cyclic graph; (b) a corresponding spanning tree.
+is and is not willing to forward frames. In a sense, it is by removing ports from the
+topology that the extended LAN is reduced to an acyclic tree.2 It is even possible that
+an entire bridge will not participate in forwarding frames, which seems strange when
+you consider that the one reason we intentionally have loops in the network in the first
+2Representing an extended LAN as an abstract graph is a bit awkward. Basically, you let both the bridges and
+the LANs correspond to the vertices of the graph and the ports correspond to the graph’s edges. However, the
+spanning tree we are going to compute for this graph needs to span only those nodes that correspond to networks.
+It is possible that nodes corresponding to bridges will be disconnected from the rest of the graph. This corresponds
+to a situation in which all the ports connecting a bridge to various networks get removed by the algorithm.
+3.2 Bridges and LAN Switches 187
+place is to provide redundancy. The algorithm is dynamic, however, meaning that the
+bridges are always prepared to reconfigure themselves into a new spanning tree should
+some bridge fail.
+The main idea of the spanning tree is for the bridges to select the ports over
+which they will forward frames. The algorithm selects ports as follows. Each bridge
+has a unique identifier; for our purposes, we use the labels B1, B2, B3, and so on. The
+algorithm first elects the bridge with the smallest id as the root of the spanning tree;
+exactly how this election takes place is described below. The root bridge always forwards
+frames out over all of its ports. Next, each bridge computes the shortest path
+to the root and notes which of its ports is on this path. This port is also selected as the
+bridge’s preferred path to the root. Finally, all the bridges connected to a given LAN
+elect a single designated bridge that will be responsible for forwarding frames toward
+the root bridge. Each LAN’s designated bridge is the one that is closest to the root, and
+if two or more bridges are equally close to the root, then the bridges’ identifiers are
+used to break ties; the smallest id wins. Of course, each bridge is connected to more
+than one LAN, so it participates in the election of a designated bridge for each LAN
+it is connected to. In effect, this means that each bridge decides if it is the designated
+bridge relative to each of its ports. The bridge forwards frames over those ports for
+which it is the designated bridge.
+Figure 3.14 shows the spanning tree that corresponds to the extended LAN
+shown in Figure 3.12. In this example, B1 is the root bridge, since it has the smallest id.
+Notice that both B3 and B5 are connected to LAN A, but B5 is the designated bridge
+since it is closer to the root. Similarly, both B5 and B7 are connected to LAN B, but
+in this case, B5 is the designated bridge since it has the smaller id; both are an equal
+distance from B1.
+While it is possible for a human to look at the extended LAN given in Figure 3.12
+and to compute the spanning tree given in Figure 3.14 according to the rules given
+above, the bridges in an extended LAN do not have the luxury of being able to see
+the topology of the entire network, let alone peek inside other bridges to see their ids.
+Instead, the bridges have to exchange configuration messages with each other and then
+decide whether or not they are the root or a designated bridge based on these messages.
+Specifically, the configuration messages contain three pieces of information:
+1 the id for the bridge that is sending the message
+2 the id for what the sending bridge believes to be the root bridge
+3 the distance, measured in hops, from the sending bridge to the root bridge
+Each bridge records the current “best” configuration message it has seen on each of
+its ports (“best” is defined below), including both messages it has received from other
+bridges and messages that it has itself transmitted.
+188 3 Packet Switching
+A
+C
+E
+D
+B
+K
+F
+H
+J
+G
+I
+B5
+B2
+B3
+B7
+B4
+B1
+B6
+Figure 3.14 Spanning tree with some ports not selected.
+Initially, each bridge thinks it is the root, and so it sends a configuration message
+out on each of its ports identifying itself as the root and giving a distance to the root of
+0. Upon receiving a configuration message over a particular port, the bridge checks to
+see if that new message is better than the current best configuration message recorded
+for that port. The new configuration message is considered “better” than the currently
+recorded information if
+¦ it identifies a root with a smaller id or
+¦ it identifies a root with an equal id but with a shorter distance or
+¦ the root id and distance are equal, but the sending bridge has a smaller id.
+If the new message is better than the currently recorded information, the bridge discards
+the old information and saves the new information. However, it first adds 1 to the
+distance-to-root field since the bridge is one hop farther away from the root than the
+bridge that sent the message.
+When a bridge receives a configuration message indicating that it is not the root
+bridge—that is, a message from a bridge with a smaller id—the bridge stops generating
+configuration messages on its own and instead only forwards configuration messages
+from other bridges, after first adding 1 to the distance field. Likewise, when a bridge
+3.2 Bridges and LAN Switches 189
+receives a configuration message that indicates it is not the designated bridge for that
+port—that is, a message from a bridge that is closer to the root or equally far from
+the root but with a smaller id—the bridge stops sending configuration messages over
+that port. Thus, when the system stabilizes, only the root bridge is still generating
+configuration messages, and the other bridges are forwarding these messages only
+over ports for which they are the designated bridge.
+To make this more concrete, consider what would happen in Figure 3.14 if the
+power had just been restored to the building housing this network, so that all the
+bridges boot at about the same time. All the bridges would start off by claiming to
+be the root. We denote a configuration message from node X in which it claims to
+be distance d from root node Y as (Y, d, X). Focusing on the activity at node B3, a
+sequence of events would unfold as follows:
+1 B3 receives (B2, 0, B2).
+2 Since 2 < 3, B3 accepts B2 as root.
+3 B3 adds one to the distance advertised by B2 (0) and thus sends (B2, 1, B3)
+toward B5.
+4 Meanwhile, B2 accepts B1 as root because it has the lower id, and it sends
+(B1, 1, B2) toward B3.
+5 B5 accepts B1 as root and sends (B1, 1, B5) toward B3.
+6 B3 accepts B1 as root, and it notes that both B2 and B5 are closer to the root
+than it is. Thus B3 stops forwarding messages on both its interfaces.
+This leaves B3 with both ports not selected, as shown in Figure 3.14.
+Even after the system has stabilized, the root bridge continues to send configuration
+messages periodically, and the other bridges continue to forward these messages as
+described in the previous paragraph. Should a particular bridge fail, the downstream
+bridges will not receive these configuration messages, and after waiting a specified
+period of time, they will once again claim to be the root, and the algorithm just described
+will kick in again to elect a new root and new designated bridges.
+One important thing to notice is that although the algorithm is able to reconfigure
+the spanning tree whenever a bridge fails, it is not able to forward frames over
+alternative paths for the sake of routing around a congested bridge.
+3.2.3 Broadcast and Multicast
+The preceding discussion has focused on how bridges forward unicast frames from
+one LAN to another. Since the goal of a bridge is to transparently extend a LAN
+across multiple networks, and since most LANs support both broadcast and multicast,
+190 3 Packet Switching
+then bridges must also support these two features. Broadcast is simple—each bridge
+forwards a frame with a destination broadcast address out on each active (selected)
+port other than the one on which the frame was received.
+Multicast can be implemented in exactly the same way, with each host deciding
+for itself whether or not to accept the message. This is exactly what is done in practice.
+Notice, however, that since not all the LANs in an extended LAN necessarily have
+a host that is a member of a particular multicast group, it is possible to do better.
+Specifically, the spanning tree algorithm can be extended to prune networks over which
+multicast frames need not be forwarded. Consider a frame sent to group M by a host
+on LAN A in Figure 3.14. If there is no host on LAN J that belongs to group M, then
+there is no need for bridge B4 to forward the frames over that network. On the other
+hand, not having a host on LAN H that belongs to groupMdoes not necessarily mean
+that bridge B1 can avoid forwarding multicast frames onto LAN H. It all depends on
+whether or not there are members of group M on LANs I and J.
+How does a given bridge learn whether it should forward a multicast frame over
+a given port? It learns exactly the same way that a bridge learns whether it should forward
+a unicast frame over a particular port—by observing the source addresses that it
+receives over that port. Of course, groups are not typically the source of frames, so we
+have to cheat a little. In particular, each host that is a member of groupMmust periodically
+send a frame with the address for groupMin the source field of the frame header.
+This frame would have as its destination address the multicast address for the bridges.
+Note that while the multicast extension just described has been proposed, it is
+not widely adopted. Instead, multicast is implemented in exactly the same way as
+broadcast on today’s extended LANs.
+3.2.4 Limitations of Bridges
+The bridge-based solution just described is meant to be used in only a fairly limited
+setting—to connect a handful of similar LANs. The main limitations of bridges become
+apparent when we consider the issues of scale and heterogeneity.
+On the issue of scale, it is not realistic to connect more than a few LANs by
+means of bridges, where in practice “few” typically means “tens of.” One reason for
+this is that the spanning tree algorithm scales linearly; that is, there is no provision for
+imposing a hierarchy on the extended LAN. A second reason is that bridges forward
+all broadcast frames. While it is reasonable for all hosts within a limited setting (say,
+a department) to see each other’s broadcast messages, it is unlikely that all the hosts
+in a larger environment (say, a large company or university) would want to have to be
+bothered by each other’s broadcast messages. Said another way, broadcast does not
+scale, and as a consequence, extended LANs do not scale.
+3.2 Bridges and LAN Switches 191
+W X
+B1 B2
+Y Z
+VLAN 100 VLAN 100
+VLAN 200 VLAN 200
+Figure 3.15 Two virtual LANs share a common backbone.
+One approach to increasing the scalability of extended LANs is the virtual LAN
+(VLAN). VLANs allow a single extended LAN to be partitioned into several seemingly
+separate LANs. Each virtual LAN is assigned an identifier (sometimes called a color),
+and packets can only travel from one segment to another if both segments have the
+same identifier. This has the effect of limiting the number of segments in an extended
+LAN that will receive any given broadcast packet.
+We can see how VLANs work with an example. Figure 3.15 shows four hosts on
+four different LAN segments. In the absence of VLANs, any broadcast packet from
+any host will reach all the other hosts. Now let’s suppose that we define the segments
+connected to hosts W and X as being in one VLAN, which we’ll call VLAN 100. We
+also define the segments that connect to hosts Y and Z as being in VLAN 200. To do
+this, we need to configure a VLAN ID on each port of bridges B1 and B2. The link
+between B1 and B2 is considered to be in both VLANs.
+When a packet sent by host X arrives at bridge B2, the bridge observes that it
+came in a port that was configured as being in VLAN 100. It inserts a VLAN header
+between the Ethernet header and its payload. The interesting part of the VLAN header
+is the VLAN ID; in this case, that ID is set to 100. The bridge now applies its normal
+rules for forwarding to the packet, with the extra restriction that the packet may not
+be sent out an interface that is not part of VLAN 100. Thus, under no circumstances
+will the packet—even a broadcast packet—be sent out the interface to host Z, which
+is in VLAN 200. The packet is, however, forwarded to bridge B1, which follows the
+same rules, and thus may forward the packet to host W but not to host Y.
+An attractive feature of VLANs is that it is possible to change the logical topology
+without moving any wires or changing any addresses. For example, if we wanted to
+make the segment that connects to host Z be part of VLAN 100, and thus enable X,
+W, and Z to be on the same virtual LAN, we would just need to change one piece of
+configuration on bridge B2.
+192 3 Packet Switching
+On the issue of heterogeneity, bridges are fairly limited in the kinds of networks
+they can interconnect. In particular, bridges make use of the network’s frame header
+and so can support only networks that have exactly the same format for addresses.
+Thus, bridges can be used to connect Ethernets to Ethernets, 802.5 to 802.5, and
+Ethernets to 802.5 rings, since both networks support the same 48-bit address format.
+Bridges do not readily generalize to other kinds of networks, such as ATM.3
+Despite their limitations, bridges are a very important part of the complete networking
+picture. Their main advantage is that they allow multiple LANs to be transparently
+connected; that is, the networks can be connected without the end hosts
+having to run any additional protocols (or even be aware, for that matter). The one
+potential exception is when the hosts are expected to announce their membership in a
+multicast group, as described in Section 3.2.3.
+Notice, however, that this transparency can be dangerous. If a host, or more precisely,
+the application and transport protocol running on that host, is programmed
+under the assumption that it is running on a single LAN, then inserting bridges
+between the source and destination hosts can have unexpected consequences. For
+example, if a bridge becomes congested, it may have to drop frames; in contrast, it
+is rare that a single Ethernet ever drops a frame. As another example, the latency
+between any pair of hosts on an extended LAN becomes both larger and more highly
+variable; in contrast, the physical limitations of a single Ethernet make the latency both
+small and predictable. As a final example, it is possible (although unlikely) that frames
+will be reordered in an extended LAN; in contrast, frame order is never shuffled on
+a single Ethernet. The bottom line is that it is never safe to design network software
+under the assumption that it will run over a single Ethernet segment. Bridges happen.
+3.3 Cell Switching (ATM)
+Another switching technology that deserves special attention is asynchronous transfer
+mode (ATM). ATM became an important technology in the 1980s and early 1990s for
+a variety of reasons, not the least of which is that it was embraced by the telephone
+industry, which has historically been less than active in data communications except
+as a supplier of links on top of which other people have built networks. ATM also
+happened to be in the right place at the right time, as a high-speed switching technology
+that appeared on the scene just when shared media like Ethernet and 802.5 were
+starting to look a bit too slow for many users of computer networks. In some ways
+ATM is a competing technology with Ethernet switching, but the areas of application
+for these two technologies only partially overlap.
+3As we will see in Section 3.3.5, there are techniques to make ATM networks look more like “conventional” LANs
+such as Ethernets, and bridges do have a role in this environment.
+3.3 Cell Switching (ATM) 193
+ATM is a connection-oriented, packet-switched technology, which is to say, it
+uses virtual circuits very much in the manner described in Section 3.1.2. In ATM
+terminology, the connection setup phase is called signalling. The main ATM signalling
+protocol is known as Q.2931. In addition to discovering a suitable route across an
+ATM network, Q.2931 is also responsible for allocating resources at the switches
+along the circuit. This is done in an effort to ensure the circuit a particular quality
+of service. Indeed, the QoS capabilities of ATM are one of its greatest strengths. We
+return to this topic in Chapter 6, where we discuss it in the context of similar efforts
+to implement QoS.
+When any virtual connection is set up, it is necessary to put the address of the
+destination in the signalling message. In ATM, this address can be in one of several
+formats, the most common ones being E.164 and NSAP (network service access point);
+the details are not terribly important here, except to note that they are different from
+the MAC addresses used in traditional LANs.
+One thing that makes ATM really unusual is that the packets that are switched in
+an ATM network are of fixed length. That length happens to be 53 bytes—5 bytes of
+header followed by 48 bytes of payload—a rather interesting choice that is discussed
+in more detail below. To distinguish these fixed-length packets from the more common
+variable-length packets normally used in computer networks, they are given a special
+name: cells. ATM may be thought of as the canonical example of cell switching.
+3.3.1 Cells
+All the packet-switching technologies we have looked at so far have used variablelength
+packets. Variable-length packets are normally constrained to fall within some
+bounds. The lower bound is set by the minimum amount of information that needs to
+be contained in the packet, which is typically a header with no optional extensions.
+The upper bound may be set by a variety of factors; the maximum FDDI packet size,
+for example, determines how long each station is allowed to transmit without passing
+on the token, and thus determines how long a station might have to wait for the token
+to reach it. Cells, in contrast, are both fixed in length and small in size. While this
+seems like a simple enough design choice, there are actually a lot of factors involved,
+as explained in the following paragraphs.
+Cell Size
+Variable-length packets have some nice characteristics. If you only have 1 byte to send
+(e.g., to acknowledge the receipt of a packet), you put it in a minimum-sized packet.
+If you have a large file to send, however, you break it up into as many maximumsized
+packets as you need. You do not need to send any extraneous padding in the
+first case, and in the second, you drive down the ratio of header to data bytes, thus
+194 3 Packet Switching
+increasing bandwidth efficiency. You also minimize the total number of packets sent,
+thereby minimizing the total processing incurred by per-packet operations. This can be
+particularly important in obtaining high throughput, since many network devices are
+limited not by how many bits per second they can process but rather by the number
+of packets per second.
+So, why use fixed-length cells? One of the main reasons was to facilitate the
+implementation of hardware switches. When ATM was being created in the mid- and
+late 1980s, 10-Mbps Ethernet was the cutting-edge technology in terms of speed. To go
+much faster, most people thought in terms of hardware. Also, in the telephone world,
+people think big when they think of switches—telephone switches often serve tens of
+thousands of customers. Fixed-length packets turn out to be a very helpful thing if you
+want to build fast, highly scalable switches. There are two main reasons for this:
+1 It is easier to build hardware to do simple jobs, and the job of processing packets
+is simpler when you already know how long each one will be.
+2 If all packets are the same length, then you can have lots of switching elements
+all doing much the same thing in parallel, each of them taking the same time to
+do its job.
+This second reason, the enabling of parallelism, greatly improves the scalability of
+switch designs. It would be overstating the case to say that fast parallel hardware
+switches can only be built using fixed-length cells. However, it is certainly true that
+cells ease the task of building such hardware and that there was a lot of knowledge
+available about how to build cell switches in hardware at the time the ATM standards
+were being defined.
+Another nice property of cells relates to the behavior of queues. Queues build
+up in a switch when traffic from several inputs may be heading for a single output. In
+general, once you extract a packet from a queue and start transmitting it, you need
+to continue until the whole packet is transmitted; it is not practical to preempt the
+transmission of a packet. The longest time that a queue output can be tied up is equal
+to the time it takes to transmit a maximum-sized packet. Fixed-length cells mean that
+a queue output is never tied up for more than the time it takes to transmit one cell,
+which is almost certainly shorter than the maximum-sized packet on a variable-length
+packet network. Thus, if tight control over the latency that is being experienced by
+cells when they pass through a queue is important, cells provide some advantage. Of
+course, long queues can still build up, and there is no getting around the fact that some
+cells will have to wait their turn. What you get from cells is not much shorter queues
+but potentially finer control over the behavior of queues.
+3.3 Cell Switching (ATM) 195
+An example will help to clarify this idea. Imagine a network with variable-length
+packets, where the maximum packet length is 4 KB and the link speed is 100 Mbps.
+The time to transmit a maximum-sized packet is 4096 × 8/100 = 327.68 µs. Thus, a
+high-priority packet that arrives just after the switch starts to transmit a 4-KB packet
+will have to sit in the queue 327.68 µs waiting for access to the link. In contrast, if the
+switch were forwarding 53-byte cells, the longest wait would be 53×8/100 = 4.24 µs.
+This may not seem like a big deal, but the ability to control delay and especially to
+control its variation with time (jitter) can be important for some applications.
+Queues of cells also tend to be a little shorter than queues of packets, for the
+following reason. When a packet begins to arrive in an empty queue, it is typical for the
+switch to have to wait for the whole packet to arrive before it can start transmitting
+the packet on an outgoing link. This means that the link sits idle while the packet
+arrives. However, if you imagine a large packet being replaced by a “train” of small
+cells, then as soon as the first cell in the train has entered the queue, the switch can
+transmit it. Imagine in the example above what would happen if two 4-KB packets
+arrived in a queue at about the same time. The link would sit idle for 327.68 µs while
+these two packets arrive, and at the end of that period we would have 8 KB in the
+queue. Only then could the queue start to empty. If those same two packets were sent
+as trains of cells, then transmission of the cells could start 4.24 µs after the first train
+started to arrive. At the end of 327.68 µs, the link would have been active for a little
+over 323 µs, and there would be just over 4 KB of data left in the queue, not 8 KB as
+before. Shorter queues mean less delay for all the traffic.
+Having decided to use small, fixed-length packets, the next question is, What is
+the right length to fix them at? If you make them too short, then the amount of header
+information that needs to be carried around relative to the amount of data that fits
+in one cell gets larger, so the percentage of link bandwidth that is actually used to
+carry data goes down. Even more seriously, if you build a device that processes cells at
+some maximum number of cells per second, then as cells get shorter, the total data rate
+drops in direct proportion to cell size. An example of such a device might be a network
+adaptor that reassembles cells into larger units before handing them up to the host.
+The performance of such a device depends directly on cell size. On the other hand, if
+you make the cells too big, then there is a problem of wasted bandwidth caused by the
+need to pad transmitted data to fill a complete cell. If the cell payload size is 48 bytes
+and you want to send 1 byte, you’ll need to send 47 bytes of padding. If this happens
+a lot, then the utilization of the link will be very low.
+Efficient link utilization is not the only factor that influences cell size. For example,
+cell size has a particular effect on voice traffic, and since ATM grew out of
+the telephony community, one of the major concerns was that it be able to carry
+196 3 Packet Switching
+voice effectively. The standard digital encoding
+of voice is done at 64 Kbps (8-bit
+samples taken at 8 KHz). To maximize efficiency,
+you want to collect a full cell’s
+worth of voice samples before transmitting
+a cell. A sampling rate of 8 KHz means that
+1 byte is sampled every 125 µs, so the time
+it takes to fill an n-byte cell with samples
+is n × 125 µs. If cells are, say, 1000 bytes
+long, it would take 125 ms just to collect
+a full cell of samples before you even start
+to transmit it to the receiver. That amount
+of latency starts to be quite noticeable to a
+human listener. Even considerably smaller
+latencies create problems for voice, particularly
+in the form of echoes. Echoes can be
+eliminated by a piece of technology called an
+echo canceler, but this adds cost to a telephone
+network that many network operators
+would rather avoid.
+All of the above factors caused a great
+deal of debate in the international standards
+bodies when ATM was being standardized,
+and the fact that no length was perfect in all
+cases was used by those opposed to ATM to
+argue that fixed-length cells were a bad idea
+in the first place. As is so often the case with
+standards, the end result was a compromise
+that pleased almost no one: 48 bytes was
+chosen as the length for the ATM cell payload.
+Probably the greatest tragedy of this
+choice is that it is not a power of two, which
+means that it is quite a mismatch to most
+things that computers handle, like pages and
+cache lines. Rather less controversially, the
+header was fixed at 5 bytes. The format
+of an ATM cell is shown in Figure 3.16;
+note that this figure shows the field lengths
+in bits.
+A Compromise of 48 Bytes
+The explanation for why the payload
+of an ATM cell is 48 bytes
+is an interesting one and is an excellent
+case study in the process
+of standardization. As the ATM
+standard was evolving, the U.S.
+telephone companies were pushing
+for a 64-byte cell size, while the
+European companies were advocating
+32-byte cells. The reason
+that the Europeans wanted the
+smaller size was that since the countries
+they served were of a small
+enough size, they would not have
+to install echo cancelers if they were
+able to keep the latency induced
+by generating a complete cell small
+enough. Thirty-two-byte cells were
+adequate for this purpose. In contrast,
+the United States is a large
+enough country that the phone
+companies had to install echo cancelers
+anyway, and so the larger cell
+size reflected a desire to improve the
+header-to-payload ratio.
+Averaging is a classic form
+of compromise—48 bytes is simply
+the average of 64 bytes and
+32 bytes. So as not to leave the
+false impression that this use of
+compromise-by-averaging is an isolated
+incident, we note that the
+seven-layer OSI model was actually
+a compromise between six and
+eight layers.
+3.3 Cell Switching (ATM) 197
+GFC HEC (CRC-8)
+4 8 16 3 1
+VPI VCI Type CLP Payload
+8 384 (48 bytes)
+Figure 3.16 ATM cell format at the UNI.
+Cell Format
+The ATM cell actually comes in two different formats, depending on where you look
+in the network. The one shown in Figure 3.16 is called the UNI (user-network interface)
+format; the alternative is the NNI (network-network interface). The UNI format
+is used, of course, at the user-to-network interface. This is likely to be the interface
+between a telephone company and one of its customers. The network-to-network
+interface is likely to be between a pair of phone companies. The only significant difference
+in cell formats is that the NNI format replaces the GFC field with 4 extra bits
+of VPI. Clearly, understanding all the three-letter acronyms (TLAs) is a key part of
+understanding ATM.
+Starting from the leftmost byte of the cell (which is the first one transmitted), the
+UNI cell has 4 bits for generic flow control (GFC). These bits have not been widely used,
+but they were intended to have local significance at a site and could be overwritten in
+the network. The basic idea behind the GFC bits was to provide a means to arbitrate
+access to the link if the local site used some shared medium to connect to ATM.
+The next 24 bits contain an 8-bit virtual path identifier (VPI) and a 16-bit virtual
+circuit identifier (VCI). The difference between the two is explained below, but for
+now it is adequate to think of them as a single 24-bit identifier that is used to identify
+a virtual connection, just as in Section 3.1.2. Following the VPI/VCI is a 3-bit Type
+field that has eight possible values. Four of them, when the first bit in the field is set,
+relate to management functions. When that bit is clear, it means that the cell contains
+user data. In this case, the second bit is the “explicit forward congestion indication”
+(EFCI) bit, and the third is the “user signalling” bit. The former can be set by a
+congested switch to tell an end node that it is congested; it has its roots in the DECbit
+described in Section 6.4.1; in ATM, it is used for congestion control in conjunction
+with the available bit rate (ABR) service class described in Section 6.5.4. The third bit
+is used primarily in conjunction with ATM Adaptation Layer 5 to delineate frames, as
+discussed below.
+Next is a bit to indicate cell loss priority (CLP); a user or network element may set
+this bit to indicate cells that should be dropped preferentially in the event of overload.
+For example, a video coding application could set this bit for cells that, if dropped,
+would not dramatically degrade the quality of the video. A network element might set
+198 3 Packet Switching
+this bit for cells that have been transmitted by a user in excess of the amount that was
+negotiated.
+The last byte of the header is an 8-bit CRC, known as the header error check
+(HEC). It uses the CRC-8 polynomial given in Section 2.4.3 and provides error detection
+and single-bit error correction capability on the cell header only. Protecting the cell
+header is particularly important because an error in the VCI will cause the cell to be
+misdelivered.
+3.3.2 Segmentation and Reassembly
+Up to this point, we have assumed that a low-level protocol could just accept the
+packet handed down to it by a high-level protocol, attach its own header, and pass the
+packet on down. This is not possible with ATM, however, since the packets handed
+down from above are often larger than 48 bytes, and thus, will not fit in the payload
+of an ATM cell. The solution to this problem is to fragment the high-level message
+into low-level packets at the source, transmit the individual low-level packets over the
+network, and then reassemble the fragments back together at the destination. This
+general technique is usually called fragmentation and reassembly. In the case of ATM,
+however, it is often called segmentation and reassembly (SAR).
+Segmentation is not unique to ATM, but it is much more of a problem than in a
+network with a maximum packet size of, say, 1500 bytes. To address the issue, a protocol
+layer was added that sits between ATM and the variable-length packet protocols
+that might use ATM, such as IP. This layer is called the ATM Adaptation Layer (AAL),
+and to a first approximation, the AAL header simply contains the information needed
+by the destination to reassemble the individual cells back into the original message.
+The relationship between the AAL and ATM is illustrated in Figure 3.17.
+Because ATM was designed to support all sorts of services, including voice,
+video, and data, it was felt that different services would have different AAL needs.
+… …
+AAL
+ATM
+AAL
+ATM
+Figure 3.17 Segmentation and reassembly in ATM.
+3.3 Cell Switching (ATM) 199
+Thus, four adaptation layers were originally defined: 1 and 2 were designed to support
+applications, like voice, that require guaranteed bit rates, while 3 and 4 were intended
+to provide support for packet data running over ATM. The idea was that AAL3 would
+be used by connection-oriented packet services (such as X.25) and AAL4 would be
+used by connectionless services (such as IP). Eventually, the reasons for having different
+AALs for these two types of service were found to be insufficient, and the AALs
+merged into one that is inconveniently known as AAL3/4. Meanwhile, some perceived
+shortcomings in AAL3/4 caused a fifth AAL to be proposed, called AAL5. Thus, there
+are now four AALs: 1, 2, 3/4, and 5. The two that support computer communications
+are described below.
+ATM Adaptation Layer 3/4
+The main function of AAL3/4 is to provide enough information to allow variablelength
+packets to be transported across the ATM network as a series of fixed-length
+cells. That is, the AAL supports the segmentation and reassembly process. Since we
+are now working at a new layer of the network hierarchy, convention requires us
+to introduce a new name for a packet—in this case, we call it a protocol data unit
+(PDU). The task of segmentation/reassembly involves two different packet formats.
+The first of these is the convergence sublayer protocol data unit (CS-PDU), as depicted
+in Figure 3.18. The CS-PDU defines a way of encapsulating variable-length PDUs prior
+to segmenting them into cells. The PDU passed down to the AAL layer is encapsulated
+by adding a header and a trailer, and the resultant CS-PDU is segmented into ATM
+cells.
+The CS-PDU format begins with an 8-bit common part indicator (CPI), which
+indicates which version of the CS-PDU format is in use. Only the value 0 is currently
+defined. The next 8 bits contain the beginning tag (Btag), which is supposed to match
+the end tag (Etag) for a given PDU. This protects against the situation in which the
+loss of the last cell of one PDU and the first cell of another causes two PDUs to be
+inadvertently joined into a single PDU and passed up to the next layer in the protocol
+stack. The buffer allocation size (BASize) field is not necessarily the length of the PDU
+(which appears in the trailer); it is supposed to be a hint to the reassembly process as
+to how much buffer space to allocate for the reassembly. The reason for not including
+CPI Btag BASize Pad 0 Etag Len
+8 8 16 < 64 KB 0–24 8 8 16
+User data
+Figure 3.18 ATM Adaptation Layer 3/4 packet format.
+200 3 Packet Switching
+ATM header Length CRC-10
+40 2 4
+Type SEQ MID Payload
+10 352 (44 bytes) 6 10
+Figure 3.19 ATM cell format for AAL3/4.
+Value Name Meaning
+10 BOM Beginning of message
+00 COM Continuation of message
+01 EOM End of message
+11 SSM Single-segment message
+Table 3.4 AAL3/4 Type field.
+the actual length here is that the sending host might not have known how long the
+CS-PDU was when it transmitted the header. Before adding the CS-PDU trailer, the
+user data is padded to one byte less than a multiple of 4 bytes, by adding up to 3 bytes
+of padding. This padding, plus the 0-filled byte, ensures that the trailer is aligned on
+a 32-bit boundary, making for more efficient processing. The CS-PDU trailer itself
+contains the Etag and the real length of the PDU (Len).
+In addition to the CS-PDU header and trailer, AAL3/4 specifies a header and
+trailer that are carried in each cell, as depicted in Figure 3.19. Thus, the CS-PDU is
+actually segmented into 44-byte chunks; an AAL3/4 header and trailer is attached to
+each one, bringing it up to 48 bytes, which is then carried as the payload of an ATM
+cell.
+The first two bits of the AAL3/4 header contain the Type field, which indicates
+if this is the first cell of a CS-PDU, the last cell of a CS-PDU, a cell in the middle of
+a CS-PDU, or a single-cell PDU (in which case it is both first and last). The official
+names for these four conditions are shown in Table 3.4, along with the bit encodings.
+Next is a 4-bit sequence number (SEQ), which is intended simply to detect cell
+loss or misordering so that reassembly can be aborted. Clearly, a sequence number this
+small can miss cell losses if the number of lost cells is large enough. This is followed
+by a multiplexing identifier (MID), which can be used to multiplex several PDUs onto
+a single connection. The 6-bit Length field shows the number of bytes of PDU that are
+contained in the cell; it must equal 44 for BOM and COM cells. Finally, a 10-bit CRC
+is used to detect errors anywhere in the 48-byte cell payload.
+3.3 Cell Switching (ATM) 201
+CS-PDU
+header
+CS-PDU
+trailer
+User data
+44 bytes 44 bytes 44 bytes  44 bytes
+ATM header
+AAL header
+Cell payload
+AAL trailer
+Padding
+Figure 3.20 Encapsulation and segmentation for AAL3/4.
+Figure 3.20 shows the entire encapsulation and segmentation process for AAL3/4.
+At the top, the user data is encapsulated with the CS-PDU header and trailer. The
+CS-PDU is then segmented into 44-byte payloads, which are encapsulated as ATM
+cells by adding the AAL3/4 header and trailer as well as the 5-byte ATM header. Note
+that the last cell is only partially filled whenever the CS-PDU is not an exact multiple
+of 44 bytes.
+One thing to note about AAL3/4 is that it exacerbates the fixed per-cell overhead
+that we discussed above. With 44 bytes of data to 9 bytes of header, the best possible
+bandwidth utilization would be 83%. Note that the efficiency can be considerably less
+than that, as illustrated by Figure 3.20, because of the CS-PDU encapsulation and the
+partial filling of the last cell.
+ATM Adaptation Layer 5
+One thing you may have noticed in the discussion of AAL3/4 is that it seems to
+take a lot of fields and thus a lot of overhead to perform the conceptually simple
+function of segmentation and reassembly. This observation was, in fact, made by
+several people in the early days of ATM, and numerous competing proposals arose
+for an AAL to support computer communications over ATM. There was a movement,
+known informally as “Back the Bit,” that argued that if we could just have 1 bit in
+the ATM header (as opposed to the AAL header) to delineate the end of a frame, then
+segmentation and reassembly could be accomplished without using any of the 48-byte
+ATMpayload for segmentation/reassembly information. This movement eventually led
+to the definition of the user signalling bit described above and to the standardization
+of AAL5.
+202 3 Packet Switching
+CRC-32
+< 64 KB 0–47 bytes 16 16
+Pad Reserved Len
+32
+Data
+Figure 3.21 ATM Adaptation Layer 5 packet format.
+User data
+48 bytes 48 bytes 48 bytes
+ATM header Cell payload
+Padding
+CS-PDU
+trailer
+Figure 3.22 Encapsulation and segmentation for AAL5.
+What AAL5 does is replace the 2-bit Type field of AAL3/4 with 1 bit of framing
+information in the ATM cell header. By setting that 1 bit, we can identify the last cell
+of a PDU; the next cell is assumed to be the first cell of the next PDU, and subsequent
+cells are assumed to be COM cells until another cell is received with the user signalling
+bit set. All the pieces of AAL3/4 that provide protection against lost, corrupt,
+or misordered cells, including the loss of an EOM cell, are provided by the AAL5
+CS-PDU packet format depicted in Figure 3.21.
+The AAL5 CS-PDU consists simply of the data portion (the PDU handed down
+by the higher-layer protocol) and an 8-byte trailer. To make sure that the trailer always
+falls at the tail end of an ATM cell, there may be up to 47 bytes of padding between
+the data and the trailer. It is necessary to force the trailer to be at the end of a cell, as
+otherwise there would be no way for the entity performing reassembly of the CS-PDU
+to find the trailer. The first 2 bytes of the trailer are currently reserved and must be
+0. The length field (Len) is the number of bytes carried in the PDU, not including the
+trailer or any padding before the trailer. Finally, there is a 32-bit CRC.
+Figure 3.22 shows the encapsulation and segmentation process for AAL5. Just
+like AAL3/4, the user data is encapsulated to form a CS-PDU (although using only a
+3.3 Cell Switching (ATM) 203
+trailer in this case). The resulting PDU is then cut up into 48-byte chunks, which are
+carried directly inside the payload of ATM cells without any further encapsulation.
+Somewhat surprisingly, AAL5 provides almost the same functionality as AAL3/4
+without using an extra 4 bytes out of every cell. For example, the CRC-32 detects lost
+or misordered cells as well as bit errors in the data. In fact, having a checksum over
+the entire PDU rather than doing it on a per-cell basis as in AAL3/4 provides stronger
+protection. For example, it protects against the loss of 16 consecutive cells, an event
+that would not be picked up by the sequence number checking of AAL3/4. Also, a
+32-bit CRC protects against longer burst errors than a 10-bit CRC.
+The main feature missing from AAL5 is the ability to provide an additional layer
+of multiplexing onto one virtual circuit using the MID. It is not clear whether this is
+a significant loss. It is still possible to multiplex traffic from many applications and
+higher-layer protocols onto a single VC using AAL5 by carrying a demux key of the
+sort described in Section 1.3.1. It just becomes necessary to do the multiplexing on a
+packet-by-packet, rather than a cell-by-cell, basis.
+There are positive and negative aspects to multiplexing traffic from a lot of
+different applications onto a single VC. For example, if you are being charged for
+every virtual circuit you set up across a network, then multiplexing traffic from lots of
+different applications onto one connection might be a plus. However, this approach
+has the drawback that all applications will have to live with whatever quality of service
+(e.g., delay and bandwidth guarantees) has been chosen for that one connection, which
+may mean that some applications are not receiving appropriate service.
+In general, AAL5 has been wholeheartedly embraced by the computer communications
+community (at least by that part of the community that has embraced ATM
+at all). For example, it is the preferred AAL in the IETF for transmitting IP datagrams
+over ATM. Its more efficient use of bandwidth and simple design are the main features
+that make it more appealing than AAL3/4.
+3.3.3 Virtual Paths
+As mentioned above, ATMuses a 24-bit identifier for virtual circuits, and these circuits
+operate almost exactly like the ones described in Section 3.1.2. The one twist is that the
+24-bit identifier is split into two parts: an 8-bit virtual path identifier (VPI) and a 16-bit
+virtual circuit identifier (VCI). This effectively creates a two-level hierarchy of virtual
+connections. To understand how such a hierarchy might work, consider the following
+example. (We ignore the fact that in some places there might be a network-network
+interface with a different-sized VPI; just assume that 8-bit VPIs are used everywhere.)
+Suppose that a corporation has two sites that connect to a public ATM network,
+and that at each site the corporation has a network of ATMswitches.We could imagine
+establishing a virtual path between two sites using only the VPI field. Thus, the switches
+204 3 Packet Switching
+Public network
+Network A Network B
+Figure 3.23 Example of a virtual path.
+in the public network would use the VPI as the only field on which to make forwarding
+decisions. From their point of view, this is a virtual circuit network with 8-bit circuit
+identifiers. The 16-bit VCI is of no interest to these public switches, and they neither
+use the field for switching nor remap it. Within the corporate sites, however, the full
+24-bit space is used for switching. Any traffic that needs to flow between the two sites
+is routed to a switch that has a connection to the public network, and its top 8 bits
+(the VPI) are mapped onto the appropriate value to get the data to the other site. This
+idea is illustrated in Figure 3.23. Note that the virtual path acts like a fat pipe that
+contains a bundle of virtual circuits, all of which have the same 8 bits in their most
+significant byte.
+The advantage of this approach is clear: Although there may be thousands or
+millions of virtual connections across the public network, the switches in the public
+network behave as if there is only one connection. This means that there needs to be
+much less connection-state information stored in the switches, avoiding the need for
+big, expensive tables of per-VCI information.
+3.3.4 Physical Layers for ATM
+While the layered approach to protocol design might lead you to think that we do not
+need to worry about what type of point-to-point link ATM runs on top of, this turns
+out not to be the case. From a simple pragmatic point of view, when you buy an ATM
+adaptor for a workstation or an ATM switch, it comes with some physical medium
+over which ATM cells will be sent. Of course, this is also true for other networking
+protocols such as 802.5 and Ethernet. Like these protocols, ATM can also run over
+several different physical media and physical-layer protocols.
+From early in the process of standardizing ATM, it was assumed that ATMwould
+run on top of a SONET physical layer (see Section 2.3.3). Some people even get ATM
+and SONET confused because they have been so tightly coupled for so long. While
+it is true that standard ways of carrying ATM cells inside a SONET frame have been
+defined, and that you can now buy ATM-over-SONET products, the two are entirely
+3.3 Cell Switching (ATM) 205
+separable. For example, you can lease a SONET link from a phone company and send
+whatever you want over it, including variable-length packets. Also, you can send ATM
+cells over many other physical layers instead of SONET, and standards have been (or
+are being) defined for these encapsulations. A notable early physical layer for ATM
+was TAXI, the physical layer used in FDDI (Section 2.7). Wireless physical layers for
+ATM are also being defined.
+When you send ATM cells over some physical medium, the main issue is how to
+find the boundaries of the ATM cells; this is exactly the framing problem described in
+Chapter 2. With SONET, there are two easy ways to find the boundaries. One of the
+overhead bytes in the SONET frame can be used as a pointer into the SONET payload
+to the start of an ATM cell. Having found the start of one cell, it is known that the
+next cell starts 53 bytes further on in the SONET payload, and so on. In theory, you
+only need to read this pointer once, but in practice, it makes sense to read it every time
+the SONET overhead goes by so that you can detect errors or resynchronize if needed.
+The other way to find the boundaries of ATM cells takes advantage of the fact
+that every cell has a CRC in the fifth byte of the cell. Thus, if you run a CRC calculation
+over the last 5 bytes received and the answer comes out to indicate no errors, then it is
+probably true that you have just read an ATM header. If this happens several times in
+a row at 53-byte intervals, you can be pretty sure you have found the cell boundary.
+3.3.5 ATM in the LAN
+As we mentioned above, ATM grew out of the telephony community, who envisioned
+it as a way to build large public networks that could transport voice, video, and
+data traffic. However, it was subsequently embraced by segments of the computer and
+data communications industries as a technology to be used in LANs—a replacement
+for Ethernet and 802.5. Its popularity in this realm at a particular point in time can
+be attributed to two main factors:
+¦ ATM is a switched technology, whereas Ethernet and 802.5 were originally
+envisioned as shared-media technologies.
+¦ ATM was designed to operate on links with speeds of 155 Mbps and above,
+compared to the original 10 Mbps of Ethernet and 4 or 16 Mbps of token
+rings.
+When ATM switches first became available, these were significant advantages
+over the existing solutions. In particular, switched networks have a big performance
+advantage over shared-media networks: A single shared-media network has a fixed
+total bandwidth that must be shared among all hosts, whereas each host gets its own
+206 3 Packet Switching
+dedicated link to the switch in a switched network. Thus the performance of switched
+networks scales better than that of shared-media networks.
+However, it should be apparent that the distinction between shared-media and
+switched networks is not all that clear-cut. A bridge that connects a number of sharedmedia
+networks together is also a switch, and it is possible (and quite common) to
+connect only one host to each segment, giving it dedicated access to that bandwidth.
+At the same time as ATM switches were appearing on the scene, high-performance
+Ethernet switches became available. These devices have large numbers of ports and
+high total throughput. The 100-Mbps Ethernet standard was defined, and so the link
+speed of Ethernet—which could be achieved over copper—began to approach that of
+ATM.
+All this was not enough to kill off ATM in the LAN. One advantage of ATM
+over Ethernet that remains is the lack of distance limitation for ATM links. Also,
+higher-speed ATM links (e.g., 622 Mbps) soon became available. This made ATM
+fairly popular for the high-performance “backbone” of larger LANs. One common
+configuration was to connect hosts to Ethernet switches, which in turn could be interconnected
+by ATM switches, as depicted in Figure 3.24. High-performance servers
+might also be connected directly to the ATM switch, as with host H7 in this example.
+More recently, the technology that has probably overtaken ATM for LAN backbones
+and server connections is Gigabit Ethernet. Gigabit Ethernet links use the same
+framing as lower-speed Ethernets but are usually point-to-point fiber links and can run
+over relatively long distances (up to several kilometers). And the same basic approach
+is now scaling up to provide 10-Gbps links.
+ATM links
+Ethernet links
+Ethernet switch
+ATM switch
+ATM-attached
+host
+E1
+H5
+H6
+H7
+H1
+E3
+H2
+H4
+H3
+E2
+Figure 3.24 ATM used as a LAN backbone.
+3.3 Cell Switching (ATM) 207
+One significant problem with running ATM in a LAN is that it doesn’t look like
+a “traditional” LAN. Because most LANs (i.e., Ethernets and token rings) are sharedmedia
+networks (i.e., every node on the LAN is connected to the same link), it is easy
+to implement broadcast (sending to everybody) and multicast (sending to a group).
+Thus, many of the protocols that people depend on in their LANs—for example,
+the Address Resolution Protocol (ARP) described in Section 4.1.5—depend in turn
+on the ability of the LAN to support multicast and broadcast. However, because of
+its connection-oriented and switched nature, ATM behaves rather differently than a
+shared-media LAN. For example, how can you broadcast to all nodes on an ATM
+LAN if you don’t know all their addresses and set up VCs to all of them?
+There are two possible solutions to this problem, and both of them have been
+explored. One is to redesign the protocols that make assumptions about LANs that
+are not in fact true of ATM. Thus, for example, there is a new protocol called
+ATMARP that, unlike traditional ARP, does not depend on broadcast. We discuss
+this in Section 4.1.5. The alternative is to make ATM behave more like a shared-media
+LAN—in the sense of supporting multicast and broadcast—without losing the performance
+advantages of a switched network. This approach has been specified by the
+ATM Forum as “LAN emulation” or LANE (which might be more correctly called
+“shared-media emulation”). This approach aims to add functionality to ATM LANs
+so that anything that runs over a shared-media LAN can operate over an ATM LAN.
+While LANE might now be considered something of a historical curiosity, it does provide
+an interesting case study in how layering can work in a network. By making the
+“ATM layer” look more like an Ethernet, higher-layer protocols that worked well over
+Ethernet continue to work without modification.
+One aspect of LAN emulation that can be confusing is the variety of different
+addresses and identifiers that are used. All ATM devices must have an ATM address,
+which is used when signalling to establish a VC. As noted above, these addresses are
+different from the standard IEEE 802 MAC addresses used in Ethernets, token rings,
+and so on. If we want to emulate the behavior of these types of LANs, each device will
+also need to have a standard (48-bit, globally unique) MAC address. And finally, recall
+that a virtual circuit identifier is very different from an address. It is the shorthand that
+is used to get cells along an established connection, but you must first establish a
+connection, and to do that you need an ATM address.
+LAN emulation does not actually change the functionality of ATM switches,
+but adds functionality to the network through the addition of a number of servers.
+Devices that connect to the ATM network—hosts, bridges, routers—are referred to
+as LAN emulation clients (LECs). The interactions between LECs and the various
+servers result in network behavior that, from the point of view of any higher-layer
+protocol, is indistinguishable from that of an Ethernet or token ring network.
+208 3 Packet Switching
+Host Switch Host
+Ethernet-like
+interface
+Higher-layer
+protocols
+(IP, ARP, . . .)
+Signalling
++ LANE
+AAL5
+ATM
+PHY
+Higher-layer
+protocols
+(IP, ARP, . . .)
+Signalling
++ LANE
+AAL5
+ATM
+PHY
+ATM
+PHY PHY
+Figure 3.25 Protocol layers in LAN emulation.
+Figure 3.25 illustrates the protocol layers in the case where a pair of hosts communicate
+across an ATM network that is emulating a LAN. By “Ethernet-like interface,”
+we mean that the services offered up to higher layers are like those of an Ethernet:
+Frames can be delivered to any MAC address on the LAN, frames can be broadcast
+to all destinations on the LAN, and so on.
+The servers that are required to build an emulated LAN are
+¦ the LAN emulation configuration server (LECS)
+¦ the LAN emulation server (LES)
+¦ the broadcast and unknown server (BUS)
+These servers can be physically located in one or more devices, perhaps in one of the
+hosts or other devices connected to the ATM network. The LECS and LES primarily
+perform configuration functions, while the BUS has a central role in making data
+transfer in an ATM network resemble that of a shared-media LAN.
+The LECS enables a newly attached or rebooted LAN emulation client (e.g., a
+host) to get some essential information. First, the client must find the LECS, which
+it may do by using a well-known, predefined VC that is always set up; alternatively,
+the client must have prior knowledge of the ATM address of the LECS so it can set
+up a VC to it. Once connected to the LECS, the client provides the LECS with its
+ATM address, and the LECS responds by telling the client what type of LAN is being
+emulated (Ethernet or token ring), what the maximum packet size is, and the ATM
+address of the LES. One LECS might support many separate emulated LANs.
+3.3 Cell Switching (ATM) 209
+LES BUS
+ATM network
+Point-to-point VC
+Point-to-multipoint VC
+H1
+H2
+Figure 3.26 Servers and clients in an emulated LAN.
+The client now signals for a connection to the LES whose ATM address it just
+learned. Once connected to the LES, the client registers its MAC and ATM addresses
+with the LES. Among other things, the LES provides the client with the ATM address
+of the BUS.
+The BUS maintains a single point-to-multipoint VC that connects it to all registered
+clients. It should be apparent that the BUS and this multipoint VC are crucial to
+LAN emulation: They enable the broadcast capability of traditional LANs to be emulated
+in a virtual circuit environment. Once a LEC has the ATM address of the BUS,
+it signals for a connection to the BUS. The BUS in turn adds the LEC to the point-tomultipoint
+VC. At this point, everything is ready for the LEC to participate in data
+transfer. The arrangement where two hosts have connected to the LES and the BUS,
+and the BUS has formed the point-to-multipoint VC to both of them, is shown in
+Figure 3.26. The LECS is not shown.
+This might seem like a lot of work to get the LEC connected to the BUS, but
+the separation of functions among servers is helpful from a network management
+standpoint. For example, a great deal of information can be centralized in a single
+LECS rather than having to be distributed to many LESs, and the amount of special
+configuration needed in each host is kept to a bare minimum.
+It should be clear that the BUS is the place to send any packet that needs to be
+broadcast to all clients on the LAN. While it could also be used for delivery of unicast
+packets, this would be inefficient. Delivery of unicast packets operates as follows.
+Assume that a host has a packet that it wants to deliver to a particular MAC address.
+In a traditional LAN, the packet could be placed on the wire and would be picked up
+by the intended recipient. In an emulated LAN, the packet needs to be delivered to
+the recipient over a virtual circuit. But a newly attached host would only have a VC
+to the LES and the BUS, not the recipient. To make matters worse, it would not even
+know the ATM address of the recipient, which is required to set up a VC. Thus, the
+host performs the following steps:
+210 3 Packet Switching
+¦ It sends the packet to the BUS, which it knows can deliver the packet to the
+destination using its point-to-multipoint VC.
+¦ It sends an “address resolution” request to the LES, of the form “What ATM
+address corresponds to this MAC address?”
+Since all clients should have registered their MAC and ATM addresses with the
+LES, the LES should be able to answer the query and provide an ATM address to the
+client. The client can now signal for a VC to the recipient, which it may use to forward
+subsequent frames to the destination. The reason for using the BUS to send the first
+packet is to minimize delay, since it may take some time to get a response from the
+LES and establish a VC.
+One detail in this process is that LANs are not supposed to deliver frames out
+of order, and an emulated LAN should be no different. But if some frames are sent
+via the BUS and then later frames are sent on a direct connection, misordering may
+occur. LAN emulation procedures include a “flush” mechanism to ensure that the last
+packet sent down one path has arrived before another one is sent on a new path, thus
+ensuring in-order delivery.
+With the above process, a client would eventually end up with direct VCs to
+all destinations that it has ever sent data to. This might be an excessive number of
+VCs, and so a client may use a caching algorithm to dispose of VCs that are no longer
+carrying traffic. A “cache miss” (i.e., the arrival of a packet that needs to be sent to a
+destination for which no VC exists) will be handled by sending the packet to the BUS.
+3.4 Implementation and Performance
+So far, we have talked about what a switch must do without discussing how to do it.
+There is a very simple way to build a switch: Buy a general-purpose workstation and
+equip it with a number of network interfaces. Such a device, running suitable software,
+can receive packets on one of its interfaces, perform any of the switching functions
+described above, and send packets out another of its interfaces. This is, in fact, a
+popular way to build experimental switches when you want to be able to do things
+like develop new routing protocols, because it offers extreme flexibility and a familiar
+programming environment. It is also not too far removed from the architecture of many
+low-end routers (which, as we will see in the next chapter, have much in common with
+switches).
+Figure 3.27 shows a workstation with three network interfaces used as a switch.
+The figure shows a path that a packet might take from the time it arrives on interface
+1 until it is output on interface 2. We have assumed here that the workstation has a
+mechanism to move data directly from an interface to its main memory without having
+3.4 Implementation and Performance 211
+I/O bus
+Interface 1
+Interface 2
+Interface 3
+CPU
+Main memory
+Figure 3.27 A workstation used as a packet switch.
+to be directly copied by the CPU, that is, direct memory access (DMA) as described in
+Section 2.9. Once the packet is in memory, the CPU examines its header to determine
+which interface the packet should be sent out on. It then uses DMA to move the packet
+out to the appropriate interface. Note that Figure 3.27 does not show the packet going
+to the CPU because the CPU inspects only the header of the packet; it does not have
+to read every byte of data in the packet.
+The main problem with using a workstation as a switch is that its performance
+is limited by the fact that all packets must pass through a single point of contention:
+In the example shown, each packet crosses the I/O bus twice and is written to and
+read from main memory once. The upper bound on aggregate throughput of such a
+device (the total sustainable data rate summed over all inputs) is, thus, either half the
+main memory bandwidth or half the I/O bus bandwidth, whichever is less. (Usually,
+it’s the I/O bus bandwidth.) For example, a workstation with a 33-MHz, 32-bit-wide
+I/O bus can transmit data at a peak rate of a little over 1 Gbps. Since forwarding a
+packet involves crossing the bus twice, the actual limit is 500 Mbps, which is enough to
+support five 100-Mbps Ethernet interface cards. In practice, the peak bus bandwidth
+isn’t sustainable, so it’s more likely such a workstation would support only three or
+four such interface cards.
+Moreover, this upper bound also assumes that moving data is the only problem—
+a fair approximation for long packets but a bad one when packets are short. In the latter
+case, the cost of processing each packet—parsing its header and deciding which output
+link to transmit it on—is likely to dominate. Suppose, for example, that a workstation
+can perform all the necessary processing to switch 500,000 packets each second.
+212 3 Packet Switching
+This is sometimes called the packet per second
+(pps) rate. (This number is representative
+of what is achievable on today’s highend
+PCs.) If the average packet is short, say,
+64 bytes, this would imply
+Throughput = pps × (BitsPerPacket)
+= 500 × 103 × 64 × 8
+= 256 × 106
+that is, a throughput of 256 Mbps—
+substantially below the range that users are
+demanding from their networks today. Bear
+in mind that this 256 Mbps would be shared
+by all users connected to the switch, just as
+the 10 Mbps of an Ethernet is shared among
+all users connected to the shared medium.
+Thus, for example, a 10-port switch with
+this aggregate throughput would only be
+able to cope with an average data rate of
+25.6 Mbps on each port.
+To address this problem, hardware designers
+have come up with a large array
+of switch designs that reduce the amount
+of contention and provide high aggregate
+throughput. Note that some contention is
+unavoidable: If every input has data to send
+to a single output, then they cannot all send
+it at once. However, if data destined for different
+outputs is arriving at different inputs,
+a well-designed switch will be able to move
+data from inputs to outputs in parallel, thus
+increasing the aggregate throughput.
+3.4.1 Ports
+Most switches look conceptually similar to
+the one shown in Figure 3.28. They consist
+of a number of input ports and output
+ports and a fabric. There is usually at least
+Defining Throughput
+It turns out to be difficult to define
+precisely the throughput of a
+switch. Intuitively, we might think
+that if a switch has n inputs that
+each support a link speed of si , then
+the throughput would just be the
+sum of all the si . This is actually
+the best possible throughput that
+such a switch could provide, but
+in practice almost no real switch
+can guarantee that level of performance.
+One reason for this is simple
+to understand. Suppose that, for
+some period of time, all the traffic
+arriving at the switch needed
+to be sent to the same output. As
+long as the bandwidth of that output
+is less than the sum of the input
+bandwidths, then some of the traffic
+will need to be either buffered
+or dropped. With this particular
+traffic pattern, the switch could
+not provide a sustained throughput
+higher than the link speed of
+that one output. However, a switch
+might be able to handle traffic arriving
+at the full link speed on all
+inputs if it is distributed across all
+the outputs evenly; this would be
+considered optimal.
+Another factor that affects
+the performance of switches is the
+the size of packets arriving on the
+inputs. For an ATM switch, this
+is normally not an issue because
+3.4 Implementation and Performance 213
+all “packets” (cells) are the same
+length. But for Ethernet switches
+or IP routers, packets of widely
+varying sizes are possible. Some of
+the operations that a switch must
+perform have a constant overhead
+per packet, so a switch is likely
+to perform differently depending
+on whether all arriving packets are
+very short, very long, or mixed.
+For this reason, routers or switches
+that forward variable-length packets
+are often characterized by a
+packet per second (pps) rate as well
+as a throughput in bits per second.
+The pps rate is usually measured
+with minimum-sized packets.
+The first thing to notice about
+this discussion is that the throughput
+of the switch is a function of the
+traffic to which it is subjected. One
+of the things that switch designers
+spend a lot of their time doing is
+trying to come up with traffic models
+that approximate the behavior
+of real data traffic. It turns out that
+it is extremely difficult to achieve
+accurate models. A traffic model attempts
+to answer several important
+questions: (1) When do packets arrive?
+(2) What outputs are they destined
+for? And (3) how big are they?
+Traffic modeling is a wellestablished
+science that has been
+extremely successful in the world of
+telephony, enabling telephone companies
+to engineer their networks
+one control processor in charge of the whole
+switch that communicates with the ports
+either directly or, as shown here, via the
+switch fabric. The ports communicate with
+the outside world. They may contain fiber
+optic receivers and lasers, buffers to hold
+packets that are waiting to be switched or
+transmitted, and often a significant amount
+of other circuitry that enables the switch
+to function. The fabric has a very simple
+and well-defined job: When presented with
+a packet, deliver it to the right output port.
+One of the jobs of the ports, then, is to
+deal with the complexity of the real world
+in such a way that the fabric can do its
+relatively simple job. For example, suppose
+that this switch is supporting a virtual circuit
+model of communication. In general,
+the virtual circuit mapping tables described
+in Section 3.1.2 are located in the ports.
+The ports maintain lists of virtual circuit
+identifiers that are currently in use, with
+information about what output a packet
+should be sent out on for each VCI and
+how the VCI needs to be remapped to ensure
+uniqueness on the outgoing link. Similarly,
+the ports of an Ethernet switch store tables
+that map between Ethernet addresses and
+output ports (bridge forwarding tables as
+described in Section 3.2). In general, when
+a packet is handed from an input port to
+the fabric, the port has figured out where
+the packet needs to go, and either the port
+sets up the fabric accordingly by communicating
+some control information to it, or
+it attaches enough information to the packet
+itself (e.g., an output port number) to allow
+the fabric to do its job automatically.
+Fabrics that switch packets by looking only
+214 3 Packet Switching
+at the information in the packet are referred
+to as “self-routing,” since they require no
+external control to route packets. An example
+of a self-routing fabric is discussed
+below.
+The input port is the first place to
+look for performance bottlenecks. The input
+port has to receive a steady stream of
+packets, analyze information in the header
+of each one to determine which output port
+(or ports) the packet must be sent to, and
+pass the packet on to the fabric. The type of
+header analysis that it performs can range
+from a simple table lookup on a VCI to
+complex matching algorithms that examine
+many fields in the header. This is the type of
+operation that sometimes becomes a problem
+when the average packet size is very
+small. For example, 64-byte packets arriving
+on a port connected to an OC-48 link
+have to process packets at a rate of
+2.48 × 109 ÷ (64 × 8) = 4.83 × 106 pps
+In other words, when small packets are
+arriving as fast as possible on this link (the
+worst-case scenario that most ports are
+engineered to handle), the input port has
+approximately 200 nanoseconds to process
+each packet.
+Another key function of ports is
+buffering. Observe that buffering can happen
+in either the input or the output
+port; it can also happen within the fabric
+(sometimes called internal buffering).
+Simple input buffering has some serious
+limitations. Consider an input buffer
+to carry expected loads quite efficiently.
+This is partly because the
+way people use the phone network
+does not change that much over
+time: The frequency with which
+calls are placed, the amount of time
+taken for a call, and the tendency of
+everyone to make calls on Mother’s
+Day have stayed fairly constant for
+many years.4 By contrast, the rapid
+evolution of computer communications,
+where a new application
+like Napster can change the traffic
+patterns almost overnight, has
+made effective modeling of computer
+networks much more difficult.
+Nevertheless, there are some
+excellent books and articles on the
+subject that we list at the end of the
+chapter.
+To give you a sense of the range
+of throughputs that designers need
+to be concerned about, a high-end
+router used in the Internet at the
+time of writing might support 10
+OC-192 links for a throughput of
+approximately 100 Gbps. A 100-
+Gbps switch, if called upon to handle
+a steady stream of 64-byte packets,
+would need a packet per second
+rate of
+100 × 109 ÷ (64 × 8)
+= 195 × 106 pps
+4This statement has recently become less true with the advent of fax machines and modem connections to
+the Internet.
+3.4 Implementation and Performance 215
+Switch
+fabric
+Control
+processor
+Output
+port
+Input
+port
+Figure 3.28 A 4 × 4 switch.
+Switch
+2
+1 2
+Port 1
+Port 2
+Figure 3.29 Simple illustration of head-of-line blocking.
+implemented as a FIFO. As packets arrive at the switch, they are placed in the input
+buffer. The switch then tries to forward the packets at the front of each FIFO to their
+appropriate output port. However, if the packets at the front of several different input
+ports are destined for the same output port at the same time, then only one of them
+can be forwarded;5 the rest must stay in their input buffers.
+The drawback of this feature is that those packets left at the front of the input
+buffer prevent other packets further back in the buffer from getting a chance to go
+to their chosen outputs, even though there may be no contention for those outputs.
+This phenomenon is called head-of-line blocking. A simple example of head-of-line
+blocking is given in Figure 3.29, where we see a packet destined for port 1 blocked
+behind a packet contending for port 2. It can be shown that when traffic is uniformly
+distributed among outputs, head-of-line blocking limits the throughput of an
+5For a simple input-buffered switch, exactly one packet at a time can be sent to a given output port. It is possible
+to design switches that can forward more than one packet to the same output at once, at a cost of higher switch
+complexity, but there is always some upper limit on the number.
+216 3 Packet Switching
+input-buffered switch to 59% of the theoretical maximum (which is the sum of the
+link bandwidths for the switch). Thus, the majority of switches use either pure output
+buffering or a mixture of internal and output buffering. Those that do rely on
+input buffers use sophisticated buffer management schemes to avoid head-of-line
+blocking.
+Buffers actually perform a more complex task than just holding onto packets
+that are waiting to be transmitted. Buffers are the main source of delay in a switch,
+and also the place where packets are most likely to get dropped due to lack of space
+to store them. The buffers therefore are the main place where the quality of service
+characteristics of a switch are determined. For example, if a certain packet has been
+sent along a VC that has a guaranteed delay, it cannot afford to sit in a buffer for very
+long. This means that the buffers, in general, must be managed using packet scheduling
+and discard algorithms that meet a wide range of QoS requirements. We talk more
+about these issues in Chapter 6.
+3.4.2 Fabrics
+While there has been an abundance of impressive research conducted on the design
+of efficient and scalable fabrics, it is sufficient for our purposes here to understand
+only the high-level properties of a switch fabric. A switch fabric should be able to
+move packets from input ports to output ports with minimal delay and in a way that
+meets the throughput goals of the switch. That usually means that fabrics display
+some degree of parallelism. A high-performance fabric with n ports can often move
+one packet from each of its n ports to one of the output ports at the same time. A
+sample of fabric types includes the following:
+¦ Shared-bus: This is the type of “fabric” found in a conventional workstation
+used as a switch, as described above. Because the bus bandwidth determines
+the throughput of the switch, high-performance switches usually have specially
+designed busses rather than the standard busses found in PCs.
+¦ Shared-memory: In a shared-memory switch, packets are written into a memory
+location by an input port and then read from memory by the output ports.
+Here it is the memory bandwidth that determines switch throughput, so wide
+and fast memory is typically used in this sort of design. A shared-memory
+switch is similar in principle to the shared-bus switch, except it usually uses a
+specially designed, high-speed memory bus rather than an I/O bus.
+¦ Crossbar: A crossbar switch is a matrix of pathways that can be configured
+to connect any input port to any output port. Figure 3.30 shows a 4 × 4
+3.4 Implementation and Performance 217
+Figure 3.30 A 4 × 4 crossbar switch.
+crossbar switch. The main problem with crossbars is that, in their simplest
+form, they require each output port to be able to accept packets from all inputs
+at once, implying that each port would have a memory bandwidth equal to the
+total switch throughput. In reality, more complex designs are typically used
+to address this issue (see, for example, the Knockout switch and McKeown’s
+virtual output-buffered approach in the “Further Reading” section at the end
+of the chapter).
+¦ Self-routing: As noted above, self-routing fabrics rely on some information
+in the packet header to direct each packet to its correct output. Usually, a
+special “self-routing header” is appended to the packet by the input port after
+it has determined which output the packet needs to go to, as illustrated
+in Figure 3.31; this extra header is removed before the packet leaves the
+switch. Self-routing fabrics are often built from large numbers of very simple
+2 × 2 switching elements interconnected in regular patterns, such as the
+banyan switching fabric shown in Figure 3.32. For some examples of selfrouting
+fabric designs, see the “Further Reading” section at the end of this
+chapter.
+Self-routing fabrics are among the most scalable approaches to fabric design, and
+there has been a wealth of research on the topic, some of which is listed in the “Further
+Reading” section. Many self-routing fabrics resemble the one shown in Figure 3.32,
+218 3 Packet Switching
+Switch
+fabric
+Output
+port
+Input
+port
+Original packet
+header
+Switch
+fabric
+Output
+port
+Input
+port
+Self-routing
+header
+Switch
+fabric
+Output
+port
+Input
+port
+(a)
+(b)
+(c)
+Figure 3.31 A self-routing header is applied to a packet at input to enable the fabric to
+send the packet to the correct output, where it is removed. (a) Packet arrives at input
+port. (b) Input port attaches self-routing header to direct packet to correct output. (c)
+Self-routing header is removed at output port before packet leaves switch.
+consisting of regularly interconnected 2×2 switching elements. For example, the 2×2
+switches in the banyan network perform a simple task: They look at 1 bit in each selfrouting
+header and route packets toward the upper output if it is 0 or toward the
+lower output if it is 1. Obviously, if two packets arrive at a banyan element at the
+3.4 Implementation and Performance 219
+001
+011
+110
+111
+001
+011
+110
+111
+Figure 3.32 Routing packets through a banyan network. The 3-bit numbers represent
+values in the self-routing headers of four arriving packets.
+same time and both have the bit set to the same value, then they want to be routed
+to the same output and a collision will occur. Either preventing or dealing with these
+collisions is a main challenge for self-routing switch design. The banyan network is a
+clever arrangement of 2 × 2 switching elements that routes all packets to the correct
+output without collisions if the packets are presented in ascending order.
+We can see how this works in an example, as shown in Figure 3.32, where the
+self-routing header contains the output port number encoded in binary. The switch
+elements in the first column look at the most significant bit of the output port number
+and route packets to the top if that bit is a 0 or the bottom if it is a 1. Switch elements
+in the second column look at the second bit in the header, and those in the last column
+look at the least significant bit. You can see from this example that the packets are
+routed to the correct destination port without collisions. Notice how the top outputs
+from the first column of switches all lead to the top half of the network, thus getting
+packets with port numbers 0–3 into the right half of the network. The next column
+gets packets to the right quarter of the network, and the final column gets them to the
+right output port. The clever part is the way switches are arranged to avoid collisions.
+Part of the arrangement includes the “perfect shuffle” wiring pattern at the start of
+the network. To build a complete switch fabric around a banyan network would require
+additional components to sort packets before they are presented to the banyan. The
+Batcher-banyan switch design is a notable example of such an approach. The Batcher
+network, which is also built from a regular interconnection of 2×2 switching elements,
+220 3 Packet Switching
+sorts packets into descending order. On leaving the Batcher network, the packets are
+then ready to be directed to the correct output, with no risk of collisions, by the banyan
+network.
+One of the interesting things about switch design is the wide range of different
+types of switches that can be built using the same basic technology. For example,
+the Ethernet switches and ATM switches discussed in this chapter, as well as Internet
+routers discussed in the next chapter, are all built using designs such as those outlined
+in this section.
+3.5 Summary
+This chapter has started to look at some of the issues involved in building large scalable
+networks by using switches, rather than just links, to interconnect hosts. There are
+several different ways to decide how to switch packets; the two main ones are the
+datagram (connectionless) model and the virtual circuit (connection-oriented) model.
+An important application of switching is the interconnection of shared-media
+LANs. LAN switches, or bridges, use techniques such as source address learning to
+improve forwarding efficiency and spanning tree algorithms to avoid looping. These
+switches are extensively used in data centers, campuses, and corporate networks.
+The most widespread uses of virtual circuit switching are in Frame Relay and
+ATM switches. ATM introduces some particular challenges through the use of cells,
+short fixed-length packets. The availability of relatively high-throughputATMswitches
+has contributed to the acceptance of the technology, although it has certainly not swept
+all other technologies aside as some predicted. One of the main uses of ATM today is
+to interconnect widely separated sites in corporate networks.
+Independent of the specifics of the switching technology, switches need to forward
+packets from inputs to outputs at a high rate, and in some circumstances, switches
+need to grow to a large size to accommodate hundreds or thousands of ports. Building
+switches that both scale and offer high performance at acceptable cost is complicated
+by the problem of contention, and as a consequence, switches often employ specialpurpose
+hardware rather than being built from general-purpose workstations.
+In addition to the issues of contention discussed here, we observe that the related
+problem of congestion has come up throughout this chapter. We will postpone our
+discussion of congestion control until Chapter 6, after we have seen more of the
+network architecture.We do this because it is impossible to fully appreciate congestion
+(both the problem and how it to address it) without understanding both what happens
+inside the network (the topic of this and the next chapter) and what happens at the
+edges of the network (the topic of Chapter 5).
+Further Reading 221
+ATM was originally envisioned by
+many of its proponents as the foundation
+for the “Broadband Integrated
+Services Digital Network,” and it was
+predicted in some quarters that ATM
+would displace all other networking
+technologies. Hosts would acquire
+O P E N I S S U E
+The Future of ATM
+ATM adaptors instead of Ethernet ports, enabling “ATM to the desktop.” Phone
+companies everywhere would deploy ATM, and as the technology that supports all
+media types—voice, video, and data—it would remove the need for any other type of
+network.
+It is now apparent that this scenario is unlikely to play out. The success of Ethernet
+switches in particular has killed off the ATM-to-the-desktop movement. Gigabit
+Ethernet and 10-Gigabit Ethernet technologies have successfully addressed the need
+for high-speed connections to servers where ATM might once have been used. In fact,
+we now hear ATM referred to as a “legacy protocol,” a term that was much used in
+the heyday of ATM to refer to older protocols.
+Another factor that has limited the acceptance of ATM has been the success of
+the Internet. It is now a fact of life that consumers are willing to pay for Internet
+access, and that means selling a service that delivers IP packets. While ATM can be
+used to help deliver that service (as it is in many DSL networks, for example), simply
+selling ATMconnections to consumers does not meet their data networking needs. The
+notable exception is corporate customers looking to interconnect many sites, where
+an ATM VC may be just the right thing to economically replace a leased line. In fact,
+this is the primary niche for ATM today—it is used (in conjunction with Frame Relay)
+to provide wide area virtual circuit services to corporate networking customers.
+The future of ATM therefore seems to hinge on the future of wide area virtual
+circuit-based services. These services are unlikely to go away any time soon, but ATM’s
+role is to some extent being challenged by newer technologies, such as encrypted IP
+tunnels and Multiprotocol Label Switching (MPLS). Both of these technologies will
+be described in the next chapter.
+F U R T H E R R E A D I N G
+The seminal paper on bridges, in particular the spanning tree algorithm, is the article
+by Perlman below. There is a wealth of survey papers on ATM; the article by Turner,
+an ATM pioneer, is one of the earliest to propose the use of a cell-based network for
+integrated services. The third paper describes the Sunshine switch and is especially
+222 3 Packet Switching
+interesting because it provides insights into the important role of traffic analysis in
+switch design. In particular, the Sunshine designers were among the first to realize that
+cells were unlikely to arrive at a switch in a totally uncorrelated way and thus were
+able to factor these correlations into their design. Finally, McKeown’s paper describes
+an approach to switch design that uses cells internally but has been used commercially
+as the basis for high-performance routers forwarding variable-length packets.
+¦ Perlman, R. An algorithm for distributed computation of spanning trees in an
+extended LAN. Proceedings of the Ninth Data Communications Symposium,
+pages 44–53, September 1985.
+¦ Turner, J. S. Design of an integrated services packet network. Proceedings
+of the Ninth Data Communications Symposium, pages 124–133, September
+1985.
+¦ Giacopelli, J. N., et al. Sunshine: A high-performance self-routing broadband
+packet-switched architecture. IEEE Journal of Selected Areas in Communi-
+cations (JSAC) 9(8):1289–1298, October 1991.
+¦ McKeown, N. The iSLIP scheduling algorithm for input-queued switches.
+IEEE Transactions on Networking 7(2):188–201, April 1999.
+A good general overview of bridges can be found in another work by Perlman
+[Per00]. For a detailed description of many aspects of ATM, with a focus on building
+real networks, we recommend the book by Ginsburg [Gin99]. Also, as one of the key
+ATM standards-setting bodies, the ATM Forum produces new specifications for ATM;
+the User-Network Interface (UNI) specification, version 4.1, is the most recent at the
+time of this writing. (See the live reference below.)
+There have been literally thousands of papers published on switch architectures.
+One early paper that explains Batcher networks well is, not surprisingly, one by Batcher
+himself [Bat68]. Sorting networks are explained by Drysdale and Young [DY75], and
+the knockout switch, an interesting form of crossbar switch is described by Yeh et al.
+[YHA87]. A survey of ATM switch architectures appears in Partridge [Par94], and
+a good overview of the performance of different switching fabrics can be found in
+Robertazzi [Rob93]. An example of the design of a switch based on variable-length
+packets can be found in Gopal and Guerin [GG94].
+Optical networking is a rich field in its own right, with its own journals, conferences,
+and so on. We recommend Ramaswami and Sivarajan [RS01] as a good
+introductory text in that field.
+An excellent text to read if you want to learn about the mathematical analysis of
+network performance is by Kleinrock [Kle75], one of the pioneers of the ARPANET.
+Exercises 223
+Many papers have been published on the applications of queuing theory to packet
+switching. We recommend the article by Paxson and Floyd [PF94] as a significant
+contribution focused on the Internet, and one by Leland et al. [LTWW94], a paper
+that introduces the important concept of “long-range dependence” and shows the
+inadequacy of many traditional approaches to traffic modeling.
+Finally, we recommend the following live reference:
+¦ http://www.atmforum.com: current activities of the ATM Forum
+E X E R C I S E S
+1 Using the example network given in Figure 3.33, give the virtual circuit tables for
+all the switches after each of the following connections is established. Assume that
+the sequence of connections is cumulative; that is, the first connection is still up
+when the second connection is established, and so on. Also assume that the VCI
+assignment always picks the lowest unused VCI on each link, starting with 0.
+(a) Host A connects to host B.
+(b) Host C connects to host G.
+(c) Host E connects to host I.
+(d) Host D connects to host B.
+(e) Host F connects to host J.
+(f) Host H connects to host A.
+2 Using the example network given in Figure 3.33, give the virtual circuit tables
+for all the switches after each of the following connections is established. Assume
+that the sequence of connections is cumulative; that is, the first connection is
+still up when the second connection is established, and so on. Also assume that
+the VCI assignment always picks the lowest unused VCI on each link, starting
+with 0.
+(a) Host D connects to host H.
+(b) Host B connects to host G.
+(c) Host F connects to host A.
+(d) Host H connects to host C.
+(e) Host I connects to host E.
+(f) Host H connects to host J.
+224 3 Packet Switching
+0
+3 1
+2
+0
+1 3
+2
+0
+3 1
+2
+Switch 3
+Switch 2
+Switch 4
+Host A
+Host J Host B
+Switch 1
+Host C
+Host D
+Host E
+Host I
+2
+3 1
+0
+Host H
+Host F
+Host G
+Figure 3.33 Example network for Exercises 1 and 2.
+2
+3
+6
+2
+8 1
+D
+A
+F
+E
+B
+C
+Figure 3.34 Network for Exercise 3.
+3 For the network given in Figure 3.34, give the datagram forwarding table for each
+node. The links are labelled with relative costs; your tables should forward each
+packet via the lowest-cost path to its destination.
+4 Give forwarding tables for switches S1–S4 in Figure 3.35. Each switch should
+have a “default” routing entry, chosen to forward packets with unrecognized
+Exercises 225
+S1
+1 3
+2
+A
+B
+S2
+1 3
+2
+S3
+1 3
+2
+C
+S4
+1
+2
+OUT D
+Figure 3.35 Diagram for Exercise 4.
+S1
+1 3
+2
+A E
+B
+S2
+1 3 3
+2
+C
+S3
+1
+2
+D
+Figure 3.36 Diagram for Exercise 5.
+Switch S1
+Port VCI Port VCI
+1 2 3 1
+1 1 2 3
+2 1 3 2
+Switch S2
+Port VCI Port VCI
+1 1 3 3
+1 2 3 2
+Switch S3
+Port VCI Port VCI
+1 3 2 1
+1 2 3 1
+Table 3.5 VCI tables for switches in Figure 3.36.
+destination addresses toward OUT. Any specific destination table entries duplicated
+by the default entry should then be eliminated.
+5 Consider the virtual circuit switches in Figure 3.36. Table 3.5 lists, for each switch,
+what port, VCI (or VCI, interface) pairs are connected to what other. Connections
+are bidirectional. List all endpoint-to-endpoint connections.
+6 In the source routing example of Section 3.1.3, the address received by B is not
+reversible and doesn’t help B know how to reach A. Propose a modification to the
+delivery mechanism that does allow for reversibility. Your mechanism should not
+require giving all switches globally unique names.
+226 3 Packet Switching
+7 Propose a mechanism that virtual circuit switches might use so that if one switch
+loses all its state regarding connections, then a sender of packets along a path
+through that switch is informed of the failure.
+8 Propose a mechanism that might be used by datagram switches so that if one
+switch loses all or part of its forwarding table, affected senders are informed of
+the failure.
+9 The virtual circuit mechanism described in Section 3.1.2 assumes that each link
+is point-to-point. Extend the forwarding algorithm to work in the case that links
+are shared-media connections, for example, Ethernet.
+10 Suppose, in Figure 3.4, that a new link has been added, connecting switch 3
+port 1 (where G is now) and switch 1 port 0 (where D is now); neither switch is
+“informed” of this link. Furthermore, switch 3 mistakenly thinks that host B is
+reached via port 1.
+(a) What happens if hostAattempts to send to host B, using datagram forwarding?
+(b) What happens if host A attempts to connect to host B, using the virtual circuit
+setup mechanism discussed in the text?
+11 Give an example of a working virtual circuit whose path traverses some link twice.
+Packets sent along this path should not, however, circulate indefinitely.
+12 In Section 3.1.2, each switch chose the VCI value for the incoming link. Show that
+it is also possible for each switch to choose the VCI value for the outbound link,
+and that the same VCI values will be chosen by each approach. If each switch
+chooses the outbound VCI, is it still necessary to wait one RTT before data is
+sent?
+13 Given the extended LAN shown in Figure 3.37, indicate which ports are not
+selected by the spanning tree algorithm.
+14 Given the extended LAN shown in Figure 3.37, assume that bridge B1 suffers
+catastrophic failure. Indicate which ports are not selected by the spanning tree
+algorithm after the recovery process and a new tree has been formed.
+15 Consider the arrangement of learning bridges shown in Figure 3.38. Assuming all
+are initially empty, give the forwarding tables for each of the bridges B1–B4 after
+the following transmissions:
+Exercises 227
+A
+C
+E
+D
+B
+F
+H
+J
+G
+I
+B7
+B1
+B2
+B5
+B6
+B3
+B4
+Figure 3.37 Network for Exercises 13 and 14.
+B3 C
+A B1 B2
+B4 D
+Figure 3.38 Network for Exercises 15 and 16.
+¦ A sends to C.
+¦ C sends to A.
+¦ D sends to C.
+Identify ports with the unique neighbor reached directly from that port; that is,
+the ports for B1 are to be labelled “A” and “B2.”
+16 As in the previous problem, consider the arrangement of learning bridges shown
+in Figure 3.38. Assuming all are initially empty, give the forwarding tables for
+each of the bridges B1–B4 after the following transmissions:
+228 3 Packet Switching
+Z
+X B1 B2 B3
+Y W
+Figure 3.39 Diagram for Exercise 17.
+B2 B1 B3
+Figure 3.40 Extended LAN for Exercise 18.
+¦ D sends to C.
+¦ C sends to D.
+¦ A sends to C.
+17 Consider hosts X, Y, Z, W and learning bridges B1, B2, B3, with initially empty
+forwarding tables, as in Figure 3.39.
+(a) Suppose X sends to Z. Which bridges learn where X is? Does Y’s network
+interface see this packet?
+(b) Suppose Z now sends to X. Which bridges learn where Z is? Does Y’s network
+interface see this packet?
+(c) Suppose Y now sends to X. Which bridges learn where Y is? Does Z’s network
+interface see this packet?
+(d) Finally, suppose Z sends to Y. Which bridges learn where Z is? Does W’s
+network interface see this packet?
+18 Give the spanning tree generated for the extended LAN shown in Figure 3.40, and
+discuss how any ties are resolved.
+Exercises 229
+B1
+L
+M
+B2
+Figure 3.41 Loop for Exercises 19 and 20.
+19 Suppose two learning bridges B1 and B2 form a loop as shown in Figure 3.41,
+and do not implement the spanning tree algorithm. Each bridge maintains a single
+table of address, interface pairs.
+(a) What will happen if M sends to L?
+(b) Suppose a short while later L replies to M. Give a sequence of events that leads
+to one packet from M and one packet from L circling the loop in opposite
+directions.
+20 Suppose thatMin Figure 3.41 sends to itself (this normally would never happen).
+State what would happen, assuming
+(a) the bridges’ learning algorithm is to install (or update) the new sourceaddress,
+interface entry before searching the table for the destination address
+(b) the new source address was installed after destination address lookup
+21 Consider the extended LAN of Figure 3.12. What happens in the spanning tree
+algorithm if bridge B1 does not participate and
+(a) simply forwards all spanning tree algorithm messages?
+(b) drops all spanning tree messages?
+22 Suppose some repeaters (hubs), rather than bridges, are connected into a loop.
+(a) What will happen when somebody transmits?
+(b) Why would the spanning tree mechanism be difficult or impossible to implement
+for repeaters?
+230 3 Packet Switching
+(c) Propose a mechanism by which repeaters might detect loops and shut down
+some ports to break the loop. Your solution is not required to work 100% of
+the time.
+23 Suppose a bridge has two of its ports on the same network. How might the bridge
+detect and correct this?
+24 What percentage of an ATM link’s total bandwidth is consumed by the ATM cell
+headers? What percentage of the total bandwidth is consumed by all nonpayload
+bits in AAL3/4 and AAL5, when the user data is 512 bytes long?
+25 Explain why AAL3/4 will not detect the loss of 16 consecutive cells of a single
+PDU.
+26 The IP datagram for a TCP ACK message is 40 bytes long: It contains 20 bytes of
+TCP header and 20 bytes of IP header. Assume that this ACK is traversing an ATM
+network that uses AAL5 to encapsulate IP packets. How many ATM packets will
+it take to carry the ACK? What if AAL3/4 is used instead?
+27 The CS-PDU for AAL5 contains up to 47 bytes of padding, while the AAL3/4 CSPDU
+only contains up to 3 bytes of padding. Explain why the effective bandwidth
+of AAL5 is always the same as, or higher than, that of AAL3/4, given a PDU of a
+particular size.
+28 How reliable does an ATM connection have to be in order to maintain a loss
+rate of less than one per million for a higher-level PDU of size 20 cells? Assume
+AAL5.
+29 Assuming the 20-cell AAL5 packet from the previous problem, suppose a final cell
+is tacked on the end of the PDU, and that this cell is the XOR of all the previous
+cells in the PDU. This allows recovery from any one lost cell. What cell loss rate
+now would yield a net one-per-million loss rate for 20-data-cell PDUs?
+30 Recall that AAL3/4 has a CRC-10 checksum at the end of each cell, while AAL5
+has a single CRC-32 checksum at the end of the PDU. If a PDU is carried in
+12 AAL3/4 cells, then AAL3/4 devotes nearly four times as many bits to error
+detection as AAL5.
+(a) Suppose errors are known to come in bursts, where each burst is small enough
+to be confined to a single cell. Find the probability that AAL3/4 fails to detect
+Exercises 231
+an error, given that it is known that exactly two cells are affected. Do the same
+for three cells. Under these conditions, is AAL3/4 more or less reliable than
+AAL5? Assume that an N-bit CRC fails to detect an error with probability
+1/2N (which is strictly true only when all errors are equally likely).
+(b) Can you think of any error distribution in which AAL3/4 would be more likely
+than AAL5 to detect an error? Do you think such circumstances are likely?
+31 Cell switching methods essentially always use virtual circuit routing rather than
+datagram routing. Give a specific argument why this is so.
+32 Suppose a workstation has an I/O bus speed of 800 Mbps and memory bandwidth
+of 2 Gbps. Assuming DMA in and out of main memory, how many interfaces to
+45-Mbps T3 links could a switch based on this workstation handle?
+33 Suppose a workstation has an I/O bus speed of 1 Gbps and memory bandwidth
+of 2 Gbps. Assuming DMA in and out of main memory, how many interfaces to
+45-Mbps T3 links could a switch based on this workstation handle?
+34 Suppose a switch can forward packets at a rate of 100,000 per second, regardless
+(within limits) of size. Assuming the workstation parameters described in the previous
+problem, at what packet size would the bus bandwidth become the limiting
+factor?
+35 Suppose that a switch is designed to have both input and output FIFO buffering.
+As packets arrive on an input port they are inserted at the tail of the FIFO. The
+switch then tries to forward the packets at the head of each FIFO to the tail of the
+appropriate output FIFO.
+(a) Explain under what circumstances such a switch can lose a packet destined
+for an output port whose FIFO is empty.
+(b) What is this behavior called?
+(c) Assuming the FIFO buffering memory can be redistributed freely, suggest a
+reshuffling of the buffers that avoids the above problem, and explain why it
+does so.
+36 A stage of an n × n banyan network consists of (n/2) 2 × 2 switching elements.
+The first stage directs packets to the correct half of the network, the next stage
+to the correct quarter, and so on, until the packet is routed to the correct output.
+232 3 Packet Switching
+Derive an expression for the number of 2 ×2 switching elements needed to make
+an n × n banyan network. Verify your answer for n = 8.
+37 Describe how a Batcher network works. (See the “Further Reading” section.)
+Explain how a Batcher network can be used in combination with a banyan network
+to build a switching fabric.
+38 An Ethernet switch is simply a bridge that has the ability to forward some number
+of packets in parallel, assuming the input and output ports are all distinct.
+Suppose two such N-port switches, for a large value of N, are each able to forward
+individually up to three packets in parallel. They are then connected to one
+another in series by joining a pair of ports, one from each switch; the joining link
+is the bottleneck as it can, of course, carry only one packet at a time.
+(a) Suppose we choose two connections through this combined switch at random.
+What is the probability that both connections can be forwarded in parallel?
+Hint: This is the probability that at most one of the connections crosses the
+link.
+(b) What if three connections are chosen at random?
+39 Suppose a 10-Mbps Ethernet hub (repeater) is replaced by a 10-Mbps switch,
+in an environment where all traffic is between a single server and N “clients.”
+Because all traffic must still traverse the server-switch link, nominally there is no
+improvement in bandwidth.
+(a) Would you expect any improvement in bandwidth? If so, why?
+(b) What would your answer be if the original hub were token ring rather than
+Ethernet?
+(c) What other advantages and drawbacks might a switch offer versus a
+hub?
+This Page Intentionally Left Blank
+Internetworking
+Every seeming equality conceals a hierarchy.
+—Mason Cooley
+We have now seen how to build a single network using point-to-point links,
+shared media, and switches. The problem is that lots of people have built
+networks with these various technologies and they all want to be able to
+communicate with each other, not just with the other users of a single network. This
+chapter is about the problem of interconnecting different networks.
+P R O B L E M
+There Is More Than
+One Network
+There are two important problems
+that must be addressed when
+connecting networks: heterogeneity
+and scale. Simply stated, the problem
+of heterogeneity is that users on one
+type of network want to be able to
+communicate with users on other
+type of networks. To further complicate matters, establishing connectivity between
+hosts on two different networks may require traversing several other networks in
+between, each of which may be of yet another type. These different networks may be
+Ethernets, token rings, point-to-point links, or switched networks of various kinds,
+and each of them is likely to have its own addressing scheme, media access protocols,
+service model, and so on. The challenge of heterogeneity is to provide a useful and
+fairly predictable host-to-host service over this hodgepodge of different networks. To
+understand the problem of scaling, it is worth considering the growth of the Internet,
+which has roughly doubled in size each year for 20 years. This sort of growth forces us
+to face a number of challenges. One of these is routing: How can you find an efficient
+path through a network with millions, or perhaps billions, of nodes? Closely related
+to this is the problem of addressing, the task of providing suitable identifiers for all
+those nodes.
+This chapter looks at a series of approaches to interconnecting networks and
+the problems that must be solved. In doing so, we trace the evolution of the TCP/IP
+4 Internet in an effort to understand the problems of heterogeneity
+and scale in detail, along with the general techniques
+that can be applied to them.
+The first section introduces the Internet Protocol (IP)
+and shows how it can be used to build a scalable, heterogeneous
+internetwork. This section includes a discussion of
+the Internet’s service model, which is the key to its ability
+to handle heterogeneity. It also describes how the Internet’s
+hierarchical addressing scheme has helped the Internet to
+scale to a modestly large size.
+A central aspect of building large heterogeneous internetworks
+is the problem of finding efficient, loop-free
+paths through the constituent networks. The second section
+introduces the principles of routing and explores the
+scaling issues of routing protocols, using some of the Internet’s
+routing protocols as examples.
+The third section discusses several of the problems
+(growing pains) that the Internet has experienced over the
+past several years and introduces a variety of techniques
+that have been employed to address these problems. The
+experience gained from using these techniques has led to
+the design of a new version of IP, which is IP version 6
+(IPv6). Throughout all these discussions, we see the importance
+of hierarchy in building scalable networks.
+The chapter concludes by considering a pair of significant
+enhancements to the Internet’s capabilities. The
+first, multicast, is an enhancement of the basic service
+model. We show how multicast—the ability to deliver
+packets efficiently to a set of receivers—can be incorporated
+into an internet, and we describe several of the routing
+protocols that have been developed to support multicast.
+The second enhancement, MPLS (Multiprotocol
+Label Switching), modifies the forwarding mechanism of
+IP networks. This modification has enabled some changes
+in the way IP routing is performed and in the services offered
+by IP networks.
+236 

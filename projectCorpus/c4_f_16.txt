@@ -1,0 +1,2280 @@
+THIRD EDITION
+C O M P U T E R
+N E T W O R K S
+A Systems Approach
+The Morgan Kaufmann Series in Networking
+Series Editor, David Clark, M.I.T.
+Computer Networks: A Systems Approach, 3e
+Larry L. Peterson and Bruce S. Davie
+Network Architecture, Analysis, and Design, 2e
+James D. McCabe
+MPLS Network Management: MIBs, Tools, and Techniques
+Thomas D. Nadeau
+Developing IP-Based Services: Solutions for Service Providers and Vendors
+Monique Morrow and Kateel Vijayananda
+Telecommunications Law in the Internet Age
+Sharon K. Black
+Optical Networks: A Practical Perspective, 2e
+Rajiv Ramaswami and Kumar N. Sivarajan
+Internet QoS: Architectures and Mechanisms
+Zheng Wang
+TCP/IP Sockets in Java: Practical Guide for Programmers
+Michael J. Donahoo and Kenneth L. Calvert
+TCP/IP Sockets in C: Practical Guide for Programmers
+Kenneth L. Calvert and Michael J. Donahoo
+Multicast Communication: Protocols, Programming, and Applications
+Ralph Wittmann and Martina Zitterbart
+MPLS: Technology and Applications
+Bruce Davie and Yakov Rekhter
+High-Performance Communication Networks, 2e
+Jean Walrand and Pravin Varaiya
+Internetworking Multimedia
+Jon Crowcroft, Mark Handley, and Ian Wakeman
+Understanding Networked Applications: A First Course
+David G. Messerschmitt
+Integrated Management of Networked Systems: Concepts, Architectures,
+and their Operational Application
+Heinz-Gerd Hegering, Sebastian Abeck, and Bernhard Neumair
+Virtual Private Networks: Making the Right Connection
+Dennis Fowler
+Networked Applications: A Guide to the New Computing Infrastructure
+David G. Messerschmitt
+Modern Cable Television Technology: Video, Voice, and Data Communications
+Walter Ciciora, James Farmer, and David Large
+Switching in IP Networks: IP Switching, Tag Switching, and Related Technologies
+Bruce S. Davie, Paul Doolan, and Yakov Rekhter
+Wide Area Network Design: Concepts and Tools for Optimization
+Robert S. Cahn
+Frame Relay Applications: Business and Technology Case Studies
+James P. Cavanagh
+For further information on these books and for a list of forthcoming titles, please visit
+our website at http://www.mkp.com
+T H I R D E D I T I O N
+Larry L. Peterson & Bruce S. Davie
+C O M P U T E R
+N E T W O R K S
+A Systems Approach
+Senior Editor Rick Adams
+Publishing Services Manager Simon Crump
+Developmental Editor Karyn Johnson
+Cover Design Ross Carron Design
+Cover Image Vasco de Gama Bridge, Lisbon, Portugal
+Composition/Illustration International Typesetting and Composition
+Copyeditor Ken DellaPenta
+Proofreader Jennifer McClain
+Indexer Steve Rath
+Printer Courier Corporation
+Designations used by companies to distinguish their products are often claimed as trademarks
+or registered trademarks. In all instances in which Morgan Kaufmann Publishers is aware of a
+claim, the product names appear in initial capital or all capital letters. Readers, however, should
+contact the appropriate companies for more complete information regarding trademarks and
+registration.
+Morgan Kaufmann Publishers
+An Imprint of Elsevier Science
+340 Pine Street, Sixth Floor
+San Francisco, CA 94104-3205
+www.mkp.com
+© 2003 by Elsevier Science (USA)
+All rights reserved
+Printed in the United States of America
+07 06 05 04 03 5 4 3 2 1
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in
+any form or by any means—electronic, mechanical, photocopying, or otherwise—without the
+prior written permission of the publisher.
+Library of Congress Control Number: xxxxxxxxxx
+ISBN: 1-55860-832-X (Casebound)
+ISBN: 1-55860-833-8 (Paperback)
+This book is printed on acid-free paper.
+To Lee Peterson and Robert Davie
+This Page Intentionally Left Blank
+F O R E W O R D
+David Clark
+Massachusetts Institute of Technology
+This third edition represents another major upgrade to this classic networking
+book. The field continues to change fast, and new concepts emerge with amazing
+speed. This version expands its discussion of a lot of important new topics,
+including peer-to-peer networks, Ipv6, overlay and content distribution networks,
+MPLS and switching, wireless and mobile technology, and more. It also contains an
+earlier and stronger focus on applications, which reflects the student and professional’s
+increased familiarity with a wide range of networked applications. The book continues
+its tradition of giving you the facts you need to understand today’s world.
+But it has not lost track of its larger goal, to tell you not only the facts but the
+why behind the facts. The philosophy of the book remains the same: to be timely but
+timeless. What this book will teach you in today’s networked world will give you the
+insight needed to work in tomorrow’s landscape. And that is important, since there
+is no reason to believe that the evolution of networks is going to slow down anytime
+soon.
+It is hard to remember what the world looked like only ten years ago. Back then
+the Internet was not really a commercial reality. Ten megabits per second was really
+fast.We didn’t worry about spam and virus attacks—we left our computers unguarded
+and hardly worried. Those times were simpler, but today may be more exciting. And
+you better believe that tomorrow will be different from today: at least as exciting, with
+luck no less trustworthy, and certainly bigger, faster and filled with fresh innovation.
+So I hope Larry and Bruce can relax for a little before they have to start the next
+revision. Meanwhile, use this book to learn about today and get ready for tomorrow.
+Have fun.
+This Page Intentionally Left Blank
+F O R E W O R D T O T H E F I R S T E D I T I O N
+David Clark
+Massachusetts Institute of Technology
+The term spaghetti code is universally understood as an insult. All good computer
+scientists worship the god of modularity, since modularity brings many benefits,
+including the all-powerful benefit of not having to understand all parts of a
+problem at the same time in order to solve it. Modularity thus plays a role in presenting
+ideas in a book, as well as in writing code. If a book’s material is organized effectively—
+modularly—the reader can start at the beginning and actually make it to the end.
+The field of network protocols is perhaps unique in that the “proper” modularity
+has been handed down to us in the form of an international standard: the seven-layer
+reference model of network protocols from the ISO. This model, which reflects a
+layered approach to modularity, is almost universally used as a starting point for
+discussions of protocol organization, whether the design in question conforms to the
+model or deviates from it.
+It seems obvious to organize a networking book around this layered model.
+However, there is a peril to doing so, because the OSI model is not really successful
+at organizing the core concepts of networking. Such basic requirements as reliability,
+flow control, or security can be addressed at most, if not all, of the OSI layers. This
+fact has led to great confusion in trying to understand the reference model. At times it
+even requires a suspension of disbelief. Indeed, a book organized strictly according to
+a layered model has some of the attributes of spaghetti code.
+Which brings us to this book. Peterson and Davie follow the traditional layered
+model, but they do not pretend that this model actually helps in the understanding of
+the big issues in networking. Instead, the authors organize discussion of fundamental
+concepts in a way that is independent of layering. Thus, after reading the book, readers
+will understand flow control, congestion control, reliability enhancement, data representation,
+and synchronization, and will separately understand the implications of
+addressing these issues in one or another of the traditional layers.
+This is a timely book. It looks at the important protocols in use today—especially
+the Internet protocols. Peterson and Davie have a long involvement in and much
+experience with the Internet. Thus their book reflects not just the theoretical issues in
+x Foreword to the First Edition
+protocol design, but the real factors that matter in practice. The book looks at some of
+the protocols that are just emerging now, so the reader can be assured of an up-to-date
+perspective. But most importantly, the discussion of basic issues is presented in a way
+that derives from the fundamental nature of the problem, not the constraints of the
+layered reference model or the details of today’s protocols. In this regard, what this
+book presents is both timely and timeless. The combination of real-world relevance,
+current examples, and careful explanation of fundamentals makes this book unique.
+C O N T E N T S
+Foreword vii
+Foreword to the First Edition ix
+Preface xix
+1 Foundation
+Problem: Building a Network 2
+1.1 Applications 4
+1.2 Requirements 6
+1.2.1 Connectivity 7
+1.2.2 Cost-Effective Resource Sharing 10
+1.2.3 Support for Common Services 15
+1.3 Network Architecture 19
+1.3.1 Layering and Protocols 20
+1.3.2 OSI Architecture 26
+1.3.3 Internet Architecture 27
+1.4 Implementing Network Software 30
+1.4.1 Application Programming Interface (Sockets) 31
+1.4.2 Example Application 33
+1.4.3 Protocol Implementation Issues 36
+1.5 Performance 40
+1.5.1 Bandwidth and Latency 40
+1.5.2 Delay × Bandwidth Product 44
+1.5.3 High-Speed Networks 46
+1.5.4 Application Performance Needs 48
+1.6 Summary 50
+Open Issue: Ubiquitous Networking 51
+Further Reading 52
+Exercises 55
+xii Contents
+2 Direct Link Networks
+Problem: Physically Connecting Hosts 64
+2.1 Hardware Building Blocks 66
+2.1.1 Nodes 66
+2.1.2 Links 67
+2.2 Encoding (NRZ, NRZI, Manchester, 4B/5B) 75
+2.3 Framing 79
+2.3.1 Byte-Oriented Protocols (BISYNC, PPP, DDCMP) 80
+2.3.2 Bit-Oriented Protocols (HDLC) 83
+2.3.3 Clock-Based Framing (SONET) 84
+2.4 Error Detection 88
+2.4.1 Two-Dimensional Parity 89
+2.4.2 Internet Checksum Algorithm 90
+2.4.3 Cyclic Redundancy Check 92
+2.5 Reliable Transmission 97
+2.5.1 Stop-and-Wait 98
+2.5.2 Sliding Window 101
+2.5.3 Concurrent Logical Channels 110
+2.6 Ethernet (802.3) 111
+2.6.1 Physical Properties 112
+2.6.2 Access Protocol 114
+2.6.3 Experience with Ethernet 119
+2.7 Token Rings (802.5, FDDI) 120
+2.7.1 Physical Properties 121
+2.7.2 Token Ring Media Access Control 122
+2.7.3 Token Ring Maintenance 125
+2.7.4 Frame Format 126
+2.7.5 FDDI 127
+2.8 Wireless (802.11) 131
+2.8.1 Physical Properties 132
+2.8.2 Collision Avoidance 133
+2.8.3 Distribution System 134
+2.8.4 Frame Format 136
+2.9 Network Adaptors 137
+2.9.1 Components 138
+2.9.2 View from the Host 139
+2.9.3 Memory Bottleneck 144
+2.10 Summary 146
+Contents xiii
+Open Issue: Does It Belong in Hardware? 147
+Further Reading 148
+Exercises 150
+3 Packet Switching
+Problem: Not All Networks Are Directly Connected 164
+3.1 Switching and Forwarding 166
+3.1.1 Datagrams 168
+3.1.2 Virtual Circuit Switching 170
+3.1.3 Source Routing 177
+3.2 Bridges and LAN Switches 180
+3.2.1 Learning Bridges 181
+3.2.2 Spanning Tree Algorithm 185
+3.2.3 Broadcast and Multicast 189
+3.2.4 Limitations of Bridges 190
+3.3 Cell Switching (ATM) 192
+3.3.1 Cells 193
+3.3.2 Segmentation and Reassembly 198
+3.3.3 Virtual Paths 203
+3.3.4 Physical Layers for ATM 204
+3.3.5 ATM in the LAN 205
+3.4 Implementation and Performance 210
+3.4.1 Ports 212
+3.4.2 Fabrics 216
+3.5 Summary 220
+Open Issue: The Future of ATM 221
+Further Reading 221
+Exercises 223
+4 Internetworking
+Problem: There Is More Than One Network 234
+4.1 Simple Internetworking (IP) 236
+4.1.1 What Is an Internetwork? 236
+4.1.2 Service Model 238
+4.1.3 Global Addresses 250
+4.1.4 Datagram Forwarding in IP 252
+4.1.5 Address Translation (ARP) 258
+4.1.6 Host Configuration (DHCP) 263
+xiv Contents
+4.1.7 Error Reporting (ICMP) 266
+4.1.8 Virtual Networks and Tunnels 267
+4.2 Routing 271
+4.2.1 Network as a Graph 272
+4.2.2 Distance Vector (RIP) 274
+4.2.3 Link State (OSPF) 282
+4.2.4 Metrics 291
+4.2.5 Routing for Mobile Hosts 295
+4.3 Global Internet 299
+4.3.1 Subnetting 301
+4.3.2 Classless Routing (CIDR) 306
+4.3.3 Interdomain Routing (BGP) 308
+4.3.4 Routing Areas 316
+4.3.5 IP Version 6 (IPv6) 318
+4.4 Multicast 331
+4.4.1 Link-State Multicast 332
+4.4.2 Distance-Vector Multicast 332
+4.4.3 Protocol Independent Multicast (PIM) 336
+4.5 Multiprotocol Label Switching (MPLS) 340
+4.5.1 Destination-Based Forwarding 340
+4.5.2 Explicit Routing 346
+4.5.3 Virtual Private Networks and Tunnels 348
+4.6 Summary 352
+Open Issue: Deployment of IPV6 353
+Further Reading 354
+Exercises 355
+5 End-to-End Protocols
+Problem: Getting Processess to Communicate 374
+5.1 Simple Demultiplexer (UDP) 376
+5.2 Reliable Byte Stream (TCP) 378
+5.2.1 End-to-End Issues 379
+5.2.2 Segment Format 382
+5.2.3 Connection Establishment and Termination 384
+5.2.4 Sliding Window Revisited 389
+5.2.5 Triggering Transmission 395
+5.2.6 Adaptive Retransmission 397
+5.2.7 Record Boundaries 401
+Contents xv
+5.2.8 TCP Extensions 402
+5.2.9 Alternative Design Choices 403
+5.3 Remote Procedure Call 405
+5.3.1 Bulk Transfer (BLAST) 408
+5.3.2 Request/Reply (CHAN) 414
+5.3.3 Dispatcher (SELECT) 423
+5.3.4 Putting It All Together (SunRPC, DCE) 424
+5.4 Performance 431
+5.5 Summary 434
+Open Issue: Application-Specific Protocols 435
+Further Reading 436
+Exercises 437
+6 Congestion Control and Resource Allocation
+Problem: Allocating Resources 450
+6.1 Issues in Resource Allocation 452
+6.1.1 Network Model 452
+6.1.2 Taxonomy 456
+6.1.3 Evaluation Criteria 458
+6.2 Queuing Disciplines 461
+6.2.1 FIFO 462
+6.2.2 Fair Queuing 463
+6.3 TCP Congestion Control 468
+6.3.1 Additive Increase/Multiplicative Decrease 468
+6.3.2 Slow Start 471
+6.3.3 Fast Retransmit and Fast Recovery 476
+6.4 Congestion-Avoidance Mechanisms 478
+6.4.1 DECbit 478
+6.4.2 Random Early Detection (RED) 480
+6.4.3 Source-Based Congestion Avoidance 486
+6.5 Quality of Service 492
+6.5.1 Application Requirements 493
+6.5.2 Integrated Services (RSVP) 499
+6.5.3 Differentiated Services (EF, AF) 509
+6.5.4 ATM Quality of Service 513
+6.5.5 Equation-Based Congestion Control 517
+6.6 Summary 518
+xvi Contents
+Open Issue: Inside versus Outside the Network 519
+Further Reading 520
+Exercises 521
+7 End-to-End Data
+Problem: What Do We Do with the Data? 534
+7.1 Presentation Formatting 536
+7.1.1 Taxonomy 537
+7.1.2 Examples (XDR, ASN.1, NDR) 541
+7.1.3 Markup Languages (XML) 545
+7.2 Data Compression 548
+7.2.1 Lossless Compression Algorithms 550
+7.2.2 Image Compression (JPEG) 552
+7.2.3 Video Compression (MPEG) 557
+7.2.4 Transmitting MPEG over a Network 562
+7.2.5 Audio Compression (MP3) 566
+7.3 Summary 568
+Open Issue: Computer Networks Meet Consumer Electronics 568
+Further Reading 569
+Exercises 570
+8 Network Security
+Problem: Securing the Data 578
+8.1 Cryptographic Algorithms 580
+8.1.1 Requirements 582
+8.1.2 Secret Key Encryption (DES) 583
+8.1.3 Public Key Encryption (RSA) 588
+8.1.4 Message Digest Algorithms (MD5) 591
+8.1.5 Implementation and Performance 593
+8.2 Security Mechanisms 594
+8.2.1 Authentication Protocols 594
+8.2.2 Message Integrity Protocols 598
+8.2.3 Public Key Distribution (X.509) 601
+8.3 Example Systems 604
+8.3.1 Pretty Good Privacy (PGP) 605
+8.3.2 Secure Shell (SSH) 607
+8.3.3 Transport Layer Security (TLS, SSL, HTTPS) 610
+8.3.4 IP Security (IPSEC) 614
+Contents xvii
+8.4 Firewalls 617
+8.4.1 Filter-Based Firewalls 618
+8.4.2 Proxy-Based Firewalls 620
+8.4.3 Limitations 622
+8.5 Summary 622
+Open Issue: Denial-of-Service Attacks 623
+Further Reading 624
+Exercises 625
+9 Applications
+Problem: Applications Need Their Own Protocols 632
+9.1 Name Service (DNS) 634
+9.1.1 Domain Hierarchy 635
+9.1.2 Name Servers 636
+9.1.3 Name Resolution 640
+9.2 Traditional Applications 643
+9.2.1 Electronic Mail (SMTP, MIME, IMAP) 644
+9.2.2 World Wide Web (HTTP) 650
+9.2.3 Network Management (SNMP) 657
+9.3 Multimedia Applications 660
+9.3.1 Real-time Transport Protocol (RTP) 660
+9.3.2 Session Control and Call Control (SDP, SIP, H.323) 671
+9.4 Overlay Networks 680
+9.4.1 Routing Overlays 682
+9.4.2 Peer-to-Peer Networks 690
+9.4.3 Content Distribution Networks 698
+9.5 Summary 704
+Open Issue: New Network Artichitecture 704
+Further Reading 705
+Exercises 707
+Glossary 715
+Bibliography 743
+Solutions to Selected Exercises 763
+Index 777
+About the Authors 810
+This Page Intentionally Left Blank
+P R E F A C E
+When the first edition of this book was published in 1996, it was a novelty to
+be able to order merchandise on the Internet, and a company that advertised
+its domain name was considered cutting edge. Today, Internet commerce is
+a fact of life, and “.com” stocks have gone through an entire boom and bust cycle.
+A host of new technologies ranging from optical switches to wireless networks are
+now becoming mainstream. It seems the only predictable thing about the Internet is
+constant change.
+Despite these changes the question we asked in the first edition is just as valid
+today: What are the underlying concepts and technologies that make the Internet
+work? The answer is that much of the TCP/IP architecture continues to function just
+as was envisioned by its creators nearly 30 years ago. This isn’t to say that the Internet
+architecture is uninteresting, quite the contrary. Understanding the design principles
+that underlie an architecture that has not only survived but fostered the kind of growth
+and change that the Internet has seen over the past three decades is precisely the right
+place to start. Like the previous editions, the third edition makes the “why” of the
+Internet architecture its cornerstone.
+Audience
+Our intent is that the book should serve as the text for a comprehensive networking
+class, at either the graduate or upper-division undergraduate level.We also believe that
+the book’s focus on core concepts should be appealing to industry professionals who
+are retraining for network-related assignments, as well as current network practitioners
+who want to understand the “whys” behind the protocols they work with every day
+and to see the big picture of networking.
+It is our experience that both students and professionals learning about networks
+for the first time often have the impression that network protocols are some sort of edict
+handed down from on high, and that their job is to learn as many TLAs (three-letter
+acronyms) as possible. In fact, protocols are the building blocks of a complex system
+developed through the application of engineering design principles. Moreover, they
+are constantly being refined, extended, and replaced based on real-world experience.
+xx Preface
+With this in mind, our goal with this book is to do more than survey the protocols
+in use today. Instead, we explain the underlying principles of sound network design.
+We feel that this grasp of underlying principles is the best tool for handling the rate of
+change in the networking field.
+Changes in the Third Edition
+Even though our focus is on the underlying principles of networking, we illustrate
+these principles using examples from today’s working Internet. Therefore, we added a
+significant amount of new material to track many of the important recent advances in
+networking. We also deleted, reorganized, and changed the focus of existing material
+to reflect changes that have taken place over the past seven years.
+Perhaps the most significant change we have noticed since writing the first edition
+is that almost every reader now has some familiarity with networked applications such
+as the World Wide Web and email. For this reason, we have increased the focus on
+applications, starting in the first chapter. We use applications as the motivation for
+the study of networking, and to derive a set of requirements that a useful network
+must meet if it is to support both current and future applications on a global scale.
+However, we retain the problem-solving approach of previous editions that starts with
+the problem of interconnecting hosts and works its way up the layers to conclude with
+a detailed examination of application-layer issues. We believe it is important to make
+the topics covered in the book relevant by starting with applications and their needs. At
+the same time, we feel that higher-layer issues, such as application-layer and transportlayer
+protocols, are best understood after the basic problems of connecting hosts and
+switching packets have been explained.
+Another important change in this edition is in the exercises. We have increased
+the number and quality of exercises; we have attempted to identify those that are
+especially difficult or that require above-average levels of mathematical knowledge
+(these are marked with an icon ); and in each chapter we have added a number of
+exercises with worked solutions that are included in the book. As before, the complete
+set of exercise solutions is available only to instructors.
+As we did in the second edition, we have added or increased coverage of important
+new topics and brought other topics up-to-date. Major new or substantially
+updated topics in this edition are
+¦ a new section on Multiprotocol Label Switching (MPLS), including coverage
+of traffic engineering and virtual private networks
+¦ a new section on overlay networks, including “peer-to-peer” networking and
+“content distribution networks”
+Preface xxi
+¦ greatly expanded coverage on protocols for multimedia applications, such as
+Session Initiation Protocol (SIP) and Session Description Protocol (SDP)
+¦ updated coverage of congestion-control mechanisms, including selective acknowledgments
+for TCP, equation-based congestion control, and explicit congestion
+notification
+¦ updated security coverage, including distributed denial of service (DDoS) attacks
+¦ updated material on wireless technology, including spread spectrum techniques
+and the emerging 802.11 standards
+Finally, the book is now supplemented by a comprehensive set of laboratory exercises
+designed to illustrate the key concepts through simulation experiments. Sections
+that discuss material covered by the laboratory exercises are marked with the icon
+shown in the margin. Details on this new feature of the book appear below.
+Approach
+For an area that’s as dynamic and changing as computer networks, the most important
+thing a textbook can offer is perspective—to distinguish between what’s important and
+what’s not, and between what’s lasting and what’s superficial. Based on our experience
+over the past 20 years doing research that has led to new networking technology,
+teaching undergraduate and graduate students about the latest trends in networking,
+and delivering advanced networking products to market, we have developed a
+perspective—which we call the systems approach—that forms the soul of this book.
+The systems approach has several implications:
+¦ Rather than accept existing artifacts as gospel, we start with first principles
+and walk you through the thought process that led to today’s networks. This
+allows us to explain why networks look like they do. It is our experience that
+once you understand the underlying concepts, any new protocol that you are
+confronted with will be relatively easy to digest.
+¦ Although the material is loosely organized around the traditional network
+layers, starting at the bottom and moving up the protocol stack, we do not
+adopt a rigid layered approach. Many topics—congestion control and security
+are good examples—have implications up and down the hierarchy, and so
+we discuss them outside the traditional layered model. In short, we believe
+layering makes a good servant but a poor master; it’s more often useful to
+take an end-to-end perspective.
+xxii Preface
+¦ Rather than explain how protocols work in the abstract, we use the most
+important protocols in use today—many of them from the TCP/IP Internet—
+to illustrate how networks work in practice. This allows us to include realworld
+experiences in the discussion.
+¦ Although at the lowest levels networks are constructed from commodity hardware
+that can be bought from computer vendors and communication services
+that can be leased from the phone company, it is the software that allows networks
+to provide new services and adapt quickly to changing circumstances.
+It is for this reason that we emphasize how network software is implemented,
+rather than stopping with a description of the abstract algorithms involved.
+We also include code segments taken from a working protocol stack to illustrate
+how you might implement certain protocols and algorithms.
+¦ Networks are constructed from many building-block pieces, and while it is
+necessary to be able to abstract away uninteresting elements when solving
+a particular problem, it is essential to understand how all the pieces fit together
+to form a functioning network. We therefore spend considerable time
+explaining the overall end-to-end behavior of networks, not just the individual
+components, so that it is possible to understand how a complete network
+operates, all the way from the application to the hardware.
+¦ The systems approach implies doing experimental performance studies, and
+then using the data you gather both to quantitatively analyze various design
+options and to guide you in optimizing the implementation. This emphasis on
+empirical analysis pervades the book.
+¦ Networks are like other computer systems—for example, operating systems,
+processor architectures, distributed and parallel systems, and so on. They
+are all large and complex. To help manage this complexity, system builders
+often draw on a collection of design principles. We highlight these design
+principles as they are introduced throughout the book, illustrated, of course,
+with examples from computer networks.
+Pedagogy and Features
+The third edition retains several features that we encourage you to take advantage of:
+¦ Problem statements. At the start of each chapter, we describe a problem that
+identifies the next set of issues that must be addressed in the design of a
+network. This statement introduces and motivates the issues to be explored
+in the chapter.
+Preface xxiii
+¦ Shaded sidebars. Throughout the text, shaded sidebars elaborate on the topic
+being discussed or introduce a related advanced topic. In many cases, these
+sidebars relate real-world anecdotes about networking.
+¦ Highlighted paragraphs. These paragraphs summarize an important nugget
+of information that we want you to take away from the discussion, such as a
+widely applicable system design principle.
+¦ Real protocols. Even though the book’s focus is on core concepts rather than
+existing protocol specifications, real protocols are used to illustrate most of the
+important ideas. As a result, the book can be used as a source of reference for
+many protocols. To help you find the descriptions of the protocols, each applicable
+section heading parenthetically identifies the protocols described in that
+section. For example, Section 5.2, which describes the principles of reliable
+end-to-end protocols, provides a detailed description of TCP, the canonical
+example of such a protocol.
+¦ Open issues. We conclude the main body of each chapter with an important
+issue that is currently being debated in the research community, the commercial
+world, or society as a whole. We have found that discussing these issues
+helps to make the subject of networking more relevant and exciting.
+¦ Further reading. These highly selective lists appear at the end of each chapter.
+Each list generally contains the seminal papers on the topics just discussed.
+We strongly recommend that advanced readers (e.g., graduate students) study
+the papers in this reading list to supplement the material covered in the
+chapter.
+Road Map and Course Use
+The book is organized as follows:
+¦ Chapter 1 introduces the set of core ideas that are used throughout the rest
+of the text. Motivated by widespread applications, it discusses what goes into
+network architecture, and it defines the quantitative performance metrics that
+often drive network design.
+¦ Chapter 2 surveys a wide range of low-level network technologies, ranging
+from Ethernet to token ring to wireless. It also describes many of the issues
+that all data link protocols must address, including encoding, framing, and
+error detection.
+xxiv Preface
+¦ Chapter 3 introduces the basic models of switched networks (datagrams versus
+virtual circuits) and describes one prevalent switching technology (ATM) in
+some detail. It also discusses the design of hardware-based switches.
+¦ Chapter 4 introduces internetworking and describes the key elements of the
+Internet Protocol (IP). A central question addressed in this chapter is how
+networks that scale to the size of the Internet are able to route packets.
+¦ Chapter 5 moves up to the transport level, describing both the Internet’s Transmission
+Control Protocol (TCP) and Remote Procedure Call (RPC) used to
+build client/server applications in detail.
+¦ Chapter 6 discusses congestion control and resource allocation. The issues
+in this chapter cut across both the network level (Chapters 3 and 4) and the
+transport level (Chapter 5). Of particular note, this chapter describes how
+congestion control works in TCP, and it introduces the mechanisms used by
+both the Internet and ATM to provide quality of service.
+¦ Chapter 7 considers the data sent through a network. This includes the problems
+of both presentation formatting and data compression. The discussion
+of compression includes explanations of how MPEG video compression and
+MP3 audio compression work.
+¦ Chapter 8 discusses network security, ranging from an overview of cryptography
+protocols (DES, RSA, MD5), to protocols for security services (authentication,
+digital signature, message integrity), to complete security systems
+(privacy enhanced email, IPSEC). The chapter also discusses pragmatic issues
+like firewalls.
+¦ Chapter 9 describes a representative sample of network applications and the
+protocols they use, including traditional applications like email and the Web,
+multimedia applications such as IP telephony and video streaming, and overlay
+networks like peer-to-peer file sharing and content distribution networks.
+For an undergraduate course, extra class time will most likely be needed to help
+students digest the introductory material in the first chapter, probably at the expense
+of the more advanced topics covered in Chapters 6 through 8. Chapter 9 then returns
+to the popular topic of network applications. In contrast, the instructor for a graduate
+course should be able to cover the first chapter in only a lecture or two—with students
+studying the material more carefully on their own—thereby freeing up additional
+class time to cover the last four chapters in depth. Both graduate and undergraduate
+classes will want to cover the core material contained in the middle four chapters
+Preface xxv
+(Chapters 2–5), although an undergraduate class might choose to skim the more advanced
+sections (e.g., Sections 2.2, 2.9, 3.4, and 4.4).
+For those of you using the book in self-study, we believe that the topics we have
+selected cover the core of computer networking, and so we recommend that the book
+be read sequentially, from front to back. In addition, we have included a liberal supply
+of references to help you locate supplementary material that is relevant to your specific
+areas of interest, and we have included solutions to selected exercises.
+The book takes a unique approach to the topic of congestion control by pulling
+all topics related to congestion control and resource allocation together in a single
+place—Chapter 6. We do this because the problem of congestion control cannot be
+solved at any one level, and we want you to consider the various design options at
+the same time. (This is consistent with our view that strict layering often obscures
+important design trade-offs.) A more traditional treatment of congestion control is
+possible, however, by studying Section 6.2 in the context of Chapter 3 and Section 6.3
+in the context of Chapter 5.
+Exercises
+Significant effort has gone into improving the exercises in both the second and third
+editions. In the second edition we greatly increased the number of problems and, based
+on class testing, dramatically improved their quality. In this edition, we added a few
+more exercises, but made two other important changes:
+¦ For those exercises that we feel are particularly challenging or require special
+knowledge not provided in the book (e.g., probability expertise), we have
+added an icon to indicate the extra level of difficulty.
+¦ In each chapter we added some extra representative exercises for which worked
+solutions are provided in the back of the book. These exercises, marked ,
+are intended to provide some help in tackling the other exercises in the book.
+The current sets of exercises are of several different styles:
+¦ Analytical exercises that ask the student to do simple algebraic calculations
+that demonstrate their understanding of fundamental relationships
+¦ Design questions that ask the student to propose and evaluate protocols for
+various circumstances
+¦ Hands-on questions that ask the student to write a few lines of code to test
+an idea or to experiment with an existing network utility
+xxvi Preface
+¦ Library research questions that ask the student to learn more about a particular
+topic
+Also, as described in more detail below, socket-based programming assignments,
+as well as simulation labs, are available online.
+Supplemental Materials and Online Resources
+To assist instructors, we have prepared an instructor’s manual that contains solutions
+to selected exercises. The manual is available from the publisher.
+Additional support materials, including lecture slides, figures from the text,
+socket-based programming assignments, and sample exams and programming assignments
+are available through the Morgan Kaufmann Web site at http://www.mkp.com
+(search for Computer Networks). We suggest that you visit the page for this book
+every few weeks, as we will be adding support materials and establishing links to
+networking-related sites on a regular basis.
+And finally, new with the third edition, a set of laboratory experiments supplements
+the book. These labs, developed by Professor Emad Aboelela from the University
+of Massachusetts Dartmouth, use simulation to explore the behavior, scalability, and
+performance of protocols covered in the book. The simulations use the OPNET simulation
+toolset, which is available for free to anyone using Computer Networks in their
+course.
+Acknowledgments
+This book would not have been possible without the help of many people. We would
+like to thank them for their efforts in improving the end result. Before we do so,
+however, we should mention that we have done our best to correct the mistakes that
+the reviewers have pointed out and to accurately describe the protocols and mechanisms
+that our colleagues have explained to us. We alone are responsible for any
+remaining errors. If you should find any of these, please send email to our publisher,
+Morgan Kaufmann, at netbugs@mkp.com, and we will endeavor to correct them in
+future printings of this book.
+First, we would like to thank the many people who reviewed drafts of all or
+parts of the manuscript. In addition to those who reviewed prior editions, we wish
+to thank Carl Emberger, Isaac Ghansah, and Bobby Bhattacharjee for their thorough
+reviews. Thanks also to Peter Druschel, Limin Wang, Aki Nakao, Dave Oran,
+George Swallow, Peter Lei, and Michael Ramalho for their reviews of various sections.
+We also wish to thank all those who provided feedback and input to help us
+decide what to do in this edition: Chedley Aouriri, Peter Steenkiste, Esther A. Hughes,
+Ping-Tsai Chung, Doug Szajda, Mark Andersland, Leo Tam, C. P. Watkins,
+Preface xxvii
+Brian L. Mark, Miguel A. Labrador, Gene Chase, Harry W. Tyrer, Robert Siegfried,
+Harlan B. Russell, John R. Black, Robert Y. Ling, Julia Johnson, Karen Collins, Clark
+Verbrugge, Monjy Rabemanantsoa, Kerry D. LaViolette,William Honig, Kevin Mills,
+Murat Demirer, J Rufinus, Manton Matthews, Errin W. Fulp, Wayne Daniel, Luiz
+DaSilva, Don Yates, Raouf Boules, Nick McKeown, Neil T. Spring, Kris Verma, Szuecs
+Laszlo, Ted Herman, Mark Sternhagen, Zongming Fei, Dulal C. Kar, Mingyan Liu,
+Ken Surendran, Rakesh Arya, Mario J. Gonzalez, Annie Stanton, Tim Batten, and Paul
+Francis.
+Second, several members of the Network Systems Group at Princeton contributed
+ideas, examples, corrections, data, and code to this book. In particular, we would like
+to thank Andy Bavier, Tammo Spalink, Mike Wawrzoniak, Zuki Gottlieb, George
+Tzanetakis, and Chad Mynhier. As before, we want to thank the Defense Advanced
+Research Projects Agency, the National Science Foundation, Intel Corporation, and
+Cisco Systems, Inc. for supporting our networking research over the past several years.
+Third, we would like to thank our series editor, David Clark, as well as all
+the people at Morgan Kaufmann who helped shepherd us through the book-writing
+process. A special thanks is due to our original sponsoring editor, Jennifer Mann; our
+editor for the third edition, Rick Adams; our developmental editor, Karyn Johnson;
+and our production manager, Simon Crump. The whole crew at MKP has been a
+delight to work with.
+This Page Intentionally Left Blank
+Foundation
+I must Create a System, or be enslav’d by another Man’s; I will not
+Reason and Compare: my business is to Create.
+—William Blake
+Suppose you want to build a computer network, one that has the potential to
+grow to global proportions and to support applications as diverse as teleconferencing,
+video-on-demand, electronic commerce, distributed computing, and
+digital libraries. What available technologies would serve as the underlying building
+blocks, and what kind of software architecture would you design to integrate
+P R O B L E M
+Building a Network
+these building blocks into an effective
+communication service? Answering
+this question is the overriding
+goal of this book—to describe the
+available building materials and then
+to show how they can be used to construct
+a network from the ground up.
+Before we can understand how to design a computer network, we should first
+agree on exactly what a computer network is. At one time, the term network meant
+the set of serial lines used to attach dumb terminals to mainframe computers. To
+some, the term implies the voice telephone network. To others, the only interesting
+network is the cable network used to disseminate video signals. The main thing these
+networks have in common is that they are specialized to handle one particular kind of
+data (keystrokes, voice, or video) and they typically connect to special-purpose devices
+(terminals, hand receivers, and television sets).
+What distinguishes a computer network from these other types of networks?
+Probably the most important characteristic of a computer network is its generality.
+Computer networks are built primarily from general-purpose programmable hardware,
+and they are not optimized for a particular application like making phone calls or
+delivering television signals. Instead, they are able to carry many different types of data,
+and they support a wide, and ever-growing, range of applications. This chapter looks
+1 at some typical applications of computer networks and
+discusses the requirements that a network designer who
+wishes to support such applications must be aware of.
+Once we understand the requirements, how do we
+proceed? Fortunately, we will not be building the first network.
+Others, most notably the community of researchers
+responsible for the Internet, have gone before us. We will
+use the wealth of experience generated from the Internet
+to guide our design. This experience is embodied in a net-
+work architecture that identifies the available hardware
+and software components and shows how they can be
+arranged to form a complete network system.
+To start us on the road toward understanding how
+to build a network, this chapter does four things. First, it
+explores the requirements that different applications and
+different communities of people (such as network users
+and network operators) place on the network. Second, it
+introduces the idea of a network architecture, which lays
+the foundation for the rest of the book. Third, it introduces
+some of the key elements in the implementation of
+computer networks. Finally, it identifies the key metrics
+that are used to evaluate the performance of computer
+networks.
+4 1 Foundation
+1.1 Applications
+Most people know the Internet through its applications: the World Wide Web, email,
+streaming audio and video, chat rooms, and music (file) sharing. TheWeb, for example,
+presents an intuitively simple interface. Users view pages full of textual and graphical
+objects, click on objects that they want to learn more about, and a corresponding new
+page appears. Most people are also aware that just under the covers, each selectable
+object on a page is bound to an identifier for the next page to be viewed. This identifier,
+called a uniform resource locator (URL), uniquely names every possible page that can
+be viewed from your Web browser. For example,
+http://www.mkp.com/pd3e
+is the URL for a page representing this book at Morgan Kaufmann: The string http
+indicates that the HyperText Transfer Protocol (HTTP) should be used to download
+the page, www.mkp.com is the name of the machine that serves the page, and pd3e
+uniquely identifies the page at the publisher’s site.
+What most Web users are not aware of, however, is that by clicking on just one
+such URL, as many as 17 messages may be exchanged over the Internet, and this
+assumes the page itself is small enough to fit in a single message. This number includes
+up to six messages to translate the server name (www.mkp.com) into its Internet address
+(213.38.165.180), three messages to set up a Transmission Control Protocol (TCP)
+connection between your browser and this server, four messages for your browser
+to send the HTTP “get” request and the server to respond with the requested page
+(and for each side to acknowledge receipt of that message), and four messages to tear
+down the TCP connection. Of course, this does not include the millions of messages
+exchanged by Internet nodes throughout the day, just to let each other know that they
+exist and are ready to serve Web pages, translate names to addresses, and forward
+messages toward their ultimate destination.
+Although not yet as common as surfing the Web, another emerging application
+of the Internet is streaming audio and video. Although an entire video file could first
+be fetched from a remote machine and then played on the local machine, similar to
+the process of downloading and displaying a Web page, this would entail waiting for
+the last second of the video file to be delivered before starting to look at it. Streaming
+video implies that the sender and the receiver are, respectively, the source and the sink
+for the video stream. That is, the source generates a video stream (perhaps using a
+video capture card), sends it across the Internet in messages, and the sink displays the
+stream as it arrives.
+To be more precise, video is not an application; it is a type of data. One example
+of a video application is video-on-demand, which reads a preexisting movie from disk
+1.1 Applications 5
+and transmits it over the network. Another kind of application is videoconferencing,
+which is actually the more interesting case because it has very tight timing constraints.
+Just as when using the telephone, the interactions among the participants must be
+timely. When a person at one end gestures, then that action must be displayed at
+the other end as quickly as possible. Too much delay makes the system unusable. In
+contrast, if it takes several seconds from the time the user starts the video until the
+first image is displayed, then the service is still deemed satisfactory. Also, interactive
+video usually implies that video is flowing in both directions, while a video-on-demand
+application is most likely sending video in only one direction.
+The Unix application vic is an example of a popular videoconferencing tool.
+Figure 1.1 shows the control panel for a vic session. Note that vic is actually one
+of a suite of conferencing tools designed at Lawrence Berkeley Laboratory and
+Figure 1.1 The vic video application.
+6 1 Foundation
+UC Berkeley. The others include a whiteboard application (wb) that allows users to
+send sketches and slides to each other, a visual audio tool called vat, and a session
+directory (sdr) that is used to create and advertise videoconferences. All these tools
+run on Unix—hence their lowercase names—and are freely available on the Internet.
+Similar tools are available for other operating systems.
+Although they are just two examples, downloading pages from the Web and
+participating in a videoconference demonstrate the diversity of applications that can
+be built on top of the Internet and hint at the complexity of the Internet’s design.
+Starting from the beginning, and addressing one problem at a time, the rest of this
+book explains how to build a network that supports such a wide range of applications.
+Chapter 9 concludes the book by revisiting these two specific applications, as well as
+several others that have become popular on today’s Internet.
+1.2 Requirements
+We have just established an ambitious goal for ourselves: to understand how to build
+a computer network from the ground up. Our approach to accomplishing this goal
+will be to start from first principles, and then ask the kinds of questions we would
+naturally ask if building an actual network. At each step, we will use today’s protocols
+to illustrate various design choices available to us, but we will not accept these
+existing artifacts as gospel. Instead, we will be asking (and answering) the question
+of why networks are designed the way they are. While it is tempting to settle for just
+understanding the way it’s done today, it is important to recognize the underlying concepts
+because networks are constantly changing as the technology evolves and new
+applications are invented. It is our experience that once you understand the fundamental
+ideas, any new protocol that you are confronted with will be relatively easy to
+digest.
+The first step is to identify the set of constraints and requirements that influence
+network design. Before getting started, however, it is important to understand that the
+expectations you have of a network depend on your perspective:
+¦ An application programmer would list the services that his or her application
+needs, for example, a guarantee that each message the application sends will
+be delivered without error within a certain amount of time.
+¦ A network designer would list the properties of a cost-effective design, for
+example, that network resources are efficiently utilized and fairly allocated to
+different users.
+¦ A network provider would list the characteristics of a system that is easy to
+administer and manage, for example, in which faults can be easily isolated
+and where it is easy to account for usage.
+1.2 Requirements 7
+This section attempts to distill these different perspectives into a high-level
+introduction to the major considerations that drive network design, and in doing
+so, identifies the challenges addressed throughout the rest of this book.
+1.2.1 Connectivity
+Starting with the obvious, a network must provide connectivity among a set of computers.
+Sometimes it is enough to build a limited network that connects only a few
+select machines. In fact, for reasons of privacy and security, many private (corporate)
+networks have the explicit goal of limiting the set of machines that are connected. In
+contrast, other networks (of which the Internet is the prime example) are designed
+to grow in a way that allows them the potential to connect all the computers in the
+world. A system that is designed to support growth to an arbitrarily large size is said
+to scale. Using the Internet as a model, this book addresses the challenge of scalability.
+Links, Nodes, and Clouds
+Network connectivity occurs at many different levels. At the lowest level, a network
+can consist of two or more computers directly connected by some physical medium,
+such as a coaxial cable or an optical fiber. We call such a physical medium a link, and
+we often refer to the computers it connects as nodes. (Sometimes a node is a more
+specialized piece of hardware rather than a computer, but we overlook that distinction
+for the purposes of this discussion.) As illustrated in Figure 1.2, physical links are
+sometimes limited to a pair of nodes (such a link is said to be point-to-point), while
+in other cases, more than two nodes may share a single physical link (such a link is
+said to be multiple access). Whether a given link supports point-to-point or multipleaccess
+connectivity depends on how the node is attached to the link. It is also the case
+that multiple-access links are often limited in size, in terms of both the geographical
+distance they can cover and the number of nodes they can connect. The exception is
+a satellite link, which can cover a wide geographic area.
+(a)
+(b)
+…
+Figure 1.2 Direct links: (a) point-to-point; (b) multiple-access.
+8 1 Foundation
+Figure 1.3 Switched network.
+If computer networks were limited to situations in which all nodes are directly
+connected to each other over a common physical medium, then either networks would
+be very limited in the number of computers they could connect, or the number of wires
+coming out of the back of each node would quickly become both unmanageable and
+very expensive. Fortunately, connectivity between two nodes does not necessarily imply
+a direct physical connection between them—indirect connectivity may be achieved
+among a set of cooperating nodes. Consider the following two examples of how a
+collection of computers can be indirectly connected.
+Figure 1.3 shows a set of nodes, each of which is attached to one or more pointto-
+point links. Those nodes that are attached to at least two links run software that forwards
+data received on one link out on another. If organized in a systematic way, these
+forwarding nodes form a switched network. There are numerous types of switched networks,
+of which the two most common are circuit switched and packet switched. The
+former is most notably employed by the telephone system, while the latter is used for
+the overwhelming majority of computer networks and will be the focus of this book.
+The important feature of packet-switched networks is that the nodes in such a network
+send discrete blocks of data to each other. Think of these blocks of data as corresponding
+to some piece of application data such as a file, a piece of email, or an image. We
+call each block of data either a packet or a message, and for now we use these terms
+interchangeably; we discuss the reason they are not always the same in Section 1.2.2.
+Packet-switched networks typically use a strategy called store-and-forward. As
+the name suggests, each node in a store-and-forward network first receives a complete
+1.2 Requirements 9
+packet over some link, stores the packet in its internal memory, and then forwards
+the complete packet to the next node. In contrast, a circuit-switched network first
+establishes a dedicated circuit across a sequence of links and then allows the source
+node to send a stream of bits across this circuit to a destination node. The major
+reason for using packet switching rather than circuit switching in a computer network
+is efficiency, discussed in the next subsection.
+The cloud in Figure 1.3 distinguishes between the nodes on the inside that
+implement the network (they are commonly called switches, and their sole function
+is to store and forward packets) and the nodes on the outside of the cloud that
+use the network (they are commonly called hosts, and they support users and run
+application programs). Also note that the cloud in Figure 1.3 is one of the most
+important icons of computer networking. In general, we use a cloud to denote any
+type of network, whether it is a single point-to-point link, a multiple-access link, or a
+switched network. Thus, whenever you see a cloud used in a figure, you can think of
+it as a placeholder for any of the networking technologies covered in this book.
+A second way in which a set of computers can be indirectly connected is shown in
+Figure 1.4. In this situation, a set of independent networks (clouds) are interconnected
+to form an internetwork, or internet for short. We adopt the Internet’s convention
+of referring to a generic internetwork of networks as a lowercase i internet, and the
+Figure 1.4 Interconnection of networks.
+10 1 Foundation
+currently operational TCP/IP Internet as the capital I Internet. A node that is connected
+to two or more networks is commonly called a router or gateway, and it plays much
+the same role as a switch—it forwards messages from one network to another. Note
+that an internet can itself be viewed as another kind of network, which means that an
+internet can be built from an interconnection of internets. Thus, we can recursively
+build arbitrarily large networks by interconnecting clouds to form larger clouds.
+Just because a set of hosts are directly or indirectly connected to each other does
+not mean that we have succeeded in providing host-to-host connectivity. The final
+requirement is that each node must be able to say which of the other nodes on the
+network it wants to communicate with. This is done by assigning an address to each
+node. An address is a byte string that identifies a node; that is, the network can use
+a node’s address to distinguish it from the other nodes connected to the network.
+When a source node wants the network to deliver a message to a certain destination
+node, it specifies the address of the destination node. If the sending and receiving
+nodes are not directly connected, then the switches and routers of the network use this
+address to decide how to forward the message toward the destination. The process
+of determining systematically how to forward messages toward the destination node
+based on its address is called routing.
+This brief introduction to addressing and routing has presumed that the source
+node wants to send a message to a single destination node (unicast). While this is
+the most common scenario, it is also possible that the source node might want to
+broadcast a message to all the nodes on the network. Or a source node might want
+to send a message to some subset of the other nodes, but not all of them, a situation
+called multicast. Thus, in addition to node-specific addresses, another requirement of
+a network is that it support multicast and broadcast addresses.
+? The main idea to take away from this discussion is that we can define a network
+recursively as consisting of two or more nodes connected by a physical link, or as two
+or more networks connected by a node. In other words, a network can be constructed
+from a nesting of networks, where at the bottom level, the network is implemented by
+some physical medium. One of the key challenges in providing network connectivity is
+to define an address for each node that is reachable on the network (including support
+for broadcast and multicast connectivity), and to be able to use this address to route
+messages toward the appropriate destination node(s).
+1.2.2 Cost-Effective Resource Sharing
+As stated above, this book focuses on packet-switched networks. This section explains
+the key requirement of computer networks—efficiency—that leads us to packet switching
+as the strategy of choice.
+1.2 Requirements 11
+Given a collection of nodes indirectly connected by a nesting of networks, it is
+possible for any pair of hosts to send messages to each other across a sequence of
+links and nodes. Of course, we want to do more than support just one pair of communicating
+hosts—we want to provide all pairs of hosts with the ability to exchange
+messages. The question then is, How do all the hosts that want to communicate share
+the network, especially if they want to use it at the same time? And, as if that problem
+isn’t hard enough, how do several hosts share the same link when they all want to use
+it at the same time?
+To understand how hosts share a network, we need to introduce a fundamental
+concept, multiplexing, which means that a system resource is shared among multiple
+users. At an intuitive level, multiplexing can be explained by analogy to a timesharing
+computer system, where a single physical CPU is shared (multiplexed) among multiple
+jobs, each of which believes it has its own private processor. Similarly, data being sent
+by multiple users can be multiplexed over the physical links that make up a network.
+To see how this might work, consider the simple network illustrated in Figure 1.5,
+where the three hosts on the left side of the network (L1–L3) are sending data to the
+three hosts on the right (R1–R3) by sharing a switched network that contains only
+one physical link. (For simplicity, assume that host L1 is communicating with host R1,
+and so on.) In this situation, three flows of data—corresponding to the three pairs of
+hosts—are multiplexed onto a single physical link by switch 1 and then demultiplexed
+back into separate flows by switch 2. Note that we are being intentionally vague about
+exactly what a “flow of data” corresponds to. For the purposes of this discussion,
+assume that each host on the left has a large supply of data that it wants to send to its
+counterpart on the right.
+There are several different methods for multiplexing multiple flows onto one physical
+link. One common method is synchronous time-division multiplexing (STDM).
+The idea of STDM is to divide time into equal-sized quanta and, in a round-robin
+L2
+L3
+R2
+R3
+L1 R1
+Switch 1 Switch 2
+Figure 1.5 Multiplexing multiple logical flows over a single physical link.
+12 1 Foundation
+fashion, give each flow a chance to send its data over the physical link. In other words,
+during time quantum 1, data from the first flow is transmitted; during time quantum
+2, data from the second flow is transmitted; and so on. This process continues until all
+the flows have had a turn, at which time the first flow gets to go again, and the process
+repeats. Another method is frequency-
+division multiplexing (FDM). The idea of
+FDM is to transmit each flow over the physical
+link at a different frequency, much the
+same way that the signals for different TV
+stations are transmitted at a different frequency
+on a physical cable TV link.
+Although simple to understand, both
+STDM and FDM are limited in two ways.
+First, if one of the flows (host pairs) does not
+have any data to send, its share of the physical
+link—that is, its time quantum or its
+frequency—remains idle, even if one of the
+other flows has data to transmit. For computer
+communication, the amount of time
+that a link is idle can be very large—for
+example, consider the amount of time you
+spend reading a Web page (leaving the link
+idle) compared to the time you spend fetching
+the page. Second, both STDM and FDM
+are limited to situations in which the maximum
+number of flows is fixed and known
+ahead of time. It is not practical to resize the
+quantum or to add additional quanta in the
+case of STDM or to add new frequencies in
+the case of FDM.
+The form of multiplexing that we
+make most use of in this book is called
+statistical multiplexing. Although the name
+is not all that helpful for understanding
+the concept, statistical multiplexing is really
+quite simple, with two key ideas. First,
+it is like STDM in that the physical link
+is shared over time—first data from one
+flow is transmitted over the physical link,
+SANs, LANs, MANs,
+and WANs
+One way to characterize networks
+is according to their size. Two wellknown
+examples are LANs (local
+area networks) and WANs (wide
+area networks); the former typically
+extend less than 1 km, while
+the latter can be worldwide. Other
+networks are classified as MANs
+(metropolitan area networks),
+which usually span tens of kilometers.
+The reason such classifications
+are interesting is that the size of a
+network often has implications for
+the underlying technology that can
+be used, with a key factor being the
+amount of time it takes for data
+to propagate from one end of the
+network to the other; we discuss
+this issue more in later chapters.
+An interesting historical note is
+that the term “wide area network”
+was not applied to the first WANs
+because there was no other sort
+of network to differentiate them
+from. When computers were incredibly
+rare and expensive, there
+was no point in thinking about
+how to connect all the computers
+in the local area—there was only
+one computer in that area. Only as
+1.2 Requirements 13
+then data from another flow is transmitted, and so on. Unlike STDM, however, data is
+transmitted from each flow on demand rather than during a predetermined time slot.
+Thus, if only one flow has data to send, it gets to transmit that data without waiting
+for its quantum to come around and thus without having to watch the quanta assigned
+computers began to proliferate did
+LANs become necessary, and the
+term “WAN” was then introduced
+to describe the larger networks that
+interconnected geographically distant
+computers.
+Another kind of network that
+we need to be aware of is SANs
+(system area networks). SANs are
+usually confined to a single room
+and connect the various components
+of a large computing system.
+For example, HiPPI (High
+Performance Parallel Interface) and
+Fiber Channel are two common
+SAN technologies used to connect
+massively parallel processors to
+scalable storage servers and data
+vaults. (Because they often connect
+computers to storage servers, SANs
+are sometimes defined as storage
+area networks.) Although this book
+does not describe such networks
+in detail, they are worth knowing
+about because they are often at the
+leading edge in terms of performance,
+and because it is increasingly
+common to connect such networks
+into LANs and WANs.
+to the other flows go by unused. It is this
+avoidance of idle time that gives packet
+switching its efficiency.
+As defined so far, however, statistical
+multiplexing has no mechanism to ensure
+that all the flows eventually get their turn to
+transmit over the physical link. That is, once
+a flow begins sending data, we need some
+way to limit the transmission, so that the
+other flows can have a turn. To account for
+this need, statistical multiplexing defines an
+upper bound on the size of the block of data
+that each flow is permitted to transmit at a
+given time. This limited-size block of data
+is typically referred to as a packet, to distinguish
+it from the arbitrarily large message
+that an application program might want
+to transmit. Because a packet-switched network
+limits the maximum size of packets,
+a host may not be able to send a complete
+message in one packet. The source may
+need to fragment the message into several
+packets, with the receiver reassembling the
+packets back into the original message.
+In other words, each flow sends a sequence
+of packets over the physical link,
+with a decision made on a packet-by-packet
+basis as to which flow’s packet to send next.
+Notice that if only one flow has data to send,
+then it can send a sequence of packets backto-
+back. However, should more than one of
+the flows have data to send, then their packets
+are interleaved on the link. Figure 1.6
+depicts a switch multiplexing packets from
+multiple sources onto a single shared link.
+14 1 Foundation
+…
+Figure 1.6 A switch multiplexing packets from multiple sources onto one shared link.
+The decision as to which packet to send next on a shared link can be made in a
+number of different ways. For example, in a network consisting of switches interconnected
+by links such as the one in Figure 1.5, the decision would be made by
+the switch that transmits packets onto the shared link. (As we will see later, not all
+packet-switched networks actually involve switches, and they may use other mechanisms
+to determine whose packet goes onto the link next.) Each switch in a packetswitched
+network makes this decision independently, on a packet-by-packet basis.
+One of the issues that faces a network designer is how to make this decision in a
+fair manner. For example, a switch could be designed to service packets on a firstin-
+first-out (FIFO) basis. Another approach would be to service the different flows
+in a round-robin manner, just as in STDM. This might be done to ensure that certain
+flows receive a particular share of the link’s bandwidth, or that they never have
+their packets delayed in the switch for more than a certain length of time. A network
+that allows flows to request such treatment is said to support quality of service
+(QoS).
+Also, notice in Figure 1.6 that since the switch has to multiplex three incoming
+packet streams onto one outgoing link, it is possible that the switch will receive packets
+faster than the shared link can accommodate. In this case, the switch is forced to buffer
+these packets in its memory. Should a switch receive packets faster than it can send them
+for an extended period of time, then the switch will eventually run out of buffer space,
+and some packets will have to be dropped. When a switch is operating in this state,
+it is said to be congested.
+1.2 Requirements 15
+? The bottom line is that statistical multiplexing defines a cost-effective way for
+multiple users (e.g., host-to-host flows of data) to share network resources (links and
+nodes) in a fine-grained manner. It defines the packet as the granularity with which the
+links of the network are allocated to different flows, with each switch able to schedule
+the use of the physical links it is connected to on a per-packet basis. Fairly allocating
+link capacity to different flows and dealing with congestion when it occurs are the key
+challenges of statistical multiplexing.
+1.2.3 Support for Common Services
+While the previous section outlined the challenges involved in providing cost-effective
+connectivity among a group of hosts, it is overly simplistic to view a computer network
+as simply delivering packets among a collection of computers. It is more accurate to
+think of a network as providing the means for a set of application processes that are
+distributed over those computers to communicate. In other words, the next requirement
+of a computer network is that the application programs running on the hosts
+connected to the network must be able to communicate in a meaningful way.
+When two application programs need to communicate with each other, there
+are a lot of complicated things that need to happen beyond simply sending a message
+from one host to another. One option would be for application designers to
+build all that complicated functionality into each application program. However, since
+many applications need common services, it is much more logical to implement those
+common services once and then to let the application designer build the application
+using those services. The challenge for a network designer is to identify the right set
+of common services. The goal is to hide the complexity of the network from the application
+without overly constraining the application designer.
+Intuitively, we view the network as providing logical channels over which
+application-level processes can communicate with each other; each channel provides
+the set of services required by that application. In other words, just as we use a cloud
+to abstractly represent connectivity among a set of computers, we now think of a channel
+as connecting one process to another. Figure 1.7 shows a pair of application-level
+processes communicating over a logical channel that is, in turn, implemented on top
+of a cloud that connects a set of hosts. We can think of the channel as being like a
+pipe connecting two applications, so that a sending application can put data in one
+end and expect that data to be delivered by the network to the application at the other
+end of the pipe.
+The challenge is to recognize what functionality the channels should provide
+to application programs. For example, does the application require a guarantee that
+16 1 Foundation
+Host
+Host Host
+Channel
+Application
+Host
+Application
+Host
+Figure 1.7 Processes communicating over an abstract channel.
+messages sent over the channel are delivered, or is it acceptable if some messages fail to
+arrive? Is it necessary that messages arrive at the recipient process in the same order in
+which they are sent, or does the recipient not care about the order in which messages
+arrive? Does the network need to ensure that no third parties are able to eavesdrop
+on the channel, or is privacy not a concern? In general, a network provides a variety
+of different types of channels, with each application selecting the type that best meets
+its needs. The rest of this section illustrates the thinking involved in defining useful
+channels.
+Identifying Common Communication Patterns
+Designing abstract channels involves first understanding the communication needs
+of a representative collection of applications, then extracting their common communication
+requirements, and finally incorporating the functionality that meets these
+requirements in the network.
+One of the earliest applications supported on any network is a file access program
+like FTP (File Transfer Protocol) or NFS (Network File System). Although many
+details vary—for example, whether whole files are transferred across the network or
+only single blocks of the file are read/written at a given time—the communication
+1.2 Requirements 17
+component of remote file access is characterized by a pair of processes, one that requests
+that a file be read or written and a second process that honors this request. The
+process that requests access to the file is called the client, and the process that supports
+access to the file is called the server.
+Reading a file involves the client sending a small request message to a server and
+the server responding with a large message that contains the data in the file. Writing
+works in the opposite way—the client sends a large message containing the data to be
+written to the server, and the server responds with a small message confirming that the
+write to disk has taken place. A digital library, as exemplified by theWorldWideWeb,
+is another application that behaves in a similar way: A client process makes a request,
+and a server process responds by returning the requested data.
+Using file access, a digital library, and the two video applications described in the
+introduction (videoconferencing and video-on-demand) as a representative sample, we
+might decide to provide the following two types of channels: request/reply channels
+and message stream channels. The request/reply channel would be used by the file
+transfer and digital library applications. It would guarantee that every message sent
+by one side is received by the other side and that only one copy of each message is
+delivered. The request/reply channel might also protect the privacy and integrity of the
+data that flows over it, so that unauthorized parties cannot read or modify the data
+being exchanged between the client and server processes.
+The message stream channel could be used by both the video-on-demand and
+videoconferencing applications, provided it is parameterized to support both one-way
+and two-way traffic and to support different delay properties. The message stream
+channel might not need to guarantee that all messages are delivered, since a video application
+can operate adequately even if some frames are not received. It would, however,
+need to ensure that those messages that are delivered arrive in the same order in which
+they were sent, to avoid displaying frames out of sequence. Like the request/reply
+channel, the message stream channel might want to ensure the privacy and integrity of
+the video data. Finally, the message stream channel might need to support multicast,
+so that multiple parties can participate in the teleconference or view the video.
+While it is common for a network designer to strive for the smallest number
+of abstract channel types that can serve the largest number of applications, there is
+a danger in trying to get away with too few channel abstractions. Simply stated, if
+you have a hammer, then everything looks like a nail. For example, if all you have
+are message stream and request/reply channels, then it is tempting to use them for the
+next application that comes along, even if neither type provides exactly the semantics
+needed by the application. Thus, network designers will probably be inventing new
+types of channels—and adding options to existing channels—for as long as application
+programmers are inventing new applications.
+18 1 Foundation
+Also note that independent of exactly what functionality a given channel provides,
+there is the question of where that functionality is implemented. In many cases,
+it is easiest to view the host-to-host connectivity of the underlying network as simply
+providing a bit pipe, with any high-level communication semantics provided at the
+end hosts. The advantage of this approach is it keeps the switches in the middle of the
+network as simple as possible—they simply forward packets—but it requires the end
+hosts to take on much of the burden of supporting semantically rich process-to-process
+channels. The alternative is to push additional functionality onto the switches, thereby
+allowing the end hosts to be “dumb” devices (e.g., telephone handsets).We will see this
+question of how various network services are partitioned between the packet switches
+and the end hosts (devices) as a reoccurring issue in network design.
+Reliability
+As suggested by the examples just considered, reliable message delivery is one of the
+most important functions that a network can provide. It is difficult to determine how
+to provide this reliability, however, without first understanding how networks can fail.
+The first thing to recognize is that computer networks do not exist in a perfect world.
+Machines crash and later are rebooted, fibers are cut, electrical interference corrupts
+bits in the data being transmitted, switches run out of buffer space, and if these sorts
+of physical problems aren’t enough to worry about, the software that manages the
+hardware sometimes forwards packets into oblivion. Thus, a major requirement of a
+network is to mask (hide) certain kinds of failures, so as to make the network appear
+more reliable than it really is to the application programs using it.
+There are three general classes of failure that network designers have to worry
+about. First, as a packet is transmitted over a physical link, bit errors may be introduced
+into the data; that is, a 1 is turned into a 0 or vice versa. Sometimes single bits are
+corrupted, but more often than not, a burst error occurs—several consecutive bits are
+corrupted. Bit errors typically occur because outside forces, such as lightning strikes,
+power surges, and microwave ovens, interfere with the transmission of data. The good
+news is that such bit errors are fairly rare, affecting on average only one out of every
+106 to 107 bits on a typical copper-based cable and one out of every 1012 to 1014
+bits on a typical optical fiber. As we will see, there are techniques that detect these bit
+errors with high probability. Once detected, it is sometimes possible to correct for such
+errors—if we know which bit or bits are corrupted, we can simply flip them—while
+in other cases the damage is so bad that it is necessary to discard the entire packet. In
+such a case, the sender may be expected to retransmit the packet.
+The second class of failure is at the packet, rather than the bit, level; that is, a
+complete packet is lost by the network. One reason this can happen is that the packet
+contains an uncorrectable bit error and therefore has to be discarded. A more likely
+1.3 Network Architecture 19
+reason, however, is that one of the nodes that has to handle the packet—for example,
+a switch that is forwarding it from one link to another—is so overloaded that it has
+no place to store the packet, and therefore is forced to drop it. This is the problem of
+congestion mentioned in Section 1.2.2. Less commonly, the software running on one of
+the nodes that handles the packet makes a mistake. For example, it might incorrectly
+forward a packet out on the wrong link, so that the packet never finds its way to the
+ultimate destination. As we will see, one of the main difficulties in dealing with lost
+packets is distinguishing between a packet that is indeed lost and one that is merely
+late in arriving at the destination.
+The third class of failure is at the node and link level; that is, a physical link is cut,
+or the computer it is connected to crashes. This can be caused by software that crashes,
+a power failure, or a reckless backhoe operator. While such failures can eventually be
+corrected, they can have a dramatic effect on the network for an extended period of
+time. However, they need not totally disable the network. In a packet-switched network,
+for example, it is sometimes possible to route around a failed node or link. One of
+the difficulties in dealing with this third class of failure is distinguishing between a failed
+computer and one that is merely slow, or in the case of a link, between one that has been
+cut and one that is very flaky and therefore introducing a high number of bit errors.
+? The key idea to take away from this discussion is that defining useful channels
+involves both understanding the applications’ requirements and recognizing the
+limitations of the underlying technology. The challenge is to fill in the gap between
+what the application expects and what the underlying technology can provide. This is
+sometimes called the semantic gap.
+1.3 Network Architecture
+In case you hadn’t noticed, the previous section established a pretty substantial set of
+requirements for network design—a computer network must provide general, costeffective,
+fair, and robust connectivity among a large number of computers. As if this
+weren’t enough, networks do not remain fixed at any single point in time, but must
+evolve to accommodate changes in both the underlying technologies upon which they
+are based as well as changes in the demands placed on them by application programs.
+Designing a network to meet these requirements is no small task.
+To help deal with this complexity, network designers have developed general
+blueprints—usually called a network architecture—that guide the design and implementation
+of networks. This section defines more carefully what we mean by a network
+architecture by introducing the central ideas that are common to all network architectures.
+It also introduces two of the most widely referenced architectures—the OSI
+architecture and the Internet architecture.
+20 1 Foundation
+Application programs
+Process-to-process channels
+Host-to-host connectivity
+Hardware
+Figure 1.8 Example of a layered network system.
+1.3.1 Layering and Protocols
+When the system gets complex, the system designer introduces another level of abstraction.
+The idea of an abstraction is to define a unifying model that can capture
+some important aspect of the system, encapsulate this model in an object that provides
+an interface that can be manipulated by other components of the system, and hide the
+details of how the object is implemented from the users of the object. The challenge
+is to identify abstractions that simultaneously provide a service that proves useful in a
+large number of situations and that can be efficiently implemented in the underlying
+system. This is exactly what we were doing when we introduced the idea of a channel
+in the previous section: We were providing an abstraction for applications that hides
+the complexity of the network from application writers.
+Abstractions naturally lead to layering, especially in network systems. The general
+idea is that you start with the services offered by the underlying hardware, and
+then add a sequence of layers, each providing a higher (more abstract) level of service.
+The services provided at the high layers are implemented in terms of the services
+provided by the low layers. Drawing on the discussion of requirements given in the
+previous section, for example, we might imagine a network as having two layers of
+abstraction sandwiched between the application program and the underlying hardware,
+as illustrated in Figure 1.8. The layer immediately above the hardware in this
+case might provide host-to-host connectivity, abstracting away the fact that there may
+be an arbitrarily complex network topology between any two hosts. The next layer up
+builds on the available host-to-host communication service and provides support for
+process-to-process channels, abstracting away the fact that the network occasionally
+loses messages, for example.
+Layering provides two nice features. First, it decomposes the problem of building
+a network into more manageable components. Rather than implementing a monolithic
+piece of software that does everything you will ever want, you can implement several
+layers, each of which solves one part of the problem. Second, it provides a more modular
+design. If you decide that you want to add some new service, you may only need
+1.3 Network Architecture 21
+Hardware
+Host-to-host connectivity
+Request/reply
+channel
+Message stream
+channel
+Application programs
+Figure 1.9 Layered system with alternative abstractions available at a given layer.
+to modify the functionality at one layer, reusing the functions provided at all the other
+layers.
+Thinking of a system as a linear sequence of layers is an oversimplification,
+however. Many times there are multiple abstractions provided at any given level of
+the system, each providing a different service to the higher layers but building on the
+same low-level abstractions. To see this, consider the two types of channels discussed
+in Section 1.2.3: One provides a request/reply service, and one supports a message
+stream service. These two channels might be alternative offerings at some level of a
+multilevel networking system, as illustrated in Figure 1.9.
+Using this discussion of layering as a foundation, we are now ready to discuss the
+architecture of a network more precisely. For starters, the abstract objects that make
+up the layers of a network system are called protocols. That is, a protocol provides
+a communication service that higher-level objects (such as application processes, or
+perhaps higher-level protocols) use to exchange messages. For example, we could imagine
+a network that supports a request/reply protocol and a message stream protocol,
+corresponding to the request/reply and message stream channels discussed above.
+Each protocol defines two different interfaces. First, it defines a service inter-
+face to the other objects on the same computer that want to use its communication
+services. This service interface defines the operations that local objects can perform
+on the protocol. For example, a request/reply protocol would support operations by
+which an application can send and receive messages. Second, a protocol defines a peer
+interface to its counterpart (peer) on another machine. This second interface defines
+the form and meaning of messages exchanged between protocol peers to implement
+the communication service. This would determine the way in which a request/reply
+protocol on one machine communicates with its peer on another machine. In other
+words, a protocol defines a communication service that it exports locally, along with
+a set of rules governing the messages that the protocol exchanges with its peer(s) to
+implement this service. This situation is illustrated in Figure 1.10.
+22 1 Foundation
+Host 1 Host 2
+Service
+interface
+Peer-to-peer
+interface
+High-level
+object
+High-level
+object
+Protocol Protocol
+Figure 1.10 Service and peer interfaces.
+Except at the hardware level where peers directly communicate with each other
+over a link, peer-to-peer communication is indirect—each protocol communicates with
+its peer by passing messages to some lower-level protocol, which in turn delivers the
+message to its peer. In addition, there are potentially multiple protocols at any given
+level, each providing a different communication service. We therefore represent the
+suite of protocols that make up a network system with a protocol graph. The nodes of
+the graph correspond to protocols, and the edges represent a depends-on relation. For
+example, Figure 1.11 illustrates a protocol graph for the hypothetical layered system
+we have been discussing—protocols RRP (Request/Reply Protocol) and MSP (Message
+Stream Protocol) implement two different types of process-to-process channels,
+and both depend on HHP (Host-to-Host Protocol), which provides a host-to-host
+connectivity service.
+In this example, suppose that the file access program on host 1 wants to send
+a message to its peer on host 2 using the communication service offered by protocol
+RRP. In this case, the file application asks RRP to send the message on its behalf.
+To communicate with its peer, RRP then invokes the services of HHP, which in turn
+transmits the message to its peer on the other machine. Once the message has arrived
+at protocol HHP on host 2, HHP passes the message up to RRP, which in turn delivers
+the message to the file application. In this particular case, the application is said to
+employ the services of the protocol stack RRP/HHP.
+Note that the term protocol is used in two different ways. Sometimes it refers to
+the abstract interfaces—that is, the operations defined by the service interface and the
+form and meaning of messages exchanged between peers—and sometimes it refers to
+the module that actually implements these two interfaces. To distinguish between the
+1.3 Network Architecture 23
+Host 1
+RRP MSP
+HHP
+Host 2
+RRP MSP
+HHP
+File
+application
+Digital
+library
+application
+Video
+application
+File
+application
+Digital
+library
+application
+Video
+application
+Figure 1.11 Example of a protocol graph.
+interfaces and the module that implements these interfaces, we generally refer to the
+former as a protocol specification. Specifications are generally expressed using a combination
+of prose, pseudocode, state transition diagrams, pictures of packet formats, and
+other abstract notations. It should be the case that a given protocol can be implemented
+in different ways by different programmers, as long as each adheres to the specification.
+The challenge is ensuring that two different implementations of the same specification
+can successfully exchange messages. Two or more protocol modules that do accurately
+implement a protocol specification are said to interoperate with each other.
+We can imagine many different protocols and protocol graphs that satisfy the
+communication requirements of a collection of applications. Fortunately, there exist
+standardization bodies, such as the International Standards Organization (ISO) and
+the Internet Engineering Task Force (IETF), that establish policies for a particular protocol
+graph. We call the set of rules governing the form and content of a protocol
+graph a network architecture. Although beyond the scope of this book, standardization
+bodies such as the ISO and the IETF have established well-defined procedures for
+24 1 Foundation
+introducing, validating, and finally approving protocols in their respective architectures.
+We briefly describe the architectures defined by the ISO and the IETF shortly,
+but first there are two additional things we need to explain about the mechanics of a
+protocol graph.
+Encapsulation
+Consider what happens in Figure 1.11 when one of the application programs sends a
+message to its peer by passing the message to protocol RRP. From RRP’s perspective,
+the message it is given by the application is an uninterpreted string of bytes. RRP does
+not care that these bytes represent an array of integers, an email message, a digital
+image, or whatever; it is simply charged with sending them to its peer. However, RRP
+must communicate control information to its peer, instructing it how to handle the
+message when it is received. RRP does this by attaching a header to the message.
+Generally speaking, a header is a small data structure—from a few bytes to a few
+dozen bytes—that is used among peers to communicate with each other. As the name
+suggests, headers are usually attached to the front of a message. In some cases, however,
+this peer-to-peer control information is sent at the end of the message, in which case
+it is called a trailer. The exact format for the header attached by RRP is defined by
+its protocol specification. The rest of the message—that is, the data being transmitted
+on behalf of the application—is called the message’s body or payload. We say that the
+application’s data is encapsulated in the new message created by protocol RRP.
+This process of encapsulation is then repeated at each level of the protocol graph;
+for example, HHP encapsulates RRP’s message by attaching a header of its own. If we
+now assume that HHP sends the message to its peer over some network, then when the
+message arrives at the destination host, it is processed in the opposite order: HHP first
+strips its header off the front of the message, interprets it (i.e., takes whatever action
+is appropriate given the contents of the header), and passes the body of the message
+up to RRP, which removes the header that its peer attached, takes whatever action
+is indicated by that header, and passes the body of the message up to the application
+program. The message passed up from RRP to the application on host 2 is exactly the
+same message as the application passed down to RRP on host 1; the application does
+not see any of the headers that have been attached to it to implement the lower-level
+communication services. This whole process is illustrated in Figure 1.12. Note that in
+this example, nodes in the network (e.g., switches and routers) may inspect the HHP
+header at the front of the message.
+Note that when we say a low-level protocol does not interpret the message it is
+given by some high-level protocol, we mean that it does not know how to extract any
+meaning from the data contained in the message. It is sometimes the case, however,
+that the low-level protocol applies some simple transformation to the data it is given,
+such as to compress or encrypt it. In this case, the protocol is transforming the entire
+1.3 Network Architecture 25
+Host 1 Host 2
+Application
+program
+Application
+program
+RRP
+Data Data
+HHP
+RRP
+HHP
+Application
+program
+Application
+program
+RRP Data RRP Data
+HHP RRP Data
+Figure 1.12 High-level messages are encapsulated inside of low-level messages.
+body of the message, including both the original application’s data and all the headers
+attached to that data by higher-level protocols.
+Multiplexing and Demultiplexing
+Recall from Section 1.2.2 that a fundamental idea of packet switching is to multiplex
+multiple flows of data over a single physical link. This same idea applies up and down
+the protocol graph, not just to switching nodes. In Figure 1.11, for example, we can
+think of RRP as implementing a logical communication channel, with messages from
+two different applications multiplexed over this channel at the source host and then
+demultiplexed back to the appropriate application at the destination host.
+Practically speaking, all this means is that the header that RRP attaches to its
+messages contains an identifier that records the application to which the message
+belongs. We call this identifier RRP’s demultiplexing key, or demux key for short.
+At the source host, RRP includes the appropriate demux key in its header. When the
+message is delivered to RRP on the destination host, it strips its header, examines the
+demux key, and demultiplexes the message to the correct application.
+26 1 Foundation
+RRP is not unique in its support for multiplexing; nearly every protocol implements
+this mechanism. For example, HHP has its own demux key to determine which
+messages to pass up to RRP and which to pass up to MSP. However, there is no uniform
+agreement among protocols—even those within a single network architecture—on exactly
+what constitutes a demux key. Some protocols use an 8-bit field (meaning they can
+support only 256 high-level protocols), and others use 16- or 32-bit fields. Also, some
+protocols have a single demultiplexing field in their header, while others have a pair of
+demultiplexing fields. In the former case, the same demux key is used on both sides of
+the communication, while in the latter case, each side uses a different key to identify the
+high-level protocol (or application program) to which the message is to be delivered.
+1.3.2 OSI Architecture
+The ISO was one of the first organizations to formally define a common way to connect
+computers. Their architecture, called the Open Systems Interconnection (OSI) architecture
+and illustrated in Figure 1.13, defines a partitioning of network functionality into
+One or more nodes
+within the network
+End host
+Application
+Presentation
+Session
+Transport
+Network
+Data link
+Physical
+Network
+Data link
+Physical
+Network
+Data link
+Physical
+End host
+Application
+Presentation
+Session
+Transport
+Network
+Data link
+Physical
+Figure 1.13 OSI network architecture.
+1.3 Network Architecture 27
+seven layers, where one or more protocols implement the functionality assigned to a
+given layer. In this sense, the schematic given in Figure 1.13 is not a protocol graph, per
+se, but rather a reference model for a protocol graph. The ISO, usually in conjunction
+with a second standards organization known as the International Telecommunications
+Union (ITU),1 publishes a series of protocol specifications based on the OSI architecture.
+This series is sometimes called the “X dot” series since the protocols are given
+names like X.25, X.400, X.500, and so on. There have been several networks based on
+these standards, including the public X.25 network and private networks like Tymnet.
+Starting at the bottom and working up, the physical layer handles the transmission
+of raw bits over a communications link. The data link layer then collects a stream
+of bits into a larger aggregate called a frame. Network adaptors, along with device
+drivers running in the node’s OS, typically implement the data link level. This means
+that frames, not raw bits, are actually delivered to hosts. The network layer handles
+routing among nodes within a packet-switched network. At this layer, the unit of data
+exchanged among nodes is typically called a packet rather than a frame, although
+they are fundamentally the same thing. The lower three layers are implemented on all
+network nodes, including switches within the network and hosts connected along the
+exterior of the network. The transport layer then implements what we have up to this
+point been calling a process-to-process channel. Here, the unit of data exchanged is
+commonly called a message rather than a packet or a frame. The transport layer and
+higher layers typically run only on the end hosts and not on the intermediate switches
+or routers.
+There is less agreement about the definition of the top three layers. Skipping
+ahead to the top (seventh) layer, we find the application layer. Application layer protocols
+include things like the File Transfer Protocol (FTP), which defines a protocol by
+which file transfer applications can interoperate. Below that, the presentation layer is
+concerned with the format of data exchanged between peers, for example, whether an
+integer is 16, 32, or 64 bits long and whether the most significant bit is transmitted
+first or last, or how a video stream is formatted. Finally, the session layer provides a
+name space that is used to tie together the potentially different transport streams that
+are part of a single application. For example, it might manage an audio stream and a
+video stream that are being combined in a teleconferencing application.
+1.3.3 Internet Architecture
+The Internet architecture, which is also sometimes called the TCP/IP architecture after
+its two main protocols, is depicted in Figure 1.14. An alternative representation is given
+in Figure 1.15. The Internet architecture evolved out of experiences with an earlier
+1A subcommittee of the ITU on telecommunications (ITU-T) replaces an earlier subcommittee of the ITU, which
+was known by its French name, Comit´e Consultatif International de T´el´egraphique et T´el´ephonique (CCITT).
+28 1 Foundation
+…
+FTP
+TCP UDP
+IP
+NET1 NET2 NETn
+HTTP NV TFTP
+Figure 1.14 Internet protocol graph.
+TCP UDP
+IP
+Network
+Application
+Figure 1.15 Alternative view of the Internet architecture.
+packet-switched network called the ARPANET. Both the Internet and the ARPANET
+were funded by the Advanced Research Projects Agency (ARPA), one of the R&D
+funding agencies of the U.S. Department of Defense. The Internet and ARPANET
+were around before the OSI architecture, and the experience gained from building
+them was a major influence on the OSI reference model.
+While the seven-layer OSI model can, with some imagination, be applied to the
+Internet, a four-layer model is often used instead. At the lowest level are a wide variety
+of network protocols, denoted NET1, NET2, and so on. In practice, these protocols
+are implemented by a combination of hardware (e.g., a network adaptor) and software
+(e.g., a network device driver). For example, you might find Ethernet or Fiber
+Distributed Data Interface (FDDI) protocols at this layer. (These protocols in turn
+may actually involve several sublayers, but the Internet architecture does not presume
+anything about them.) The second layer consists of a single protocol—the Internet
+Protocol (IP). This is the protocol that supports the interconnection of multiple networking
+technologies into a single, logical internetwork. The third layer contains two
+main protocols—the Transmission Control Protocol (TCP) and the User Datagram
+Protocol (UDP). TCP and UDP provide alternative logical channels to application
+1.3 Network Architecture 29
+programs: TCP provides a reliable byte-stream channel, and UDP provides an unreliable
+datagram delivery channel (datagram may be thought of as a synonym for
+message). In the language of the Internet, TCP and UDP are sometimes called end-to-
+end protocols, although it is equally correct to refer to them as transport protocols.
+Running above the transport layer are a range of application protocols, such as
+FTP, TFTP (Trivial File Transport Protocol), Telnet (remote login), and SMTP (Simple
+Mail Transfer Protocol, or electronic mail), that enable the interoperation of popular
+applications. To understand the difference between an application layer protocol and
+an application, think of all the different World Wide Web browsers that are available
+(e.g., Mosaic, Netscape, Internet Explorer, Lynx, etc.). There are a similarly large
+number of different implementations ofWeb servers. The reason that you can use any
+one of these application programs to access a particular site on the Web is because
+they all conform to the same application layer protocol: HTTP (HyperText Transport
+Protocol). Confusingly, the same word sometimes applies to both an application and
+the application layer protocol that it uses (e.g., FTP).
+The Internet architecture has three features that are worth highlighting. First, as
+best illustrated by Figure 1.15, the Internet architecture does not imply strict layering.
+The application is free to bypass the defined transport layers and to directly use IP or
+one of the underlying networks. In fact, programmers are free to define new channel
+abstractions or applications that run on top of any of the existing protocols.
+Second, if you look closely at the protocol graph in Figure 1.14, you will notice
+an hourglass shape—wide at the top, narrow in the middle, and wide at the bottom.
+This shape actually reflects the central philosophy of the architecture. That is, IP serves
+as the focal point for the architecture—it defines a common method for exchanging
+packets among a wide collection of networks. Above IP can be arbitrarily many transport
+protocols, each offering a different channel abstraction to application programs.
+Thus, the issue of delivering messages from host to host is completely separated from
+the issue of providing a useful process-to-process communication service. Below IP,
+the architecture allows for arbitrarily many different network technologies, ranging
+from Ethernet to FDDI to ATM to single point-to-point links.
+A final attribute of the Internet architecture (or more accurately, of the IETF
+culture) is that in order for someone to propose a new protocol to be included in the
+architecture, they must produce both a protocol specification and at least one (and
+preferably two) representative implementations of the specification. The existence of
+working implementations is required for standards to be adopted by the IETF. This
+cultural assumption of the design community helps to ensure that the architecture’s
+protocols can be efficiently implemented. Perhaps the value the Internet culture places
+on working software is best exemplified by a quote on T-shirts commonly worn at
+IETF meetings:
+30 1 Foundation
+We reject kings, presidents, and voting.We believe in rough consensus and running
+code.
+(Dave Clark)
+? Of these three attributes of the Internet architecture, the hourglass design philosophy
+is important enough to bear repeating. The hourglass’s narrow waist represents
+a minimal and carefully chosen set of global capabilities that allows both higher-level
+applications and lower-level communication technologies to coexist, share capabilities,
+and evolve rapidly. The narrow-waisted model is critical to the Internet’s ability
+to adapt rapidly to new user demands and changing technologies.
+1.4 Implementing Network Software
+Network architectures and protocol specifications are essential things, but a good
+blueprint is not enough to explain the phenomenal success of the Internet: The number
+of computers connected to the Internet has been doubling every year since 1981 and is
+now approaching 200 million; the number of people who use the Internet is estimated
+at well over 600 million; and it is believed that the number of bits transmitted over the
+Internet surpassed the corresponding figure for the voice phone system sometime in
+2001.
+What explains the success of the Internet? There are certainly many contributing
+factors (including a good architecture), but one thing that has made the Internet such
+a runaway success is the fact that so much of its functionality is provided by software
+running in general-purpose computers. The significance of this is that new functionality
+can be added readily with “just a small matter of programming.” As a result,
+new applications and services—electronic commerce, videoconferencing, and packet
+telephony, to name a few—have been showing up at a phenomenal pace.
+A related factor is the massive increase in computing power available in commodity
+machines. Although computer networks have always been capable in principle of
+transporting any kind of information, such as digital voice samples, digitized images,
+and so on, this potential was not particularly interesting if the computers sending and
+receiving that data were too slow to do anything useful with the information. Virtually
+all of today’s computers are capable of playing back digitized voice at full speed and can
+display video at a speed and resolution that is useful for some (but by no means all)
+applications. Thus, today’s networks have begun to support multimedia, and their
+support for it will only improve as computing hardware becomes faster.
+The point to take away from this is that knowing how to implement network
+software is an essential part of understanding computer networks. With this in mind,
+this section first introduces some of the issues involved in implementing an application
+program on top of a network, and then goes on to identify the issues involved in
+1.4 Implementing Network Software 31
+implementing the protocols running within the network. In many respects, network
+applications and network protocols are very similar—the way an application engages
+the services of the network is pretty much the same as the way a high-level protocol
+invokes the services of a low-level protocol. As we will see later in the section, however,
+there are a couple of important differences.
+1.4.1 Application Programming Interface (Sockets)
+The place to start when implementing a network application is the interface exported
+by the network. Since most network protocols are implemented in software (especially
+those high in the protocol stack), and nearly all computer systems implement
+their network protocols as part of the operating system, when we refer to the interface
+“exported by the network,” we are generally referring to the interface that the
+OS provides to its networking subsystem. This interface is often called the network
+application programming interface (API).
+Although each operating system is free to define its own network API (and most
+have), over time certain of these APIs have become widely supported; that is, they
+have been ported to operating systems other than their native system. This is what has
+happened with the socket interface originally provided by the Berkeley distribution of
+Unix, which is now supported in virtually all popular operating systems. The advantage
+of industrywide support for a single API is that applications can be easily ported from
+one OS to another. It is important to keep in mind, however, that application programs
+typically interact with many parts of the OS other than the network; for example, they
+read and write files, fork concurrent processes, and output to the graphical display.
+Just because two systems support the same network API does not mean that their
+file system, process, or graphic interfaces are the same. Still, understanding a widely
+adopted API like Unix sockets gives us a good place to start.
+Before describing the socket interface, it is important to keep two concerns separate
+in your mind. Each protocol provides a certain set of services, and the API
+provides a syntax by which those services can be invoked in this particular OS.
+The implementation is then responsible for mapping the tangible set of operations
+and objects defined by the API onto the abstract set of services defined by the protocol.
+If you have done a good job of defining the interface, then it will be possible
+to use the syntax of the interface to invoke the services of many different protocols.
+Such generality was certainly a goal of the socket interface, although it’s far from
+perfect.
+The main abstraction of the socket interface, not surprisingly, is the socket. A
+good way to think of a socket is as the point where a local application process attaches
+to the network. The interface defines operations for creating a socket, attaching the
+socket to the network, sending/receiving messages through the socket, and closing the
+32 1 Foundation
+socket. To simplify the discussion, we will limit ourselves to showing how sockets are
+used with TCP.
+The first step is to create a socket, which is done with the following operation:
+int socket(int domain, int type, int protocol)
+The reason that this operation takes three arguments is that the socket interface was
+designed to be general enough to support any underlying protocol suite. Specifically, the
+domain argument specifies the protocol family that is going to be used: PF INET denotes
+the Internet family, PF UNIX denotes the Unix pipe facility, and PF PACKET denotes
+direct access to the network interface (i.e., it bypasses the TCP/IP protocol stack). The
+type argument indicates the semantics of the communication. SOCK STREAM is used to
+denote a byte stream. SOCK DGRAM is an alternative that denotes a message-oriented
+service, such as that provided by UDP. The protocol argument identifies the specific
+protocol that is going to be used. In our case, this argument is UNSPEC because the
+combination of PF INET and SOCK STREAM implies TCP. Finally, the return value from
+socket is a handle for the newly created socket, that is, an identifier by which we can
+refer to the socket in the future. It is given as an argument to subsequent operations
+on this socket.
+The next step depends on whether you are a client or a server. On a server
+machine, the application process performs a passive open—the server says that it is
+prepared to accept connections, but it does not actually establish a connection. The
+server does this by invoking the following three operations:
+int bind(int socket, struct sockaddr *address, int addr len)
+int listen(int socket, int backlog)
+int accept(int socket, struct sockaddr *address, int *addr len)
+The bind operation, as its name suggests, binds the newly created socket to the
+specified address. This is the network address of the local participant—the server. Note
+that, when used with the Internet protocols, address is a data structure that includes
+both the IP address of the server and a TCP port number. (As we will see in Chapter 5,
+ports are used to indirectly identify processes. They are a form of demux keys as defined
+in Section 1.3.1.) The port number is usually some well-known number specific
+to the service being offered; for example, Web servers commonly accept connections
+on port 80.
+The listen operation then defines how many connections can be pending on
+the specified socket. Finally, the accept operation carries out the passive open. It is
+a blocking operation that does not return until a remote participant has established
+a connection, and when it does complete, it returns a new socket that corresponds
+to this just-established connection, and the address argument contains the remote
+1.4 Implementing Network Software 33
+participant’s address. Note that when accept returns, the original socket that was
+given as an argument still exists and still corresponds to the passive open; it is used in
+future invocations of accept.
+On the client machine, the application process performs an active open; that is,
+it says who it wants to communicate with by invoking the following single operation:
+int connect(int socket, struct sockaddr *address, int addr len)
+This operation does not return until TCP has successfully established a connection, at
+which time the application is free to begin sending data. In this case, address contains
+the remote participant’s address. In practice, the client usually specifies only the remote
+participant’s address and lets the system fill in the local information. Whereas a server
+usually listens for messages on a well-known port, a client typically does not care
+which port it uses for itself; the OS simply selects an unused one.
+Once a connection is established, the application processes invoke the following
+two operations to send and receive data:
+int send(int socket, char *message, int msg len, int flags)
+int recv(int socket, char *buffer, int buf len, int flags)
+The first operation sends the given message over the specified socket, while the second
+operation receives a message from the specified socket into the given buffer. Both
+operations take a set of flags that control certain details of the operation.
+1.4.2 Example Application
+We now show the implementation of a simple client/server program that uses the socket
+interface to send messages over a TCP connection. The program also uses other Unix
+networking utilities, which we introduce as we go. Our application allows a user on
+one machine to type in and send text to a user on another machine. It is a simplified
+version of the Unix talk program, which is similar to the program at the core of aWeb
+chat room.
+Client
+We start with the client side, which takes the name of the remote machine as an
+argument. It calls the Unix utility gethostbyname to translate this name into the remote
+host’s IP address. The next step is to construct the address data structure (sin) expected
+by the socket interface. Notice that this data structure specifies that we’ll be using the
+socket to connect to the Internet (AF INET). In our example, we use TCP port 5432
+as the well-known server port; this happens to be a port that has not been assigned to
+any other Internet service. The final step in setting up the connection is to call socket
+and connect. Once the connect operation returns, the connection is established and the
+34 1 Foundation
+client program enters its main loop, which reads text from standard input and sends
+it over the socket.
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#define SERVER_PORT 5432
+#define MAX_LINE 256
+int
+main(int argc, char * argv[])
+{
+FILE *fp;
+struct hostent *hp;
+struct sockaddr_in sin;
+char *host;
+char buf[MAX_LINE];
+int s;
+int len;
+if (argc==2) {
+host = argv[1];
+}
+else {
+fprintf(stderr, "usage: simplex-talk host\n");
+exit(1);
+}
+/* translate host name into peer's IP address */
+hp = gethostbyname(host);
+if (!hp) {
+fprintf(stderr, "simplex-talk: unknown host: %s\n", host);
+exit(1);
+}
+/* build address data structure */
+bzero((char *)&sin, sizeof(sin));
+sin.sin_family = AF_INET;
+bcopy(hp->h_addr, (char *)&sin.sin_addr, hp->h_length);
+sin.sin_port = htons(SERVER_PORT);
+/* active open */
+if ((s = socket(PF_INET, SOCK_STREAM, 0)) < 0) {
+perror("simplex-talk: socket");
+exit(1);
+1.4 Implementing Network Software 35
+}
+if (connect(s, (struct sockaddr *)&sin, sizeof(sin)) < 0) {
+perror("simplex-talk: connect");
+close(s);
+exit(1);
+}
+/* main loop: get and send lines of text */
+while (fgets(buf, sizeof(buf), stdin)) {
+buf[MAX_LINE-1] = '\0';
+len = strlen(buf) + 1;
+send(s, buf, len, 0);
+}
+}
+Server
+The server is equally simple. It first constructs the address data structure by filling in
+its own port number (SERVER PORT). By not specifying an IP address, the application
+program is willing to accept connections on any of the local host’s IP addresses. Next,
+the server performs the preliminary steps involved in a passive open: creates the socket,
+binds it to the local address, and sets the maximum number of pending connections
+to be allowed. Finally, the main loop waits for a remote host to try to connect, and
+when one does, receives and prints out the characters that arrive on the connection.
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#define SERVER_PORT 5432
+#define MAX_PENDING 5
+#define MAX_LINE 256
+int
+main()
+{
+struct sockaddr_in sin;
+char buf[MAX_LINE];
+int len;
+int s, new_s;
+/* build address data structure */
+bzero((char *)&sin, sizeof(sin));
+sin.sin_family = AF_INET;
+sin.sin_addr.s_addr = INADDR_ANY;
+sin.sin_port = htons(SERVER_PORT);
+36 1 Foundation
+/* setup passive open */
+if ((s = socket(PF_INET, SOCK_STREAM, 0)) < 0) {
+perror("simplex-talk: socket");
+exit(1);
+}
+if ((bind(s, (struct sockaddr *)&sin, sizeof(sin))) < 0) {
+perror("simplex-talk: bind");
+exit(1);
+}
+listen(s, MAX_PENDING);
+/* wait for connection, then receive and print text */
+while(1) {
+if ((new_s = accept(s, (struct sockaddr *)&sin, &len)) < 0){
+perror("simplex-talk: accept");
+exit(1);
+}
+while (len = recv(new_s, buf, sizeof(buf), 0))
+fputs(buf, stdout);
+close(new_s);
+}
+}
+1.4.3 Protocol Implementation Issues
+As mentioned at the beginning of this section, the way application programs interact
+with the underlying network is similar to the way a high-level protocol interacts with
+a low-level protocol. For example, TCP needs an interface to send outgoing messages
+to IP, and IP needs to be able to deliver incoming messages to TCP. This is exactly the
+service interface introduced in Section 1.3.1.
+Since we already have a network API (e.g., sockets), we might be tempted to use
+this same interface between every pair of protocols in the protocol stack. Although
+certainly an option, in practice the socket interface is not used in this way. The reason
+is that there are inefficiencies built into the socket interface that protocol implementers
+are not willing to tolerate. Application programmers tolerate them because they simplify
+their programming task and because the inefficiency only has to be tolerated once,
+but protocol implementers are often obsessed with performance and must worry about
+getting a message through several layers of protocols. The rest of this section discusses
+the two primary differences between the network API and the protocol-to-protocol
+interface found lower in the protocol graph.
+Process Model
+Most operating systems provide an abstraction called a process, or alternatively, a
+thread. Each process runs largely independently of other processes, and the OS is
+1.4 Implementing Network Software 37
+(a) (b)
+Figure 1.16 Alternative process models: (a) process-per-protocol; (b) process-per-
+message.
+responsible for making sure that resources, such as address space and CPU cycles,
+are allocated to all the current processes. The process abstraction makes it fairly
+straightforward to have a lot of things executing concurrently on one machine; for
+example, each user application might execute in its own process, and various things
+inside the OS might execute as other processes. When the OS stops one process from
+executing on the CPU and starts up another one, we call the change a context switch.
+When designing the network subsystem, one of the first questions to answer
+is, “Where are the processes?” There are essentially two choices, as illustrated in
+Figure 1.16. In the first, which we call the process-per-protocol model, each protocol
+is implemented by a separate process. This means that as a message moves up or down
+the protocol stack, it is passed from one process/protocol to another—the process that
+implements protocol i processes the message, then passes it to protocol i - 1, and so
+on. How one process/protocol passes a message to the next process/protocol depends
+on the support the host OS provides for interprocess communication. Typically, there
+is a simple mechanism for enqueuing a message with a process. The important point,
+however, is that a context switch is required at each level of the protocol graph—
+typically a time-consuming operation.
+The alternative, which we call the process-per-message model, treats each protocol
+as a static piece of code and associates the processes with the messages.
+38 1 Foundation
+That is, when a message arrives from the network, the OS dispatches a process that
+it makes responsible for the message as it moves up the protocol graph. At each level,
+the procedure that implements that protocol is invoked, which eventually results in the
+procedure for the next protocol being invoked, and so on. For outbound messages, the
+application’s process invokes the necessary procedure calls until the message is delivered.
+In both directions, the protocol graph is traversed in a sequence of procedure calls.
+Although the process-per-protocol model is sometimes easier to think about—
+I implement my protocol in my process, and you implement your protocol in your
+process—the process-per-message model is generally more efficient for a simple reason:
+A procedure call is an order of magnitude more efficient than a context switch on most
+computers. The former model requires the expense of a context switch at each level,
+while the latter model costs only a procedure call per level.
+Now think about the relationship between the service interface as defined above
+and the process model. For an outgoing message, the high-level protocol invokes a
+send operation on the low-level protocol. Because the high-level protocol has the
+message in hand when it calls send, this operation can be easily implemented as a
+procedure call; no context switch is required. For incoming messages, however, the
+high-level protocol invokes the receive operation on the low-level protocol, and then
+must wait for a message to arrive at some unknown future time; this basically forces a
+context switch. In other words, the process running in the high-level protocol receives a
+message from the process running in the low-level protocol. This isn’t a big deal if only
+the application process receives messages from the network subsystem—in fact, it’s the
+right interface for the network API since application programs already have a processcentric
+view of the world—but it does have a significant impact on performance if such
+a context switch occurs at each layer of the protocol stack.
+It is for this reason that most protocol implementations replace the receive operation
+with a deliver operation. That is, the low-level protocol does an upcall—a procedure
+call up the protocol stack—to deliver the message to the high-level protocol.
+Figure 1.17 shows the resulting interface between two adjacent protocols, TCP and IP
+in this case. In general, messages move down the protocol graph through a sequence of
+send operations, and up the protocol graph through a sequence of deliver operations.
+Message Buffers
+A second inefficiency of the socket interface is that the application process provides
+the buffer that contains the outbound message when calling send, and similarly it
+provides the buffer into which an incoming message is copied when invoking the
+receive operation. This forces the topmost protocol to copy the message from the application’s
+buffer into a network buffer, and vice versa, as shown in Figure 1.18. It turns
+out that copying data from one buffer to another is one of the most expensive things a
+1.4 Implementing Network Software 39
+sendIP (message) deliverTCP (message)
+TCP
+IP
+Figure 1.17 Protocol-to-protocol interface.
+send()
+deliver()
+Topmost protocol
+Application process
+Figure 1.18 Copying incoming/outgoing messages between application buffer and
+network buffer.
+protocol implementation can do. This is because while processors are becoming faster
+at an incredible pace, memory is not getting faster as quickly as processors are.
+Instead of copying message data from one buffer to another at each layer in the
+protocol stack, most network subsystems define an abstract data type for messages
+that is shared by all protocols in the protocol graph. Not only does this abstraction
+permit messages to be passed up and down the protocol graph without copying, but
+it usually provides copy-free ways of manipulating messages in other ways, such as
+adding and stripping headers, fragmenting large messages into a set of small messages,
+and reassembling a collection of small messages into a single large message. The exact
+form of this message abstraction differs from OS to OS, but it generally involves a
+linked list of pointers to message buffers, similar to the one shown in Figure 1.19.
+We leave it as an exercise for you to define a general copy-free message abstraction.
+40 1 Foundation
+Figure 1.19 Example message data structure.
+1.5 Performance
+Up to this point, we have focused primarily
+on the functional aspects of networks.
+Like any computer system, however, computer
+networks are also expected to perform
+well, since the effectiveness of computations
+distributed over the network often depends
+directly on the efficiency with which the network
+delivers the computation’s data. While
+the old programming adage “First get it
+right and then make it fast” is valid in many
+settings, in networking it is usually necessary
+to “design for performance.” It is therefore
+important to understand the various
+factors that impact network performance.
+1.5.1 Bandwidth and
+Latency
+Network performance is measured in two
+fundamental ways: bandwidth (also called
+throughput) and latency (also called delay).
+The bandwidth of a network is given by
+the number of bits that can be transmitted
+over the network in a certain period of time.
+For example, a network might have a bandwidth
+of 10 million bits/second (Mbps),
+meaning that it is able to deliver 10 million
+Bandwidth and
+Throughput
+Bandwidth and throughput are two
+of the most confusing terms used
+in networking. While we could try
+to give you a precise definition of
+each term, it is important that you
+know how other people might use
+them and for you to be aware that
+they are often used interchangeably.
+First of all, bandwidth is literally
+a measure of the width of
+a frequency band. For example,
+a voice-grade telephone line supports
+a frequency band ranging
+from 300 to 3300 Hz; it is said
+to have a bandwidth of 3300 Hz-
+300 Hz = 3000 Hz. If you see the
+word “bandwidth” used in a situation
+in which it is being measured
+in hertz, then it probably refers to
+the range of signals that can be
+accommodated.
+When we talk about the bandwidth
+of a communication link, we
+1.5 Performance 41
+bits every second. It is sometimes useful to think of bandwidth in terms of how long it
+takes to transmit each bit of data. On a 10-Mbps network, for example, it takes 0.1
+microsecond (µs) to transmit each bit.
+While you can talk about the bandwidth of the network as a whole, sometimes
+you want to be more precise, focusing, for example, on the bandwidth of a single
+physical link or of a logical process-to-process channel. At the physical level, bandwidth
+is constantly improving, with no end in sight. Intuitively, if you think of a second
+of time as a distance you could measure with a ruler, and bandwidth as how many
+bits fit in that distance, then you can think of each bit as a pulse of some width. For
+example, each bit on a 1-Mbps link is 1 µs wide, while each bit on a 2-Mbps link
+is 0.5 µs wide, as illustrated in Figure 1.20. The more sophisticated the transmitting
+and receiving technology, the narrower each bit can become, and thus, the higher the
+normally refer to the number of
+bits per second that can be transmitted
+on the link. We might say
+that the bandwidth of an Ethernet
+is 10 Mbps. A useful distinction
+might be made, however, between
+the bandwidth that is available on
+the link and the number of bits per
+second that we can actually transmit
+over the link in practice. We
+tend to use the word “throughput”
+to refer to the measured perfor-
+mance of a system. Thus, because of
+various inefficiencies of implementation,
+a pair of nodes connected by
+a link with a bandwidth of 10 Mbps
+might achieve a throughput of only
+2 Mbps. This would mean that an
+application on one host could send
+data to the other host at 2 Mbps.
+Finally, we often talk about
+the bandwidth requirements of an
+application—the number of bits
+bandwidth. For logical process-to-process
+channels, bandwidth is also influenced by
+other factors, including how many times the
+software that implements the channel has to
+handle, and possibly transform, each bit of
+data.
+The second performance metric, latency,
+corresponds to how long it takes a
+message to travel from one end of a network
+to the other. (As with bandwidth, we could
+be focused on the latency of a single link
+or an end-to-end channel.) Latency is measured
+strictly in terms of time. For example,
+a transcontinental network might have a latency
+of 24 milliseconds (ms); that is, it takes
+a message 24 ms to travel from one end of
+North America to the other. There are many
+situations in which it is more important to
+know how long it takes to send a message
+from one end of a network to the other and
+back, rather than the one-way latency. We
+call this the round-trip time (RTT) of the
+network.
+We often think of latency as having
+three components. First, there is the speedof-
+light propagation delay. This delay occurs
+because nothing, including a bit on
+a wire, can travel faster than the speed
+42 1 Foundation
+1 second
+(a)
+1 second
+(b)
+Figure 1.20 Bits transmitted at a particular bandwidth can be regarded as having some
+width: (a) bits transmitted at 1 Mbps (each bit 1 µs wide); (b) bits transmitted at 2 Mbps
+(each bit 0.5 µs wide).
+of light. If you know the distance between two points, you can calculate the speed-oflight
+latency, although you have to be careful because light travels across different mediums
+at different speeds: It travels at 3.0×108 m/s in a vacuum, 2.3×108 m/s in a cable,
+and 2.0×108 m/s in a fiber. Second, there is the amount of time it takes to transmit a unit
+of data. This is a function of the network bandwidth and the size of the packet in which
+the data is carried. Third, there may be queuing delays inside the network, since packet
+switches generally need to store packets for some time before forwarding them on an
+outbound link, as discussed in Section 1.2.2. So, we could define the total latency as
+Latency = Propagation + Transmit + Queue
+Propagation = Distance/SpeedOfLight
+Transmit = Size/Bandwidth
+where Distance is the length of the wire over
+which the data will travel, SpeedOfLight
+is the effective speed of light over that
+wire, Size is the size of the packet, and
+Bandwidth is the bandwidth at which the
+packet is transmitted. Note that if the
+message contains only one bit and we are
+talking about a single link (as opposed to
+a whole network), then the Transmit and
+Queue terms are not relevant, and latency
+corresponds to the propagation delay only.
+Bandwidth and latency combine to define
+the performance characteristics of a
+given link or channel. Their relative importance,
+however, depends on the application.
+For some applications, latency dominates
+per second that it needs to transmit
+over the network to perform
+acceptably. For some applications,
+this might be “whatever I can get”;
+for others, it might be some fixed
+number (preferably no more than
+the available link bandwidth); and
+for others, it might be a number
+that varies with time. We will provide
+more on this topic later in this
+section.
+1.5 Performance 43
+bandwidth. For example, a client that sends a 1-byte message to a server and receives
+a 1-byte message in return is latency bound. Assuming that no serious computation
+is involved in preparing the response, the application will perform much differently
+on a transcontinental channel with a 100-ms RTT than it will on an across-the-room
+channel with a 1-ms RTT. Whether the channel is 1 Mbps or 100 Mbps is relatively insignificant,
+however, since the former implies that the time to transmit a byte (Transmit)
+is 8 µs and the latter implies Transmit = 0.08 µs.
+In contrast, consider a digital library program that is being asked to fetch a
+25-megabyte (MB) image—the more bandwidth that is available, the faster it will be
+able to return the image to the user. Here, the bandwidth of the channel dominates
+performance. To see this, suppose that the channel has a bandwidth of 10 Mbps. It will
+take 20 seconds to transmit the image, making it relatively unimportant if the image
+is on the other side of a 1-ms channel or a 100-ms channel; the difference between a
+20.001-second response time and a 20.1-second response time is negligible.
+Figure 1.21 gives you a sense of how latency or bandwidth can dominate performance
+in different circumstances. The graph shows how long it takes to move objects
+10,000
+5000
+2000
+1000
+500
+200
+100
+50
+20
+10
+5
+2
+1
+10 100
+RTT (ms)
+1-MB object, 1.5-Mbps link
+1-MB object, 10-Mbps link
+2-KB object, 1.5-Mbps link
+2-KB object, 10-Mbps link
+1-byte object, 1.5-Mbps link
+1-byte object, 10-Mbps link
+Perceived latency (ms) 
+ject sizes and link speeds.
+44 

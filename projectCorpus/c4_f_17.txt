@@ -1,0 +1,2638 @@
+2.5 Reliable Transmission 107
+invoked in deliverSWP (see below) increments this count, thus unblocking any waiting
+sender.
+static int
+sendSWP(SwpState *state, Msg *frame)
+{
+struct sendQ_slot *slot;
+hbuf[HLEN];
+/* wait for send window to open */
+semWait(&state->sendWindowNotFull);
+state->hdr.SeqNum = ++state->LFS;
+slot = &state->sendQ[state->hdr.SeqNum % SWS];
+store_swp_hdr(state->hdr, hbuf);
+msgAddHdr(frame, hbuf, HLEN);
+msgSaveCopy(&slot->msg, frame);
+slot->timeout = evSchedule(swpTimeout, slot,
+SWP_SEND_TIMEOUT);
+return sendLINK(frame);
+}
+Now to SWP’s protocol-specific implementation of the deliver operation, which
+is given in procedure deliverSWP. This routine actually handles two different kinds
+of incoming messages: ACKs for frames sent earlier from this node and data frames
+arriving at this node. In a sense, the ACK half of this routine is the counterpart to the
+sender side of the algorithm given in sendSWP. A decision as to whether the incoming
+message is an ACK or a data frame is made by checking the Flags field in the header.
+Note that this particular implementation does not support piggybacking ACKs on data
+frames.
+When the incoming frame is an ACK, deliverSWP simply finds the slot in the
+transmit queue (sendQ) that corresponds to the ACK, cancels the timeout event, and
+frees the frame saved in that slot. This work is actually done in a loop since the
+ACK may be cumulative. The only other thing to notice about this case is the call
+to subroutine swpInWindow. This subroutine, which is given below, ensures that the
+sequence number for the frame being acknowledged is within the range of ACKs that
+the sender currently expects to receive.
+When the incoming frame contains data, deliverSWP first calls msgStripHdr and
+load swp hdr to extract the header from the frame. Routine load swp hdr is the counterpart
+to store swp hdr discussed earlier; it translates a byte string into the C data
+structure that holds the SWP header. deliverSWP then calls swpInWindow to make
+sure the sequence number of the frame is within the range of sequence numbers that it
+expects. If it is, the routine loops over the set of consecutive frames it has received and
+passes them up to the higher-level protocol by invoking the deliverHLP routine. It also
+108 2 Direct Link Networks
+sends a cumulative ACK back to the sender, but does so by looping over the receive
+queue (it does not use the SeqNumToAck variable used in the prose description given
+earlier in this section).
+static int
+deliverSWP(SwpState state, Msg *frame)
+{
+SwpHdr hdr;
+char *hbuf;
+hbuf = msgStripHdr(frame, HLEN);
+load_swp_hdr(&hdr, hbuf)
+if (hdr->Flags & FLAG_ACK_VALID)
+{
+/* received an acknowledgment---do SENDER side */
+if (swpInWindow(hdr.AckNum, state->LAR + 1,
+state->LFS))
+{
+do
+{
+struct sendQ_slot *slot;
+slot = &state->sendQ[++state->LAR % SWS];
+evCancel(slot->timeout);
+msgDestroy(&slot->msg);
+semSignal(&state->sendWindowNotFull);
+} while (state->LAR != hdr.AckNum);
+}
+}
+if (hdr.Flags & FLAG_HAS_DATA)
+{
+struct recvQ_slot *slot;
+/* received data packet---do RECEIVER side */
+slot = &state->recvQ[hdr.SeqNum % RWS];
+if (!swpInWindow(hdr.SeqNum, state->NFE,
+state->NFE + RWS - 1))
+{
+/* drop the message */
+return SUCCESS;
+}
+msgSaveCopy(&slot->msg, frame);
+slot->received = TRUE;
+if (hdr.SeqNum == state->NFE)
+{
+2.5 Reliable Transmission 109
+Msg m;
+while (slot->received)
+{
+deliverHLP(&slot->msg);
+msgDestroy(&slot->msg);
+slot->received = FALSE;
+slot = &state->recvQ[++state->NFE % RWS];
+}
+/* send ACK: */
+prepare_ack(&m, state->NFE - 1);
+sendLINK(&m);
+msgDestroy(&m);
+}
+}
+return SUCCESS;
+}
+Finally, swpInWindow is a simple subroutine that checks to see if a given sequence
+number falls between some minimum and maximum sequence number.
+static bool
+swpInWindow(SwpSeqno seqno, SwpSeqno min, SwpSeqno max)
+{
+SwpSeqno pos, maxpos;
+pos = seqno - min; /* pos *should* be in range [0..MAX)*/
+maxpos = max - min + 1; /* maxpos is in range [0..MAX]*/
+return pos < maxpos;
+}
+Frame Order and Flow Control
+The sliding window protocol is perhaps the best-known algorithm in computer networking.
+What is easily confusing about the algorithm, however, is that it can be used
+to serve three different roles. The first role is the one we have been concentrating on
+in this section—to reliably deliver frames across an unreliable link. (In general, the
+algorithm can be used to reliably deliver messages across an unreliable network.) This
+is the core function of the algorithm.
+The second role that the sliding window algorithm can serve is to preserve the
+order in which frames are transmitted. This is easy to do at the receiver—since each
+frame has a sequence number, the receiver just makes sure that it does not pass a
+frame up to the next-higher-level protocol until it has already passed up all frames
+with a smaller sequence number. That is, the receiver buffers (i.e., does not pass along)
+out-of-order frames. The version of the sliding window algorithm described in this
+110 2 Direct Link Networks
+section does preserve frame order, although we could imagine a variation in which
+the receiver passes frames to the next protocol without waiting for all earlier frames
+to be delivered. A question we should ask ourselves is whether we really need the
+sliding window protocol to keep the frames in order, or whether, instead, this is unnecessary
+functionality at the link level. Unfortunately, we have not yet seen enough
+of the network architecture to answer this question; we first need to understand how
+a sequence of point-to-point links is connected by switches to form an end-to-end
+path.
+The third role that the sliding window algorithm sometimes plays is to support
+flow control—a feedback mechanism by which the receiver is able to throttle the
+sender. Such a mechanism is used to keep the sender from overrunning the receiver,
+that is, from transmitting more data than the receiver is able to process. This is usually
+accomplished by augmenting the sliding window protocol so that the receiver not only
+acknowledges frames it has received, but also informs the sender of how many frames
+it has room to receive. The number of frames that the receiver is capable of receiving
+corresponds to how much free buffer space it has. As in the case of ordered delivery, we
+need to make sure that flow control is necessary at the link level before incorporating
+it into the sliding window protocol.
+? One important concept to take away from this discussion is the system design
+principle we call separation of concerns. That is, you must be careful to distinguish
+between different functions that are sometimes rolled together in one mechanism,
+and you must make sure that each function is necessary and being supported in the
+most effective way. In this particular case, reliable delivery, ordered delivery, and flow
+control are sometimes combined in a single sliding window protocol, and we should
+ask ourselves if this is the right thing to do at the link level.With this question in mind,
+we revisit the sliding window algorithm in Chapter 3 (we show how X.25 networks
+use it to implement hop-by-hop flow control) and in Chapter 5 (we describe how TCP
+uses it to implement a reliable byte-stream channel).
+2.5.3 Concurrent Logical Channels
+The data link protocol used in the ARPANET provides an interesting alternative to
+the sliding window protocol, in that it is able to keep the pipe full while still using the
+simple stop-and-wait algorithm. One important consequence of this approach is that
+the frames sent over a given link are not kept in any particular order. The protocol
+also implies nothing about flow control.
+The idea underlying the ARPANET protocol, which we refer to as concurrent
+logical channels, is to multiplex several logical channels onto a single point-to-point
+link and to run the stop-and-wait algorithm on each of these logical channels. There is
+no relationship maintained among the frames sent on any of the logical channels, yet
+2.6 Ethernet (802.3) 111
+because a different frame can be outstanding on each of the several logical channels,
+the sender can keep the link full.
+More precisely, the sender keeps 3 bits of state for each channel: a boolean, saying
+whether the channel is currently busy; the 1-bit sequence number to use the next time
+a frame is sent on this logical channel; and the next sequence number to expect on
+a frame that arrives on this channel. When the node has a frame to send, it uses the
+lowest idle channel, and otherwise it behaves just like stop-and-wait.
+In practice, the ARPANET supported 8 logical channels over each ground link
+and 16 over each satellite link. In the ground-link case, the header for each frame
+included a 3-bit channel number and a 1-bit sequence number, for a total of 4 bits.
+This is exactly the number of bits the sliding window protocol requires to support up
+to eight outstanding frames on the link when RWS = SWS.
+2.6 Ethernet (802.3)
+The Ethernet is easily the most successful local area networking technology of the last
+20 years. Developed in the mid-1970s by researchers at the Xerox Palo Alto Research
+Center (PARC), the Ethernet is a working example of the more general Carrier Sense
+Multiple Access with Collision Detect (CSMA/CD) local area network technology.
+As indicated by the CSMA name, the Ethernet is a multiple-access network,
+meaning that a set of nodes send and receive frames over a shared link. You can,
+therefore, think of an Ethernet as being like a bus that has multiple stations plugged
+into it. The “carrier sense” in CSMA/CD means that all the nodes can distinguish
+between an idle and a busy link, and “collision detect” means that a node listens as
+it transmits and can therefore detect when a frame it is transmitting has interfered
+(collided) with a frame transmitted by another node.
+The Ethernet has its roots in an early packet radio network, called Aloha, developed
+at the University of Hawaii to support computer communication across the
+Hawaiian Islands. Like the Aloha network, the fundamental problem faced by the
+Ethernet is how to mediate access to a shared medium fairly and efficiently (in Aloha
+the medium was the atmosphere, while in Ethernet the medium is a coax cable). That
+is, the core idea in both Aloha and the Ethernet is an algorithm that controls when
+each node can transmit.
+Digital Equipment Corporation and Intel Corporation joined Xerox to define a
+10-Mbps Ethernet standard in 1978. This standard then formed the basis for IEEE
+standard 802.3.With one exception that we will see in Section 2.6.2, it is fair to view the
+1978 Ethernet standard as a proper subset of the 802.3 standard; 802.3 additionally
+defines a much wider collection of physical media over which Ethernet can operate,
+and more recently, it has been extended to include a 100-Mbps version called Fast
+112 2 Direct Link Networks
+Transceiver
+Ethernet cable
+Adaptor
+Host
+Figure 2.24 Ethernet transceiver and adaptor.
+Ethernet and a 1000-Mbps version called Gigabit Ethernet. The rest of this section
+focuses on 10-Mbps Ethernet, since it is typically used in multiple-access mode and
+we are interested in how multiple hosts share a single link. Both 100-Mbps and 1000-
+Mbps Ethernets are designed to be used in full-duplex, point-to-point configurations,
+which means that they are typically used in switched networks, as described in the
+next chapter.
+2.6.1 Physical Properties
+An Ethernet segment is implemented on a coaxial cable of up to 500 m. This cable
+is similar to the type used for cable TV, except that it typically has an impedance
+of 50 ohms instead of cable TV’s 75 ohms. Hosts connect to an Ethernet segment by
+tapping into it; taps must be at least 2.5 m apart. A transceiver—a small device directly
+attached to the tap—detects when the line is idle and drives the signal when the host
+is transmitting. It also receives incoming signals. The transceiver is, in turn, connected
+to an Ethernet adaptor, which is plugged into the host. All the logic that makes up the
+Ethernet protocol, as described in this section, is implemented in the adaptor (not the
+transceiver). This configuration is shown in Figure 2.24.
+Multiple Ethernet segments can be joined together by repeaters.Arepeater is a device
+that forwards digital signals, much like an amplifier forwards analog signals. However,
+no more than four repeaters may be positioned between any pair of hosts, meaning
+that an Ethernet has a total reach of only 2500 m. For example, using just two repeaters
+between any pair of hosts supports a configuration similar to the one illustrated
+in Figure 2.25, that is, a segment running down the spine of a building with a segment
+on each floor. All told, an Ethernet is limited to supporting a maximum of 1024 hosts.
+2.6 Ethernet (802.3) 113
+Repeater
+Host
+…
+…
+…
+…
+Figure 2.25 Ethernet repeater.
+Any signal placed on the Ethernet by a host is broadcast over the entire network;
+that is, the signal is propagated in both directions, and repeaters forward the signal
+on all outgoing segments. Terminators attached to the end of each segment absorb
+the signal and keep it from bouncing back and interfering with trailing signals. The
+Ethernet uses the Manchester encoding scheme described in Section 2.2.
+In addition to the system of segments and repeaters just described, alternative
+technologies have been introduced over the years. For example, rather than using a
+50-ohm coax cable, an Ethernet can be constructed from a thinner cable known as
+10Base2; the original cable is called 10Base5 (the two cables are commonly called thin-
+net and thick-net, respectively). The “10” in 10Base2 means that the network operates
+at 10 Mbps, “Base” refers to the fact that the cable is used in a baseband system, and
+the “2” means that a given segment can be no longer than 200 m (a segment of the
+original 10Base5 cable can be up to 500 m long). Today, a third cable technology is
+predominantly used, called 10BaseT, where the “T” stands for twisted pair. Typically,
+Category 5 twisted pair wiring is used. A 10BaseT segment is usually limited to under
+100 m in length. (Both 100-Mbps and 1000-Mbps Ethernets also run over Category
+5 twisted pair, up to distances of 100 m.)
+114 2 Direct Link Networks
+Hub Hub
+Figure 2.26 Ethernet hub.
+Because the cable is so thin, you do not tap into a 10Base2 or 10BaseT cable in the
+same way as you would with 10Base5 cable.With 10Base2, a T-joint is spliced into the
+cable. In effect, 10Base2 is used to daisy-chain a set of hosts together. With 10BaseT,
+the common configuration is to have several point-to-point segments coming out of
+a multiway repeater, sometimes called a hub, as illustrated in Figure 2.26. Multiple
+100-Mbps Ethernet segments can also be connected by a hub, but the same is not true
+of 1000-Mbps segments.
+It is important to understand that whether a given Ethernet spans a single segment,
+a linear sequence of segments connected by repeaters, or multiple segments
+connected in a star configuration by a hub, data transmitted by any one host on that
+Ethernet reaches all the other hosts. This is the good news. The bad news is that all
+these hosts are competing for access to the same link, and as a consequence, they are
+said to be in the same collision domain.
+2.6.2 Access Protocol
+We now turn our attention to the algorithm that controls access to the shared Ethernet
+link. This algorithm is commonly called the Ethernet’s media access control (MAC).
+It is typically implemented in hardware on the network adaptor. We will not describe
+the hardware per se, but instead focus on the algorithm it implements. First, however,
+we describe the Ethernet’s frame format and addresses.
+Frame Format
+Each Ethernet frame is defined by the format given in Figure 2.27. The 64-bit preamble
+allows the receiver to synchronize with the signal; it is a sequence of alternating 0s
+and 1s. Both the source and destination hosts are identified with a 48-bit address.
+The packet type field serves as the demultiplexing key; that is, it identifies to which
+of possibly many higher-level protocols this frame should be delivered. Each frame
+contains up to 1500 bytes of data. Minimally, a frame must contain at least 46 bytes of
+data, even if this means the host has to pad the frame before transmitting it. The reason
+2.6 Ethernet (802.3) 115
+Dest
+addr
+64 48 32
+Preamble Src CRC
+addr
+Type Body
+48 16
+Figure 2.27 Ethernet frame format.
+for this minimum frame size is that the frame must be long enough to detect a collision;
+we discuss this more below. Finally, each frame includes a 32-bit CRC. Like the HDLC
+protocol described in Section 2.3.2, the Ethernet is a bit-oriented framing protocol.
+Note that from the host’s perspective, an Ethernet frame has a 14-byte header: two
+6-byte addresses and a 2-byte type field. The sending adaptor attaches the preamble,
+CRC, and postamble before transmitting, and the receiving adaptor removes them.
+The frame format just described is taken from the Digital-Intel-Xerox Ethernet
+standard. The 802.3 frame format is exactly the same, except it substitutes a 16-bit
+length field for the 16-bit type field. 802.3 is usually paired with an encapsulation
+standard that defines a type field used to demultiplex incoming frames. This type field
+is the first thing in the data portion of the 802.3 frames; that is, it immediately follows
+the 802.3 header. Fortunately, since the Ethernet standard has avoided using any type
+values less than 1500 (the maximum length found in an 802.3 header), and the type and
+length fields are in the same location in the header, it is possible for a single device to
+accept both formats, and for the device driver running on the host to interpret the last
+16 bits of the header as either a type or a length. In practice, most hosts follow the
+Digital-Intel-Xerox format and interpret this field as the frame’s type.
+Addresses
+Each host on an Ethernet—in fact, every Ethernet host in the world—has a unique
+Ethernet address. Technically, the address belongs to the adaptor, not the host; it is
+usually burned into ROM. Ethernet addresses are typically printed in a form humans
+can read as a sequence of six numbers separated by colons. Each number corresponds
+to 1 byte of the 6-byte address and is given by a pair of hexadecimal digits, one for each
+of the 4-bit nibbles in the byte; leading 0s are dropped. For example, 8:0:2b:e4:b1:2 is
+the human-readable representation of Ethernet address
+00001000 00000000 00101011 11100100 10110001 00000010
+To ensure that every adaptor gets a unique address, each manufacturer of Ethernet
+devices is allocated a different prefix that must be prepended to the address on
+every adaptor they build. For example, Advanced Micro Devices has been assigned the
+116 2 Direct Link Networks
+24-bit prefix x080020 (or 8:0:20). A given manufacturer then makes sure the address
+suffixes it produces are unique.
+Each frame transmitted on an Ethernet is received by every adaptor connected
+to that Ethernet. Each adaptor recognizes those frames addressed to its address and
+passes only those frames on to the host. (An adaptor can also be programmed to run
+in promiscuous mode, in which case it delivers all received frames to the host, but this
+is not the normal mode.) In addition to these unicast addresses, an Ethernet address
+consisting of all 1s is treated as a broadcast address; all adaptors pass frames addressed
+to the broadcast address up to the host. Similarly, an address that has the first bit set
+to 1 but is not the broadcast address is called a multicast address. A given host can
+program its adaptor to accept some set of multicast addresses. Multicast addresses are
+used to send messages to some subset of the hosts on an Ethernet (e.g., all file servers).
+To summarize, an Ethernet adaptor receives all frames and accepts
+¦ frames addressed to its own address
+¦ frames addressed to the broadcast address
+¦ frames addressed to a multicast address, if it has been instructed to listen to
+that address
+¦ all frames, if it has been placed in promiscuous mode
+It passes to the host only the frames that it accepts.
+Transmitter Algorithm
+As we have just seen, the receiver side of the Ethernet protocol is simple; the real smarts
+are implemented at the sender’s side. The transmitter algorithm is defined as follows.
+When the adaptor has a frame to send and the line is idle, it transmits the frame
+immediately; there is no negotiation with the other adaptors. The upper bound of
+1500 bytes in the message means that the adaptor can occupy the line for only a fixed
+length of time.
+When an adaptor has a frame to send and the line is busy, it waits for the line to go
+idle and then transmits immediately.2 The Ethernet is said to be a 1-persistent protocol
+because an adaptor with a frame to send transmits with probability 1 whenever a busy
+line goes idle. In general, a p-persistent algorithm transmits with probability 0 ? p ? 1
+after a line becomes idle, and defers with probability q = 1- p. The reasoning behind
+choosing a p < 1 is that there might be multiple adaptors waiting for the busy line
+2To be more precise, all adaptors wait 9.6 µs after the end of one frame before beginning to transmit the next
+frame. This is true for the sender of the first frame, as well as those nodes listening for the line to become idle.
+2.6 Ethernet (802.3) 117
+to become idle, and we don’t want all of them to begin transmitting at the same time.
+If each adaptor transmits immediately with a probability of, say, 33%, then up to
+three adaptors can be waiting to transmit and the odds are that only one will begin
+transmitting when the line becomes idle. Despite this reasoning, an Ethernet adaptor
+always transmits immediately after noticing that the network has become idle and has
+been very effective in doing so.
+To complete the story about p-persistent protocols for the case when p < 1, you
+might wonder how long a sender that loses the coin flip (i.e., decides to defer) has
+to wait before it can transmit. The answer for the Aloha network, which originally
+developed this style of protocol, was to divide time into discrete slots, with each slot
+corresponding to the length of time it takes to transmit a full frame. Whenever a node
+has a frame to send and it senses an empty (idle) slot, it transmits with probability p
+and defers until the next slot with probability q = 1- p. If that next slot is also empty,
+the node again decides to transmit or defer, with probabilities p and q, respectively. If
+that next slot is not empty—that is, some other station has decided to transmit—then
+the node simply waits for the next idle slot and the algorithm repeats.
+Returning to our discussion of the Ethernet, because there is no centralized control
+it is possible for two (or more) adaptors to begin transmitting at the same time,
+either because both found the line to be idle or because both had been waiting for a
+busy line to become idle. When this happens, the two (or more) frames are said to
+collide on the network. Each sender, because the Ethernet supports collision detection,
+is able to determine that a collision is in progress. At the moment an adaptor
+detects that its frame is colliding with another, it first makes sure to transmit a 32-bit
+jamming sequence and then stops the transmission. Thus, a transmitter will minimally
+send 96 bits in the case of a collision: 64-bit preamble plus 32-bit jamming
+sequence.
+One way that an adaptor will send only 96 bits—which is sometimes called
+a runt frame—is if the two hosts are close to each other. Had the two hosts been
+farther apart, they would have had to transmit longer, and thus send more bits, before
+detecting the collision. In fact, the worst-case scenario happens when the two hosts are
+at opposite ends of the Ethernet. To know for sure that the frame it just sent did not
+collide with another frame, the transmitter may need to send as many as 512 bits. Not
+coincidentally, every Ethernet frame must be at least 512 bits (64 bytes) long: 14 bytes
+of header plus 46 bytes of data plus 4 bytes of CRC.
+Why 512 bits? The answer is related to another question you might ask about
+an Ethernet: Why is its length limited to only 2500 m? Why not 10 or 1000 km? The
+answer to both questions has to do with the fact that the farther apart two nodes
+are, the longer it takes for a frame sent by one to reach the other, and the network is
+vulnerable to a collision during this time.
+118 2 Direct Link Networks
+(a)
+(b)
+(c)
+A B
+A B
+A B
+A B
+(d)
+Figure 2.28 Worst-case scenario: (a) A sends a frame at time t; (b) A’s frame arrives at
+B at time t + d; (c) B begins transmitting at time t + d and collides with A’s frame; (d) B’s
+runt (32-bit) frame arrives at A at time t +2d.
+Figure 2.28 illustrates the worst-case scenario, where hosts A and B are at opposite
+ends of the network. Suppose host A begins transmitting a frame at time t, as
+shown in (a). It takes it one link latency (let’s denote the latency as d) for the frame to
+reach host B. Thus, the first bit of A’s frame arrives at B at time t +d, as shown in (b).
+Suppose an instant before host A’s frame arrives (i.e., B still sees an idle line), host B
+begins to transmit its own frame. B’s frame will immediately collide with A’s frame,
+and this collision will be detected by host B (c). Host B will send the 32-bit jamming
+sequence, as described above. (B’s frame will be a runt.) Unfortunately, host A will not
+know that the collision occurred until B’s frame reaches it, which will happen one link
+latency later, at time t+2×d, as shown in (d). Host A must continue to transmit until
+this time in order to detect the collision. In other words, host A must transmit for 2×d
+to be sure that it detects all possible collisions. Considering that a maximally configured
+Ethernet is 2500 m long, and that there may be up to four repeaters between
+any two hosts, the round-trip delay has been determined to be 51.2 µs, which on
+a 10-Mbps Ethernet corresponds to 512 bits. The other way to look at this situation
+is that we need to limit the Ethernet’s maximum latency to a fairly small value
+2.6 Ethernet (802.3) 119
+(e.g., 51.2 µs) for the access algorithm to work; hence, an Ethernet’s maximum length
+must be something on the order of 2500 m.
+Once an adaptor has detected a collision and stopped its transmission, it waits
+a certain amount of time and tries again. Each time it tries to transmit but fails,
+the adaptor doubles the amount of time it waits before trying again. This strategy of
+doubling the delay interval between each retransmission attempt is a general technique
+known as exponential backoff. More precisely, the adaptor first delays either 0 or
+51.2 µs, selected at random. If this effort fails, it then waits 0, 51.2, 102.4, or 153.6 µs
+(selected randomly) before trying again; this is k× 51.2 for k = 0..3. After the third
+collision, it waits k× 51.2 for k = 0..23 - 1, again selected at random. In general, the
+algorithm randomly selects a k between 0 and 2n - 1 and waits k × 51.2 µs, where
+n is the number of collisions experienced so far. The adaptor gives up after a given
+number of tries and reports a transmit error to the host. Adaptors typically retry up
+to 16 times, although the backoff algorithm caps n in the above formula at 10.
+2.6.3 Experience with Ethernet
+Because Ethernets have been around for so many years and are so popular, we have a
+great deal of experience in using them. One of the most important observations people
+have made about Ethernets is that they work best under lightly loaded conditions. This
+is because under heavy loads—typically, a utilization of over 30% is considered heavy
+on an Ethernet—too much of the network’s capacity is wasted by collisions.
+Fortunately, most Ethernets are used in a far more conservative way than the
+standard allows. For example, most Ethernets have fewer than 200 hosts connected to
+them, which is far fewer than the maximum of 1024. (See if you can discover a reason
+for this upper limit of around 200 hosts in Chapter 4.) Similarly, most Ethernets are
+far shorter than 2500 m, with a round-trip delay of closer to 5 µs than 51.2 µs.
+Another factor that makes Ethernets practical is that, even though Ethernet adaptors
+do not implement link-level flow control, the hosts typically provide an end-to-end
+flow-control mechanism. As a result, it is rare to find situations in which any one host
+is continuously pumping frames onto the network.
+Finally, it is worth saying a few words about why Ethernets have been so successful,
+so that we can understand the properties we should emulate with any LAN
+technology that tries to replace it. First, an Ethernet is extremely easy to administer
+and maintain: There are no switches that can fail, no routing or configuration tables
+that have to be kept up-to-date, and it is easy to add a new host to the network. It is
+hard to imagine a simpler network to administer. Second, it is inexpensive: Cable is
+cheap, and the only other cost is the network adaptor on each host. Any switch-based
+approach will involve an investment in some relatively expensive infrastructure (the
+switches), in addition to the incremental cost of each adaptor. As we will see in the
+120 2 Direct Link Networks
+next chapter, the most successful LAN switching technology in use today is itself based
+on Ethernet.
+2.7 Token Rings (802.5, FDDI)
+Alongside the Ethernet, token rings are the other significant class of shared-media
+network. There are more different types of token rings than there are types of Ethernets;
+this section will discuss the type that was for years the most prevalent, known as the
+IBM Token Ring. Like the Xerox Ethernet, IBM’s Token Ring has a nearly identical
+IEEE standard, known as 802.5. Where necessary, we note the differences between the
+IBM and 802.5 token rings.
+Most of the general principles of token ring networks can be understood once
+the IBM and 802.5 standards have been discussed. However, the FDDI (Fiber Distributed
+Data Interface) standard—a newer, faster type of token ring—warrants some
+discussion, which we provide at the end of this section. At the time of writing, yet
+another token ring standard, called Resilient Packet Ring or 802.17, is nearing completion.
+As the name suggests, a token ring network consists of a set of nodes connected
+in a ring (see Figure 2.29). Data always flows in a particular direction around the ring,
+with each node receiving frames from its upstream neighbor and then forwarding them
+to its downstream neighbor. This ring-based topology is in contrast to the Ethernet’s
+bus topology. Like the Ethernet, however, the ring is viewed as a single shared medium;
+it does not behave as a collection of independent point-to-point links that just happen
+Figure 2.29 Token ring network.
+2.7 Token Rings (802.5, FDDI) 121
+to be configured in a loop. Thus, a token ring shares two key features with an Ethernet:
+First, it involves a distributed algorithm that controls when each node is allowed to
+transmit, and second, all nodes see all frames, with the node identified in the frame
+header as the destination saving a copy of the frame as it flows past.
+The word “token” in token ring comes from the way access to the shared
+ring is managed. The idea is that a token, which is really just a special sequence
+of bits, circulates around the ring; each node receives and then forwards the token.
+When a node that has a frame to transmit sees the token, it takes the token off the
+ring (i.e., it does not forward the special bit pattern) and instead inserts its frame
+into the ring. Each node along the way simply forwards the frame, with the destination
+node saving a copy and forwarding the message onto the next node on the
+ring. When the frame makes its way back around to the sender, this node strips its
+frame off the ring (rather than continuing to forward it) and reinserts the token.
+In this way, some node downstream will have the opportunity to transmit a frame.
+The media access algorithm is fair in the sense that as the token circulates around
+the ring, each node gets a chance to transmit. Nodes are serviced in a round-robin
+fashion.
+2.7.1 Physical Properties
+One of the first things you might worry about with a ring topology is that any link
+or node failure would render the whole network useless. This problem is addressed
+by connecting each station into the ring using an electromechanical relay. As long as
+the station is healthy, the relay is open and the station is included in the ring. If the
+station stops providing power, the relay closes and the ring automatically bypasses the
+station. This is illustrated in Figure 2.30.
+Host
+From previous
+host
+To next
+host
+Relay
+(a)
+Host
+Host Host
+From previous
+host
+To next
+host
+Relay
+(b)
+Figure 2.30 Relay used on a token ring: (a) relay open—host active; (b) relay closed—
+host bypassed.
+122 2 Direct Link Networks
+Host
+Host
+Host
+Host
+From previous
+MSAU
+To next
+MSAU
+MSAU
+Figure 2.31 Multistation access unit.
+Several of these relays are usually packed into a single box, known as a multistation
+access unit (MSAU). This has the interesting effect of making a token ring
+actually look more like a star topology, as shown in Figure 2.31. It also makes it very
+easy to add stations to and remove stations from the network, since they can just be
+plugged into or unplugged from the nearest MSAU, while the overall wiring of the
+network can be left unchanged. One of the small differences between the IBM Token
+Ring specification and 802.5 is that the former actually requires the use of MSAUs,
+while the latter does not. In practice, MSAUs are almost always used because of the
+need for robustness and ease of station addition and removal.
+There are a few other physical details to know about 802.5 and IBM Token
+Rings. The data rate may be either 4 Mbps or 16 Mbps. The encoding of bits uses
+differential Manchester encoding, as described in Section 2.2. IBM Token Rings may
+have up to 260 stations per ring, while 802.5 sets the limit at 250. The physical medium
+is twisted pair for IBM, but is not specified in 802.5.
+2.7.2 Token Ring Media Access Control
+It is now time to look a little more closely at how the MAC protocol operates on a
+token ring. The network adaptor for a token ring contains a receiver, a transmitter, and
+one or more bits of data storage between them. When none of the stations connected
+to the ring has anything to send, the token circulates around the ring. Obviously, the
+ring has to have enough “storage capacity” to hold an entire token. For example, the
+2.7 Token Rings (802.5, FDDI) 123
+802.5 token is 24 bits long. If every station could hold only 1 bit (as is the norm for
+802.5 networks), and the stations were close enough together that the time for a bit to
+propagate from one station to another was negligible, we would need to have at least
+24 stations on the ring before it would operate correctly. This situation is avoided by
+having one designated station, called the monitor, add some additional bits of delay to
+the ring if necessary. The operation of the monitor is described in more detail below.
+As the token circulates around the ring, any station that has data to send may
+“seize” the token, that is, drain it off the ring and begin sending data. In 802.5 networks,
+the seizing process involves simply modifying 1 bit in the second byte token; the
+first 2 bytes of the modified token now become the preamble for the subsequent data
+packet. Once a station has the token, it is allowed to send one or more packets—exactly
+how many more depends on some factors described below.
+Each transmitted packet contains the destination address of the intended receiver;
+it may also contain a multicast (or broadcast) address if it is intended to reach more
+than one (or all) receivers. As the packet flows past each node on the ring, each node
+looks inside the packet to see if it is the intended recipient. If so, it copies the packet
+into a buffer as it flows through the network adaptor, but it does not remove the packet
+from the ring. The sending station has the responsibility of removing the packet from
+the ring. For any packet that is longer than the number of bits that can be stored in
+the ring, the sending station will be draining the first part of the packet from the ring
+while still transmitting the latter part.
+One issue we must address is how much data a given node is allowed to transmit
+each time it possesses the token, or said another way, how long a given node is allowed
+to hold the token. We call this the token holding time (THT). If we assume that most
+nodes on the network do not have data to send at any given time—a reasonable
+assumption, and certainly one that the Ethernet takes advantage of—then we could
+make a case for letting a node that possesses the token transmit as much data as it
+has before passing the token on to the next node. This would mean setting the THT
+to infinity. It would be silly in this case to limit a node to sending a single message
+and to force it to wait until the token circulates all the way around the ring before
+getting a chance to send another message. Of course, “as much data as it has” would
+be dangerous because a single station could keep the token for an arbitrarily long time,
+but we could certainly set the THT to significantly more than the time to send one
+packet.
+It is easy to see that the more bytes a node can send each time it has the token, the
+better the utilization of the ring you can achieve in the situation in which only a single
+node has data to send. The downside, of course, is that this strategy does not work
+well when multiple nodes have data to send—it favors nodes that have a lot of data
+to send over nodes that have only a small message to send, even when it is important
+124 2 Direct Link Networks
+to get this small message delivered as soon as possible. The situation is analogous to
+finding yourself in line at the bank behind a customer who is taking out a car loan,
+even though you simply want to cash a check. In 802.5 networks, the default THT is
+10 ms.
+There is a little subtlety to the use of the THT. Before putting each packet onto
+the ring, the station must check that the amount of time it would take to transmit the
+packet would not cause it to exceed the token holding time. This means keeping track
+of how long it has already held the token, and looking at the length of the next packet
+that it wants to send.
+From the token holding time we can derive another useful quantity, the token
+rotation time (TRT), which is the amount of time it takes a token to traverse the ring
+as viewed by a given node. It is easy to see that
+TRT ? ActiveNodes × THT + RingLatency
+where RingLatency denotes how long it takes the token to circulate around the ring
+when no one has data to send, and ActiveNodes denotes the number of nodes that
+have data to transmit.
+The 802.5 protocol provides a form of reliable delivery using 2 bits in the packet
+trailer, the A and C bits. These are both 0 initially. When a station sees a frame for
+which it is the intended recipient, it sets the A bit in the frame. When it copies the frame
+into its adaptor, it sets the C bit. If the sending station sees the frame come back over
+the ring with the A bit still 0, it knows that the intended recipient is not functioning
+or absent. If the A bit is set but not the C bit, this implies that for some reason (e.g.,
+lack of buffer space) the destination could not accept the frame. Thus, the frame might
+reasonably be retransmitted later in the hope that buffer space had become available.
+Another detail of the 802.5 protocol concerns the support of different levels of
+priority. The token contains a 3-bit priority field, so we can think of the token having
+a certain priority n at any time. Each device that wants to send a packet assigns a
+priority to that packet, and the device can only seize the token to transmit a packet if
+the packet’s priority is at least as great as the token’s. The priority of the token changes
+over time due to the use of three reservation bits in the frame header. For example, a
+station X waiting to send a priority n packet may set these bits to n if it sees a data
+frame going past and the bits have not already been set to a higher value. This causes
+the station that currently holds the token to elevate its priority to n when it releases it.
+Station X is responsible for lowering the token priority to its old value when it is done.
+Note that this is a strict priority scheme, in the sense that no lower-priority packets
+get sent when higher-priority packets are waiting. This may cause lower-priority
+packets to be locked out of the ring for extended periods if there is a sufficient supply
+of high-priority packets.
+2.7 Token Rings (802.5, FDDI) 125
+Token
+Frame
+Token
+Frame
+(a) (b)
+Figure 2.32 Token release: (a) early versus (b) delayed.
+One final issue will complete our discussion of the MAC protocol, which is the
+matter of exactly when the sending node releases the token. As illustrated in Figure
+2.32, the sender can insert the token back onto the ring immediately following its
+frame (this is called early release) or after the frame it transmits has gone all the way
+around the ring and been removed (this is called delayed release). Clearly, early release
+allows better bandwidth utilization, especially on large rings. 802.5 originally used
+delayed token release, but support for early release was subsequently added.
+2.7.3 Token Ring Maintenance
+As we noted above, token rings have a designated monitor station. The monitor’s job
+is to ensure the health of the ring. Any station on the ring can become the monitor,
+and there are defined procedures by which the monitor is elected when the ring is first
+connected or on the failure of the current monitor. A healthy monitor periodically
+announces its presence with a special control message; if a station fails to see such a
+message for some period of time, it will assume that the monitor has failed and will try
+to become the monitor. The procedures for electing a monitor are the same whether
+the ring has just come up or the active monitor has just failed.
+When a station decides that a new monitor is needed, it transmits a “claim token”
+frame, announcing its intent to become the new monitor. If that token circulates back
+to the sender, it can assume that it is OK for it to become the monitor. If some other
+station is also trying to become the monitor at the same instant, the sender might see
+a claim token message from that other station first. In this case, it will be necessary to
+break the tie using some well-defined rule like “highest address wins.”
+126 2 Direct Link Networks
+Once the monitor is agreed upon, it plays a number of roles. We have already
+seen that it may need to insert additional delay into the ring. It is also responsible
+for making sure that there is always a token somewhere in the ring, either circulating
+or currently held by a station. It should be clear that a token may vanish for several
+reasons, such as a bit error, or a crash on the part of a station that was holding it. To
+detect a missing token, the monitor watches for a passing token and maintains a timer
+equal to the maximum possible token rotation time. This interval equals
+NumStations × THT + RingLatency
+where NumStations is the number of stations on the ring, and RingLatency is the total
+propagation delay of the ring. If the timer expires without the monitor seeing a token,
+it creates a new one.
+The monitor also checks for corrupted or orphaned frames. The former have
+checksum errors or invalid formats, and without monitor intervention, they could
+circulate forever on the ring. The monitor drains them off the ring before reinserting
+the token. An orphaned frame is one that was transmitted correctly onto the ring but
+whose “parent” died; that is, the sending station went down before it could remove
+the frame from the ring. These are detected using another header bit, the “‘monitor”
+bit. This is 0 on transmission and set to 1 the first time the packet passes the monitor.
+If the monitor sees a packet with this bit set, it knows the packet is going by for the
+second time and it drains the packet off the ring.
+One additional ring maintenance function is the detection of dead stations. The
+relays in the MSAU can automatically bypass a station that has been disconnected
+or powered down, but may not detect more subtle failures. If any station suspects a
+failure on the ring, it can send a beacon frame to the suspect destination. Based on
+how far this frame gets, the status of the ring can be established, and malfunctioning
+stations can be bypassed by the relays in the MSAU.
+2.7.4 Frame Format
+We are now ready to define the 802.5 frame format, which is depicted in Figure 2.33.
+As noted above, 802.5 uses differential Manchester encoding. This fact is used by the
+frame format, which uses “illegal” Manchester codes in the start and end delimiters.
+Src Body Checksum
+addr
+48 Variable
+Dest
+addr
+48 32
+End
+delimiter
+8
+Frame
+status
+8
+Frame
+control
+8
+Access
+control
+8
+Start
+delimiter
+8
+Figure 2.33 802.5/token ring frame format.
+2.7 Token Rings (802.5, FDDI) 127
+After the start delimiter comes the access control byte, which includes the frame priority
+and the reservation priority mentioned above. The frame control byte is a demux key
+that identifies the higher-layer protocol.
+Similar to the Ethernet, 802.5 addresses are 48 bits long. The standard actually
+allows for smaller 16-bit addresses, but 48-bit addresses are typically used. When 48-
+bit addresses are used, they are interpreted in exactly the same way as on an Ethernet.
+The frame also includes a 32-bit CRC. This is followed by the frame status byte, which
+includes the A and C bits for reliable delivery.
+2.7.5 FDDI
+In many respects, FDDI is similar to 802.5 and IBM Token Rings. However, there
+are significant differences—some arising because it runs on fiber, not copper, and some
+arising from innovations that were made subsequent to the invention of the IBM Token
+Ring. We discuss some of the significant differences below.
+Physical Properties
+Unlike 802.5 networks, an FDDI network consists of a dual ring—two independent
+rings that transmit data in opposite directions, as illustrated in Figure 2.34(a). The
+second ring is not used during normal operation but instead comes into play only if
+the primary ring fails, as depicted in Figure 2.34(b). That is, the ring loops back on
+the secondary fiber to form a complete ring, and as a consequence, an FDDI network
+is able to tolerate a single break in the cable or the failure of one station.
+Because of the expense of the dual-ring configuration, FDDI allows nodes to
+attach to the network by means of a single cable. Such nodes are called single
+(a) (b)
+Figure 2.34 Dual-fiber ring: (a) normal operation; (b) failure of the primary ring.
+128 2 Direct Link Networks
+Concentrator (DAS)
+SAS SAS SAS SAS
+Upstream
+neighbor
+Downstream
+neighbor
+Figure 2.35 SASs connected to a concentrator.
+attachment stations (SAS); their dual-connected counterparts are called, not surprisingly,
+dual attachment stations (DAS). A concentrator is used to attach several SASs
+to the dual ring, as illustrated in Figure 2.35. Notice how the single-cable (two-fiber)
+connection into an SAS forms a connected piece of the ring. Should this SAS fail, the
+concentrator detects this situation and uses an optical bypass to isolate the failed SAS,
+thereby keeping the ring connected. This is analogous to the relays inside MSAUs used
+in 802.5 rings. Note that in this illustration, the second (backup) ring is denoted with
+a dotted line.
+As in 802.5, each network adaptor holds some number of bits between its input
+and output interfaces. Unlike 802.5, however, the buffer can be of different sizes in
+different stations, although never less than 9 bits nor more than 80 bits. It is also
+possible for a station to start transmitting bits out of this buffer before it is full. Of
+course, the total time it takes for a token to pass around the network is a function of
+the size of these buffers. For example, because FDDI is a 100-Mbps network, it has
+a 10-nanosecond (ns) bit time (each bit is 10 ns wide). If each station implements a
+10-bit buffer and waits for the buffer to be half full before starting to transmit, then
+each station introduces a 5 × 10 ns = 50-ns delay into the total ring rotation time.
+FDDI has other physical characteristics. For example, the standard limits a single
+network to at most 500 stations (hosts), with a maximum distance of 2 km between
+any pair of stations. Overall, the network is limited to a total of 200 km of fiber, which
+means that, because of the dual nature of the ring, the total amount of cable connecting
+all stations is limited to 100 km. Also, although the “F” in FDDI implies that optical
+fiber serves as the underlying physical medium, the standard has been defined to run
+over a number of different physical media, including coax and twisted pair. Of course,
+you still have to be careful about the total distance covered by the ring. As we will
+2.7 Token Rings (802.5, FDDI) 129
+see below, the amount of time it takes the token to traverse the network plays an
+important role in the access control algorithm.
+FDDI uses 4B/5B encoding, as discussed in Section 2.2. Since FDDI was the
+first popular networking technology to use fiber, and 4B/5B chip sets operating at
+FDDI rates became widely available, 4B/5B has enjoyed considerable popularity as an
+encoding scheme for fiber.
+Timed Token Algorithm
+The rules governing token holding times are a little more complex in FDDI than in
+802.5. The THT for each node is defined as before and is configured to some suitable
+value. In addition, to ensure that a given node has the opportunity to transmit within
+a certain amount of time—that is, to put an upper bound on the TRT observed by any
+node—we define a target token rotation time (TTRT), and all nodes agree to live within
+the limits of the TTRT. (How the nodes agree to a particular TTRT is described in the
+next subsection.) Specifically, each node measures the time between successive arrivals
+of the token. We call this the node’s measured TRT. If this measured TRT is greater
+than the agreed-upon TTRT, then the token is late, and the node does not transmit any
+data. If this measured TRT is less than the TTRT, then the token is early, and the node
+is allowed to hold the token for the difference between TTRT and the measured TRT.
+Although it may seem that we are now done, the algorithm we have just developed
+does not ensure that a node concerned with sending a frame with a bounded delay will
+actually be able to do so. The problem is that a node with lots of data to send has the
+opportunity, upon seeing an early token, to hold the token for so long that by the time
+a downstream node gets the token, its measured TRT is equal to or exceeds the TTRT,
+meaning that it still cannot transmit its frame. To account for this possibility, FDDI
+defines two classes of traffic: synchronous and asynchronous.3 When a node receives
+a token, it is always allowed to send synchronous data, without regard for whether
+the token is early or late. In contrast, a node can send asynchronous traffic only when
+the token is early.
+Note that the terms synchronous and asynchronous are somewhat misleading.
+By synchronous, FDDI means that the traffic is delay sensitive. For example, you
+would send voice or video as synchronous traffic on an FDDI network. In contrast,
+asynchronous means that the application is more interested in throughput than delay.
+A file transfer application would be asynchronous FDDI traffic.
+Are we done yet? Not quite. Because synchronous traffic can transmit without
+regard to whether the token is early or late, it would seem that if each node had a sizable
+3Originally, FDDI defined two subclasses of asynchronous traffic: restricted and unrestricted. In practice, however,
+the restricted asynchronous case is not supported, and so we describe only the unrestricted case and refer to it
+simply as “asynchronous.”
+130 2 Direct Link Networks
+amount of synchronous data to send, then the target rotation time would again be
+meaningless. To account for this, the total amount of synchronous data that can be sent
+during one token rotation is also bounded by TTRT. This means that in the worst case,
+the nodes with asynchronous traffic first use up one TTRT’s worth of time, and then the
+nodes with synchronous data consume another TTRT’s worth of time, meaning that
+it is possible for the measured TRT at any given node to be as much as 2 × TTRT.
+Note that if the synchronous traffic has already consumed one TTRT’s worth of time,
+then the nodes with asynchronous traffic will not send any data because the token
+will be late. Thus, while it is possible for a single rotation of the token to take as long
+as 2 × TTRT, it is not possible to have back-to-back rotations that take 2 × TTRT
+amount of time.
+One final detail concerns precisely how a node determines if it can send asynchronous
+traffic. As stated above, a node sends if the measured TRT is less than the
+TTRT. The question then arises: What if the measured TRT is less than the TTRT,
+but by such a small amount that it’s not possible to send the full message without
+exceeding the TTRT? The answer is that the node is allowed to send in this case. As a
+consequence, the measured TRT is actually bounded by TTRT plus the time it takes
+to send a full FDDI frame.
+Token Maintenance
+The FDDI mechanisms for ensuring that a valid token is always in circulation are also
+different from those in 802.5, as they are intertwined with the process of setting the
+TTRT. First, all nodes on an FDDI ring monitor the ring to be sure that the token
+has not been lost. Observe that in a correctly functioning ring, each node should see
+a valid transmission—either a data frame or the token—every so often. The greatest
+idle time between valid transmissions that a given node should experience is equal to
+the ring latency plus the time it takes to transmit a full frame, which on a maximally
+sized ring is a little less than 2.5 ms. Therefore, each node sets a timer event that fires
+after 2.5 ms. If this timer expires, the node suspects that something has gone wrong
+and transmits a “claim” frame. Every time a valid transmission is received, however,
+the node resets the timer back to 2.5 ms.
+The claim frames in FDDI differ from those in 802.5 because they contain the
+node’s bid for the TTRT, that is, the token rotation time that the node needs so that the
+applications running on the node can meet their timing constraints. A node can send
+a claim frame without holding the token and typically does so whenever it suspects a
+failure or when it first joins the network. If this claim frame makes it all the way
+around the ring, then the sender removes it, knowing that its TTRT bid was the lowest.
+That node now holds the token—that is, it is responsible for inserting a valid token
+on the ring—and may proceed with the normal token algorithm.
+2.8 Wireless (802.11) 131
+Control
+8 8 8 24
+CRC
+Start of
+frame
+End of
+frame
+Dest
+addr
+Body
+48 48
+Src
+addr
+Status
+32
+Figure 2.36 FDDI frame format.
+When a node receives a claim frame, it checks to see if the TTRT bid in the frame
+is less than its own. If it is, then the node resets its local definition of the TTRT to that
+contained in the claim frame and forwards the frame to the next node. If the bid TTRT
+is greater than that node’s minimum required TTRT, then the claim frame is removed
+from the ring and the node enters the bidding process by putting its own claim frame
+on the ring. Should the bid TTRT be equal to the node’s required TTRT, the node
+compares the address of the claim frame’s sender with its own and the higher address
+wins. Thus, if a claim frame makes it all the way back around to the original sender,
+that node knows that it is the only active bidder and that it can safely claim the token.
+At the same time, all nodes are now in agreement about the TTRT that will be short
+enough to keep all nodes happy.
+Frame Format
+The FDDI frame format, depicted in Figure 2.36, differs in very few ways from that
+for 802.5. Because FDDI uses 4B/5B encoding instead of Manchester, it uses 4B/5B
+control symbols rather than illegal Manchester symbols in the start- and end-of-frame
+markers. The other significant differences are the presence of a bit in the header to
+distinguish synchronous from asynchronous traffic, and the lack of the access control
+bits of 802.5.
+2.8 Wireless (802.11)
+Wireless networking is a rapidly evolving technology for connecting computers. As we
+saw earlier in this chapter, the possibilities for building wireless networks are almost
+endless, ranging from using infrared signals within a single building to constructing
+a global network from a grid of low-orbit satellites. This section takes a closer look
+at a specific technology centered around the emerging IEEE 802.11 standard. Like its
+Ethernet and token ring siblings, 802.11 is designed for use in a limited geographical
+area (homes, office buildings, campuses), and its primary challenge is to mediate access
+to a shared communication medium—in this case, signals propagating through space.
+802.11 supports additional features (e.g., time-bounded services, power management,
+and security mechanisms), but we focus our discussion on its base functionality.
+132 2 Direct Link Networks
+2.8.1 Physical Properties
+802.11 was designed to run over three different physical media—two based on spread
+spectrum radio and one based on diffused infrared. The radio-based versions currently
+run at 11 Mbps, but may soon run at 54 Mbps.
+The idea behind spread spectrum is to spread the signal over a wider frequency
+band than normal, so as to minimize the impact of interference from other devices.
+(Spread spectrum was originally designed for military use, so these “other devices”
+were often attempting to jam the signal.) For example, frequency hopping is a spread
+spectrum technique that involves transmitting the signal over a random sequence of
+frequencies; that is, first transmitting at one frequency, then a second, then a third,
+and so on. The sequence of frequencies is not truly random, but is instead computed
+algorithmically by a pseudorandom number generator. The receiver uses the same
+algorithm as the sender—and initializes it with the same seed—and hence is able to
+hop frequencies in sync with the transmitter to correctly receive the frame.
+A second spread spectrum technique, called direct sequence, achieves the same
+effect by representing each bit in the frame by multiple bits in the transmitted signal.
+For each bit the sender wants to transmit, it actually sends the exclusive-OR of that
+bit and n random bits. As with frequency hopping, the sequence of random bits is
+generated by a pseudorandom number generator known to both the sender and the
+receiver. The transmitted values, known as an n-bit chipping code, spread the signal
+across a frequency band that is n times wider than the frame would have otherwise
+required. Figure 2.37 gives an example of a 4-bit chipping sequence.
+802.11 defines one physical layer using frequency hopping (over 79 1-MHz-wide
+frequency bandwidths) and a second using direct sequence (using an 11-bit chipping
+sequence). Both standards run in the 2.4-GHz frequency band of the electromagnetic
+spectrum. In both cases, spread spectrum also has the interesting characteristic of
+making the signal look like noise to any receiver that does not know the pseudorandom
+sequence.
+Random sequence: 0100101101011001
+Data stream: 1010
+XOR of the two: 1011101110101001
+0
+0
+0
+1
+1
+1
+Figure 2.37 Example 4-bit chipping sequence.
+2.8 Wireless (802.11) 133
+A B C D
+Figure 2.38 Example wireless network.
+The third physical standard for 802.11 is based on infrared signals. The transmission
+is diffused, meaning that the sender and receiver do not have to be aimed at
+each other and do not need a clear line of sight. This technology has a range of up to
+about 10 m and is limited to the inside of buildings only.
+2.8.2 Collision Avoidance
+At first glance, it might seem that a wireless protocol would follow exactly the same
+algorithm as the Ethernet—wait until the link becomes idle before transmitting and
+back off should a collision occur—and to a first approximation, this is exactly what
+802.11 does. The problem is more complicated in a wireless network, however, because
+not all nodes are always within reach of each other.
+Consider the situation depicted in Figure 2.38, where each of four nodes is able
+to send and receive signals that reach just the nodes to its immediate left and right.
+For example, B can exchange frames with A and C but it cannot reach D, while C
+can reach B and D but not A. (A and D’s reach is not shown in the figure.) Suppose
+both A and C want to communicate with B and so they each send it a frame. A and C
+are unaware of each other since their signals do not carry that far. These two frames
+collide with each other at B, but unlike an Ethernet, neither A nor C is aware of this
+collision. A and C are said to be hidden nodes with respect to each other.
+A related problem, called the exposed node problem, occurs under the following
+circumstances. Suppose B is sending to A in Figure 2.38. Node C is aware of this
+communication because it hears B’s transmission. It would be a mistake for C to
+conclude that it cannot transmit to anyone just because it can hear B’s transmission.
+For example, suppose C wants to transmit to node D. This is not a problem since
+C’s transmission to D will not interfere with A’s ability to receive from B. (It would
+interfere with A sending to B, but B is transmitting in our example.)
+134 2 Direct Link Networks
+802.11 addresses these two problems with an algorithm called Multiple Access
+with Collision Avoidance (MACA). The idea is for the sender and receiver to exchange
+control frames with each other before the sender actually transmits any data. This
+exchange informs all nearby nodes that a transmission is about to begin. Specifically,
+the sender transmits a Request to Send (RTS) frame to the receiver; the RTS frame
+includes a field that indicates how long the sender wants to hold the medium (i.e., it
+specifies the length of the data frame to be transmitted). The receiver then replies with
+a Clear to Send (CTS) frame; this frame echoes this length field back to the sender.
+Any node that sees the CTS frame knows that it is close to the receiver, and therefore
+cannot transmit for the period of time it takes to send a frame of the specified length.
+Any node that sees the RTS frame but not the CTS frame is not close enough to the
+receiver to interfere with it, and so is free to transmit.
+There are two more details to complete the picture. First, the receiver sends an
+ACK to the sender after successfully receiving a frame. All nodes must wait for this
+ACK before trying to transmit.4 Second, should two or more nodes detect an idle link
+and try to transmit an RTS frame at the same time, their RTS frames will collide with
+each other. 802.11 does not support collision detection, but instead the senders realize
+the collision has happened when they do not receive the CTS frame after a period
+of time, in which case they each wait a random amount of time before trying again.
+The amount of time a given node delays is defined by the same exponential backoff
+algorithm used on the Ethernet (see Section 2.6.2).
+2.8.3 Distribution System
+As described so far, 802.11 would be suitable for an ad hoc configuration of nodes
+that may or may not be able to communicate with all other nodes, depending on how
+far apart they are. Moreover, since one of the advantages of a wireless network is
+that nodes are free to move around—they are not tethered by wire—the set of directly
+reachable nodes may change over time. To help deal with this mobility and partial
+connectivity, 802.11 defines additional structure on a set of nodes. Nodes are free to
+directly communicate with each other as just described, but in practice, they operate
+within this structure.
+Instead of all nodes being created equal, some nodes are allowed to roam (e.g.,
+your laptop) and some are connected to a wired network infrastructure. The latter
+are called access points (AP), and they are connected to each other by a so-called
+distribution system. Figure 2.39 illustrates a distribution system that connects three
+access points, each of which services the nodes in some region. Each of these regions
+4This ACK was not part of the original MACA algorithm, but was instead proposed in an extended version called
+MACAW: MACA for Wireless LANs.
+2.8 Wireless (802.11) 135
+B
+H
+A
+F
+G
+D
+AP-2
+AP-1 AP-3
+C E
+Distribution system
+Figure 2.39 Access points connected to a distribution network.
+is analogous to a cell in a cellular phone system, with the APs playing the same role
+as a base station. The details of the distribution system are not important to this
+discussion—it could be an Ethernet or a token ring, for example. The only important
+point is that the distribution network runs at layer 2 of the ISO architecture; that is,
+it does not depend on any higher-level protocols.
+Although two nodes can communicate directly with each other if they are within
+reach of each other, the idea behind this configuration is that each node associates
+itself with one access point. For node A to communicate with node E, for example,
+A first sends a frame to its access point (AP-1), which forwards the frame across
+the distribution system to AP-3, which finally transmits the frame to E. How AP-1
+knew to forward the message to AP-3 is beyond the scope of 802.11; it may have
+used the bridging protocol described in the next chapter (Section 3.2). What 802.11
+does specify is how nodes select their access points and, more interestingly, how this
+algorithm works in light of nodes moving from one cell to another.
+The technique for selecting an AP is called scanning and involves the following
+four steps:
+1 The node sends a Probe frame.
+2 All APs within reach reply with a Probe Response frame.
+3 The node selects one of the access points and sends that AP an Association
+Request frame.
+4 The AP replies with an Association Response frame.
+136 2 Direct Link Networks
+B
+H
+A
+F
+G
+D
+AP-2
+AP-1 AP-3
+C E
+C
+Distribution system
+Figure 2.40 Node mobility.
+A node engages this protocol whenever it joins the network, as well as when it becomes
+unhappy with its current AP. This might happen, for example, because the signal from
+its current AP has weakened due to the node moving away from it. Whenever a node
+acquires a new AP, the new AP notifies the old AP of the change (this happens in step 4)
+via the distribution system.
+Consider the situation shown in Figure 2.40, where node C moves from the cell
+serviced by AP-1 to the cell serviced by AP-2. As it moves, it sends Probe frames, which
+eventually result in Probe Response frames from AP-2. At some point, C prefers AP-2
+over AP-1, and so it associates itself with that access point.
+The mechanism just described is called active scanning since the node is actively
+searching for an access point. APs also periodically send a Beacon frame that advertises
+the capabilities of the access point; these include the transmission rates supported by
+the AP. This is called passive scanning, and a node can change to this AP based on the
+Beacon frame simply by sending it an Association Request frame back to the access
+point.
+2.8.4 Frame Format
+Most of the 802.11 frame format, which is depicted in Figure 2.41, is exactly what
+we would expect. The frame contains the source and destination node addresses, each
+of which are 48 bits long; up to 2312 bytes of data; and a 32-bit CRC. The Control
+field contains three subfields of interest (not shown): a 6-bit Type field that indicates
+whether the frame carries data, is an RTS or CTS frame, or is being used by the
+2.9 Network Adaptors 137
+Addr1 Addr2 Addr3 SeqCtrl Addr4 Payload CRC
+48 48 48 16 48 0–18,496 32
+Duration
+16
+Control
+16
+Figure 2.41 802.11 frame format.
+scanning algorithm; and a pair of 1-bit fields—called ToDS and FromDS—that are
+described below.
+The peculiar thing about the 802.11 frame format is that it contains four, rather
+than two, addresses. How these addresses are interpreted depends on the settings of the
+ToDS and FromDS bits in the frame’s Control field. This is to account for the possibility
+that the frame had to be forwarded across the distribution system, which would mean
+that the original sender is not necessarily the same as the most recent transmitting
+node. Similar reasoning applies to the destination address. In the simplest case, when
+one node is sending directly to another, both the DS bits are 0, Addr1 identifies the
+target node, and Addr2 identifies the source node. In the most complex case, both DS
+bits are set to 1, indicating that the message went from a wireless node onto the distribution
+system, and then from the distribution system to another wireless node.
+With both bits set, Addr1 identifies the ultimate destination, Addr2 identifies the
+immediate sender (the one that forwarded the frame from the distribution system to
+the ultimate destination), Addr3 identifies the intermediate destination (the one that accepted
+the frame from a wireless node and forwarded it across the distribution system),
+and Addr4 identifies the original source. In terms of the example given in Figure 2.39,
+Addr1 corresponds to E, Addr2 identifies AP-3, Addr3 corresponds to AP-1, and Addr4
+identifies A.
+2.9 Network Adaptors
+Nearly all the networking functionality described in this chapter is implemented in the
+network adaptor: framing, error detection, and the media access protocol. The only
+exceptions are the point-to-point automatic repeat request (ARQ) schemes described
+in Section 2.5, which are typically implemented in the lowest-level protocol running
+on the host. We conclude this chapter by describing the design of a generic network
+adaptor and the device driver software that controls it.
+When reading this section, keep in mind that no two network adaptors are
+exactly alike; they vary in countless small details. Our focus, therefore, is on their
+general characteristics, although we do include some examples from an actual adaptor
+to make the discussion more tangible.
+138 2 Direct Link Networks
+Host I/O bus
+Adaptor
+Network link
+Bus
+interface
+Link
+interface
+Figure 2.42 Block diagram of a typical network adaptor.
+2.9.1 Components
+A network adaptor serves as an interface between the host and the network, and as
+a result, it can be thought of as having two main components: a bus interface that
+understands how to communicate with the host and a link interface that speaks the
+correct protocol on the network. There must also be a communication path between
+these two components, over which incoming and outgoing data is passed. A simple
+block diagram of a network adaptor is depicted in Figure 2.42.
+Network adaptors are always designed for a specific I/O bus, which often precludes
+moving an adaptor from one vendor’s machine to another.5 Each bus, in effect,
+defines a protocol that is used by the host’s CPU to program the adaptor, by the adaptor
+to interrupt the host’s CPU, and by the adaptor to read and write memory on the
+host. One of the main features of an I/O bus is the data transfer rate that it supports.
+For example, a typical bus might have a 32-bit-wide data path (i.e., it can transfer
+32 bits of data in parallel) running at 33 MHz (i.e., the bus’s cycle time is 33 ns),
+giving it a peak transfer rate of approximatley 1 Gbps, which would be enough to
+support a (unidirectional) 622-Mbps STS-12 link. Of course, the peak rate tells us
+almost nothing about the average rate, which may be much lower.
+The link-half of the adaptor implements the link-level protocol. For fairly mature
+technologies like Ethernet, the link-half of the adaptor is implemented by a chip set
+that can be purchased on the commodity market. For newer link technologies, however,
+the link-level protocol may be implemented in software on a general-purpose
+microprocessor or perhaps with some form of programmable hardware, such as a
+field-programmable gate array (FPGA). These approaches generally add to the cost of
+5Fortunately, there are standards in bus design just as there are in networking, so some adaptors can be used on
+machines from several vendors.
+2.9 Network Adaptors 139
+the adaptor but make it more flexible—it is easier to modify software than hardware
+and easier to reprogram FPGAs than to redesign boards.
+Because the host’s bus and the network link are, in all probability, running at
+different speeds, there is a need to put a small amount of buffering between the two
+halves of the adaptor. Typically, a small FIFO (byte queue) is enough to hide the
+asynchrony between the bus and the link.
+2.9.2 View from the Host
+Since we have spent most of this chapter discussing various protocols that are implemented
+by the link-half of the adaptor, we now turn our attention to the host’s view
+of the network adaptor.
+Control Status Register
+A network adaptor, like any other device, is ultimately programmed by software running
+on the CPU. From the CPU’s perspective, the adaptor exports a control status
+register (CSR) that is readable and writable from the CPU. The CSR is typically located
+at some address in the memory, thereby making it possible for the CPU to read and
+write just like any other memory location. The CPU writes to the CSR to instruct it to
+transmit and/or receive a frame and reads from the CSR to learn the current state of
+the adaptor.
+The following is an example CSR from the Lance Ethernet device, which is
+manufactured by Advanced Micro Devices (AMD). The Lance device actually has four
+different control status registers; the following shows the bit masks used to interpret
+the 16-bit CSR0. To set a bit on the adaptor, the CPU does an inclusive-OR of CSRO
+and the mask corresponding to the bit it wants to set. To determine if a particular bit
+is set, the CPU compares the AND of the contents of CSR0 and the mask against 0.
+/*
+* Control and status bits for CSR0.
+*
+* Legend:
+* RO - Read Only
+* RC - Read/Clear (writing 1 clears, writing 0 has no effect)
+* RW - Read/Write
+* W1 - Write-1-only (writing 1 sets, writing 0 has no effect)
+* RW1 - Read/Write-1-only
+(writing 1 sets, writing 0 has no effect)
+*/
+#define LE_ERR 0x8000 /* RO BABL | CERR | MISS | MERR */
+#define LE_BABL 0x4000 /* RC transmitted too many bits */
+#define LE_CERR 0x2000 /* RC No Heartbeat */
+140 2 Direct Link Networks
+#define LE_MISS 0x1000 /* RC Missed an incoming packet */
+#define LE_MERR 0x0800 /* RC Memory Error; no acknowledge */
+#define LE_RINT 0x0400 /* RC Received packet Interrupt */
+#define LE_TINT 0x0200 /* RC Transmitted packet Interrupt */
+#define LE_IDON 0x0100 /* RC Initialization Done */
+#define LE_INTR 0x0080 /* RO BABL|MISS|MERR|RINT|TINT|IDON */
+#define LE_INEA 0x0040 /* RW Interrupt Enable */
+#define LE_RXON 0x0020 /* RO Receiver On */
+#define LE_TXON 0x0010 /* RO Transmitter On */
+#define LE_TDMD 0x0008 /* W1 Transmit Demand (send it now) */
+#define LE_STOP 0x0004 /* RW1 Stop */
+#define LE_STRT 0x0002 /* RW1 Start */
+#define LE_INIT 0x0001 /* RW1 Initialize */
+This definition says, for example, that the host writes a 1 to the least significant
+bit of CSR0 (0x0001) to initialize the Lance chip. Similarly, if the host sees a 1 in the
+sixth significant bit (0x0020) and in the fifth significant bit (0x0010), then it knows that
+the Lance chip is enabled to receive and transmit frames, respectively.
+Interrupts
+The host CPU could sit in a tight loop reading the adaptor’s control status register
+until something interesting happens and then take the appropriate action. On the
+Lance chip, for example, it could continually watch for a 1 in the 11th significant bit
+(0x0400), which would indicate that a frame has just arrived. This is called polling,
+and although it is not an unreasonable design in certain situations (e.g., a network
+router that has nothing better to do than wait for the next frame), it is not typically
+done on end hosts that could better spend their time running application programs.
+Instead of polling, most hosts only pay attention to the network device when the
+adaptor interrupts the host. The device raises an interrupt when an event that requires
+host intervention occurs—for example, a frame has been successfully transmitted or
+received, or an error occurred when the device was attempting to transmit or receive
+a frame. The host’s architecture includes a mechanism that causes a particular procedure
+inside the operating system to be invoked when such an interrupt occurs. This
+procedure is known as an interrupt handler, and it inspects the CSR to determine the
+cause of the interrupt and then takes the appropriate action.
+While servicing an interrupt, the host typically disables additional interrupts.
+This keeps the device driver from having to service multiple interrupts at one time.
+Because interrupts are disabled, the device driver must finish its job quickly (it does not
+have the time to execute the entire protocol stack), and under no circumstances can it
+afford to block (that is, suspend execution while awaiting some event). For example,
+this might be accomplished by having the interrupt handler dispatch a process to take
+2.9 Network Adaptors 141
+care of the frame and then return. Thus, the handler makes sure that the frame will get
+processed without having to spend valuable time actually processing the frame itself.
+Direct Memory Access versus Programmed I/O
+One of the most important issues in network adaptor design is how the bytes of a
+frame are transferred between the adaptor and the host memory. There are two basic
+mechanisms: direct memory access (DMA) and programmed I/O (PIO). With DMA,
+the adaptor directly reads and writes the host’s memory without any CPU involvement;
+the host simply gives the adaptor a memory address and the adaptor reads to (writes
+from) it.With PIO, the CPU is directly responsible for moving data between the adaptor
+and the host memory: To send a frame, the CPU sits in a tight loop that first reads a
+word from host memory and then writes it to the adaptor; to receive a frame, the CPU
+reads words from the adaptor and writes them to memory. We now consider DMA
+and PIO in more detail.
+When using DMA, there is no need to buffer frames on the adaptor; the adaptor
+reads and writes host memory. (A few bytes of buffering are needed to stage data
+between the bus and the link, as described above, but complete frames are not buffered
+on the adaptor.) The CPU is therefore responsible for giving the adaptor a pair of buffer
+descriptor lists: one to transmit out of and one to receive into. A buffer descriptor list
+is an array of address/length pairs, as illustrated in Figure 2.43.
+When receiving frames, the adaptor uses as many buffers as it needs to hold the
+incoming frame. For example, the descriptor illustrated in Figure 2.43 would cause
+Buffer
+descriptor
+list
+Memory buffers
+100
+1400
+1500
+1500
+1500
+… F
+i
+g
+u
+r
+e
+2
+.
+4
+3
+B
+u
+f
+f
+e
+r
+d
+e
+s
+c
+r
+i
+p
+t
+o
+r
+l
+i
+s
+t
+.
+142 2 Direct Link Networks
+an Ethernet adaptor that was attempting to
+receive a 1450-byte frame to put the first
+100 bytes in the first buffer and the next
+1350 bytes in the second buffer. If a second
+1500-byte frame arrived immediately
+after the first, it would be placed entirely
+in the third buffer. That is, separate frames
+are placed in separate buffers, although a
+single frame may be scattered across multiple
+buffers. This latter feature is usually
+called scatter-read. In practice, scatter-read
+is used when the network’s maximum frame
+size is so large that it is wasteful to allocate
+all buffers big enough to contain the largest
+possible arriving frame. An OS-specific message
+data structure, similar to the ones described
+in Section 1.4.3, would then be used
+to link together all the buffers that make
+up a single frame. Scatter-read is typically
+not used on an Ethernet because preallocating
+1500-byte buffers does not excessively
+waste memory.
+Output works in a similar way. When
+the host has a frame to transmit, it puts a
+pointer to the buffer that contains the frame
+in the transmit descriptor list. Devices that
+support gather-write allow the frame to be
+fragmented across multiple physical buffers.
+In practice, gather-write is more widely used
+than scatter-read because outgoing frames
+are often constructed in a piecemeal fashion,
+with more than one protocol contributing
+a buffer. For example, by the time a message
+makes it down the protocol stack and
+is ready to be transmitted, it consists of a
+buffer that contains the aggregate header
+(the collection of headers attached by various
+protocols that processed the message)
+and a separate buffer that contains the application’s
+data.
+Frames, Buffers,
+and Messages
+As this section has suggested, the
+network adaptor is the place where
+the network comes in physical contact
+with the host. It also happens
+to be the place where three different
+worlds intersect: the network,
+the host architecture, and the host
+operating system. It turns out that
+each of these has a different terminology
+for talking about the same
+thing. It is important to recognize
+when this is happening.
+From the network’s perspective,
+the adaptor transmits frames
+from the host and receives frames
+into the host. Most of this chapter
+has been presented from the network
+perspective, so you should
+have a good understanding of
+what the term “frame” means.
+From the perspective of the host
+architecture, each frame is received
+into or transmitted from a
+buffer, which is simply a region
+of main memory of some length
+and starting at some address. Finally,
+from the operating system’s
+perspective, a message is an abstract
+object that holds network
+frames. Messages are implemented
+by a data structure that includes
+pointers to different memory locations
+(buffers). We saw an example
+of a message data structure in
+Chapter 1.
+2.9 Network Adaptors 143
+Host
+Adaptor Memory
+CPU
+Memory
+Memory
+Figure 2.44 Programmed I/O.
+In the case of PIO, the network adaptor must contain some amount of buffering—
+the CPU copies frames between host memory and this adaptor memory, as illustrated
+in Figure 2.44. The basic fact that necessitates buffering is that, with most operating
+systems, you can never be sure when the CPU will get around to doing something,
+so you need to be prepared to wait for it. One important question that must be addressed
+is how much memory is needed on the adaptor. There certainly needs to be
+at least one frame’s worth of memory in both the transmit and the receive direction.
+In addition, adaptors that use PIO usually have additional memory that can be used
+to hold a small number of incoming frames until the CPU can get around to copying
+them into host memory. Although the computer system axiom that “memory is
+cheap” would seem to suggest putting a huge amount of memory on the adaptor, this
+memory must be of the more expensive dual-ported type because both the CPU and
+the adaptor read/write it. PIO-based adaptors typically have something on the order
+of 64–256 KB of adaptor memory, although there are adaptors with as much as 1 MB
+of memory.
+Device Drivers
+A device driver is a collection of operating system routines that effectively anchor the
+protocol stack to the network hardware. It typically includes routines to initialize the
+device, transmit frames on the link, and field interrupts. The code is often difficult to
+read because it’s full of device-specific details, but the overall logic is actually quite
+simple.
+For example, a transmit routine first makes sure there is a free transmit buffer
+on the device to handle the message. If not, it has to block the process until one is
+available. Once there is an available transmit buffer, the invoking process disables
+144 2 Direct Link Networks
+interrupts to protect itself from interference. It then translates the message from the
+internal OS format to that expected by the device, sets the CSR to instruct the device
+to transmit, and enables interrupts.
+The logic for the interrupt handler is equally simple. It first disables additional
+interrupts that might interfere with the processing of this interrupt. It then inspects the
+CSR to determine what caused the interrupt. There are three possibilities: (1) an error
+has occurred, (2) a transmit request has completed, or (3) a frame has been received.
+In the first case, the handler prints a message and clears the error bits. In the second
+case, we know that a transmit request that was queued earlier by the transmit routine
+has completed, meaning that there is now a free transmit buffer that can be reused. In
+the third case, the handler calls a receive routine to extract the incoming frame from
+the receive buffer list and place it in the OS’s internal message data structure, and then
+start a process to shepherd the message up the protocol stack.
+2.9.3 Memory Bottleneck
+As discussed in Section 2.1.1, host memory performance is often the limiting factor in
+network performance. Nowhere is this possibility more critical than at the host/adaptor
+interface. To help drive this point home, consider Figure 2.45. This diagram shows
+the bandwidth available between various components of a modern PC. While the I/O
+bus is fast enough to transfer frames between the network adaptor and host memory
+at gigabit rates, there are two potential problems.
+The first is that the advertised I/O bus speed corresponds to its peak bandwidth;
+it is the product of the bus’s width and clock speed (e.g., a 32-bit-wide bus running
+at 33 MHz has a peak transfer rate of 1056 Mbps). The real limitation is the size
+of the data block that is being transferred across the I/O bus, since there is a certain
+amount of overhead involved in each bus transfer. On some architectures, for example,
+I/O bus
+235 Mbps 1056 Mbps
+CPU
+Memory
+Crossbar
+Figure 2.45 Memory bandwidth on a modern PC-class machine.
+2.9 Network Adaptors 145
+it takes 8 clock cycles to acquire the bus for the purpose of transferring data from the
+adaptor to host memory. This overhead is independent of the number of data bytes
+transferred. Thus, if you want to transfer a 64-byte payload across the I/O bus—this
+happens to be the size of a minimum Ethernet packet—then the whole transfer takes
+24 cycles: 8 cycles to acquire the bus and 16 cycles to transfer the data. (The bus
+is 32 bits wide, which means that it can transfer a 4-byte word during each clock
+cycle; 64 bytes divided by 4 bytes per cycle equals 16 cycles.) This means that the
+maximum bandwidth you can achieve is
+16 ÷ (8 + 16) × 1056 = 704 Mbps
+not the peak 1056 Mbps.
+The second problem is that the memory/CPU bandwidth, which is 235 MBps
+(1880 Mbps), is the same order of magnitude as the bandwidth of the I/O bus. Fortunately,
+this is a measured number rather than an advertised peak rate. The ramification
+is that while it is possible to deliver frames across the I/O bus and into memory and
+then to load the data from memory into the CPU’s registers at network bandwidths, it
+is impractical for the device driver, operating system, and application to go to memory
+multiple times for each word of data in a network packet, possibly because it
+needs to copy the data from one buffer to another. In particular, if the memory/CPU
+path is crossed n times, then it might be the case that the bandwidth your application
+sees is 235 MBps/n. (The performance might be better if the data is cached, but
+often caches don’t help with data arriving from the network.) For example, if the
+various software layers need to copy the message from one buffer to another four
+times—not an uncommon situation—then the application might see a throughput of
+58.75 MBps (470 Mbps), a far cry from the 1056 Mbps we thought this machine could
+support.
+? As an aside, it is important to recognize that there are many parallels between
+moving a message to and from memory and moving a message across a network. In
+particular, the effective throughput of the memory system is defined by the same two
+formulas given in Section 1.5.
+Throughput = TransferSize/TransferTime
+TransferTime = RTT + 1/Bandwidth × TransferSize
+In the case of the memory system, however, the transfer size corresponds to how
+big a unit of data we can move across the bus in one transfer (i.e., cache line versus
+small cells versus large message), and the RTT corresponds to the memory latency, that
+146 2 Direct Link Networks
+is, whether the memory is on-chip cache, off-chip cache, or main memory. Just as in the
+case of the network, the larger the transfer size and the smaller the latency, the better
+the effective throughput. Also similar to a network, the effective memory throughput
+does not necessarily equal the peak memory bandwidth (i.e., the bandwidth that can
+be achieved with an infinitely large transfer).
+The main point of this discussion is that we must be aware of the limits memory
+bandwidth places on network performance. If carefully designed, the system can work
+around these limits. For example, it is possible to integrate the buffers used by the
+device driver, the operating system, and the application in a way that minimizes data
+copies. The system also needs to be aware of when data is brought into the cache, so
+it can perform all necessary operations on the data before it gets bumped from the
+cache. The details of how this is accomplished are beyond the scope of this book, but
+can be found in papers referenced at the end of the chapter.
+Finally, there is a second important lesson lurking in this discussion: when the
+network isn’t performing as well as you think it should, it’s not always the network’s
+fault. In many cases, the actual bottleneck in the system is one of the machines connected
+to the network. For example, when it takes a long time for a Web page to
+appear on your browser, it might be network congestion, but it’s just as likely the case
+that the server at the other end of the network can’t keep up with the workload.
+2.10 Summary
+This chapter introduced the hardware building blocks of a computer network—nodes
+and links—and discussed the five key problems that must be solved so that two or
+more nodes that are directly connected by a physical link can exchange messages with
+each other.
+First, physical links carry signals. It is therefore necessary to encode the bits that
+make up a binary message into the signal at the source node and then to recover the
+bits from the signal at the receiving node. This is the encoding problem, and it is made
+challenging by the need to keep the sender’s and receiver’s clocks synchronized. We
+discussed four different encoding techniques—NRZ, NRZI, Manchester, and 4B/5B—
+which differ largely in how they encode clock information along with the data being
+transmitted. One of the key attributes of an encoding scheme is its efficiency, that is,
+the ratio of signal pulses to encoded bits.
+Once it is possible to transmit bits between nodes, the next step is to figure out
+how to package these bits into frames. This is the framing problem, and it boils down
+to being able to recognize the beginning and end of each frame. Again, we looked at
+several different techniques, including byte-oriented protocols, bit-oriented protocols,
+and clock-based protocols.
+Open Issue: Does It Belong in Hardware? 147
+Assuming that each node is able to recognize the collection of bits that make up a
+frame, the third problem is to determine if those bits are in fact correct, or if they have
+possibly been corrupted in transit. This is the error detection problem, and we looked
+at three different approaches: cyclic redundancy check, two-dimensional parity, and
+checksums. Of these, the CRC approach gives the strongest guarantees and is the most
+widely used at the link level.
+Given that some frames will arrive at the destination node containing errors
+and thus will have to be discarded, the next problem is how to recover from such
+losses. The goal is to make the link appear reliable. The general approach to this
+problem is called ARQ and involves using a combination of acknowledgments and
+timeouts.We looked at three specific ARQ algorithms: stop-and-wait, sliding window,
+and concurrent channels. What makes these algorithms interesting is how effectively
+they use the link, with the goal being to keep the pipe full.
+The final problem is not relevant to point-to-point links, but it is the central
+issue in multiple-access links: how to mediate access to a shared link so that all nodes
+eventually have a chance to transmit their data. In this case, we looked at three different
+media access protocols—Ethernet, token ring, and wireless—which have been
+put to practical use in building local area networks. What these technologies have in
+common is that control over the network is distributed over all the nodes connected
+to the network; there is no dependence on a central arbitrator.
+We concluded the chapter by observing that, in practice, most of the algorithms
+that address these five problems are implemented on the adaptor that connects the
+host to the link. It turns out that the design of this adaptor is of critical importance in
+how well the network, as a whole, performs.
+One of the most important questions
+in the design of any computer system
+is, What belongs in hardware and
+what belongs in software? In the case
+of networking, the network adaptor
+finds itself at the heart of this question.
+For example, why is the Ether-
+O P E N I S S U E
+Does It Belong in Hardware?
+net algorithm, presented in Section 2.6 of this chapter, typically implemented on the
+network adaptor, while the higher-level protocols discussed later in this book are not?
+It is certainly possible to put a general-purpose microprocessor on the network
+adaptor, which gives you the opportunity to move high-level protocols there, such as
+TCP/IP. The reason that this is typically not done is complicated, but it comes down to
+148 2 Direct Link Networks
+the economics of computer design: The host processor is usually the fastest processor
+on a computer, and it would be a shame if this fast host processor had to wait for a
+slower adaptor processor to run TCP/IP when it could have done the job faster itself.
+On the flip side, some protocol processing does belong on the network adaptor. The
+general rule of thumb is that any processing for which a fixed processor can keep pace
+with the link speed—that is, a faster processor would not improve the situation—is a
+good candidate for being moved to the adaptor. In other words, any function that is
+already limited by the link speed, as opposed to the processor at the end of the link,
+might be effectively implemented on the adaptor.
+Historically, the decision as to what functionality belonged on the network adaptor
+and what belonged on the host computer was a complex one that generated quite
+a body of research. In modern systems, it is almost always the case that the MAC layer
+and below are performed by the adaptor, while the IP layer and above are performed
+on the host. Interestingly, however, the same debate about how much hardware assistance
+is required above the MAC layer continues in the design of switches and routers,
+which is a topic for the next two chapters.
+Independent of exactly what protocols are implemented on the network adaptor,
+generally the data will eventually find its way onto the main computer, and when it
+does, the efficiency with which the data is moved between the adaptor and the computer’s
+memory is very important. Recall from Section 2.9.3 that memory bandwidth—
+the rate at which data can be moved from one memory location to another—has the
+potential to be a limiting factor in how a workstation-class machine performs. An
+inefficient host/adaptor data transfer mechanism can, therefore, limit the throughput
+rate seen by application programs running on the host. First, there is the issue of
+whether DMA or programmed I/O is used; each has advantages in different situations.
+Second, there is the issue of how well the network adaptor is integrated with the operating
+system’s buffer mechanism; a carefully integrated system is usually able to avoid
+copying data at a higher level of the protocol graph, thereby improving applicationto-
+application throughput.
+F U R T H E R R E A D I N G
+One of the most important contributions in computer networking over the last 20 years
+is the original paper by Metcalf and Boggs (1976) introducing the Ethernet. Many
+years later, Boggs, Mogul, and Kent (1988) reported their practical experiences with
+Ethernet, debunking many of the myths that had found their way into the literature
+over the years. Both papers are must reading. The third and fourth papers discuss the
+issues involved in integrating high-speed network adaptors with system software.
+Further Reading 149
+¦ Metcalf, R., and D. Boggs. Ethernet: Distributed packet switching for local
+computer networks. Communications of the ACM 19(7):395–403, July 1976.
+¦ Boggs, D., J. Mogul, and C. Kent. Measured capacity of an Ethernet. Pro-
+ceedings of the SIGCOMM ’88 Symposium, pages 222–234, August 1988.
+¦ Metcalf, R. Computer/network interface design lessons from Arpanet and Ethernet.
+IEEE Journal of Selected Areas in Communication (JSAC) 11(2):173–
+180, February 1993.
+¦ Druschel, P., M. Abbot, M. Pagels, and L. L. Peterson. Network subsystem
+design. IEEE Network (Special Issue on End-System Support for High Speed
+Networks) 7(4):8–17, July 1993.
+There are countless textbooks with a heavy emphasis on the lower levels of
+the network hierarchy, with a particular focus on telecommunications—networking
+from the phone company’s perspective. Books by Spragins et al. [SHP91] and Minoli
+[Min93] are two good examples. Several other books concentrate on various local area
+network technologies. Of these, Stallings’s book is the most comprehensive [Sta00b],
+while Jain gives a thorough description of FDDI [Jai94]. Jain’s book also gives a good
+introduction to the low-level details of optical communication. Also, a comprehensive
+overview of FDDI can be found in Ross’s article [Ros86].
+For an introduction to information theory, Blahut’s book is a good place to start
+[Bla87], along with Shannon’s seminal paper on link capacity [Sha48].
+For a general introduction to the mathematics behind error codes, Rao and
+Fujiwara [RF89] is recommended. For a detailed discussion of the mathematics of
+CRCs in particular, along with some more information about the hardware used to
+calculate them, see Peterson and Brown [PB61].
+On the topic of network adaptor design, much work was done in the early 1990s
+by researchers trying to connect hosts to networks running at higher and higher rates.
+In addition to the two examples given in the reading list, see Traw and Smith [TS93],
+Ramakrishnan [Ram93], Edwards et al. [EWL+94], Druschel et al. [DPD94], Kanakia
+and Cheriton [KC88], Cohen et al. [CFFD93], and Steenkiste [Ste94a]. Recently, a new
+generation of interface cards, ones that utilize network processors, are coming onto
+the market. Spalink et al. demonstrate how these new processors can be programmed
+to implement various network functionality [SKPG01].
+For general information on computer architecture, Hennessy and Patterson’s
+book [HP02] is an excellent reference.
+Finally, we recommend the following live reference:
+¦ http://standards.ieee.org/: status of various IEEE network-related standards
+150 2 Direct Link Networks
+E X E R C I S E S
+1 Show the NRZ, Manchester, and NRZI encodings for the bit pattern shown in
+Figure 2.46. Assume that the NRZI signal starts out low.
+2 Show the 4B/5B encoding, and the resulting NRZI signal, for the following bit
+sequence:
+1110 0101 0000 0011
+3 Show the 4B/5B encoding, and the resulting NRZI signal, for the following bit
+sequence:
+1101 1110 1010 1101 1011 1110 1110 1111
+4 In the 4B/5B encoding (Table 2.4), only two of the 5-bit codes used end in two 0s.
+How many possible 5-bit sequences are there (used by the existing code or not)
+that meet the stronger restriction of having at most one leading and at most one
+trailing 0? Could all 4-bit sequences be mapped to such 5-bit sequences?
+5 Assuming a framing protocol that uses bit stuffing, show the bit sequence transmitted
+over the link when the frame contains the following bit sequence:
+110101111101011111101011111110
+Mark the stuffed bits.
+6 Suppose the following sequence of bits arrives over a link:
+1101011111010111110010111110110
+Bits
+NRZ
+1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1
+Clock
+Manchester
+NRZI
+Figure 2.46 Diagram for Exercise 1.
+Exercises 151
+Show the resulting frame after any stuffed bits have been removed. Indicate any
+errors that might have been introduced into the frame.
+7 Suppose the following sequence of bits arrive over a link:
+011010111110101001111111011001111110
+Show the resulting frame after any stuffed bits have been removed. Indicate any
+errors that might have been introduced into the frame.
+8 Suppose you want to send some data using the BISYNC framing protocol, and
+the last 2 bytes of your data are DLE and ETX. What sequence of bytes would be
+transmitted immediately prior to the CRC?
+9 For each of the following framing protocols, give an example of a byte/bit sequence
+that should never appear in a transmission.
+(a) BISYNC
+(b) HDLC
+10 Assume that a SONET receiver resynchronizes its clock whenever a 1 bit appears;
+otherwise, the receiver samples the signal in the middle of what it believes is the
+bit’s time slot.
+(a) What relative accuracy of the sender’s and receiver’s clocks is required in order
+to receive correctly 48 0 bytes (one ATM AAL5 cell’s worth) in a row?
+(b) Consider a forwarding station A on a SONET STS-1 line, receiving frames
+from the downstream end B and retransmitting them upstream. What relative
+accuracy of A’s and B’s clocks is required to keep A from accumulating more
+than one extra frame per minute?
+11 Show that two-dimensional parity allows detection of all 3-bit errors.
+12 Give an example of a 4-bit error that would not be detected by two-dimensional
+parity, as illustrated in Figure 2.16. What is the general set of circumstances under
+which 4-bit errors will be undetected?
+13 Show that two-dimensional parity provides the receiver enough information to
+correct any 1-bit error (assuming the receiver knows only 1 bit is bad), but not
+any 2-bit error.
+152 2 Direct Link Networks
+14 Show that the Internet checksum will never be 0xFFFF (that is, the final value of
+sum will not be 0x0000) unless every byte in the buffer is 0. (Internet specifications
+in fact require that a checksum of 0x0000 be transmitted as 0xFFFF; the value
+0x0000 is then reserved for an omitted checksum. Note that, in ones complement
+arithmetic, 0x0000 and 0xFFFF are both representations of the number 0.)
+15 Prove the Internet checksum computation shown in the text is independent of
+byte order (host order or network order) except that the bytes in the final checksum
+should be swapped later to be in the correct order. Specifically, show that
+the sum of 16-bit word integers can be computed in either byte order. For example,
+if the ones complement sum (denoted by +') of 16-bit words is represented
+as
+[A, B] +' [C, D] +' · · ·+' [Y, Z]
+the following swapped sum is the same as the original sum above:
+[B, A] +' [D, C] +' · · ·+' [Z, Y]
+16 Suppose that one byte in a buffer covered by the Internet checksum algorithm needs
+to be decremented (e.g., a header hop count field). Give an algorithm to compute
+the revised checksum without rescanning the entire buffer. Your algorithm should
+consider whether the byte in question is low order or high order.
+17 Show that the Internet checksum can be computed by first taking the 32-bit ones
+complement sum of the buffer in 32-bit units, then taking the 16-bit ones complement
+sum of the upper and lower halfwords, and finishing as before by complementing
+the result. (To take a 32-bit ones complement sum on 32-bit twos
+complement hardware, you need access to the “overflow” bit.)
+18 Suppose we want to transmit the message 11001001 and protect it from errors
+using the CRC polynomial x3 + 1.
+(a) Use polynomial long division to determine the message that should be transmitted.
+(b) Suppose the leftmost bit of the message is inverted due to noise on the transmission
+link. What is the result of the receiver’s CRC calculation? How does
+the receiver know that an error has occurred?
+Exercises 153
+19 Suppose we want to transmit the message 1011 0010 0100 1011 and protect it from
+errors using the CRC-8 polynomial x8 + x2 + x1 + 1.
+(a) Use polynomial long division to determine the message that should be transmitted.
+(b) Suppose the leftmost bit of the message is inverted due to noise on the transmission
+link. What is the result of the receiver’s CRC calculation? How does
+the receiver know that an error has occurred?
+20 The CRC algorithm as presented in this chapter requires lots of bit manipulations.
+It is, however, possible to do polynomial long division taking multiple bits at a
+time, via a table-driven method, that enables efficient software implementations of
+CRC.We outline the strategy here for long division 3 bits at a time (see Table 2.6);
+in practice we would divide 8 bits at a time, and the table would have 256 entries.
+Let the divisor polynomial C = C(x) be x3 + x2 + 1, or 1101. To build the table
+for C, we take each 3-bit sequence, p, append three trailing 0s, and then find the
+quotient q = p?000÷C, ignoring the remainder. The third column is the product
+C × q, the first 3 bits of which should equal p.
+(a) Verify, for p = 110, that the quotients p?000 ÷ C and p?111 ÷ C are the
+same; that is, it doesn’t matter what the trailing bits are.
+(b) Fill in the missing entries in the table.
+p q = p?000÷C C × q
+000 000 000 000
+001 001 001 101
+010 011 010
+011 0 011
+100 111 100 011
+101 110 101 110
+110 100 110
+111 111
+Table 2.6 Table-driven CRC calculation.
+154 2 Direct Link Networks
+(c) Use the table to divide 101 001 011 001 100 by C. Hint: The first 3 bits of
+the dividend are p = 101, so from the table the corresponding first 3 bits
+of the quotient are q = 110.Write the 110 above the second 3 bits of the dividend,
+and subtract C×q = 101 110, again from the table, from the first 6 bits
+of the dividend. Keep going in groups of 3 bits. There should be no remainder.
+21 With 1 parity bit we can detect all 1-bit errors. Show that at least one generalization
+fails, as follows:
+(a) Show that if messages m are 8 bits long, then there is no error detection code
+e = e(m) of size 2 bits that can detect all 2-bit errors. Hint: Consider the set
+Mof all 8-bit messages with a single 1 bit; note that any message from Mcan
+be transmuted into any other with a 2-bit error, and show that some pair of
+messages m1 and m2 in M must have the same error code e.
+(b) Find an N (not necessarily minimal) such that no 32-bit error detection code
+applied to N-bit blocks can detect all errors altering up to 8 bits.
+22 Consider an ARQ protocol that uses only negative acknowledgments (NAKs),
+but no positive acknowledgments (ACKs). Describe what timeouts would need
+to be scheduled. Explain why an ACK-based protocol is usually preferred to a
+NAK-based protocol.
+23 Consider an ARQ algorithm running over a 20-km point-to-point fiber link.
+(a) Compute the propagation delay for this link, assuming that the speed of light
+is 2 × 108 m/s in the fiber.
+(b) Suggest a suitable timeout value for the ARQ algorithm to use.
+(c) Why might it still be possible for theARQalgorithm to time out and retransmit
+a frame, given this timeout value?
+24 Suppose you are designing a sliding window protocol for a 1-Mbps point-to-point
+link to the moon, which has a one-way latency of 1.25 seconds. Assuming that
+each frame carries 1 KB of data, what is the minimum number of bits you need
+for the sequence number?
+25 Suppose you are designing a sliding window protocol for a 1-Mbps point-to-point
+link to a stationary satellite revolving around the earth at 3 × 104 km altitude.
+Assuming that each frame carries 1 KB of data, what is the minimum number of
+bits you need for the sequence number in the following cases? Assume the speed
+of light is 3 × 108 m/s.
+Exercises 155
+(a) RWS=1
+(b) RWS=SWS
+26 The text suggests that the sliding window protocol can be used to implement flow
+control.We can imagine doing this by having the receiver delay ACKs, that is, not
+send the ACK until there is free buffer space to hold the next frame. In doing so,
+each ACK would simultaneously acknowledge the receipt of the last frame and
+tell the source that there is now free buffer space available to hold the next frame.
+Explain why implementing flow control in this way is not a good idea.
+27 Implicit in the stop-and-wait scenarios of Figure 2.19 is the notion that the receiver
+will retransmit its ACK immediately on receipt of the duplicate data frame.
+Suppose instead that the receiver keeps its own timer and retransmits its ACK
+only after the next expected frame has not arrived within the timeout interval.
+Draw timelines illustrating the scenarios in Figure 2.19(b)–(d); assume the receiver’s
+timeout value is twice the sender’s. Also redraw (c) assuming the receiver’s
+timeout value is half the sender’s.
+28 In stop-and-wait transmission, suppose that both sender and receiver retransmit
+their last frame immediately on receipt of a duplicate ACK or data frame; such
+a strategy is superficially reasonable because receipt of such a duplicate is most
+likely to mean the other side has experienced a timeout.
+(a) Draw a timeline showing what will happen if the first data frame is somehow
+duplicated, but no frame is lost. How long will the duplications continue?
+This situation is known as the Sorcerer’s Apprentice bug.
+(b) Suppose that, like data, ACKs are retransmitted if there is no response within
+the timeout period. Suppose also that both sides use the same timeout interval.
+Identify a reasonably likely scenario for triggering the Sorcerer’s Apprentice
+bug.
+29 Give some details of how you might augment the sliding window protocol with
+flow control by having ACKs carry additional information that reduces the SWS
+as the receiver runs out of buffer space. Illustrate your protocol with a timeline
+for a transmission; assume the initial SWS and RWS are 4, the link speed is instantaneous,
+and the receiver can free buffers at the rate of one per second (i.e., the
+receiver is the bottleneck). Show what happens at T = 0, T = 1, . . . , T = 4 seconds.
+156 2 Direct Link Networks
+30 Describe a protocol combining the sliding window algorithm with selective ACKs.
+Your protocol should retransmit promptly, but not if a frame simply arrives one or
+two positions out of order. Your protocol should also make explicit what happens
+if several consecutive frames are lost.
+31 Draw a timeline diagram for the sliding window algorithm with SWS = RWS =
+3 frames for the following two situations. Use a timeout interval of about 2×RTT.
+(a) Frame 4 is lost.
+(b) Frames 4–6 are lost.
+32 Draw a timeline diagram for the sliding window algorithm with SWS = RWS = 4
+frames for the following two situations. Assume the receiver sends a duplicate
+acknowledgement if it does not receive the expected frame. For example, it sends
+DUPACK[2] when it expects to see FRAME[2] but receives FRAME[3] instead. Also,
+the receiver sends a cumulative acknowledgment after it receives all the outstanding
+frames. For example, it sends ACK[5] when it receives the lost frame FRAME[2]
+after it already received FRAME[3], FRAME[4], and FRAME[5]. Use a timeout interval
+of about 2×RTT.
+(a) Frame 2 is lost. Retransmission takes place upon timeout (as usual).
+(b) Frame 2 is lost. Retransmission takes place either upon receipt of the first
+DUPACK or upon timeout. Does this scheme reduce the transaction time? Note
+that some end-to-end protocols (e.g., variants of TCP) use a similar scheme
+for fast retransmission.
+33 Suppose that we attempt to run the sliding window algorithm with SWS = RWS =
+3 and with MaxSeqNum = 5. The Nth packet DATA[N] thus actually contains N
+mod 5 in its sequence number field. Give an example in which the algorithm
+becomes confused; that is, a scenario in which the receiver expects DATA[5] and
+accepts DATA[0]—which has the same transmitted sequence number—in its stead.
+Nopackets may arrive out of order. Note this implies MaxSeqNum ? 6 is necessary
+as well as sufficient.
+34 Consider the sliding window algorithm with SWS = RWS = 3, with no out-oforder
+arrivals, and with infinite-precision sequence numbers.
+(a) Show that if DATA[6] is in the receive window, then DATA[0] (or in general
+any older data) cannot arrive at the receiver (and hence that MaxSeqNum = 6
+would have sufficed).
+Exercises 157
+A R B
+Figure 2.47 Diagram for Exercises 36–38.
+(b) Show that if ACK[6] may be sent (or, more literally, that DATA[5] is in the
+sending window), then ACK[2] (or earlier) cannot be received.
+These amount to a proof of the formula given in Section 2.5.2, particularized to
+the case SWS = 3. Note that part (b) implies that the scenario of the previous
+problem cannot be reversed to involve a failure to distinguish ACK[0] and ACK[5].
+35 Suppose that we run the sliding window algorithm with SWS = 5 and RWS = 3,
+and no out-of-order arrivals.
+(a) Find the smallest value for MaxSeqNum. You may assume that it suffices to
+find the smallest MaxSeqNum such that if DATA[MaxSeqNum] is in the receive
+window, then DATA[0] can no longer arrive.
+(b) Give an example showing that MaxSeqNum - 1 is not sufficient.
+(c) State a general rule for the minimum MaxSeqNum in terms of SWS and RWS.
+36 Suppose A is connected to B via an intermediate router R, as shown in Figure 2.47.
+The A–R and R–B links each accept and transmit only one packet per second in
+each direction (so two packets take 2 seconds), and the two directions transmit
+independently. Assume A sends to B using the sliding window protocol with
+SWS = 4.
+(a) For Time = 0, 1, 2, 3, 4, 5, state what packets arrive at and leave each node,
+or label them on a timeline.
+(b) What happens if the links have a propagation delay of 1.0 seconds, but accept
+immediately as many packets as are offered (i.e., latency = 1 second but
+bandwidth is infinite)?
+37 Suppose A is connected to B via an intermediate router R, as in the previous
+problem. The A–R link is instantaneous, but the R–B link transmits only one
+packet each second, one at a time (so two packets take 2 seconds). Assume A sends
+to B using the sliding window protocol with SWS = 4. For Time = 0, 1, 2, 3, 4,
+state what packets arrive at and are sent from A and B. How large does the queue
+at R grow?
+158 2 Direct Link Networks
+38 Consider the situation in the previous exercise, except this time assume that the
+router has a queue size of 1; that is, it can hold one packet in addition to the one
+it is sending (in each direction). Let A’s timeout be 5 seconds, and let SWS again
+be 4. Show what happens at each second from T = 0 until all four packets from
+the first windowful are successfully delivered.
+39 Why is it important for protocols configured on top of the Ethernet to have a
+length field in their header, indicating how long the message is?
+40 What kinds of problems can arise when two hosts on the same Ethernet share
+the same hardware address? Describe what happens and why that behavior is a
+problem.
+41 The 1982 Ethernet specification allowed between any two stations up to 1500 m
+of coaxial cable, 1000 m of other point-to-point link cable, and two repeaters.
+Each station or repeater connects to the coaxial cable via up to 50 m of “drop
+cable.” Typical delays associated with each device are given in Table 2.7 (where
+c = speed of light in a vacuum = 3×108 m/s). What is the worst-case round-trip
+propagation delay, measured in bits, due to the sources listed? (This list is not
+complete; other sources of delay include sense time and signal rise time.)
+42 Coaxial cable Ethernet was limited to a maximum of 500 m between repeaters,
+which regenerate the signal to 100% of its original amplitude. Along one 500-m
+segment, the signal could decay to no less than 14% of its original value (8.5 dB).
+Along 1500 m, then, the decay might be (0.14)3 = 0.3%. Such a signal, even
+along 2500 m, is still strong enough to be read; why then are repeaters required
+every 500 m?
+Item Delay
+Coaxial cable propagation speed .77c
+Link/drop cable propagation speed .65c
+Repeaters approximately 0.6 µs each
+Transceivers approximately 0.2 µs each
+Table 2.7 Typical delays associated with various devices (Exercise 41).
+Exercises 159
+43 Suppose the round-trip propagation delay for Ethernet is 46.4 µs. This yields a
+minimum packet size of 512 bits (464 bits corresponding to propagation delay +
+48 bits of jam signal).
+(a) What happens to the minimum packet size if the delay time is held constant,
+and the signalling rate rises to 100 Mbps?
+(b) What are the drawbacks to so large a minimum packet size?
+(c) If compatibility were not an issue, how might the specifications be written so
+as to permit a smaller minimum packet size?
+44 Let A and B be two stations attempting to transmit on an Ethernet. Each has a
+steady queue of frames ready to send; A’s frames will be numbered A1, A2, and
+so on, and B’s similarly. Let T = 51.2 µs be the exponential backoff base unit.
+Suppose A and B simultaneously attempt to send frame 1, collide, and happen to
+choose backoff times of 0 × T and 1 × T, respectively, meaning A wins the race
+and transmits A1 while B waits. At the end of this transmission, B will attempt
+to retransmit B1 while A will attempt to transmit A2. These first attempts will
+collide, but now A backs off for either 0 × T or 1 × T, while B backs off for time
+equal to one of 0 × T, . . . , 3 × T.
+(a) Give the probability that A wins this second backoff race immediately after
+this first collision; that is, A’s first choice of backoff time k× 51.2 is less than
+B’s.
+(b) Suppose A wins this second backoff race. A transmits A3, and when it is
+finished, A and B collide again as A tries to transmit A4 and B tries once
+more to transmit B1. Give the probability that A wins this third backoff race
+immediately after the first collision.
+(c) Give a reasonable lower bound for the probability thatAwins all the remaining
+backoff races.
+(d) What then happens to the frame B1?
+This scenario is known as the Ethernet capture effect.
+45 Suppose the Ethernet transmission algorithm is modified as follows: After each successful
+transmission attempt, a host waits one or two slot times before attempting
+to transmit again, and otherwise backs off the usual way.
+(a) Explain why the capture effect of the previous exercise is now much less likely.
+(b) Show how the strategy above can now lead to a pair of hosts capturing the
+Ethernet, alternating transmissions, and locking out a third.
+160 2 Direct Link Networks
+(c) Propose an alternative approach, for example, by modifying the exponential
+backoff. What aspects of a station’s history might be used as parameters to
+the modified backoff?
+46 Ethernets use Manchester encoding. Assuming that hosts sharing the Ethernet are
+not perfectly synchronized, why does this allow collisions to be detected soon after
+they occur, without waiting for the CRC at the end of the packet?
+47 Suppose A, B, and C all make their first carrier sense, as part of an attempt to
+transmit, while a fourth station D is transmitting. Draw a timeline showing one
+possible sequence of transmissions, attempts, collisions, and exponential backoff
+choices. Your timeline should also meet the following criteria: (i) initial transmission
+attempts should be in the order A, B, C, but successful transmissions should
+be in the order C, B, A, and (ii) there should be at least four collisions.
+48 Repeat the previous exercise, now with the assumption that Ethernet is p-persistent
+with p = 0.33 (that is, a waiting station transmits immediately with probability
+p when the line goes idle, and otherwise defers one 51.2-µs slot time and repeats
+the process). Your timeline should meet criterion (i) of the previous problem, but
+in lieu of criterion (ii), you should show at least one collision and at least one run
+of four deferrals on an idle line. Again, note that many solutions are possible.
+49 Suppose Ethernet physical addresses are chosen at random (using true random
+bits).
+(a) What is the probability that on a 1024-host network, two addresses will be
+the same?
+(b) What is the probability that the above event will occur on some one or more
+of 220 networks?
+(c) What is the probability that of the 230 hosts in all the networks of (b), some
+pair has the same address?
+Hint: The calculation for (a) and (c) is a variant of that used in solving the socalled
+Birthday Problem: Given Npeople, what is the probability that two of their
+birthdays (addresses) will be the same? The second person has probability 1- 1
+365
+of having a different birthday from the first, the third has probability 1 - 2
+365
+of having a different birthday from the first two, and so on. The probability all
+birthdays are different is thus
+
+1 -
+1
+365
+
+×
+
+1 -
+2
+365
+
+×· · ·×
+
+1 -
+N- 1
+365
+
+Exercises 161
+which for smallish N is about
+1 -
+1 + 2+· · ·+(N- 1)
+365
+50 Suppose five stations are waiting for another packet to finish on an Ethernet. All
+transmit at once when the packet is finished and collide.
+(a) Simulate this situation up until the point when one of the five waiting stations
+succeeds. Use coin flips or some other genuine random source to determine
+backoff times. Make the following simplifications: Ignore interframe spacing,
+ignore variability in collision times (so that retransmission is always after an
+exact integral multiple of the 51.2-µs slot time), and assume that each collision
+uses up exactly one slot time.
+(b) Discuss the effect of the listed simplifications in your simulation versus the
+behavior you might encounter on a real Ethernet.
+51 Write a program to implement the simulation discussed above, this time with N
+stations waiting to transmit. Again model time as an integer, T, in units of slot
+times, and again treat collisions as taking one slot time (so a collision at time
+T followed by a backoff of k = 0 would result in a retransmission attempt at
+time T+1). Find the average delay before one station transmits successfully, for
+N = 20, N = 40, and N = 100. Does your data support the notion that the delay
+is linear in N? Hint: For each station, keep track of that station’s NextTimeToSend
+and CollisionCount. You are done when you reach a time T for which there is only
+one station with NextTimeToSend == T. If there is no such station, increment T. If
+there are two or more, schedule the retransmissions and try again.
+52 Suppose that NEthernet stations, all trying to send at the same time, require N/2
+slot times to sort out who transmits next. Assuming the average packet size is 5
+slot times, express the available bandwidth as a function of N.
+53 Consider the following Ethernet model. Transmission attempts are at random
+times with an average spacing of ? slot times; specifically, the interval between
+consecutive attempts is an exponential random variable x = -? log u, where
+u is chosen randomly in the interval 0 ? u ? 1. An attempt at time t results
+in a collision if there is another attempt in the range from t - 1 to t + 1,
+where t is measured in units of the 51.2-µs slot time; otherwise the attempt
+succeeds.
+(a) Write a program to simulate, for a given value of ?, the average number of slot
+times needed before a successful transmission, called the contention interval.
+162 2 Direct Link Networks
+Find the minimum value of the contention interval. Note that you will have
+to find one attempt past the one that succeeds, in order to determine if there
+was a collision. Ignore retransmissions, which probably do not fit the random
+model above.
+(b) The Ethernet alternates between contention intervals and successful transmissions.
+Suppose the average successful transmission lasts 8 slot times (512
+bytes). Using your minimum length of the contention interval from above,
+what fraction of the theoretical 10-Mbps bandwidth is available for transmissions?
+54 What conditions would have to hold for a corrupted frame to circulate forever on
+a token ring without a monitor? How does the monitor fix this problem?
+55 An IEEE 802.5 token ring has five stations and a total wire length of 230 m. How
+many bits of delay must the monitor insert into the ring? Do this for both 4 Mbps
+and 16 Mbps; use a propagation rate of 2.3 × 108 m/s.
+56 Consider a token ring network like FDDI in which a station is allowed to hold the
+token for some period of time (the token holding time, or THT). Let RingLatency
+denote the time it takes the token to make one complete rotation around the
+network when none of the stations have any data to send.
+(a) In terms of THT and RingLatency, express the efficiency of this network when
+only a single station is active.
+(b) What setting of THT would be optimal for a network that had only one station
+active (with data to send) at a time?
+(c) In the case where N stations are active, give an upper bound on the token
+rotation time, or TRT, for the network.
+57 Consider a token ring with a ring latency of 200 µs. Assuming that the delayed
+token release strategy is used, what is the effective throughput rate that can be
+achieved if the ring has a bandwidth of 4 Mbps? What is the effective throughput
+rate that can be achieved if the ring has a bandwidth of 100 Mbps? Answer for
+both a single active host and for “many” hosts; for the latter, assume there are
+sufficiently many hosts transmitting that the time spent advancing the token can
+be ignored. Assume a packet size of 1 KB.
+58 For a 100-Mbps token ring network with a token rotation time of 200 µs that
+allows each station to transmit one 1-KB packet each time it possesses the token,
+Exercises 163
+calculate the maximum effective throughput rate that any one host can achieve.
+Do this assuming (a) immediate release and (b) delayed release.
+59 Suppose a 100-Mbps delayed-release token ring has 10 stations, a ring latency of
+30 µs, and an agreed-upon TTRT of 350 µs.
+(a) How many synchronous frame bytes could each station send, assuming all are
+allocated the same amount?
+(b) Assume stations A, B, C are in increasing order on the ring. Due to uniform
+synchronous traffic, the TRT without asynchronous data is 300 µs. B sends a
+200-µs (2.5-Kb) asynchronous frame. What TRT will A, B, and C then see on
+their next measurement? Who may transmit such a frame next?
+Packet Switching
+Nature seems . . .to reach many of her ends by long circuitous routes.
+—Rudolph Lotze
+The directly connected networks described in the previous chapter suffer from
+two limitations. First, there is a limit to how many hosts can be attached. For
+example, only two hosts can be attached to a point-to-point link, and an Ethernet
+can connect up to only 1024 hosts. Second, there is a limit to how large of a
+geographic area a single network can serve. For example, an Ethernet can span only
+P R O B L E M
+Not All Networks Are Directly
+Connected
+2500 m, and even though point-topoint
+links can be quite long, they do
+not really serve the area between the
+two ends. Since our goal is to build
+networks that can be global in scale,
+the next problem is therefore to enable
+communication between hosts
+that are not directly connected.
+This problem is not unlike the one addressed in the telephone network: Your
+phone is not directly connected to every person you might want to call, but instead
+is connected to an exchange that contains a switch. It is the switches that create the
+impression that you have a connection to the person at the other end of the call. Similarly,
+computer networks use packet switches (as distinct from the circuit switches
+used for telephony) to enable packets to travel from one host to another, even when
+no direct connection exists between those hosts. This chapter introduces the major
+concepts of packet switching, which lies at the heart of computer networking.
+A packet switch is a device with several inputs and outputs leading to and from
+the hosts that the switch interconnects. The core job of a switch is to take packets
+that arrive on an input and forward (or switch) them to the right output so that they
+will reach their appropriate destination. There are a variety of ways that the switch
+can determine the “right” output for a packet, which can be broadly categorized as
+connectionless and connection-oriented approaches.
+3 A key problem that a switch must deal with is the
+finite bandwidth of its outputs. If packets destined for a
+certain output arrive at a switch and their arrival rate exceeds
+the capacity of that output, then we have a problem
+of contention. The switch queues (buffers) packets until
+the contention subsides, but if it lasts too long, the switch
+will run out of buffer space and be forced to discard packets.
+When packets are discarded too frequently, the switch
+is said to be congested. The ability of a switch to handle
+contention is a key aspect of its performance, and many
+high-performance switches use exotic hardware to reduce
+the effects of contention.
+This chapter introduces the issues of forwarding and
+contention in packet switches.We begin by considering the
+various approaches to switching, including the connectionless
+and connection-oriented models. We then examine
+two particular technologies in detail. The first is LAN
+switching, which has evolved from Ethernet bridging to
+become one of the dominant technologies in today’s LAN
+environments. The second noteworthy switching technology
+is asynchronous transfer mode (ATM), which is popular
+among telecommunications service providers in wide
+area networks. Finally, we consider some of the aspects
+of switch design that must be taken into account when
+building large-scale networks.
+166 3 Packet Switching
+3.1 Switching and Forwarding
+In the simplest terms, a switch is a mechanism that allows us to interconnect links to
+form a larger network. A switch is a multi-input, multi-output device, which transfers
+packets from an input to one or more outputs. Thus, a switch adds the star topology
+(see Figure 3.1) to the point-to-point link, bus (Ethernet), and ring (802.5 and
+FDDI) topologies established in the last chapter. A star topology has several attractive
+properties:
+¦ Even though a switch has a fixed number of inputs and outputs, which limits
+the number of hosts that can be connected to a single switch, large networks
+can be built by interconnecting a number of switches.
+¦ We can connect switches to each other and to hosts using point-to-point links,
+which typically means that we can build networks of large geographic scope.
+¦ Adding a new host to the network by connecting it to a switch does not
+necessarily mean that the hosts already connected will get worse performance
+from the network.
+This last claim cannot be made for the shared-media networks discussed in the
+last chapter. For example, it is impossible for two hosts on the same Ethernet to transmit
+continuously at 10 Mbps because they share the same transmission medium. Every host
+on a switched network has its own link to the switch, so it may be entirely possible for
+many hosts to transmit at the full link speed (bandwidth), provided that the switch is
+designed with enough aggregate capacity. Providing high aggregate throughput is one
+Figure 3.1 A switch provides a star topology.
+3.1 Switching and Forwarding 167
+T3 T3 STS-1
+Switching
+protocol
+Figure 3.2 Example protocol graph running on a switch.
+Input
+ports
+T3
+T3
+STS-1
+T3
+T3
+STS-1
+Switch
+Output
+ports
+Figure 3.3 Example switch with three input and output ports.
+of the design goals for a switch; we return to this topic below. In general, switched
+networks are considered more scalable (i.e., more capable of growing to large numbers
+of nodes) than shared-media networks because of this ability to support many hosts
+at full speed.
+A switch is connected to a set of links and, for each of these links, runs the
+appropriate data link protocol to communicate with the node at the other end of the
+link. A switch’s primary job is to receive incoming packets on one of its links and to
+transmit them on some other link. This function is sometimes referred to as either
+switching or forwarding, and in terms of the OSI architecture, it is the main function
+of the network layer. Figure 3.2 shows the protocol graph that would run on a switch
+that is connected to two T3 links and one STS-1 SONET link. A representation of this
+same switch is given in Figure 3.3. In this figure, we have split the input and output
+halves of each link, and we refer to each input or output as a port. (In general, we
+assume that each link is bidirectional, and hence supports both input and output.) In
+other words, this example switch has three input ports and three output ports.
+The question then is, How does the switch decide which output port to place
+each packet on? The general answer is that it looks at the header of the packet
+for an identifier that it uses to make the decision. The details of how it uses this
+identifier vary, but there are two common approaches. The first is the datagram or
+168 3 Packet Switching
+connectionless approach. The second is the virtual circuit or connection-oriented approach.
+A third approach, source routing, is less common than these other two, but it
+is simple to explain and does have some useful applications.
+One thing that is common to all networks is that we need to have a way to identify
+the end nodes. Such identifiers are usually called addresses. We have already seen
+examples of addresses in the previous chapter, for example, the 48-bit address used
+for Ethernet. The only requirement for Ethernet addresses is that no two nodes on a
+network have the same address. This is accomplished by making sure that all Ethernet
+cards are assigned a globally unique identifier. For the following discussions, we assume
+that each host has a globally unique address. Later on, we consider other useful properties
+that an address might have, but global uniqueness is adequate to get us started.
+Another assumption that we need to make is that there is some way to identify the
+input and output ports of each switch. There are at least two sensible ways to identify
+ports: One is to number each port, and the other is to identify the port by the name of
+the node (switch or host) to which it leads. For now, we use numbering of the ports.
+3.1.1 Datagrams
+The idea behind datagrams is incredibly simple: You just make sure that every packet
+contains enough information to enable any switch to decide how to get it to its destination.
+That is, every packet contains the complete destination address. Consider
+the example network illustrated in Figure 3.4, in which the hosts have addresses A,
+B, C, and so on. To decide how to forward a packet, a switch consults a forwarding
+table (sometimes called a routing table), an example of which is depicted in Table 3.1.
+Destination Port
+A 3
+B 0
+C 3
+D 3
+E 2
+F 1
+G 0
+H 0
+Table 3.1 Forwarding table for switch 2.
+3.1 Switching and Forwarding 169
+0
+3 1
+2
+0
+1 3
+2
+0
+3 1
+2
+Switch 3 Host B
+Switch 2
+Host A
+Switch 1
+Host C
+Host D
+Host E
+Host F
+Host G
+Host H
+Figure 3.4 Datagram forwarding: an example network.
+This particular table shows the forwarding information that switch 2 needs to forward
+datagrams in the example network. It is pretty easy to figure out such a table when you
+have a complete map of a simple network like that depicted here; we could imagine a
+network operator configuring the tables statically. It is a lot harder to create the forwarding
+tables in large, complex networks with dynamically changing topologies and
+multiple paths between destinations. That harder problem is known as routing and is
+the topic of Section 4.2. We can think of routing as a process that takes place in the
+background so that, when a data packet turns up, we will have the right information
+in the forwarding table to be able to forward, or switch, the packet.
+Connectionless (datagram) networks have the following characteristics:
+¦ A host can send a packet anywhere at any time, since any packet that turns
+up at a switch can be immediately forwarded (assuming a correctly populated
+forwarding table). As we will see, this contrasts with most connection-oriented
+networks, in which some “connection state” needs to be established before
+the first data packet is sent.
+¦ When a host sends a packet, it has no way of knowing if the network is capable
+of delivering it or if the destination host is even up and running.
+170 3 Packet Switching
+¦ Each packet is forwarded independently of previous packets that might have
+been sent to the same destination. Thus, two successive packets from host A
+to host B may follow completely different paths (perhaps because of a change
+in the forwarding table at some switch in the network).
+¦ A switch or link failure might not have any serious effect on communication
+if it is possible to find an alternate route around the failure and to update the
+forwarding table accordingly.
+This last fact is particularly important to the history of datagram networks. One
+of the important goals of the ARPANET, forerunner to the Internet, was to develop
+networking technology that would be robust in a military environment, where you
+might expect links and nodes to fail because of active attacks such as bombing. It was
+the ability to route around failures that led to a datagram-based design.
+3.1.2 Virtual Circuit Switching
+A widely used technique for packet switching, which differs significantly from the
+datagram model, uses the concept of a virtual circuit (VC). This approach, which is also
+called a connection-oriented model, requires that we first set up a virtual connection
+from the source host to the destination host before any data is sent. To understand how
+this works, consider Figure 3.5, where host A again wants to send packets to host B.
+We can think of this as a two-stage process. The first stage is “connection setup.” The
+second is data transfer. We consider each in turn.
+In the connection setup phase, it is necessary to establish “connection state” in
+each of the switches between the source and destination hosts. The connection state
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+3
+Host A
+Host B
+Switch 3
+Switch 1 Switch 2
+Figure 3.5 An example of a virtual circuit network.
+3.1 Switching and Forwarding 171
+for a single connection consists of an entry in a “VC table” in each switch through
+which the connection passes. One entry in the VC table on a single switch contains
+¦ a virtual circuit identifier (VCI) that uniquely identifies the connection at this
+switch and that will be carried inside the header of the packets that belong to
+this connection
+¦ an incoming interface on which packets for this VC arrive at the switch
+¦ an outgoing interface in which packets for this VC leave the switch
+¦ a potentially different VCI that will be used for outgoing packets
+The semantics of one such entry is as follows: If a packet arrives on the designated
+incoming interface and that packet contains the designated VCI value in its header,
+then that packet should be sent out the specified outgoing interface with the specified
+outgoing VCI value first having been placed in its header.
+Note that the combination of the VCI of packets as they are received at the switch
+and the interface on which they are received uniquely identifies the virtual connection.
+There may of course be many virtual connections established in the switch at one
+time. Also, we observe that the incoming and outgoing VCI values are generally not
+the same. Thus, the VCI is not a globally significant identifier for the connection;
+rather, it has significance only on a given link—that is, it has link local scope.
+Whenever a new connection is created, we need to assign a new VCI for that
+connection on each link that the connection will traverse. We also need to ensure that
+the chosen VCI on a given link is not currently in use on that link by some existing
+connection.
+There are two broad classes of approach to establishing connection state. One is
+to have a network administrator configure the state, in which case the virtual circuit is
+“permanent.” Of course, it can also be deleted by the administrator, so a permanent
+virtual circuit (PVC) might best be thought of as a long-lived or administratively
+configured VC. Alternatively, a host can send messages into the network to cause the
+state to be established. This is referred to as signalling, and the resulting virtual circuits
+are said to be switched. The salient characteristic of a switched virtual circuit (SVC)
+is that a host may set up and delete such a VC dynamically without the involvement
+of a network administrator. Note that an SVC should more accurately be called a
+“signalled” VC, since it is the use of signalling (not switching) that distinguishes an
+SVC from a PVC.
+Let’s assume that a network administrator wants to manually create a new virtual
+connection from host A to host B. First, the administrator needs to identify a path
+through the network from A to B. In the example network of Figure 3.5, there is only
+172 3 Packet Switching
+Incoming Outgoing
+Interface Incoming VCI Interface Outgoing VCI
+2 5 1 11
+(a)
+Incoming Outgoing
+Interface Incoming VCI Interface Outgoing VCI
+3 11 2 7
+(b)
+Incoming Outgoing
+Interface Incoming VCI Interface Outgoing VCI
+0 7 1 4
+(c)
+Table 3.2 Virtual circuit table entries for (a) switch 1, (b) switch 2 and (c) switch 3.
+one such path, but in general this may not be the case. The administrator then picks a
+VCI value that is currently unused on each link for the connection. For the purposes
+of our example, let’s suppose that the VCI value 5 is chosen for the link from host A
+to switch 1, and that 11 is chosen for the link from switch 1 to switch 2. In that case,
+switch 1 needs to have an entry in its VC table configured as shown in Table 3.2(a).
+Similarly, suppose that the VCI of 7 is chosen to identify this connection on
+the link from switch 2 to switch 3, and that a VCI of 4 is chosen for the link from
+switch 3 to host B. In that case, switches 2 and 3 need to be configured with VC table
+entries as shown in Table 3.2. Note that the “outgoing” VCI value at one switch is the
+“incoming” VCI value at the next switch.
+Once the VC tables have been set up, the data transfer phase can proceed, as
+illustrated in Figure 3.6. For any packet that it wants to send to host B, A puts the VCI
+value of 5 in the header of the packet and sends it to switch 1. Switch 1 receives any
+such packet on interface 2, and it uses the combination of the interface and the VCI
+in the packet header to find the appropriate VC table entry. As shown in Table 3.2,
+the table entry in this case tells switch 1 to forward the packet out of interface 1 and
+3.1 Switching and Forwarding 173
+0
+1
+2
+3
+0
+3 1
+0
+1
+2
+3
+0
+1
+2
+2
+3
+Host A Host B
+Switch 3
+Switch 1 Switch 2
+5
+11
+Figure 3.6 A packet is sent into a virtual circuit network.
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+3
+Host A Host B
+Switch 3
+Switch 1 Switch 2
+7
+11
+Figure 3.7 A packet makes its way through a virtual circuit network.
+to put the VCI value 11 in the header when the packet is sent. Thus, the packet will
+arrive at switch 2 on interface 3 bearing VCI 11. Switch 2 looks up interface 3 and VCI
+11 in its VC table (as shown in Table 3.2) and sends the packet on to switch 3 after
+updating the VCI value in the packet header appropriately, as shown in Figure 3.7.
+This process continues until it arrives at host B with the VCI value of 4 in the packet.
+To host B, this identifies the packet as having come from host A.
+In real networks of reasonable size, the burden of configuring VC tables correctly
+in a large number of switches would quickly become excessive using the above
+procedures. Thus, some sort of signalling is almost always used, even when setting up
+“permanent” VCs. In the case of PVCs, signalling is initiated by the network administrator,
+while SVCs are usually set up using signalling by one of the hosts. We consider
+now how the same VC just described could be set up by signalling from the host.
+To start the signalling process, host A sends a setup message into the network,
+that is, to switch 1. The setup message contains, among other things, the complete
+destination address of host B. The setup message needs to get all the way to B to create
+the necessary connection state in every switch along the way. We can see that getting
+174 3 Packet Switching
+the setup message to B is a lot like getting a datagram to B, in that the switches have
+to know which output to send the setup message to so that it eventually reaches B.
+For now, let’s just assume that the switches know enough about the network topology
+to figure out how to do that, so that the setup message flows on to switches 2 and 3
+before finally reaching host B.
+When switch 1 receives the connection request, in addition to sending it on to
+switch 2, it creates a new entry in its virtual circuit table for this new connection. This
+entry is exactly the same as shown previously in Table 3.2. The main difference is that
+now the task of assigning an unused VCI value on the interface is performed by the
+switch. In this example, the switch picks the value 5. The virtual circuit table now
+has the following information: “When packets arrive on port 2 with identifier 5, send
+them out on port 1.” Another issue is that, somehow, host A will need to learn that it
+should put the VCI value of 5 in packets that it wants to send to B; we will see how
+that happens below.
+When switch 2 receives the setup message, it performs a similar process; in this
+example it picks the value 11 as the incoming VCI value. Similarly, switch 3 picks
+7 as the value for its incoming VCI. Each switch can pick any number it likes, as
+long as that number is not currently in use for some other connection on that port of
+that switch. As noted above, VCIs have “link local scope”; that is, they have no global
+significance.
+Finally, the setup message arrives at host B. Assuming that B is healthy and willing
+to accept a connection from host A, it too allocates an incoming VCI value, in this
+case 4. This VCI value can be used by B to identify all packets coming from host A.
+Now, to complete the connection, everyone needs to be told what their downstream
+neighbor is using as the VCI for this connection. Host B sends an acknowledgment
+of the connection setup to switch 3 and includes in that message the VCI that it
+chose (4). Now switch 3 can complete the virtual circuit table entry for this connection,
+since it knows the outgoing value must be 4. Switch 3 sends the acknowledgment on to
+switch 2, specifying a VCI of 7. Switch 2 sends the message on to switch 1, specifying
+a VCI of 11. Finally, switch 1 passes the acknowledgment on to host A, telling it to
+use the VCI of 5 for this connection.
+At this point, everyone knows all that is necessary to allow traffic to flow from
+host A to host B. Each switch has a complete virtual circuit table entry for the connection.
+Furthermore, host A has a firm acknowledgment that everything is in place
+all the way to host B. At this point, the connection table entries are in place in all
+three switches just as in the administratively configured example above, but the whole
+process happened automatically in response to the signalling message sent from A.
+The data transfer phase can now begin and is identical to that used in the PVC case.
+When host A no longer wants to send data to host B, it tears down the connection
+by sending a teardown message to switch 1. The switch removes the relevant entry from
+3.1 Switching and Forwarding 175
+its table and forwards the message on to the other switches in the path, which similarly
+delete the appropriate table entries. At this point, if host A were to send a packet with
+a VCI of 5 to switch 1, it would be dropped as if the connection had never existed.
+There are several things to note about virtual circuit switching:
+¦ Since host A has to wait for the connection request to reach the far side of the
+network and return before it can send its first data packet, there is at least one
+RTT of delay before data is sent.1
+¦ While the connection request contains the full address for host B (which might
+be quite large, being a global identifier on the network), each data packet
+contains only a small identifier, which is only unique on one link. Thus, the
+per-packet overhead caused by the header is reduced relative to the datagram
+model.
+¦ If a switch or a link in a connection fails, the connection is broken and a new
+one will need to be established. Also, the old one needs to be torn down to
+free up table storage space in the switches.
+¦ The issue of how a switch decides which link to forward the connection request
+on has been glossed over. In essence, this is the same problem as building up
+the forwarding table for datagram forwarding, which requires some sort of
+routing algorithm. Routing is described in Section 4.2, and the algorithms
+described there are generally applicable to routing setup requests as well as
+datagrams.
+One of the nice aspects of virtual circuits is that by the time the host gets the
+go-ahead to send data, it knows quite a lot about the network—for example, that
+there really is a route to the receiver and that the receiver is willing and able to receive
+data. It is also possible to allocate resources to the virtual circuit at the time it is
+established. For example, an X.25 network—a packet-switched network that uses the
+connection-oriented model—employs the following three-part strategy:
+1 Buffers are allocated to each virtual circuit when the circuit is initialized.
+2 The sliding window protocol is run between each pair of nodes along the virtual
+circuit, and this protocol is augmented with flow control to keep the sending
+node from overrunning the buffers allocated at the receiving node.
+3 The circuit is rejected by a given node if not enough buffers are available at that
+node when the connection request message is processed.
+1This is not strictly true. Some people have proposed “optimistically” sending a data packet immediately after
+sending the connection request. However, most current implementations wait for connection setup to complete
+before sending data.
+176 3 Packet Switching
+In doing these three things, each node is ensured of having the buffers it needs to queue
+the packets that arrive on that circuit. This basic strategy is usually called hop-by-hop
+flow control.
+By comparison, a datagram network has no connection establishment phase,
+and each switch processes each packet independently, making it less obvious how
+a datagram network would allocate resources in a meaningful way. Instead, each
+arriving packet competes with all other
+packets for buffer space. If there are no free
+buffers, the incoming packet must be discarded.
+We observe, however, that even in
+a datagram-based network, a source host
+often sends a sequence of packets to the
+same destination host. It is possible for each
+switch to distinguish among the set of packets
+it currently has queued, based on the
+source/destination pair, and thus for the
+switch to ensure that the packets belonging
+to each source/destination pair are receiving
+a fair share of the switch’s buffers. We
+discuss this idea in much greater depth in
+Chapter 6.
+In the virtual circuit model, we could
+imagine providing each circuit with a different
+quality of service (QoS). In this setting,
+the term “quality of service” is usually taken
+to mean that the network gives the user
+some kind of performance-related guarantee,
+which in turn implies that switches set
+aside the resources they need to meet this
+guarantee. For example, the switches along
+a given virtual circuit might allocate a percentage
+of each outgoing link’s bandwidth
+to that circuit. As another example, a sequence
+of switches might ensure that packets
+belonging to a particular circuit not be
+delayed (queued) for more than a certain
+amount of time. We return to the topic of
+quality of service in Section 6.5.
+The most popular examples of virtual
+circuit technologies are Frame Relay and
+Introduction to Congestion
+Recall the distinction between contention
+and congestion: Contention
+occurs when multiple packets have
+to be queued at a switch because
+they are competing for the
+same output link, while congestion
+means that the switch has so many
+packets queued that it runs out of
+buffer space and has to start dropping
+packets.We return to the topic
+of congestion in Chapter 6, after
+we have seen the transport protocol
+component of the network architecture.
+At this point, however,
+we observe that the decision as to
+whether your network uses virtual
+circuits or datagrams has an impact
+on how you deal with congestion.
+On the one hand, suppose
+that each switch allocates enough
+buffers to handle the packets
+belonging to each virtual circuit it
+supports, as is done in an X.25
+network. In this case, the network
+has defined away the problem
+of congestion—a switch never encounters
+a situation in which it has
+more packets to queue than it has
+buffer space, since it does not allow
+the connection to be established in
+the first place unless it can dedicate
+3.1 Switching and Forwarding 177
+Variable
+Control
+8
+Address
+16
+Frame
+checksum
+16
+Flag
+(0x7E)
+8
+Flag
+(0x7E)
+8
+Data
+Figure 3.8 Frame Relay packet format.
+enough resources to it to avoid this
+situation. The problem with this
+approach, however, is that it is extremely
+conservative—it is unlikely
+that all the circuits will need to use
+all of their buffers at the same time,
+and as a consequence, the switch is
+potentially underutilized.
+On the other hand, the datagram
+model seemingly invites
+congestion—you do not know that
+there is enough contention at a
+switch to cause congestion until
+you run out of buffers. At that
+point, it is too late to prevent the
+congestion, and your only choice is
+to try to recover from it. The good
+news, of course, is that you may
+be able to get better utilization out
+of your switches since you are not
+holding buffers in reserve for a
+worst-case scenario that is unlikely
+to happen.
+As is quite often the case, nothing
+is strictly black and white—
+there are design advantages for
+defining congestion away (as the
+X.25 model does) and for doing
+nothing about congestion until
+after it happens (as the simple
+datagram model does).We describe
+some of these design points in
+Chapter 6.
+asynchronous transfer mode (ATM). ATM
+has a number of interesting properties that
+we discuss in Section 3.3. Frame Relay is
+a rather straightforward implementation of
+virtual circuit technology, and its simplicity
+has made it extremely popular. Many
+network service providers offer Frame Relay
+PVC services. One of the applications
+of Frame Relay is the construction of vir-
+tual private networks (VPNs), a subject discussed
+in Section 4.1.8.
+Frame Relay provides some basic
+quality of service and congestion-avoidance
+features, but these are rather lightweight
+compared to X.25 and ATM. The Frame
+Relay packet format (see Figure 3.8) provides
+a good example of a packet used for
+virtual circuit switching.

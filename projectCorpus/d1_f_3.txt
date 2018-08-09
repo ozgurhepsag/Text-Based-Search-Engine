@@ -1,0 +1,1717 @@
+PREFACE.
+
+
+The present work is a modest effort to reproduce approximately, in modern
+measures, the venerable epic, Beowulf. _Approximately_, I repeat; for a
+very close reproduction of Anglo-Saxon verse would, to a large extent, be
+prose to a modern ear.
+
+The Heyne-Socin text and glossary have been closely followed. Occasionally
+a deviation has been made, but always for what seemed good and sufficient
+reason. The translator does not aim to be an editor. Once in a while,
+however, he has added a conjecture of his own to the emendations quoted
+from the criticisms of other students of the poem.
+
+This work is addressed to two classes of readers. From both of these alike
+the translator begs sympathy and co-operation. The Anglo-Saxon scholar he
+hopes to please by adhering faithfully to the original. The student of
+English literature he aims to interest by giving him, in modern garb, the
+most ancient epic of our race. This is a bold and venturesome undertaking;
+and yet there must be some students of the Teutonic past willing to follow
+even a daring guide, if they may read in modern phrases of the sorrows of
+Hrothgar, of the prowess of Beowulf, and of the feelings that stirred the
+hearts of our forefathers in their primeval homes.
+
+In order to please the larger class of readers, a regular cadence has been
+used, a measure which, while retaining the essential characteristics of
+the original, permits the reader to see ahead of him in reading.
+
+Perhaps every Anglo-Saxon scholar has his own theory as to how Beowulf
+should be translated. Some have given us prose versions of what we believe
+to be a great poem. Is it any reflection on our honored Kemble and Arnold
+to say that their translations fail to show a layman that Beowulf is
+justly called our first _epic_? Of those translators who have used verse,
+several have written from what would seem a mistaken point of view. Is it
+proper, for instance, that the grave and solemn speeches of Beowulf and
+Hrothgar be put in ballad measures, tripping lightly and airily along? Or,
+again, is it fitting that the rough martial music of Anglo-Saxon verse be
+interpreted to us in the smooth measures of modern blank verse? Do we hear
+what has been beautifully called "the clanging tread of a warrior in
+mail"?
+
+[viii]
+
+Of all English translations of Beowulf, that of Professor Garnett alone
+gives any adequate idea of the chief characteristics of this great
+Teutonic epic.
+
+The measure used in the present translation is believed to be as near a
+reproduction of the original as modern English affords. The cadences
+closely resemble those used by Browning in some of his most striking
+poems. The four stresses of the Anglo-Saxon verse are retained, and as
+much thesis and anacrusis is allowed as is consistent with a regular
+cadence. Alliteration has been used to a large extent; but it was thought
+that modern ears would hardly tolerate it on every line. End-rhyme has
+been used occasionally; internal rhyme, sporadically. Both have some
+warrant in Anglo-Saxon poetry. (For end-rhyme, see 1_53, 1_54; for
+internal rhyme, 2_21, 6_40.)
+
+What Gummere[1] calls the "rime-giver" has been studiously kept; _viz._,
+the first accented syllable in the second half-verse always carries the
+alliteration; and the last accented syllable alliterates only
+sporadically. Alternate alliteration is occasionally used as in the
+original. (See 7_61, 8_5.)
+
+No two accented syllables have been brought together, except occasionally
+after a caesural pause. (See 2_19 and 12_1.) Or, scientifically speaking,
+Sievers's C type has been avoided as not consonant with the plan of
+translation. Several of his types, however, constantly occur; _e.g._ A and
+a variant (/ x | / x) (/ x x | / x); B and a variant (x / | x / ) (x x / |
+x / ); a variant of D (/ x | / x x); E (/ x x | / ). Anacrusis gives
+further variety to the types used in the translation.
+
+The parallelisms of the original have been faithfully preserved. (_E.g._,
+1_16 and 1_17: "Lord" and "Wielder of Glory"; 1_30, 1_31, 1_32; 2_12 and
+2_13; 2_27 and 2_28; 3_5 and 3_6.) Occasionally, some loss has been
+sustained; but, on the other hand, a gain has here and there been made.
+
+The effort has been made to give a decided flavor of archaism to the
+translation. All words not in keeping with the spirit of the poem have
+been avoided. Again, though many archaic words have been used, there are
+none, it is believed, which are not found in standard modern poetry.
+
+[ix]
+
+With these preliminary remarks, it will not be amiss to give an outline of
+the story of the poem.
+
+
+_THE STORY._
+
+_Hrothgar, king of the Danes, or Scyldings, builds a great mead-hall, or
+palace, in which he hopes to feast his liegemen and to give them presents.
+The joy of king and retainers is, however, of short duration. Grendel, the
+monster, is seized with hateful jealousy. He cannot brook the sounds of
+joyance that reach him down in his fen-dwelling near the hall. Oft and
+anon he goes to the joyous building, bent on direful mischief. Thane after
+thane is ruthlessly carried off and devoured, while no one is found strong
+enough and bold enough to cope with the monster. For twelve years he
+persecutes Hrothgar and his vassals._
+
+_Over sea, a day's voyage off, Beowulf, of the Geats, nephew of Higelac,
+king of the Geats, hears of Grendel's doings and of Hrothgar's misery. He
+resolves to crush the fell monster and relieve the aged king. With
+fourteen chosen companions, he sets sail for Dane-land. Reaching that
+country, he soon persuades Hrothgar of his ability to help him. The hours
+that elapse before night are spent in beer-drinking and conversation. When
+Hrothgar's bedtime comes he leaves the hall in charge of Beowulf, telling
+him that never before has he given to another the absolute wardship of his
+palace. All retire to rest, Beowulf, as it were, sleeping upon his arms._
+
+_Grendel comes, the great march-stepper, bearing God's anger. He seizes
+and kills one of the sleeping warriors. Then he advances towards Beowulf.
+A fierce and desperate hand-to-hand struggle ensues. No arms are used,
+both combatants trusting to strength and hand-grip. Beowulf tears
+Grendel's shoulder from its socket, and the monster retreats to his den,
+howling and yelling with agony and fury. The wound is fatal._
+
+_The next morning, at early dawn, warriors in numbers flock to the hall
+Heorot, to hear the news. Joy is boundless. Glee runs high. Hrothgar and
+his retainers are lavish of gratitude and of gifts._
+
+_Grendel's mother, however, comes the next night to avenge his death. She
+is furious and raging. While Beowulf is sleeping in a room somewhat apart
+[x] from the quarters of the other warriors, she seizes one of Hrothgar's
+favorite counsellors, and carries him off and devours him. Beowulf is
+called. Determined to leave Heorot entirely purified, he arms himself, and
+goes down to look for the female monster. After traveling through the
+waters many hours, he meets her near the sea-bottom. She drags him to her
+den. There he sees Grendel lying dead. After a desperate and almost fatal
+struggle with the woman, he slays her, and swims upward in triumph, taking
+with him Grendel's head._
+
+_Joy is renewed at Heorot. Congratulations crowd upon the victor. Hrothgar
+literally pours treasures into the lap of Beowulf; and it is agreed among
+the vassals of the king that Beowulf will be their next liegelord._
+
+_Beowulf leaves Dane-land. Hrothgar weeps and laments at his departure._
+
+_When the hero arrives in his own land, Higelac treats him as a
+distinguished guest. He is the hero of the hour._
+
+_Beowulf subsequently becomes king of his own people, the Geats. After he
+has been ruling for fifty years, his own neighborhood is wofully harried
+by a fire-spewing dragon. Beowulf determines to kill him. In the ensuing
+struggle both Beowulf and the dragon are slain. The grief of the Geats is
+inexpressible. They determine, however, to leave nothing undone to honor
+the memory of their lord. A great funeral-pyre is built, and his body is
+burnt. Then a memorial-barrow is made, visible from a great distance, that
+sailors afar may be constantly reminded of the prowess of the national
+hero of Geatland._
+
+_The poem closes with a glowing tribute to his bravery, his gentleness,
+his goodness of heart, and his generosity._
+
+       *       *       *       *       *
+
+It is the devout desire of this translator to hasten the day when the
+story of Beowulf shall be as familiar to English-speaking peoples as that
+of the Iliad. Beowulf is our first great epic. It is an epitomized history
+of the life of the Teutonic races. It brings vividly before us our
+forefathers of pre-Alfredian eras, in their love of war, of sea, and of
+adventure.
+
+My special thanks are due to Professors Francis A. March and James A.
+Harrison, for advice, sympathy, and assistance.
+
+                                                        J.L. HALL.
+
+[xi]
+
+
+
+
+ABBREVIATIONS USED IN THE NOTES.
+
+
+B. = Bugge. C. = Cosijn. Gr. = Grein. Grdvtg. = Grundtvig. H. = Heyne. H.
+and S. = Harrison and Sharp. H.-So. = Heyne-Socin. K.= Kemble. Kl. =
+Kluge. M.= Muellenhoff. R. = Rieger. S. = Sievers. Sw. = Sweet. t.B. = ten
+Brink. Th. = Thorpe. W. = Wuelcker.
+
+       *       *       *       *       *
+
+
+
+
+BIBLIOGRAPHY OF TRANSLATIONS.
+
+
+~Arnold, Thomas.~--Beowulf. A heroic poem of the eighth century. London,
+1876. With English translation. Prose.
+
+~Botkine, L.~--Beowulf. Epopee Anglo-Saxonne. Havre, 1877. First French
+translation. Passages occasionally omitted.
+
+~Conybeare, J.J.~--Illustrations of Anglo-Saxon Poetry. London, 1826. Full
+Latin translation, and some passages translated into English blank-verse.
+
+~Ettmuller, L.~--Beowulf, stabreimend uebersetzt. Zuerich, 1840.
+
+~Garnett, J.M.~--Beowulf: an Anglo-Saxon Poem, and the Fight at Finnsburg.
+Boston, 1882. An accurate line-for-line translation, using alliteration
+occasionally, and sometimes assuming a metrical cadence.
+
+~Grein, C.W.M.~--Dichtungen der Angelsachsen, stabreimend uebersetzt. 2
+Bde. Goettingen, 1857-59.
+
+~Grion, Giusto.~--Beovulf, poema epico anglo-sassone del VII. secolo,
+tradotto e illustrato. Lucca, 1883. First Italian translation.
+
+~Grundtvig, N.F.S.~--Bjowulfs Drape. Copenhagen, 1820.
+
+~Heyne, M.~--A translation in iambic measures. Paderborn, 1863.
+
+~Kemble, J.M.~--The Anglo-Saxon Poems of Beowulf, the Traveller's Song,
+and the Battle of Finnsburg. London, 1833. The second edition contains a
+prose translation of Beowulf.
+
+~Leo, H.~--Ueber Beowulf. Halle, 1839. Translations of extracts.
+
+[xii]
+
+~Lumsden, H.W.~--Beowulf, translated into modern rhymes. London, 1881.
+Ballad measures. Passages occasionally omitted.
+
+~Sandras, G.S.~--De carminibus Caedmoni adjudicatis. Paris, 1859. An
+extract from Beowulf, with Latin translation.
+
+~Schaldmose, F.~--Beowulf og Scopes Widsith, to Angelsaxiske Digte.
+Copenhagen, 1847.
+
+~Simrock, K.~--Beowulf. Uebersetzt und erlaeutert. Stuttgart und Augsburg,
+1859. Alliterative measures.
+
+~Thorkelin, G.J.~--De Danorum rebus gestis secul. III. et IV. poema
+Danicum dialecto Anglosaxonica. Havniae, 1815. Latin translation.
+
+~Thorpe, B.~--The Anglo-Saxon Poems of Beowulf, the Scop or Gleeman's
+Tale, and the Fight at Finnsburg. Oxford, 1855. English translation in
+short lines, generally containing two stresses.
+
+~Wackerbarth, A.D.~--Beowulf, translated into English verse. London, 1849.
+
+~Wickberg, R.~--Beowulf, en fornengelsk hjeltedikt, oefersatt. Westervik.
+First Swedish translation.
+
+~von Wolzogen, H.~--Beowulf, in alliterative measures. Leipzig.
+
+~Zinsser, G.~--Der Kampf Beowulfs mit Grendel. Jahresbericht of the
+Realschule at Forbach, 1881.
+
+[xiii]
+
+
+
+
+GLOSSARY OF PROPER NAMES.
+
+       *       *       *       *       *
+
+[The figures refer to the divisions of the poem in which the respective
+names occur. The large figures refer to fitts, the small, to lines in the
+fitts.]
+
+       *       *       *       *       *
+
+~AElfhere~.--A kinsman of Wiglaf.--36_3.
+
+~AEschere~.--Confidential friend of King Hrothgar. Elder brother of
+Yrmenlaf. Killed by Grendel.--21_3; 30_89.
+
+~Beanstan~.--Father of Breca.--9_26.
+
+~Beowulf~.--Son of Scyld, the founder of the dynasty of Scyldings. Father
+of Healfdene, and grandfather of Hrothgar.--1_18; 2_1.
+
+~Beowulf~.--The hero of the poem. Sprung from the stock of Geats, son of
+Ecgtheow. Brought up by his maternal grandfather Hrethel, and figuring in
+manhood as a devoted liegeman of his uncle Higelac. A hero from his youth.
+Has the strength of thirty men. Engages in a swimming-match with Breca.
+Goes to the help of Hrothgar against the monster Grendel. Vanquishes
+Grendel and his mother. Afterwards becomes king of the Geats. Late in life
+attempts to kill a fire-spewing dragon, and is slain. Is buried with great
+honors. His memorial mound.--6_26; 7_2; 7_9; 9_3; 9_8; 12_28; 12_43; 23_1,
+etc.
+
+~Breca~.--Beowulf's opponent in the famous swimming-match.--9_8; 9_19;
+9_21; 9_22.
+
+~Brondings~.--A people ruled by Breca.--9_23.
+
+~Brosinga mene~.--A famous collar once owned by the Brosings.--19_7.
+
+~Cain~.--Progenitor of Grendel and other monsters.--2_56; 20_11.
+
+~Daeghrefn~.--A warrior of the Hugs, killed by Beowulf.--35_40.
+
+~Danes~.--Subjects of Scyld and his descendants, and hence often called
+Scyldings. Other names for them are Victory-Scyldings, Honor-Scyldings,
+Armor-Danes, Bright-Danes, East-Danes, West-Danes, North-Danes,
+South-Danes, Ingwins, Hrethmen.--1_1; 2_1; 3_2; 5_14; 7_1, etc.
+
+~Ecglaf~.--Father of Unferth, who taunts Beowulf.--9_1.
+
+~Ecgtheow~.--Father of Beowulf, the hero of the poem. A widely-known
+Waegmunding warrior. Marries Hrethel's daughter. After slaying Heatholaf, a
+Wylfing, he flees his country.--7_3; 5_6; 8_4.
+
+~Ecgwela~.--A king of the Danes before Scyld.--25_60.
+
+[xiv]
+
+~Elan~.--Sister of Hrothgar, and probably wife of Ongentheow, king of the
+Swedes.--2_10.
+
+~Eagle Cape~.--A promontory in Geat-land, under which took place Beowulf's
+last encounter.--41_87.
+
+~Eadgils~.--Son of Ohthere and brother of Eanmund.--34_2.
+
+~Eanmund~.--Son of Ohthere and brother of Eadgils. The reference to these
+brothers is vague, and variously understood. Heyne supposes as follows:
+Raising a revolt against their father, they are obliged to leave Sweden.
+They go to the land of the Geats; with what intention, is not known, but
+probably to conquer and plunder. The Geatish king, Heardred, is slain by
+one of the brothers, probably Eanmund.--36_10; 31_54 to 31_60; 33_66 to
+34_6.
+
+~Eofor~.--A Geatish hero who slays Ongentheow in war, and is rewarded by
+Hygelac with the hand of his only daughter.--41_18; 41_48.
+
+~Eormenric~.--A Gothic king, from whom Hama took away the famous Brosinga
+mene.--19_9.
+
+~Eomaer~.--Son of Offa and Thrytho, king and queen of the Angles.--28_69.
+
+~Finn~.--King of the North-Frisians and the Jutes. Marries Hildeburg. At
+his court takes place the horrible slaughter in which the Danish general,
+Hnaef, fell. Later on, Finn himself is slain by Danish warriors.--17_18;
+17_30; 17_44; 18_4; 18_23.
+
+~Fin-land~.--The country to which Beowulf was driven by the currents in
+his swimming-match.--10_22.
+
+~Fitela~.--Son and nephew of King Sigemund, whose praises are sung in
+XIV.--14_42; 14_53.
+
+~Folcwalda~.--Father of Finn.--17_38.
+
+~Franks~.--Introduced occasionally in referring to the death of
+Higelac.--19_19; 40_21; 40_24.
+
+~Frisians~.--A part of them are ruled by Finn. Some of them were engaged
+in the struggle in which Higelac was slain.--17_20; 17_42; 17_52; 40_21.
+
+~Freaware~.--Daughter of King Hrothgar. Married to Ingeld, a Heathobard
+prince.--29_60; 30_32.
+
+~Froda~.--King of the Heathobards, and father of Ingeld.--29_62.
+
+~Garmund~.--Father of Offa.--28_71.
+
+~Geats, Geatmen~.--The race to which the hero of the poem belongs. Also
+called Weder-Geats, or Weders, War-Geats, Sea-Geats. They are ruled by
+Hrethel, Haethcyn, Higelac, and Beowulf.--4_7; 7_4; 10_45; 11_8; 27_14;
+28_8.
+
+~Gepids~.--Named in connection with the Danes and Swedes.--35_34.
+
+~Grendel~.--A monster of the race of Cain. Dwells in the fens and moors.
+Is furiously envious when he hears sounds of joy in Hrothgar's palace.
+Causes the king untold agony for years. Is finally conquered by Beowulf,
+and dies of his wound. His hand and arm are hung up in Hrothgar's hall
+Heorot. His head is cut off by Beowulf when he goes down to fight with
+Grendel's mother.--2_50; 3_1; 3_13; 8_19; 11_17; 12_2; 13_27; 15_3.
+
+~Guthlaf~.--A Dane of Hnaef's party.--18_24.
+
+~Half-Danes~.--Branch of the Danes to which Hnaef belonged.--17_19.
+
+[xv]
+
+~Halga~.--Surnamed the Good. Younger brother of Hrothgar.--2_9.
+
+~Hama~.--Takes the Brosinga mene from Eormenric.--19_7.
+
+~Haereth~.--Father of Higelac's queen, Hygd.--28_39; 29_18.
+
+~Haethcyn~.--Son of Hrethel and brother of Higelac. Kills his brother
+Herebeald accidentally. Is slain at Ravenswood, fighting against
+Ongentheow.--34_43; 35_23; 40_32.
+
+~Helmings~.--The race to which Queen Wealhtheow belonged.--10_63.
+
+~Heming~.--A kinsman of Garmund, perhaps nephew.--28_54; 28_70.
+
+~Hengest~.--A Danish leader. Takes command on the fall of Hnaef.--17_33;
+17_41.
+
+~Herebeald~.--Eldest son of Hrethel, the Geatish king, and brother of
+Higelac. Killed by his younger brother Haethcyn.--34_43; 34_47.
+
+~Heremod~.--A Danish king of a dynasty before the Scylding line. Was a
+source of great sorrow to his people.--14_64; 25_59.
+
+~Hereric~.--Referred to as uncle of Heardred, but otherwise
+unknown.--31_60.
+
+~Hetwars~.--Another name for the Franks.--33_51.
+
+~Healfdene~.--Grandson of Scyld and father of Hrothgar. Ruled the Danes
+long and well.--2_5; 4_1; 8_14.
+
+~Heardred~.--Son of Higelac and Hygd, king and queen of the Geats.
+Succeeds his father, with Beowulf as regent. Is slain by the sons of
+Ohthere.--31_56; 33_63; 33_75.
+
+~Heathobards~.--Race of Lombards, of which Froda is king. After Froda
+falls in battle with the Danes, Ingeld, his son, marries Hrothgar's
+daughter, Freaware, in order to heal the feud.--30_1; 30_6.
+
+~Heatholaf~.--A Wylfing warrior slain by Beowulf's father.--8_5.
+
+~Heathoremes~.--The people on whose shores Breca is cast by the waves
+during his contest with Beowulf.--9_21.
+
+~Heorogar~.--Elder brother of Hrothgar, and surnamed 'Weoroda Raeswa,'
+Prince of the Troopers.--2_9; 8_12.
+
+~Hereward~.--Son of the above.--31_17.
+
+~Heort~, ~Heorot~.--The great mead-hall which King Hrothgar builds. It is
+invaded by Grendel for twelve years. Finally cleansed by Beowulf, the
+Geat. It is called Heort on account of the hart-antlers which decorate
+it.--2_25; 3_32; 3_52.
+
+~Hildeburg~.--Wife of Finn, daughter of Hoce, and related to
+Hnaef,--probably his sister.--17_21; 18_34.
+
+~Hnaef~.--Leader of a branch of the Danes called Half-Danes. Killed in the
+struggle at Finn's castle.--17_19; 17_61.
+
+~Hondscio~.--One of Beowulf's companions. Killed by Grendel just before
+Beowulf grappled with that monster.--30_43.
+
+~Hoce~.--Father of Hildeburg and probably of Hnaef.--17_26.
+
+~Hrethel~.--King of the Geats, father of Higelac, and grandfather of
+Beowulf.--7_4; 34_39.
+
+~Hrethla~.--Once used for Hrethel.--7_82.
+
+~Hrethmen~.--Another name for the Danes.--7_73.
+
+~Hrethric~.--Son of Hrothgar.--18_65; 27_19.
+
+[xvi]
+
+~Hreosna-beorh~.--A promontory in Geat-land, near which Ohthere's sons
+made plundering raids.--35_18.
+
+~Hrothgar~.--The Danish king who built the hall Heort, but was long unable
+to enjoy it on account of Grendel's persecutions. Marries Wealhtheow, a
+Helming lady. Has two sons and a daughter. Is a typical Teutonic king,
+lavish of gifts. A devoted liegelord, as his lamentations over slain
+liegemen prove. Also very appreciative of kindness, as is shown by his
+loving gratitude to Beowulf.--2_9; 2_12; 4_1; 8_10; 15_1; etc., etc.
+
+~Hrothmund~.--Son of Hrothgar.--18_65.
+
+~Hrothulf~.--Probably a son of Halga, younger brother of Hrothgar.
+Certainly on terms of close intimacy in Hrothgar's palace.--16_26; 18_57.
+
+~Hrunting~.--Unferth's sword, lent to Beowulf.--22_71; 25_9.
+
+~Hugs~.--A race in alliance with the Franks and Frisians at the time of
+Higelac's fall.--35_41.
+
+~Hun~.--A Frisian warrior, probably general of the Hetwars. Gives Hengest
+a beautiful sword.--18_19.
+
+~Hunferth~.--Sometimes used for Unferth.
+
+~Hygelac~, ~Higelac~.--King of the Geats, uncle and liegelord of Beowulf,
+the hero of the poem.--His second wife is the lovely Hygd, daughter of
+Haereth. The son of their union is Heardred. Is slain in a war with the
+Hugs, Franks, and Frisians combined. Beowulf is regent, and afterwards
+king of the Geats.--4_6; 5_4; 28_34; 29_9; 29_21; 31_56.
+
+~Hygd~.--Wife of Higelac, and daughter of Haereth. There are some
+indications that she married Beowulf after she became a widow.--28_37.
+
+~Ingeld~.--Son of the Heathobard king, Froda. Marries Hrothgar's daughter,
+Freaware, in order to reconcile the two peoples.--29_62; 30_32.
+
+~Ingwins~.--Another name for the Danes.--16_52; 20_69.
+
+~Jutes~.--Name sometimes applied to Finn's people.--17_22; 17_38; 18_17.
+
+~Lafing~.--Name of a famous sword presented to Hengest by Hun.--18_19.
+
+~Merewing~.--A Frankish king, probably engaged in the war in which Higelac
+was slain.--40_29.
+
+~Naegling~.--Beowulf's sword.--36_76.
+
+~Offa~.--King of the Angles, and son of Garmund. Marries the terrible
+Thrytho who is so strongly contrasted with Hygd.--28_59; 28_66.
+
+~Ohthere~.--Son of Ongentheow, king of the Swedes. He is father of Eanmund
+and Eadgils.--40_35; 40_39.
+
+~Onela~.--Brother of Ohthere.--36_15; 40_39.
+
+~Ongentheow~.--King of Sweden, of the Scylfing dynasty. Married, perhaps,
+Elan, daughter of Healfdene.--35_26; 41_16.
+
+~Oslaf~.--A Dane of Hnaef's party.--18_24.
+
+~Ravenswood~.--The forest near which Haethcyn was slain.--40_31; 40_41.
+
+~Scefing~.--Applied (1_4) to Scyld, and meaning 'son of Scef.'
+
+[xvii]
+
+~Scyld~.--Founder of the dynasty to which Hrothgar, his father, and
+grandfather belonged. He dies, and his body is put on a vessel, and set
+adrift. He goes from Daneland just as he had come to it--in a bark.--1_4;
+1_19; 1_27.
+
+~Scyldings~.--The descendants of Scyld. They are also called
+Honor-Scyldings, Victory-Scyldings, War-Scyldings, etc. (See 'Danes,'
+above.)--2_1; 7_1; 8_1.
+
+~Scylfings~.--A Swedish royal line to which Wiglaf belonged.--36_2.
+
+~Sigemund~.--Son of Waels, and uncle and father of Fitela. His struggle
+with a dragon is related in connection with Beowulf's deeds of
+prowess.--14_38; 14_47.
+
+~Swerting~.--Grandfather of Higelac, and father of Hrethel.--19_11.
+
+~Swedes~.--People of Sweden, ruled by the Scylfings.--35_13.
+
+~Thrytho~.--Wife of Offa, king of the Angles. Known for her fierce and
+unwomanly disposition. She is introduced as a contrast to the gentle Hygd,
+queen of Higelac.--28_42; 28_56.
+
+~Unferth~.--Son of Ecglaf, and seemingly a confidential courtier of
+Hrothgar. Taunts Beowulf for having taken part in the swimming-match.
+Lends Beowulf his sword when he goes to look for Grendel's mother. In the
+MS. sometimes written _Hunferth_. 9_1; 18_41.
+
+~Waels~.--Father of Sigemund.--14_60.
+
+~Waegmunding~.--A name occasionally applied to Wiglaf and Beowulf, and
+perhaps derived from a common ancestor, Waegmund.--36_6; 38_61.
+
+~Weders~.--Another name for Geats or Wedergeats.
+
+~Wayland~.--A fabulous smith mentioned in this poem and in other old
+Teutonic literature.--7_83.
+
+~Wendels~.--The people of Wulfgar, Hrothgar's messenger and retainer.
+(Perhaps = Vandals.)--6_30.
+
+~Wealhtheow~.--Wife of Hrothgar. Her queenly courtesy is well shown in the
+poem.--10_55.
+
+~Weohstan~, or ~Wihstan~.--A Waegmunding, and father of Wiglaf.--36_1.
+
+~Whale's Ness~.--A prominent promontory, on which Beowulf's mound was
+built.--38_52; 42_76.
+
+~Wiglaf~.--Son of Wihstan, and related to Beowulf. He remains faithful to
+Beowulf in the fatal struggle with the fire-drake. Would rather die than
+leave his lord in his dire emergency.--36_1; 36_3; 36_28.
+
+~Wonred~.--Father of Wulf and Eofor.--41_20; 41_26.
+
+~Wulf~.--Son of Wonred. Engaged in the battle between Higelac's and
+Ongentheow's forces, and had a hand-to-hand fight with Ongentheow himself.
+Ongentheow disables him, and is thereupon slain by Eofor.--41_19; 41_29.
+
+~Wulfgar~.--Lord of the Wendels, and retainer of Hrothgar.--6_18; 6_30.
+
+~Wylfings~.--A people to whom belonged Heatholaf, who was slain by
+Ecgtheow.--8_6; 8_16.
+
+~Yrmenlaf~.--Younger brother of AEschere, the hero whose death grieved
+Hrothgar so deeply.--21_4.
+
+[xviii]
+
+
+
+
+LIST OF WORDS AND PHRASES NOT IN GENERAL USE.
+
+
+ATHELING.--Prince, nobleman.
+
+BAIRN.--Son, child.
+
+BARROW.--Mound, rounded hill, funeral-mound.
+
+BATTLE-SARK.--Armor.
+
+BEAKER.--Cup, drinking-vessel.
+
+BEGEAR.--Prepare.
+
+BIGHT.--Bay, sea.
+
+BILL.--Sword.
+
+BOSS.--Ornamental projection.
+
+BRACTEATE.--A round ornament on a necklace.
+
+BRAND.--Sword.
+
+BURN.--Stream.
+
+BURNIE.--Armor.
+
+CARLE.--Man, hero.
+
+EARL.--Nobleman, any brave man.
+
+EKE.--Also.
+
+EMPRISE.--Enterprise, undertaking.
+
+ERST.--Formerly.
+
+ERST-WORTHY.--Worthy for a long time past.
+
+FAIN.--Glad.
+
+FERRY.--Bear, carry.
+
+FEY.--Fated, doomed.
+
+FLOAT.--Vessel, ship.
+
+FOIN.--To lunge (Shaks.).
+
+GLORY OF KINGS.--God.
+
+GREWSOME.--Cruel, fierce.
+
+HEFT.--Handle, hilt; used by synecdoche for 'sword.'
+
+HELM.--Helmet, protector.
+
+HENCHMAN.--Retainer, vassal.
+
+HIGHT.--Am (was) named.
+
+HOLM.--Ocean, curved surface of the sea.
+
+HIMSEEMED.--(It) seemed to him.
+
+LIEF.--Dear, valued.
+
+MERE.--Sea; in compounds, 'mere-ways,' 'mere-currents,' etc.
+
+MICKLE.--Much.
+
+NATHLESS.--Nevertheless.
+
+NAZE.--Edge (nose).
+
+NESS.--Edge.
+
+NICKER.--Sea-beast.
+
+QUIT, QUITE.--Requite.
+
+RATHE.--Quickly.
+
+REAVE.--Bereave, deprive.
+
+SAIL-ROAD.--Sea.
+
+SETTLE.--Seat, bench.
+
+SKINKER.--One who pours.
+
+SOOTHLY.--Truly.
+
+SWINGE.--Stroke, blow.
+
+TARGE, TARGET.--Shield.
+
+THROUGHLY.--Thoroughly.
+
+TOLD.--Counted.
+
+UNCANNY.--Ill-featured, grizzly.
+
+UNNETHE.--Difficult.
+
+WAR-SPEED.--Success in war.
+
+WEB.--Tapestry (that which is 'woven').
+
+WEEDED.--Clad (cf. widow's weeds).
+
+WEEN.--Suppose, imagine.
+
+WEIRD.--Fate, Providence.
+
+WHILOM.--At times, formerly, often.
+
+WIELDER.--Ruler. Often used of God; also in compounds, as 'Wielder of
+Glory,' 'Wielder of Worship.'
+
+WIGHT.--Creature.
+
+WOLD.--Plane, extended surface.
+
+WOT.--Knows.
+
+YOUNKER.--Youth.
+
+[1]
+
+
+
+
+BEOWULF.
+
+
+
+
+I.
+
+THE LIFE AND DEATH OF SCYLD.
+
+
+{The famous race of Spear-Danes.}
+
+          Lo! the Spear-Danes' glory through splendid achievements
+          The folk-kings' former fame we have heard of,
+          How princes displayed then their prowess-in-battle.
+
+{Scyld, their mighty king, in honor of whom they are often called
+Scyldings. He is the great-grandfather of Hrothgar, so prominent in the
+poem.}
+
+          Oft Scyld the Scefing from scathers in numbers
+        5 From many a people their mead-benches tore.
+          Since first he found him friendless and wretched,
+          The earl had had terror: comfort he got for it,
+          Waxed 'neath the welkin, world-honor gained,
+          Till all his neighbors o'er sea were compelled to
+       10 Bow to his bidding and bring him their tribute:
+          An excellent atheling! After was borne him
+
+{A son is born to him, who receives the name of Beowulf--a name afterwards
+made so famous by the hero of the poem.}
+
+          A son and heir, young in his dwelling,
+          Whom God-Father sent to solace the people.
+          He had marked the misery malice had caused them,
+       15 [1]That reaved of their rulers they wretched had erstwhile[2]
+          Long been afflicted. The Lord, in requital,
+          Wielder of Glory, with world-honor blessed him.
+          Famed was Beowulf, far spread the glory
+          Of Scyld's great son in the lands of the Danemen.
+
+[2]
+
+{The ideal Teutonic king lavishes gifts on his vassals.}
+
+       20 So the carle that is young, by kindnesses rendered
+          The friends of his father, with fees in abundance
+          Must be able to earn that when age approacheth
+          Eager companions aid him requitingly,
+          When war assaults him serve him as liegemen:
+       25 By praise-worthy actions must honor be got
+          'Mong all of the races. At the hour that was fated
+
+{Scyld dies at the hour appointed by Fate.}
+
+          Scyld then departed to the All-Father's keeping
+          Warlike to wend him; away then they bare him
+          To the flood of the current, his fond-loving comrades,
+       30 As himself he had bidden, while the friend of the Scyldings
+          Word-sway wielded, and the well-loved land-prince
+          Long did rule them.[3] The ring-stemmed vessel,
+          Bark of the atheling, lay there at anchor,
+          Icy in glimmer and eager for sailing;
+
+{By his own request, his body is laid on a vessel and wafted seaward.}
+
+       35 The beloved leader laid they down there,
+          Giver of rings, on the breast of the vessel,
+          The famed by the mainmast. A many of jewels,
+          Of fretted embossings, from far-lands brought over,
+          Was placed near at hand then; and heard I not ever
+       40 That a folk ever furnished a float more superbly
+          With weapons of warfare, weeds for the battle,
+          Bills and burnies; on his bosom sparkled
+          Many a jewel that with him must travel
+          On the flush of the flood afar on the current.
+       45 And favors no fewer they furnished him soothly,
+          Excellent folk-gems, than others had given him
+
+{He leaves Daneland on the breast of a bark.}
+
+          Who when first he was born outward did send him
+          Lone on the main, the merest of infants:
+          And a gold-fashioned standard they stretched under heaven
+[3]    50 High o'er his head, let the holm-currents bear him,
+          Seaward consigned him: sad was their spirit,
+          Their mood very mournful. Men are not able
+
+{No one knows whither the boat drifted.}
+
+          Soothly to tell us, they in halls who reside,[4]
+          Heroes under heaven, to what haven he hied.
+
+    [1] For the 'Þaet' of verse 15, Sievers suggests 'Þa' (= which). If
+    this be accepted, the sentence 'He had ... afflicted' will read: _He_
+    (_i.e._ God) _had perceived the malice-caused sorrow which they,
+    lordless, had formerly long endured_.
+
+    [2] For 'aldor-lease' (15) Gr. suggested 'aldor-ceare': _He perceived
+    their distress, that they formerly had suffered life-sorrow a long
+    while_.
+
+    [3] A very difficult passage. 'Ahte' (31) has no object. H. supplies
+    'geweald' from the context; and our translation is based upon this
+    assumption, though it is far from satisfactory. Kl. suggests
+    'laendagas' for 'lange': _And the beloved land-prince enjoyed (had) his
+    transitory days (i.e. lived)_. B. suggests a dislocation; but this is
+    a dangerous doctrine, pushed rather far by that eminent scholar.
+
+    [4] The reading of the H.-So. text has been quite closely followed;
+    but some eminent scholars read 'sele-raedenne' for 'sele-raedende.' If
+    that be adopted, the passage will read: _Men cannot tell us, indeed,
+    the order of Fate, etc._ 'Sele-raedende' has two things to support it:
+    (1) v. 1347; (2) it affords a parallel to 'men' in v. 50.
+
+
+
+
+II.
+
+SCYLD'S SUCCESSORS.--HROTHGAR'S GREAT MEAD-HALL.
+
+
+{Beowulf succeeds his father Scyld}
+
+          In the boroughs then Beowulf, bairn of the Scyldings,
+          Beloved land-prince, for long-lasting season
+          Was famed mid the folk (his father departed,
+          The prince from his dwelling), till afterward sprang
+        5 Great-minded Healfdene; the Danes in his lifetime
+          He graciously governed, grim-mooded, aged.
+
+{Healfdene's birth.}
+
+          Four bairns of his body born in succession
+          Woke in the world, war-troopers' leader
+          Heorogar, Hrothgar, and Halga the good;
+       10 Heard I that Elan was Ongentheow's consort,
+
+{He has three sons--one of them, Hrothgar--and a daughter named Elan.
+Hrothgar becomes a mighty king.}
+
+          The well-beloved bedmate of the War-Scylfing leader.
+          Then glory in battle to Hrothgar was given,
+          Waxing of war-fame, that willingly kinsmen
+          Obeyed his bidding, till the boys grew to manhood,
+       15 A numerous band.  It burned in his spirit
+          To urge his folk to found a great building,
+          A mead-hall grander than men of the era
+
+{He is eager to build a great hall in which he may feast his retainers}
+
+          Ever had heard of, and in it to share
+          With young and old all of the blessings
+       20 The Lord had allowed him, save life and retainers.
+          Then the work I find afar was assigned
+[4]       To many races in middle-earth's regions,
+          To adorn the great folk-hall. In due time it happened
+          Early 'mong men, that 'twas finished entirely,
+       25 The greatest of hall-buildings; Heorot he named it
+
+{The hall is completed, and is called Heort, or Heorot.}
+
+          Who wide-reaching word-sway wielded 'mong earlmen.
+          His promise he brake not, rings he lavished,
+          Treasure at banquet. Towered the hall up
+          High and horn-crested, huge between antlers:
+       30 It battle-waves bided, the blasting fire-demon;
+          Ere long then from hottest hatred must sword-wrath
+          Arise for a woman's husband and father.
+          Then the mighty war-spirit[1] endured for a season,
+
+{The Monster Grendel is madly envious of the Danemen's joy.}
+
+          Bore it bitterly, he who bided in darkness,
+       35 That light-hearted laughter loud in the building
+          Greeted him daily; there was dulcet harp-music,
+          Clear song of the singer. He said that was able
+
+{[The course of the story is interrupted by a short reference to some old
+account of the creation.]}
+
+          To tell from of old earthmen's beginnings,
+          That Father Almighty earth had created,
+       40 The winsome wold that the water encircleth,
+          Set exultingly the sun's and the moon's beams
+          To lavish their lustre on land-folk and races,
+          And earth He embellished in all her regions
+          With limbs and leaves; life He bestowed too
+       45 On all the kindreds that live under heaven.
+
+{The glee of the warriors is overcast by a horrible dread.}
+
+          So blessed with abundance, brimming with joyance,
+          The warriors abided, till a certain one gan to
+          Dog them with deeds of direfullest malice,
+          A foe in the hall-building: this horrible stranger[2]
+       50 Was Grendel entitled, the march-stepper famous
+          Who[3] dwelt in the moor-fens, the marsh and the fastness;
+          The wan-mooded being abode for a season
+[5]       In the land of the giants, when the Lord and Creator
+          Had banned him and branded. For that bitter murder,
+       55 The killing of Abel, all-ruling Father
+
+{Cain is referred to as a progenitor of Grendel, and of monsters in
+general.}
+
+          The kindred of Cain crushed with His vengeance;
+          In the feud He rejoiced not, but far away drove him
+          From kindred and kind, that crime to atone for,
+          Meter of Justice. Thence ill-favored creatures,
+       60 Elves and giants, monsters of ocean,
+          Came into being, and the giants that longtime
+          Grappled with God; He gave them requital.
+
+    [1] R. and t. B. prefer 'ellor-gaest' to 'ellen-gaest' (86): _Then the
+    stranger from afar endured, etc._
+
+    [2] Some authorities would translate '_demon_' instead of
+    '_stranger_.'
+
+    [3] Some authorities arrange differently, and render: _Who dwelt in
+    the moor-fens, the marsh and the fastness, the land of the
+    giant-race._
+
+
+
+
+III.
+
+GRENDEL THE MURDERER.
+
+
+{Grendel attacks the sleeping heroes}
+
+          When the sun was sunken, he set out to visit
+          The lofty hall-building, how the Ring-Danes had used it
+          For beds and benches when the banquet was over.
+          Then he found there reposing many a noble
+        5 Asleep after supper; sorrow the heroes,[1]
+          Misery knew not. The monster of evil
+          Greedy and cruel tarried but little,
+
+{He drags off thirty of them, and devours them}
+
+          Fell and frantic, and forced from their slumbers
+          Thirty of thanemen; thence he departed
+       10 Leaping and laughing, his lair to return to,
+          With surfeit of slaughter sallying homeward.
+          In the dusk of the dawning, as the day was just breaking,
+          Was Grendel's prowess revealed to the warriors:
+
+{A cry of agony goes up, when Grendel's horrible deed is fully realized.}
+
+          Then, his meal-taking finished, a moan was uplifted,
+       15 Morning-cry mighty. The man-ruler famous,
+          The long-worthy atheling, sat very woful,
+          Suffered great sorrow, sighed for his liegemen,
+[6]       When they had seen the track of the hateful pursuer,
+          The spirit accursed: too crushing that sorrow,
+
+{The monster returns the next night.}
+
+       20 Too loathsome and lasting. Not longer he tarried,
+          But one night after continued his slaughter
+          Shameless and shocking, shrinking but little
+          From malice and murder; they mastered him fully.
+          He was easy to find then who otherwhere looked for
+       25 A pleasanter place of repose in the lodges,
+          A bed in the bowers. Then was brought to his notice
+          Told him truly by token apparent
+          The hall-thane's hatred: he held himself after
+          Further and faster who the foeman did baffle.
+       30 [2]So ruled he and strongly strove against justice
+          Lone against all men, till empty uptowered
+
+{King Hrothgar's agony and suspense last twelve years.}
+
+          The choicest of houses. Long was the season:
+          Twelve-winters' time torture suffered
+          The friend of the Scyldings, every affliction,
+       35 Endless agony; hence it after[3] became
+          Certainly known to the children of men
+          Sadly in measures, that long against Hrothgar
+          Grendel struggled:--his grudges he cherished,
+          Murderous malice, many a winter,
+       40 Strife unremitting, and peacefully wished he
+          [4]Life-woe to lift from no liegeman at all of
+          The men of the Dane-folk, for money to settle,
+          No counsellor needed count for a moment
+[7]       On handsome amends at the hands of the murderer;
+
+{Grendel is unremitting in his persecutions.}
+
+       45 The monster of evil fiercely did harass,
+          The ill-planning death-shade, both elder and younger,
+          Trapping and tricking them. He trod every night then
+          The mist-covered moor-fens; men do not know where
+          Witches and wizards wander and ramble.
+       50 So the foe of mankind many of evils
+          Grievous injuries, often accomplished,
+          Horrible hermit; Heort he frequented,
+          Gem-bedecked palace, when night-shades had fallen
+
+{God is against the monster.}
+
+          (Since God did oppose him, not the throne could he touch,[5]
+       55 The light-flashing jewel, love of Him knew not).
+          'Twas a fearful affliction to the friend of the Scyldings
+
+{The king and his council deliberate in vain.}
+
+          Soul-crushing sorrow. Not seldom in private
+          Sat the king in his council; conference held they
+          What the braves should determine 'gainst terrors unlooked for.
+
+{They invoke the aid of their gods.}
+
+       60 At the shrines of their idols often they promised
+          Gifts and offerings, earnestly prayed they
+          The devil from hell would help them to lighten
+          Their people's oppression. Such practice they used then,
+          Hope of the heathen; hell they remembered
+       65 In innermost spirit, God they knew not,
+
+{The true God they do not know.}
+
+          Judge of their actions, All-wielding Ruler,
+          No praise could they give the Guardian of Heaven,
+          The Wielder of Glory. Woe will be his who
+          Through furious hatred his spirit shall drive to
+       70 The clutch of the fire, no comfort shall look for,
+          Wax no wiser; well for the man who,
+          Living his life-days, his Lord may face
+          And find defence in his Father's embrace!
+
+    [1] The translation is based on 'weras,' adopted by H.-So.--K. and Th.
+    read 'wera' and, arranging differently, render 119(2)-120: _They knew
+    not sorrow, the wretchedness of man, aught of misfortune_.--For
+    'unhaelo' (120) R. suggests 'unfaelo': _The uncanny creature, greedy and
+    cruel, etc_.
+
+    [2] S. rearranges and translates: _So he ruled and struggled unjustly,
+    one against all, till the noblest of buildings stood useless (it was a
+    long while) twelve years' time: the friend of the Scyldings suffered
+    distress, every woe, great sorrows, etc_.
+
+    [3] For 'syethethan,' B. suggests 'sarcwidum': _Hence in mournful words it
+    became well known, etc_. Various other words beginning with 's' have
+    been conjectured.
+
+    [4] The H.-So. glossary is very inconsistent in referring to this
+    passage.--'Sibbe' (154), which H.-So. regards as an instr., B. takes
+    as accus., obj. of 'wolde.' Putting a comma after Deniga, he renders:
+    _He did not desire peace with any of the Danes, nor did he wish to
+    remove their life-woe, nor to settle for money_.
+
+    [5] Of this difficult passage the following interpretations among
+    others are given: (1) Though Grendel has frequented Heorot as a demon,
+    he could not become ruler of the Danes, on account of his hostility to
+    God. (2) Hrothgar was much grieved that Grendel had not appeared
+    before his throne to receive presents. (3) He was not permitted to
+    devastate the hall, on account of the Creator; _i.e._ God wished to
+    make his visit fatal to him.--Ne ... wisse (169) W. renders: _Nor had
+    he any desire to do so_; 'his' being obj. gen. = danach.
+
+[8]
+
+
+
+
+IV.
+
+BEOWULF GOES TO HROTHGAR'S ASSISTANCE.
+
+
+{Hrothgar sees no way of escape from the persecutions of Grendel.}
+
+          So Healfdene's kinsman constantly mused on
+          His long-lasting sorrow; the battle-thane clever
+          Was not anywise able evils to 'scape from:
+          Too crushing the sorrow that came to the people,
+        5 Loathsome and lasting the life-grinding torture,
+
+{Beowulf, the Geat, hero of the poem, hears of Hrothgar's sorrow, and
+resolves to go to his assistance.}
+
+          Greatest of night-woes. So Higelac's liegeman,
+          Good amid Geatmen, of Grendel's achievements
+          Heard in his home:[1] of heroes then living
+          He was stoutest and strongest, sturdy and noble.
+       10 He bade them prepare him a bark that was trusty;
+          He said he the war-king would seek o'er the ocean,
+          The folk-leader noble, since he needed retainers.
+          For the perilous project prudent companions
+          Chided him little, though loving him dearly;
+       15 They egged the brave atheling, augured him glory.
+
+{With fourteen carefully chosen companions, he sets out for Dane-land.}
+
+          The excellent knight from the folk of the Geatmen
+          Had liegemen selected, likest to prove them
+          Trustworthy warriors; with fourteen companions
+          The vessel he looked for; a liegeman then showed them,
+       20 A sea-crafty man, the bounds of the country.
+          Fast the days fleeted; the float was a-water,
+          The craft by the cliff. Clomb to the prow then
+          Well-equipped warriors: the wave-currents twisted
+          The sea on the sand; soldiers then carried
+       25 On the breast of the vessel bright-shining jewels,
+          Handsome war-armor; heroes outshoved then,
+          Warmen the wood-ship, on its wished-for adventure.
+
+[9]
+
+{The vessel sails like a bird}
+
+          The foamy-necked floater fanned by the breeze,
+          Likest a bird, glided the waters,
+
+{In twenty four hours they reach the shores of Hrothgar's dominions}
+
+       30 Till twenty and four hours thereafter
+          The twist-stemmed vessel had traveled such distance
+          That the sailing-men saw the sloping embankments,
+          The sea cliffs gleaming, precipitous mountains,
+          Nesses enormous: they were nearing the limits
+       35 At the end of the ocean.[2] Up thence quickly
+          The men of the Weders clomb to the mainland,
+          Fastened their vessel (battle weeds rattled,
+          War burnies clattered), the Wielder they thanked
+          That the ways o'er the waters had waxen so gentle.
+
+{They are hailed by the Danish coast guard}
+
+       40 Then well from the cliff edge the guard of the Scyldings
+          Who the sea-cliffs should see to, saw o'er the gangway
+          Brave ones bearing beauteous targets,
+          Armor all ready, anxiously thought he,
+          Musing and wondering what men were approaching.
+       45 High on his horse then Hrothgar's retainer
+          Turned him to coastward, mightily brandished
+          His lance in his hands, questioned with boldness.
+
+{His challenge}
+
+          "Who are ye men here, mail-covered warriors
+          Clad in your corslets, come thus a-driving
+       50 A high riding ship o'er the shoals of the waters,
+          [3]And hither 'neath helmets have hied o'er the ocean?
+[10]      I have been strand-guard, standing as warden,
+          Lest enemies ever anywise ravage
+          Danish dominions with army of war-ships.
+       55 More boldly never have warriors ventured
+          Hither to come; of kinsmen's approval,
+          Word-leave of warriors, I ween that ye surely
+
+{He is struck by Beowulf's appearance.}
+
+          Nothing have known. Never a greater one
+          Of earls o'er the earth have _I_ had a sight of
+       60 Than is one of your number, a hero in armor;
+          No low-ranking fellow[4] adorned with his weapons,
+          But launching them little, unless looks are deceiving,
+          And striking appearance. Ere ye pass on your journey
+          As treacherous spies to the land of the Scyldings
+       65 And farther fare, I fully must know now
+          What race ye belong to. Ye far-away dwellers,
+          Sea-faring sailors, my simple opinion
+          Hear ye and hearken: haste is most fitting
+          Plainly to tell me what place ye are come from."
+
+    [1] 'From ham' (194) is much disputed. One rendering is: _Beowulf,
+    being away from home, heard of Hrothgar's troubles, etc_. Another,
+    that adopted by S. and endorsed in the H.-So. notes, is: _B. heard
+    from his neighborhood (neighbors),_ i.e. _in his home, etc_. A third
+    is: _B., being at home, heard this as occurring away from home_. The
+    H.-So. glossary and notes conflict.
+
+    [2] 'Eoletes' (224) is marked with a (?) by H.-So.; our rendering
+    simply follows his conjecture.--Other conjectures as to 'eolet' are:
+    (1) _voyage_, (2) _toil_, _labor_, (3) _hasty journey_.
+
+    [3] The lacuna of the MS at this point has been supplied by various
+    conjectures. The reading adopted by H.-So. has been rendered in the
+    above translation. W., like H.-So., makes 'ic' the beginning of a new
+    sentence, but, for 'helmas baeron,' he reads 'hringed stefnan.' This
+    has the advantage of giving a parallel to 'brontne ceol' instead of a
+    kenning for 'go.'--B puts the (?) after 'holmas', and begins a new
+    sentence at the middle of the line. Translate: _What warriors are ye,
+    clad in armor, who have thus come bringing the foaming vessel over the
+    water way, hither over the seas? For some time on the wall I have been
+    coast guard, etc_. S. endorses most of what B. says, but leaves out
+    'on the wall' in the last sentence. If W.'s 'hringed stefnan' be
+    accepted, change line 51 above to, _A ring-stemmed vessel hither
+    o'ersea_.
+
+    [4] 'Seld-guma' (249) is variously rendered: (1) _housecarle_; (2)
+    _home-stayer_; (3) _common man_. Dr. H. Wood suggests _a man-at-arms
+    in another's house_.
+V.
+
+THE GEATS REACH HEOROT.
+
+
+{Beowulf courteously replies.}
+
+          The chief of the strangers rendered him answer,
+          War-troopers' leader, and word-treasure opened:
+
+{We are Geats.}
+
+          "We are sprung from the lineage of the people of Geatland,
+          And Higelac's hearth-friends. To heroes unnumbered
+
+{My father Ecgtheow was well-known in his day.}
+
+        5 My father was known, a noble head-warrior
+          Ecgtheow titled; many a winter
+          He lived with the people, ere he passed on his journey,
+          Old from his dwelling; each of the counsellors
+          Widely mid world-folk well remembers him.
+
+{Our intentions towards King Hrothgar are of the kindest.}
+
+       10 We, kindly of spirit, the lord of thy people,
+          The son of King Healfdene, have come here to visit,
+[11]      Folk-troop's defender: be free in thy counsels!
+          To the noble one bear we a weighty commission,
+          The helm of the Danemen; we shall hide, I ween,
+
+{Is it true that a monster is slaying Danish heroes?}
+
+       15 Naught of our message. Thou know'st if it happen,
+          As we soothly heard say, that some savage despoiler,
+          Some hidden pursuer, on nights that are murky
+          By deeds very direful 'mid the Danemen exhibits
+          Hatred unheard of, horrid destruction
+       20 And the falling of dead. From feelings least selfish
+
+{I can help your king to free himself from this horrible creature.}
+
+          I am able to render counsel to Hrothgar,
+          How he, wise and worthy, may worst the destroyer,
+          If the anguish of sorrow should ever be lessened,[1]
+          Comfort come to him, and care-waves grow cooler,
+       25 Or ever hereafter he agony suffer
+          And troublous distress, while towereth upward
+          The handsomest of houses high on the summit."
+
+{The coast-guard reminds Beowulf that it is easier to say than to do.}
+
+          Bestriding his stallion, the strand-watchman answered,
+          The doughty retainer: "The difference surely
+       30 'Twixt words and works, the warlike shield-bearer
+          Who judgeth wisely well shall determine.
+          This band, I hear, beareth no malice
+
+{I am satisfied of your good intentions, and shall lead you to the
+palace.}
+
+          To the prince of the Scyldings. Pass ye then onward
+          With weapons and armor. I shall lead you in person;
+       35 To my war-trusty vassals command I shall issue
+          To keep from all injury your excellent vessel,
+
+{Your boat shall be well cared for during your stay here.}
+
+          Your fresh-tarred craft, 'gainst every opposer
+          Close by the sea-shore, till the curved-necked bark shall
+          Waft back again the well-beloved hero
+       40 O'er the way of the water to Weder dominions.
+
+{He again compliments Beowulf.}
+
+          To warrior so great 'twill be granted sure
+          In the storm of strife to stand secure."
+          Onward they fared then (the vessel lay quiet,
+          The broad-bosomed bark was bound by its cable,
+[12]   45 Firmly at anchor); the boar-signs glistened[2]
+          Bright on the visors vivid with gilding,
+          Blaze-hardened, brilliant; the boar acted warden.
+          The heroes hastened, hurried the liegemen,
+
+{The land is perhaps rolling.}
+
+          Descended together, till they saw the great palace,
+       50 The well-fashioned wassail-hall wondrous and gleaming:
+
+{Heorot flashes on their view.}
+
+          'Mid world-folk and kindreds that was widest reputed
+          Of halls under heaven which the hero abode in;
+          Its lustre enlightened lands without number.
+          Then the battle-brave hero showed them the glittering
+       55 Court of the bold ones, that they easily thither
+          Might fare on their journey; the aforementioned warrior
+          Turning his courser, quoth as he left them:
+
+{The coast-guard, having discharged his duty, bids them God-speed.}
+
+          "'Tis time I were faring; Father Almighty
+          Grant you His grace, and give you to journey
+       60 Safe on your mission! To the sea I will get me
+          'Gainst hostile warriors as warden to stand."
+
+    [1] 'Edwendan' (280) B. takes to be the subs. 'edwenden' (cf. 1775);
+    and 'bisigu' he takes as gen. sing., limiting 'edwenden': _If
+    reparation for sorrows is ever to come_. This is supported by t.B.
+
+    [2] Combining the emendations of B. and t.B., we may read: _The
+    boar-images glistened ... brilliant, protected the life of the
+    war-mooded man_. They read 'ferh-wearde' (305) and 'guethmodgum men'
+    (306).
+
+
+
+
+VI.
+
+BEOWULF INTRODUCES HIMSELF AT THE PALACE.
+
+
+          The highway glistened with many-hued pebble,
+          A by-path led the liegemen together.
+          [1]Firm and hand-locked the war-burnie glistened,
+          The ring-sword radiant rang 'mid the armor
+        5 As the party was approaching the palace together
+
+{They set their arms and armor against the wall.}
+
+          In warlike equipments. 'Gainst the wall of the building
+          Their wide-fashioned war-shields they weary did set then,
+[13]      Battle-shields sturdy; benchward they turned then;
+          Their battle-sarks rattled, the gear of the heroes;
+       10 The lances stood up then, all in a cluster,
+          The arms of the seamen, ashen-shafts mounted
+          With edges of iron: the armor-clad troopers
+
+{A Danish hero asks them whence and why they are come.}
+
+          Were decked with weapons. Then a proud-mooded hero
+          Asked of the champions questions of lineage:
+       15 "From what borders bear ye your battle-shields plated,
+          Gilded and gleaming, your gray-colored burnies,
+          Helmets with visors and heap of war-lances?--
+          To Hrothgar the king I am servant and liegeman.
+          'Mong folk from far-lands found I have never
+
+{He expresses no little admiration for the strangers.}
+
+       20 Men so many of mien more courageous.
+          I ween that from valor, nowise as outlaws,
+          But from greatness of soul ye sought for King Hrothgar."
+
+{Beowulf replies.}
+
+          Then the strength-famous earlman answer rendered,
+          The proud-mooded Wederchief replied to his question,
+
+{We are Higelac's table-companions, and bear an important commission to
+your prince.}
+
+       25 Hardy 'neath helmet: "Higelac's mates are we;
+          Beowulf hight I. To the bairn of Healfdene,
+          The famous folk-leader, I freely will tell
+          To thy prince my commission, if pleasantly hearing
+          He'll grant we may greet him so gracious to all men."
+       30 Wulfgar replied then (he was prince of the Wendels,
+          His boldness of spirit was known unto many,
+          His prowess and prudence): "The prince of the Scyldings,
+
+{Wulfgar, the thane, says that he will go and ask Hrothgar whether he will
+see the strangers.}
+
+          The friend-lord of Danemen, I will ask of thy journey,
+          The giver of rings, as thou urgest me do it,
+       35 The folk-chief famous, and inform thee early
+          What answer the good one mindeth to render me."
+          He turned then hurriedly where Hrothgar was sitting,
+          [2]Old and hoary, his earlmen attending him;
+          The strength-famous went till he stood at the shoulder
+       40 Of the lord of the Danemen, of courteous thanemen
+          The custom he minded. Wulfgar addressed then
+          His friendly liegelord: "Folk of the Geatmen
+
+[14]
+
+{He thereupon urges his liegelord to receive the visitors courteously.}
+
+          O'er the way of the waters are wafted hither,
+          Faring from far-lands: the foremost in rank
+       45 The battle-champions Beowulf title.
+          They make this petition: with thee, O my chieftain,
+          To be granted a conference; O gracious King Hrothgar,
+          Friendly answer refuse not to give them!
+
+{Hrothgar, too, is struck with Beowulf's appearance.}
+
+          In war-trappings weeded worthy they seem
+       50 Of earls to be honored; sure the atheling is doughty
+          Who headed the heroes hitherward coming."
+
+    [1] Instead of the punctuation given by H.-So, S. proposed to insert a
+    comma after 'scir' (322), and to take 'hring-iren' as meaning
+    'ring-mail' and as parallel with 'gueth-byrne.' The passage would then
+    read: _The firm and hand-locked war-burnie shone, bright ring-mail,
+    rang 'mid the armor, etc_.
+
+    [2] Gr. and others translate 'unhar' by 'bald'; _old and bald_.
+
+
+
+
+VII.
+
+HROTHGAR AND BEOWULF.
+
+
+{Hrothgar remembers Beowulf as a youth, and also remembers his father.}
+
+          Hrothgar answered, helm of the Scyldings:
+          "I remember this man as the merest of striplings.
+          His father long dead now was Ecgtheow titled,
+          Him Hrethel the Geatman granted at home his
+        5 One only daughter; his battle-brave son
+          Is come but now, sought a trustworthy friend.
+          Seafaring sailors asserted it then,
+
+{Beowulf is reported to have the strength of thirty men.}
+
+          Who valuable gift-gems of the Geatmen[1] carried
+          As peace-offering thither, that he thirty men's grapple
+       10 Has in his hand, the hero-in-battle.
+
+{God hath sent him to our rescue.}
+
+          The holy Creator usward sent him,
+          To West-Dane warriors, I ween, for to render
+          'Gainst Grendel's grimness gracious assistance:
+          I shall give to the good one gift-gems for courage.
+       15 Hasten to bid them hither to speed them,[2]
+          To see assembled this circle of kinsmen;
+          Tell them expressly they're welcome in sooth to
+          The men of the Danes." To the door of the building
+
+[15]
+
+{Wulfgar invites the strangers in.}
+
+          Wulfgar went then, this word-message shouted:
+       20 "My victorious liegelord bade me to tell you,
+          The East-Danes' atheling, that your origin knows he,
+          And o'er wave-billows wafted ye welcome are hither,
+          Valiant of spirit. Ye straightway may enter
+          Clad in corslets, cased in your helmets,
+       25 To see King Hrothgar. Here let your battle-boards,
+          Wood-spears and war-shafts, await your conferring."
+          The mighty one rose then, with many a liegeman,
+          An excellent thane-group; some there did await them,
+          And as bid of the brave one the battle-gear guarded.
+       30 Together they hied them, while the hero did guide them,
+          'Neath Heorot's roof; the high-minded went then
+          Sturdy 'neath helmet till he stood in the building.
+          Beowulf spake (his burnie did glisten,
+          His armor seamed over by the art of the craftsman):
+
+{Beowulf salutes Hrothgar, and then proceeds to boast of his youthful
+achievements.}
+
+       35 "Hail thou, Hrothgar! I am Higelac's kinsman
+          And vassal forsooth; many a wonder
+          I dared as a stripling. The doings of Grendel,
+          In far-off fatherland I fully did know of:
+          Sea-farers tell us, this hall-building standeth,
+       40 Excellent edifice, empty and useless
+          To all the earlmen after evenlight's glimmer
+          'Neath heaven's bright hues hath hidden its glory.
+          This my earls then urged me, the most excellent of them,
+          Carles very clever, to come and assist thee,
+       45 Folk-leader Hrothgar; fully they knew of
+
+{His fight with the nickers.}
+
+          The strength of my body. Themselves they beheld me
+          When I came from the contest, when covered with gore
+          Foes I escaped from, where five[3] I had bound,
+[16]      The giant-race wasted, in the waters destroying
+       50 The nickers by night, bore numberless sorrows,
+          The Weders avenged (woes had they suffered)
+          Enemies ravaged; alone now with Grendel
+
+{He intends to fight Grendel unaided.}
+
+          I shall manage the matter, with the monster of evil,
+          The giant, decide it. Thee I would therefore
+       55 Beg of thy bounty, Bright-Danish chieftain,
+          Lord of the Scyldings, this single petition:
+          Not to refuse me, defender of warriors,
+          Friend-lord of folks, so far have I sought thee,
+          That _I_ may unaided, my earlmen assisting me,
+       60 This brave-mooded war-band, purify Heorot.
+          I have heard on inquiry, the horrible creature
+
+{Since the monster uses no weapons,}
+
+          From veriest rashness recks not for weapons;
+          I this do scorn then, so be Higelac gracious,
+          My liegelord beloved, lenient of spirit,
+       65 To bear a blade or a broad-fashioned target,
+          A shield to the onset; only with hand-grip
+
+{I, too, shall disdain to use any.}
+
+          The foe I must grapple, fight for my life then,
+          Foeman with foeman; he fain must rely on
+          The doom of the Lord whom death layeth hold of.
+
+{Should he crush me, he will eat my companions as he has eaten thy
+thanes.}
+
+       70 I ween he will wish, if he win in the struggle,
+          To eat in the war-hall earls of the Geat-folk,
+          Boldly to swallow[4] them, as of yore he did often
+          The best of the Hrethmen! Thou needest not trouble
+          A head-watch to give me;[5] he will have me dripping
+
+[17]
+
+{In case of my defeat, thou wilt not have the trouble of burying me.}
+
+       75 And dreary with gore, if death overtake me,[6]
+          Will bear me off bleeding, biting and mouthing me,
+          The hermit will eat me, heedless of pity,
+          Marking the moor-fens; no more wilt thou need then
+
+{Should I fall, send my armor to my lord, King Higelac.}
+
+          Find me my food.[7] If I fall in the battle,
+       80 Send to Higelac the armor that serveth
+          To shield my bosom, the best of equipments,
+          Richest of ring-mails; 'tis the relic of Hrethla,
+
+{Weird is supreme}
+
+          The work of Wayland. Goes Weird as she must go!"
+
+    [1] Some render 'gif-sceattas' by 'tribute.'--'Geata' B. and Th.
+    emended to 'Geatum.' If this be accepted, change '_of_ the Geatmen' to
+    '_to_ the Geatmen.'
+
+    [2] If t.B.'s emendation of vv. 386, 387 be accepted, the two lines,
+    'Hasten ... kinsmen' will read: _Hasten thou, bid the throng of
+    kinsmen go into the hall together_.
+
+    [3] For 420 (_b_) and 421 (_a_), B. suggests: Þaer ic (on) fifelgeban
+    yethde eotena cyn = _where I in the ocean destroyed the
+    eoten-race_.--t.B. accepts B.'s "brilliant" 'fifelgeban,' omits 'on,'
+    emends 'cyn' to 'ham,' arranging: Þaer ic fifelgeban yethde, eotena ham =
+    _where I desolated the ocean, the home of the eotens_.--This would be
+    better but for changing 'cyn' to 'ham.'--I suggest: Þaer ic fifelgeband
+    (cf. nhd. Bande) yethde, eotena cyn = _where I conquered the monster
+    band, the race of the eotens_. This makes no change except to read
+    '_fifel_' for '_fife_.'
+
+    [4] 'Unforhte' (444) is much disputed.--H.-So. wavers between adj. and
+    adv. Gr. and B. take it as an adv. modifying _etan: Will eat the Geats
+    fearlessly_.--Kl. considers this reading absurd, and proposes
+    'anforhte' = timid.--Understanding 'unforhte' as an adj. has this
+    advantage, viz. that it gives a parallel to 'Geatena leode': but to
+    take it as an adv. is more natural. Furthermore, to call the Geats
+    'brave' might, at this point, seem like an implied thrust at the
+    Danes, so long helpless; while to call his own men 'timid' would be
+    befouling his own nest.
+
+    [5] For 'head-watch,' cf. H.-So. notes and cf. v. 2910.--Th.
+    translates: _Thou wilt not need my head to hide_ (i.e., thou wilt have
+    no occasion to bury me, as Grendel will devour me whole).--Simrock
+    imagines a kind of dead-watch.--Dr. H. Wood suggests: _Thou wilt not
+    have to bury so much as my head_ (for Grendel will be a thorough
+    undertaker),--grim humor.
+
+    [6] S. proposes a colon after 'nimeeth' (l. 447). This would make no
+    essential change in the translation.
+
+    [7] Owing to the vagueness of 'feorme' (451), this passage is
+    variously translated. In our translation, H.-So.'s glossary has been
+    quite closely followed. This agrees substantially with B.'s
+    translation (P. and B. XII. 87). R. translates: _Thou needst not take
+    care longer as to the consumption of my dead body._ 'Lic' is also a
+    crux here, as it may mean living body or dead body.
+
+
+
+
+VIII.
+
+HROTHGAR AND BEOWULF.--_Continued_.
+
+
+{Hrothgar responds.}
+
+          Hrothgar discoursed, helm of the Scyldings:
+          "To defend our folk and to furnish assistance,[1]
+          Thou soughtest us hither, good friend Beowulf.
+
+{Reminiscences of Beowulf's father, Ecgtheow.}
+
+          The fiercest of feuds thy father engaged in,
+        5 Heatholaf killed he in hand-to-hand conflict
+          'Mid Wilfingish warriors; then the Wederish people
+          For fear of a feud were forced to disown him.
+          Thence flying he fled to the folk of the South-Danes,
+[18]      The race of the Scyldings, o'er the roll of the waters;
+       10 I had lately begun then to govern the Danemen,
+          The hoard-seat of heroes held in my youth,
+          Rich in its jewels: dead was Heregar,
+          My kinsman and elder had earth-joys forsaken,
+          Healfdene his bairn. He was better than I am!
+       15 That feud thereafter for a fee I compounded;
+          O'er the weltering waters to the Wilfings I sent
+          Ornaments old; oaths did he swear me.
+
+{Hrothgar recounts to Beowulf the horrors of Grendel's persecutions.}
+
+          It pains me in spirit to any to tell it,
+          What grief in Heorot Grendel hath caused me,
+       20 What horror unlooked-for, by hatred unceasing.
+          Waned is my war-band, wasted my hall-troop;
+          Weird hath offcast them to the clutches of Grendel.
+          God can easily hinder the scather
+          From deeds so direful. Oft drunken with beer
+
+{My thanes have made many boasts, but have not executed them.}
+
+       25 O'er the ale-vessel promised warriors in armor
+          They would willingly wait on the wassailing-benches
+          A grapple with Grendel, with grimmest of edges.
+          Then this mead-hall at morning with murder was reeking,
+          The building was bloody at breaking of daylight,
+       30 The bench-deals all flooded, dripping and bloodied,
+          The folk-hall was gory: I had fewer retainers,
+          Dear-beloved warriors, whom death had laid hold of.
+
+{Sit down to the feast, and give us comfort.}
+
+          Sit at the feast now, thy intents unto heroes,[2]
+          Thy victor-fame show, as thy spirit doth urge thee!"
+
+{A bench is made ready for Beowulf and his party.}
+
+       35 For the men of the Geats then together assembled,
+          In the beer-hall blithesome a bench was made ready;
+          There warlike in spirit they went to be seated,
+          Proud and exultant. A liegeman did service,
+[19]      Who a beaker embellished bore with decorum,
+
+{The gleeman sings}
+
+       40 And gleaming-drink poured. The gleeman sang whilom
+
+{The heroes all rejoice together.}
+
+          Hearty in Heorot; there was heroes' rejoicing,
+          A numerous war-band of Weders and Danemen.
+
+    [1] B. and S. reject the reading given in H.-So., and suggested by
+    Grtvg. B. suggests for 457-458:
+
+               waere-ryhtum Þu, wine min Beowulf,
+               and for ar-stafum usic sohtest.
+
+    This means: _From the obligations of clientage, my friend Beowulf, and
+    for assistance thou hast sought us_.--This gives coherence to
+    Hrothgar's opening remarks in VIII., and also introduces a new motive
+    for Beowulf's coming to Hrothgar's aid.
+
+    [2] _Sit now at the feast, and disclose thy purposes to the victorious
+    heroes, as thy spirit urges_.--Kl. reaches the above translation by
+    erasing the comma after 'meoto' and reading 'sige-hreethsecgum.'--There
+    are other and bolder emendations and suggestions. Of these the boldest
+    is to regard 'meoto' as a verb (imperative), and read 'on sael': _Think
+    upon gayety, etc_.--All the renderings are unsatisfactory, the one
+    given in our translation involving a zeugma.
+

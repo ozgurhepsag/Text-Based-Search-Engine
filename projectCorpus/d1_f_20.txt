@@ -1,0 +1,2038 @@
+Understanding Karate-do:
+A Guide to Unity of Body, Mind, and Soul
+Owen Johnston
+2005-2011
+
+'The true purpose of budo is the search for truth. In karate,
+three elements are important - physical strength, spirit and heart.
+The end of do (the way), cannot be achieved in a few years, rather it
+is a lifelong search. Perhaps you could say the aim is to make us
+good Human Beings.'
+- Ohtsuka Hironori (6/1/1892 - 1/29/1982), founder of Wado ryu
+karate
+5
+Understanding Karate-do
+Introduction
+'The Way is not meant as a way of fighting. It is a path on
+which you travel to find your own inner peace and harmony. It is
+yours to seek and find.' - Ohtsuka Hironori
+Karate-do, as a tool for self-improvement in one's own life and
+for the lives of others, is rivaled by few other disciplines on
+earth. It may be practiced nearly anywhere, anytime, and by almost
+anyone, especially its code of conduct. It is not necessarily a
+religion, but indeed a discipline that one may apply to one's
+existing beliefs. It is simply one of many methods by which one may
+step onto the path of becoming the best person one can possibly be,
+where one's ultimate teacher will be life itself.
+No book can replace formal, technical instruction; as such, this
+book is primarily designed as a companion guide for the existing or
+prospective student of Karate-do. Also, as this book is a constant
+work in progress, I realize that the histories and lineage provided
+are far from comprehensive. However, I do hope that they are passable
+as basic, concise sources. For more comprehensive information about
+the wide world of karate and more, check out my Sources and
+Recommended Viewing.
+My lineage: I earned the rank of shodan in Heiwado (Japan
+International Karate Center's karate) from Sensei Craig McKenzie. He
+was taught by Sensei Kevin Marshall, who in turn was taught by Sensei
+Dale Coker. His teacher was Shihan Ronald Woodard. My particular
+formulation of Heiwado is based on continued research. More lineage
+information is found in Part I of the book.
+Author & Publisher:
+Owen Johnston
+cyriades@yahoo.com
+Johnston Karate Home Page:
+http://www.johnstonkarate.com
+Don't forget to visit the site for free supplementary materials.
+Click the link at the top of the page that says 'Free Karate
+Downloads' for free videos and other guides.
+6
+Understanding Karate-do
+A Brief History of Karate
+Karate-do, in all its various forms, finds its origins in one
+place - the Ryukyu islands off the coast of Japan. What we know as
+one of the most widely practiced systems of self defense and
+discipline in the world is the result of centuries of development.
+While Karate-do was introduced as a code of ethics to a peacetime
+America only a few decades ago, it began through the need of Ryukyu
+natives for better methods of fighting.
+There are a few theories about the origins of the fighting arts
+that later became collectively known as Karate-do. However, it is
+certain that many notable Chinese kung fu practitioners settled in
+Okinawa, the capital of the Ryukyu kingdom.
+The origins of the Chinese arts themselves are also shrouded in
+the mists of time. A widely accepted theory is that Bodhidharma, the
+founder of Ch'an (Zen) Buddhism created what would later evolve into
+Shaolin kung-fu. The original exercises were used to strengthen his
+monks' bodies, minds, and spirits, to help them better fulfill their
+duties. This level of personal cultivation carried across to many
+Chinese martial arts. By way of transmission to other countries, this
+carried across to other martial arts, Karate-do being one of them.
+In the year 1429, a weapons ban was passed by King Shohashi.
+This led to the rapid development of native unarmed fighting arts.
+These arts were primarily influenced by various forms of Chinese kung
+fu, which Okinawans began learning in the 14th century.
+Okinawans learned forms of Shaolin kung fu from Shaolin masters
+who fled China as a result of the oppressive Qing dynasty. Okinawans
+also learned various forms of kung fu from Chinese merchants, Chinese
+officials on diplomatic missions, and young members of wealthy
+Okinawan families who went to China to learn 'Quan Fa' / kung fu to
+further their education and martial arts studies. The general name
+given to the fighting arts learned and further refined by the
+Okinawan martial artists was tode-jutsu (alternately spelled tou-di),
+the Okinawan name given to Chinese martial arts.
+In February 1609, invasion of Okinawa by the Satsuma clan (of
+Kyushu, Japan) triggered another period of rapid development of
+native Okinawan fighting arts. Satsuma control lasted until 1879,
+when the King of Ryukyu finally abdicated and the country became part
+of Japan.
+During this period, kobudo (often translated 'classical fighting
+method'; commonly used to represent Okinawan weapon fighting)
+evolved. Farm implements were used as weapons, as traditional weapons
+were not allowed. However, some of the native Ryukyu warrior class
+traveled up to the Satsuma clan in the later part of the 19th century
+and learned their samurai fighting art Jigen-ryu kenjutsu. It was not
+long after this that Sokon Matsumura, 'Toudi' Sakugawa, and Tsuken
+7
+Understanding Karate-do
+A Brief History of Karate continued
+Koura, among the many who had made the trip, introduced their
+contributions to kobudo.
+Ultimately, three major strains were developed from Ryukyu kenpo
+karate-jutsu (as tode-jutsu eventually came to be called). These
+strains were named Shuri-te, Naha-te, and Tomari-te, for the regions
+in which they were developed. All three regions are based in the
+southern part of Okinawa. The differences of the three styles may be
+traced back to the socio-economic status of those who practiced them.
+The lowest rung on the ladder was the worker class studying Tomari-
+Te. The middle section was the merchant class studying Naha-Te. The
+upper class noblemen were taking up practice of Shuri-te in and
+around the capital.
+Matsumura is commonly considered the great grandfather of the
+karate movement in and around Shuri. He learned native Okinawan
+fighting from Sakugawa (who in turn learned from Kusankun and other
+masters). He later studied in Fujian and Satsuma. He learned Shaolin
+Boxing (Shorin-ryu) under the tutelage of master Iwah. As a result of
+the efforts of Matsumura, the fighting arts that surfaced around the
+noble / castle district of Shuri came to be known as Shuri-te (Shuri
+hand).
+The Chinese master Ason taught Zhao Ling Liu (Shorei-ryu) to
+Sakiyama, Gushi, Nagahama, and Tomoyori of Naha. This led to the
+development of Naha-te. Naha, a coastal city, was a large trade
+center at the time. Xie Zhongxiang (nicknamed Ryuru Ko) of Fuzhou
+founded Whooping Crane kung fu (hakutsuru) and taught it to a number
+of notable karate masters in the Fuzhou province. Wai Xinxian, it is
+said, was a Qing dynasty officer, and taught Xingyi kung fu as well
+as Monk Fist Boxing. It is also said he assisted Master Iwah's
+instruction in Fuzhou province.
+Two separate, modern styles developed from Naha-te: Goju-Ryu and
+Uechi-Ryu. Goju-ryu stresses deep breathing methods (ibuki). Its
+kata, including Sanchin, tend to utilize dynamic tension for power
+training. Uechi-ryu uses a number of kata that Kanei Uechi (1877-
+1948) learned while in China, as well as several Goju-ryu kata.
+Uechi-ryu's Sanchin is done with open hands, and doesn't use the deep
+breathing emphasized by Goju ryu.
+Naha-te's Chinese lineage can be seen through the influence of
+the forms and methods of Crane and other styles. Dragon Boxing
+includes the forms Seisan, Peichurrin (also known as Suparimpei),
+Saam Chien, and Eighteen Scholar Fists. Tiger Boxing also includes
+Saam Chien and Peichurrin, as well as Sanseiru and others. Arhat
+Boxing (Monk Fist) has Saam Chien, Seisan, Jitte, Seipai, Useishi,
+Peichurrin, and other forms.
+8
+Understanding Karate-do
+A Brief History of Karate continued
+While Karate was primarily organized in Shuri and Naha, Tomari
+originally had little direct influence. This is because, at that
+time, Tomari was inhabited by a simple people; it was a working class
+city of fishermen. Tomari had its share of notable masters, however,
+with Kosaku Matsumora (1829-1898), Kokan Oyadomari (1827-1905) and
+Gikei Yamazato (1835-1905) the most notable. They studied under
+Annan, as well as Ason, a Chinese sergeant.
+Tomari was located near Shuri, and its fighting arts developed
+partly under its influence. Some of the Chinese masters who taught
+Tomari villagers, however, did not reach Shuri. Some of these
+teachings did later influence Shuri-te, as exchanges eventually took
+place. Many of the kata became part of both Shuri-te and Tomari-te.
+Some of the kata unique to Tomari-te, however, are Wansu, Rohai, and
+Wankan. It is believed that Chotoku Kyan (1870-1945) brought the kata
+Ananku from Taiwan in 1895. It is said there are other kata that have
+been lost over time.
+It is also said that a pirate or sailor (named Chinto, or Annan,
+depending on the source), was a castaway from a shipwreck on the
+coast. He took refuge in the graveyard of the mountains of Tomari,
+and later lived in a cave. Reportedly, Sokon Matsumura formulated the
+kata Chinto (a.k.a. Gankaku) from the sailor's White Crane Kung Fu
+teachings. Chinto kata, of which there are more than half a dozen
+versions, was adopted into shuri-te. The Tomari-te chinto kata has a
+Chinese flair, in contrast with the simpler looking shuri-te version.
+A one legged stance occurs many times, bearing the image of a crane
+poised to strike its prey. The flying kicks of this kata
+differentiates it from others.
+Matsumora and Oyadomari apprenticed under local masters Kishin
+Teruya (1804-1864) and Giko Uku (1800-1850). They learned from Teruya
+the kata Passai, Rohai, and Wanshu, and from Uku, the kata Naifanchi.
+Matsumora was also versed in the jo-jutsu (short staff technique) of
+Jigen ryu. It is often said in Okinawan sources that Matsumora is
+Annan's successor. Yamazato followed Matsumora and Oyadomari, who
+were close friends. Both masters encouraged their students to
+exchange techniques and kata, furthering the development of Tomarite.
+Tomari-te became a light form of fighting, with plenty of feints.
+The kata Seishan is named after a well known Chinese martial
+artist who lived in or near Shuri circa 1700. He was associated with
+Takahara Perchin, a map-maker who was the first to teach Tode
+Sakugawa. The kata is said to be the oldest still in use, and
+translates to '13' or '30'. The naha-te Seisan has a Chinese flair.
+The movements are repeated in sets of three, and has pivots and
+turning of the head. Hangetsu, the Japanese name for Seisan,
+translates to half-moon. This is taken from the stances and footwork,
+9
+Understanding Karate-do
+A Brief History of Karate continued
+as well as the hand movements, which use circular paths. As with many
+other forms, the kata's movements differ slightly between styles.
+Throughout this period, tode-jutsu was taught primarily for
+health, philosophy and self defense. In this way, the Chinese
+tradition was continued. Tou-di, the karate of old, was not meant for
+the competition seen in modern karate. In fact, there were no public
+classes, as practicing fighting was forbidden as a way to promote
+public order. The to-de masters chose their students with caution
+because they were liable for problems that could arise (and
+frequently did) from their students' actions. Tode-jutsu had also
+become a part of the imperial guards' training. As a result of
+Okinawa's annexation to Japan, however, there was a huge unemployment
+boom, and poverty spread heavily. Because of this, a number of
+chikundun peichin (those who upheld public order in the Ryukyu
+kingdom) started teaching tode-jutsu for money.
+In the Satsuma occupation's later years, Japan began major
+changes as a result of the Meiji restoration. Cultural reforms led to
+the abolition of the feudal system, the abasement of the samurai
+class, and development of democracy. However, democracy was never
+fully implemented, nor were all the ideas of the samurai code and the
+feudal system totally abandoned. Japan did not want to totally lose
+its strong identity to (primarily Western) foreign influences. Part
+of this identity was the bugei (martial arts), which assisted in the
+shaping of modern Japan.
+The budo (martial ways), as they came to be called, were more
+than simply a cultural recreation. The ruling elite used the spread
+of budo to further instill moral virtues, the values of bushido (way
+of the warrior), and 'Japaneseness' in the Japanese public. In this
+Pre-World War II age full of increasing militarism, Japan needed
+strong, able men who were willing to fight to the death. Japan also
+hoped that young men of good health and mind would be more productive
+citizens.
+As a result, many budo were introduced to the school system.
+Some of these classical budo included Aikido (The Way of Spiritual
+Harmony), Jiu Jitsu (unarmed self defense art often focused on
+grappling), and Kendo (Way of the Sword), derived from the samurai
+fighting traditions. Also, Judo ('Gentle Art') was developed from jiu
+jitsu in the later part of the 19th century.
+Itosu Anko led a group of Okinawan karate-jutsu experts in a
+campaign to introduce the art to the Okinawan school system as a form
+of exercise. Many of the dangerous applications were not practiced in
+the school system, transforming karate from a hidden art of self
+defense into a unique recreation.
+Karate was introduced in this form to the Japanese mainland in
+10
+Understanding Karate-do
+A Brief History of Karate continued
+1917. The Japanese martial arts association ('Dai Nippon Butokukai')
+was interested enough in karate to invite the art's best
+practitioner. Their intent was to compare karate-jutsu to Japanese
+jiu jitsu in matches of skill.
+Gichin Funakoshi was an Okinawan native who taught at the school
+'Shoto Gakko', which prepared Okinawans for Japanese civil service.
+His life's passion, however, was karate. Because of the respect he
+commanded from Japanese gentlemen, and his skill in karate, he was
+selected to represent Okinawa's martial art.
+He defeated every opponent he faced at the demonstration, and
+won great respect. Because of this and his love of Japanese culture,
+he stayed on the mainland to further propagate karate. As a result of
+the first and further exhibitions, he gained many followers and
+ultimately began teaching out of a Kendo dojo.
+At first, there were cultural barriers and traditions that
+slowed the progress of karate across the mainland. As a result of
+Funakoshi's excellence in teaching, however, he broke through the
+prejudices against karate. Eventually, he was able to open his own
+dojo, which was the first formalized karate dojo. Also during this
+time, karate as a whole came to be formalized and 'Japanized'
+(although divisions among separate karate styles have not, to this
+day, been resolved - primarily due to pride and organizational
+politics).
+Such formalization included acceptance of the kyu/dan
+(class/grade) system as devised by Jigoro Kano (founder of judo).
+Also, it became important that all teachers were qualified and
+knowledgeable. Finally, it was necessary to institute a standard
+curriculum, uniform, and competitive format.
+Nationalism and anti-Chinese sentiment made the karate-jutsu
+movement consider a more appropriate ideogram to represent their art.
+The original 'kara' ideogram of karate meant China, as did the 'tou'
+of toudi (Chinese hand, and a reference to the Tang dynasty). The
+replacement ideogram means 'empty', and takes on not just a physical
+but a spiritual meaning. 'Kara' may represent the 'void', and freedom
+from worldly desire.
+Also changed was the suffix for karate. Instead of jutsu
+(art/science), do (way/path/totality, pronounced 'dao' in Mandarin)
+came to be used. In this sense, as a result of the efforts of such
+masters as Itosu, karate-do joined kendo, jiu jitsu, aikido, and judo
+as a modern budo, in which not only combat is practiced, but also a
+cultural discipline for the pursuit of harmony.
+11
+Understanding Karate-do
+A Brief History of Wado ryu
+Hironori Ohtsuka founded Wado-Ryu, the 1st Japanese form of
+Karate in 1938. It was the result of many years of training in
+various forms of Japanese Jiu Jitsu and Okinawan Karate, as well as
+Aikido, developed into a single fluid, powerful, yet peaceful martial
+art. Wado-Ryu Karate is the Way of Peace and Harmony, and is
+practiced as a way of life by millions of people worldwide.
+For such a relatively new and widely practiced martial art,
+details of its origin are either scarce or hotly debated. There is
+also plenty of speculation and rumor. I will give as factual an
+outline of the history as I am able. Also, I apologize beforehand if
+it seems that any part of this history is vague, which is a result of
+the lack of facts pertaining to that particular section. For a more
+comprehensive study of Karate, Wado-Ryu, and Ohtsuka-sensei, please
+refer to Sources and Recommended Viewing.
+Ohtsuka began his martial arts training very young. His great
+uncle Chojiro Ebashi began teaching him Jiu Jitsu (alternately
+spelled jujutsu and jujitsu), a grappling oriented art beginning at
+the age of 3 or 4. He was later enrolled around age 5 or 6 in shindo
+yoshin-ryu jujutsu ('Sacred Willow Style' jujutsu) under Shinzaburo
+Nakayama-sensei. This form of Jiu Jitsu was founded by Katsunosuke
+Matsuoka, a student of Yoshin-ryu jujutsu ('Willow Style'), in the
+early to mid 1800s. Shindo Yoshin-ryu emphasizes grace and natural
+movement.
+This study of natural flowing movement later played a major role
+in the development of Wado principles, along with Ohtsuka's training
+later in life under Morihei Ueshiba O'Sensei, founder of Aikido. The
+use of the opponent's momentum are as important in defeating him or
+her as your own movements. Also, Jiu Jitsu's orientation towards
+rugged practicality influenced Ohtsuka's modifications to the Karate
+techniques he would later learn.
+The Jiu Jitsu community of that time generally retained many of
+the Samurai traditions and fighting arts from which Jiu Jitsu itself
+was derived. Shindo Yoshin Ryu Jiu Jitsu, for example, contained
+Kenjutsu influence and a heavier emphasis on striking than many other
+Jiu Jitsu forms. The Kenjutsu side was a definite influence on the
+body shifting and hand controlling techniques Ohtsuka later included
+in Wado-Ryu.
+Ohtsuka continued his study of Jiu Jitsu for many years. During
+his period at Waseda University (from 1910-1917, where he earned his
+Associate's Degree in Economics) he experimented with various Jiu
+Jitsu styles to find their best qualities. Even this early on,
+Ohtsuka began evolving his techniques and principles.
+According to many, on June 1st 1920 Ohtsuka was promoted to 4th
+Grandmaster of Shindo Yoshin Ryu Jiu Jitsu. This has been much
+12
+Understanding Karate-do
+A Brief History of Wado ryu continued
+debated, however. The 3rd grandmaster of Shindo Yoshin Ryu, Tatsuo
+Matsuoka (grandson of the art's founder), did not pass away until
+1989, 7 years after Ohtsuka's death. Also, Ohtsuka's instructor,
+Nakayama, had previously branched off from the founder to begin his
+own style and lineage of Shindo Yoshin-ryu. It is also heavily
+debated as to how much or little of the actual shindo yoshin-ryu
+jujutsu curriculum was later adopted into Wado ryu. Also, Ohtsuka
+had, at some time during the early 1920s, been awarded a 'menkyo
+kaiden' certificate. This certification essentially meant he had
+gained full proficiency in the system. At the very least, Wado was
+heavily influenced by the shindo yoshin-ryu principles, and some of
+its waza (techniques).
+Nonetheless, Ohtsuka's path as a budoka was set by this point,
+and would soon take its first fateful turn. He would soon meet the
+father of modern karate, Gichin Funakoshi. In the fall of 1922,
+Ohtsuka was giving thought to his future. Although his job at the
+bank appeared secure, he was not satisfied. He wanted to devote his
+life to his true passion, the martial arts. This interest was
+heightened even more when Ohtsuka found out that an Okinawan school
+teacher, Gichin Funakoshi, was invited by Crown Prince Hirohito to
+perform karate before the Emperor of Japan at a public hall in Tokyo.
+Ohtsuka attended the demonstration, and as a result became one of
+Funakoshi's 35 original Japanese students.
+Because of the popularity gained by the demonstration, Funakoshi
+stayed in Japan. Ohtsuka was at Funakoshi's dojo nearly every night,
+absorbing the art. By 1924, he became chief assistant instructor. On
+April 24th, Ohtsuka was named among the first seven black belts in
+modern karate.
+Funakoshi came to rely heavily on Ohtsuka. At 32, Ohtsuka's
+realized his dream of being a full time martial artist. However, he
+found Funakoshi's karate (later named Shotokan) lacking. He felt
+there was little sense behind the philosophies, the kata seemed to
+have no practical application, and the movements were too confined.
+Also, Funakoshi did not allow free sparring, leaving no way to truly
+test his karate. Therefore, while still assisting Funakoshi, Ohtsuka
+trained with other notable masters. These included Kenwa Mabuni,
+founder of Shito-Ryu Karate, as well as Choki Motobu, famous for his
+excellent technical and fighting abilities, and Morihei Ueshiba,
+founder of Aikido.
+Ueshiba O'Sensei helped Ohtsuka find the missing link, and
+officially begin the creation of Wado. Like Shindo Yoshin Ryu Jiu
+Jitsu, Aikido is a direct descendant of Aikijujutsu (a part of
+Samurai combative). The greatness of Aikido is in its reliance on
+natural movements, focusing on breathing, relaxation, and 'ki' (life
+force; breath; spirit). Whereas most karate tended to generate
+13
+Understanding Karate-do
+A Brief History of Wado ryu continued
+tension in performing techniques, Aikido was the opposite. Instead of
+meeting force of force, it blended with and redirected the opposing
+force or ki.
+It was upon learning Aikido that Ohtsuka-sensei began to form a
+new budo, a Way of Harmony. He would eventually blend the basics of
+Funakoshi's karate, the practicality of Shindo Yoshin Ryu Jiu Jitsu,
+and the spirituality of Aikido, as well as the natural, evasive
+movements of the latter two. Much like the Jiu Jitsu influence on
+Ohtsuka-meijin's budo, Aikido had more influence on the principles
+from which techniques are derived, rather than the specific
+techniques themselves. Also, it would appear that Shito ryu Karate
+and Shindo Yoshin Ryu Jiu Jitsu had a much heavier influence on Wado
+than Aikido.
+Ohtsuka gradually incorporated knowledge from Jiu Jitsu, Aikido,
+and the other karate sensei he trained with, into the classes
+Funakoshi-sensei had put him in charge of. This included free
+fighting, and weaving his newfound principles into the kata. While
+many students agreed with the changes being made, Funakoshi-sensei
+viewed them as contrary to his teachings. Due to their disagreements,
+it was in 1930 that Ohtsuka-sensei and Funakoshi-sensei finally
+parted ways.
+Over the 4 years that followed, with help from students who also
+left Funakoshi's instruction, Ohtsuka continued his own teaching.
+Constantly developing his new budo, he focused on deriving practical
+defense from formal art. A major breakthrough was the idea of Kihon
+Kumite Kata, which became his greatest contribution to martial arts.
+In blending Jiu Jitsu, Aikido, and Karate, he created not only 36 new
+kata, but a new budo.
+Ohtsuka-sensei created the All Japan Karate-do Research
+Organization (Dai Nippon Karatedo Shinko Kai) in 1934, after
+encouragement from many of his students. Also, his son Jiro (later
+known as Hironori Ohtsuka II), who would later become Ohtsuka's heir,
+was born that same year.
+Four years later, the All Japan Classical Martial Arts Festival
+(Dai Nippon Kobudo Tai Kai) invited Ohtsuka-sensei to demonstrate his
+controversial new style. He was asked to name the style prior to the
+demonstration, and he registered it as Shin Shu Wado Ryu Karatejujutsu
+- New Style Way of Harmony School. The year after, when Dai
+Nippon Butokukai requested all Japanese martial arts and their chief
+instructors register their names, Ohtsuka-sensei gave the name Wado-
+Ryu - Way of Peace and Harmony.
+Ohtsuka-sensei continued teaching, and Wado-Ryu eventually
+became one of the most highly regarded Japanese martial arts. The 1st
+All Japan Wado-Ryu Karate championships were held in 1955. In 1963,
+14
+Understanding Karate-do
+A Brief History of Wado ryu continued
+Mr. Arakawa, Mr. Takashima, and Mr. Tatsao Suzuki left Japan to help
+spread Wado-Ryu Karate to Europe and America. Emperor Hirohito in
+1966 awarded Ohtsuka-sensei with The Grand Order of the Rising Sun
+(Kyuokujitsusho). In 1972, the president of International Martial
+Arts Federation (Kokusai Budo Renmei) awarded Ohtsuka the title of
+'meijin' (master), the first time a karateka had been given such an
+honor in Japan. Even now, many years after his death in 1982, people
+all over the world are still being affected in a positive way by
+Ohtsuka's Wado-Ryu Karate-do, which is his ultimate honor.
+15
+Understanding Karate-do
+Karate Lineage
+Any further worthwhile information is accepted and appreciated.
+Sokon Matsumura
+Student of Kong Su Kung/Kushanku and Sakugawa
+Matsumura taught Okinawan Shuri-te which later became known as
+Shorin-Ryu. This form was a combination of Sakugawa's tode, and Kong
+Su Kung's Chinese Boxing.
+Yasutsune Itosu
+Student of Sokon Matsumura
+Itosu-sensei continued Shorin-Ryu as it was originally taught by
+Matsumura-sensei.
+Kanryo Higaonna
+He practiced and taught the Naha-te style which became known as
+Shorei-Ryu (influenced directly by Zhao Long Liu, a Chinese martial
+art). After his death, Shorei-ryu was continued by Chojun Miyagi, who
+later formulated it into Goju-Ryu.
+Kosanku Matsumora
+He practiced and taught Tomari-te.
+Other practitioners and styles at/around the time:
+Hohan Sokan, founder of Matsumuro Seito
+Chotoku Kyan, founder of Shobayashi-Ryu
+Chosin Chibana, founder of Kobayashi-Ryu
+Shosin Nagamine, founder of Matsubayashi-Ryu
+Joen Nakazato, founder of Shorinji-Ryu
+Kanbun Uechi, founder of Uechi-Ryu
+Motubi-Ryu, a family style
+Isshin-Ryu, founded by Tatsuo Shimabuku.
+Toon-Ryu, founded by Juhatsu Kiyoda.
+Shito-Ryu, founded by Kenwa Mabuni.
+Okinawan Kempo, a combination of Shuri-te, Naha-te, and Tomarite,
+founded by Shigeru Nalamura.
+Gichin Funakoshi
+Student of Yasutsune Itosu and Sokon Matsumura
+The father of modern karate-do, Funakoshi-sensei founded
+Shotokan Karate-do in the 1920's after popularizing his martial art
+in Japan. He originally studied under not only Matsumura and Itosusensei
+but a number of other masters, whom Funakoshi talks about in
+detail in his Karate-do: My Way of Life.
+16
+Understanding Karate-do
+Karate Lineage continued
+Choki Motobu
+Student of Soken Matsumura and Anko Itosu of Shuri, Kosaku
+Matsumora of Tomari, and possibly Tokumine
+His teaching methods primarily consisted of Naihanchi kata for kihon
+(basics), and kumite. He stressed up-close fighting.
+Hironori Ohtsuka
+Student of Gichin Funakoshi
+Founder of Wado-Ryu Karate-do, Ohtsuka-sensei developed the
+style as a blend of the basics and kata of Shotokan Karate, the
+rugged practicality and natural movements of Shindo Yoshin-ryu Jiu
+Jitsu, and the fluidity and peacefulness of Aikido. The Wado-Ryu
+symbol represents peace encompassing strength.
+In the months leading to his retirement, he decided that his son
+was to succeed him as grandmaster of Wado-Ryu. However, some of the
+higher level Wado-Ryu Karateka were not in favor of this decision.
+Negotiations took place, but no agreement could be reached as to the
+next grandmaster. As a result, some of the karateka split off to form
+their own associations.
+Hironori Ohtsuka II (Ohtsuka Jiro)
+Son & Student of Hironori Ohtsuka
+Months before his father's death, he and a group split from
+Japan Karate Federation-Wadokai. His split is named Wadoryu Renmei.
+It is regarded as a private group. In 1989 a new split occurred.
+Suzuki Tatsuo, resident in London, founded International Wadoryu
+Federation. The succession argument is the one most backed by Jiro as
+to the split.
+Hironori Ohtsuka III
+Grandson of Hironori Ohtsuka
+Tatsao Suzuki
+Senior Student of Hironori Ohtsuka
+Founder of International Wadoryu Federation
+Suzuki sensei was one of the primary influences in spreading Wado
+throughout Europe. As a result, Wado is currently the most widely
+practiced form of karate in Britain.
+17
+Understanding Karate-do
+Karate Lineage continued
+Lineage of Heiwado:
+Kiyohisa Hirano-soke
+Student of Hironori Ohtsuka
+Founder of Japan International Karate Center
+Hirano-soke founded Heiwa-do, his interpretation of Wado-Ryu
+Karate-do. It also blends in ideas from Shotokan, Shito-Ryu, and
+Goju-Ryu, as well as Aikido, Iaido, and Judo. The basic strategy and
+philosophies are classical Wado-Ryu.
+Shotokan's scientific approach to body physics helps students
+grasp instruction more easily. Shito's efficiency & superior stances
+are also adopted. Also integrated into the movements are Goju-Ryu's
+dynamic breathing methods.
+The name Heiwa-do uses the first kanji (Japanese set of Chinese
+loanwords) of Hirano (Hira, or Hei) & the 1st character from Wado
+(Wa). The do in Heiwa-do translates to The Way. Heiwa-do's name was
+created out of respect for its origins in Wado-Ryu. Heiwa also
+happens to be the Japanese word for peace; therefore Heiwa-do
+literally means The Way of Peace.
+Shihan Ronald Woodard
+Student of Kiyohisa Hirano-soke & current shihan of JIKC
+Shihan Woodard is the 1st JIKC instructor in continental US.
+Sensei Dale Coker
+Student of Shihan Ronald Woodard
+Founder of Nippon Kokusai Karate Center
+Founder of Japan Karate Institute
+Sensei Curtis Boyd
+Student of Sensei Dale Coker
+Sensei Kevin Marshall
+Student of Sensei Dale Coker
+18
+Understanding Karate-do
+Karate Principles for Self Defense
+Included herein are generalized principles of the self-defense
+side of Karate, meant to be applied to every day life.
+A comprehensive listing of all techniques,and variations as
+practiced in every family style and branch of karate, as well as the
+differences in kata between branches, is beyond the focus of this
+book. Also, no book, no matter how technical the explanations and
+pictures, can possibly replace formal instruction. Therefore,
+included in this and the next two chapters is a general guide to
+principles, technique, and kata - based upon my own formulation of
+karate - that I hope will serve you alongside your daily training.
+The general learning curve intended is for body mechanics,
+mental discipline, and ethical precepts to be practiced in the first
+phases of training. After such training, application of principles,
+mental focus, and personal development may be assisted.
+Wa no Michi - The Way of Peace
+We should seek unity, harmony, and peace within ourselves and
+the world around us.
+Karate-do - The Way of the Empty Hand
+Do not look to one way of doing things or one technique.
+Instead, internalize all you have learned, to become like water, and
+take the path of least resistance. Do not meet force with force, but
+avoid or stop attacks using body shifting, footwork, stop hits, and
+deflection. Blend naturally with opposing energy.
+Zanshin
+'Remaining mind' / Awareness.
+Haragei
+Breathing art/'Belly art'/Body Focus. Breathe, relax, and settle
+your body, naturally.
+Mushin
+'Mind-without-thinking'/Mental Focus. Empty your mind and be
+fully aware of all angles. Do not concentrate on one technique, but
+let your principles guide you according to the situation.
+Kiai
+'Life force harmony'/Spirit Focus. Exert your spirit in a
+powerful yet natural way. Be flexible, intimidating, and untouchable.
+21
+Understanding Karate-do
+Karate Principles continued
+Tai Sabaki
+Body management/body shifting/'optimum utilization'. These
+movements are performed with economy of motion.
+The 3 body shifting methods - San mi Ittai
+Ten-i - Move away from the attack.
+Ten-tai - Turn and realign the body to dodge the attack or reduce the
+area on your body that is vulnerable to attack.
+Ten-gi - Perform techniques while the attack passes through. Consider
+using his/her momentum to your advantage.
+Timings for counter attack
+Consider uses for the body shifting methods.
+Go no Sen - Defensive attack. Counter once the attack is completed,
+but before the opponent is able to attack again.
+Sen - Simultaneously attack with the attacker. You will complete your
+counter first, and/or displace the attacker's movement.
+Sensen no Sen - Preempt the attack with your own, by perceiving your
+opponent's intent. This will catch him/her off guard, breaking
+his/her mental balance.
+Defensive movements
+Heavily influenced by Shindo Yoshin-ryu jujutsu, these movements
+are used to control the opponent's energy. These movements apply maai
+and body shifting. Consider uses of the timings for counter attack.
+Nagasu - Flowing / Fluidity. Move evasively off the line of attack
+but closely enough that the attacker's force can be used to add to
+your own. Often combined with penetrating into an opponent's side
+(irimi).
+Irimi - Move to enter the opponent's attack.
+Inasu - Move under, inside, or around the attack.
+Noru - Control the opponent's movement.
+Musubi
+'Connection'. This deals with finding the opponent's center of
+gravity. Use as little energy and strength as possible when making
+this 'connection'. Focusing on skill in application rather than force
+20
+Understanding Karate-do
+Karate Principles continued
+guarantees proper use of principle, and reduce your opponent's
+chances of using strength to overpower you. Relax and develop
+sensitivity! Once you find this, you will find the same principles in
+all 'waza' / techniques. Remember to push with the hands and pull
+with the feet.
+Ki Ken Tai no Ichi
+'Mind and Body as One'. Coordination of mind and body in
+movement. Thought and action must become one.
+Hei Jo Shin
+'Calm mind and body'. When the opponent feints or draws a
+weapon, you should not flinch. Instead, fight reflexively with a
+focused mind.
+Maai
+The state of mind and spirit of the combatants, and the distance
+between them. Keep enough space to attack and defend. At a high
+level, you control the spirit and energy of a conflict. Draw a
+reaction from the opponent that will give you a tactical advantage.
+Practice the above principles to understand and apply maai.
+Continuously study specific tactics to help further your
+understanding of this broad strategy. A few technical examples and
+training methods are included later.
+21
+Understanding Karate-do
+Basic Techniques and Drills
+This is not a comprehensive list of techniques and drills, but
+those that I personally teach. Notes and Japanese terms also
+included.
+Basic Directions/Positions
+High - Jodan / Middle - Chudan / Low - Gedan
+Left - Hidari / Right - Migi
+Centerline - Seichusen, Pattern line – Embusen
+Karate Techniques (Basic Strikes, Kicks, Blocks, and Stances)
+Strikes:
+Knife hand - Shuto
+Ridge hand - Haito
+Elbow strike - Empi uchi
+Hammer fist - Tettsui
+Back fist - Ura ken
+Four finger spear hand thrust - Yohan nukite
+One knuckle punch - Ippon ken
+Palm strike - Shotei uchi
+Reverse Punch - Gyakuzuki
+Kicks:
+Front snap kick - Mae geri, Roundhouse kick - Mawashi geri
+Side thrust kick - Yoku geri kekomi / sokuto geri
+Side snap kick - Yoko geri keagi, Back kick - Ushiro geri
+Inward & Outward Crescent kicks - Mikazuki geri
+Knee kick - Hiza geri
+Blocks:
+Brush block; High block - Jodan uke
+Outward & Inward middle blocks (Chudan soto uke, Chudan uchi uke)
+Low block - Gedan barai uke
+Knife hand block - Shuto uke, Support hand block - Morote uke
+Elbow block - Empi uke
+Cross arm block - Juji uke
+Stances:
+Attention stance; Ready stance; Horse stance - Kiba dachi
+Straddle stance - Shiko dachi
+Cat foot stance - Neko ashi dachi
+Back stance - Kokutsu dachi
+Front stance / "Fighting stance" - Zenkutsu dachi
+Hourglass stances - Sanchin dachi, Seishan dachi
+Crane stance - Tsuru dachi
+22
+Understanding Karate-do
+Techniques continued
+Footwork:
+Some basic types of footwork used in getting closer to the opponent.
+Yoriashi - move the front foot, then the back foot.
+Ayumiashi - the back foot moves forward (as if walking).
+Suriashi / Tsugiashi - back foot steps up to the front foot (no
+crossing over).
+Surikomi - crossover step using the back foot.
+muay Thai Techniques:
+Front push, Switch kick, Inside leg kick, Power kick, Cut kick,
+Clinchwork
+Boxing Techniques:
+Punches - jab, cross, hook, uppercut, shovel hook, overhand cross
+Parries - inward, outward, low, glove parry, slipping parry
+Grappling:
+This includes throws, takedowns, as well as seizing &
+controlling techniques such as joint locks, chokes, gripping, and
+small joint manipulation. These deal with various body points,
+including vital organs, muscles, joints, and nerve clusters. When
+using locks, maintain pressure and use pain to control or subdue the
+opponent.
+Control all the joints in the arm when applying wrist / arm
+locks, and to push with your hands rather than pull. Do not allow the
+opponent to use his or her strength to resist - find the center of
+gravity and attack their weak line of movement. Use circular
+movements to defeat the linearity of the human body. Study kuzushi
+and sensitivity to understand not only grappling, but striking.
+Some Basic Locks:
+Various wrist and arm locks, Rear naked choke, Guillotine choke, leg
+and ankle locks
+Some Basic Sweeps, Throws, Takedowns:
+Major outer and inner reaps - Osoto gari, Ouchi gari
+Minor outer and inner reaps - Kosoto gari, Kouchi gari
+Foot sweep - Okuriashi harai, Forward foot sweep - Deashi harai
+Hip toss, Shoulder throw variations
+Sacrifice throw variations, Double or single leg takedown
+Basic Ground Positions:
+Mount, side mount / control, guard, half guard
+23
+Understanding Karate-do
+Techniques continued
+Drills:
+Alternate sparring
+Take turns striking, with no blocking or hard contact.
+Call sparring
+Call a technique or series of techniques, and wait for your
+partner to confirm that he or she is ready before attacking. Your
+partner's goal is to successfully defend all techniques (via evasion,
+parrying, and/or blocking). It is then your partner's turn to attack.
+When both partners have improved at this drill, they may both
+simply take turns delivering a short series of attacks without
+calling out techniques. At first, this drill should be done at half
+intensity with light to no contact. Also, counterattacks should not
+be used in this drill, as the goal is to develop quick, reflexive
+defenses. However, once skill is gained, counterattacks may be
+drilled using the following routines.
+Slip and duck (Reaction and combination drill)
+This drills additional body shifting against punches at close
+range. The key is to develop both looseness and quick reactions when
+cornered. At first, the hands simply protect the face. As you
+improve, add counter punches during and after slips and ducks. This
+drill may be practiced with or without striking pads.
+Sensitivity drill
+You and a partner face each other in fighting stances, with your
+hands open in guard position. You and your partner should keep your
+hands or arms in contact with each other throughout the drill.
+Practice redirection using soft techniques that flow into one
+another, while maintaining good posture. As often as possible,
+simultaneously redirect and counter attack. Do not rush the drill at
+first - you and your partner will both slowly use redirection on one
+another - 'countering counters', so to speak. This helps 'musubi' /
+connection and sensitivity to direction of force, as well as bunkai.
+It will also help you to not depend only on your eyes at close range.
+This drill helps with clinchwork, Ki Ken Tai no Ichi and Hei Jo Shin.
+Kuzushi (Balance breaking)
+Clinch with your partner, and use momentum, body mechanics,
+sticking hands, foot sweeps/reaps, etc. to try to break one another's
+balance. Try to create openings for takedowns. Major outer reap uses
+the back leg on their opposite leg. Major inner reap aims for the
+inside (mirror image). Minor outer reap uses the front leg on the
+same side (mirror image). Minor inner reap aims to the opposite leg.
+24
+Understanding Karate-do
+Techniques continued
+Shadow Boxing
+Practice performing "freestyle" combinations on your own.
+Footwork, breathing, rhythm and flow of techniques, slipping, and a
+continuous active guard are among the most important things in shadow
+boxing. Visualize an opponent as you practice - imagine different
+scenarios and fighting rhythms.
+If you are new to this, do it for three 1-minute rounds at half
+speed. As your technique and/or stamina improve, build up to at least
+three 3-minute rounds at full speed. Always take a one minute rest
+between rounds. Of course, one can always perform more rounds as
+desired / needed.
+Once you are ready, do it with a partner at half speed. Maintain
+some distance from one another - and read each other's movements as
+you attack, defend, and use footwork. Watch angles, body language,
+and rhythm as you apply what you learned in previous drills. Partner
+shadow boxing helps adapt technical skills to a real sparring
+situation. Eventually, move on to light sparring. Perform strikes
+closer to your partner, and at full speed. However, use little to no
+contact until you have improved control, and have gotten used to
+techniques being thrown at you.
+25
+Understanding Karate-do
+Kata
+'A kata may be regarded as an integration of offensive and defensive
+techniques, but it is more than that. One should try to understand
+the spirit of the master karateka who created the kata, for it has a
+life of its own and requires five or six years to be mastered.'
+- Hironori Ohtsuka, Wado-Ryu founder
+Kata - 'Formal movements'; in the context of Japanese martial
+arts, an 'imaginary fight'.
+Bunkai - Principles and application of kata.
+Kata:
+Wado-Ryu kata tend to use the Okinawan names. Alternate names
+included are the Japanese / Shotokan names, unless otherwise
+indicated. The kata included in any particular dojo's curriculum may
+vary from this list, however. As such, this list is intended to be
+informative to those interested in kata history, rather than
+suggestive of what should be required to learn. I also do not pretend
+that my information is complete / perfect, due to a lack of written
+records in early 'te' history, and ongoing debate. I have also listed
+various other kata I am aware of.
+Kata list
+Wado ryu kata
+Pinan (Heian) series: Shodan, Nidan, Sandan, Yodan, and Godan
+'Peaceful Mind' Numbers 1-5. Said to be created by Anko Itosu in 1905
+or 1906, basing them on Kushanku, and a forgotten kata called
+Channan. There is some debate as to whether Kushanku was instead
+formulated from the Pinan series, however. Ohtsuka-meijin studied the
+Pinan series under both Funakoshi- and Mabuni-sensei. Ohtsuka later
+made modifications to these kata under the direction of Mabuni, and
+also used influences from Shindo Yoshin ryu jujutsu.
+Kushanku (Kanku Dai)
+'Gazing heavenward', 'viewing the sky', or 'contemplating the sky'.
+Said to be the most advanced of all Okinawan kata. Ohtsuka-sensei
+studied Kushanku under Funakoshi- and Mabuni-sensei.
+Chinto (Gankaku)
+'Fighting to the East' / 'Crane on a Rock'. Formulated in Tomari from
+the teachings of a Chinese sailor of the same name, this kata was
+based mostly on White Crane Kung-Fu and later adopted into shuri-te.
+Ohtsuka-sensei studied variations of this kata under masters
+Funakoshi and Mabuni.
+26
+Understanding Karate-do
+Kata continued
+Seishan (Hangetsu)
+'13 Hands'/'Crescent Moon'. It is based on movements brought from
+Fukien to Okinawa circa 1700. Ohtsuka-sensei also knew and taught the
+shuri-te version of Seishan.
+Naifanchi / Naihanchi (Tekki Shodan)
+'Holding your ground', 'The Iron Horse', or 'Battlefield'. Named
+after naihanchi dachi, which the kata centers around. This kata was
+transmitted by Matsumura-sensei throughout Shuri and Tomari sometime
+before 1825. Master Ohtsuka learned Naifanchi from Motobu-sensei.
+Bassai
+'Extract from a fortress' or 'remove an obstruction'. An Tomari-te
+kata that uses dynamic stances and hip rotation. The Shotokan, Shito,
+and Wado ryu versions of Bassai are directly based upon Master
+Itosu's Bassai. Ohtsuka learned Bassai from Funakoshi.
+Wanshu (Empi)
+'Dumping Form'. A Tomari-te kata based on movements brought to
+Okinawa in 1683 by Wanshu, which is the Okinawan adapted name of the
+Wang Ji. Wanshu was a practitioner of the Shaolin tradition of Fujian
+White Crane. Ohtsuka-sensei learned Wanshu from Master Funakoshi.
+Jion
+'Temple Sounds' / 'In the Jion-ji Shaolin Temple'. A Tomari-te kata,
+it is named after Jion-Je, a Buddhist temple. Ohtsuka studied this
+kata under Funakoshi and Mabuni.
+Jutte (Jitte - alternate spelling)
+'Ten Hands'. It is said that anyone who masters this Tomari-te kata
+has the strength of 5 men. Ohtsuka studied this kata under Funakoshi
+and Mabuni.
+Rohai (Meikyo)
+'Vision of a crane' or 'vision of a heron'. Originally a Tomari-te
+kata, a version of it was taught by Itosu-sensei, who formulated
+three versions of it (Rohai Shodan, Rohai Nidan, Rohai Sandan). Itosu
+Rohai was taught by Master Mabuni to Ohtsuka. The Rohai practiced in
+Wado is known as Rohai Shodan, in Shotokan. The Shotokan version,
+Meikyo, translates 'clear mirror' or 'mirror of the soul'.
+Suparimpei (Pechurrin - Chinese name)
+'108 Steps' (represents the 108 evil spirits of man). Developed from
+a Chinese form used in systems including Dragon Boxing and Tiger
+27
+Understanding Karate-do
+Kata continued
+Boxing. Practiced in Wado.
+Niseishi (Nijushiho)
+Transmitted by Ankichi Aragaki, variations of this Shuri-te kata
+exist in Shotokan, Shito, and Wado.
+Unsu (Unshu - alternate spelling)
+'Defense of a Cloud' or 'Cloud Hand'. This Tomari-te kata is
+practiced in Shotokan, Shito, and Wado.
+Kihon Kumite Kata (Basic Sparring Forms):
+These kata are two-person drills.
+Ipponme / Nihonme / Sanbonme / Yohonme / Gohonme
+Rokuhonme / Shichihonme / Hachibonme / Kyuhonme / Juhonme
+List of other kata (terribly incomplete!)
+Kihon Kata Shodan / Nidan / Sandan
+Basic Forms 1, 2, and 3. Variations exist in many styles.
+Sei Shi
+'24 Steps'. A Shorin-ryu kata performed in 3 directions - the points
+of a triangle.
+Seipai
+Variations exist in Goju-ryu and Shito-ryu. It was influenced by
+White Crane Kung-Fu.
+Annan
+A Shito-ryu kata that primarily uses open hand techniques. It also
+has a Goju variation. Annan has great versatility and speed in its
+self defense techniques.
+Useishi (Gojushiho Sho)
+'54 steps' number one. A Shotokan kata.
+Gojushiho Dai
+'54 steps' number two. A Shotokan kata.
+Ji'in
+Variations exist in Shotokan, Shito & Wado.
+Nipaipo
+A Shito kata with a Chinese flair.
+28
+Understanding Karate-do
+Kata continued
+Bunkai
+Bunkai, or application of technique, assists in understanding
+the movements once they have been learned. Kaisetsu, or learning the
+principles behind the movements, may then be drilled, so as to assist
+in learning how to adapt and apply kata. As such, there should not be
+any one prescribed method for teaching bunkai. As such, drilling the
+following bunkai is not meant to be 'the only way', but instead meant
+to help gain a basic understanding of "kaisetsu".
+Kihon Kata Shodan
+Basic awareness, stances, defenses, attack angles, economy of
+motion, & focus. High Blocks 2 & 3 may be used as strikes.
+Kihon Kata Nidan
+This kata builds on the previous one by drilling kick-punch
+combinations.
+Kihon Kata Sandan
+It teaches power generation through hip twisting and body torque
+as well as momentum.
+Pinan Shodan
+This kata helps movements become stable, efficient, and
+intimidating. The first technique, 'c block', sets up for a
+redirection. Even the sword hand blocks can become attacks.
+Pinan Nidan
+This kata instructs further on timing, distance management, and
+counter-attacking quickly.
+Pinan Sandan
+This kata teaches a continuous guard. It also helps become body
+shifting, consistency of stances, and redirection of attack. The
+middle & low blocks in the beginning may be termed 'continuous
+block', which may be interpreted in many ways. The turn after the
+spearhand strike, and follow-up with the outward tetsui, is twisting
+out of the opponent's grappling of your arm, and countering.
+The use of the elbows in naihanchi dachi may be either strikes
+or strong blocks. This may be interpreted in many ways in close
+quarters. The last moves of the kata may be seen as elbowing to both
+the back and front, breaking rear grapples with an elbow to each
+opponent's abdomen and a hook to the face, or a powerful hook or
+elbow to an opponent in front.
+29
+Understanding Karate-do
+Kata continued
+Pinan Yodan
+Stepping into a back stance as you double block disrupts the
+opponent's movement, as you simultaneously block and counter.
+Blocking behind you immediately after the initial blocks cuts a sneak
+attack short. The low block, front snap kick, and elbow combination
+will block, stumble, and knock out an opponent. The sequence after
+the second elbow assists in learning how to follow through with
+attacks, and helps practice economy of motion.
+The cross-block that begins the second half of the kata counters
+a grab attempt. Pulling the hand back as you kick may be interpreted
+as trapping the opponent's arm under yours, and pulling him/her into
+a kick to the groin.
+Pinan Godan
+The high cross block sets up for an arm lock, tetsui, and
+finishing punch. The jump ends with a strike to a fallen opponent.
+The palm strikes followed by pulling motions represent attacking the
+groin and causing severe trauma to it.
+Kushanku
+The Pinan kata help understand Kushanku, as there are many
+similarities. The slow motions are used for breathing and focus, but
+may often be used as blocks and/or attacks. Practice consistency in
+stances, torque, and momentum in this kata.
+In the second half, the sequence that ends with a punch to the
+ground represents blocking a kick, throwing the opponent, and
+knocking him/her out. The next sequence blocks and throws an
+opponent, then jumps over him/her to kick another, and follows
+through with a finishing strike. The last sequence is a takedown with
+a knockout blow.
+Naihanchi
+Naihanchi develops lower body strength. It also teaches one to
+settle all one's strength in the abdomen/center and draw from it. The
+methods employed in Naihanchi are best applied and
+interpreted in a narrow space.
+Bassai
+Bassai builds a stronger, more efficient defense. The first two
+middle blocks may be seen as a kick counter and takedown; the
+backfists near the end may also be used this way by performing
+scooping blocks to set up for the attacks. The crescent kick
+redirects an attack, so as to set up for the elbow strike. After the
+elbow is 3 sets of double strikes to counter a rear grapple attempt.
+30
+Understanding Karate-do
+Kata continued
+Wanshu
+Wanshu, like Bassai, is technical and efficient, but is of a
+more aggressive nature. It is also a study in timing and followthrough.
+Stepping into side stance as you set up for a low block may
+be seen as body shifting to dodge an attack, as you move in to punch
+the opponent. The jump represents stomping on a downed opponent while
+preparing to block an attack from another.
+Jion
+Jion is very direct, yet powerful, stable, and technical. Its
+use of stances will greatly assist your footwork. Remember, the
+physical side of fighting is done from the ground up.
+The first technique may be considered as a striking block, and
+its uses are numerous. Compare this to Pinan Sandan. The low block
+and middle block in back stance sequence sets up for a pulling block
+and punch counter. Performing low block in back stance, then a
+supported backfist in jigotsu dachi may represent blocking a low
+punch, then sweeping a kick.
+Seipai
+As an Okinawan kata, Seipai uses a small structure to reinforce
+mobility. Due to the Crane influence, Seipai is a study in entering
+and parrying. The first combination blocks and pulls
+a low attack, then knocks the attacker down. The rolling motion of
+the arms after the turn, low block, middle block, and mawashi uke
+combination represents a damaging arm lock. In a variation of Seipai,
+juji uke is performed just before the sweep. The last two strikes of
+the kata knock the opponent down, then out.
+Gojushiho Sho
+This kata is a study in close quarters techniques. The first
+sequence is a double wrist block, and counter attack. The sequences
+after the elbow strike represent a kick counter, nukite, and grapple
+counter. The last sequence represents blocking an attack to the
+midsection, blocking a grapple attempt, then counter attacking to the
+collar bones.
+Annan
+Annan contains many practical, efficient counter attack methods.
+It is also useful in practicing breathing and focus. Raising the knee
+and striking with the finger may represent blocking a kick, then
+hitting the vital point below the ear. Stepping into horse stance,
+extending the hands, and clinching them into fists will jam the
+opponent, and grab him/her to gain control for the side kick. The 'ox
+31
+Understanding Karate-do
+Kata continued
+jaw' wrist blocks near the end block a middle punch, then knock the
+shoulder out of joint.
+Shu Shi no Kon / Shuji no Kon
+The bo (staff) is known for its versatility, speed, power, and
+adaptability, and ease of use. Shu Shi no Kan is a great example of
+this, as well as an excellent training aid. Once learned and
+understood staff skills may be applied to makeshift weapons.
+The usage of both ends of the staff allows a great degree of
+control. This also enables may long range (yet deceptively fast)
+block-and-counter techniques. The use of centrifugal force also adds
+to the power. We must remember, however, to treat the staff as an
+extension of our existing karate techniques - and practice
+accordingly.
+Seishan
+Seishan is direct yet graceful. The primary stances used are
+seishan dachi, tate seishan, and shikodachi. The footwork and a
+number of the techniques utilize forward whipping movement for speed
+and impact. The open handed blocks near the beginning may counter
+grappling as well as strikes. These blocks may also be seen as double
+spear hands. Also, in the second half of the kata, what appears to be
+a shortened high block may be used as a wrist block, and the jammed
+front snap kick becomes a knee kick.
+Overview:
+Aside from the dojo precepts, kata is traditionally Karate-do's
+primary tool for personal development. It is the textbook of Karatedo
+that is to be learned, understood, and applied. It is the tool by
+which Karate-do demonstrates fighting principles, but also creates
+unity in one's body, mind, and soul.
+What may seem unnatural motions become second nature with
+training and practice. Kata assists in drilling good habits, and
+replacing bad ones. Once the techniques have been absorbed, patterns,
+principles, and body mechanics may be understood. The 'art' of
+'martial art' is understanding these underlying ideas, that guide
+techniques and give them meaning. A technique is not just a strike or
+block, but also the factors necessary for those to work (timing,
+movement, and so forth). By practicing kata, and drilling 'bunkai',
+you will learn to apply principles with no extra 'clutter'.
+The fighting principles, when well applied, will work in many
+situations. Awareness and defensive principles help avoid, assess, or
+diffuse encounters. The search for unity means we should use lethal
+force as a last resort. The key is to move last, but hit first. In
+32
+Understanding Karate-do
+Kata continued
+this way, there is no first strike in karate, but we meet force with
+a passive counter. Look for new ways to interpret kata - many secrets
+may be found...or created.
+Mentally, kata teaches focus, and attention to all angles. One
+must cut through disclarity of mind to understand kata, and with this
+a growing process takes place. You will find bunkai where you did not
+before, as you imagine the problems the kata creators faced. This
+problem solving that kata teaches is invaluable. It balances the mind
+and grounds it to a reality that is still unpredictable, yet enriched
+by clearer understanding.
+Physically, kata enforces proper use of body structure. It also
+strengthens the muscles through natural body weight exercises.
+Practiced vigorously, kata improves cardiovascular efficiency. Kata
+is therapeutic and empowering.
+Spiritually, kata provides a path of self awareness. In
+practicing or even creating new kata, one builds resolve. In aiming
+for mastery, one builds patience. In either, one has to continually
+search in and outside of themselves, that one may learn how to apply
+the truths contained within kata.
+33
+Understanding Karate-do
+Philosophy
+The material in this and the next chapter are what I personally
+teach in my own classes. However, regional and personal differences
+will necessarily make for different experiences in every martial arts
+school.
+Purpose of Karate Training
+To stand for peace, harmony, and truth!
+Dojo Precepts
+1) Perfect one's character!
+1) Dedicate oneself to others!
+1) Uphold honor, bravery, and justice!
+1) Never stop learning!
+1) Obtain victory without conflict!
+Mukso (Meditation)
+Meditation warms up the mind before training, and cools down the mind
+after training. After training, meditate on what you did well, and
+what you want to work on next time.
+Bowing
+Shomen ni rei - Bow to the front
+Otagai ni rei - Bow to each other
+Traditions
+1) Do not wear anything on your feet on the training floor, or
+anything that inhibits training.
+2) Courtesy / Respect: Bow when entering and leaving the training
+floor. Bow when a teacher enters or leaves the training floor.
+Say 'Thank you' or 'Arigato' and 'Hai, sensei' often. Ask the
+teacher first before you leave the floor for any reason.
+3) Relationships: Teacher-Student (oyabun-kobun) and Senior-Junior
+(sempai-kohai). In Japanese tradition, the relationship of
+master and apprentice is comparable to that of parent and child.
+4) Honor: Carry yourself in an honorable fashion in dealing with
+people in and out of the dojo. In the dojo, this includes
+respecting your classmates and teachers by giving them your
+best. Outside of the dojo, this includes doing the best you can
+for others.
+34
+Understanding Karate-do
+Terms
+Pronunciation
+Ei is like long a, ai is like ie in pie, y is like long e
+General
+Dojo - 'Place of the Way'; The training hall
+Sensei - 'One who comes before'; Instructor
+Sempai - Senior Student
+Kohai - Junior Student
+Hai - Yes
+Osu - A greeting used in various styles.
+Karate-do - 'Way of the Empty Hand'; Founded in Okinawa as a
+system of self-defense & conduct
+Commands
+Yoi - Ready
+Kiyotsuke rei - Line up, bow
+Jiyu kumite - Free sparring
+Hajime - Start
+Yame - Stop
+Mawate - Turn
+Seiza - Formal Japanese sitting position
+Mukso - Concentration / Meditation
+Shomen ni rei - Bow to the front
+Otagai ni rei - Bow to each other
+Tate - Stand up
+Moichido - One more time
+Counting
+Ichi - One / Ni - Two / San - Three / Shi - Four / Go - Five
+Roku - Six / Shichi - Seven / Hachi - Eight / Ku - Nine
+Juu - Ten
+(Note: 'Shi' may also be pronounced 'yo' or 'yon', since 'Shi' can
+also mean death. 'Shichi' is alternatively pronounced 'nana', and
+'Ku' is alternatively pronounced 'kyuu'.)
+35
+Understanding Karate-do
+Karate Precepts
+Perfect one's character:
+Do not harbor hatred and bitterness. Negativity breeds
+negativity. Love one another. Enough cannot be said on this.
+Dedicate oneself to others:
+And not just to oneself. Selfishness leads to hate, which leads
+to anger. Anger consumes all in its path and is never quenched,
+except by effort, which rebuilds. This may be one's own effort, or
+the effort of another, changing your nature and your life from the
+inside out. This will influence those around you.
+Uphold honor, bravery, and justice:
+In these you will find right paths. Selfishness corrupts.
+Patience instructs. Only time will tell.
+Never stop learning:
+Always consider following right paths. Think not on the way of
+life or death. Do not settle for less than truth, or you will be
+deceived. Letting go of life too quickly is not always honorable. Let
+go of concern for your life or death; seek only honor and truth.
+Focus only on these, then pain and deception turn into lessons, or
+blessings. You must always seek greater understanding, so you may
+seek greater truth. 'Obstacles are what you see when you lose sight
+of your goal.' - Anonymous
+Obtain victory without conflict:
+The paramount of skill is victory without conflict. Preserve the
+whole using your empty hand. You must practice preserving the whole
+in every thing.
+36
+Understanding Karate-do
+Karate Principles
+'The ultimate aim of karate lies not in victory or defeat, but in the
+perfection of the character of its participants.' - Gichin Funakoshi,
+founder of Shotokan Karate
+The underlying principles of karate-do (Way of the Empty Hand)
+include not only self-defense, but a system of learning that provides
+one with a tool for self-improvement. Its accessibility is shown by
+its ability to be practiced hard or soft, by nearly anyone, and
+nearly anywhere, even in one's own mind. Its precepts and discipline
+can lead us on in the difficult times of our lives. This is the
+connection of body, mind, and soul.
+'There is no first strike in karate.' - Gichin Funakoshi
+Karate-do is a way of life that teaches one to be the best he or
+she can be, in spite of and because of the worst situations that one
+faces. Karate is a code of conduct that avoids conflict; its level of
+force is only stepped up if absolutely necessary. In this way, karate
+may be used to defend oneself and others without striking a single
+blow.
+Way of the Empty Hand
+Karate is not simply a method of empty handed combat, but also a
+way of peace. Keep your mind open to the situation, and to the Truth.
+Do not miss the forest for the trees. Cut through all the hype and
+find understanding. Your hand, the human hand, is the most versatile
+physical tool on the planet. Your mind is an even more versatile
+tool. It is the tool of your human soul, human instincts. In that
+way, your mind is a hand, reaching out for truth, greater things.
+Therefore, Karate is the way of uniting body, mind, and soul, that
+one may be a sharpened tool. Once one has learned Karate, its
+textbook of technique, philosophy, kata, one should digest it and
+make it part of one's nature. Continue to sharpen yourself, refining
+what you have learned, using it to your advantage and the good of
+others.
+37
+Understanding Karate-do
+Strategy
+In the broad view, a warrior must uphold the values of his or
+her society to be of any honorable use. We all depend on one another.
+The warrior must quell disorder, promote peace, and cultivate
+character. In practicing the ways of war, one has an obligation to
+not use them in an illegal or immoral fashion.
+Let us now consider fighting tactics. First, we must understand
+self defense. One should exercise caution in the use of force.
+Awareness must have the highest priority.
+In self defense, one must be able to read the situation and
+potential adversary. Pay attention to the neighborhood, your own
+mental and physical state, as well as the mental state of potential
+attackers. One can never be too careful. When visiting a new area,
+stay in well lit areas that seem safe. Also try to find good
+information on the right places to stay if you are going to be in
+town for a while.
+There are many articles on the uses of makeshift weapons, and
+weapon disarms. Not all such articles are realistic, nor are any of
+them a substitute for hands-on defense training. They may be a
+supplement to such training from a true instructor. The broken rhythm
+of fighting, the form without form, and the warrior's mindset are
+difficult to learn without guidance.
+Blend with or break the opponent's energy, rhythm, or attitude.
+Read timings/habits quickly. This is applied to hand to hand combat,
+large scale combat, and overall strategy. You must be ready to defend
+yourself as soon as you leave your home, even if you are sick, caught
+off guard, outnumbered, or overwhelmed by a stronger attacker. You
+must be prepared for the worst. End the fight as soon and as
+peacefully as possible; simplicity and instinct are key!
+Many fights actually begin at or near home; before a
+disagreement turns into an altercation, try to defuse the situation.
+In any altercation, use positive reinforcement. 'I know / am sure
+you're a nice person, but I would rather not (fill in the blank).'
+Remember, martial arts are not just collections of fighting
+techniques, but 'arts' by which we defend the quality of life for
+ourselves and others.
+'Budo' and 'kung fu' have rather holistic meanings for everyday
+life, and not simply 'martial arts', as they are so commonly
+translated. In this sense, 'martial art' may itself take on a new
+meaning. 'Martial' certainly connotes fighting tactics, yet 'art'
+presents a deeper level of understanding. Do everything you can to
+'preserve the whole'. Do not fight if possible, or to take the path
+of least resistance if conflict is inevitable. Fight out of
+necessity rather than hostility.
+An attacker believes he/she has an advantage. This may include a
+38
+Understanding Karate-do
+Strategy continued
+weapon, surprise, strength, and so forth. He / she is also more
+likely to attack you if he / she sees you as a potential victim.
+Therefore, be cautious when you are fatigued or alone, and do not
+appear timid, even if you are smaller than potential attackers.
+Always try to stay aware, and prepared to talk your way out of a
+situation, or defend yourself.
+The environment, mindset of the attacker, and effects of panic
+will further handicap you. Your attackers do not come at you in
+prearranged patterns. You have to be ready to fight back, and take
+the initiative, because every second counts!
+The best defense is a good offense. Use distance and the
+environment; be spontaneous. This is all very important against
+multiple assailants! Your movements must be fluid, economical, and
+not overly mechanical. The longer the fight, the more dangerous it
+becomes! When in unfamiliar territory, scan for escape routes, taking
+potential obstacles into account. Don't forget pepper spray,
+pinching, biting, etc. to provide distractions. Overall, you want to
+be as prepared as possible for potential violence.
+When faced with a heavy handed puncher, his or her hand speed
+and upper body defenses may be hard to match or get past. In this
+case, timing and creativity are of high priority. In a street
+situation, you do not have time to memorize his or her habits. Watch
+for openings in the attacks, and draw out your opponent for a timed
+hit. Don't forget use of body shifting; especially to the outside of
+the opponent, which will present you with a strategic advantage. This
+reduces his / her options by 50%. This will be easier or harder to do
+depending on the attacker's training; such is hard to judge
+immediately, so it is instead better to take the initiative and/or
+counter-hit as quickly and efficiently as possible. Untrained
+punchers, however, tend to have a large amount of telegraphing
+(movements that signal a certain attack).
+Against a kicker, remember that people are already on the brink
+of disaster on two feet, and taking another foot off the ground ruins
+balance even more. Also, a kick generally takes longer than a punch
+to reach its destination. You will want to react to the opponent's
+starting movement as quickly as possible with a jamming technique or
+combination. Be extra careful when the attacker does manage to raise
+a kick. A well trained kicker can often change a kick's height or
+target before putting his or her foot down.
+You must maintain a strong cover from which you can counter
+swiftly, and off-balance your opponent while their kicking foot is
+still traveling. Make an opportunity to close with the kicker, and
+reduce his or her options. Elbows and knees are particularly
+effective for striking away kicks. Use caution, however, if your
+39
+Understanding Karate-do
+Strategy continued
+attacker appears trained in a heavily body-conditioning oriented
+flavor of Muay Thai / Thai boxing, Kyokushin karate, or the like.
+Counter striking to vital areas that cannot be conditioned (solar
+plexus and so forth) will be even more important in these cases.
+Many fights end up hitting the ground. If you are not
+comfortable working from the ground, then maintain a solid fighting
+distance and avoid in-close fighting as much as possible. Adding to
+the danger of ground fighting is the possibility of more attackers
+arriving, glass on the ground, weapons, and your most immediate
+attacker being much heavier, as well as numerous other factors. A
+grappler will have methods of closing the fighting distance with you,
+and taking you out of the range from which many types of strikes can
+be thrown solidly. In this case, use standing submissions, reversals,
+makeshift weapons, and/or muay Thai style clinching (using elbows and
+knees as well). Do not to over-extend your strikes, or leave them
+extended for long after delivery, against a seasoned grappler.
+When faced with an attacker who you suspect has a weapon, you
+will, of course, have even more reason to seek means of escaping the
+situation other than hand to hand combat. It is possible that if you
+comply with your attacker, they will let you alone afterwards.
+However, do not always be quick to believe that he or she shares your
+belief system; they could very well harm or even kill you after
+getting what he / she wanted.
+The attacker may also be on drugs such as PCP, which would make
+him or her very dangerous to deal with. Pain compliance may not work
+as well against such an assailant. Use the environment even more so,
+such as getting free to run and throwing things in his / her path. If
+at close range, attempt to stop any weapon from even being drawn. If
+this is not possible, dodge an attack or jam it as your opponent
+comes at you. Control the wielding arm, and strike at your opponent
+with your free limbs, head butts, etc. until you can disarm or
+subdue. It's also very important not to get caught off guard with a
+handgun, which would put you at a severe disadvantage. In this case,
+use distraction or other methods to diffuse the situation, and disarm
+if necessary.
+Overall, there is no way anyone can plan ahead for all
+situations. However, one should constantly learn, as well as use
+strategy, adaptability, and heart to one's advantage. In life, stay
+truthful to yourself and loved ones. Be honorable as possible in
+every situation - your enemy today may become your ally tomorrow.
+Also remember that what protects and upholds you today may hinder you
+tomorrow. Watch carefully, ask questions, and never stop learning.
+40
+Understanding Karate-do
+Peace, Harmony, and Truth
+Practice the Way of the Empty Hand to become as an empty vessel.
+This is so that you may take natural courses of action, like water,
+that you may find the path of least resistance. This is in order to
+better understand and utilize your nature, as it relates to the
+universe, and universal truth.
+Practice the Way of Peace and Harmony in every way possible.
+Strength of mind, body, and soul is a tool for peace and harmony.
+Peace and harmony give strength meaning.
+Life, like the ocean, is an ebb and tide, a give and take. Learn
+to subside and crash upon the shores of life. Study, recover, train,
+become...Then give it all back. This all relates to not just combat,
+but life itself.
+Like the ecosystem, people all depend on each other. Do not
+hesitate to plant a good seed. Though 'an eye for an eye' makes the
+world blind, a favor for a favor makes the world a garden.
+In your search for peace, harmony, and truth, strip away the
+unessential. Make leaps of faith; give it all your best effort. Do
+not ever hesitate, or stop learning. Reach to the bottom of the lake
+of your soul. I wish you the best, and God bless you.
+41
+Understanding Karate-do
+On Teaching
+'True karate-do is this; that in daily life one's mind and body
+be trained and developed in a spirit of humility; and that in
+critical times, one be devoted utterly to the cause of justice.' -
+Gichin Funakoshi, Karate-do Kyohan
+The major concern in teaching martial arts is helping others.
+While it is not wrong to make a living from teaching, prestige is
+nothing without setting a good example. We can not have desirable
+progress in the 'martial ways' or peace and happiness without mutual
+respect.
+To ensure continued progress in the effectiveness of philosophy
+and technique of our own arts, we must study our arts diligently
+while being open to other perspectives. Teachers must set an example
+for students by also being model students. This level of modesty can
+take years to cultivate, and is one of the ultimate goals of our
+training. Also, before we can realize our full potential in teaching
+others, we must honestly learn our own strengths and weaknesses. Let
+us look at ourselves in the mirrors of truth and good standards,
+while chasing the rainbow of perfection.
+'The technique of the martial arts is like the universe - there
+is no limit to knowledge. One must realize no limit to one's
+performance.' - Hironori Ohtsuka
+Most of all, we should be respectful and modest. We must
+remember to have and give respect as least as much as we get it. It
+is easy to lose modesty under a pile of well-practiced technique.
+Yet, without modesty, one has gained nothing from training. We learn
+the realities of fighting so as to know how to avoid fighting and
+take the most honorable approach. There are no winners in war - only
+losers. With this in mind, we must punch and kick not to win or lose,
+but to learn from each other in martial brotherhood.
+'Have no regard for the martial aspects when training, but
+rather adhere to the way of peace.' - Hironori Ohtsuka
+42
+Understanding Karate-do
+Walking the Path
+'From one thing, know ten thousand things.' - Musashi, Go Rin no
+Sho (Book of Five Rings)
+It is hard to describe the true experience of kata ('set
+forms' / 'formal movements' in various Japanese arts) with words, in
+the way it is hard to describe a symphony with sheet music alone.
+Similarly, it is difficult to understand the true way of karate after
+having practiced kata only a few times. Life is in the living -
+swimming is in the water - karate is in the empty hand. Karate is not
+in the clenched fist, but in the open mind and tempered spirit. This
+is the true path of budo.
+Much practice and study of technique are required for its
+digestion and understanding. In this way we slowly come to view the
+true path. While we may begin with 'a way', a style of technique,
+this gives us the foundation to find 'the way'. What we call our
+style is simply a symbol for what we practice and absorb, and should
+not be confused with the true way. However, practicing a well-taught
+style may teach us many things. In diligent, proper training, we find
+the flexibility and focus of not just our bodies, but also our minds.
+A tempered spirit is a tool that solves according to internal
+principle, and guides technique. In light of this, listed below are a
+few general factors that we should train in ourselves, for others,
+along the martial path.
+Power and endurance: Explosive strength is a must in the
+performance of athletic skill. Ways to develop power include (but are
+not necessarily limited to) plyometrics, body weight exercises (with
+or without partners), cardiovascular training, and stance training.
+One must also have mental fortitude to press on past the comfort
+zone. Spiritual development occurs as a natural result. Every day
+provides fresh lessons.
+Rhythm, timing, distance: Fighting and music have often been
+compared to one another. If you understand rhythm, you will know how
+to break your own - and find your opponent's. Timing, then, is a
+necessary consideration in employing the use of rhythm and broken
+rhythm. To develop rhythm, we may start with kata, then understand
+bunkai (application of kata), and then learn how to adapt naturally.
+In this way, one may control the distance between oneself and one's
+opponent - both physically and mentally. Many different sparring
+drills may be employed. The serious study of rhythm and timing may
+provide many lessons on understanding the ebb and tide of life's many
+seasons.
+Awareness and adaptability: While we by nature depend highly on
+vision, we may train ourselves to more fully use our senses.
+Knowledge is nothing without being mentally aware of its application,
+43
+Understanding Karate-do
+Walking the Path continued
+or the spiritual flexibility to adapt to change in a positive
+fashion. Let us train diligently so that we may do our best, and be
+prepared for the worst.
+In this way, we can see that disciplining our bodies develops
+our mental clarity. In cutting away the inessential, we develop our
+mental focus and begin to see the true path. Thus, we make progress
+in our spiritual perception. In this way, we will take a positive
+direction spiritually and morally, as we have already done mentally
+and physically. Thus, we will make a positive effect on the world
+around us.
+44
+Understanding Karate-do
+In Pursuit of Perfection
+In this series of articles, I hope to set out an outline of the
+philosophy, techniques, principles, and training curriculum of my own
+formulation of Karate. The primary influences are Heiwado Karate, as
+well as various other karate styles, Western Sport Boxing, and
+Brazilian Jiujitsu.
+In the pursuit of perfection of character - the ultimate aim of
+karate-do - one learns a new mode of self-expression. In this way,
+verbal and body language take on new forms and meanings. As a result,
+we may better effect positive changes within - and without -
+ourselves, as well as more honestly and clearly express our inner
+hopes and desires.
+In this light, let us remember that life is a give and take. In
+all fairness, we must treat others as we would like to be treated. In
+this way, we may try to find the universal good and absolute
+morality. Overall, we must seek the best possible solution in every
+situation. Studies of ancient wisdom, and hard - yet efficient -
+training, will provide the answers.
+What is invisible must become visible. What is visible must
+become invisible. The rhythms, seasons, and cycles of life and nature
+are easily observed, but are hard to understand without much study.
+To improve our own nature is even more difficult. Yet, let us look at
+acorns. Depending on factors in the environment surrounding it, the
+small acorn disappears in the ground and grows into a grand oak tree.
+In time, this oak produces acorns of its own. Let us always remember
+that our only strength is the truth, for it will always stand. Let us
+continue to seek the true path.
+Remember these factors for external strength - power, speed,
+technique, agility, balance, control, endurance. Remember these
+factors for internal strength - love, hope, faith, discipline,
+looseness, determination, fighting spirit. Many subtleties and shades
+are contained within! The factors for internal strength take time to
+foster, but are infinitely more important. Difficult external
+training, and the wisdom of others will strengthen you on the inside
+- but only as long as you want to learn. Also, adversities in life
+develop one's mental and spiritual depth.
+Massive strength and extraneous movements should not be
+necessary in technique or application. Rather, we should consider
+power - smooth, explosive movement. Much practice and training are
+required to gain the proper efficiency. Yet, unlike raw strength,
+there is virtually no limit to skill development. Remember this in
+your physical, mental, and spiritual training.
+45
+Understanding Karate-do
+In Pursuit of Perfection – Part II
+Many martial arts use forms to help teach not only the technique
+systems, but the qualities and types of power that I put forth in the
+previous article. Proper rhythms - and broken rhythm - must be
+understood. This is not simply for fighting, but also for life.
+As such, I detail below a series of drills. The influences on
+these drills are primarily Karate, Boxing, and Brazilian Jiujitsu.
+The drills help train the following: bunkai (applications) and
+kaisetsu (principles), footwork, evasion, efficient counterattacking,
+standup grappling / clinchwork, and breakfalls.
+The general goal is to unify many techniques and methods into
+one structure, which is loose, agile, and cat-like. The following
+qualities are very important: efficiency, flexibility, power
+(including strain energy, falling energy, momentum, explosive power,
+and short power), springy evasive movement, trapping hands and feet,
+as well as simultaneous attack and defense.
+Shuffling
+This is a set of drills which will help develop speed,
+efficiency, timing, softness, and rhythm in footwork.
+Side and straight line shuffles. First, shuffle side to side,
+slowly then quickly. Practice this with left or right leg in front,
+then switch and practice again. The three types of side shuffles -
+side, behind, across. Next, shuffle forward and backward, shooting
+out punches as you do so.
+Also try performing kicks as part of shuffle practice. One drill
+is to perform two small hops in which you switch feet, then perform
+kick of choice with the back leg. Before setting the foot down, pivot
+to the opposite side of the kick and perform a full turn in that
+direction. (If you kicked with the right foot, then turn to the
+left.) As you are planting your feet, shoot forward with a jab with
+the lead hand.
+Pivot shuffles. Best done with a partner. Step forward along the
+line of his or her attack, then pivot the back leg behind the front
+leg, using a hip motion. If your partner is using a straight punch,
+use a parrying strike while trapping your his or her lead hand or arm
+(to set up for grappling and/or further strikes). If your partner is
+kicking, use the motion to begin a takedown. Once you have pivoted
+your back leg out, pivot back in while blocking with the lead hand.
+Circular shuffles. Shuffle around your practice area, switching
+your balance. Stay on the balls of your feet, for lightness of foot.
+Then, use sliding circular shuffles - with feet more planted – to
+46
+Understanding Karate-do
+In Pursuit of Perfection II continued
+practice shifting your balance with solid, but light steps. In this
+way, you practice for real fighting, where you need not only agility,
+but power and stability.
+Parry shuffles. Coordinate both hands and both feet in
+simultaneous movement, attack, and defense. Blocking isn't always
+necessary - better not to be in the way of the attack!
+Smashing / Lunging
+The basic technique is to perform a brushing block with the lead
+hand as your back foot steps across to set up for a step-across
+karate reverse punch. As you improve, add a deeper lunge to the
+punch, then explode with a kick. Then set the kicking leg forward and
+perform another lunging punch with the other side. This sets up for
+very explosive movements.
+Next, drill a continuous straight blast. Concentrate on
+controlling and/or jamming the opponent's movement. This straight
+blast may be used to back your opponent into an obstruction. If the
+opponent moves off the line of attack, quickly transition into the
+next technique.
+Once you have improved with these, add techniques that require
+both forward movement and circular pivoting for full power, such as
+elbows, roundhouse kicks, and hooks. Concentrate on boxing in the
+opponent and making him or her panic, or change tactics. Next, add
+pulling / clinching / controlling techniques. Lastly, fast, welltimed,
+evasive attack along your opponent's line of attack should be
+drilled. Utilize techniques for parrying and bridging the gap while
+simultaneously attacking. Quickly transition to off-balancing /
+sweeping / groundwork techniques.
+"Pulling Hands" / Standup grappling and clinching
+The key is to push with the hands and pull with the feet. The
+ultimate goal is to take away your opponent's free range of movement.
+Leverage and positioning are key. Firstly, review standing armbar
+submissions and wrist locks, then move into clinchwork. The key is to
+control the opponent's momentum, so that you may effect an
+unbalancing technique.
+If the opponent resists a standing armbar, use your control of
+his or her arm off-balance them in a different direction, setting up
+for a standing wrist / arm lock or similar technique, and a takedown.
+However, if the opponent reacts to your "pushing hands" by trying to
+pull you back, push in and effect a blood choke or similar submission
+technique. Also, as needed, use strikes, clinch work, and seizing or
+pain compliance techniques (aim for joints, vital points, and
+47
+Understanding Karate-do
+In Pursuit of Perfection II continued
+muscles). Lastly, takedowns, throws, and sweeps allow easy
+transitions to various ground submissions.
+In the case of multiple opponents, you may throw one into
+another, or use an opponent as a shield. Of course, these are just
+the basics. Keep training and studying to find what works for you.
+Switching
+The goal of switching is to use clever strategy to throw your
+opponent off his or her rhythm / pattern. The basic technique is to
+quickly move forward with the lead foot while performing a fast
+technique the lead hand. As you step, pivot the back leg around and
+past the front leg, using a quick twist of the hips. This looks like
+a shortened step-forward-and-pivot body shift.
+The dip of the back leg may be large or small, but it must be
+fast and performed immediately after the first technique. The dip
+sets up for a side kick with the front leg. After the kick, retract
+the leg, come back to a front stance, and perform a roundhouse kick
+with the back leg. Retract that leg to a front stance (pulling it
+back or setting it forward), then perform a front kick with the other
+leg. Of course, one may change the techniques, but the idea is to
+trick your opponent, "box" him or her in, and limit their movement.
+One may also vary the switch, of course, to pivot and turn at
+various angles. This may be used as a variation of "Pivot shuffles".
+The idea is quickly shutting down your opponent's movement with
+tricky footwork. One could add in continuous strikes, making this
+similar to sticking smash. Next, drill a turning step. As with the
+basic switch, move in with the lead foot and hand, then pivot the
+back leg. However, after this, follow-up with pivoting the body
+completely around. One should land in a stance with the same leg in
+front as before. Perform techniques while using this footwork.
+Lastly, vary your angles of movement while practicing such steps. Try
+it with a partner - you will try to throw each other off-guard.
+Sinking step
+Move away or along the line of attack using a deep, lunging
+style of angular footwork, while pivoting the upper body to evade a
+straight line punch. The hands should remain up, ready to parry. The
+legs should remain loose but stable, so that you can move quickly to
+the next position. A roundhouse kick or hook may be used together
+with a sinking step. A sinking step also sets up for a quick counter.
+Sinking steps may also assist in performing jumping kicks. However,
+such kicks are only used here to assist speed and power training. In
+a real scenario, one could counter with brush block and powerstepping
+roundhouse kick. A sinking step may also setup for pivoting
+48
+Understanding Karate-do
+In Pursuit of Perfection II continued
+into the opponent and performing a fast combination.
+Wedging in. Sink backwards with brush blocks, then sink forward
+with penetrating sword hand blocks. This is to not only continue the
+idea of pulling and smashing, but to also add your own momentum, as
+well as "uprooting" the opponent. The idea is to twist your opponent
+and "cut" through their stance – possibly effecting a takedown. This
+may be modified to setup for various types of takedowns.
+Rockfall step. Sink away from an attack into a low stance while
+parrying / trapping, then fall / wedge in with the lead leg. With a
+partner, practice using a knife hand block against his or her punch
+while entering his or her stance with your own side facing cat
+stance. The goal is to gain control of their center of gravity and
+knock him or her off balance while using leverage (such as using a
+trapped arm) and strikes (such as shoulder / elbow / body checks).
+While maintaining control of your partner, you may pivot away from
+him or her to create the momentum needed for a takedown, or use
+leverage to throw the opponent.
+Spinning step
+This is a quick evasive pivot that sets up for techniques such
+as throws, back hands, and back kicks. Like the basic switch step,
+move in with the lead foot and hand, then pivot the back leg.
+However, follow-up by completing a full turn on the back leg. This
+back leg turn may be compared to the pivoting often seen in karate
+kata. This type of step is more of a drill than a direct application.
+As such, one may adjust it to include techniques such as spinning
+back kicks, or throwing one opponent and turning with the back leg to
+face another. As with switch steps, one may vary the spinning step to
+pivot and turn. Practice pivoting to one side, then the other.
+Finally, adjust it to include defensive and offensive techniques, as
+well as various kinds of steps (depending on what you need to
+practice). Spinning steps may also include practice of throws.
+Falling / Breakfalls
+This helps practice ground work. Kicks, elbows, takedowns,
+setups for various submissions, etc. may be practiced in conjunction
+with the rolls, falls, and position changes. Simply keep moving,
+attacking, and transitioning. When breaking falls, use both momentum
+and every part of the body to lesson the impact on any one part.
+Back roll. This may be used effectively when falling backwards,
+and not just straight down (in which case a side fall may be better).
+49
+Understanding Karate-do
+In Pursuit of Perfection II continued
+Forward roll. Remember to "check" with the hand that is on the
+side you are falling to, and "rocket" with the balls of the feet.
+This will help you roll with the momentum and clear the ground. Do
+not land flat on your back, but instead bridge over quickly on your
+shoulder as you keep your head tucked in.
+Back control. This includes setting up a guard position and
+submissions when on one's back. Also, practice changing positions
+from the ground, especially when it comes to sweeps from the guard.
+Forward control. This is when you are engaged in standup
+grappling. Practice sprawls, guard passes, mounts, ground strikes,
+submissions. Also practice spinning while giving the opponent no
+space, so as to gain the best position.
+Side fall. Sometimes you may have to use a side break fall as
+not to get the wind knocked out of you, or take damage to your back.
+Remember to loosen up as you fall and use your arm to soften the
+blow. From here, use one or more kicks as you try to regain position
+and control. This may be followed with a technical rise, clinch,
+shoot, leg sweep, and so forth.
+In Summary
+The ultimate goal is near-constant movement. One must be able to
+move in any direction with agility. The best defense is a good
+offense. Press the advantage, cut your opponent short, and jam their
+attack by sensing their pattern, their rhythm. It would take many
+pages to break down the body mechanics of techniques, much less
+describe further application in actual fighting.
+Overall
+Always engage in well rounded, sober training in the martial
+ways. Anything less is to shortchange ourselves and all who we come
+in contact with. We must not be hostile, violent, or proud, but ready
+to survive, protect, and lead. Do not mistake the truth for an
+interpretation of the truth. Let us study "a" way for a while to gain
+an understanding of "the" way - whose goals include perfection of
+character and dedication to others. This will increase our knowledge
+of the internal factors, which we may call wisdom. Both our external
+and internal strength should be used to carry ourselves with a
+positive attitude through life. The mind and body are incredibly
+adaptable. The soul is capable of great depth - and great height as
+well. Lastly, personal progress begins not in action, but choice. Let
+us decide within ourselves to follow our goals and dreams.
+50
+Understanding Karate-do
+In Pursuit of Perfection - Part III
+Let us diligently train the external factors. This will help us
+develop power - not just physical power, but strength that may help
+us walk the path of truth. Let our inner hopes, then, shine through.
+Nonetheless, I will detail a few ideas for external training.
+The following routine is just an outline. Feel free to adjust this
+routine to suit personal goals & concerns. Also, one may instead use
+the Pavel's Ladder method and/or a push/pull routine for one's
+exercises of choice.
+http://www.cbass.com/Pavel%27sLadders.htm
+http://www.exrx.net/Workouts/Workout2PP.html
+Warmup routine:
+5 minutes of stretching
+3 minute round of skipping rope
+1 minute of pushups
+3 minute round of skipping rope
+1 minute of crunches
+3 minute round of skipping rope
+1 minute of squats
+Take a water break
+High intensity interval training routine
+The idea is to supercharge your running routine by sprinting,
+then jogging, then sprinting, and so forth. Highly useful in losing
+excess fat (and therefore toning up) as well as building your overall
+cardio. Also, in any form of fighting, one needs both long term
+endurance and quick bursts. No matter how tired one gets, one should
+always have that one last burst.
+One way to start H.I.I.T. is to begin with a four minute cycle.
+Sprint for 30 seconds, and then jog for 30 seconds, four times. Each
+week, one may add a sprint and a jog to the routine. Work up to doing
+15 minutes or more of H.I.I.T.
+This routine may be done every day that you are working out.
+However, it is recommended to have a nutritious, high-protein drink
+and "power snack" (such as a fruit or granola bar) after H.I.I.T.
+Also, after doing H.I.I.T., rest at least two hours before heavy
+weight lifting. On other workout days, rest at least half an hour
+before beginning another routine. However, be sure to consult your
+own age and health, as well as a local fitness instructor, to help
+design a well-rounded plan.
+51
+Understanding Karate-do
+In Pursuit of Perfection III continued
+Martial arts routine:
+Personalized variations of this routine may be performed every
+day that you are working out. However, after completing your martial
+arts routine, get at least one hour of rest and a nutritious "power
+snack" before performing a heavy routine with a weight bar.
+Three 3 minute rounds of shadow boxing with one minute of rest
+between rounds.
+Three 3 minute rounds of heavy bag work with one minute of rest
+between rounds.
+Three 3 minute rounds of speed bag with one minute of rest
+between rounds.
+Three 3 minute rounds of partner shadow boxing. One minute of
+rest between rounds.
+Three 3 minute rounds of partner pad work. One minute rest
+between rounds.
+Two or three minutes of slow stretching and breathing, then take
+a water break.
+Three 3 minute rounds of light boxing with a partner, or three 3
+to 5 minute rounds of light sparring using MMA rules. Use the
+appropriate equipment. One minute rest between rounds.
+Three 5 minute rounds of grappling with a partner. One minute
+rest between rounds.
+Two or three minutes of slow stretch and breathing, then take a
+water break.
+Depending on your goals, add additional rounds of one or more of
+the above. Do not forget water breaks every several rounds.
+Body weight conditioning routine #1 - Upper body:
+This routine may be performed every day that you are working
+out. On days when you are doing a heavy weight routine with a weight
+bar, complete this routine first as a warm up for your muscles. One
+minute rest between rest between each exercise, and each set.
+Pushups:
+One minute rest between each exercise, and each set. Once you
+have mastered these exercises, no longer perform knuckle or regular
+pushups, and slowly increase the number of reps and sets for the
+other two types of pushups.
+Knuckle or regular pushups - until failure.
+Incline pushups - one set of 25 to 50 incline pushups with your
+feet posted up at a 45 degree angle.
+52
+Understanding Karate-do
+In Pursuit of Perfection III continued
+One armed pushups - one set of 10 per arm. Build up to doing at
+least two sets of 20 per arm.
+Pull-ups:
+Two sets of 10, then pull-ups until failure
+Abdominal:
+One minute rest between each exercise, and each set.
+Incline sit-ups - Perform 2 sets of 10. Eventually build up to
+doing at least 3 sets of 15.
+Crunches - perform 25-50. Only the shoulders should be raised
+off the floor, as you breathe out and tense the upper abs, and then
+relax. A light to medium weight held slightly above the chest may be
+used to provide resistance. Build up to doing at least 3 sets of 25.
+Double ended crunches - pull your knees as close as possible to
+your chest as you perform a crunch. Perform this 25 times.
+Six inches
+Lay your back flat on your exercise area. Your palms should be
+also flat on the ground, with your legs straight out and knees
+locked. Slowly raise your feet to 6 inches off the ground. If new to
+Six inches, keep your feet in this position for intervals of 30
+seconds until you have held the position for a total of 2 minutes.
+Slowly build the intervals until you are able to hold the position
+for the entire 2 minutes without dropping your feet. Bruce Lee would
+commonly hold this position for 45 minutes while watching a
+television program!
+Body weight conditioning routine #2 - Legs:
+This routine should be only be performed on days that you are
+not doing a heavy weight routine with a weight bar. I personally
+recommend performing this routine after your martial arts workout. Be
+sure to eat a moderately sized, nutritious, high protein meal after
+this routine. One minute rest between each exercise, and each set.
+Squat kicks - squat as low as you possibly can, and as you come
+back up, perform a front snap kick. Alternate legs with each
+repetition. One set of 20.
+One legged squats - use a door or wall to assist balance.
+However, one should try to maintain balance during this exercise
+53
+Understanding Karate-do
+In Pursuit of Perfection III continued
+without relying too much on objects. To perform this exercise, one
+may place one leg in front of or behind the body (depending on what
+one feels more comfortable with) and squat with the other leg. At
+least one set of 10 each leg. Once proficient with one legged squats,
+add a dumbbell.
+Normal squats - One set of 20, a set of 40, then perform squats
+until failure.
+Horse stance training - sit deep in a very wide horse stance. To
+add difficulty, one may practice strikes, perform calf raises in this
+stance, and/or add two dumbbells (which may be balanced on the upper
+thighs, which should be perpendicular to the floor). Without weights,
+try to hold the horse for at least several minutes. With weights, try
+at least two minutes total (even if one has to do this exercise for
+one minute, rest, then go for the second minute).
+Ankle weights may be used to provide resistance for the next
+three exercises.
+Bear crawls - get on hands and feet, with the body close to the
+floor (knees and elbows should be bent). Move forward swiftly while
+staying low. Choose an area (20 to 50 feet) to bear crawl across.
+Grass and matted floors are preferable. Bear crawling the length of
+it, and back, is a lap. Do 4 laps, or until failure.
+Bunny hops - completely bend at the knees while keeping your
+back straight, and your hands up. Jump forward explosively from the
+ground. Tuck your feet back in as you jump, and land lightly. The
+goal is to perform bunny hops in quick succession. Grass and matted
+floors are preferable. However, if using sidewalks to bunny hop, use
+excellent running shoes and a bit of caution. Do at least 10 bunny
+hops. Eventually build up to bunny hopping the length of your
+choosing. Masahiko Kimura, the legendary Judo player, once bunny
+hopped a kilometer!
+Duck walk - start in bunny hop position, but instead move one
+foot in front of the other without coming up at all. The goal is to
+move swiftly without dragging one's feet, or losing balance. Do 3
+laps of duck walking on grass or a matted area or until failure. One
+may also use a sidewalk to duck walk, but remember to take the same
+precautions.
+Dumbbell routine - upper body
+If necessary, start with light weights - 5 or 10 pounds. Exhale
+54
+Understanding Karate-do
+In Pursuit of Perfection III continued
+sharply when performing a repetition, and to inhale deeply in-between
+repetitions (or reps, for short). This routine should be performed 3
+times a week, on the same days as heavy weight training with a weight
+bar.
+Rows - these work arms and back. Best with two dumbbells, which
+should be placed beside one another, and within arm's reach on the
+floor in front of you. A.) Start with your feet shoulder width apart,
+then lean forward and stretch down your right arm and grab the right
+dumbbell. Use your left hand and leg for support if needed. B.) Then,
+pull the right dumbbell up as you bend your arm back to waist level,
+and carefully lower the dumbbell back to the floor. This should be
+done quickly. C.) From there, grab the left dumbbell and perform the
+same exercise. Perform 2 sets of 25.
+Weighted shoulder shrugs - perform at least one set of 10 each.
+Dumbbell curls - best done sitting, so as to enforce proper
+technique.
+Dumbbell flies - lay flat on your back on a weight bench, with
+your feet planted on the floor. The dumbbells should be placed within
+arm's reach, one beside each arm. Grasp both dumbbells from under -
+palms facing up. Instead of a curl-like motion, keep the elbows
+mostly locked, and squeeze your arms close enough together that the
+dumbbells touch. Perform one set of 10, then perform until failure.
+Dumbbell routine - legs
+If necessary, start with light weights - 5 or 10 pounds.
+Remember proper breathing during reps. This routine should be
+performed 3 times a week, on days when not doing heavy weight
+training with a weight bar.
+Weighted calf raises and squats - at least one set of 10 each.
+Weighted one legged squats - at least one set of 10 per side.
+Weighted horse stance - at least one minute in deep horse stance
+with a dumbbells resting on each thigh, placed near the hip. Hold the
+dumbbells in place with your hands as necessary. Build up to using
+heavier dumbbells and longer intervals.
+Weight bar routine
+Only perform this routine three days a week so as to give your
+55
+Understanding Karate-do
+In Pursuit of Perfection III continued
+upper body enough time to recuperate. Remember to maintain a healthy,
+high protein diet. Creatine supplements and fruits are highly
+recommended.
+Power cleans - start with light weight on the bar at first to
+practice the technique. The bar should be a few inches in front of
+your toes. Bend your knees slightly, and bend over to grasp the bar,
+with palms facing the floor. Your hands should be outside of your
+knees. Jump with an exploding movement as you jerk the weight
+upwards. As you do this, allow your elbows to bend in front of the
+body and the hands to come to shoulder level. Also, the knees should
+bend deeply as you land. Basically, you will be landing under the
+weight.
+Put enough weight on the bar that you will not be able to
+perform more than 12 power cleans. If you are unable to perform 10,
+then you are using too much weight. Once you have completed 10 to 12
+bench presses, take a one minute rest. Add enough weight such that
+you will be able to perform 8 to 10 reps.
+Weighted jumping jacks - With palms facing down, pick up the bar
+and raise it to chest level, and bend deeply at the knees (it should
+look as if you just performed a power clean). Jump your feet outwards
+widely while quickly pressing the weight over the head. Then jump the
+feet back in as you bring the bar back to chest level. That is one
+repetition. Put enough weight on the bar that you will be able to
+perform 8 to 10 reps.
+Military presses - With palms facing down, pick up the bar and
+lift it above your head. Lower the bar so as to let it almost
+completely rest on neck and shoulders. Slowly press the bar upwards
+above the head. That is one repetition. Perform at least one set of
+10.
+Dead lifts - At least one set of 10 at 2/3rd of your max.
+Bench presses – Always take at least a one minute rest between
+sets. If you are toning and / or building stamina, put enough weight
+on the bar that you will not be able to perform more than 15 bench
+presses. If you are unable to perform 12, then you are using too much
+weight. Take at least a one minute rest between sets. Complete 12 to
+15 for the first set, and rest. Add enough weight such that you will
+be able to perform 10 to 12. Complete this second set, and rest. Add
+such weight that you can perform 8 to 10. Complete your third set,
+and rest. Add a few more light sets as needed.
+56
+Understanding Karate-do
+In Pursuit of Perfection III continued
+If you are lifting heavy – for size and/or strength - you may
+not want to perform more than 3 or 4 sets. Your first set should be
+enough weight such that can perform 6-8 or 10-12, depending upon your
+goals. Your following sets should move up in weight such that you
+will perform a few less reps per set. Take a 2 to 3 minute break if
+needed between sets.
+For the advanced level, I recommend trying the cluster flux
+routine.
+http://www.muscleandfitness.com/high_intensity_growth/videos/196
+"Strength comes from health, speed comes from efforts, technique
+comes from experience, will power comes from faith, serenity comes
+from old knowledge, progress comes from new knowledge - today is
+now!" - Peter Urban, founder of American Goju-ryu Karate
+57
+Understanding Karate-do
+Sources and Recommended Viewing
+Sources:
+'Bible of Karate - Bubishi' translated with commentary by Patrick
+McCarthy. Contains much in-depth information, analysis, and history.
+'The Complete Idiot's Guide to Karate' by Randall G. Hassell and
+Edmond Otis. An excellent starting point for potential students.
+'The Karate Dojo' by Peter Urban
+'Karate-do: My Way of Life' by Gichin Funakoshi
+The official Wado-Ryu Japan site http://www.wado-ryu.jp
+The Japan Karate Institute homepage http://www.japankarate.net
+More details on Ohtsuka's life and the expansion of Karate
+http://www.msisshinryu.com/history/tomari-te/
+Detailed explanation of the Tomari's role in karate's development.
+http://www.hogia.net/karate/karate/history.htm
+http://en.wikipedia.org/wiki/Karate_kata
+http://en.wikipedia.org/wiki/Karate
+http://en.wikipedia.org/wiki/Boxing
+http://en.wikipedia.org/wiki/Brazilian_jiujitsu
+Recommended Viewing:
+'The Art of War' by Sun Tzu
+'A Book of Five Rings' by Miyamoto Musashi
+'Karate - Technique & Spirit' by Tadashi Nakamura. A wonderful,
+inspiring pictorial guide to Karate and many of its techniques.
+USA National Karate Federation website http://www.usankf.org/
+Great listing of kata by karate ryu (style).
+Takamura ha Shindo Yoshin Ryu http://www.shinyokai.com
+Jarek's Chinese Martial Arts Pages http://www.chinafrominside.com/ma/
+Information about Chinese internal martial arts.
+Japan International Karate Center homepage http://www.jikc.org
+Understanding Karate-do:
+A Guide to Unity of Body, Mind, and Soul
+Owen Johnston
+cyriades@yahoo.com
+http://www.johnstonkarate.com
+http://cyriades.webs.com

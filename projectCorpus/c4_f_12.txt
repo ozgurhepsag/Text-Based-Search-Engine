@@ -1,0 +1,1980 @@
+9.4 Overlay Networks 685
+A
+B
+C
+D
+R1 R2
+R1 R2
+R1 R2
+R1 R2
+A
+B
+C
+D
+A
+B
+C
+D
+A
+B
+C
+D
+50
+5
+5
+5
+5
+(a)
+(b)
+(c)
+(d)
+Figure 9.19 Alternative multicast trees mapped onto a physical topology: (a) physical
+topology; (b) naive unicast transmission; (c) multicast tree constructed at the network
+level (by routers); (d) multicast tree constructed at the application level (by end hosts).
+graph representing the Internet, the goal is to find the embedded multicast tree that
+spans all the group members.
+Since we take the underlying Internet to be fully connected, a naive solution
+would be to have each source directly connected to each member of the group. In
+other words, end system multicast could be implemented by having each node send
+unicast messages to every group member. To see the problem in doing this, especially
+compared to implementing IP multicast in routers, consider the example topology in
+Figure 9.19. Figure 9.19(a) depicts an example physical topology, where R1 and R2 are
+routers connected by a low-bandwidth transcontinental link; A, B, C, and D are end
+hosts; and link delays are given as edge weights. Assuming A wants to send a multicast
+686 9 Applications
+A
+B
+C
+D
+A
+B
+C
+D
+Figure 9.20 Multicast tree embedded in an overlay mesh.
+message to the other three hosts, Figure 9.19(b) shows how naive unicast transmission
+would work. This is clearly undesirable because the same message must traverse the
+link A–R1 three times, and two copies of the message traverse R1–R2. Figure 9.19(c)
+depicts the IP multicast tree constructed by DVMRP. Clearly, this approach eliminates
+the redundant messages.Without support from the routers, however, the best you can
+hope for with end system multicast is a tree similar to the one shown in Figure 9.19(d).
+End system multicast defines an architecture for constructing this tree.
+The general approach is to support multiple levels of overlay networks, each
+of which extracts a subgraph from the overlay below it, until we have selected the
+subgraph that the application expects. For end system multicast in particular, this
+happens in two stages: First we construct a simple mesh overlay on top of the fully
+connected Internet, and then we select a multicast tree within this mesh. The idea is
+illustrated in Figure 9.20, again assuming the four end hosts A, B, C, and D. The
+first step is the critical one: Once we have selected a suitable mesh overlay, we simply
+run a standard multicast routing algorithm (e.g., DVMRP) on top of it to build the
+multicast tree. We also have the luxury of ignoring the scalability issue that Internetwide
+multicast faces since the intermediate mesh can be selected to include only those
+nodes that want to participate in a particular multicast group.
+The key to constructing the intermediate mesh overlay is to select a topology
+that roughly corresponds to the physical topology of the underlying Internet, but we
+9.4 Overlay Networks 687
+have to do this without anyone telling us what the underlying Internet actually looks
+like since we are running only on end hosts and not routers. The general strategy is
+for the end hosts to measure the round-trip latency to other nodes and to decide to
+add links to the mesh only when they like what they see. This works as follows.
+First, assuming a mesh already exists, each node exchanges the list of all other
+nodes it believes is part of the mesh with its directly connected neighbors. When a node
+receives such a membership list from a neighbor, it incorporates that information into
+its membership list and forwards the resulting list to its neighbors. This information
+eventually propagates through the mesh, much as in a distance vector routing protocol.
+When a host wants to join the multicast overlay, it must know the IP address of
+at least one other node already in the overlay. It then sends a “join mesh” message
+to this node. This connects the new node to the mesh by an edge to the known node.
+In general, the new node might send a join message to multiple current nodes, thereby
+joining the mesh by multiple links. Once a node is connected to the mesh by a set of
+links, it periodically sends “keepalive” messages to its neighbors, letting it know that
+it still wants to be part of the group.
+When a node leaves the group, it sends a “leave mesh” message to its directly
+connected neighbors, and this information is propagated to the other nodes in the mesh
+via the membership list described above. Alternatively, a node can fail, or just silently
+decide to quit the group, in which case its neighbors detect that it is no longer sending
+“keepalive” messages. Some node departures have little effect on the mesh, but should
+a node detect that the mesh has become partitioned due to a departing node, it creates
+a new edge to a node in the other partition by sending it a “join mesh” message. Note
+that multiple neighbors can simultaneously decide that a partition has occurred in the
+mesh, leading to multiple cross-partition edges being added to the mesh.
+As described so far, we will end up with a mesh that is a subgraph of the original
+fully connected Internet, but it may have suboptimal performance because (1) initial
+neighbor selection adds random links to the topology, (2) partition repair might add
+edges that are essential at the moment but not useful in the long run, (3) group membership
+may change due to dynamic joins and departures, and (4) underlying network
+conditions may change. What needs to happen is that the system must evaluate the
+value of each edge, resulting in new edges being added to the mesh and existing edges
+being removed over time.
+To add new edges, each node i periodically probes some random member j that
+it is not currently connected to in the mesh, measures the round-trip latency of edge
+(i, j ), and then evaluates the utility of adding this edge. If the utility is above a certain
+threshold, link (i, j ) is added to the mesh. Evaluating the utility of adding edge (i, j )
+might look something like this:
+688 9 Applications
+EvaluateUtility( j )
+utility = 0
+for each member m not equal to i
+CL = current latency to node m along route through mesh
+NL = new latency to node m along mesh if edge (i, j ) is added
+if (NL < CL) then
+utility += (CL - NL)/CL
+return utility
+Deciding to remove an edge is similar, except each node i computes the cost of
+each link to current neighbor j as follows:
+EvaluateCost( j )
+Costi j = number of members for which i uses j as next hop
+Costji = number of members for which j uses i as next hop
+return max(Costi j , Costji )
+It then picks the neighbor with the lowest cost and drops it if the cost falls below a
+certain threshold.
+Finally, since the mesh is maintained using what is essentially a distance-vector
+protocol, it is trivial to run DVMRP to find an appropriate multicast tree in the mesh.
+Note that although it is not possible to prove that the protocol just described results
+in the optimum mesh network, thereby allowing DVMRP to select the best possible
+multicast tree, both simulation and extensive practical experience suggest that it does
+a good job.
+Resilient Overlay Networks
+Another routing overlay gaining in popularity is one that finds alternative routes for
+traditional unicast applications. Such overlays exploit the observation that the triangle
+inequality does not hold in the Internet. Figure 9.21 illustrates what we mean by this.
+It is not uncommon to find three sites in the Internet—call them A, B, and C—such
+that the latency between A and B is greater than the sum of the latencies from A to C
+and from C to B. That is, sometimes you would be better off indirectly sending your
+packets via some intermediate node than sending them directly to the destination.
+How can this be? Well, BGP never promised that it would find the shortest
+route between any two sites; it only tries to find some route. To make matters worse,
+there are countless opportunities for human-directed policies to override BGP’s normal
+operation. This often happens, for example, at peering points between major backbone
+ISPs. In short, that the triangle inequality does not hold in the Internet should not come
+as a surprise.
+How do we exploit this observation? The first step is to realize that there is a
+fundamental trade-off between the scalability and optimality of a routing algorithm.
+9.4 Overlay Networks 689
+10
+125
+70
+Figure 9.21 The triangle inequality does not necessarily hold in networks.
+On the one hand, BGP scales to very large networks, but often does not select the best
+possible route and is slow to adapt to network outages. On the other hand, if you
+were only worried about finding the best route among a handful of sites, you could
+do a much better job of monitoring the quality of every path you might use, thereby
+allowing you to select the best possible route at any moment in time.
+An experimental overlay, calledRON(for resilient overlay network), does exactly
+this. RON scales to only a few dozen nodes because it uses an N×N strategy of
+closely monitoring (via active probes) three aspects of path quality—latency, available
+bandwidth, and loss probability—between every pair of sites. It is then able to both
+select the optimal route between any pair of nodes and rapidly change routes should
+network conditions change. Experience shows that RON is able to deliver modest
+performance improvements to applications, but more importantly, it recovers from
+network failures much more quickly. For example, during one 64-hour period in 2001,
+an instance of RON running on 12 nodes detected 32 outages lasting over 30 minutes,
+and it was able to recover from all of them in less than 20 seconds on average. This
+experiment also suggested that forwarding data through just one intermediate node is
+usually sufficient to recover from Internet failures.
+Since RON does not scale, it is not possible to use RON to help random host A
+communicate with random host B; A and B have to know ahead of time that they are
+690 9 Applications
+likely to communicate, and then join the same RON. However,RONseems like a good
+idea in certain settings, such as when connecting a few dozen corporate sites spread
+across the Internet, or allowing you and 50 of your friends to establish your own
+private overlay for the sake of running some application. The real question, though,
+is, What happens when everyone starts to run their own RON? Does the overhead of
+millions of RONs aggressively probing paths swamp the network, and does anyone see
+improved behavior when many RONs compete for the same paths? These questions
+are still unanswered.
+? All of these overlays illustrate a concept that is central to computer networks in
+general: virtualization. That is, it is possible to build a virtual network from abstract
+(logical) resources on top of a physical network constructed from physical resources.
+Moreover, it is possible to stack these virtualized networks on top of each other, and
+for multiple virtual networks to coexist at the same level. Each virtual network, in
+turn, provides new capabilities that are of value to some set of users, applications, or
+higher-level networks.
+9.4.2 Peer-to-Peer Networks
+Recent music-sharing applications like Napster and KaZaA have introduced the term
+“peer-to-peer” into the popular vernacular. But what exactly does it mean for a system
+to be “peer-to-peer”? Certainly, in the context of sharing MP3 files it means not having
+to download music from a central site, but instead being able to access music files
+directly from whoever in the Internet happens to have a copy stored on their computer.
+More generally then, we could say that a peer-to-peer network allows a community
+of users to pool their resources (content, storage, network bandwidth, disk bandwidth,
+CPU), thereby providing access to larger archival stores, larger video-audioconferences,
+more complex searches and computations, and so on, than any one user could afford
+individually.
+Quite often, attributes like decentralized and self-organizing are mentioned when
+discussing peer-to-peer networks, meaning that individual nodes organize themselves
+into a network without any centralized coordination. If you think about it, terms like
+these could be used to describe the Internet itself. Ironically, however, Napster is not
+a true peer-to-peer system by this definition since it depends on a central registry of
+known files, and users have to search this directory to find what machine offers a
+particular file. It is only the last step—actually downloading the file—that takes place
+between machines that belong to two users, but this is little more than a traditional
+client/server transaction. The only difference is that the server is owned by someone
+just like you rather than a large corporation.
+So we are back to the original question: What’s interesting about peer-to-peer
+networks? One answer is that both the process of locating an object of interest and
+9.4 Overlay Networks 691
+Figure 9.22 Example topology of a Gnutella peer-to-peer network.
+the process of downloading that object onto your local machine happen without your
+having to contact a centralized authority, and at the same time, the system is able to
+scale to millions of nodes. A peer-to-peer system that can accomplish these two tasks in
+a decentralized manner turns out to be an overlay network, where the nodes are those
+hosts that are willing to share objects of interest (e.g., music and other assorted files),
+and the links (tunnels) connecting these nodes represent the sequence of machines that
+you have to visit to track down the object you want. This description will become
+more clear after we look at two examples.
+Gnutella
+Gnutella is an early peer-to-peer network that attempted to distinguish between exchanging
+music (which likely violates somebody’s copyright) and the general sharing of
+files (which must be good since we’ve been taught to share since the age of two). What’s
+interesting about Gnutella is that it was one of the first such systems not to depend
+on a centralized registry of objects. Instead, Gnutella participants arrange themselves
+into an overlay network similar to the one shown in Figure 9.22. That is, each node
+that runs the Gnutella software (i.e., implements the Gnutella protocol) knows about
+some set of other machines that also run the Gnutella software. The relationship “A
+and B know each other” corresponds to the edges in this graph. (We’ll talk about how
+this graph is formed in a moment.)
+Whenever the user on a given node wants to find an object, Gnutella sends
+a QUERY message for the object—for example, specifying the file’s name—to its
+neighbors in the graph. If one of the neighbors has the object, it responds to the
+node that sent it the query with a QUERY RESPONSE message, specifying where the
+object can be downloaded (e.g., an IP address and TCP port number). That node can
+subsequently use GET or PUT messages to access the object. If the node cannot resolve
+692 9 Applications
+the query, it forwards the QUERY message to each of its neighbors (except the one
+that sent it the query), and the process repeats. In other words, Gnutella floods the
+overlay to locate the desired object. Gnutella sets a TTL on each query so this flood
+does not continue indefinitely.
+In addition to the TTL and query string, each QUERY message contains a unique
+query identifier (QID), but it does not contain the identity of the original message
+source. Instead, each node maintains a record of the QUERY messages it has seen
+recently: both the QID and the neighbor that sent it the QUERY. It uses this history
+in two ways. First, if it ever receives a QUERY with a QID that matches one it has
+seen recently, the node does not forward the QUERY message. This serves to cut off
+forwarding loops more quickly than the TTL might have done. Second, whenever the
+node receives a QUERY RESPONSE from a downstream neighbor, it knows to forward
+the response to the upstream neighbor that originally sent it the QUERY message. In
+this way, the response works its way back to the original node without any of the intermediate
+nodes knowing who wanted to locate this particular object in the first place.
+Returning to the question of how the graph evolves, a node certainly has to
+know about at least one other node when it joins a Gnutella overlay. The new node is
+attached to the overlay by at least this one link. After that, a given node learns about
+other nodes as the result of QUERY RESPONSE messages, both for objects it requested
+and for responses that just happen to pass through it. A node is free to decide which
+of the nodes it discovers in this way that it wants to keep as a neighbor. The Gnutella
+protocol provides PING and PONG messages by which a node probes whether or not
+a given neighbor still exists and by which that neighbor responds, respectively.
+It should be clear that Gnutella is not a particularly clever protocol, and subsequent
+systems have tried to improve upon it. One dimension along which improvements
+are possible is in how queries are propogated. Flooding has the nice property
+that it is guaranteed to find the desired object in the fewest possible hops, but it does
+not scale well. It is possible to forward queries randomly, or according to the probability
+of success based on past results. A second dimension is to proactively replicate
+the objects, since the more copies of a given object there are, the easier it should be to
+find a copy. Alternatively, you could develop a completely different strategy, which is
+the topic we consider next.
+Structured Overlays
+At the same time file sharing systems have been fighting to fill the void left by Napster,
+the research community has been exploring an alternative design for peer-to-peer
+networks. We refer to these networks as structured, to contrast them with the essentially
+random (unstructured) way in which a Gnutella network evolves. Unstructured
+overlays like Gnutella employ trivial overlay construction and maintenance algorithms,
+9.4 Overlay Networks 693
+but the best they can offer is unreliable, random search. In contrast, structured overlays
+are designed to conform to a particular graph structure that allows reliable and efficient
+(probabilistically bounded delay) object location, in return for additional complexity
+during overlay construction and maintenance.
+If you think about what we are trying to do at a high level, there are two questions
+to consider: (1) How do we map objects onto nodes, and (2) how do we route requests
+to the node that is responsible for a given object?We start with the first question, which
+has a simple statement: How do we map an object with name x into the address of
+some node n that is able to serve that object? While traditional peer-to-peer networks
+have no control over which node hosts object x, if we could control how objects get
+distributed over the network, we might be able to do a better job of finding those
+objects at a later time.
+A well-known technique for mapping names into addresses is to use a hash table,
+so that
+hash(x) -› n
+implies object x is first placed on node n, and at a later time, a client trying to locate
+x would only have to perform the hash of x to determine that it is on node n. A
+hash-based approach has the nice property that it tends to spread the objects evenly
+across the set of nodes, but straightforward hashing algorithms suffer from a fatal flaw:
+How many possible values of n should we allow? (In hashing terminology, how many
+buckets should there be?) Naively, we could decide that there are, say, 101 possible
+hash values, and we use a modulo hash function; that is,
+hash(x)
+return x % 101
+Unfortunately, if there are more than 101 nodes willing to host objects, then we
+can’t take advantage of all of them. On the other hand, if we select a number larger
+than the largest possible number of nodes, then there will be some values of x that
+will hash into an address for a node that does not exist. There is also the not-so-small
+issue of translating the value returned by the hash function into an actual IP address.
+To address these issues, structured peer-to-peer networks use an algorithm known
+as consistent hashing, which hashes a set of objects x uniformly across a large id space.
+Figure 9.23 visualizes a 128-bit id space as a circle, where we use the algorithm to place
+both objects
+hash(object name) -› objid
+and nodes
+hash(IP addr) -› nodeid
+694 9 Applications
+objid
+nodeids
+2128 -1 0
+Figure 9.23 Both nodes and objects map (hash) onto the id space, where objects are
+maintained at the nearest node in this space.
+onto this circle. Since a 128-bit id space is enormous, it is unlikely that an object will
+hash to exactly the same id as a machine’s IP address hashes to. To account for this
+unlikelihood, each object is maintained on the node whose id is closest, in this 128-bit
+space, to the object id. In other words, the idea is to use a high-quality hash function to
+map both nodes and objects into the same large, sparse id space; you then map objects
+to nodes by numerical proximity of their respective identifiers. Like ordinary hashing,
+this distributes objects fairly evenly across nodes, but unlike ordinary hashing, only a
+small number of objects have to move when a node (hash bucket) joins or leaves.
+We now turn to the second question—how does a user who wants to access
+object x know which node is closest in x’s id in this space? One possible answer is that
+each node keeps a complete table of node ids and their associated IP addresses, but
+this would not be practical for a large network. The alternative, which is the approach
+used by structured peer-to-peer networks, is to route a message to this node! In other
+words, if we construct the overlay in a clever way—which is the same as saying that
+we need to choose entries for a node’s routing table in a clever way—then we find
+a node simply by routing toward it. Collectively, this approach is sometimes called
+distributed hash tables (DHT), since conceptually, the hash table is distributed over
+all the nodes in the network.
+9.4 Overlay Networks 695
+d46a1c
+locate(d46a1c)
+d462ba
+d4213f
+d13da3
+65a1fc
+d467c4
+d471f1
+Figure 9.24 Objects are located by routing through the peer-to-peer overlay network.
+Figure 9.24 illustrates what happens for a simple 28-bit id space. To keep the
+discussion as concrete as possible, we consider the approach used by a particular peerto-
+peer network called Pastry. Other systems work in a similar manner. (See the papers
+cited in the “Further Reading” section for additional examples.)
+Suppose you are at the node with id 65a1fc (hex) and you are trying to locate
+the object with id d46a1c. You realize that your id shares nothing with the object’s,
+but you know of a node that shares at least the prefix d. That node is closer than you
+in the 128-bit id space, so you forward the message to it. (We do not give the format
+of the message being forwarded, but you can think of it as saying, “Locate object
+d46a1c.”) Assuming node d13da3 knows of another node that shares an even longer
+prefix with the object, it forwards the message on. This process of moving closer in
+id space continues until you reach a node that knows of no closer node. This node is,
+by definition, the one that hosts the object. Keep in mind that as we logically move
+through “id space” the message is actually being forwarded, node to node, through
+the underlying Internet.
+Each node maintains both a routing table (more below) and the IP addresses of
+a small set of numerically larger and smaller node ids. This is called the node’s leaf set.
+The relevance of the leaf set is that once a message is routed to any node in the same
+leaf set as the node that hosts the object, that node can directly forward the message to
+the ultimate destination. Said another way, the leaf set facilitates correct and efficient
+696 9 Applications
+delivery of a message to the numerically closest node, even though multiple nodes may
+exist that share a maximal length prefix with the object id. Moreover, the leaf set makes
+routing more robust because any of the nodes in a leaf set can route a message just as
+well as any other node in the same set. Thus, if one node is unable to make progress
+routing a message, one of its neighbors in the leaf set may be able to. In summary, the
+routing procedure is defined as follows:
+Route(D)
+if D is within range of my leaf set
+forward to numerically closest member in leaf set
+else
+let l = length of shared prefix
+let d = value of lth digit in D’s address
+if RouteTab[l,d] exists
+forward to RouteTab[l,d]
+else
+forward to known node with at least as long a prefix
+and is numerically closer than this node
+The routing table, denoted RouteTab, is a two-dimensional array. It has a row for
+every hex digit in an id (there are 32 such digits in a 128-bit id) and a column for every
+hex value (there are obviously 16 such values). Every entry in row i shares a prefix of
+length i with this node, and within this row, the entry in column j has the hex value j
+in the i + 1th position. Figure 9.25 shows the first three rows of an example routing
+table for node 65a1fcx, where x denotes an unspecified suffix. This figure shows the id
+prefix matched by every entry in the table. It does not show the actual value contained
+in this entry—the IP address of the next node to route to.
+Adding a node to the overlay works much like routing a “locate object message”
+to an object. The new node must know of at least one current member. It asks this
+member to route an “add node message” to the node numerically closest to the id of
+the joining node, as shown in Figure 9.26. It is through this routing process that the
+new node learns about other nodes with a shared prefix and is able to begin filling out
+its routing table. Over time, as additional nodes join the overlay, existing nodes also
+have the option of including information about the newly joining node in their routing
+tables. They do this when the new node adds a longer prefix than they currently have
+in their table. Neighbors in the leaf sets also exchange routing tables with each other,
+which means that over time routing information propagates through the overlay.
+You may have noticed that although structured overlays provide a probabilistic
+bound on the number of routing hops required to locate a given object—the number of
+hops in Pastry is bounded by log16N, where Nis the number of nodes in the overlay—
+each hop may contribute substantial delay. This is because each intermediate node may
+9.4 Overlay Networks 697
+0
+x
+1
+x
+2
+x
+3
+x
+4
+x
+5
+x
+7
+x
+8
+x
+9
+x
+a
+x
+b
+x
+c
+x
+d
+x
+e
+x
+f
+x
+6
+0
+x
+6
+1
+x
+6
+2
+x
+6
+3
+x
+6
+4
+x
+6
+6
+x
+6
+7
+x
+6
+8
+x
+6
+9
+x
+6
+a
+x
+6
+b
+x
+6
+c
+x
+6
+d
+x
+6
+e
+x
+6
+f
+x
+6
+5
+0
+x
+6
+5
+1
+x
+6
+5
+2
+x
+6
+5
+3
+x
+6
+5
+4
+x
+6
+5
+5
+x
+6
+5
+6
+x
+6
+5
+7
+x
+6
+5
+8
+x
+6
+5
+9
+x
+6
+5
+b
+x
+6
+5
+c
+x
+6
+5
+d
+x
+6
+5
+e
+x
+6
+5
+f
+x
+6
+5
+a
+0
+x
+6
+5
+a
+2
+x
+6
+5
+a
+3
+x
+6
+5
+a
+4
+x
+6
+5
+a
+5
+x
+6
+5
+a
+6
+x
+6
+5
+a
+7
+x
+6
+5
+a
+8
+x
+6
+5
+a
+9
+x
+6
+5
+a
+a
+x
+6
+5
+a
+b
+x
+6
+5
+a
+c
+x
+6
+5
+a
+d
+x
+6
+5
+a
+e
+x
+6
+5
+a
+f
+x
+Row 0
+Row 1
+Row 2
+Row 3
+Figure 9.25 Example routing table at the node with id 65a1fcx.
+d46a1c d462ba
+d4213f
+d13da3
+65a1fc
+d467c4
+d471f1
+addnode(d46a1c)
+Figure 9.26 Adding a node to the network.
+698 9 Applications
+be at a random location in the Internet. (In the worst case, each node is on a different
+continent!) In fact, in a worldwide overlay network using the algorithm as described
+above, the expected delay of each hop is the average delay among all pairs of nodes
+in the Internet! Fortunately, we can do much better in practice. The idea is to choose
+each routing table entry such that it refers to a nearby node in the underlying physical
+network, among all nodes with an id prefix that is appropriate for the entry. It turns
+out that doing so achieves end-to-end routing delays that are within a small factor of
+the delay between source and destination node.
+Finally, the discussion up to this point has focused on the general problem of
+locating objects in a peer-to-peer network. Given such a routing infrastructure, it is
+possible to build different services. For example, a file sharing service would use file
+names as object names. To locate a file, you first hash its name into a corresponding
+object id, and then route a “locate object message” to this id. The system might also
+replicate each file across multiple nodes to improve availability. Storing multiple copies
+on the leaf set of the node to which a given file normally routes would be one way
+of doing this. Keep in mind that even though these nodes are neighbors in the id
+space, they are likely to be physically distributed across the Internet. Thus, while a
+power outage in an entire city might take down physically close replicas of a file in
+a traditional file system, one or more replicas would likely survive such a failure in a
+peer-to-peer network.
+Services other than file sharing can also be built on top of distributed hash tables.
+Consider multicast applications, for example. Instead of constructing a multicast
+tree from a mesh, you could construct the tree from edges in the structured overlay,
+thereby amortizing the cost of overlay construction and maintenance across several
+applications and multicast groups.
+9.4.3 Content Distribution Networks
+We have already seen how HTTP running over TCP allows Web browsers to retrieve
+pages from Web servers. However, anyone that has waited an eternity for a Web page
+to return knows that the system is far from perfect. Considering that the backbone of
+the Internet is now constructed from OC-192 (10-Gbps) links, it’s not obvious why
+this should happen. It is generally agreed that when it comes to downloading Web
+pages, there are three potential bottlenecks in the system:
+¦ The first mile: The Internet may have high-capacity links in it, but that doesn’t
+help you download a Web page any faster when you’re connected by a 56-
+Kbps modem.
+¦ The last mile: The link that connects the server to the Internet, along with the
+server itself, can be overloaded by too many requests.
+9.4 Overlay Networks 699
+¦ Peering points: The handful of ISPs that collectively implement the backbone
+of the Internet may internally have high-bandwidth pipes, but they have little
+motivation to provide high-capacity connectivity to their peers. If you are
+connected to ISP A and the server is connected to ISP B, then the page you
+request may get dropped at the point A and B peer with each other.
+There’s not a lot anyone except you can do about the first problem, but it is possible
+to use replication to address the second and third problems. A system that does this
+is often called a content distribution network (CDN). Akamai and Digital Island are
+probably the two best-known CDNs.
+The idea of a CDN is to geographically distribute a collection of server surrogates
+that cache pages normally maintained in some set of backend servers. Thus, rather
+than have millions of users wait forever to contact www.cnn.com when a big news
+story breaks—such a situation is known as a flash crowd—it is possible to spread
+this load across many servers. Moreover, rather than having to traverse multiple ISPs
+to reach www.cnn.com, if these surrogate servers happen to be spread across all the
+backbone ISPs, then it should be possible to reach one without having to cross a
+peering point. Clearly, maintaining thousands of surrogate servers all over the Internet
+is too expensive for any one site that wants to provide better access to its Web pages.
+Commercial CDNs provide this service for many sites, thereby amortizing the cost
+across many customers.
+Although we call them surrogate servers, in fact, they can just as correctly be
+viewed as caches. If they don’t have a page that has been requested by a client, they
+ask the backend server for it. In practice, however, the backend servers proactively
+replicate their data across the surrogates rather than wait for surrogates to request it
+on demand. It’s also the case that only static pages, as opposed to dynamic content,
+are distributed across the surrogates. Clients have to go to the backend server for
+any content that either changes frequently (e.g., sports scores and stock quotes) or is
+produced as the result of some computation (e.g., a database query).
+Having a large set of geographically distributed servers does not fully solve the
+problem. To complete the picture, CDNs also need to provide a set of redirectors that
+forward client requests to the most appropriate server, as shown in Figure 9.27. The
+primary objective of the redirectors is to select the server for each request that results in
+the best response time for the client. A secondary objective is for the system as a whole
+to process as many requests per second as the underlying hardware (network links and
+Web servers) is able to support. The average number of requests that can be satisfied in
+a given time period—known as the system throughput—is primarily an issue when the
+system is under heavy load, for example, when a flash crowd is accessing a small set of
+pages or a distributed denial of service (DDoS) attacker is targeting a particular site,
+as happened to CNN, Yahoo, and several other high-profile sites in February 2000.
+700 9 Applications
+Backend
+servers
+Geographically
+distributed
+surrogate
+servers
+Redirectors
+Clients
+Cache
+aaa.com bbb.com ccc.com
+Figure 9.27 Components in a content distribution network (CDN).
+CDNs use several factors to decide how to distribute client requests. For example,
+to minimize response time, a redirector might select a server based on its network
+proximity. In contrast, to improve the overall system throughput, it is desirable to
+evenly balance the load across a set of servers. Both throughput and response time
+are improved if the distribution mechanism takes locality into consideration, that is,
+selects a server that is likely to already have the page being requested in its cache. The
+exact combination of factors that should be employed by a CDN is open to debate.
+This section considers some of the possibilities.
+Mechanisms
+As described so far, a redirector is just an abstract function, although it sounds like
+something a router might be asked to do since it logically forwards a request message
+much like a router forwards packets. In fact, there are several mechanisms that can be
+used to implement redirection. Note that for the purpose of this discussion we assume
+that each redirector knows the address of every available server. (From here on, we
+drop the “surrogate” qualifier and talk simply in terms of a set of servers.) In practice,
+some form of out-of-band communication takes place to keep this information up-todate
+as servers come and go.
+9.4 Overlay Networks 701
+First, redirection could be implemented by augmenting DNS to return different
+server addresses to clients. For example, when a client asks to resolve the name
+www.cnn.com, the DNS server could return the IP address of a server hosting CNN’s
+Web pages that is known to have the lightest load. Alternatively, for a given set of servers,
+it might just return addresses in a round-robin fashion. Note that the granularity
+of DNS-based redirection is usually at the level of a site (e.g., cnn.com) rather than
+a specific URL (e.g., http://www.cnn.com/2002/WORLD/europe/06/21/william.birthday/
+index.html). However, when returning an embedded link, the server can rewrite the
+URL, thereby effectively pointing the client at the most appropriate server for that
+specific object.
+Commercial CDNs essentially use a combination of URL rewriting and DNSbased
+redirection. For scalability reasons, the high-level DNS server first points to a
+regional-level DNS server, which replies with the actual server address. In order to
+respond to changes quickly, the DNS servers tweak the TTL of the resource records
+they return to a very short period, such as 20 seconds. This is necessary so clients
+don’t cache results, and thus fail to go back to the DNS server for the most recent
+URL-to-server mapping.
+Another possibility is to use the HTTP redirect feature: The client sends a request
+message to a server, which responds with a new (better) server that the client
+should contact for the page. Unfortunately, server-based redirection incurs an additional
+round-trip time across the Internet, and even worse, servers can be vulnerable
+to being overloaded by the redirection task itself. Instead, if there is a node close to the
+client—for example, a local Web proxy—that is aware of the available servers, then
+it can intercept the request message and instruct the client to instead request the page
+from an appropriate server. In this case, either the redirector would need to be on a
+choke point so that all requests leaving the site pass through it, or the client would
+have to cooperate by explicitly addressing the proxy (as with a classical, rather than
+transparent, proxy).
+At this point you may be wondering what CDNs have to do with overlay networks,
+and while viewing a CDN as an overlay is a bit of a stretch, they do share
+one very important trait in common. Like an overlay node, a proxy-based redirector
+makes an application-level routing decision. Rather than forward a packet based on
+an address and its knowledge of the network topology, it forwards HTTP requests
+based on a URL and its knowledge of the location and load of a set of servers. Today’s
+Internet architecture does not support redirection directly—where by “directly” we
+mean the client sends the HTTP request to the redirector, which forwards it to the
+destination—so instead redirection is typically implemented indirectly by having the
+redirector return the appropriate destination address and the client contacts the server
+itself.
+702 9 Applications
+Policies
+We now consider some example policies that redirectors might use to forward requests.
+Actually, we have already suggested one simple policy—round robin. A similar
+scheme would be to simply select one of the available servers at random. Both of these
+approaches do a good job of spreading the load evenly across the CDN, but they do
+not do a particularly good job of lowering the client-perceived response time.
+It’s obvious that neither of these two schemes take network proximity into consideration,
+but just as importantly, they also ignore locality. That is, requests for the
+same URL are forwarded to different servers, making it less likely that the page will be
+served from the selected server’s in-memory cache. This forces the server to retrieve the
+page from its disk or possibly even from the backend server. How can a distributed set
+of redirectors cause requests for the same page to go to the same server (or small set of
+servers) without global coordination? The answer is surprisingly simple: All redirectors
+use some form of hashing to deterministically map URLs into a small range of values.
+The primary benefit of this approach is that no inter-redirector communication is
+required to achieve coordinated operation; no matter which redirector receives a URL,
+the hashing process produces the same output.
+So what makes for a good hashing scheme? The classic modulo hashing scheme—
+which hashes each URL modulo the number of servers—is not suitable for this environment.
+This is because should the number of servers change, the modulo calculation
+will result in a diminishing fraction of the pages keeping their same server assignments.
+While we do not expect frequent changes in the set of servers, the fact that addition
+of new servers into the set will cause massive reassignment is undesirable.
+An alternative is to use the same consistent hashing algorithm discussed in
+Section 9.4.2. Specifically, each redirector first hashes every server into the unit circle.
+Then for each URL that arrives, the redirector also hashes the URL to a value on
+the unit circle, and the URL is assigned to the server that lies closest on the circle to
+its hash value. If a node fails in this scheme, its load shifts to its neighbors (on the
+unit circle), so the addition/removal of a server only causes local changes in request
+assignments. Note that unlike the peer-to-peer case, where a message is routed from
+one node to another in order to find the server whose id is closest to the objects, each
+redirector knows how the set of servers maps onto the unit circle, so they can each
+independently select the “nearest” one.
+This strategy can easily be extended to take server load into account. Assume the
+redirector knows the current load of each of the available servers. This information
+may not be perfectly up-to-date, but we can imagine the redirector simply counting
+how many times it has forwarded a request to each server in the last few seconds, and
+using this count as an estimate of that server’s current load. Upon receiving a URL, the
+9.4 Overlay Networks 703
+redirector hashes the URL plus each of the available servers, and sorts the resulting
+values. This sorted list effectively defines the order in which the redirector will consider
+the available servers. The redirector then walks down this list until it finds a server
+whose load is below some threshold. The benefit of this approach compared to plain
+consistent hashing is that server order is different for each URL, so if one server fails,
+its load is distributed evenly among the other machines. This approach is the basis for
+the Cache Array Routing Protocol (CARP) and is shown in pseudocode below.
+SelectServer(URL, S)
+for = each server si in server set S
+weighti = hash(URL, address(si ))
+sort weight
+for each server s j in decreasing order of weight j
+if = Load(s j ) < threshold then
+return s j
+return server with highest weight
+As the load increases, this scheme changes from using only the first server on the
+sorted list to spreading requests across several servers. Some pages normally handled
+by “busy” servers will also start being handled by less busy servers. Since this process is
+based on aggregate server load rather than the popularity of individual pages, servers
+hosting some popular pages may find more servers sharing their load than servers
+hosting collectively unpopular pages. In the process, some unpopular pages will be
+replicated in the system simply because they happen to be primarily hosted on busy
+servers. At the same time, if some pages become extremely popular, it is conceivable
+that all of the servers in the system could be responsible for serving them.
+Finally, it is possible to introduce network proximity into the equation in at least
+two different ways. The first is to blur the distinction between server load and network
+proximity by monitoring how long a server takes to respond to requests, and using this
+measurement as the “server load” parameter in the preceding algorithm. This strategy
+tends to perfer nearby/lightly loaded servers over distant/heavily loaded servers. A
+second approach is to factor proximity into the decision at an earlier stage by limiting
+the candidate set of servers considered by the above algorithm (S) to only those that
+are nearby. The harder problem is deciding which of the potentially many servers are
+suitably close. One approach would be to select only those servers that are available
+on the same ISP as the client. A slightly more sophisticated approach would be to look
+at the map of autonoumous systems produced by BGP and select only those servers
+within some number of hops from the client as candidate servers. Finding the right
+balance between network proximity and server cache locality is a subject of ongoing
+research.
+704 9 Applications
+9.5 Summary
+We have seen four client/server–based application protocols: the DNS protocol used
+by the domain naming system, SMTP used to exchange electronic mail, HTTP used
+to walk the World Wide Web, and SNMP used to query remote nodes for the sake of
+network management. We have also seen a collection of application-level protocols,
+including RTP and SIP, used to control and play streaming multimedia applications like
+vic and vat, as well as the emerging voice-over-IP service. Finally, we looked at emerging
+applications—including overlay, peer-to-peer, and content distribution networks—that
+blend application processing and packet forwarding in innovative ways.
+Application protocols are a curious lot. In many ways, the traditional client/server
+applications are like another layer of transport protocol, except they have applicationspecific
+knowledge built into them. You could argue that they are just specialized
+transport protocols, and that transport protocols get layered on top of each other
+until producing the precise service needed by the application. Similarly, the overlay and
+peer-to-peer protocols can be viewed as providing an alternative routing infrastructure,
+but again, one that is tailored for a particular application’s needs. The one sure lesson
+we draw from this observation is that designing application-level protocols is really no
+different than designing core network protocols, and that the more one understands
+about the latter, the better they will do designing the former.
+O P E N I S S U E
+New Network Architecture
+It’s difficult to put a finger on a specific
+open issue in the realm of application
+protocols—the entire field
+is open as new applications are invented
+every day, and the networking
+needs of these applications are,
+well, application dependent. The real
+challenge to network designers is to recognize that what applications need from the
+network changes over time, and these changes drive the transport protocols we develop
+and the functionality we put into network routers.
+Developing new transport protocols is a reasonably tractable problem. You may
+not be able to get the IETF to bless your transport protocol as an equal of TCP or
+UDP, but there’s certainly nothing stopping you from designing the world’s greatest
+multimedia application that comes bundled with a new end-to-end protocol that runs
+on top of UDP, much like happens with RTP.
+On the other hand, pushing application-specific knowledge into the middle of the
+network—into the routers—is a much more difficult problem. This is because in order
+Further Reading 705
+to affect a particular application, any new network service or functionality may need to
+be loaded into many, if not all, of the routers in the Internet. Overlay networks provide
+a way of introducing new functionality into the network without the cooperation of
+all (or even any) of the routers, but in the long run, we can expect the underlying
+network architecture will need to change to accommodate these overlays.We saw this
+issue with RON—how RON and BGP route selection interact with each other—and
+can expect it to be a general question as overlay networks become more prevalent.
+One possibility is that an alternative fixed architecture does not evolve, but instead,
+the next network architecture will be highly adaptive. In the limit, rather than
+defining an infrastructure for carrying data packets, the network architecture might
+allow packets to carry both data and code (or possibly pointers to code) that tell the
+routers how they should process the packet. Such a network raises a host of issues, not
+the least of which is how to enforce security in a world where arbitrary applications
+can effectively program routers.
+F U R T H E R R E A D I N G
+The seminal paper on application-layer protocols is that by Clark and Tennenhouse,
+which is cited by the designers of RTP as their guiding vision. The development of
+DNS is well described by Mockapetris and Dunlap. Although overlays and peer-topeer
+networks are still an emerging area, the last six research papers provide a good
+place to start understanding the issues.
+¦ Clark, D., and D. Tennenhouse. Architectural considerations for a new generation
+of protocols. Proceedings of the SIGCOMM ’90 Symposium, pages
+200–208, September 1990.
+¦ Mockapetris, P., and K. Dunlap. Development of the domain name system.
+Proceedings of theSIGCOMM’88 Symposium, pages 123–133, August 1988.
+¦ Karger, D., E. Lehman, F. T. Leighton, R. Panigrahy, M. Levine, and D. Lewin.
+Consistent hashing and random trees: Distributed caching protocols for relieving
+hot spots on the World Wide Web. Proceedings of the ACM Symposium
+on Theory of Computing, pages 654–663, 1997.
+¦ Chu, Y., S. Rao, and H. Zhang. A case for end system multicast. Proceedings
+of the ACM SIGMETRICS ’00 Conference, pages 1–12, June 2000.
+¦ Andersen, D., H. Balakrishnan, F. Kaashoek, and R. Morris. Resilient overlay
+networks. Proceedings of the 18th ACM Symposium on Operating Systems
+Principles (SOSP), pages 131–145, October 2001.
+706 9 Applications
+¦ Rowstron, A., and P. Druschel. Storage management and caching in PAST,
+a large-scale persistent peer-to-peer storage utility. Proceedings of the 18th
+ACM Symposium on Operating Systems Principles (SOSP), pages 188–201,
+October 2001.
+¦ Stoica, I., R. Morris, D. Karger, F. Kaashoek, and H. Balakrishnan. Chord: A
+peer-to-peer lookup service for Internet applications. Proceedings of the ACM
+SIGCOMM Conference, pages 149–160, August 2001.
+¦ Ratnasamy, S., P. Francis, M. Handley, R. Karp, and S. Shenker. A scalable
+content-addressable network. Proceedings of ACM SIGCOMM ’01, pages
+161–172, August 2001.
+There are a wealth of papers on naming, as well as on the related issue of resource
+discovery (finding out what resources exist in the first place). General studies
+of naming can be found in Terry [Ter86], Comer and Peterson [CP89], Birrell
+et al. [BLNS82], Saltzer [Sal78], Shoch [Sho78], andWatson [Wat81]; attribute-based
+(descriptive) naming systems are described in Peterson [Pet88] and Bowman et al.
+[BPY90]; and resource discovery is the subject of Bowman et al. [BDMS94].
+SMTP is originally defined in RFC 821 [Pos82], and of course, RFC 822 is RFC
+822 [Cro82]. MIME is defined in a series of RFCs; the original specification was in
+RFC 1521 [BF93], and the most recent version is defined in RFC 2045 [FB96].
+Version 1.0 of HTTP is specified in RFC 1945 [BLFF96], and the latest version
+(1.1) is defined in RFC 2068 [FGMBL97]. There are a wealth of papers written
+aboutWeb performance, especiallyWeb caching. A good example is a paper by Danzig
+on Web traffic and its implications on the effectiveness of caching [Dan98].
+Network management is a sufficiently large and important field that the IETF
+devotes an entire area to it. There are well over 100 RFCs describing various aspects of
+SNMP and MIBs. The two key references, however, are Case et al. [CMRW93], which
+defines version 2 of SNMP (SNMPv2), and McCloghrie and Rose [MR91], which
+defines the second version of the mandatory MIB variables (MIB-II). Many of the
+other SNMP/MIB–related RFCs define extensions to the core set of MIB variables—for
+example, variables that are specific to a particular network technology or to a particular
+vendor’s product. Perkins and McGinnis [PM97] provides a good introduction to
+SNMP and MIBs.
+RTP is described in RFC 1889 [SCFJ96], although much of the interesting detail
+is in Internet drafts that are yet to be published. McCanne and Jacobson [MJ95]
+describe vic, one of the applications to use RTP.
+SIP is defined in RFC 3261 [SCJ+02], which contains a helpful tutorial section
+as well as the detailed specification of the protocol.
+Exercises 707
+The National Research Council report on the ossification of the Internet can be
+found in [NRC01], and a proposal to use overlay networks to introduce disruptive
+technology was made by Peterson et al. [PACR02]. The original case for overriding
+BGP routes is made by Savage et al. [SCH+99]. The idea of using DNS to loadbalance
+a set of servers is described in RFC 1784 [Bri95]. The Cache Array Routing
+Protocol (CARP) is defined in an Internet Draft [CPVR97]. A comprehensive treatment
+of the issue of Web caching versus replicated servers can be found in Rabinovich
+and Spatscheck’s book [RS02]. Wang et al. explore the design space for redirectors
+[WPP02].
+Finally, we recommend the following live reference to help keep tabs on the rapid
+evolution of the Web:
+¦ http://www.w3.org: World Wide Web Consortium
+E X E R C I S E S
+1 ARP and DNS both depend on caches; ARP cache entry lifetimes are typically 10
+minutes, while DNS cache is on the order of days. Justify this difference. What
+undesirable consequences might there be in having too long a DNS cache entry
+lifetime?
+2 IPv6 simplifies ARP out of existence by allowing hardware addresses to be part of
+the IPv6 address. How does this complicate the job of DNS? How does this affect
+the problem of finding your local DNS server?
+3 DNS servers also allow reverse lookup; given an IP address 128.112.169.4, it is
+reversed into a text string 4.169.112.128.in-addr.arpa and looked up using DNS
+PTR records (which form a hierarchy of domains analogous to that for the address
+domain hierarchy). Suppose you want to authenticate the sender of a packet based
+on its host name and are confident that the source IP address is genuine. Explain the
+insecurity in converting the source address to a name as above and then comparing
+this name to a given list of trusted hosts. Hint: Whose DNS servers would you be
+trusting?
+4 What is the relationship between a domain name (e.g., cs.princeton.edu) and an
+IP subnet number (e.g., 192.12.69.0)? Do all hosts on the subnet have to be
+identified by the same name server? What about reverse lookup, as in the previous
+exercise?
+708 9 Applications
+5 Suppose a host elects to use a name server not within its organization for address
+resolution. When would this result in no more total traffic, for queries not found
+in any DNS cache, than with a local name server? When might this result in a
+better DNS cache hit rate and possibly less total traffic?
+6 Figure 9.4 shows the hierarchy of name servers. How would you represent this
+hierarchy if one name server served multiple zones? In that setting, how does the
+name server hierarchy relate to the zone hierarchy? How do you deal with the fact
+that each zone may have multiple name servers?
+7 Use the whois utility/service to find out who is in charge of your site, at least as
+far as the InterNIC is concerned. Look up your site both by DNS name and by IP
+network number; for the latter you may have to try an alternative whois server
+(e.g., whois -h whois.arin.net. . .). Try princeton.edu and cisco.com as well.
+8 Many smaller organizations have theirWeb sites maintained by a third party. How
+could you use whois to find if this is the case, and if so, the identity of the third
+party?
+9 One feature of the existing DNS .com hierarchy is that it is extremely “wide.”
+(a) Propose a more hierarchical reorganization of the .com hierarchy. What objections
+might you foresee to your proposal’s adoption?
+(b) What might be some of the consequences of having most DNS domain names
+contain four or more levels, versus the two of many existing names?
+10 Suppose, in the other direction, we abandon any pretense at all of DNS hierarchy,
+and simply move all the .com entries to the root name server: www.cisco.com
+would become www.cisco, or perhaps just cisco. How would this affect root name
+server traffic in general? How would this affect such traffic for the specific case of
+resolving a name like cisco into a Web server address?
+11 What DNS cache issues are involved in changing the IP address of, say, a Web
+server host name? How might these be minimized?
+12 Take a suitable DNS-lookup utility (e.g., nslookup) and disable the recursive
+lookup feature (e.g., with set norecurse), so that when your utility sends a query
+to a DNS server, and that server is unable to fully answer the request from
+its own records, the server sends back the next DNS server in the lookup
+sequence rather than automatically forwarding the query to that next server.
+Exercises 709
+Then carry out manually a name lookup such as that in Figure 9.5; try the host
+name www.cs.princeton.edu. List each intermediate name server contacted. You
+may also need to specify that queries are for NS records rather than the usual A
+records.
+13 Discuss how you might rewrite SMTP or HTTP to make use of a hypothetical
+general-purpose request/reply protocol (perhaps something like CHAN RPC).
+Could an appropriate analog of persistent connections be moved from the application
+layer into such a transport protocol? What other application tasks might
+be moved into this protocol?
+14 Most Telnet clients can be used to connect to port 25, the SMTP port, instead of
+to the Telnet port. Using such a tool, connect to an SMTP server and send yourself
+(or someone else, with permission) some forged email. Then examine the headers
+for evidence the message isn’t genuine.
+15 What features might be used by (or added to) SMTP and/or a mail daemon
+such as sendmail to provide some resistance to email forgeries as in the previous
+exercise?
+16 Find out how SMTP hosts deal with unknown commands from the other side, and
+how in particular this mechanism allows for the evolution of the protocol (e.g.,
+to “extended SMTP”). You can either read the RFC or contact an SMTP server
+as in Exercise 14 and test its responses to nonexistent commands.
+17 As presented in the text, SMTP involves the exchange of several small messages. In
+most cases, the server responses do not affect what the client sends subsequently.
+The client might thus implement command pipelining: sending multiple commands
+in a single message.
+(a) For what SMTP commands does the client need to pay attention to the server’s
+responses?
+(b) Assume the server reads each client message with gets() or the equivalent,
+which reads in a string up to an <LF>. What would it have to do even to
+detect that a client had used command pipelining?
+(c) Pipelining is nonetheless known to break with some servers; find out how a
+client can negotiate its use.
+18 Find out what other features DNSMXrecords provide in addition to supplying an
+alias for a mail server; the latter could, after all, be provided by a DNS CNAME
+710 9 Applications
+record. MX records are provided to support email; would an analogous WEB
+record be of use in supporting HTTP?
+19 One of the central problems faced by a protocol such as MIME is the vast number
+of data formats available. Consult the MIME RFC to find out how MIME deals
+with new or system-specific image and text formats.
+20 MIME supports multiple representations of the same content using the multipart/
+alternative syntax; for example, text could be sent as text/plain, text/richtext, and
+application/postscript. Why do you think plaintext is supposed to be the first format,
+even though implementations might find it easier to place plaintext after their
+native format?
+21 Consult the MIME RFC to find out how base64 encoding handles binary data of
+a length not evenly divisible by three bytes.
+22 In HTTP version 1.0, a server marked the end of a transfer by closing the connection.
+Explain why, in terms of the TCP layer, this was a problem for servers. Find
+out how HTTP version 1.1 avoids this. How might a general-purpose request/reply
+protocol address this?
+23 Find out how to configure an HTTP server so as to eliminate the 404 not found
+message and have a default (and hopefully friendlier) message returned instead.
+Decide if such a feature is part of the protocol or part of an implementation, or is
+technically even permitted by the protocol. (Documentation for the apache HTTP
+server can be found at www.apache.org.)
+24 Why does the HTTP GET command on page 654,
+GET http://www.cs.princeton.edu/index.html HTTP/1.1
+contain the name of the server being contacted?Wouldn’t the server already know
+its name? Use Telnet, as in Exercise 14, to connect to port 80 of an HTTP server
+and find out what happens if you leave the host name out.
+25 When an HTTP server initiates a close() at its end of a connection, it must then wait
+in TCP state FIN WAIT 2 for the client to close the other end. What mechanism
+within the TCP protocol could help an HTTP server deal with noncooperative or
+poorly implemented clients that don’t close from their end? If possible, find out
+about the programming interface for this mechanism, and indicate how an HTTP
+server might apply it.
+Exercises 711
+26 The POP3 Post Office Protocol only allows a client to retrieve email, using a password
+for authentication. Traditionally, to send email a client would simply send
+it to its server and expect that it be relayed.
+(a) Explain why email servers often no longer permit such relaying from arbitrary
+clients.
+(b) Propose an SMTP option for remote client authentication.
+(c) Find out what existing methods are available for addressing this issue.
+27 Suppose a very largeWeb site wants a mechanism by which clients access whichever
+of multiple HTTP servers is “closest” by some suitable measure.
+(a) Discuss developing a mechanism within HTTP for doing this.
+(b) Discuss developing a mechanism within DNS for doing this.
+Compare the two. Can either approach be made to work without upgrading the
+browser?
+28 Find out if there is available to you an SNMP node that will answer queries you
+send it. If so, locate some SNMP utilities (e.g., the ucd-snmp suite) and try the
+following:
+(a) Fetch the entire system group, using something like
+snmpwalk nodename public system
+Also try the above with 1 in place of system.
+(b) Manually walk through the system group, using multiple SNMP GET-NEXT
+operations (e.g., using snmpgetnext or equivalent), retrieving one entry at a
+time.
+29 Using the SNMP device and utilities of the previous exercise, fetch the tcp group
+(numerically, group 6) or some other group. Then do something to make some of
+the group’s counters change, and fetch the group again to show the change. Try
+to do this in such a way that you can be sure your actions were the cause of the
+change recorded.
+30 What information provided by SNMP might be useful to someone planning the
+IP spoofing attack of Exercise 19 in Chapter 5? What other SNMP information
+might be considered sensitive?
+712 9 Applications
+31 Try to find situations where anRTP application might reasonably do the following:
+¦ Send multiple packets at essentially the same time that need different
+timestamps.
+¦ Send packets at different times that need the same timestamp.
+Argue, in consequence, that RTP timestamps must, in at least some cases, be
+provided (at least indirectly) by the application. Hint: Think of cases where the
+sending rate and playback rate might not match.
+32 Having the timestamp clock count time in units of one frame time or one voice
+sample time would be the minimum resolution to ensure accurate playback. But
+the time unit is usually considerably smaller; what is the purpose of this?
+33 Suppose we want returning RTCP reports from receivers to amount to no more
+than 5% of the outgoing primary RTP stream. If each report is 84 bytes, and the
+RTP traffic is 20 KBps, and there are 1000 recipients, how often do individual
+receivers get to report? What if there are 10,000 recipients?
+34 RFC 1889 specifies that the time interval between receiver RTCP reports include
+a randomization factor to avoid having all the receivers send at the same
+time. If all the receivers sent in the same 5% subinterval of their reply time
+interval, the arriving upstream RTCP traffic would rival the downstream RTP
+traffic.
+(a) Video receivers might reasonably wait to send their reports until the higherpriority
+task of processing and displaying one frame is completed; this might
+mean their RTCP transmissions were synchronized on frame boundaries. Is
+this likely to be a serious concern?
+(b) With 10 receivers, what is the probability of their all sending in one particular
+5% subinterval?
+(c) With 10 receivers, what is the probability half will send in one particular 5%
+subinterval? Multiply this by 20 for an estimate of the probability half will
+all send in the same arbitrary 5% subinterval. Hint: How many ways can we
+choose 5 receivers out of 10?
+35 What might a server actually do with the packet-loss-rate data and jitter data in
+receiver reports?
+Exercises 713
+36 Video applications typically run over UDP rather than TCP because they cannot
+tolerate retransmission delays. However, this means video applications are not
+constrained by TCP’s congestion-control algorithm. What impact does this have
+on TCP traffic? Be specific about the consequences.
+Fortunately, these video applications often use RTP, which results in RTCP
+“receiver reports” being sent from the sink back to the source. These reports are
+sent periodically (e.g., once a second) and include the percentage of packets successfully
+received in the last reporting period. Describe how the source might use
+this information to adjust its rate in a TCP-compatible way.
+37 Suppose some receivers in a large conference can receive data at a significantly
+higher bandwidth than others. What sorts of things might be implemented to address
+this? Hint: Consider both the Session Announcement Protocol (SAP) and the
+possibility of utilizing third-party “mixers.”
+38 Propose a mechanism for deciding when to report an RTP packet as lost. How
+does your mechanism compare with the TCP adaptive retransmission mechanisms
+of Section 5.2.6?
+39 How might you encode audio (or video) data in two packets so that if one packet
+is lost, then the resolution is simply reduced to what would be expected with half
+the bandwidth? Explain why this is much more difficult if a JPEG-type encoding
+is used.
+40 Explain the relationship between uniform resource locators (URLs) and uniform
+resource identifiers (URIs). Give an example of a URI that is not a URL.
+41 What problem would a DNS-based redirection mechanism encounter if it wants
+to select an appropriate server based on current load information?
+This Page Intentionally Left Blank
+G L O S S A R Y
+4B/5B: A type of bit encoding scheme used in FDDI, in which every 4 bits of data are
+transmitted as a 5-bit sequence.
+802.3: IEEE Ethernet standard.
+802.5: IEEE token ring standard.
+802.11: IEEE wireless network standard.
+822: Refers to RFC 822, which defines the format of Internet email messages. See
+SMTP.
+AAL: ATM Adaptation Layer. A protocol layer, configured over ATM. Two AALs are
+defined for data communications, AAL3/4 and AAL5. Each protocol layer provides
+a mechanism to segment large packets into cells at the sender and to reassemble the
+cells back together at the receiver.
+ABR: (1) Available bit rate. A rate-based congestion-control scheme being developed
+for use on ATM networks. ABR is intended to allow a source to increase or decrease
+its allotted rate, based on feedback from switches within the network. Contrast with
+CBR, UBR, and VBR. (2) Area border router. Router at the edge of an area in a
+link-state protocol.
+ACK: An abbreviation for acknowledgment. An acknowledgment is sent by a receiver
+of data to indicate to the sender that the data transmission was successful.
+additive increase/multiplicative decrease: Congestion window strategy used by TCP.
+TCP opens the congestion window at a linear rate, but halves it when losses are
+experienced due to congestion. It has been shown that additive increase/multiplicative
+decrease is a necessary condition for a congestion-control mechanism to be stable.
+716 Glossary
+AF: Assured forwarding. One of the per-hop behaviors proposed for Differentiated
+Services.
+ALF: Application Level Framing. A protocol design principle that says that application
+programs better understand their communication needs than do general-purpose
+transport protocols.
+AMPS: Advanced Mobile Phone System. Analog-based cell phone system. Currently
+being replaced by digital system, known as PCS.
+ANSI: American National Standards Institute. Private U.S. standardization body
+that commonly participates in the ISO standardization process. Responsible for
+SONET.
+API: Application programming interface. Interface that application programs use to
+access the network subsystem (usually the transport protocol). Usually OS-specific.
+The socket API from Berkeley Unix is a widely used example.
+area: In the context of link-state routing, a collection of adjacent routers that share
+full routing information with each other. A routing domain is divided into areas to
+improve scalability.
+ARP: Address Resolution Protocol. Protocol of the Internet architecture, used to
+translate high-level protocol addresses into physical hardware addresses. Commonly
+used on the Internet to map IP addresses into Ethernet addresses.
+ARPA: Advanced Research Projects Agency. One of the research and development organizations
+within the Department of Defense. Responsible for funding the ARPANET
+as well as the research that led to the development of the TCP/IP Internet. Also known
+as DARPA, the D standing for Defense.
+ARPANET: An experimental wide area packet-switched network funded by ARPA
+and begun in the late 1960s, which became the backbone of the developing Internet.
+ARQ: Automatic repeat request. General strategy for reliably sending packets over an
+unreliable link. If the sender does not receive an ACK for a packet after a certain time
+period, it assumes that the packet did not arrive (or was delivered with bit errors) and
+retransmits it. Stop-and-wait and sliding window are two example ARQ protocols.
+Contrast with FEC.
+Glossary 717
+ASN.1: Abstract Syntax Notation One. In conjunction with BER, a presentation formatting
+standard devised by the ISO as part of the OSI architecture.
+ATM: Asynchronous transfer mode. A connection-oriented network technology that
+uses small, fixed-size packets (called cells) to carry data.
+ATMARP: Address Resolution Protocol as enhanced for ATM networks.
+ATM Forum: A key ATM standards-setting body.
+authentication: Security protocol by which two suspicious parties prove to each other
+that they are who they claim to be.
+autonomous system (AS): A group of networks and routers, subject to a common
+authority and using the same intradomain routing protocol.
+bandwidth: A measure of the capacity of a link or connection, usually given in units
+of bits per second.
+Bellman-Ford: A name for the distance-vector routing algorithm, from the names of
+the inventors.
+BER: Basic Encoding Rules. Rules for encoding data types defined by ASN.1.
+best-effort delivery: The service model of the current Internet architecture. Delivery
+of a message is attempted but is not guaranteed.
+BGP: Border Gateway Protocol. An interdomain routing protocol by which autonomous
+systems exchange reachability information. The most recent version is
+BGP-4.
+BISYNC: Binary Synchronous Communication. A byte-oriented link-level protocol
+developed in the late 1960s by IBM.
+bit stuffing: A technique used to distinguish control sequences and data on the bit
+level. Used by the HDLC protocol.
+BLAST: A protocol that performs fragmentation and reassembly of large messages,
+used to build an RPC protocol.
+718 Glossary
+block: An OS term used to describe a situation in which a process suspends execution
+while awaiting some event, such as a change in the state of a semaphore.
+bridge: A device that forwards link-level frames from one physical network to another,
+sometimes called a LAN switch. Contrast with repeater and router.
+broadcast: A method of delivering a packet to every host on a particular network
+or internet. May be implemented in hardware (e.g., Ethernet) or software (e.g., IP
+broadcast).
+BUS: Broadcast and unknown server. A device used in LAN emulation
+(LANE).
+CA: Certification authority (also known as certificate authority). An entity that signs
+security certificates, thereby promising that the public key contained in the certificate
+belongs to the entity named in the certificate.
+CBR: Constant bit rate. A class of service in ATM that guarantees transmission of
+data at a constant bit rate, thus emulating a dedicated transmission link. Contrast with
+ABR, UBR, and VBR.
+CCITT: The now defunct Comit´e Consultif International de Telegraphique et Tele-
+phonique, a unit of the International Telecommunications Union (ITU) of the United
+Nations. Now replaced by ITU-T.
+CDN: Content distribution network. A collection of surrogate Web servers, distributed
+across the Internet, that respond to Web HTTP requests in place of the server.
+The goal of widely distributing the surrogate servers is to have a surrogate close to the
+client, making it possible to respond to requests more quickly.
+cell: A 53-byte ATM packet, capable of carrying up to 48 bytes of data.
+certificate: A document digitally signed by one entity that contains the name and
+public key of another entity. Used to distribute public keys. Also see CA.
+CHAN: A protocol that implements request/reply channels.
+channel: A generic communication term used in this book to denote a logical processto-
+process connection.
+Glossary 719
+checksum: Typically a ones complement sum over some or all of the bytes of a packet,
+computed and appended to the packet by the sender. The receiver recomputes the
+checksum and compares it to the one carried in the message. Checksums are used
+to detect errors in a packet and may also be used to verify that the packet has been
+delivered to the correct host. The term checksum is also sometimes (imprecisely) used
+to refer generically to error-detecting codes.
+chipping code: Random sequence of bits that is XORed with the data stream to
+implement the direct sequence technique of spread spectrum.
+CIDR: Classless interdomain routing. A method of aggregating routes that treats a
+block of contiguous Class C IP addresses as a single network.
+circuit switching: A general strategy for switching data through a network. It involves
+establishing a dedicated path (circuit) between the source and destination. Contrast
+with packet switching.
+client: The requester of a service in a distributed system.
+CLNP: Connectionless Network Protocol. The ISO counterpart to the Internet’s IP.
+clock recovery: The process of deriving a valid clock from a serially transmitted digital
+signal.
+concurrent logical channels: Multiplexing several stop-and-wait logical channels onto
+a single point-to-point link. No delivery order is enforced. This mechanism was used
+by the IMP-IMP protocol of the ARPANET.
+congestion: A state resulting from too many packets contending for limited resources
+(e.g., link bandwidth and buffer space on routers or switches), which may force the
+router (switch) to discard packets.
+congestion control: Any network resource management strategy that has, as its goal,
+the alleviation or avoidance of congestion. A congestion-control mechanism may be
+implemented on the routers (switches) inside the network, by the hosts at the edges of
+the network, or by a combination of both.
+connection: In general, a channel that must be established prior to use (e.g., by the
+transmission of some setup information). For example, TCP provides a connection
+720 Glossary
+abstraction that offers reliable, ordered delivery of a byte stream. Connection-oriented
+networks, such as ATM, are often said to provide a virtual circuit abstraction.
+connectionless protocol: A protocol in which data may be sent without any advance
+setup. IP is an example of such a protocol.
+context switch: An operation in which an operating system suspends the execution
+of one process and begins the execution of another. A context switch involves saving
+the state of the former process (e.g., the contents of all registers) and loading the state
+of the latter process.
+controlled load: One of the service classes available in the Internet’s Integrated Services
+architecture.
+CRC: Cyclic redundancy check. An error-detecting code computed over the bytes
+composing a packet and then appended to the packet by the network hardware
+(e.g., Ethernet adaptor). CRC provides stronger error detection than a simple
+checksum.
+crossbar switch: A simple switch design in which every input is directly connected to
+every output and the output port is responsible for resolving contention.
+CSMA/CD: Carrier Sense Multiple Access with Collision Detect. CSMA/CD is a functionality
+of network hardware. “Carrier sense multiple access” means that multiple
+stations can listen to the link and detect when it is in use or idle; “collision detect”
+indicates that if two or more stations are transmitting on the link simultaneously, they
+will detect the collision of their signals. Ethernet is the best-known technology that
+uses CSMA/CD.
+cut-through: A form of switching or forwarding in which a packet starts to be transferred
+to an output before it has been completely received by the switching node, thus
+reducing latency through the node.
+datagram: The basic transmission unit in the Internet architecture. A datagram contains
+all of the information needed to deliver it to its destination, analogous to a letter
+in the U.S. postal system. Datagram networks are connectionless.
+DCE: Distributed Computing Environment. An RPC-based suite of protocols and
+standards that support distributed computing. Defined by OSF.
+Glossary 721
+DDCMP: Digital Data Communication Message Protocol. A byte-oriented link-level
+protocol used in Digital Equipment Corporation’s DECNET.
+DDoS: Distributed denial of service. A DoS attack in which the attack originates at a
+set of nodes. Each attacking node may put only a marginal load on the target machine,
+but the aggregate load from all the attacking nodes swamps the target machine.
+DECbit: A congestion-control scheme in which routers notify the endpoints of imminent
+congestion by setting a bit in the header of routed packets. The endpoints
+decrease their sending rates when a certain percentage of received packets have the bit
+set.
+decryption: The act of reversing an encryption process to recover the data from an
+encrypted message.
+delay × bandwidth product: The product of a network’s RTT and bandwidth. Gives
+a measure of how much data can be in transit on the network.
+demultiplexing: Using information contained in a packet header to direct it upward
+through a protocol stack. For example, IP uses the ProtNum field in the IP header to
+decide which higher protocol (i.e., TCP, UDP) a packet belongs to, and TCP uses the
+port number to demultiplex a TCP packet to the correct application process. Contrast
+with multiplexing.
+demultiplexing key: A field in a packet header that enables demultiplexing to take
+place (e.g., the ProtNum field of IP).
+dense mode multicast: PIM mode used when most routers or hosts need to receive
+multicast packets.
+DES: Data Encryption Standard. An algorithm for data encryption based on a 64-bit
+secret key.
+DHCP: Dynamic Host Configuration Protocol. A protocol used by a host, as it boots,
+to learn various network information, such as its IP address.
+DHT: Distributed hash table. A technique by which a message is routed toward a
+machine that supports a particular object, based on the object’s name. The object is
+hashed to a unique identifier, with each intermediate node along the route forwarding
+722 Glossary
+the message to a node that is able to interpret a larger prefix of this id. DHTs are often
+used in peer-to-peer networks.
+Differentiated Services: Anew architecture for providing better than best-effort service
+on the Internet. It has been proposed as an alternative to Integrated Services.
+direct sequence: A spread spectrum technique that involves XORing the data stream
+with a random bit sequence known as a chipping code.
+distance vector: A lowest-cost-path algorithm used in routing. Each node advertises
+reachability information and associated costs to its immediate neighbors, and uses the
+updates it receives to construct its forwarding table. The routing protocol RIP uses a
+distance-vector algorithm. Contrast with link state.
+DMA: Direct memory access. An approach to connecting hosts to I/O devices, in
+which the device directly reads data from and writes data to the host’s memory. Also
+see PIO.
+DNA/DECNET: Digital Network Architecture. An OSI-based architecture that supports
+a connectionless network model and a connection-oriented transport protocol.
+DNS: Domain name system. The distributed naming system of the Internet, used to
+resolve host names (e.g., cicada.cs.princeton.edu) into IP addresses (e.g., 192.12.69.35).
+The DNS is implemented by a hierarchy of name servers.
+domain: Can refer either to a context in the hierarchical DNS name space (e.g., the
+“edu” domain) or to a region of the Internet that is treated as a single entity for the
+purpose of hierarchical routing. The latter is equivalent to autonomous system.
+DoS: Denial of service. A situation in which an attacking node floods a target node
+with so much work (so many packets) that it effectively keeps legitimate users from
+accessing the node; hence, they are denied servce.
+DS3: A 44.7-Mbps transmission link service offered by the phone company. Also
+called T3.
+DSL: Digital subscriber line. A family of standards for transmitting data over twisted
+pair telephone lines at multimegabit-per-second speeds.
+Glossary 723
+duplicate ACK: A retransmission of a TCP acknowledgment. The duplicate ACK does
+not acknowledge any new data. The receipt of multiple duplicate ACKs triggers the
+TCP fast retransmit mechanism.
+DVMRP: Distance Vector Multicast Routing Protocol. Multicast routing protocol
+used by the majority of the routers in the MBone.
+DWDM: Dense wavelength division multiplexing. Multiplexing multiple light waves
+(colors) onto a single physical fiber. The technique is “dense” in the sense that a large
+number of optical wavelengths can be supported.
+ECN: Explict congestion notification. A technique by which routers inform end hosts
+about congestion by setting a flag in packets they are forwarding. Used in conjunction
+with active queue management algorithms like RED.
+EF: Expedited forwarding. One of the per-hop behaviors proposed for Differentiated
+Services.
+EGP: Exterior Gateway Protocol. An early interdomain routing protocol of the Internet,
+which was used by exterior gateways (routers) of autonomous systems to exchange
+routing information with other ASs. Replaced by BGP.
+encapsulation: The operation, performed by a lower-level protocol, of attaching a
+protocol-specific header and/or trailer to a message passed down by a higher-level
+protocol. As a message travels down the protocol stack, it gathers a sequence of headers,
+of which the outermost corresponds to the protocol at the bottom of the stack.
+encryption: The act of applying a transforming function to data, with the intention
+that only the receiver of the data will be able to read it (after applying the inverse
+function, decryption). Encryption generally depends on either a secret shared by the
+sender and receiver or on a public/private key pair.
+Ethernet: A popular local area network technology that uses CSMA/CD and has a
+bandwidth of 10 Mbps. An Ethernet itself is just a passive wire; all aspects of Ethernet
+transmission are completely implemented by the host adaptors.
+exponential backoff: A retransmission strategy that doubles the timeout value each
+time a packet is retransmitted.
+724 Glossary
+exposed node problem: Situation that occurs on a wireless network where two nodes
+receive signals from a common source, but each is able to reach other nodes that do
+not receive this signal.
+extended LAN: A collection of LANs connected by bridges.
+fabric: The part of a switch that actually does the switching, that is, moves packets
+from input to output. Contrast with port.
+fair queuing (FQ): A round-robin-based queuing algorithm that prevents a badly
+behaved process from capturing an arbitrarily large portion of the network capacity.
+fast retransmit: A strategy used by TCP that attempts to avoid timeouts in the presence
+of lost packets. TCP retransmits a segment after receiving three consecutive duplicate
+ACKs, acknowledging the data up to (but not including) that segment.
+FDDI: Fiber Distributed Data Interface. A high-speed token ring networking technology
+designed to run over optical fiber.
+FEC: Forward error correction. A general strategy for recovering from bit errors
+introduced into data packets without having to retransmit the packet. Redundant
+information is included with each packet that can be used by the receiver to determine
+which bits in a packet are incorrect. Contrast with ARQ.
+Fiber Channel: A bidirectional link protocol commonly used to connect computers
+(usually supercomputers) to peripherals. Fiber Channel has a bandwidth of 100 MBps
+and can span up to 30 m. Used in the same way as HiPPI.
+firewall: A router that has been configured to filter (not forward) packets from certain
+sources. Used to enforce a security policy.
+flow control: A mechanism by which the receiver of data throttles the transmission
+rate of the sender, so that data will not arrive too quickly to be processed. Contrast
+with congestion control.
+flowspec: Specification of a flow’s bandwidth and delay requirements presented to the
+network to establish a reservation. Used with RSVP.
+forwarding: The operation performed by a router on every packet: receiving it on an
+input, deciding what output to send it to, and sending it there.
+Glossary 725
+forwarding table: The table maintained in a router that lets it make decisions on
+how to forward packets. The process of building up the forwarding table is called
+routing, and thus the forwarding table is sometimes called a routing table. In some
+implementations, the routing and forwarding tables are separate data structures.
+fragmentation/reassembly: A method for transmission of messages larger than the network’s
+MTU. Messages are fragmented into small pieces by the sender and reassembled
+by the receiver.
+frame: Another name for a packet, typically used in reference to packets sent over a
+single link rather than a whole network. An important problem is how the receiver
+detects the beginning and ending of a frame, a problem known as framing.
+Frame Relay: A connection-oriented public packet-switched service offered by the
+phone company.
+frequency hopping: A spread spectrum technique that involves transmitting data over
+a random sequence of frequencies.
+FTP: File Transfer Protocol. The standard protocol of the Internet architecture for
+transferring files between hosts. Built on top of TCP.
+GMPLS: Generalized MPLS. Allows IP to run native over optically switched networks.
+gopher: An Internet information service.
+GSM: Global System for Mobile communication. Digital cellular phone system being
+deployed throughout the world (except the United States and Canada). Similar to PCS,
+which is being deployed throughout the United States and Canada.
+H.323: Session control protocol often used for internet telephony.
+handle: In programming, an identifer or pointer that is used to access an object.
+hardware address: The link-level address used to identify the host adaptor on the local
+network.
+HDLC: High-Level Data Link Control protocol. An ISO-standard link-level protocol.
+It uses bit stuffing to solve the framing problem.
+726 Glossary
+hidden node problem: Situation that occurs on a wireless network where two nodes
+are sending to a common destination, but are unaware that the other exists.
+hierarchical routing: A multilevel routing scheme that uses the hierarchical structure
+of the address space as the basis for making forwarding decisions. For example, packets
+might first be routed to a destination network and then to a specific host on that
+network.
+HiPPI: High Performance Parallel Interface. An ANSI-standard network technology
+capable of Gbps transmission rates, typically used to connect supercomputers to peripheral
+devices. Used in same way as Fiber Channel.
+host: A computer attached to one or more networks that supports users and runs
+application programs.
+HTML: HyperText Markup Language. A language used to construct World Wide
+Web pages.
+HTTP: HyperText Transport Protocol. An application-level protocol based on a
+request/reply paradigm and used in theWorldWideWeb. HTTP uses TCP connections
+to transfer data.
+IAB: Internet Activities Board. The main body that oversees the development and
+standardization of protocols of the Internet architecture. The IRTF and IETF are task
+forces of the IAB.
+IBGP: Interior BGP, the protocol used to exchange interdomain routing information
+among routers in the same domain.
+ICMP: Internet Control Message Protocol. This protocol is an integral part of IP. It
+allows a router or destination host to communicate with the source, typically to report
+an error in IP datagram processing.
+IEEE: Institute for Electrical and Electronics Engineers. A professional society for engineers
+that also defines network standards, including the 802 series of LAN standards.
+IETF: Internet Engineering Task Force. A task force of the IAB, responsible for providing
+short-term engineering solutions for the Internet.
+Glossary 727
+IMAP: Internet Message Access Protocol. An application-layer protocol that allows
+a user to retrieve his or her email from a mail server.
+IMP-IMP: A byte-oriented link-level protocol used in the original ARPANET.
+Integrated Services: Usually taken to mean a packet-switched network that can effectively
+support both conventional computer data and real-time audio and video. Also,
+a name given to a proposed Internet service model that is being designed to replace
+the current best-effort service model.
+integrity: In the context of network security, a service that ensures that a received
+message is the same one that was sent.
+interdomain routing: The process of exchanging routing among different routing
+domains. BGP is an example of an interdomain protocol.
+internet: A collection of (possibly heterogeneous) packet-switching networks interconnected
+by routers. Also called an internetwork.
+Internet: The global internet based on the Internet (TCP/IP) architecture, connecting
+millions of hosts worldwide.
+interoperability: The ability of heterogeneous hardware and multivendor software to
+communicate by correctly exchanging messages.
+interrupt: An event (typically generated by a hardware device) that tells the operating
+system to stop its current activity and take some action. For example, an interrupt is
+used to notify the OS that a packet has arrived from the network.
+intradomain routing: The exchange of routing information within a single domain or
+autonomous system. RIP and OSPF are example intradomain protocols.
+IP: Internet Protocol (also known as IPv4). A protocol that provides a connectionless,
+best-effort delivery service of datagrams across the Internet.
+IPng: Internet Protocol—Next Generation (also known as IPv6). Proposed version
+of IP that provides a larger, more hierarchical address space and other new
+features.
+728 Glossary
+IPSEC: IP Security. An architecture for authentication, privacy, and message integrity,
+among other security services to the Internet architecture.
+IRTF: Internet Research Task Force. A task force of the IAB, responsible for charting
+direction in research and development for the Internet.
+ISDN: Integrated Services Digital Network. A digital communication service offered
+by telephone carriers and standardized by ITU-T. ISDN combines voice connection
+and digital data services in a single physical medium.
+IS-IS: A link-state routing protocol, similar to OSPF.
+ISO: International Standards Organization. The international body that drafted the
+seven-layer OSI architecture, and a suite of protocols that has not enjoyed commercial
+success.
+ITU-T: A subcommittee of the International Telecommunications Union, a global
+body that drafts technical standards for all areas of international analog and digital
+communication. ITU-T deals with standards for telecommunications, notably
+ATM.
+jitter: Variation in network latency. Large jitter has a negative impact on the quality
+of video and audio applications.
+JPEG: Joint Photographic Experts Group. Typically used to refer to a widely used
+algorithm for compressing still images that was developed by JPEG.
+Kerberos: A TCP/IP-based authentication system developed at MIT, in which two
+hosts use a trusted third party to authenticate each other.
+key distribution: Mechanism by which users learn each others’ public keys through
+the exchange of digitally signed certificates.
+LAN: Local area network. A network based on any physical network technology that
+is designed to span distances of up to a few thousand meters (e.g., Ethernet or FDDI).
+Contrast with SAN, MAN, and WAN.
+LANE: Local area network emulation. Adding functionality to ATM to make it
+behave like a shared-media (i.e., Ethernet-like) LAN.
+Glossary 729
+LAN switch: Another term for a bridge, usually applied to a bridge with many ports.
+Also called an Ethernet switch if the link technology it supports is Ethernet.
+latency: A measure of how long it takes a single bit to propagate from one end of a
+link or channel to the other. Latency is measured strictly in terms of time.
+LDAP: Lightweight Directory Access Protocol. A subset of the X.500 directory service
+that has recently become a popular directory service for information about users.
+LER: Label edge router. A router at the edge of an MPLS cloud. Performs a complete
+IP lookup on arriving IP packets, and then applies labels to them as a result of the
+lookup.
+LES: LAN emulation (LANE) server.
+link: A physical connection between two nodes of a network. It may be implemented
+over copper or fiberoptic cable or it may be a wireless link (e.g., a satellite).
+link-level protocol: A protocol that is responsible for delivering frames over a directly
+connected network (e.g., an Ethernet, token ring, or point-to-point link). (Also called
+link-layer protocol.)
+link state: A lowest-cost-path algorithm used in routing. Information on directly connected
+neighbors and current link costs are flooded to all routers; each router uses
+this information to build a view of the network on which to base forwarding decisions.
+The OSPF routing protocol uses a link-state algorithm. Contrast with distance
+vector.
+LSR: Label switching router. A router that runs IP control protocols, but uses the
+label switching forwarding algorithm of MPLS.
+MAC: Media access control. Algorithms used to control access to shared-media networks
+like Ethernet and FDDI.
+MACA: Multiple Access with Collision Avoidance. Distributed algorithm used to
+mediate access to a shared media.
+MACAW: Multiple Access with Collision Avoidance for Wireless. Enhancement of
+the general MACA algorithm to better support wireless networks. Used by 802.11.
+730 Glossary
+MAN: Metropolitan area network. A network based on any of several new network
+technologies that operate at high speeds (up to several Gbps) and across distances wide
+enough to span a metropolitan area. Contrast with SAN, LAN, and WAN.
+Manchester: A bit encoding scheme that transmits the exclusive-OR of the clock and
+the NRZ-encoded data. Used on the Ethernet.
+MBone: Multicast Backbone. A logical network imposed over the top of the Internet,
+in which multicast-enhanced routers use tunneling to forward multicast datagrams
+across the Internet.
+MD5: Message Digest version 5. An efficient cryptographic checksum algorithm commonly
+used to verify that the contents of a message are unaltered.
+MIB: Management information base. Defines the set of network-related variables that
+may be read or written on a network node. The MIB is used in conjunction with SNMP.
+MIME: Multipurpose Internet Mail Extensions. Specifications for converting binary
+data (such as image files) to ASCII text, which allows it to be sent via email.
+Mosaic: A popular and free graphical World Wide Web browser developed at the
+National Center for Supercomputing Applications at the University of Illinois.
+MP3: MPEG Layer 3. Audio compression standard used with MPEG.
+MPEG: Moving Picture Experts Group. Typically used to refer to an algorithm for
+compressing video streams developed by MPEG.
+MPLS: Multiprotocol Label Switching. A collection of techniques used to enhance
+the capabilities of IP routers be attaching labels to packets.
+MSAU: Multistation access unit. A device used in token ring networks to connect
+several stations to the ring and remove them in the event of failure.
+MTU: Maximum transmission unit. The size of the largest packet that can be sent
+over a physical network.
+multicast: A special form of broadcast in which packets are delivered to a specified
+subgroup of network hosts.
+Glossary 731
+multiplexing: Combining distinct channels into a single lower-level channel. For
+example, separate TCP and UDP channels are multiplexed into a single host-to-host
+IP channel. The inverse operation, demultiplexing, takes place on the receiving host.
+name resolution: The action of resolving host names (which are easy for humans to
+read) into their corresponding addresses (which machines can read). See DNS.
+NAT: Network address translation. A technique for extending the IP address space
+that involves translating between globally understood IP addresses and local-only addresses
+at the edge of a network or site.
+NDR: Network Data Representation. The data encoding standard used in the Distributed
+Computing Environment (DCE), as defined by the Open Software Foundation.
+NDR uses a receiver-makes-right strategy and inserts an architecture tag at the front
+of each message.
+Netscape: A popular graphical WWW browser.
+network-level protocol: A protocol that runs over switched networks, directly above
+the link level.
+NFS: Network File System. A popular distributed file system developed by Sun
+Microsystems. NFS is based on SunRPC, an RPC protocol developed by Sun.
+NIST: National Institute for Standards and Technology. The official U.S. standardization
+body.
+node: A generic term used for individual computers that make up a network. Nodes
+include general-purpose computers, switches, and routers.
+NRZ: Non-return to zero. A bit encoding scheme that encodes a 1 as the high signal
+and a 0 as the low signal.
+NRZI: Non-return to zero inverted. A bit encoding scheme that makes a transition
+from the current signal to encode a 1 and stays at the current signal to encode a 0.
+NSF: National Science Foundation. An agency of the U.S. government that funds
+scientific research in the United States, including research on networks and on the
+Internet infrastructure.
+732 Glossary
+NV: Network Video. A videoconferencing application that runs over the MBone.
+OC: Optical Carrier. The prefix for various rates of SONET optical transmission. For
+example, OC-1 refers to the SONET standard for 51.84-Mbps transmission over fiber.
+An OC-n signal differs from an STS-n signal only in that the OC-n signal is scrambled
+for optical transmission.
+ONC: Open Network Computing. A version of SunRPC that is being standardized
+for the Internet.
+optical switch: A switching device that forwards optical light waves from input port
+to output port without converting to electrical format.
+OSF: Open Software Foundation. A consortium of computer vendors that have defined
+standards for distributed computing, including the NDR presentation format.
+OSI: Open Systems Interconnection. The seven-layer network reference model developed
+by the ISO. Guides the design of ISO and ITU-T protocol standards.
+OSPF: Open Shortest Path First. A routing protocol developed by the IETF for the
+Internet architecture. OSPF is based on a link-state algorithm, in which every node
+constructs a topography of the Internet and uses it to make forwarding decisions.
+Today known as Open Group.
+overlay: A virtual (logical) network running on top of an existing physical network.
+Overlay nodes communicate with each other through tunnels rather than over physical
+links. Overlays are often used to deploy new network services since they do not require
+the cooperation of the existing network infrastructure.
+packet: A data unit sent over a packet-switched network. Also see frame and segment.
+packet switching: A general strategy for switching data through a network. Packet
+switching uses store-and-forward switching of discrete data units called packets and
+implies statistical multiplexing.
+participants: A generic term used to denote the processes, protocols, or hosts that are
+sending messages to each other.
+Glossary 733
+PAWS: Protection against wrapped sequence numbers. Engineering transport protocol
+with a large enough sequence number space to protect against the numbers wrapping
+around on a network where packets can be delayed for a long period of time.
+PCS: Personal Communication Services. New digital cellular phone system being
+deployed throughout the United States and Canada. Similar to GSM, which is being
+deployed throughout the rest of the world.
+PDU: Protocol data unit. Another name for a packet or frame.
+peer: A counterpart on another machine that a protocol module interoperates with
+to implement some communication service.
+peer-to-peer networks: A general class of applications that integrate application logic
+(e.g., file storage) with routing. Popular examples include Napster and Gnutella.
+Research prototypes often use distributd hash tables.
+PEM: Privacy Enhanced Mail. Extensions to Internet email that support privacy and
+integrity protection. See also PGP.
+PGP: Pretty Good Privacy. A collection of public domain software that provides privacy
+and authentication capabilities using RSA and that uses a mesh of trust for public
+key distribution.
+PHB: Per-hop behavior. Behavior of individual routers in the Differentiated Services
+architecture. AF and EF are two proposed PHBs.
+physical-level protocol: The lowest layer of the OSI protocol stack. Its main function
+is to encode bits onto the signals that are propagated across the physical transmission
+media.
+piconet: Wireless network spanning short distances (e.g., 10 m). Used to connect office
+computers (laptops, printers, PDAs, workstations, etc.) without cables.
+PIM: Protocol Independent Multicast. A multicast routing protocol that can be built
+on top of different unicast routing protocols.
+734 Glossary
+Ping: A Unix utility used to test the RTT to various hosts over the Internet. Ping sends
+an ICMP ECHO REQUEST message, and the remote host sends an ECHO RESPONSE
+message back.
+PIO: Programmed Input/Ouput. An approach to connecting hosts to I/O devices, in
+which the CPU reads data from and writes data to the I/O device. Also see DMA.
+poison reverse: Used in conjunction with split horizon. A heuristic technique to avoid
+routing loops in distance-vector routing protocols.
+port: A generic term usually used to mean the point at which a network user attaches
+to the network. On a switch, a port denotes the input or output on which packets are
+received and sent.
+POTS: Plain old telephone service. Used to specify the existing phone service, in contrast
+to ISDN, ATM, or other technologies that the telephone companies offer now or
+may offer in the future.
+PPP: Point-to-Point Protocol. Data link protocol typically used to connect computers
+over a dial-up line.
+process: An abstraction provided by an operating system to enable different operations
+to take place concurrently. For example, each user application usually runs inside
+its own process, while various operating system functions take place in other processes.
+promiscuous mode: A mode of operation for a network adaptor in which it receives
+all frames transmitted on the network, not just those addressed to it.
+protocol: A specification of an interface between modules running on different
+machines, as well as the communication service that those modules implement. The
+term is also used to refer to an implementation of the module that meets this specification.
+To distinguish between these two uses, the interface is often called a protocol
+specification.
+proxy: An agent sitting between a client and server that intercepts messages and provides
+some service. For example, a proxy can “stand in” for a server by responding to
+client requests, perhaps using data it has cached, without contacting the server.
+pseudoheader: A subset of fields from the IP header that are passed up to transport
+protocols TCP and UDP for use in their checksum calculation. The pseudoheader
+Glossary 735
+contains source and destination IP addresses and IP datagram length, thus enabling
+detection of corruption of these fields or delivery of a packet to an incorrect
+address.
+public key encryption: Any of several encryption algorithms (e.g., RSA), in which
+each participant has a private key (shared with no one else) and a public key (available
+to everyone). A secure message is sent to a user by encrypting the data with that user’s
+public key; possession of the private key is required to decrypt the message, and so
+only the receiver can read it.
+QoS: Quality of service. Packet delivery guarantees provided by a network architecture.
+Usually related to performance guarantees, such as bandwidth and delay.
+The Internet offers a best-effort delivery service, meaning that every effort is made to
+deliver a packet but delivery is not guaranteed.
+RED: Random early detection. A queuing discipline for routers in which, when congestion
+is anticipated, packets are randomly dropped to alert the senders to slow down.
+rendezvous point: A router used by PIM to allow receivers to learn about senders.
+repeater: A device that propagates electrical signals from one Ethernet cable to another.
+There can be a maximum of two repeaters between any two hosts in an Ethernet.
+Repeaters forward signals, whereas bridges forward frames, and routers and switches
+forward packets.
+reverse-path broadcast (RPB): A technique used to eliminate duplicate broadcast
+packets.
+RFC: Request for Comments. Internet reports that contain, among other things, specifications
+for protocols like TCP and IP.
+RIO: RED with In and Out. A packet drop policy based on RED, but involving two
+drop curves: one for packets that have been marked as being “in” profile and one for
+packets that have been marked “out” of profile. Designed to be used to implement
+Differentiated Services.
+RIP: Routing Information Protocol. An intradomain routing protocol supplied with
+Berkeley Unix. Each router running RIP dynamically builds its forwarding table based
+on a distance-vector algorithm.
+736 Glossary
+router: A network node connected to two or more networks that forwards packets
+from one network to another. Contrast with bridge, repeater, and switch.
+routing: The process by which nodes exchange topological information to build correct
+forwarding tables. See forwarding, link state, and distance vector.
+routing table: See forwarding table.
+RPC: Remote Procedure Call. Synchronous request/reply transport protocol used in
+many client/server interactions.
+RSA: A public key encryption algorithm named after its inventors: Rivest, Shamir,
+and Adleman.
+RSVP: Resource Reservation Protocol. A protocol for reserving resources in the network.
+RSVP uses the concept of soft state in routers and puts responsibility for making
+reservations on receivers instead of on senders.
+RTCP: Real-time Transport Control Protocol. Control protocol associated with RTP.
+RTP: Real-time Transport Protocol. An end-to-end protocol used by multimedia
+applications that have real-time constraints.
+RTT: Round-trip time. The time it takes for a bit of information to propagate from
+one end of a link or channel to the other and back again; in other words, double the
+latency of the channel.
+SAN: System area network. A network that spans the components of a computer system
+(e.g., display, camera, disk). Sometimes stands for storage area network and includes
+interfaces like HiPPI and Fiber Channel. Contrast with LAN, MAN, andWAN.
+schema: A specification of how to structure and interpret a set of data. Defined for
+XML documents.
+scrambling: The process of XORing a signal with a pseudorandom bit stream before
+transmission to cause enough signal transitions to allow clock recovery. Scrambling is
+used in SONET.
+SDP: Session Description Protocol. An application-layer protocol used to learn about
+the available audio/video channels. It reports the name and purpose of the session,
+Glossary 737
+start and end times for the session, the media types (e.g., audio, video) that comprise
+the session, and detailed information needed to receive the session (e.g., the multicast
+address, transport protocol, and port numbers to be used).
+segment: A TCP packet. A segment contains a portion of the byte stream that is being
+sent by means of TCP.
+SELECT: A synchronous demultiplexing protocol used to build an RPC protocol.
+semaphore: A variable used to support synchronization between processes. Typically,
+a process blocks on a semaphore while it waits for some other process to signal the
+semaphore.
+server: The provider of a service in a client/server distributed system.
+signalling: At the physical level, denotes the transmission of a signal over some physical
+medium. In ATM, signalling refers to the process of establishing a virtual
+circuit.
+silly window syndrome: A condition occurring in TCP that may arise if each time
+the receiver opens its receive window a small amount, the sender sends a small segment
+to fill the window. The result is many small segments and an inefficient use of
+bandwidth.
+SIP: Session Initiation Protocol. An application-layer protocol used in multimedia
+applications. It determines the correct device with which to communicate to reach a
+particular user, determines if the user is willing or able to take part in a particular communication,
+determines the choice of media and coding scheme to use, and establishes
+session parameters (e.g., port numbers).
+sliding window: An algorithm that allows the sender to transmit multiple packets (up
+to the size of the window) before receiving an acknowledgment. As acknowledgments
+are returned for those packets in the window that were sent first, the window “slides”
+and more packets may be sent. The sliding window algorithm combines reliable
+delivery with a high throughput. See ARQ.
+slow start: A congestion-avoidance algorithm for TCP that attempts to pace outgoing
+segments. For each ACK that is returned, two additional packets are sent, resulting in
+an exponential increase in the number of outstanding segments.
+738 Glossary
+SMDS: Switched Multimegabit Data Service.Aservice supporting LAN-to-WANconnectivity,
+offered by some telephone companies.
+SMTP: Simple Mail Transfer Protocol. The electronic mail protocol of the Internet.
+See 822.
+SNA: System Network Architecture. The proprietary network architecture of IBM.
+SNMP: Simple Network Management Protocol. An Internet protocol that allows the
+monitoring of hosts, networks, and routers.
+socket: The abstraction provided by Unix that provides the application programming
+interface (API) to TCP/IP.
+soft state: Connection-related information contained in a router that is cached for a
+limited period of time rather than being explicitly established (and requiring explicit
+teardown) through a connection setup.
+SONET: Synchronous Optical Network. A clock-based framing standard for digital
+transmission over optical fiber. It defines how telephone companies transmit data over
+optical networks.
+source routing: Routing decisions performed at the source before the packet is sent.
+The route consists of the list of nodes that the packet should traverse on the way to
+the destination.
+sparse mode multicast: A mode used in PIM when relatively few hosts or routers need
+to receive multicast data for a certain group.
+split horizon: A method of breaking routing loops in a distance-vector routing algorithm.
+When a node sends a routing update to its neighbors, it does not send those
+routes it learned from each neighbor back to that neighbor. Split horizon is used with
+poison reverse.
+spread spectrum: Encoding technique that involves spreading a signal over a wider
+frequency than necessary, so as to minimize the impact of interference.
+SSL: Secure Socket Layer. A protocol layer that runs over TCP to provide authentication
+and encryption of connections. Also known as Transport Layer Security (TLS).
+Glossary 739
+statistical multiplexing: Demand-based multiplexing of multiple data sources over a
+shared link or channel.
+stop-and-wait: A reliable transmission algorithm in which the sender transmits a
+packet and waits for an acknowledgment before sending the next packet. Compare
+with sliding window and concurrent logical channels. See also ARQ.
+STS: Synchronous Transport Signal. The prefix for various rates of SONET transmission.
+For example, STS-1 refers to the SONET standard for 51.84-Mbps transmission.
+subnetting: The use of a single IP network address to denote multiple physical networks.
+Routers within the subnetwork use a subnet mask to discover the physical
+network to which a packet should be forwarded. Subnetting effectively introduces a
+third level to the two-level hierarchical IP address.
+SunRPC: Remote procedure call protocol developed by Sun Microsystems. SunRPC
+is used to support NFS. See also ONC.
+switch: A network node that forwards packets from inputs to outputs based on header
+information in each packet. Differs from a router mainly in that it typically does not
+interconnect networks of different types.
+switching fabric: The component of a switch that directs packets from their inputs to
+the correct outputs.
+T1: A standard telephone carrier service equal to 24 ISDN circuits, or 1.544 Mbps.
+Also called DS1.
+T3: A standard telephone carrier service equal to 24 T1 circuits, or 44.736 Mbps.
+Also called DS3.
+TCP: Transmission Control Protocol. Connection-oriented transport protocol of the
+Internet architecture. TCP provides a reliable, byte-stream delivery service.
+Telnet: Remote terminal protocol of the Internet architecture. Telnet allows you to
+interact with a remote system as if your terminal is directly connected to that machine.
+throughput: The observed rate at which data is sent through a channel. The term is
+often used interchangeably with bandwidth.
+740 Glossary
+TLS: Transport Layer Security. Security services that can be layered on top of a transport
+protocol like TCP. It is often used by HTTP to perform secure transactions on
+the World Wide Web. Derived from SSL.
+token bucket: A way to characterize or police the bandwidth used by a flow. Conceptually,
+processes accumulate tokens over time, and they must spend a token to transmit
+a byte of data and then must stop sending when they have no tokens left. Thus, overall
+bandwidth is limited, with the accommodation of some burstiness.
+token ring: A physical network technology in which hosts are connected in a ring.
+A token (bit pattern) circulates around the ring. A given node must possess the
+token before it is allowed to transmit. 802.5 and FDDI are examples of token ring
+networks.
+TP4: OSI Transport Protocol Class 4. The most powerful OSI transport protocol.
+TP4 is the ISO equivalent of TCP.
+transport protocol: An end-to-end protocol that enables processes on different hosts
+to communicate. TCP is the canonical example.
+TTL: Time to live. Usually a measure of the number of hops (routers) an IP datagram
+can visit before it is discarded.
+tunneling: Encapsulating a packet using a protocol that operates at the same layer
+as the packet. For example, multicast IP packets are encapsulated inside unicast IP
+packets to tunnel across the Internet to implement the MBone. Tunneling will also be
+used during the transition from IPv4 to IPv6.
+two-dimensional parity: A parity scheme in which bytes are conceptually stacked as
+a matrix, and parity is calculated for both rows and columns.
+Tymnet: An early network in which a virtual circuit abstraction was maintained across
+a set of routers.
+UBR: Unspecified bit rate. The “no frills” service class in ATM, offering best-effort
+cell delivery. Contrast with ABR, CBR, and VBR.
+UDP: User Datagram Protocol. Transport protocol of the Internet architecture that
+provides a connectionless datagram service to application-level processes.
+Glossary 741
+unicast: Sending a packet to a single destination host. Contrast with broadcast and
+multicast.
+URI: Uniform resource identifier. A generalization of the URL. Used, for example, in
+conjunction with SIP to set up multimedia sessions.
+URL: Uniform resource locator. A text string used to identify the location of Internet
+resources. A typical URL looks like http://www.cisco.com. In this URL, http is the
+protocol to use to access the resource located on host www.cisco.com.
+vat: Audioconferencing tool used on the Internet that runs over RTP.
+VBR: Variable bit rate. One of the classes of service in ATM, intended for applications
+with bandwidth requirements that vary with time, such as compressed video. Contrast
+with ABR, CBR, and UBR.
+VCI: Virtual circuit identifier. An identifier in the header of a packet that is used for
+virtual circuit switching. In the case of ATM, the VPI and VCI together identify the
+end-to-end connection.
+vic: Unix-based videoconferencing tool that uses RTP.
+virtual circuit: The abstraction provided by connection-oriented networks such as
+ATM. Messages must usually be exchanged between participants to establish a virtual
+circuit (and perhaps to allocate resources to the circuit) before data can be sent.
+Contrast with datagram.
+virtual clock: A service model that allows the source to reserve resources on routers
+using a rate-based description of its needs. Virtual clock goes beyond the best-effort
+delivery service of the current Internet.
+VPI: Virtual path identifier. An 8-bit or 12-bit field in the ATMheader. VPI can be used
+to hide multiple virtual connections across a network inside a single virtual “path,”
+thus decreasing the amount of connection state that the switches must maintain. See
+also VCI.
+VPN: Virtual private network. A logical network overlaid on top of some existing
+network. For example, a company with sites around the world may build a virtual
+network on top of the Internet rather than lease lines between each site.
+742 

@@ -1,0 +1,2552 @@
+1 Foundation
+of various sizes (1 byte, 2 KB, 1 MB) across networks with RTTs ranging from 1 to
+100 ms and link speeds of either 1.5 or 10 Mbps. We use logarithmic scales to show
+relative performance. For a 1-byte object (say, a keystroke), latency remains almost
+exactly equal to the RTT, so that you cannot distinguish between a 1.5-Mbps network
+and a 10-Mbps network. For a 2-KB object (say, an email message), the link speed
+makes quite a difference on a 1-ms RTT network but a negligible difference on a 100-
+ms RTT network. And for a 1-MB object (say, a digital image), the RTT makes no
+difference—it is the link speed that dominates performance across the full range ofRTT.
+Note that throughout this book we use the terms latency and delay in a generic
+way, that is, to denote how long it takes to perform a particular function such as
+delivering a message or moving an object. When we are referring to the specific
+amount of time it takes a signal to propagate from one end of a link to another,
+we use the term propagation delay. Also, we make it clear in the context of the
+discussion whether we are referring to the one-way latency or the round-trip time.
+As an aside, computers are becoming
+so fast that when we connect them to networks,
+it is sometimes useful to think, at
+least figuratively, in terms of instructions per
+mile. Consider what happens when a computer
+that is able to execute 1 billion instructions
+per second sends a message out on a
+channel with a 100-ms RTT. (To make the
+math easier, assume that the message covers
+a distance of 5000 miles.) If that computer
+sits idle the full 100 ms waiting for a reply
+message, then it has forfeited the ability to
+execute 100 million instructions, or 20,000
+instructions per mile. It had better have been
+worth going over the network to justify this
+waste.
+1.5.2 Delay × Bandwidth
+Product
+It is also useful to talk about the product of
+these two metrics, often called the delay ×
+bandwidth product. Intuitively, if we think
+of a channel between a pair of processes
+as a hollow pipe (see Figure 1.22), where
+How Big Is a Mega?
+There are several pitfalls you need
+to be aware of when working with
+the common units of networking—
+MB, Mbps, KB, and Kbps. The
+first is to distinguish carefully between
+bits and bytes. Throughout
+this book, we always use a lowercase
+b for bits and a capital B for
+bytes. The second is to be sure you
+are using the appropriate definition
+of mega (M) and kilo (K). Mega,
+for example, can mean either 220
+or 106. Similarly, kilo can be either
+210 or 103. What is worse, in networking
+we typically use both definitions.
+Here’s why.
+Network bandwidth, which is
+often specified in terms of Mbps,
+is typically governed by the speed
+of the clock that paces the transmission
+of the bits. A clock that is
+1.5 Performance 45
+Bandwidth
+Delay
+Figure 1.22 Network as a pipe.
+the latency corresponds to the length of the pipe and the bandwidth gives the diameter
+of the pipe, then the delay × bandwidth product gives the volume of the pipe—the
+number of bits it holds. Said another way, if latency (measured in time) corresponds
+to the length of the pipe, then given the width of each bit (also measured in time),
+you can calculate how many bits fit in the pipe. For example, a transcontinental channel
+with a one-way latency of 50 ms and a bandwidth of 45 Mbps is able to hold
+running at 10 MHz is used to transmit
+bits at 10 Mbps. Because the
+mega in MHz means 106 hertz,
+Mbps is usually also defined as 106
+bits per second. (Similarly, Kbps is
+103 bits per second.) On the other
+hand, when we talk about a message
+that we want to transmit, we
+often give its size in kilobytes. Because
+messages are stored in the
+computer’s memory, and memory
+is typically measured in powers of
+two, the K in KB is usually taken
+to mean 210. (Similarly, MB usually
+means 220.) When you put
+the two together, it is not uncommon
+to talk about sending a
+32-KB message over a 10-Mbps
+channel, which should be interpreted
+to mean 32 × 210 × 8 bits
+are being transmitted at a rate of
+50 × 10-3 seconds × 45 × 106 bits/second
+= 2.25 × 106 bits
+or approximately 280 KB of data. In other
+words, this example channel (pipe) holds as
+many bytes as the memory of a personal
+computer from the early 1980s could hold.
+The delay × bandwidth product is important
+to know when constructing highperformance
+networks because it corresponds
+to how many bits the sender must
+transmit before the first bit arrives at the
+receiver. If the sender is expecting the receiver
+to somehow signal that bits are starting
+to arrive, and it takes another channel
+latency for this signal to propagate back
+to the sender (i.e., we are interested in the
+channel’s RTT rather than just its one-way
+latency), then the sender can send up to
+two delay×bandwidth’s worth of data before
+hearing from the receiver that all is
+well. The bits in the pipe are said to be “in
+flight,” which means that if the receiver tells
+the sender to stop transmitting, it might receive
+up to a delay × bandwidth’s worth of
+46 1 Foundation
+data before the sender manages to respond.
+In our example above, that amount corresponds
+to 5.5 × 106 bits (671 KB) of data.
+On the other hand, if the sender does not fill
+the pipe—send a whole delay × bandwidth
+product’s worth of data before it stops to
+wait for a signal—the sender will not fully
+utilize the network.
+Note that most of the time we are
+interested in the RTT scenario, which we
+simply refer to as the delay × bandwidth
+product, without explicitly saying that
+this product is multiplied by two. Again,
+whether the “delay” in “delay × bandwidth”
+means one-way latency or RTT is
+made clear by the context.
+1.5.3 High-Speed Networks
+The bandwidths available on today’s networks
+are increasing at a dramatic rate, and
+there is eternal optimism that network bandwidth
+will continue to improve. This causes
+network designers to start thinking about
+what happens in the limit, or stated another
+way, what is the impact on network design
+of having infinite bandwidth available.
+Although high-speed networks bring
+a dramatic change in the bandwidth available
+to applications, in many respects their
+impact on how we think about networking
+comes in what does not change as bandwidth
+increases: the speed of light. To quote
+Scotty from Star Trek, “You cannae change
+the laws of physics.” In other words, “high
+speed” does not mean that latency improves
+at the same rate as bandwidth; the transcontinental
+RTT of a 1-Gbps link is the same
+100 ms as it is for a 1-Mbps link.
+10×106 bits per second. This is the
+interpretation we use throughout
+the book, unless explicitly stated
+otherwise.
+The good news is that many
+times we are satisfied with a
+back-of-the-envelope calculation,
+in which case it is perfectly reasonable
+to pretend that a byte has 10
+bits in it (making it easy to convert
+between bits and bytes) and that
+106 is really equal to 220 (making
+it easy to convert between the two
+definitions of mega). Notice that
+the first approximation introduces
+a 20% error, while the latter introduces
+only a 5% error.
+To help you in your quickand-
+dirty calculations, 100 ms is
+a reasonable number to use for a
+cross-country round-trip time—at
+least when the country in question
+is the United States—and 1 ms is
+a good approximation of an RTT
+across a local area network. In the
+case of the former, we increase the
+48-ms round-trip time implied by
+the speed of light over a fiber to
+100 ms because there are, as we
+have said, other sources of delay,
+such as the processing time in the
+switches inside the network. You
+can also be sure that the path taken
+by the fiber between two points will
+not be a straight line.
+1.5 Performance 47
+1-Mbps cross-country link
+1-Gbps cross-country link
+(b)
+1 MB
+.
+. .
+(a)
+Source
+Source
+.1 Mb
+.1 Mb
+.1 Mb
+.1 Mb
+Destination
+Destination
+Figure 1.23 Relationship between bandwidth and latency. With a 1-MB file, (a) the
+1-Mbps link has 80 pipes full of data; (b) the 1-Gbps link has 1/12 of one pipe full of
+data.
+To appreciate the significance of ever-increasing bandwidth in the face of fixed
+latency, consider what is required to transmit a 1-MB file over a 1-Mbps network
+versus over a 1-Gbps network, both of which have an RTT of 100 ms. In the case
+of the 1-Mbps network, it takes 80 round-trip times to transmit the file; during each
+RTT, 1.25% of the file is sent. In contrast, the same 1-MB file doesn’t even come close
+to filling 1 RTT’s worth of the 1-Gbps link, which has a delay × bandwidth product
+of 12.5 MB.
+Figure 1.23 illustrates the difference between the two networks. In effect, the
+1-MB file looks like a stream of data that needs to be transmitted across a 1-Mbps
+network, while it looks like a single packet on a 1-Gbps network. To help drive this
+point home, consider that a 1-MB file is to a 1-Gbps network what a 1-KB packet is
+to a 1-Mbps network.
+? Another way to think about the situation is that more data can be transmitted
+during each RTT on a high-speed network, so much so that a single RTT becomes a
+significant amount of time. Thus, while you wouldn’t think twice about the difference
+48 1 Foundation
+between a file transfer taking 101 RTTs rather than 100 RTTs (a relative difference
+of only 1%), suddenly the difference between 1 RTT and 2 RTTs is significant—a
+100% increase. In other words, latency, rather than throughput, starts to dominate
+our thinking about network design.
+Perhaps the best way to understand the relationship between throughput and
+latency is to return to basics. The effective end-to-end throughput that can be achieved
+over a network is given by the simple relationship
+Throughput = TransferSize/TransferTime
+where TransferTime includes not only the elements of one-way Latency identified earlier
+in this section, but also any additional time spent requesting or setting up the transfer.
+Generally, we represent this relationship as
+TransferTime = RTT + 1/Bandwidth × TransferSize
+We use RTT in this calculation to account for a request message being sent across the
+network and the data being sent back. For example, consider a situation where a user
+wants to fetch a 1-MB file across a 1-Gbps network with a round-trip time of 100 ms.
+The TransferTime includes both the transmit time for 1 MB (1/1 Gbps ×1MB = 8 ms),
+and the 100-ms RTT, for a total transfer time of 108 ms. This means that the effective
+throughput will be
+1 MB/108 ms = 74.1 Mbps
+not 1 Gbps. Clearly, transferring a larger amount of data will help improve the effective
+throughput, where in the limit, an infinitely large transfer size will cause the
+effective throughput to approach the network bandwidth. On the other hand, having
+to endure more than 1 RTT—for example, to retransmit missing packets—will hurt
+the effective throughput for any transfer of finite size and will be most noticeable for
+small transfers.
+1.5.4 Application Performance Needs
+The discussion in this section has taken a network-centric view of performance; that
+is, we have talked in terms of what a given link or channel will support. The unstated
+assumption has been that application programs have simple needs—they want as much
+bandwidth as the network can provide. This is certainly true of the aforementioned
+digital library program that is retrieving a 25-MB image; the more bandwidth that is
+available, the faster the program will be able to return the image to the user.
+However, some applications are able to state an upper limit on how much bandwidth
+they need. Video applications are a prime example. Suppose you want to stream
+1.5 Performance 49
+a video image that is one-quarter the size of a standard TV image; that is, it has a
+resolution of 352 by 240 pixels. If each pixel is represented by 24 bits of information,
+as would be the case for 24-bit color, then the size of each frame would be
+(352 × 240 × 24)/8 = 247.5 KB
+If the application needs to support a frame rate of 30 frames per second, then it might
+request a throughput rate of 75 Mbps. The ability of the network to provide more
+bandwidth is of no interest to such an application because it has only so much data to
+transmit in a given period of time.
+Unfortunately, the situation is not as simple as this example suggests. Because
+the difference between any two adjacent frames in a video stream is often small, it is
+possible to compress the video by transmitting only the differences between adjacent
+frames. This compressed video does not flow at a constant rate, but varies with time
+according to factors such as the amount of action and detail in the picture and the
+compression algorithm being used. Therefore, it is possible to say what the average
+bandwidth requirement will be, but the instantaneous rate may be more or less.
+The key issue is the time interval over which the average is computed. Suppose
+that this example video application can be compressed down to the point that it needs
+only 2 Mbps, on average. If it transmits 1 megabit in a 1-second interval and 3 megabits
+in the following 1-second interval, then over the 2-second interval it is transmitting at
+an average rate of 2 Mbps; however, this will be of little consolation to a channel that
+was engineered to support no more than 2 megabits in any one second. Clearly, just
+knowing the average bandwidth needs of an application will not always suffice.
+Generally, however, it is possible to put an upper bound on how big of a burst an
+application like this is likely to transmit. A burst might be described by some peak rate
+that is maintained for some period of time. Alternatively, it could be described as the
+number of bytes that can be sent at the peak rate before reverting to the average rate
+or some lower rate. If this peak rate is higher than the available channel capacity, then
+the excess data will have to be buffered somewhere, to be transmitted later. Knowing
+how big of a burst might be sent allows the network designer to allocate sufficient
+buffer capacity to hold the burst. We will return to the subject of describing bursty
+traffic accurately in Chapter 6.
+Analogous to the way an application’s bandwidth needs can be something other
+than “all it can get,” an application’s delay requirements may be more complex than
+simply “as little delay as possible.” In the case of delay, it sometimes doesn’t matter so
+much whether the one-way latency of the network is 100 ms or 500 ms as how much
+the latency varies from packet to packet. The variation in latency is called jitter.
+Consider the situation in which the source sends a packet once every 33 ms,
+as would be the case for a video application transmitting frames 30 times a second.
+50 1 Foundation
+Network
+{
+Interpacket gap
+Packet
+source
+Packet
+sink
+4 3 2 1 4 3 2 1
+Figure 1.24 Network-induced jitter.
+If the packets arrive at the destination spaced out exactly 33 ms apart, then we can
+deduce that the delay experienced by each packet in the network was exactly the same.
+If the spacing between when packets arrive at the destination—sometimes called the
+interpacket gap—is variable, however, then the delay experienced by the sequence of
+packets must have also been variable, and the network is said to have introduced
+jitter into the packet stream, as shown in Figure 1.24. Such variation is generally
+not introduced in a single physical link, but it can happen when packets experience
+different queuing delays in a multihop packet-switched network. This queuing delay
+corresponds to the Queue component of latency defined earlier in this section, which
+varies with time.
+To understand the relevance of jitter, suppose that the packets being transmitted
+over the network contain video frames, and in order to display these frames on the
+screen the receiver needs to receive a new one every 33 ms. If a frame arrives early,
+then it can simply be saved by the receiver until it is time to display it. Unfortunately,
+if a frame arrives late, then the receiver will not have the frame it needs in time to
+update the screen, and the video quality will suffer; it will not be smooth. Note that it
+is not necessary to eliminate jitter, only to know how bad it is. The reason for this is
+that if the receiver knows the upper and lower bounds on the latency that a packet can
+experience, it can delay the time at which it starts playing back the video (i.e., displays
+the first frame) long enough to ensure that in the future it will always have a frame to
+display when it needs it. The receiver delays the frame, effectively smoothing out the
+jitter, by storing it in a buffer. We return to the topic of jitter in Chapter 9.
+1.6 Summary
+Computer networks like the Internet have experienced enormous growth over the
+past decade and are now positioned to provide a wide range of services—remote file
+access, digital libraries, videoconferencing—to hundreds of millions of users. Much
+of this growth can be attributed to the general-purpose nature of computer networks,
+and in particular to the ability to add new functionality to the network by writing
+Open Issue: Ubiquitous Networking 51
+software that runs on affordable, high-performance computers. With this in mind,
+the overriding goal of this book is to describe computer networks in such a way that
+when you finish reading it, you should feel that if you had an army of programmers
+at your disposal, you could actually build a fully functional computer network from
+the ground up. This chapter lays the foundation for realizing this goal.
+The first step we have taken toward this goal is to carefully identify exactly
+what we expect from a network. For example, a network must first provide costeffective
+connectivity among a set of computers. This is accomplished through a nested
+interconnection of nodes and links, and by sharing this hardware base through the use
+of statistical multiplexing. This results in a packet-switched network, on top of which
+we then define a collection of process-to-process communication services.
+The second step is to define a layered architecture that will serve as a blueprint for
+our design. The central objects of this architecture are network protocols. Protocols
+both provide a communication service to higher-level protocols and define the form
+and meaning of messages exchanged with their peers running on other machines. We
+have briefly surveyed two of the most widely used architectures: the OSI architecture
+and the Internet architecture. This book most closely follows the Internet architecture,
+both in its organization and as a source of examples.
+The third step is to implement the network’s protocols and application programs,
+usually in software. Both protocols and applications need an interface by which they
+invoke the services of other protocols in the network subsystem. The socket interface is
+the most widely used interface between application programs and the network subsystem,
+but a slightly different interface is typically used within the network subsystem.
+Finally, the network as a whole must offer high performance, where the two
+performance metrics we are most interested in are latency and throughput. As we will
+see in later chapters, it is the product of these two metrics—the so-called delay ×
+bandwidth product—that often plays a critical role in protocol design.
+There is little doubt that computer
+networks are becoming an integral
+part of the everyday lives of vast
+numbers of people. What began over
+20 years ago as experimental systems
+like the ARPANET—connecting
+mainframe computers over long-
+O P E N I S S U E
+Ubiquitous Networking
+distance telephone lines—has turned into big business. And where there is big business,
+there are lots of players. In this case, there is the computing industry, which has
+52 1 Foundation
+become increasingly involved in supporting packet-switched networking products; the
+telephone carriers, which recognize the market for carrying all sorts of data, not just
+voice; and the cable TV industry, which currently owns the entertainment portion of
+the market.
+Assuming that the goal is ubiquitous networking—to bring the network into
+every household—the first problem that must be addressed is how to establish the
+necessary physical links. Although it could be argued that the ultimate answer is to
+bring an optical fiber into every home, at an estimated $1000 per house and 100 million
+homes in the U.S. alone, this is a $100 billion proposition. The most widely discussed
+alternatives make use of either the existing cable TV facilities or the copper pairs used
+to deliver telephone service. Each of these approaches has its own set of problems. For
+example, today’s cable facilities are asymmetric—you can deliver 150 channels into
+every home, but the outgoing bandwidth is severely limited. Such asymmetry implies
+that there are a small number of information providers, but that most of us are simply
+information consumers. Many people would argue that in a democracy we should
+all have an equal opportunity to provide information. Digital subscriber line (DSL)
+technology need not be asymmetric, but can only offer high-bandwidth connections
+to a subset of consumers over the existing telephone wires.
+How the struggle between the computer companies, the telephone companies,
+and the cable industry will play out in the marketplace is anyone’s guess. (If we knew
+the answer, we’d be charging a lot more for this book.) All we know is that there
+are many technical obstacles—issues of connectivity, levels of service, performance,
+reliability, and fairness—that stand between the current state of the art and the sort of
+global, ubiquitous, heterogeneous network that we believe is possible and desirable.
+It is these challenges that are the focus of this book.
+F U R T H E R R E A D I N G
+Computer networks are not the first communication-oriented technology to have
+found their way into the everyday fabric of our society. For example, the early part
+of this century saw the introduction of the telephone, and then during the 1950s television
+became widespread. When considering the future of networking—how widely
+it will spread and how we will use it—it is instructive to study this history. Our first
+reference is a good starting point for doing this (the entire issue is devoted to the first
+100 years of telecommunications).
+The second and third papers are the seminal papers on the OSI and Internet
+architectures, respectively. The Zimmerman paper introduces the OSI architecture, and
+the Clark paper is a retrospective. The final two papers are not specific to networking,
+Further Reading 53
+but ones that every systems person should read. The Saltzer et al. paper motivates
+and describes one of the most widely applied rules of system design—the end-to-end
+argument. The paper by Mashey describes the thinking behind RISC architectures; as
+we will soon discover, making good judgments about where to place functionality in
+a complex system is what system design is all about.
+¦ Pierce, J. Telephony—a personal view. IEEE Communications 22(5):116–120,
+May 1984.
+¦ Zimmerman, H. OSI reference model—the ISO model of architecture for
+open systems interconnection. IEEE Transactions on Communications COM-
+28(4):425–432, April 1980.
+¦ Clark, D. The design philosophy of the DARPA Internet protocols. Proceed-
+ings of the SIGCOMM ’88 Symposium, pages 106–114, August 1988.
+¦ Saltzer, J., D. Reed, and D. Clark. End-to-end arguments in system design.
+ACM Transactions on Computer Systems 2(4):277–288, November 1984.
+¦ Mashey, J. RISC, MIPS, and the motion of complexity. UniForum 1986 Con-
+ference Proceedings, pages 116–124, 1986.
+Several texts offer an introduction to computer networking: Stallings gives an
+encyclopedic treatment of the subject, with an emphasis on the lower levels of the OSI
+hierarchy [Sta00a]; Tanenbaum uses the OSI architecture as an organizational model
+[Tan02]; Comer gives an overview of the Internet architecture [Com00]; and Bertsekas
+and Gallager discuss networking from a performance modeling perspective [BG92].
+To put computer networking into a larger context, two books—one dealing
+with the past and the other looking toward the future—are must reading. The first is
+Holzmann and Pehrson’s The Early History of Data Networks [HP95]. Surprisingly,
+many of the ideas covered in the book you are now reading were invented during
+the 1700s. The second is Realizing the Information Future: The Internet and Beyond,
+a book prepared by the Computer Science and Telecommunications Board of the
+National Research Council [NRC94].
+To follow the history of the Internet from its beginning, you are encouraged to
+peruse the Internet’s Request for Comments (RFC) series of documents. These documents,
+which include everything from the TCP specification to April Fools’ jokes, are
+retrievable at http://www.ietf.org/rfc.html. For example, the protocol specifications for
+TCP, UDP, and IP are available in RFC 793, 768, and 791, respectively.
+To gain a better appreciation for the Internet philosophy and culture, two references
+are must reading; both are also quite entertaining. Padlipsky gives a good
+description of the early days, including a pointed comparison of the Internet and OSI
+54 1 Foundation
+architectures [Pad85]. For a more up-to-date account of what really happens behind
+the scenes at the Internet Engineering Task Force, we recommend Boorsook’s article
+[Boo95].
+There are a wealth of articles discussing various aspects of protocol implementations.
+A good starting point is to understand two complete protocol implementation
+environments: the Stream mechanism from System V Unix [Rit84] and the x-kernel
+[HP91]. In addition, [LMKQ89] and [SW95] describe the widely used Berkeley Unix
+implementation of TCP/IP.
+More generally, there is a large body of work addressing the issue of structuring
+and optimizing protocol implementations. Clark was one of the first to discuss the
+relationship between modular design and protocol performance [Cla82]. Later papers
+then introduce the use of upcalls in structuring protocol code [Cla85] and study
+the processing overheads in TCP [CJRS89]. Finally, [WM87] describes how to gain
+efficiency through appropriate design and implementation choices.
+Several papers have introduced specific techniques and mechanisms that can be
+used to improve protocol performance. For example, [HMPT89] describes some of
+the mechanisms used in the x-kernel, [MD93] discusses various implementations of
+demultiplexing tables, [VL87] introduces the timing wheel mechanism used to manage
+protocol events, and [DP93] describes an efficient buffer management strategy. Also,
+the performance of protocols running on parallel processors—locking is a key issue in
+such environments—is discussed in [BG93] and [NYKT94].
+Because many aspects of protocol implementation depend on an understanding
+of the basics of operating systems, we recommend Finkel [Fin88], Bic and Shaw [BS88],
+and Tanenbaum [Tan01] for an introduction to OS concepts.
+Finally, we conclude the “Further Reading” section of each chapter with a set
+of live references, that is, URLs for locations on the World Wide Web where you can
+learn more about the topics discussed in that chapter. Since these references are live,
+it is possible that they will not remain active for an indefinite period of time. For this
+reason, we limit the set of live references at the end of each chapter to sites that either
+export software, provide a service, or report on the activities of an ongoing working
+group or standardization body. In other words, we only give URLs for the kinds of
+material that cannot easily be referenced using standard citations. For this chapter, we
+include four live references:
+¦ http://www.mkp.com: information about this book, including supplements,
+addendums, and so on
+¦ http://www.acm.org/sigcomm/sos.html: status of various networking standards,
+including those of the IETF, ISO, and IEEE
+Exercises 55
+¦ http://www.ietf.org/: information about the IETF and its working groups
+¦ http://www.cs.columbia.edu/˜ hgs/netbib/: searchable bibliography of networkrelated
+research papers
+E X E R C I S E S
+1 Use anonymous FTP to connect to ftp.isi.edu (directory in-notes), and retrieve the
+RFC index. Also retrieve the protocol specifications for TCP, IP, and UDP.
+2 Look up the Web site
+http://www.cs.princeton.edu/nsg
+Here you can read about current network research under way at Princeton University
+and see a picture of author Larry Peterson. Follow links to find a picture
+of author Bruce Davie.
+3 Use a Web search tool to locate useful, general, and noncommercial information
+about the following topics: MBone, ATM, MPEG, IPv6, and Ethernet.
+4 The Unix utility whois can be used to find the domain name corresponding to
+an organization, or vice versa. Read the man page documentation for whois and
+experiment with it. Try whois princeton.edu and whois princeton, for starters.
+5 Calculate the total time required to transfer a 1000-KB file in the following cases,
+assuming an RTT of 100 ms, a packet size of 1 KB and an initial 2 × RTT of
+“handshaking” before data is sent.
+(a) The bandwidth is 1.5 Mbps, and data packets can be sent continuously.
+(b) The bandwidth is 1.5 Mbps, but after we finish sending each data packet we
+must wait one RTT before sending the next.
+(c) The bandwidth is “infinite,” meaning that we take transmit time to be zero,
+and up to 20 packets can be sent per RTT.
+(d) The bandwidth is infinite, and during the first RTT we can send one packet
+(21-1), during the secondRTT we can send two packets (22-1), during the third
+we can send four (23-1), and so on. (A justification for such an exponential
+increase will be given in Chapter 6.)
+56 1 Foundation
+6 Calculate the total time required to transfer a 1.5-MB file in the following cases,
+assuming an RTT of 80 ms, a packet size of 1 KB and an initial 2×RTT of “handshaking”
+before data is sent.
+(a) The bandwidth is 10 Mbps, and data packets can be sent continuously.
+(b) The bandwidth is 10 Mbps, but after we finish sending each data packet we
+must wait one RTT before sending the next.
+(c) The link allows infinitely fast transmit, but limits bandwidth such that only
+20 packets can be sent per RTT.
+(d) Zero transmit time as in (c), but during the first RTT we can send one packet,
+during the second RTT we can send two packets, during the third we can send
+four = 23-1, and so on. (A justification for such an exponential increase will
+be given in Chapter 6.)
+7 Consider a point-to-point link 2 km in length. At what bandwidth would propagation
+delay (at a speed of 2×108 m/s) equal transmit delay for 100-byte packets?
+What about 512-byte packets?
+8 Consider a point-to-point link 50 km in length. At what bandwidth would propagation
+delay (at a speed of 2×108 m/s) equal transmit delay for 100-byte packets?
+What about 512-byte packets?
+9 What properties of postal addresses would be likely to be shared by a network
+addressing scheme? What differences might you expect to find? What properties
+of telephone numbering might be shared by a network addressing scheme?
+10 One property of addresses is that they are unique; if two nodes had the same
+address it would be impossible to distinguish between them. What other properties
+might be useful for network addresses to have? Can you think of any situations
+in which network (or postal or telephone) addresses might not be unique?
+11 Give an example of a situation in which multicast addresses might be beneficial.
+12 What differences in traffic patterns account for the fact that STDM is a costeffective
+form of multiplexing for a voice telephone network and FDM is a costeffective
+form of multiplexing for television and radio networks, yet we reject both
+as not being cost-effective for a general-purpose computer network?
+13 How “wide” is a bit on a 1-Gbps link? How long is a bit in copper wire, where
+the speed of propagation is 2.3 × 108 m/s?
+Exercises 57
+14 How long does it take to transmit x KB over a y-Mbps link? Give your answer as
+a ratio of x and y.
+15 Suppose a 100-Mbps point-to-point link is being set up between Earth and a new
+lunar colony. The distance from the moon to Earth is approximately 385,000 km,
+and data travels over the link at the speed of light—3 × 108 m/s.
+(a) Calculate the minimum RTT for the link.
+(b) Using the RTT as the delay, calculate the delay × bandwidth product for the
+link.
+(c) What is the significance of the delay × bandwidth product computed in (b)?
+(d) A camera on the lunar base takes pictures of Earth and saves them in digital
+format to disk. Suppose Mission Control on Earth wishes to download the
+most current image, which is 25 MB. What is the minimum amount of time
+that will elapse between when the request for the data goes out and the transfer
+is finished?
+16 Suppose a 128-Kbps point-to-point link is set up between Earth and a rover on
+Mars. The distance from Earth to Mars (when they are closest together) is approximately
+55 Gm, and data travels over the link at the speed of light—3 × 108 m/s.
+(a) Calculate the minimum RTT for the link.
+(b) Calculate the delay × bandwidth product for the link.
+(c) A camera on the rover takes pictures of its surroundings and sends these to
+Earth. How quickly after a picture is taken can it reach Mission Control on
+Earth? Assume that each image is 5Mb in size.
+17 For each of the following operations on a remote file server, discuss whether they
+are more likely to be delay sensitive or bandwidth sensitive.
+(a) Open a file.
+(b) Read the contents of a file.
+(c) List the contents of a directory.
+(d) Display the attributes of a file.
+18 Calculate the latency (from first bit sent to last bit received) for the following:
+(a) 10-Mbps Ethernet with a single store-and-forward switch in the path, and
+a packet size of 5000 bits. Assume that each link introduces a propagation
+delay of 10 µs and that the switch begins retransmitting immediately after it
+has finished receiving the packet.
+58 1 Foundation
+(b) Same as (a) but with three switches.
+(c) Same as (a) but assume the switch implements “cut-through” switching: It is
+able to begin retransmitting the packet after the first 200 bits have been
+received.
+19 Calculate the latency (from first bit sent to last bit received) for the following:
+(a) 1-Gbps Ethernet with a single store-and-forward switch in the path, and a
+packet size of 5000 bits. Assume that each link introduces a propagation delay
+of 10 µs and that the switch begins retransmitting immediately after it has
+finished receiving the packet.
+(b) Same as (a) but with three switches.
+(c) Same as (b) but assume the switch implements “cut-through” switching: It
+is able to begin retransmitting the packet after the first 128 bits have been
+received.
+20 Calculate the effective bandwidth for the following cases. For (a) and (b) assume
+there is a steady supply of data to send; for (c) simply calculate the average over
+12 hours.
+(a) 10-Mbps Ethernet through three store-and-forward switches as in Exercise
+18(b). Switches can send on one link while receiving on the other.
+(b) Same as (a) but with the sender having to wait for a 50-byte acknowledgment
+packet after sending each 5000-bit data packet.
+(c) Overnight (12-hour) shipment of 100 compact disks (650 MB each).
+21 Calculate the bandwidth × delay product for the following links. Use one-way
+delay, measured from first bit sent to first bit received.
+(a) 10-Mbps Ethernet with a delay of 10 µs.
+(b) 10-Mbps Ethernet with a single store-and-forward switch like that of
+Exercise 18(a), packet size 5000 bits, and 10 µs per link propagation delay.
+(c) 1.5-Mbps T1 link, with a transcontinental one-way delay of 50 ms.
+(d) 1.5-Mbps T1 link through a satellite in geosynchronous orbit, 35,900 km
+high. The only delay is speed-of-light propagation delay.
+22 Hosts A and B are each connected to a switch S via 10-Mbps links as in
+Figure 1.25. The propagation delay on each link is 20 µs. S is a store-andforward
+device; it begins retransmitting a received packet 35 µs after it has finished
+receiving it. Calculate the total time required to transmit 10,000 bits from
+A to B
+Exercises 59
+A S B
+Figure 1.25 Diagram for Exercise 22.
+(a) as a single packet
+(b) as two 5000-bit packets sent one right after the other
+23 Suppose a host has a 1-MB file that is to be sent to another host. The file takes
+1 second of CPU time to compress 50%, or 2 seconds to compress 60%.
+(a) Calculate the bandwidth at which each compression option takes the same
+total compression + transmission time.
+(b) Explain why latency does not affect your answer.
+24 Suppose that a certain communications protocol involves a per-packet overhead
+of 100 bytes for headers and framing. We send 1 million bytes of data using this
+protocol; however, one data byte is corrupted and the entire packet containing it
+is thus lost. Give the total number of overhead + loss bytes for packet data sizes
+of 1000, 5000, 10,000, and 20,000 bytes. Which size is optimal?
+25 Assume you wish to transfer an n-byte file along a path composed of the source,
+destination, seven point-to-point links, and five switches. Suppose each link has a
+propagation delay of 2 ms, bandwidth of 4 Mbps, and that the switches support
+both circuit and packet switching. Thus you can either break the file up into 1-KB
+packets, or set up a circuit through the switches and send the file as one contiguous
+bit stream. Suppose that packets have 24 bytes of packet header information and
+1000 bytes of payload, that store-and-forward packet processing at each switch
+incurs a 1-ms delay after the packet has been completely received, that packets
+may be sent continuously without waiting for acknowledgments, and that circuit
+setup requires a 1-KB message to make one round-trip on the path incurring a
+1-ms delay at each switch after the message has been completely received. Assume
+switches introduce no delay to data traversing a circuit. You may also assume that
+file size is a multiple of 1000 bytes.
+(a) For what file size n bytes is the total number of bytes sent across the network
+less for circuits than for packets?
+(b) For what file size n bytes is the total latency incurred before the entire file
+arrives at the destination less for circuits than for packets?
+60 1 Foundation
+(c) How sensitive are these results to the number of switches along the path? To
+the bandwidth of the links? To the ratio of packet size to packet header size?
+(d) How accurate do you think this model of the relative merits of circuits and
+packets is? Does it ignore important considerations that discredit one or the
+other approach? If so, what are they?
+26 Consider a closed-loop network (e.g., token ring) with bandwidth 100 Mbps and
+propagation speed of 2 × 108 m/s. What would the circumference of the loop be
+to exactly contain one 250-byte packet, assuming nodes do not introduce delay?
+What would the circumference be if there was a node every 100 m, and each node
+introduced 10 bits of delay?
+27 Compare the channel requirements for voice traffic with the requirements for the
+real-time transmission of music, in terms of bandwidth, delay, and jitter. What
+would have to improve? By approximately how much? Could any channel requirements
+be relaxed?
+28 For the following, assume that no data compression is done; this would in practice
+almost never be the case. For (a)–(c), calculate the bandwidth necessary for
+transmitting in real time:
+(a) Video at a resolution of 640 × 480, 3 bytes/pixel, 30 frames/second.
+(b) 160 × 120 video, 1 byte/pixel, 5 frames/second.
+(c) CD-ROM music, assuming one CD holds 75 minutes’ worth and takes
+650 MB.
+(d) Assume a fax transmits an 8×10-inch black-and-white image at a resolution
+of 72 pixels per inch. How long would this take over a 14.4-Kbps modem?
+29 For the following, as in the previous problem, assume that no data compression
+is done. Calculate the bandwidth necessary for transmitting in real time:
+(a) HDTV high-definition video at a resolution of 1920 × 1080, 24 bits/pixel,
+30 frames/second.
+(b) POTS (plain old telephone service) voice audio of 8-bit samples at 8 KHz.
+(c) GSM mobile voice audio of 260-bit samples at 50 Hz.
+(d) HDCD high-definition audio of 24-bit samples at 88.2 KHz.
+30 Discuss the relative performance needs of the following applications, in terms of
+average bandwidth, peak bandwidth, latency, jitter, and loss tolerance:
+Exercises 61
+(a) File server
+(b) Print server
+(c) Digital library
+(d) Routine monitoring of remote weather instruments
+(e) Voice
+(f) Video monitoring of a waiting room
+(g) Television broadcasting
+31 Suppose a shared mediumMoffers to hosts A1, A2, . . ., AN in round-robin fashion
+an opportunity to transmit one packet; hosts that have nothing to send immediately
+relinquish M. How does this differ from STDM? How does network utilization
+of this scheme compare with STDM?
+32 Consider a simple protocol for transferring files over a link. After some initial
+negotiation, A sends data packets of size 1 KB to B; B then replies with an acknowledgment.
+A always waits for each ACK before sending the next data packet;
+this is known as stop-and-wait. Packets that are overdue are presumed lost and
+are retransmitted.
+(a) In the absence of any packet losses or duplications, explain why it is not
+necessary to include any “sequence number” data in the packet headers.
+(b) Suppose that the link can lose occasional packets, but that packets that do
+arrive always arrive in the order sent. Is a 2-bit sequence number (that is, N
+mod 4) enough for A and B to detect and resend any lost packets? Is a 1-bit
+sequence number enough?
+(c) Now suppose that the link can deliver out of order, and that sometimes a
+packet can be delivered as much as 1 minute after subsequent packets. How
+does this change the sequence number requirements?
+33 Suppose hosts A and B are connected by a link. Host A continuously transmits the
+current time from a high-precision clock, at a regular rate, fast enough to consume
+all the available bandwidth. Host B reads these time values and writes them each
+paired with its own time from a local clock synchronized with A’s. Give qualitative
+examples of B’s output assuming the link has
+(a) high bandwidth, high latency, low jitter
+(b) low bandwidth, high latency, high jitter
+(c) high bandwidth, low latency, low jitter, occasional lost data
+62 1 Foundation
+For example, a link with zero jitter, a bandwidth high enough to write on every
+other clock tick, and a latency of 1 tick might yield something like (0000, 0001),
+(0002, 0003), (0004, 0005).
+34 Obtain and build the simplex-talk sample socket program shown in the text. Start
+one server and one client, in separate windows. While the first client is running,
+start 10 other clients that connect to the same server; these other clients should
+most likely be started in the background with their input redirected from a file.
+What happens to these 10 clients? Do their connect()s fail, or time out, or succeed?
+Do any other calls block? Now let the first client exit. What happens? Try this
+with the server value MAX PENDING set to 1 as well.
+35 Modify the simplex-talk socket program so that each time the client sends a line
+to the server, the server sends the line back to the client. The client (and server)
+will now have to make alternating calls to recv() and send().
+36 Modify the simplex-talk socket program so that it uses UDP as the transport protocol,
+rather than TCP. You will have to change SOCK STREAM to SOCK DGRAM
+in both client and server. Then, in the server, remove the calls to listen() and accept(),
+and replace the two nested loops at the end with a single loop that calls
+recv() with socket s. Finally, see what happens when two such UDP clients simultaneously
+connect to the same UDP server, and compare this to the TCP behavior.
+37 Investigate the different options and parameters that you can set for a TCP connection.
+(Do man tcp on Unix.) Experiment with various parameter settings to see
+how they affect TCP performance.
+38 The Unix utility ping can be used to find the RTT to various Internet hosts. Read
+the man page for ping, and use it to find the RTT to www.cs.princeton.edu in New
+Jersey andwww.cisco.com in California. Measure theRTT values at different times
+of day, and compare the results. What do you think accounts for the differences?
+39 The Unix utility traceroute, or its Windows equivalent tracert, can be used to find
+the sequence of routers through which a message is routed. Use this to find the
+path from your site to some others. How well does the number of hops correlate
+with the RTT times from ping? How well does the number of hops correlate with
+geographical distance?
+40 Use traceroute, above, to map out some of the routers within your organization
+(or to verify none are used).
+This Page Intentionally Left Blank
+Direct Link Networks
+It is a mistake to look too far ahead. Only one link in the chain of
+destiny can be handled at a time.
+—Winston Churchill
+The simplest network possible is one in which all the hosts are directly connected
+by some physical medium. This may be a wire or a fiber, and it may cover a small
+area (e.g., an office building) or a wide area (e.g., transcontinental). Connecting
+two or more nodes with a suitable medium is only the first step, however. There are
+five additional problems that must be addressed before the nodes can successfully
+exchange packets.
+P R O B L E M
+Physically Connecting Hosts
+The first is encoding bits onto the
+wire or fiber so that they can be understood
+by a receiving host. Second
+is the matter of delineating the
+sequence of bits transmitted over the
+link into complete messages that can
+be delivered to the end node. This is
+called the framing problem, and the messages delivered to the end hosts are often
+called frames. Third, because frames are sometimes corrupted during transmission, it
+is necessary to detect these errors and take the appropriate action; this is the error
+detection problem. The fourth issue is making a link appear reliable in spite of the
+fact that it corrupts frames from time to time. Finally, in those cases where the link is
+shared by multiple hosts—as opposed to a simple point-to-point link—it is necessary
+to mediate access to this link. This is the media access control problem.
+Although these five issues—encoding, framing, error detection, reliable delivery,
+and access mediation—can be discussed in the abstract, they are very real problems
+that are addressed in different ways by different networking technologies. This chapter
+considers these issues in the context of four specific network technologies: point-topoint
+links, Carrier Sense Multiple Access (CSMA) networks (of which Ethernet is the
+most famous example), token rings (of which IEEE Standard 802.5 and FDDI are the
+2 most famous examples), and wireless (for which 802.11 is
+an emerging standard). The goal of this chapter is simultaneously
+to survey the available network technology and
+to explore these five fundamental issues.
+Before tackling the specific issues of connecting hosts,
+this chapter begins by examining the building blocks that
+will be used: nodes and links. We then explore the first
+three issues—encoding, framing, and error detection—in
+the context of a simple point-to-point link. The techniques
+introduced in these three sections are general and therefore
+apply equally well to multiple-access networks. The
+problem of reliable delivery is considered next. Since linklevel
+reliability is usually not implemented in shared-access
+networks, this discussion focuses on point-to-point links
+only. Finally, we address the media access problem in the
+context of CSMA, token rings, and wireless.
+Note that these five functions are, in general, implemented
+in a network adaptor—a board that plugs into a
+host’s I/O bus on one end and into the physical medium
+on the other end. In other words, bits are exchanged between
+adaptors, but correct frames are exchanged between
+nodes. This adaptor is controlled by software running on
+the node—the device driver—which, in turn, is typically
+represented as the bottom protocol in a protocol graph.
+This chapter concludes with a concrete example of a network
+adaptor and sketches the device driver for such an
+adaptor.
+66 2 Direct Link Networks
+2.1 Hardware Building Blocks
+As we saw in Chapter 1, networks are constructed from two classes of hardware
+building blocks: nodes and links. This statement is just as true for the simplest possible
+network—one in which a single point-to-point link connects a pair of nodes—as it is for
+a worldwide internet. This section gives a brief overview of what we mean by nodes
+and links and, in so doing, defines the underlying technology that we will assume
+throughout the rest of this book.
+2.1.1 Nodes
+Nodes are often general-purpose computers, like a desktop workstation, a multiprocessor,
+or a PC. For our purposes, let’s assume it’s a workstation-class machine. This
+workstation can serve as a host that users run application programs on, it might be
+used inside the network as a switch that forwards messages from one link to another,
+or it might be configured as a router that forwards internet packets from one network
+to another. In some cases, a network node—most commonly a switch or router inside
+the network, rather than a host—is implemented by special-purpose hardware. This
+is usually done for reasons of performance and cost: It is generally possible to build
+custom hardware that performs a particular function faster and cheaper than a generalpurpose
+processor can perform it. When this happens, we will first describe the basic
+function being performed by the node as though this function is being implemented
+in software on a general-purpose workstation, and then explain why and how this
+functionality might instead be implemented by special hardware.
+Although we could leave it at that, it is useful to know a little bit about what a
+workstation looks like on the inside. This information becomes particularly important
+when we become concerned about how well the network performs. Figure 2.1 gives
+a simple block diagram of the workstation-class machine we assume throughout this
+book. There are three key features of this figure that are worth noting.
+First, the memory on any given machine is finite. It may be 4 MB or it may be
+128 MB, but it is not infinite. As pointed out in Section 1.2.2, this is important because
+memory turns out to be one of the two scarce resources in the network (the other is
+link bandwidth) that must be carefully managed if we are to provide a fair amount of
+network capacity to each user. Memory is a scarce resource because on a node that
+serves as a switch or router, packets must be buffered in memory while waiting their
+turn to be transmitted over an outgoing link.
+Second, each node connects to the network via a network adaptor. This adaptor
+generally sits on the system’s I/O bus and delivers data between the workstation’s
+memory and the network link. A software module running on the workstation—the
+device driver—manages this adaptor. It issues commands to the adaptor, telling it,
+2.1 Hardware Building Blocks 67
+I/O bus
+(To network)
+CPU
+Memory
+Network
+adaptor
+Cache
+Figure 2.1 Example workstation architecture.
+for example, from what memory location outgoing data should be transmitted and
+into what memory location incoming data should be stored. Adaptors are discussed
+in more detail in Section 2.9.
+Finally, while CPUs are becoming faster at an unbelievable pace, the same is
+not true of memory. Recent performance trends show processor speeds doubling every
+18 months, but memory latency improving at a rate of only7%each year. The relevance
+of this difference is that as a network node, a workstation runs at memory speeds, not
+processor speeds, to a first approximation. This means that the network software needs
+to be careful about how it uses memory and, in particular, about how many times it
+accesses memory as it processes each message. We do not have the luxury of being
+sloppy just because processors are becoming infinitely fast.
+2.1.2 Links
+Network links are implemented on a variety of different physical media, including
+twisted pair (the wire that your phone connects to), coaxial cable (the wire that your
+TV connects to), optical fiber (the medium most commonly used for high-bandwidth,
+long-distance links), and space (the stuff that radio waves, microwaves, and infrared
+beams propagate through). Whatever the physical medium, it is used to propagate
+signals. These signals are actually electromagnetic waves traveling at the speed of
+light. (The speed of light is, however, medium dependent—electromagnetic waves
+traveling through copper and fiber do so at about two-thirds the speed of light in a
+vacuum.)
+68 2 Direct Link Networks
+One important property of an electromagnetic wave is the frequency, measured in
+hertz, with which the wave oscillates. The distance between a pair of adjacent maxima
+or minima of a wave, typically measured in meters, is called the wave’s wavelength.
+Since all electromagnetic waves travel at the speed of light, that speed divided by the
+wave’s frequency is equal to its wavelength. We have already seen the example of a
+voice-grade telephone line, which carries continuous electromagnetic signals ranging
+between 300 Hz and 3300 Hz; a 300-Hz wave traveling through copper would have
+a wavelength of
+SpeedOfLightInCopper ÷ Frequency
+= 2/3 × 3 × 108 ÷ 300
+= 667 × 103 meters
+Generally, electromagnetic waves span a much wider range of frequencies, ranging
+from radio waves, to infrared light, to visible light, to X rays and gamma rays. Figure
+2.2 depicts the electromagnetic spectrum and shows which media are commonly used
+to carry which frequency bands.
+So far we understand a link to be a physical medium carrying signals in the form
+of electromagnetic waves. Such links provide the foundation for transmitting all sorts
+of information, including the kind of data we are interested in transmitting—binary
+data (1s and 0s). We say that the binary data is encoded in the signal. The problem of
+encoding binary data onto electromagnetic signals is a complex topic. To help make
+the topic more manageable, we can think of it as being divided into two layers. The
+lower layer is concerned with modulation—varying the frequency, amplitude, or phase
+of the signal to effect the transmission of information. A simple example of modulation
+Radio Microwave Infrared UV
+f(Hz)
+FM
+Coax
+Satellite
+TV
+AM Terrestrial microwave
+Fiber optics
+X ray
+100
+104 105 106 107 108 109 1010 1011 1012 1013 1014 1015 1016
+102 106 108 1010 1012 1014 1016 1018 1020 1022 1024 104
+Gamma ray
+Figure 2.2 Electromagnetic spectrum.
+2.1 Hardware Building Blocks 69
+is to vary the power (amplitude) of a single wavelength. Intuitively, this is equivalent
+to turning a light on and off. Because the issue of modulation is secondary to our
+discussion of links as a building block for computer networks, we simply assume
+that it is possible to transmit a pair of distinguishable signals—think of them as a
+“high” signal and a “low” signal—and we consider only the upper layer, which is
+concerned with the much simpler problem of encoding binary data onto these two
+signals. Section 2.2 discusses such encodings.
+Another attribute of a link is how many bit streams can be encoded on it at
+a given time. If the answer is only one, then the nodes connected to the link must
+share access to the link. This is the case for the multiple-access links described in
+Sections 2.6 and 2.7. For point-to-point links, however, it is often the case that two bit
+streams can be simultaneously transmitted over the link at the same time, one going in
+each direction. Such a link is said to be full-duplex. A point-to-point link that supports
+data flowing in only one direction at a time—such a link is called half-duplex—requires
+that the two nodes connected to the link alternate using it. For the purposes of this
+book, we assume that all point-to-point links are full-duplex.
+The only other property of a link that we are interested in at this stage is a very
+pragmatic one—how do you go about getting one? The answer depends on how far
+the link needs to reach, how much money you have to spend, and whether or not you
+know how to operate earth-moving equipment. The following is a survey of different
+link types you might use to build a computer network.
+Cables
+If the nodes you want to connect are in the same room, in the same building, or even
+on the same site (e.g., a campus), then you can buy a piece of cable and physically
+string it between the nodes. Exactly what type of cable you choose to install depends
+on the technology you plan to use to transmit data over the link; we’ll see several
+examples later in this chapter. For now, a list of the common cable (fiber) types is
+given in Table 2.1.
+Of these, Category 5 (Cat-5) twisted pair—it uses a thicker gauge than the twisted
+pair you find in your home—is quickly becoming the within-building norm. Because
+of the difficulty and cost in pulling new cable through a building, every effort is made
+to make new technologies use existing cable; Gigabit Ethernet, for example, has been
+designed to run over Cat-5 wiring. Fiber is typically used to connect buildings at a site.
+Leased Lines
+If the two nodes you want to connect are on opposite sides of the country, or even
+across town, then it is not practical to install the link yourself. Your only option is to
+lease a dedicated link from the telephone company, in which case all you’ll need to be
+able to do is conduct an intelligent conversation with the phone company customer
+70 2 Direct Link Networks
+Cable Typical Bandwidths Distances
+Category 5 twisted pair 10–100 Mbps 100 m
+Thin-net coax 10–100 Mbps 200 m
+Thick-net coax 10–100 Mbps 500 m
+Multimode fiber 100 Mbps 2 km
+Single-mode fiber 100–2400 Mbps 40 km
+Table 2.1 Common types of cables and fibers available for local links.
+Service Bandwidth
+DS1 1.544 Mbps
+DS3 44.736 Mbps
+STS-1 51.840 Mbps
+STS-3 155.250 Mbps
+STS-12 622.080 Mbps
+STS-48 2.488320 Gbps
+STS-192 9.953280 Gbps
+Table 2.2 Common bandwidths available from the carriers.
+service representative. Table 2.2 gives the common services that can be leased from
+the phone company. Again, more details are given throughout this chapter.
+While these bandwidths appear somewhat arbitrary, there is actually some
+method to the madness. DS1 and DS3 (they are also sometimes called T1 and T3,
+respectively) are relatively old technologies that were orginally defined for copperbased
+transmission media. DS1 is equal to the aggregation of 24 digital voice circuits of
+64 Kbps each, and DS3 is equal to 28 DS1 links. All the STS-N links are for optical fiber
+(STS stands for Synchronous Transport Signal). STS-1 is the base link speed, and each
+STS-N has N times the bandwidth of STS-1. An STS-N link is also sometimes called
+an OC-N link (OC stands for optical carrier). The difference between STS and OC is
+subtle: The former refers to the electrical transmission on the devices connected to the
+link, and the latter refers to the actual optical signal that is propagated over the fiber.
+Keep in mind that the phone company does not implement the “link” we just
+ordered as a single, unbroken piece of cable or fiber. Instead, it implements the link
+2.1 Hardware Building Blocks 71
+on its own network. Although the telephone network has historically looked much
+different from the kind of network described in this book—it was built primarily to
+provide a voice service and used circuit-switching technology—the current trend is
+toward the style of networking described in this book, including the asynchronous
+transfer mode (ATM) network described in Chapter 3. This is not surprising—the
+potential market for carrying data, voice, and video is huge.
+In any case, whether the link is physical or a logical connection through the
+telephone network, the problem of building a computer network on top of a collection
+of such links remains the same. So, we will proceed as though each link is implemented
+by a single cable/fiber, and only when we are done will we worry about whether we
+have just built a computer network on top of the underlying telephone network, or
+the computer network we have just built could itself serve as the backbone for the
+telephone network.
+Last-Mile Links
+If you can’t afford a dedicated leased line—they range in price from roughly a thousand
+dollars a month for a cross-country DS1 link to “if you have to ask, you can’t afford
+it”—then there are less expensive options available. We call these “last-mile” links
+because they often span the last mile from the home to a network service provider.
+These services, which are summarized in Table 2.3, typically connect a home to an
+existing network. This means they are probably not suitable for use in building a complete
+network from scratch, but if you’ve already succeeded in building a network—and
+“you” happen to be either the telephone company or the cable company—then you
+can use these links to reach millions of customers.
+The first option is a conventional modem over POTS (plain old telephone service).
+Today it is possible to buy a modem that transmits data at 56 Kbps over a
+standard voice-grade line for less than a hundred dollars. The technology is already
+at its bandwidth limit, however, which has led to the development of the second
+option: ISDN (Integrated Services Digital Network). An ISDN connection includes two
+Service Bandwidth
+POTS 28.8–56 Kbps
+ISDN 64–128 Kbps
+xDSL 16 Kbps–55.2 Mbps
+CATV 20–40 Mbps
+Table 2.3 Common services available to connect your home.
+72 2 Direct Link Networks
+1.554–8.448 Mbps
+16–640 Kbps
+Local loop
+Central
+office
+Subscriber
+premises
+Figure 2.3 ADSL connects the subscriber to the central office via the local loop.
+64-Kbps channels, one that can be used to transmit data and another that can be
+used for digitized voice. (A device that encodes analog voice into a digital ISDN link
+is called a CODEC, for coder/decoder.) When the voice channel is not in use, it can
+be combined with the data channel to support up to 128 Kbps of data bandwidth.
+For many years ISDN was viewed
+as the future for modest bandwidth into
+the home. ISDN has now been largely
+overtaken, however, by two newer technologies:
+xDSL (digital subscriber line) and
+cable modems. The former is actually a
+collection of technologies that are able
+to transmit data at high speeds over the
+standard twisted pair lines that currently
+come into most homes in the United States
+(and many other places). The one in most
+widespread use today is ADSL (asymmetric
+digital subscriber line). As its name implies,
+ADSL provides a different bandwidth from
+the subscriber to the telephone company’s
+central office (upstream) than it does from
+the central office to the subscriber (downstream).
+The exact bandwidth depends on
+the length of the line running from the
+subscriber to the central office. This line
+is called the local loop, as illustrated in
+Figure 2.3, and runs over existing copper.
+Downstream bandwidths range from
+1.544 Mbps (18,000 feet) to 8.448 Mbps
+(9000 feet), while upstream bandwidths
+range from 16 Kbps to 640 Kbps.
+Shannon’s Theorem
+Meets Your Modem
+There has been an enormous body
+of work done in the related areas
+of signal processing and information
+theory, studying everything
+from how signals degrade over distance
+to how much data a given signal
+can effectively carry. The most
+notable piece of work in this area
+is a formula known as Shannon’s
+theorem. Simply stated, Shannon’s
+theorem gives an upper bound to
+the capacity of a link, in terms of
+bits per second (bps), as a function
+of the signal-to-noise ratio of the
+link, measured in decibels (dB).
+Shannon’s theorem can be used
+to determine the data rate at which
+a modem can be expected to transmit
+binary data over a voice-grade
+phone line without suffering from
+2.1 Hardware Building Blocks 73
+STS-N
+over fiber
+VDSL at 12.96–55.2 Mbps
+over 1000–4500 feet of copper
+Central
+office
+Subscriber
+premises
+Neighborhood optical
+network unit
+Figure 2.4 VDSL connects the subscriber to the optical network that reaches the
+neighborhood.
+An alternative technology that has yet to be widely deployed—very high data rate
+digital subscriber line (VDSL)—is symmetric, with data rates ranging from 12.96 Mbps
+to 55.2 Mbps. VDSL runs over much shorter distances—1000 to 4500 feet—which
+means that it will not typically reach from the home to the central office. Instead,
+the telephone company would have to put VDSL transmission hardware in neighborhoods,
+with some other technology (e.g., STS-N running over fiber) connecting the
+too high an error rate. For example,
+we assume that a voice-grade
+phone connection supports a frequency
+range of 300 Hz to 3300
+Hz.
+Shannon’s theorem is typically
+given by the following formula:
+C = B log2(1 + S/N)
+where C is the achievable channel
+capacity measured in hertz, B is the
+bandwidth of the line (3300 Hz -
+300 Hz = 3000 Hz), S is the average
+signal power, and N is the
+average noise power. The signalto-
+noise ratio (S/N) is usually
+expressed in decibels, related as follows:
+dB = 10 × log10(S/N)
+neighborhood to the central office, as illustrated
+in Figure 2.4. This is sometimes called
+“fiber to the neighborhood” (contrasting
+with more ambitious schemes such as “fiber
+to the home” and “fiber to the curb”).
+Cable modems are an alternative to
+the various types of DSL. As the name
+suggests, this technology uses the cable
+TV (CATV) infrastructure, which currently
+reaches 95% of the households in the
+United States. (Only 65% of U.S. homes
+actually subscribe.) In this approach, some
+subset of the available CATV channels
+are made available for transmitting digital
+data, where a single CATV channel
+has a bandwidth of 6 MHz. CATV, like
+ADSL, is used in an asymmetric way, with
+downstream rates much greater than upstream
+rates. The technology is currently
+able to achieve 40 Mbps downstream on
+a single CATV channel, with 100 Mbps
+as the theoretical capacity. The upstream
+rate is roughly half the downstream rate
+(i.e., 20 Mbps) due to a 1000-fold decrease
+in the signal-to-noise ratio. It is also
+the case that fewer CATV channels are
+74 2 Direct Link Networks
+dedicated to upstream traffic than to downstream traffic. Unlike DSL, the bandwidth
+is shared among all subscribers in a neighborhood (a fact that led to some amusing
+advertising from DSL providers). This means that some method for arbitrating access
+to the shared medium—similar to the 802 standards described later in this chapter—
+needs to be used. Finally, like DSL, it is unlikely that cable modems will be used to
+connect arbitrary node A at one site to arbitrary node B at some other site. Instead,
+cable modems are seen as a means to connect node A in your home to the cable
+company, with the cable company then defining what the rest of the network looks
+like.
+Wireless Links
+The field of wireless communication is exploding, both economically and technologically.
+The Advanced Mobile Phone System (AMPS) has been the standard for cellular
+phones in the United States for several years. AMPS, which is based on analog technology,
+is rapidly giving way to digital cellular–PCS (Personal Communication Services)
+in the United States and Canada, and GSM (Global System for Mobile Communication)
+in the rest of the world. All three
+systems currently use a system of towers
+to transmit signals, although some significant
+efforts have been made to supplement
+this infrastructure by ringing the globe with
+a grid of medium- and low-orbit satellites.
+These projects—which include ICO, Globalstar,
+Iridium, and Teledesic—have had
+mixed success. Those that are still viable are
+mostly focusing on delivery of telephone service
+to those increasingly rare parts of the
+globe where cellular service is not available.
+Thinking a bit less globally, frequency
+bands from the radio and infrared portions
+of the electromagnetic spectrum can be used
+to provide wireless links over short distances,
+such as inside office buildings, coffee
+shops, building complexes, and campuses.
+In the case of infrared, signals with
+wavelengths in the 850–950-nanometer
+range can be used to transmit data at
+1-Mbps rates over distances of about 10 m.
+Assuming a typical decibel ratio
+of 30 dB, this means that S/N =
+1000. Thus, we have
+C = 3000 × log2(1001)
+which equals approximately 30
+Kbps, roughly the limit of a 28.8-
+Kbps modem.
+Given this fundamental limit,
+why is it possible to buy 56-Kbps
+modems at any electronics store?
+One reason is that such rates depend
+on improved line quality, that
+is, a higher signal-to-noise ratio
+than 30 dB. Another reason is
+that changes within the phone system
+have largely eliminated analog
+lines that are bandwidth-limited to
+3300 Hz.
+2.2 Encoding (NRZ, NRZI, Manchester, 4B/5B) 75
+This technology does not require line of sight, but is limited to in-building environments.
+In the case of radio, several different bands are currently being made available
+for data communication. For example, bands at 5.2 GHz and 17 GHz are allocated
+to HIPERLAN (High Performance European Radio LAN) in Europe. Similarly, bandwidth
+at 2.4 GHz has been set aside in many countries for use with the IEEE 802.11
+standard for wireless LANs. (Additional bandwidth is available at 5 GHz, but unfortunately
+it is subject to interference from microwave ovens.) IEEE 802.11, which is an
+evolving standard that supports data rates of up to 54 Mbps, will be discussed more
+fully in Section 2.8.
+Another interesting development in the wireless arena is the Bluetooth radio
+interface that operates in the 2.45-GHz frequency band. Bluetooth is designed for
+short distances (on the order of 10 m) with a bandwidth of 1 Mbps. Its developers
+envision it being used in all devices (e.g., printers, workstations, laptops, projectors,
+PDAs, mobile phones), thereby eliminating the need for wires and cables in the office
+(or between the various devices on your body, perhaps). Networks of such devices are
+starting to be called piconets.
+2.2 Encoding (NRZ, NRZI, Manchester, 4B/5B)
+The first step in turning nodes and links into usable building blocks is to understand
+how to connect them in such a way that bits can be transmitted from one node to the
+other. As mentioned in the preceding section, signals propagate over physical links.
+The task, therefore, is to encode the binary data that the source node wants to send
+into the signals that the links are able to carry, and then to decode the signal back
+into the corresponding binary data at the receiving node. We ignore the details of
+modulation and assume we are working with two discrete signals: high and low. In
+practice, these signals might correspond to two different voltages on a copper-based
+link, or two different power levels on an optical link.
+As we have said, most of the functions discussed in this chapter are performed by
+a network adaptor—a piece of hardware that connects a node to a link. The network
+adaptor contains a signalling component that actually encodes bits into signals at the
+sending node and decodes signals into bits at the receiving node. Thus, as illustrated
+in Figure 2.5, signals travel over a link between two signalling components, and bits
+flow between network adaptors.
+Let’s return to the problem of encoding bits onto signals. The obvious thing to
+do is to map the data value 1 onto the high signal and the data value 0 onto the low
+signal. This is exactly the mapping used by an encoding scheme called, cryptically
+enough, non-return to zero (NRZ). For example, Figure 2.6 schematically depicts the
+NRZ-encoded signal (bottom) that corresponds to the transmission of a particular
+sequence of bits (top).
+76 2 Direct Link Networks
+Signalling component
+Signal
+Bits
+Node Adaptor Adaptor Node
+Figure 2.5 Signals travel between signalling components; bits flow between adaptors.
+Bits
+NRZ
+0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0
+Figure 2.6 NRZ encoding of a bit stream.
+The problem with NRZ is that a sequence of several consecutive 1s means that
+the signal stays high on the link for an extended period of time, and similarly, several
+consecutive 0s means that the signal stays low for a long time. There are two
+fundamental problems caused by long
+strings of 1s or 0s. The first is that it leads
+to a situation known as baseline wander.
+Specifically, the receiver keeps an average of
+the signal it has seen so far, and then uses this
+average to distinguish between low and high
+signals. Whenever the signal is significantly
+lower than this average, the receiver concludes
+that it has just seen a 0, and likewise,
+a signal that is significantly higher than the
+average is interpreted to be a 1. The problem,
+of course, is that too many consecutive
+1s or 0s cause this average to change, making
+it more difficult to detect a significant
+change in the signal.
+The second problem is that frequent
+transitions from high to low and vice versa
+are necessary to enable clock recovery.
+Intuitively, the clock recovery problem is
+that both the encoding and the decoding
+Bit Rates and Baud Rates
+Many people use the terms bit
+rate and baud rate interchangeably,
+even though as we see with the
+Manchester encoding, they are not
+the same thing. While the Manchester
+encoding is an example of
+a case in which a link’s baud rate
+is greater than its bit rate, it is also
+possible to have a bit rate that is
+greater than the baud rate. This
+would imply that more than one bit
+is encoded on each pulse sent over
+the link.
+To see how this might happen,
+suppose you could transmit four
+2.2 Encoding (NRZ, NRZI, Manchester, 4B/5B) 77
+Bits
+NRZ
+Clock
+Manchester
+NRZI
+0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0
+Figure 2.7 Different encoding strategies.
+processes are driven by a clock—every clock cycle the sender transmits a bit and the
+receiver recovers a bit. The sender’s and the receiver’s clocks have to be precisely
+synchronized in order for the receiver to recover the same bits the sender transmits.
+If the receiver’s clock is even slightly faster or slower than the sender’s clock,
+then it does not correctly decode the signal. You could imagine sending the clock
+to the receiver over a separate wire, but this is typically avoided because it makes
+the cost of cabling twice as high. So instead, the receiver derives the clock from the
+distinguished signals over a link
+rather than just two. On an analog
+link, for example, these four signals
+might correspond to four different
+frequencies. Given four different
+signals, it is possible to encode two
+bits of information on each signal.
+That is, the first signal means 00,
+the second signal means 01, and so
+on. Now, a sender (receiver) that
+is able to transmit (detect) 1000
+pulses per second would be able to
+send (receive) 2000 bits of information
+per second. That is, it would
+be a 1000-baud/2000-bps link.
+received signal—the clock recovery process.
+Whenever the signal changes, such as on
+a transition from 1 to 0 or from 0 to 1,
+then the receiver knows it is at a clock
+cycle boundary, and it can resynchronize
+itself. However, a long period of time without
+such a transition leads to clock drift.
+Thus, clock recovery depends on having lots
+of transitions in the signal, no matter what
+data is being sent.
+One approach that addresses this
+problem, called non-return to zero inverted
+(NRZI), has the sender make a transition
+from the current signal to encode a 1 and
+stay at the current signal to encode a 0.
+This solves the problem of consecutive 1s,
+but obviously does nothing for consecutive
+0s. NRZI is illustrated in Figure 2.7.
+An alternative, called Manchester encod-
+ing, does a more explicit job of merging
+78 2 Direct Link Networks
+the clock with the signal by transmitting the exclusive-OR of the NRZ-encoded data
+and the clock. (Think of the local clock as an internal signal that alternates from low
+to high; a low/high pair is considered one clock cycle.) The Manchester encoding is
+also illustrated in Figure 2.7. Observe that the Manchester encoding results in 0 being
+encoded as a low-to-high transition and 1 being encoded as a high-to-low transition.
+Because both 0s and 1s result in a transition to the signal, the clock can be effectively
+recovered at the receiver. (There is also a variant of the Manchester encoding, called
+differential Manchester, in which a 1 is encoded with the first half of the signal equal
+to the last half of the previous bit’s signal and a 0 is encoded with the first half of the
+signal opposite to the last half of the previous bit’s signal.)
+The problem with the Manchester encoding scheme is that it doubles the rate
+at which signal transitions are made on the link, which means that the receiver has
+half the time to detect each pulse of the signal. The rate at which the signal changes
+is called the link’s baud rate. In the case of the Manchester encoding, the bit rate is
+half the baud rate, so the encoding is considered only 50% efficient. Keep in mind
+that if the receiver had been able to keep up with the faster baud rate required by the
+Manchester encoding in Figure 2.7, then both NRZ and NRZI could have been able
+to transmit twice as many bits in the same time period.
+A final encoding that we consider, called 4B/5B, attempts to address the inefficiency
+of the Manchester encoding without suffering from the problem of having
+extended durations of high or low signals. The idea of 4B/5B is to insert extra bits
+into the bit stream so as to break up long sequences of 0s or 1s. Specifically, every
+4 bits of actual data are encoded in a 5-bit code that is then transmitted to the
+receiver; hence the name 4B/5B. The 5-bit codes are selected in such a way that each
+one has no more than one leading 0 and no more than two trailing 0s. Thus, when sent
+back-to-back, no pair of 5-bit codes results in more than three consecutive 0s being
+transmitted. The resulting 5-bit codes are then transmitted using the NRZI encoding,
+which explains why the code is only concerned about consecutive 0s—NRZI already
+solves the problem of consecutive 1s. Note that the 4B/5B encoding results in 80%
+efficiency.
+Table 2.4 gives the 5-bit codes that correspond to each of the 16 possible 4-bit
+data symbols. Notice that since 5 bits are enough to encode 32 different codes, and
+we are using only 16 of these for data, there are 16 codes left over that we can use
+for other purposes. Of these, code 11111 is used when the line is idle, code 00000
+corresponds to when the line is dead, and 00100 is interpreted to mean halt. Of the
+remaining 13 codes, 7 of them are not valid because they violate the “one leading 0,
+two trailing 0s” rule, and the other 6 represent various control symbols. As we will
+see later in this chapter, some framing protocols (e.g., FDDI) make use of these control
+symbols.
+2.3 Framing 79
+4-Bit Data Symbol 5-Bit Code
+0000 11110
+0001 01001
+0010 10100
+0011 10101
+0100 01010
+0101 01011
+0110 01110
+0111 01111
+1000 10010
+1001 10011
+1010 10110
+1011 10111
+1100 11010
+1101 11011
+1110 11100
+1111 11101
+Table 2.4 4B/5B encoding.
+2.3 Framing
+Now that we have seen how to transmit a sequence of bits over a point-to-point link—
+from adaptor to adaptor—let’s consider the scenario illustrated in Figure 2.8. Recall
+from Chapter 1 that we are focusing on packet-switched networks, which means that
+blocks of data (called frames at this level), not bit streams, are exchanged between
+nodes. It is the network adaptor that enables the nodes to exchange frames. When
+node A wishes to transmit a frame to node B, it tells its adaptor to transmit a frame
+from the node’s memory. This results in a sequence of bits being sent over the link.
+The adaptor on node B then collects together the sequence of bits arriving on the link
+and deposits the corresponding frame in B’s memory. Recognizing exactly what set of
+bits constitutes a frame—that is, determining where the frame begins and ends—is the
+central challenge faced by the adaptor.
+80 2 Direct Link Networks
+Frames
+Bits
+Node A Adaptor Adaptor Node B
+Figure 2.8 Bits flow between adaptors, frames between hosts.
+SYN
+Header Body
+8 8 8 8 8 16
+SYN
+SOH
+STX
+ETX
+CRC
+Figure 2.9 BISYNC frame format.
+There are several ways to address the framing problem. This section uses several
+different protocols to illustrate the various points in the design space. Note that while
+we discuss framing in the context of point-to-point links, the problem is a fundamental
+one that must also be addressed in multiple-access networks like Ethernet and token
+rings.
+2.3.1 Byte-Oriented Protocols (BISYNC, PPP, DDCMP)
+One of the oldest approaches to framing—it has its roots in connecting terminals to
+mainframes—is to view each frame as a collection of bytes (characters) rather than
+a collection of bits. Such a byte-oriented approach is exemplified by the BISYNC
+(Binary Synchronous Communication) protocol developed by IBM in the late 1960s,
+and the DDCMP (Digital Data Communication Message Protocol) used in Digital
+Equipment Corporation’s DECNET. Sometimes these protocols assume a particular
+character set—for example, BISYNC can support ASCII, EBCDIC, and IBM’s 6-bit
+Transcode—but this is not necessarily the case.
+Although similar in many respects, these two protocols are examples of two
+different framing techniques, the sentinel approach and the byte-counting approach.
+Sentinel Approach
+The BISYNC protocol illustrates the sentinel approach to framing; its frame format is
+depicted in Figure 2.9. This figure is the first of many that you will see in this book
+that are used to illustrate frame or packet formats, so a few words of explanation
+2.3 Framing 81
+are in order. We show a packet as a sequence of labeled fields. Above each field is a
+number indicating the length of that field in bits. Note that the packets are transmitted
+beginning with the leftmost field.
+The beginning of a frame is denoted by sending a special SYN (synchronization)
+character. The data portion of the frame is then contained between special sentinel
+characters: STX (start of text) and ETX (end of text). The SOH (start of header)
+field serves much the same purpose as the STX field. The problem with the sentinel
+approach, of course, is that the ETX character might appear in the data portion of the
+frame. BISYNC overcomes this problem by “escaping” the ETX character by preceding
+it with a DLE (data-link-escape) character whenever it appears in the body of a frame;
+the DLE character is also escaped (by preceding it with an extra DLE) in the frame
+body. (C programmers may notice that this is analogous to the way a quotation mark
+is escaped by the backslash when it occurs inside a string.) This approach is often
+called character stuffing because extra characters are inserted in the data portion of
+the frame.
+The frame format also includes a field labeled CRC (cyclic redundancy check)
+that is used to detect transmission errors; various algorithms for error detection are
+presented in Section 2.4. Finally, the frame contains additional header fields that
+are used for, among other things, the link-level reliable delivery algorithm. Examples
+of these algorithms are given in Section 2.5.
+The more recent Point-to-Point Protocol (PPP), which is commonly run over dialup
+modem links, is similar to BISYNC in that it uses character stuffing. The format for
+a PPP frame is given in Figure 2.10. The special start-of-text character, denoted as the
+Flag field in Figure 2.10, is 01111110. The Address and Control fields usually contain
+default values, and so are uninteresting. The Protocol field is used for demultiplexing:
+It identifies the high-level protocol such as IP or IPX (an IP-like protocol developed
+by Novell). The frame payload size can be negotiated, but it is 1500 bytes by default.
+The Checksum field is either 2 (by default) or 4 bytes long.
+The PPP frame format is unusual in that several of the field sizes are negotiated
+rather than fixed. This negotiation is conducted by a protocol called LCP (Link Control
+Protocol). PPP and LCP work in tandem: LCP sends control messages encapsulated
+in PPP frames—such messages are denoted by an LCP identifier in the PPP Protocol
+Flag Address Control Protocol Payload
+8 8 8 16 16 8
+Checksum Flag
+Figure 2.10 PPP frame format.
+82 2 Direct Link Networks
+SYN
+Header Body
+8 8 8 14 42 16
+SYN
+Class
+Count CRC
+Figure 2.11 DDCMP frame format.
+field—and then turns around and changes PPP’s frame format based on the information
+contained in those control messages. LCP is also involved in establishing a link between
+two peers when both sides detect the carrier signal.
+Byte-Counting Approach
+As every Computer Sciences 101 student
+knows, the alternative to detecting the end
+of a file with a sentinel value is to include the
+number of items in the file at the beginning
+of the file. The same is true in framing—the
+number of bytes contained in a frame can
+be included as a field in the frame header.
+DECNET’s DDCMP protocol uses this
+approach, as illustrated in Figure 2.11. In
+this example, the COUNT field specifies how
+many bytes are contained in the frame’s
+body.
+One danger with this approach is
+that a transmission error could corrupt the
+COUNT field, in which case the end of the
+frame would not be correctly detected. (A
+similar problem exists with the sentinelbased
+approach if the ETX field becomes
+corrupted.) Should this happen, the receiver
+will accumulate as many bytes as the bad
+COUNT field indicates and then use the error
+detection field to determine that the frame
+is bad. This is sometimes called a framing
+error. The receiver will then wait until it sees
+the next SYN character to start collecting
+the bytes that make up the next frame. It is
+What’s in a Layer?
+One of the important contributions
+of the OSI reference model
+presented in Chapter 1 was to provide
+some vocabulary for talking
+about protocols and, in particular,
+protocol layers. This vocabulary
+has provided fuel for plenty of
+arguments along the lines of “Your
+protocol does function X at layer Y,
+and the OSI reference model says it
+should be done at layer Z—that’s
+a layer violation.” In fact, figuring
+out the right layer at which to
+perform a given function can be
+very difficult, and the reasoning
+is usually a lot more subtle than
+“What does the OSI model say?”
+It is partly for this reason that
+this book avoids a rigidly layerist
+approach. Instead, it shows you
+a lot of functions that need to be
+performed by protocols and looks
+at some ways that they have been
+successfully implemented.
+2.3 Framing 83
+Header Body
+8 16 16 8
+CRC
+Beginning
+sequence
+Ending
+sequence
+Figure 2.12 HDLC frame format.
+therefore possible that a framing error will cause back-to-back frames to be incorrectly
+received.
+In spite of our nonlayerist
+approach, sometimes we need convenient
+ways to talk about classes
+of protocols, and the name of the
+layer at which they operate is often
+the best choice. Thus, for example,
+this chapter focuses primarily
+on link-layer protocols. (Bit
+encoding, described in Section 2.2,
+is the exception, being considered
+a physical-layer function.) Linklayer
+protocols can be identified
+by the fact that they run over single
+links—the type of network discussed
+in this chapter. Networklayer
+protocols, by contrast, run
+over switched networks that contain
+lots of links interconnected by
+switches or routers. Topics related
+to network-layer protocols are discussed
+in Chapters 3 and 4.
+Note that protocol layers are
+supposed to be helpful—they provide
+helpful ways to talk about
+2.3.2 Bit-Oriented Protocols
+(HDLC)
+Unlike these byte-oriented protocols, a bitoriented
+protocol is not concerned with byte
+boundaries—it simply views the frame as
+a collection of bits. These bits might come
+from some character set, such as ASCII, they
+might be pixel values in an image, or they
+could be instructions and operands from an
+executable file. The Synchronous Data Link
+Control (SDLC) protocol developed by IBM
+is an example of a bit-oriented protocol;
+SDLC was later standardized by the ISO as
+the High-Level Data Link Control (HDLC)
+protocol. In the following discussion, we use
+HDLC as an example; its frame format is
+given in Figure 2.12.
+HDLC denotes both the beginning
+and the end of a frame with the distinguished
+bit sequence 01111110. This sequence
+is also transmitted during any times
+that the link is idle so that the sender and
+receiver can keep their clocks synchronized.
+In this way, both protocols essentially
+use the sentinel approach. Because this sequence
+might appear anywhere in the body
+of the frame—in fact, the bits 01111110
+84 2 Direct Link Networks
+might cross byte boundaries—bit-oriented protocols use the analog of the DLE character,
+a technique known as bit stuffing.
+Bit stuffing in the HDLC protocol works as follows. On the sending side, any
+time five consecutive 1s have been transmitted from the body of the message (i.e.,
+excluding when the sender is trying to transmit the distinguished 01111110 sequence),
+the sender inserts a 0 before transmitting the next bit. On the receiving side, should
+five consecutive 1s arrive, the receiver makes its decision based on the next bit it sees
+(i.e., the bit following the five 1s). If the next bit is a 0, it must have been stuffed, and
+so the receiver removes it. If the next bit is a 1, then one of two things is true: Either
+this is the end-of-frame marker or an error has been introduced into the bit stream.
+By looking at the next bit, the receiver can distinguish between these two cases: If it
+sees a 0 (i.e., the last eight bits it has looked at are 01111110), then it is the end-offrame
+marker; if it sees a 1 (i.e., the last eight bits it has looked at are 01111111), then
+there must have been an error and the whole frame is discarded. In the latter case, the
+receiver has to wait for the next 01111110 before it can start receiving again, and as a
+consequence, there is the potential that the receiver will fail to receive two consecutive
+frames. Obviously, there are still ways that framing errors can go undetected, such as
+when an entire spurious end-of-frame pattern is generated by errors, but these failures
+are relatively unlikely. Robust ways of detecting errors are discussed in Section 2.4.
+An interesting characteristic of bit
+stuffing, as well as character stuffing, is that
+the size of a frame is dependent on the data
+that is being sent in the payload of the frame.
+It is in fact not possible to make all frames
+exactly the same size, given that the data
+that might be carried in any frame is arbitrary.
+(To convince yourself of this, consider
+what happens if the last byte of a frame’s
+body is the ETX character.) A form of framing
+that ensures that all frames are the same
+size is described in the next subsection.
+2.3.3 Clock-Based Framing
+(SONET)
+A third approach to framing is exemplified
+by the Synchronous Optical Network
+(SONET) standard. For lack of a widely
+accepted generic term, we refer to this
+approach simply as clock-based framing.
+classes of protocols, and they help
+us divide the problem of building
+networks into manageable subtasks.
+However, they are not meant
+to be overly restrictive—the mere
+fact that something is a layer violation
+does not end the argument
+about whether it is a worthwhile
+thing to do. In other words, layering
+makes a good slave, but a
+poor master.Aparticularly interesting
+argument about the best layer
+to place a certain function comes up
+when we look at congestion control
+in Chapter 6.
+2.3 Framing 85
+SONET was first proposed by Bell Communications Research (Bellcore), and then
+developed under the American National Standards Institute (ANSI) for digital transmission
+over optical fiber; it has since been adopted by the ITU-T. Who standardized
+what and when is not the interesting issue, though. The thing to remember about
+SONET is that it is the dominant standard for long-distance transmission of data over
+optical networks.
+An important point to make about SONET before we go any further is that the
+full specification is substantially larger than this book. Thus, the following discussion
+will necessarily cover only the high points of the standard. Also, SONET addresses
+both the framing problem and the encoding problem. It also addresses a problem
+that is very important for phone companies—the multiplexing of several low-speed
+links onto one high-speed link. We begin with framing and discuss the other issues
+following.
+As with the previously discussed framing schemes, a SONET frame has some
+special information that tells the receiver where the frame starts and ends. However,
+that is about as far as the similarities go. Notably, no bit stuffing is used, so that a
+frame’s length does not depend on the data being sent. So the question to ask is, How
+does the receiver know where each frame starts and ends? We consider this question
+for the lowest-speed SONET link, which is known as STS-1 and runs at 51.84 Mbps.
+An STS-1 frame is shown in Figure 2.13. It is arranged as nine rows of 90 bytes each,
+and the first 3 bytes of each row are overhead, with the rest being available for data
+that is being transmitted over the link. The first 2 bytes of the frame contain a special
+bit pattern, and it is these bytes that enable the receiver to determine where the frame
+starts. However, since bit stuffing is not used, there is no reason why this pattern will
+not occasionally turn up in the payload portion of the frame. To guard against this,
+the receiver looks for the special bit pattern consistently, hoping to see it appearing
+Overhead Payload
+90 columns
+9 rows
+Figure 2.13 A SONET STS-1 frame.
+86 2 Direct Link Networks
+once every 810 bytes, since each frame is 9 × 90 = 810 bytes long. When the special
+pattern turns up in the right place enough times, the receiver concludes that it is in
+sync and can then interpret the frame correctly.
+One of the things we are not describing due to the complexity of SONET is the
+detailed use of all the other overhead bytes. Part of this complexity can be attributed
+to the fact that SONET runs across the carrier’s optical network, not just over a single
+link. (Recall that we are glossing over the fact that the carriers implement a network,
+and we are instead focusing on the fact that we can lease a SONET link from them and
+then use this link to build our own packet-switched network.) Additional complexity
+comes from the fact that SONET provides a considerably richer set of services than
+just data transfer. For example, 64 Kbps of a SONET link’s capacity is set aside for a
+voice channel that is used for maintenance.
+The overhead bytes of a SONET frame are encoded using NRZ, the simple
+encoding described in the previous section where 1s are high and 0s are low. However,
+to ensure that there are plenty of transitions to allow the receiver to recover the sender’s
+clock, the payload bytes are scrambled. This is done by calculating the exclusive-OR
+(XOR) of the data to be transmitted and by the use of a well-known bit pattern. The bit
+pattern, which is 127 bits long, has plenty of transitions from 1 to 0, so that XORing
+it with the transmitted data is likely to yield a signal with enough transitions to enable
+clock recovery.
+SONET supports the multiplexing of multiple low-speed links in the following
+way. A given SONET link runs at one of a finite set of possible rates, ranging from
+51.84 Mbps (STS-1) to 2488.32 Mbps (STS-48) and beyond. (See Table 2.2 in Section
+2.1 for the full set of SONET data rates.) Note that all of these rates are integer
+multiples of STS-1. The significance for framing is that a single SONET frame can
+contain subframes for multiple lower-rate channels. A second related feature is that
+each frame is 125 µs long. This means that at STS-1 rates, a SONET frame is 810 bytes
+long, while at STS-3 rates, each SONET frame is 2430 bytes long. Notice the synergy
+between these two features: 3 × 810 = 2430, meaning that three STS-1 frames fit
+exactly in a single STS-3 frame.
+Intuitively, the STS-N frame can be thought of as consisting of N STS-1 frames,
+where the bytes from these frames are interleaved; that is, a byte from the first frame is
+transmitted, then a byte from the second frame is transmitted, and so on. The reason for
+interleaving the bytes from each STS-Nframe is to ensure that the bytes in each STS-1
+frame are evenly paced; that is, bytes show up at the receiver at a smooth 51 Mbps,
+rather than all bunched up during one particular 1/Nth of the 125-µs interval.
+Although it is accurate to view an STS-Nsignal as being used to multiplex NSTS-
+1 frames, the payload from these STS-1 frames can be linked together to form a larger
+STS-Npayload; such a link is denoted STS-Nc (for concatenated). One of the fields in
+2.3 Framing 87
+STS-1
+Hdr
+STS-1
+Hdr
+STS-1
+Hdr
+Hdr STS-3c
+Figure 2.14 Three STS-1 frames multiplexed onto one STS-3c frame.
+Frame 0
+Frame 1
+87 columns
+9 rows
+Figure 2.15 SONET frames out of phase.
+the overhead is used for this purpose. Figure 2.14 schematically depicts concatenation
+in the case of three STS-1 frames being concatenated into a single STS-3c frame. The
+significance of a SONET link being designated as STS-3c rather than STS-3 is that, in
+the former case, the user of the link can view it as a single 155.25-Mbps pipe, whereas
+an STS-3 should really be viewed as three 51.84-Mbps links that happen to share a
+fiber.
+Finally, the preceding description of SONET is overly simplistic in that it
+assumes that the payload for each frame is completely contained within the frame.
+(Why wouldn’t it be?) In fact, we should view the STS-1 frame just described as simply
+a placeholder for the frame, where the actual payload may float across frame boundaries.
+This situation is illustrated in Figure 2.15. Here we see both the STS-1 payload
+floating across two STS-1 frames, and the payload shifted some number of bytes to
+the right and, therefore, wrapped around. One of the fields in the frame overhead
+points to the beginning of the payload. The value of this capability is that it simplifies
+the task of synchronizing the clocks used throughout the carriers’ networks, which is
+something that carriers spend a lot of their time worrying about.
+88 2 Direct Link Networks
+2.4 Error Detection
+As discussed in Chapter 1, bit errors are sometimes introduced into frames. This
+happens, for example, because of electrical interference or thermal noise. Although
+errors are rare, especially on optical links, some mechanism is needed to detect these
+errors so that corrective action can be taken. Otherwise, the end user is left wondering
+why the C program that successfully compiled just a moment ago now suddenly has
+a syntax error in it, when all that happened in the interim is that it was copied across
+a network file system.
+There is a long history of techniques for dealing with bit errors in computer
+systems, dating back to Hamming and Reed/Solomon codes that were developed
+for use when storing data on magnetic disks and in early core memories. This section
+describes some of the error detection techniques most commonly used in networking.
+Detecting errors is only one part of the problem. The other part is correcting
+errors once detected. There are two basic approaches that can be taken when the
+recipient of a message detects an error. One is to notify the sender that the message
+was corrupted so that the sender can retransmit a copy of the message. If bit errors
+are rare, then in all probability the retransmitted copy will be error-free. Alternatively,
+there are some types of error detection algorithms that allow the recipient to reconstruct
+the correct message even after it has been corrupted; such algorithms rely on
+error-correcting codes, discussed below.
+One of the most common techniques for detecting transmission errors is a technique
+known as the cyclic redundancy check (CRC). It is used in nearly all the link-level
+protocols discussed in the previous section—for example, HDLC, DDCMP—as well
+as in the CSMA and token ring protocols described later in this chapter. Section 2.4.3
+outlines the basic CRC algorithm. Before discussing that approach, we consider two
+simpler schemes that are also widely used: two-dimensional parity and checksums.
+The former is used by the BISYNC protocol when it is transmitting ASCII characters
+(CRC is used as the error code when BISYNC is used to transmit EBCDIC), and the
+latter is used by several Internet protocols.
+The basic idea behind any error detection scheme is to add redundant information
+to a frame that can be used to determine if errors have been introduced. In the extreme,
+we could imagine transmitting two complete copies of the data. If the two copies are
+identical at the receiver, then it is probably the case that both are correct. If they
+differ, then an error was introduced into one (or both) of them, and they must be
+discarded. This is a rather poor error detection scheme for two reasons. First, it sends
+n redundant bits for an n-bit message. Second, many errors will go undetected—any
+error that happens to corrupt the same bit positions in the first and second copies of
+the message.
+2.4 Error Detection 89
+Fortunately, we can do a lot better than this simple scheme. In general, we can
+provide quite strong error detection capability while sending only k redundant bits for
+an n-bit message, where k « n. On an Ethernet, for example, a frame carrying up to
+12,000 bits (1500 bytes) of data requires only a 32-bit CRC code, or as it is commonly
+expressed, uses CRC-32. Such a code will catch the overwhelming majority of errors,
+as we will see below.
+We say that the extra bits we send are redundant because they add no new
+information to the message. Instead, they are derived directly from the original message
+using some well-defined algorithm. Both the sender and the receiver know exactly
+what that algorithm is. The sender applies the algorithm to the message to generate the
+redundant bits. It then transmits both the message and those few extra bits. When the
+receiver applies the same algorithm to the received message, it should (in the absence of
+errors) come up with the same result as the sender. It compares the result with the one
+sent to it by the sender. If they match, it can conclude (with high likelihood) that no
+errors were introduced in the message during transmission. If they do not match, it can
+be sure that either the message or the redundant bits were corrupted, and it must take
+appropriate action, that is, discarding the message, or correcting it if that is possible.
+One note on the terminology for these extra bits. In general, they are referred
+to as error-detecting codes. In specific cases, when the algorithm to create the code
+is based on addition, they may be called a checksum. We will see that the Internet
+checksum is appropriately named: It is an error check that uses a summing algorithm.
+Unfortunately, the word “checksum” is often used imprecisely to mean any form of
+error-detecting code, including CRCs. This can be confusing, so we urge you to use
+the word “checksum” only to apply to codes that actually do use addition and to use
+“error-detecting code” to refer to the general class of codes described in this section.
+2.4.1 Two-Dimensional Parity
+Two-dimensional parity is exactly what the name suggests. It is based on “simple”
+(one-dimensional) parity, which usually involves adding one extra bit to a 7-bit code
+to balance the number of 1s in the byte. For example, odd parity sets the eighth bit to
+1 if needed to give an odd number of 1s in the byte, and even parity sets the eighth bit
+to 1 if needed to give an even number of 1s in the byte. Two-dimensional parity does
+a similar calculation for each bit position across each of the bytes contained in the
+frame. This results in an extra parity byte for the entire frame, in addition to a parity
+bit for each byte. Figure 2.16 illustrates how two-dimensional even parity works for
+an example frame containing 6 bytes of data. Notice that the third bit of the parity
+byte is 1 since there are an odd number of 1s in the third bit across the 6 bytes in the
+frame. It can be shown that two-dimensional parity catches all 1-, 2-, and 3-bit errors,
+and most 4-bit errors. In this case, we have added 14 bits of redundant information
+90 2 Direct Link Networks
+1011110 1
+1101001 0
+0101001 1
+1011111 0
+0110100 1
+0001110 1
+1111011 0
+Parity
+bits
+Parity
+byte
+Data
+Figure 2.16 Two-dimensional parity.
+to a 42-bit message, and yet we have stronger protection against common errors than
+the “repetition code” described above.
+2.4.2 Internet Checksum Algorithm
+A second approach to error detection is exemplified by the Internet checksum.
+Although it is not used at the link level, it nevertheless provides the same sort of
+functionality as CRCs and parity, so we discuss it here.We will see examples of its use
+in Sections 4.1, 5.1, and 5.2.
+The idea behind the Internet checksum is very simple—you add up all the words
+that are transmitted and then transmit the result of that sum. The result is called
+the checksum. The receiver performs the same calculation on the received data and
+compares the result with the received checksum. If any transmitted data, including the
+checksum itself, is corrupted, then the results will not match, so the receiver knows
+that an error occurred.
+You can imagine many different variations on the basic idea of a checksum. The
+exact scheme used by the Internet protocols works as follows. Consider the data being
+checksummed as a sequence of 16-bit integers. Add them together using 16-bit ones
+complement arithmetic (explained below) and then take the ones complement of the
+result. That 16-bit number is the checksum.
+In ones complement arithmetic, a negative integer -x is represented as the
+complement of x; that is, each bit of x is inverted. When adding numbers in ones
+complement arithmetic, a carryout from the most significant bit needs to be added
+to the result. Consider, for example, the addition of -5 and -3 in ones complement
+arithmetic on 4-bit integers. +5 is 0101, so -5 is 1010; +3 is 0011, so -3 is 1100.
+2.4 Error Detection 91
+If we add 1010 and 1100 ignoring the carry, we get 0110. In ones complement arithmetic,
+the fact that this operation caused a carry from the most significant bit causes
+us to increment the result, giving 0111, which is the ones complement representation
+of -8 (obtained by inverting the bits in 1000), as we would expect.
+The following routine gives a straightforward implementation of the Internet’s
+checksum algorithm. The count argument gives the length of buf measured in 16-bit
+units. The routine assumes that buf has already been padded with 0s to a 16-bit
+boundary.
+u_short
+cksum(u_short *buf, int count)
+{
+register u_long sum = 0;
+while (count--)
+{
+sum += *buf++;
+if (sum & 0xFFFF0000)
+{
+/* carry occurred,
+so wrap around */
+sum &= 0xFFFF;
+sum++;
+}
+}
+return ˜ (sum & 0xFFFF);
+}
+This code ensures that the calculation uses ones complement arithmetic, rather
+than the twos complement that is used in most machines. Note the if statement inside
+the while loop. If there is a carry into the top 16 bits of sum, then we increment sum
+just as in the previous example.
+Compared to our repetition code, this algorithm scores well for using a small
+number of redundant bits—only 16 for a message of any length—but it does not score
+extremely well for strength of error detection. For example, a pair of single-bit errors,
+one of which increments a word, one of which decrements another word by the same
+amount, will go undetected. The reason for using an algorithm like this in spite of its
+relatively weak protection against errors (compared to a CRC, for example) is simple:
+This algorithm is much easier to implement in software. Experience in the ARPANET
+suggested that a checksum of this form was adequate. One reason it is adequate is that
+this checksum is the last line of defense in an end-to-end protocol; the majority of errors
+are picked up by stronger error detection algorithms, such as CRCs, at the link level.
+92 2 Direct Link Networks
+2.4.3 Cyclic Redundancy
+Check
+It should be clear by now that a major goal
+in designing error detection algorithms is to
+maximize the probability of detecting errors
+using only a small number of redundant
+bits. Cyclic redundancy checks use some
+fairly powerful mathematics to achieve
+this goal. For example, a 32-bit CRC gives
+strong protection against common bit
+errors in messages that are thousands of
+bytes long. The theoretical foundation of
+the cyclic redundancy check is rooted in a
+branch of mathematics called finite fields.
+While this may sound daunting, the basic
+ideas can be easily understood.
+To start, think of an (n+1)-bit message
+as being represented by a polynomial
+of degree n, that is, a polynomial whose
+highest-order term is xn. The message is represented
+by a polynomial by using the value
+of each bit in the message as the coefficient
+for each term in the polynomial, starting
+with the most significant bit to represent the
+highest-order term. For example, an 8-bit
+message consisting of the bits 10011010 corresponds
+to the polynomial
+M(x) = 1 × x7 + 0 × x6 + 0 × x5 + 1 × x4
++1 × x3 + 0 × x2 + 1 × x1
++0 × x0
+= x7 + x4 + x3 + x1
+Simple Probability
+Calculations
+When dealing with network errors
+and other unlikely (we hope)
+events, we often have use for simple
+back-of-the-envelope probability
+estimates. A useful approximation
+here is that if two independent
+events have small probabilities p
+and q, then the probability of either
+event is p + q; the exact answer is
+1 - (1 - p)(1 - q) = p + q - pq.
+For p = q = .01, this estimate is
+.02, while the exact value is .0199.
+For a simple application of this,
+suppose that the per-bit error rate
+on a link is 1 in 107. Assuming bit
+errors are all independent (which
+they aren’t), we can estimate that
+the probability of at least one error
+in a 10,000-bit packet is 104/107 =
+10-3. The exact answer, computed
+as 1 - P(no errors), would be 1 -
+(1 - 10-7)10,000 = .00099950.
+For a slightly more complex
+application, we compute the probability
+of two errors in such a packet;
+this is the probability of an error
+We can thus think of a sender and a receiver as exchanging polynomials with each
+other.
+For the purposes o f calculating a CRC, a sender and receiver have to agree on
+a divisor polynomial, C(x). C(x) is a polynomial of degree k. For example, suppose
+C(x) = x3 + x2 + 1. In this case, k = 3. The answer to the question “Where did
+2.4 Error Detection 93
+that would sneak past a 1-parity-bit
+checksum. Let Ei j be the event that
+bits i and j are bad, for 0 ? i < j <
+104; the probability of this event is
+about p = 10-7 × 10-7 = 10-14.
+For a fixed j , the number of events
+Ei j with i < j is j ; adding up the
+number of these events for all j <
+104, we get 1+2+· · ·+(104-1) ? 1
+2108. The final probability is thus
+1
+2108 × 10-14 = 1
+210-6.
+Note that had we attempted
+to estimate P(two errors) = P(first
+error) × P(second error), and taken
+these last two to be P(one error)
+= 10-3, we would have obtained
+10-6 here, which is rather far off;
+the problem with this approach is
+that not all i are equally likely to
+be the position of the first error.
+Or, looked at another way, we have
+overstated the true probability by a
+factor of two because we counted
+errors at positions (i, j ) and ( j, i )
+separately when they should only
+be counted once.
+C(x) come from?” is, in most practical
+cases, “You look it up in a book.” In fact, the
+choice of C(x) has a significant impact on
+what types of errors can be reliably detected,
+as we discuss below. There are a handful
+of divisor polynomials that are very good
+choices for various environments, and the
+exact choice is normally made as part of the
+protocol design. For example, the Ethernet
+standard uses a well-known polynomial of
+degree 32.
+When a sender wishes to transmit a
+message M(x) that is n + 1 bits long, what
+is actually sent is the (n + 1)-bit message
+plus k bits. We call the complete transmitted
+message, including the redundant bits,
+P(x). What we are going to do is contrive
+to make the polynomial representing P(x)
+exactly divisible by C(x); we explain how
+this is achieved below. If P(x) is transmitted
+over a link and there are no errors introduced
+during transmission, then the receiver
+should be able to divide P(x) by C(x) exactly,
+leaving a remainder of zero. On the other
+hand, if some error is introduced into P(x)
+during transmission, then in all likelihood
+the received polynomial will no longer be
+exactly divisible by C(x), and thus the receiver
+will obtain a nonzero remainder, implying
+that an error has occurred.
+It will help to understand the following
+if you know a little about polynomial
+arithmetic; it is just slightly different from normal integer arithmetic. We are dealing
+with a special class of polynomial arithmetic here, where coefficients may be only one
+or zero, and operations on the coefficients are performed using modulo 2 arithmetic.
+This is referred to as “polynomial arithmetic modulo 2.” Since this is a networking
+book, not a mathematics text, let’s focus on the key properties of this type of arithmetic
+for our purposes (which we ask you to accept on faith):
+94 2 Direct Link Networks
+¦ Any polynomial B(x) can be divided by a divisor polynomial C(x) if B(x) is
+of higher degree than C(x).
+¦ Any polynomial B(x) can be divided once by a divisor polynomial C(x) if
+B(x) is of the same degree as C(x).
+¦ The remainder obtained when B(x) is divided by C(x) is obtained by subtracting
+C(x) from B(x).
+¦ To subtract C(x) from B(x), we simply perform the exclusive-OR (XOR)
+operation on each pair of matching coefficients.
+For example, the polynomial x3 +1 can be divided by x3 + x2 +1 (because they
+are both of degree 3) and the remainder would be 0×x3+1×x2+0×x1+0×x0 = x2
+(obtained by XORing the coefficients of each term). In terms of messages, we could
+say that 1001 can be divided by 1101 and leaves a remainder of 0100. You should be
+able to see that the remainder is just the bitwise exclusive-OR of the two messages.
+Nowthat we know the basic rules for dividing polynomials, we are able to do long
+division, which is necessary to deal with longer messages. An example appears below.
+Recall that we wanted to create a polynomial for transmission that is derived
+from the original message M(x), is k bits longer than M(x), and is exactly divisible by
+C(x). We can do this in the following way:
+1 Multiply M(x) by xk; that is, add k zeroes at the end of the message. Call this
+zero-extended message T(x).
+2 Divide T(x) by C(x) and find the remainder.
+3 Subtract the remainder from T(x).
+It should be obvious that what is left at this point is a message that is exactly
+divisible by C(x). We may also note that the resulting message consists of M(x) followed
+by the remainder obtained in step 2, because when we subtracted the remainder
+(which can be no more than k bits long), we were just XORing it with the k zeroes
+added in step 1. This part will become clearer with an example.
+Consider the message x7 + x4 + x3 + x1, or 10011010. We begin by multiplying
+by x3, since our divisor polynomial is of degree 3. This gives 10011010000.We divide
+this by C(x), which corresponds to 1101 in this case. Figure 2.17 shows the polynomial
+long division operation. Given the rules of polynomial arithmetic described above, the
+long division operation proceeds much as it would if we were dividing integers. Thus
+in the first step of our example, we see that the divisor 1101 divides once into the
+first four bits of the message (1001), since they are of the same degree, and leaves
+a remainder of 100 (1101 XOR 1001). The next step is to bring down a digit from
+2.4 Error Detection 95
+Generator 1101
+11111001
+10011010000 Message
+1101
+1001
+1101
+1000
+1101
+1011
+1101
+1100
+1101
+1000
+1101
+101 Remainder
+Figure 2.17 CRC calculation using polynomial long division.
+the message polynomial until we get another polynomial with the same degree as
+C(x), in this case 1001.We calculate the remainder again (100) and continue until the
+calculation is complete. Note that the “result” of the long division, which appears at
+the top of the calculation, is not really of much interest—it is the remainder at the end
+that matters.
+You can see from the very bottom of Figure 2.17 that the remainder of the
+example calculation is 101. So we know that 10011010000 minus 101 would be
+exactly divisible by C(x), and this is what we send. The minus operation in polynomial
+arithmetic is the logical XOR operation, so we actually send 10011010101. As noted
+above, this turns out to be just the original message with the remainder from the long
+division calculation appended to it. The recipient divides the received polynomial by
+C(x) and, if the result is 0, concludes that there were no errors. If the result is nonzero,
+it may be necessary to discard the errored message; with some codes, it may be possible
+to correct a small error (e.g., if the error affected only one bit). A code that enables
+error correction is called an error-correcting code (ECC).
+Now we will consider the question of where the polynomial C(x) comes from.
+Intuitively, the idea is to select this polynomial so that it is very unlikely to divide evenly
+into a message that has errors introduced into it. If the transmitted message is P(x), we
+may think of the introduction of errors as the addition of another polynomial E(x),
+so the recipient sees P(x) + E(x). The only way that an error could slip by undetected
+would be if the received message could be evenly divided by C(x), and since we know
+that P(x) can be evenly divided by C(x), this could only happen if E(x) can be divided
+evenly by C(x). The trick is to pick C(x) so that this is very unlikely for common types
+of errors.
+96 2 Direct Link Networks
+CRC C(x)
+CRC-8 x8 + x2 + x1 + 1
+CRC-10 x10 + x9 + x5 + x4 + x1 + 1
+CRC-12 x12 + x11 + x3 + x2 + 1
+CRC-16 x16 + x15 + x2 + 1
+CRC-CCITT x16 + x12 + x5 + 1
+CRC-32 x32 + x26 + x23 + x22 + x16 + x12 + x11
++ x10 + x8 + x7 + x5 + x4 + x2 + x + 1
+Table 2.5 Common CRC polynomials.
+One common type of error is a single-bit error, which can be expressed as E(x) =
+xi when it affects bit position i . If we select C(x) such that the first and the last term are
+nonzero, then we already have a two-term polynomial that cannot divide evenly into
+the one term E(x). Such a C(x) can, therefore, detect all single-bit errors. In general,
+it is possible to prove that the following types of errors can be detected by a C(x) with
+the stated properties:
+¦ All single-bit errors, as long as the
+xk and x0 terms have nonzero coefficients.
+¦ All double-bit errors, as long as
+C(x) has a factor with at least three
+terms.
+¦ Any odd number of errors, as long
+as C(x) contains the factor (x+1).
+¦ Any “burst” error (i.e., sequence of
+consecutive errored bits) for which
+the length of the burst is less than
+k bits. (Most burst errors of larger
+than k bits can also be detected.)
+Six versions of C(x) are widely used in
+link-level protocols (shown in Table 2.5).
+Error Detection
+or Error Correction?
+We have mentioned that it is possible
+to use codes that not only detect
+the presence of errors but also enable
+errors to be corrected. Since
+the details of such codes require yet
+more complex mathematics than
+that required to understand CRCs,
+we will not dwell on them here.
+However, it is worth considering
+the merits of correction versus detection.
+At first glance, it would seem
+that correction is always better,
+since with detection we are forced
+to throw away the message and,
+2.5 Reliable Transmission 97
+x0 x1
+XOR gate x2
+Message
+Figure 2.18 CRC calculation using shift register.
+For example, the Ethernet and 802.5 networks described later in this chapter use
+CRC-32, while HDLC uses CRC-CCITT. ATM, as described in Chapter 3, uses CRC-
+8, CRC-10, and CRC-32.
+Finally, we note that the CRC algorithm, while seemingly complex, is easily
+implemented in hardware using a k-bit shift register and XOR gates. The number of
+bits in the shift register equals the degree of the generator polynomial (k). Figure 2.18
+shows the hardware that would be used for the generator x3+x2+1 from our previous
+example. The message is shifted in from the left, beginning with the most significant
+bit and ending with the string of k zeroes that is attached to the message, just as
+in general, ask for another copy to
+be transmitted. This uses up bandwidth
+and may introduce latency
+while waiting for the retransmission.
+However, there is a downside
+to correction: It generally requires a
+greater number of redundant bits to
+send an error-correcting code that
+is as strong (that is, able to cope
+with the same range of errors) as a
+code that only detects errors. Thus,
+while error detection requires more
+bits to be sent when errors occur,
+error correction requires more bits
+to be sent all the time. As a result,
+in the long division example. When all the
+bits have been shifted in and appropriately
+XORed, the register contains the remainder,
+that is, the CRC (most significant bit on the
+right). The position of the XOR gates is determined
+as follows: If the bits in the shift
+register are labelled 0 through k - 1, left
+to right, then put an XOR gate in front of
+bit n if there is a term xn in the generator
+polynomial. Thus, we see an XOR gate in
+front of positions 0 and 2 for the generator
+x3 + x2 + x0.
+2.5 Reliable Transmission
+As we saw in the previous section, frames
+are sometimes corrupted while in transit,
+with an error code like CRC used to
+detect such errors. While some error codes
+are strong enough also to correct errors,
+in practice the overhead is typically too
+98 2 Direct Link Networks
+large to handle the range of bit and burst errors that can be introduced on a network
+link. Even when error-correcting codes are used (e.g., on wireless links), some errors
+will be too severe to be corrected. As a result, some corrupt frames must be discarded.
+A link-level protocol that wants to deliver frames reliably must somehow recover from
+these discarded (lost) frames.
+This is usually accomplished using a combination of two fundamental
+mechanisms—acknowledgments and timeouts. An acknowledgment (ACK for short)
+is a small control frame that a protocol sends back to its peer saying that it has received
+an earlier frame. By control frame we mean a header without any data, although a
+protocol can piggyback an ACK on a data frame it just happens to be sending in the
+opposite direction. The receipt of an acknowledgment indicates to the sender of the
+original frame that its frame was successfully delivered. If the sender does not receive
+an acknowledgment after a reasonable amount of time, then it retransmits the original
+frame. This action of waiting a reasonable amount of time is called a timeout.
+The general strategy of using acknowledgments and timeouts to implement reliable
+delivery is sometimes called automatic repeat request (normally abbreviated
+ARQ). This section describes three different ARQ algorithms using generic language;
+that is, we do not give detailed information about a particular protocol’s header fields.
+2.5.1 Stop-and-Wait
+The simplest ARQ scheme is the stop-and-
+wait algorithm. The idea of stop-and-wait
+is straightforward: After transmitting one
+frame, the sender waits for an acknowledgment
+before transmitting the next frame. If
+the acknowledgment does not arrive after a
+certain period of time, the sender times out
+and retransmits the original frame.
+Figure 2.19 illustrates four different
+scenarios that result from this basic algorithm.
+This figure is a timeline, a common
+way to depict a protocol’s behavior.
+The sending side is represented on the left,
+the receiving side is depicted on the right,
+and time flows from top to bottom. Figure
+2.19(a) shows the situation in which
+the ACK is received before the timer expires,
+(b) and (c) show the situation in which
+error correction tends to be most
+useful when (1) errors are quite
+probable, as they may be, for example,
+in a wireless environment,
+or (2) the cost of retransmission is
+too high, for example, because of
+the latency involved in retransmitting
+a packet over a satellite link.
+The use of error-correcting
+codes in networking is sometimes
+referred to as forward error cor-
+rection (FEC) because the correction
+of errors is handled “in
+advance” by sending extra information,
+rather than waiting for
+errors to happen and dealing with
+them later by retransmission.
+2.5 Reliable Transmission 99
+the original frame and the ACK, respectively, are lost, and (d) shows the situation in
+which the timeout fires too soon. Recall that by “lost” we mean that the frame was
+corrupted while in transit, that this corruption was detected by an error code on the
+receiver, and that the frame was subsequently discarded.
+There is one important subtlety in the stop-and-wait algorithm. Suppose the
+sender sends a frame and the receiver acknowledges it, but the acknowledgment is
+either lost or delayed in arriving. This situation is illustrated in timelines (c) and (d)
+of Figure 2.19. In both cases, the sender times out and retransmits the original frame,
+Sender Receiver
+Frame
+ACK
+Timeout
+Time
+Sender Receiver
+Frame
+ACK
+Timeout
+Frame
+ACK
+Timeout
+Sender Receiver
+Frame
+ACK
+Timeout
+Frame
+ACK
+Timeout
+Sender Receiver
+Frame
+Timeout
+Frame
+ACK
+Timeout
+(a) (c)
+(b) (d)
+Figure 2.19 Timeline showing four different scenarios for the stop-and-wait algorithm.
+(a) The ACK is received before the timer expires; (b) the original frame is lost; (c) the
+ACK is lost; (d) the timeout fires too soon.
+100 2 Direct Link Networks
+Sender Receiver
+Frame 0
+ACK 0
+Time
+Frame 1
+ACK 1
+Frame 0
+ACK 0
+…
+Figure 2.20 Timeline for stop-and-wait with 1-bit sequence number.
+but the receiver will think that it is the next frame, since it correctly received and
+acknowledged the first frame. This has the potential to cause duplicate copies of a
+frame to be delivered. To address this problem, the header for a stop-and-wait protocol
+usually includes a 1-bit sequence number—that is, the sequence number can take on the
+values 0 and 1—and the sequence numbers used for each frame alternate, as illustrated
+in Figure 2.20. Thus, when the sender retransmits frame 0, the receiver can determine
+that it is seeing a second copy of frame 0 rather than the first copy of frame 1 and
+therefore can ignore it (the receiver still acknowledges it, in case the first ACK was lost).
+The main shortcoming of the stop-and-wait algorithm is that it allows the sender
+to have only one outstanding frame on the link at a time, and this may be far below
+the link’s capacity. Consider, for example, a 1.5-Mbps link with a 45-ms round-trip
+time. This link has a delay × bandwidth product of 67.5 Kb, or approximately 8 KB.
+Since the sender can send only one frame per RTT, and assuming a frame size of 1 KB,
+this implies a maximum sending rate of
+BitsPerFrame ÷ TimePerFrame
+= 1024 × 8 ÷ 0.045
+= 182 Kbps
+or about one-eighth of the link’s capacity. To use the link fully, then, we’d like the sender
+to be able to transmit up to eight frames before having to wait for an acknowledgment.
+2.5 Reliable Transmission 101
+? The significance of the bandwidth × delay product is that it represents the
+amount of data that could be in transit. We would like to be able to send this much
+data without waiting for the first acknowledgment. The principle at work here is often
+referred to as keeping the pipe full. The algorithms presented in the following two
+subsections do exactly this.
+2.5.2 Sliding Window
+Consider again the scenario in which the link has a delay × bandwidth product of
+8 KB and frames are of 1-KB size.We would like the sender to be ready to transmit the
+ninth frame at pretty much the same moment that the ACK for the first frame arrives.
+The algorithm that allows us to do this is called sliding window, and an illustrative
+timeline is given in Figure 2.21.
+The Sliding Window Algorithm
+The sliding window algorithm works as follows. First, the sender assigns a sequence
+number, denoted SeqNum, to each frame. For now, let’s ignore the fact that SeqNum is
+implemented by a finite-size header field and instead assume that it can grow infinitely
+large. The sender maintains three variables: The send window size, denoted SWS,
+gives the upper bound on the number of outstanding (unacknowledged) frames that
+the sender can transmit; LAR denotes the sequence number of the last acknowledgment
+received; and LFS denotes the sequence number of the last frame sent. The sender also
+maintains the following invariant:
+LFS - LAR ? SWS
+This situation is illustrated in Figure 2.22.
+Sender Receiver
+Time
+… …
+Figure 2.21 Timeline for the sliding window algorithm.
+102 2 Direct Link Networks
+ SWS
+LAR LFS
+… …
+Figure 2.22 Sliding window on sender.
+ RWS
+LFR LAF
+… …
+Figure 2.23 Sliding window on receiver.
+When an acknowledgment arrives, the sender moves LAR to the right, thereby
+allowing the sender to transmit another frame. Also, the sender associates a timer with
+each frame it transmits, and it retransmits the frame should the timer expire before an
+ACK is received. Notice that the sender has to be willing to buffer up to SWS frames
+since it must be prepared to retransmit them until they are acknowledged.
+The receiver maintains the following three variables: The receive window size,
+denoted RWS, gives the upper bound on the number of out-of-order frames that the
+receiver is willing to accept; LAF denotes the sequence number of the largest acceptable
+frame; and LFR denotes the sequence number of the last frame received. The receiver
+also maintains the following invariant:
+LAF - LFR ? RWS
+This situation is illustrated in Figure 2.23.
+When a frame with sequence number SeqNum arrives, the receiver takes the
+following action. If SeqNum ? LFR or SeqNum > LAF, then the frame is outside
+the receiver’s window and it is discarded. If LFR < SeqNum ? LAF, then the frame is
+within the receiver’s window and it is accepted. Now the receiver needs to decide
+whether or not to send an ACK. Let SeqNumToAck denote the largest sequence
+number not yet acknowledged, such that all frames with sequence numbers less
+than or equal to SeqNumToAck have been received. The receiver acknowledges the
+receipt of SeqNumToAck, even if higher-numbered packets have been received.
+2.5 Reliable Transmission 103
+This acknowledgment is said to be cumulative. It then sets LFR = SeqNumToAck
+and adjusts LAF = LFR + RWS.
+For example, suppose LFR = 5 (i.e., the last ACK the receiver sent was for
+sequence number 5), and RWS = 4. This implies that LAF = 9. Should frames 7 and 8
+arrive, they will be buffered because they are within the receiver’s window. However,
+no ACK needs to be sent since frame 6 is yet to arrive. Frames 7 and 8 are said to have
+arrived out of order. (Technically, the receiver could resend an ACK for frame 5 when
+frames 7 and 8 arrive.) Should frame 6 then arrive—perhaps it is late because it was
+lost the first time and had to be retransmitted, or perhaps it was simply delayed—the
+receiver acknowledges frame 8, bumps LFR to 8, and sets LAF to 12. If frame 6 was
+in fact lost, then a timeout will have occurred at the sender, causing it to retransmit
+frame 6.
+We observe that when a timeout occurs, the amount of data in transit decreases,
+since the sender is unable to advance its window until frame 6 is acknowledged. This
+means that when packet losses occur, this scheme is no longer keeping the pipe full.
+The longer it takes to notice that a packet loss has occurred, the more severe this
+problem becomes.
+Notice that in this example, the receiver could have sent a negative acknowl-
+edgment (NAK) for frame 6 as soon as frame 7 arrived. However, this is unnecessary
+since the sender’s timeout mechanism is sufficient to catch this situation, and sending
+NAKs adds additional complexity to the receiver. Also, as we mentioned, it would
+have been legitimate to send additional acknowledgments of frame 5 when frames 7
+and 8 arrived; in some cases, a sender can use duplicate ACKs as a clue that a frame
+was lost. Both approaches help to improve performance by allowing early detection
+of packet losses.
+Yet another variation on this scheme would be to use selective acknowledgments.
+That is, the receiver could acknowledge exactly those frames it has received, rather
+than just the highest-numbered frame received in order. So, in the above example, the
+receiver could acknowledge the receipt of frames 7 and 8. Giving more information
+to the sender makes it potentially easier for the sender to keep the pipe full, but adds
+complexity to the implementation.
+The sending window size is selected according to how many frames we want to
+have outstanding on the link at a given time; SWS is easy to compute for a given delay×
+bandwidth product.1 On the other hand, the receiver can set RWS to whatever it wants.
+Two common settings are RWS = 1, which implies that the receiver will not buffer any
+frames that arrive out of order, and RWS = SWS, which implies that the receiver can
+1Easy, that is, if we know the delay and the bandwidth. Sometimes we do not, and estimating them well is a
+challenge to protocol designers. We discuss this further in Chapter 5.
+104 2 Direct Link Networks
+buffer any of the frames the sender transmits. It makes no sense to set RWS > SWS
+since it’s impossible for more than SWS frames to arrive out of order.
+Finite Sequence Numbers and Sliding Window
+We now return to the one simplification we introduced into the algorithm—our assumption
+that sequence numbers can grow infinitely large. In practice, of course, a
+frame’s sequence number is specified in a header field of some finite size. For example,
+a 3-bit field means that there are eight possible sequence numbers, 0 . . . 7. This makes
+it necessary to reuse sequence numbers or, stated another way, sequence numbers wrap
+around. This introduces the problem of being able to distinguish between different incarnations
+of the same sequence numbers, which implies that the number of possible
+sequence numbers must be larger than the number of outstanding frames allowed. For
+example, stop-and-wait allowed one outstanding frame at a time and had two distinct
+sequence numbers.
+Suppose we have one more number in our space of sequence numbers than
+we have potentially outstanding frames; that is, SWS ? MaxSeqNum - 1, where
+MaxSeqNum is the number of available sequence numbers. Is this sufficient? The
+answer depends on RWR. If RWS = 1, then MaxSeqNum ? SWS + 1 is sufficient. If
+RWS is equal to SWS, then having a MaxSeqNum just one greater than the sending
+window size is not good enough. To see this, consider the situation in which we
+have the eight sequence numbers 0 through 7, and SWS = RWS = 7. Suppose the
+sender transmits frames 0..6, they are successfully received, but the ACKs are lost. The
+receiver is now expecting frames 7, 0..5, but the sender times out and sends frames 0..6.
+Unfortunately, the receiver is expecting the second incarnation of frames 0..5, but gets
+the first incarnation of these frames. This is exactly the situation we wanted to avoid.
+It turns out that the sending window size can be no more than half as big
+as the number of available sequence numbers when RWS = SWS, or stated more
+precisely,
+SWS < (MaxSeqNum + 1)/2
+Intuitively, what this is saying is that the sliding window protocol alternates between
+the two halves of the sequence number space, just as stop-and-wait alternates between
+sequence numbers 0 and 1. The only difference is that it continually slides between the
+two halves rather than discretely alternating between them.
+Note that this rule is specific to the situation where RWS = SWS. We leave
+it as an exercise to determine the more general rule that works for arbitrary values
+of RWS and SWS. Also note that the relationship between the window size and
+the sequence number space depends on an assumption that is so obvious that it
+2.5 Reliable Transmission 105
+is easy to overlook, namely, that frames are not reordered in transit. This cannot
+happen on a direct point-to-point link since there is no way for one frame to overtake
+another during transmission. However, we will see the sliding window algorithm used
+in a different environment in Chapter 5, and we will need to devise another rule.
+Implementation of Sliding Window
+The following routines illustrate how we might implement the sending and receiving
+sides of the sliding window algorithm. The routines are taken from a working protocol
+named, appropriately enough, sliding window protocol (SWP). So as not to concern
+ourselves with the adjacent protocols in the protocol graph, we denote the protocol
+sitting above SWP as HLP (high-level protocol) and the protocol sitting below SWP
+as LINK (link-level protocol).
+We start by defining a pair of data structures. First, the frame header is very
+simple: It contains a sequence number (SeqNum) and an acknowledgment number
+(AckNum). It also contains a Flags field that indicates whether the frame is an ACK or
+carries data.
+typedef u_char SwpSeqno;
+typedef struct {
+SwpSeqno SeqNum; /* sequence number of this frame */
+SwpSeqno AckNum; /* ack of received frame */
+u_char Flags; /* up to 8 bits' worth of flags */
+} SwpHdr;
+Next, the state of the sliding window algorithm has the following structure. For
+the sending side of the protocol, this state includes variables LAR and LFS, as described
+earlier in this section, as well as a queue that holds frames that have been transmitted
+but not yet acknowledged (sendQ). The sending state also includes a counting
+semaphore called sendWindowNotFull. We will see how this is used below, but generally
+a semaphore is a synchronization primitive that supports semWait and semSignal
+operations. Every invocation of semSignal increments the semaphore by 1, and
+every invocation of semWait decrements s by 1, with the calling process blocked (suspended)
+should decrementing the semaphore cause its value to become less than 0. A
+process that is blocked during its call to semWait will be allowed to resume as soon as
+enough semSignal operations have been performed to raise the value of the semaphore
+above 0.
+For the receiving side of the protocol, the state includes the variable NFE. This is
+the next frame expected—the frame with a sequence number one more than the last
+frame received (LFR), described earlier in this section. There is also a queue that holds
+frames that have been received out of order (recvQ). Finally, although not shown,
+106 2 Direct Link Networks
+the sender and receiver sliding window sizes are defined by constants SWS and RWS,
+respectively.
+typedef struct {
+/* sender side state: */
+SwpSeqno LAR; /* seqno of last ACK received */
+SwpSeqno LFS; /* last frame sent */
+Semaphore sendWindowNotFull;
+SwpHdr hdr; /* preinitialized header */
+struct sendQ_slot {
+Event timeout; /* event associated with send-timeout */
+Msg msg;
+} sendQ[SWS];
+/* receiver side state: */
+SwpSeqno NFE; /* seqno of next frame expected */
+struct recvQ_slot {
+int received; /* is msg valid? */
+Msg msg;
+} recvQ[RWS];
+} SwpState;
+The sending side of SWP is implemented by procedure sendSWP. This routine
+is rather simple. First, semWait causes this process to block on a semaphore until it
+is OK to send another frame. Once allowed to proceed, sendSWP sets the sequence
+number in the frame’s header, saves a copy of the frame in the transmit queue (sendQ),
+schedules a timeout event to handle the case in which the frame is not acknowledged,
+and sends the frame to the next-lower-level protocol, which we denote as LINK.
+One detail worth noting is the call to store swp hdr just before the call to
+msgAddHdr. This routine translates the C structure that holds the SWP header (state->
+hdr) into a byte string that can be safely attached to the front of the message (hbuf).
+This routine (not shown) must translate each integer field in the header into network
+byte order and remove any padding that the compiler has added to the C structure.
+The issue of byte order is discussed more fully in Section 7.1, but for now it is enough
+to assume that this routine places the most significant bit of a multiword integer in
+the byte with the highest address. Also, we assume an abstract data type, denoted
+Msg, that holds a message. The Msg type supports operations like msgAddHdr and
+msgSaveCopy.
+Another piece of complexity in this routine is the use of semWait and the send-
+WindowNotFull semaphore. sendWindowNotFull is initialized to the size of the sender’s
+sliding window, SWS (this initialization is not shown). Each time the sender transmits
+a frame, the semWait operation decrements this count and blocks the sender
+should the count go to 0. Each time an ACK is received, the semSignal operation

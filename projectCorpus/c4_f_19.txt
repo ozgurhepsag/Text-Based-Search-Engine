@@ -1,0 +1,2086 @@
+4 Internetworking
+4.1 Simple Internetworking (IP)
+In the previous chapter, we saw that it was possible to build reasonably large LANs
+using bridges and LAN switches, but that such approaches were limited in their ability
+to scale and to handle heterogeneity. In this chapter, we explore some ways to go
+beyond the limitations of bridged networks, enabling us to build large, highly heterogeneous
+networks with reasonably efficient routing. We refer to such networks
+as internetworks. In the following sections, we make a steady progression toward
+larger and larger internetworks. We start with the basic functionality of the currently
+deployed version of the Internet Protocol (IP), and then we examine various techniques
+that have been developed to extend the scalability of the Internet in Section 4.3. This
+discussion culminates with a description of IP version 6 (IPv6), also known as the
+“next-generation” IP. Before delving into the details of an internetworking protocol,
+however, let’s consider more carefully what the word “internetwork” means.
+4.1.1 What Is an Internetwork?
+We use the term “internetwork,” or sometimes just “internet” with a lowercase i, to
+refer to an arbitrary collection of networks interconnected to provide some sort of hostto-
+host packet delivery service. For example, a corporation with many sites might construct
+a private internetwork by interconnecting the LANs at their different sites with
+point-to-point links leased from the phone company. When we are talking about the
+widely used, global internetwork to which a large percentage of networks are now connected,
+we call it the “Internet” with a capital I. In keeping with the first-principles approach
+of this book, we mainly want you to learn about the principles of “lowercase i”
+internetworking, but we illustrate these ideas with real-world examples from the
+“big I” Internet.
+Another piece of terminology that can be confusing is the difference between
+networks, subnetworks, and internetworks. We are going to avoid subnetworks (or
+subnets) altogether until Section 4.3. For now, we use network to mean either a directly
+connected or a switched network of the kind that was discussed in the last two chapters.
+Such a network uses one technology, such as 802.5, Ethernet, orATM. An internetwork
+is an interconnected collection of such networks. Sometimes, to avoid ambiguity, we
+refer to the underlying networks that we are interconnecting as physical networks.
+An internet is a logical network built out of a collection of physical networks. In
+this context, a collection of Ethernets connected by bridges or switches would still be
+viewed as a single network.
+Figure 4.1 shows an example internetwork. An internetwork is often referred
+to as a “network of networks” because it is made up of lots of smaller networks. In
+this figure, we see Ethernets, an FDDI ring, and a point-to-point link. Each of these
+4.1 Simple Internetworking (IP) 237
+R2
+R1
+H4
+H5
+H1 H2 H3
+Network 2 (Ethernet)
+Network 1 (Ethernet)
+H6
+Network 4
+(point-to-point)
+H7 R3 H8
+Network 3 (FDDI)
+Figure 4.1 A simple internetwork. Hn = host; Rn = router.
+is a single-technology network. The nodes that interconnect the networks are called
+routers. They are also sometimes called gateways, but since this term has several other
+connotations, we restrict our usage to router.
+The Internet Protocol is the key tool used today to build scalable, heterogeneous
+internetworks. It was originally known as the Kahn-Cerf protocol after its inventors.
+One way to think of IP is that it runs on all the nodes (both hosts and routers) in
+a collection of networks and defines the infrastructure that allows these nodes and
+networks to function as a single logical internetwork. For example, Figure 4.2 shows
+how hosts H1 and H8 are logically connected by the internet in Figure 4.1, including
+the protocol graph running on each node. Note that higher-level protocols, such as
+TCP and UDP, typically run on top of IP on the hosts.
+Most of the rest of this chapter is about various aspects of IP. While it is certainly
+possible to build an internetwork that does not use IP—for example, Novell created
+an internetworking protocol called IPX, which was in turn based on the XNS internet
+designed by Xerox—IP is the most interesting case to study simply because of the
+size of the Internet. Said another way, it is only the IP Internet that has really faced
+the issue of scale. Thus it provides the best case study of a scalable internetworking
+protocol.
+238 4 Internetworking
+R1 R2 R3
+H1 H8
+ETH FDDI
+IP
+ETH
+TCP
+FDDI PPP PPP ETH
+IP
+ETH
+TCP
+IP IP IP
+Figure 4.2 A simple internetwork, showing the protocol layers used to connect H1 to
+H8 in Figure 4.1. ETH is the protocol that runs over Ethernet.
+4.1.2 Service Model
+A good place to start when you build an internetwork is to define its service model,
+that is, the host-to-host services you want to provide. The main concern in defining a
+service model for an internetwork is that we can provide a host-to-host service only if
+this service can somehow be provided over each of the underlying physical networks.
+For example, it would be no good deciding that our internetwork service model was
+going to provide guaranteed delivery of every packet in 1 ms or less if there were
+underlying network technologies that could arbitrarily delay packets. The philosophy
+used in defining the IP service model, therefore, was to make it undemanding enough
+that just about any network technology that might turn up in an internetwork would
+be able to provide the necessary service.
+The IP service model can be thought of as having two parts: an addressing scheme,
+which provides a way to identify all hosts in the internetwork, and a datagram (connectionless)
+model of data delivery. This service model is sometimes called best effort
+because, although IP makes every effort to deliver datagrams, it makes no guarantees.
+We postpone a discussion of the addressing scheme for now and look first at the data
+delivery model.
+Datagram Delivery
+The IP datagram is fundamental to the Internet Protocol. Recall from Section 3.1.1 that
+a datagram is a type of packet that happens to be sent in a connectionless manner over
+a network. Every datagram carries enough information to let the network forward the
+packet to its correct destination; there is no need for any advance setup mechanism to
+tell the network what to do when the packet arrives. You just send it, and the network
+makes its best effort to get it to the desired destination. The “best-effort” part means
+4.1 Simple Internetworking (IP) 239
+that if something goes wrong and the packet gets lost, corrupted, misdelivered, or in
+any way fails to reach its intended destination, the network does nothing—it made its
+best effort, and that is all it has to do. It does not make any attempt to recover from
+the failure. This is sometimes called an unreliable service.
+Best-effort, connectionless service is about the simplest service you could ask for
+from an internetwork, and this is a great strength. For example, if you provide besteffort
+service over a network that provides a reliable service, then that’s fine—you end
+up with a best-effort service that just happens to always deliver the packets. If, on the
+other hand, you had a reliable service model over an unreliable network, you would
+have to put lots of extra functionality into the routers to make up for the deficiencies
+of the underlying network. Keeping the routers as simple as possible was one of the
+original design goals of IP.
+The ability of IP to “run over anything” is frequently cited as one of its most
+important characteristics. It is noteworthy that many of the technologies over which
+IP runs today did not exist when IP was invented. So far, no networking technology
+has been invented that has proven too bizarre for IP; it has even been claimed that IP
+can run over a network that transports messages using carrier pigeons.
+Best-effort delivery does not just mean that packets can get lost. Sometimes they
+can get delivered out of order, and sometimes the same packet can get delivered more
+than once. The higher-level protocols or applications that run above IP need to be
+aware of all these possible failure modes.
+Packet Format
+Clearly, a key part of the IP service model is the type of packets that can be carried.
+The IP datagram, like most packets, consists of a header followed by a number of bytes
+of data. The format of the header is shown in Figure 4.3. Note that we have adopted
+a different style of representing packets than the one we used in previous chapters.
+This is because packet formats at the internetworking layer and above, where we will
+be focusing our attention for the next few chapters, are almost invariably designed to
+align on 32-bit boundaries to simplify the task of processing them in software. Thus,
+the common way of representing them (used in Internet Requests for Comments, for
+example) is to draw them as a succession of 32-bit words. The top word is the one
+transmitted first, and the leftmost byte of each word is the one transmitted first. In
+this representation, you can easily recognize fields that are a multiple of 8 bits long.
+On the odd occasion when fields are not an even multiple of 8 bits, you can determine
+the field lengths by looking at the bit positions marked at the top of the packet.
+Looking at each field in the IP header, we see that the “simple” model of besteffort
+datagram delivery still has some subtle features. The Version field specifies the
+240 4 Internetworking
+Version HLen TOS Length
+Ident Flags Offset
+TTL Protocol Checksum
+SourceAddr
+DestinationAddr
+Options (variable) Pad
+(variable)
+0 4 8 16 19 31
+Data
+Figure 4.3 IPv4 packet header.
+version of IP. The current version of IP is 4, and it is sometimes called IPv4.1 Observe
+that putting this field right at the start of the datagram makes it easy for everything
+else in the packet format to be redefined in subsequent versions; the header processing
+software starts off by looking at the version and then branches off to process the rest
+of the packet according to the appropriate format. The next field, HLen, specifies the
+length of the header in 32-bit words. When there are no options, which is most of the
+time, the header is 5 words (20 bytes) long. The 8-bit TOS (type of service) field has
+had a number of different definitions over the years, but its basic function is to allow
+packets to be treated differently based on application needs. For example, the TOS
+value might determine whether or not a packet should be placed in a special queue
+that receives low delay.We discuss the use of this field (and a new name for it) in more
+detail in Section 6.5.3.
+The next 16 bits of the header contain the Length of the datagram, including the
+header. Unlike the HLen field, the Length field counts bytes rather than words. Thus,
+the maximum size of an IP datagram is 65,535 bytes. The physical network over
+which IP is running, however, may not support such long packets. For this reason,
+IP supports a fragmentation and reassembly process. The second word of the header
+contains information about fragmentation, and the details of its use are presented
+under “Fragmentation and Reassembly” below.
+1The next major version of IP, which is discussed later in this chapter, has a new version number 6 and is known
+as IPv6. The version number 5 was used for an experimental protocol called ST-II that was not widely used.
+4.1 Simple Internetworking (IP) 241
+Moving on to the third word of the header, the next byte is the TTL (time to live)
+field. Its name reflects its historical meaning rather than the way it is commonly used
+today. The intent of the field is to catch packets that have been going around in routing
+loops and discard them, rather than let them consume resources indefinitely. Originally,
+TTL was set to a specific number of seconds that the packet would be allowed to live,
+and routers along the path would decrement this field until it reached 0. However,
+since it was rare for a packet to sit for as long as 1 second in a router, and routers did
+not all have access to a common clock, most routers just decremented the TTL by 1 as
+they forwarded the packet. Thus, it became more of a hop count than a timer, which is
+still a perfectly good way to catch packets that are stuck in routing loops. One subtlety
+is in the initial setting of this field by the sending host: Set it too high and packets could
+circulate rather a lot before getting dropped; set it too low and they may not reach
+their destination. The value 64 is the current default.
+The Protocol field is simply a demultiplexing key that identifies the higher-level
+protocol to which this IP packet should be passed. There are values defined for
+TCP (6), UDP (17), and many other protocols that may sit above IP in the protocol
+graph.
+The Checksum is calculated by considering the entire IP header as a sequence of
+16-bit words, adding them up using ones complement arithmetic, and taking the ones
+complement of the result. This is the IP checksum algorithm described in Section 2.4.
+Thus, if any bit in the header is corrupted in transit, the checksum will not contain
+the correct value upon receipt of the packet. Since a corrupted header may contain
+an error in the destination address—and, as a result, may have been misdelivered—it
+makes sense to discard any packet that fails the checksum. It should be noted that this
+type of checksum does not have the same strong error detection properties as a CRC,
+but it is much easier to calculate in software.
+The last two required fields in the header are the SourceAddr and the
+DestinationAddr for the packet. The latter is the key to datagram delivery: Every packet
+contains a full address for its intended destination so that forwarding decisions can be
+made at each router. The source address is required to allow recipients to decide if they
+want to accept the packet and to enable them to reply. IP addresses are discussed in
+Section 4.1.3—for now, the important thing to know is that IP defines its own global
+address space, independent of whatever physical networks it runs over. As we will see,
+this is one of the keys to supporting heterogeneity.
+Finally, there may be a number of options at the end of the header. The presence
+or absence of options may be determined by examining the header length (HLen)
+field. While options are used fairly rarely, a complete IP implementation must handle
+them all.
+242 4 Internetworking
+Fragmentation and Reassembly
+One of the problems of providing a uniform host-to-host service model over a heterogeneous
+collection of networks is that each network technology tends to have its
+own idea of how large a packet can be. For example, an Ethernet can accept packets
+up to 1500 bytes long, while FDDI packets may be 4500 bytes long. This leaves two
+choices for the IP service model: make sure that all IP datagrams are small enough to
+fit inside one packet on any network technology, or provide a means by which packets
+can be fragmented and reassembled when they are too big to go over a given network
+technology. The latter turns out to be a good choice, especially when you consider the
+fact that new network technologies are always turning up, and IP needs to run over all
+of them; this would make it hard to pick a suitably small bound on datagram size. This
+also means that a host will not send needlessly small packets, which wastes bandwidth
+and consumes processing resources by requiring more headers per byte of data sent.
+For example, two hosts connected to FDDI networks that are interconnected by a
+point-to-point link would not need to send packets small enough to fit on an Ethernet.
+The central idea here is that every network type has a maximum transmission
+unit (MTU), which is the largest IP datagram that it can carry in a frame. Note that this
+value is smaller than the largest packet size on that network because the IP datagram
+needs to fit in the payload of the link-layer frame. Also, note that in ATM networks,
+the “frame” is the CS-PDU, not the ATM cell; the fact that CS-PDUs get segmented
+into cells is not visible to IP.
+When a host sends an IP datagram, therefore, it can choose any size that it
+wants. A reasonable choice is the MTU of the network to which the host is directly
+attached. Then fragmentation will only be necessary if the path to the destination
+includes a network with a smaller MTU. Should the transport protocol that sits on
+top of IP give IP a packet larger than the local MTU, however, then the source host
+must fragment it.
+Fragmentation typically occurs in a router when it receives a datagram that it
+wants to forward over a network that has an MTU that is smaller than the received
+datagram. To enable these fragments to be reassembled at the receiving host, they
+all carry the same identifier in the Ident field. This identifier is chosen by the sending
+host and is intended to be unique among all the datagrams that might arrive at the
+destination from this source over some reasonable time period. Since all fragments
+of the original datagram contain this identifier, the reassembling host will be able to
+recognize those fragments that go together. Should all the fragments not arrive at the
+receiving host, the host gives up on the reassembly process and discards the fragments
+that did arrive. IP does not attempt to recover from missing fragments.
+To see what this all means, consider what happens when host H1 sends a datagram
+to host H8 in the example internet shown in Figure 4.1. Assuming that the MTU
+4.1 Simple Internetworking (IP) 243
+H1 R1 R2 R3 H8
+ETH FDDI
+PPP IP (376)
+PPP IP (512)
+PPP IP (512) (512)
+ETH IP
+ETH IP
+ETH IP (512)
+(376)
+IP (1400) IP (1400)
+R1 R2 R3
+Figure 4.4 IP datagrams traversing the sequence of physical networks graphed in
+Figure 4.1.
+is 1500 bytes for the two Ethernets, 4500 bytes for the FDDI network, and 532 bytes
+for the point-to-point network, then a 1420-byte datagram (20-byte IP header plus
+1400 bytes of data) sent from H1 makes it across the first Ethernet and the FDDI network
+without fragmentation but must be fragmented into three datagrams at router
+R2. These three fragments are then forwarded by router R3 across the second Ethernet
+to the destination host. This situation is illustrated in Figure 4.4. This figure also serves
+to reinforce two important points:
+1 Each fragment is itself a self-contained IP datagram that is transmitted over a
+sequence of physical networks, independent of the other fragments.
+2 Each IP datagram is reencapsulated for each physical network over which it
+travels.
+The fragmentation process can be understood in detail by looking at the header
+fields of each datagram, as is done in Figure 4.5. The unfragmented packet, shown at
+the top, has 1400 bytes of data and a 20-byte IP header. When the packet arrives at
+router R2, which has an MTU of 532 bytes, it has to be fragmented. A 532-byte MTU
+leaves 512 bytes for data after the 20-byte IP header, so the first fragment contains
+512 bytes of data. The router sets theMbit in the Flags field (see Figure 4.3), meaning
+that there are more fragments to follow, and it sets the Offset to 0, since this fragment
+contains the first part of the original datagram. The data carried in the second fragment
+starts with the 513th byte of the original data, so the Offset field in this header is set
+to 64, which is 512 ÷ 8. Why the division by 8? Because the designers of IP decided
+that fragmentation should always happen on 8-byte boundaries, which means that
+the Offset field counts 8-byte chunks, not bytes. (We leave it as an exercise for you to
+figure out why this design decision was made.) The third fragment contains the last
+244 4 Internetworking
+(a)
+Ident = x
+Start of header
+Rest of header
+1400 data bytes
+0 Offset = 0
+(b)
+Ident = x
+Start of header
+Rest of header
+512 data bytes
+1 Offset = 0
+Ident = x
+Rest of header
+512 data bytes
+1 Offset = 64
+Start of header
+Ident = x
+Start of header
+Rest of header
+376 data bytes
+0 Offset = 128
+Figure 4.5 Header fields used in IP fragmentation. (a) Unfragmented packet; (b) frag-
+mented packets.
+376 bytes of data, and the offset is now 2 × 512 ÷ 8 = 128. Since this is the last
+fragment, the M bit is not set.
+Observe that the fragmentation process is done in such a way that it could
+be repeated if a fragment arrived at another network with an even smaller MTU.
+Fragmentation produces smaller, valid IP datagrams that can be readily reassembled
+4.1 Simple Internetworking (IP) 245
+into the original datagram upon receipt, independent of the order of their arrival.
+Reassembly is done at the receiving host and not at each router.
+Implementation
+We conclude this discussion of IP fragmentation and reassembly by giving a fragment
+of code that performs reassembly. One reason we give this particular piece of code is
+that it is representative of a large proportion of networking software—it does little
+more than tedious and unglamorous bookkeeping.
+First, we define the key data structure (FragList) that is used to hold the individual
+fragments that arrive at the destination. Incoming fragments are saved in this data
+structure until all the fragments in the original datagram have arrived, at which time
+they are reassembled into a complete datagram and passed up to some higher-level
+protocol. Note that each element in FragList contains either a fragment or a hole.
+#define FRAGOFFMASK 0x1fff
+#define FRAGOFFSET(fragflag) ((fragflag) & FRAGOFFMASK)
+#define INFINITE_OFFSET 0xffff
+/* structure to hold the fields that uniquely identify fragments
+of the same IP datagram */
+typedef struct fid {
+IpHost source;
+IpHost dest;
+u_char prot;
+u_char pad;
+u_short ident;
+} FragId;
+typedef struct hole {
+u_int first;
+u_int last;
+} Hole;
+#define HOLE 1
+#define FRAG 2
+/* structure to hold a fragment or a hole */
+typedef struct fragif {
+u_char type;
+union {
+Hole hole;
+Msg frag;
+} u;
+struct fragif *next, *prev;
+} FragInfo;
+246 4 Internetworking
+/* structure to hold all the fragments and holes for a
+single IP datagram being reassembled */
+typedef struct FragList {
+u_short nholes;
+FragInfo head; /* dummy header node */
+Binding binding;
+bool gcMark; /* garbage collection flag */
+} FragList;
+The reassembly routine, ipReassemble, takes an incoming datagram (dg) and
+the IP header for that datagram (hdr) as arguments. The third argument, fragMap,
+is a Map structure (which supports mapBind, mapRemove, and MapResolve operations)
+used to efficiently map the incoming datagram into the appropriate FragList.
+(Recall that the group of fragments that are being reassembled together are uniquely
+identified by several fields in the IP header, as defined by structure FragId given
+above.)
+The actual work done in ipReassemble is straightforward; as stated above, it
+is mostly bookkeeping. First, the routine extracts the fields from the IP header that
+uniquely identify the datagram to be reassembled, constructs a key from these fields,
+and looks this key up in fragMap to find the appropriate FragList. If this is the first
+fragment for the datagram, a new FragList must be created and initialized. Next, the
+routine inserts the new fragment into this FragList. This involves comparing the sum
+of the offset and length of this fragment with the offset of the next fragment in the
+list. Some of this work is done in subroutine hole create, which is given below. Finally,
+ipReassemble checks to see if all the holes are filled. If all the fragments are present,
+it calls the routine msgReassemble to actually reassemble the fragments into a whole
+datagram and then calls deliver to pass this datagram up the protocol graph to some
+high-level protocol identified as HLP.
+ipReassemble(Msg *dg, IpHdr *hdr, Map fragMap)
+{
+FragId fragid;
+FragList *list;
+FragInfo *fi, *prev;
+Hole *hole;
+u_short offset, len;
+/* extract fragmentation info from header
+(offset and fragment length) */
+offset = FRAGOFFSET(hdr->frag)*8;
+4.1 Simple Internetworking (IP) 247
+len = hdr->dlen - GET_HLEN(hdr) * 4;
+/* Create the unique id for this fragment */
+bzero((char *)&fragid, sizeof(FragId));
+fragid.source = hdr->source;
+fragid.dest = hdr->dest;
+fragid.prot = hdr->prot;
+fragid.ident = hdr->ident;
+/* find reassembly list for this frag; create one if none exists */
+if (mapResolve( fragMap, &fragid, (void **)&list) == FALSE)
+{
+/* first fragment of datagram - need new FragList */
+list = NEW(FragList);
+/* insert it into the Map structure */
+list->binding = mapBind( fragMap, &fragid, list );
+/* initialize list with a single hole spanning the
+whole datagram */
+list->nholes = 1;
+list->head.next = fi = NEW(FragInfo);
+fi->next = 0;
+fi->type = HOLE;
+fi->u.hole.first = 0;
+fi->u.hole.last = INFINITE_OFFSET;
+}
+/* mark the current FragList as ineligible for garbage
+collection */
+list->gcMark = FALSE;
+/* walk through the FragList to find the right hole for
+this frag */
+prev = &list->head;
+for ( fi = prev->next; fi != 0; prev = fi, fi = fi->next )
+{
+if ( fi->type == FRAG )
+{
+continue;
+}
+hole = &fi->u.hole;
+if ( (offset < hole->last) && ((offset + len) >
+hole->first) )
+{
+/* check to see if frag overlaps previously
+received frags */
+if ( offset < hole->first )
+248 4 Internetworking
+{
+/* truncate message from left */
+msgStripHdr(dg, hole->first - offset);
+offset = hole->first;
+}
+if ( (offset + len) > hole->last )
+{
+/* truncate message from right */
+msgTruncate(dg, hole->last - offset);
+len = hole->last - offset;
+}
+/* now check to see if new hole(s) need to be made */
+if (((offset + len) < hole->last) &&
+(hdr->frag & MOREFRAGMENTS))
+{
+/* creating new hole above */
+hole_create(prev, fi, (offset+len), hole->last);
+list->nholes++;
+}
+if ( offset > hole->first )
+{
+/* creating new hole below */
+hole_create(fi, fi->next, hole->first, (offset));
+list->nholes++;
+}
+/* change this FragInfo structure to be FRAG */
+list->nholes--;
+fi->type = FRAG;
+msgSaveCopy(&fi->u.frag, dg);
+break;
+} /* if found a hole */
+} /* for loop */
+/* check to see if we're done, and if so, pass datagram up */
+if ( list->nholes == 0 )
+{
+Msg fullMsg;
+/* now have a full datagram */
+for( fi = list->head.next; fi != 0; fi = fi->next )
+{
+msgReassemble(&fullMsg, &fi->u.frag, &fullMsg);
+}
+/* get rid of FragList and its Map entry */
+4.1 Simple Internetworking (IP) 249
+mapRemove(fragMap, list->binding);
+ipFreeFragList(list);
+deliver(HLP, &fullMsg);
+msgDestroy(&fullMsg);
+}
+return SUCCESS;
+}
+Subroutine hole create creates a new hole in the fragment list that begins at offset
+first and continues to offset last. It makes use of the utility NEW, which creates an
+instance of the given structure.
+static int
+hole_create(FragInfo *prev, FragInfo *next, u_int first, u_int last)
+{
+FragInfo *fi;
+/* creating new hole from first to last */
+fi = NEW(FragInfo);
+fi->type = HOLE;
+fi->u.hole.first = first;
+fi->u.hole.last = last;
+fi->next = next;
+prev->next = fi;
+}
+Finally, note that these routines do not capture the entire picture of reassembly.
+What is not shown is a background process that periodically checks to see if there
+has been any recent activity on this datagram (it looks at field gcMark), and if not, it
+deletes the corresponding FragList. IP does not attempt to recover from the situation
+in which one or more of the fragments does not arrive; it simply gives up and reclaims
+the memory that was being used for reassembly.
+One thing to notice from this code is that IP reassembly is far from a simple
+process. Note, for example, that if a single fragment is lost, the receiver will still
+attempt to reassemble the datagram, and it will eventually give up and have to garbagecollect
+the resources that were used to perform the failed reassembly. For this reason,
+among others, IP fragmentation is generally considered a good thing to avoid. Hosts
+are now strongly encouraged to perform “path MTU discovery,” a process by which
+fragmentation is avoided by sending packets that are small enough to traverse the link
+with the smallest MTU in the path from sender to receiver.
+250 4 Internetworking
+4.1.3 Global Addresses
+In the above discussion of the IP service model, we mentioned that one of the things
+that it provides is an addressing scheme. After all, if you want to be able to send data to
+any host on any network, there needs to be a way of identifying all the hosts. Thus, we
+need a global addressing scheme—one in which no two hosts have the same address.
+Global uniqueness is the first property that should be provided in an addressing
+scheme.
+Ethernet addresses are globally unique, but that alone does not suffice for an
+addressing scheme in a large internetwork. Ethernet addresses are also flat, which
+means that they have no structure and provide very few clues to routing protocols.2
+In contrast, IP addresses are hierarchical, by which we mean that they are made up of
+several parts that correspond to some sort of hierarchy in the internetwork. Specifically,
+IP addresses consist of two parts, a network part and a host part. This is a fairly logical
+structure for an internetwork, which is made up of many interconnected networks.
+The network part of an IP address identifies the network to which the host is attached;
+all hosts attached to the same network have the same network part in their IP address.
+The host part then identifies each host uniquely on that particular network. Thus, in
+the simple internetwork of Figure 4.1, the addresses of the hosts on network 1, for
+example, would all have the same network part and different host parts.
+Note that the routers in Figure 4.1 are attached to two networks. They need
+to have an address on each network, one for each interface. For example, router R1,
+which sits between network 2 and network 3, has an IP address on the interface to
+network 2 that has the same network part as the hosts on network 2, and it has an
+IP address on the interface to network 3 that has the same network part as the hosts
+on network 3. Thus, bearing in mind that a router might be implemented as a host
+with two network interfaces, it is more precise to think of IP addresses as belonging
+to interfaces than to hosts.
+Now, what do these hierarchical addresses look like? Unlike some other forms
+of hierarchical address, the sizes of the two parts are not the same for all addresses.
+Instead, IP addresses are divided into three different classes, as shown in Figure 4.6,
+each of which defines different-sized network and host parts. (There are also class D
+addresses that specify a multicast group, discussed in Section 4.4, and class E addresses
+that are currently unused.) In all cases, the address is 32 bits long.
+The class of an IP address is identified in the most significant few bits. If the
+first bit is 0, it is a class A address. If the first bit is 1 and the second is 0, it is a
+2In fact, as we noted, Ethernet addresses do have a structure for the purposes of assignment—the first 24 bits
+identify the manufacturer—but this provides no useful information to routing protocols since this structure has
+nothing to do with network topology.
+4.1 Simple Internetworking (IP) 251
+Network Host
+7 24
+0
+(a)
+Network Host
+14 16
+1 0
+(b)
+Network Host
+21 8
+1 1 0
+(c)
+Figure 4.6 IP addresses: (a) class A; (b) class B; (c) class C.
+class B address. If the first two bits are 1 and the third is 0, it is a class C address.
+Thus, of the approximately 4 billion possible IP addresses, half are class A, onequarter
+are class B, and one-eighth are class C. Each class allocates a certain number
+of bits for the network part of the address and the rest for the host part. Class A
+networks have 7 bits for the network part and 24 bits for the host part, meaning
+that there can be only 126 class A networks (the values 0 and 127 are reserved),
+but each of them can accommodate up to 224 - 2 (about 16 million) hosts (again,
+there are two reserved values). Class B addresses allocate 14 bits for the network and
+16 bits for the host, meaning that each class B network has room for 65,534 hosts.
+Finally, class C addresses have only 8 bits for the host and 21 for the network part.
+Therefore, a class C network can have only 256 unique host identifiers, which means
+only 254 attached hosts (one host identifier, 255, is reserved for broadcast, and 0
+is not a valid host number). However, the addressing scheme supports 221 class C
+networks.
+On the face of it, this addressing scheme has a lot of flexibility, allowing networks
+of vastly different sizes to be accommodated fairly efficiently. The original idea was
+that the Internet would consist of a small number of wide area networks (these would
+be class A networks), a modest number of site- (campus-) sized networks (these would
+be class B networks), and a large number of LANs (these would be class C networks).
+However, as we shall see in Section 4.3, additional flexibility has been needed, and
+some innovative ways to provide it are now in use. Because one of these techniques
+actually removes the distinction between address classes, the addressing scheme just
+described is now known as “classful” addressing to distinguish it from the newer
+“classless” approach.
+Before we look at how IP addresses get used, it is helpful to look at some practical
+matters, such as how you write them down. By convention, IP addresses are written
+252 4 Internetworking
+as four decimal integers separated by dots. Each integer represents the decimal value
+contained in 1 byte of the address, starting at the most significant. For example, the
+address of the computer on which this sentence was typed is 171.69.210.245.
+It is important not to confuse IP addresses with Internet domain names, which
+are also hierarchical. Domain names tend to be ASCII strings separated by dots, such
+as cs.princeton.edu.We will be talking about those in Section 9.1. The important thing
+about IP addresses is that they are what is carried in the headers of IP packets, and it
+is those addresses that are used in IP routers to make forwarding decisions.
+4.1.4 Datagram Forwarding in IP
+We are now ready to look at the basic mechanism by which IP routers forward datagrams
+in an internetwork. Recall from Chapter 3 that forwarding is the process of
+taking a packet from an input and sending it out on the appropriate output, while
+routing is the process of building up the tables that allow the correct output for a
+packet to be determined. The discussion here focuses on forwarding; we take up routing
+in Section 4.2.
+The main points to bear in mind as we discuss the forwarding of IP datagrams
+are the following:
+¦ Every IP datagram contains the IP address of the destination host.
+¦ The “network part” of an IP address uniquely identifies a single physical
+network that is part of the larger Internet.
+¦ All hosts and routers that share the same network part of their address are
+connected to the same physical network and can thus communicate with each
+other by sending frames over that network.
+¦ Every physical network that is part of the Internet has at least one router that,
+by definition, is also connected to at least one other physical network; this
+router can exchange packets with hosts or routers on either network.
+Forwarding IP datagrams can therefore be handled in the following way. A datagram
+is sent from a source host to a destination host, possibly passing through several
+routers along the way. Any node, whether it is a host or a router, first tries to
+establish whether it is connected to the same physical network as the destination.
+To do this, it compares the network part of the destination address with the network
+part of the address of each of its network interfaces. (Hosts normally have
+only one interface, while routers normally have two or more, since they are typically
+connected to two or more networks.) If a match occurs, then that means that the
+destination lies on the same physical network as the interface, and the packet can be
+4.1 Simple Internetworking (IP) 253
+directly delivered over that network. Section 4.1.5 explains some of the details of this
+process.
+If the node is not connected to the same physical network as the destination node,
+then it needs to send the datagram to a router. In general, each node will have a choice of
+several routers, and so it needs to pick the best one, or at least one that has a reasonable
+chance of getting the datagram closer to its destination. The router that it chooses is
+known as the next hop router. The router finds the correct next hop by consulting its
+forwarding table. The forwarding table is conceptually just a list of NetworkNum,
+NextHop pairs. (As we will see below, forwarding tables in practice often contain
+some additional information related to the next hop.) Normally, there is also a default
+router that is used if none of the entries in the table match the destination’s network
+number. For a host, it may be quite acceptable to have a default router and nothing
+else—this means that all datagrams destined for hosts not on the physical network to
+which the sending host is attached will be sent out through the default router.
+We can describe the datagram forwarding algorithm in the following way:
+if (NetworkNum of destination = NetworkNum of one of my interfaces) then
+deliver packet to destination over that interface
+else
+if (NetworkNum of destination is in my forwarding table) then
+deliver packet to NextHop router
+else
+deliver packet to default router
+For a host with only one interface and only a default router in its forwarding
+table, this simplifies to
+if (NetworkNum of destination = my NetworkNum) then
+deliver packet to destination directly
+else
+deliver packet to default router
+Let’s see how this works in the example internetwork of Figure 4.1. First, suppose
+that H1 wants to send a datagram to H2. Since they are on the same physical
+network, H1 and H2 have the same network number in their IP address. Thus, H1
+deduces that it can deliver the datagram directly to H2 over the Ethernet. The one
+issue that needs to be resolved is how H1 finds out the correct Ethernet address for
+H2—this is the address resolution mechanism described in Section 4.1.5.
+Now suppose H1 wants to send a datagram to H8. Since these hosts are on
+different physical networks, they have different network numbers, so H1 deduces that
+254 4 Internetworking
+NetworkNum NextHop
+1 R3
+2 R1
+Table 4.1 Example forwarding table for router R2 in Figure 4.1.
+it needs to send the datagram to a router.
+R1 is the only choice—the default router—
+so H1 sends the datagram over the Ethernet
+to R1. Similarly, R1 knows that it cannot
+deliver a datagram directly to H8 because
+neither of R1’s interfaces is on the same network
+as H8. Suppose R1’s default router is
+R2; R1 then sends the datagram to R2 over
+the token ring network. Assuming R2 has
+the forwarding table shown in Table 4.1, it
+looks up H8’s network number (network 1)
+and forwards the datagram to R3. Finally,
+R3, since it is on the same network as H8,
+forwards the datagram directly to H8.
+Note that it is possible to include the
+infomation about directly connected networks
+in the forwarding table. For example,
+we would label the network interfaces
+of router R2 as interface 0 for the point-topoint
+link (network 4) and interface 1 for
+the token ring (network 3). Then R2 would
+have the forwarding table shown in Table
+4.2.
+Thus, for any network number that
+R2 encounters in a packet, it knows what to
+do. Either that network is directly connected
+to R2, in which case the packet can be delivered
+to its destination over that network,
+or the network is reachable via some next
+Bridges, Switches,
+and Routers
+It is easy to become confused about
+the distinction between bridges,
+switches, and routers. There is
+good reason for such confusion,
+since at some level, they all forward
+messages from one link to another.
+One distinction people make is
+based on layering: Bridges are linklevel
+nodes (they forward frames
+from one link to another to implement
+an extended LAN), switches
+are network-level nodes (they forward
+packets from one link to
+another to implement a packetswitched
+network), and routers are
+internet-level nodes (they forward
+datagrams from one network to
+another to implement an internet).
+In some sense, however, this is an
+artificial distinction. It is certainly
+the case that networking companies
+do not ask the layering police
+for permission to sell new products
+that do not fit neatly into one layer
+or another.
+4.1 Simple Internetworking (IP) 255
+NetworkNum NextHop
+1 R3
+2 R1
+3 Interface 1
+4 Interface 0
+Table 4.2 Complete forwarding table for router R2 in Figure 4.1.
+For example, we have already
+seen that a multiport bridge is usually
+called an Ethernet switch or
+LAN switch. Thus the distinction
+between bridges and switches has
+now been largely eroded. For this
+reason, bridges and switches are
+often grouped together as “layer
+2 devices,” where layer 2 in this
+context means “above the physical
+layer, below the internet layer.”
+There is, however, an important
+distinction between LAN
+switches (or bridges) and ATM
+switches (and other switches that
+are used in WANs, such as Frame
+Relay and X.25 switches). LAN
+switches and bridges depend on
+the spanning tree algorithm, while
+WAN switches generally run routing
+protocols that allow each
+switch to learn the topology of the
+whole network. This is an important
+distinction because knowing
+the whole network topology allows
+hop router that R2 can reach over a network
+to which it is connected. In either case,
+R2 will use ARP, described below, to find
+the MAC address of the node to which the
+packet is to be sent next.
+The forwarding table used by R2 is
+simple enough that it could be manually
+configured. Usually, however, these tables
+are more complex and would be built up
+by running a routing protocol such as one
+of those described in Section 4.2. Also note
+that, in practice, the network numbers are
+usually longer (e.g., 128.96).
+We can now see how hierarchical
+addressing—splitting the address into
+network and host parts—has improved the
+scalability of a large network. Routers now
+contain forwarding tables that list only a
+set of network numbers, rather than all
+the nodes in the network. In our simple
+example, that meant that R2 could
+store the information needed to reach all
+the hosts in the network (of which there
+were eight) in a four-entry table. Even if
+there were 100 hosts on each physical network,
+R2 would still only need those same
+four entries. This is a good first step (although
+by no means the last) in achieving
+scalability.
+256 4 Internetworking
+? This illustrates one of the most important
+principles of building scalable networks:
+To achieve scalability, you need to
+reduce the amount of information that is
+stored in each node and that is exchanged
+between nodes. The most common way to
+do that is hierarchical aggregation. IP introduces
+a two-level hierarchy, with networks
+at the top level and nodes at the bottom
+level. We have aggregated information by
+letting routers deal only with reaching the
+right network; the information that a router
+needs to deliver a datagram to any node on
+a given network is represented by a single
+aggregated piece of information.
+Router Implementation
+In Section 3.4 we saw a variety of ways
+to build a switch, ranging from a generalpurpose
+workstation with a suitable number
+of network interfaces to some sophisticated
+hardware designs. In general, the same
+range of options is available for building
+routers, most of which look something like
+Figure 4.7. The control processor is responsible
+for running the routing protocols (discussed
+in Section 4.2) and generally acts as
+the central point of control of the router.
+The switching fabric transfers packets from
+one port to another, just as in a switch, and
+the ports provide a range of functionality
+to allow the router to interface to links of
+various types (e.g., Ethernet, SONET, etc.).
+A few points are worth noting about
+router design and how it differs from switch
+design. First, routers must be designed to
+handle variable-length packets, a constraint
+that does not apply to ATM switches but
+the switches to discriminate among
+different routes, while in contrast,
+the spanning tree algorithm locks in
+a single tree over which messages
+are forwarded. It is also the case
+that the spanning tree approach
+does not scale as well.
+What about switches and
+routers? Are they fundamentally
+the same thing, or are they different
+in some important way? Here, the
+distinction is much less clear. For
+starters, since a single point-topoint
+link is itself a legitimate
+network, a router can be used to
+connect a set of such links. In such
+a situation, a router looks just like
+a switch. It just happens to be a
+switch that forwards IP packets using
+a datagram forwarding model
+and IP routing protocols. We’ll see
+more of this similarity when we
+consider router implementation at
+the end of this section.
+One big difference between
+an ATM network built from
+switches and the Internet built
+from routers is that the Internet is
+able to accommodate heterogeneity,
+whereas ATM consists of homogeneous
+links. This support for
+heterogeneity is one of the key reasons
+why the Internet is so widely
+deployed.
+4.1 Simple Internetworking (IP) 257
+Switching
+fabric
+Control
+processor
+Output
+port
+Input
+port
+Figure 4.7 Block diagram of a router.
+is certainly applicable to Ethernet or Frame Relay switches. It turns out that many
+high-performance routers are designed using a switching fabric that is cell based. In
+such cases the ports must be able to convert variable-length packets into cells and back
+again. This is very much like the standard ATM segmentation and reassembly (SAR)
+problem described in Section 3.3.2.
+Another consequence of the variable length of IP datagrams is that it can be
+harder to characterize the performance of a router than a switch that forwards only
+cells. Routers can usually forward a certain number of packets per second, and this
+implies that the total throughput in bits per second depends on packet size. Router
+designers generally have to make a choice as to what packet length they will support
+at line rate. That is, if pps (packets per second) is the rate at which packets arriving
+on a particular port can be forwarded, and linerate is the physical speed of the port in
+bits per second, then there will be some packetsize in bits such that
+packetsize × pps = linerate
+This is the packet size at which the router can forward at line rate; it is likely to be
+able to sustain line rate for longer packets but not for shorter packets. Sometimes
+a designer might decide that the right packet size to support is 40 bytes, since that
+is the minimum size of an IP packet that has a TCP header attached. Another choice
+might be the expected average packet size, which can be determined by studying traces
+of network traffic. For example, measurements of the Internet backbone suggest that
+the average IP packet is around 300 bytes long. However, such a router would fall
+behind and perhaps start dropping packets when faced with a long sequence of short
+258 4 Internetworking
+packets, which is statistically likely from time to time and also very possible if the
+router is subject to an active attack (see Chapter 8). Design decisions of this type
+depend heavily on cost considerations and the intended application of the router.
+When it comes to the task of forwarding IP packets, routers can be broadly
+characterized as having either a centralized or distributed forwarding model. In the
+centralized model, the IP forwarding algorithm, outlined earlier in this section, is done
+in a single processing engine that handles the traffic from all ports. In the distributed
+model, there are several processing engines, perhaps one per port, or more often one
+per line card, where a line card may serve one or more physical ports. Each model
+has advantages and disadvantages. All things being equal, a distributed forwarding
+model should be able to forward more packets per second through the router as a
+whole because there is more processing power in total. But a distributed model also
+complicates the software architecture because each forwarding engine typically needs
+its own copy of the forwarding table, and thus it is necessary for the control processor
+to ensure that the forwarding tables are updated consistently and in a timely manner.
+In recent years, there has been considerable interest in the possibility of creating
+network processors that could be used in the design of routers and other networking
+hardware. A network processor is intended to be a device that is just about as
+programmable as a standard workstation or PC processor, but that is more highly
+optimized for networking tasks. For example, a network processor might have instructions
+that are particularly well suited to performing lookups on IP addresses or
+calculating checksums on IP datagrams.
+One of the interesting and ongoing debates about network processors is whether
+they can do a better job than the alternatives. For example, given the continuous and
+remarkable improvements in performance of conventional processors, and the huge
+industry that drives those improvements, can network processors keep up? And can a
+device that strives for generality do as good a job as a custom-designed chip that does
+nothing except, say, IP forwarding? Part of the answer to questions like these depends
+on what you mean by “do a better job.” For example, there will always be trade-offs to
+be made between cost of hardware, time to market, performance, and flexibility—the
+ability to change the features supported by a router after it is built. We will see in the
+rest of this chapter and in later chapters just how diverse the requirements for router
+functionality can be. It is safe to assume that a wide range of router designs will exist
+for the foreseeable future and that network processors will have some role to play.
+4.1.5 Address Translation (ARP)
+In the previous section we talked about how to get IP datagrams to the right physical
+network, but glossed over the issue of how to get a datagram to a particular host or
+4.1 Simple Internetworking (IP) 259
+router on that network. The main issue is that IP datagrams contain IP addresses, but
+the physical interface hardware on the host or router to which you want to send the
+datagram only understands the addressing scheme of that particular network. Thus, we
+need to translate the IP address to a link-level address that makes sense on this network
+(e.g., a 48-bit Ethernet address). We can then encapsulate the IP datagram inside a
+frame that contains that link-level address and send it either to the ultimate destination
+or to a router that promises to forward the datagram toward the ultimate destination.
+One simple way to map an IP address into a physical network address is to
+encode a host’s physical address in the host part of its IP address. For example, a host
+with physical address 00100001 01001001 (which has the decimal value 33 in the upper
+byte and 81 in the lower byte) might be given the IP address 128.96.33.81. While this
+solution has been used on some networks, it is limited in that the network’s physical
+addresses can be no more than 16 bits long in this example; they can be only 8 bits
+long on a class C network. This clearly will not work for 48-bit Ethernet addresses.
+A more general solution would be for each host to maintain a table of address
+pairs; that is, the table would map IP addresses into physical addresses. While this table
+could be centrally managed by a system administrator and then copied to each host
+on the network, a better approach would be for each host to dynamically learn the
+contents of the table using the network. This can be accomplished using the Address
+Resolution Protocol (ARP). The goal of ARP is to enable each host on a network to
+build up a table of mappings between IP addresses and link-level addresses. Since these
+mappings may change over time (e.g., because an Ethernet card in a host breaks and
+is replaced by a new one with a new address), the entries are timed out periodically
+and removed. This happens on the order of every 15 minutes. The set of mappings
+currently stored in a host is known as the ARP cache or ARP table.
+ARP takes advantage of the fact that many link-level network technologies, such
+as Ethernet and token ring, support broadcast. If a host wants to send an IP datagram
+to a host (or router) that it knows to be on the same network (i.e., the sending and
+receiving node have the same IP network number), it first checks for a mapping in
+the cache. If no mapping is found, it needs to invoke the Address Resolution Protocol
+over the network. It does this by broadcasting an ARP query onto the network. This
+query contains the IP address in question (the “target IP address”). Each host receives
+the query and checks to see if it matches its IP address. If it does match, the host
+sends a response message that contains its link-layer address back to the originator of
+the query. The originator adds the information contained in this response to its ARP
+table.
+The query message also includes the IP address and link-layer address of the
+sending host. Thus, when a host broadcasts a query message, each host on the network
+can learn the sender’s link-level and IP addresses and place that information in its
+260 4 Internetworking
+TargetHardwareAddr (bytes 2–5)
+TargetProtocolAddr (bytes 0–3)
+SourceProtocolAddr (bytes 2–3)
+Hardware type = 1 ProtocolType = 0x0800
+SourceHardwareAddr (bytes 4–5)
+TargetHardwareAddr (bytes 0–1)
+SourceProtocolAddr (bytes 0–1)
+HLen = 48 PLen = 32 Operation
+SourceHardwareAddr (bytes 0–3)
+0 8 16 31
+Figure 4.8 ARP packet format for mapping IP addresses into Ethernet addresses.
+ARP table. However, not every host adds this information to its ARP table. If the host
+already has an entry for that host in its table, it “refreshes” this entry; that is, it resets
+the length of time until it discards the entry. If that host is the target of the query, then
+it adds the information about the sender to its table, even if it did not already have an
+entry for that host. This is because there is a good chance that the source host is about
+to send it an application-level message, and it may eventually have to send a response
+or ACK back to the source; it will need the source’s physical address to do this. If a host
+is not the target and does not already have an entry for the source in its ARP table, then
+it does not add an entry for the source. This is because there is no reason to believe
+that this host will ever need the source’s link-level address; there is no need to clutter
+its ARP table with this information.
+Figure 4.8 shows the ARP packet format for IP-to-Ethernet address mappings.
+In fact, ARP can be used for lots of other kinds of mappings—the major differences
+are in the address sizes. In addition to the IP and link-layer addresses of both sender
+and target, the packet contains
+¦ a HardwareType field, which specifies the type of physical network (e.g.,
+Ethernet)
+¦ a ProtocolType field, which specifies the higher-layer protocol (e.g., IP)
+¦ HLen (“hardware” address length) and PLen (“protocol” address length) fields,
+which specify the length of the link-layer address and higher-layer protocol
+address, respectively
+¦ an Operation field, which specifies whether this is a request or a response
+¦ the source and target hardware (Ethernet) and protocol (IP) addresses
+4.1 Simple Internetworking (IP) 261
+Note that the results of the ARP process can be added as an extra column in
+a forwarding table like the one in Table 4.1. Thus, for example, when R2 needs to
+forward a packet to network 2, it not only finds that the next hop is R1, but also finds
+the MAC address to place on the packet to send it to R1.
+ATMARP
+It should be clear that if an ATM network is to operate as part of an IP internetwork,
+then it too must provide a form of ARP. However, the procedure just described will
+clearly not work on a simple ATM network, because it depends on the fact that ARP
+packets can be broadcast to all hosts on a single network. One solution to this problem
+is to use the LAN emulation procedures described in Section 3.3.5. Since the goal of
+these procedures is to make an ATM network behave just like a shared-media LAN,
+which includes support for broadcast, the effect is to reduce ARP to a previously solved
+problem.
+There are, however, situations where it may not be desirable to treat an ATM
+network as an emulated LAN. In particular, LAN emulation can be quite inefficient in
+a large, wide area ATM network. Recall that in an emulated LAN many packets may
+need to be sent to the broadcast and unknown server, which then floods those packets
+to all nodes on the emulated LAN. Clearly, there are limits to how far this can scale.
+The problem here is that adding broadcast capabilities to an intrinsically nonbroadcast
+network, while useful in some circumstances, is really overkill if the only reason you
+need broadcast is to enable address resolution.
+For this reason, there is a different ARP procedure that may be used in an ATM
+network and that does not depend on broadcast or LAN emulation. This procedure
+is known as ATMARP and is part of the Classical IP over ATM model. The reason
+for calling the model “classical” will become apparent shortly. Like LAN emulation,
+ATMARP relies on the use of a server to resolve addresses—in this case, it is called an
+ARP server, and its behavior is described below.
+A key concept in the Classical IP over ATM model is the logical IP subnet (LIS).
+The LIS abstraction allows us to take one large ATM network and subdivide it into
+several smaller subnets. (We define “subnet” precisely in Section 4.3.1, but in this case
+a subnet behaves much like a single network.) All nodes on the same subnet have the
+same IP network number. And just as in “classical” IP, two nodes (hosts or routers)
+that are on the same subnet can communicate directly over the ATMnetwork, whereas
+two nodes that are on different subnets will have to communicate via one or more
+routers. An example of an ATM network divided into two LISs appears in Figure 4.9.
+Note that the IP address of host H1 has a network number of 10, as does the router
+interface that connects to the left-hand LIS, while H2 has a network number of 12, as
+does the right-hand interface on the router. That is, H1 and the router connect to the
+262 4 Internetworking
+H2
+H1
+ATM network
+10.0.0.2
+10.0.0.1
+12.0.0.3
+12.0.0.5
+R
+LIS 10
+LIS 12
+Figure 4.9 Logical IP subnets.
+same LIS (LIS 10) while H2 is on a different subnet (LIS 12) to which the router also
+connects.
+An advantage of the LIS model is that we can connect a large number of hosts and
+routers to a big ATM network without necessarily giving them all addresses from the
+same IP network. This may make it easier to manage address assignment, for example,
+in the case where not all nodes connected to the ATM network are under the control
+of the same administrative entity. The division of the ATM network into a number of
+LISs also improves scalability by limiting the number of nodes that must be supported
+by a single ARP server.
+The basic job of an ARP server is to enable nodes on a LIS to resolve IP addresses
+to ATM addresses without using broadcast. Each node in the LIS must be configured
+with the ATM address of the ARP server, so that it can establish a VC to the server
+when it boots. Once it has a VC to the server, the node sends a registration message
+to the ARP server that contains both the IP and ATM addresses of the registering
+node. Thus the ARP server builds up a complete database of all the IP address, ATM
+address pairs. Once this is in place, any node that wants to send a packet to some
+IP address can ask the ARP server to provide the corresponding ATM address. Once
+this is received, the sending node can use ATM signalling to set up a VC to that ATM
+address, and then send the packet. Just like conventional ARP, a cache of IP-to-ATM
+address mappings can be maintained. In addition, the node can keep a VC established
+to that ATM destination as long as there is enough traffic flowing to justify it, thus
+avoiding the delay of setting up the VC again when the next packet arrives.
+An interesting consequence of the Classical IP over ATM model is that two nodes
+on the same ATM network cannot establish a direct VC between themselves if they
+are on different subnets. This would violate the rule that communication from one
+subnet to another must pass through a router. For example, host H1 and host H2 in
+Figure 4.9 cannot establish a direct VC under the classical model. Instead, each needs
+4.1 Simple Internetworking (IP) 263
+to have a VC to router R. The simple explanation for this rule is that IP routing is
+known to work well when that rule is obeyed, as it is in non-ATM networks. New
+techniques to work around that rule have been developed, but they have introduced
+considerable complexity and problems of robustness.
+? We have now seen the basic mechanisms that IP provides for dealing with both
+heterogeneity and scale. On the issue of heterogeneity, IP begins by defining a besteffort
+service model that makes minimal assumptions about the underlying networks;
+most notably, this service model is based on unreliable datagrams. IP then makes two
+important additions to this starting point: (1) a common packet format (fragmentation/
+reassembly is the mechanism that makes this format work over networks with
+different MTUs) and (2) a global address space for identifying all hosts (ARP is the
+mechanism that makes this global address space work over networks with different
+physical addressing schemes). On the issue of scale, IP uses hierarchical aggregation to
+reduce the amount of information needed to forward packets. Specifically, IP addresses
+are partitioned into network and host components, with packets first routed toward
+the destination network and then delivered to the correct host on that network.
+4.1.6 Host Configuration (DHCP)
+In Section 2.6 we observed that Ethernet addresses are configured into the network
+adaptor by the manufacturer, and this process is managed in such a way to ensure that
+these addresses are globally unique. This is clearly a sufficient condition to ensure
+that any collection of hosts connected to a single Ethernet (including an extended
+LAN) will have unique addresses. Furthermore, uniqueness is all we ask of Ethernet
+addresses.
+IP addresses, by contrast, not only must be unique on a given internetwork, but
+also must reflect the structure of the internetwork. As noted above, they contain a
+network part and a host part, and the network part must be the same for all hosts
+on the same network. Thus, it is not possible for the IP address to be configured once
+into a host when it is manufactured, since that would imply that the manufacturer
+knew which hosts were going to end up on which networks, and it would mean that
+a host, once connected to one network, could never move to another. For this reason,
+IP addresses need to be reconfigurable.
+In addition to an IP address, there are some other pieces of information a host
+needs to have before it can start sending packets. The most notable of these is the
+address of a default router—the place to which it can send packets whose destination
+address is not on the same network as the sending host.
+Most host operating systems provide a way for a system administrator, or even
+a user, to manually configure the IP information needed by a host. However, there
+are some obvious drawbacks to such manual configuration. One is that it is simply
+264 4 Internetworking
+a lot of work to configure all the hosts in a large network directly, especially when
+you consider that such hosts are not reachable over a network until they are configured.
+Even more importantly, the configuration process is very error-prone, since it is
+necessary to ensure that every host gets the correct network number and that no two
+hosts receive the same IP address. For these reasons, automated configuration methods
+are required. The primary method uses a protocol known as the Dynamic Host
+Configuration Protocol (DHCP).
+DHCP relies on the existence of a DHCP server that is responsible for providing
+configuration information to hosts. There is at least one DHCP server for an administrative
+domain. At the simplest level, the DHCP server can function just as a centralized
+repository for host configuration information. Consider, for example, the problem of
+administering addresses in the internetwork of a large company. DHCP saves the network
+administrators from having to walk around to every host in the company with a
+list of addresses and network map in hand and configuring each host manually. Instead,
+the configuration information for each host could be stored in the DHCP server and
+automatically retrieved by each host when it is booted or connected to the network.
+However, the administrator would still pick the address that each host is to receive;
+he would just store that in the server. In this model, the configuration information for
+each host is stored in a table that is indexed by some form of unique client identifier,
+typically the “hardware address” (e.g., the Ethernet address of its network adaptor).
+A more sophisticated use of DHCP saves the network admininstrator from even
+having to assign addresses to individual hosts. In this model, the DHCP server maintains
+a pool of available addresses that it hands out to hosts on demand. This considerably
+reduces the amount of configuration an administrator must do, since now it is
+only necessary to allocate a range of IP addresses (all with the same network number)
+to each network.
+Since the goal of DHCP is to minimize the amount of manual configuration
+required for a host to function, it would rather defeat the purpose if each host had
+to be configured with the address of a DHCP server. Thus, the first problem faced by
+DHCP is that of server discovery.
+To contact a DHCP server, a newly booted or attached host sends a
+DHCPDISCOVER message to a special IP address (255.255.255.255) that is an IP broadcast
+address. This means it will be received by all hosts and routers on that network.
+(Routers do not forward such packets onto other networks, preventing broadcast to
+the entire Internet.) In the simplest case, one of these nodes is the DHCP server for the
+network. The server would then reply to the host that generated the discovery message
+(all the other nodes would ignore it). However, it is not really desirable to require one
+DHCP server on every network because this still creates a potentially large number
+of servers that need to be correctly and consistently configured. Thus, DHCP uses the
+4.1 Simple Internetworking (IP) 265
+DHCP
+relay
+DHCP
+server
+Unicast to server
+Broadcast
+Host
+Other networks
+Figure 4.10 A DHCP relay agent receives a broadcast DHCPDISCOVER message from
+a host and sends a unicast DHCPDISCOVER message to the DHCP server.
+Operation HType HLen Hops
+Xid
+ciaddr
+yiaddr
+siaddr
+giaddr
+chaddr (16 bytes)
+sname (64 bytes)
+file (128 bytes)
+options
+Secs Flags
+Figure 4.11 DHCP packet format.
+concept of a relay agent. There is at least one relay agent on each network, and it is
+configured with just one piece of information: the IP address of the DHCP server. When
+a relay agent receives a DHCPDISCOVER message, it unicasts it to the DHCP server and
+awaits the response, which it will then send back to the requesting client. The process
+of relaying a message from a host to a remote DHCP server is shown in Figure 4.10.
+Figure 4.11 shows the format of a DHCP message. The message is actually sent
+using a protocol called UDP (the User Datagram Protocol) that runs over IP. UDP is
+266 4 Internetworking
+discussed in detail in the next chapter, but the only interesting thing it does in this
+context is to provide a demultiplexing key that says, “This is a DHCP packet.”
+DHCP is derived from an earlier protocol called BOOTP, and some of the packet
+fields are thus not strictly relevant to host configuration. When trying to obtain configuration
+information, the client puts its hardware address (e.g., its Ethernet address) in
+the chaddr field. The DHCP server replies by filling in the yiaddr (“your” IP address)
+field and sending it to the client. Other information such as the default router to be
+used by this client can be included in the options field.
+In the case where DHCP dynamically assigns IP addresses to hosts, it is clear
+that hosts cannot keep addresses indefinitely, as this would eventually cause the server
+to exhaust its address pool. At the same time, a host cannot be depended upon to
+give back its address, since it might have crashed, been unplugged from the network,
+or been turned off. Thus, DHCP allows addresses to be “leased” for some period of
+time. Once the lease expires, the server is free to return that address to its pool. A host
+with a leased address clearly needs to renew the lease periodically if in fact it is still
+connected to the network and functioning correctly.
+? DHCP illustrates an important aspect of scaling: the scaling of network management.
+While discussions of scaling often focus on keeping the state in network
+devices from growing too rapidly, it is important to pay attention to growth of network
+management complexity. By allowing network managers to configure a range
+of IP addresses per network rather than one IP address per host, DHCP improves the
+manageability of a network.
+Note that DHCP may also introduce some more complexity into network management,
+since it makes the binding between physical hosts and IP addresses much
+more dynamic. This may make the network manager’s job more difficult if, for example,
+it becomes necessary to locate a malfunctioning host.
+4.1.7 Error Reporting (ICMP)
+The next issue is how the Internet treats errors. While IP is perfectly willing to drop
+datagrams when the going gets tough—for example, when a router does not know
+how to forward the datagram or when one fragment of a datagram fails to arrive
+at the destination—it does not necessarily fail silently. IP is always configured with a
+companion protocol, known as the Internet Control Message Protocol (ICMP), that
+defines a collection of error messages that are sent back to the source host whenever
+a router or host is unable to process an IP datagram successfully. For example, ICMP
+defines error messages indicating that the destination host is unreachable (perhaps due
+to a link failure), that the reassembly process failed, that the TTL had reached 0, that
+the IP header checksum failed, and so on.
+4.1 Simple Internetworking (IP) 267
+ICMP also defines a handful of control messages that a router can send back
+to a source host. One of the most useful control messages, called an ICMP-Redirect,
+tells the source host that there is a better route to the destination. ICMP-Redirects are
+used in the following situation. Suppose a host is connected to a network that has two
+routers attached to it, called R1 and R2, where the host uses R1 as its default router.
+Should R1 ever receive a datagram from the host, where based on its forwarding
+table it knows that R2 would have been a better choice for a particular destination
+address, it sends an ICMP-Redirect back to the host, instructing it to use R2 for all
+future datagrams addressed to that destination. The host then adds this new route to
+its forwarding table.
+4.1.8 Virtual Networks and Tunnels
+We conclude our introduction to IP by considering an issue you might not have anticipated,
+but one that is becoming increasingly important. Our discussion up to this point
+has focused on making it possible for nodes on different networks to communicate with
+each other in an unrestricted way. This is usually the goal in the Internet—everybody
+wants to be able to send email to everybody, and the creator of a new Web site wants
+to reach the widest possible audience. However, there are many situations where more
+controlled connectivity is required. An important example of such a situation is the
+virtual private network (VPN).
+The term “VPN” is heavily overused and definitions vary, but intuitively we can
+define a VPN by considering first the idea of a private network. Corporations with
+many sites often build private networks by leasing transmission lines from the phone
+companies and using those lines to interconnect sites. In such a network, communication
+is restricted to take place only among the sites of that corporation, which is often
+desirable for security reasons. To make a private network virtual, the leased transmission
+lines—which are not shared with any other corporations—would be replaced by
+some sort of shared network. A virtual circuit is a very reasonable replacement for
+a leased line because it still provides a logical point-to-point connection between the
+corporation’s sites. For example, if corporation X has a VC from site A to site B, then
+clearly it can send packets between sites A and B. But there is no way that corporation
+Y can get its packets delivered to site B without first establishing its own virtual
+circuit to site B, and the establishment of such a VC can be administratively prevented,
+thus preventing unwanted connectivity between corporation X and corporation Y.
+Figure 4.12(a) shows two private networks for two separate corporations. In
+Figure 4.12(b) they are both migrated to a virtual circuit network. The limited connectivity
+of a real private network is maintained, but since the private networks now
+share the same transmission facilities and switches we say that two virtual private
+networks have been created.
+268 4 Internetworking
+Corporation X private network
+Corporation Y private network
+Physical links
+Physical links
+Virtual circuits
+(a)
+(b)
+C
+A B
+K L
+M
+K L
+M
+C
+A B
+Figure 4.12 An example of virtual private networks: (a) two separate private networks;
+(b) two virtual private networks sharing common switches.
+In Figure 4.12, a Frame Relay or ATM network is used to provide the controlled
+connectivity among sites. It is also possible to provide a similar function
+using an IP network—an internetwork—to provide the connectivity. However, we
+cannot just connect the various corporations’ sites to a single internetwork because
+that would provide connectivity between corporation X and corporation Y, which
+we wish to avoid. To solve this problem, we need to introduce a new concept, the
+IP tunnel.
+We can think of an IP tunnel as a virtual point-to-point link between a pair of
+nodes that are actually separated by an arbitrary number of networks. The virtual link
+is created within the router at the entrance to the tunnel by providing it with the IP
+address of the router at the far end of the tunnel. Whenever the router at the entrance
+of the tunnel wants to send a packet over this virtual link, it encapsulates the packet
+inside an IP datagram. The destination address in the IP header is the address of the
+4.1 Simple Internetworking (IP) 269
+IP header,
+Destination = 2.x
+IP payload
+IP header,
+Destination = 10.0.0.1
+IP header,
+Destination = 2.x
+IP payload
+IP header,
+Destination = 2.x
+IP payload
+10.0.0.1
+R1 R2
+Network 1 Internetwork Network 2
+Figure 4.13 A tunnel through an internetwork.
+NetworkNum NextHop
+1 Interface 0
+2 Virtual interface 0
+Default Interface 1
+Table 4.3 Forwarding table for router R1 in Figure 4.13.
+router at the far end of the tunnel, while the source address is that of the encapsulating
+router.
+In the forwarding table of the router at the entrance to the tunnel, this virtual
+link looks much like a normal link. Consider, for example, the network in Figure 4.13.
+A tunnel has been configured from R1 to R2 and assigned a virtual interface number
+of 0. The forwarding table in R1 might therefore look like Table 4.3.
+R1 has two physical interfaces. Interface 0 connects to network 1; interface 1
+connects to a large internetwork and is thus the default for all traffic that does not
+match something more specific in the forwarding table. In addition, R1 has a virtual
+interface, which is the interface to the tunnel. Suppose R1 receives a packet from
+network 1 that contains an address in network 2. The forwarding table says this packet
+should be sent out virtual interface 0. In order to send a packet out this interface, the
+router takes the packet, adds an IP header addressed to R2, and then proceeds to
+forward the packet as if it had just been received. R2’s address is 10.0.0.1; since the
+network number of this address is 10, not 1 or 2, a packet destined for R2 will be
+forwarded out the default interface into the internetwork.
+270 4 Internetworking
+Once the packet leaves R1, it looks to the rest of the world like a normal IP packet
+destined to R2, and it is forwarded accordingly. All the routers in the internetwork
+forward it using normal means, until it arrives at R2. When R2 receives the packet,
+it finds that it carries its own address, so it removes the IP header and looks at the
+payload of the packet. What it finds is an inner IP packet whose destination address is
+in network 2. R2 now processes this packet like any other IP packet it receives. Since
+R2 is directly connected to network 2, it forwards the packet on to that network.
+Figure 4.13 shows the change in encapsulation of the packet as it moves across the
+network.
+While R2 is acting as the endpoint of the tunnel, there is nothing to prevent it
+from performing the normal functions of a router. For example, it might receive some
+packets that are not tunneled, but that are addressed to networks it knows how to
+reach, and it would forward them in the normal way.
+You might wonder why anyone would want to go to all the trouble of creating a
+tunnel and changing the encapsulation of a packet as it goes across an internetwork.
+One reason is security, which we will discuss in more detail in Chapter 8. Supplemented
+with encryption, a tunnel can become a very private sort of link across a public network.
+Another reason may be that R1 and R2 have some capabilities that are not
+widely available in the intervening networks, such as multicast routing. By connecting
+these routers with a tunnel, we can build a virtual network in which all the routers
+with this capability appear to be directly connected. This in fact is how the MBone
+(multicast backbone) is built, as we will see in Section 4.4. A third reason to build
+tunnels is to carry packets from protocols other than IP across an IP network. As long
+as the routers at either end of the tunnel know how to handle these other protocols,
+the IP tunnel looks to them like a point-to-point link over which they can send non-IP
+packets. Tunnels also provide a mechanism by which we can force a packet to be delivered
+to a particular place even if its original header—the one that gets encapsulated
+inside the tunnel header—might suggest that it should go somewhere else. We will see
+an application of this when we consider mobile hosts in Section 4.2.5. Thus, we see that
+tunneling is a powerful and quite general technique for building virtual links across
+internetworks.
+Tunneling does have its downsides. One is that it increases the length of packets;
+this might represent a significant waste of bandwidth for short packets. There may also
+be performance implications for the routers at either end of the tunnel, since they need
+to do more work than normal forwarding as they add and remove the tunnel header.
+Finally, there is a management cost for the administrative entity that is responsible
+for setting up the tunnels and making sure they are correctly handled by the routing
+protocols.
+4.2 Routing 271
+4.2 Routing
+In both this and the previous chapter we have assumed that the switches and routers
+have enough knowledge of the network topology so they can choose the right port onto
+which each packet should be output. In the case of virtual circuits, routing is an issue
+only for the connection request packet; all subsequent packets follow the same path
+as the request. In datagram networks, including IP networks, routing is an issue for
+every packet. In either case, a switch or router needs to be able to look at the packet’s
+destination address and then to determine which of the output ports is the best choice
+to get the packet to that address. As we saw in Section 3.1.1, the switch makes this
+decision by consulting a forwarding table. The fundamental problem of routing is,
+How do switches and routers acquire the information in their forwarding tables?
+? We restate an important distinction, which is often neglected, between forward-
+ing and routing. Forwarding consists of taking a packet, looking at its destination
+address, consulting a table, and sending the packet in a direction determined by that
+table. We saw several examples of forwarding in the preceding section. Routing is the
+process by which forwarding tables are built. We also note that forwarding is a relatively
+simple and well-defined process performed locally at a node, whereas routing
+depends on complex distributed algorithms that have continued to evolve throughout
+the history of networking.
+While the terms forwarding table and routing table are sometimes used interchangeably,
+we will make a distinction between them here. The forwarding table is
+used when a packet is being forwarded and so must contain enough information to
+accomplish the forwarding function. This means that a row in the forwarding table
+contains the mapping from a network number to an outgoing interface and someMAC
+information, such as the Ethernet address of the next hop. The routing table, on the
+other hand, is the table that is built up by the routing algorithms as a precursor to
+building the forwarding table. It generally contains mappings from network numbers
+to next hops. It may also contain information about how this information was learned,
+so that the router will be able to decide when it should discard some information.
+Whether the routing table and forwarding table are actually separate data structures
+is something of an implementation choice, but there are numerous reasons to
+keep them separate. For example, the forwarding table needs to be structured to optimize
+the process of looking up a network number when forwarding a packet, while the
+routing table needs to be optimized for the purpose of calculating changes in topology.
+In some cases, the forwarding table may even be implemented in specialized hardware,
+whereas this is rarely if ever done for the routing table. Table 4.4 provides an example
+of a row from each sort of table. In this case, the routing table tells us that network
+number 10 is to be reached by a next hop router with the IP address 171.69.245.10,
+272 4 Internetworking
+Network Number NextHop
+10 171.69.245.10
+(a)
+Network Number Interface MAC Address
+10 if0 8:0:2b:e4:b:1:2
+(b)
+Table 4.4 Example rows from (a) routing and (b) forwarding tables.
+while the forwarding table contains the information about exactly how to forward
+a packet to that next hop: Send it out interface number 0 with a MAC address of
+8:0:2b:e4:b:1:2. Note that the last piece of information is provided by the Address
+Resolution Protocol.
+Before getting into the details of routing, we need to remind ourselves of the key
+question we should be asking anytime we try to build a mechanism for the Internet:
+“Does this solution scale?” The answer for the algorithms and protocols described
+in this section is no. They are designed for networks of fairly modest size—fewer
+than a hundred nodes, in practice. However, the solutions we describe do serve as
+a building block for a hierarchical routing infrastructure that is used in the Internet
+today. Specifically, the protocols described in this section are collectively known as
+intradomain routing protocols, or interior gateway protocols (IGPs). To understand
+these terms, we need to define a routing domain: A good working definition is an
+internetwork in which all the routers are under the same adminstrative control (e.g.,
+a single university campus or the network of a single Internet service provider). The
+relevance of this definition will become apparent in the next section when we look at
+interdomain routing protocols. For now, the important thing to keep in mind is that we
+are considering the problem of routing in the context of small to midsized networks,
+not for a network the size of the Internet.
+4.2.1 Network as a Graph
+Routing is, in essence, a problem of graph theory. Figure 4.14 shows a graph representing
+a network. The nodes of the graph, labeled A through F, may be either hosts,
+switches, routers, or networks. For our initial discussion, we will focus on the case
+4.2 Routing 273
+4
+3
+6
+2
+1
+9
+1
+1
+D
+A
+F
+E
+B
+C
+Figure 4.14 Network represented as a graph.
+where the nodes are routers. The edges of the graph correspond to the network links.
+Each edge has an associated cost, which gives some indication of the desirability of
+sending traffic over that link. A discussion of how edge costs are assigned is given in
+Section 4.2.4.3
+The basic problem of routing is to find the lowest-cost path between any two
+nodes, where the cost of a path equals the sum of the costs of all the edges that make
+up the path. For a simple network like the one in Figure 4.14, you could imagine just
+calculating all the shortest paths and loading them into some nonvolatile storage on
+each node. Such a static approach has several shortcomings:
+¦ It does not deal with node or link failures.
+¦ It does not consider the addition of new nodes or links.
+¦ It implies that edge costs cannot change, even though we might reasonably
+wish to temporarily assign a high cost to a link that is heavily loaded.
+For these reasons, routing is achieved in most practical networks by running
+routing protocols among the nodes. These protocols provide a distributed, dynamic
+way to solve the problem of finding the lowest-cost path in the presence of link and node
+failures and changing edge costs. Note the word “distributed” in the last sentence: It is
+difficult to make centralized solutions scalable, so all the widely used routing protocols
+use distributed algorithms.
+The distributed nature of routing algorithms is one of the main reasons why this
+has been such a rich field of research and development—there are a lot of challenges in
+making distributed algorithms work well. For example, distributed algorithms raise the
+possibility that two routers will at one instant have different ideas about the shortest
+3In the example networks (graphs) used throughout this chapter, we use undirected edges and assign each edge a
+single cost. This is actually a slight simplification. It is more accurate to make the edges directed, which typically
+means that there would be a pair of edges between each node—one flowing in each direction, and each with its
+own edge cost.
+274 4 Internetworking
+D
+G
+A
+F
+E
+B
+C
+Figure 4.15 Distance-vector routing: an example network.
+path to some destination. In fact, each one may think that the other one is closer to
+the destination, and decide to send packets to the other one. Clearly, such packets will
+be stuck in a loop until the discrepancy between the two routers is resolved, and it
+would be good to resolve it as soon as possible. This is just one example of the type
+of problem routing protocols must address.
+To begin our analysis, we assume that the edge costs in the network are known.
+We will examine the two main classes of routing protocols: distance vector and link
+state. In Section 4.2.4 we return to the problem of calculating edge costs in a meaningful
+way.
+4.2.2 Distance Vector (RIP)
+The idea behind the distance-vector algorithm is suggested by its name:4 Each node
+constructs a one-dimensional array (a vector) containing the “distances” (costs) to
+all other nodes and distributes that vector to its immediate neighbors. The starting
+assumption for distance-vector routing is that each node knows the cost of the link to
+each of its directly connected neighbors. A link that is down is assigned an infinite cost.
+To see how a distance-vector routing algorithm works, it is easiest to consider
+an example like the one depicted in Figure 4.15. In this example, the cost of each link
+is set to 1, so that a least-cost path is simply the one with the fewest hops. (Since all
+edges have the same cost, we do not show the costs in the graph.) We can represent
+each node’s knowledge about the distances to all other nodes as a table like the one
+given in Table 4.5. Note that each node only knows the information in one row of the
+table (the one that bears its name in the left column). The global view that is presented
+here is not available at any single point in the network.
+4The other common name for this class of algorithm is Bellman-Ford, after its inventors.
+4.2 Routing 275
+Information
+Distance to Reach Node
+Stored at Node A B C D E F G
+A 0 1 1 ? 1 1 ?
+B 1 0 1 ? ? ? ?
+C 1 1 0 1 ? ? ?
+D ? ? 1 0 ? ? 1
+E 1 ? ? ? 0 ? ?
+F 1 ? ? ? ? 0 1
+G ? ? ? 1 ? 1 0
+Table 4.5 Initial distances stored at each node (global view).
+Destination Cost NextHop
+B 1 B
+C 1 C
+D ? —
+E 1 E
+F 1 F
+G ? —
+Table 4.6 Initial routing table at node A.
+We may consider each row in Table 4.5 as a list of distances from one node to
+all other nodes, representing the current beliefs of that node. Initially, each node sets a
+cost of 1 to its directly connected neighbors and?to all other nodes. Thus, A initially
+believes that it can reach B in one hop and that D is unreachable. The routing table
+stored at A reflects this set of beliefs and includes the name of the next hop that A
+would use to reach any reachable node. Initially, then, A’s routing table would look
+like Table 4.6.
+The next step in distance-vector routing is that every node sends a message to
+its directly connected neighbors containing its personal list of distances. For example,
+276 4 Internetworking
+Destination Cost NextHop
+B 1 B
+C 1 C
+D 2 C
+E 1 E
+F 1 F
+G 2 F
+Table 4.7 Final routing table at node A.
+node F tells node A that it can reach node G at a cost of 1; A also knows it can reach
+F at a cost of 1, so it adds these costs to get the cost of reaching G by means of F. This
+total cost of 2 is less than the current cost of infinity, so A records that it can reach G
+at a cost of 2 by going through F. Similarly, A learns from C that D can be reached
+from C at a cost of 1; it adds this to the cost of reaching C (1) and decides that D can
+be reached via C at a cost of 2, which is better than the old cost of infinity. At the same
+time, A learns from C that B can be reached from C at a cost of 1, so it concludes that
+the cost of reaching B via C is 2. Since this is worse than the current cost of reaching
+B (1), this new information is ignored.
+At this point, A can update its routing table with costs and next hops for all
+nodes in the network. The result is shown in Table 4.7.
+In the absence of any topology changes, it only takes a few exchanges of information
+between neighbors before each node has a complete routing table. The process
+of getting consistent routing information to all the nodes is called convergence.
+Table 4.8 shows the final set of costs from each node to all other nodes when routing
+has converged. We must stress that there is no one node in the network that has all
+the information in this table—each node only knows about the contents of its own
+routing table. The beauty of a distributed algorithm like this is that it enables all
+nodes to achieve a consistent view of the network in the absence of any centralized
+authority.
+There are a few details to fill in before our discussion of distance-vector routing is
+complete. First we note that there are two different circumstances under which a given
+node decides to send a routing update to its neighbors. One of these circumstances is the
+periodic update. In this case, each node automatically sends an update message every
+4.2 Routing 277
+Information
+Distance to Reach Node
+Stored at Node A B C D E F G
+A 0 1 1 2 1 1 2
+B 1 0 1 2 2 2 3
+C 1 1 0 1 2 2 2
+D 2 2 1 0 3 2 1
+E 1 2 2 3 0 2 3
+F 1 2 2 2 2 0 1
+G 2 3 2 1 3 1 0
+Table 4.8 Final distances stored at each node (global view).
+so often, even if nothing has changed. This serves to let the other nodes know that this
+node is still running. It also makes sure that they keep getting information that they may
+need if their current routes become unviable. The frequency of these periodic updates
+varies from protocol to protocol, but it is typically on the order of several seconds to
+several minutes. The second mechanism, sometimes called a triggered update, happens
+whenever a node receives an update from one of its neighbors that causes it to change
+one of the routes in its routing table. That is, whenever a node’s routing table changes,
+it sends an update to its neighbors, which may lead to a change in their tables, causing
+them to send an update to their neighbors.
+Now consider what happens when a link or node fails. The nodes that notice first
+send new lists of distances to their neighbors, and normally the system settles down
+fairly quickly to a new state. As to the question of how a node detects a failure, there
+are a couple of different answers. In one approach, a node continually tests the link to
+another node by sending a control packet and seeing if it receives an acknowledgment.
+In another approach, a node determines that the link (or the node at the other end of
+the link) is down if it does not receive the expected periodic routing update for the last
+few update cycles.
+To understand what happens when a node detects a link failure, consider what
+happens when F detects that its link to G has failed. First, F sets its new distance to
+G to infinity and passes that information along to A. Since A knows that its 2-hop
+path to G is through F, A would also set its distance to G to infinity. However, with
+278 4 Internetworking
+the next update from C, A would learn that C has a 2-hop path to G. Thus A would
+know that it could reach G in 3 hops through C, which is less than infinity, and so A
+would update its table accordingly. When it advertises this to F, node F would learn
+that it can reach G at a cost of 4 through A, which is less than infinity, and the system
+would again become stable.
+Unfortunately, slightly different circumstances can prevent the network from
+stabilizing. Suppose, for example, that the link from A to E goes down. In the next
+round of updates, A advertises a distance of infinity to E, but B and C advertise a
+distance of 2 to E. Depending on the exact timing of events, the following might
+happen: Node B, upon hearing that E can be reached in 2 hops from C, concludes that
+it can reach E in 3 hops and advertises this to A; node A concludes that it can reach
+E in 4 hops and advertises this to C; node C concludes that it can reach E in 5 hops;
+and so on. This cycle stops only when the distances reach some number that is large
+enough to be considered infinite. In the meantime, none of the nodes actually knows
+that E is unreachable, and the routing tables for the network do not stabilize. This
+situation is known as the count-to-infinity problem.
+There are several partial solutions to this problem. The first one is to use some
+relatively small number as an approximation of infinity. For example, we might decide
+that the maximum number of hops to get across a certain network is never going to be
+more than 16, and so we could pick 16 as the value that represents infinity. This at least
+bounds the amount of time that it takes to count to infinity. Of course, it could also
+present a problem if our network grew to a point where some nodes were separated
+by more than 16 hops.
+One technique to improve the time to stabilize routing is called split horizon.
+The idea is that when a node sends a routing update to its neighbors, it does not send
+those routes it learned from each neighbor back to that neighbor. For example, if B
+has the route (E, 2, A) in its table, then it knows it must have learned this route from A,
+and so whenever B sends a routing update to A, it does not include the route (E, 2) in
+that update. In a stronger variation of split horizon, called split horizon with poison
+reverse, B actually sends that route back to A, but it puts negative information in the
+route to ensure that A will not eventually use B to get to E. For example, B sends
+the route (E, ?) to A. The problem with both of these techniques is that they only
+work for routing loops that involve two nodes. For larger routing loops, more drastic
+measures are called for. Continuing the above example, if B and C had waited
+for a while after hearing of the link failure from A before advertising routes to
+E, they would have found that neither of them really had a route to E. Unfortunately,
+this approach delays the convergence of the protocol; speed of convergence
+is one of the key advantages of its competitor, link-state routing, the subject of
+Section 4.2.3.
+4.2 Routing 279
+Implementation
+The code that implements this algorithm is very straightforward; we give only some of
+the basics here. Structure Route defines each entry in the routing table, and constant
+MAX TTL specifies how long an entry is kept in the table before it is discarded.
+#define MAX_ROUTES 128 /* maximum size of routing table */
+#define MAX_TTL 120 /* time (in seconds) until route expires */
+typedef struct {
+NodeAddr Destination; /* address of destination */
+NodeAddr NextHop; /* address of next hop */
+int Cost; /* distance metric */
+u_short TTL; /* time to live */
+} Route;
+int numRoutes = 0;
+Route routingTable[MAX_ROUTES];
+The routine that updates the local node’s routing table based on a new route is
+given by mergeRoute. Although not shown, a timer function periodically scans the list
+of routes in the node’s routing table, decrements the TTL (time to live) field of each
+route, and discards any routes that have a time to live of 0. Notice, however, that the
+TTL field is reset to MAX TTL any time the route is reconfirmed by an update message
+from a neighboring node.
+void
+mergeRoute (Route *new)
+{
+int i;
+for (i = 0; i < numRoutes; ++i)
+{
+if (new->Destination == routingTable[i].Destination)
+{
+if (new->Cost + 1 < routingTable[i].Cost)
+{
+/* found a better route: */
+break;
+} else if (new->NextHop == routingTable[i].NextHop) {
+/* metric for current next hop may have changed: */
+break;
+} else {
+/* route is uninteresting---just ignore it */
+return;
+}
+280 4 Internetworking
+}
+}
+if (i == numRoutes)
+{
+/*this is a completely new route; is there room for it?*/
+if (numRoutes < MAXROUTES)
+{
+++numRoutes;
+} else {
+/* can't fit this route in table so give up */
+return;
+}
+}
+routingTable[i] = *new;
+/* reset TTL */
+routingTable[i].TTL = MAX_TTL;
+/* account for hop to get to next node */
+++routingTable[i].Cost;
+}
+Finally, the procedure updateRoutingTable is the main routine that calls merge-
+Route to incorporate all the routes contained in a routing update that is received from
+a neighboring node.
+void
+updateRoutingTable (Route *newRoute, int numNewRoutes)
+{
+int i;
+for (i=0; i < numNewRoutes; ++i)
+{
+mergeRoute(&newRoute[i]);
+}
+}
+Routing Information Protocol (RIP)
+One of the most widely used routing protocols in IP networks is the Routing Information
+Protocol (RIP). Its widespread use is due in no small part to the fact that it was
+distributed along with the popular Berkeley Software Distribution (BSD) version of
+Unix, from which many commercial versions of Unix were derived. It is also extremely
+simple. RIP is the canonical example of a routing protocol built on the distance-vector
+algorithm just described.
+Routing protocols in internetworks differ very slightly from the idealized graph
+model described above. In an internetwork, the goal of the routers is to learn how to
+4.2 Routing 281
+A
+C
+1
+2
+3
+B
+D
+4
+5
+6
+Figure 4.16 Example network running RIP.
+Address of net 2
+Distance to net 2
+Command Must be zero
+Family of net 2 Address of net 2
+Family of net 1 Address of net 1
+Address of net 1
+Distance to net 1
+Version
+0 8 16 31
+Figure 4.17 RIP packet format.
+forward packets to various networks. Thus, rather than advertising the cost of reaching
+other routers, the routers advertise the cost of reaching networks. For example, in
+Figure 4.16, router C would advertise to router A the fact that it can reach networks
+2 and 3 (to which it is directly connected) at a cost of 0; networks 5 and 6 at cost 1;
+and network 4 at cost 2.
+We can see evidence of this in the RIP packet format in Figure 4.17. The majority
+of the packet is taken up with network-address, distance pairs. However, the principles
+of the routing algorithm are just the same. For example, if router A learns from
+router B that network X can be reached at a lower cost via B than via the existing next
+282 4 Internetworking
+hop in the routing table, A updates the cost and next hop information for the network
+number accordingly.
+RIP is in fact a fairly straightforward implementation of distance-vector routing.
+Routers running RIP send their advertisements every 30 seconds; a router also sends
+an update message whenever an update from another router causes it to change its
+routing table. One point of interest is that it supports multiple address families, not just
+IP. The network-address part of the advertisements is actually represented as a family,
+address pair. RIP version 2 (RIPv2) also has some features related to scalability that
+we will discuss in the next section.
+As we will see below, it is possible to use a range of different metrics or costs
+for the links in a routing protocol. RIP takes the simplest approach, with all link
+costs being equal to 1, just as in our example above. Thus it always tries to find the
+minimum hop route. Valid distances are 1 through 15, with 16 representing infinity.
+This also limits RIP to running on fairly small networks—those with no paths longer
+than 15 hops.
+4.2.3 Link State (OSPF)
+Link-state routing is the second major class of intradomain routing protocol. The
+starting assumptions for link-state routing are rather similar to those for distancevector
+routing. Each node is assumed to be capable of finding out the state of the link
+to its neighbors (up or down) and the cost of each link. Again, we want to provide each
+node with enough information to enable it to find the least-cost path to any destination.
+The basic idea behind link-state protocols is very simple: Every node knows how to
+reach its directly connected neighbors, and if we make sure that the totality of this
+knowledge is disseminated to every node, then every node will have enough knowledge
+of the network to build a complete map of the network. This is clearly a sufficient
+condition (although not a necessary one) for finding the shortest path to any point
+in the network. Thus, link-state routing protocols rely on two mechanisms: reliable
+dissemination of link-state information, and the calculation of routes from the sum of
+all the accumulated link-state knowledge.
+Reliable Flooding
+Reliable flooding is the process of making sure that all the nodes participating in the
+routing protocol get a copy of the link-state information from all the other nodes.
+As the term “flooding” suggests, the basic idea is for a node to send its link-state
+information out on all of its directly connected links, with each node that receives
+this information forwarding it out on all of its links. This process continues until the
+information has reached all the nodes in the network.
+4.2 Routing 283
+More precisely, each node creates an update packet, also called a link-state packet
+(LSP), that contains the following information:
+¦ the ID of the node that created the LSP
+¦ a list of directly connected neighbors of that node, with the cost of the link to
+each one
+¦ a sequence number
+¦ a time to live for this packet
+The first two items are needed to enable route calculation; the last two are used to make
+the process of flooding the packet to all nodes reliable. Reliability includes making sure
+that you have the most recent copy of the information, since there may be multiple,
+contradictory LSPs from one node traversing the network. Making the flooding reliable
+has proven to be quite difficult. (For example, an early version of link-state routing
+used in the ARPANET caused that network to fail in 1981.)
+Flooding works in the following way. First, the transmission of LSPs between
+adjacent routers is made reliable using acknowledgments and retransmissions just as
+in the reliable link-layer protocol described in Section 2.5. However, there are several
+more steps needed to reliably flood an LSP to all nodes in a network.
+Consider a node X that receives a copy of an LSP that originated at some other
+node Y. Note that Y may be any other router in the same routing domain as X. X
+checks to see if it has already stored a copy of an LSP from Y. If not, it stores the LSP.
+If it already has a copy, it compares the sequence numbers; if the new LSP has a larger
+sequence number, it is assumed to be the more recent, and that LSP is stored, replacing
+the old one. A smaller (or equal) sequence number would imply an LSP older (or not
+newer) than the one stored, so it would be discarded and no further action would be
+needed. If the received LSP was the newer one, X then sends a copy of that LSP to all
+of its neighbors except the neighbor from which the LSP was just received. The fact
+that the LSP is not sent back to the node from which it was received helps to bring
+an end to the flooding of an LSP. Since X passes the LSP on to all its neighbors, who
+then turn around and do the same thing, the most recent copy of the LSP eventually
+reaches all nodes.
+Figure 4.18 shows an LSP being flooded in a small network. Each node becomes
+shaded as it stores the new LSP. In Figure 4.18(a) the LSP arrives at node X, which
+sends it to neighbors A and C in Figure 4.18(b). A and C do not send it back to X, but
+send it on to B. Since B receives two identical copies of the LSP, it will accept whichever
+arrived first and ignore the second as a duplicate. It then passes the LSP on to D, who
+has no neighbors to flood it to, and the process is complete.
+284 4 Internetworking
+(a)
+X A
+C B D
+(b)
+X A
+C B D
+(c)
+X A
+C B D
+(d)
+X A
+C B D
+Figure 4.18 Flooding of link-state packets. (a) LSP arrives at node X; (b) X floods LSP
+to A and C; (c) A and C flood LSP to B (but not X); (d) flooding is complete.
+Just as in RIP, each node generates LSPs under two circumstances. Either the
+expiry of a periodic timer or a change in topology can cause a node to generate a new
+LSP. However, the only topology-based reason for a node to generate an LSP is if one
+of its directly connected links or immediate neighbors has gone down. The failure of a
+link can be detected in some cases by the link-layer protocol. The demise of a neighbor
+or loss of connectivity to that neighbor can be detected using periodic “hello” packets.
+Each node sends these to its immediate neighbors at defined intervals. If a sufficiently
+long time passes without receipt of a “hello” from a neighbor, the link to that neighbor
+will be declared down, and a new LSP will be generated to reflect this fact.
+One of the important design goals of a link-state protocol’s flooding mechanism
+is that the newest information must be flooded to all nodes as quickly as possible, while
+old information must be removed from the network and not allowed to circulate. In
+addition, it is clearly desirable to minimize the total amount of routing traffic that is
+sent around the network; after all, this is just “overhead” from the perspective of those
+who actually use the network for their applications. The next few paragraphs describe
+some of the ways that these goals are accomplished.
+One easy way to reduce overhead is to avoid generating LSPs unless absolutely
+necessary. This can be done by using very long timers—often on the order of hours—for
+the periodic generation of LSPs. Given that the flooding protocol is truly reliable when
+topology changes, it is safe to assume that messages saying “nothing has changed” do
+not need to be sent very often.
+To make sure that old information is replaced by newer information, LSPs carry
+sequence numbers. Each time a node generates a new LSP, it increments the sequence
+4.2 Routing 285
+number by 1. Unlike most sequence numbers used in protocols, these sequence numbers
+are not expected to wrap, so the field needs to be quite large (say, 64 bits). If a node
+goes down and then comes back up, it starts with a sequence number of 0. If the
+node was down for a long time, all the old LSPs for that node will have timed out
+(as described below); otherwise, this node will eventually receive a copy of its own
+LSP with a higher sequence number, which it can then increment and use as its own
+sequence number. This will ensure that its new LSP replaces any of its old LSPs left
+over from before the node went down.
+LSPs also carry a time to live. This is used to ensure that old link-state information
+is eventually removed from the network. A node always decrements the TTL of a newly
+received LSP before flooding it to its neighbors. It also “ages” the LSP while it is stored
+in the node. When the TTL reaches 0, the node refloods the LSP with a TTL of 0, which
+is interpreted by all the nodes in the network as a signal to delete that LSP.
+Route Calculation
+Once a given node has a copy of the LSP from every other node, it is able to compute
+a complete map for the topology of the network, and from this map it is able to decide
+the best route to each destination. The question, then, is exactly how it calculates
+routes from this information. The solution is based on a well-known algorithm from
+graph theory—Dijkstra’s shortest-path algorithm.
+We first define Dijkstra’s algorithm in graph-theoretic terms. Imagine that a node
+takes all the LSPs it has received and constructs a graphical representation of the network,
+in which Ndenotes the set of nodes in the graph, l(i, j ) denotes the nonnegative
+cost (weight) associated with the edge between nodes i, j ? N, and l(i, j ) = ? if no
+edge connects i and j . In the following description, we let s ? Ndenote this node, that
+is, the node executing the algorithm to find the shortest path to all the other nodes
+in N. Also, the algorithm maintains the following two variables: M denotes the set
+of nodes incorporated so far by the algorithm, and C(n) denotes the cost of the path
+from s to each node n. Given these definitions, the algorithm is defined as follows:
+M = {s}
+for each n in N- {s}
+C(n) = l(s, n)
+while (N = M)
+M = M ? {w} such that C(w) is the minimum for all w in (N- M)
+for each n in (N- M)
+C(n) = MIN(C(n), C(w) + l(w, n))
+Basically, the algorithm works as follows. We start with Mcontaining this node s and
+then initialize the table of costs (the C(n)s) to other nodes using the known costs to
+286 4 Internetworking
+directly connected nodes. We then look for the node that is reachable at the lowest
+cost (w) and add it to M. Finally, we update the table of costs by considering the cost
+of reaching nodes through w. In the last line of the algorithm, we choose a new route
+to node n that goes through node w if the total cost of going from the source to w
+and then following the link from w to n is less than the old route we had to n. This
+procedure is repeated until all nodes are incorporated in M.
+In practice, each switch computes its routing table directly from the LSPs it has
+collected using a realization of Dijkstra’s algorithm called the forward search algorithm.
+Specifically, each switch maintains two lists, known as Tentative and Confirmed.
+Each of these lists contains a set of entries of the form (Destination, Cost, NextHop).
+The algorithm works as follows:
+1 Initialize the Confirmed list with an entry for myself; this entry has a cost of 0.
+2 For the node just added to the Confirmed list in the previous step, call it node
+Next, select its LSP.
+3 For each neighbor (Neighbor) of Next, calculate the cost (Cost) to reach this
+Neighbor as the sum of the cost from myself to Next and from Next to Neighbor.
+(a) If Neighbor is currently on neither the Confirmed nor the Tentative list, then
+add (Neighbor, Cost, NextHop) to the Tentative list, where NextHop is the
+direction I go to reach Next.
+(b) If Neighbor is currently on the Tentative list, and the Cost is less than the currently
+listed cost for Neighbor, then replace the current entry with (Neighbor,
+Cost, NextHop), where NextHop is the direction I go to reach Next.
+4 If the Tentative list is empty, stop. Otherwise, pick the entry from the Tentative
+list with the lowest cost, move it to the Confirmed list, and return to step 2.
+This will become a lot easier to understand when we look at an example. Consider
+the network depicted in Figure 4.19. Note that, unlike our previous example, this
+D
+A
+B
+C
+5 3
+2
+11
+10
+Figure 4.19 Link-state routing: an example network.
+4.2 Routing 287
+Step Confirmed Tentative Comments
+1 (D,0,-) Since D is the only new member of the
+confirmed list, look at its LSP.
+2 (D,0,-) (B,11,B)
+(C,2,C)
+D’s LSP says we can reach B through B
+at cost 11, which is better than
+anything else on either list, so put it
+on Tentative list; same for C.
+3 (D,0,-)
+(C,2,C)
+(B,11,B) Put lowest-cost member of Tentative
+(C) onto Confirmed list. Next,
+examine LSP of newly confirmed
+member (C).
+4 (D,0,-)
+(C,2,C)
+(B,5,C)
+(A,12,C)
+Cost to reach B through C is 5, so
+replace (B,11,B). C’s LSP tells us
+that we can reach A at cost 12.
+5 (D,0,-)
+(C,2,C)
+(B,5,C)
+(A,12,C) Move lowest-cost member of Tentative
+(B) to Confirmed, then look at its LSP.
+6 (D,0,-)
+(C,2,C)
+(B,5,C)
+(A,10,C) Since we can reach A at cost 5 through
+B, replace the Tentative entry.
+7 (D,0,-)
+(C,2,C)
+(B,5,C)
+(A,10,C)
+Move lowest-cost member of
+Tentative (A) to Confirmed, and we
+are all done.
+Table 4.9 Steps for building routing table for node D (Figure 4.19).
+network has a range of different edge costs. Table 4.9 traces the steps for building the
+routing table for node D. We denote the two outputs of D by using the names of the
+nodes to which they connect, B and C. Note the way the algorithm seems to head off
+on false leads (like the 11-unit cost path to B that was the first addition to the Tentative
+list) but ends up with the least-cost paths to all nodes.
+288 4 Internetworking
+The link-state routing algorithm has many nice properties: It has been proven to
+stabilize quickly, it does not generate much traffic, and it responds rapidly to topology
+changes or node failures. On the downside, the amount of information stored at each
+node (one LSP for every other node in the network) can be quite large. This is one
+of the fundamental problems of routing and is an instance of the more general problem
+of scalability. Some solutions to both the specific problem (the amount of storage
+potentially required at each node) and the general problem (scalability) will be discussed
+in the next section.
+? Thus, the difference between the distance-vector and link-state algorithms can be
+summarized as follows. In distance vector, each node talks only to its directly connected
+neighbors, but it tells them everything it has learned (i.e., distance to all nodes). In link
+state, each node talks to all other nodes, but it tells them only what it knows for sure
+(i.e., only the state of its directly connected links).
+The Open Shortest Path First Protocol (OSPF)
+One of the most widely used link-state routing protocols is OSPF. The first word,
+“Open,” refers to the fact that it is an open, nonproprietary standard, created under
+the auspices of the IETF. The “SPF” part comes from an alternative name for linkstate
+routing. OSPF adds quite a number of features to the basic link-state algorithm
+described above, including the following:
+¦ Authentication of routing messages: This is a nice feature, since it is all too
+common for some misconfigured host to decide that it can reach every host
+in the universe at a cost of 0. When the host advertises this fact, every router
+in the surrounding neighborhood updates its forwarding tables to point to
+that host, and said host receives a vast amount of data that, in reality, it has
+no idea what to do with. It typically drops it all, bringing the network to a
+halt. Such disasters can be averted in many cases by requiring routing updates
+to be authenticated. Early versions of OSPF used a simple 8-byte password
+for authentication. This is not a strong enough form of authentication to
+prevent dedicated malicious users, but it alleviates many problems caused
+by misconfiguration. (A similar form of authentication was added to RIP
+in version 2.) Strong cryptographic authentication of the sort discussed in
+Section 8.2.1 was later added.
+¦ Additional hierarchy: Hierarchy is one of the fundamental tools used to make
+systems more scalable. OSPF introduces another layer of hierarchy into routing
+by allowing a domain to be partitioned into areas. This means that a
+router within a domain does not necessarily need to know how to reach every
+network within that domain—it may be sufficient for it to know only how to
+4.2 Routing 289
+Authentication
+Version Type Message length
+Checksum Authentication type
+SourceAddr
+AreaId
+0 8 16 31
+Figure 4.20 OSPF header format.
+get to the right area. Thus, there is a reduction in the amount of information
+that must be transmitted to and stored in each node. We examine areas in
+detail in Section 4.3.4.
+¦ Load balancing: OSPF allows multiple routes to the same place to be assigned
+the same cost and will cause traffic to be distributed evenly over those
+routes.
+There are several different types of OSPF messages, but all begin with the same
+header, as shown in Figure 4.20. The Version field is currently set to 2, and the Type
+field may take the values 1 through 5. The SourceAddr identifies the sender of the
+message, and the AreaId is a 32-bit identifier of the area in which the node is located.
+The entire packet, except the authentication data, is protected by a 16-bit checksum
+using the same algorithm as the IP header (see Section 2.4). The Authentication type
+is 0 if no authentication is used; otherwise it may be 1, implying a simple password is
+used, or 2, which indicates that a cryptographic authentication checksum, of the sort
+described in Section 8.2.1, is used. In the latter cases the Authentication field carries
+the password or cryptographic checksum.
+Of the five OSPF message types, type 1 is the “hello” message, which a router
+sends to its peers to notify them that it is still alive and connected as described above.
+The remaining types are used to request, send, and acknowledge the receipt of linkstate
+messages. The basic building block of link-state messages in OSPF is known as
+the link-state advertisement (LSA). One message may contain many LSAs.We provide
+a few details of the LSA here.
+Like any internetwork routing protocol, OSPF must provide information about
+how to reach networks. Thus, OSPF must provide a little more information than the
+simple graph-based protocol described above. Specifically, a router running OSPF may
+generate link-state packets that advertise one or more of the networks that are directly
+290 

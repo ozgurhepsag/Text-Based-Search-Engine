@@ -1,0 +1,2585 @@
+4 Internetworking
+LS Age Options Type=1
+0 Flags 0 Number of links
+Link type Num_TOS Metric
+Link-state ID
+Advertising router
+LS sequence number
+Link ID
+Link data
+Optional TOS information
+More links
+LS checksum Length
+Figure 4.21 OSPF link-state advertisement.
+connected to that router. In addition, a router that is connected to another router by
+some link must advertise the cost of reaching that router over the link. These two types
+of advertisements are necessary to enable all the routers in a domain to determine the
+cost of reaching all networks in that domain and the appropriate next hop for each
+network.
+Figure 4.21 shows the packet format for a “type 1” link-state advertisement.
+Type 1 LSAs advertise the cost of links between routers. Type 2 LSAs are used to
+advertise networks to which the advertising router is connected, while other types are
+used to support additional hierarchy as described in the next section. Many fields in
+the LSA should be familiar from the preceding discussion. The LS Age is the equivalent
+of a time to live, except that it counts up and the LSA expires when the age reaches a
+defined maximum value. The Type field tells us that this is a type 1 LSA.
+In a type 1 LSA, the Link-state ID and the Advertising router field are identical.
+Each carries a 32-bit identifier for the router that created this LSA. While a number of
+assignment strategies may be used to assign this ID, it is essential that it be unique in
+the routing domain and that a given router consistently uses the same router ID. One
+way to pick a router ID that meets these requirements would be to pick the lowest IP
+address among all the IP addresses assigned to that router. (Recall that a router may
+have a different IP address on each of its interfaces.)
+The LS sequence number is used exactly as described above, to detect old or
+duplicate LSAs. The LS checksum is similar to others we have seen in Section 2.4 and
+in other protocols; it is of course used to verify that data has not been corrupted. It
+covers all fields in the packet except LS Age, so that it is not necessary to recompute
+a checksum every time LS Age is incremented. Length is the length in bytes of the
+complete LSA.
+4.2 Routing 291
+Now we get to the actual link-state information. This is made a little complicated
+by the presence of TOS (type of service) information. Ignoring that for a moment, each
+link in the LSA is represented by a Link ID, some Link Data, and a metric. The first two of
+these fields identify the link; a common way to do this would be to use the router ID of
+the router at the far end of the link as the Link ID, and then use the Link Data to disambiguate
+among multiple parallel links if necessary. The metric is of course the cost of the
+link. Type tells us something about the link, for example, if it is a point-to-point link.
+The TOS information is present to allow OSPF to choose different routes for IP
+packets based on the value in their TOS field. Instead of assigning a single metric to a
+link, it is possible to assign different metrics depending on the TOS value of the data.
+For example, if we had a link in our network that was very good for delay-sensitive
+traffic, we could give it a low metric for the TOS value representing low delay and
+a high metric for everything else. OSPF would then pick a different shortest path for
+those packets that had their TOS field set to that value. It is worth noting that, at the
+time of writing, this capability has not been widely deployed.5
+4.2.4 Metrics
+The preceding discussion assumes that link costs, or metrics, are known when we
+execute the routing algorithm. In this section, we look at some ways to calculate link
+costs that have proven effective in practice. One example that we have seen already,
+which is quite reasonable and very simple, is to assign a cost of 1 to all links—the
+least-cost route will then be the one with the fewest hops. Such an approach has
+several drawbacks, however. First, it does not distinguish between links on a latency
+basis. Thus, a satellite link with 250-ms latency looks just as attractive to the routing
+protocol as a terrestrial link with 1-ms latency. Second, it does not distinguish between
+routes on a capacity basis, making a 9.6-Kbps link look just as good as a 45-Mbps
+link. Finally, it does not distinguish between links based on their current load, making
+it impossible to route around overloaded links. It turns out that this last problem is
+the hardest because you are trying to capture the complex and dynamic characteristics
+of a link in a single scalar cost.
+The ARPANET was the testing ground for a number of different approaches
+to link-cost calculation. (It was also the place where the superior stability of link
+state over distance-vector routing was demonstrated; the original mechanism used
+distance vector while the later version used link state.) The following discussion traces
+the evolution of the ARPANET routing metric and, in so doing, explores the subtle
+aspects of the problem.
+5Note also that the meaning of the TOS field has changed since the OSPF specification was written. This topic is
+discussed in Section 6.5.3.
+292 4 Internetworking
+The original ARPANET routing metric measured the number of packets that
+were queued waiting to be transmitted on each link, meaning that a link with 10
+packets queued waiting to be transmitted was assigned a larger cost weight than a link
+with 5 packets queued for transmission. Using queue length as a routing metric did
+not work well, however, since queue length is an artificial measure of load—it moves
+packets toward the shortest queue rather than toward the destination, a situation all
+too familiar to those of us who hop from line to line at the grocery store. Stated more
+precisely, the original ARPANET routing mechanism suffered from the fact that it did
+not take either the bandwidth or the latency of the link into consideration.
+A second version of the ARPANET routing algorithm, sometimes called the
+“new routing mechanism,” took both link bandwidth and latency into consideration
+and used delay, rather than just queue length, as a measure of load. This was done
+as follows. First, each incoming packet was timestamped with its time of arrival at
+the router (ArrivalTime); its departure time from the router (DepartTime) was also
+recorded. Second, when the link-level ACK was received from the other side, the node
+computed the delay for that packet as
+Delay = (DepartTime - ArrivalTime) + TransmissionTime + Latency
+where TransmissionTime and Latency were statically defined for the link and captured
+the link’s bandwidth and latency, respectively. Notice that in this case, DepartTime –
+ArrivalTime represents the amount of time the packet was delayed (queued) in the node
+due to load. If the ACK did not arrive, but instead the packet timed out, then Depart-
+Time was reset to the time the packet was retransmitted. In this case, DepartTime –
+ArrivalTime captures the reliability of the link—the more frequent the retransmission
+of packets, the less reliable the link, and the more we want to avoid it. Finally, the
+weight assigned to each link was derived from the average delay experienced by the
+packets recently sent over that link.
+Although an improvement over the original mechanism, this approach also had
+a lot of problems. Under light load, it worked reasonably well, since the two static
+factors of delay dominated the cost. Under heavy load, however, a congested link
+would start to advertise a very high cost. This caused all the traffic to move off that
+link, leaving it idle, so then it would advertise a low cost, thereby attracting back all
+the traffic, and so on. The effect of this instability was that, under heavy load, many
+links would in fact spend a great deal of time being idle, which is the last thing you
+want under heavy load.
+Another problem was that the range of link values was much too large. For
+example, a heavily loaded 9.6-Kbps link could look 127 times more costly than a lightly
+loaded 56-Kbps link. This means that the routing algorithm would choose a path with
+126 hops of lightly loaded 56-Kbps links in preference to a 1-hop 9.6-Kbps path.
+4.2 Routing 293
+While shedding some traffic from an overloaded line is a good idea, making it look so
+unattractive that it loses all its traffic is excessive. Using 126 hops when 1 hop will do is
+in general a bad use of network resources. Also, satellite links were unduly penalized,
+so that an idle 56-Kbps satellite link looked considerably more costly than an idle
+9.6-Kbps terrestrial link, even though the former would give better performance for
+high-bandwidth applications.
+A third approach, called the “revised ARPANET routing metric,” addressed
+these problems. The major changes were to compress the dynamic range of the metric
+considerably, to account for the link type, and to smooth the variation of the metric
+with time.
+The smoothing was achieved by several mechanisms. First, the delay measurement
+was transformed to a link utilization, and this number was averaged with the
+last reported utilization to suppress sudden changes. Second, there was a hard limit
+on how much the metric could change from one measurement cycle to the next. By
+smoothing the changes in the cost, the likelihood that all nodes would abandon a route
+at once is greatly reduced.
+The compression of the dynamic range was achieved by feeding the measured
+utilization, the link type, and the link speed into a function that is shown graphically
+in Figure 4.22. Observe the following:
+225
+New metric (routing units)
+140
+90
+75
+60
+30
+25% 50% 75% 100%
+Utilization
+9.6-Kbps satellite link
+9.6-Kbps terrestrial link
+56-Kbps satellite link
+56-Kbps terrestrial link
+Figure 4.22 Revised ARPANET routing metric versus link utilization.
+294 4 Internetworking
+¦ A highly loaded link never shows
+a cost of more than three times its
+cost when idle.
+¦ The most expensive link is only
+seven times the cost of the least expensive.
+¦ A high-speed satellite link is more
+attractive than a low-speed terrestrial
+link.
+¦ Cost is a function of link utilization
+only at moderate to high
+loads.
+All these factors mean that a link is much
+less likely to be universally abandoned, since
+a threefold increase in cost is likely to make
+the link unattractive for some paths while
+letting it remain the best choice for others.
+The slopes, offsets, and breakpoints for
+the curves in Figure 4.22 were arrived at
+by a great deal of trial and error, and they
+were carefully tuned to provide good performance.
+There is one final issue related to calculating
+edge weights—the frequency with
+which each node calculates the weights on
+its links. There are two things to keep in
+mind. First, none of the metrics are instantaneous.
+That is, whether a node is measuring
+queue length, delay, or utilization, it is
+actually computing an average over a period
+of time. Second, just because a metric
+changes does not mean that the node
+sends out an update message. In practice,
+updates are sent only when the change to an
+edge weight is larger than some threshold.
+Monitoring Routing
+Behavior
+Given the complexity of routing
+packets through a network of the
+scale of the Internet, we might wonder
+how well the system works.We
+know it works some of the time
+because we are able to connect to
+sites all over the world. We suspect
+it doesn’t work all the time, though,
+because sometimes we are unable
+to connect to certain sites. The real
+problem is determining what part
+of the system is at fault when our
+connections fail: Has some routing
+machinery failed to work properly,
+is the remote server too busy, or has
+some link or machine simply gone
+down?
+This is really an issue of network
+management, and while there
+are tools that system administrators
+use to keep tabs on their
+own networks—for example, see
+the Simple Network Management
+Protocol (SNMP) described in Section
+9.2.3—it is a largely unresolved
+problem for the Internet as
+a whole. In fact, the Internet has
+grown so large and complex that,
+even though it is constructed from a
+collection of man-made, largely deterministic
+parts, we have come to
+view it almost as a living organism
+4.2 Routing 295
+or natural phenomenon that is to
+be studied. That is, we try to understand
+the Internet’s dynamic behavior
+by performing experiments on it
+and proposing models that explain
+our observations.
+An excellent example of this
+kind of study has been conducted
+by Vern Paxson. Paxson used
+the Unix traceroute tool to study
+40,000 end-to-end routes between
+37 Internet sites in 1995. He was
+attempting to answer questions
+about how routes fail, how stable
+routes are over time, and whether
+or not they are symmetric. Among
+other things, Paxson found that the
+likelihood of a user encountering a
+serious end-to-end routing problem
+was 1 in 30, and that such problems
+usually lasted about 30 seconds. He
+also found that two-thirds of the
+Internet’s routes persisted for days
+or weeks, and that about one-third
+of the time the route used to get
+from host A to host B included at
+least one different routing domain
+than the route used to get from
+host B to host A. Paxson’s overall
+conclusion was that Internet
+routing was becoming less and less
+predictable over time.
+4.2.5 Routing for Mobile
+Hosts
+Looking back over the preceding discussion
+of how IP addressing and routing works,
+you might notice that there is an implicit
+assumption about the mobility of hosts, or
+rather the lack of it. A host’s address consists
+of a network number and a host part,
+and the network number tells us which network
+the host is attached to. IP routing algorithms
+tell the routers how to get packets
+to the correct network, thus enhancing the
+scalability of the routing system by keeping
+host-specific information out of the routers.
+So what would happen if a host were disconnected
+from one network and connected
+to another? If we didn’t change the IP
+address of the host, then it would become
+unreachable. Any packet destined for this
+host would be sent to the network that has
+the appropriate network number, but when
+the router(s) on that network tried to deliver
+the packet to the host, the host would not
+be there to receive it.
+The obvious solution to this problem
+is to provide the host with a new address
+when it attaches to a new network. Techniques
+such as DHCP (described in Section
+4.1.6) can make this a relatively simple
+process. In many situations this solution is
+adequate, but in others it is not. For example,
+suppose that a user of a PC equipped
+with a wireless network interface is running
+some application while she roams the countryside.
+The PC might detach itself from
+one network and attach to another with
+some frequency, but the user would want
+to be oblivious to this. In particular, the
+296 4 Internetworking
+applications that were running when the PC was attached to network A should continue
+to run without interruption when it attaches to network B. If the PC simply
+changes its IP address in the middle of running the application, the application cannot
+simply keep working, because the remote end has no way of knowing that it must
+now send the packets to a new IP address. Ideally, we want the movement of the PC to
+be transparent to the remote application. The procedures that are designed to address
+this problem are usually referred to as “Mobile IP” (which is also the name of the
+IETF working group that defined them).
+The Mobile IP working group made some important design decisions at the
+outset. In particular, it was a requirement that the solution would work without any
+changes to the software of nonmobile hosts or the majority of routers in the Internet.
+This sort of approach is frequently adopted in the Internet. Any new technology that
+requires a majority of routers or hosts to be modified before it can work is likely to
+face an uphill battle for acceptance.
+While the majority of routers remain unchanged, mobility support does require
+some new functionality in at least one router, known as the home agent of the mobile
+node. This router is located on the “home” network of the mobile host. The mobile
+host is assumed to have a permanent IP address, called its home address, which has a
+network number equal to that of the home network, and thus of the home agent. This is
+the address that will be used by other hosts when they send packets to the mobile host;
+since it does not change, it can be used by long-lived applications as the host roams.
+In many cases, a second router with enhanced functionality, the foreign agent, is
+also required. This router is located on a network to which the mobile node attaches
+itself when it is away from its home network. We will consider first the operation of
+Mobile IP when a foreign agent is used. An example network with both home and
+foreign agents is shown in Figure 4.23.
+Both home and foreign agents periodically announce their presence on the networks
+to which they are attached using agent advertisement messages. A mobile host
+Internetwork
+Foreign agent
+(12.0.0.6)
+Mobile host
+(10.0.0.9)
+Home agent
+(10.0.0.3)
+Home network
+(network 10)
+Sending host
+Figure 4.23 Mobile host and mobility agents.
+4.2 Routing 297
+may also solicit an advertisement when it attaches to a new network. The advertisement
+by the home agent enables a mobile host to learn the address of its home agent
+before it leaves its home network. When the mobile host attaches to a foreign network,
+it hears an advertisement from a foreign agent and registers with the agent, providing
+the address of its home agent. The foreign agent then contacts the home agent,
+providing a care-of address. This is usually the IP address of the foreign agent.
+At this point, we can see that any host that tries to send a packet to the mobile
+host will send it with a destination address equal to the home address of that node.
+Normal IP forwarding will cause that packet to arrive on the home network of the
+mobile node, on which the home agent is sitting. Thus, we can divide the problem of
+delivering the packet to the mobile node into three parts:
+1 How does the home agent intercept a packet that is destined for the mobile node?
+2 How does the home agent then deliver the packet to the foreign agent?
+3 How does the foreign agent deliver the packet to the mobile node?
+The first problem might look easy if you just look at Figure 4.23, in which the
+home agent is clearly the only path between the sending host and the home network,
+and thus must receive packets that are destined to the mobile node. But what if the
+sending node were on network 10, or what if there were another router connected
+to network 10 that tried to deliver the packet without its passing through the home
+agent? To address this problem, the home agent actually impersonates the mobile
+node, using a technique called “proxy ARP.” This works just like ARP as described
+in Section 4.1.5, except that the home agent inserts the IP address of the mobile node,
+rather than its own, in the ARP messages. It uses its own hardware address, so that
+all the nodes on the same network learn to associate the hardware address of the
+home agent with the IP address of the mobile node. One subtle aspect of this process
+is the fact that ARP information may be cached in other nodes on the network. To
+make sure that these caches are invalidated in a timely way, the home agent issues an
+ARP message as soon as the mobile node registers with a foreign agent. Because the
+ARP message is not a response to a normal ARP request, it is termed a “gratuitous
+ARP.”
+The second problem is the delivery of the intercepted packet to the foreign agent.
+Here we use the tunneling technique described in Section 4.1.8. The home agent simply
+“wraps” the packet inside an IP header that is destined for the foreign agent and
+transmits it into the internetwork. All the intervening routers just see an IP packet
+destined for the IP address of the foreign agent. Another way of looking at this is that
+an IP tunnel is established between the home agent and the foreign agent, and the
+home agent just drops packets destined for the mobile node into that tunnel.
+298 4 Internetworking
+When a packet finally arrives at the foreign agent, it strips the extra IP header
+and finds inside an IP packet destined for the mobile node. Clearly, the foreign agent
+cannot treat this like any old IP packet because this would cause it to send it back
+to the home network. Instead, it has to recognize the address as that of a registered
+mobile node. It then delivers the packet to the hardware address of the mobile
+node (e.g., its Ethernet address), which was learned as part of the registration process.
+One observation that can be made about these procedures is that it is possible
+for the foreign agent and the mobile node to be in the same box; that is, a mobile node
+can perform the foreign agent function itself. To make this work, however, the mobile
+node must be able to dynamically acquire an IP address that is located in the address
+space of the foreign network. This address will then be used as the care-of address.
+In our example, this would have to be an address with a network number of 12.
+We have already seen one way in which a host can dynamically acquire a correct
+IP address, using DHCP (Section 4.1.6). This approach has the desirable feature of
+allowing mobile nodes to attach to networks that don’t have foreign agents; thus,
+mobility can be achieved with only the addition of a home agent and some new software
+on the mobile node (assuming DHCP is used on the foreign network).
+What about traffic in the other direction (i.e., from mobile node to fixed node)?
+This turns out to be much easier. The mobile node just puts the IP address of the fixed
+node in the destination field of its IP packets, while putting its permanent address in
+the source field, and the packets are forwarded to the fixed node using normal means.
+Of course, if both nodes in a conversation are mobile, then the procedures described
+above are used in each direction.
+Route Optimization in Mobile IP
+There is one significant drawback to the above approach, which may be familiar to
+users of cellular telephones. The route from sending node to mobile node can be significantly
+suboptimal. One of the most extreme examples is when a mobile node and
+the sending node are on the same network, but the home network for the mobile node
+is on the far side of the Internet. The sending node addresses all packets to the home
+network; they traverse the Internet to reach the home agent, which then tunnels them
+back across the Internet to reach the foreign agent. Clearly, it would be nice if the
+sending node could find out that the mobile node is actually on the same network
+and deliver the packet directly. In the more general case, the goal is to deliver packets
+as directly as possible from sending node to mobile node without passing through a
+home agent. This is sometimes referred to as the “triangle routing problem” since the
+path from sender to mobile node via home agent takes two sides of a triangle, rather
+than the third side that is the direct path.
+The basic idea behind the solution to triangle routing is to let the sending node
+know the care-of address of the mobile node. The sending node can then create its
+4.3 Global Internet 299
+own tunnel to the foreign agent. This is treated as an optimization of the process just
+described. If the sender has been equipped with the necessary software to learn the
+care-of address and create its own tunnel, then the route can be optimized; if not,
+packets just follow the suboptimal route.
+When a home agent sees a packet destined for one of the mobile nodes that it
+supports, it can deduce that the sender is not using the optimal route. Therefore, it
+sends a “binding update” message back to the source, in addition to forwarding the
+data packet to the foreign agent. The source, if capable, uses this binding update to
+create an entry in a “binding cache,” which consists of a list of mappings from mobile
+node addresses to care-of addresses. The next time this source has a data packet to
+send to that mobile node, it will find the binding in the cache and can tunnel the packet
+directly to the foreign agent.
+There is an obvious problem with this scheme, which is that the binding cache
+may become out-of-date if the mobile host moves to a new network. If an out-of-date
+cache entry is used, the foreign agent will receive tunneled packets for a mobile node
+that is no longer registered on its network. In this case, it sends a “binding warning”
+message back to the sender to tell it to stop using this cache entry. This scheme works
+only in the case where the foreign agent is not the mobile node itself, however. For this
+reason, cache entries need to be deleted after some period of time; the exact amount
+is specified in the binding update message.
+Mobile routing provides some interesting security challenges. For example, an
+attacker wishing to intercept the packets destined to some other node in an internetwork
+could contact the home agent for that node and announce itself as the new
+foreign agent for the node. Thus it is clear that some authentication mechanisms are
+required. We discuss such mechanisms in Chapter 8.
+Finally, we note that there are many open issues in mobile networking. For
+example, the security and performance aspects of mobile networks might require routing
+algorithms to take account of several factors when finding a route to a mobile host;
+for example, it might be desirable to find a route that doesn’t pass through some untrusted
+network. There is also the problem of “ad hoc” mobile networks—enabling
+a group of mobile nodes to form a network in the absence of any fixed nodes. These
+continue to be areas of active research.
+4.3 Global Internet
+At this point, we have seen how to connect a heterogeneous collection of networks to
+create an internetwork and how to use the simple hierarchy of the IP address to make
+routing in an internet somewhat scalable. We say “somewhat” scalable because even
+though each router does not need to know about all the hosts connected to the internet,
+300 4 Internetworking
+Stanford NSFNET backbone
+BARRNET
+regional
+Berkeley
+PARC
+NCAR
+UA
+UNM
+Westnet
+regional
+UNL KU
+ISU
+MidNet
+regional
+…
+Figure 4.24 The tree structure of the Internet in 1990.
+it does, in the model described so far, need to know about all the networks connected
+to the internet. Today’s Internet has tens of thousands of networks connected to it.
+Routing protocols such as those we have just discussed do not scale to those kinds of
+numbers. This section looks at a variety of techniques that greatly improve scalability
+and that have enabled the Internet to grow as far as it has.
+Before getting to these techniques, we need to have a general picture in our
+heads of what the global Internet looks like. It is not just a random interconnection of
+Ethernets, but instead it takes on a shape that reflects the fact that it interconnects many
+different organizations. Figure 4.24 gives a simple depiction of the state of the Internet
+in 1990. Since that time, the Internet’s topology has grown much more complex than
+this figure suggests—we present a more accurate picture of the current Internet in
+Section 4.3.3 and Figure 4.29—but this picture will do for now.
+One of the salient features of this topology is that it consists of “end user” sites
+(e.g., Stanford University) that connect to “service provider” networks (e.g., BARRNET
+was a provider network that served sites in the San Francisco Bay Area). In 1990,
+many providers served a limited geographic region and were thus known as regional
+networks. The regional networks were, in turn, connected by a nationwide backbone.
+In 1990, this backbone was funded by the National Science Foundation (NSF) and
+was therefore called the NSFNET backbone. Although the detail is not shown in this
+figure, the provider networks are typically built from a large number of point-to-point
+links (e.g., DS3 or OC-3 links) that connect to routers; similarly, each end user site
+is typically not a single network, but instead consists of multiple physical networks
+connected by routers and bridges.
+Notice in Figure 4.24 that each provider and end user are likely to be an administratively
+independent entity. This has some significant consequences on routing.
+For example, it is quite likely that different providers will have different ideas about
+4.3 Global Internet 301
+the best routing protocol to use within their network, and on how metrics should
+be assigned to links in their network. Because of this independence, each provider’s
+network is usually a single autonomous system (AS). We will define this term more
+precisely in Section 4.3.3, but for now it is adequate to think of an AS as a network
+that is administered independently of other ASs.
+The fact that the Internet has a discernible structure can be used to our advantage
+as we tackle the problem of scalability. In fact, we need to deal with two related scaling
+issues. The first is the scalability of routing. We need to find ways to minimize the
+number of network numbers that get carried around in routing protocols and stored
+in the routing tables of routers. The second is address utilization—that is, making sure
+that the IP address space does not get consumed too quickly.
+Throughout this section, we will see the principle of hierarchy used again and
+again to improve scalability. We begin with subnetting, which primarily deals with
+address space utilization. Next we introduce classless routing or supernetting, which
+tackles both address utilization and routing scalability. We then look at how hierarchy
+can be used to improve the scalability of routing, both through interdomain
+routing and within a single domain. Our final subsection looks at the emerging standards
+for IP version 6, the invention of which was largely the result of scalability
+concerns.
+4.3.1 Subnetting
+The original intent of IP addresses was that the network part would uniquely identify
+exactly one physical network. It turns out that this approach has a couple of drawbacks.
+Imagine a large campus that has lots of internal networks and that decides to
+connect to the Internet. For every network, no matter how small, the site needs at least
+a class C network address. Even worse, for any network with more than 255 hosts,
+they need a class B address. This may not seem like a big deal, and indeed it wasn’t
+when the Internet was first envisioned, but there are only a finite number of network
+numbers, and there are far fewer class B addresses than class Cs. Class B addresses
+tend to be in particularly high demand because you never know if your network might
+expand beyond 255 nodes, so it is easier to use a class B address from the start than
+to have to renumber every host when you run out of room on a class C network.
+The problem we observe here is address assignment inefficiency: A network with two
+nodes uses an entire class C network address, thereby wasting 253 perfectly useful
+addresses; a class B network with slightly more than 255 hosts wastes over 64,000
+addresses.
+Assigning one network number per physical network, therefore, uses up the
+IP address space potentially much faster than we would like. While we would need
+to connect over 4 billion hosts to use up all the valid addresses, we only need to
+302 4 Internetworking
+connect 214 (about 16,000) class B networks before that part of the address space runs
+out. Therefore, we would like to find some way to use the network numbers more
+efficiently.
+Assigning many network numbers has another drawback that becomes apparent
+when you think about routing. Recall that the amount of state that is stored in a node
+participating in a routing protocol is proportional to the number of other nodes, and
+that routing in an internet consists of building up forwarding tables that tell a router
+how to reach different networks. Thus, the more network numbers there are in use,
+the bigger the forwarding tables get. Big forwarding tables add cost to routers, and
+they are potentially slower to search than smaller tables for a given technology, so they
+degrade router performance. This provides another motivation for assigning network
+numbers carefully.
+Subnetting provides an elegantly simple way to reduce the total number of network
+numbers that are assigned. The idea is to take a single IP network number
+and allocate the IP addresses with that network number to several physical networks,
+which are now referred to as subnets. Several things need to be done to make this
+work. First, the subnets should be close to each other. This is because at a distant
+point in the Internet, they will all look like a single network, having only one network
+number between them. This means that a router will only be able to select one route
+to reach any of the subnets, so they had better all be in the same general direction. A
+perfect situation in which to use subnetting is a large campus or corporation that has
+many physical networks. From outside the campus, all you need to know to reach any
+subnet inside the campus is where the campus connects to the rest of the Internet. This
+is often at a single point, so one entry in your forwarding table will suffice. Even if
+there are multiple points at which the campus is connected to the rest of the Internet,
+knowing how to get to one point in the campus network is still a good start.
+The mechanism by which a single network number can be shared among multiple
+networks involves configuring all the nodes on each subnet with a subnet mask. With
+simple IP addresses, all hosts on the same network must have the same network number.
+The subnet mask enables us to introduce a subnet number; all hosts on the same
+physical network will have the same subnet number, which means that hosts may be
+on different physical networks but share a single network number.
+What the subnet mask effectively does is introduce another level of hierarchy into
+the IP address. For example, suppose that we want to share a single class B address
+among several physical networks. We could use a subnet mask of 255.255.255.0.
+(Subnet masks are written down just like IP addresses; this mask is therefore all 1s in
+the upper 24 bits and 0s in the lower 8 bits.) In effect, this means that the top 24 bits
+(where the mask has 1s) are now defined to be the network number, and the lower
+8 bits (where the mask has 0s) are the host number. Since the top 16 bits identify the
+4.3 Global Internet 303
+Network number Host number
+Class B address
+Subnet mask (255.255.255.0)
+Subnetted address
+111111111111111111111111 00000000
+Network number Subnet ID Host ID
+Figure 4.25 Subnet addressing.
+Subnet mask: 255.255.255.128
+Subnet number: 128.96.34.0
+128.96.34.15
+128.96.34.1
+H1 R1
+128.96.34.130 Subnet mask: 255.255.255.128
+Subnet number: 128.96.34.128
+128.96.34.129
+128.96.34.139
+R2
+H2
+128.96.33.1
+128.96.33.14
+Subnet mask: 255.255.255.0
+Subnet number: 128.96.33.0
+H3
+Figure 4.26 An example of subnetting.
+network in a class B address, we may now think of the address as having not two parts
+but three: a network part, a subnet part, and a host part. That is, we have divided what
+used to be the host part into a subnet part and a host part. This is shown in Figure 4.25.
+What subnetting means to a host is that it is now configured with both an IP
+address and a subnet mask for the subnet to which it is attached. For example, host
+H1 in Figure 4.26 is configured with an address of 128.96.34.15 and a subnet mask
+of 255.255.255.128. (All hosts on a given subnet are configured with the same mask;
+304 4 Internetworking
+i.e., there is exactly one subnet mask per subnet.) The bitwise AND of these two
+numbers defines the subnet number of the host and of all other hosts on the same
+subnet. In this case, 128.96.34.15 AND 255.255.255.128 equals 128.96.34.0, so this
+is the subnet number for the topmost subnet in the figure.
+When the host wants to send a packet to a certain IP address, the first thing it
+does is to perform a bitwise AND between its own subnet mask and the destination
+IP address. If the result equals the subnet number of the sending host, then it knows
+that the destination host is on the same subnet and the packet can be delivered directly
+over the subnet. If the results are not equal, the packet needs to be sent to a router
+to be forwarded to another subnet. For example, if H1 is sending to H2, then H1
+ANDs its subnet mask (255.255.255.128) with the address for H2 (128.96.34.139) to
+obtain 128.96.34.128. This does not match the subnet number for H1 (128.96.34.0)
+so H1 knows that H2 is on a different subnet. Since H1 cannot deliver the packet to
+H2 directly over the subnet, it sends the packet to its default router R1.
+Note that ARP is largely unaffected by the change in address structure. Once a
+host or router figures out which node it needs to deliver a packet to on one of the
+networks to which it is attached, it performs ARP to find the MAC address for that
+node if necessary.
+The job of a router also changes when we introduce subnetting. Recall that,
+for simple IP, a router has a forwarding table that consists of entries of the form
+NetworkNum, NextHop. To support subnetting, the table must now hold entries of
+the form SubnetNumber, SubnetMask, NextHop. To find the right entry in the table,
+the router ANDs the packet’s destination address with the SubnetMask for each entry
+in turn; if the result matches the SubnetNumber of the entry, then this is the right entry
+to use, and it forwards the packet to the next hop router indicated. In the example
+network of Figure 4.26, router R1 would have the entries shown in Table 4.10.
+Continuing with the example of a datagram from H1 being sent to H2, R1
+would AND H2’s address (128.96.34.139) with the subnet mask of the first entry
+(255.255.255.128) and compare the result (128.96.34.128) with the network number
+SubnetNumber SubnetMask NextHop
+128.96.34.0 255.255.255.128 Interface 0
+128.96.34.128 255.255.255.128 Interface 1
+128.96.33.0 255.255.255.0 R2
+Table 4.10 Example forwarding table with subnetting for Figure 4.26.
+4.3 Global Internet 305
+for that entry (128.96.34.0). Since this is not a match, it proceeds to the next entry.
+This time a match does occur, so R1 delivers the datagram to H2 using interface 1,
+which is the interface connected to the same network as H2.
+We can now describe the datagram forwarding algorithm in the following way:
+D = destination IP address
+for each forwarding table entry SubnetNumber, SubnetMask, NextHop
+D1 = SubnetMask & D
+if D1 = SubnetNumber
+if NextHop is an interface
+deliver datagram directly to destination
+else
+deliver datagram to NextHop (a router)
+Although not shown in this example, a default router would usually be included in
+the table and would be used if no explicit matches were found. We note in passing
+that a naive implementation of this algorithm—one involving repeated ANDing of the
+destination address with a subnet mask that may not be different every time, and a
+linear table search—would be very inefficient.
+A few fine points about subnetting need to be mentioned. We have already seen
+that the subnet mask does not need to align with a byte boundary, with the example
+mask of 255.255.255.128 (25 1s followed by 7 0s) used above. More confusingly, it
+is not even necessary for all the 1s in a subnet mask to be contiguous. For example, it
+would be quite possible to use a subnet mask of 255.255.1.0. All of the mechanisms
+described above should continue to work, but now you can’t look at a contiguous part
+of the IP address and say, “That is the subnet number.” This makes administration
+more difficult. It may also fail to work with implementations that assume that no one
+would use noncontiguous masks, and so it is not recommended in practice.
+We can also put multiple subnets on a single physical network. The effect of this
+would be to force hosts on the same network to talk to each other through a router,
+which might be useful for administrative purposes; for example, to provide isolation
+between different departments sharing a LAN.
+Athird point to which we have alluded is that different parts of the internet see the
+world differently. From outside our hypothetical campus, routers see a single network.
+In the example above, routers outside the campus see the collection of networks in
+Figure 4.26 as just the network 128.96, and they keep one entry in their forwarding
+tables to tell them how to reach it. Routers within the campus, however, need to be able
+to route packets to the right subnet. Thus, not all parts of the internet see exactly the
+same routing information. The next section takes a closer look at how the propagation
+of routing information is done in the Internet.
+306 4 Internetworking
+? The bottom line is that subnetting helps solve our scalability problems in two
+ways. First, it improves our address assignment efficiency by letting us not use up an
+entire class C or class B address every time we add a new physical network. Second, it
+helps us aggregate information. From a reasonable distance, a complex collection of
+physical networks can be made to look like a single network, so that the amount of
+information that routers need to store to deliver datagrams to those networks can be
+reduced.
+4.3.2 Classless Routing (CIDR)
+Classless interdomain routing (CIDR, pronounced “cider”) is a technique that
+addresses two scaling concerns in the Internet: the growth of backbone routing tables
+as more and more network numbers need to be stored in them, and the potential
+for the 32-bit IP address space to be exhausted well before the four-billionth host is
+attached to the Internet. We have already mentioned the problem that would cause
+this address space exhaustion: address assignment inefficiency. The inefficiency arises
+because the IP address structure, with class A, B, and C addresses, forces us to hand
+out network address space in fixed-sized chunks of three very different sizes. A network
+with two hosts needs a class C address, giving an address assignment efficiency
+of 2/255 = 0.78%; a network with 256 hosts needs a class B address, for an efficiency
+of only 256/65,535 = 0.39%. Even though subnetting can help us to assign
+addresses carefully, it does not get around the fact that any autonomous system with
+more than 255 hosts, or an expectation of eventually having that many, wants a class B
+address.
+As it turns out, exhaustion of the IP address space centers on exhaustion of the
+class B network numbers. One way to deal with that would seem to be saying no to
+any AS that requests a class B address unless they can show a need for something
+close to 64K addresses, and instead giving them an appropriate number of class C
+addresses to cover the expected number of hosts. Since we would now be handing out
+address space in chunks of 256 addresses at a time, we could more accurately match
+the amount of address space consumed to the size of the AS. For any AS with at least
+256 hosts (which means the majority of ASs), we can guarantee an address utilization
+of at least 50%, and typically much more.
+This solution, however, raises a problem that is at least as serious: excessive
+storage requirements at the routers. If a single AS has, say, 16 class C network numbers
+assigned to it, that means every Internet backbone router needs 16 entries in its routing
+tables for that AS. This is true even if the path to every one of those networks is the
+same. If we had assigned a class B address to the AS, the same routing information
+could be stored in one table entry. However, our address assignment efficiency would
+then be only 16 × 255/65,536 = 6.2%.
+4.3 Global Internet 307
+CIDR, therefore, tries to balance the desire to minimize the number of routes that
+a router needs to know against the need to hand out addresses efficiently. To do this,
+CIDR helps us to aggregate routes. That is, it lets us use a single entry in a forwarding
+table to tell us how to reach a lot of different networks. As you may have guessed
+from the name, it does this by breaking the rigid boundaries between address classes.
+To understand how this works, consider our hypothetical AS with 16 class C network
+numbers. Instead of handing out 16 addresses at random, we can hand out a block of
+contiguous class C addresses. Suppose we assign the class C network numbers from
+192.4.16 through 192.4.31. Observe that the top 20 bits of all the addresses in this
+range are the same (11000000 00000100 0001). Thus, what we have effectively created
+is a 20-bit network number—something that is between a class B network number and
+a class C number in terms of the number of hosts that it can support. In other words,
+we get both the high address efficiency of handing out addresses in chunks smaller
+than a class B network and a single network prefix that can be used in forwarding
+tables. Observe that for this scheme to work, we need to hand out blocks of class C
+addresses that share a common prefix, which means that each block must contain a
+number of class C networks that is a power of two.
+All we need now to make CIDR solve our problems is a routing protocol that
+can deal with these “classless” addresses, which means that it must understand that
+a network number may be of any length. Modern routing protocols (such as BGP-4,
+described below) do exactly that. The network numbers that are carried in such a
+routing protocol are represented simply by length, value pairs, where the length
+gives the number of bits in the network prefix—20 in the above example. Note that
+representing a network address in this way is similar to the mask, value approach
+used in subnetting, as long as masks consist of contiguous bits starting from the most
+significant bit. Also note that we used subnetting to share one address among multiple
+physical networks, while CIDR aims to collapse the multiple addresses that would be
+assigned to a single AS onto one address. The similarity between the two approaches
+is reflected in the original name for CIDR—supernetting.
+In fact, the ability to aggregate routes in the way that we have just shown is
+only the first step. Imagine an Internet service provider network, whose primary job
+is to provide Internet connectivity to a large number of corporations and campuses.
+If we assign network numbers to the corporations in such a way that all the different
+corporations connected to the provider network share a common address prefix, then
+we can get even greater aggregation of routes. Consider the example in Figure 4.27.
+The two corporations served by the provider network have been assigned adjacent 20-
+bit network prefixes. Since both of the corporations are reachable through the same
+provider network, it can advertise a single route to both of them by just advertising the
+common 19-bit prefix they share. In general, it is possible to aggregate routes repeatedly
+if addresses are assigned carefully. This means that we need to pay attention to which
+308 4 Internetworking
+Border gateway
+(advertises path to
+11000000000001)
+Regional network
+Corporation X
+(11000000000001000001)
+Corporation Y
+(11000000000001000000)
+Figure 4.27 Route aggregation with CIDR.
+provider a corporation is attached to before assigning it an address if this scheme is to
+work. One way to accomplish that is to assign a portion of address space to the provider
+and then to let the network provider assign addresses from that space to its customers.
+IP Forwarding Revisited
+In all our discussion of IP forwarding so far, we have assumed that we could find the
+network number in a packet and then look up that number in a forwarding table.
+However, now that we have introduced CIDR, we need to reexamine this assumption.
+CIDR means that prefixes may be of any length, from 2 to 32 bits. Furthermore, it is
+sometimes possible to have prefixes in the forwarding table that “overlap,” in the sense
+that some addresses may match more than one prefix. For example, we might find both
+171.69 (a 16-bit prefix) and 171.69.10 (a 24-bit prefix) in the forwarding table of a
+single router. In this case, a packet destined to, say, 171.69.10.5 clearly matches both
+prefixes. The rule in this case is based on the principle of “longest match”; that is, the
+packet matches the longest prefix, which would be 171.69.10 in this example. On the
+other hand, a packet destined to 171.69.20.5 would match 171.69 and not 171.69.10,
+and in the absence of any other matching entry in the routing table, 171.69 would be
+the longest match.
+The task of efficiently finding the longest match between an IP address and the
+variable-length prefixes in a forwarding table has been a fruitful field of research
+in recent years, and the “Further Reading” section of this chapter provides some
+references. The most well-known algorithm uses an approach known as a PATRICIA
+tree, which was actually developed well in advance of CIDR.
+4.3.3 Interdomain Routing (BGP)
+At the beginning of this section we introduced the notion that the Internet is organized
+as autonomous systems, each of which is under the control of a single administrative
+entity. A corporation’s complex internal network might be a single AS, as may the
+4.3 Global Internet 309
+R1
+Autonomous system 1
+R2
+R3
+Autonomous system 2
+R4
+R5 R6
+Figure 4.28 A network with two autonomous systems.
+network of a single Internet service provider. Figure 4.28 shows a simple network
+with two autonomous systems.
+The basic idea behind autonomous systems is to provide an additional way to
+hierarchically aggregate routing information in a large internet, thus improving scalability.
+We now divide the routing problem into two parts: routing within a single
+autonomous system and routing between autonomous systems. Since another name
+for autonomous systems in the Internet is routing domains, we refer to the two parts
+of the routing problem as interdomain routing and intradomain routing. In addition
+to improving scalability, the AS model decouples the intradomain routing that takes
+place in one AS from that taking place in another. Thus, each AS can run whatever
+intradomain routing protocols it chooses. It can even use static routes or multiple protocols
+if desired. The interdomain routing problem is then one of having different ASs
+share reachability information with each other.
+One feature of the autonomous system idea is that it enables some ASs to dramatically
+reduce the amount of routing information they need to care about by using
+default routes. For example, if a corporate network is connected to the rest of the
+310 4 Internetworking
+Internet by a single router (this router is typically called a border router since it sits
+at the boundary between the AS and the rest of the Internet), then it is pretty easy
+for a host or router inside the autonomous system to figure out where it should send
+packets that are headed for a destination outside of this AS—they first go to the AS’s
+border router. This is the default route. Similarly, a regional Internet service provider
+can keep track of how to reach the networks of all its directly connected customers and
+can have a default route to some other provider (typically a backbone provider) for
+everyone else. Of course, this passing of the buck has to stop at some point; eventually
+the packet should reach a router connected to a backbone network that knows how
+to reach everything. Managing the amount of routing information in the backbones is
+an important issue that we discuss below.
+There have been two major interdomain routing protocols in the recent history of
+the Internet. The first was the Exterior Gateway Protocol (EGP). EGP had a number of
+limitations, perhaps the most severe of which was that it constrained the topology of the
+Internet rather significantly. EGP basically forced a treelike topology onto the Internet,
+or to be more precise, it was designed when the Internet had a treelike topology, such
+as that illustrated in Figure 4.24. EGP did not allow for the topology to become more
+general. Note that in this simple treelike structure, there is a single backbone, and
+autonomous systems are connected only as parents and children and not as peers.
+The replacement for EGP is the Border Gateway Protocol (BGP), which is in its
+fourth version at the time of this writing (BGP-4). BGP is also known for being rather
+complex. This section presents the highlights of BGP-4.
+As a starting position, BGP assumes that the Internet is an arbitrarily interconnected
+set of ASs. This model is clearly general enough to accommodate non-treestructured
+internetworks, like the simplified picture of today’s multibackbone Internet
+shown in Figure 4.29.6
+Unlike the simple tree-structured Internet shown in Figure 4.24, today’s Internet
+consists of an interconnection of multiple backbone networks (they are usually called
+service provider networks, and they are operated by private companies rather than
+the government), and sites are connected to each other in arbitrary ways. Some large
+corporations connect directly to one or more of the backbones, while others connect
+to smaller, nonbackbone service providers. Many service providers exist mainly to
+provide service to “consumers” (i.e., individuals with PCs in their homes), and these
+providers must also connect to the backbone providers. Often many providers arrange
+to interconnect with each other at a single “peering point.” In short, it is hard to discern
+much structure at all in today’s Internet.
+6In an interesting stretch of metaphor, the Internet now has multiple backbones, having had only one for most of
+its early life. The authors know of no other animal that has this characteristic.
+4.3 Global Internet 311
+Backbone service provider
+Peering
+point
+Peering
+point
+Large corporation
+Large corporation
+Small
+corporation
+“Consumer” ISP
+“Consumer” ISP
+“Consumer” ISP
+Figure 4.29 Today’s multibackbone Internet.
+Given this rough sketch of the Internet, if we define local traffic as traffic that
+originates at or terminates on nodes within an AS, and transit traffic as traffic that
+passes through an AS, we can classify ASs into three types:
+¦ Stub AS: an AS that has only a single connection to one other AS; such an
+AS will only carry local traffic. The small corporation in Figure 4.29 is an
+example of a stub AS.
+¦ Multihomed AS: an AS that has connections to more than one other AS but
+that refuses to carry transit traffic; for example, the large corporation at the
+top of Figure 4.29.
+¦ Transit AS: an AS that has connections to more than one other AS and that is
+designed to carry both transit and local traffic, such as the backbone providers
+in Figure 4.29.
+Whereas the discussion of routing in Section 4.2 focused on finding optimal paths
+based on minimizing some sort of link metric, the problem of interdomain routing turns
+out to be so difficult that the goals are more modest. First and foremost, the goal is
+to find any path to the intended destination that is loop-free. That is, we are more
+concerned with reachability than optimality. Finding a path that is anywhere close to
+optimal is considered a great achievement.We will see why this is so as we look at the
+details of BGP.
+There are a few reasons why interdomain routing is hard. The first is simply
+a matter of scale. An Internet backbone router must be able to forward any packet
+destined anywhere in the Internet. That means having a routing table that will provide
+a match for any valid IP address. While CIDR has helped to control the number of
+312 4 Internetworking
+distinct prefixes that are carried in the Internet’s backbone routing, there is inevitably
+a lot of routing information to pass around—on the order of 140,000 prefixes at the
+time of writing.
+The second challenge in interdomain routing arises from the autonomous nature
+of the domains. Note that each domain may run its own interior routing protocols and
+use any scheme it chooses to assign metrics to paths. This means that it is impossible
+to calculate meaningful path costs for a path that crosses multiple ASs. A cost of 1000
+across one provider might imply a great path, but it might mean an unacceptably bad
+one from another provider. As a result, interdomain routing advertises only “reachability.”
+The concept of reachability is basically a statement that “you can reach this
+network through this AS.” This means that for interdomain routing to pick an optimal
+path is essentially impossible.
+The third challenge involves the issue of trust. Provider A might be unwilling to
+believe certain advertisements from provider B for fear that provider B will advertise
+erroneous routing information. For example, trusting provider B when he advertises
+a great route to anywhere in the Internet can be a disastrous choice if provider B turns
+out to have made a mistake configuring his routers or to have insufficient capacity to
+carry the traffic.
+Closely related to this issue is the need to support very flexible policies in interdomain
+routing. One common policy is the prevention of transit traffic. For example,
+the multihomed corporation in Figure 4.29 may not wish to carry any traffic between
+the two providers to whom it connects. As a more complex example, provider A might
+wish to implement policies that say, “Use provider B only to reach these addresses,”
+“Use the path that crosses the fewest number of ASs,” or “Use AS x in preference to
+AS y.” The goal is to specify policies that lead to “good” paths, if not to optimal ones.
+When configuring BGP, the administrator of each AS picks at least one node to
+be a “BGP speaker,” which is essentially a spokesperson for the entire AS. That BGP
+speaker establishes BGP sessions to other BGP speakers in other ASs. These sessions
+are used to exchange reachability information among ASs.
+In addition to the BGP speakers, the AS has one or more border “gateways,”
+which need not be the same as the speakers. The border gateways are the routers
+through which packets enter and leave the AS. In our simple example in Figure 4.28,
+routers R2 and R4 would be border gateways. Note that we have avoided using the
+word “gateway” until this point because it tends to be confusing.We can’t avoid it here,
+given the name of the protocol we are describing. The important point to understand
+here is that, in the context of interdomain routing, a border gateway is simply an IP
+router that is charged with the task of forwarding packets between ASs.
+BGP does not belong to either of the two main classes of routing protocols
+(distance-vector and link-state protocols) described in Section 4.2. Unlike these
+4.3 Global Internet 313
+Regional provider A
+(AS 2)
+Regional provider B
+(AS 3)
+Customer P
+(AS 4)
+Customer Q
+(AS 5)
+Customer R
+(AS 6)
+Customer S
+(AS 7)
+128.96
+192.4.153
+192.4.32
+192.4.3
+192.12.69
+192.4.54
+192.4.23
+Backbone network
+(AS 1)
+Figure 4.30 Example of a network running BGP.
+protocols, BGP advertises complete paths as an enumerated list of ASs to reach a
+particular network. This is necessary to enable the sorts of policy decisions described
+above to be made in accordance with the wishes of a particular AS. It also enables
+routing loops to be readily detected.
+To see how this works, consider the example network in Figure 4.30. Assume
+that the providers are transit networks, while the customer networks are stubs. A BGP
+speaker for the AS of provider A (AS 2) would be able to advertise reachability information
+for each of the network numbers assigned to customers P and Q. Thus, it
+would say, in effect, “The networks 128.96, 192.4.153, 192.4.32, and 192.4.3 can
+be reached directly from AS 2.” The backbone network, on receiving this advertisement,
+can advertise, “The networks 128.96, 192.4.153, 192.4.32, and 192.4.3 can
+be reached along the path AS 1, AS 2.” Similarly, it could advertise, “The networks
+192.12.69, 192.4.54, and 192.4.23 can be reached along the path AS 1, AS 3.”
+An important job of BGP is to prevent the establishment of looping paths. For
+example, consider three interconnected ASs, 1, 2, and 3. Suppose AS 1 learns that
+it can reach network 10.0.1 through AS 2, so it advertises this fact to AS 3, who in
+turn advertises it back to AS 2. AS 2 could now decide that AS 3 was the place to
+send packets destined for 10.0.1; AS 3 sends them to AS 1; AS 1 sends them back to
+AS 2; and they would loop forever. This is prevented by carrying the complete AS path
+in the routing messages. In this case, the advertisement received by AS 2 from AS 3
+would contain an AS path of AS 3, AS 1, AS 2. AS 2 sees itself in this path, and thus
+concludes that this is not a useful path for it to use.
+It should be apparent that the AS numbers carried in BGP need to be unique.
+For example, AS 2 can only recognize itself in the AS path in the above example if
+314 4 Internetworking
+no other AS identifies itself in the same way. AS numbers are 16-bit numbers assigned
+by a central authority to assure uniqueness. While 16 bits only allows about 65,000
+ASs, which might not seem like a lot, we note that stub ASs do not need a unique AS
+number, and this covers the overwhelming majority of nonprovider networks.
+We should note that a given AS will only advertise routes that it considers good
+enough for itself. That is, if a BGP speaker has a choice of several different routes to a
+destination, it will choose the best one according to its own local policies, and then that
+will be the route it advertises. Furthermore, a BGP speaker is under no obligation to
+advertise any route to a destination, even if it has one. This is how an AS can implement
+a policy of not providing transit—by refusing to advertise routes to prefixes that are
+not contained within that AS, even if it knows how to reach them.
+In addition to advertising paths, BGP speakers need to be able to cancel previously
+advertised paths if a critical link or node on a path goes down. This is done with a form
+of negative advertisement known as a withdrawn route. Both positive and negative
+reachability information are carried in a BGP update message, the format of which is
+shown in Figure 4.31. (Note that the fields in this figure are multiples of 16 bits, unlike
+other packet formats in this chapter.)
+One point to note about BGP-4 is that it was designed to cope with the classless
+addresses described in Section 4.3.2. This means that the “networks” that are advertised
+in BGP are actually prefixes of any length. Thus, the updates contain both the
+prefix itself and its length in bits. When writing these down, it is common to write
+prefix/length. For example, a CIDR prefix that begins 192.4.16 and is 20 bits long
+would be written as 192.4.16/20.
+0 15
+Unfeasible routes
+length
+Withdrawn routes
+(variable)
+Total path
+attribute length
+Path attributes
+(variable)
+Network layer
+reachability info
+(variable)
+Figure 4.31 BGP-4 update packet format.
+4.3 Global Internet 315
+A final point to note is that BGP is defined to run on top of TCP, the reliable
+transport protocol described in Section 5.2. Because BGP speakers can count on TCP
+to be reliable, this means that any information that has been sent from one speaker to
+another does not need to be sent again. Thus, as long as nothing has changed, a BGP
+speaker can simply send an occasional “keepalive” message that says, in effect, “I’m
+still here and nothing has changed.” If that router were to crash, it would stop sending
+the keepalives, and the other routers that had learned routes from it would know that
+those routes were no longer valid.
+We will not delve further into the details of BGP-4, except to point out that all
+the protocol does is specify how reachability information should be exchanged among
+autonomous systems. BGP speakers obtain enough information by this exchange to
+calculate loop-free routes to all reachable networks, but how they choose the “best”
+routes is largely left to the policies of the AS.
+? Let’s return to the real question: How does all this help us to build scalable
+networks? First, the number of nodes participating in BGP is on the order of the
+number of ASs, which is much smaller than the number of networks. Second, finding
+a good interdomain route is only a matter of finding a path to the right border router,
+of which there are only a few per AS. Thus, we have neatly subdivided the routing
+problem into manageable parts, once again using a new level of hierarchy to increase
+scalability. The complexity of interdomain routing is now on the order of the number
+of ASs, and the complexity of intradomain routing is on the order of the number of
+networks in a single AS.
+Integrating Interdomain and Intradomain Routing
+While the preceding discussion illustrates how a BGP speaker learns interdomain routing
+information, the question still remains as to how all the other routers in a domain
+get this information. There are several ways this problem can be addressed.
+We have already alluded to one very simple situation, which is also very common.
+In the case of a stub AS that only connects to other ASs at a single point, the border
+router is clearly the only choice for all routes that are outside the AS. Such a router
+can “inject” a default route into the intradomain routing protocol. In effect, this is a
+statement that any network that has not been explicitly advertised in the intradomain
+protocol is reachable through the border router. Recall from the discussion of IP forwarding
+in Section 4.1 that the default entry in the forwarding table comes after all
+the more specific entries, and it matches anything that failed to match a specific entry.
+The next step up in complexity is to have the border routers inject specific routes
+they have learned from outside the AS. Consider, for example, the border router of a
+provider AS that connects to a customer AS. That router could learn that the network
+prefix 192.4.54/24 is located inside the customer AS, either through BGP or because
+316 4 Internetworking
+the information is configured into the border router. It could inject a route to that
+prefix into the routing protocol running inside the provider AS. This would be an
+advertisement of the sort “I have a link to 192.4.54/24 of cost X.” This would cause
+other routers in the provider AS to learn that this border router is the place to send
+packets destined for that prefix.
+The final level of complexity comes in backbone networks, which learn so much
+routing information from BGP that it becomes too costly to inject it into the intradomain
+protocol. For example, if a border router wants to inject 10,000 prefixes that
+it learned about from another AS, it will have to send very big link-state packets to
+the other routers in that AS, and their shortest-path calculations are going to become
+very complex. For this reason, the routers in a backbone network use a variant of BGP
+called interior BGP (IBGP) to effectively redistribute the information that is learned
+by the BGP speakers at the edges of the AS to all the other routers in the AS. IBGP
+enables any router in the AS to learn the best border router to use when sending a
+packet to any address. At the same time, each router in the AS keeps track of how to
+get to each border router using a conventional intradomain protocol with no injected
+information. By combining these two sets of information, each router in the AS is able
+to determine the appropriate next hop for all prefixes.
+4.3.4 Routing Areas
+As if we didn’t already have enough hierarchy, link-state intradomain routing protocols
+provide a means to partition a routing domain into subdomains called areas. (The
+terminology varies somewhat among protocols; we use the OSPF terminology here.)
+By adding this extra level of hierarchy, we enable single domains to grow larger without
+overburdening the intradomain routing protocols.
+An area is a set of routers that are administratively configured to exchange linkstate
+information with each other. There is one special area—the backbone area, also
+known as area 0. An example of a routing domain divided into areas is shown in
+Figure 4.32. Routers R1, R2, and R3 are members of the backbone area. They are
+also members of at least one nonbackbone area; R1 is actually a member of both area 1
+and area 2. A router that is a member of both the backbone area and a nonbackbone
+area is an area border router (ABR). Note that these are distinct from the routers
+that are at the edge of an AS, which are referred to as AS border routers for clarity.
+Routing within a single area is exactly as described in Section 4.2.3. All the
+routers in the area send link-state advertisements to each other, and thus develop a
+complete, consistent map of the area. However, the link-state advertisements of routers
+that are not area border routers do not leave the area in which they originated. This has
+the effect of making the flooding and route calculation processes considerably more
+scalable. For example, router R4 in area 3 will never see a link-state advertisement
+4.3 Global Internet 317
+Area 1
+Area 0
+Area 3
+Area 2
+R9
+R8
+R7
+R1
+R6 R5
+R4
+R3
+R2
+Figure 4.32 A domain divided into areas.
+from router R8 in area 1. As a consequence, it will know nothing about the detailed
+topology of areas other than its own.
+How, then, does a router in one area determine the right next hop for a packet
+destined to a network in another area? The answer to this becomes clear if we imagine
+the path of a packet that has to travel from one nonbackbone area to another as being
+split into three parts. First, it travels from its source network to the backbone area,
+then it crosses the backbone, then it travels from backbone to destination network.
+To make this work, the area border routers summarize routing information that they
+have learned from one area and make it available in their advertisements to other
+areas. For example, R1 receives link-state advertisements from all the routers in area 1
+and can thus determine the cost of reaching any network in area 1. When R1 sends
+link-state advertisements into area 0, it advertises the costs of reaching the networks
+in area 1 much as if all those networks were directly connected to R1. This enables all
+the area 0 routers to learn the cost to reach all networks in area 1. The area border
+routers then summarize this information and advertise it into the nonbackbone areas.
+Thus, all routers learn how to reach all networks in the domain.
+Note that in the case of area 2, there are two ABRs, and that routers in area 2
+will thus have to make a choice as to which one they use to reach the backbone. This
+is easy enough, since both R1 and R2 will be advertising costs to various networks,
+so that it will become clear which is the better choice as the routers in area 2 run their
+shortest-path algorithm. For example, it is pretty clear that R1 is going to be a better
+choice than R2 for destinations in area 1.
+318 4 Internetworking
+When dividing a domain into areas, the network administrator makes a tradeoff
+between scalability and optimality of routing. The use of areas forces all packets
+traveling from one area to another to go via the backbone area, even if a shorter path
+might have been available. For example, even if R4 and R5 were directly connected,
+packets would not flow between them because they are in different nonbackbone areas.
+It turns out that the need for scalability is often more important than the need to use
+the absolute shortest path.
+? This illustrates an important principle in network design. There is frequently
+a trade-off between some sort of optimality and scalability. When hierarchy is introduced,
+information is hidden from some nodes in the network, hindering their
+ability to make perfectly optimal decisions. However, information hiding is essential
+to scalability, since it saves all nodes from having global knowledge. It is invariably
+true in large networks that scalability is a more pressing design goal than perfect
+optimality.
+Finally, we note that there is a trick by which network administrators can more
+flexibly decide which routers go in area 0. This trick uses the idea of a “virtual link”
+between routers. Such a virtual link is obtained by configuring a router that is not
+directly connected to area 0 to exchange backbone routing information with a router
+that is. For example, a virtual link could be configured from R8 to R1, thus making R8
+part of the backbone. R8 would now participate in link-state advertisement flooding
+with the other routers in area 0. The cost of the virtual link from R8 to R1 is determined
+by the exchange of routing information that takes place in area 1. This technique can
+help to improve the optimality of routing.
+4.3.5 IP Version 6 (IPv6)
+In many respects, the motivation for a new version of IP is the same as the motivation
+for the techniques described in the last section: to deal with scaling problems caused
+by the Internet’s massive growth. Subnetting and CIDR have helped to contain the rate
+at which the Internet address space is being consumed (the address depletion problem)
+and have also helped to control the growth of routing table information needed in
+the Internet’s routers (the routing information problem). However, there will come a
+point at which these techniques are no longer adequate. In particular, it is virtually
+impossible to achieve 100% address utilization efficiency, so the address space will
+be exhausted well before the four-billionth host is connected to the Internet. Even if
+we were able to use all four billion addresses, it’s not too hard to imagine ways that
+number could be exhausted, such as the assignment of IP addresses to set-top boxes for
+cable TV or to electricity meters. All of these possibilities argue that a bigger address
+space than that provided by 32 bits will eventually be needed.
+4.3 Global Internet 319
+Historical Perspective
+The IETF began looking at the problem of expanding the IP address space in 1991,
+and several alternatives were proposed. Since the IP address is carried in the header
+of every IP packet, increasing the size of the address dictates a change in the packet
+header. This means a new version of the Internet Protocol, and as a consequence, a
+need for new software for every host and router in the Internet. This is clearly not a
+trivial matter—it is a major change that needs to be thought about very carefully.
+The effort to define a new version of IP was known as IP Next Generation, or
+IPng. As the work progressed, an official IP version number was assigned, so IPng
+is now known as IPv6. Note that the version of IP discussed so far in this chapter
+is version 4 (IPv4). The apparent discontinuity in numbering is the result of version
+number 5 being used for an experimental protocol some years ago.
+The significance of the change to a new version of IP caused a snowball effect.
+The general feeling among network designers was that if you are going to make a
+change of this magnitude, you might as well fix as many other things in IP as possible
+at the same time. Consequently, the IETF solicited white papers from anyone who
+cared to write one, asking for input on the features that might be desired in a new
+version of IP. In addition to the need to accommodate scalable routing and addressing,
+some of the other wish list items for IPng were
+¦ support for real-time services
+¦ security support
+¦ autoconfiguration (i.e., the ability of hosts to automatically configure themselves
+with such information as their own IP address and domain name)
+¦ enhanced routing functionality, including support for mobile hosts
+It is interesting to note that while many of these features were absent from IPv4 at the
+time IPv6 was being designed, support for all of them has made its way into IPv4 in
+recent years.
+In addition to the wish list, one absolutely nonnegotiable feature for IPng was
+that there must be a transition plan to move from the current version of IP (version 4)
+to the new version.With the Internet being so large and having no centralized control,
+it would be completely impossible to have a “flag day” on which everyone shut down
+their hosts and routers and installed a new version of IP. Thus, there will probably be
+a long transition period in which some hosts and routers will run IPv4 only, some will
+run IPv4 and IPv6, and some will run IPv6 only.
+The IETF appointed a committee called the IPng Directorate to collect all the
+inputs on IPng requirements and to evaluate proposals for a protocol to become IPng.
+Over the life of this committee there were a number of proposals, some of which
+320 4 Internetworking
+merged with other proposals, and eventually one was chosen by the Directorate to be
+the basis for IPng. That proposal was called SIPP (Simple Internet Protocol Plus). SIPP
+originally called for a doubling of the IP address size to 64 bits. When the Directorate
+selected SIPP, they stipulated several changes, one of which was another doubling of
+the address to 128 bits (16 bytes). It was around this time that the version number 6
+was assigned. The rest of this section describes some of the main features of IPv6. At
+the time of this writing, most of the key specifications for IPv6 are Proposed or Draft
+Standards in the IETF.
+Addresses and Routing
+First and foremost, IPv6 provides a 128-bit address space, as opposed to the 32 bits of
+version 4. Thus, while version 4 can potentially address four billion nodes if address
+assignment efficiency reaches 100%, IPv6 can address 3.4×1038 nodes, again assuming
+100% efficiency. As we have seen, though, 100% efficiency in address assignment is
+not likely. Some analysis of other addressing schemes, such as those of the French
+and U.S. telephone networks, as well as that of IPv4, have turned up some empirical
+numbers for address assignment efficiency. Based on the most pessimistic estimates of
+efficiency drawn from this study, the IPv6 address space is predicted to provide over
+1500 addresses per square foot of the earth’s surface, which certainly seems like it
+should serve us well even when toasters on Venus have IP addresses.
+Address Space Allocation
+IPv6 addresses do not have classes, but the address space is still subdivided in various
+ways based on the leading bits. Rather than specifying different address classes,
+the leading bits specify different uses of the IPv6 address. The current assignment of
+prefixes is listed in Table 4.11.
+This allocation of the address space turns out to be easier to explain than it
+looks. First, the entire functionality of IPv4’s three main address classes (A, B, and C)
+is contained inside the 001 prefix. Aggregatable Global Unicast Addresses, as we will
+see shortly, are a lot like classless IPv4 addresses, only much longer. These are the main
+ones of interest at this point, with one-eighth of the address space allocated to this
+important form of address. Obviously, large chunks of address space have been left
+unassigned to allow for future growth and new features. Two portions of the address
+space (0000 001 and 0000 010) have been reserved for encoding of other (non-IP)
+address schemes. NSAP addresses are used by the ISO protocols, and IPX addresses
+are used by Novell’s network-layer protocol.
+The idea behind “link local use” addresses is to enable a host to construct an
+address that will work on the network to which it is connected without being concerned
+about global uniqueness of the address. This may be useful for autoconfiguration, as
+4.3 Global Internet 321
+Prefix Use
+0000 0000 Reserved
+0000 0001 Unassigned
+0000 001 Reserved for NSAP allocation
+0000 010 Reserved for IPX allocation
+0000 011 Unassigned
+0000 1 Unassigned
+0001 Unassigned
+001 Aggregatable Global Unicast Addresses
+010 Unassigned
+011 Unassigned
+100 Unassigned
+101 Unassigned
+110 Unassigned
+1110 Unassigned
+1111 0 Unassigned
+1111 10 Unassigned
+1111 110 Unassigned
+1111 1110 0 Unassigned
+1111 1110 10 Link local use addresses
+1111 1110 11 Site local use addresses
+1111 1111 Multicast addresses
+Table 4.11 Address prefix assignments for IPv6.
+322 4 Internetworking
+we will see below. Similarly, the “site local
+use” addresses are intended to allow valid
+addresses to be constructed on a site (e.g., a
+private corporate network) that is not connected
+to the larger Internet; again, global
+uniqueness need not be an issue.
+Finally, the multicast address space is
+for multicast, thereby serving the same role
+as class D addresses in IPv4. Note that multicast
+addresses are easy to distinguish—
+they start with a byte of all 1s. We will see
+how these addresses are used in Section 4.4.
+Within the reserved address space (addresses
+beginning with a byte of 0s) are some
+important special types of addresses. A node
+may be assigned an “IPv4-compatible IPv6
+address” by zero-extending a 32-bit IPv4
+address to 128 bits.Anode that is only capable
+of understanding IPv4 can be assigned
+an “IPv4-mapped IPv6 address” by prefixing
+the 32-bit IPv4 address with 2 bytes of
+all 1s and then zero-extending the result to
+128 bits. These two special address types
+have uses in the IPv4-to-IPv6 transition (see
+the sidebar on this topic).
+Address Notation
+Just as with IPv4, there is some special notation
+for writing down IPv6 addresses. The
+standard representation is x:x:x:x:x:x:x:x,
+where each “x” is a hexadecimal representation
+of a 16-bit piece of the address. An
+example would be
+47CD:1234:4422:ACO2:0022:1234:A456:0124
+Any IPv6 address can be written using
+this notation. Since there are a few special
+types of IPv6 addresses, there are some
+special notations that may be helpful in
+Transition from IPv4
+to IPv6
+The most important idea behind
+the transition from IPv4 to IPv6
+is that the Internet is far too big
+and decentralized to have a “flag
+day”—one specified day on which
+every host and router is upgraded
+from IPv4 to IPv6. Thus, IPv6 needs
+to be deployed incrementally in
+such a way that hosts and routers
+that only understand IPv4 can continue
+to function for as long as possible.
+Ideally, IPv4 nodes should be
+able to talk to other IPv4 nodes
+and some set of other IPv6-capable
+nodes indefinitely. Also, IPv6 hosts
+should be capable of talking to
+other IPv6 nodes even when some
+of the infrastructure between them
+may only support IPv4. Two major
+mechanisms have been defined
+to help this transition: dual-stack
+operation and tunneling.
+The idea of dual stacks is fairly
+straightforward: IPv6 nodes run
+both IPv6 and IPv4 and use the
+Version field to decide which stack
+should process an arriving packet.
+In this case, the IPv6 address could
+be unrelated to the IPv4 address,
+or it could be the “IPv4-mapped
+IPv6 address” described earlier in
+this section.
+The basic tunneling technique,
+in which an IP packet is sent as
+4.3 Global Internet 323
+the payload of another IP packet,
+was described in Section 4.1. For
+IPv6 transition, tunneling is used to
+send an IPv6 packet over a piece
+of the network that only understands
+IPv4. This means that the
+IPv6 packet is encapsulated within
+an IPv4 header that has the address
+of the tunnel endpoint in its header,
+is transmitted across the IPv4-only
+piece of network, and then is decapsulated
+at the endpoint. The endpoint
+could be either a router or
+a host; in either case, it must be
+IPv6-capable to be able to process
+the IPv6 packet after decapsulation.
+If the endpoint is a host with
+an IPv4-mapped IPv6 address, then
+tunneling can be done automatically,
+by extracting the IPv4 address
+from the IPv6 address and using
+it to form the IPv4 header. Otherwise,
+the tunnel must be configured
+manually. In this case, the encapsulating
+node needs to know the
+IPv4 address of the other end of
+the tunnel, since it cannot be extracted
+from the IPv6 header. From
+the perspective of IPv6, the other
+end of the tunnel looks like a regular
+IPv6 node that is just one
+hop away, even though there may
+be many hops of IPv4 infrastructure
+between the tunnel endpoints.
+certain circumstances. For example, an address
+with a large number of contiguous 0s
+can be written more compactly by omitting
+all the 0 fields. Thus
+47CD:0000:0000:0000:0000:0000:A456:0124
+could be written
+47CD::A456:0124
+Clearly, this form of shorthand can only
+be used for one set of contiguous 0s in an
+address to avoid ambiguity.
+Since there are two types of IPv6
+addresses that contain an embedded IPv4
+address, these have their own special notation
+that makes extraction of the IPv4
+address easier. For example, the “IPv4-
+mapped IPv6 address” of a host whose IPv4
+address was 128.96.33.81 could be written
+as
+::FFFF:128.96.33.81
+That is, the last 32 bits are written in IPv4
+notation, rather than as a pair of hexadecimal
+numbers separated by a colon. Note
+that the double colon at the front indicates
+the leading 0s.
+Aggregatable Global Unicast
+Addresses
+By far the most important thing that IPv6
+must provide when it is deployed is plain
+old unicast addressing. It must do this in a
+way that supports the rapid rate of addition
+of new hosts to the Internet and that allows
+routing to be done in a scalable way as the
+number of physical networks in the Internet
+grows. Thus, at the heart of IPv6 is the
+324 4 Internetworking
+unicast address allocation plan that determines how addresses beginning with the 001
+prefix will be assigned to service providers, autonomous systems, networks, hosts, and
+routers.
+In fact, the address allocation plan that is proposed for IPv6 unicast addresses
+is extremely similar to that being deployed with CIDR in IPv4. To understand how
+it works and how it provides scalability, it is helpful to define some new terms. We
+may think of a nontransit AS (i.e., a stub or multihomed AS) as a subscriber, and we
+may think of a transit AS as a provider. Furthermore, we may subdivide providers into
+direct and indirect. The former are directly connected to subscribers. The latter primarily
+connect other providers, are not connected directly to subscribers, and are often
+known as backbone networks.
+With this set of definitions, we can see that the Internet is not just an arbitrarily
+interconnected set of ASs; it has some intrinsic hierarchy. The difficulty is in making
+use of this hierarchy without inventing mechanisms that fail when the hierarchy is not
+strictly observed, as happened with EGP. For example, the distinction between direct
+and indirect providers becomes blurred when a subscriber connects to a backbone or
+when a direct provider starts connecting to many other providers.
+As with CIDR, the goal of the IPv6 address allocation plan is to provide aggregation
+of routing information to reduce the burden on intradomain routers. Again,
+the key idea is to use an address prefix—a set of contiguous bits at the most significant
+end of the address—to aggregate reachability information to a large number of networks
+and even to a large number of ASs. The main way to achieve this is to assign an
+address prefix to a direct provider and then for that direct provider to assign longer
+prefixes that begin with that prefix to its subscribers. This is exactly what we observed
+in Figure 4.27. Thus, a provider can advertise a single prefix for all of its subscribers.
+Of course, the drawback is that if a site decides to change providers, it will
+need to obtain a new address prefix and renumber all the nodes in the site. This
+could be a colossal undertaking, enough to dissuade most people from ever changing
+providers. For this reason, there is ongoing research on other addressing schemes, such
+as geographic addressing, in which a site’s address is a function of its location rather
+than the provider to which it attaches. At present, however, provider-based addressing
+is necessary to make routing work efficiently.
+Note that while IPv6 address assignment is essentially equivalent to the way
+address assignment has happened in IPv4 since the introduction of CIDR, IPv6 has
+the significant advantage of not having a large installed base of assigned addresses to
+fit into its plans.
+One question is whether it makes sense for hierarchical aggregation to take place
+at other levels in the hierarchy. For example, should all providers obtain their address
+prefixes from within a prefix allocated to the backbone to which they connect? Given
+that most providers connect to multiple backbones, this probably doesn’t make sense.
+4.3 Global Internet 325
+3 m n o p 125–m–n–o–p
+010 RegistryID ProviderID SubscriberID SubnetID InterfaceID
+Figure 4.33 An IPv6 provider-based unicast address.
+Also, since the number of providers is much smaller than the number of sites, the
+benefits of aggregating at this level are much less.
+One place where aggregation may make sense is at the national or continental
+level. Continental boundaries form natural divisions in the Internet topology, and
+if all addresses in Europe, for example, had a common prefix, then a great deal of
+aggregation could be done, so that most routers in other continents would only need
+one routing table entry for all networks with the Europe prefix. Providers in Europe
+would all select their prefixes such that they began with the European prefix. Using
+this scheme, an IPv6 address might look like Figure 4.33. The RegistryID might be an
+identifier assigned to a European address registry, with different IDs assigned to other
+continents or countries. Note that prefixes would be of different lengths under this
+scenario. For example, a provider with few customers could have a longer prefix (and
+thus less total address space available) than one with many customers.
+One tricky situation could occur when a subscriber is connected to more than
+one provider. Which prefix should the subscriber use for his or her site? There is no
+perfect solution to the problem. For example, suppose a subscriber is connected to two
+providers X and Y. If the subscriber takes his prefix from X, then Y has to advertise a
+prefix that has no relationship to its other subscribers and that as a consequence cannot
+be aggregated. If the subscriber numbers part of his AS with the prefix of X and part
+with the prefix of Y, he runs the risk of having half his site become unreachable if the
+connection to one provider goes down. One solution that works fairly well if X and Y
+have a lot of subscribers in common is for them to have three prefixes between them:
+one for subscribers of X only, one for subscribers of Y only, and one for the sites that
+are subscribers of both X and Y.
+Packet Format
+Despite the fact that IPv6 extends IPv4 in several ways, its header format is actually
+simpler. This simplicity is due to a concerted effort to remove unnecessary functionality
+from the protocol. Figure 4.34 shows the result. (For comparison with IPv4, see the
+header format shown in Figure 4.3.)
+As with many headers, this one starts with a Version field, which is set to 6 for
+IPv6. The Version field is in the same place relative to the start of the header as IPv4’s
+Version field so that header-processing software can immediately decide which header
+326 4 Internetworking
+Version TrafficClass FlowLabel
+PayloadLen NextHeader HopLimit
+SourceAddress
+DestinationAddress
+0 4 12 16 24 31
+Next header/data
+Figure 4.34 IPv6 packet header.
+format to look for. The TrafficClass and FlowLabel fields both relate to quality of
+service issues, as discussed in Section 6.5.
+The PayloadLen field gives the length of the packet, excluding the IPv6 header,
+measured in bytes. The NextHeader field cleverly replaces both the IP options and
+the Protocol field of IPv4. If options are required, then they are carried in one or
+more special headers following the IP header, and this is indicated by the value of the
+NextHeader field. If there are no special headers, the NextHeader field is the demux
+key identifying the higher-level protocol running over IP (e.g., TCP or UDP); that is, it
+serves the same purpose as the IPv4 Protocol field. Also, fragmentation is now handled
+as an optional header, which means that the fragmentation-related fields of IPv4 are
+not included in the IPv6 header. The HopLimit field is simply the TTL of IPv4, renamed
+to reflect the way it is actually used.
+Finally, the bulk of the header is taken up with the source and destination addresses,
+each of which is 16 bytes (128 bits) long. Thus, the IPv6 header is always
+40 bytes long. Considering that IPv6 addresses are four times longer than those of
+IPv4, this compares quite well with the IPv4 header, which is 20 bytes long in the
+absence of options.
+4.3 Global Internet 327
+The way that IPv6 handles options is quite an improvement over IPv4. In IPv4,
+if any options were present, every router had to parse the entire options field to see if
+any of the options were relevant. This is because the options were all buried at the end
+of the IP header, as an unordered collection of type, length, value tuples. In contrast,
+IPv6 treats options as extension headers that must, if present, appear in a specific
+order. This means that each router can quickly determine if any of the options are
+relevant to it; in most cases, they will not be. Usually, this can be determined by just
+looking at the NextHeader field. The end result is that option processing is much more
+efficient in IPv6, which is an important factor in router performance. In addition, the
+new formatting of options as extension headers means that they can be of arbitrary
+length, whereas in IPv4 they were limited to 44 bytes at most. We will see how some
+of the options are used below.
+Each option has its own type of extension header. The type of each extension
+header is identified by the value of the NextHeader field in the header that precedes it,
+and each extension header contains a NextHeader field to identify the header following
+it. The last extension header will be followed by a transport-layer header (e.g., TCP),
+and in this case the value of the NextHeader field is the same as the value of the
+Protocol field in an IPv4 header. Thus, the NextHeader field does double duty; either
+it may identify the type of extension header to follow, or, in the last extension header,
+it serves as a demux key to identify the higher-layer protocol running over IPv6.
+Consider the example of the fragmentation header, shown in Figure 4.35. This
+header provides functionality similar to the fragmentation fields in the IPv4 header described
+in Section 4.1.2, but it is only present if fragmentation is necessary. Assuming it
+is the only extension header present, then the NextHeader field of the IPv6 header would
+contain the value 44, which is the value assigned to indicate the fragmentation header.
+The NextHeader field of the fragmentation header itself contains a value describing the
+header that follows it. Again, assuming no other extension headers are present, then
+the next header might be the TCP header, which results in NextHeader containing
+the value 6, just as the Protocol field would in IPv4. If the fragmentation header were
+followed by, say, an authentication header, then the fragmentation header’s NextHeader
+field would contain the value 51.
+NextHeader Reserved Offset RES M
+Ident
+0 8 16 29 31
+Figure 4.35 IPv6 fragmentation extension header.
+328 4 Internetworking
+Autoconfiguration
+While the Internet’s growth has been impressive,
+one factor that has inhibited faster
+acceptance of the technology is the fact that
+getting connected to the Internet has typically
+required a fair amount of system administration
+expertise. In particular, every
+host that is connected to the Internet needs
+to be configured with a certain minimum
+amount of information, such as a valid IP
+address, a subnet mask for the link to which
+it attaches, and the address of a name server.
+Thus, it has not been possible to unpack a
+new computer and connect it to the Internet
+without some preconfiguration. One goal of
+IPv6, therefore, is to provide support for
+autoconfiguration, sometimes referred to as
+“plug-and-play” operation.
+As we saw in Section 4.1.6, autoconfiguration
+is possible for IPv4, but
+it depends on the existence of a server
+that is configured to hand out addresses
+and other configuration information to
+DHCP clients. The longer address format
+in IPv6 helps provide a useful, new form
+of autoconfiguration called stateless autoconfiguration,
+which does not require a
+server.
+Recall that IPv6 unicast addresses are
+hierarchical, and that the least significant
+portion is the interface ID. Thus, we can
+subdivide the autoconfiguration problem
+into two parts:
+1 Obtain an interface ID that is unique
+on the link to which the host is attached.
+2 Obtain the correct address prefix for
+this subnet.
+Network Address
+Translation
+While IPv6 was motivated by a
+concern that increased usage of IP
+would lead to exhaustion of the
+address space, another technology
+has become popular as a way
+to conserve IP address space. That
+technology is network address
+translation (NAT), and it is possible
+that its widespread use will
+significantly delay the need to deploy
+IPv6. NAT is often viewed as
+“architecturally impure,” but it is
+also a fact of networking life that
+cannot be ignored.
+The basic idea behind NAT
+is that all the hosts that might
+communicate with each other over
+the Internet do not need to have
+globally unique addresses. Instead,
+a host could be assigned a “private
+address” that is not necessarily
+globally unique, but is unique
+within some more limited scope; for
+example, within the corporate network
+where the host resides. The
+class A network number 10 is often
+used for this purpose, since that
+network number was assigned to
+the ARPANET and is no longer in
+use as a globally unique address.
+As long as the host communicates
+only with other hosts in the corporate
+network, a locally unique
+address is sufficient. If it should
+want to communicate with a host
+4.3 Global Internet 329
+outside the corporate network, it
+does so via a “NAT box”—a device
+that is able to translate from
+the private address used by the host
+to some globally unique address
+that is assigned to the NAT box.
+Since it’s likely that a small subset
+of the hosts in the corporation
+need the services of the NAT
+box at any one time, the NAT box
+might be able to get by with a small
+pool of globally unique addresses,
+much smaller than the number of
+addresses that would be needed if
+every host in the corporation had a
+globally unique address.
+So, we can imagine a NAT box
+receiving IP packets from a host
+inside the corporation and translating
+the IP source address from
+some private address (say, 10.0.1.5)
+to a globally unique address (say,
+171.69.210.246). When packets
+come back from the remote host
+addressed to 171.69. 210.246, the
+NAT box translates the destination
+address to 10.0.1.5 and forwards
+the packet on toward the
+host.
+The chief drawback of NAT
+is that it breaks a key assumption
+of the IP service model—that
+all nodes have globally unique addresses.
+It turns out that lots of
+applications and protocols rely on
+The first part turns out to be rather
+easy, since every host on a link must have a
+unique link-level address. For example, all
+hosts on an Ethernet have a unique 48-bit
+Ethernet address. This can be turned into a
+valid link local use address by adding the
+appropriate prefix from Table 4.11 (1111
+1110 10) followed by enough 0s to make
+up 128 bits. For some devices—for example,
+printers or hosts on a small routerless
+network that do not connect to any
+other networks—this address may be perfectly
+adequate. Those devices that need a
+globally valid address depend on a router
+on the same link to periodically advertise
+the appropriate prefix for the link. Clearly,
+this requires that the router be configured
+with the correct address prefix, and that this
+prefix be chosen in such a way that there is
+enough space at the end (e.g., 48 bits) to
+attach an appropriate link-level address.
+The ability to embed link-level addresses
+as long as 48 bits into IPv6 addresses
+was one of the reasons for choosing such a
+large address size. Not only does 128 bits
+allow the embedding, but it leaves plenty
+of space for the multilevel hierarchy of
+addressing that we discussed above.
+Advanced Routing Capabilities
+Another of IPv6’s extension headers is the
+routing header. In the absence of this header,
+routing for IPv6 differs very little from that
+of IPv4 under CIDR. The routing header
+contains a list of IPv6 addresses that represent
+nodes or topological areas that the
+packet should visit en route to its destination.
+A topological area may be, for
+example, a backbone provider’s network.
+330 4 Internetworking
+Specifying that packets must visit this network
+would be a way of implementing
+provider selection on a packet-by-packet
+basis. Thus, a host could say that it wants
+some packets to go through a provider that
+is cheap, others through a provider that
+provides high reliability, and still others
+through a provider that the host trusts to
+provide security.
+To provide the ability to specify topological
+entities rather than individual nodes,
+IPv6 defines an anycast address. An anycast
+address is assigned to a set of interfaces, and
+packets sent to that address will go to the
+“nearest” of those interfaces, with nearest
+being determined by the routing protocols.
+For example, all the routers of a backbone
+provider could be assigned a single anycast
+address, which would be used in the routing
+header.
+The anycast address and the routing
+header are also expected to be used to provide
+enhanced routing support to mobile
+hosts. The detailed mechanisms for providing
+this support are still being defined.
+this assumption. In particular,
+many protocols that run over
+IP (e.g., application protocols)
+carry IP addresses in their messages.
+These addresses also need
+to be translated by a NAT box
+if the higher-layer protocol is to
+work properly, and thus NAT
+boxes become much more complex
+than simple IP header translators.
+They potentially need to understand
+an ever-growing number
+of higher-layer protocols. This in
+turn presents an obstacle to deployment
+of new applications. It is
+probably safe to say that networks
+would be better off without NAT,
+but its disappearance seems unlikely.
+Widespread deployment of
+IPv6 would almost certainly help.
+Other Features
+As mentioned at the beginning of this section, the primary motivation behind the development
+of IPv6 was to support the continued growth of the Internet. Once the IP header
+had to be changed for the sake of the addresses, however, the door was open for a wide
+variety of other changes, two of which we have just described—autoconfiguration and
+source-directed routing. IPv6 includes several additional features, most of which are
+covered elsewhere in this book—mobility is discussed in Section 4.2.5, network security
+is the topic of Chapter 8, and a new service model proposed for the Internet is
+described in Section 6.5. It is interesting to note that, in most of these areas, the IPv4
+and IPv6 capabilities have become virtually indistinguishable, so that the main driver
+for IPv6 remains the need for larger addresses.
+4.4 Multicast 331
+4.4 Multicast
+As we saw in Chapter 2, multiaccess networks like Ethernet and token rings implement
+multicast in hardware. This section describes how to extend multicast, in software,
+across an internetwork of such networks. The approach described in this section is
+based on an implementation of multicast used in the current Internet (IPv4). Multicast
+will also be supported in the next generation of IP (IPv6), with the major differences
+being restricted to the address format.
+The motivation for developing multicast is that there are applications that want
+to send a packet to more than one destination host. Instead of forcing the source host
+to send a separate packet to each of the destination hosts, we want the source to be
+able to send a single packet to a multicast address, and for the network—or internet,
+in this case—to deliver a copy of that packet to each of a group of hosts. Hosts can
+then choose to join or leave this group at will, without synchronizing or negotiating
+with other members of the group. Also, a host may belong to more than one group at
+a time.
+Internet multicast can be implemented on top of a collection of networks that
+support hardware multicast (or broadcast) by extending the routing and forwarding
+functions implemented by the routers that connect these networks. This section describes
+three such extensions: The first is based on distance-vector routing as described
+in Section 4.2.2; the second is based on link-state routing, described in Section 4.2.3;
+the third can build on any underlying routing protocol and is thus called Protocol
+Independent Multicast (PIM).
+Before looking at any of the multicast routing protocols, however, we need to
+look at the service model for IP multicast. We could imagine that a host wishing to
+send a packet to some number of internet hosts could enumerate all their addresses,
+but this would quickly become unscalable for large numbers of receivers—consider
+using the Internet to distribute a pay-per-view movie, for example. For this reason, IP
+multicast uses the idea of a multicast group that receivers may join. Each group has a
+specially assigned address, and senders to the group use that address as the destination
+address for their packets. In IPv4, these addresses are assigned in the class D address
+space, and IPv6 also has a portion of its address space reserved for multicast group
+addresses.
+Hosts join multicast groups using a protocol called Internet Group Management
+Protocol (IGMP). They use this to notify a router on their local network of their desire
+to receive packets sent to a certain multicast group. The protocols described below
+are concerned with how packets are distributed to the appropriate routers. Delivery of
+packets from the “last hop” router to the host is handled by the underlying multicast
+capability of the network, as described in Section 2.6.
+332 4 Internetworking
+One perplexing question is how senders and receivers learn about multicast
+addresses. This is normally handled by out-of-band means, and there are some quite
+sophisticated tools to enable group addresses to be advertised on the Internet.
+4.4.1 Link-State Multicast
+Adding multicast to a link-state routing algorithm is fairly straightforward, so we describe
+it first. Recall that in link-state routing, each router monitors the state of its
+directly connected links and sends an update message to all of the other routers whenever
+the state changes. Since each router receives enough information to reconstruct
+the entire topology of the network, it is able to use Dijkstra’s algorithm to compute
+the shortest-path spanning tree rooted at itself and reaching all possible destinations.
+The router uses this tree to determine the best next hop for each packet it forwards.
+All we have to do to extend this algorithm to support multicast is to add the set of
+groups that have members on a particular link (LAN) to the “state” for that link. The
+only question is how each router determines which groups have members on which
+links. As suggested in Section 3.2.3, the solution is to have each host periodically
+announce to the LAN the groups to which it belongs. The router simply monitors
+the LAN for such announcements. Should such announcements stop arriving after a
+period of time, the router then assumes that the host has left the group.
+Given full knowledge of which groups have members on which links, each router
+is able to compute the shortest-path multicast tree from any source to any group,
+again using Dijkstra’s algorithm. For example, given the internet illustrated in Figure
+4.36, where the colored hosts belong to group G, the routers would compute the
+shortest-path multicast trees given in Figure 4.37 for sources A, B, and C. The routers
+would use these trees to decide how to forward packets addressed to multicast group
+G. For example, router R3 would forward a packet going from host A to group
+G to R6.
+Keep in mind that each router must potentially keep a separate shortest-path
+multicast tree from every source to every group. This is obviously very expensive,
+so instead the router just computes and stores a cache of these trees—one for each
+source/group pair that is currently active.
+4.4.2 Distance-Vector Multicast
+Adding multicast to the distance-vector algorithm is a bit trickier because the routers do
+not know the entire topology of the internet. Instead, recall that each router maintains
+a table of  Destination, Cost, NextHop  tuples, and exchanges a list of  Destination,
+Cost  pairs with its directly connected neighbors. Extending this algorithm to support
+multicast is a two-stage process. First, we need to design a broadcast mechanism that
+allows a packet to be forwarded to all the networks on the internet. Second, we need
+4.4 Multicast 333
+R1
+R2
+R3 R4 R5
+R6 R7
+A
+B
+C
+Figure 4.36 Example internet with members of group G in color.
+to refine this mechanism so that it prunes back networks that do not have hosts that
+belong to the multicast group.
+Reverse-Path Broadcast (RPB)
+Each router knows that the current shortest path to a given destination goes through
+NextHop. Thus, whenever it receives a multicast packet from source S, the router
+forwards the packet on all outgoing links (except the one on which the packet arrived)
+if and only if the packet arrived over the link that is on the shortest path to S (i.e., the
+packet came from the NextHop associated with S in the routing table). This strategy
+effectively floods packets outward from S, but does not loop packets back toward S.
+There are two major shortcomings to this approach. The first is that it truly
+floods the network; it has no provision for avoiding LANs that have no members
+in the multicast group. We address this problem in the next subsection. The second
+limitation is that a given packet will be forwarded over a LAN by each of the routers
+connected to that LAN. This is due to the forwarding strategy of flooding packets on
+all links other than the one on which the packet arrived, without regard to whether or
+not those links are part of the shortest-path tree rooted at the source.
+The solution to this second limitation is to eliminate the duplicate broadcast
+packets that are generated when more than one router is connected to a given LAN.
+334 4 Internetworking
+R6 R7
+R4 R5
+R2
+R2
+B
+R6
+R4 R5
+R1
+R1
+R1
+A
+C
+R7
+R6 R7
+C
+Source
+Source
+Source
+R3
+R3 R4 R5
+R2
+R3
+C
+B
+A
+A
+B
+Figure 4.37 Example shortest-path multicast trees.
+4.4 Multicast 335
+One way to do this is to designate one router as the “parent” router for each link,
+relative to the source, where only the parent router is allowed to forward multicast
+packets from that source over the LAN. The router that has the shortest path to source
+S is selected as the parent; a tie between two routers would be broken according to
+which router has the smallest address. A given router can learn if it is the parent for the
+LAN (again relative to each possible source) based upon the distance-vector messages
+it exchanges with its neighbors.
+Notice that this refinement requires that each router keep, for each source,
+a bit for each of its incident links indicating whether or not it is the parent for
+that source/link pair. Keep in mind that in an internet setting, a “source” is a network,
+not a host, since an internet router is only interested in forwarding packets between
+networks. The resulting mechanism is sometimes called reverse-path broadcast
+(RPB).
+Reverse-Path Multicast (RPM)
+RPB implements shortest-path broadcast. We now want to prune the set of networks
+that receives each packet addressed to group G to exclude those that have no hosts
+that are members of G. This can be accomplished in two stages. First, we need to
+recognize when a leaf network has no group members. Determining that a network
+is a leaf is easy—if the parent router as described in RPB is the only router on the
+network, then the network is a leaf. Determining if any group members reside on the
+network is accomplished by having each host that is a member of group G periodically
+announce this fact over the network, as described in our earlier description of link-state
+multicast. The router then uses this information to decide whether or not to forward
+a multicast packet addressed to G over this LAN.
+The second stage is to propagate this “no members of G here” information up
+the shortest-path tree. This is done by having the router augment the Destination,
+Cost pairs it sends to its neighbors with the set of groups for which the leaf network
+is interested in receiving multicast packets. This information can then be propagated
+from router to router, so that for each of its links, a given router knows for what
+groups it should forward multicast packets.
+Note that including all of this information in the routing update is a fairly expensive
+thing to do. In practice, therefore, this information is exchanged only when some
+source starts sending packets to that group. In other words, the strategy is to use
+RPB, which adds a small amount of overhead to the basic distance-vector algorithm,
+until a particular multicast address becomes active. At that time, routers that are not
+interested in receiving packets addressed to that group speak up, and that information
+is propagated to the other routers.
+336 4 Internetworking
+4.4.3 Protocol Independent Multicast (PIM)
+PIM was developed in response to the scaling problems of existing multicast routing
+protocols. In particular, it was recognized that the existing protocols did not scale well
+in environments where a relatively small proportion of routers want to receive traffic
+for a certain group. For example, broadcasting traffic to all routers until they explicitly
+ask to be removed from the distribution is not a good design choice if most routers
+don’t want to receive the traffic in the first place. This situation is sufficiently common
+that PIM divides the problem space into “sparse mode” and “dense mode.” Because
+the existing protocols were so poorly suited to the sparse environment, PIM sparse
+mode has received the most attention and is the focus of our discussion here.
+In PIM sparse mode (PIM-SM), routers explicitly join and leave the multicast
+group using PIM protocol messages known as Join and Prune messages. The question
+that arises is where to send those messages. To address this, PIM assigns a rendezvous
+point (RP) to each group. In general, a number of routers in a domain are configured
+to be candidate RPs, and PIM defines a set of procedures by which all the routers in a
+domain can agree on the router to use as the RP for a given group. These procedures
+are rather complex, as they must deal with a wide variety of scenarios, such as the
+failure of a candidate RP and the partitioning of a domain into two separate networks
+due to a number of link or node failures. For the rest of this discussion, we assume
+that all routers in a domain know the unicast IP address of the RP for a given group.
+A multicast forwarding tree is built as a result of routers sending Join messages
+to the RP. PIM-SM allows two types of trees to be constructed: a shared tree, which
+may be used by all senders, and a source-specific tree, which may be used only by
+a specific sending host. The normal mode of operation creates the shared tree first,
+followed by one or more source-specific trees if there is enough traffic to warrant
+it. Because building trees installs state in the routers along the tree, it is important
+that the default is to have only one tree for a group, not one for every sender to a
+group.
+When a router sends a Join message toward the RP for a group G, it is sent using
+normal IP unicast transmission. This is illustrated in Figure 4.38(a), in which router
+R4 is sending a Join to the rendezvous point for some group. The initial Join message
+is “wildcarded”; that is, it applies to all senders. A Join message clearly must pass
+through some sequence of routers before reaching the RP (e.g., R2). Each router along
+the path looks at the Join and creates a forwarding table entry for the shared tree,
+called a (*, G) entry (* meaning “all senders”). To create the forwarding table entry,
+it looks at the interface on which the Join arrived and marks that interface as one on
+which it should forward data packets for this group. It then determines which interface
+it will use to forward the Join toward the RP. This will be the only acceptable interface
+4.4 Multicast 337
+RP
+R3 R2 R4
+R1 R5
+(c)
+RP
+R3 R2 R4
+R1 R5
+(d)
+RP
+R3 R2 R4
+R1 R5
+(a)
+RP
+R3 R2 R4
+R1 R5
+(b)
+Join
+Join
+Join
+Join
+Join
+RP = Rendezvous point
+Shared tree
+Source-specific tree for source R1
+Figure 4.38 PIM operation: (a) R4 sends Join to RP and joins shared tree. (b) R5 joins
+shared tree. (c) RP builds source-specific tree to R1 by sending Join to R1. (d) R4 and
+R5 build source-specific tree to R1 by sending Joins to R1.
+for incoming packets sent to this group. It then forwards the Join toward the RP.
+Eventually, the message arrives at the RP, completing the construction of the tree
+branch. The shared tree thus constructed is shown as a colored line from the RP to R4
+in Figure 4.38(a).
+As more routers send Joins toward the RP, they cause new branches to be added
+to the tree, as illustrated in Figure 4.38(b). Note that in this case, the Join only needs
+to travel to R2, which can add the new branch to the tree simply by adding a new
+outgoing interface to the forwarding table entry created for this group. R2 need not
+forward the Join on to the RP. Note also that the end result of this process is to build
+a tree whose root is the RP.
+338 4 Internetworking
+RP
+R3 R2 R4
+R1
+R5
+Host
+RP G
+RP G
+G
+G
+G
+G
+Figure 4.39 Delivery of a packet along a shared tree. R1 tunnels the packet to the RP,
+which forwards it along the shared tree to R4 and R5.
+At this point, suppose a host wishes to send a message to the group. To do so,
+it constructs a packet with the appropriate multicast group address as its destination
+and sends it to a router on its local network known as the designated router (DR).
+Suppose the DR is R1 in Figure 4.38. There is no state for this multicast group between
+R1 and the RP at this point, so instead of simply forwarding the multicast packet, R1
+“tunnels” it to the RP. That is, R1 encapsulates the multicast packet inside a unicast
+IP packet that it sends to the unicast IP address of the RP. Just like a tunnel endpoint
+of the sort described in Section 4.1.8, the RP receives the packet addressed to it, looks
+at the payload of the unicast packet, and finds inside an IP packet addressed to the
+multicast address of this group. The RP, of course, does know what to do with such a
+packet—it sends it out onto the shared tree of which the RP is the root. In the example
+of Figure 4.38, this means that the RP sends the packet on to R2, which is able to
+forward it to R4 and R5. The complete delivery of a packet from R1 to R4 and R5 is
+shown in Figure 4.39. We see the tunneled packet travel from R1 to the RP with an
+extra IP header containing the unicast address of RP, and then the multicast packet
+addressed to G making its way along the shared tree to R4 and R5.
+At this point, we might be tempted to declare success, since all hosts can send to
+all receivers this way. However, there is some bandwidth inefficiency and processing
+cost in the encapsulation and decapsulation of packets on the way to the RP, so the
+RP has the option of forcing knowledge about this group into the intervening routers
+so that tunneling can be avoided. Its decision to exercise this option is based on the
+4.4 Multicast 339
+data rate of packets coming from a given source; only if this rate is high enough to
+warrant the effort will the RP take action. If it does, it sends a Join message toward
+the sending host (Figure 4.38(c)). As this Join travels toward the host, it causes the
+routers along the path (R3) to learn about the group, so that it will be possible for
+the DR to send the packet to the group as “native” (i.e., not tunneled) multicast
+packets.
+An important detail to note at this stage is that the Join message sent by the RP
+to the sending host is specific to that sender, whereas the previous ones sent by R4 and
+R5 applied to all senders. Thus the effect of the new Join is to create sender-specific
+state in the routers between the identified source and the RP. This is referred to as
+(S, G) state, since it applies to one sender to one group and contrasts with the (*, G)
+state that was installed between the receivers and the RP that applies to all senders.
+Thus, in Figure 4.38(c), we see a source-specific route from R1 to the RP (indicated
+by the dashed line) and a tree that is valid for all senders from the RP to the receivers
+(indicated by the colored line).
+The next possible optimization is to replace the entire shared tree with a sourcespecific
+tree. This is desirable because the path from sender to receiver via the RP
+might be significantly longer than the shortest possible path. This again is likely to be
+triggered by a high data rate being observed from some sender. In this case, the router
+at the downstream end of the tree—say, R4 in our example—sends a source-specific
+Join toward the source. As it follows the shortest path toward the source, the routers
+along the way create (S, G) state for this tree, and the result is a tree that has its root
+at the source, rather than the RP. Assuming both R4 and R5 made the switch to the
+source-specific tree, we would end up with the tree shown in Figure 4.38(d). Note that
+this tree no longer involves the RP at all. We have removed the shared tree from this
+picture to simplify the diagram, but in reality all routers with receivers for a group
+must stay on the shared tree in case new senders show up.
+We can now see why PIM is “protocol independent.” All of its mechanisms
+for building and maintaining trees depend on whatever unicast routing protocol is
+used in the domain. The formation of trees is entirely determined by the paths that
+Join messages follow, which is determined by the choice of shortest paths made by
+unicast routing. Thus, to be precise, PIM is “unicast routing protocol independent,”
+as compared to the other multicast routing protocols in this section, which are derived
+from either link-state or distance-vector routing. Note that PIM is very much bound up
+with the Internet Protocol—it is not protocol independent in terms of network-layer
+protocols.
+The design of PIM again illustrates the challenges in building scalable networks,
+and how scalability is sometimes pitted against some sort of optimality. The shared
+tree is certainly more scalable than a source-specific tree, in the sense that it reduces
+340 4 Internetworking
+the total state in routers to be on the order of the number of groups rather than the
+number of senders times the number of groups. However, the source-specific tree is
+likely to be necessary to achieve efficient routing.
+4.5 Multiprotocol Label Switching (MPLS)
+We conclude our discussion of IP by describing an idea that was originally viewed
+as a way to improve the performance of the Internet. The idea, called Multiprotocol
+Label Switching (MPLS), tries to combine some of the properties of virtual circuits
+with the flexibility and robustness of datagrams. On the one hand, MPLS is very much
+associated with the Internet Protocol’s datagram-based architecture—it relies on IP
+addresses and IP routing protocols to do its job. On the other hand, MPLS-enabled
+routers also forward packets by examining relatively short, fixed-length labels, and
+these labels have local scope, just like in a virtual circuit network. It is perhaps this
+marriage of two seemingly opposed technologies that has caused MPLS to have a
+somewhat mixed reception in the Internet engineering community.
+Before looking at how MPLS works, it is reasonable to ask, “What is it good
+for?” Many claims have been made for MPLS, but there are three main things that it
+is used for today:
+¦ To enable IP capabilities on devices that do not have the capability to forward
+IP datagrams in the normal manner
+¦ To forward IP packets along “explicit routes”—precalculated routes that don’t
+necessarily match those that normal IP routing protocols would select
+¦ To support certain types of virtual private network services
+It is worth noting that one of the original goals—improving performance— is not on
+the list. This has a lot to do with the advances that have been made in forwarding
+algorithms for IP routers in recent years, and with the complex set of factors beyond
+header processing that determine performance.
+The best way to understand how MPLS works is to look at some examples
+of its use. In the next three sections we will look at examples to illustrate the three
+applications of MPLS mentioned above.
+4.5.1 Destination-Based Forwarding
+One of the earliest publications to introduce the idea of attaching labels to IP packets
+was a paper by Chandranmenon and Varghese that described an idea called “threaded
+indices.” A very similar idea is now implemented in MPLS-enabled routers. The following
+example shows how this idea works.
+4.5 Multiprotocol Label Switching (MPLS) 341
+10.1.1/24
+10.3.3/24
+0
+0
+1
+10.1.1 0
+10.3.3 0
+…
+Prefix Interface
+10.1.1
+10.3.3 0
+…
+Prefix Interface
+1
+R1 R2
+R4
+R3
+Figure 4.40 Routing tables in example network.
+Consider the network in Figure 4.40. Each of the two routers on the far right
+(R3 and R4) has one connected network, with prefixes 10.1.1/24 and 10.3.3/24. The
+remaining routers (R1 and R2) have routing tables that indicate which outgoing interface
+each router would use when forwarding packets to one of those two networks.
+When MPLS is enabled on a router, the router allocates a label for each prefix
+in its routing table and advertises both the label and the prefix that it represents
+to its neighboring routers. This advertisement is carried in the “Label Distribution
+Protocol.” This is illustrated in Figure 4.41. Router R2 has allocated the label value
+15 for the prefix 10.1.1 and the label value 16 for the prefix 10.3.3. These labels can
+be chosen at the convenience of the allocating router and can be thought of as indices
+into the routing table. After allocating the labels, R2 advertises the label bindings to its
+neighbors; in this case, we see R2 advertising a binding between the label 15 and the
+prefix 10.1.1 to R1. The meaning of such an advertisement is that R2 has said, in effect,
+“Please attach the label 15 to all packets sent to me that are destined to prefix 10.1.1.”
+R1 stores the label in a table alongside the prefix that it represents as the “remote” or
+“outgoing” label for any packets that it sends to that prefix.
+In Figure 4.41(c), we see another label advertisement from router R3 to R2 for
+the prefix 10.1.1, and R2 places the “remote” label that it learned from R3 in the
+appropriate place in its table.
+At this point, we can look at what happens when a packet is forwarded in this
+network. Suppose a packet destined to the IP address 10.1.1.5 arrives from the left to
+router R1. R1 in this case is referred to as a label edge router (LER); an LER performs
+a complete IP lookup on arriving IP packets, and then applies labels to them as a result
+of the lookup. In this case, R1 would see that 10.1.1.5 matches the prefix 10.1.1 in its
+342 4 Internetworking
+10.1.1/24
+10.3.3/24
+0
+0
+1
+R1 R2
+R4
+R3
+10.1.1 0
+10.3.3 0
+…
+Prefix Interface
+15 10.1.1 1
+16 10.3.3 0
+…
+Label Prefix Interface
+15 10.1.1 1
+16 10.3.3 0
+…
+Label Prefix Interface
+Label = 15, Prefix = 10.1.1
+10.1.1/24
+10.3.3/24
+0 0
+1
+10.1.1 0
+10.3.3 0
+…
+Prefix Interface
+R1 R2
+R4
+R3
+Remote
+label
+15
+16
+(a)
+(b)
+10.1.1/24
+10.3.3/24
+0
+0
+1
+R1 R2
+R4
+R3
+15 10.1.1 1 24
+16 10.3.3 0
+…
+Label Prefix Interface
+(c)
+10. 1.1 0
+10. 3.3 0
+…
+Prefix Interface
+Remote
+label
+15
+16
+Remote
+label
+Label = 24, Prefix = 10.1.1
+Figure 4.41 (a) R2 allocates labels and advertises bindings to R1. (b) R1 stores the
+received labels in a table. (c) R3 advertises another binding, and R2 stores the received
+label in a table.
+4.5 Multiprotocol Label Switching (MPLS) 343
+forwarding table, and that this entry contains both an outgoing interface and a remote
+label value. R1 therefore attaches the remote label 15 to the packet before sending it.
+When the packet arrives at R2, R2 looks at the label in the packet. The forwarding
+table at R2 indicates that packets arriving with a label value of 15 should be sent out
+interface 1, and that they should carry the label value 24, as advertised by router R3.
+R2 therefore rewrites, or swaps, the label and forwards it to R3.
+What has been accomplished by all this application and swapping of labels?
+Observe that when R2 forwarded the packet in this example, it never actually needed
+to examine the IP address. Instead, R3 looked only at the incoming label. Thus, we have
+replaced the normal IP destination address lookup with a label lookup. To understand
+why this is significant, it helps to recall that although IP addresses are always the
+same length, IP prefixes are of variable length, and the IP destination address lookup
+algorithm needs to find the longest match—the longest prefix that matches the highorder
+bits in the IP address of the packet being forwarded. By contrast, the label
+forwarding mechanism just described is an exact match algorithm. It is possible to
+implement a very simple exact match algorithm, for example, by using the label as
+an index into an array, where each element in the array is one line in the forwarding
+table.
+Note that while the forwarding algorithm has been changed from longest match
+to exact match, the routing algorithm can be any standard IP routing algorithm (e.g.,
+OSPF). The path that a packet will follow in this environment is the exact same path
+that it would have followed if MPLS were not involved—the path chosen by the IP
+routing algorithms. All that has changed is the forwarding algorithm.
+The major effect of changing the forwarding algorithm is that devices that normally
+don’t know how to forward IP packets can be used in an MPLS network. The
+most notable early application of this result was to ATM switches, which can support
+MPLS without any changes to their forwarding hardware. ATM switches support the
+label swapping forwarding algorithm just described, and by providing these switches
+with IP routing protocols and a method to distribute label bindings, they could be
+turned into label switching routers (LSRs)—devices that run IP control protocols but
+use the label switching forwarding algorithm. More recently, the same idea has been
+applied to optical switches of the sort described in Section 3.1.2.
+Before we consider the purported benefits of turning an ATMswitch into an LSR,
+we should tie up some loose ends. We have said that labels are “attached” to packets,
+but where exactly are they attached? The answer depends on the type of link on which
+packets are carried. Two common methods for carrying labels on packets are shown in
+Figure 4.42. When IP packets are carried as complete frames, as they are on most link
+types including Ethernet, token ring, and PPP, the label is inserted as a “shim” between
+the layer 2 header and the IP (or other layer 3) header, as shown in Figure 4.42(b).
+344 4 Internetworking
+However, if an ATM switch is to function
+as an MPLS LSR, then the label needs to
+be in a place where the switch can use it,
+and that means it needs to be in the ATM
+cell header, exactly where we would normally
+find the VCI and VPI fields, as shown in
+Figure 4.42(a).
+Having now devised a scheme by
+which an ATM switch can function as an
+LSR, what have we gained? One thing to
+note is that we could now build a network
+that used a mixture of conventional
+IP routers, label edge routers, and ATM
+switches functioning as LSRs, and they
+would all use the same routing protocols.
+To understand the benefits of using the same
+protocols, consider the alternative. In Figure
+4.43(a) we see a set of routers interconnected
+by virtual circuits over an ATM network,
+a configuration called an “overlay”
+network. At one point in time, networks of
+this type were often built because commercially
+available ATM switches supported
+higher total throughput than routers. Today,
+networks like this are less common because
+routers have caught up with and even surpassed
+ATM switches. However, these networks
+still exist because of the significant
+installed base of ATM switches in network
+What Layer Is MPLS?
+There have been many debates
+about where MPLS belongs in the
+layered protocol architectures presented
+in Section 1.3. Since the
+MPLS header is normally found
+between the layer 3 and the layer
+2 headers in a packet, it is sometimes
+referred to as a layer 2.5 protocol.
+Some people argue that, since
+IP packets are encapsulated inside
+MPLS headers, MPLS must be
+“below” IP, making it a layer 2 protocol.
+Others argue that, since the
+control protocols for MPLS are, in
+large part, the same protocols as
+IP—MPLS uses IP routing protocols
+and IP addressing—then MPLS
+must be at the same layer as IP (i.e.,
+layer 3). As we noted in Section 1.3,
+layered architectures are useful
+tools but they may not always
+exactly describe the real world,
+and MPLS is a good example of
+where strictly layerist views may be
+difficult to reconcile with reality.
+backbones, which in turn is partly a result of ATM’s ability to support a range of
+capabilities such as circuit emulation and virtual circuit services.
+In an overlay network, each router would potentially be connected to each of
+the other routers by a virtual circuit, but in this case for clarity we have just shown the
+circuits from R1 to all of its peer routers. R1 has five routing neighbors and needs to
+exchange routing protocol messages with all of them—we say that R1 has five routing
+adjacencies. By contrast, in Figure 4.43(b), the ATM switches have been replaced with
+LSRs. There are no longer virtual circuits interconnecting the routers. Thus R1 has
+only one adjacency, with LSR1. In large networks, running MPLS on the switches leads
+to a significant reduction in the number of adjacencies that each router must maintain
+4.5 Multiprotocol Label Switching (MPLS) 345
+PPP header Label header Layer 3 header
+“Shim” header
+(for PPP, Ethernet,
+etc.)
+ATM cell
+header
+HEC
+Label
+(a) GFC VPI VCI PTI CLP DATA
+(b)
+Figure 4.42 (a) Label on an ATM-encapsulated packet. (b) Label on a frame-
+encapsulated packet.
+R3 R4
+R6
+R5
+R1
+R2
+LSR1
+LSR2
+LSR3
+R3 R4
+R6
+R2
+R1
+R5
+(a)
+(b)
+Figure 4.43 (a) Routers connect to each other using an “overlay”of virtual circuits. (b)
+Routers peer directly with LSRs.
+346 4 Internetworking
+and can greatly reduce the amount of work that the routers have to do to keep each
+other informed of topology changes.
+A second benefit of running the same routing protocols on edge routers and on
+the LSRs is that the edge routers now have a full view of the topology of the network.
+This means that if some link or node fails inside the network, the edge routers will
+have a better chance of picking a good new path than if the ATM switches rerouted
+the affected VCs without the knowledge of the edge routers.
+Note that the step of “replacing” ATM switches with LSRs is actually achieved
+by changing the protocols running on the switches, but typically no change to the
+forwarding hardware is needed. That is, an ATM switch can often be converted to an
+MPLS LSR by upgrading only its software. Furthermore, an MPLS LSR might continue
+to support standard ATM capabilities at the same time as it runs the MPLS control
+protocols.
+More recently, the idea of running IP control protocols on devices that are unable
+to forward IP packets natively has been extended to optical switches and TDM devices
+such as SONET multiplexers. This is known as generalized MPLS (GMPLS). Part of
+the motivation for GMPLS was to provide routers with topological knowledge of an
+optical network, just as in the ATM case. Even more important was the fact that there
+were no standard protocols for controlling optical devices, and so MPLS seemed like
+a natural fit for that job.
+4.5.2 Explicit Routing
+In Section 3.1.3 we introduced the concept of source routing. IP has a source routing
+option, but it is not widely used for several reasons, including the fact that only a
+limited number of hops can be specified, and because it is usually processed outside
+the “fast path” on most routers.
+MPLS provides a convenient way to add capabilities similar to source routing
+to IP networks, although the capability is more often called “explicit routing” rather
+than “source routing.” One reason for the distinction is that it usually isn’t the real
+source of the packet that picks the route. More often it is one of the routers inside a
+service provider’s network. Figure 4.44 shows an example of how the explicit routing
+capability of MPLS might be applied. This sort of network is often called a “fish”
+network because of its shape (the routers R1 and R2 form the tail; R7 is at the head).
+Suppose that the operator of the network in Figure 4.44 has determined that any
+traffic flowing from R1 to R7 should follow the path R1-R3-R6-R7, and that any traffic
+going from R2 to R7 should follow the path R2-R3-R4-R7. One reason for such a
+choice would be to make good use of the capacity available along the two distinct paths
+from R3 to R7. This cannot easily be accomplished with normal IP routing because
+R3 doesn’t look at where traffic came from in making its forwarding decisions.
+4.5 Multiprotocol Label Switching (MPLS) 347
+R1
+R3
+R2
+R6
+R4 R5
+R7
+Figure 4.44 A network requiring explicit routing.
+Because MPLS uses label swapping to forward packets, it is easy enough to
+achieve the desired routing if the routers are MPLS-enabled. If R1 and R2 attach
+distinct labels to packets before sending them to R3, then R3 can forward packets
+from R1 and R2 along different paths. The question that then arises is, How do all
+the routers in the network agree on what labels to use and how to forward packets
+with particular labels? Clearly, we can’t use the same procedures as described in the
+preceding section to distribute labels because those procedures establish labels that
+cause packets to follow the normal paths picked by IP routing, which is exactly what
+we are trying to avoid. Instead, a new mechanism is needed. It turns out that the
+protocol used for this task is the Resource Reservation Protocol (RSVP). We’ll talk
+more about this protocol in Section 6.5.2, but for now it suffices to say that it is possible
+to send an RSVP message along an explicitly specified path (e.g., R1-R3-R6-R7) and
+use it to set up label forwarding table entries all along that path. This is very similar
+to the process of establishing a virtual circuit described in Section 3.1.2.
+One of the applications of explicit routing is “traffic engineering,” which refers
+to the task of ensuring that sufficient resources are available in a network to meet
+the demands placed on it. Controlling exactly which paths the traffic flows on is an
+important part of traffic engineering. Explicit routing can also help to make networks
+more resilient in the face of failure, using a capability called fast reroute. For example,
+it is possible to precalculate a path from router A to router B that explicitly avoids
+a certain link L. In the event that link L fails, router A could send all traffic destined
+to B down the precalculated path. The combination of precalculation of the “backup
+path” and the explicit routing of packets along the path means that A doesn’t need
+to wait for routing protocol packets to make their way across the network or for
+routing algorithms to be executed by various other nodes in the network. In certain
+circumstances, this can significantly reduce the time taken to reroute packets around
+a point of failure.
+348 4 Internetworking
+One final point to note about explicit routing is that explicit routes need not
+be calculated by a network operator as in the above example. There are a range of
+algorithms that routers can use to calculate explicit routes automatically. The most
+common of these is called constrained shortest path first (CSPF), which is like the
+link-state algorithms described in Section 4.2.3, but which also takes “constraints”
+into account. For example, if it was required to find a path from R1 to R7 that could
+carry an offered load of 100 Mbps, we could say that the “constraint” is that each
+link must have at least 100 Mbps of available capacity. CSPF addresses this sort of
+problem. More details on CSPF, and the applications of explicit routing, are provided
+in the “Further Reading” section at the end of the chapter.
+4.5.3 Virtual Private Networks and Tunnels
+We first talked about virtual private networks (VPNs) in Section 4.1.8, and we noted
+that one way to build them was using tunnels. It turns out that MPLS can be thought
+of as a way to build tunnels, and this makes it suitable for building VPNs of various
+types.
+The simplest form of MPLS VPN to understand is a “layer 2” VPN. In this type
+of VPN, MPLS is used to tunnel layer 2 data (such as Ethernet frames or ATM cells)
+across a network of MPLS-enabled routers. Recall from Section 4.1.8 that one reason
+for tunnels is to provide some sort of network service (such as multicast) that is not
+supported by some routers in the network. The same logic applies here: IP routers
+are not ATM switches, so you cannot provide an ATM virtual circuit service across a
+network of conventional routers. However, if you had a pair of routers interconnected
+by a tunnel, they could send ATM cells across the tunnel and emulate an ATM circuit.
+The term for this technique within the IETF is pseudowire emulation. Figure 4.45
+illustrates the idea.
+We have already seen how IP tunnels are built: The router at the entrance of the
+tunnel wraps the data to be tunneled in an IP header (the “tunnel header”), which
+R2
+Tail
+R3
+Head
+ATM cells arrive
+Cells sent into
+tunnel at head
+Tunneled data
+arrives at tail
+ATM cells sent
+Figure 4.45 An ATM circuit is emulated by a tunnel.
+4.5 Multiprotocol Label Switching (MPLS) 349
+represents the address of the router at the far end of the tunnel, and sends the data like
+any other IP packet. The receiving router receives the packet with its own address in
+the header, strips the tunnel header, and finds the data that was tunneled, which it then
+processes. Exactly what it does with that data depends on what it is. For example, if it
+were another IP packet, it would then be forwarded like a normal IP packet. However,
+it need not be an IP packet, as long as the receiving router knows what to do with
+non-IP packets. We’ll return to the issue of how to handle non-IP data in a moment.
+An MPLS tunnel is not too different from an IP tunnel, except that the “tunnel
+header” consists of an MPLS header rather than an IP header. Looking back to our
+first example, in Figure 4.41, we saw that router R1 attached a label (15) to every
+packet that it sent toward prefix 10.1.1. Such a packet would then follow the path
+R1-R2-R3, with each router in the path examining only the MPLS label. Thus, we
+observe that there was no requirement that R1 only send IP packets along this path—
+any data could be wrapped up in the MPLS header, and it would follow the same path
+because the intervening routers never look beyond the MPLS header. In this regard,
+an MPLS header is just like an IP tunnel header.7 The only issue with sending non-IP
+traffic along a tunnel, MPLS or otherwise, is this: What do we do with non-IP traffic
+when it reaches the end of the tunnel? The general solution is to carry some sort of
+demultiplexing identifier in the tunnel payload that tells the router at the end of the
+tunnel what to do. It turns out that an MPLS label is a perfect fit for such an identifier.
+An example will make this clear.
+Let’s assume we want to tunnel ATM cells from one router to another across
+a network of MPLS-enabled routers, as in Figure 4.45. Further, we assume that the
+goal is to emulate an ATM virtual circuit; that is, cells arrive at the entrance, or head,
+of the tunnel on a certain input port with a certain VCI and should leave the tail
+end of the tunnel on a certain output port and potentially different VCI. This can be
+accomplished by configuring the “head” and “tail” routers as follows:
+¦ The head router needs to be configured with the incoming port, the incoming
+VCI, the “demultiplexing label” for this emulated circuit, and the address of
+the tunnel end router.
+¦ The tail end router needs to be configured with the outgoing port, the outgoing
+VCI, and the demultiplexing label.
+Once the routers are provided with this information, we can see how an ATM cell
+would be forwarded. Figure 4.46 illustrates the steps.
+7Note, however, that an MPLS header is only 4 bytes long, compared to 20 for an IP header, which implies a
+bandwidth savings when MPLS is used.
+350 4 Internetworking
+R2
+Tail
+R3
+Head
+1. ATM cells arrive
+6. ATM cells sent
+101
+202
+DL 101
+TL DL 101
+DL 101
+TL DL 101
+2. Demux label added
+3. Tunnel label added 4. Packet is forwarded to tail
+5. Demux label examined
+Figure 4.46 Forwarding ATM cells along a tunnel.
+1 An ATM cell arrives on the designated input port with the appropriate VCI value
+(101 in this example).
+2 The head router attaches the demultiplexing label that identifies the emulated
+circuit.
+3 The head router then attaches a second label, which is the tunnel label that will
+get the packet to the tail router. This label is learned by mechanisms just like
+those described in Section 4.5.1.
+4 Routers between the head and tail forward the packet using only the tunnel label.
+5 The tail router removes the tunnel label, finds the demultiplexing label, and
+recognizes the emulated circuit.
+6 The tail router modifies the ATM VCI to the correct value (202 in this case) and
+sends it out the correct port.
+One item in this example that might be surprising is that the packet has two
+labels attached to it. This is one of the interesting features of MPLS—labels may be
+“stacked” on a packet to any depth. This provides some useful scaling capabilities. In
+this example, it enables a single tunnel to carry a potentially large number of emulated
+circuits.
+The same techniques described here can be applied to emulate many other layer 2
+services, including Frame Relay and Ethernet. It is worth noting that virtually identical
+capabilities can be provided using IP tunnels; the main advantage of MPLS here is the
+shorter tunnel header.
+Before MPLS was used to tunnel layer 2 services, it was also being used to support
+layer 3 VPNs.We won’t go into the details of layer 3 VPNs, which are quite complex—
+4.5 Multiprotocol Label Switching (MPLS) 351
+Provider
+network
+VPN A/Site 3
+VPN A/Site 1
+VPN A/Site 2
+VPN B/Site 2
+VPN B/Site 1
+VPN B/Site 3
+Figure 4.47 Example of a layer 3 VPN. Customers A and B each obtain a virtually
+private IP service from a single provider.
+see the “Further Reading” section for some good sources of more information—but
+we will note that they represent one of the most popular uses of MPLS today. Layer 3
+VPNs also use stacks of MPLS labels to tunnel packets across an IP network. However,
+the packets that are tunneled are themselves IP packets—hence the name “layer 3
+VPNs.” In a layer 3 VPN, a single service provider operates a network of MPLSenabled
+routers and provides a “virtually private” IP network service to any number
+of distinct customers. That is, each customer of the provider has some number of
+sites, and the service provider creates the illusion for each customer that there are no
+other customers on the network. The customer sees an IP network interconnecting his
+own sites, and no other sites. This means that each customer is isolated from all other
+customers in terms of both routing and addressing. Customer A can’t send packets
+directly to customer B, and vice versa.8 Customer A can even use IP addresses that
+have also been used by customer B. The basic idea is illustrated in Figure 4.47. As in
+8Customer A in fact usually can send data to customer B in some restricted way. Most likely, both customer A
+and customer B have some connection to the global Internet, and thus it is probably possible for customer A to
+send email messages, for example, to the mail server inside customer B’s network. The “privacy” offered by a
+VPN prevents customer A from having unrestricted access to all the machines and subnets inside customer B’s
+network.
+352 4 Internetworking
+layer 2 VPNs, MPLS is used to tunnel packets from one site to another. However, the
+configuration of the tunnels is performed automatically by some fairly elaborate use
+of BGP, which is beyond the scope of this book.
+In summary, MPLS is a rather versatile tool that has been applied to a wide
+range of different networking problems. It combines the label swapping forwarding
+mechanism that is normally associated with virtual circuit networks with the routing
+and control protocols of IP datagram networks to produce a class of network that is
+somewhere between the two conventional extremes. This extends the capabilities of
+IP networks to enable, among other things, more precise control of routing and the
+support of a range of VPN services.

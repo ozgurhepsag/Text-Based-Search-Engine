@@ -1,0 +1,5385 @@
+Glossary
+WAN: Wide area network. Any physical network technology that is capable of spanning
+long distances (e.g., cross-country). Compare with SAN, LAN, and WAN.
+weighted fair queuing (WFQ): A variation of fair queuing in which each flow can be
+given a different proportion of the network capacity.
+well-known port: A port number that is, by convention, dedicated for use by a particular
+server. For instance, the Domain Name Server receives messages at well-known
+UDP and TCP port 53 on every host.
+WWW: World Wide Web. A hypermedia information service on the Internet.
+X.25: The ITU packet-switching protocol standard.
+X.400: The ITU electronic mail standard. The counterpart to SMTP in the Internet
+architecture.
+X.500: The ITU directory services standard, which defines an attribute-based naming
+service.
+X.509: An ITU standard for digital certificates.
+XDR: External Data Representation. Sun Microsystems’ standard for machineindependent
+data structures. Contrast with ASN.1 and NDR.
+XML: Extensible Markup Language. Defines a syntax for describing data that may
+be passed between Internet applications.
+zone: A partition of the domain name hierarchy, corresponding to an administrative
+authority that is responsible for that portion of the hierarchy. Each zone must have at
+least two name servers to field DNS requests for the zone.
+B I B L I O G R A P H Y
+[Bat68] Batcher, K. E. Sorting networks and their applications. Proceedings
+of the 1968 Spring AFIPS Joint Computer Conference 32:307–314,
+1968.
+[BBC+98] Blake, S., D. Black, M. Carlson, E. Davies, Z.Wang, andW.Weiss. An
+architecture for differentiated services. Request for Comments 2475,
+December 1998.
+[BCS94] Braden, R., D. Clark, and S. Shenker. Integrated services in the
+internet architecture: An overview. Request for Comments 1633,
+September 1994.
+[BDMS94] Bowman, C. M., P. B. Danzig, U. Manber, and M. F. Schwartz. Scalable
+internet resource discovery: Research problems and approaches.
+Communications of the ACM 37(8):98–107, August 1994.
+[Bel00] Bellovin, S. M. ICMP traceback messages.Work in progress, Internet
+draft draft-bellovin-itrace-00.txt, March 2000.
+[BF93] Borenstein, N., and N. Freed. MIME (multipurpose internet mail
+extensions) part one: Mechanisms for specifying and describing the
+format of internet message bodies. Request for Comments 1521,
+September 1993.
+[BG92] Bertsekas, D., and R. Gallager. Data Networks. Prentice Hall,
+Englewood Cliffs, NJ, second edition, 1992.
+[BG93] Bjorkman, M., and P. Gunningberg. Locking effects in multiprocessor
+implementations of protocols. Proceedings of the
+SIGCOMM ’93 Symposium, pages 74–83, September 1993.
+744 Bibliography
+[Bla87] Blahut, R. E. Principles and Practice of Information Theory. Addison-
+Wesley, Reading, MA, 1987.
+[BLFF96] Berners-Lee, T., R. Fielding, and H. Frystyk. Hypertext transfer
+protocol—HTTP/1.0. Request for Comments 1945, May 1996.
+[BLNS82] Birrell, A., R. Levin, R. Needham, and M. Schroeder. Grapevine:
+An exercise in distributed computing. Communications of the ACM
+25:250–273, April 1982.
+[BM95] Bradner, S., and A. Mankin, editors. IPng: Internet Protocol Next
+Generation. Addison-Wesley, Reading, MA, 1995.
+[Boo95] Boorsook, P. How anarchy works. Wired 3(10):110–118, October
+1995.
+[BP95] Brakmo, L. S., and L. L. Peterson. TCP Vegas: End-to-end congestion
+avoidance on a global internet. IEEE Journal of Selected Areas in
+Communication (JSAC) 13(8):1465–1480, October 1995.
+[BPY90] Bowman, M., L. L. Peterson, and A. Yeatts. Univers: An attributebased
+name server. Software—Practice and Experience 20(4):403–
+424, April 1990.
+[Bri95] Brisco, T. DNS support for load balancing. Request for Comments
+1794, Rutgers University, New Brunswick, NJ, April 1995.
+[BS88] Bic, L., and A. C. Shaw. The Logical Design of Operating Systems.
+Prentice Hall, Englewood Cliffs, NJ, 1988.
+[BS01] Barrett, D., and R. Silverman. SSH: The Secure Shell. O’Reilly, Sebastopol,
+CA, 2001.
+[Buf94] Buford, John F. K. Multimedia Systems. ACM Press/Addison-Wesley,
+Reading, MA, 1994.
+[BZ96] Bennett, T., and H. Zhang. Hierarchical packet fair queueing algorithms.
+Proceedings of the SIGCOMM ’96 Symposium, pages 143–
+156, August 1996.
+Bibliography 745
+[CCITT92a] Comit´e Consultif International de Telegraphique et Telephonique.
+Open systems interconnection: Specification of abstract syntax notation
+one (ASN.1). CCIT Recommendation X.208, 1992.
+[CCITT92b] Comit´e Consultif International de Telegraphique et Telephonique.
+Open systems interconnection: Specification of basic encoding rules
+for abstract syntax notation one (ASN.1). CCIT Recommendation
+X.209, 1992.
+[CF98] Clark, D., and W. Fang. Explicit allocation of best-effort packet
+delivery service. IEEE/ACM Transactions on Networking 6(4):
+362–373, August 1998.
+[CFFD93] Cohen, D., G. Finn, R. Felderman, and A. DeSchon. ATOMIC:
+A low-cost, very-high-speed, local communications architecture.
+Proceedings of the 1993 Conference on Parallel Processing,
+August 1993.
+[Cha93] Chapin, A. L. The billion node Internet. In D. C. Lynch and M. T.
+Rose, editors, Internet System Handbook, chapter 17, pages 707–
+716. Addison-Wesley, Reading, MA, 1993.
+[CJRS89] Clark, D. D., V. Jacobson, J. Romkey, and H. Salwen. An analysis of
+TCP processing overhead. IEEE Communications 27(6):23–29, June
+1989.
+[Cla82] Clark, D. D. Modularity and efficiency in protocol implementation.
+Request for Comments 817, July 1982.
+[Cla85] Clark, D. D. The structuring of systems using upcalls. Proceedings of
+the 10th ACM Symposium on Operating Systems Principles, pages
+171–180, December 1985.
+[Cla97] Clark, D. Internet cost allocation and pricing. In L. Knight and J.
+Bailey, editors, Internet Economics, pages 215–253. MIT Press, Cambridge,
+MA, 1997.
+[CLNZ89] Chen, S. K., E. D. Lazowska, D. Notkin, and J. Zahorjan. Performance
+implications of design alternatives for remote procedure call
+746 Bibliography
+stubs. Proceedings of the Ninth International Conference on Dis-
+tributed Computing Systems, pages 36–41, June 1989.
+[CMRW93] Case, J., K. McCloghrie, M. Rose, and S. Waldbusser. Structure of
+management information for version 2 of the Simple Network Management
+Protocol (SNMPv2). Request for Comments 1442, April
+1993.
+[Com00] Comer, D. E. Internetworking with TCP/IP. Volume I: Principles,
+Protocols, and Architecture. Prentice Hall, Upper Saddle River, NJ,
+fourth edition, 2000.
+[CP89] Comer, D. E., and L. L. Peterson. Understanding naming in distributed
+systems. Distributed Computing 3(2):51–60, May 1989.
+[CPVR97] Cohen, J., N. Phadnis, V. Valloppillil, and K. W. Ross. Cache array
+routing protocol v1.1. http://ds1.internic.net/internet-drafts/draftvinod-
+carp-v1-01.txt, September 1997.
+[Cro82] Crocker, D. Standard for the format of ARPA Internet text message.
+Request for Comments 822, August 1982.
+[CS94] Comer, D. E., and D. L. Stevens. Internetworking with TCP/IP.
+Volume III: Client-Server Programming and Applications, AT&T
+TLI Version. Prentice Hall, Englewood Cliffs, NJ, 1994.
+[CS97] Comer, D. E., and D. L. Stevens. Internetworking with TCP/IP.
+Volume III: Client-Server Programming and Applications, Windows
+Sockets Version. Prentice Hall, Englewood Cliffs, NJ, 1997.
+[CS00] Comer, D. E., and D. L. Stevens. Internetworking with TCP/IP.
+Volume III: Client-Server Programming and Applications, Linux/
+Posix Sockets Version. Prentice Hall, Upper Saddle River, NJ, 2000.
+[CV95] Chandranmenon, G. P., and G. Varghese. Trading packet headers for
+packet processing. Proceedings of the SIGCOMM ’95 Symposium,
+pages 162–173, October 1995.
+Bibliography 747
+[CZ85] Cheriton, D. R., and W. Zwaenepoel. Distributed process groups in
+the V kernel. ACM Transactions on Computer Systems 3(2):77–107,
+May 1985.
+[Dan98] Danzig, P. NetCache architecture and deployment. Third Interna-
+tional WWW Caching Workshop, June 1998.
+[DBCP97] Degermark, M., A. Brodnik, S. Carlsson, and S. Pink. Small forwarding
+tables for fast routing lookups. Proceedings of the SIGCOMM
+’97 Symposium, pages 3–14, October 1997.
+[DCB+02] Davie, B., A. Charny, J. C. R. Bennett, K. Benson, J. Y. Le Boudec,
+W. Courtney, S. Davari, V. Firoiu, and D. Stiliadis. An expedited
+forwarding phb (per-hop behavior). Request for Comments 3246,
+March 2002.
+[DEF+96] Deering, S., D. Estrin, D. Farinacci, V. Jacobson, C. Liu, and L. Wei.
+The PIM architecture for wide-area multicast routing. ACM/IEEE
+Transactions on Networking 4(2):153–162, April 1996.
+[DH98] Deering, S., and R. Hinden. Internet Protocol, version 6 (IPv6) specification.
+Request for Comments 2460, December 1998.
+[DP93] Druschel, P., and L. L. Peterson. Fbufs: A high-bandwidth crossdomain
+transfer facility. Proceedings of the 14th ACM Symposium
+on Operating Systems Principles, pages 189–202, December 1993.
+[DPD94] Druschel, P., L. L. Peterson, and B. S. Davie. Experience with a highspeed
+network adaptor: A software perspective. Proceedings of the
+SIGCOMM ’94 Symposium, pages 2–13, August 1994.
+[DR00] Davie, B., and Y. Rekhter. MPLS: Technology and Applications.
+Morgan Kaufmann Publishers, San Francisco, CA, 2000.
+[DY75] Drysdale, R. L., and F. H. Young. Improved divide/sort/merge sorting
+networks. SIAM Journal on Computing 4(3):264–270, September
+1975.
+748 Bibliography
+[EFH+98] Estrin, D., D. Farinacci, A. Helmy, D. Thaler, S. Deering, M.
+Handley, V. Jacobson, C. Liu, P. Sharma, and L. Wei. Protocol independent
+multicast-sparse mode (pim-sm): Protocol specification.
+Request for Comments 2362, April 1998.
+[EWL+94] Edwards, A., G. Watson, J. Lumley, D. Banks, C. Calamvokis, and
+C. Dalton. User-space protocols deliver high performance to applications
+on a low-cost Gb/s LAN. Proceedings of the SIGCOMM ’94
+Symposium, pages 14–23, August 1994.
+[FB96] Freed, N., and N. Borenstein. Multipurpose Internet mail extensions
+(MIME) part one: Format of Internet message bodies.
+Request for Comments 2045, November 1996.
+[FGMBL97] Fielding, R., J. Gettys, J. Mogul, and T. Berners-Lee. HyperText
+Transfer Protocol—HTTP/1.1. Request for Comments 2068, January
+1997.
+[FHPW00] Floyd, S., M. Handley, J. Padhye, and J. Widmer. Equation-based
+congestion control for unicast applications. Proceedings of the SIG-
+COMM ’00 Symposium, pages 43–56, Stockholm, Sweden, 2000.
+[Fin88] Finkel, R. A. An Operating Systems Vade Mecum. Prentice Hall,
+Englewood Cliffs, NJ, 1988.
+[FKSS99] Feng,W.-C., D. Kandlur, D. Saha, and K. Shin.Aself-configuringRED
+gateway. IEEE INFOCOM, New York, pages 1320–1328, March
+1999.
+[FLYV93] Fuller, V., T. Li, J. Yu, and K. Varadhan. Classless interdomain routing
+(CIDR): An address assignment and aggregation strategy. Request for
+Comments 1519, September 1993.
+[Gar00] Garber, L. Technology news: Denial-of-service attacks rip the Internet.
+Computer 33(4):12–17, April 2000.
+[GG94] Gopal, I., and R. Guerin. Network transparency: The plaNET
+approach. IEEE/ACM Transactions on Networking 2(3):226–
+239, June 1994.
+Bibliography 749
+[Gin99] D. Ginsburg, ATM: Solutions for Enterprise Internetworking.
+Addison-Wesley, Reading, MA, second edition, 1999.
+[GVC96] Goyal, P., H. Vin, and H. Chen. Start-time fair queueing: A scheduling
+algorithm for integrated services packet switching networks. Pro-
+ceedings of the SIGCOMM ’96 Symposium, pages 157–168, August
+1996.
+[Har00] Harrison, A. Cyber assaults hit Buy.com, eBay, CNN and Amazon.
+Computerworld, February 2000.
+[HC98] Harkins, D., and D. Carrel. The Internet Key Exchange (IKE). Re-
+quest for Comments 2409, November 1998.
+[Hed88] Hedrick, C. Routing information protocol. Request for Comments
+1058, June 1988.
+[HMPT89] Hutchinson, N., S. Mishra, L. Peterson, and V. Thomas. Tools for
+implementing network protocols. Software—Practice and Experience
+19(9):895–916, September 1989.
+[HP91] Hutchinson, N., and L. Peterson. The x-kernel: An architecture for
+implementing network protocols. IEEE Transactions on Software
+Engineering 17(1):64–76, January 1991.
+[HP95] Holzmann, G. J., and B. Pehrson. The Early History of Data Net-
+works. IEEE Computer Society Press, Los Alamitos, CA, 1995.
+[HP02] Hennessy, J. L., and D. A. Patterson. Computer Architecture: A
+Quantitative Approach. Morgan Kaufmann, San Francisco, CA, third
+edition, 2002.
+[Huf52] Huffman, D. A. A method for the construction of minimalredundancy
+codes. Proceedings of the IRE 40(9):1098–1101, September
+1952.
+[Jac88] Jacobson, V. Congestion avoidance and control. Proceedings of the
+SIGCOMM ’88 Symposium, pages 314–329, August 1988.
+750 Bibliography
+[Jaf81] Jaffe, J. M. Flow control power is nondecentralizable. IEEE Transac-
+tions on Communications COM-29(9):1301–1306, September 1981.
+[Jai89] Jain, R. A delay-based approach for congestion avoidance in interconnected
+heterogeneous computer networks. ACM Computer Com-
+munication Review 19(5):56–71, October 1989.
+[Jai91] Jain, R. The Art of Computer Systems Performance Analysis: Tech-
+niques for Experimental Design, Measurement, Simulation, and
+Modeling. John Wiley & Sons, New York, 1991.
+[Jai94] Jain, R. FDDI Handbook: High-Speed Networking Using Fiber and
+Other Media. Addison-Wesley, Reading, MA, 1994.
+[JBB92] Jacobson, V., R. Braden, and D. Borman. TCP extensions for high
+performance. Request for Comments 1323, May 1992.
+[KA98a] Kent, S., and R. Atkinson. IP authentication header. Request for Com-
+ments 2402, November 1998.
+[KA98b] Kent, S., and R. Atkinson. IP encapsulating security payload (ESP).
+Request for Comments 2406, November 1998.
+[KC88] Kanakia, H., and D. R. Cheriton. The VMP network adaptor board
+(NAB): High-performance network communication for multiprocessors.
+Proceedings of the SIGCOMM ’88 Symposium, pages 175–187,
+August 1988.
+[Kes91] Keshav, S. A control-theoretic approach to flow control. Proceedings
+of the SIGCOMM ’91 Symposium, pages 3–15, September 1991.
+[KHR02] Katabi, D., M. Handley, and C. Rohrs. Congestion control for
+high bandwidth-delay product networks. Proceedings of the ACM
+SIGCOMM ’02, pages 89–102, August 2002.
+[Kle75] Kleinrock, L. Queuing Systems. Volume 1: Theory. John Wiley &
+Sons, New York, 1975.
+[Kle79] Kleinrock, L. Power and deterministic rules of thumb for probabilistic
+problems in computer communications. Proceedings of
+Bibliography 751
+the International Conference on Communications, pages 43.1.1–
+43.1.10, June 1979.
+[KM87] Kent, C., and J. Mogul. Fragmentation considered harmful. Pro-
+ceedings of the SIGCOMM ’87 Symposium, pages 390–401,
+August 1987.
+[KP91] Karn, P., and C. Partridge. Improving round-trip time estimates in reliable
+transport protocols. ACM Transactions on Computer Systems
+9(4):364–373, November 1991.
+[KPS02] Kaufman, C., R. Perlman, and M. Speciner. Network Security:
+Private Communication in a PublicWorld. Prentice Hall, Englewood
+Cliffs, NJ, 2002.
+[LAAJ00] Labovitz, C., A. Ahuja, A. Abose, and F. Jahanian. Delayed
+internet routing convergence. Proceedings of the SIGCOMM 2000
+Symposium, Stockholm, Sweden, pages 293–306, August 2000.
+[Lin93] Lin, H.-A. Estimation of the optimal performance of ASN.1/BER
+transfer syntax. Computer Communications Review 23(3):45–58,
+July 1993.
+[LM97] Lin, D., and R. Morris. Dynamics of random early dectection. Pro-
+ceedings of the SIGCOMM ’97 Symposium, pages 127–136, Cannes,
+France, October 1997.
+[LMKQ89] Leffler, S. J., M. K. McKusick, M. J. Karels, and J. S. Quarterman. The
+Design and Implementation of the 4.3BSD UNIX Operating System.
+Addison-Wesley, Reading, MA, 1989.
+[LPW02] Low, S., L. Peterson, and L. Wang. Understanding TCP Vegas:
+A duality model. Journal of the ACM 49(2):207–235, March 2002.
+[LPW+02] Low, S., F. Paganini, J. Wang, S. Adlakha, and J. Doyle. Dynamics of
+TCP/RED and a scalable control. IEEE INFOCOM, pages 239–248,
+June 2002.
+[LS98] Lakshman, T. V., and D. Stiliadis. High speed policy-based packet
+forwarding using efficient multi-dimensional range matching.
+752 Bibliography
+Proceedings of the SIGCOMM ’98 Symposium, pages 203–214,
+September 1998.
+[LTWW94] Leland, W., M. Taqqu, W. Willinger, and D. Wilson. On the
+self-similar nature of Ethernet traffic. IEEE/ACM Transactions on
+Networking 2:1–15, February 1994.
+[Mal93] Malkin, G. RIP version 2 carrying additional information. Request
+for Comments 1388, January 1993.
+[MD90] Mogul, J., and S. Deering. Path MTU discovery. Request for
+Comments 1191, November 1990.
+[MD93] McKenney, P. E., and K. F. Dove. Efficient demultiplexing of
+incoming TCP packets. Proceedings of the SIGCOMM ’92 Sympo-
+sium, pages 269–280, August 1993.
+[MD98] Madson, C., and N. Doraswamy. The ESP DES-CBC cipher algorithm
+with explicit IV. Request for Comments 2405, November 1998.
+[MG98a] Madson, C., and R. Glenn. The use of HMAC-MD5-96 within ESP
+and AH. Request for Comments 2403, November 1998.
+[MG98b] Madson, C., and R. Glenn. The use of HMAC-SHA-1-96
+within ESP and AH. Request for Comments 2404, November
+1998.
+[Min93] Minoli, D. Enterprise Networking: Fractional T1 to SONET, Frame
+Relay to BISDN. Artech House, Norwood, MA, 1993.
+[MJ95] McCanne, S., and V. Jacobson. vic: A flexible framework for packet
+video. ACM Multimedia ’95, pages 511–522, 1995.
+[Mor68] Morrison, D. PATRICIA—A practical algorithm to retrieve information
+coded in alphanumeric. Journal of the ACM 15(4):514–534,
+October 1968.
+[Moy98] Moy, J. OSPF version 2. Request for Comments 2328, April 1998.
+Bibliography 753
+[MP85] Mogul, J., and J. Postel. Internet standard subnetting procedure. Re-
+quest for Comments 950, August 1985.
+[MPBO96] Mosberger, D., L. Peterson, P. Bridges, and S. O’Malley. Analysis
+of techniques to improve protocol latency. Proceedings of the
+SIGCOMM ’96 Symposium, pages 73–84, August 1996.
+[MPFL96] Mitchell, J. L.,W. B. Pennebaker, C. E. Fogg, and D. J. LeGall. MPEG
+Video: Compression Standard. Chapman Hall, New York, 1996.
+[MR91] McCloghrie, K., and M. Rose. Management information base for
+network management of TCP/IP-based internets: MIB-II. Request for
+Comments 1213, March 1991.
+[MSST98] Maughan, D., M. Schertler, M. Schneider, and J. Turner. Internet
+security association and key management protocol (ISAKMP).
+Request for Comments 2408, November 1998.
+[Mul90] Mullender, S. Amoeba: A distributed operating system for the 1990s.
+IEEE Computer 23(5):44–53, May 1990.
+[MVS01] Moore, D., G. Voelker, and S. Savage. Inferring Internet denial of
+service activity. Proceedings of 2001 USENIX Security Symposium,
+pages 9–22, August 2001.
+[Nel92] Nelson, M. The Data Compression Book. M&T Books, San
+Mateo, CA, 1992.
+[Nol97] Noll, P. MPEG digital audio coding. IEEE Signal Processing
+Magazine, pages 59–81, September 1997.
+[NRC94] National Research Council, Computer Science and Telecommunications
+Board. Realizing the Information Future: The Internet and Be-
+yond. National Academy Press, Washington, DC, 1994.
+[NRC01] National Research Council. Looking Over the Fence at Networks.
+National Academy Press, Washington, DC, 2001.
+754 Bibliography
+[NYKT94] Nahum, E. M., D. J. Yates, J. F. Kurose, and D. Towsley. Performance
+issues in parallelized network protocols. Proceedings of the
+First USENIX Symposium on Operating System Design and Imple-
+mentation (OSDI), pages 125–137, November 1994.
+[OCD+88] Ousterhout, J. K., A. R. Cherenson, F. Douglis, M. N. Nelson,
+and B. B. Welch. The Sprite network operating system. IEEE Com-
+puter 21(2):23–36, February 1988.
+[OP91] O’Malley, S., and L. Peterson. TCP extensions considered harmful.
+Request for Comments 1263, October 1991.
+[OPM94] O’Malley, S. W., T. A. Proebsting, and A. B. Montz. Universal stub
+compiler. Proceedings of the SIGCOMM ’94 Symposium, pages 295–
+306, August 1994.
+[OSF94] Open Software Foundation. OSF DCE Application Environment
+Specification. Prentice Hall, Englewood Cliffs, NJ, 1994.
+[PACR02] Peterson, L., T. Anderson, D. Culler, and T. Roscoe. A blueprint for
+introducing disruptive technology into the Internet. Proceedings of
+HotNets-I, October 2002.
+[Pad85] Padlipsky, M. A. The Elements of Networking Style and Other Es-
+says and Animadversions on the Art of Intercomputer Networking.
+Prentice Hall, Englewood Cliffs, NJ, 1985.
+[Par94] Partridge, C. Gigabit Networking. Addison-Wesley, Reading, MA,
+1994.
+[Par98] Partridge, C., et al. A 50 Gb/s IP router. IEEE/ACM Transactions on
+Networking 6(3):237–247, June 1998.
+[PB61] Peterson, W. W., and D. T. Brown. Cyclic codes for error detection.
+Proceedings of the IRE, 49:228–235, January 1961.
+[Per00] Perlman, R. Interconnections: Bridges, Routers, Switches and Inter-
+networking Protocols. Addison-Wesley, Reading, MA, second edition,
+2000.
+Bibliography 755
+[Pet88] Peterson, L. L. The Profile naming service. ACM Transactions on
+Computer Systems 6(4):341–364, November 1988.
+[PF94] Paxson, V., and S. Floyd. Wide-area traffic: The failure of Poisson
+modeling. Proceedings of the SIGCOMM ’94 Symposium, pages
+257–268, London, UK, August 1994.
+[PFTK98] Padhye, J., V. Firoiu, D. Towsley, and J. Kursoe. Modeling TCP
+throughput: A simple model and its empirical validation. ACM
+SIGCOMM ’98 Conference on Applications, Technologies, Architec-
+tures, and Protocols for Computer Communication, pages 303–314,
+Vancouver, Canada, 1998.
+[Pip98] Piper, D. The Internet IP security domain of interpretation for
+ISAKMP. Request for Comments 2407, November 1998.
+[PL01] Park, K., and H. Lee. On the effectiveness of route-based packet filtering
+for distributed DoS attack prevention in power-law internets.
+Proceedings of ACM SIGCOMM ’01, pages 15–26, August 2001.
+[PM97] Perkins, D., and E. McGinnis. Understanding SNMP MIBS. Prentice
+Hall, Upper Saddle River, NJ, 1997.
+[Pos81] Postel, J. Internet Protocol. Request for Comments 791, September
+1981.
+[Pos82] Postel, J. Simple Mail Transfer Protocol. Request for Comments 821,
+August 1982.
+[QPP02] Qie, X., R. Pang, and L. Peterson. Defensive programming: Using an
+annotation toolkit to build DoS-resistant software. Proceedings of
+OSDI ’02, pages 45–60, December 2002.
+[Ram93] Ramakrishnan, K. K. Performance considerations in designing network
+interfaces. IEEE Journal of Selected Areas in Communication
+(JSAC) 11(2):203–219, February 1993.
+[RDR+97] Rekhter, Y., B. Davie, E. Rosen, G. Swallow, D. Farinacci, and
+D. Katz. Tag switching architecture overview. Proceeedings of the
+IEEE 82(12):1973–1983, December 1997.
+756 Bibliography
+[RF89] Rao, T. R. N., and E. Fujiwara. Error-Control Coding for Computer
+Systems. Prentice Hall, Englewood Cliffs, NJ, 1989.
+[RF94] Romanow, A., and S. Floyd. Dynamics of TCP traffic over ATM
+networks. Proceedings of the SIGCOMM ’94 Symposium, pages 79–
+88, October 1994.
+[RFB01] Ramakrishnan, K., S. Floyd, and D. Black. The addition of explicit
+congestion notification (ECN) to IP. Request for Comments 3168,
+September 2001.
+[RHE99] Rejaie, R., M. Handley, and D. Estrin. RAP: An end-to-end rate-based
+congestion control mechanism for realtime streams in the internet.
+INFOCOM (3), pages 1337–1345, 1999.
+[Rit84] Ritchie, D. A stream input-output system. AT&T Bell Laboratories
+Technical Journal 63(8):311–324, October 1984.
+[RL95] Rekhter, Y., and T. Li. A Border Gateway Protocol 4 (BGP-4). Request
+for Comments 1771, March 1995.
+[Rob93] Robertazzi, T. G., editor. Performance Evaluation of High Speed
+Switching Fabrics and Networks: ATM, Broadband ISDN, andMAN
+Technology. IEEE Press, Piscataway, NJ, 1993.
+[Ros86] Ross, F. E. FDDI—A tutorial. IEEE Communications 24(5):10–17,
+May 1986.
+[ROY00] Rhee, I., V. Ozdemir, and Y. Yi. Tear: TCP emulation at receivers—
+Flow control for multimedia streaming, NCSU technical report, April
+2000.
+[RR99] Rosen, E., and Y. Rekhter. BGP/MPLS VPNs. Request for Comments
+2547, March 1999.
+[RS01] Ramaswami, R., and K. Sivarajan. Optical Networks: A Practical
+Perspective, Second Edition. Morgan Kaufmann Publishers, San
+Francisco, second edition, 2001.
+Bibliography 757
+[RS02] Rabinovich, M., and O. Spatscheck. Web Caching and Replication.
+Addison-Wesley, Reading, MA, 2002.
+[Sal78] Saltzer, J. Naming and binding of objects. Lecture Notes on Computer
+Science 60:99–208, 1978.
+[SB89] Schroeder, M. D., and M. Burrows. Performance of Firefly RPC. Pro-
+ceedings of the 12th ACM Symposium on Operating Systems Princi-
+ples, pages 83–90, December 1989.
+[SCFJ96] Schulzrinne, H., S. Casner, R. Frederick, and V. Jacobson. RTP: A
+transport protocol for real-time applications. Request for Comments
+1889, January 1996.
+[Sch95] Schneier, B. Applied Cryptography: Protocols, Algorithms, and
+Source Code in C. John Wiley & Sons, New York, 1995.
+[SCH+99] Savage, S., A. Collins, E. Hoffman, J. Snell, and T. Anderson. The
+end-to-end effects of Internet path selection. Proceedings of the
+ACM SIGCOMM Conference, Cambridge, MA, pages 289–300,
+September 1999.
+[SCJ+02] Schulzrinne, H., G. Camarillo, A. Johnston, J. Peterson, R. Sparks,
+M. Handley, and E. Schooler. SIP: Session initiation protocol. Request
+for Comments 3261, June 2002.
+[Sha48] Shannon, C. A mathematical theory of communication. Bell Systems
+Technical Journal 27:379–423, 623–656, 1948.
+[Sho78] Shoch, J. Inter-network naming, addressing, and routing. Seventeenth
+IEEE Computer Society International Conference (COMPCON),
+pages 72–79, September 1978.
+[SHP91] Spragins, J., J. Hammond, and K. Pawlikowski. Telecommunications:
+Protocols and Design. Addison-Wesley, Reading, MA, 1991.
+[SKPG01] Spalink, T., S. Karlin, L. Peterson, and Y. Gottlieb. Building a robust
+software-based router using network processors. Proceedings of
+758 Bibliography
+the 18th ACM Symposium on Operating Systems Principles (SOSP),
+pages 216–229, Chateau Lake Louise, Banff, Alberta, Canada,
+October 2001.
+[SP99] Spatscheck, O., and L. Peterson. Defending against denial of service
+attacks in Scout. Proceedings of OSDI ’99, pages 59–72, February
+1999.
+[SPS+01] Snoeren, A. C., C. Partridge, L. A. Sanchez, C. E. Jones, F.
+Tchakountio, S. T. Kent, and W. T. Strayer. Hash-based IP traceback.
+Proceedings of ACM SIGCOMM ’01, pages 3–14, August 2001.
+[Sri95a] Srinivasan, R. RPC: Remote procedure call protocol specification
+version 2. Request for Comments 1831, August 1995.
+[Sri95b] Srinivasan, R. XDR: External data representation standard. Request
+for Comments 1832, August 1995.
+[SS98] Sisalem, D., and H. Schulzrinne. The loss-delay based adjustment
+algorithm: A TCP-friendly adaptation scheme. Proceedings of
+NOSSDAV, Cambridge, UK, pages 215–226, 1998.
+[SSZ98] Stoica, I., S. Shenker, and H. Zhang. Core-stateless fair queuing: A
+scalable architecture to approximate fair bandwidth allocations in
+high-speed networks. ACM SIGCOMM ’98, pages 118–130, August
+1998.
+[Sta00a] Stallings, W. Data and Computer Communications. Prentice Hall,
+Upper Saddle River, NJ, sixth edition, 2000.
+[Sta00b] Stallings, W. Local and Metropolitan Area Networks. Prentice Hall,
+Upper Saddle River, NJ, sixth edition, 2000.
+[Ste94a] Steenkiste, P. A. A systematic approach to host interface design for
+high speed networks. IEEE Computer 27(3):47–57, March 1994.
+[Ste94b] Stevens,W. R. TCP/IP Illustrated. Volume 1: The Protocols. Addison-
+Wesley, Reading, MA, 1994.
+Bibliography 759
+[SVSW98] Srinivasan, V., G. Varghese, S. Suri, and M. Waldvogel. Fast scalable
+level four switching. Proceedings of the SIGCOMM ’98 Symposium,
+pages 191–202, September 1998.
+[SW95] Stevens, W. R., and G. R. Wright. TCP/IP Illustrated. Volume 2: The
+Implementation. Addison-Wesley, Reading, MA, 1995.
+[SWKA00] Savage, S., D. Wetherall, A. Karlin, and T. Anderson. Practical
+network support for IP traceback. Proceedings of the 2000 ACM
+SIGCOMM Conference, pages 295–306, August 2000.
+[SZ97] Stoica, I., and H. Zhang. A hierarchical fair service curve algorithm
+for link-sharing and priority services. Proceedings of the SIGCOMM
+’97 Symposium, pages 249–262, October 1997.
+[Tan01] Tanenbaum, A. S. Modern Operating Systems. Prentice Hall, Upper
+Saddle River, NJ, second edition, 2001.
+[Tan02] Tanenbaum, A. S. Computer Networks. Prentice Hall, Upper Saddle
+River, NJ, fourth edition, 2002.
+[Ter86] Terry, D. Structure-free name management for evolving distributed
+environments. Sixth International Conference on Distributed Com-
+puting Systems, pages 502–508, May 1986.
+[TL93] Thekkath, C. A., and H. M. Levy. Limits to low-latency communication
+on high-speed networks. ACM Transactions on Computer
+Systems 11(2):179–203, May 1993.
+[TS93] Traw, C. B. S., and J. M. Smith. Hardware/software organization
+of a high-performance ATM host interface. IEEE Journal of Selec-
+ted Areas in Communications (JSAC) 11(2):240–253, February
+1993.
+[VL87] Varghese, G., and T. Lauck. Hashed and hierarchical timing wheels:
+Data structures for the efficient implementation of a timer facility.
+Proceedings of the 11th ACM Symposium on Operating Systems
+Principles, pages 25–38, November 1987.
+760 Bibliography
+[Wat81] Watson, R. Identifiers (naming) in distributed systems. In B. Lampson,
+M. Paul, and H. Siegert, editors, Distributed System—Architecture
+and Implementation, pages 191–210. Springer-Verlag, New York,
+1981.
+[WC91] Wang, Z., and J. Crowcroft. A new congestion control scheme: Slow
+start and search (Tri-S). ACM Computer Communication Review
+21(1):32–43, January 1991.
+[WC92] Wang, Z., and J. Crowcroft. Eliminating periodic packet losses in
+4.3-Tahoe BSD TCP congestion control algorithm. ACM Computer
+Communication Review 22(2):9–16, April 1992.
+[Wel84] Welch, T. A technique for high-performance data compression. IEEE
+Computer 17(6):8–19, June 1984.
+[WM87] Watson, R. W., and S. A. Mamrak. Gaining efficiency in transport
+services by appropriate design and implementation choices. ACM
+Transactions on Computer Systems 5(2):97–120, May 1987.
+[WMB99] Witten, I. H., A. Moffat, and T. C. Bell. Managing Gigabytes: Com-
+pressing and Indexing Documents and Images. Morgan Kaufmann
+Publishers, San Francisco, 1999.
+[WPP02] Wang, L., V. Pai, and L. Peterson. The effectiveness of request redirection
+on CDN robustness. Proceedings of OSDI ’02, pages 345–360,
+December 2002.
+[WVTP97] Waldvogel, M., G. Varghese, J. Turner, and B. Plattner. Scalable high
+speed routing lookups. Proceedings of the SIGCOMM ’97 Sympo-
+sium, pages 25–36, October 1997.
+[YHA87] Yeh, Y.-S., M. B. Hluchyj, and A. S. Acampora. The knockout
+switch: A simple, modular architecture for high-performance packet
+switching. IEEE Journal of Selected Areas in Communication (JSAC)
+5(8):1274–1283, October 1987.
+[ZDE+93] Zhang, L., S. Deering, D. Estrin, S. Schenker, and D. Zappala. RSVP:
+A new resource reservation protocol. IEEE Network 7(9):8–18,
+September 1993.
+Bibliography 761
+[ZL77] Ziv, J., and A. Lempel. A universal algorithm for sequential data
+compression. IEEE Transactions on Information Theory 23(3):337–
+343, May 1977.
+[ZL78] Ziv, J., and A. Lempel. Compression of individual sequences via
+variable-rate coding. IEEE Transactions on Information Theory
+24(5):530–536, September 1978.
+This Page Intentionally Left Blank
+S O L U T I O N S T O S E L E C T E D E X E R C I S E S
+Chapter 1
+6. We will count the transfer as completed when the last data bit arrives at its destination.
+(a) 1.5MB = 12,582,912 bits. 2 initial RTTs (160 ms) + 12,582,912/10,000,000
+bps (transmit) + RTT/2 (propagation) ? 1.458 seconds.
+(b) To the above we add the time for 1499 RTTs (the number of RTTs between
+when packet 1 arrives and packet 1000 arrives), for a total of 1.46+119.92 =
+121.38.
+(c) This is 74.5 RTTs, plus the initial 2, for 6.12 seconds.
+(d) Right after the handshaking is done we send one packet. One RTT after the
+handshaking we send two packets. At n RTTs past the initial handshaking we
+have sent 1 + 2 + 4 + · · · + 2n = 2n+1 - 1 packets. At n = 10 we have thus
+been able to send all 1000 packets; the last batch arrives 0.5 RTT later. Total
+time is 2 + 10.5 RTTs, or 1 second.
+8. Propagation delay is 50 × 103 m/(2 × 108 m/s) = 250µs. 800 bits/250µs is 3.2
+Mbps. For 512-byte packets, this rises to 16.4 Mbps.
+16. (a) Propagation delay on the link is (55 × 109)/(3 × 108) = 184 seconds. Thus
+the RTT is 268 seconds.
+(b) The delay × bandwidth product for the link is the RTT × the bandwidth =
+23.5 Mb.
+(c) After a picture is taken it must be transmitted on the link and be completely
+propagated before Mission Control can interpret it. Transmit delay for 5Mb
+of data is 39 seconds. Thus, the total time required is transmit delay + propagation
+delay = 223 seconds.
+19. (a) For each link, it takes 1 Gbps/5 Kb = 5µs to transmit the packet on the link,
+after which it takes an additional 10 µs for the last bit to propagate across
+764 Solutions to Selected Exercises
+the link. Thus for a LAN with only one switch that starts forwarding only
+after receiving the whole packet, the total transfer delay is two transmit delays
++ two propagation delays = 30 µs.
+(b) For three switched and thus four links, the total delay is four transmit delays
++ four propagation delays = 60 µs.
+(c) For “cut-through,” a switch need only decode the first 128 bits before beginning
+to forward. This takes 128 ns. This delay replaces the switch transmit
+delays in the previous answer, for a total delay of one transmit delay + three
+cut-through decoding delays + four propagation delays = 45.384 µs.
+29. (a) 1920 × 1080 × 24 × 30 = 1,492,992,000 ? 1.5 Gbps.
+(b) 8 × 8000 = 64 Kbps.
+(c) 260 × 50 = 13 Kbps.
+(d) 24 × 88, 200 = 216, 800 ? 2.1 Mbps.
+Chapter 2
+3. The 4B/5B encoding of the given bit sequence is the following:
+11011 11100 10110 11011 10111 11100 11100 11101
+Bits 1 1 0 1 1 1 1 1 0 0 1 0 1 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 1
+NRZ
+7. Let ? mark each position where a stuffed 0 bit was removed. There was one error
+where the seven consecutive 1s are detected (err ). At the end of the bit sequence,
+the end of frame was detected (eof ).
+01101011111?101001111111
+err
+0 110 01111110
+eof
+19. (a) We take the message 1011 0010 0100 1011, append eight Os, and divide by
+1 0000 0111 (x8 + x2 + x1 + 1). The remainder is 1001 0011. We transmit the
+original message with this remainder appended, resulting in
+1011 0010 0100 0011 1001 0011.
+Solutions to Selected Exercises 765
+(b) Inverting the first bit gives 0011 0010 0100 1011 1001 0011. Dividing by
+1 0000 0111 (x8 + x2 + x1 + 1) gives a remainder of 1011 0110.
+25. One-way latency of the link is 100 ms. Bandwidth × roundtrip delay is about 125
+packets/second × 0.2 seconds, or 25 packets. SWS should be this large.
+(a) If RWS = 1, the necessary sequence number space is 26. Therefore 5 bits are
+needed.
+(b) If RWS = SWS, the sequence number space must cover twice the SWS, or up
+to 50. Therefore 6 bits are needed.
+32. The following gives the timeline for the first case. The second case reduces the
+total transaction time by roughly 1 RTT.
+FRAME[1]
+FRAME[2]
+FRAME[3]
+FRAME[4]
+FRAME[5]
+FRAME[2]
+FRAME[6]
+ACK[1]
+ACK[5]
+ACK[6]
+1 RTT
+2 RTT
+3 RTT
+4 RTT
+Timeout
+FRAME[1]
+FRAME[2]
+FRAME[3]
+FRAME[4]
+FRAME[5]
+FRAME[2]
+FRAME[6]
+ACK[1]
+ACK[5]
+ACK[6]
+1 RTT
+2 RTT
+3 RTT
+4 RTT
+DUPACK[2]
+DUPACK[2]
+DUPACK[2]
+DUPACK[2]
+DUPACK[2]
+DUPACK[2]
+766 Solutions to Selected Exercises
+Chapter 3
+2. The following table is cumulative; at each part the VCI tables consist of the entries
+at that part and also all previous entries.
+Input Output
+Exercise
+part Switch Port VCI Port VCI
+(a) 1 0 0 1 0
+2 3 0 1 0
+4 3 0 0 0
+(b) 2 0 0 1 1
+3 3 0 0 0
+4 3 1 1 0
+(c) 1 1 1 2 0
+2 1 2 3 1
+4 2 0 3 2
+(d) 1 1 2 3 0
+2 1 3 3 2
+4 0 1 3 3
+(e) 2 0 1 2 0
+3 2 0 0 1
+(f) 2 1 4 0 2
+3 0 2 1 0
+4 0 2 3 4
+14. The following list shows the mapping between LANs and their designated bridges:
+B1 A-interface: A B2-interface: D (not C)
+B2 B1-interface: A B3-interface: C B4-interface: D
+B3 C-interface: C B2-interface: A, D
+B4 D-interface: D B2-interface: C (not A)
+B1 dead
+B2 A, B, D
+B3 E, F, G, H
+B4 I
+Solutions to Selected Exercises 767
+B5 idle
+B6 J
+B7 C
+16. All bridges see the packet from D to C. Only B3, B2, and B4 see the packet from
+C to D. Only B1, B2, and B3 see the packet from A to C.
+33. Since the I/O bus speed is less than the memory bandwidth, it is the bottleneck.
+Effective bandwidth that the I/O bus can provide is 1000/2 Mbps because each
+packet crosses the I/O bus twice. Therefore, the number of interfaces is ?500/45? =
+11.
+Chapter 4
+5. By definition, path MTU is 512 bytes. Maximum IP payload size is 512-20 =
+492 bytes. We need to transfer 2048 + 20 = 2068 bytes in the IP payload. This
+would be fragmented into 4 fragments of size 492 bytes and 1 fragment of size
+100 bytes. There are 5 packets in total if we use path MTU. In the previous setting
+we needed 7 packets.
+16. (a)
+Information
+Distance to Reach Node
+Stored at Node A B C D E F
+A 0 2 ? 5 ? ?
+B 2 0 2 ? 1 ?
+C ? 2 0 2 ? 3
+D 5 ? 2 0 ? ?
+E ? 1 ? ? 0 3
+F ? ? 3 ? 3 0
+(b)
+Information
+Distance to Reach Node
+Stored at Node A B C D E F
+A 0 2 4 5 3 ?
+B 2 0 2 4 1 4
+C 4 2 0 2 3 3
+D 5 4 2 0 ? 5
+E 3 1 3 ? 0 3
+F ? 4 3 5 3 0
+768 Solutions to Selected Exercises
+(c)
+Information
+Distance to Reach Node
+Stored at Node A B C D E F
+A 0 2 4 5 3 6
+B 2 0 2 4 1 4
+C 4 2 0 2 3 3
+D 5 4 2 0 5 5
+E 3 1 3 5 0 3
+F 6 4 3 5 3 0
+19. The following is an example network topology:
+A C F
+B D E
+22. Apply each subnet mask, and if the corresponding subnet number matches the
+SubnetNumber column, then use the entry in NextHop.
+(a) Applying the subnet mask 255.255.254.0, we get 128.96.170.0. Use interface
+0 as the next hop.
+(b) Applying subnet mask 255.255.254.0, we get 128.96.166.0 (next hop is R2).
+Applying subnet mask 255.255.252.0, we get 128.96.164.0 (next hop is R3).
+However, 255.255.254.0 is a longer prefix. Use R2 as the next hop.
+(c) None of the subnet number entries match; hence use default router R4.
+(d) Applying subnet mask 255.255.254.0, we get 128.96.168.0. Use interface 1
+as the next hop.
+(e) Applying subnet mask 255.255.252.0, we get 128.96.164.0. Use R3 as the
+next hop.
+29.
+Step Confirmed Tentative
+1 (A,0,-)
+2 (A,0,-) (B,1,B) (D,5,D)
+3 (A,0,-) (B,1,B) (D,4,B) (C,7,B)
+4 (A,0,-) (B,1,B) (D,4,B) (C,5,B) (E,7,B)
+5 (A,0,-) (B,1,B) (D,4,B) (C,5,B) (E,6,B)
+6 (A,0,-) (B,1,B) (D,4,B) (C,5,B) (E,6,B)
+Solutions to Selected Exercises 769
+46. (a) F (b) B (c) E (d) A (e) D (f) C
+56. The following denotes the active ports.
+source
+source
+R1
+R2
+R3 R4 R5
+R6 R7
+D
+E
+R1
+R2
+R3 R4 R5
+R6 R7
+D
+E
+Chapter 5
+10. The advertised window should be large enough to keep the pipe full; delay (RTT)×
+bandwidth here is 140 ms×1 Gbps=140Mb=17.5MBof data. This requires 25
+bits (225 = 33, 554, 432) for the AdvertisedWindow field. The sequence number
+field must not wrap around in the maximum segment lifetime. In 60 seconds,
+770 Solutions to Selected Exercises
+7.5GB can be transmitted. 33 bits allows a sequence space of 8.6 GB, and so will
+not wrap in 60 seconds.
+13. (a) 232 bytes / (5 GB) = 859 ms.
+(b) 1000 ticks in 859 ms is once each 859 µs, indicating wraparound in 3.7Ms
+or approx 43 days.
+27. Using initial Deviation = 50, it took 20 iterations for TimeOut to fall below 300.0.
+Iteration SampleRTT EstRTT Dev diff TimeOut
+0 200.0 90.0 50.0
+1 200.0 103.7 57.5 110.0 333.7
+2 200.0 115.7 62.3 96.3 364.9
+3 200.0 126.2 65.0 84.3 386.2
+4 200.0 135.4 66.1 73.8 399.8
+5 200.0 143.4 66.0 64.6 407.4
+6 200.0 150.4 64.9 56.6 410.0
+7 200.0 156.6 63.0 49.6 408.6
+8 200.0 162.0 60.6 43.4 404.4
+9 200.0 166.7 57.8 38.0 397.9
+10 200.0 170.8 54.8 33.3 390.0
+11 200.0 174.4 51.6 29.2 380.8
+12 200.0 177.6 48.4 25.6 371.2
+13 200.0 180.4 45.2 22.4 361.2
+14 200.0 182.8 42.0 19.6 350.8
+15 200.0 184.9 38.9 17.2 340.5
+16 200.0 186.7 36.0 15.1 330.7
+17 200.0 188.3 33.2 13.3 321.1
+18 200.0 189.7 30.6 11.7 312.1
+19 200.0 190.9 28.1 10.3 303.3
+20 200.0 192.0 25.8 9.1 295.2
+Chapter 6
+11. (a) First we calculate the finishing times Fi . We don’t need to worry about clock
+speed here since we may take Ai = 0 for all the packets. Fi thus becomes just
+the cumulative per-flow size, that is, Fi = Fi-1 + Pi .
+Solutions to Selected Exercises 771
+Packet Size Flow Fi
+1 200 1 200
+2 200 1 400
+3 160 2 160
+4 120 2 280
+5 160 2 440
+6 210 3 210
+7 150 3 360
+8 90 3 450
+We now send in increasing order of Fi : packet 3, packet 1, packet 6, packet
+4, packet 7, packet 2, packet 5, packet 8.
+(b) To give flow 1 a weight of 2, we divide each of its Fi by 2, that is, Fi =
+Fi-1+ Pi /2. To give flow 2 a weight of 4, we divide each of its Fi by 4, that is,
+Fi = Fi-1 + Pi /4. To give flow 3 a weight of 3, we divide each of its Fi by 3,
+that is, Fi = Fi-1 + Pi /3. Again we are using the fact that there is no waiting.
+Packet Size Flow Weighted Fi
+1 200 1 100
+2 200 1 200
+3 160 2 40
+4 120 2 70
+5 160 2 110
+6 210 3 70
+7 150 3 120
+8 90 3 150
+Transmitting in increasing order of the weighted Fi we send as follows: packet
+3, packet 4, packet 6, packet 1, packet 5, packet 7, packet 8, packet 2.
+15. (a) For the ith arriving packet on a given flow, we calculate its estimated finishing
+time Fi by the formula Fi = max{Ai , Fi-1} + 1, where the clock used to
+measure the arrival times Ai runs slow by a factor equal to the number of
+772 Solutions to Selected Exercises
+active queues. The Ai clock is global; the sequence of Fi ’s calculated as above
+is local to each flow.
+The following table lists all events by wall clock time.We identify packets
+by their flow and arrival time; thus, packet A4 is the packet that arrives on
+flow A at wall clock time 4, that is, the third packet. The last three columns are
+the queues for each flow for the subsequent time interval, including the packet
+currently being transmitted. The number of such active queues determines the
+amount by which Ai is incremented on the subsequent line. Multiple packets
+appear on the same line if their Fi values are all the same; the Fi values are
+in italic when Fi = Fi-1 + 1 (versus Fi = Ai + 1).
+Wall A’s B’s C’s
+Clock Ai Arrivals Fi Sent Queue Queue Queue
+1 1.0 A1, B1, C1 2.0 A1 A1 B1 C1
+2 1.333 C2 3.0 B1 B1 C1, C2
+3 1.833 A3 3.0 C1 A3 C1, C2
+4 2.333 B4 3.333 A3 A3 B4 C2, C4
+C4 4.0
+5 2.666 A5 4.0 C2 A5 B4 C2, C4
+6 3.0 A6 5.0 B4 A5, A6 B4 C4, C6
+C6 5.0
+7 3.333 B7 4.333 A5 A5, A6 B7 C4, C6, C7
+C7 6.0
+8 3.666 A8 6.0 C4 A6, A8 B7, B8 C4, C6, C7
+B8 5.333
+9 4 A9 7.0 B7 A6, A8, A9 B7, B8, B9 C6, C7
+B9 6.333
+10 4.333 A6 A6, A8, A9 B8, B9 C6, C7
+11 4.666 A11 8.0 C6 A8, A9, A11 B8, B9 C7
+12 5 C12 7.0 B8 A8, A9, A11 B8, B9 C7, C12
+13 5.333 B13 7.333 A8 A8, A9, A11 B9, B13 C7, C12
+14 5.666 C7 A9, A11 B9, B13 C7, C12
+15 6.0 B15 8.333 B9 A9, A11 B9, B13, B15 C12
+16 6.333 A9 A9, A11 B13, B15 C12
+17 6.666 C12 A11 B13, B15 C12
+18 7 B13 A11 B13, B15
+19 7.5 A11 A11 B15
+20 8 B15 B15
+Solutions to Selected Exercises 773
+(b) For weighted fair queuing we have, for flow B,
+Fi = max{Ai , Fi-1} + 0.5
+For flows A and C, Fi is as before. Here is the table corresponding to the one
+above.
+Wall A’s B’s C’s
+Clock Ai Arrivals Fi Sent Queue Queue Queue
+1 1.0 A1, C1 2.0 B1 A1 B1 C1
+B1 1.5
+2 1.333 C2 3.0 A1 C1, C2
+3 1.833 A3 3.0 C1 A1 C1, C2
+4 2.333 B4 2.833 B4 A3 B4 C2, C4
+C4 4.0
+5 2.666 A5 4.0 A3 A3, A5 C2, C4
+6 3.166 A6 5.0 C2 A5, A6 C2, C4, C6
+C6 5.0
+7 3.666 B7 4.167 A5 A5, A6 B7 C4, C6, C7
+C7 6.0
+8 4.0 A8 6.0 C4 A6, A8 B7, B8 C6, C7
+B8 4.666
+9 4.333 A9 7.0 B7 A6, A8, A9 B7, B8, B9 C6, C7
+B9 5.166
+10 4.666 B8 A6, A8, A9 B8, B9 C6, C7
+11 5.0 A11 8.0 A6 A6, A8, A9, A11 B9 C6, C7
+12 5.333 C12 7.0 C6 A8, A9, A11 B9 C6, C7, C12
+13 5.666 B13 6.166 B9 A8, A9, A11 B9, B13 C7, C12
+14 6.0 A8 A9, A11 B13 C7, C12
+15 6.333 B15 6.833 C7 A9, A11 B13, B15 C12
+16 6.666 B13 A9, A11 B13, B15 C12
+17 7.0 B15 A11 B15 C12
+18 7.333 A9 A11 C12
+19 7.833 C12 A11 C12
+20 8.333 A11 A11
+774 Solutions to Selected Exercises
+36. (a) We have
+TempP = MaxP ×
+AvgLen - MinThreshold
+MaxThreshold - MinThreshold
+AvgLen is halfway between MinThreshold and MaxThreshold, which implies
+that the fraction here is 1/2 and so TempP = MaxP/2 = p/2.
+We now have Pcount = TempP/(1 - count × TempP) = 1/(x - count),
+where x = 2/p. Therefore 1 - Pcount = x-(count+1)
+x-count . Evaluating the product
+(1 - P1) × · · · × (1 - Pn) gives x-2
+x-1 · x-3
+x-2 · · · · x-(n+1)
+x-n = x-(n+1)
+x-1 , where
+x = 2/p.
+(b) From the result of the previous question, ? = x-(n+1)
+x-1 . Therefore x = (n+1) -?
+1-? = 2/p. Accordingly, p = 2(1-?)
+(n+1) -? .
+48. At every second, the bucket volume must not be negative. For a given bucket depth
+D and token rate r , we can calculate the bucket volume v(t) at time t seconds,
+and enforce v(t) to be nonnegative.
+v(0) = D- 5 + r = D- (5 - r ) ? 0
+v(1) = D- 5 - 5 + 2r = D- 2(5 - r ) ? 0
+v(2) = D- 5 - 5 - 1 + 3r = D- (11 - 3r ) ? 0
+v(3) = D- 5 - 5 - 1 + 4r = D- (11 - 4r ) ? 0
+v(4) = D- 5 - 5 - 1 - 6 + 5r = D- (17 - 5r ) ? 0
+v(5) = D- 5 - 5 - 1 - 6 - 1 + 6r = D- 6(3 - r ) ? 0
+We define the functions f1(r ), f2(r ), . . . , f6(r ) as follows:
+f1(r ) = 5 - r
+f2(r ) = 2(5 - r ) = 2 f1(r ) ? f1(r ) (for 1 ? r ? 5)
+f3(r ) = 11 - 3r ? f2(r ) (for r ? 1)
+f4(r ) = 11 - 4r < f3(r ) (for r ? 1)
+f5(r ) = 17 - 5r
+f6(r ) = 6(3 - r ) ? f5(r ) (for r ? 1)
+First of all, for r ? 5, fi (r ) ? 0 for all i . This means if the token rate is faster
+than 5 packets per second, any positive bucket depth will suffice, that is, D ? 0.
+For 1 ? r ? 5, we only need to consider f2(r ) and f5(r ), since other functions
+are less than these functions. You can easily find f2(r ) - f5(r ) = 3r - 7.
+Solutions to Selected Exercises 775
+Therefore, the bucket depth D is enforced by the following formula.
+D ?
+??
+?
+f5(r ) = 17 - 5r (r = 1, 2)
+f2(r ) = 2(5 - r) (r = 3, 4, 5)
+0 (r ? 5)
+Chapter 7
+2. 4 M A R Y 4377 7 J A N U A R Y 7 2002 2 90000 150000 1
+8. INT 4 15
+INT 4 29496729
+INT 4 58993458
+10. 15 be 00000000 00000000 00000000 00001111
+15 le 00001111 00000000 00000000 00000000
+29496729 be 00000001 11000010 00010101 10011001
+29496729 le 10011001 00010101 11000010 00000001
+58993458 be 00000011 10000100 00101011 00110010
+58993458 le 00110010 00101011 10000100 00000011
+Chapter 8
+4. We first note that the S box given implies that to get Ri+1 = F (Ri , Ki+1) ? Li, we
+simply XOR the middle 4 bits of each 6-bit chunk of Ki+1 with the corresponding
+4-bit chunk of Ri . In bits, Ki+1 (5af310 7a3fff in hexadecimal) is
+0101 1010 1111 0011 0001 0000 0111 1010 0011 1111 1111 1111
+or with the middle four bits separated from each 6-bit piece, with only 4-bit
+chunks shown below:
+0 1011 01 0111 10 0110 00 1000 00 1111 01 0001 11 1111 11 1111 1
+1011 -- 0111 -- 0110 -- 1000 -- 1111 -- 0001 -- 1111 -- 1111
+Li = Ri-1 is deadbeef in hex. In bits, it is represented as follows:
+1101 1110 1010 1101 1011 1110 1110 1111
+From the previous exercise, we get Ri as follows:
+1001 0011 0001 0110 1011 1110 1110 1111
+776 Solutions to Selected Exercises
+Now we can XOR three pieces, Li , Ri , and Ki+1. The final result Ri+1 is the
+following:
+1111 1010 1101 0011 1111 0001 1111 1111
+or, in hex, fad3 f1ff.
+7. (a) We must find d so that 5d ? 1 mod ( p-1)(q-1). This means 5d+72k = 1
+for some k. Using the Euclidean mutually dividing algorithm, we find d =
+29 + 72r , where r is an arbitrary integer. We take the least positive d = 29.
+(b) pq = 91 so m5 mod pq = 75 mod 91 = 63.
+(c) cd mod pq = 229 mod 91 = 32.
+I N D E X
+Numbers
+4B/5B encoding, 78–79
+defined, 78
+efficiency, 78
+FDDI, 129
+illustrated, 79
+See also encoding
+6-Bone, 684
+10Base2, 113, 114
+10BaseT, 113–114
+A
+AAL3/4, 199–201
+cell format, 200
+defined, 199
+encapsulation and
+segmentation, 201
+header, 200
+packet format, 199
+See also ATM Adaptation
+Layer (AAL)
+AAL5, 201–204
+CS-PDU, 202–203
+defined, 202
+encapsulation and
+segmentation, 202
+functionality, 203
+missing feature, 203
+multiplexing and, 203
+packet format, 202
+See also ATM Adaptation
+Layer (AAL)
+abstract data type (ADT), 420
+Abstract Syntax Notation
+One (ASN.1), 543–544
+BER, 543
+compound data types, 544
+data representation, 543
+defined, 543
+multibyte tags, 543–544
+nesting in, 544
+representation for 4-byte
+integer, 544
+representation for length,
+545
+XDR vs., 544
+AC coefficients, 554
+access points (APs), 134–136
+active scanning, 136
+as base station role, 135
+illustrated, 135
+passive scanning, 136
+selecting, 135
+See also wireless networks
+acknowledgments (ACK)
+defined, 98
+duplicate, 476
+implicit, 415
+negative (NAK), 103
+for pacing packet
+transmission, 468
+partial, 409
+selective, 103, 409, 431
+use strategy, 98
+active queue management,
+481
+active scanning, 136
+acyclic tree, 186
+ad hoc mobile networks, 299
+adaptive retransmission,
+397–401
+defined, 397
+implementation, 400–401
+Jacobson/Karels algorithm,
+399–400
+Karn/Partridge algorithm,
+398–399
+original algorithm,
+397–398
+See also Transmission
+Control Protocol (TCP)
+adaptive video coding,
+564–566
+additive increase/
+multiplicative decrease
+(AIMD), 468–471
+“additive increase” part,
+469–470
+concept, 471
+defined, 469
+“multiplicative decrease”
+part, 469
+as necessary condition, 471
+packets in transit, 469
+See also congestion control
+Address Resolution Protocol
+(ARP), 207, 258–263,
+642
+ATM, 261–263
+defined, 259
+goal, 259
+invocation, 259
+messages, 297
+778 Index
+Address Resolution Protocol
+(ARP) (continued)
+packet format, 260
+process, 261
+proxy, 297
+server, 261, 262
+table, 260
+uses, 260
+address utilization, 301
+addresses
+anycast, 330
+assignment efficiency, 306
+assignment inefficiency, 301
+care-of, 297, 298
+contact, 679
+flat, 634
+global, 182, 250–252
+hardware, 298
+home, 296
+LANE, 207
+mapping names into, 693
+multicast, 331
+names translated into, 635
+NSAP, 320
+of record, 678–679
+source, 182, 190
+two-tier, 426
+unicast, 323–325
+See also IP addresses
+addressing
+challenge, 234
+geographic, 324
+hierarchical, 255
+subnet, 303
+admission control, 502–503
+defined, 500, 502
+dependency, 502
+policing vs., 503
+policy and, 503
+See also Integrated Services
+(IntServ)
+Advanced Mobile Phone
+System (AMPS), 74
+advertised window, 403
+aliases, 639
+Aloha, 111
+anycast address, 330
+Application Level Framing
+(ALF), 664
+application processing, 680
+application profile, 673
+application programmer
+perspective, 6
+application programming
+interfaces (APIs),
+31–33
+defined, 31
+industry support for, 31
+syntax, 31
+applications, 4–6, 632–705
+conferencing, 661
+delay-adaptive, 498
+DNS, 632, 634–643
+e-mail, 644–650
+example, 33–36
+file transfer, 492
+hybrid, 680–681
+multimedia, 660–680
+network management,
+657–659
+non-real-time, 493
+performance needs, 48–50
+rate-adaptive, 498
+real-time, 492, 493–498
+real-time audio, 493–496
+sdr, 6
+streaming, 4, 661–662
+summary, 704
+traditional, 643–659
+vat, 6, 661, 663
+vic, 5–6
+videoconferencing, 5
+video-on-demand, 4–5
+voice/video, 492
+wb, 6
+World Wide Web, 650–657
+application-specific protocols,
+435–436
+areas, 316–318
+area border router (ABR),
+316, 317
+defined, 316
+divided into, 317, 318
+use of, 318
+See also routing
+argument marshalling
+canonical intermediate
+form, 539
+conversion strategy,
+538–539
+data types, 537–538
+defined, 536
+illustrated, 538
+receiver-makes-right, 539
+stubs, 540–541
+tagged data, 539–540
+tags, 539–540
+taxonomy, 537–541
+untagged data, 539–540
+ARPANET, 28
+link-cost calculation, 291
+new routing mechanism,
+292
+original routing
+mechanism, 292
+revised routing metric, 293
+routing metric evolution,
+291–292
+ASCII, 644–646
+character set, 646
+email messages, 645
+assured forwarding (AF),
+510–511
+asymmetric DSL (ADSL),
+72
+asynchronous protocols,
+418–419
+asynchronous transfer mode
+(ATM), 165, 192–210
+cell format, 197–198
+cells, 193–198
+circuit emulation by tunnel,
+348
+Index 779
+as connection-oriented,
+packet-switched
+technology, 193
+defined, 192
+early packet discard (EPD),
+486
+Ethernet vs., 206
+fixed-length packets, 193
+future of, 221
+homogeneous links, 256
+implementation, 210–220
+as LAN backbone, 206
+in LANs, 205–210
+networks, 71, 256
+performance, 210–220
+physical layers for,
+204–205
+popularity, 205
+properties, 177
+Q.2931, 193
+scalability, 194
+segmentation and
+reassembly (SAR),
+198–203
+signalling, 193, 500
+standardization, 196
+switches, 205–206, 220
+switches functioning as
+MPLS LSRs, 344
+virtual paths, 203–204
+See also ATM QoS
+ATM Adaptation Layer
+(AAL)
+AAL1, 199
+AAL2, 199
+AAL3/4, 199–201
+AAL5, 201–204
+defined, 198
+ATM Forum, 207, 514
+ATM QoS, 498, 513–517
+ABR, 515–517
+CBR, 514
+classes, 513
+definition time, 513
+RVSP vs., 514–515
+UBR, 514–515
+VBR-nrt, 514
+VBR-rt, 514
+See also quality of service
+(QoS)
+ATMARP, 261–263
+ARP server, 261, 262
+defined, 261
+IP-to-ATM address
+mappings, 262
+LIS, 261–262
+at-most-once semantics, 414
+ATM-over-SONET products,
+204–205
+audience, this book, ix–xx
+authentication, 594–598
+defined, 579
+implementation, 594–598
+PGP, 606
+protocols, 594–598
+public key, 597–598
+server, 596
+three-way handshake,
+595–596
+trusted third party,
+596–597
+See also security
+Authentication Header (AH),
+614, 615–616
+AuthenticationData field,
+616
+defined, 615
+illustrated, 616
+NextHdr field, 615
+PayloadLength field, 615
+Reserved field, 615
+SeqNum field, 616
+SPI field, 615
+See also IP Security (IPSEC)
+autoconfiguration, 328–329
+problem, 328
+stateless, 328
+support, 328
+automatic repeat request
+(ARQ), 147
+algorithms, 98–1111
+concurrent logical
+channels, 110–111
+defined, 98
+point-to-point, 137
+sliding window, 101–110
+stop-and-wait, 98–101
+autonomous systems (ASs),
+301
+border router, 310
+concept, 309
+default routes, 309
+destinations outside of, 310
+intradomain routing
+protocols, 309
+multihomed, 311
+network with two, 309
+stub, 311
+transit, 311
+available bit rate (ABR),
+515–517
+defined, 515
+intention, 515
+operation, 515
+TCP congestion avoidance
+and, 516
+VC with segmented control
+loops, 516
+See also ATM QoS
+AVP profile, 673–674
+B
+B frames
+combining, 565
+decompression, 560
+defined, 557
+generation, 560
+macroblock processing,
+559
+sequence, 558
+See also frames (MPEG)
+backend servers, 699
+bandwidth, 40–44
+bit width, 42
+780 Index
+bandwidth (continued)
+effective, 145, 146
+high-speed network, 46
+I/O bus, 211
+latency and, 42–43
+latency relationship, 47
+leased line, 70
+memory, 144, 211
+need, reducing, 492
+network, 145
+peak, 144
+physical link, 41
+requirements, 41
+RTCP, 669
+specification, 44
+subnet manager (SBM),
+507–508
+throughput vs., 40–42
+See also performance
+banyan network, 219
+base types, 537
+Basic Encoding Rules (BER),
+543
+Batcher-banyan switch,
+219–220
+baud rate, 76
+Berkeley Software
+Distribution (BSD), 280
+best-effort service, 238–239,
+375
+connectionless, 239
+defined, 238–239
+model, 458
+big-endian form
+defined, 536
+illustrated, 537
+XDR, 542
+Binary Synchronous
+Communication
+(BISYNC) protocol,
+80–81
+binding cache, 299
+bit errors, 18
+bit rate, 76
+bit stuffing, 84
+bit-by-bit round-robin, 465
+bit-oriented protocols, 83–84
+BLAST, 408–413
+algorithm, 408–411
+concept, 408–409
+defined, 407
+fragment retransmission,
+411
+message delivery, 408, 411
+missing fragments and, 411
+performance, 411
+receive side, 409
+receiver conditions,
+409–410
+representative timeline, 410
+send side, 409
+in simple RPC stack,
+424–425
+SRR, 409
+See also Remote Procedure
+Call (RPC)
+BLAST message header,
+411–413
+DATA message, 413
+defined, 411–412
+FragMask field, 412
+illustrated, 412
+Length field, 413
+MID field, 412–413
+NumFrags field, 413
+ProtNum field, 413
+BOOTP, 266
+Border Gateway Protocol
+(BGP), 310–316, 705
+BGP-4 update packet
+format, 314
+complete path
+advertisement, 313
+defined, 310
+interior (IBGP), 316
+looping path prevention,
+313
+network running example,
+313
+nodes participating in, 315
+path cancellation, 314
+sessions, 312
+speakers, 312, 314, 315
+starting position, 310
+update message, 314
+See also interdomain
+routing
+border routers, 310
+bottleneck routers, 454
+bridges, 180–192
+closing loop, 185
+configuration message
+reception, 188–189
+defined, 181, 254
+designated, 187, 189
+Ethernet, 181
+in extended LANs, 187
+forwarding table
+maintained by, 182, 183
+frame forwarding, 187
+goal, 189
+learning, 181–185
+limitations of, 190–192
+as link-level nodes, 254
+multiport, 255
+root, 188, 189
+table, 185
+broadcast
+addresses, 116
+defined, 10
+reverse-path (RPB),
+333–335
+shortest-path, 335
+support, 189–190
+broadcast and unknown
+server (BUS), 208, 209,
+210
+buffer descriptor lists, 141
+buffering
+internal, 214
+output, 215
+ports and, 214–215
+buffers, 142
+capacity, 49
+Index 781
+as delay source, 216
+extra, 490
+FIFO implementation, 215
+playback, 494–495, 663
+QoS characteristics and,
+216
+receive, 390
+send, 389–390
+VC, 175
+burst errors, 18, 96
+C
+cable modems, 73–74
+bandwidth sharing, 74
+defined, 73
+downstream/upstream
+rates, 73
+use of, 74
+See also last-mile links
+cables, 69
+Cat-5 twisted pair, 69
+types of, 70
+See also links
+Cache Array Routing
+Protocol (CARP), 703
+cache replacement algorithm,
+185
+caching, 656–657
+benefits, 656
+“cache directives,” 657
+HTTP and, 657
+implementation, 657
+canonical intermediate form,
+539
+care-of address, 297, 298
+Carrier Sense Multiple Access
+(CSMA)
+with Collision Detection
+(CSMA/CD), 111
+networks, 64
+cell formats, 197–198
+NNI, 197
+UNI, 197
+See also asynchronous
+transfer mode (ATM)
+cell switching, 192–210
+cells, 193–198
+boundaries, 205
+characteristics, 193
+fixed-length, 194
+forwarding along tunnel,
+350
+link utilization and,
+195–196
+payload length, 196
+queues and, 194–195
+RM, 515, 516
+size, 193–196
+thirty-two-byte, 196
+See also asynchronous
+transfer mode (ATM)
+centralized forwarding, 258
+certificate revocation list
+(CRL), 604
+certificates, 601–604
+chains of trust, 602–603
+components, 603
+defined, 602
+handshake protocol and,
+612
+possession of, 604
+revocation, 604
+X.509 standard, 603
+See also security
+certification authority (CA)
+CRL issued by, 604
+defined, 602
+root, 603
+tree-structured hierarchy,
+603
+chains of trust, 602–603
+CHAN, 414–423
+algorithm, 414–416
+at-most-once semantics,
+414
+client implementation, 422
+data structures, 419
+defined, 407, 414
+implementation, 419–423
+message delivery, 414
+PROBE timer, 418, 423
+request/reply algorithm
+implementation, 425
+RETRANSMIT timer, 418,
+421, 423
+server implementation, 422
+in simple RPC stack, 425
+SunRPC vs., 426
+as synchronous protocol,
+418–419
+timeline, 415
+timeline using implicit
+ACKs, 415
+timeout and
+acknowledgment
+mechanism, 425
+timeouts, 418
+See also Remote Procedure
+Call (RPC)
+CHAN message format,
+416–417
+BID field, 417
+CID field, 416
+defined, 416
+illustrated, 517
+MID field, 416–417
+ProtNum field, 416
+changes, this edition, xx–xxi
+channels
+abstract, 16
+capacity, available, 49
+existing, options, 17
+functionality, 15, 18
+inventing new, 17
+logical, 15, 110–111, 414
+message stream, 17
+request/reply, 17
+character stuffing, 81
+checksums, 88, 89
+cryptographic, 581
+defined, 89
+Internet algorithm, 90–91
+MD5, 601
+782 Index
+checksums (continued)
+TCP, 384
+UDP, 377
+variations, 90
+See also error detection
+cipher block chaining (CBC),
+586–587, 598–599
+defined, 587
+illustrated, 588
+ciphertext messages, 578
+circuit switches, 164
+circuit-switched networks, 8
+Classical IP over ATM model,
+261, 262
+classical proxy, 621
+classless interdomain routing
+(CIDR), 306–308,
+352–353
+defined, 306
+multiple address collapse,
+307
+prefix length, 308
+route aggregation with, 308
+supernetting, 307
+See also routing
+Clear to Send (CTS) frames,
+134
+clients
+defined, 17
+example application,
+33–35
+SMTP, 649
+SNMP, 659
+See also servers
+clock-based framing, 84–87
+clouds, 9
+coarse-grained timeouts,
+477–478
+collision domain, 114
+color images, 556–557
+compression vs. fidelity,
+557
+RGB, 556
+YUV, 556
+See also JPEG
+Common Object Request
+Broker Architecture
+(CORBA), 428
+complex types, 538
+compression, 548–568
+algorithms, 550
+audio, 566–568
+benefits, 549
+image, 552–557
+JPEG, 552–557
+lossless, 549
+lossy, 549
+MP3, 566–568
+MPEG, 557–565
+ratio, 549
+summary, 568
+video, 557–565
+computer networks. See
+networks
+concurrency management,
+425
+concurrent logical channels,
+110–111
+behavior, 111
+defined, 110
+See also automatic repeat
+request (ARQ)
+conferencing applications,
+661
+congestion
+collapse, 460
+defined, 176
+introduction to, 176–177
+lost segments and, 399
+in packet-switched
+networks, 453
+X.25 model and, 177
+congestion avoidance,
+478–491
+ABR interaction, 516
+DECbit, 478–480
+defined, 478
+RED, 480–486
+source-based, 486–491
+congestion control, 468–478
+additive
+increase/multiplicative
+decrease, 468–471
+behavior, 474
+congestion window,
+468–469
+defined, 379, 450, 452, 468
+equation-based, 517–518
+evaluating, 491–493
+fairness, 452
+fast recovery, 478
+flow control vs., 452
+introduction of, 468
+mechanism invention,
+492–493
+packet-pair, 476
+real-time applications and,
+517
+routing vs., 453–454
+slow start, 471–476
+summary, 518
+TCP, 379, 468–478
+“TCP-friendly,” 517
+See also resource allocation
+congestion window, 468–469,
+478
+decreasing, 490, 491
+flattening, 474, 475
+illustrated, 491
+increasing, 472, 474
+increasing/decreasing over
+time, 474
+observed throughput rate
+vs., 489
+reset, 475
+target, 473
+TCP Vegas adjustment,
+490
+connectionless flows,
+454–455
+defined, 454
+illustrated, 455
+See also flows
+connectionless networks. See
+datagrams
+Index 783
+connection-oriented
+approach. See virtual
+circuit switching
+connectivity, 7–10, 51
+clouds, 9
+host-to-host, 10
+internetwork, 9–10
+levels, 7
+links, 7
+nodes, 7–9
+consistent hashing, 693–694,
+702
+constant bit rate (CBR), 514
+constrained shortest path first
+(CSPF), 348
+contact address, 679
+content distribution networks
+(CDNs), 698–703
+Akamai, 699
+commercial, 699, 701
+components illustration,
+700
+defined, 699
+Digital Island, 699
+distribution factors, 700
+flash crowd, 699
+load balance, 700
+locality, 700
+mechanisms, 700–701
+network proximity, 700,
+703
+as overlay networks, 701
+policies, 702–703
+redirectors, 699
+server surrogates, 699
+system throughput, 699
+contention
+occurrence, 176
+problem, 165
+contributing source (CSRC),
+668
+control status register (CSR),
+139–140
+defined, 139
+example, 139–140
+location, 139
+See also network adapters
+controlled load service, 499
+convergence
+defined, 276
+delaying, 278
+speed of, 278
+convergence sublayer PDUs
+(CS-PDU), 199–200
+AAL3/4, 199–200
+AAL5, 202
+count to infinity problem, 278
+counting semaphore, 105
+crossbar switches, 216–217
+cryptographic algorithms,
+580–594
+best, 582
+as building blocks, 581
+deployment risks, 582
+DES, 581, 582, 583–588
+hashing, 580
+implementation, 593–594
+MD5, 581, 591–593
+performance, 594
+PGP use of, 607
+public key, 580
+requirements, 582–583
+RSA, 581, 588–591
+secret key, 580
+types of, 579
+See also security
+cryptographic checksum, 581
+cyclic redundancy check
+(CRC), 81, 88–89
+calculation, 92–95
+common polynomials, 96
+CRC-32, 89
+defined, 88
+divisor polynomial, 92–93
+mechanics, 92
+polynomial arithmetic
+modulo 2, 93
+with polynomial long
+division, 95
+with shift register, 97
+See also error detection
+D
+data compression, 535,
+548–568
+Data Encryption Standard
+(DES), 579, 580,
+583–588
+breaking, 587
+with CBC, 586–587,
+598–599
+complexity, 582
+compression permutation,
+586
+defined, 583
+example S box, 587
+expansion phase, 587
+functioning of both sides
+of, 586
+high-level outline, 584
+initial (and final)
+permutation, 584
+initialization vector (IV),
+587
+key permutation, 585
+key rotation amount per
+round, 585
+manipulation at each
+round, 585
+marginal security, 583
+performance, 594
+phases, 583
+security proof, 587
+substitution box, 586
+triple (3DES), 588
+See also cryptographic
+algorithms
+data manipulation functions,
+535
+data types, 537–538
+base, 537
+complex, 538
+flat, 538
+784 Index
+data types (continued)
+See also argument
+marshalling
+datagram forwarding
+algorithm, 253, 305
+defined, 252
+handling, 252–253
+illustration, 169
+IP, 252–258
+table, 168, 253
+datagrams, 168–170
+defined, 168
+IP, 238, 242–243
+network characteristics,
+169–170
+source routing and,
+179
+switch/link failure, 170
+DC coefficient, 554, 555
+DCE-RPC, 428–431
+ActivityId field, 430
+at-most-once call
+semantics, 428
+defined, 428
+fragmentation with
+selective
+acknowledgments, 431
+FragmentNum field, 430
+message exchange, 429
+message labeling, 428
+multiple call semantics
+support, 428
+SequenceNum field, 430
+ServerBoot field, 429–430
+See also Remote Procedure
+Call (RPC)
+DECbit, 478–480
+congestion bit, 479
+defined, 479
+host part, 479–480
+RED vs., 480–481
+See also congestion
+avoidance
+decompression, 548
+algorithms, 549
+defined, 555
+See also compression
+decryption, 578
+default routes, 309
+delay
+buffer source, 216
+end-to-end routing, 698
+example distribution of,
+496
+propagation, 41–42, 44, 50
+queuing, 42, 50
+throughput ratio, 459
+See also latency
+delay x bandwidth product,
+44–46
+data loss and, 475
+defined, 44
+importance, 45
+RTT and, 46
+using, 45
+See also performance
+delay-adaptive applications,
+498
+delta encoding, 551
+demultiplexing, 25–26
+demux keys, 25, 32
+denial-of-service attack,
+623–624
+defined, 618, 623
+example, 623–624
+protecting against, 624
+SYN attack, 623
+dense wavelength division
+multiplexing (DWDM),
+179
+equipment, 179
+terminals, 180
+designated bridges, 187
+designated router (DR), 338
+designated subnet bandwidth
+manager (DSBM), 507
+destination-based forwarding,
+340–346
+device drivers, 143–144
+defined, 66–67, 143
+routines, 143
+See also network adapters
+dictionary-based compression
+methods, 551–552
+differential Manchester, 78,
+126
+Differential Pulse Code
+Modulation (DPCM),
+551
+Differentiated Services
+(DiffServ), 509–513
+code points (DSCPs), 510,
+512
+defined, 509
+as middle ground, 519
+per-hop behaviors (PHBs),
+510–511
+stringent applications and,
+519
+traffic classes, 509
+See also quality of service
+(QoS)
+Diffie-Hellman key exchange,
+597–599
+defined, 597–598
+parameters, 598
+process, 598–599
+Digital Data Communication
+Message Protocol
+(DDCMP), 80, 82–83
+defined, 82
+frame format, 82
+Digital Network Architecture
+(DNA), 478
+digital signatures
+defined, 599, 602
+DSS, 600
+with RSA, 599–600
+digital subscriber line (DSL),
+72–73
+asymmetric (ADSL), 72
+very high rate (VDSL), 73
+See also last-mile links
+Dijkstra’s shortest-path
+algorithm, 285, 332
+direct link networks, 64–148
+Index 785
+direct memory access (DMA),
+141–143, 211
+buffer descriptor lists, 141
+defined, 141
+gather-write, 142
+scatter-read, 142
+use decision, 148
+See also network adapters
+direct sequence, 132
+discrete cosine transform
+(DCT), 553
+AC coefficients, 554
+DC coefficient, 554, 555
+formulas, 554
+phase, 553–555
+signal breaking, 553
+distance-vector multicast,
+332–335
+RPB, 333–335
+RPM, 335
+as two-stage process,
+332–333
+See also multicast
+distance-vector routing,
+274–280
+defined, 274
+functioning, 274–276
+implementation, 279–280
+initial distance at nodes,
+275
+link-state routing vs., 288
+node messages, 275–276
+periodic update, 276–277
+RIP, 280–282
+triggered update, 277
+See also routing
+Distributed Computing
+Environment (DCE)
+defined, 428
+NDR, 544–545
+See also DCE-RPC
+distributed denial-of-service
+(DDos), 624, 699
+distributed hash tables
+(DHT), 694, 698
+distributed routing, 273–274
+divisor polynomial, 92–93
+domain hierarchy, 635–636
+illustrated, 636
+resource records and, 638
+tree, 636
+zones, 636–638
+domain name system (DNS),
+634–643
+domain hierarchy, 635–636
+hierarchical name space,
+635
+name resolution, 640–643
+name servers, 636–640,
+701
+names, 635
+naming conventions,
+640–641
+double-bit errors, 96
+drop policies, 462–463
+drop probability, 481, 482
+dual attachment stations
+(DASs), 128
+duplicate acknowledgments,
+476
+Dynamic Host Configuration
+Protocol (DHCP),
+263–266
+BOOTP and, 266
+complexity and, 266
+defined, 264
+goal, 264
+message format, 265
+network manageability
+and, 266
+packet format, 265
+packets, 266
+relay agent, 264–265
+server, 264, 265, 266
+server contact, 264
+dynamic port selection, 619
+E
+early packet discard (EPD),
+486
+early random drop, 481
+edge weights, 294
+effective resource allocation,
+458–460
+effective throughput, 145,
+146
+electromagnetic spectrum,
+68
+electronic mail, 644–650
+mail reader, 649–650
+message format, 644–646
+message header, 644–645
+message transfer, 647–649
+See also applications
+Encapsulating Security
+Payload (ESP), 614, 615,
+616–617
+benefits, 616
+for building IPSEC tunnels,
+617
+defined, 616
+fields, 617
+illustrated, 617
+See also IP Security
+(IPSEC)
+encapsulation, 24–25
+defined, 24
+illustrated, 25
+process, 24
+encoding, 75–79, 146
+4B/5B, 78–79
+defined, 64
+delta, 551
+Manchester, 77–78
+NRZ, 75–77
+NRZI, 77
+phase, 556
+strategy illustration, 77
+encryption
+defined, 578
+PGP, 607
+public key, 580, 588–591
+secret key, 578, 580,
+583–588
+See also security
+786 Index
+end system multicast,
+684–688
+defined, 684
+host joining, 687
+mesh maintenance, 688
+mesh overlay, 685, 686
+See also multicast
+end-to-end data, 534–569
+data compression, 548–568
+presentation formatting,
+536–548
+summary, 568
+end-to-end protocols,
+374–436
+defined, 374
+measured round-trip
+latencies, 433
+performance, 431–434
+properties, 374
+RPC, 405–431
+shaping forces, 374
+summary, 434–435
+TCP, 378–405
+UDP, 376–378
+See also protocols
+end-to-end routing delays,
+698
+equation-based congestion
+control, 517–518
+defined, 518
+general form, 518
+See also congestion control
+error correction, 88
+approaches, 88
+ECC, 95
+error detection vs., 96–98
+forward (FEC), 98
+error detection, 88–97, 147
+checksums, 88, 89, 90–91
+concept, 88
+CRC, 88–89, 92–97
+defined, 64
+error correction vs., 96–98
+on hop-by-hop basis, 381
+two-dimensional parity, 88,
+89–90
+error-correcting code (ECC),
+95
+errors
+burst, 96
+double-bit, 96
+reporting, 266–267
+single-bit, 96
+Ethernet, 111–120
+1-persistent protocol, 116
+10Base2, 113, 114
+10BaseT, 113–114
+access control, 114–119
+addresses, 115–116
+addresses, mapping IP
+addresses into, 260
+ATM vs., 206
+beginnings, 111
+bridges, 181
+bridging, 165
+collision domain, 114
+experience with, 119–120
+exponential backoff, 119
+Fast, 111–112
+frame format, 114–115
+Gigabit, 112, 206
+globally unique identifiers,
+168
+hosts, 119
+hubs, 114
+interface cards, 211
+with lightly loaded
+conditions, 119
+media access control
+(MAC), 114
+multiple segments,
+112
+physical properties,
+112–114
+p-persistent protocols,
+116–117
+repeaters, 112, 113
+switches, 221
+token ring vs., 121
+transceiver and adapter,
+112
+transmitter algorithm,
+116–119
+worse-case scenario, 118
+exact match algorithm, 343
+exercises
+applications, 707–713
+congestion control and
+resource allocation,
+521–533
+direct link networks,
+150–163
+end-to-end data, 570–576
+end-to-end protocols,
+437–448
+foundation, 55–62
+internetworking, 355–373
+network security, 625–631
+packet switching, 223–232
+solutions to, 763–776
+styles, xxv
+expedited forwarding (EF),
+510
+Explicit Congestion
+Notification (ECN),
+480–481
+bit set, 480, 481
+standardization, 480
+explicit routing, 346–348
+benefits, 347
+CSPF, 348
+defined, 346
+fast enroute, 347
+network requirement, 347
+traffic engineering
+application, 347
+See also Multiprotocol
+Label Switching (MPLS);
+source routing
+exponential backoff, 119
+extended LANs, 181,
+190–192
+bridges in, 187
+with loops, 186
+Index 787
+scale and, 190
+See also LANs
+Extensible Markup Language
+(XML), 546–548
+built-in types support, 547
+defined, 546
+documents, 546, 547, 548
+as generalization of
+HTML, 546
+schemas, 547
+extension headers, 327, 329
+Exterior Gateway Protocol
+(EGP), 310
+External Data Representation
+(XDR), 541–543
+ASN.1 vs., 544
+big-endian format, 542
+defined, 541
+example encoding of
+structures in, 542
+integer, 542
+performance, 543
+taxonomy, 541–542
+variable-length arrays, 542
+F
+fabrics, 216–220
+banyan, 217
+crossbar, 216–217
+defined, 212–213
+functions, 216
+high-performance, 216
+packet switching, 213
+self-routing, 213–214, 217
+shared-bus, 216
+shared-memory, 216
+fair queuing (FQ), 463–468
+approximating bit-by-bit
+round-robin, 465
+behavior simulation, 465
+with congestion-control
+mechanism, 464
+defined, 464
+drop policies, 467
+example illustration, 466
+fairness, 464
+guaranteed minimum
+bandwidth, 467
+implementation, 466
+at routers, 464
+as scheduling algorithm,
+467
+weighted (WFQ), 467–468
+work-conserving, 466, 467
+See also queuing
+fair resource allocation,
+460–461
+defined, 460
+fairness index, 461
+RED, 484
+See also resource allocation
+fairness index, 461
+fast enroute, 347
+Fast Ethernet, 111–112
+fast recovery, 478
+fast retransmit, 476–478
+based on duplicate ACKs,
+476–477
+defined, 476
+illustrated, 477
+trace of TCP with, 477
+See also congestion control
+features, this book, xxiii
+feedback-based resource
+allocation, 456–457
+Fiber Channel, 13
+Fiber Distributed Data
+Interface (FDDI), 28,
+120, 127–131
+4B/5B encoding, 129
+asynchronous, 129
+claim frames, 130
+defined, 127
+dual attachment stations
+(DASs), 128
+dual-fiber ring, 127
+frame format, 131
+physical media, 128
+physical properties,
+127–129
+ring monitor, 130
+single attachment stations
+(SASs), 127–128
+synchronous, 129
+target token rotation time
+(TTRT), 129–130
+timed-token algorithm,
+129–130
+token maintenance,
+130–131
+See also token rings
+field-programmable gate
+arrays (FPGAs),
+138–139
+File Transfer Protocol (FTP),
+16, 29
+defined, 27
+proxy, 621
+as supported application,
+16
+filter-based firewalls,
+618–619
+configuration, 618–619
+dynamic port selection, 619
+filter installation, 619
+as level 4 switches, 619
+See also firewalls
+firewalls, 617–622
+defined, 617–618
+filter-based, 618–619
+function illustration, 618
+limitations, 622
+mobile code and, 622
+proxy-based, 618, 620–621
+uses, 618
+vulnerabilities, 622
+See also security
+first-come-first-served (FCFS)
+queuing, 462
+first-in-first-out (FIFO)
+queuing, 14, 462–463
+defined, 462
+drawbacks, 463–464
+788 Index
+first-in-first-out (FIFO)
+queuing (continued)
+illustrated, 462
+priority queuing variation,
+463
+as scheduling discipline,
+462
+with tail drop, 462–463
+See also queuing
+“fish” network, 346
+fixed-length packets, 194,
+195
+flash crowd, 699
+flat types, 538
+flow control
+congestion control vs., 452
+defined, 379
+hop-by-hop, 176
+sliding window for, 110
+TCP, 380, 390–393
+UDP and, 377
+flows
+abstraction, 454
+connectionless, 454–455
+defined, 454
+with different token bucket
+descriptions, 502
+explicit, 455
+fairness index, 461
+hard state, 455
+implicit, 455
+multicast, 504
+multiple, passing through
+set of routers, 455
+soft state, 455
+WFQ, 467
+flowspecs, 500–502
+defined, 500
+RSpec, 500
+TSpec, 500–502, 505–506
+See also Integrated Services
+(IntServ)
+foreign agent, 296–299
+care-of address, 297
+defined, 296
+See also mobile host
+routing
+forward error correction
+(FEC), 98
+forward search algorithm,
+286
+forwarding
+assured (AF), 510–511
+ATM cells along tunnel,
+350
+centralized, 258
+datagram, 169, 252–258
+destination-based, 340–346
+distributed, 258
+expedited (EF), 510
+IP, 308
+packet, 680
+port, 609–610
+routing vs., 271
+See also switching
+forwarding tables, 168
+bridge-maintained, 182,
+183
+defined, 168, 271
+directly connected network
+information, 254
+entries, scanning, 184
+example, 254, 455
+example rows, 272
+illustrated, 168
+routers, 255
+routing tables vs., 271
+structures, 271
+with subnetting, 304
+at tunnel entrance, 269
+update, 184
+fragmentation, 242–245
+header fields, 244
+output, 244–245
+process, 243–244
+reassembly and, 245–249
+with selective
+acknowledgments, 431
+frame format
+token ring, 126–127
+wireless, 136–137
+frame formats
+802.11, 136–137
+BISYNC, 80
+DDCMP, 82
+Ethernet, 114–115
+FDDI, 131
+HDLC, 83
+PPP, 81
+Frame Relay, 177
+features, 177
+packet format, 177
+switches, 257
+frames
+802.3, 115
+802.5, 126–127
+802.11, 136–137
+beacon, 126
+claim, 130
+collision, 117
+corrupted, 126
+CTS, 134
+defined, 64
+order, 109–110
+orphaned, 126
+receiving, 142
+RTS, 134
+runt, 117
+size, 84
+SONET, 85, 86, 87
+STS-1, 85, 86, 87
+STS-N, 86
+transmitting, 142
+frames (MPEG)
+B, 557, 558, 559, 560, 561
+as collection of
+macroblocks, 559
+defined, 557
+I, 557, 558
+P, 557, 558, 559, 560, 561
+types, 557–561
+framing, 79–87, 146
+byte-counting approach,
+82–83
+Index 789
+clock-based, 84–87
+defined, 64
+errors, 82
+sentinel approach, 80–82
+frequency hopping, 132
+frequency-division
+multiplexing (FDM), 12
+full-duplex links, 69
+G
+gateways. See routers
+gather-write, 142
+generalized MPLS (GMPLS),
+346
+Gigabit Ethernet
+defined, 112
+links, 206
+See also Ethernet
+global addresses, 250–252
+Global System for Mobile
+Communication (GSM),
+74
+globally unique identifiers,
+168
+Gnutella peer-to-peer
+network, 691–692
+defined, 691
+example topology, 691
+QUERY messages, 691,
+692
+QUERY RESPONSE
+messages, 691, 692
+as unstructured overlay,
+692–693
+See also peer-to-peer
+networks
+Graphical Interchange
+Format (GIF), 534–535
+guaranteed service, 499
+H
+H.323, 679–680
+defined, 679
+H.245 protocol and, 680
+network, 679
+terminals, 679, 680
+half-duplex links, 69
+handshake protocol,
+611–612
+for certificate exchange,
+612
+defined, 611–612
+illustrated, 612
+See also Transport Layer
+Security (TLS)
+hard state, 455
+hardware building blocks,
+66–75
+defined, 66
+links, 67–75
+nodes, 66–67
+hash function, 580, 581
+hash tables
+defined, 693
+distributed (DHT), 694,
+698
+hashing algorithms, 580
+consistent, 693–694, 702
+flaw, 693
+modulo, 702
+head-of-line blocking,
+215–216
+defined, 215
+illustrated example, 215
+hidden nodes, 133
+hierarchical addressing, 255
+hierarchical aggregation, 256,
+263
+hierarchical name space, 634,
+635
+High Performance European
+Radio LAN
+(HIPERLAN), 75
+High-Level Data Link
+Control (HDLC), 83–84
+bit stuffing, 84
+defined, 83
+frame format, 83
+high-speed networks, 46–48
+bandwidth, 46
+data transmission on,
+47–48
+HiPPI (High Performance
+Parallel Interface), 13
+home addresses, 296
+home agent, 296–299
+defined, 296
+packet wrapping, 297
+See also mobile host
+routing
+hop-by-hop flow control, 176
+host configuration, 263–266
+DHCP, 264–266
+error-prone process, 264
+host-centric resource
+allocation, 456
+hubs, 114
+hypertext links, 653
+HyperText Markup Language
+(HTML), 545–546
+defined, 644
+documents, 655
+HyperText Transfer Protocol
+(HTTP), 4, 29, 643
+caching, 656–657
+header types, 653
+message form, 653
+operations, 613
+persistent connections, 656
+proxy, 620, 621
+redirect feature, 701
+request messages,
+653–654
+request operations, 654
+response messages,
+654–655
+result codes, 655
+Secure (HTTPS), 611
+TCP connections, 655–656
+as text-oriented protocol,
+653
+use, 643
+well-known port 80, 620
+790 Index
+I
+I frames
+combining, 565
+defined, 557
+losing, 565
+as reference frames, 558
+sequence, 558
+See also frames (MPEG)
+I/O bus bandwidth, 211
+ICMP-Redirects, 267
+IEEE
+802.3, 111–120
+802.5, 64, 120–127
+802.11, 65, 75, 131–137
+image compression, 552–557
+color images, 556–557
+DCT, 553–554
+encoding phase, 556
+quantization phase,
+554–555
+implicit acknowledgments,
+415
+input ports, 212, 213
+packet processing, 214
+performance bottlenecks,
+214
+See also ports
+Integrated Services and
+Specific Link Layers
+(ISSLL), 506–507
+Integrated Services Digital
+Network (ISDN), 71–72
+CODEC, 72
+connections, 71–72
+Integrated Services (IntServ),
+499–509
+admission control, 500,
+502–503
+ATM QoS and, 506–507
+controlled load service, 499
+flowspecs, 500–502
+guaranteed service, 499
+overview of mechanisms,
+499–500
+packet classifying and
+scheduling, 507–508
+real-time service, 500
+reservation protocol,
+503–506
+scalability issues, 508–509
+service classes, 499
+subnet technologies and,
+506–508
+See also quality of service
+(QoS)
+interdomain routing,
+308–316
+BGP, 310–316
+challenges, 311–312
+complexity, 315
+EGP, 310
+intradomain routing
+integration, 315–316
+problem, 309
+protocols, 272
+reachability, 312
+See also routing
+interior BGP (IBGP), 316
+interior gateway protocols
+(IGPs), 272
+internal buffering, 214
+International Data
+Encryption Algorithm
+(IDEA), 580
+International Standards
+Organization (ISO), 23,
+26, 27
+International
+Telecommunications
+Union (ITU), 27
+H.225, 679
+H.245, 680
+H.323, 679–680
+“H series,” 561
+Internet
+ATM network vs., 256
+backbone routing, 312
+defined, 236
+domain names, 252
+local traffic, 311
+multibackbone, 311
+routing domains, 309
+scalability problem, 301
+topology, 300
+transit traffic, 311
+tree structure, 300
+Internet architecture, 27–30
+evolution, 27–28
+features, 29
+hourglass design
+philosophy, 29, 30
+illustrated, 28
+See also network
+architecture
+Internet checksum, 90–91
+defined, 90
+implementation, 91
+variations, 90
+See also error detection
+Internet Control Message
+Protocol (ICMP),
+266–267
+control message definition,
+267
+defined, 266
+error message definition,
+266
+ICMP-Redirects, 267
+Internet Engineering Task
+Force (IETF)
+defined, 23
+Integrated Services and
+Specific Link Layers
+(ISSLL), 506–507
+Internet Group Management
+Protocol (IGMP), 331
+Internet Key Exchange (IKE),
+615
+Internet Message Access
+Protocol (IMAP), 650
+defined, 650
+message attributes, 650
+state transition diagram,
+651
+Internet Protocol. See IP
+Index 791
+Internet Security Association
+and Key Management
+Protocol (ISAKMP),
+614, 615
+internetworks, 234–354
+defined, 9, 236–237
+illustrated, 237, 238
+as logical networks, 236
+with protocol layers, 238
+routing protocols in, 280
+simple, 236–270
+structure, 263
+tunnels through, 269
+interpacket gap, 50
+interrupt handler, 144
+defined, 140
+logic, 144
+interrupts, 140–141
+intradomain routing,
+315–316
+interdomain routing
+integration, 315–316
+protocols, 272
+See also routing
+IP, 235, 236–270
+datagram forwarding in,
+252–258
+defined, 237
+devices, 569
+error reporting, 266–267
+experimental versions of,
+683–684
+forwarding, 308
+hierarchical aggregation,
+263
+host configuration,
+263–266
+networks, 235, 351
+routing, 235
+tunnels, 268–270
+virtual networks, 267–268
+IP addresses, 250–252, 569
+blocks of, 353
+class A, 251, 306
+class B, 251, 301, 306
+class C, 250–251, 301, 306
+classes, 250–251, 320
+decimal integers, 251–252
+flexibility, 251
+global, 250–252
+hierarchical, 250
+home, 296
+host part, 250, 259
+illustrated, 251
+Internet domain names vs.,
+252
+internetwork structure and,
+263
+IPv4, 353
+IPv6, 320, 323
+mapping, 259
+name translation into, 642
+network part, 250
+original intent, 301
+partitioning, 263
+prefixes, 354
+in query message, 259
+space, 306
+uniqueness, 263
+IP datagrams, 238
+as fragmentation output,
+244–245
+self-contained, 243
+size, 242
+traversing physical
+networks, 243
+variable length, 257
+IP Security (IPSEC), 614–617
+Authentication Header
+(AH), 614, 615–616
+defined, 614
+degrees of freedom, 614
+Encapsulating Security
+Payload (ESP), 614, 615,
+616–617
+operation, 604
+tunnels, 617
+See also security
+IP service model, 238–249
+datagram deliver, 238–239
+fragmentation and
+reassembly, 242–245
+implementation, 245–249
+packet format, 239–241
+IPng Directorate, 319–320
+IPv4 packet header
+Checksum field, 241
+DestinationAddr field, 241
+HLen field, 240, 241
+illustrated, 240
+Length field, 240
+Protocol field, 241
+SourceAddr field, 241
+TOS field, 240
+TTL field, 241
+Version field, 239–240
+IPv6, 236, 318–330, 353
+address assignment, 324
+address notation, 322–323
+address prefix assignments,
+321
+address space allocation,
+320–322
+addresses, 320, 323
+advanced routing
+capabilities, 329–330
+aggregatable global unicast
+addresses, 323–325
+anycast address, 330
+autoconfiguration,
+328–329
+defined, 235, 319
+deployment issue, 353–354
+Draft Standards, 320
+dual-stack operation, 322
+extension headers, 327,
+329
+features, 330
+historical perspective,
+319–320
+hosts, 322
+incremental deployment,
+322
+multicast support, 331
+NAT, 328–330
+792 Index
+IPv6 (continued)
+packet format, 325–327
+prefixes, 354
+provider-based unicast
+address, 325
+routing, 320
+source-directed routing,
+330
+transition period, 319
+transition to, 322–323
+tunneling, 322–323
+unicast address allocation
+plan, 324
+See also IP
+IPv6 packet header, 325–327
+FlowLabel field, 326
+fragmentation extension,
+327
+HopLimit field, 326
+illustrated, 326
+length, 326
+NextHeader field, 326, 327
+PayLoadLen field, 326
+TrafficClass field, 326
+Version field, 325–326
+IPX, 237
+J
+Jacobson/Karels algorithm,
+399–400
+clock and, 400
+defined, 399
+timeout computation, 399
+jitter
+defined, 49
+elimination and, 50
+network-induced, 50
+relevance of, 50
+Joint Photographic Experts
+Group., See also JPEG
+JPEG, 534
+block diagram, 553
+color images, 556–557
+compression vs. fidelity,
+557
+DCT phase, 553–554
+defined, 552
+encoding phase, 556
+quantization phase,
+554–556
+quantization table, 555
+K
+Kahn-Cerf protocol. See IP
+Karn/Partridge algorithm,
+398–399
+defined, 399
+introduction, 399
+See also adaptive
+retransmission
+keeping the pipeline full, 101
+key distribution problem,
+579, 581
+key ring, 606
+keyed MD5, 600–601
+defined, 600
+public key cryptography
+combination, 600–601
+See also Message Digest 5
+(MD5)
+kilo, 44, 45
+L
+Label Distribution Protocol,
+341
+label edge routers (LERs),
+341
+label switching routers
+(LSRs), 343–346
+defined, 343
+routers peer with, 345
+routing protocols on, 346
+LAN emulation (LANE),
+207–210
+addresses/identifiers, 207
+clients (LECs), 207–208
+configuration server
+(LECS), 208
+defined, 207
+server (LES), 208, 209
+LAN switches, 180–192
+defined, 180
+dependence, 255
+LANs
+ATM in, 205–210
+bridges, 255
+broadcast support,
+189–190
+defined, 12
+extended, 181, 186,
+190–192
+interconnecting, 181
+multicast support, 190
+switching, 165
+virtual (VLANs), 191
+last-mile links, 71–74
+ADSL, 72
+cable modems, 73–74
+ISDN, 71–72
+POTS, 71
+VDSL, 73
+xDSL, 72–73
+See also links
+latency, 41–42
+bandwidth and, 42–43
+bandwidth relationship, 47
+components, 41–42
+data transmit, 42
+defined, 40
+end-to-end protocols, 433
+high-speed networks and,
+46–47
+memory, 67
+perceived, vs. RTT, 43
+queuing, 42
+retransmission and, 492
+speed-of-light, 41–42
+variability, 495
+See also delay; performance
+layer 2 devices, 255
+Index 793
+layered systems
+with alternative
+abstractions, 21
+illustrated example, 20
+layering, 20–26
+leaf set
+defined, 695
+storing multiple copies of,
+698
+See also nodes
+learning bridges, 181–185
+defined, 181–182
+illustrated, 183
+implementation, 183–185
+See also bridges
+leased lines, 69–71
+common bandwidths, 70
+defined, 69–70
+DS1/DS3, 70
+implementation, 71
+STS-N, 70
+See also links
+Lempel-Ziv (LZ)
+compression, 551–552
+defined, 552
+Unix compress command,
+551, 552
+variation, 552
+See also compression
+level-7 switches, 681
+level 4 switches, 619
+Lightweight Directory Access
+Protocol (LDAP), 640
+line rate, 257
+Link Control Protocol (LCP),
+81
+link-cost calculation, 291
+link-local scope, 171, 174
+links
+attributes, 68–69
+bit stream encoding, 69
+cable, 69
+defined, 7
+full-duplex, 69
+Gigabit Ethernet, 206
+half-duplex, 69
+last-mile, 71–74
+leased line, 69–71
+media, 67
+multiple-access, 7
+obtaining, 69
+OC-48, 393
+overloaded, 291
+physical, cut, 19
+point-to-point, 7
+satellite, 293
+SONET, 182
+STS-N, 70
+wireless, 74–75
+See also hardware building
+blocks
+link-state advertisements
+(LSAs), 289, 290
+defined, 289
+illustrated, 290
+type 1, 290
+type 2, 290
+See also Open Shortest Path
+First (OSPF) protocol
+link-state multicast, 332
+link-state packets (LSPs),
+283–285
+defined, 283
+deleting, 285
+flooding of, 283, 284
+generation, 284
+information, 283
+periodic generation of, 284
+sequence numbers, 284
+time to live, 285
+link-state routing, 282–291
+defined, 282
+distance-vector routing vs.,
+288
+example network, 286
+forward search algorithm,
+286–287
+nodes in, 282
+OSPF, 288–291
+properties, 288
+reliable flooding, 282–285
+response speed, 288
+route calculation, 285–288
+stabilize speed, 288
+traffic generation, 288
+See also routing
+little-endian form
+defined, 536
+illustrated, 537
+load
+balancing, 289, 700
+control, 460
+setting, 459
+throughput/delay ratio as
+function of, 459
+local area networks. See
+LANs
+local traffic, 311
+logical channels, 15
+ARPANET support, 111
+concurrent, 110–111
+request/reply, 414
+See also channels
+logical IP subnet (LIS),
+261–262
+advantages, 262
+defined, 261
+illustrated, 262
+logical networks, 236
+longest match, 343
+lossless compression
+algorithms, 550–552
+defined, 549
+dictionary-based, 551–552
+DPCM, 551
+LZ, 551–552
+RLE, 550
+See also compression
+lossy compression, 549
+M
+Macromedia FLASH, 562
+mail daemons, 647
+794 Index
+mail gateways, 647
+mail readers, 647, 649–650
+management information
+base (MIB), 658–659
+defined, 658
+group variables, 658–659
+groups, 658
+Manchester encoding, 77–78
+bit rate vs. baud rate, 76
+defined, 77–78
+differential, 78, 126
+illustrated, 77
+problem, 78
+token ring, 126
+See also encoding
+maximum segment lifetime
+(MSL)
+defined, 380
+as engineering choice, 380
+recommended, 393
+maximum segment size
+(MSS), 469, 470
+maximum transmission unit
+(MTU), 242
+MBone, 270, 672, 683–684
+defined, 683
+forwarding algorithm,
+683–684
+media access control
+defined, 64
+Ethernet, 64
+token ring, 122–125
+media gateways (MGs),
+568–569
+mega, 44, 45
+memory
+bandwidth, 144, 211
+bottleneck, 144–146
+latency, 67
+node, 66
+on-chip cache, 146
+memory system
+effective throughput, 145,
+146
+transfer size and, 145
+mesh overlay, 686
+message buffers, 38–40
+Message Digest 5 (MD5),
+579, 581, 591–593
+checksum, 601
+computation efficiency, 581
+keyed, 600–601
+operation, 591
+operation implementation,
+593
+performance, 594
+properties, 581
+requirements, 583
+with RSA signature, 601
+transformation, 592
+transformation passes,
+592–593
+use of, 591
+See also cryptographic
+algorithms
+message digest function, 580
+message format, 644–646
+MIME, 644–646
+RFC 822, 644, 645
+See also electronic mail
+message integrity, 598–601
+defined, 579
+DES with CBC, 598–599
+digital signature with RSA,
+599–600
+keyed MD5, 600–601
+MD5 with RSA signature,
+601
+need for, 598
+PGP, 606
+See also security
+message integrity code (MIC),
+598
+message stream channels, 17
+messages
+ADT for, 420
+ARP, 297
+BLAST format, 411–413
+body, 24
+CHAN format, 416–417
+ciphertext, 578
+data structure example, 40
+defined, 142
+DHCP, 265
+header, 24
+high-level, 24, 25
+low-level, 24, 25
+OSPF, 289
+PATH, 504, 505
+plaintext, 578
+processing, 568
+RESV, 504–505
+routing, authentication,
+288
+SRR, 409
+trailer, 24
+metropolitan area networks
+(MANs), 12
+microprotocol, 407
+middleware, 634
+mobile host routing, 295–299
+address, 295
+care-of-address, 297, 298
+foreign agent, 296–299
+hardware address, 298
+home agents, 296–299
+mobility agents and,
+296–297
+open issues, 299
+route optimization,
+298–299
+security challenges, 299
+See also routing
+Mobile IP working group,
+296
+mobility agents, 296–297
+modulation
+defined, 68
+example, 68–69
+modulo hashing, 702
+monitor, 123, 125, 126
+for checking
+corrupted/orphaned
+frames, 126
+defined, 123
+Index 795
+FDDI, 130
+healthy, 125
+See also token rings
+Morgan Kaufmann Web site,
+xxvi
+motion estimation, 560
+Moving Picture Experts
+Group. See MPEG
+MP3, 566–568
+compression rates, 567
+defined, 567
+header, 568
+quantization tables, 567
+subbands, 567
+MPEG, 557–565
+addresses, 567
+complexity, 562
+compression ratio, 561
+decoding, 558–559, 561
+defined, 557
+effectiveness and
+performance, 561
+frame redundancy, 557
+frame types, 557–561
+header, 562
+macroblocks, 559
+motion estimation, 560
+MPEG-2, 562
+MPEG-4, 561–562
+stream packetization,
+564–565
+transmitting, over network,
+562–565
+video stream format, 562,
+563
+multicast, 331–340
+addresses, 116
+defined, 10
+development motivation,
+331
+distance-vector, 332–335
+end system, 684–688
+extension, 190
+flow support, 504
+groups, 331
+IPv6 support, 331
+link-state, 332
+receiver-driven layered
+(RLM), 566
+reverse-path (RPM), 335
+support, 189–190
+trees, 685, 686
+trees, reservations on, 505
+video stream, 565–566
+multicast address, 331
+multihomed AS, 311
+multimedia applications,
+660–680
+conferencing, 661
+frame boundary indication,
+663
+protocol stack, 662
+with RTP, 660–671
+streaming, 661–662
+Multiple Access with
+Collision Avoidance
+(MACA), 134
+multiple-access links, 7
+multiplexing
+defined, 11
+frequency-division (FDM),
+12
+PDUs, 200
+statistical, 12–14
+synchronous time-division
+(STDM), 11–13
+Multiprotocol Label
+Switching (MPLS), 221,
+235, 340–352
+control protocols, 346
+defined, 340
+destination-based
+forwarding, 340–346
+explicit routing, 346–348
+generalized (GMPLS), 346
+headers, 344
+IP routing protocols, 344
+label stacking, 350
+layer, 344
+LSRs, 344
+performance improvement
+goal, 340
+routers, 340
+summary, 352
+tunnels, 349–352
+uses, 340
+virtual private networks
+(VPNs), 348–352
+Multipurpose Internet Mail
+Extensions (MIME), 644
+definitions, 645
+encoding, 645
+messages, 646
+version of, 645
+multistation access unit
+(MSAU), 122
+N
+Nagle’s algorithm, 396–397
+self-clocking solution, 396
+transmission rule, 397
+turning off, 397
+name resolution, 640–643
+local server query, 641
+in practice, 642
+questions, 641–642
+See also domain name
+system (DNS)
+name servers, 636–640
+defined, 634
+hierarchy of, 637
+local, 641
+root, 638
+third-level, 639
+zones, 636–638
+See also domain name
+system (DNS)
+name-to-address bindings,
+634
+Napster peer-to-peer
+network, 690
+National Institute for
+Standards and
+Technology (NIST), 600
+796 Index
+n-bit chipping code, 132
+negative acknowledgment
+(NAK), 103
+network adapters, 137–146
+block diagram, 138
+bus interface, 138
+components, 138–139
+control status register
+(CSR), 139–140
+defined, 66, 138
+device drivers, 143–144
+direct memory access
+(DMA), 141–143
+interrupts, 140–141
+link interface, 138
+management, 66–67
+memory bottleneck,
+144–146
+programmed I/O (PIO),
+141–143
+view from host, 139–144
+network address translation
+(NAT), 328–330
+boxes, 329, 330, 353
+defined, 328
+network architecture, 19–30
+defined, 3, 19
+defining, 51
+Internet, 27–30
+layering, 20–26
+OSI, 26–27
+Network Data
+Representation (NDR),
+428, 544–545
+architecture tag, 545
+defined, 544
+receiver-makes-right, 544
+stubs generation, 545
+network designers
+channels and, 17
+perspective, 6
+Network File System (NFS),
+425
+Network Information Center
+(NIC), 634
+network management,
+657–659
+problem, 657
+process, 659
+SNMP, 658–659
+network processors, 258
+network provider perspective,
+6
+network security, 578–624
+example systems, 604–617
+firewalls, 617–622
+mechanisms, 594–604
+summary, 622–623
+taxonomy, 581
+network service access point
+(NSAP), 193
+networks
+ATM, 71
+banyan, 219
+computer vs. regular, 2
+connectionless, 169–170
+connection-oriented,
+170–177
+content distribution,
+698–703
+defined, 2
+direct link, 64–148
+Ethernet, 111–120
+“fish,” 346
+generality, 2
+graph representation,
+272–274
+growth, 50–51
+high-speed, 46–48
+IP, 235
+logical, 236
+overlay, 344, 680–703
+peer-to-peer, 690–698
+perspectives, 6
+as pipe, 45
+power of, 459
+proximity, 700, 703
+scalable, 256
+service provider, 310
+shared-media, 206
+software implementation,
+30–40
+switched, 8
+token ring, 120–131
+virtual private (VPNs),
+267–268
+wireless, 131–137
+X.25, 175, 176–177
+next hop routers, 253
+NNI ATM cell format, 197
+nodes
+adding, to overlay, 696,
+697
+addresses, 10
+in BGP, 315
+defined, 7
+edge weights, 294
+exposed, 133
+hidden, 133
+internet-level, 254
+leaf set, 695, 698
+link failure detection,
+277–278
+link-level, 254
+in link-state routing, 282
+memory, 66
+mobility, 136
+network-level, 254
+overlay network, 682, 684
+routing information to, 276
+types of, 66
+See also hardware building
+blocks
+non-real-time applications,
+493
+non-return to zero inverted
+(NRZI) encoding, 77
+code transmission with, 78
+defined, 77
+illustrated, 77
+See also encoding
+non-return to zero (NRZ)
+encoding, 75–77
+baseline wander, 76
+Index 797
+of bit stream, 76
+clock recovery, 76
+defined, 75
+illustrated, 77
+problems, 76
+SONET, 86
+See also encoding
+NSFNET backbone, 300
+O
+online resources, xxvi
+open issues
+application-specific
+protocols, 435–436
+computer networks meet
+consumer electronics,
+568–569
+denial-of-service attacks,
+623–624
+deployment of IPv6,
+353–354
+does it belong in
+hardware?, 147–148
+future of ATM, 221
+inside versus outside the
+network, 519–520
+mobile networking, 299
+new network architecture,
+704–705
+ubiquitous networking,
+51–52
+Open Shortest Path First
+(OSPF) protocol,
+288–291, 352
+authentication, 288
+defined, 288
+header format, 289
+hierarchy, 288–289
+information, 289
+load balancing, 289
+LSAs, 289, 290
+messages, 289
+TOS information, 291
+See also link-state routing
+Open Software Foundation
+(OSF), 428
+Open Systems
+Interconnection. See OSI
+network architecture
+optical amplifiers, 179, 180
+optical switches, 181–182
+microscopic mirrors, 182
+“real” circuits, 182
+SONET framing and, 181
+See also switches
+optical switching, 179–183
+DWDM, 179, 180
+optical amplifiers, 179,
+180
+repeaters, 179
+SONET, 181, 182
+organization, this book,
+xxiii–xxv
+OSI network architecture,
+26–27
+application layer, 27
+contributions, 82
+data link layer, 27
+defined, 26–27
+illustrated, 26
+network layer, 27
+physical layer, 27
+presentation layer, 27
+session layer, 27
+transport layer, 27
+See also network
+architecture
+output ports, 212, 213
+overlay networks, 344,
+680–703
+6-Bone, 684
+content distribution
+networks as, 701
+defined, 681
+functionality, 705
+layered on physical
+network, 681
+MBone, 683–684
+nodes, 682, 684
+ossification of the Internet
+and, 682–684
+peer-to-peer, 690–698
+resilient, 688–690
+routing, 682–690
+structured, 692–698
+unstructured, 692–693
+P
+P frames
+combining, 565
+defined, 557
+generation, 560
+macroblock processing,
+559
+sequence, 558
+See also frames (MPEG)
+packet scheduling, 500,
+507–508
+algorithms, 508
+defined, 507
+details, 508
+packet switches
+defined, 164
+workstation as, 211
+packet switching, 164–221
+packet-pair, 476
+packets
+AAL3/4 format, 199
+classifying, 507
+contending, 450
+defined, 13
+DHCP format, 265
+dropping, 257–258,
+481–484
+fixed-length, 193
+forwarding, 680
+IP format, 239–241
+IPv6 format, 325–327
+link-state (LSPs), 283–285
+marking, 480
+maximum segment lifetime
+(MSL), 380, 393
+minimum-sized, 193
+798 Index
+packets (continued)
+most recently received, 184
+per second (pps) rate, 212,
+213
+premium, 512, 513
+retransmission, 292
+RIP format, 281
+sequence of, 13
+size, 42
+spacing, 473
+total number sent, 194
+variable-length, 193, 195,
+256
+packet-switched networks
+congestion in, 453
+defined, 8
+resource allocation in,
+453–454
+store-and-forward, 8–9
+parallelism, 194
+partial packet discard (PPD),
+486
+passive scanning, 136
+PATRICIA tree, 308
+Paxson, Vern, 295
+peer interface, 21, 22
+peering points, 699
+peer-to-peer networks,
+690–698
+consistent hashing,
+693–694
+defined, 690
+Gnutella, 691–692
+Napster and, 690
+object location by routing
+through, 695
+structured, 692–698
+performance, 40–50
+application needs, 48–50
+bandwidth, 40–44
+delay x bandwidth product,
+44–46
+designing for, 40
+high-speed network, 46–48
+latency, 40–44
+per-hop behaviors (PHBs),
+510–511
+AF, 510–511
+EF, 510
+periodic update, 276–277
+permanent virtual circuits
+(PVCs), 171, 173
+persistent connections, 656
+Personal Communication
+Services (PCS), 74
+piconets, 75
+plain old telephone service
+(POTS), 71
+plaintext messages, 578
+playback
+buffer, 494–495, 663
+time, 494, 495
+playback point, 494
+advancing, 498
+setting, 497–498
+shifting, 497
+point-to-point links, 7
+Point-to-Point Protocol (PPP),
+81–82
+defined, 81
+frame format, 81–82
+policing, 503
+polling, 140
+port forwarding, 609–610
+defined, 609–610
+illustrated, 610
+Port Mapper, 426–427
+ports, 212–216
+buffering function, 214
+defined, 167
+elements, 212–213
+input, 212, 213, 214
+jobs, 213
+output, 212, 213
+UDP, 426–427
+well-known, 377
+Post Office Protocol (POP),
+650
+power (network)
+curve, 460
+defined, 459
+p-persistent protocols,
+116–117
+premium traffic, 512–513
+presentation formatting,
+536–548
+defined, 534, 536
+examples, 541–545
+illustrated, 536
+markup languages,
+545–548
+taxonomy, 537–541
+Pretty Good Privacy (PGP),
+604, 605–607
+certification relationships,
+605
+cryptographic algorithms,
+607
+defined, 605–607
+encryption, 607
+key management software,
+606
+key ring, 606
+key-signing parties,
+605–606
+message integrity and
+authentication, 606
+See also security
+priority queuing, 463
+Privacy Enhanced Mail
+(PEM), 605
+private key, 580
+probability calculations,
+92–93
+process models, 36–38
+process-per-message, 37–38
+process-per-protocol, 37
+processes, 36
+programmed I/O (PIO),
+141–143
+buffering, 143
+illustrated, 143
+use decision, 148
+See also network adapters
+Index 799
+propagation delay
+defined, 44
+speed-of-light, 41–42
+protocol data units (PDUs)
+convergence sublayer
+(CS-PDUs), 199, 200
+defined, 199
+multiplexing, 200
+single-cell, 200
+protocol graphs
+defined, 22
+example illustration, 23
+Protocol Independent
+Multicast (PIM), 331,
+336–340
+defined, 336
+design, 339
+operation illustration, 337
+protocol independence, 339
+rendezvous point (RP),
+336–339
+shared trees, 336, 337, 338
+source-specific trees, 336,
+340
+sparse mode (PIM-SM),
+336
+protocols
+bit-oriented, 83–84
+defined, 21
+end-to-end, 29
+implementation issues,
+36–40
+implementing, 51
+interface definitions, 21
+link-layer, 83
+specifications, 23
+See also specific protocols
+protocols stacks, 22
+protocol-to-protocol
+interface, 39
+proxies
+classical, 621
+defined, 620
+FTP, 621
+HTTP, 620, 621
+local Web, 701
+SIP, 675, 676
+Telnet, 621
+transparent, 621
+proxy-based firewalls,
+620–621
+classical, 621
+defined, 620
+illustrated, 621
+transparent, 621
+See also firewalls
+pseudoheader, 377
+pseudowire emulation, 348
+public key, 580
+algorithm, 580
+authentication, 597–598
+construction, 588
+cryptography, 580
+distribution, 601–604
+encryption, 580, 588–591
+push operation, 401
+Q
+Q.2931, 514
+quality of service (QoS), 14,
+492–518
+application requirements,
+493–498
+approaches, 498
+architecture, 498
+ATM, 498, 513–517
+coarse-grained approaches,
+498
+Differentiated Services
+(DiffServ), 509–513
+fine-grained approaches,
+498
+Integrated Services
+(IntServ), 499–509
+real-time applications,
+493–498
+service model, 458, 493
+summary, 519
+virtual circuit model, 176
+quantization
+equation, 555
+phase, 554–556
+table, 554, 555
+queue length, 195
+average, computing, 479
+average, weighted running,
+482
+management, 485
+queues
+behavior control, 194
+best-effort, 512
+cells and, 194–195
+output time, 194
+premium, 512
+queuing, 461–468
+delays, 42, 50
+disciplines, 451, 461–468
+fair (FQ), 463–468
+FIFO, 462–463
+priority, 463
+R
+random early detection
+(RED), 480–486
+algorithm, 481
+average queue length
+computation, 481
+DECbit vs., 480, 481
+defined, 480
+drop distribution, 484
+drop probability, 481, 482
+early random drop, 481
+fair resource allocation,
+484
+implementation, 480
+with In and Out (RIO),
+510–512
+packet dropping, 481
+parameters, 484–485
+with PPD, 486
+queue length averaged over
+time, 484
+800 Index
+random early detection
+(RED) (continued)
+queue length thresholds,
+482
+random nature of, 484
+tail drop mode, 484
+thresholds on FIFO queue,
+483
+weighted (WRED), 512
+See also congestion
+avoidance
+rate-adaptive applications,
+498
+rate-based design, 404
+rate-based resource
+allocation, 457–458
+reachability concept, 312
+real-time applications, 492,
+493–498
+adaptability, 496–497
+audio example, 493–496
+defined, 492
+distinguishing
+characteristics, 492
+intolerant, 496
+taxonomy of, 496–498
+TCP congestion control
+and, 517
+tolerant, 496
+real-time audio application,
+493–496
+data generation, 493
+illustrated, 494
+playback buffer, 494–495
+playback time, 494
+Real-time Transport Control
+Protocol (RTCP),
+668–671
+application-specific control
+packets, 669
+bandwidth, 669
+canonical name (CNAME),
+668, 671
+control stream functions,
+668
+defined, 664
+messages, 671
+packet types, 669
+receiver reports, 669, 670
+reports, 669
+sender reports, 669, 670
+source descriptions, 669,
+671
+traffic, limiting, 669
+Real-time Transport Protocol
+(RTP), 660–671
+coding scheme
+communication, 662
+CSRC, 668
+data stream granularities,
+670
+defined, 661
+details, 664–665
+header, 664, 665, 666
+header format, 665–668
+lost packet detection, 667
+multiple media streams
+using, 666
+packet padding, 666
+profile, 664, 667
+protocol stack for
+applications using, 662
+requirements, 662–664
+running over UDP, 662
+SSRC, 667–668
+standard, 664
+timing relationship
+determination, 662–663
+reassembly, 245–249
+background process, 249
+complexity, 249
+routine, 246–249
+receive buffer, 390
+defined, 390
+emptying, 391
+pointers, 390
+See also Transmission
+Control Protocol (TCP)
+receiver-driven layered
+multicast (RLM), 566
+receiver-makes right, 539
+record boundaries, 401–402
+record protocol, 613
+RED with In and Out (RIO),
+510–512
+classes, 511
+congestion and, 512
+defined, 510–511
+illustrated, 511
+in/out packet order, 512
+relay agent, 264–265
+reliability, 18–19
+reliable byte stream, 378–405
+reliable datagram protocol,
+419
+reliable flooding, 282–285
+defined, 282
+design goals, 284
+LSP illustration, 284
+See also link-state routing
+Remote Procedure Call
+(RPC), 375, 405–431
+BLAST, 407, 408–413,
+424–425
+bulk transfer, 408–413
+CHAN, 407, 414–423, 425
+components, 406
+DCE, 428–431
+defined, 405
+dispatcher, 423–424
+functions, 407
+implementation, 408
+invoking, 407
+layer, 408–409
+local procedure call basis,
+405
+mechanism illustration,
+406
+popularity, 405
+problems, 405–406
+protocol design, 407
+protocol issues, 425
+request/reply, 414–423
+SELECT, 407, 423–424,
+425
+simple stack, 424–425
+Index 801
+stub compiler, 406
+summary, 435
+SunRPC, 425–428
+timeline for, 405
+as transport protocol,
+409
+See also end-to-end
+protocols
+rendezvous points (RPs),
+336–339
+candidate, 336
+defined, 336
+source-specific tree, 336,
+337
+See also Protocol
+Independent Multicast
+(PIM)
+repeaters
+defined, 112
+illustrated, 113
+See also Ethernet
+Request to Send (RTS)
+frames, 134
+request/reply channels, 17
+requirements
+bandwidth, 41
+connectivity, 7–10
+cryptographic algorithms,
+582–583
+MD5, 583
+resource sharing, 10–14
+RTP, 662–664
+service support, 15–19
+reservation-based resource
+allocation, 456–457
+resilient overlay networks
+(RON), 688–690, 705
+defined, 689
+performance
+improvements, 689
+questions, 690
+resolution mechanism, 634
+resource allocation, 452–461
+defined, 450–451, 452
+effective, 458–460
+evaluation criteria,
+458–461
+fair, 460–461
+feedback-based, 456–457
+host-centric, 456
+implementation, 452
+issues, 452–461
+in packet-switched
+networks, 453–454
+rate-based, 457–458
+reservation-based, 456–457
+router-centric, 456
+service model, 456
+summary, 518
+taxonomy, 456–458
+throughput increase,
+458–459
+window-based, 457–458
+See also congestion control
+resource management (RM),
+515, 516
+Resource Reservation
+Protocol (RSVP), 347,
+500, 503–506
+ATM QoS vs., 514–515
+connectionless model, 514
+defined, 503
+multicast flow support, 504
+PATH message, 504, 505
+receiver-oriented approach,
+504
+reservation styles, 506
+RESV message, 504–505
+soft state use, 503–504
+underlying assumptions,
+503
+resource reservations
+defined, 500
+on multicast tree, 505
+styles, 506
+resource sharing, 10–14
+retransmission, 292
+adaptive, 397–401
+latency and, 492
+selective request (SRR), 409
+reverse-path broadcast (RPB),
+333–335
+defined, 335
+shortest-path broadcast
+implementation, 335
+reverse-path multicast
+(RPM), 335
+revised ARPANET routing
+metric, 293
+defined, 293
+illustrated, 293
+observations, 294
+See also ARPANET; routing
+RFC 822, 644, 645
+Rivest, Shamir, Adleman
+(RSA), 579, 588–591
+breaking, 583, 590
+defined, 588
+digital signatures with,
+599–600
+key length, 588
+performance, 594
+premise, 590
+public key, 588
+public/private key pair, 590
+See also cryptographic
+algorithms
+root bridge, 188, 189
+round-trip time (RTT), 44
+calculation, 401
+defined, 41
+in delay x bandwidth, 46
+minimum/maximum
+average, 487
+on high-speed network,
+47–48
+packet drops per, 484
+perceived latency vs., 43
+TCP sampling, 471
+route calculation, 285–288
+router-centric resource
+allocation, 456
+routers
+area border (ABR), 316,
+317
+802 Index
+routers (continued)
+block diagram, 257
+border, 310
+bottleneck, 454
+congested, 454
+default, 253
+defined, 10, 237, 254
+design, 256
+designated (DR), 338
+fair queuing at, 464
+firewalls, 617–622
+forwarding tables, 255
+fragmentation in, 242
+goal, 280–281
+implementation, 256–258
+as internet-level nodes, 254
+label edge (LERs), 341
+label switching (LSRs),
+343–346
+line rate, 257
+MPLS-based, 340
+next hop, 253
+packet size and, 257
+sender-specific state,
+339
+switches vs., 256
+throughput, 257
+use of, 256
+routing, 169
+areas, 316–318
+around, 453
+behavior monitoring,
+294–295
+challenge, 234
+classless, 306–308
+complexity, 294
+congestion control vs.,
+453–454
+defined, 10, 252
+distance-vector, 274–280
+distributed, 273–274
+domains, 309
+explicit, 346–348
+forwarding vs., 271
+as graph theory problem,
+272
+interdomain, 308–316
+Internet backbone, 312
+intradomain, 315–316
+IP, 235
+IPv6, 320
+link-state, 282–291
+loops, 278
+lowest-cost path problem,
+273
+message authentication,
+288
+metrics, 291–294
+mobile host, 295–299
+problem, 271
+source, 168, 177–180, 346
+source-directed, 330
+to subnets, 305
+triangle, 298
+updates, 276–277, 279,
+280
+Routing Information Protocol
+(RIP), 280–282
+example network running,
+281
+packet format, 281
+routers running, 282
+version 2 (RIPv2), 282
+See also distance-vector
+routing
+routing overlays, 682–690
+end system multicast,
+684–688
+experimental versions of IP,
+683–684
+resilient, 688–690
+See also overlay networks
+routing protocols, 256
+distributed algorithms, 273
+interdomain, 272
+in internetworks, 280
+intradomain, 272
+running, 273
+routing tables, 168
+build steps, 287
+defined, 271
+example, 341, 697
+example rows, 272
+forwarding tables vs., 271
+initial, 275
+structures, 271
+as two-dimensional array,
+696
+RSpecs, 500
+run length encoding (RLE),
+550
+S
+scalability
+achieving, 256
+hierarchy principle and,
+301
+information hiding and,
+318
+Internet, 301
+IntServ, 508–509
+optimality tradeoff, 318
+subnetting and, 306
+scaling factor, 403
+scatter-read, 142
+secret key
+algorithm, 580
+defined, 578
+encryption, 580, 583–588
+secure hash algorithm (SHA),
+591
+Secure Shell (SSH), 604–605,
+607–610
+for client/server
+authentication, 608
+defined, 607
+importance, 608
+protocols, 608
+remote login support, 607
+SSH-AUTH, 608
+SSH-COMM, 609
+SSH-TRANS, 608–609
+See also security
+Index 803
+Secure Socket Layer (SSL),
+610
+security
+authentication, 579,
+594–598
+cryptographic algorithms,
+579, 580–594
+encryption, 578, 580
+example systems, 604–617
+firewalls, 617–622
+IPSEC, 604, 614–617
+mechanisms, 594–604
+message integrity, 579,
+598–601
+PGP, 604, 605–607
+public key distribution,
+601–604
+SSH, 604–605, 607–610
+summary, 622–623
+taxonomy, 581
+TLS, 605, 610–614
+types of, 604–605
+security association (SA), 615
+security parameters index
+(SPI), 615
+segmentation and reassembly
+(SAR), 198–203
+defined, 198
+illustrated, 198
+See also asynchronous
+transfer mode (ATM)
+segments
+contents, 397
+defined, 382
+format, 382–384
+lost, 399
+probe, 392–393
+response, 392
+See also Transmission
+Control Protocol (TCP)
+SELECT, 423–424
+address space definition,
+425
+concurrency management,
+425
+defined, 407, 423
+implementation, 424
+invocation, 424
+on client side, 423
+on server side, 423
+in simple RPC stack, 425
+simplicity, 423
+SunRPC and, 426
+version configuration, 423
+See also Remote Procedure
+Call (RPC)
+selective acknowledgments,
+103, 409
+defined, 103
+fragmentation with, 431
+See also acknowledgments
+selective retransmission
+request (SRR), 409
+self-clocking, 468
+self-routing fabrics, 213–214
+banyan, 217
+defined, 217
+research, 217
+self-routing header, 217,
+218
+See also fabrics
+send buffer, 389–390
+defined, 389–390
+filling, 391
+overflow, 392
+pointers, 390
+See also Transmission
+Control Protocol (TCP)
+separating policy and
+mechanism, 467–468
+separation of concerns, 110
+server surrogates, 699
+servers
+backend, 699
+“busy,” 703
+defined, 17
+example application, 35–36
+name, 634, 636–640, 701
+SMTP, 649
+SNMP, 658
+service interface, 21, 22
+service models
+best-effort, 458
+defined, 456
+multiple QoS, 456
+QoS-based, 458, 493
+service provider networks,
+310
+session control, 671–680
+defined, 660
+issues, 671
+protocols, 671
+Session Description Protocol
+(SDP), 671, 672–674
+defined, 672
+formatting rules, 673
+information, 672
+message example, 672
+SIP and, 674
+version zero of, 673
+session directory tool, 674
+Session Initiation Protocol
+(SIP), 671, 675–679
+capabilities, 675
+defined, 675
+in human-to-human
+communication, 675
+proxies, 675, 676
+registration capabilities,
+678
+SDP and, 674
+session message flow, 678
+URI, 676
+session resumption, 613–614
+Shannon’s theorem, 72–73
+defined, 72
+formula, 73
+use of, 72–73
+shared trees, 336, 337
+defined, 336
+packet delivery along, 338
+See also Protocol
+Independent Multicast
+(PIM)
+804 Index
+shared-bus fabric, 216
+shared-media networks, 206
+shared-memory switches, 216
+shortest paths, 273
+shortest-path multicast trees
+defined, 332
+illustrated, 334
+signalling
+defined, 171
+PVCs, 173
+SVCs, 173
+signals
+data encoding in, 68
+propagation, 67
+between signalling
+components, 76
+silly window syndrome,
+395–396
+defined, 395
+illustrated, 396
+problem existence, 396
+See also Transmission
+Control Protocol
+(TCP)
+Simple Internet Protocol Plus
+(SIPP), 320
+Simple Mail Transfer Protocol
+(SMTP), 29, 643
+client, 649
+example, 648–649
+implementation, 647
+independent connection,
+648
+server, 649
+use, 643
+Simple Network
+Management Protocol
+(SNMP), 294, 543, 643
+client, 659
+defined, 658
+MIB and, 658
+server, 658
+use, 643, 658
+single attachment stations
+(SASs), 127–128
+single-bit errors, 96
+sliding window, 101–110,
+175
+algorithm, 101–104
+defined, 101
+finite sequence numbers
+and, 104–105
+flow control, 110
+frame order, 109–110
+implementation of,
+105–109
+largest acceptable frame,
+102
+last acknowledgment
+received, 101
+last frame received, 102
+last frame sent, 101
+negative acknowledgment
+(NAK), 103
+on receiver, 102
+on sender, 102
+receive window size, 102
+roles, 109
+selective acknowledgments,
+103
+send window size, 101, 104
+sequence number, 101
+TCP, 379, 383, 389–394
+timeline, 101
+window size, 391
+X.25, 381
+See also automatic repeat
+request (ARQ)
+Sliding Window Protocol
+(SWP), 105
+defined, 105
+implementation, 107
+sending side, 106
+slow start, 471–476
+alternatives, 476
+defined, 472
+packets in transit during,
+472
+to restart flow, 473
+for spacing packets, 473
+use situations, 473
+See also congestion control
+smart sender/dumb receiver
+rule, 393
+socket interface, 31
+sockets
+defined, 31
+return value from, 32
+soft state
+defined, 455
+refreshment, 504
+RSVP use, 503–504
+SONET, 84–87
+data rates, 86
+defined, 85
+frames, 85, 86
+frames out of phase, 87
+links, 182
+NRZ encoding, 86
+optical switches and, 181
+overhead, 205
+specification, 85
+STS-1 frame, 85
+support, 86
+source addresses, 182, 190
+source routing, 168,
+177–180, 346
+in datagram networks,
+179
+defined, 177
+example, 178–179
+header handling methods,
+180
+headers, 178–179, 180
+illustrated, 178
+implementation, 177–178
+scaling problem, 179–180
+uses, 179–180
+in virtual private networks,
+179
+See also routing
+source-based congestion
+avoidance, 486–491
+TCP Reno, 486–487, 488
+Index 805
+TCP Tahoe, 486, 488
+TCP Vegas, 488–491
+throughput calculation,
+487
+See also congestion
+avoidance
+source-directed routing, 330,
+487
+source-specific trees, 336, 340
+spanning tree algorithm,
+185–189, 255–256
+basic concept, 187
+defined, 185–186
+distributed, 185
+illustrated, 186
+with some ports not
+selected, 188
+split horizon, 278
+star topology, 166
+stateless autoconfiguration,
+328
+state-transition diagram,
+386–389
+CLOSED state, 388, 389
+ESTABLISHED state, 386,
+388
+illustrated, 386
+LISTEN state, 387
+SYN RCVD state, 387
+SYN SENT state, 387
+TIME WAIT state, 388
+See also TCP connections
+statistical multiplexing,
+12–14
+stop-and-wait, 98–101
+defined, 98
+scenarios, 98–99
+shortcoming, 100
+subtlety, 99–100
+timeline, 100
+See also automatic repeat
+request (ARQ)
+store-and-forward, 8–9
+streaming applications, 4,
+661–662
+structured overlays, 692–698
+adding nodes to, 696, 697
+consistent hashing,
+693–694
+distributed hash tables,
+694, 698
+number of routing hops
+and, 696
+See also overlay networks
+STS-N links, 70
+stub AS, 311
+stub compiler
+defined, 406
+illustrated, 541
+stubs, 540–541
+compilation-based
+approach, 541
+defined, 540
+interpretation-based
+approach, 541
+NDR generation, 545
+on client side, 540
+on server side, 540
+See also argument
+marshalling
+subnet bandwidth manager
+(SBM), 507–508
+defined, 507
+designated (DSBM), 507
+subnet masks
+byte boundary alignment
+and, 305
+defined, 302
+noncontiguous, 305
+subnets
+addressing, 303
+defined, 302
+IntServ and, 506–508
+multiple, 305
+number, 302, 305
+proximity to each other,
+302
+routing to, 305
+subnetting, 301–306
+defined, 302
+forwarding table with, 304
+hosts and, 303–304
+scalability and, 306
+support, 304
+use situation, 302
+subnetworks, 236, 262
+substitution box, 586
+SunRPC, 425–428
+CHAN vs., 426
+defined, 425
+header definition, 427
+header formats, 427–428
+issues, 425
+Port Mapper, 426–427
+protocol graph, 426
+SELECT and, 426
+as standard, 425
+two-tier addresses, 426
+See also Remote Procedure
+Call (RPC)
+supernetting, 307
+switched networks
+circuit-switched, 8
+defined, 8
+illustrated, 8
+packet-switched, 8
+scalability, 167
+switched virtual circuits
+(SVCs), 171, 173
+switches
+4 × 4, 215
+ATM, 205–206, 220
+Batcher-banyan, 219–220
+circuit, 164
+congested, 165
+crossbar, 216–217
+defined, 9, 254
+Ethernet, 221
+Frame Relay, 257
+functionality, 18
+LAN, 180–192, 255
+level-7, 681
+level 4, 619
+806 Index
+switches (continued)
+as network-level nodes, 254
+optical, 181–182
+packet, 164
+performance, 212–213
+protocol graph running on,
+167
+routers vs., 256
+shared-bus, 216
+shared-memory, 216
+star topology, 166
+with three input/output
+ports, 167
+throughput, 212–214
+use example, 14
+utilization, 177
+WAN, 255
+switching, 166–180
+cell, 192–210
+datagram, 168–170
+defined, 167
+optical, 179–183
+packet, 164–221
+source routing, 168,
+177–180
+virtual circuit, 168,
+170–177
+SYN attack, 623
+synchronization source
+(SSRC), 667–668
+Synchronous Data Link
+Control (SDLC), 83
+Synchronous Optical
+Network. See SONET
+synchronous protocols,
+418–419
+synchronous time-division
+multiplexing (STDM),
+11–13
+defined, 11–12
+limitations, 12
+system area networks (SANs),
+13
+system throughput, 699
+systems approach
+defined, xxi
+implications, xxi–xxii
+T
+tagged data, 539–540
+tail drop, 462–463
+defined, 462
+FIFO queuing with,
+462–463
+RED, 484
+See also first-in-first-out
+(FIFO) queuing
+target token rotation time
+(TTRT), 129–130
+TCP connections, 4, 379,
+380, 381
+coarse-grained timeouts,
+477–478
+establishment and
+termination, 384–389
+HTTP, 655–656
+MPEG stream over, 564
+packet drop from, 485
+setup, 384
+state-transition diagram,
+386–389
+termination messages, 384
+three-way handshake,
+385–386
+See also Transmission
+Control Protocol (TCP)
+TCP Reno, 486–487, 488
+TCP Tahoe, 486, 488
+TCP Vegas, 488–491
+congestion window
+adjustment, 490
+congestion window
+decrease, 490, 491
+congestion-avoidance
+actions, 488
+defined, 486
+driving on ice metaphor,
+488
+goal, 488
+intuition behind, 488
+sending rate calculation,
+489–490
+tracing
+congestion-avoidance
+mechanism, 491
+See also source-based
+congestion avoidance
+TCP/IP, 147, 148
+thrashing, 460
+threaded indices, 340–341
+three-way handshake,
+385–386, 595–596
+algorithm timeline, 385
+for authentication,
+595–596
+defined, 385
+illustrated, 595
+process, 595–596
+See also TCP connections
+throughput
+delay ratio, 459
+designers and, 214
+effective, 145, 146
+as function of traffic, 213
+resource allocation and,
+458–459
+router, 257
+switch, 212–214
+system, 699
+See also bandwidth
+timed-token algorithm,
+129–130
+timeouts
+coarse-grained, 477–478
+defined, 98
+use strategy, 98
+timestamp, 402
+token buckets, 500–501
+defined, 500
+parameters, 500
+single flow description, 502
+use illustration, 502
+token holding time (THT),
+123–124
+default, 124
+Index 807
+defined, 123
+token rings, 120–131
+beacon frame, 126
+dead station detection, 126
+defined, 120
+delayed release, 125
+early release, 125
+Ethernet vs., 121
+FDDI, 120, 127–131
+frame format, 126–127
+functioning of, 121
+illustrated, 120–131
+maintenance, 125–126
+Manchester encoding, 126
+media access control
+(MAC), 122–125
+monitor, 123, 125, 126
+multistation access unit
+(MSAU), 122
+physical properties,
+121–122
+relay used on, 121
+reservation bits, 124
+storage capacity, 122–123
+strict priority scheme, 124
+token holding time (THT),
+123–124
+token rotation time (TRT),
+124
+token rotation time (TRT),
+124
+measured, 129
+target (TTRT), 129–130
+traceroute tool, 295
+traffic
+DiffServ classes, 509
+local, 311
+models, 213–214
+premium, 512–513
+throughput as function of,
+213
+transit, 311
+transceivers, 112
+transit AS, 311
+transit traffic, 311
+Transmission Control
+Protocol (TCP), 28,
+378–405
+32-bit timestamp, 402
+adaptive retransmission,
+397–401
+alternative design choices,
+403–405
+blocking sending process,
+392
+byte stream management,
+382
+as byte-oriented protocol,
+403
+byte-stream channel, 29
+characteristics, 379
+checksum, 384
+congestion-control
+mechanism, 379,
+468–478
+defined, 378–379
+demultiplexing support,
+379
+end-to-end issues, 379–381
+explicit setup/teardown
+phases, 404
+extensions, 402–403
+flow control, 380, 390–393
+header format, 383
+headers, 384
+maximum segment size
+(MSS), 469, 470
+measured round-trip
+latencies, 433
+Nagle’s algorithm, 396–397
+packet lifetime, 380
+peers, packet exchange,
+382
+pipe fullness, 393–394
+process illustration, 383
+push operation, 401
+receive buffer, 390
+record boundaries,
+401–402
+reliable/ordered delivery,
+389–390
+for request/reply
+applications, 403
+round-trip time sampling,
+471
+sawtooth pattern, 471
+segment format, 382–384
+segments, 382
+self-clocking, 468
+send buffer, 389–390
+silly window syndrome,
+395–396
+sliding window algorithm,
+379, 383, 389–394
+summary, 434–435
+timeout mechanism, 402
+triggering transmission,
+395–397
+urgent data feature, 401
+as window-based protocol,
+404
+wraparound protection,
+393
+See also end-to-end
+protocols; TCP
+connections
+transparent proxy, 621
+Transport Layer Security
+(TLS), 605, 610–614
+handshake protocol,
+611–612
+parts, 611
+in practice, 614
+problem solutions, 610
+record protocol, 613
+session resumption feature,
+613–614
+See also security
+triggered update, 277
+triple-DES (3DES), 588
+Trivial File Transport
+Protocol (TFTP), 29
+trusted third party, 596–597
+authentication server, 596
+in Kerberos, 596
+process, 596–597
+See also authentication
+808 Index
+TSpecs, 500–502
+calculating, 506
+flow conformance to, 503
+flow not conforming to,
+503
+receiver collection, 506
+sender, 504
+See also flowspecs
+tunnels, 268–270
+defined, 268
+downside of, 270
+endpoints, 270
+for forcing packet delivery,
+270
+forwarding table of router
+at entrance, 269
+between home agent and
+foreign agent, 297
+illustrated, 269
+IPSEC, 617
+IPv6, 322–323
+MPLS, 349–352
+two-dimensional parity, 88,
+89–90
+calculation, 90
+defined, 89
+illustrated, 90
+See also error detection
+type of service (TOS)
+information, 291
+U
+ubiquitous networking,
+51–52
+UNI ATM cell format
+cell loss priority (CLP),
+197–198
+defined, 197
+generic flow control (GFC),
+197
+header error check (HEC),
+198
+illustrated, 197
+NNI format vs., 197
+virtual circuit identifier
+(VCI), 197
+virtual path identifier (VPI),
+197
+See also cell formats
+unicast
+addresses, 116
+defined, 10
+uniform resource identifier
+(URI), 673, 676
+uniform resource locators
+(URLs), 651–652,
+702–703
+defined, 4
+embedded, 653
+mapping, 702
+redirector hashing, 703
+units of measure, 44–45
+unmarshalling, 536
+unreliable service, 239
+unresponsive flow problem,
+485
+unspecified bit rate (UBR),
+514–515
+defined, 514
+maximum send rate, 515
+See also ATM QoS
+untagged data, 539–540
+updates, 280
+BGP, 314–315
+binding, 299
+periodic, 276–277
+routing table, 279
+triggered, 277
+See also routing
+User Datagram Protocol
+(UDP), 28, 376–378,
+660
+checksum algorithm, 377
+datagram delivery channel,
+29
+defined, 376
+flow control and, 377
+header format, 376
+length field, 377
+measured round-trip
+latencies, 433
+measured throughput
+using, 434
+message queue, 378
+ports, 426–427
+pseudoheader, 377
+RTP running over, 662
+summary, 434
+See also end-to-end
+protocols
+V
+variable bit
+rate—non-real-time
+(VBR-nrt), 514
+variable bit rate—real-time
+(VBR-rt), 514
+vat, 6, 661, 663
+very high rate DSL (VDSL),
+73
+vic, 663
+video compression, 557–565
+ITU-T H series, 561
+Macromedia FLASH, 562
+MPEG, 557–561
+See also compression
+videoconferencing
+application, 5–6
+video-on-demand application,
+4
+virtual circuit identifiers
+(VCIs), 349
+defined, 171
+link-local scope, 171, 174
+unused value, 174
+value, 172
+virtual circuit switching,
+170–177
+connection request, 175
+link decision, 175
+network illustration, 170
+packet sent to, 173
+QoS, 176
+Index 809
+source routing and, 179
+switch/link connection
+failure, 175
+See also switching
+virtual circuits (VCs)
+buffers, 175
+defined, 170
+permanent (PVCs), 171,
+173
+signalled, 171
+switched (SVCs), 171, 173
+table configuration, 173
+table entries, 172
+virtual destination (VD), 516
+virtual LANs (VLANs), 191
+virtual path identifiers (VPIs),
+203–204
+virtual paths, 203–204
+advantage, 204
+defined, 203
+example illustration, 204
+virtual private networks
+(VPNs), 177, 267–268
+defined, 267
+illustrated, 268
+implementation, 681
+layer 3 example, 351
+MPLS, 348–352
+MPLS label stacks, 351
+virtual source (VS), 516
+virtualization, 690
+W
+wavelength, 68
+weighted fair queuing
+(WFQ), 467–468
+defined, 467
+flows, 467
+policies, 468
+premium packets, 513
+as reservation-based
+resource allocation
+component, 467
+router performing, 467
+See also fair queuing
+weighted RED (WRED), 512
+well-known ports, 377
+whiteboard (wb) application,
+6
+wide area networks (WANs)
+defined, 12–13
+switches, 255
+window-based resource
+allocation, 457–458
+wireless links, 74–75
+AMPS, 74
+Bluetooth, 75
+GSM, 74
+HIPERLAN, 75
+IEEE 802.11, 75
+PCS, 74
+See also links
+wireless networks, 131–137
+access points (APs),
+134–136
+collision avoidance,
+133–134
+direct sequence, 132
+distribution system,
+134–136
+exposed node problem, 133
+frame format, 136–137
+frequency hopping, 132
+hidden nodes, 133
+illustrated example, 133
+MACA, 134
+n-bit chipping code, 132
+node mobility, 136
+physical properties,
+132–133
+standard, 131
+work-conserving, 466, 467
+workstations
+architecture, 67
+as packet switches, 211
+World Wide Web, 650–657
+wraparound, 393
+X
+X.25 networks, 175,
+176–177
+congestion and, 177
+sliding window protocol,
+381
+X.500 standard, 640
+X.509 standard, 603
+xDSL, 72–73
+Z
+zero-or-more semantics, 414
+zones, 636–638
+defined, 636
+domain hierarchy
+partitioned into, 637
+implementation, 637–638
+relevance, 637
+See also name servers
+A B O U T T H E A U T H O R S
+Larry L. Peterson is Professor of Computer Science at Princeton University and has
+previously taught at the University of Arizona. He has been involved in the design and
+evaluation of several network protocols, and currently directs the PlanetLab project.
+He has served as the Editor-in-Chief of ACM Transactions on Computer Systems, and
+on the program committees for SOSP, SIGCOMM, OSDI, and ASPLOS. He is anACM
+Fellow and a member of the Internet’s End-to-End Research Group.
+Bruce S. Davie is a Cisco Fellow at Cisco Systems, Inc., where he is involved in the
+development of MPLS and quality of service technologies. He is an author of numerous
+journal articles, conference papers, and RFCs, and co-author of two additional books
+for MKP. He is an active participant in both the Internet Engineering Task Force and
+the End-to-End Research Group, as well as a senior member of the IEEE.
