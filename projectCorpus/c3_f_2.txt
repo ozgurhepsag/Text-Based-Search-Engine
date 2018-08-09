@@ -1,0 +1,565 @@
+Google+ Now Open to Everyone With New Features
+
+
+Vic Gundotra, Google's senior vice president of social business: "We think there's lots of room for innovation"
+Google+ is being opened up for anyone to join after two-and-a-half months in closed testing.
+
+The search firm's latest foray into social networking was initially offered to journalists and people working in technology related fields.
+
+However, members' ability to invite friends meant its user base quickly grew to tens of millions.
+
+Google+ has been praised for several innovative features including its multi person "hangouts" video chat.
+
+Two weeks after it launched, the company announced that its service had attracted 10 million users.
+
+It has not produced official figures since then, although estimates by web analytic firm Comscore put membership at 25 million by the end of the first month.
+
+Despite users' apparently rapid uptake, research carried out by Australian web software maker 89n suggested that the rate of public posting was declining. The survey did not take account of private postings.
+Social search
+
+Alongside its full public launch, Google is adding several new features to the service, including video hangouts on Android smartphones - allowing multi-person chats.
+
+Users will also be able to share the content of their computer screens with whoever they are talking to.Another notable addition is the integration of search within Google+, allowing members to find results from socially shared information, as well as across the wider web.
+
+The prospect of "social search" through Google would appeal to businesses, according to social networking specialist Matt Rhodes from Fresh Networks.
+
+"Brands know that a lot of people who come to them come through search and anything they can do make themselves come up through the right terms or higher up the rankings is important. Commercially that is the opportunity," he said.
+
+"If you are logged into Google and search for supermarkets, if some of my friends have plus 1'd Tesco or commented about it, that might push Tesco above Sainsbury's in my search results."
+
+Myspace founder Tom Anderson - an active Google+ user - told BBC News: "Failure is not an option for Google on this. The fate of their business depends on social in the long run, so I think they'll keep tweaking and reminding users until they get it right."
+Rivals' response
+
+The rise of Google+ has not gone un-noticed by its competitors.
+
+Facebook has recently rolled out a number of innovations which many observers have characterised as a direct response to the Google challenge, although the company argues that these have been in the pipeline for far longer.
+
+These include a revamp of the social network's friend system, making in easier to add people to categories, similar to Google Circles.
+
+Earlier this week it was revealed that Facebook users would be able to connect their status updates directly to their Twitter feed, in a move that may enhance the appeal of both Google rivals.
+
+Conversely, Google finds itself in the unusual position of being a minority player in the market, facing Twitter's 200 million users and Facebook's 750 million.
+
+Vic Gundotra, Google's senior vice president of social business told the BBC that he welcomed the competition.
+
+"We suspect people use many different tools to share," he said.
+
+---------------------------------------------------------------------------
+
+Santorum asks Google to clean up search results for his name
+
+
+(CNN) -- Former U.S. Sen. and Republican presidential candidate Rick Santorum has a well-known Google problem.
+
+For the uninitiated, if you Google Santorum's name, the first result you'll probably get is not his personal website but a fake definition of "santorum," a sexual byproduct that's a bit too graphic to talk about in detail here. (Of course, you can Google him and easily find out.)
+
+We'll get into how that all happened in a second, but here's what's new: On Tuesday, the socially conservative politician lashed out at Google, saying the company could get rid of the sexual references to his name on the search results if it wanted to -- and perhaps would do so if he were a Democrat.
+
+"I suspect if something was up there like that about Joe Biden, they'd get rid of it," he told Politico. "If you're a responsible business, you don't let things like that happen in your business that have an impact on the country."
+
+He continued: "To have a business allow that type of filth to be purveyed through their website or through their system is something that they say they can't handle, but I suspect that's not true."
+
+Santorum contacted Google and asked the company about the issue, Politico said.
+
+In an e-mail to CNN, a Google spokeswoman said, "Google's search results are a reflection of the content and information that is available on the Web. Users who want content removed from the Internet should contact the webmaster of the page directly. Once the webmaster takes the page down from the Web, it will be removed from Google's search results through our usual crawling process."
+
+She added: "We do not remove content from our search results, except in very limited cases such as illegal content and violations of our webmaster guidelines."
+
+Santorum is just the latest to gripe at Google over how it ranks search results. The CEO of Yelp posted a blog Tuesday saying that Google purposefully ranks its own products -- like Google Places -- above its competitors.
+
+"We believe Google has acted anti-competitively in at least two key ways: by misusing Yelp review content in their competing Places product and by favoring their own competing Places product in search results," Yelp's Jeremy Stoppelman wrote.
+
+Google CEO Eric Schmidt was scheduled to testify before Congress on Wednesday about similar antitrust complaints.
+
+The lewd "santorum" definition popped up after the former senator compared homosexuality to pedophilia and bestiality in a 2003 interview with The Associated Press:
+
+"In every society, the definition of marriage has not ever to my knowledge included homosexuality," he said. "That's not to pick on homosexuality. It's not, you know, man on child, man on dog, or whatever the case may be."
+
+That angered gay rights supporters, including gay podcast host and sex columnist Dan Savage, who launched a campaign for his listeners to redefine Santorum's name. Savage created a website to promote the winning definition (again, you'll have to search for that elsewhere), and enough bloggers linked to it that the spoof site eventually eclipsed Santorum's campaign website in search rankings.
+
+Danny Sullivan, who writes at the blog SearchEngineLand, notes that Google has a history of being hands-off when it comes to these controversies, regardless of the politics or sensitivities involved:
+
+"Google is loathe to touch its results in any way, shape or form. That's because if it does intervene in any way, there's some interest group that will immediately claim a bias. Way back in 2004, an anti-Jewish web site started ranking in Google's top results for 'Jew.'
+
+"Despite Google co-founder Sergey Brin being Jewish and himself disgusted with the result, it stood. Intervention, when Google's ranking algorithms had spoken, was seen as harmful to user trust," Sullivan writes.
+
+In December 2009, when racist images of first lady Michelle Obama popped to the top of Google search results, the company took a similar free-speech stance.
+
+"We have a bias toward free expression," Google spokesman Scott Rubin said at the time. "That means that some ugly things will show up."
+
+Still, Google has removed offensive content from searches, usually by making changes to how its overall search equations function.
+
+In 2007, for example, a change to Google's search algorithm stopped the search term "miserable failure" from directing Internet users to pages about former president George W. Bush, according to SearchEngineLand.
+
+It's worth noting that some of these Internet weirdnesses have shown up on other search engines, too, not just on Google.
+
+What do you think about the Santorum situation? Should Google make changes? Or is the company right to stand by the way its equations rank Web pages against each other, by trying to judge their relevance?
+-------------------------------------------------------
+
+
+Facebook wants to be your music platform
+
+
+SAN FRANCISCO (CNNMoney) -- As Facebook edges toward the billion-users mark, an entire ecosystem that has grown up in its wake -- including developers, partners, advertisers and rivals -- is waiting to hear what's next. They'll get answers Thursday at f8, Facebook's annual developer conference.
+
+Anchored by a keynote from Facebook CEO Mark Zuckerberg, the conference traditionally serves as the launching point for new features that map out the strategy of the social network, which now has more than 750 million active users.
+
+This year, music will be a major focus. Sources with knowledge of Facebook's plans say the site is partnering up with services like Spotify, Mog, Rhapsody and Rdio to allow users to share music from different services on the site. Spotify CEO Daniel Ek is slated to speak at an f8 session on "the future of digital music."
+
+"What Facebook is going to do is, you'll be able to subscribe to whatever you like and we'll be able to have a joint music experience," said Eliot Van Buskirk, editor of music-meets-tech blog Evolver.fm.
+But sources close to Facebook say the company's vision extends beyond just the music space. The social giant is readying a broader media platform, with a slogan of "Read, Watch, Listen." The company's ubiquitous "Like" button could be getting some company: Facebook is rumored to be set to roll out new buttons to accompany its new media campaign.
+
+But Facebook isn't making members wait until Thursday to start sampling its latest creations. The company has launched a steady stream of tweaks and new features over the past week.
+
+On Tuesday, Facebook unveiled changes to its News Feed. When users log in, they'll see larger photos and a customized list of status updates from their closest friends, which now changes depending on how recently they last checked the site. Facebook is eliminating separate tabs for "top news" and "most recent."
+
+"You really shouldn't miss important updates from your friends," News Feed product manager Keith Schacht said in an interview. A new ticker on the top right of the Facebook page will show friends' activities on the site immediately after they occur. The features should be activated on everyone's account within the next week or so, Schacht said.
+
+But the user reaction to the change was swift and brutal. "This sucks. That is all," wrote one, summing up a blacklash that played out across Facebook pages and on Twitter.
+
+Facebook also recently beefed up its "lists" feature, making it easier to share messages with a small subset of people on your friends list, and launched a "subscribe" button, which lets you customize the content that shows up in your News Feed.
+
+Stay tuned for more. "We're entering launch season," Facebook vice president of engineering Mike Schroepfer said at the TechCrunch Disrupt conference last week. The line echoed a statement Zuckerberg made in July, at a news event he called the kickoff to Faceboook's 2011 "launching season."
+
+"We've been really building up steam ... in making improvements we've been wanting to make for a long time," Schroepfer told the Disrupt audience.
+
+But some of those new features seem a bit -- well, familiar. Subscriptions essentially brings Twitter-like updates to Facebook, while the curation tool Facebook calls "smart lists" isn't too far removed from Circles on Google Plus (which opened to the public this week).
+
+"I think competition is great," Schroepfer said. "It keeps people sharp."
+-----------------------------------------------------------------------
+
+Sony: Supreme Court ruling spurred changes to PlayStation terms
+
+
+
+(CNN) -- People don't typically pay attention to software agreements, but PlayStation owners may want to read a recent update to their digital contract.
+
+Last week Sony changed the terms-of-service document for its PlayStation Network, asking U.S. customers to forfeit their rights to file class-action lawsuits against the company and its partners. Customers can opt out by sending the company a letter in the mail.
+
+Sony's PlayStation Network, which allows subscribers to play games and watch movies online, was down for weeks last spring following a security breach that exposed personal details of 77 million users. Users immediately began filing class-action lawsuits.
+
+Sony said this week that the new terms-of-service changes were made, as some analysts suspected, in response to a Supreme Court decision in April. In that case, AT&T Mobility was permitted to include and enforce a clause in employment contracts that bars workers from bringing class-action suits.
+
+"The Supreme Court recently ruled in the AT&T case that language like this is enforceable," a spokeswoman for Sony's PlayStation unit wrote in an e-mail. "The updated language in the TOS is designed to benefit both the consumer and the company by ensuring that there is adequate time and procedures to resolve disputes."
+
+Like AT&T, Sony prefers to settle disputes outside of court through a process called arbitration.
+
+Arbiters are typically retired judges who fetch an hourly rate of $300 or more, a fee that's generally split between the two parties on top of any costs for hiring lawyers, said Jack Lerner, a director at the University of Southern California's Technology Law Clinic. That would deter anyone looking to correct unfair charges of a few dollars to an individual, which could amount to millions if the problem was widespread and settled as a class action in court, he said.
+
+Arbitration also does not involve a jury, which could include people more sympathetic to consumers than to corporations.
+
+The AT&T suit was first brought in 2006 by customers who complained of being charged $30 in state taxes for a cell phone that was advertised as free. The 5-4 Supreme Court vote came, ironically, on the same day in April that PlayStation customers began filing class-action lawsuits against Sony for losing their personal data to hackers.
+
+Sony added the new clause last week, apparently to protect itself against potential future widespread and costly blunders.
+
+Courts haven't been lenient in the past about enforcing software agreements, despite the reality that few people read them, Lerner said. This year's court ruling in the AT&T case likely won't be overturned anytime soon, unless Congress intervenes with changes to the law, he said.
+
+"That was an absolute travesty," Lerner said. "The implications for consumers (are) staggering."
+
+Sony's new user agreement describes how to opt out of the class-action waiver. Future class-action suits against Sony from PlayStation online account-holders would only include people who made the effort to send a written letter, lowering the ultimate costs to Sony.
+
+Including an option to dodge the waiver "was a savvy move by Sony because they didn't necessarily have to do it," Lerner said. The move should enable Sony to argue in court that it played fair, he said. Likely less than 1% of PlayStation users, of whom there are more than 77 million worldwide, would go through the process of opting out, he estimated.
+
+PlayStation Network users were alerted of the class-action changes in e-mails and in a note near the top of the agreement. Gamers are unable to play online or watch Internet video from services like Netflix until they agree to the contract update on their consoles.
+
+It takes 45 seconds, using a game controller, to scroll to the part of the document that describes the legal waiver. It takes a minute and a half to scroll through the entire document, and certainly much longer to actually read it.
+----------------------------------------------------------------------
+
+Amazon brings Kindle e-books to 11,000 libraries
+
+NEW YORK (CNNMoney) -- It's an e-book perk that often flies under the radar: Many bricks-and-mortar libraries are now lending out electronic editions.
+
+That option got an extra push Wednesday when Amazon went live with its library lending program, bringing Kindle e-books to 11,000 participating libraries across the U.S.
+
+Customers with a library card will be able to browse their local library's website and borrow digital books, which will be sent wirelessly to their Kindle devices and apps. You don't have to have a Kindle device to borrow Kindle books: The program works with Amazon's Kindle apps, which are available on a profusion of mobile devices, and with Kindle Cloud Reader, the company's new Web-based offering.
+
+Books can be borrowed for a set duration, typically around two weeks, after which they are deleted from the borrower's digital collection. Libraries purchase licenses for the books they lend, which limits the number of digital copies that can be "checked out" at the same time.
+
+But don't get too excited about borrowing the latest bestseller without ever setting foot in your local library: Amazon (AMZN, Fortune 500) has more than 1 million Kindle titles available now, but only a small fraction of them can be digitally borrowed. Publishers decide which books they'll allow libraries to lend out digitally. Some major publishers, including Simon & Schuster and Macmillan, do not currently sell their e-books to libraries.
+
+Library e-books will have a few cool perks their print counterparts lack.
+
+"Normally, making margin notes in library books is a big no-no. But we're fixing this by extending our Whispersync technology to library books," Jay Marine, director of Amazon Kindle, said in a written statement. "Your notes, highlights and bookmarks are always backed up and available the next time you check out the book or if you decide to buy the book."
+
+Borrowers can choose to publish their notes publicly, passing them on to the next reader. Twitter and Facebook integration also lets readers pass around passages they want to share.
+
+Amazon's library lending is powered by OverDrive, which already had library programs in place to lend out books for Sony (SNE) Reader, Barnes & Noble's (BKS, Fortune 500) Nook and other e-reader platforms. OverDrive says it ended last year with 400,000 e-book, music and video titles available to libraries, which were borrowed 15 million times in 2010.
+
+Topping the "bestseller" list for most-borrowed title: The Girl with the Dragon Tattoo, the first book in Stieg Larsson's Millennium trilogy of mystery novels.
+------------------------------------------------------------------------
+
+Urbee 3D printed car goes on display in Canada
+
+
+An environmentally friendly car, partly made using 3D printing technology, has gone on show in Canada.
+
+The Urbee uses electric motors, backed up by a small ethanol-powered engine, and is capable of 200mpg.
+
+Although the vehicle has been in development for several years, its complete printed body shell has never been seen publicly before.
+
+Only one Urbee currently exists, but its makers hope to go into commercial production by 2014.
+
+The use of "additive manufacturing", where layers of material are built up, or "printed" to form a solid objects, contributed to the car's green credentials, according to project leader Jim Kor.
+
+"One only puts material where one needs it," explained Mr Kor, who unveiled his vehicle at the TEDxWinnipeg conference.
+
+"It is an additive process, building the part essentially one 'molecule' of material at a time, ultimately with no waste.
+
+"This process can do many materials, and our goal would be to use fully-recycled materials."
+
+Currently it is only the Urbee's body panels that are printed - by Minneapolis-based Stratasys. However, Mr Kor said he hoped that other parts would be produced this way in future.
+
+Instant Items
+
+Typically 3D printing is used for prototyping - making one-off versions of items as part of the product design process.
+
+However, it is increasingly being mooted as a solution for distributing physical objects without the need for shipping.
+
+Among the many fields expected to embrace the technology is the medical profession, with equipment and even prosthetic body parts potentially being printed.
+
+"This process could revolutionise how we make things. It has certainly changed my way of thinking about manufacturing," said Mr Kor.
+
+He pointed out that the same computer files used to make miniature prototypes of the Urbee were used to manufacture the full size version.
+
+"This way, we knew the big panels would all fit properly," he added.
+
+Underneath its aerodynamic shell, the Urbee is designed to achieve maximum efficiency with minimum input.
+
+Its tiny single cylinder engine generates just 8 horsepower, but is capable of reaching between 60 and 70 mpg.
+As well as charging its batteries from the bio-ethanol motor, it can also draw electrical charge from inbuilt solar panels, potentially reducing fuel consumption to zero.
+
+Far from being a fanciful experiment, like some "hyper mile" vehicles, the company developing Urbee, Kor EcoLogic, insists that it could become a viable runaround for normal people.
+
+Estimated prices range from $10,000 (£6,500) - $50,000 (£33,000) depending on whether the Urbee can achieve mass production.
+
+Mr Kor is optimistic about timescales: "I believe the best-case scenario would be 2014."
+
+"This would be the first practical, roadworthy car that could run on solely renewable energy," he said.
+------------------------------------------------------------------
+
+Will we all be tweaking our own genetic code?
+
+
+Professor George Church explains his vision for the future of genetics
+
+You have to wonder what's going on in the DNA of Harvard genetics professor George Church.
+
+What extra bit of code does he have that the rest of us don't? If genes tell the story of a person's life, then some altered sequence of 'A's, 'C's, 'G's and 'T's must be at play, because his brain works like almost no one else's. 
+
+"The most popular mechanism people use to share today is email. So we think there's lots of room for innovation."
+About 30 years ago, Prof Church was one of a handful of people who dreamed up the idea of sequencing the entire human genome - every letter in the code that separates us from fruit flies as well as our parents. His lab was the first to come up with a machine to break that code, and he's been working to improve it ever since.
+
+Once the first genome was sequenced, he pushed the idea that it wasn't enough to have one sequence, we needed everyone's. When people pointed to the nearly $3bn price tag for that first one, he built another machine.
+
+Now, the cost is down to below $5,000 per genome, and Prof Church says we're quickly heading toward another 10- or 20-fold decrease in price - to roughly the cost of a blood test.
+Genes: read, write, edit
+
+To Prof Church, routine whole-genome sequencing will herald the beginning of a new era as transformative and full of possibilities as the Internet Age. But this is not just about insurance companies wanting to have every customer's entire genome in their files.
+
+For Prof Church sees this only as a beginning of the project, rather than the culmination of three decades of work.
+He's pointing to at a bigger goal: Now that reading DNA code is almost simple, he wants to write and edit it, too.
+
+He envisions a day when a device implanted in your body will be able to identify the first mutations of a potential tumour, or the genes of an invading bacteria. You'll be able to pop an antibiotic targeted at the invader, or a cancer pill aimed at those few renegade cells.
+
+Another device will monitor your outside environment, warning you away from sites that pose a health risk.
+
+A range of genetic disorders will be identified at birth, or even conception, and tiny, preprogrammed viruses will be sent into the body to penetrate compromised cells and correct the damage. Changing the adult body at the first signs of illness will be just as easy, he predicts.
+
+There's no reason, Prof Church says, why people won't be able to live to be 120, and then 150. 
+"There used to be this attitude: here's your genetic destiny, get used to it," Prof Church says. "Now the attitude is: genetics is really about the environmental changes you can make to change your destiny."
+Democratic science
+
+Standing at 1.93m, with a bushy reddish-grey beard, George Church is hard not to notice. The 57-year-old is both imposing and unassuming. There's an awkwardness to Church, like an 8th grade boy after a summer growth spurt, and an openness that makes him easy to like. His manner is the same with a Harvard faculty colleague as with the technician operating a machine he helped design.
+
+This democratic instinct comes through in his science. Church advises 20 of the 30-or-so advanced genomics companies in the United States, but his heart is clearly in academia, doing basic science that helps everyone.
+
+As he pushes for the mapping of more and more complete genomes, he also pushes to make those genomes public, so researchers can learn about medical conditions by comparing them. He's put 11 up on the web already, including his own, and is aiming for 100,000 more.
+
+Once thousands of people with diverse backgrounds have made their genomes and health status public, researchers will be able to delve into a wide range of diseases and disorders, from schizophrenia to heart disease, diabetes to learning disabilities, looking for patterns.
+
+"You bring down the price and many blossoms bloom," he says.
+
+Prof Church doesn't want to make these discoveries himself. The pace of that kind of science is too slow for him, and not driven by technology.
+'Evolution on steroids'
+
+There's a climate-controlled room in the middle of Church's generous lab space, where a small tray shakes back and forth, jostling pellets of E. coli DNA.
+
+In a four-hour production process, researchers can turn on or off a single base pair of that DNA, or whole regions of genes to see what happens. The goal is to find a way to improve production of industrial chemicals or medications, or to test viral resistance.
+
+"You could think of this as driving evolution to very rapid rates," Church said. "Sort of evolution on steroids."
+
+The machine is a second-generation Multiplex Automated Genome Engineering (MAGE) machine, built with help from industry; the first one, which sits across the street not far from Church's corner office was a doctoral student's PhD thesis. Another thesis project sits just on the other side of the wall from new MAGE. Called the Polonator, this open-source genome-sequencing machine can read and write a billion base pairs at a time.
+
+These two machines put Church's lab at the forefront of synthetic biology, a burgeoning new field that aims to make things Mother Nature never thought of, like high efficiency, non-polluting fuels, and viruses that can carry cancer drugs safely to a tumour.
+
+With these machines, Prof Church is doing to synthetic biology what he's already done to personalised genomics: making it cheaper, faster and available to everyone.
+Ethical concerns
+
+"He's beginning to transform synthetic biology to a larger scale," says James J. Collins, a professor at Boston University and Prof Church's colleague at the Wyss Institute for Biologically Inspired Engineering at Harvard.
+
+Prof Collins acknowledges that some people will have ethical concerns about scientists writing genetic codes. But, he said, the reality of synthetic biology is nowhere near as scary as the hype. No one is creating doomsday species or humanoids. They're just barely able to create a single new cell, says Prof Collins.
+
+"I think we as a community have a need and a role and responsibility to educate the public as well as to take precautionary safeguards to make sure we're not introducing something that's problematic," says James Collins, who builds his cells with programmable kill switches, so they self-destruct before reproducing or mutating.
+
+George Annas, chairman of the department of health law, bioethics and human rights at Boston University, agrees that it's too early to be troubled by the ethics of synthetic biology. "At this point, we don't know how synthetic biology will turn out or even if it will work at all," he says.
+
+Of the possible fears about new life forms: "I think we're in the realm of science fiction right now," Mr Annas says.
+Reality check
+
+Prof Church's optimism about the power of reading and writing DNA is contagious, but not irresistible.
+
+"You need George's imagination and his vision if you're going to do make any progress at all. But you've got to be foolish to think you're going to make as much progress as he [imagines]," Mr Annas says.
+
+American medical care is going broke as it is, he said. Adding more personalised treatment is only going to drive up the cost. And medicine may be able to add years to someone's life, but the quality of those years is unlikely to be good, warns Mr Annas.
+
+Chad Nussbaum agrees.
+
+"There's a statistical chance of being hit by a truck that's going to make it hard to live to 150 no matter how healthy you are," says Mr Nussbaum, co-director of the genome sequencing and analysis program at the Broad Institute of Harvard and MIT, a genetics research institute, where Church is an associate member.
+
+Extreme aging isn't all about genetics, Mr Nussbaum says, it's basic engineering: parts just wear out over time. "It's wonderfully naive to think all we have to do is learn all the genetics and we'll live to be 150."
+
+But Chad Nussbaum says he still admires Prof Church's vision and his "genius."
+
+"It's a great thing to think big and try to do crazy things," says Mr Nussbaum. "If you don't try to do things that are impossible, we'll never accomplish the things that are nearly impossible."
+----------------------------------------------------------------------------------
+
+Users not happy with new Facebook changes
+
+(CNN) -- Here we go again.
+
+Facebook has made big changes to users' pages, and people are responding in droves with their metaphorical "dislike" buttons.
+
+News Feeds were popping with not-so-gentle complaints Wednesday as many of the social-networking behemoth's 750 million users began seeing the overhaul.
+
+"This is absolutely the worst of the many wrong-headed 'improvements' you have made, and that's quite a feat," a user named Franklin Habit wrote on the site's official Facebook page. "I think Facebook's usefulness to me has now been outstripped by its lack of ease in use."
+
+Others were more succinct.
+
+"This sucks," wrote user Brandon Howell. "That is all."
+
+To be fair, griping about Facebook changes is a time-honored hallmark of the site. Change is hard for some people, and users grumble every time Facebook revamps their pages.
+
+And it's perhaps a touch on the ironic side that many of the current complaints are coming from folks who, in turn, complained in December when the current format was rolled out. Or the time before. And the time before that.
+
+Which isn't to say that the changes aren't pretty dramatic.
+
+Instead of defaulting to your friends' most recent posts, the News Feed (which people hated when it was introduced) is now topped in many cases by what Facebook calls "Top Stories" for you. It uses an algorithm that combines such factors as which friends you interact with most and which friends' posts have the most comments and "likes" on them.
+
+That algorithm, of course, was in its infancy on Wednesday, leading many users to say the top stories that Facebook suggested were random, at best.
+
+"The 'top stories' needs to be gotten rid of," wrote user Kristy Montaney. "They're out of context and I want to check my News Feed from most recent to oldest, none of this 'top stories' stuff."
+
+In a post on The Facebook Blog, developer Mark Tonkelowitz said the idea is to help people who may not log in to the site all the time find the best content, not just the newest.
+
+"Now, News Feed will act more like your own personal newspaper," he wrote. "You won't have to worry about missing important stuff. All your news will be in a single stream with the most interesting stories featured at the top."
+
+If you check Facebook more frequently, he said, you'll see newer stories at the top of your feed.
+
+The other most glaring change Wednesday was a new, scrolling rail on the right side of the home page. Facebook calls it The Ticker. We're partial to "The ADD Bar," because the feature seems pitched to our attention-deficit lifestyles with its rapidly streaming nuggets of friends' activity.
+
+If a friend "likes" an update, comments on a post or subscribes to a page, it now pops up in the -- OK, we'll say it -- somewhat Twitter-like timeline.
+
+Haters were calling it distracting. But Tonkelowitz believes the Ticker plugs the gap in the time lag the News Feed sometimes experiences, letting users have more real-time interactions.
+
+One apparent quirk of the Ticker is that when a friend interacts with a nonfriend (say, likes the status update of someone you're not friends with), clicking on that activity will show the original post.
+
+Tonkelowitz's blog post said the Ticker "shows you the same stuff you were already seeing on Facebook." But, Wednesday morning, clicking on a few items there seemed to show updates and other posts by nonfriends, even when those users' privacy settings appeared to make their posts private.
+
+Facebook did not immediately respond Wednesday to a message seeking clarification on how that feature works. The company may explain the new changes further at f8, its annual conference, on Thursday.
+
+In the history of Facebook changes, the pattern has typically been that users complain loudly at first and threaten to leave the site but then eventually learn to live with, if not like, the new approach.
+
+This time may be somewhat more interesting in that it's the first major Facebook overhaul since Google rolled out its rival social networking site, Google+.
+
+Many of the anti-change posts Wednesday were coupled with threats to defect to Google+ if things aren't changed back.
+
+And interestingly -- and, we have to assume, coincidentally -- the Facebook overhaul was announced on the same day that Google+, previously an invite-only affair, was opened to the public.
+------------------------------------------------------------------
+
+Microsoft's plan to stop Bing's $1 billion bleeding
+
+
+NEW YORK (CNNMoney) -- Bing, Microsoft's two-year old search engine, is losing nearly a $1 billion a quarter, with no sign of letting up.
+
+Microsoft (MSFT, Fortune 500) has lost $5.5 billion on Bing since the search service launched in June 2009, but the company's search losses actually pre-date that. In fact, the software giant has never made money in its online services division. Since Microsoft began breaking out that unit's finances in 2007, the company has lost a total of $9 billion.
+
+Even the good news with Bing isn't so great. Microsoft proudly proclaims that it has gained search market share against Google (GOOG, Fortune 500) in each of the past 27 months. While that's true, it is not gaining search share from Google.
+
+Bing currently maintains a 14.7% share of the search market, up from 8.4% when Bing launched, according to online data tracker comScore (SCOR). Google currently commands 64.8% of the market -- down just two-tenths of a percentage point from the 65% it held when Bing debuted.
+
+More than half the share that Bing has gained has actually come from third-place Yahoo (YHOO, Fortune 500). The rest has come from search cellar-dwellers Ask.com and AOL (AOL).
+
+There's usually no such thing as "bad" market share growth, but Yahoo's search is powered by Bing. That means more than half of Microsoft's share growth has come from cannibalizing its search partner.
+
+Can Bing escape its stagnation and actually make money? Microsoft says it has a solution.
+
+At the company's financial analyst meeting in Anaheim, Calif., last week, Microsoft President of Online Services Qi Lu gave an impassioned speech about how Bing would improve search by "reorganizing the Web." To do that, Microsoft plans to leverage its network of products and partnerships to gain a better understanding of what the user is after when they enter a query into a Bing search box. Ultimately, Microsoft believes its technical secret sauce will let Bing both expand what is "searchable" and deliver more robust search results than any of its competitors.
+
+Lu said Microsoft could not and would not try to "out-Google" Google. Instead, it must "change the game fundamentally."
+
+Bing has already begun to show some of that capability. For instance, though partnerships with various ticketing agencies, a search for "Mariners tickets" will display links to upcoming games and a map of Seattle's Safeco Field showing fans where tickets are available. A search for flight information will tell you when the best day is to purchase a plane ticket. Searching for "digital camera" will display images of cameras that can be filtered, sorted and compared.
+
+It's a step forward from a laundry list of blue links.
+
+Through its search partnership with Facebook, its mobile partnership with Nokia (NOK) and its marriage with various Microsoft products, Bing will gradually gain a semantic understanding of the Web, Lu said. That will transform search from today's noun-based keyword entry -- a system Lu dismissed as "caveman speak" -- to eventually give Bing the ability to field questions phrased in natural human language.
+It sounds great. But how is this thing going to make money?
+
+Stefan Weitz, Microsoft's director of Bing, believes that if Bing can change the way people think about search, sooner or later users will switch over from Google.
+
+"Our challenge is that no one wakes up in the morning and says, 'I really wish there was a better search engine,'" Weitz said. "That's why, for us, it's always been about figuring out how to accomplish more than we thought was possible with a search engine. Eventually, people will expect to do more with search, and if they can't, they'll be disappointed."
+
+Luring users away from Google is a daunting task. Microsoft is competing against a verb -- "I'll go Google that" -- and an entrenched consumer habit.
+
+Even if Microsoft can steal market share from Google, it faces a long journey toward profitability. Market share is key in search: With it, advertisers flock to you, and you can charge high rates for ads. But without it, search is a very expensive business.
+
+To capture the attention of a critical mass of advertisers -- enough to turn a profit -- multiple analysts said that Bing will need at least 25% to 30% of the market. That's double its current share.
+
+Meanwhile, Google is also scrambling to -- as Microsoft put it -- "do more with search." Google recently launched a new social network, integrated advanced flight data into its search results, and tweaked its algorithm to favor original content.
+
+Weitz calls the Bing-vs-Google rivalry a "big geek slap fight," and says Microsoft has one key advantage over its rival: It has nothing to lose by experimenting. On the flip side, slight tweaks to Google's search algorithm send shivers down the spines of companies that rely on high rankings.
+
+"We are able to try things with much more flexibility," said Weitz. "If we make a mistake, it's not going to take down the company."
+
+Most analysts are bullish on Bing's technology, but they're mixed on whether Internet users will really change their behavior.
+
+"Bing will likely be better than Google over time, but even if it is, users and advertisers still need to go to them," said Sid Parakh, analyst at McAdams Wright Ragen. "To be clear, this will take a long, long time to play out. This is something Microsoft will continue to lose money on."
+
+Several analysts, including Parakh, predict that Bing will continue to incrementally improve and gain share, becoming profitable in another three to four years.
+
+Looking at Google's dominance, it may seem impossible today for a rival to get a significant foothold. But the tech world is funny like that: No one could have imagined 13 years ago that a small search engine out of Stanford University would ever unseat the mighty Yahoo.
+
+"When you're talking about something like consumer behavior and advertising, having the advantage of being the first place people go is hard for another company to counteract," said Sue Feldman, search engine analyst at IDC. "Can it change? Sure. As with everything in technology, in a period of tremendous ferment and innovation, something could happen to overturn a market leader." 
+-----------------------------------------------------------
+
+Report: Next iPhone to be unveiled October 4
+
+
+(CNN) -- Apple will unveil its next-generation iPhone at an event on Tuesday, October 4, according to a report on AllThingsD, a Wall Street Journal blog network.
+
+The phone will be available to consumers "within a few weeks" of that announcement, the publication says, citing unnamed sources.
+
+CNN has not confirmed this news and AllThingsD acknowledges the date could change.
+
+The smartphone likely will be called the iPhone 5 or the iPhone 4S, according to the common wisdom on tech blogs.
+
+A version of the phone was reportedly found in a San Francisco bar earlier this summer, according to the tech site CNET, but few details about the phone's hardware are certain.
+
+AllThingsD also expects Tim Cook, Apple's new CEO, to handle most of the announcement. Cook took over leadership of the much-scrutinized tech company after its iconic co-founder, Steve Jobs, stepped down from the post after going on medical leave.
+
+"The pressure will be on Cook to turn in a good performance at the event," writes John Paczkowski, "especially after what has so far been a very smooth leadership transition at Apple."
+
+The blog TechCrunch agrees:
+
+"Apple's future likely hinges more on his on-stage presence than just a piece of hardware."
+------------------------------------------------------------------------------
+
+Artificial blood vessels created on a 3D printer
+
+
+Artificial blood vessels made on a 3D printer may soon be used for transplants of lab-created organs.
+
+Until now, the stumbling block in tissue engineering has been supplying artificial tissue with nutrients that have to arrive via capillary vessels.
+
+A team at the Fraunhofer Institute in Germany has solved that problem using 3D printing and a technique called multiphoton polymerisation.
+
+The findings will be shown at the Biotechnica Fair in Germany in October.
+
+Out of thousands of patients in desperate need of an organ transplant there are inevitably some who do not get it in time.
+
+In Germany, for instance, more than 11,000 people have been put on an organ transplant waiting list in 2011 alone.
+
+To make sure more patients receive these life-saving surgeries, researchers in tissue engineering all over the globe have been working on creating artificial tissue and even entire organs in the lab.
+
+But for a lab-made organ to function, it needs to be equipped with artificial blood vessels - tiny and extremely complex tubes that our organs naturally possess, used to carry nutrients.
+Continue reading the main story
+“Start Quote
+
+    The individual techniques are already functioning and they are presently working in the test phase”
+
+Dr Gunter Tovar Fraunhofer Institute, Germany
+
+Numerous attempts have been made to create synthetic capillaries, and the latest one by the German team seems to be especially promising.
+
+"The individual techniques are already functioning and they are presently working in the test phase; the prototype for the combined system is being built," said Dr Gunter Tovar, who heads the BioRap project at Fraunhofer Institute for Interfacial Engineering and Biotechnology IGB in Stuttgart.
+Elastic biomaterials
+
+3D printing technology has been increasingly used in numerous industries, ranging from creating clothes, architectural models and even chocolate treats.
+
+But this time, Dr Tovar's team had a much more challenging printing mission.
+
+To print something as small and complex as a blood vessel, the scientists combined the 3D printing technology with two-photon polymerisation - shining intense laser beams onto the material to stimulate the molecules in a very small focus point.
+
+The material then becomes an elastic solid, allowing the researchers to create highly precise and elastic structures that would be able to interact with a human body's natural tissue.
+
+So that the synthetic tubes do not get rejected by the living organism, their walls are coated with modified biomolecules.
+
+Such biomolecules are also present in the composition of the "inks" used for the blood vessel printer, combined with synthetic polymers.
+
+"We are establishing a basis for applying rapid prototyping to elastic and organic biomaterials," said Dr Tovar.
+
+"The vascular systems illustrate very dramatically what opportunities this technology has to offer, but that's definitely not the only thing possible."
+--------------------------------------------------------------------------
+
+Apple drops 'Jew or not Jew' app in France
+
+
+US computer firm Apple has withdrawn a mobile phone application called Jewish or Not Jewish from its online store in France.
+
+The application allowed users to find out whether celebrities and public figures were Jewish or not.
+
+Anti-racism group SOS Racisme said it was illegal because French law did not allow the compilation of personal data without the individual's consent.
+
+Developer Johann Levy, who is Jewish, said the app was "recreational".
+
+Mr Levy said there was nothing sinister about his application, which is still available outside France.
+
+"I'm not a spokesman for all Jews, but as a Jew myself, I know that in our community we often ask whether such and such celebrity is Jewish or not," the 35-year-old Franco-British engineer told Le Parisien newspaper on Wednesday.
+
+"For me, there's nothing pejorative about saying that someone is Jewish or not," he said. "On the contrary, it's about being proud."
+
+He said he compiled information about some 3,500 people listed in his app by using various online sources.
+
+French laws enacted after World War II ban the compilation of information about religious affiliation without permission. Doing so is punishable by up to five years in prison and a fine of 300,000 euros (£260,000).
+
+In June, Apple had to remove an Arabic-language application from its App Store called ThirdIntifada, after Israel said it incited violence.
+---------------------------------------------------------------------------------
+
+Dyson turns up the heat in the home
+
+
+Dyson has unveiled its latest air blowing gadget - a room heater.
+
+The AM04 is a follow-up to the company's high-end bladeless fan, that was launched in 2009.
+
+The £269 price tag of the AM04 suggests that the device is unlikely to find the mass market appeal of its bagless vacuum cleaners.
+
+However, Dyson claims that the device does a better job of warming a room than traditional electrical fan heaters.
+
+"We've tested a lot of products and often the heat will come out and rise very quickly towards the ceiling so you have to sit pretty close to them to feel they are working," said Tom Crawford, head of product development for environmental control at Dyson.
+
+The company has again made use of the air multiplier technology that was first developed for its bladeless fans.
+
+Using the well known physical properties of inducement and entrainment large amounts of air can be drawn into a stream using relatively small amounts of blowing power.
+
+To heat it, the fast moving air is passed over "hot stone" elements, shielded by the device's plastic aerofoil.
+
+Although Dyson believes the technology to be more efficient at warming a room, its actual heating elements have a power draw of up to 2KW - comparable to conventional machines.
+
+The Wiltshire-based company launched its environmental control division in 2009, with the creation of its bladeless desk fan.
+
+Back then, the roll out of a fan during October raised some eyebrows, as the UK was heading into winter.
+
+The company explained that was a consequence of it launching the product all round the globe at the same time.
+----------------------------------------------------------------------------
+
+HP TouchPad 7-inch Appears On Chinese Forum
+11:00 AM - September 21, 2011 - By Jane McEntegart -
+Source : This Is My Next
+
+The TouchPad might be (almost) completely dead, but that doesn't mean we've seen the last of it.
+
+It's been a few weeks since HP revealed plans to kill off the TouchPad and Pre lines of tablets and phones. In fact, HP was putting an end to all webOS hardware. Sadly, this means upcoming projects under the TouchPad or Pre umbrellas will never be seen. Or will they?
+
+The following images recently appeared on a Chinese forum (page no longer available) and apparently show the unreleased TouchPad Go. You might remember the 7-inch Go better if we used its codename, Opal, which is what it was referred to when it was first talked about in the beginning of the year. Originally tipped for a September launch, we imagine the poor TouchPad Go was all but ready to be shipped when HP pulled the plug on the entire line.
+
+According to This Is My Next, the poster of these photos claims to have had the device for the last three month. The device boasts the same 1.5GHz APQ8060 Snapdragon CPU, 16GB of storage, front camera and 1024 x 768 resolution as its larger brother, but the 7-inch model also boasts a rear camera as well as possible NFC support. The poster doesn't elaborate on where he got the tablet, and the thread is no longer available, so we may never know.

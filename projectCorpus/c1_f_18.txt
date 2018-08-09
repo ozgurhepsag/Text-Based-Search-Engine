@@ -1,0 +1,659 @@
+Etymology
+The Old Norse feminine noun viking refers to an expedition overseas. It occurs in Viking Age 
+runic inscriptions and in later medieval writings in set expressions such as the phrasal verb fara 
+i viking "to go on an expedition". In later texts such as the Icelandic sagas, the phrase "to go 
+viking" implies participation in raiding activity or piracy, and not simply seaborne missions of 
+trade and commerce. The related Old Norse masculine noun vikingr appears in Viking Age 
+skaldic poetry and on several rune stones found in Scandinavia, where it refers to a seaman or 
+warrior who takes part in an expedition overseas.[4] The form also occurs as a personal name on 
+some Swedish rune stones. There is little indication of any negative connotation in the term 
+before the end of the Viking Age. Regardless of its possible origins, the word was used to 
+indicate an activity and those who participated in it, and not to any ethnic or cultural group.
+In Old English, the word wicing appears first in the Anglo-Saxon poem, "Widsith", which 
+probably dates from the 9th century. In Old English, and in the history of the archbishops of 
+Hamburg-Bremen written by Adam of Bremen in about 1070, the term is synonymous with 
+pirate and a Scandinavian. As in the Old Norse usages, the term is not employed as a name for 
+any people or culture in general. The word does not occur in any preserved Middle English 
+texts.
+There are several theories on the etymology of the word Viking. According to recent research, 
+the word dates from before the sail was taken into use by the Germanic peoples of North-
+Western Europe, because the Old Frisian spelling shows that the word was pronounced with a 
+palatal k and thus in all probability existed in North-Western Germanic before that 
+palatalization happened, i.e. in the 5th century of before (in the western branch). In that case 
+the word can be explained from the Old Scandinavian maritime distance unit, vika (f.), which 
+probably originally referred to the distance covered by one shift of rowers. The Old Norse 
+feminine viking (as in the phrase fara i viking) may originally have been a sea journey 
+characterized by the shifting of rowers, i.e. a long-distance sea journey, because in the pre-sail 
+era, the shifting of rowers would distinguish long-distance sea journeys. A vikingr (the 
+masculine) would then originally have been a participant on a sea journey characterized by the 
+shifting of rowers. In that case, the word Viking was not originally connected to Scandinavian 
+seafarers but assumed this meaning when the Scandinavians begun to dominate the seas. - 
+The starting-point of the distance unit vika is the verb that in Old Scandinavian had the form 
+vika (Old Icelandic vikja) 'to recede, turn to the side, give way, yield', and the idea behind it 
+seems to be that the tired rower moves aside for the rested rower on the thwart when he 
+relieves him. At the same time, vika is the same word as a week 'seven days'; in both cases the 
+real meaning is 'a shift, a rotation'. A "sea week" really means 'a rotation (of rowers)', and 
+seven days really is a rotation of week-day gods - Wednesday is Wodanaz's day, Thursday is 
+?unaraz's day, Friday is Frijjo's day, etc.
+The idea that the word Viking is connected to the maritime distance unit vika has been put 
+forward by at least four persons independently since the early 1980s, and has gained 
+substantial support among scholars in recent years. Traditionally, two other explanations have 
+been favoured: 1. The word Viking derives from the feminine that in Old Scandinavian had 
+the form vik and which means 'a bay'. The idea would then be that the Vikings would seek 
+shelter in bays and attack merchant ships from there, or make land raids from there. 2. Viking 
+derives from the name Vik(in) 'the Norwegian coast of the Skagerrak Sea'. The idea would 
+then be that "Vikings" originally was a term for the peoples of this area, and secondarily 
+assumed the meaning 'pirates, sea raiders' because these peoples played a prominent role in the 
+Viking raids. Both these explanations are highly problematic. The first is contradicted by the 
+fact that all seafarers make for harbour in bays; that can hardly have distinguished the 
+Vikings; to the contrary. According to the sources, the Vikings rather made camp on 
+headlands and islands, which were more easily defendable from land-based armies. The 
+second explanation faces several problems: First, people from Vik(in) are in Old Norse 
+manuscripts referred to as vikverir 'Vik dwellers', never as vikingar. Second, no medieval 
+source, neither from Scandinavia nor the rest of Europe, connects the Vikings with the 
+Norwegian Skagerrak coast. Third, this explanations runs into formal linguistic problems. In 
+addition, these explanations could only explain the masculine (Old Scandinavian vikingr) and 
+ignore the feminine (Old Scandinavian viking), which is a serious problem because the 
+masculine can easily be derived from the feminine but hardly vice versa.
+In the modern Scandinavian languages, the word Viking usually refers specifically to those 
+people who went on Viking expeditions.[5]
+The word Viking was introduced into Modern English during the 18th-century "Viking 
+revival", at which point it acquired romanticised heroic overtones of "barbarian warrior" or 
+noble savage. During the 20th century, the meaning of the term was expanded to refer not 
+only to seaborne raiders from Scandinavia, but secondarily to any Scandinavian who lived 
+during the period from the late eighth to the mid-11th centuries, or more loosely from c. 700 
+to as late as about 1100. As an adjective, the word is used to refer to ideas, phenomena or 
+artefacts connected with Scandinavians and their cultural life in these centuries, producing 
+expressions like "Viking age", "Viking culture", "Viking art", "Viking religion", "Viking ship", 
+and so on. The people of medieval Scandinavia are also referred to as Norse, although this 
+term properly applies only to the Old-Norse-speaking peoples of Scandinavia, and not to the 
+Sami.
+Literature
+The most important primary sources for information on the Vikings are different sorts of 
+contemporary evidence from Scandinavia and the various regions in which the Vikings were 
+active.[6] Writing in Latin letters was introduced to Scandinavia with Christianity, so there are 
+few native documentary sources from Scandinavia before the late 11th and early 12th 
+centuries.[7] The Scandinavians did write inscriptions in runes, but these are usually very short 
+and formulaic. The contemporary documentary sources upon which modern knowledge is 
+based therefore consist mostly of texts written in Christian and Islamic communities overseas, 
+that had often been negatively affected by Viking activity. These texts reflect varying degrees 
+of bias and reliability, but not more so than is usually the case in early medieval writings, and 
+they remain very important. Since the mid-20th century, archaeological sources have helped 
+build a more complete and balanced picture.[8] The archaeological record is particularly rich 
+and varied, and provides knowledge of rural and urban settlement, crafts and production, 
+ships and military equipment, and pagan and Christian religious artefacts and practices. 
+Archaeology also provides the main source of evidence for circumstances in Scandinavia 
+before the Viking Age.
+Evidence from after the Viking Age can also be important for understanding the Vikings, 
+although it needs to be treated very cautiously. After the consolidation of the church and the 
+assimilation of Scandinavia and its colonies into the mainstream of medieval Christian culture 
+in the 11th and 12th centuries, native written sources begin to appear, in Latin and Old Norse. 
+In the Viking colony of Iceland, an extraordinary vernacular literature blossomed in the 
+twelfth to 14th centuries, and many traditions connected with the Viking Age were written 
+down for the first time in the Icelandic sagas. The reliability of these medieval prose narratives 
+about the Scandinavian past is often doubtful, but some elements remain worthy of 
+consideration, such as the great quantity of skaldic poetry attributed to court poets of the 
+tenth and 11th centuries that was included in these writings. The linguistic evidence from 
+medieval and later records and Old Norse place-names in Scandinavia and elsewhere also 
+provides a vital source of information for the social history of Viking Age Scandinavia and 
+the Viking settlements overseas.
+A consequence of the available written sources, which may have coloured how we perceive 
+the Viking Age as a historical period, is that we know a lot more of the raids to western 
+Europe than those to the East. One reason for this is that the peoples living in north-eastern 
+Europe at the time were illiterate. Another reason is that the vast majority of the written 
+sources from Scandinavia comes from Iceland, a nation originally settled by Norwegian 
+colonists. As a result there is much more material from the Viking Age concerning Norway 
+than for instance Sweden, which, apart from Runic inscriptions, has almost no written sources 
+from the early Middle Ages.
+Archaeology
+Good-quality written historical sources for Scandinavia during the Viking Period are scarce, 
+but the archaeological record is rich.
+Runestones
+The vast majority of runic inscriptions from the Viking period come from Sweden and date 
+from the 11th century. Many runestones in Scandinavia record the names of participants in 
+Viking expeditions, such as the Kjula runestone which tells of extensive warfare in Western 
+Europe and the Turinge runestone which tells of a warband in Eastern Europe. Other 
+runestones mention men who died on Viking expeditions. Among them are around 25 Ingvar 
+runestones in the Malardalen district of Sweden, erected to commemorate members of a 
+disastrous expedition into present-day Russia in the early 11th century. The runestones are 
+important sources in the study of Norse society and early medieval Scandinavia, not only of 
+the 'Viking' segment of the population.[10]
+Runestones attest to voyages to locations such as Bath,[11] Greece,[12] Khwaresm,[13] 
+Jerusalem,[14] Italy (as Langobardland),[15] London,[16] Serkland (i.e. the Muslim world),[17] 
+England,[18] and various locations in Eastern Europe.
+Ships
+There were two distinct classes of Viking ships: the 'longship' (sometimes erroneously called 
+"drakkar", a corruption of "dragon" in Norse) and the 'knarr'. The longship, intended for 
+warfare and exploration, was designed for speed and agility, and was equipped with oars to 
+complement the sail as well as making it able to navigate independently of the wind. The 
+longship had a long and narrow hull, as well as a shallow draft, in order to facilitate landings 
+and troop deployments in shallow water. The knarr was a dedicated merchant vessel designed 
+to carry cargo. It was designed with a broader hull, deeper draft and limited number of oars 
+(used primarily to maneuver in harbors and similar situations). One Viking innovation was the 
+'beitass', a spar mounted to the sail that allowed their ships to sail effectively against the 
+wind.[20]
+Longships were used extensively by the Leidang, the Scandinavian defence fleets. The term 
+"Viking ships" has entered common usage, however, possibly because of its romantic 
+associations (discussed below).
+In Roskilde are the well-preserved remains of five ships, excavated from nearby Roskilde 
+Fjord in the late 1960s. The ships were scuttled there in the 11th century to block a navigation 
+channel, thus protecting the city, which was then the Danish capital, from seaborne assault. 
+These five ships represent the two distinct classes of Viking ships, the longship and the knarr. 
+The remains of these ships can be found on display at the Viking Ship Museum in Roskilde.
+Longships are not to be confused with later-period longboats. It was common for Viking ships 
+to tow or carry a smaller boat to transfer crews and cargo from the ship to shore.
+Experimental archaeology
+On 1 July 2007, the reconstructed Viking ship Skuldelev 2, renamed Sea Stallion,[21] began a 
+journey from Roskilde, Denmark to Dublin, Ireland. The remains of that ship and four others 
+were discovered during a 1962 excavation in the Roskilde Fjord. This multi-national 
+experimental archeology project saw 70 crew members sail the ship back to its home in 
+Ireland. Tests of the original wood show that it was made of Irish trees. The Sea Stallion 
+arrived outside Dublin's Custom House on 14 August 2007.
+The purpose of the voyage was to test and document the seaworthiness, speed and 
+maneuverability of the ship on the rough open sea and in coastal waters with treacherous 
+currents. The crew tested how the long, narrow, flexible hull withstood the tough ocean 
+waves. The expedition also provided valuable new information on Viking longships and 
+society. The ship was built using Viking tools, materials and much the same methods as the 
+original ship.
+Other vessels, often replicas of the Gokstad ship (full- or half-scale) or Skuldelev I have been 
+built and tested also. The Snorri (a Skuldelev I Knarr) was sailed from Greenland to 
+Newfoundland in 1998, for example. [22]
+Viking-age reenactors have undertaken experimental activities such as iron smelting and 
+forging using Norse techniques.
+The Viking Age
+The period from the earliest recorded raids in the 790s until the Norman Conquest of England 
+in 1066 is commonly known as the Viking Age of Scandinavian history. Vikings used the 
+Norwegian Sea[24] and Baltic Sea for sea routes to the south. The Normans were descended 
+from Danish and Norwegian Vikings who were given feudal overlordship of areas in northern 
+France - the Duchy of Normandy - in the 10th century.[citation needed] In that respect, 
+descendants of the Vikings continued to have an influence in northern Europe. Likewise, 
+King Harold Godwinson, the last Anglo-Saxon king of England, had Danish ancestors.
+Geographically, a "Viking Age" may be assigned not only to Scandinavian lands (modern 
+Denmark, Norway and Sweden), but also to territories under North Germanic dominance, 
+mainly the Danelaw, including Scandinavian York, the administrative centre of the remains of 
+the Kingdom of Northumbria,[25] parts of Mercia,[26] and East Anglia.[27] Viking navigators 
+opened the road to new lands to the north, west and east, resulting in the foundation of 
+independent settlements in the Shetland, Orkney, and Faroe Islands; Iceland; Greenland;[28] 
+and L'Anse aux Meadows, a short-lived settlement in Newfoundland, circa 1000 A.D.[29] 
+Many of these lands, specifically Greenland and Iceland, may have been originally discovered 
+by sailors blown off course.[citation needed] They also may well have been deliberately sought out, 
+perhaps on the basis of the accounts of sailors who had seen land in the distance. The 
+Greenland settlement eventually died out, possibly due to climate change. Vikings also 
+explored and settled in territories in Slavic-dominated areas of Eastern Europe, particularly the 
+Kievan Rus. By 950 AD these settlements were largely Slavicised.
+As early as 839, when Swedish emissaries are first known to have visited Byzantium, 
+Scandinavians served as mercenaries in the service of the Byzantine Empire.[30] In the late 10th 
+century, a new unit of the imperial bodyguard was formed which traditionally contained large 
+numbers of Scandinavians. This was known as the Varangian Guard. The word "Varangian" 
+may have originated in Old Norse, but in Slavic and Greek it could refer either to 
+Scandinavians or Franks. The most eminent Scandinavian to serve in the Varangian Guard 
+was Harald Hardrada, who subsequently established himself as king of Norway (1047-66).
+Important trading ports during the period include Birka, Hedeby, Kaupang, Jorvik, Staraya 
+Ladoga, Novgorod and Kiev.
+There is archaeological evidence that Vikings reached the city of Baghdad, the centre of the 
+Islamic Empire.[31] The Norse regularly plied the Volga with their trade goods: furs, tusks, seal 
+fat for boat sealant and slaves. However, they were far less successful in establishing 
+settlements in the Middle East, due to the more centralised Islamic power.[citation needed]
+Generally speaking, the Norwegians expanded to the north and west to places such as Ireland, 
+Scotland, Iceland and Greenland; the Danes to England and France, settling in the Danelaw 
+(northern/eastern England) and Normandy; and the Swedes to the east, founding the Kievan 
+Rus, the original Russia. However, among the Swedish runestones which mention expeditions 
+over seas, almost half tell of raids and travels to western Europe. Also, according to the 
+Icelandic sagas, many Norwegian Vikings went to eastern Europe. These nations, although 
+distinct, were similar in culture and language. The names of Scandinavian kings are known 
+only for the later part of the Viking Age. Only after the end of the Viking Age did the 
+separate kingdoms acquire distinct identities as nations, which went hand in hand with their 
+Christianization. Thus the end of the Viking Age for the Scandinavians also marks the start of 
+their relatively brief Middle Ages.
+ The Vikings sailed most of the North Atlantic, reaching south to North Africa and east to Russia, 
+Constantinople and the Middle East, as looters, traders, colonists, and mercenaries. Vikings under 
+Leif Eriksson, heir to Erik the Red, reached North America, and set up a short-lived settlement in 
+present-day L'Anse aux Meadows, Newfoundland and Labrador, Canada.
+The motives driving the Viking expansion form a topic of much debate in Nordic history. One 
+common theory posits that Charlemagne "used force and terror to Christianise all pagans", 
+leading to "baptism, converting or death by iron and blood", and as a result "Vikings and other 
+pagans wanted to avenge".[32][33][34][35][36] Professor Rudolf Simek confirms that "it is not a 
+coincidence if the early Viking activity occurred during the reign of Charlemagne".[37][38] 
+Because of the penetration of Christianity in Scandinavia, serious conflict divided Norway for 
+almost a century.[39]
+Another common theory posits that the Norse population had outgrown the agricultural 
+potential of their Scandinavian homeland.[citation needed] For a coastal population with superior 
+naval technologies, it made sense to expand overseas in the face of a youth bulge effect. 
+Raiding by sea may have been easier than trying to carve out new farms in their vast interior 
+arboreal forest, which is not highly productive soil. No such rise in population or decline in 
+agricultural production has been definitively proven.
+Another explanation is that the Vikings exploited a moment of weakness in the surrounding 
+regions. For instance, the Danish Vikings were aware of the internal divisions within 
+Charlemagne's empire that began in the 830s and resulted in schism.[citation needed] England 
+suffered from internal divisions, and was relatively easy prey given the proximity of many 
+towns to the sea or to navigable rivers. Lack of organised naval opposition throughout 
+Western Europe allowed Viking ships to travel freely, raiding or trading as opportunity 
+permitted.
+The decline in the profitability of old trade routes could also have played a role. Trade 
+between western Europe and the rest of Eurasia suffered a severe blow when the Roman 
+Empire fell in the 5th century.[40] The expansion of Islam in the 7th century had also affected 
+trade with western Europe.[41] Trade on the Mediterranean Sea was historically at its lowest 
+level when the Vikings initiated their expansion.[citation needed] By opening new trade routes in 
+Arabic and Frankish lands, the Vikings profited from international trade by expanding beyond 
+their traditional boundaries.[citation needed]
+The end of the Viking Age
+During the Viking Age, Scandinavian men and women travelled to many parts of Europe and 
+beyond, in a cultural diaspora that left its traces from Newfoundland to Byzantium. But this 
+period of energetic activity also had a pronounced effect in the Scandinavian homelands, 
+which were subject to a variety of new influences.[42] In the 300 years from the late 8th 
+century, when contemporary chroniclers first commented on the appearance of Viking raiders, 
+to the end of the 11th century, Scandinavia underwent profound cultural changes.
+In the late 11th century, royal dynasties legitimised by the Church were asserting their power 
+with increasing authority and ambition, and the three kingdoms of Denmark, Norway and 
+Sweden had taken shape. Towns were appearing which functioned as secular and 
+ecclesiastical administrative centres as well as market sites, and monetary economies were 
+beginning to emerge based on English and German models.[43] By this time the influx of 
+Islamic silver from the East had been absent for more than a century, and the flow of English 
+silver had come to an end in the mid-11th century.[44] Christianity had taken root in Denmark 
+and Norway with the establishment of dioceses during the 11th century, and the new religion 
+was beginning to organise and assert itself more effectively in Sweden. Foreign churchmen 
+and native elites were energetic in furthering the interests of Christianity, which was now no 
+longer operating simply on a missionary footing, and old ideologies and lifestyles were 
+transforming. It was not until 1103, however, that the first archbishopric was founded in 
+Scandinavia, at Lund (in the southernmost part of present-day Sweden, previously part of 
+Denmark).
+The assimilation of the nascent Scandinavian kingdoms into the cultural mainstream of 
+European Christendom altered the aspirations of Scandinavian rulers and those Scandinavians 
+able to travel overseas, and changed their relations with their neighbours. One of the primary 
+sources of profit for the Vikings had been slave-taking. The medieval Church took the 
+position that Christians should not own fellow Christians as slaves, so chattel slavery 
+diminished as a practice throughout northern Europe. This took much of the economic 
+incentive out of raiding, though sporadic slaving activity continued in the 11th century. 
+Eventually, outright slavery was outlawed, and replaced with serfdom at the bottom rung of 
+medieval society. Scandinavian predation in Christian lands around the North Sea and the 
+Irish Sea diminished markedly.
+The kings of Norway continued to assert power in parts of northern Britain and Ireland, and 
+raids continued into the 12th century, but the military ambitions of Scandinavian rulers were 
+now directed toward new paths. In 1107 Sigurd I of Norway sailed for the eastern 
+Mediterranean with a host of Norwegian crusaders to fight for the newly established 
+Kingdom of Jerusalem, and the Danes and Swedes participated energetically in the Baltic 
+Crusades of the 12th and 13th centuries.[45]
+Weapons and warfare
+Our knowledge about arms and armour of the Viking age is based on relatively sparse 
+archaeological finds, pictorial representation, and to some extent on the accounts in the Norse 
+sagas and Norse laws recorded in the 13th century.
+According to custom, all free Norse men were required to own weapons, as well as permitted 
+to carry them all the time. These arms were also indicative of a Viking's social status: a 
+wealthy Viking would have a complete ensemble of a helmet, shield, chainmail shirt, and 
+sword. A typical bondi (freeman) was more likely to fight with a spear and shield, and most 
+also carried a seax as a utility knife and side-arm. Bows were used in the opening stages of 
+land battles, and at sea, but tended to be considered less "honourable" than a hand weapon. 
+Vikings were relatively unusual for the time in their use of axes as a main battle weapon. The 
+Huscarls, the elite guard of King Cnut (and later King Harold II) were armed with two-
+handed axes which could split shields or metal helmets with ease.
+Legacy
+Medieval perceptions of the Vikings
+In England the Viking Age began dramatically on 8 June 793 when Norsemen destroyed the 
+abbey on the island of Lindisfarne. The devastation of Northumbria's Holy Island shocked 
+and alerted the royal Courts of Europe to the Viking presence. "Never before has such an 
+atrocity been seen," declared the Northumbrian scholar, Alcuin of York.[citation needed] More than 
+any other single event, the attack on Lindisfarne demonised perception of the Vikings for the 
+next twelve centuries. Not until the 1890s did scholars outside Scandinavia begin to seriously 
+reassess the achievements of the Vikings, recognizing their artistry, technological skills and 
+seamanship.[46]
+Norse mythology, sagas and literature tell of Scandinavian culture and religion through tales 
+of heroic and mythological heroes. However, early transmission of this information was 
+primarily oral, and later texts were reliant upon the writings and transcriptions of Christian 
+scholars, including the Icelanders Snorri Sturluson and Samundur fro?i. Many of these sagas 
+were written in Iceland, and most of them, even if they had no Icelandic provenance, were 
+preserved there after the Middle Ages due to the Icelanders' continued interest in Norse 
+literature and law codes.
+The 200-year Viking influence on European history is filled with tales of plunder and 
+colonization, and the majority of these chronicles came from western witnesses and their 
+descendants. Less common, though equally relevant, are the Viking chronicles that originated 
+in the east, including the Nestor chronicles, Novgorod chronicles, Ibn Fadlan chronicles, Ibn 
+Rusta chronicles, and many brief mentions by the Fosio bishop from the first big attack on the 
+Byzantine Empire.
+Other chroniclers of Viking history include Adam of Bremen, who wrote "There is much gold 
+here (in Zealand), accumulated by piracy. These pirates, which are called wichingi by their 
+own people, and Ascomanni by our own people, pay tribute to the Danish king" in the fourth 
+volume of his Gesta Hammaburgensis Ecclesiae Pontificum.
+In 991, the Battle of Maldon between Viking raiders and the inhabitants of the town of 
+Maldon in Essex, England was commemorated with a poem of the same name.
+Post-medieval perceptions of the Vikings
+Early modern publications, dealing with what we now call Viking culture, appeared in the 
+16th century, e.g. Historia de gentibus septentrionalibus (Olaus Magnus, 1555), and the first 
+edition of the 13th century Gesta Danorum of Saxo Grammaticus in 1514. The pace of 
+publication increased during the 17th century with Latin translations of the Edda (notably 
+Peder Resen's Edda Islandorum of 1665).
+In Scandinavia, the 17th century Danish scholars Thomas Bartholin and Ole Worm, and the 
+Swede Olof Rudbeck were the first to set the standard for using runic inscriptions and 
+Icelandic sagas as historical sources.[citation needed] During the Age of Enlightenment and the 
+Nordic Renaissance, historical scholarship in Scandinavia became more rational and pragmatic, 
+as witnessed by the works of the Danish historian Ludvig Holberg and the Swede Olof von 
+Dalin.[citation needed]. An important early British contributor to the study of the Vikings was 
+George Hicke, who published his Linguarum vett. septentrionalium thesaurus in 1703 - 05. 
+During the 18th century, British interest and enthusiasm for Iceland and early Scandinavian 
+culture grew dramatically, expressed in English translations of Old Norse texts, and original 
+poems which extolled the supposed "Viking virtues".
+The word "viking" was first popularised at the beginning of the 19th century by Erik Gustaf 
+Geijer in his poem, The Viking. Geijer's poem did much to propagate the new romanticised 
+ideal of the Viking, which had little basis in historical fact. The renewed interest of 
+Romanticism in the Old North had contemporary political implications. The Geatish Society, 
+of which Geijer was a member, popularised this myth to a great extent. Another Swedish 
+author who had great influence on the perception of the Vikings was Esaias Tegner, member 
+of the Geatish Society, who wrote a modern version of Fri??jofs saga ins frokna, which 
+became widely popular in the Nordic countries, the United Kingdom and Germany.
+The fascination with the Vikings reached a peak during the so-called Viking Revival in the 
+late 18th and 19th centuries. In Britain this took the form of Septentrionalism, in Germany 
+that of "Wagnerian" pathos or even Germanic mysticism, and in the Scandinavian countries 
+that of Romantic nationalism or Scandinavism. Pioneering 19th-century scholarly editions of 
+the Viking Age began to reach a small readership in Britain, archaeologists began to dig up 
+Britain's Viking past, and linguistic enthusiasts started to identify the Viking-Age origins for 
+rural idioms and proverbs. The new dictionaries of the Old Norse language enabled the 
+Victorians to grapple with the primary Icelandic sagas.[47]
+Until recently, the history of the Viking Age was largely based on Icelandic sagas, the history 
+of the Danes written by Saxo Grammaticus, the Russian Primary Chronicle and The War of 
+the Irish with the Foreigners. Although few scholars still accept these texts as reliable sources, 
+historians nowadays rely more on archeology and numismatics, disciplines that have made 
+valuable contributions toward understanding the period.[48]
+The figure of the Viking in twentieth-
+century politics
+The romanticised idea of the Vikings constructed in scholarly and popular circles in 
+northwestern Europe in the nineteenth and early 20th centuries was a potent one, and the 
+figure of the Viking became a familiar and malleable symbol in different contexts in the 
+politics and political ideologies of 20th-century Europe.[49] In Normandy, which had been 
+settled by Vikings, the Viking ship became an uncontroversial regional symbol. In Germany, 
+awareness of Viking history in the 19th century had been stimulated by the border dispute 
+with Denmark over Schleswig-Holstein and the use of Scandinavian mythology by Richard 
+Wagner. The idealised view of the Vikings appealed to Germanic supremacists who 
+transformed the figure of the Viking in accordance with the racialist ideology of the Germanic 
+master race.[50] Building on the linguistic and cultural connections between Norse-speaking 
+Scandinavians and other Germanic groups in the far past, Scandinavian Vikings were 
+portrayed in Nazi Germany as a pure Germanic type. The cultural phenomenon of Viking 
+expansion was re-interpreted for use as propaganda to support the extreme militant 
+nationalism of the Third Reich, and ideologically informed interpretations of Viking paganism 
+and the Scandinavian use of runes were employed in the construction of Nazi mysticism. 
+Other political organizations of the same ilk, such as the former Norwegian fascist party 
+Nasjonal Samling, similarly appropriated elements of the modern Viking cultural myth in their 
+symbolism and propaganda. In communist Russia, the ideology of Slavic racial purity led to 
+the complete denial that Scandinavians had played a part in the emergence of the principalities 
+of the Rus', which was supposed to have been founded by Slavs. Evidence to the contrary 
+was suppressed until the 1990s. The city of Novgorod now enthusiastically acknowledges its 
+Viking history, and has included a Viking ship in its logo.[51]
+The Vikings in modern music, literature, 
+and popular culture
+Led by the operas of German composer Richard Wagner, such as Der Ring des Nibelungen, 
+Vikings and the Romanticist Viking Revival inspired many creative works. These have 
+included novels directly based on historical events, such as Frans Gunnar Bengtsson's The 
+Long Ships (which was also released as a 1963 film), and historical fantasies such as the film 
+The Vikings, Michael Crichton's Eaters of the Dead (movie version called The 13th Warrior) 
+and the comedy film Erik the Viking. The vampire Eric Northman, in the HBO TV series True 
+Blood, was a Viking prince before being turned into a vampire. Vikings appear in several 
+books by the Danish American writer Poul Anderson, while British explorer, historian and 
+writer Tim Severin authored a trilogy of novels in 2005 about a young Viking adventurer 
+Thorgils Leifsson, who travels around the world.
+Since the 1960s, there has been rising enthusiasm for historical reenactment. While the earliest 
+groups had little claim for historical accuracy, the seriousness and accuracy of re-enactors has 
+increased. The largest such groups include The Vikings and Regia Anglorum, though many 
+smaller groups exist in Europe, the UK, North America, New Zealand, and Australia. Many 
+reenactor groups participate in live-steel combat, and a few have Viking-style ships or boats.
+Modern reconstructions of Viking mythology have shown a persistent influence in late 20th- 
+and early 21st-century popular culture in some countries, inspiring comics, role-playing games, 
+computer games, and music, including Viking metal, a sub-genre of heavy metal music.
+Common misconceptions concerning the 
+Vikings
+Horned helmets
+Apart from two or three representations of (ritual) helmets - with protrusions that may be 
+either stylised ravens, snakes or horns - no depiction of Viking Age warriors' helmets, and no 
+preserved helmet, has horns. In fact, the formal close-quarters style of Viking combat (either 
+in shield walls or aboard "ship islands") would have made horned helmets cumbersome and 
+hazardous to the warrior's own side.
+Therefore historians believe that Viking warriors did not use horned helmets, but whether or 
+not such helmets were used in Scandinavian culture for other, ritual purposes remains 
+unproven. The general misconception that Viking warriors wore horned helmets was partly 
+promulgated by the 19th century enthusiasts of Gotiska Forbundet, founded in 1811 in 
+Stockholm, Sweden. They promoted the use of Norse mythology as the subject of high art 
+and other ethnological and moral aims.
+The Vikings were often depicted with winged helmets and in other clothing taken from 
+Classical antiquity, especially in depictions of Norse gods. This was done in order to legitimise 
+the Vikings and their mythology by associating it with the Classical world which had long 
+been idealised in European culture.
+The latter-day mythos created by national romantic ideas blended the Viking Age with aspects 
+of the Nordic Bronze Age some 2,000 years earlier. Horned helmets from the Bronze Age 
+were shown in petroglyphs and appeared in archaeological finds (see Bohuslan and Vikso 
+helmets). They were probably used for ceremonial purposes.[52]
+Cartoons like Hagar the Horrible and Vicky the Viking, and sports uniforms such as those of 
+the Minnesota Vikings and Canberra Raiders football teams have perpetuated the mythic 
+cliche of the horned helmet.
+Viking helmets were conical, made from hard leather with wood and metallic reinforcement 
+for regular troops. The iron helmet with mask and chain mail was for the chieftains, based on 
+the previous Vendel-age helmets from central Sweden. The only true Viking helmet found is 
+that from Gjermundbu in Norway. This helmet is made of iron and has been dated to the 10th 
+century.
+Use of skulls as drinking vessels
+The use of human skulls as drinking vessels-another common motif in popular pictorial 
+representations of the Vikings-is also ahistorical. The rise of this legend can be traced to Ole 
+Worm's Runer seu Danica literatura antiquissima (1636), in which Danish warriors drinking or 
+bjugvi?um hausa [from the curved branches of skulls, i.e. from horns] were rendered as 
+drinking ex craniis eorum quos ceciderunt [from the skulls of those whom they had slain]. The 
+skull-cup allegation may also have some history in relation with other Germanic tribes and 
+Eurasian nomads, such as the Scythians and Pechenegs, and the vivid example of the 
+Lombard Alboin, made notorious by Paul the Deacon's History.
+There may also be some confusion between "skull" and the Norse/Icelandic word for a 
+drinking cup, skal. This is a common toast in Scandinavian countries.
+Barbarity
+The image of wild-haired, dirty savages sometimes associated with the Vikings in popular 
+culture[clarification needed] is a distorted picture of reality.[1] Non-Scandinavian Christians are 
+responsible for most surviving accounts of the Vikings and, consequently, a strong possibility 
+for bias exists. This attitude is likely attributed to Christian misunderstandings regarding 
+paganism. Viking tendencies were often misreported and the work of Adam of Bremen, 
+among others, told largely disputable tales of Viking savagery and uncleanliness.[53]
+The Anglo-Danes were considered excessively clean by their Anglo-Saxon neighbours, due to 
+their custom of bathing every Saturday and combing their hair often. To this day, Saturday is 
+referred to as laugardagur / laurdag / lordag / lordag, "washing day" in the Scandinavian 
+languages. Icelanders were known to use natural hot springs as baths, and there is a strong 
+sauna/bathing culture in Scandinavia to this day.
+As for the Vikings in the east, Ibn Rustah notes their cleanliness in carrying clean clothes, 
+whereas Ibn Fadlan is disgusted by all of the men sharing the same, used vessel to wash their 
+faces and blow their noses in the morning. Ibn Fadlan's disgust is possibly because of the 
+contrast to the personal hygiene particular to the Muslim world at the time, such as running 
+water and clean vessels. While the example intended to convey his disgust about certain 
+customs of the Rus', at the same time it recorded that they did wash every morning.
+Genetic legacy
+Studies of genetic diversity provide some indication of the origin and expansion of the Viking 
+population. The Haplogroup I1 (defined by specific genetic markers on the Y-chomosome) is 
+sometimes referred to as the "Viking haplogroup".[citation needed] This mutation occurs with the 
+greatest frequency among Scandinavian males: 35 percent in Norway, Denmark and Sweden, 
+and peaking at 40 percent within western Finland.[54] It is also common near the southern 
+Baltic and North Sea coasts, and then successively decreases the further south geographically.
+Genetic studies in the British Isles of the Y-DNA Haplogroup R1a1, seen also across 
+Scandinavia, have demonstrated that the Vikings settled in Britain and Ireland as well as 
+raiding there. Both male and female descent studies show evidence of Norwegian descent in 
+areas closest to Scandinavia, such as the Shetland and Orkney Islands. Inhabitants of lands 
+farther away show most Norse descent in the male Y-chromosome lines.[55]
+A specialised surname study in Liverpool demonstrated marked Norse heritage, up to 50 
+percent of males who belonged to original families, those who lived there before the years of 
+industrialization and population expansion.[56] High percentages of Norse inheritance-tracked 
+through R1a1 haplotype signatures-were also found among males in Wirral and West 
+Lancashire.[57] This was similar to the percentage of Norse inheritance found among males in 
+the Orkney Islands.[58]
+Recent research suggests that the Scottish warrior Somerled, who drove the Vikings out of 
+Scotland and was the progenitor of Clan Donald, may himself have been of Viking descent-
+a member of Haplogroup R1a1.[59]
+Vikings!
+
+
+Vikings! The word conjures up images of wild, barbaric, sea faring men, intent on setting their mark 
+on their less warlike neighbours with fire and sword. From the land of ice and giants, they swept 
+across Europe like a forest fire raping, pillaging and destroying all in their path. Sound familiar? It 
+should do, it's the image that the writers of the time recorded.
+It is inescapable that in a bloodthirsty age they were more bloodthirsty than most, but the 
+mask of enduring ferocity slips a little when you consider that the people that did the writing 
+were those that stood between the Vikings and their silver - the clerical staff of churches and 
+abbeys.
+Let us look briefly at the roots and achievements of the Viking age.
+Ships.
+When the very distant ancestors of the Vikings reached the end of their long migration from - 
+probably - the Indus valley, they ran into a real problem. The sea. They were a nomadic people 
+from an area with few areas of open water and certainly with no seaboard. Yet, within a few 
+generations, they seem to have invented more or less from scratch a design of hull that became 
+common throughout Europe for several centuries. It is possible to follow a line of 
+development through previous boat designs found on the European west coast, but around the 
+beginning of the seventh century after Christ, some northern genius invented the long narrow 
+hull that became known as the Longship.
+Construction.
+Long, lean and above all flexible, the hulls were usually of oak planks that had been split from felled 
+trunks. With axe and adze, the planks were trimmed to shape then riveted together with iron nails. 
+At the junction of the planks, a thin rope of twisted hair soaked in pitch (boiled birch tree sap) was 
+trapped. This acted as a flexible waterproofing membrane. The hulls were built first, the distortion 
+of the planks leading to the upwards curvature of the bow and stern. It was soon found that this 
+type of hull was very seaworthy and this aspect of the design was exaggerated to create the 
+soaring curve that became such a characteristic of the shape of Northern vessels. When the hull 
+was finished, the ribs were tied in with the thin fibrous roots of the Larch tree. At sea, the hulls 
+were watertight and because of their flexible nature, would often twist and bend where a more 
+solid structure might break.
+Uses.
+At first, they were only used as rowing boats, but within a hundred years, ships were being built 
+that were obviously intended as sailing ships. With their square sail and single mast, they could 
+largely only sail down wind, but there is good evidence from ship replicas that they could sail across 
+the wind to some extent.
+Oars were mostly used for times when the wind did not suit the purposes of the ship master 
+and for manoeuvring in port. However, it was quite possible with a big crew to maintain a 
+steady pace but crossing the North Sea under oars alone was not practiced by raiding ships as 
+it was simply too far.
+It is important to understand that there were many different types of ship. There were small 
+rowing boats that might be handled by a couple of men each pulling two oars each called 
+Faerings. Trading vessels which had a virtually fixed mast and only four oar ports in their 
+fifty foot length known as Knarrs. Also the great Drakkars, the warships that were over a 
+hundred feet long and had crews of more than a hundred men. There were Karvs, a sort of 
+multi purpose ship that could trade and/or raid and it is one of these ships that was found at 
+the end of the last century at Gokstad in Norway. This find gave birth to many replicas, based 
+upon this well-preserved hull. In the closing years of the nineteenth century, the first of these 
+was sailed across the Atlantic to the World's Fair in Chicago. I understand that the hull is still 
+to be seen by the shore of Lake Michigan and is itself one of the oldest ships on the North 
+American continent!
+During this century, several other ship finds have been made, adding to our knowledge of this 
+fascinating type of vessel. The importance of the ship to the Scandinavians of a thousand 
+years ago cannot be overstated. Truly, without them, there would have been no Viking age 
+and Europe would be a very different place today.
+Abroad
+Trading
+The mobility of their shallow draft vessels allowed the Vikings to travel far up the rivers 
+which flow into the seas surrounding the European continent. The Swedes seem to have 
+specialised in trading down the river systems from the Baltic into central Europe and so to 
+Constantinople. They called the place 'Miklagard', literally 'The Great City'. From this trade 
+route, luxury goods like silk and spices were brought north and sold in specialist trading 
+communities like Birka and Hedeby.
+Norwegian and Danish Vikings tended to look more to the west. They traded and raided 
+around the western seaboard of Europe and its islands. It was these people who explored and 
+settled Iceland, Greenland and finally North America. There is now no doubt that there was a 
+Viking settlement in Labrador. However, this represented the limit of reach of their 
+settlements and it is unlikely that they stayed there long, possibly only a few years. It is my 
+opinion that when Leif Erikson went to North America, he did so knowing that it was there. 
+It was likely that the expedition went there for wood more than from the pure spirit of 
+exploration. The site in New Foundland known as Lans aux Meadows, is now beginning to 
+throw up finds that suggest they even went further south.
+There are records of other visits to America, some of whom never returned. Sailing the North 
+Atlantic in an open boat - however seaworthy - is a dangerous business and it is more than 
+likely that those who never returned were simply lost at sea. It is fun to speculate, though, on 
+the report that Cortez brought back. He said he was initially welcomed by the inhabitants of 
+South America as a representative of those pale-skinned seafarers who had visited that part of 
+the world centuries before........
+Raiding.
+It must have seemed like a continuing nightmare to the largely peaceful settlements around the 
+coasts of Europe and its islands. Suddenly, in the closing years of the eighth century, the 
+Viking raids began. They often came in on the morning sea mists, their shallow-draft vessels 
+creeping quietly through the reeds of the river mouths or sliding silently up on sandy beaches. 
+Quickly, the raiding party would assemble and work its way inland. Their early targets were 
+the churches and monasteries, looking for silver, gold and slaves. Soon, these were depleted 
+and the raiders attention turned to the more mundane victims of farm and village for food and 
+horses to make their getaway. As the years slipped by, so the sea raiders came more and more 
+often. Sometimes, they would stay over-winter and gradually the raiders camps turned into 
+settlements. At one time, most of England was under the Viking heel and they called this part 
+of the country the Danelaw.
+The turning point came when Alfred the Great beat Guthrum in a straight fight and forced 
+him and his important men to become Christians. After that, every year saw first Alfred and 
+then his kin pushing the Danish invaders further and further north. They did this steadily, 
+setting up Burhs or fortified towns. (One example of this as place name evidence is 
+Middlesbrough.) Eventually, in the reign of Athelstan, the whole of Britain came under his 
+kingship.
+
+
+Around the turn of the millennium there followed a period of state-organised invasion. 
+Hundreds of ships would turn up regularly each year with thousands of men. They were intent 
+upon making Britain politically part of Scandinavia and they could only be bought off with 
+ever increasing sums of Danegeld, as it became known. 20,000 pounds weight of silver was a 
+not unusual sum and it proved a crippling load on the economy of the English state. But 
+curiously, despite the vast sums of money going out of the country, it held together and only 
+fell to Cnut after a large defeat in battle at Ashington in Essex.
+Eventually, in 1016, the English Witan turned to Cnut, king of Denmark and asked him to 
+become king of England. He proved to be a good king and spent much of his early reign 
+settling the affairs of ravaged parts of the kingdom and re-settling them. For instance, there is 
+some evidence that he spent a whole year in the Isle of Wight, setting things to rights there.
+Substantially, the reign of Cnut (or Canute) represented the end of Viking military incursions 
+into England, although there were sporadic raids around the coast for some time. The last 
+great fete of Scandinavian arms in this country was in 1066, when king Harold Godwinsson, 
+last Saxon king of the English, brought King Harald Hardrada of Norway to open battle at 
+Stamford Bridge near York. In a crushing decisive victory, King Harold broke the power of 
+the Scandinavian kings to wage overseas war on a large scale. It was the final major Viking 
+raid.
+At Home
+The Law
+For a people who were so careless of the rights of the folk they fought against, the Vikings 
+were surprisingly organised and careful of their rights at home. There was a strict system of 
+law, enforced by the people that lived under it. Regular meetings - called Things or Althings - 
+were held at which the Law was read aloud. (This custom survives to this day in the Manx 
+Tynwald.) At these meetings, cases were judged and punishments imposed by a council of 
+important men who were changed from time to time. Every free man or woman had the right 
+to speak at an Althing, and women were generally held to be the equal of men under the law. 
+Women retained their rights to manage their own money and property after marriage and 
+could obtain a divorce with the same ease - or difficulty - as a man. Women only became 
+second-class citizens after the imposition of Norman Law!
+Eating And Drinking
+The Vikings ate a wide range of foodstuffs, but there are no real surprises. Beef, mutton, pork 
+and venison were common meats, and communities close to the coast could expect to widen 
+their diets with fish and shellfish. A heavy bread made from barley flour was common, but 
+there is evidence that at least some people had wheaten bread available to them. It was often 
+the custom to eat gruel - a porridge augmented by scraps of meat as a morning meal. Boiled 
+meat was much more common than roasted, something which was normally only eaten during 
+ceremonies. Boiled sausages known as 'cauldron snakes', were a special delicacy. Other sought 
+after foodstuffs were sun-dried cod, ling and pork that had been preserved in whey, then 
+boiled to rags in its juice. Yuk!
+It is reasonable to assume that rich folk ate better than poor, but their range of foodstuffs 
+would not have been very different.
+ 
+
+Housing
+Their houses were constructed of wood and/or stone. They were long lived structures and - barring 
+accidents - might last at least 150 years with normal maintenance. The traditional Longhouse would 
+have been a dark, smoky place in which to live and work, but there is emerging evidence that the 
+Vikings often used two storey buildings with balconies on the upper floor, much as might be seen in 
+rural Scandinavia to this day. The roofs were thatched, turfed or covered in wood shingles, 
+depending on available local resources.
+To Sum Up
+The Vikings were a proud, honourable, law-abiding people who valued warfare and personal 
+reputation (they called it 'word fame') above almost anything else. In the latter years of the 
+Viking Age, they became involved in their own myth, starting such organisations as the 
+Jomsvikings.
+They brought the seafaring ship to Europe and, by their constant depredations, spread its use 
+far and wide. In only 250 years, they set their mark on the law and language of many 
+countries and made many European communities see themselves in the light of a nation state 
+for the first time. In terms of human history, if you blinked, you would have missed them! But 
+the image the Vikings promoted of the brave, hardy individualist, unafraid of the world in all 
+its forms, remains with us all as an example of how a man should conduct himself in adversity.
+'Wealth dies, kinsmen die. Cattle die and the wheat, too. 
+But this thing never dies: word-fame! 
+Word-fame never dies for he that achieves it well.' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
