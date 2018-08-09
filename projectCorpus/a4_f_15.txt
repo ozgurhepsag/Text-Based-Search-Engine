@@ -1,0 +1,751 @@
+
+lot for home-grown systems. Third-party license managers, on the other hand, generally employ two 
+approaches to integrate the software with the license manager: injection or APIs. 
+•  Injection: Given a "normal" application, the "injection" approach analyzes the object code 
+and "injects" into it new code that typically obfuscates and/or encrypts the original code and 
+adds the client license manager to enforce the license. In other words, injection works just like a virus, albeit a beneficial one. Table 4-1 lists some of the advantages and disadvantages 
+of the injection approach. 
+•  API: In this approach developers write to an API (or SDK) provided by the license manager 
+vendor. The API provides for such things as license registration and enforcement (e.g., it has 
+calls for "checking the validity of the license" or "logging in a concurrent user.") This 
+approach is not strictly required for concurrent licensing, but it makes implementing such 
+schemes vastly easier. APIs can be used with interpreted languages, but most vendors feel 
+that using them in this manner does not provide very strong security. More plainly, it is 
+relatively easy to hack the API approach in Java/C#. Table 4-2 captures the advantages and 
+disadvantages of API-based approaches.  
+Table 4-1. Advantages and Disadvantages of the Injection Approach 
+Advantages  Disadvantages 
+•  Requires little or no work by developers 
+•  Can result in more secure protection, because 
+the injection approaches obfuscate and/or 
+encrypts code 
+•  Increases size of code 
+•  Decreases execution performance 
+•  Can only be used with binaries; 
+typically not suitable for interpreted 
+languages 
+Table 4-2. Advantages and Disadvantages of API-based Approaches 
+Advantages  Disadvantages 
+•  Provides maximum flexibility—you can control 
+exactly how the license model works 
+•  Can be used with interpreted languages 
+•  If not used properly can be easy 
+to defeat 
+•  Creates lock-in to an existing 
+vendor 
+•  Usually takes longer to 
+implement a complete solution 
+•  Can lead to a false sense of 
+security 
+While professional third-party license managers have many virtues, you need to evaluate them very 
+carefully. Consider the issues in the following sections when conducting this evaluation. 
+Business Model Support 
+To the best of my knowledge, no licensing manager supports all of the business models listed earlier. 
+For example, I don't know of any that provide direct support for most hardware-based business models 
+(such as per CPU or per-expansion-card). Most work best if you alter your business model to work 
+well with their specific technologies. 
+Traditional license managers provide a fixed set of models with fill-in parameters. An example is a 
+time-based usage scenario, in which you simply fill in the amount of time. More modern license 
+managers provide a license scripting language, similar to languages like Visual Basic, that allows you 
+to create customized scripts for creative licensing models. 
+Platform and Operating System Support 
+Make certain your license manager vendors can provide support for all required platforms and 
+operating systems. When examining their supported platforms, take the time to explore their development roadmap, because, when a new version of an operating system is released, your 
+development efforts are stalled until your license management vendor supports it! 
+Check Cracker Web Sites to Determine Solution Strength 
+It is easy to create a simple license manager. It is very hard to create an industrial-strength license 
+manager that will consistently thwart crackers, maintain the security of your software, and ensure that 
+you're getting the maximum revenue from your licensing model. If you don't have the skill to assess 
+the strength of the solution, hire a consultant who does. 
+Check Backend Integration and Volume Capabilities 
+As stated earlier, the license generator is almost always integrated with backend systems. Examine 
+your potential license manager vendor's ability to integrate its system within your environment. While 
+you're doing this, make certain they can also meet your performance, volume, scalability, and stability 
+requirements. 
+Make Certain Operational Environment Matches Yours 
+License managers create a whole host of operational issues. For example, customer service 
+representatives may have to regenerate a license, or create a temporary evaluation license on the fly, 
+or cancel a previously generated license. You'll have to make certain that the integrations created 
+between your license generator and other backend components are sufficiently scalable and reliable. 
+Make certain that your license manager vendor can meet your operational requirements. In other 
+words, if your customer service environment is completely Web-based, make certain your license 
+manager vendor can provide all required functionality via a browser. 
+Check Branding and User Interface Control 
+When the code enforcing the license detects a violation, chances are good that some kind of error 
+message will be displayed to the user. Assess the degree of control you have over the content and 
+presentation of this error message. You want to make certain that it meets all of your usability 
+requirements, especially internationalization. You don't want to discover that your vendor has twelve 
+dialogs it might bring up in obscure circumstances, and that you can't change any of their contents. 
+Examine License Content and Format 
+The format and content of the license should be understandable and should match your business 
+requirements. Anything generated by your system, even if it is not used by the license manager, 
+should be digitally signed. For example, you may wish to put a serial number inside the license to 
+integrate the license generator with other backend systems. Any custom or proprietary data that you 
+store in the license should be signed. 
+Examine License Distribution Capabilities 
+Licenses can be distributed in a variety of ways. Make certain the vendor supports the approaches that 
+are most important to you. Internet, e-mail, phone, and fax are the most common license distribution 
+options. 
+Market Maturity Influences on the Business Model The maturity of your target market is one of the strongest influences on the selection and management 
+of a given business model. In the early phases of a given market, business models should be chosen so 
+that they can be quickly and easily understood, primarily because you may not be certain of the best 
+way to structure them. You may find that your customers prefer an annual license to a subscription, or 
+that they expect discounts if they purchase in bulk. Moreover, despite the best intentions of the 
+business plan, innovators and early adopters may expect and/or demand special terms. 
+As the market matures, chances are good that your business model will become increasingly complex 
+in order to serve the idiosyncratic needs of different market segments. I helped one client whose 
+growth had stalled attack a new market segment with the same underlying system simply by defining 
+a new business model. The original one consisted of an annual license. The new one was pay per use. 
+The easy part was modifying the underlying architecture so that both models could be supported. The 
+hard part was creating the appropriate price points so that a given customer could choose the best 
+model without harming the relationships with current customers. 
+The enforcement of business models also matches the maturity of the target market. In early market 
+stages, enforcement tends to be lax. As the market matures, or in cases where you suspect piracy, the 
+enforcement tightens up. My experience is that marketects and tarchitects take enforcement far too 
+lightly. You've worked hard to create your system, and software piracy is a serious problem. Create a 
+business model that identifies the real value provided to your customers, price it competitively, and 
+enforce it accordingly. Just remember that onerous enforcement will lead to dissatisfaction among 
+honest customers, so be careful. 
+Choosing a Business Model 
+Choosing a business model is one of the most challenging tasks faced by the marketect, as it 
+incorporates everything that has been discussed in this chapter and several factors that are beyond the 
+chapter scope, such as the business and licensing models offered by competitors (which may constrain 
+you to existing market expectations) and corporate and/or environmental factors beyond your control 
+(such as when another division does poorly and you need to find a way to increase short-term 
+revenue). To help you through the potential morass of choosing a business model, consider these 
+questions. 
+•  What is the target market? What does it value? A crisp description of the target market and 
+what it values is the first step in creating an appropriate business licensing model. If you're 
+not certain of what it values, consider how it wants to use what you're offering. Once you've 
+determined what your market values, show how your solution provides it. 
+•  What are your objectives relative to this target market? In an emerging market you may wish 
+to capture market share, so create simpler models. In a mature market you may wish to 
+protect market share, so create more complex models to provide flexibility. 
+•  What is your business model? Pick one of the business models defined above and customize it 
+to meet your needs. 
+•  What rights do you wish to convey? Begin by asking your legal department for a "standard" 
+contract, as it will contain a variety of nonnegotiable rights and restrictions. See what you can 
+do about everything that is left. 
+•  What is the affect of this business model on your software architecture? Work with the 
+tarchitect to make certain that any business model you propose is appropriately supported. 
+•  What is the pricing model? The business model provides the framework for defining how 
+you're going to make money. The pricing model sets the amount the customer will pay. You'll 
+need to consider such things as volume discounts, sales and/or channel incentives, and so 
+forth. Pricing choices may also affect your software architecture, so make them carefully. As you develop the answers to these questions, you're likely to find that the best way to reach a given 
+target market will require a variety of changes to your current business model, licensing model, and 
+software architecture. You'll have to rank-order the changes in all areas of your product so that you 
+can reach the largest target market. The benefits will be worth it, as creating the right business and 
+licensing model forms the foundation of a winning solution for both you and your customers. 
+Chapter Summary 
+•  Your business model is how you make money. 
+•  Business models are associated with, and to a large extent define, license models. 
+•  Your license model is the terms and conditions you associate with the use of your software. 
+•  The most common software-related business models make money by 
+- Providing unfettered access to or use of the application for a defined period of time 
+- Charging a percentage of the revenue obtained or costs saved from using the application 
+- Charging for a transaction, that is, a defined and measurable unit of work 
+- Metering access to or use of the application, or something the application processes 
+- Charging for the hardware the application runs on, not the application itself 
+- Providing one or more services that are intimately related to application operation and/or use 
+•  Business models associated with users (such as concurrent user licensing) motivate 
+integration with corporate systems that manage users (such as LDAP servers). 
+•  Make certain you understand every right associated with your business model. Separating 
+rights may provide more opportunities to create revenue. 
+•  License models may be enforced by home-grown or third-party professional license 
+managers. 
+ 
+Check This 
+•  Each member of the development team can define the business models currently in use or 
+under serious consideration for the future. 
+•  Our license agreements are congruent with our business model. 
+•  Our license agreements define the specific set of rights provided to customers. 
+•  We have chosen an appropriate mechanism for enforcing our business model. 
+•  The costs of changing tarchitecture to support alternative business models are understood and 
+communicated to marketects. 
+Try This 
+1.  What is your business model? 
+2.  How well does your architecture support your business model? Why do you claim this? 3.  Can you demonstrate support for a new kind of business model? For example, if your current 
+system is sold on an annual license, can you easily add support for some kind of concurrent 
+license, in such a way that you can open a new market for your software? 
+4.  If you're using a license manager, have you allocated enough time in your project plan to 
+properly integrate it into your application? 
+5.  If you are using a license manager, have you examined their development roadmap to make 
+certain it supports your own? 
+6.  Are your target customers likely to be innovators, early majority, majority, late majority, or 
+laggards? How does this characterization affect your business model? 
+Chapter 5. Technology In-Licensing 
+You can't build everything new. Every complex software system is part new code and part systems 
+integration with previously written software—even if the software you are integrating with is nothing 
+more than the C runtime library that comes with your favorite compiler. What you're integrating is a 
+product from another company, and as described in Chapter 4, this product comes to you based on a 
+business and license model. The process of licensing this technology and incorporating it into your 
+offerings is called technology in-licensing. 
+There are many motivations for technologies in-licensing. Licensing technology can be cheaper and 
+faster than building our own. Sometimes licensing isn't a choice but a requirement, as a company may 
+have obtained a key patent on a technology essential to your success. An additional consideration is 
+the skills and experience of key staff. You may not want them spending precious time and energy 
+designing and building components that you can obtain via a license. 
+Any, or all, of these factors mean that you are likely to be licensing one or more key technologies 
+from another party. As a result, understanding basic concepts associated with in-license agreements 
+and how they affect your tarchitecture is vital for everyone on the team. 
+Disclaimer: I'm not a lawyer. Any contract that may affect your system, including any license 
+agreement, should be thoroughly evaluated by a properly trained attorney. That said, an attorney can 
+only do a good job when she understands the business objectives as well as the relationship between 
+the licensed technology and the underlying tarchitecture. Thus, everyone benefits when key members 
+of the team understand the core issues associated with technology in-licensing. 
+Licensing Risks/Rewards 
+The introduction outlined some of the motivations for licensing technology. While these motivations 
+are quite real, so too are the associated risks. The following list captures both the motivations and the 
+risks that must be considered in every licensing situation. 
+Motivation/Reward. You can reduce, manage, or otherwise eliminate complexity and risk by 
+licensing technology from a third party. The technology or provider is an expert in a given area that 
+you deem important to success. By licensing their technology you gain the provider's expertise. 
+Risk. You may be able to shift complexity from your team to the technology provider, but in doing so 
+you increase risk by increasing your reliance on third-party technology. If the technology evolves in a 
+way that fails to match your needs, you could be in serious trouble. 
+A supplier might change focus, leaving you without an equivalent replacement. You may not even be 
+able to find a plug-compatible supplier. This almost happened to one of my teams when a search engine vendor whose technology we had licensed decided to reposition themselves as a portal vendor. 
+They initially stopped development of their core technology (text indexing and searching). 
+Fortunately, several customers, including us, managed to convince the vendor to maintain its 
+investment in the core technology. Everything worked out, but the situation was very tense for several 
+weeks as we explored several undesirable replacement scenarios. 
+Finally, make certain that you assess the viability of the technology provider. Given today's volatile 
+corporate market, there is always the risk that a technology provider may go out of business. 
+Motivation/Reward. In-licensing technology promotes component-based software systems, which 
+can be easily changed (such as replacing one component with another). 
+Risk. In-licensed technologies can become too intertwined with a solution to make changes to support 
+a different implementation. 
+For example, suppose you in-license a reporting component. Chances are good that you could only 
+replace it with a different implementation if that implementation supported the same level of 
+functionality. If you expose or rely on any vendor-specific functionality you've probably locked 
+yourself to this vendor. If this was a conscious choice, great. If not, you might be stuck. 
+Motivation/Reward. In-licensing technology makes your system easier to construct because you can 
+focus on creating your unique technology. 
+Risk. In-licensed components increase configuration complexity. Incompatible business models may 
+make the use of certain kinds of technologies practically impossible. I'll elaborate on this later in this 
+chapter. 
+Another potential risk deals with the restrictions that may come with various components. (Consider 
+high-end cryptographic libraries, which are often subject to various forms of export restrictions.) 
+Licensing these technologies means that you're subjecting your software to these restrictions. Keep in 
+mind that this is one of the goals of many open source licenses, most notably GNU GPL. 
+Motivation/Reward. You can obtain protection by licensing technology protected by a patent. 
+Risk. Indemnity, legal exemption from the penalties or liabilities incurred for using the component, is 
+hard to secure. Suppose you license a component from company A because it has a patent on a key 
+technology. This license is not likely to protect you from being sued by company B, who may claim 
+that you're infringing on its rights. 
+Motivation/Reward. You can reduce time-to-market by reusing technology. 
+Risk. Licensing technology does not always result in faster time to market. At the very least you have 
+to invest time in learning the technology, integrating it into your solution, and verifying that it works 
+correctly for your total solution. 
+Sometimes it really is faster to build your own technology, from scratch, to meet your needs (consider 
+your choices for creating or licensing a license manager, discussed in Chapter 4). 
+Motivation/Reward. Vendor-created components are higher quality than those you write on your 
+own. Risk. Many times this just isn't true—in-licensed technology is often lower in quality than what you 
+create from scratch. 
+Motivation/Reward. Vendor created components are lighter, and consume fewer resources, such as 
+memory or processor cycles (presumably because they have been optimized). 
+Risk. In-licensed technology may be surprising heavy, consuming more resources or running more 
+slowly than code you write on your own. Moreover, it is nearly impossible to substantially tune the 
+performance of most in-licensed technologies: You're left with the "switches" the vendor gives you 
+and not much else. You can't recompile someone else's library to turn on multithreading or modify the 
+code to perform I/O operations more efficiently. 
+Motivation/Reward. Licensing a component relieves some of the burden associated with technology 
+currency because the vendor will be continually improving this component. 
+Risk. Vendors don't always update components as fast as needed. Sometimes they drop support for 
+other components that you must still support, such as an OS. 
+Motivation/Reward. The component is state of the art, and using it will future-proof your 
+application. 
+Risk. This sounds like resumé driven design, in which developers seek to use a technology because it 
+is cool. If you can't easily justify the use of a given technology based on your real needs, drop it. 
+Motivation/Reward. Licensing technology is cheaper than building it from scratch. 
+Risk. The claim that it is cheaper to license a technology is usually based on building an equivalent 
+replacement. You may not need an equivalent replacement, which substantially lowers development 
+costs. License fee structures can ruin the economics associated with a good product. 
+Motivation/Reward. Licensing components will reduce service and support costs because the bugs 
+associated with these components have been handled. 
+Risk. Providing support for in-licensed technologies is one of the biggest challenges faced in creating 
+a winning solution. While a mature component may have fewer bugs, in-licensing introduces new 
+possibilities for errors. 
+Suppose you in-license three technologies: A database management system, a search engine, and a 
+report writing tool. When your customer calls you for support, you're going to have to determine the 
+source of the problem and how it should be fixed. 
+There are several potential sources of problems. It could be a previously undiscovered bug in your 
+code or in any of the in-licensed components. It could be a bug in how you've integrated the 
+component or in how the components interoperate. 
+When the situation is tense it can become quite easy for each vendor to blame the other. Your 
+customer doesn't care about this infighting; they just want you to fix the problem. Make certain that 
+you can properly support a component before choosing to in-license it. Fixing Their Code 
+In one project we decided to license an essential technology from a new start-up. 
+Unfortunately, its libraries had some real problems: The APIs were poorly documented, the 
+technology didn't scale to our needs, the code was written in C++ and riddled with memory 
+leaks, and the technology lacked functions that would greatly enhance our ability to use it. 
+We could have dropped the technology, but it was felt by all involved, especially product 
+management, that we simply had to have it. Since the underlying algorithms were protected 
+by some very strong patents, we couldn't simply create our own solution. In fact, even if the 
+underlying technology was not protected we probably would not have created our own 
+version, as the technology was based on extremely sophisticated mathematical algorithms, 
+and it would have taken several months for my team to build the knowledge necessary to 
+create this basic technology. Moreover, we had been given direct access to their source 
+code, and developing a duplicate or replacement version would have put us on very 
+precarious legal grounds (if you're going to try this, you need a wide variety of techniques, 
+including clean-room reverse engineering, to protect yourself as much as possible). 
+The best choice was to work with the vendor to help them modify their technology to meet 
+our needs. I instructed my team to carefully prepare a document that outlined all of the 
+problems with the technology, including the memory leaks. We also documented what we 
+wanted to see in the APIs, prioritized the additional features we wanted, and provided the 
+vendor with sample code that we had written to test their technology. As you can guess, the 
+vendor was stunned by our apparent generosity. They had never expected that we would 
+work so hard to help them be successful. Of course, we were working for our own benefit 
+because we needed this technology. The vendor adopted our suggestions, and I've 
+maintained a strong, positive relationship with them ever since. 
+Contracts—Where the Action Is 
+The heart of any technology licensing is the contract that defines the terms and conditions associated 
+with its use. This section outlines some of the basic elements associated with technology contracts and 
+some of the terms and conditions commonly found in them. 
+Contract Basics 
+A valid contract requires three things: an offer, acceptance, and consideration. 
+•  An offer is a statement by the offeror (a person or a corporation) that indicates a willingness 
+to enter into an agreement on the terms stated. 
+•  Acceptance occurs when the entity to whom the offer was addressed (the offeree) indicates a 
+willingness to accept the offeror's proposed agreement. 
+•  Consideration is anything of value exchanged by the parties. Technology licensing contracts 
+usually specify monetary forms of consideration as payment terms, discussed in greater detail 
+in the next section. 
+Pretty boring, yes? The real action is in the license terms, discussed next. 
+License Terms Before you can understand how license agreements and if the terms can affect your tarchitecture, you 
+have to have an idea of what kinds of terms exist. This section discusses terms commonly found in 
+technology in-license agreements. 
+Definitions 
+A precise, legal description of all important items or terms referenced in the license agreement. 
+Descriptions of technology often go something like this 
+•  Software means the object code software proprietary to {licensor} and listed on the pricing 
+schedule. 
+or this: 
+•  Software means the object code software proprietary to {licensor} and listed in Attachment A 
+of this license agreement. 
+Pay attention to what is listed, because the definitions will often include specific version numbers, 
+supported operating systems, and so forth. If you need something that isn't defined, you may be unable 
+to obtain support and/or upgrades, or you'll have to create another contract to pay your supplier to 
+provide you with the needed or required technology. 
+Usage or Grant 
+The manner in which the in-license technology can be used. This section may be one of the longest in 
+the agreement, as it often contains many of the other terms discussed here. 
+Duration or Term and Other Key Dates 
+When the agreement begins and ends. By working together, and by negotiating precise agreements 
+about specific dates, the marketect and tarchitect can create a better overall result for their company. 
+To illustrate, suppose that you agree to license a key technology under an annual license fee. You 
+estimate that it will take you four months to integrate the technology, another month to QA the 
+integration, and another two months to roll it out. From your perspective, the best deal will allow 
+development with the new technology to commence once the contract is signed but will delay 
+payment of the initial annual license fee until the technology is actually delivered to customers, the 
+reason being that until the technology is used by a customer it is only a cost to the licensor. From the 
+perspective of the technology provider, payments should begin when the contract is signed because 
+they are not responsible for how long it takes you to integrate the technology and you're getting the 
+benefits of it from the moment it is delivered. Who's right depends on your role in the negotiating 
+process. 
+Most in-license agreements specify a variety of other important dates beyond the beginning and end of 
+the agreement. If you don't understand these dates you can be headed for a lot of expensive trouble. At 
+a minimum, keep track of the dates listed in Table 5-1. 
+Table 5-1. Dates to Keep Track Of 
+Date  Why Important 
+Effective Date the agreement is considered in effect. 
+Expiration Date the agreement is ended. May be specified any number of ways, including an 
+absolute or calculated (such as adding a fixed period of time to the effective date). Table 5-1. Dates to Keep Track Of 
+Date  Why Important 
+Payment Dates when fees are due, usually listed along with payment terms (e.g., Net 30 or 
+payments shall be made the fifteenth and the last day of each month). 
+Audit periods Period during which the licensor can audit how the technology is being used. 
+Termination 
+notice 
+Amount of time allowed to terminate the contract. It should be long enough to properly 
+replace the terminated technology. (Many agreements do not specify a long enough 
+period of time.) 
+Other A wide variety of additional dates depending on license and contract requirements. The 
+license might be required to report usage according to a well-defined schedule. OEM 
+and partnership agreements may specify quarterly, biannual, or annual technology 
+reviews. Timetables associated with new releases may be listed in the contract, along 
+with penalties should these dates be missed. 
+The Costly Renewal 
+One product I worked on had licensed a cross-platform database access library. The license 
+agreement clearly specified an end date. When that date arrived, the product development 
+team had a simple choice: renew the agreement or reengineer the product to remove the 
+library. We chose to reengineer the product, primarily because the vendor wanted to raise 
+the price by several thousand dollars. We also felt that we could improve quality and build a 
+higher-performance implementation using a mixture of freely available technology and a 
+new database access layer. Unfortunately, we couldn't finish the reengineering effort by the 
+specified renewal date, so we had to renew the license agreement at a substantial cost to the 
+company. 
+A variant of this example is the "automatic renewal" associated with many contracts. With 
+an automatic renewal, once the contract has been signed it automatically renews unless you 
+explicitly cancel it. It is vitally important that you remain aware of these renewals. 
+Circumstances change, and you may not want to re-up. 
+Territory 
+The applicable territory where the in-licensed technology can be used. It is especially important to be 
+careful of geographic restrictions because they can be very hard to honor in our Web-connected world. 
+Specific Use 
+Development, quality assurance, technical support, or commercial use of technology as specified by 
+the in-license agreement. It is important to understand what the agreement covers. Note that general 
+terms are sometimes captured in one agreement while specific terms are captured in other, related 
+agreements. 
+Exclusivity 
+The degree to which the licensee agrees not to license the technology to anyone else. In general, 
+exclusivity is hard to obtain, although there are ways to get it. For example, suppose that you want to 
+license a key technology but only intend to use it in Europe. It might be possible to obtain exclusivity 
+for the European market. It can also be obtained for higher fees. In most circumstances you don't 
+really need exclusivity, so it isn't something you should worry much about. Sublicense 
+The degree to which you (the licensee) can license the technology to a third party. Sublicense rights 
+are usually required for embedded technologies. Suppose, for example, that you license in a core 
+technology for use in an information appliance. Chances are very good that you're going to license 
+your solution to your customers, which requires a sublicense right from the technology's vendor. As I 
+will discuss later, sublicense rights often have a substantial impact on your tarchitecture. 
+Termination 
+The ways in which one party may terminate the contract. All of the contracts I've seen contain at least 
+one termination clause, and most of them contain several. These clauses allow either party to 
+withdraw from the agreement if there is a breach in performance. Performance breaches are usually 
+specifically stated, such as failure to deliver by a specific date or failure of a system to meet defined 
+processing requirements. Enumerating and describing potential breaches and remedies is one of the 
+more time-consuming aspects of contract negotiation. Withdrawing from a contract because of breach 
+is harder than it seems, because there is usually a process for recovery from the breach (the remedy). 
+Many technology licensing contracts allow either party to withdraw from the agreement provided that 
+they give the other party sufficient advance warning, ranging from as little as 30 days to as much as 
+one year. Always try to negotiate the longest period of time possible. Replacing an in-licensed 
+technology with another one or with technology developed inhouse always takes longer than planned. 
+The contract can be terminated if either party goes bankrupt or fails to meet defined financial criteria, 
+if one party elects to drop support for the technology, or if there is a substantial change in control 
+(such as when a competitor acquires a technology provider). Although termination sections can get 
+quite lengthy, it pays to read them carefully. 
+Renewal 
+Technology license agreements often contain one or more renewal clauses. These clauses may be 
+automatic, which can actually cause a company to pay too much in fees depending on the evolution of 
+the tarchitecture. Automatic renewal clauses can also create a false sense of security (an automatic 
+renewal does not mean an automic upgrade). In general, I recommend against them as this forces you 
+to evaluate each license agreement to make certain it is still meeting your needs. 
+Fees or Payment Terms 
+The foundation of a valid contract is some form of consideration. As discussed in Chapter 4, there are 
+any number of creative licensing and business models, all of which end up in this section of the 
+contract. What is vitally important is that your tarchitecture support the payment terms required. If you 
+are in-licensing a technology based on a transactional business model, your tarchitecture needs to 
+support their business model. A key point of contention is when the business model required in the 
+license is different from the one you use with your customers. Such differences can often be resolved 
+only through careful negotiations, as discussed in the next section. 
+Deployment Restrictions 
+Some license agreements restrict one or more deployment options associated with the technology. For 
+example, the vendor may require one agreement to use the technology for a customer deployment and a different agreement if the licensed technology is to be used as an ASP. Deployment options are 
+discussed in greater detail in Chapter 7. 
+Other or General Restrictions 
+In addition to the terms that define what you can do, license agreements also carefully define what 
+you cannot do. As with the other terms, any of these restrictions can have an impact on your 
+tarchitecture. One example is the very common restriction against any form of reverse engineering or 
+modification of the licensed technology. 
+The practical effect of this kind of restriction can be fairly surprising. Suppose, for example, that a 
+developer finds a bug in a licensed component. A restriction against reverse engineering may prevent 
+analyzing the technology to identify the bug. Let's say that this restriction doesn't exist, and that you 
+instruct the developer to research the bug. Even if he finds a fix, you may still be out of luck as a 
+restriction against modifications means that you can't apply it. You may only be allowed to supply the 
+fix to the vendor and wait for them to issue a patch or a new release. Since the best thing you can do is 
+influence their development plans, you might be waiting a long time. 
+Noncompete 
+Vendors may require that the solution you create not compete with their technology. In other words, 
+you have to create a new offering. This may sound silly, but it prevents people from doing things like 
+licensing a J2EE Web server under the pretense of integrating the technology into a new product 
+without really creating a new product. The net result would be a new solution that competes with the 
+original vendor's solution. 
+Access to Source Code 
+Technology agreements often specify that a copy of the source code be placed in escrow and given to 
+the licensee should the licensor breach. In theory, this is great because it makes certain that you can 
+get full and complete access to the technology you need. In practice, however, it is often worthless. 
+Suppose that the vendor does breach and you're given access to the source code. What then? Chances 
+are good that you won't have the necessary skills or staff to manage it. 
+Marketing Requirements 
+The agreement may obligate you to issue a press release or allow the licensee or the licensor (or both) 
+the right to use the name or corporate logo of the other on their Web site. Any number of other 
+marketing-related requirements associated with the technology may be laid out, so read these sections 
+carefully. Marketing and branding requirements can mean nasty surprises for your tarchitecture. 
+When Business Models Collide, Negotiations Ensue 
+Before you actually license any technology, you have to make certain that your business model is 
+compatible with your provider's business model. If the two are not compatible, you're going to have to 
+negotiate an acceptable compromise. These choices can have a significant impact on the tarchitecture, 
+so everyone needs to be involved. 
+Suppose, for example, that you're building an enterprise application and you want to base your 
+business model on concurrent users. You want to integrate a search engine, for which your preferred 
+vendor will charge an annual fee. While the business models are different, this situation can be fairly easily resolved. If the annual fee is low enough, you can just pay it. If it is too high, you might be able 
+to negotiate something more acceptable and, again, pay it. 
+A more complex strategy is to negotiate a license fee based on the projected revenue from your 
+concurrent users, with a floor (a guaranteed minimum amount you'll pay) and a ceiling (the maximum 
+amount you'll pay). You can pay the floor to gain access to the technology and, at the end of the 
+license term (one year), provide the licensor with a statement that details your actual revenue and the 
+amount of money you owe. This isn't an easy choice because it requires you to disclose potentially 
+sensitive information to your provider (such as the number of concurrent users and your annual 
+revenue). Along the way, your tarchitecture or, more likely, your back-office systems will need to be 
+checked to ensure that you can meet your license payments. 
+Let's invert the above example and see what happens. In this case, your business model is based on an 
+annual license and your technology provider's business model is based on concurrent users. You can 
+resolve these incompatibilities by creating a mutually agreeable estimate for the number of concurrent 
+users accessing your system for a given annual license, by negotiating with your technology provider 
+to accept an annual license instead of charging by concurrent user, or by offering your provider's 
+technology as an "optional" module and licensing it as a concurrent user option. If you really need this 
+technology and you can see no realistic way to make it an optional module, and if the provider is 
+adamant about maintaining its business model, you may have no other choice but to convert to a 
+concurrent user business model. The point is that you must understand the business models of all your 
+technology suppliers and how they relate to your own. 
+Nice Try, But … 
+One product team I managed planned for their system to be built on a major J2EE vendors' 
+application server. The target market was both end users and application service providers 
+who would operate the product on end-users behalf. The default license agreement of the 
+J2EE application vendor explicitly prohibited the right to operate its product in an ASP or 
+service provider environment. Product development stalled until I was able to negotiate a 
+fee schedule that protected the interests of the vendor and was acceptable to our company. 
+A special case of business model negotiation is required when you change technology vendors. Let's 
+say that you've created an enterprise application and have licensed a search engine from technology 
+vendor A. Sometime later, for whatever reason, you decide to change to technology vendor B. Along 
+with the fees associated with new systems sold using vendor B's technology, you're going to have to 
+calculate the fees associated with upgrading from vendor A's technology to vendor B's technology. 
+Depending on your licensing agreements, you may or may not be able to charge your customers for 
+the upgrade and/or change. Marketects must model the complete costs associated with changing 
+technology vendors, including the cost of converting the installed base. 
+ 
+Honoring License Agreements 
+Just about anything you can think of has, or will be, specified in a license agreement. Examples of 
+issues that are commonly covered in license agreements that are likely to affect your tarchitecture 
+include the following. •  Definition of technical terms: This is probably the biggest single area of license compliance 
+and one that tarchitects should be familiar with. Do all the definitions reflect the actual 
+product under development? Are the version numbers in the contract correct? What about the 
+defined operating systems and operating environments? Do you have the rights to use the 
+product in the manner envisioned by your business plan? More specifically, can you operate 
+the in-licensed technology in a way that supports all your deployment architectures? Can you 
+fully embed the technology in your product? What is the degree or nature of the embedding? 
+Are there any geographic or export restrictions? 
+•  APIs: Can you simply expose any third-party APIs provided in the license agreement? 
+Chances are you can't, and trivially wrapping third-party APIs with your own API won't cut 
+it. Most license agreements require you to substantially enhance the functionality of an API 
+before it can be exposed (whatever that means). 
+•  Support: Who fields what support questions? What kind of information must you capture and 
+forward to the third party? License agreements can get very precise about the support 
+information required, affecting both your tarchitecture and other corporate processes. 
+•  Branding: Do you have to include visible or direct attribution of the third-party component? 
+Consider the ubiquity of the "Intel Inside" marketing campaign to get a sense of just how 
+important third-party technology suppliers consider such attributions. 
+Managing In-Licensed Technology 
+A proven technique for managing in-licensed technology is to create a "wrapper" or "adapter" for it. 
+Instead of programming to the API provided by the vendor, you create an abstraction that you can 
+replace if needed. A common example of this approach in Java is JDBC, which provides a common 
+interface for databases. 
+Wrappers may make it easier to replace one vendor's technology with another's, but they aren't without 
+their drawbacks. Wrapping frequently introduces a least-common-denominator approach, in which the 
+development team cannot use superior but proprietary technologies. Also, wrapping takes time and 
+must be tested. If the technology is never replaced, or replacement is extremely unlikely, then the 
+additional expense associated with wrapping is not justified. The decision to insulate or protect your 
+tarchitecture from direct access to an in-licensed component must be made with the support and 
+involvement of both the marketect and the tarchitect. 
+ 
+Open Source Licensing 
+Open-source software presents a wide variety of options for both marketects and tarchitects. Using 
+key open source technologies within your products can provide substantial benefits to you and your 
+customers. This section assumes that you've evaluated a given open-source technology against your 
+technical requirements. It is neither a blanket endorsement nor an indictment of the quality or 
+appropriateness of a given technology but merely states that, for whatever reason, you want to use an 
+open-source technology as part of your overall solution. 
+The first step is to read the specific license that governs your technology, as all open-source licenses 
+are not created equal. It may seem that the differences are minor, but helping you understand the 
+nuances of these agreements is the kind of work that lawyers love to charge for! 
+When you're finished reading the license, look for the sections that govern how the licensed 
+technology can be incorporated into other technologies—this is likely to be your most important area of concern. According to the Open Source Definition, version 1.9 (www.opensource.org), your fears 
+are likely to be unfounded as it is entirely permissible to incorporate a portion of an open-source 
+technology into your product (see also the GNU Lesser General Public License), provided that you 
+maintain the same rights for the incorporated technology and that you meet the other terms of the 
+specific license. 
+It is beyond the scope of this book to provide detailed legal advice (remember, I'm not a lawyer), but 
+practically this means that you can often use a variety of open-source technologies to create a new, 
+for-profit work. This is an advantage, and open-source strategies should be considered by both the 
+marketect and the tarchitect. 
+License Fees 
+Third-party technologies come with a variety of license fees. A good way to think about these fees is 
+that anything you license represents the business model of some technology provider. As a result, you 
+may have to deal with any of the business models described in the previous chapter or, for that matter, 
+any business model the vendor has identified as being useful. Fortunately, technology providers tend 
+to keep their business models at a reasonable number. The most common approaches, and their likely 
+impact on your tarchitecture, are described next. 
+Prepaid Fees 
+In this arrangement you pay an agreed-upon fee for the time-based access or usage of the technology, 
+whether or not you actually use it. Such an arrangement usually results in minimum impact on your 
+tarchitecture, as you are given maximum flexibility in integrating the technology into your system. 
+The fee must be included in the cost estimates provided by the marketect to justify initial development 
+and in the ongoing costs associated with maintaining the system. 
+Usage-Based Fees 
+In this arrangement you pay an amount based on some measured usage of the in-licensed technology, 
+often with a minimum payment required to access it (metering). Such an arrangement always has an 
+impact on your tarchitecture because you must ensure your compliance with the license agreement. 
+Specifically, you must make certain that your tarchitecture can capture the metering data. Clearly, it is 
+advantageous for the marketect to negotiate a usage model that is conveniently implemented. 
+As described earlier, when the fees are variable the in-license technology vendor will often require a 
+minimum payment, referred to as a floor. You'll want a ceiling, or the maximum amount you'll have to 
+pay—which the vendor will resist. The strength of the technology supplier, the kind of technology 
+being provided, the quality of the relationship, and the overall volume of the expected deal are all 
+factors that play a part in negotiating usage-based fees. 
+Percentage of Revenue Fees 
+In this arrangement there are no up-front fees to license the technology; instead, you pay the provider 
+a percentage of the gross or net revenue gained from its use. As with prepaid fees, such an 
+arrangement has little impact on the tarchitecture. It can, however, have a fairly substantial impact on 
+the marketecture, requiring both companies to agree on precise definitions of the fee. 
+The fee structure specified by the technology vendor will motivate the exact negotiating strategy. However, the following are some universal strategies that I've found useful. 
+Protection from Product Obsolescence 
+A marketect needs to know that her technology providers are going to be able to support her needs for 
+as long as necessary. If she intends to support a given platform or operating system, she should make 
+certain that the technology providers are also going to support it. 
+Protected Pricing 
+Whatever fee structure is chosen, marketects should try to negotiate such provisions as capped price 
+increases, favored pricing plans (in which no other licensor will be given better terms than the 
+licensee; should such better terms be offered, they will also be automatically applied to the licensee), 
+and volume or usage discounts. 
+Milestone Payments 
+One client of mine made a very costly mistake: licensing a key technology from a vendor, paying a 
+very large up-front fee, and subsequently failing to deliver their technology to the market. A better 
+approach is to base fees on key milestones that represent revenue you're going to receive from the use 
+of the technology. 
+Say that you've decided to license a core technology based on an annual fee (the usage fee). During 
+initial development, when the technology is being incorporated into your product and you're not 
+making any money, the most you should pay is a small access or development fee. The next payment, 
+and typically the largest, should be upon release or launch of your product. The final payment may be 
+due after the product has been in the market for some months. 
+Negotiate Fees Based on Value 
+Modularly designed software systems in which each module is separately identified and 
+priced can provide the marketect the greatest advantage in keeping certain in-license fees 
+as low as possible. In one system I created we had licensed in technology from two 
+vendors based on a percentage of revenue. We isolated the usage in specifically created, 
+nonoptional modules and separately priced each one. We then structured the overall price 
+of the system so that the largest cost element was the core system, which consisted of 
+technology that we had created ourselves (thus, no license fees). 
+This approach served two fundamental purposes. First, it was inherently fair. Because the 
+core system used no in-licensed technology, our vendors had no right to receive fees 
+associated with it. Second, it reduced the percentage of the average selling price subject to 
+license fees and so resulted in greater profits. 
+Training and Development Costs 
+You may be able to obtain free or discounted training or educational materials, preferential access to 
+support or development organizations, or special review meetings in which you can meet with key 
+representatives of the technology provider to make certain your needs are being met. Whatever the licensing arrangement offered by your provider, the actual costs must be given to your 
+marketect for proper financial modeling. Simply put, too many license agreements, or even just one 
+with onerous terms, can seriously erode any profit margins you expect for a product. In extreme cases 
+the wrong fee structure can actually kill a project. 
+Licensing Economics 
+Let's say you're a lucky developer who has been asked to explore new technologies for your next 
+system—lucky because you want to learn Java and J2EE as you think it will be a good career move. 
+You download the trial version of SuperSoft's J2Server, a fully compliant J2EE 1.1 container, and use 
+it to build a slick prototype. In fact, the prototype is so useful that your boss is convinced that using 
+Java, a J2EE-based architecture, and especially SuperSoft's J2Server is the obvious choice for your 
+project. Fortunately, your boss wants to make certain that her next release is fully buzzword 
+compliant, so when you suggest this approach she readily agrees. 
+Believe it or not, you might have just designed yourself into a real jam. Many evaluation and/or trial 
+licenses explicitly prohibit the development of software for commercial uses. Even if you bend the 
+rules and ship the prototype to a customer for evaluation, you certainly cannot release your software 
+unless you've secured the necessary rights. 
+As discussed throughout this chapter, licensing issues must be aligned with your tarchitecture. Saying 
+that you're going base your application on J2Server isn't going to buy you anything if you don't know 
+how SuperSoft is going to charge you for its products. In fact, integrating J2Server could break the 
+economics of your application, something that a good marketect will be able to tell with a basic 
+economic analysis. The following exercise illustrates why. 
+Let's assume that you're company requires a gross profit margin of 30 percent and that your marketect 
+estimates the average selling price of an annual license at $100K. The current estimated direct and 
+indirect costs associated with this project are $65K, without SuperSoft's licensing fees. So far, so 
+good—your average estimated gross profit is $35K, or 35 percent. Now, let's assume that SuperSoft 
+wants to charge 15% of the gross annual revenue. This means that on a $100K license you will be 
+paying SuperSoft $15K. You can model this as an increase in costs (from $65K to $80K) for each 
+sale, with the net result that your average estimated gross profit just dropped to $20K, or 20 percent. 
+Something needs to change. 
+The example is intentionally simple, but it illustrates how vitally important it is that the total projected 
+and/or actual costs of technology in-licenses be incorporated into the product and business plan. 
+Without them, you're not likely to create a winning solution. 
+Chapter Summary 
+•  Every system has some in-licensed technology. 
+•  Effective technology in-licensing requires a full understanding by both the marketect and the 
+tarchitect of its risks and the rewards. This understanding creates a stronger negotiating 
+position and leads to more advantageous terms. 
+•  Every technology in-licensing contract comes with terms that directly or indirectly affect both 
+the marketecture and the tarchitecture. The marketect and the tarchitect must read and 
+understand these contracts so that they can properly manage the in-licensed technology and 
+honor all necessary license terms and conditions. 
+•  It is best to align all of the business models that make up the total solution. Usually this is 
+accomplished through several rounds of negotiation. •  There are a variety of techniques to manage in-licensed technology. The most fundamental is 
+to insulate your tarchitecture from it. Theoretically, this is easy. Practically, it is usually very 
+hard. 
+•  You must understand the fee structures and associated costs of the license agreements. 
+•  Technologies based on open-source licenses are increasingly attractive. 
+Check This 
+•  We have a valid contract for every licensed component or technology. 
+•  We understand the key terms and conditions associated with each in-license. We have looked 
+at all causes for breaching the contract and are certain that we won't breach because of 
+ignorance. 
+•  We have assessed the impact of replacing a licensed component or technology. 
+•  We have created compatible business models. 
+Try This 
+1.  What in-licenses do you have? 
+2.  What are their key terms? important dates? rights? 
+3.  Do you have substitutes/alternatives to the licensed technology? Can these 
+substitutes/alternatives be used to improve your operating and/or negotiating strength? 
+4.  Are you properly supporting all aspects of the business models required by your technology 
+in-licenses in your tarchitecture? 
+ 
+Chapter 6. Portability 
+Marketects and tarchitects alike often pursue portability with a fiery passion. What fuels this fire? 
+Customer need? Me-too feature management ("Our competitor supports this feature, so clearly we 
+have to")? The desire to prove technical virtuosity? By exploring the business issues associated with 
+portability you can determine how hot to build your fire. 
+The Perceived Advantages of Portability 
+Here are some of the claimed advantages of portability. Do they hold up? 
+•  Claim: By supporting multiple platforms, we can address a new market segment. This is 
+compelling since addressing more market segments with essentially the same product is a 
+good thing. Be careful, though. Effective marketing practices teach us that the key to long-
+term success is successful market segmentation. If you're basing your market segmentation on 
+the kind of operating system or hardware platform your customers are using, you may be 
+choosing the wrong approach. Effective segmentation is based on the problems faced by 
+common customers. Focusing on business problems, such as asset management or improving 
+call center efficiency, usually dominates choices of technology platforms. 
+•  Claim: By supporting multiple platforms, we demonstrate that we can meet our customers 
+idiosyncratic needs. This marketecture claim has a tarchitecture corollary. By supporting 
+multiple platforms (or standards) we can demonstrate technical skill. Sadly, technical skill 
+rarely wins customers. Solving their needs does. Portability can detract from this, especially when customers who choose a platform for specific features find that your product does not 
+support them because they are not cross-platform portable. I refer to this as the portability 
+paradox. Customers choose a platform for its unique features and perceived benefits, but 
+most portable applications are explicitly designed to avoid platform-specific features! 
+My experience indicates that the real motivations for portability aren't that impressive. Here are some 
+that I've stumbled across. 
+•  Real motivation: Developers think writing portable software is cool. It can be a lot of fun to 
+write something that is portable. Portability can stretch your limits as an engineer, and 
+creating an architecture that achieves key objectives (such as performance or stability) across 
+multiple operating environments is an impressive accomplishment. On the other hand, it can 
+be a real pain and no fun at all to create a portable application. Subtle differences in operating 
+systems, even operating systems from the same vendor, often means that things that work in 
+one version break in another. Sometimes there is simply no way to offer the same capabilities 
+in different operating environments, which means that you have to compromise either your 
+product objectives or your technical approach or both. Many developers find it tiresome 
+learning about multiple operating environments. 
+•  Real motivation: One or two early, key, customers demanded different solutions. Unless a 
+product is managed with considerable discipline, it is easy to do "anything" to secure early, 
+key, customers, sometimes including porting the application to a different platform. This is 
+usually a mistake. When a marketect finds customers who demand different solutions in the 
+early stages of the product he should continue to search for a better customer (where better is 
+defined as "within the target market") and not direct the development team to port the code 
+too quickly. Experience has shown that this is arguably the biggest motivation. 
+The Business Case for Portability 
+The collective experience of hundreds of projects demonstrates that writing cross-platform, portable 
+code is well within the skill level of most development organizations. But just because you can write 
+such code, should you? The only valid reason for creating portable solutions is that doing so will 
+ultimately result in a more profitable product. 
+The revenue side of this equation is based on whether or not you'll obtain a sufficiently large market 
+and charge enough to be profitable. Marketects are often good at identifying these revenue drivers. 
+Unfortunately, they often forget some of the key cost factors. Consider the following. 
+•  The costs of training the developers, QA, and support people in developing within, testing, 
+and supporting each platform. 
+•  The costs of purchasing, configuring, and supporting the hardware and software for each 
+supported platform. Each group has different needs with respect to these activities. 
+Developers are most productive when you give them fast hardware—often the fastest 
+possible. QA and support need a range of hardware choices to adequately reflect the 
+performance options that match target customer segments. Someone has to support all of this 
+hardware. If your IT department isn't up to the task, someone in development, QA, or support 
+will have to do it. This often creates a hidden cost. 
+•  The testing time for developers and QA to make sure that the product works properly on each 
+platform. As a general rule, the larger and more complex the matrix of pain (the complete set 
+of your supported platforms) the longer it will take to release your product. This isn't 
+necessarily a cost, but instead can be lost revenue. 
+•  The complexity of managing multiple release cycles. Suppose that you choose to support 
+Solaris, HP-UX, and Linux. This means that you must track three operating systems. When Sun Microsystems releases a new version of Solaris, customers will want to know when you 
+are going to support it. Each time you choose to support another platform you relinquish a bit 

@@ -1,0 +1,2877 @@
+Secure encryption
+10.1 Introduction
+We have seen two possible methods for secure encryption so far, but both had
+serious problems.
+The one-time pad in Chapter 5 offered the incredibly strong guarantee of
+perfect secrecy: the cryptogram reveals no new information about the message.
+The drawback was that it required a secret shared random key that is as long
+as the message. This really presents two distinct problems: first the users need
+to generate a large number of independent random bits to form the pad and,
+second, they need to share these bits securely.
+The public key systems built on families of trapdoor functions in Chapter 7
+provided an ingenious solution to the problem of sharing a secret key. They
+also offered a reasonable level of security under various plausible intractability
+assumptions. However, this security was framed in terms of the difficulty
+Eve would face in recovering a message from a cryptogram. This is significantly
+weaker than perfect secrecy. It is extremely easy for Eve to gain
+some information about the message from the cryptogram in a system such as
+RSA. For instance if the same message is sent twice then Eve can spot this
+immediately.
+All this leaves us with two major problems which we will consider in this
+chapter.
+(1) If we wish to use a one-time pad how do we generate enough independent
+random bits for the key?
+(2) If we wish to use a public key system can we build one that offers a level
+of security comparable to that of the one-time pad?
+The best current solution to both of these problems has a common basis: secure
+pseudorandom generators.
+203
+204 10 Secure encryption
+10.2 Pseudorandom generators
+Anyone who considers arithmetical methods of producing random digits
+is, of course, in a state of sin
+John von Neumann (1951)
+Informally a pseudorandom generator is a deterministic algorithm that takes
+a random string and ‘stretches’ it to produce a longer string that is ‘as good
+as random’. Before we can hope to formally define a secure pseudorandom
+generator we need to decide what we mean when we say that a string is random.
+Mathematicians have no problem with this. A random string of length k is
+simply the outcome of k independent coin tosses with an unbiased coin.
+Reality is more complicated. Where do we find a truly unbiased coin? How
+can we tell when we have found one? How can we be sure that our coin tosses
+are actually independent?
+One approach to the randomness of a string is that of Kolmogorov–Chaitin
+complexity. This is based on the idea that a string is random if any algorithm
+to produce the string is essentially as long as the string itself. Put another way:
+the shortest explanation for the string is the string itself. Unfortunately this is
+completely useless for practical purposes. (In general it is impossible to compute
+the Kolmogorov–Chaitin complexity of a string.)
+We will consider randomness in a completely different way. Rather than
+randomness being an essential property of a string itself we will start from the
+idea that ‘randomness is in the eye of the beholder’.
+While a string is Kolmogorov–Chaitin-random if no short explanation of the
+string exists we will call a string pseudorandom if no adversary can efficiently
+distinguish it from a truly random string. So the pseudorandomness of a string
+depends on the computational power of our adversary.
+Having decided, at least informally, what we require of a pseudorandom
+string we turn to the problems that computers face in generating such
+strings.
+Modern computers are (at least in theory) completely deterministic. So for
+a computer to produce random bits it will require external input from the environment.
+Extracting truly random bits from the environment is a difficult task.
+Ignoring possible philosophical objections, we could extract random bits by
+measuring the time taken by a radioactive source to decay. More practically
+we could use the least significant digit of the time taken by a user between
+keystrokes on the keyboard (measured in a suitably precise manner that makes
+predicting this value impossible).
+Most people would be happy to generate a small number of random bits by
+these methods, but are they truly random? There is no answer to this question.
+10.2 Pseudorandom generators 205
+However, we could argue that bits generated in this manner are as good as
+random, in that an adversary would be unable to predict the next bit given the
+previously generated bits.
+Assuming for now that we can obtain a small quantity of truly random bits
+from the environment we are still faced with the problem that obtaining a large
+number of independent random bits will be difficult. (If you want a million
+random bits are you actually willing to sit at your keyboard hitting ‘random’
+keys all day?) A pseudorandom generator is a possible solution to this problem.
+Suppose we could find a deterministic algorithm that takes a short string of
+random bits and produces a longer string that has the property that no adversary
+can hope to predict the next bit in the string from the previous bits. This would
+give a source of pseudorandom bits that is effectively random, in the sense that
+an adversary who attempts to guess the next bit finds this task as difficult as if
+the string were truly random.
+A bit generator G is defined to be a deterministic polynomial time algorithm
+that takes a string x ? {0, 1}k and produces a longer string G(x) of polynomial
+length l(k) > k.
+For a bit generator G to be a pseudorandom generator we need the string
+G(x) to be unpredictable whenever the input string x is random. We note that
+even if a string is truly random an adversary will still have a 50% chance of
+correctly predicting the next bit in the string by simply tossing a coin. So for a
+string to be pseudorandom we need it to be impossible for an adversary to do
+significantly better than this.
+Formally, our adversary will be known as a predictor. A predictor is a probabilistic
+polynomial time algorithm P that attempts to predict the next bit of
+a bit generator G(x) given its initial bits. Any good pseudorandom generator
+should be unpredictable and so we define a next-bit test that any predictor must
+fail almost half of the time. (Recall that l(k) > k is the length of the output
+string G(x) on input x of length k.)
+The next-bit test
+Select random x ?R {0, 1}k and compute G(x) = y1 y2 · · · yl(k).
+Give the predictor P the input 1k .
+i ‹ 1
+while i ? l(k)
+P either asks for the next bit, yi, or outputs a guess b
+if P outputs a guess then
+the test ends and P passes the test iff b = yi .
+else
+206 10 Secure encryption
+P is given the next bit yi
+i ‹i + 1.
+end-while
+P fails since it has not made a guess.
+We say that a bit generator G is a pseudorandom generator iff for any predictor
+P the probability that P passes the next-bit test is at most negligibly greater
+than 1/2. That is for x ?R {0, 1}k
+Pr[P passes the next-bit test on input 1k ] ? 1
+2
++ neg(k).
+(Recall that a function is negligible iff it is eventually smaller than the inverse
+of any positive polynomial.)
+So a pseudorandom generator produces bits that are essentially unpredictable
+for any reasonable adversary. This definition is perhaps not as strong as we
+would like. A pseudorandom generator should have the property that the bits it
+produces are indistinguishable from those produced by a truly random source.
+In order to distinguish randomness from non-randomness we need to use a
+statistical test. An example of such a test might be to check that approximately
+a half of the bits in a given string are zero.
+It is easy to come up with a long list of possible statistical tests whichwecould
+use to check a bit generator for pseudorandomness, but we can never be sure
+that out list is exhaustive. If we base the ‘randomness’ of our pseudorandom
+generator on a predetermined list of tests we run the risk that an adversary
+may develop a new test which can somehow distinguish the output of our
+pseudorandom generator from a random source. This would be problematic so
+we demand that a pseudorandom generator should be able to pass any reasonable
+statistical test. To do this we need to define what we mean by a statistical test.
+A statistical test is a probabilistic polynomial time algorithm T which when
+given an input string outputs either 0 or 1.
+A bit generator G, which outputs a string of length l(k) when given a string
+of length k, is said to pass a statistical test T if the output of T given G(x), with
+x ?R {0, 1}k, is indistinguishable from the output of T given a truly random
+string y ?R {0, 1}l(k). Formally we say that G passes the test T iff for x ?R
+{0, 1}k and y ?R {0, 1}l(k) we have
+|Pr[T (G(x)) = 1] - Pr[T (y) = 1]| ? neg(k).
+This definition needs a little time to sink in but is intuitively obvious. It simply
+says that the probability that the test T gives a particular answer is essentially
+the same whether T is presented with a pseudorandom string G(x) or a truly
+random string y of the same length.
+10.3 Hard and easy bits of one-way functions 207
+We would like a pseudorandom generator to be able to pass any statistical
+test. In fact it does, due to the following important result of Yao (1982). As with
+many of the proofs of results in this chapter this proof is too difficult to include
+at this level. We refer the reader to the original (or to Goldreich (2001)).
+Theorem 10.1 A bit generator G is a pseudorandom generator iff it passes all
+statistical tests.
+So how does one build a pseudorandom generator?We will see in Section 10.4
+that one-way functions play an important role here.
+Exercise 10.1a Suppose that G1 and G2 are pseudorandom generators which
+both output strings of length l(k), when given an input of length k. Decide
+whether the following bit generators are also pseudorandom generators.
+If you believe they are provide a proof.
+(i) G1 ? G2.
+(ii) G1, the Boolean complement of G1. (That is if G1 outputs a 1 then
+G1 outputs a 0 and vice-versa.)
+10.3 Hard and easy bits of one-way functions
+Suppose Alice and Bob use a public key cryptosystem based on a family of
+trapdoor functions. Although decrypting is difficult for Eve we have already
+noted that she may be able to gain valuable information about the message from
+the cryptogram. For example, she may be able to decide whether the message
+starts with a 0 or 1. But surely if a function is one-way then ‘most’ of the
+information about the message should be hard for Eve to compute.
+We nowtry to formalise the idea that a particular piece of information related
+to the message is difficult for Eve to obtain from the cryptogram.
+A predicate is a yes/no question. In other words it is a function
+B : {0, 1}* › {0, 1}.
+Informally a hard-core predicate of a one-way function f is a predicate that is
+difficult to compute given only f (x) but easy to compute given x. If f is an
+encryption function then this corresponds to a question that Eve cannot answer,
+given only the cryptogram, but that anyone can answer, given the message.
+Since a predicate has only two possible values Eve always has a 50% chance
+of correctly guessing B(x) (even without knowing anything about B, x or f (x)).
+She simply needs to toss a coin. So to say that a predicate is difficult to compute
+means that it is infeasible for her to do significantly better than this.
+208 10 Secure encryption
+Formally a predicate B : {0, 1}* › {0, 1} is a hard-core predicate of a function
+f : {0, 1}* › {0, 1}* iff
+(1) there is a probabilistic polynomial time algorithm for computing B(x)
+given x.
+(2) For any probabilistic polynomial time algorithm A and x ?R {0, 1}k
+Pr[A( f (x)) = B(x)] ? 1
+2
++ neg(k).
+One obvious property of a hard-core predicate is that it is essentially unbiased:
+on a random input it is almost equally likely to be 0 or 1. More precisely we
+have the following result.
+Lemma 10.2 If B : {0, 1}* › {0, 1} is a hard-core predicate of a function
+f : {0, 1}* › {0, 1}* then for x ?R {0, 1}k
+|Pr[B(x) = 0] - Pr[B(x) = 1]| ? neg(k).
+Proof: Suppose this does not hold. Then without loss of generality we may
+suppose there is a positive polynomial q(·) such that for infinitely many k and
+x ?R {0, 1}k
+Pr[B(x) = 0] - Pr[B(x) = 1] ? 1
+q(k)
+.
+Now
+Pr[B(x) = 0] + Pr[B(x) = 1] = 1
+implies that
+Pr[B(x) = 0] ? 1
+2
++ 1
+2q(k)
+.
+Hence the polynomial time algorithm A that on input f (x) always outputs 0
+satisfies
+Pr[A( f (x)) = B(x)] ? 1
+2
++ 1
+2q(k)
+,
+for infinitely many k, contradicting the fact that B(x) is a hard-core
+predicate. 
+Hence a hard-core predicate is a function that is hard to compute and outputs
+an essentially unbiased single bit. In our search for a pseudorandom generator
+this looks quite promising!
+10.3 Hard and easy bits of one-way functions 209
+So what about some of the one-way functions we have seen, do they have
+any obvious hard-core predicates? For example recall the function dexp. Under
+the Discrete Logarithm Assumption this is a one-way function.
+Let p be a prime, g be a primitive root mod p and x ? Z
+*
+p, then
+dexp(p, g, x) = (p, g, gx mod p).
+Two obvious predicates to consider are the least and most significant bits of x.
+We define two corresponding functions.
+least(x) = 0, if x is even,
+1, otherwise.
+most(x) = 0, if x < (p - 1)/2,
+1, otherwise.
+Our next result tells us that computing the least significant bit of x, given
+dexp(p, g, x), is easy. While, under the Discrete Logarithm Assumption, computing
+the most significant bit of x, given dexp(p, g, x), is hard.
+Theorem 10.3
+(i) Given dexp(p, g, x) we can compute least(x) in polynomial time.
+(ii) Under the Discrete Logarithm Assumption most(x) is a hard-core
+predicate of dexp(p, g, x).
+To prove this we need a little more number theory. First recall that b ? Z
+*
+n is a
+quadratic residue mod n iff there is x ? Z
+*
+n such that
+b = x2 mod n.
+We denote the set of quadratic residues modulo n by
+Qn = {b ? Z
+*
+n
+| b = x2 mod n}.
+We will need Euler’s Criterion (see Appendix 3, Theorem A3.13) which gives a
+simple test to decide whether b ? Qp, when p is prime. It reduces this problem
+to the easy task of exponentiation mod p. We also require the following lemma
+which tells us that computing square roots mod p is easy.
+Lemma10.4 If p is a prime and b ? Qp then there is a probabilistic polynomial
+time algorithm for computing the two square roots of b mod p.
+Proof: There is only one even prime and the result holds trivially in that case.
+For odd primes there are two cases to consider.
+210 10 Secure encryption
+First suppose that p = 4m + 3. Then the two square roots of b are
+±bm+1 mod p since by Euler’s Criterion b(p-1)/2 = 1 mod p so
+(±bm+1)2 = b2m+2 = b(p+1)/2 = b(p-1)/2+1 = b mod p.
+Thus if p = 4m + 3 there is a polynomial time algorithm. The other case, when
+p = 4m + 1, is more difficult and we omit the proof. It is a special case of the
+probabilistic algorithm of Berlekamp (1970) for factoring a polynomial mod
+p, reduced to the quadratic x2 - b. (See Chapter 4 Further Notes.) 
+We now turn to a proof of Theorem 10.3.
+Proof of Theorem 10.3: To prove (i) we claim that the following is a polynomial
+time algorithm for computing least(x) given dexp(p, g, x).
+Algorithm LEAST:
+Input: (p, g, b), p a prime, g a primitive root mod p and b = gx ? Z
+*
+p.
+c ‹ b(p-1)/2 mod p.
+If c = 1 then output 0 else output 1.
+We need to show that c = 1 if and only if least(x) = 0.
+If least(x) = 0 then x = 2k and so b = gx = (gk )2 mod p is a quadratic
+residue mod p. Hence, by Euler’s Criterion, c = 1.
+Conversely, if c = 1 then, by Euler’s Criterion, b = gx is a quadratic residue
+mod p. Thus gx = g2y mod p for some 0 ? y < p - 1. Then, since g is a
+primitive root, x = 2y mod p - 1 and so least(x) = 0.
+Hence the algorithm LEAST correctly computes least(x) when given
+dexp(p, g, x).
+Since exponentiation mod p can be performed in polynomial time this completes
+the proof of (i).
+Wedo not prove (ii) in full. Instead we prove the weaker result that if there is a
+polynomial time algorithm MOST for computing most(x) given dexp(p, g, x)
+then the Discrete Logarithm Assumption cannot hold. (The full proof must
+also deal with the case that the algorithm MOST does not always succeed in
+computing most(x) but instead succeeds with probability significantly greater
+than 1/2. We refer the reader to Blum and Micali (1984).)
+To prove this we need to use MOST to construct an efficient algorithm D for
+solving the discrete logarithm problem, thus violating the Discrete Logarithm
+Assumption.
+The algorithm D works as follows. Given (p, g, b), where b = gx mod p,
+first use algorithm LEAST described above to find the least significant bit
+of x. If this is 1 then divide b by g. So b is now an even power of g and so
+has two square roots modulo p. We then use the polynomial time algorithm
+10.4 Pseudorandom generators from hard-core predicates 211
+given by Lemma 10.4 to find these two square roots of b modulo p: r1 and
+r2. One of these is gx/2 the other is gx/2+(p-1)/2. Now MOST can distinguish
+between these two roots since the most significant bits of their exponents are 0
+and 1 respectively. We want the root gx/2. We then start the process again with
+b = gx/2. In this way we recover x, a single bit at a time, halting once we reach
+b = 1. Hence we can compute dlog(p, g, b).
+Formally the algorithm D works as follows.
+Algorithm D:
+Input: (p, g, b), p a prime, g a primitive root mod p and b = gx ? Z
+*
+p.
+i ‹ 0, x0 ‹ 0
+while b = 1
+c ‹ LEAST(p, g, b)
+if c = 1 then b ‹ bg-1 and xi ‹ 1
+else xi ‹ 0.
+r1, r2 ‹
+?
+b mod p
+if MOST(p, g, r1) = 0 then b ‹r1
+else b ‹r2
+i ‹i + 1
+end-while
+output x ‹ xi · · · x1x0.
+Assuming that MOST is polynomial time computable, this is a polynomial
+time algorithm for computing dlog(p, g, b) (since LEAST is polynomial time
+and finding square roots mod p can be achieved in probabilistic polynomial
+time by Lemma 10.4).
+Hence if most(x) is polynomial time computable then the Discrete Logarithm
+Assumption cannot hold. 
+A similar result holds for the least significant bit of a message encrypted using
+RSA.
+Theorem 10.5 Under the RSA assumption, the least significant bit of the message
+is a hard-core predicate of RSA encryption.
+The proof of this is not too difficult, we give a breakdown of it in Problem
+10.9.
+10.4 Pseudorandom generators from hard-core predicates
+So far we seem to have strayed rather far from pseudorandom generators but in
+fact we have almost just produced one.
+212 10 Secure encryption
+The Blum–Micali generator uses the hard-core predicate most(x) of
+dexp(p, g, x) to produce a pseudorandom string of polynomial length l(k) from
+a random string x of length k. It works as follows.
+Choose a random k-bit prime p and primitive root g mod p.
+Choose x ?R Z
+*
+p.
+Let x1 = x and xi = gxi-1 mod p, for i = 2 to l(k).
+Let bi = most(xi ).
+Output the sequence bl(k), bl(k)-1, . . . , b2, b1.
+Theorem 10.6 Under the Discrete Logarithm Assumption the Blum–Micali
+generator is a pseudorandom generator.
+Proof: For the full proof see the original paper of Blum and Micali (1984), we
+provide a basic sketch.
+If the Blum–Micali-generator is not a pseudorandom generator then there is
+a predictor P that has probability significantly greater than 1/2 of passing the
+next-bit test. This means that P can predict one of the Blum–Micali-generator’s
+output bits, given the previous bits.
+We need to show how to use P to give an algorithm for guessing most(x)
+from gx mod p, with success probability significantly greater than 1/2. This
+would contradict Theorem 10.3 (ii), that most(x) is a hard-core predicate of
+dexp(p, g, x) under the Discrete Logarithm Assumption.
+We start with an input x2 = gx1 mod p, where x1 ?R Z
+*
+p is unknown. We
+want to use P to calculate most(x1).We do this as follows. Let n = l(k). First we
+compute x3, . . . , xn, where xi = gxi-1 mod p, so we have x2, . . . , xn. We then
+set bi = most(xi ), for i = 2, . . . , n. The bit we wish to find is b1 = most(x1).
+We present the predictor P with the bits bn, bn-1, . . . , b2 in turn, and hope that
+it will correctly predict b1.
+The main problem we face is that we do not know which of the n bits P
+will try to guess as we give it the bits bn, bn-1, . . . , b2. As we want to find
+most(x1) we would like P to guess the nth bit of this sequence, since this is
+b1 = most(x1), but P may choose to guess another bit instead.
+To get around this problem we choose random 1 ? i ? n and then give P
+the sequence bi , bi-1, . . . , b2 instead of bn, . . . , b2. (Note that if i = 1 we do
+not give any bits to P at all.)
+Now, since x1 was chosen uniformly at random from Z
+*
+p and the function
+dlog is a bijection, the bits we give to the predictor are identically distributed
+to the original output bits: bn, bn-1, . . . , b2. (Since the bits we use are
+those that would have occurred had we started with dlogn-i (p, g, x1) instead
+of x1.)
+10.4 Pseudorandom generators from hard-core predicates 213
+If P chooses to guess the ith bit of the sequence we give it then it is in
+fact guessing the value of b1 = most(x1) as required. Moreover since P passes
+the next-bit test then in this case it will have a reasonable chance of guessing
+most(x1) correctly.
+If P instead guesses some other bit in the sequence, say the j th where j < i ,
+then we simply ignore P and toss a coin to try to guess most(x1). Similarly if
+P does not guess by the time we have given it all i - 1 bits bi , . . . , b2 then we
+simply toss a coin. In both of these cases we will succeed with probability 1/2.
+So what is our overall probability of success?
+Suppose P has success probability 1/2 + , when it guesses a bit. With
+probability 1/n, P chooses to guess the ith bit of the sequence (since we chose
+i at random). Hence we have a guessing algorithm for most(x1) satisfying
+Pr[Guess most(x1) correctly] ? 1
+2
+1 - 1
+n
+ + 1
+2
++ 
+ 1
+n
+= 1
+2
++ 
+n
+.
+By assumption  is not negligible so neither is /n. But this implies that most(x)
+is not a hard-core predicate of dexp(p, g, x), contradicting Theorem 10.3 (ii).
+
+There is a slight problem with the Blum–Micali generator as it stands. Namely
+it outputs bits in reverse order so the user needs to decide how many bits are
+wanted before he or she starts. In fact we can easily fix this, by reversing the
+order that it outputs bits.
+Proposition 10.7 If G is a pseudorandom generator and
+‹-
+G isthe bit generator
+that takes the output of G and outputs these bits in reverse order then
+‹-
+G is also
+a pseudorandom generator.
+Proof: We use the fact that any pseudorandom generator passes all statistical
+tests (see Theorem 10.1).
+If
+‹-
+G is not a pseudorandom generator then it must fail a statistical test T .
+Form the test
+‹-
+T that first reverses the input string it is given and then mimics
+T . This is a statistical test that G will fail hence G is not a pseudorandom
+generator. This contradiction proves the result. 
+So far we have seen that if the Discrete Logarithm Assumption holds then
+dexp is a one-way function with hard-core predicate most(x). Moreover, using
+this hard-core predicate we constructed a pseudorandom generator. But what
+if someone discovered how to compute discrete logarithms efficiently. Would
+that be the end of pseudorandom generators?
+214 10 Secure encryption
+In fact Yao (1982) proved that the existence of any one-way function implies
+the existence of a one-way function with a hard-core predicate. A simpler
+construction was given by Goldreich and Levin (1989).
+Theorem 10.8 If f is a one-way function and g(x, r ) = ( f (x), r ), where |x| =
+|r| = k, then
+B(x, r ) =
+k
+
+i=1
+xiri mod 2,
+is a hard-core predicate of the one-way function g.
+Thus if we know of any one-way function then we can construct a one-way
+function with a hard-core predicate.
+We saw, with the Blum–Micali generator, away to construct a pseudorandom
+generator given a particular hard-core predicate, namely the most significant
+bit of dexp. But given any one-way function can we construct a pseudorandom
+generator? In fact the rather surprising answer to this question is yes. However,
+a proof of this is well beyond the scope of this book. We instead consider a
+weaker result.
+We say that f : {0, 1}* › {0, 1}* is length preserving iff | f (x)| = |x| for
+every x ? {0, 1}*. We call f : {0, 1}* › {0, 1}* a permutation iff every x ?
+{0, 1}* has a unique preimage under f .
+Theorem 10.9 Let f : {0, 1}* › {0, 1}* be a one-way, length preserving permutation
+with hard-core predicate B : {0, 1}* › {0, 1} then
+G : {0, 1}k › {0, 1}k+1, G(x) = ( f (x), B(x)),
+is a pseudorandom generator.
+Proof: The basic idea is as follows. If x ?R {0, 1}k then, since f is a length
+preserving permutation, f (x) will be uniformly distributed over {0, 1}k . Thus
+if there is some statistical test T that distinguishes G(x) = ( f (x), B(x)) from a
+truly random string z ? {0, 1}k+1 (such a test exists if G is not a pseudorandom
+generator by Theorem 10.1) then this must tell us something about the bit B(x).
+This will then allow us to construct a guessing algorithm for B(x) which will
+have success probability significantly greater than 1/2, contradicting the fact
+that B(x) is a hard-core predicate of f .
+More formally suppose there is a positive polynomial q(·) such that for
+infinitely many k
+Pr[T (G(x)) = 1] - Pr[T (z) = 1] ? 1
+q(k)
+,
+10.4 Pseudorandom generators from hard-core predicates 215
+where x ?R {0, 1}k and z ?R {0, 1}k+1. So T is more likely to output a 1 if given
+the input G(x) than if given a random input z.
+We can now use the test T to create a guessing algorithm A for B(x).
+Algorithm A.
+Input: f (x)
+b ?R {0, 1}
+c ‹ T ( f (x), b)
+if c = 1 then output b
+else output b.
+It is now an exercise in conditional probabilities (see Problem 10.11) to show
+that
+Pr[A( f (x)) = B(x) | x ?R {0, 1}k ] ? 1
+2
++ 1
+q(k)
+.
+Hence B(x) is not a hard-core predicate, a contradiction. 
+One might argue that the pseudorandom generator given in the previous theorem
+is not much good. All it does is extend a random string by a single bit. In fact
+with more work one can prove the existence of a pseudorandom generator that
+stretches a random string of length k to one of length l(k) > k, for any fixed
+polynomial l.
+Theorem 10.10 Let f : {0, 1}* › {0, 1}* be a one-way length preserving permutation
+with hard-core predicate B : {0, 1}* › {0, 1}. If l(·) is a polynomial
+then
+G : {0, 1}k › {0, 1}l(k)
+defined by
+G(x) = B(x), B( f (x)), B( f 2(x)), . . . , B f l(k)-1(x),
+is a pseudorandom generator.
+In the proof of Theorem 10.9 we used the fact that f was a permutation to
+argue that if x is uniformly distributed over {0, 1}k then so is f (x). Proving
+that pseudorandom generators exist under the much weaker assumption that
+any one-way function exists, as was shown by H°astad, Impagliazzo, Levin and
+Luby (1999), is far more difficult.
+Theorem 10.11 One-way functions exist iff pseudorandom generators exist.
+Let us now return to the problems that Alice and Bob faced when constructing a
+one-time pad. They can now do this safely so long as they have a pseudorandom
+generator G and can share a short secret random seed. They proceed as follows.
+216 10 Secure encryption
+(1) Setup. Alice chooses a short random key x ?R {0, 1}k and shares this
+secretly with Bob.
+(2) Encryption. Alice encrypts an m-bit message M = (M1, . . . , Mm) by
+generating the pseudorandom string
+G(x) = (B1, . . . , Bm),
+using G and then forming the cryptogram C = G(x) ? M.
+(3) Decryption. For Bob to decrypt he simply forms the same pseudorandom
+string G(x) and recovers the message as M = C ? G(x).
+Of course this is not a true one-time pad since it consists of a pseudorandom
+string. However, if Eve were able to gain any significant information about the
+message from the cryptogram then G could not be a pseudorandom generator.
+So the existence of one-way functions implies the existence of pseudorandom
+generators and this in turn greatly simplifies the problems Alice and Bob face
+in constructing a secure one-time pad.
+But what about secure public key encryption?
+10.5 Probabilistic encryption
+We now return to the problem of secure public key cryptography. We start by
+considering the following basic problem.
+How can Alice use public key encryption to securely encrypt a single bit
+message M ? {0, 1} that she wishes to send to Bob?
+Clearly any deterministic public key system such as RSA will fail in this
+task since Eve can simply check whether the observed cryptogram C satisfies
+C = e(0) or C = e(1) and so can easily distinguish between the two possible
+messages.
+Alice and Bob need to use randomness in the encryption process, but how?
+Suppose Alice and Bob wish to use RSA, they can take advantage of the fact
+that it is as difficult to recover the least significant bit of a message encrypted
+using RSA as it is to recover the entire message (see Theorem 10.5). Formally
+the least significant bit is a hard-core predicate of RSA encryption, under the
+RSA assumption.
+If Alice wishes to send a single bit M ? {0, 1} then she first obtains Bob’s
+public RSA key (n, e) and then chooses x ?R Z
+*
+n with the property that the least
+significant bit of x is M. She then encrypts x and sends Bob the cryptogram
+C = xe mod n.
+10.5 Probabilistic encryption 217
+Bob then decrypts as usual with his private key and so obtains
+x = Cd mod n.
+He then examines the least significant bit of x to see whether the message M
+was 0 or 1. Note that if Alice now sends the same message twice then it is
+extremely unlikely that the two cryptograms will be the same.
+For Eve to guess which message has been sent she needs to guess the value of
+the least significant bit of x given only the cryptogram. Since the least significant
+bit is a hard-core predicate of RSA encryption Eve cannot succeed in guessing
+the message with probability significantly greater than 1/2.
+In general Alice and Bob can follow a similar procedure given any family
+of trapdoor functions with hard-core predicates. Suppose they have a family of
+trapdoor functions { fi : Di › Di }i?I , with hard-core predicates {Bi }i?I then
+they can encrypt single bit messages as follows.
+Single bit probabilistic encryption
+(1) Setup. Bob chooses a key length k and generates a public/private key pair
+(i, ti ). He publishes i and keeps ti secret.
+(2) Encryption. Alice encrypts a single bit M ? {0, 1} by choosing x ?R Di
+with Bi (x) = M (note that by Lemma 10.2 approximately half of the
+values in Di will satisfy Bi (x) = M so she can do this easily). She then
+sends Bob the cryptogram C = fi (x).
+(3) Decryption. Bob uses his private key ti to recover x from C = fi (x). He
+then calculates the message M = Bi (x).
+The security of this system seems rather good. If Alice encrypts one of two
+possible messages and sends the resulting cryptogram to Bob then, since M =
+Bi (x) is a hard-core predicate of fi, Eve cannot guess which message was sent
+with success probability significantly greater than 1/2.
+But how can Alice and Bob send longer messages? The obvious way to do
+this would be to encrypt each bit of the message separately using the single bit
+encryption method described above.
+We suppose as before that Alice and Bob have a family of trapdoor functions
+{ fi : Di › Di }i?I , with hard-core predicates {Bi }i?I . They can then encrypt
+longer messages as follows.
+Longer message probabilistic encryption
+(1) Setup. Bob chooses a key length k and generates a public/private key pair
+(i, ti ). He publishes i and keeps ti secret.
+218 10 Secure encryption
+(2) Encryption. Alice encrypts an m-bit message M ? {0, 1}m by choosing
+x1, . . . , xm ?R Di with Bi (x j ) = Mj , for 1 ? j ? m. She then sends Bob
+the cryptogram C = ( fi (x1), fi (x2), . . . fi (xm)).
+(3) Decryption. Bob uses his private key ti to recover each x j from fi (x j ). He
+then calculates the message M = (Bi (x1), Bi (x2), . . . Bi (xm)).
+This method has one very obvious drawback: message expansion. For example,
+encrypting an m-bit message using a hard-core predicate of RSA with a k-bit
+public modulus would yield a cryptogram consisting of m, k-bit integers hence
+the length of the cryptogram would be O(mk). We will see a more efficient
+system later but first we consider the more important problem of whether this
+general method of encryption is secure.
+How can we define security for longer messages? When encrypting a single
+bit we argued that encryption was secure if Eve could not guess which of the
+two possible messages was sent with success probability significantly greater
+than 1/2. Extending this idea to longer messages gives rise to the concept of
+polynomial indistinguishability which we will describe below.
+Informally a cryptosystem is polynomially indistinguishable iff whenever
+Eve presents Bob with two messages M1, M2 of the same length and he gives
+her an encryption of one of them, C, then she has no way of guessing whether
+C is an encryption of M1 or an encryption of M2 with probability significantly
+greater than 1/2. (Note that any deterministic cryptosystem will fail this test
+since given two messages M1, M2 they both have fixed encryptions C1,C2 and
+so given a cryptogram C, Eve simply checks whether C = C1 or C = C2.)
+These considerations lead naturally to the following security test.
+(1) Bob chooses a key length k.
+(2) He then generates a random public and private key pair (e, d) of the
+required length and publishes his public key e.
+(3) Eve produces two messages M1, M2 of length k in probabilistic
+polynomial time.
+(4) Bob then chooses one of the messages at random M ?R {M1, M2} and
+encrypts it as C = e(M).
+(5) Bob then sends the cryptogram C to Eve.
+(6) Eve then guesses which of the two messages Bob encrypted.
+(7) If Eve is correct then she succeeds otherwise she fails.
+Clearly by guessing at random Eve will succeed in this test half of the time.
+We say that a cryptosystem is polynomially indistinguishable iff no matter
+what probabilistic polynomial time algorithm Eve employs her probability of
+succeeding in this test is at most negligibly greater than 1/2.
+10.5 Probabilistic encryption 219
+It is important to note that in step (3) of the test Eve produces the messages
+M1, M2 herself in probabilistic polynomial time. In an ideal world we would
+like to insist that Eve cannot distinguish between encryptions of any pair of
+messages of the same length but thiswould be unrealistic. For example, suppose
+Bob uses a cryptosystem whose security is based on the difficulty of factoring
+a product of two primes, n = pq, and that knowledge of the factorisation of n
+allows anyone to easily compute his private key. Obviously in such a system
+Eve can distinguish between encryptions of the messages M1 = p and M2 = q
+since given this pair of messages she can compute Bob’s private key and hence
+decrypt any cryptogram.
+We need to insist that the pairs of messages that Eve tries to distinguish
+between are ‘reasonable’ in the sense that she could produce them herself (and
+in particular without using Bob’s private key).
+Returning now to our (rather inefficient) method for encrypting longer messages,
+we can now show that it is secure.
+Theorem 10.12 The probabilistic encryption process for longer messages,
+using hard-core predicates of trapdoor functions, yields a polynomially indistinguishable
+cryptosystem.
+Proof: We will not present a full proof of this result. The basic idea is to show
+that if Eve can distinguish between encryptions of two particularm-bit messages
+M1 and M2 then in fact she can distinguish between encryptions of other two
+m-bit messages that differ only in a single bit. (Consider a sequence of messages
+starting with M1 and ending with M2, formed by flipping a single bit of M1 at
+a time until after at most m steps we arrive at M2. There must exist a pair of
+consecutive messages in this sequence such that Eve will be able to distinguish
+between their encryptions. By construction these messages differ in exactly one
+bit.)
+But if Eve can distinguish between encryptions of two messages that differ
+in a single bit then she can construct a guessing algorithm for the hard-core
+predicate whose success probability will not be negligible. This contradiction
+proves the result. 
+Thus we have an encryption method using hard-core predicates of a family of
+trapdoor permutations that is provably secure in the sense that it is polynomially
+indistinguishable. However, we still seem rather far from the notion of perfect
+secrecy that Shannon proved one could attain in symmetric cryptography. Our
+definition of security, while quite reasonable, is not exactly the most natural.
+Really we would like to be sure that no partial information about the message is
+leaked by the cryptogram. Recall that with perfect secrecy we were guaranteed
+220 10 Secure encryption
+that Eve would learn nothing at all about the message from the cryptogram.
+We need to describe the computational version of this condition: semantic
+security.
+Informally we say that a cryptosystem is semantically secure if any piece of
+information that Eve is able to compute given the cryptogram, she could just as
+easily have computed without the cryptogram.
+We formalise this by saying that Eve obtains a piece of information if she is
+able to compute some function b :M› {0, 1} such as for example
+b(M) = 1, M contains Alice’s bank account details,
+0, otherwise.
+In our formal definition of semantic security we will again insist that the messages
+involved are reasonable. This simply means that there is a probabilistic
+polynomial time algorithm for producing messages, given the key length and
+public key.
+Let b :M› {0, 1}. We consider two scenarios.
+(1) No cryptogram. Eve is given Bob’s public key and is told that Alice
+has chosen a reasonable message M of length k. We ask Eve to guess
+b(M).
+(2) Cryptogram. Eve is given Bob’s public key and is told that Alice has
+chosen a reasonable message M of length k as before. But this time we
+also give Eve the cryptogram C = e(M) and ask her to guess b(M).
+A cryptosystem is said to be semantically secure iff for any function b :M›
+{0, 1}, Eve’s probability of succeeding in guessing b(M) when given the cryptogram
+(that is in the second scenario) is at most negligibly greater than when
+not given the cryptogram (as in the first scenario).
+This is a far more natural notion of security, and clearly one that is desirable.
+For this reason the next result due to Goldwasser and Micali (1984) is of great
+value.
+Theorem 10.13 A public key cryptosystem is semantically secure iff it is polynomially
+indistinguishable.
+Thus having described a method of encryption that is polynomially indistinguishable
+we now have the bonus of knowing that it is also semantically
+secure.
+This still leaves one major problem. Can we find a more efficient method of
+secure encryption? (Recall that the method described above involved a considerable
+expansion in the message size.)
+10.6 Efficient probabilistic encryption 221
+10.6 Efficient probabilistic encryption
+In Section 10.4 we saw how Alice and Bob could construct a secure one-time
+pad using a pseudorandom generator and a small shared random seed. This
+made symmetric cryptography far more practical by reducing the need for a long
+shared random key. The construction of a pseudorandom generatorwas achieved
+using a hard-core predicate of a length preserving one-way permutation (see
+Theorem 10.10).
+But what if they had used a trapdoor function rather than simply a one-way
+function?
+Suppose Alice and Bob know a family of length preserving, trapdoor permutations
+{ fi : Di › Di }i?I with hard-core predicates {Bi }i?I . They can construct
+a pseudorandom generator using the method described in Theorem
+10.10. Moreover, they can then build a secure public key cryptosystem as
+follows.
+(1) Setup. Bob decides on a key length k and chooses a random public key
+and trapdoor (i, ti) of the desired length. He then publishes the public key
+i and keeps the trapdoor ti secret.
+(2) Encryption. Alice encrypts a message M ? {0, 1}m as follows.
+(i) First she chooses a random seed x ?R Di .
+(ii) Then she computes fi (x), f 2
+i (x), . . . , f m
+i (x).
+(iii) Next she uses the hard-core predicate Bi to form the pseudorandom
+string:
+P = (Bi (x), Bi ( fi (x)), . . . , Bi ( f m-1
+i (x))).
+(iv) She then uses this as a one-time pad and sends Bob the cryptogram
+C = (P ? M, f m
+i (x)).
+(3) Decryption. Writing E = P ? M and y = f m
+i (x), Bob decrypts
+C = (E, y) as follows.
+(i) He uses his trapdoor ti to recover x ? Di such that f m
+i (x) = y.
+(ii) He can now construct P in the same way as Alice since he knows the
+random seed x.
+(iii) He then recovers the message as M = E ? P.
+This yields a polynomially indistinguishable (and hence semantically secure)
+cryptosystem.
+Theorem 10.14 The efficient probabilistic encryption process described above
+is polynomially indistinguishable.
+222 10 Secure encryption
+Proof: Consider the string (P, f m
+i (x)). Since fi is a length preserving oneway
+permutation this string is pseudorandom (for the same reason that the
+constructions in Theorems 10.9 and 10.10 gave pseudorandom generators).
+Indeed the bit generator
+Gi (x) = (P, f m
+i (x)) = ((Bi (x), Bi ( fi (x)), . . . , Bi ( f m-1
+i (x))), f m
+i (x))
+is a pseudorandom generator.
+Let R be a random string of length m. It is impossible for Eve to distinguish
+between C = (P ? M, f m
+i (x)) and (R, f m
+i (x)), for any reasonable message M
+since otherwise shewould have a statistical test that the pseudorandom generator
+Gi would fail. But this implies that for any two reasonable messages M1 and
+M2 an encryption of M1 is indistinguishable from (R, f m
+i (x)) which in turn is
+indistinguishable from an encryption of M2. Hence encryptions of M1 and M2
+are indistinguishable. 
+Thus, given a family of length preserving trapdoor permutations with hard-core
+predicates, Alice and Bob can construct a secure public key cryptosystem that
+does not suffer from excessive message expansion. (Note that the cryptogram
+is now only k bits longer than the original message.)
+However, such a system may still be rather inefficient in terms of the computations
+involved. Notably decryption may be rather expensive.We close this
+chapter with a description of the currently most efficient known version of such
+a scheme: the Blum–Goldwasser cryptosystem.
+This system is based on a restricted version of Rabin’s cryptosystem. Recall
+that the function RABINn(x) = x2 mod n, where n = pq is a product of
+two distinct primes, yields a family of trapdoor functions under the Factoring
+Assumption. However, they suffer from the problem that they are not permutations.
+Williams (1980) proposed a modified version of this system that does
+not suffer from this drawback.
+Recall that a Blum prime is a prime of the form p = 3 mod 4 and that Qn
+denotes the set of quadratic residues mod n.
+Lemma 10.15 If p,q are Blum primes and n = pq then the Rabin–Williams
+function RWn : Qn › Qn, RWn(x) = x2 mod n is a permutation.
+Proof: We need to use Appendix 3, Theorem A3.14 which says that ab ? Qp
+iff either a ? Qp and b ? Qp, or a ? Qp and b ? Qp. Note also that if n = pq
+is the product of two distinct primes then b ? Qn implies that b ? Qp and
+b ? Qq .
+10.6 Efficient probabilistic encryption 223
+Euler’s Criterion (Appendix 3, Theorem A3.13) tells us that -1 ? Qp for
+any Blum prime p = 4k + 3 since
+(-1)(p-1)/2 = (-1)2k+1 = -1 mod p.
+Thus if p is a Blum prime and a ? Qp then -a ? Qp.
+Suppose that x, y ? Qn and RWn(x) = RWn(y).We need to show that x =
+y mod n. Now x2 = y2 mod n so n | (x - y)(x + y). Then, since x, y ? Qn,
+we know that x, y ? Qp and so -x,-y ? Qp and so -x,-y ? Qn. Hence
+x = -y mod n. So either x = y mod n or without loss of generality p | (x - y)
+and q | (x + y). But if the latter holds then x = -y mod q and since y ? Qq
+and q is a Blum prime so x ? Qq , contradicting the fact that x ? Qn. Hence
+x = y mod n and the function RWn is a permutation as required. 
+We now note that under the Factoring Assumption the Rabin–Williams functions
+yield a family of trapdoor permutations. We require the following result
+due to Blum, Blum and Shub (1986).
+Proposition 10.16 Under the Factoring Assumption the family of Rabin–
+Williams functions {RWn : Qn › Qn}n is a family of trapdoor permutations
+with hard-core predicates Bn(x) = least significant bit of x.
+Using the Rabin–Williams family together with the hard-core predicates Bn we
+obtain the Blum–Blum–Shub generator which works as follows. (Recall that as
+before l(k) is the polynomial length of the generator’s output.)
+Choose two random k-bit Blum primes p, q and let n = pq.
+Select random x ?R Z
+*
+n.
+Let x0 = x2 mod n, xi = x2
+i-1 mod n for i = 1 to l(k).
+Let bi be the least significant bit of xi .
+Output the sequence b1, b2, . . . , bl(k).
+The fact that this is a pseudorandom generator (under the Factoring Assumption)
+follows immediately from Proposition 10.16 and Theorem 10.10.
+Finally we have the polynomially indistinguishable (and hence semantically
+secure) Blum–Goldwasser cryptosystem. This is a particular example of the
+generic efficient probabilistic cryptosystem outlined at the beginning of this
+section, making use of the Blum–Blum–Shub pseudorandom generator. We
+give the details below.
+Theorem 10.17 Under the Factoring Assumption there exists a polynomially
+indistinguishable cryptosystem.
+224 10 Secure encryption
+To simplify the decryption process wework with a subset of the Blum primes,
+namely those Blum primes of the form p = 7 mod 8.
+The Blum–Goldwasser cryptosystem
+(1) Setup. Bob chooses a key length k and selects two random k-bit primes
+p = 8i + 7 and q = 8 j + 7. He then forms his public key n = pq which
+he publishes.
+(2) Encryption. Alice encrypts a message M ? {0, 1}m as follows
+(i) First she chooses a random seed x0 ?R Qn. (She can do this by
+choosing z ?R Z
+*
+n and then squaring modulo n.)
+(ii) Then she computes xi = x2
+i-1 mod n, for i = 1, . . . ,m.
+(iii) Next she uses the hard-core predicate Bn (that is the least significant
+bit) to form the pseudorandom string:
+P = (Bn(x0), Bn(x1), . . . , Bn(xm-1)).
+(iv) She then uses this as a one-time pad and sends Bob the
+cryptogram
+C = (P ? M, xm).
+(3) Decryption. Writing E = P ? M and y = xm, Bob decrypts C = (E, y)
+as follows.
+(i) He uses his private key (p, q) to recover x0 from y (the details are
+described below).
+(ii) He can now construct the pad P in the same way as Alice since he
+knows the random seed x0.
+(iii) He then recovers the message as M = E ? P.
+We make use of the special form of the primes in the decryption process.
+Suppose that Bob is sent the cryptogram (E, y), where E = P ? M and y =
+xm. First note that if b ? Qn we have b ? Qp and so by Euler’s Criterion
+b(p-1)/2 = 1 mod p. Then, as p = 8i + 7, we have
+b = b · b(p-1)/2 = b1+4i+3 = (b2i+2)2 mod p.
+Hence the unique square root of b that is also a quadratic residue mod p is
+b2i+2 mod p. Hence x0, the 2mth root of y that Bob needs to calculate in order
+to decrypt, is given (mod p) by
+x = y(2i+2)m mod p.
+10.6 Efficient probabilistic encryption 225
+Similarly x0 = y(2 j+2)m mod q, where q = 8 j + 7. Bob can then use the
+Chinese Remainder Theorem and Euclid’s algorithm to recover x0 mod n. He
+finds integers h, k such that hp + kq = 1 and then computes
+x0 = kqy(2i+2)m + hpy(2 j+2)m mod n.
+Finally he forms the pad P in the same way as Alice and recovers the message
+as M = E ? P.
+Hence the total time spent decrypting an m-bit message encrypted with a
+k-bit key is O(k3 + k2m). So if the message is significantly longer than the key
+then this takes time O(k2m) which is the same as the time taken for encryption
+and faster than the deterministic (and less secure) RSA cryptosystem.
+Exercise 10.2a Alice and Bob use the Blum–Goldwasser cryptosystem. Suppose
+Bob has public key 7 × 23 = 161 and Alice wishes to send the
+message M = 0101.
+(a) If Alice chooses random seed x0 = 35 ? Q161 calculate the
+pseudorandom string
+P = (B161(x0), B161(x1), B161(x2), B161(x3)).
+(b) Find the cryptogram C that she sends to Bob.
+(c) Check that Bob’s decryption process works in this case.
+Problems
+10.1h Let G : {0, 1}k › {0, 1}l(k) be a bit generator, with l(k) > k a polynomial.
+Consider the following ‘statistical test’ for G:
+TG(y) = 1, if there is an input x for which G(x) = y,
+0, otherwise.
+(a) Show that this test will succeed in distinguishing the output of G
+from a truly random source (irrespective of whether or not G is a
+pseudorandom generator).
+(b) Explain why TG may not be a statistical test in the formal sense
+defined on page 206.
+(c) Use this to prove that if NP ? BPP then no pseudorandom
+generators exist.
+10.2h Suppose we have a source of bits that are mutually independent but
+biased (say 1 occurs with probability p and 0 occurs with probability
+1 - p). Explain howto construct an unbiased sequence of independent
+random bits from this source by considering pairs of bits.
+226 10 Secure encryption
+10.3h Consider a linear feedback shift register withm registers and maximum
+period 2m - 1. Prove that for any non-zero initial state the output
+sequence contains exactly 2m-1 ones and 2m-1 - 1 zeros in its output
+of 2m - 1 bits.
+10.4b Recall the Elgamal cryptosystem from Chapter 7. Define the predicate
+Q(M) = 1, if M is a quadratic residue modulo p,
+0, otherwise.
+Show that Q is easy to compute from the public key (p, g, gx ) and
+an encryption of M, e(M) = (k, d), where k = gy mod p and d =
+Mgxy mod p.
+10.5h Let p = 8k + 5 be prime. Show that, given ((p - 1)/2)! mod p, there
+is a polynomial time algorithm to find a solution to
+x2 = n mod p.
+10.6h Show that the function g defined in Theorem 10.8 is one-way.
+10.7h Prove that if pseudorandom generators exist then one-way functions
+exist.
+10.8 Suppose that f : {0, 1}* › {0, 1}* is a length preserving permutation.
+Show that if x ?R {0, 1}k then f (x) will be uniformly distributed over
+{0, 1}k .
+10.9 Show that if Eve has a polynomial time algorithm for computing the
+least significant bit of a message encrypted using RSA then she can
+construct a polynomial time algorithm for recovering the whole message.
+It may be useful to show the following.
+(a) If M1, M2 are two messages then
+e(M1M2 mod n) = e(M1)e(M2) mod n,
+where e(M) is the encryption of M using the public key (n, e).
+(b) Let C = e(M) and define L(C) to be the least significant bit of
+the message and B(C) to be the most significant bit of the
+message. So
+L(C) = 0, M is even,
+1, M is odd,
+and
+B(C) = 0, 0 ? M < n/2,
+1, M > n/2.
+Show that B(C) = L(Ce(2) mod n).
+10.6 Efficient probabilistic encryption 227
+(c) Given an algorithm for computing B(C) show that Eve can
+recover M (consider B(C), B(Ce(2)), B(Ce(4)) . . . in turn).
+(d) Hence show that Eve can recover the message using her
+algorithm for L(C).
+10.10a The Goldwasser–Micali cryptosystem works as follows. Bob chooses
+two random k-bit primes p, q and forms n = pq. He then chooses a
+quadratic non-residue y mod n (that is y ? Z
+*
+n
+\Qn) and publishes his
+public key (n, y). Alice encrypts anm-bit message M = M1M2 · · · Mm
+as follows. She chooses u1, . . . , um ?R Z
+*
+n and encrypts Mi asCi given
+by
+Ci = u2
+i mod n, if Mi = 0,
+u2
+i y mod n, if Mi = 1.
+(a) Describe a polynomial time decryption algorithm for Bob.
+(b) If Bob has public key (77, 5) and receives the cryptogram
+(71, 26) what was the message?
+(c) Explain why this cryptosystem can be totally broken by anyone
+who can factorise products of two primes.
+(d) What intractability assumption would one require to hold for this
+system to be secure?
+10.11 Complete the proof of Theorem 10.9 as follows. Throughout suppose
+that z ?R {0, 1}k+1, x ?R {0, 1}k and b ?R {0, 1}.
+(a) First explain why
+Pr[T (z) = 1] = Pr[T ( f (x), b) = 1]
+and
+Pr[T (G(x)) = 1] = Pr[T ( f (x), b) = 1 | b = B(x)].
+(b) Now show that
+Pr[T (z) = 1] = 1
+2
+(Pr[T ( f (x), b) = 1 | b = B(x)]
++ Pr[T ( f (x), b) = 1 | b = B(x)]).
+(c) Show next that
+Pr[A( f (x)) = B(x)] = 1
+2
+(Pr[T ( f (x), b) = 1 | b = B(x)]
++ Pr[T ( f (x), b) = 0 | b = B(x)]).
+(d) Finally use the assumption that
+Pr[T (G(x)) = 1] - Pr[T (z) = 1] ? 1
+q(k)
+228 10 Secure encryption
+to show that
+Pr[A( f (x)) = B(x)] ? 1
+2
++ 1
+q(k)
+.
+Further notes
+The study of what constitutes a random sequence and different interpretations
+of what it means to be random have a long history; see the monograph of
+Li and Vit´anyi (1997). The use of pseudorandom sequences in Monte Carlo
+simulators goes back at least as far as the middle of the last century, see for
+example Hammersley and Handscomb (1964). Fundamental early papers constructing
+pseudorandom generators based on difficult computational problems
+are Blum and Micali (1984: extended abstracts 1982 and 1985), Shamir (1981)
+and Yao (1982). Shamir (1981) presented a scheme which from a short secret
+random seed outputs a sequence x1, . . . , xn such that the ability to predict xn+1
+is equivalent to inverting RSA.
+Examples of early (cryptographically strong) pseudorandom bit generators
+were Yao (1982) and Blum, Blum and Shub (1986). Yao (1982) and Goldwasser,
+Micali and Tong (1982) implemented pseudorandom generators based
+on the intractability of factoring. These papers also relate pseudorandom generators
+and the next-bit test. Goldwasser and Micali (1982, 1984) introduced the
+concept of polynomial indistinguishability and the related concept of semantic
+security.
+The concept of a hard-core predicate was introduced by Blum and Micali
+(1984) who proved Theorem 10.3 showing that the most significant bit of the
+discrete logarithm was a hard-core predicate.
+The Blum–Goldwasser cryptosystem appears in Blum and Goldwasser
+(1985).
+The books of Goldreich (2001) and Luby (1996) give authoritative accounts
+of the theory relating pseudorandomness and its cryptographic applications.
+11
+Identification schemes
+11.1 Introduction
+How should Peggy prove to Victor that she is who she claims to be?
+There is no simple answer to this question, it depends on the situation. For
+example if Peggy and Victor meet in person, she may show him her passport
+(hopefully issued by an authority that he trusts). Alternatively she could present
+him with a fingerprint or other biometric information which he could then
+check against a central database. In either case it should be possible for Peggy
+to convince Victor that she really is Peggy. This is the first requirement of
+any identification scheme: honest parties should be able to prove and verify
+identities correctly.
+A second requirement is that a dishonest third party, say Oscar, should be
+unable to impersonate Peggy. For example, two crucial properties of any passport
+are that it is unforgeable and that its issuing authority can be trusted not to
+issue a fake one. In the case of biometrics Victor needs to know that the central
+database is correct.
+A special and rather important case of this second requirement arises when
+Victor is himself dishonest. After asking Peggy to prove her identity, Victor
+should not be able to impersonate her to someone else.
+Let us suppose for now that Peggy and Victor do not meet in person. Instead
+they engage in some form of communication, at the end of which hopefully
+Victor is convinced of Peggy’s identity. It is now more difficult to list possible
+identification schemes. Clearly Peggy must provide Victor with some information
+that will convince him of her identity. However, she needs to be careful,
+since any information she gives to Victor may then be used by either Victor or
+some eavesdropper to impersonate her at a later date.
+The simplest form such a scheme could take would be to use a password.
+Peggy first registers her password withVictor. At a later date Peggy can convince
+229
+230 11 Identification schemes
+Victor of her identity by sending him this password. Unfortunately there are
+many problems with such a system.
+(1) Peggy must transmit her password via a secure communication channel
+otherwise any eavesdropper can steal her password and impersonate her.
+(2) Peggy can only convince those people she has previously exchanged a
+password with of her identity.
+(3) Victor can obviously impersonate her since he also knows her password.
+So how can we solve these problems? The problem of requiring a secure
+communication channel can clearly be solved by using encryption. However
+this only stops an eavesdropper from recovering the password. If Peggy simply
+sends her password in encrypted form then an eavesdropper does not
+need to decrypt it, he simply needs to record it and then resend it when he
+wishes to fool Victor into believing that he is Peggy. Thus encryption alone is
+useless.
+The key problem is that the password does not change. To solve this we need
+to introduce randomness or timestamps into the scheme.
+A better approach might be to dispense with passwords and instead use a
+so-called challenge–response scheme. Such schemes can be based on either
+public key or symmetric cryptosystems, we will only consider the public key
+case.
+Typically a scheme of this type would work as follows.
+(1) Challenge. Victor sends Peggy a cryptogram formed by encrypting a
+random message with her public key.
+(2) Response. Peggy responds with the decrypted message.
+Equivalently we could think of this as Victor asking Peggy to sign a random
+message. Recall that when considering digital signature schemes we saw that
+it was a rather bad idea to sign all messages without question. It was far better
+to use a hash function and then sign the hash of the message. In particular
+this provided a defence against chosen-message attacks or, from the encryption
+point of view, chosen-ciphertext attacks.
+The following identification scheme attempts to take these fears into account.
+Example 11.1 A public-key challenge-response identification scheme
+(1) Victor chooses a random value r and computes its hash with a publicly
+known hash function h to produce a witness x = h(r ).
+(2) Victor then uses Peggy’s public key to encrypt a message consisting of r
+and an identifier of Victor, IV , and sends the challenge C = e(r, IV ) to
+Peggy together with the witness x.
+11.2 Interactive proofs 231
+(3) Peggy then decrypts C to obtain r and IV . She then checks that IV is
+Victor’s identifier and that h(r ) = x. If these hold she returns the response
+r to Victor.
+(4) Victor accepts Peggy’s proof of identity iff she returns the correct value
+of r .
+This scheme represents a significant improvement over a basic password system.
+However, can Peggy be sure that ifVictor is dishonest and issues challenges that
+are chosen in some cunning fashion he does not gain any information that will
+enable him to impersonate her? Peggy may need to identify herself to Victor
+frequently. She would like to be sure that by repeatedly identifying herself
+she does not enable Victor to accumulate information that will allow him to
+impersonate her later.
+If we go back to first principles it is obvious that no matter how Peggy proves
+her identity to Victor she clearly provides him with some information that he
+did not already possess: namely that she is indeed Peggy. Ideally Peggy would
+like to use an identification scheme in which this is the only piece of information
+that she reveals. But is this possible? To describe such a scheme we need to
+learn about so-called zero knowledge proofs.We start by considering the more
+general topic of interactive proofs.
+11.2 Interactive proofs
+The idea of an interactive proof system originated in the work of Goldwasser,
+Micali and Rackoff (1985). To motivate this topic we need to recall what it
+means to say that a language L belongs to NP. (We give a slight rewording of
+the actual definition introduced in Chapter 3.)
+We say that L ? NP if there is a polynomial time algorithm that given an
+input x and a possible proof y, checks whether y is a valid proof that x ? L. If
+x ? L then at least one valid proof exists, while if x ? L then no valid proof
+exists.
+An interactive proof represents a very natural generalisation of this in which
+the proof is not simply given to the checking algorithm but rather is presented
+by a prover who tries to answer any questions the checking algorithm may have.
+The computational model of an interactive proof system consists of two
+probabilistic Turing machines which can communicate with each other. Each
+machine has access to a private source of random bits.
+As is now customary, we name these machines Peggy (=P=prover) and
+Victor (=V=verifier). Peggy is all powerful except that she is only allowed to
+232 11 Identification schemes
+send messages of a length bounded by some polynomial function of the input
+size.
+The verifier, Victor, is much more constrained. His total computation time
+must be less than some fixed polynomial bound, again of the input size.
+Peggy and Victor alternate sending each other messages on two special
+interaction tapes. Both must be inactive in the time interval between sending a
+message and receiving a response. By conventionVictor initiates the interaction.
+Consider the following decision problem.
+GRAPH NON-ISOMORPHISM (GNI)
+Input: two graphs G1 and G2 with vertex set {1, 2, . . . , n}.
+Question: are G1 and G2 non-isomorphic?
+Recall that GNI is not known to belong to P but clearly belongs to co-NP. The
+classical example of an interactive proof system is the following system for
+GNI.
+Example 11.2 Interactive proof of GNI
+Let G1 and G2 be two graphs that Peggy wishes to prove are non-isomorphic.
+Victor and Peggy use the following protocol.
+(1) Victor chooses a random index i ?R {1, 2} and a random permutation
+? ?R Sn.
+(2) Victor then applies ? to the vertices of Gi to form the graph H = ?(Gi ).
+(3) Victor then sends H to Peggy and asks for the index j ? {1, 2} such that
+H is isomorphic to Gj .
+(4) Peggy responds with an index j .
+(5) Victor accepts iff j = i .
+Clearly if G1 and G2 are not isomorphic then Peggy can always choose j
+correctly and hence satisfy Victor. (Note that this relies on the fact that Peggy
+has unbounded computational capabilities since there is currently no known
+polynomial time algorithm for this task.)
+However, if G1 and G2 are isomorphic then no prover can do better than
+guess the value of i correctly half of the time so
+Pr[Victor is fooled by a malicious prover] = 1
+2
+.
+By repeating this procedure t times we can reduce the chance that a malicious
+prover can fool Victor, when G1 and G2 are in fact isomorphic, from 1/2 to
+(1/2)t .
+11.2 Interactive proofs 233
+Formally an interactive proof system consists of two PTMs: P (the prover)
+and V (the verifier) which can exchange messages via two communication
+tapes, the P › V tape and the V › P tape. The P › V tape is write only
+for P and read only for V. The V › P tape is write only for V and read only
+for P. Both P and V have private work tapes and private coin toss tapes. They
+both also share a read only input tape.
+We now place conditions on the computational power of the two machines.
+(a) The verifier V is a polynomial time PTM.
+(b) The prover P is a computationally unlimited PTM (so P can use an
+unlimited amount of time, space and random bits).
+(c) The verifier V starts the computation and P, V then take alternate turns,
+where a turn consists of a machine reading its tapes, performing a
+computation and sending a single message to the other machine.
+(d) The length of the messages which are sent are polynomially bounded.
+(e) The number of turns is polynomially bounded.
+(f) The computation ends when V enters a halting state of accept or reject.
+The condition (c) that V starts the computation is a convention to ensure the
+protocol is properly defined. We will often ignore this and have P start the
+computation. Such protocols could be easily modified to have V send an initial
+message to signal the start of the computation.
+We say that an input x is accepted/rejected by (V, P) depending on whether
+V accepts or rejects after interacting with P on input x.
+Alanguage L has a polynomial time interactive proof if there exists a verifier
+V and a prover P such that the following hold.
+(i) Completeness. If x ? L then Pr[(V, P) accepts x] = 1.
+(ii) Soundness. If x ? L then for any (possibly malicious) prover P,
+Pr[(V, P) accepts x] ? 1
+2
+.
+In both cases the probability is given by the random bits used by the verifier V.
+We denote the class of languages with polynomial time interactive proofs
+by IP.
+In the above definition it is important to distinguish between P and P. We
+can think of P as the ‘honest’ prover who can convince the verifier V. While
+P is a possibly ‘dishonest’ prover who is unlikely to fool V. (If we think about
+identification schemes then the completeness condition captures the idea that
+Peggy can convince Victor of her identity, while the soundness condition means
+that an imposter is unlikely to fool Victor.)
+234 11 Identification schemes
+Proposition 11.3 SAT ? IP.
+Proof: Given the input CNF formula f (x1, . . . , xn), the verifier V simply asks
+the prover for a satisfying assignment. Since P has unbounded computational
+resources she can, whenever the formula is satisfiable, find a satisfying assignment.
+Hence the completeness condition holds.
+However, if the input f is not satisfiable then V can never be fooled into
+accepting f since V can easily check any assignment a prover P sends him
+to see if it satisfies f . Hence the soundness condition also holds since the
+probability that a malicious prover can fool V is zero. 
+It is clear that a simple modification of the above argument will work for any
+language L ? NP. Thus we have the following result.
+Theorem 11.4 NP ? IP.
+We can now give another example to show that IP contains languages that are
+not known to belong to NP.
+Recall that x ? Z
+*
+n is a quadratic residue mod n if there exists y ? Z
+*
+n such
+that
+y2 = x mod n.
+Otherwise we say that x is a quadratic non-residue mod n. Another example
+of a language belonging to IP is given by the following decision problem.
+QUADRATIC NON-RESIDUES (QNR)
+Input: an integer n and x ? Z
+*
+n.
+Question: is x a quadratic non-residue mod n?
+Obviously QNR ? co-NP, but it is unknown whether QNR ? NP (there is no
+obvious succinct certificate to show that a given number x is a quadratic nonresidue).
+However, we have the following result that gives a hint of the power
+of interactive proof systems.
+Proposition 11.5 QNR ? IP
+Proof: We will need to use the fact that if x is a quadratic non-residue mod n
+and y is a quadratic residue mod n then xy is a quadratic non-residue mod n.
+(See Exercise 11.1.)
+We claim that the following is an interactive proof system for QNR.
+(1) Given an input x, the verifier V chooses i ?R {0, 1} and z ?R Z
+*
+n. If i = 0
+then V computes w = z2 mod n, otherwise V computes w = xz2 mod n.
+The verifier V then sends w to P and asks for the value of i .
+(2) Since P is computationally unbounded she can decide whether or not w is
+a quadratic residue. In the case that x is indeed a quadratic non-residue
+11.3 Zero knowledge 235
+this allows P to determine the value of i (since in this case w is a
+quadratic residue iff i = 0). The prover P sends the value j to V.
+(3) The verifier V accepts iff i = j .
+This interactive proof system clearly satisfies the completeness condition since
+if x is a quadratic non-residue then P can distinguish between the case i = 0
+(when w = z2 mod n is a quadratic residue) and the case i = 1 (when w =
+xz2 mod n is a quadratic non-residue).
+To see that the soundness condition also holds, suppose that x is a quadratic
+residue. Then, irrespective of the value of i , the verifier V gives the prover a
+random quadratic residue w. Hence no matter how devious a prover P may
+be she cannot hope to guess the value of i correctly more than half of the
+time. 
+How important is the constant 1/2 in the soundness condition? Actually any
+constant 0 < p < 1 will suffice.
+Proposition 11.6 If IPp denotes the class of languages with interactive proofs
+with soundness probability p, then IPp = IPq whenever 0 < p ? q < 1.
+Proof: If 0 < p ? q < 1 then clearly IPp ? IPq. To see that the converse also
+holds suppose that L ? IPq and let Aq = (V, P) be an interactive proof system
+with soundness probability q for L. Modify this system to give a newinteractive
+proof system Ap = (V*
+, P*) by carrying out t independent runs of Aq , and
+accepting iff all runs accept. Now if x ? L then
+Pr[(V*
+, P*) accepts x] = 1,
+while if x ? L then for any prover P
+Pr[(V*
+, P) accepts x] ? qt .
+If t is chosen such that qt < p then this gives a polynomial time interactive
+proof system with soundness p for L. Hence IPp = IPq . 
+Exercise 11.1 a Show that if x is a quadratic non-residue mod n and y is a
+quadratic residue mod n then xy is a quadratic non-residue mod n.
+Exercise 11.2 Prove that if L1 ? IP and L2 ?m L1 then L2 ? IP.
+11.3 Zero knowledge
+One of the original motivations of Goldwasser, Micali and Rackoff in introducing
+interactive proof systems was to obtain proof systems which gave away no
+‘knowledge’ or ‘information’ whatsoever.
+236 11 Identification schemes
+Example 11.7 The gold prospector
+Peggy has two indistinguishable looking lumps of metal, one of which she
+claims is gold. Victor wishes to purchase the gold and is able to distinguish
+between any two substances except for gold and pyrites (otherwise known as
+Fool’s Gold). He fears that Peggy has two identical lumps of pyrites.
+Victor devises the following test. He takes the two lumps and then selects
+one at random which he shows to Peggy and asks her which it is. He records her
+answer and then repeats the test. He does this twenty times and keeps a record
+of Peggy’s answers.
+If the two lumps of metal are truly different then her answers should be
+consistent and one of the lumps must be gold. In this case Victor decides
+to buy both lumps (Peggy may still be lying about which is which). However,
+if the two lumps are identical then Peggy is extremely unlikely to give
+consistent answers to Victor’s questions since she has no way of distinguishing
+between the two lumps. In this case Victor does not buy them (on the
+premise that if the two lumps are identical then they will surely both be Fool’s
+Gold).
+Note that this test has two important properties. First, if Peggy is lying then
+she is highly unlikely to fool Victor. Second, in the case that Peggy is honest,
+Victor still has no way of telling which of the two lumps is actually gold after
+conducting the tests, he simply knows that one of them is. In particular he has
+not learnt anything which would enable him to pass a similar test given by
+another sceptical gold buyer!
+Goldwasser, Micali and Rackoff (1985) attempt to make the notion of
+‘knowledge’ precise. Informally they say that an interactive proof system for a
+language L is zero knowledge if whatever the (possibly dishonest) verifier V
+can compute in probabilistic polynomial time after interacting with the prover,
+he could already compute before interacting with the prover, given the input x
+alone. In other words the verifier learns nothing from his interactions with the
+prover that he could not have computed for himself.
+There are different types of zero-knowledge proofs, we start by considering
+the strongest variety.
+11.4 Perfect zero-knowledge proofs
+A perfect zero-knowledge (or PZK) proof is an interactive proof in which P
+convinces V that an input x possesses some specific property but at the end of
+the protocol V has learnt nothing new about how to prove that x has the given
+property. We start with an example.
+11.4 Perfect zero-knowledge proofs 237
+Example 11.8 A PZK proof for GRAPH ISOMORPHISM
+GRAPH ISOMORPHISM
+Input: two graphs G1 and G2 with vertex set {1, 2, . . . , n}
+Question: are G1 and G2 isomorphic?
+Consider the following interactive proof system
+(1) The prover P chooses a random permutation ? ?R Sn. She then computes
+H = ?(G1) and sends H to V.
+(2) The verifier V chooses a random index i ?R {1, 2} and sends this to P.
+(3) The prover P computes a permutation ? ? Sn such that H = ?(Gi ) and
+sends ? to V.
+(4) The verifier V checks that H is the image of Gi under the permutation ?.
+Steps (1)–(4) are repeated t times and V accepts P’s proof iff the check in step
+(4) is successful every time, otherwise V rejects the proof.
+Now consider the probability that V accepts (G1, G2). If G1 and G2 are
+isomorphic then P can in each case find a permutation ? such that H = ?(Gi )
+so the probability of V accepting is 1.
+If G1 and G2 are not isomorphic then, no matter what dishonest strategy
+a prover employs, she can only fool V at most half of the time since either
+she chooses H = ?(G1) and so she can give the correct response when i = 1
+or she chooses H = ?(G2) and so can give the correct response when i = 2.
+However, to fool V she needs to answer correctly all t times and the probability
+that this occurs is at most
+Pr[V accepts (G1, G2)] = 1
+2
+t
+.
+Note that it is easy to see that all of V’s computations may be performed in
+polynomial time. Hence this is a polynomial time interactive proof.
+Intuitively this must be a zero-knowledge proof because all that V learns
+in each round is a random isomorphic copy H of G1 or G2 and a permutation
+which takes either H › G1 or H › G2 but not both. Crucially V could have
+computed these for himself without interacting with P. He could simply have
+chosen a random index i ?R {1, 2} and a random permutation ? ?R Sn and then
+formed the graph H = ?(Gi ).
+To make this idea more precise we say that V’s transcript of the interactive
+proof consists of the following:
+(1) the graphs G1 and G2;
+(2) the messages exchanged between P and V;
+(3) the random numbers i1, i2, . . . , it .
+238 11 Identification schemes
+In other words the transcript is
+T = [(G1, G2), (H1, i1, ?1), (H2, i2, ?2), . . . , (Ht , it, ?t )].
+The key reason why this interactive proof is perfect zero knowledge is that if
+G1 and G2 are isomorphic then anyone can forge these transcripts, whether or
+not they actually participate in an interactive proof with P. All a forger requires
+is the input and a polynomial time PTM.
+Formally, we can define a forger to be a polynomial time PTM, F, which
+produces forged transcripts. For such a machine and an input x we let F(x)
+denote the set of all possible forged transcripts and T (x) denote the set of
+all possible true transcripts (obtained by V actually engaging in an interactive
+proof with P on input x).
+We have two probability distributions on the set of all possible transcripts
+(both true or forged).
+First, we have PrT [T ], the probability that T occurs as a transcript of an
+actual true interactive proof conducted by V with P on input x. This depends
+on the random bits used by V and P. Second, we have PrF[T ], the probability
+that T is the transcript produced by the forger F, given input x. This depends
+only on the random bits used by F (since V and P play no part in producing
+the forgery).
+An interactive proof system for a language L is perfect zero knowledge iff
+there exists a forger F such that for any x ? L we have
+(i) the set of forged transcripts is identical to the set of true transcripts. That
+is F(x) = T (x),
+(ii) the two associated probability distributions are identical. That is for any
+transcript T ? T (x) we have PrT [T ] = PrF[T ].
+Proposition 11.9 The interactive proof system for GRAPH ISOMORPHISM
+given above is perfect zero knowledge.
+Proof: To simplify matters we assume that the verifier is honest and follows the
+protocol correctly.
+Suppose G1 and G2 are isomorphic what does a possible transcript consist
+of? Well it looks like
+T = [(G1, G2), (H1, i1, ?1), (H2, i2, ?2), . . . , (Ht , it, ?t )],
+where each i j ? {1, 2}, each ?j ? Sn and each Hj = ?j (Gi j ). Our forger F
+knows the input (G1, G2) and so can easily produce any of the possible true
+transcripts. All he needs to do is first write down the input and then choose
+11.4 Perfect zero-knowledge proofs 239
+random i ?R {1, 2} and ? ?R Sn and form the triple (?(Gi ), i, ?). He then
+repeats this t times to produce a transcript.
+Clearly the set of forged transcripts and the set of true transcripts will be
+identical, so F(G1, G2) = T (G1, G2).
+Moreover the forger F will have an equal chance of producing any possible
+transcript. But it is also the case that true transcripts produced by the interaction
+of V with P will also occur with equal probability. Hence if the total number
+of transcripts is N and T is a transcript then
+PrT [T ] = PrF[T ] = 1
+N
+.
+So both conditions hold. 
+Unfortunately the above proof is incomplete. To show that the protocol really
+is PZK we need to deal with the possibility that the verifier may be dishonest.
+If he is, then proving perfect zero knowledge is more difficult, see for example
+Goldreich, Micali and Wigderson (1991).
+Example 11.10 A PZK proof for QUADRATIC RESIDUE.
+QUADRATIC RESIDUE (QR)
+Input: integer n the product of two unknown distinct primes and an integer
+b ? Z
+*
+n.
+Question: is b a quadratic residue mod n?
+Obviously there is a protocol showing that QR belongs to IP, the prover simply
+gives the verifier a square root of b mod n. Clearly this is not a zero-knowledge
+proof. However, there is a zero-knowledge interactive proof which we describe
+below.
+(1) The prover P chooses a random x ?R Z
+*
+n and sends y = x2 mod n to V.
+(2) The verifier V chooses a random integer i ?R {0, 1} and sends i to P.
+(3) The prover P computes
+z =  x mod n, if i = 0,
+x
+?
+b mod n, if i = 1,
+and sends this to V.
+(4) The verifier V accepts iff z2 = bi y mod n.
+Clearly if b is a quadratic residue mod n then the prover can always pass this
+test.
+If b is not a quadratic residue mod n then any prover will always fail one
+of the possible tests no matter what she chooses as y. To be precise if a prover
+240 11 Identification schemes
+sends y = x2 mod n then she will be able to respond correctly to the challenge
+i = 0 but not to the challenge i = 1 (since
+?
+b does not exist). While if she tries
+to cheat and chooses y = b-1x2 mod n then she will now be able to respond
+correctly to the challenge i = 1 by sending z = x but not to the challenge i = 0
+(again because
+?
+b does not exist). So whatever a prover does if b is a quadratic
+non-residue then
+Pr[V accepts b] ? 1
+2
+.
+Hence this is a polynomial time interactive proof but is it a PZK proof?
+We need to consider what V learns in the process of interacting with
+P. After t rounds of interaction with P, the verifier V has the following
+transcript
+T = [(n, b), (x2
+1 , i1, x1bi1/2), (x2
+2 , i2, x2bi2/2), . . . , (x2
+t , it , xtbit /2)],
+where each x j ?R Z
+*
+n and i j ?R {0, 1}.
+Wenowconsider howa forger might produce such a transcript. First he writes
+down the input (n, b). He then chooses i ?R {0, 1}. If i = 0 he chooses x ?R
+Z
+*
+n and calculates y = x2 mod n. If i = 1 he chooses x ?R Z
+*
+n and computes
+b-1 mod n and y = x2b-1 mod n. Finally he produces the forged triple (y, i, x).
+It is straightforward to check that this forging algorithm produces transcripts
+with an identical probability distribution to that of the true transcripts.
+Exercise 11.3 Complete the proof that the interactive proof system for QR
+given above is perfect zero knowledge, assuming that the verifier is honest.
+11.5 Computational zero knowledge
+With perfect zero knowledgewerequired the forger to be able to forge transcripts
+with exactly the same probability distribution as that of the true transcripts
+produced by interactions between V and P. This is a rather strong condition.
+If we wish to use zero-knowledge proofs as the basis of identification
+schemes then perfect zero knowledge is stronger than we need. Rather than
+requiring the distributions of true and forged transcripts to be identical it is sufficient
+to require the two distributions to be indistinguishable to an adversary.
+Thus we introduce the weaker notion of computational zero knowledge
+(CZK). A language L has a CZK proof if there is an interactive proof system
+for L and a forger F who produces transcripts with a distribution that differs
+from the distribution of the true transcripts in a way that is indistinguishable to
+anyone equipped with a polynomial time PTM.
+11.5 Computational zero knowledge 241
+Under certain assumptions about one-way functions, all languages in NP
+have CZK proofs.
+A vital tool required in the proof of this result is a bit commitment scheme
+so we first explain what this is and why they exist (so long as one-way functions
+exist). In passing we will also discover how to toss a coin over the telephone!
+Bit commitment
+Suppose Bob wants Alice to commit to the value of a single bit, either 0 or 1.
+Alice is willing to do this but she does not want Bob to know which bit she
+has chosen until some later date. How can Bob ensure that Alice commits to
+a particular (unknown) bit in such a way that she cannot lie about her choice
+later?
+One possible solution is for Alice to use a one-way permutation, f :
+{0, 1}* › {0, 1}*, with hard-core predicate B(x). She chooses x ? {0, 1} such
+that B(x) ? {0, 1} is the bit to which she wishes to commit. She then sends her
+commitment C = f (x) to Bob.
+Later, Alice can decommit and reveal the bit she chose by sending Bob the
+value x. She cannot cheat since f is a permutation so there is a unique x for
+which f (x) = C. Moreover, given x, Bob can easily compute f (x) and B(x)
+so Bob can easily decide which bit Alice originally chose and check that she
+did not cheat.
+The security of this scheme relies on the fact that B(x) is a hard-core predicate
+and so if Bob tries to guess this bit he will be wrong with probability essentially
+1/2.
+Using Theorem 10.8 we know that if any one-way permutation exists then a
+one-way permutation with a hard-core predicate exists. Thus as long as one-way
+permutations exist we know that bit commitment schemes exist.
+Note that rather than committing to a single bit, Alice could commit to any
+number of bits: she simply commits to each bit in turn. Hence we can talk about
+commitment schemes in which Alice commits to some integer in a given range,
+rather than just a single bit.
+One rather nice use of a bit commitment scheme is to devise a fair method
+of tossing a coin over the telephone.
+How to toss a coin over the telephone
+Alice and Bob wish to toss a coin but are unfortunately in different locations
+and only have a telephone line to help. What can they do to ensure that neither
+of them can cheat?
+242 11 Identification schemes
+Rather than a coin we imagine that they choose a single bit z ? {0, 1}. Moreover
+we assume that Alice wins if the bit is 0 and Bob wins if the bit is 1.
+Obviously it would not be fair for only one of them to choose the bit
+so both must be involved. One possibility is Alice chooses a bit a and Bob
+chooses a bit b and the outcome of the coin toss is the bit a ? b. But the
+problem with this is that whoever gets to choose their bit last can ensure they
+win.
+We can fix this by using a bit commitment scheme as follows.
+(1) Alice chooses a bit a ? {0, 1} and sends Bob a commitment to this value
+C(a).
+(2) Bob now has no idea which bit Alice has chosen and he simply chooses
+another bit b and sends this to Alice.
+(3) Alice then decommits and the outcome of the coin toss is the bit a ? b.
+Since Bob chooses his bit last he decides the outcome. But because he has no
+idea what Alice has chosen he has no way to influence this!
+We now return to computational zero-knowledge proofs.
+Theorem 11.11 If a one-way permutation exists then every language in NP
+has a computational zero-knowledge proof.
+Proof: There are two parts to the proof.
+(1) Show that the NP-complete problem 3-COL has a CZK proof.
+(2) Using the fact that any language L ? NP is polynomially reducible to
+3-COL show that L also has a CZK proof.
+We start by describing a zero-knowledge proof of 3-COL. Let G = (A, E) be
+the input graph, with vertex set A = {v1, . . . , vn} and edge set E. Suppose that
+G is 3-colourable. (That is there is a way of assigning three colours to the
+vertices of G so that no two vertices of the same colour are joined by an edge.)
+Now P wishes to convince V that G is 3-colourable but she cannot simply
+show a particular 3-colouring to V since that would clearly not be a zeroknowledge
+proof.
+Instead P uses a commitment scheme. She chooses a 3-colouring of G and
+sends V commitments for the colours of all the vertices.
+Then V chooses a random edge in the graph and asks P to decommit to
+the colours of the two end vertices. He then checks that they do indeed have
+different colours.
+They then repeat this process, with P using a different 3-colouring of G.
+If G is not 3-colourable then in any colouring of G at least one of the edges
+of G is monochromatic (that is both vertices have the same colour). Since V
+11.5 Computational zero knowledge 243
+chooses which edge to check at random he discovers this with probability at
+least 1/|E|. Thus by repeating the checks t times he can be almost certain that
+the graph is 3-colourable.
+We describe the protocol in more detail below.
+(1) The prover P selects a legal 3-colouring ? of G = (A, E), so
+? : A › {1, 2, 3}.
+(2) Then P chooses a random permutation of the colour set ? ?R S3 and
+forms the colouring
+M = (??(v1), ??(v2), . . . , ??(vn))
+(3) Next P uses a commitment scheme to commit to the colours of the
+vertices as
+C1 = C(??(v1)),C2 = C(??(v2)), . . . ,Cn = C(??(vn)).
+(4) Then P sends C = (C1,C2, . . . ,Cn) to V.
+(5) The verifier V asks for the colours of the vertices of a random edge
+e ?R E, say e = (va, vb).
+(6) First P checks that (va, vb) is an edge. If it is she decommits to the
+colours ??(va) and ??(vb).
+(7) Then V checks that P has not cheated (that is she has decommitted
+honestly) and that ??(va) = ??(vb). If not then he rejects.
+How convincing is this proof system for V?
+If G is 3-colourable and both participants follow the protocol then V will
+always accept. Hence the completeness condition holds.
+If G is not 3-colourable then the probability that V rejects on one round is
+at least
+Pr[V picks an edge with a bad colouring] ? 1
+|E| .
+Hence repeating the protocol t times gives
+Pr[V is deceived] ? 1 - 1
+|E|
+t
+.
+If G has m edges and we take t = m2 this gives
+Pr[V is deceived] ? e-m.
+Thus the soundness condition holds and hence this is a polynomial time interactive
+proof for 3-COL.
+244 11 Identification schemes
+But what information does P reveal? A transcript of a single round of the
+protocol is of the form
+T = [(C1,C2, . . . ,Cn), (va, vb), (Da, Db)],
+where C1, . . . ,Cn are the commitments to the colours of the vertices, (va, vb)
+is a random edge of G and (Da, Db) is the decommitment information that P
+sends to V to allow him to check the colours of the vertices va and vb to which
+she previously committed.
+So how might forger F proceed? Unless F actually knows a 3-colouring
+of G there is no obvious way for him to forge transcripts perfectly. (Note that
+this would require F to solve an NP-hard problem.) But he can still do the
+following. He chooses a random edge (va, vb) ?R E and chooses two random
+distinct colours for these vertices. He then forms the colouring of G that colours
+every vertex with colour 1, apart from the vertices va and vb which receive
+the previously chosen colours. He then uses the same commitment scheme
+as P to commit to this colouring. His forged transcript then consists of his
+commitments to the (almost certainly illegal) colouring of G, the edge (va, vb)
+and the decommitment information for the colours of va and vb.
+Forged transcripts produced in this way certainly do not have a probability
+distribution which is identical to that of the true transcripts, but an adversary
+armed with a polynomial time PTM cannot distinguish between the true and
+forged transcripts without breaking the security of the commitment scheme.
+But this is impossible since the security of the commitment scheme was based
+on a hard-core predicate of a one-way function.
+Note that the forger is able to ‘cheat’ when he produces these fake transcripts
+in a way that P cannot when interacting with V since F can produce his
+‘commitments’ after he has chosen the edge which will be checked. Obviously
+P cannot do this because the interactive nature of the proof system forces her
+to commit before being told which edge will be checked.
+One final point to note is that the forger can repeat this process for a polynomial
+number of rounds.
+Hence this gives a CZK proof of 3-COL.
+Finally we note that any language L ? NP has a CZK proof since L is
+polynomially reducible to 3-COL. 
+Although Theorem 11.11 tells us that any language in NP has a CZK proof it
+is still illuminating to see CZK proofs of other NP languages. The next CZK
+proof we will consider is one for the language HAM CYCLE.
+Recall that a Hamilton cycle of a graph G is an ordering of the vertices of
+G such that consecutive vertices are joined by an edge and the first and last
+vertices are also joined by an edge.
+11.5 Computational zero knowledge 245
+HAM CYCLE
+Input: a graph G.
+Question: does G have a Hamilton cycle?
+Recall that we can encode a graph via its adjacency matrix. If G has n vertices
+this is the n × n matrix whose (i, j )th entry is 1 if there is an edge from vi to
+vj and 0 otherwise.
+Example 11.12 A CZK proof of HAM CYCLE.
+Given a graph G with a Hamilton cycle, the protocol is as follows.
+(1) The prover P chooses a random permutation ? ?R Sn and reorders the
+vertices to give the graph H = ?(G).
+(2) Using a commitment scheme P sends V commitments to all of the entries
+in the adjacency matrix of H.
+(3) Then V randomly chooses i ?R {0, 1} and sends i to P.
+(4) If i = 0 then P sends V a Hamilton cycle C of H and decommits only to
+those bits of the hidden matrix corresponding to the edges in C.
+If i = 1 then P decommits to the entire hidden matrix and sends the
+permutation ? to V.
+(5) If i = 0 then V checks that P decommitted correctly to the edges in C
+and that C is indeed a Hamilton cycle. If not then V rejects.
+If i = 1 then V checks that P decommitted correctly and that the
+permutation ? does map G to H. If not then V rejects.
+We first need to check that this is a polynomial time interactive proof system.
+When G has a Hamilton cycle P can always make V accept by simply
+following the protocol. Hence the completeness condition holds.
+But what if G does not have a Hamilton cycle? In this case any prover
+has probability at least 1/2 of failing. Since either the prover uses a different
+adjacency matrix to that of H, and so is unable to respond correctly to the
+challenge i = 1, or she uses the correct adjacency matrix, and so is unable to
+respond correctly to the challenge i = 0 as H does not contain a Hamilton
+cycle. This shows that the soundness condition also holds and hence this is a
+polynomial time interactive proof of HAM CYCLE.
+To see that this is a CZK proof we need to consider what the transcripts look
+like. Let N = n2 be the size of the adjacency matrix then a true transcript of a
+single round is of the form
+T = [(C1,C2, . . . ,CN ), 0, (Da1 , Da2, . . . , Dan )],
+or
+T = [(C1,C2, . . . ,CN ), 1, ?, (D1, D2, . . . , DN )],
+246 11 Identification schemes
+where the Ci s are the commitments to the matrix entries, the Di s are the decommitment
+values and ? is a permutation.
+A forger can do the following. He first chooses i ?R {0, 1}. If i = 0 he
+chooses a random Hamilton cycle on n vertices and forms its adjacency matrix.
+He then uses the same commitment scheme as P to commit to this matrix. His
+forged transcript then consists of his commitments to the entire matrix, the value
+0 and the decommitment values for the entries in the matrix corresponding to
+the edges of the Hamilton cycle.
+If i = 1 the forger simply chooses a random permutation ? ?R Sn, forms
+H = ?(G) and then uses the same commitment scheme as P to commit to the
+adjacency matrix of H. His forged transcript then consists of his commitments
+to the entire matrix, the value 1, the permutation ? and the decommitment
+values for all the entries of the matrix.
+As with the CZK proof for 3-COL the distributions of true and forged transcripts
+are not identical. However, no polynomial time PTM can distinguish
+between them since this would involve breaking the security of the commitment
+scheme which is impossible since this was based on a hard-core predicate
+of a one-way function.
+Exercise 11.4a Modify Example 11.12 to show that CLIQUE has a computational
+zero-knowledge proof.
+11.6 The Fiat–Shamir identification scheme
+A possible motivation for studying zero-knowledge proofs is the problem of
+authentication at cash dispensing machines. Instead of typing in a secret 4
+or 6 digit number one would take on the role of the prover Peggy in a zeroknowledge
+proof system. This was suggested by Fiat and Shamir in 1987 and
+then modified by Feige, Fiat and Shamir (1988) in a paper which the US army
+briefly attempted to classify. For a very interesting account of the background
+involving the Fiat–Shamir protocol, the military connections and patents see
+Landau (1988). We present a simplified version of the Fiat–Shamir scheme
+below.
+Setup:
+(1) A trusted third party Trent publishes a large public modulus n = pq
+keeping the primes p and q secret.
+(2) Peggy secretly selects a random 1 ? s ? n - 1 and computes
+v = s2 mod n and registers v with Trent as her public key.
+11.6 The Fiat–Shamir identification scheme 247
+Protocol: Repeat the following t times. Victor accepts Peggy’s proof of identity
+iff all t rounds succeed.
+(1) Peggy chooses a random ‘commitment’ 1 ? r ? n - 1. She then
+computes the ‘witness’ x = r 2 mod n and sends x to Victor.
+(2) Victor chooses a random ‘challenge’ e ?R {0, 1} and sends this to Peggy.
+(3) Peggy computes the ‘response’ y = rse mod n and sends this to Victor.
+(4) If y = 0 or y2 = xve mod n then Victor rejects otherwise he accepts.
+Clearly Peggy can identify herself since whichever challenge is issued byVictor
+she can respond correctly.
+But should Victor be convinced? A cheating prover, say Oscar, who does not
+know Peggy’s secret key s could either send the witness r 2 or r 2v
+-1 to Victor in
+step (1). In the former case Oscar can respond to the challenge ‘e = 0’ (with r )
+but not ‘e = 1’. Similarly in the latter case Oscar can respond to the challenge
+‘e = 1’ (with r) but not the challenge ‘e = 0’. In both cases if Oscar could
+respond to both possible challenges then he could calculate Peggy’s private
+key s and hence is able to compute square roots mod n. But as we saw in
+Proposition 7.16 this is equivalent to being able to factor n.
+Hence assuming that factoring is intractable a dishonest prover can fool
+Victor with probability at most 1/2.
+To see that this is a zero-knowledge proof consider the transcript of a single
+round of the protocol (r 2, e, rse), where 1 ? r ? n - 1 and e ?R {0, 1} are both
+random.
+A forger could do the following. First he chooses e ?R {0, 1}. If e = 0
+then he chooses random 1 ? r ? n - 1 and computes y = r 2 mod n. If e = 1
+then he chooses random 1 ? r ? n - 1 and computes v
+-1 mod n and y =
+r 2v
+-1 mod n. Finally he forges the triple (y, e, r ).
+Amore efficient variant of this scheme is the modified identification protocol
+of Feige, Fiat and Shamir (1988).
+Since the appearance of this scheme several others with the same objective
+have been proposed: see the review of Burmester, Desmedt and Beth (1992)
+and Chapter 10 of Menezes, van Oorschot and Vanstone (1996).
+Exercise 11.5 Prove that in the Fiat–Shamir scheme, even if Peggy chooses
+her secret value s from some strange probability distribution on Zn then
+y = rs mod n will still be distributed uniformly at random in Zn provided
+that so is r .
+Exercise 11.6 a A cash machine uses the Fiat–Shamir scheme for customer
+identification. It operates with a security threshold ?, this is the probability
+that a dishonest customer will successfully fool the machine. If a k-bit
+248 11 Identification schemes
+public modulus n is used how long does the identification procedure
+take?
+Problems
+11.1h Let IP(m, r) be the class of languages with interactive proofs in which
+on input x the verifier uses at most r (|x|) random bits and the total
+number of messages exchanged is at most m(|x|).
+(a) Prove that IP(0, poly) = co-RP.
+(b) Prove that IP(2, 0) = NP. (Recall that the first message to be sent
+comes from V.)
+(c) Prove that IP(poly, log) = NP.
+11.2 Prove that if L1 and L2 belong to IP then so does L1 ? L2.
+11.3h Show that IP ? PSPACE. (In fact IP = PSPACE.)
+11.4h Consider the problem of selecting a permutation uniformly at random
+from Sn. Prove that this can be done in time polynomial in n.
+11.5 Show formally that GRAPH NON-ISOMORPHISM ? IP. (This is
+another example of a language that belongs to IP but is not known
+to belong to NP.)
+11.6h We say that a language L has an interactive proof system with error
+probability p if there exists a verifier V and prover P such that the
+following hold.
+(i) If x ? L then Pr[(V, P) accepts x] ? 1 - p.
+(ii) If x ? L then for any (possibly malicious) prover P,
+Pr[(V, P) accepts x] ? p.
+Prove that the following statements are equivalent.
+(a) There exists a constant 0 <  < 1/2 such that L has an interactive
+proof system with error probability .
+(b) For every constant 0 <  < 1/2, L has an interactive proof system
+with error probability .
+11.7a Consider thePZKproof forGRAPHISOMORPHISMgiven in Example
+11.8.
+(a) Can P’s computations be done in polynomial time?
+(b) Show that if P knows a single isomorphism between G1 and G2
+then this is possible.
+Further notes
+The introduction and formalisation of the concept of an interactive proof is due
+to Goldwasser, Micali and Rackoff (1989) but the ideas had been circulated in
+11.6 The Fiat–Shamir identification scheme 249
+an extended abstract presented at STOC 1985. The article by Johnson (1988)
+in his NP-completeness column gives an interesting account of the state of
+knowledge at that time and the relationship with Arthur–Merlin proof systems
+which had been introduced by Babai (1985).
+The concept of a zero-knowledge proof was also proposed first in the paper
+of Goldwasser, Micali and Rackoff (1989). Zero-knowledge schemes for GI,
+GNI and 3-COL were proposed by Goldreich, Micali and Wigderson (1991).
+The zero-knowledge protocol for HAM CYCLE presented in Example 11.12
+is attributed by Luby (1996) to M. Blum.
+Coin-tossing over the telephone was proposed by Blum (1983).
+The original authentication/signature scheme of Fiat and Shamir (1987) was
+modified by Feige, Fiat and Shamir (1988). For an interesting account of the
+difficulties arising in patenting this see Landau (1988).
+The remarkable result that IP = PSPACE was proved by Shamir (1990) but
+the real breakthrough came earlier that year when Lund, Fortnow, Karloff and
+Nisan (1992) introduced the idea of using algebraic methods to show that hard
+counting problems such as evaluating the permanent of a matrix, or counting
+satisfying assignments to a CNF formula had interactive proofs. Hitherto it had
+not even been known that co-NP ? IP.
+Appendix 1
+Basic mathematical background
+A1.1 Order notation
+Let f : N › N and g : N › N be two functions. We say that f is of order
+g and write f (n) = O(g(n)) iff there exist a, b ? R
++ such that f (n) ? ag(n)
+for every n ? b. Informally this means that f is bounded above by a constant
+multiple of g for sufficiently large values of n.
+For example if f (n) = n2 + 3n + 2 then f (n) = O(n2). Note that we also
+have f (n) = O(n3), indeed f (n) = O(nk ) for any k ? 2.
+One important case is f (n) = O(1) which denotes the fact that f is bounded.
+Manipulation of O-notation needs to be performed with care. In particular it
+is not symmetric, in the sense that f (n) = O(g(n)) does not imply that g(n) =
+O( f (n)). For example n = O(n2) but n2 = O(n).
+We write f (n) = (g(n)) to denote g(n) = O( f (n)). If both f (n) =
+O(g(n)) and f (n) = (g(n)) then we write f (n) = (g(n)).
+A1.2 Inequalities
+The following useful inequality holds for all x ? R
+1 + x ? ex .
+The factorial of an integer n ? 1 is simply
+n! = n(n - 1)(n - 2) · · · 2 · 1.
+For example 5! = 5 · 4 · 3 · 2 · 1 = 120. Note that 0! = 1 by definition.
+The binomial coefficient n
+k, ‘n choose k’, is the number of subsets of size
+k, of a set of size n
+n
+k
+ = n!
+k!(n - k)!
+.
+For example 5
+2 = 10.
+250
+A1.2 Inequalities 251
+The following simple inequalities often prove useful (the first is essentially
+Stirling’s formula)
+?
+2?n n
+e
+n
+? n! ?
+?
+2?n n
+e
+n
+e1/12n
+and
+n
+k
+k
+? n
+k
+
+< en
+k
+k
+.
+Appendix 2
+Graph theory definitions
+A graph, G = (V, E), consists of a set V of vertices and a set E of unordered
+pairs of vertices called edges.
+A clique in G = (V, E) is a subset W ? V such that any pair of vertices in
+W forms an edge in E. A clique is said to have order k ? 1 if |W| = k.
+An independent set of vertices in a graph G = (V, E) is a subset W ? V
+such that W does not contain any edges from E.
+A k-colouring of a graph G = (V, E) is c : V › {1, 2, . . . , k} satisfying
+{v,w} ? E =? c(v) = c(w).
+A graph G is said to be k-colourable if there exists a k-colouring of G.
+A graph G = (V, E) is bipartite if there is a partition of V = W1 ?' W2 such
+that every edge in E joins a vertex of W1 to a vertex of W2.
+A path in a graph G = (V, E) is a collection of distinct vertices {v1, v2, . . . ,
+vt } such that {vi, vi+1} ? E for 1 ? i ? t - 1. If we also have {v1, vt} ? E then
+this is a cycle.
+A path (respectively cycle) containing all of the vertices of a graph is called
+a Hamilton path (respectively Hamilton cycle). If a graph contains a Hamilton
+cycle then it is said to be Hamiltonian.
+Two graphs G = (VG, EG) and H = (VH, EH) are said to be isomorphic iff
+there is a bijection f : VG › VH such that
+{ f (v), f (w)} ? EH ?? {v,w} ? EG.
+In some situations we will require graphs that have directed edges. A directed
+graph or digraph is G = (V, E) where V is a set of vertices and E is a set of
+ordered pairs of vertices called directed edges. A directed path joining vertices
+v,w ? V is a collection of distinct vertices {v1, . . . , vt } such that v1 = v, vt = w
+and for 1 ? i ? t - 1 there is a directed edge (vi, vi + 1) ? E.
+252
+Appendix 3
+Algebra and number theory
+A3.1 Polynomials
+We denote the set of polynomials in k variables with integer coefficients by
+Z[x1, x2, . . . , xk ]. For example
+f (x1, x2, x3) = 2x1x2 + 2x7
+2 x4
+3
++ 3x1x2x5
+3
++ 6.
+A monomial is a single term polynomial, for example
+g(x1, x2) = 3x3
+1 x8
+2 .
+The degree of a monomial is the sum of the powers of the variables. So the
+degree of g(x1, x2) given above is 3 + 8 = 11. The degree of a polynomial is
+the maximum degree of the monomials occuring in the polynomial. For example
+the degree of f (x1, x2, x3) given above is max{2, 11, 7, 0} = 11.
+A3.2 Groups
+A group is a pair (G, ·), where G is a set and · is a binary operation on G,
+satisfying the following conditions:
+(i) if g, h ? G then g · h ? G;
+(ii) if g, h, k ? G then g · (h · k) = (g · h) · k;
+(iii) there exists 1G ? G such that for every g ? G, g · 1G = g = 1G · g;
+(iv) for each g ? G there exists g-1 ? G such that g · g-1 = 1G = g-1 · g.
+If (G, ·) is a group then H ? G is a subgroup of G if H forms a group under the
+binary operation of G. In particular, H ? G is a subgroup of G iff it satisfies
+the following conditions:
+(i) if g, h ? H then g · h ? H;
+(iii) 1G ? H;
+(iv) if h ? H then h-1 ? H.
+253
+254 Appendix 3 Algebra and number theory
+The order of a group G is the number of elements in G and is denoted by
+|G|.
+One important example of a group that we will use is Sn the symmetric group
+of order n. This is the group of all permutations on a set of n elements, with
+composition as the binary operation.
+The order of an element g in the group (G, ·) is defined by
+ord(g) = min{k ? 1 | gk = 1G}.
+The subgroup generated by an element g ? G is
+g = {gi | 1 ? i ? ord(g)}.
+One of the most important results in group theory is Lagrange’s theorem.
+Theorem A3.1 (Lagrange) If H is a subgroup of G then |H| divides |G|
+exactly.
+One important corollary we will use is the following.
+Corollary A3.2 If H is a proper subgroup of a group G then |H| ? |G|/2.
+The following result is a special case of Lagrange’s theorem.
+Corollary A3.3 If G is a group and g ? G then ord(g) divides |G| exactly.
+A3.3 Number theory
+An integer d is a divisor of an integer n iff there is an integer c such that n = cd.
+We denote this by d|n and say that d divides n. If d|n and d = n then d is a
+proper divisor of n. If d|n and d = 1 then d is a non-trivial divisor of n.
+If an integer n ? 2 has no proper, non-trivial divisors then n is prime, otherwise
+n is composite.
+Locally the distribution of primes among the natural numbers seems essentially
+random. However, the following theorem, a highlight of nineteenth century
+mathematics, gives the asymptotic density of the primes.
+Theorem A3.4 (Prime Number Theorem) If ?(n) denotes the number of
+primes less than or equal to n then
+lim
+n›?
+?(n) ln n
+n
+= 1.
+The greatest common divisor of two integers m and n is
+gcd(m, n) = max{d | d is a divisor of m and n}.
+The integers m and n are said to be coprime iff gcd(m, n) = 1.
+A3.3 Number theory 255
+Two integers a and b are said to be congruent modulo an integer n iff n|a - b.
+We denote this by a = b mod n.
+If n is a positive integer then the set of residues mod n is
+Zn = {a | 0 ? a ? n - 1}.
+This is a group under addition mod n with identity 0. The set of non-zero
+residues mod n is
+Z
++
+n
+= {a | 1 ? a ? n - 1}.
+Theorem A3.5 (Chinese Remainder Theorem) If n1, n2, . . . , nk are pairwise
+coprime (that is gcd(ni , n j ) = 1 for i = j), and N = k
+i=1 ni then the following
+system of congruences has a unique solution mod N
+x = a1 mod n1
+x = a2 mod n2
+...
+x = ak mod nk .
+Moreover, writing Ni = N/ni and using Euclid’s algorithm to find b1, . . . , bk
+such that bi Ni = 1 mod ni , the solution is given by
+x =
+k
+
+i=1
+bi Niai mod N.
+The set of units mod n is
+Z
+*
+n
+= {a | 1 ? a ? n - 1 and gcd(a, n) = 1}.
+This is a group under multiplication mod n with identity 1.
+If p is prime then Zp is a field.
+The Euler totient function is ? : N › Ndefined by ?(n) = |Z
+*
+n
+|. Inparticular
+if n = p is prime then ?(p) = p - 1.
+If g ? Z
+*
+n then the order of g is
+ord(g) = min{k ? 1 | gk = 1 mod n}.
+We have the following simple result.
+Proposition A3.6 If g ? Z
+*
+n and gk = 1 mod n then ord(g)|k.
+The following is a special case of Corollary A3.3.
+Theorem A3.7 If g ? Z
+*
+n then ord(g)|?(n).
+If g ? Z
+*
+n satisfies
+g, g2, . . . , g?(n) = Z
+*
+n
+then g is a primitive root mod n.
+256 Appendix 3 Algebra and number theory
+Theorem A3.8 If k ? 1 and n is of the form 2, 4, pk or 2pk , where p is an odd
+prime, then there exists a primitive root mod n.
+Theorem A3.9 If p is prime then there exist ?(p - 1) distinct primitive roots
+mod p.
+Theorem A3.10 (Euler’s Theorem) If n ? N and a ? Z
+*
+n then
+a?(n) = 1 mod n.
+The special case of this theorem when n = p is prime is of particular importance.
+Theorem A3.11 (Fermat’s Little Theorem) If p is prime and a ? Z
+*
+p then
+a p-1 = 1 mod p.
+A related result (which can be used to prove Fermat’s Little Theorem) is the
+following.
+Theorem A3.12 (Wilson’s Theorem) If p is prime then
+(p - 1)! = -1 mod p.
+A residue y ? Z
+*
+n is a quadratic residue mod n iff there exists x ? Z
+*
+n such that
+x2 = y mod n. Otherwise y ? Z
+*
+n is said to be a quadratic non-residue mod n.
+We denote the set of quadratic residues mod n by Qn.
+Theorem A3.13 (Euler’s Criterion) If p is an odd prime and y ? Z
+*
+p then y
+is a quadratic residue mod p iff y(p-1)/2 = 1 mod p.
+If p is prime we define the Legendre symbol of b ? Z
+*
+p by
+ b
+p
+ =  1, if b is a quadratic residue mod p,
+-1, otherwise.
+Theorem A3.14 If p is a prime and a, b ? Z
+*
+p then ab is a quadratic residue
+mod p iff a and b are both quadratic residues mod p or a and b are both
+quadratic non-residues mod p. Equivalently we have
+ab
+p
+ = a
+p
+b
+p
+
+.
+Appendix 4
+Probability theory
+In this text we will be using only the basic notions of discrete probability theory.
+The sample space , which is the set of all possible outcomes, is restricted
+to being a countable set. The collections of events F can be taken to be all
+subsets of  and an event A occurs if the outcome ? belongs to the set A.
+For example the sample space of throwing a die would be {1, 2, 3, 4, 5, 6}
+and a possible event could be A = {1, 3, 5}, the event that the die lands with an
+odd number face up.
+Two events A and B are disjoint if A ? B = Ø. The probability (measure)
+Pr is a function from F to [0, 1] satisfying the following conditions.
+(P1) For any event A, 0 ? Pr[A] ? 1.
+(P2) Pr[] = 1.
+(P3) For any countable family of pairwise disjoint events {Ai | 1 ? i < ?}
+we have
+Pr
+ ?
+
+i=1
+Ai
+
+=
+?
+
+i=1
+Pr[Ai ].
+The triple (,F, Pr) is called a probability space and it is easy to deduce the
+following consequences of the three axioms.
+For any event A
+Pr[\A] = 1 - Pr[A].
+For any two events A, B
+Pr[A ? B] + Pr[A ? B] = Pr[A] + Pr[B].
+Akey concept is the conditional probability of an event A, given the occurrence
+of an event B. This is denoted by Pr[A | B] and only defined for Pr[B] > 0
+when
+Pr[A | B] = Pr[A ? B]
+Pr[B]
+.
+257
+258 Appendix 4 Probability theory
+A simple result concerning conditional probabilities that we will require is
+Bayes’ Theorem.
+Theorem A4.1 If A, B are events satisfying Pr[A] > 0 and Pr[B] > 0 then
+Pr[A | B] Pr[B] = Pr[B | A] Pr[A].
+Two events A and B are independent if
+Pr[A ? B] = Pr[A] Pr[B].
+Whenever Pr[B] = 0 this is equivalent to the natural condition; A, B are independent
+iff
+Pr[A | B] = Pr[A].
+More generally {Ai | i ? I } are mutually independent iff
+Pr
+
+
+i?I
+Ai
+
+=
+i?I
+Pr[Ai ].
+Afrequently used result, known as the partition theorem, allows complex events
+to be broken up into simpler sub-events.
+Theorem A4.2 If the events {Bi | 1 ? i < ?} form a partition of , that is
+the Bi are pairwise disjoint and their union is , then for any event A
+Pr[A] =
+?
+
+i=1
+Pr[A | Bi ] Pr[Bi ],
+where we assume that if any Pr[Bi ] = 0 then so is the corresponding term in
+the sum.
+A (discrete) random variable on (,F, Pr) is a function X :  › R which
+takes only countably many distinct values.
+Two random variables X, Y on  are independent if for all x, y in their
+range
+Pr[(X(?) = x) ? (Y (?) = y)] = Pr[X(?) = x] Pr[Y (?) = y].
+If {xi | i ? I } denotes the set of values taken by X then the expectation of X is
+defined by
+E[X] =
+i?I
+xi Pr[X = xi ].
+More generally, for any function g : R › R we have
+E[g(X)] =
+i?I
+g(xi ) Pr[X = xi ].
+Appendix 4 Probability theory 259
+The variance of X, var[X], is given by
+var[X] = E[X2] - (E[X])2.
+It is easy to check that for all a, b ? R we have
+E[aX + bY ] = aE[X] + bE[Y ]
+and
+var[aX + b] = a2var[X].
+When X, Y are independent we also have
+E[XY] = E[X]E[Y ]
+and
+var[X + Y ] = var[X] + var[Y ].
+Three particular families of random variables occur frequently in the text.
+The random variable X is uniformly distributed over a finite set S if for each
+s ? S
+Pr[X(?) = s] = 1
+|S| .
+The random variable X has the geometric distribution with parameter p, if it
+takes only values in N and for any integer k ? N we have
+Pr[X(?) = k] = (1 - p)k-1 p.
+Thus X is the number of independent trials of an experiment with success
+probability p, up to and including the first success. It is useful to note that when
+X is geometric with parameter p then
+E[X] = 1
+p
+and var[X] = (1 - p)
+p2 .
+Thus if an experiment (or algorithm) has success probability p and we repeat
+it until it is successful (the repetitions being independent) then the expected
+number of trials is 1/p.
+The random variable X has the binomial distribution with parameters n and
+p, if it takes only integer values 0, 1, . . . , n and for any integer 0 ? k ? n we
+have
+Pr[X(?) = k] = n
+k
+pk(1 - p)n-k .
+Thus X is the number of successes in n independent trials, each of which has
+success probability p.
+260 Appendix 4 Probability theory
+It is useful to note that when X is binomial with parameters n, p then
+E[X] = np and var[X] = np(1 - p).
+The following are two fundamental inequalities.
+Proposition A4.3 (Markov’s Inequality) If X is a random variable satisfying
+X ? 0 and t > 0 then
+Pr[X ? t] ? E[X]
+t
+.
+Proposition A4.4 (Chebyshev’s Inequality) If X is a random variable, E[X2]
+exists and t > 0 then
+Pr[|X| ? t] ? E[X2]
+t2 ,
+or equivalently, if E[X] = µ then
+Pr[|X - µ| ? t] ? var[X]
+t2 .
+Of course this inequality is only useful when E[X2] is finite.
+Appendix 5
+Hints to selected exercises and problems
+Chapter 2
+Exercises
+2.2 Copy the string symbol by symbol, keeping track of which ones have
+already been copied.
+2.3 Leave x1 fixed and copy x2 to its left. Use the symbol ‘2’ as a marker.
+2.4 (i) (a) ?? (b). A partition V = U ?' W, with no edges in U or W is a
+2-colouring. (b) ?? (c). Can you 2-colour an odd length cycle? (ii)
+Consider 2-colouring each connected component of G. Show that if you
+ever run into problems then G contains an odd length cycle.
+2.5 Use a breadth-first search to find a directed path from v to w. Start
+from v, find all its neighbours, then find all the neighbours of these
+neighbours. Continue until you reach w or there are no new
+neighbours.
+2.6 First find an integer k satisfying 2kb ? a < 2k+1b.
+Problems
+2.2 Check that the two ends of the string agree and delete both symbols.
+Continue until the string is empty or consists of a single symbol.
+2.3 Subtract a from b repeatedly.
+2.4 Copy b from the first tape onto the second tape (in time O(log b)). Then
+perform ordinary multiplication adding the answer up on the third tape.
+2.7 Apply Euclid’s algorithm to a and n and then ‘work backwards’.
+2.8 Consider an approach using ‘divide and conquer’. Check if (n/2)2 ? n, if
+this is true then sqrt(n) ? {0, . . . , n/2} otherwise
+sqrt(n) ? {n/2, . . . , n}. Repeat this procedure, approximately halving
+the size of the search space at each stage. Show that this gives a
+polynomial time algorithm.
+261
+262 Appendix 5 Hints to selected exercises and problems
+c
+a b
+Fig. A5.1 The graph H.
+2.10 In the first case use Mn = 4Mn/2 = 16Mn/4 . . . to show that
+Mn = O(n2). With Karatsuba’s method use Mn = 3Mn/2 = 9Mn/4 . . .
+to show that Mn = O(3log n) = O(nlog 3).
+2.11 Consider the proof of Theorem 2.18.
+Chapter 3
+Exercises
+3.3 First compute the reduction from A to B, then use the certificate for
+f (x) ? B.
+3.4 If the reductions are f and g then x ? A ?? f (x) ? B ?? g( f (x)) ?
+C. Moreover if f, g ? FP then g ? f ? FP.
+3.6 Computing #SAT allows us to decide SAT.
+Problems
+3.1 There exists a partition of A into sets with equal sums iff there is a
+subset of A whose sum is equal to half the total sum of A.
+3.2 You can use the same function for both reductions.
+3.3 First check whether f (x1, x2, . . . , xn) is satisfiable, then check whether
+f (1, x2, . . . , xn) is satisfiable and continue in this way until a satisfying
+truth assignment is found.
+3.4 Give a reduction from 3-COL and use the fact that 3-COL is
+NP-complete. (Given a graph G consider adding a new vertex that is
+joined to all of the other vertices of G. When is this new graph
+4-colourable?)
+3.5 Give a reduction from CLIQUE.
+3.6 Show that 3-COL?m 3-COL MAX DEGREE 4. Consider the graph H
+given in Figure A5.1. It has maximum degree 4 and is 3-colourable.
+Moreover in any 3-colouring of H the vertices a, b, c all receive the
+Appendix 5 Hints to selected exercises and problems 263
+same colour. Given a general graph G replace each vertex by a copy
+of H.
+3.9 An algorithm simply checking for the presence of cliques of
+order 1, 2, . . . n, could clearly be implemented in polynomial
+space.
+3.10 Show that HAMILTON CYCLE ?T TRAVELLING SALESMAN.
+3.11 If you can calculate ?(G) then you can decide if G is
+3-colourable.
+3.12 Think of solving A using a subroutine for B which in turn uses a
+subroutine for C.
+3.13 Any two NP-complete languages are polynomially reducible to each
+other.
+3.14 Ac is polynomially reducible to B.
+Chapter 4
+Exercises
+4.1 Repeat the ordinary RP algorithm p(n) times and accept iff it ever
+accepts. This gives a probabilistic polynomial time algorithm with the
+desired properties.
+4.5 Show that if B ? P/poly and A ?m B then A ? P/poly.
+4.6 Consider the size of the truth table of any Boolean function
+f (x1, . . . , xn).
+Problems
+4.5 Consider the ‘distance’ d(a, b) between a = (a1, . . . , an) and some fixed
+satisfying assignment b = (b1, . . . , bn), that is d(a, b) = #{i | ai 
+= bi }.
+This is bounded above by n. Our algorithm performs a random walk in
+which d(a, b) changes by ±1 on each iteration.
+4.6 Use a ‘majority vote’ machine as in the proof of Proposition 4.14.
+4.7 (a) Use the formal definition of the determinant of an n × n
+matrix
+det(A) = 
+??Sn
+sign(?)a1,? (1)a2,? (2) · · · an,? (n).
+(b) Use the fact that NON-ZERO POLY DET ? RP.
+4.10 Consider the proof of Theorem 4.18 and the fact that x1 ? · · ·? xn has
+2n-1 distinct satisfying truth assignments.
+4.11 First note that T2(x1, x2) can be computed by a single AND gate. Now,
+for n = 2k even, first compute (x1 ? x2), (x3 ? x4), . . . , (xn-1 ? xn) and
+(x1 ? x2), (x3 ? x4), . . . , (xn-1 ? xn). Now write a = (x1, . . . , xn-2) and
+264 Appendix 5 Hints to selected exercises and problems
+use the fact that
+T1(a) = (x1 ? x2) ? (x3 ? x4) ? · · · ? (xn-3 ? xn-2)
+and
+T2(x1, . . . , xn) = T2(a) ? (xn-1 ? xn) ? (T1(a) ? (xn-1 ? xn)).
+Chapter 5
+Exercises
+5.3 Use Theorem 5.8.
+5.4 Use Theorem 5.8.
+Problems
+5.1 Consider the distances between occurrences of the character U.
+5.7 Consider how you might construct a non-singular m × m matrix over
+Z2, row by row. There are 2m - 1 choices for the first row, then 2m - 2
+choices for the second row. How many choices are there for the next
+row?
+5.10 The outputs of At , Bt ,Ct are each equally likely to be 0 or 1.
+5.12 (i) Consider decrypting C once with DES and encrypting M once
+with DES. If you use K2 to do the former and K1 to do the latter
+then they should give you the same answer. (ii) Use the same
+idea again.
+5.13 Eve can ask for encryptions of a message M and its complement
+M.
+Chapter 6
+Exercises
+6.2 Assume, for a contradiction, that there is a positive polynomial q(·) such
+that the probability of at least one success when E is repeated q(k) times
+is not negligible. Then use Exercise 6.1 to show that the success
+probability of E could not have been negligible.
+Problems
+6.2 Use the fact that dlog(p, g, h) is easy to compute.
+6.3 Mimic the proof of Proposition 6.3.
+6.5 Consider performing trial division on the product n = ab, for values
+d = 2, 3, 5, 7, 11.
+6.6 Recall Proposition 3.16.
+6.7 Use a ‘divide and conquer’ algorithm to find the factors of n.
+6.8 See the proof of Theorem 6.6 for the basic idea.
+Appendix 5 Hints to selected exercises and problems 265
+6.9 Show that if FACTOR ? BPP then the Factoring Assumption cannot
+hold. Similarly show that if BDLOG ? BPP then the Discrete
+Logarithm Assumption cannot hold.
+Chapter 7
+Exercises
+7.3 (a) Recall Pratt’s Theorem (Theorem 3.17). (b) Appendix 3, Theorem
+A3.9 tells us that for any prime p the number of distinct primitive roots
+mod p is ?(p - 1).
+7.4 The primes p and q are ‘close’.
+7.5 Use the Chinese Remainder Theorem.
+7.8 Find ai such that ai ? t < ai+1. Now, since the sequence a1, . . . , an is
+super-increasing, if there exists a subset S whose sum is equal to t then
+ai ? S. Replace t by t - ai and repeat.
+Problems
+7.2 Prove first that if m, n are coprime then ?(mn) = ?(m)?(n). Then prove
+that ?(pk ) = pk - pk-1.
+7.3 Use Euler’s Criterion Appendix 3, Theorem A3.13.
+7.4 Given ?(n) you can find p by solving a quadratic equation.
+7.5 Show first that if p and q have the same bit length then p + q < 3n1/2
+and ?(n) > n/2. We know that ed - 1 = k?(n) so if we can find k then
+we can obtain ?(n) and hence, by the previous problem, find p and q.
+To find k set ˆk = (ed - 1)/n, then show that 0 < k - ˆk < 6(ed - 1)/
+n3/2. Thus k is equal to one of the six values given by i + (ed - 1)/n,
+0 ? i ? 5.
+7.8 Show that if e is Bob’s public exponent and e is the corrupted public
+exponent, formed from e by flipping a single bit, then gcd(e, e) = 1 and
+hence the attack described in Proposition 7.14 can be used to recover the
+message.
+7.9 Use the fact that the number of solutions mod p to the equation
+xk = 1 mod p is gcd(k, p - 1), together with the Chinese Remainder
+Theorem.
+7.10 If the two cryptograms are C1 = e(M) and C2 = e(M + 1) then
+consider (C2 + 2C1 - 1)/(C2 - C1 + 2).
+7.11 Consider the case that Alice and Bob’s public keys are coprime first. Use
+the Chinese Remainder Theorem.
+7.12 This is vulnerable to the same attack as the previous problem.
+7.14 For any prime p consider
+Qp = (22 ·3·5 · · · p) - 1,
+where the product is over all primes less than or equal to p. Show that
+Qp has a Blum prime factor that is greater than or equal to p.
+266 Appendix 5 Hints to selected exercises and problems
+Chapter 8
+Exercises
+8.4 (b) Take N = 2t , k = n and let pi denote the probability that a random
+message M ? {0, 1}m satisfies h(M) = yi , where the set of all possible
+hash values is {0, 1}t = {y1, y2, . . . , yN }.
+Problems
+8.3 Only quadratic residues mod n can be signed. To break this scheme use
+Proposition 7.16.
+8.5 Given the global public key (p, q, g) together with Alice’s public key
+yA = gxA mod q, Fred chooses random 1 < a, b < q and forms
+S1 = (ga yb
+A mod p) mod q and S2 = S1b-1 mod q. You can check that
+(S1, S2) is a valid DSA signature for the message M = aS2 mod q.
+8.7 If Eve chooses M ?R {0, 1}m and computes h(M) then, since t ? m - 1,
+on average h(M) will have at least two preimages and so using the
+polynomial time inverting algorithm Eve finds a different message
+M 
+= M such that h(M) = h(M) with probability at least 1/2. Hence
+she expects to find a collision after at most two attempts.
+8.8 Note that N(h) = y?H sy
+2  and thaty?H sy = |M|. Finally note that
+ifi xi is fixed theni x2
+i is minimised when the xi are all equal.
+8.9 Calculate the probability that all the birthdays are different (mimic the
+proof of Theorem 8.10).
+Chapter 9
+Problems
+9.7 Use Euler’s Criterion (Appendix 3, Theorem A3.13) that b(p-1)/2 =
+1 mod p iff b is a quadratic residue mod p. Then KAB = gab is a
+quadratic residue mod p iff either yA or yB is a quadratic residue mod p.
+9.8 Recall the proof of Pratt’s Theorem (Theorem 3.17).
+9.9 Choosing elements of a ?R Z
+*
+p we expect to find a primitive root after
+O(ln ln(p - 1)) attempts. Given the factorisation of p - 1 we can use
+the algorithm given in the proof of Theorem 3.17 to verify that any given
+a ? Z
+*
+p is a primitive root in polynomial time.
+Chapter 10
+Problems
+10.1 (a) Show that if x ?R {0, 1}k and y ?R {0, 1}l(k) then
+Pr[T (G(x)) = 1] - Pr[T (y) = 1] ? 1/2.
+10.2 Consider pairs of bits in this sequence. Ignore 00 and 11 and consider
+the probability of 01 and 10.
+Appendix 5 Hints to selected exercises and problems 267
+10.3 Consider the set of states.
+10.4 Use Euler’s Criterion together with Appendix 3, Theorem A3.14.
+10.5 Since x2 = n mod n, so n4k+2 = n(p-1)/2 = 1 mod p. Thus n2k+1 =
+±1 mod p. If n2k+1 = 1 mod p then x = n(p+3)/8 mod p is a solution. If
+n2k+1 = -1 mod p use Wilson’s Theorem (Appendix 3, Theorem
+A3.12) that (p - 1)! = -1 mod p. Show that ((p - 1)/2)! is a square
+root of -1 mod p and set x = n(p+3)/8((p - 1)/2)! mod p.
+10.6 Show that any inverting algorithm for g(x, r ) = ( f (x), r ) will also invert
+f (x), contradicting the fact that f is one-way.
+10.7 Show that the pseudorandom generator is itself a one-way function.
+Chapter 11
+Problems
+11.1 (a) This follows directly from the definitions. (b) For NP ? IP(2, 0) note
+that the prover can simply provide a certificate y which V then checks
+with his NP polynomial time checking algorithm. Conversely if
+L ? IP(2, 0) then V uses no random bits so the soundness condition tells
+us that V never accepts x 
+? L. Hence P provides certificates which can
+be checked by V in deterministic polynomial time and so L ? NP. (c)
+Using part (b) NP ? IP(2, 0) ? IP(poly, log). Conversely if V uses log n
+random bits then we can simulate V deterministically since the total
+number of different random strings of length log n is 2log n = n. Hence
+we may suppose that L ? IP(poly, 0) so now the soundness conditions
+tells us that V never accepts x 
+? L. Taking all the messages of P
+together now gives a polynomial length certificate, showing that L ? NP.
+11.3 Only polynomially many messages of polynomial length are exchanged.
+11.4 First choose r1 uniformly at random from 1, . . . , n and map 1 ›r1.
+Now remove r1 from the set and repeat on a set of size n - 1.
+11.6 (b) implies (a) is trivial. For the converse use the fact that given an
+interactive proof system with error probability 0 <  < 1/2 we can
+obtain one with error probability 0 < ? <  < 1/2 by using a ‘majority
+vote’ machine (as in the proof of Proposition 4.14).
+Appendix 6
+Answers to selected exercises and problems
+Chapter 2
+Exercises
+2.1 The standard algorithms need respectively (i) O(n) integer additions and
+left shifts (see Algorithm 2.11); (ii) O(n3) integer multiplications and
+additions (O(n) for each of the n2 entries); (iii) O(n3) integer
+multiplications and additions using Gaussian elimination; (iv) the
+simplest algorithm requires O(n2) integer comparisons (O(n log n)
+algorithms exist).
+2.2 The tape alphabet is  = {0, 1, *} and the set of states is
+ = {?0, ?1, . . . , ?6}. The starting state is ?0 and the only halting state is
+?6. The machine halts if it encounters a state/symbol combination for
+which it does not have a rule.
+(?0, 1, ?1, 1,›) #leave first one alone
+(?0, *, ?6, *,›) #blank input – halt
+(?1, 1, ?1, 0,›) #flip other ones to zeros
+(?1, *, ?2, *,›) #found end of first string
+(?2, 1, ?2, 1,›) #move to end of second string
+(?2, *, ?3, 1,‹) #found end of second string append one
+(?3, 1, ?3, 1,‹) #back to beginning of second string
+(?3, *, ?4, *,‹) #found beginning of second string
+(?4, 0, ?5, 1,›) #found zero – flip it back to a one
+(?4, 1, ?4, 1,‹) #looking for another zero
+(?4, *, ?6, *,›) #finished
+(?5, 1, ?5, 1,›) #move to end of first string
+(?5, *, ?2, *,›) #found end of first string
+This machine has time complexity 2n2 + 2n + 2 = O(n2) for n ? 1.
+2.3 The tape alphabet is  = {0, 1, 2, *} and the set of states is
+ = {?0, ?1, . . . , ?6}. The starting state is ?0 and the only halting state is
+?6. As always the machine halts if it encounters a state/symbol
+268
+Appendix 6 Answers to selected exercises and problems 269
+combination for which it does not have a rule.
+(?0, 0/1, ?1, same,›) #leave first one alone
+(?0, *, ?6, *,›) #blank input – halt
+(?1, 0, ?2, 2,‹) #remember zero to copy leave marker
+(?1, 1, ?3, 2,‹) #remember one to copy leave marker
+(?1, 2, ?1, 2,›) #find next symbol
+(?1, *, ?5, *,‹) #finished delete markers
+(?2/?3, 0/1/2, same, same,‹) #move to beginning of reversed string
+(?2, *, ?4, 0,›) #append zero to string
+(?3, *, ?4, 1,›) #append one to string
+(?4, 0/1/*, ?4, same,›) #find next symbol to copy
+(?4, 2, ?1, 2,›) #found first marker
+(?5, 2, ?5, *,‹) #deleting markers
+(?5, 0/1, ?6, same,‹) #finished
+This machine has time complexity 2n2 + 1 = O(n2) on an input of length
+n ? 0.
+2.6 If a < b output 0. Otherwise set c ‹ 0 then find k = log a/b (check
+successive values of k to find the one that satisfies 2kb ? a < 2k+1b).
+Then set a ‹a - 2kb and c ‹ c + 2k. Now repeat with the new values
+of a and c. Stop once a < b and then output c. In one iteration we reduce
+a by a factor of at least two and we need to check at most log a possible
+values to find k. Hence this algorithm takes time O(n2) when a is an n-bit
+integer. Thus div ? FP.
+Problems
+2.2 The tape alphabet is  = {0, 1, *} and the set of states is
+ = {?0, ?1, . . . , ?5, ?T, ?F}, ?0 is the start state; ?T is the accept state and
+?F is the reject state. If the machine ever encounters a state/symbol
+combination that it does not have a rule for then it rejects.
+(?0, 1, ?1, *,›) #found 1, erase it and store as state ?1
+(?0, 0, ?2, *,›) #found 0, erase it and store as state ?2
+(?0, *, ?T, *,›) #empty string – accept (even length
+input)
+(?1/?2, 0/1, same, same,›) #go right (looking for end of string)
+(?1, *, ?3, *,‹) #end of string found, now looking for a
+matching 1
+(?2, *, ?4, *,‹) #end of string found, now looking for
+matching 0
+(?3, 1, ?5, *,‹) #found matching 1, erase it and restart
+(?4, 0, ?5, *,‹) #found matching 0, erase it and restart
+(?3/?4, *, ?T, *,‹) #empty string – accept (odd length input)
+(?5, 0/1, ?5, same,‹) #keep going back to start
+(?5, *, ?0, *,›) #beginning of string found, start again.
+270 Appendix 6 Answers to selected exercises and problems
+(a) This DTM has time complexity (n + 1)(n + 2)/2 = O(n2) for any
+input of size n ? 0.
+(b) This machine has space complexity n + 2 = O(n).
+(c) There is an obvious lower bound for the time-complexity of a DTM
+accepting L PAL on an input of length n. In order to recognise that a
+string is a palindrome the whole string must be examined hence the
+running time must be at least n. (In fact any single tape DTM
+accepting L PAL must have time-complexity (n2).)
+2.3 The tape alphabet is  = {0, 1, *} and the set of states is
+ = {?0, ?1, . . . , ?7, ?T, ?F}, ?0 is the start state; ?T is the accept state and
+?F is the reject state. If the machine ever encounters a state/symbol
+combination for which it does not have a rule then it rejects. The input is
+a, b in unary, with a blank square separating a and b and the read–write
+head initially scanning the leftmost one.
+(?0, *, ?1, *,›), (?0, 1, ?0, 1,›), (?1, *, ?T, *,‹), (?1, 1, ?2, 1,‹),
+(?1, 0, ?1, 0,›), (?2, *, ?3, *,‹), (?2, 1, ?2, 1,‹), (?2, 0, ?2, 0,‹),
+(?3, *, ?7, *,›), (?3, 1, ?4, 0,›), (?3, 0, ?3, 0,‹), (?4, *, ?5, *,›),
+(?4, 0/1, ?4, same,›), (?5, *, ?F, *,‹), (?5, 1, ?6, 0,‹),
+(?5, 0, ?5, 0,›), (?6, *, ?3, *,‹), (?6, 0/1, ?6, same,‹),
+(?7, *, ?1, *,›), (?7, 0, ?7, 1,›), (?7, 1, ?7, 1,›).
+2.4 The obvious 3-tape DTM for performing multiplication of binary integers
+will have time complexity O(n2) when given two n-bit integers: for each
+bit of b that is equal to 1 we need to add a suitably shifted copy of a onto
+the answer, so for each bit of b the machine takes O(n) steps.
+2.5 Take an algorithm for COMPOSITE. This gives an algorithm for PRIME
+by simply negating its answer.
+2.6 Accept f (x1, . . . , xn) iff there is a clause (Ck ) such that for no variable xi
+both xi and xi appear in Ck .
+2.7 Apply Euclid’s algorithm to a, n. Once we have found gcd(a, n) = 1
+work backwards to find h, k ? Z such that ka + kn = 1. Then
+ka = 1 mod n so k is the inverse of a mod n. Since Euclid’s algorithm
+takes O(log n) division steps, each of which can be performed in
+polynomial time, this yields a polynomial time algorithm for calculating
+the inverse of a mod n. (In fact its running time will be O(log3 n).) For
+a = 10 and n = 27 we have: 27 = 2 × 10 + 7, 10 = 7 + 3,
+7 = 2 × 3 + 1. Thus 1 = 7 - 2 × 3 = 3 × 7 - 2 × 10 = 3 × 27 -
+8 × 10. Hence the inverse of 10 mod 27 is -8 = 19 mod 27.
+2.9 (a) At each division step of Euclid’s algorithm we obtain a new Fibonacci
+number. Starting with Fn we end with F2 thus there are n - 1 division
+steps. (b) Solving the difference equation for Fn gives
+Fn = 1 ?
+5
+?
+?
+1 +
+?
+5
+2
+n+1
+-
+1 -
+?
+5
+2
+n+1?
+?.
+Appendix 6 Answers to selected exercises and problems 271
+Thus Fn ? 2n. (c) Given input a = Fn and b = Fn-1 the number of
+division steps performed by Euclid’s algorithm is n - 1 (from part (a)),
+moreover since Fn-1 < Fn ? 2n this gives a lower bound on the number
+of division steps performed when given two n-bit integers.
+2.11 ||S(n)||S(n).
+2.12 The machine described in the solution to Problem 2.2 decides L PAL and
+uses no ink.
+Chapter 3
+Exercises
+3.1 (i) A subset S ? A with sum equal to t. (ii) A subset S ? A whose sum
+is divisible by three. (iii) An isomorphism ? : G › H. (iv) An ordering
+of the vertices of G that forms a Hamilton cycle. Of these only (ii) is
+known to belong to P.
+3.7 79 has certificate C(79) = {3, (2, 1), (3, 1), (13, 1),C(13),C(3)}, where
+C(13) = {2, (2, 2), (3, 1),C(3)} and C(3) = {2, (2, 1)}.
+Problems
+3.7 It belongs to NP: a certificate is a pair of primes p, q such that
+p + q = n (together with certificates for the primality of p and q).
+Goldbach conjectured that such p and q exist for all even integers n. If
+this is true then GOLDBACH belongs to P.
+3.10 Given a graph G = (V, E) with vertex set {v1, v2, . . . , vn}, form the
+following input to TRAVELLING SALESMAN. Take n cities
+c1, . . . , cn, with distances between cities given by
+d(ci , c j ) = 1, if {vi, vj} ? E,
+n2, otherwise.
+Our algorithm for HAMILTON CYCLE simply asks an algorithm for
+TRAVELLING SALESMAN for a shortest tour of these cities. If this
+tour is of length less than n2 then it corresponds to a HAMILTON
+CYCLE from the graph G, while if it is of length at least n2 then G
+could not have been Hamiltonian. Thus, since HAMILTON CYCLE is
+NP-complete, we know that TRAVELLING SALESMAN is NP-hard.
+3.15 It is not known whether the containment is strict.
+Chapter 4
+Exercises
+4.2 First it checks that gcd(5, 561) = 1. Then it computes 560 = 2435. Next
+it computes 535 = 23 mod 561 and then 570 = 529 mod 561,
+5140 = 463 mod 561, 5280 = 67 mod 561. Hence the algorithm outputs
+‘composite’. (Which is correct since 561 = 3 × 187.)
+272 Appendix 6 Answers to selected exercises and problems
+4.3 Suppose that n = pk for some prime p and k ? 2. Use the fact
+(Appendix 3, Theorem A3.8) that there exists a primitive root g mod pk .
+Note that gcd(g, n) = 1 and so gn-1 = 1 mod n. Since g is a primitive
+root mod pk this implies (using Appendix 3, Proposition A3.6) that
+pk-1(p - 1) = ?(pk )|n - 1. Hence p|n - 1 and p|n, a contradiction.
+Problems
+4.1 Replacing 1/2 by 1/p(n) does not change the class RP.
+4.2 (a) Yes. (b) Yes. (c) Not known.
+4.3 (a) Yes to all. (b) Yes to all.
+4.4 (a) Pr[Output is composite and not a Carmichael number] ? 1/2200,
+thus Pr[Output is prime or Carmichael] ? 1 - 1/2200. (b) If the
+algorithm outputs n then n is almost certainly a prime or a Carmichael
+number. Hence we would expect it to try at least 2511/(P + C) values of
+n. (c) Pr[n not prime] = Pr[n composite and not Carmichael] +
+Pr[n Carmichael] ? 1/2200 + C/(P + C)  1/2200 + 1/2353  1/2200.
+Chapter 5
+Exercises
+5.1 NOTAGOODCHOICEOFKEY.
+5.2 01010.
+5.3 1 + x2 + x5.
+5.4 (i) 5. (ii) 1 + x + x2 + x5 (in this case the next bit would be 0) or
+1 + x + x3 + x4 + x5 (in this case the next bit would be 1).
+5.5 00001000.
+Problems
+5.1 (i) The keyword length is 4. (ii) The keyword is BILL and the message
+is TO BE OR NOT TO BE.
+5.2 (ii) d2.
+5.3 d(C, (K1, K2)) = d2(d1(C, K1), K2).
+5.5 M1 ? M2.
+5.9 (i) 5. (ii) 1 + x2 + x4 + x5.
+5.12 (i) For all 256 possible keys K compute DESK (M). Similarly compute
+DES-1
+K (C) for all 256 possible keys K. Now C = DESK2 (DESK1 (M))
+so we have DESK1 (M) = DES-1
+K2
+(C). Thus we can find consistent keys
+(K1, K2) by comparing our two lists for matches. The total number of
+encryptions and decryptions required was 257. (ii) Use the same idea, but
+this time we have DESK2 (DESK1 (M)) = DES-1
+K3
+(C), so one of our list
+consists of all 2112 ‘double encryptions’ of M and the other consists of
+Appendix 6 Answers to selected exercises and problems 273
+all 256 decryptions of C. Thus the number of encryptions and
+decryptions performed is 2112 + 256  2112.
+5.13 First Eve chooses a message M and obtains encryptions of C1 = e(M)
+and C2 = e(M). She then goes through all 256 keys a pair at a time (that
+is she considers K together with K). For a key K she computes
+E = DESK (M) and checks whether E = C1 or E = C2. If the former
+holds then K is a possible value for the key, while if the latter holds then
+C2 = DESK (M) = DESK (M) so K is a possible value for the key.
+This attack now requires 255 DES encryptions to recover the collection
+of consistent keys, rather than 256, since Eve never needs to encrypt with
+both a key and its complement.
+Chapter 6
+Exercises
+6.4 r (k) = 1/2k , for k even, r (k) = 1/k, for k odd.
+Problems
+6.1 r (k) + s(k) and r (k)s(k) are also negligible but r (s(k)) need not be: if
+r (k) = s(k) = 1/2k , then r (s(k)) = 2-2-k › 1 as k ›?.
+6.4 No.
+6.5 The probability that a random k-bit integer is divisible by 2, 3, 5,7 or 11
+is approximately 61/77. Hence the probability that neither of two
+independently chosen random k-bit integers are divisible by 2, 3, 5, 7, or
+11 is at most (16/77)2 < 0.05. Hence with probability at least 0.95 the
+trial division algorithm finds a factor of n = ab. Clearly this is a
+polynomial time algorithm.
+6.10 The probability that a product of two random k-bit primes is in fact the
+product of two Blum k-bit primes is 1/4. Hence an algorithm for
+factoring products of Blum primes with success probability r (k) would
+yield an algorithm for factoring products of primes with success
+probability at least r (k)/4. Hence, under the Factoring Assumption, r (k)
+is negligible.
+Chapter 7
+Exercises
+7.1 p = 7, q = 11, r = 3, s = 5, u = 8, v = 2,C = 71 mod 77.
+7.3 (a) The checking algorithm given in Theorem 3.17 is exactly what we
+require. (b) Assuming the conjecture you expect to choose O(k2) k-bit
+integers before you find a Sophie Germain prime q. Then taking
+p = 2q + 1 we know there are ?(p - 1) = ?(2q) = ?(q) = q - 1
+274 Appendix 6 Answers to selected exercises and problems
+primitive roots mod p. Thus exactly a half of the elements of Z
+*
+p are
+primitive roots mod p. Hence we can find one easily and use the
+algorithm of part (a) to check (since we have the prime factorisation of
+p - 1 = 2q).
+7.4 p = 7919 and q = 7933. Thus, using Euclid’s algorithm we find
+d = 12561115.
+7.6 21631 = 223 × 97.
+7.7 M = ±15,±29 mod 77.
+7.9 (a) The probability that zk is the zero vector given that z contains t ones
+is n-t
+k 	/n
+k	. (b) n
+k	/n-t
+k 	 = (450!1024!)/(974!500!) > 253.
+Problems
+7.1 Algorithm B will be faster since Algorithm A will reject integers that
+will be correctly accepted by Algorithm B, while Algorithm B will
+never reject an integer that is accepted by Algorithm A.
+7.3 See the proof of Theorem 10.3 for an algorithm.
+7.4 Clearly given p, q it is trivial to compute ?(n) = (p - 1)(q - 1).
+Conversely given n and ?(n) we know that p satisfies
+p2 - p(n + 1 - ?(n)) + n = 0. So solving this yields p (and then
+dividing n by p gives q).
+7.6 Yes.
+7.7 The primes he chooses are almost certain to be very close and hence
+n = pq is easy to factor.
+7.9 (1 + gcd(e - 1, p - 1))(1 + gcd(e - 1, q - 1)).
+7.13 Choose odd k-bit integers at random and use the Miller–Rabin primality
+test. The Prime Number Theorem, together with the result that
+limx›? ?1(x)/?3(x) = 1, imply that you expect to test O(k) integers
+before you find a Blum prime.
+7.15 an = 2n-1.
+7.16 An enemy simply computes all k
+5	 + k
+4	 + k
+3	 + k
+2	 + k
+1	 + 1 = O(k5)
+possible messages and corresponding cryptograms in polynomial time.
+When he intercepts a cryptogram he simply compares it with his list to
+discover the message. If Elgamal is used instead of RSA there is no
+obvious way for him to do this, since if the same message is sent twice it
+will almost certainly be encrypted differently due to the use of
+randomness in the encryption process.
+7.17 Eve knows C1 + C2 = (MH + z1) + (MH + z2) = z1 + z2 mod 2.
+Consider the number of ones in this vector as opposed to the number of
+ones in a vector obtained by adding two cryptograms of random distinct
+messages. Using McEliece’s suggested parameters the former will
+contain at most 100 ones, while the latter will contain 512 ones on
+average.
+Appendix 6 Answers to selected exercises and problems 275
+Chapter 8
+Exercises
+8.1 S = 57.
+8.2 S1 = 73 = 59 mod 71 and 3-1 = 47 mod 70. Hence S2 = 48 mod 70.
+Thus her signature is (59, 48).
+8.3 V = yS1 SS2
+1
+= yS1gM-xS1 = gM = W mod p and hence accepts a
+correctly signed message.
+Problems
+8.1 Signing is exponentiation mod n, thus it takes time O(log3 n).
+Verification takes the same amount of time (comparing M to e(S) takes
+an insignificant amount of time).
+8.2 For random k, computing gcd(k, p - 1) using Euclid’s algorithm takes
+time O(log3 p). Moreover if p = 2q + 1 is a safe prime then Alice
+expects to try (p - 1)/?(p - 1) = 2 values before she succeeds.
+Signing S1 and S2 then take time O(log3 p) since Alice needs to find
+k-1 mod p - 1 and then perform exponentiation and multiplication mod
+p. Verification involves exponentiation mod p and so also takes time
+O(log3 p).
+8.4 S = (M1M2)d = Md
+1 Md
+2
+= S1S2 mod n.
+8.6 If the message/signatures are (M1, (S1, S2)) and (M2, (S1, S3)) then
+S2 - S3 = k-1(M1 - M2) mod q. Eve can find (M1 - M2)-1 mod q and
+so find k-1 mod q and hence k. Then she recovers Alice’s private key as
+xA = (kS2 - M1)S-1
+1 mod q.
+8.11 If p is 160 bits then the birthday attack requires 280 messages and
+corresponding hash values, hence p should be at least this large.
+Chapter 9
+Exercises
+9.1 xA = 6 and yB = 8.
+9.3 (KB)rA + (RB)a = gbrA+grBa=gaRB + grAb = (KA)rB + (RA)b mod p.
+Problems
+9.2 Alice sends ga to Bob who sends gab to Carol. She then sends gc to both
+Alice and Bob; Bob sends gbc to Alice and Alice sends gac to Bob. At the
+end of this process they can all form the common secret key gabc mod p.
+9.3 (a) The common conference key is gr0r1+r1r2+···+rt-1r0 mod p.
+9.4 If Eve intercepts ga, gb mod p then she repeatedly passes algorithm A
+the input (p, g, gagz mod p), where 1 ? z ? p - 1 is random. With
+probability , ga+z mod p lies in the range for which A can solve the
+276 Appendix 6 Answers to selected exercises and problems
+discrete logarithm problem. Hence Eve expects to find a after 1/
+iterations. She then forms the common key as K = (gb)a mod p.
+9.6 yqb
+A
+= gab(p-1)/2 = yqa
+B , so the common key is 1 if either a or b is even
+and -1 otherwise. If p = rq + 1 then KAB = gab(p-1)/r which would
+take one of r possible values.
+9.10 If Alice and Bob use one-time pads in this scheme then it is hopelessly
+insecure. Suppose Alice has one-time pad KA and Bob has one-time
+pad KB then the three cryptograms are M ? KA, M ? KA ? KB and
+M ? KB. So clearly at the end Bob can decrypt and obtain M,
+however, so can Eve since if she adds the first two cryptograms mod 2
+she obtains KB and so can recover M from the third cryptogram.
+Chapter 10
+Exercises
+10.1 (i) No, consider the case G1 = G2. (ii) Yes, if G1 fails a statistical test
+T then G1 would fail the test T .
+10.2 (a) P = (1, 0, 1, 1). (b) C = (P ? M, x4 mod n) = (1110, 133).
+Problems
+10.4 From the public key (p, g, gx ) and k = gy mod p we can use Euler’s
+Criterion to find the least significant bits of x and y, hence we know
+whether or not gxy is a quadratic residue mod p. Finally we can use
+Euler’s Criterion again, together with Appendix 3, Theorem A3.14, to
+compute Q(M) from d = Mgxy mod p.
+10.10 (a) Bob can decrypt in polynomial time by testing whether Ci is a
+quadratic residue mod p and mod q using Euler’s Criterion. Then he
+knows that Mi = 0 iff C(p-1)/2
+i
+= 1 mod p and C(q-1)/2
+i mod q. (b)
+M = 01. (c) Given p and q Eve can decrypt using Bob’s algorithm. (d)
+That deciding whether or not a ? Z
+*
+n is a quadratic residue mod n is
+intractable, when n = pq is the product of two random k-bit primes.
+Chapter 11
+Exercises
+11.1 By contradiction. If xy = b2 mod n and x = a2 mod n then
+y = (ba-1)2 mod n.
+11.4 Step (3) in the protocol is changed so that if i = 0 then P sends V a list
+of vertices forming a clique of the correct order and decommits to those
+bits of the hidden matrix corresponding to the edges in this clique.
+Similarly in step (4) if i = 0 then V checks that P correctly
+decommitted to a clique of the correct order.
+Appendix 6 Answers to selected exercises and problems 277
+11.6 Both Victor and Peggy’s computations (in a single round) can be
+performed in time O(k2). For the probability of Victor being fooled to be
+at most ? we require t rounds, where t = log 1/?. Hence the
+identification procedure will take time O(k2 log 1/?).
+Problems
+11.7 (a) Not unless finding an isomorphism between two isomorphic graphs
+can be done in polynomial time and this is not known. (b) Given an
+isomorphism, G2 = ? (G1), P can now perform step (3) in polynomial
+time since either i = 1 and she sends ? = ? to V or i = 2 and she sends
+? = ? ? ?
+-1 to V.

@@ -1,0 +1,2437 @@
+
+Chapter 1. Software Architecture 
+The foundation of a winning solution lies in the architecture that creates and sustains it. This chapter 
+defines software architecture and examines how architectures are created and evolve through use. 
+Along the way I'll discuss the role of architectural patterns, timeless principles of design, various 
+motivations that shape the architecture, and conclude with a discussion of the interrelationship that 
+exists between the architecture and the team that creates and sustains it. 
+Defining Software Architecture 
+Software architecture is a complex topic. Because of its complexity, our profession has produced a 
+variety of definitions, each more or less useful depending on your point of view. Here is a definition 
+from my first book, Journey of the Software Professional: 
+A system architecture defines the basic "structure" of the system (e.g., the high-level modules 
+comprising the major functions of the system, the management and distribution of data, the kind and 
+style of its user interface, what platform(s) will it run on, and so forth). This definition is pretty consistent with many others for example, [Bass], [Larman], and [POSA]. 
+However, it lacks some important elements, such as specific technology choices and the required 
+capabilities of the desired system. A colleague of mine, Myron Ahn, created the following definition 
+of software architecture. It is a bit more expansive and covers a bit more ground than my original 
+(2002, personal communication). 
+Software architecture is the sum of the nontrivial modules, processes, and data of the system, their 
+structure and exact relationships to each other, how they can be and are expected to be extended and 
+modified, and on which technologies they depend, from which one can deduce the exact capabilities 
+and flexibilities of the system, and from which one can form a plan for the implementation or 
+modification of the system. 
+We could extend these definitions from the technical point of view, but this wouldn't provide a lot of 
+value. More than any other aspect of the system, architecture deals with the "big picture." The real 
+key to understanding it is to adopt this big picture point of view. 
+ 
+Alternative Thoughts on Software Architecture 
+While the previous definitions of software architecture are useful, they are far too simplistic to take 
+into account the full set of forces that shape, and are shaped by, an architecture. In truth, I doubt that 
+any single definition of software architecture will ever capture all of what we believe to be important. 
+To illustrate, this section raises some issues that aren't often covered by traditional definitions of 
+software architecture but are nonetheless quite important. Unlike the previous definitions, which focus 
+on the "technical" aspects of architecture, consider that these focus on some of the most important 
+"human" and "business" issues, which are all part of the big picture. 
+Subsystems Are Designed to Manage Dependencies 
+Having managed distributed teams that have spanned the globe, I've found that an important criterion 
+in decomposing subsystems is having the simplest possible dependencies among development 
+organizations. By simple, I mean manageable based on the people who are creating the system. In 
+work with my consulting clients, I've found that, contrary to "technical" justifications, many 
+architectural choices regarding subsystem design are based on creating easily managed dependencies 
+among groups of developers. The practical effect of these choices is that subsystems are rarely split 
+across development organizations. 
+Subsystems Are Designed According to Human Motivations and 
+Desires 
+Many books on architecture remove far too much of the human element from the architectural design 
+process. For example, architectural patterns are a wonderful place to begin the design process, but 
+creating an architecture isn't just taking some form of starting structure, such as a pattern, and 
+objectively tailoring it to the needs of the business. You have to understand and take into account the 
+hopes, experiences, dreams, fears, and preferences of the team charged with building the architecture. 
+Subjective and objective decision making collide as the technical structure of the architecture shapes 
+the social structure of the team and vice-versa. To check this, ask yourself if you've ever been involved in a project where you wanted to work on a 
+particular aspect of the architecture because you knew you could do a better job than anyone else 
+(confidence based on experience); you wanted to learn the underlying technology (desire); you 
+thought that doing a good job might earn you a bonus or promotion (aspiration); or you were 
+concerned that no one else on the team had the requisite skill or experience to solve the problem the 
+right way (fear). 
+Designing Subsystems to Create a Sense of 
+Wholeness 
+Few developers want to be so specialized in their work that all they do is analysis or design 
+or coding or bug fixing. More often than not, developers want to be associated with the full 
+range of development activities: working with customers or product managers to clarify 
+requirements, developing analysis and design artifacts and implementing them, fixing bugs, 
+tuning performance, and so forth. I think of this as a strong desire for a sense of 
+"wholeness" or "completeness" relative to our work. This desire has deep implications, and 
+good designs are often chosen so that the teams building them can fulfill it. 
+The concept of wholeness means different things to different groups, and it is important for 
+managers to understand how a given team interprets it. In one client-server application, we 
+considered several alternative designs for the client. I'll use two of them to illustrate how we 
+interpreted wholeness and how it influenced our design choice. 
+In the first design, one team would be given responsibility for "customer-facing" issues and 
+the other would be given responsibility for "infrastructure" components. In the second 
+design, each team would have both customer-facing and backend infrastructure 
+components. 
+While the first design may have been a bit easier to manage on paper, it left the 
+infrastructure team demoralized, feeling that they would not be full participants in the 
+release process. Specifically, they wouldn't be working directly with product management, 
+technical publications, or potential customers. They had done this in prior releases and 
+wanted to keep doing it in the current and future releases. As a result, we chose the second 
+design, as it was the only choice that allowed both teams to achieve the sense of wholeness 
+that they felt was important. For them, this included interaction with product management 
+and full participation in the release process. 
+Give in to Great Architectures 
+I use the phrase "give in" when an architect or development team subordinates, to the extent that they 
+can, their experiences and expectations about what they think is "right," and instead let the forces of 
+the problem domain guide them in the realization of the architecture. Some people claim that this is 
+not a problem and that they or their team always create an architecture solely based on an objective 
+understanding of the customer's problem and its best technical solution. The operative word, of course, 
+is "best." Your opinion of best may not match mine, which is probably more heavily influenced by my 
+experiences than by the problem domain–unless my experiences are born from this domain. One 
+aspect of "giving in" to a great architecture is continually assessing if the decisions we're making are 
+designed with the customer and their needs first, and our willingness to change prior decisions when 
+we find they're not. Beauty Is in the Eye of the Beholder! 
+We all have many definitions of successful software architectures. While a company may feel that a 
+system is successful because it is powering a profitable product, the developers who have to maintain 
+it may cringe because of its antiquated technical architecture. Alternatively, many truly elegant 
+technical solutions fail for any number of reasons. In addition, we all have our own opinion on 
+architectural elegance. Two of my most skilled developers had very different philosophies regarding 
+stored procedures in databases. I was confident that both could create a good solution to just about any 
+database-related problem you could throw at them, but I was equally confident that their designs 
+would be different and that both could justify their own design while validly criticizing the other's. 
+Few developers can escape the aesthetics of their design decisions. 
+Why Software Architecture Matters 
+Software architecture matters because a good one is a key element of your long-term success. Here are 
+some of the ways that architecture influences success. Not all of them are equally important, but all 
+are related to your architecture. 
+Longevity 
+Most architectures live far longer than the teams who created them. Estimates of system or 
+architectural longevity range from 12 to 30 or more years, whereas developer longevity (the time a 
+developer is actively working on the same system) ranges from 2 to 4 years. 
+Stability 
+Many benefits accrue from the longevity of a well-designed architecture. One of the biggest is 
+stability. Architectural stability helps ensure a minimum of fundamental rework as the system's 
+functionality is extended over multiple release cycles, thus reducing total implementation costs. It 
+provides an important foundation for the development team. Instead of working on something that is 
+constantly changing, the team can concentrate on making changes that provide the greatest value. 
+Degree and Nature of Change 
+Architecture determines the nature of change within the system. Some changes are perceived as easy; 
+others are perceived as hard. When easy correlates strongly with the desired set of changes that 
+improve customer satisfaction or allow us to add features that attract new customers, we usually refer 
+to the architecture as "good." 
+In one application I worked on, the development team had created a plug-in architecture that would 
+extend the analytic tools that manipulated various data managed by the system. Adding a new tool was 
+relatively easy, which was a good thing because it was a major goal of product management to add as 
+many tools as possible. 
+Profitability 
+A good architecture is a profitable one. By "profitable," I mean that the company that created the 
+architecture can sustain it with an acceptable cost structure. If the costs of sustaining the architecture 
+become too great, it will be abandoned. This does not mean that a profitable architecture must be considered elegant or beautiful. One of the 
+most profitable architectures of all time is the Microsoft Windows family of operating systems—even 
+though many people have decried it as inelegant. 
+It is important to recognize that the profitability of a given technical architecture often has little to do 
+with the architecture itself. Take Microsoft, which has enjoyed tremendous advantages over its 
+competitors in marketing, distribution, branding, and so forth. All of these things have contributed to 
+Windows' extraordinary profitability. 
+This is not an argument for poorly created, inelegant architectures that cost more money than 
+necessary to create and sustain! Over the long run, simple and elegant architectures tend to be the 
+foundation of profitable solutions. 
+Social Structure 
+A good architecture works for the team that created it. It leverages their strengths and can, at times, 
+minimize their weaknesses. For example, many development teams are simply not skilled enough to 
+properly use C or C++. The most common mistake is mismanaging memory, resulting in applications 
+that fail for no apparent reason. For teams that do not require the unique capabilities of C or C++, a 
+better choice would be a safer language such as Java, Visual Basic, Perl, or C#, which manage 
+memory on the developer's behalf. 
+Once created, the architecture in turn exhibits a strong influence on the team. No matter what 
+language you've chosen, you have to mold the development team around it because it affects such as 
+things as your hiring and training policies. Because architectures outlast their teams, these effects can 
+last for decades (consider the incredible spike in demand in 1997–1999 for COBOL programmers as 
+the industry retrofitted COBOL applications to handle the Y2K crisis). 
+How Many People Will It Cost to Replace This 
+Thing? 
+One of the most difficult decisions faced by senior members of any product development 
+team is when to replace an existing architecture with a new one. 
+Many factors play into this decision, including the costs associated with sustaining the old 
+architecture, the demands of existing customers, your ability to support these demands, and 
+the moves of your competitors. Creating a formal set of rules for knowing when to replace 
+an architecture is impossible, because there are so many factors to consider, and each of 
+these factors is hard to quantify. The following rules of thumb have served me well. 
+If you feel that your current architecture could be replaced by a development team of 
+roughly half the size of the existing team in one year or less, you should seriously consider 
+replacing your current architecture with a new one. In very general terms, this rule allows 
+you to split your team, putting half of your resources to work on sustaining the old system 
+and half of your resources on creating the new system, with minimal increases in your cost 
+structure. 
+The resources assigned to create your architecture may not all come from your current team. 
+Bluntly, creating a new architecture with fewer people often requires radically different 
+development approaches. Your current team may not have the required skills, and may be unwilling or unable to acquire them. Thus, every manager must be ready to substantially 
+change the composition of his or her team before undertaking an architectural replacement. 
+While replacing one or two people is often required, it is lunacy to try to replace everyone. 
+The older and more complex the system, the more likely you'll need the services of one or 
+two trusted veterans of its development to make certain that the new system is faithfully 
+implementing the functionality of the old. There will be skeletons, and you're going to need 
+these veterans to know where these skeletons are buried. 
+All of the traditional adages of "being careful" and "it is harder and will take longer than 
+you think" apply here. You should be careful, and it probably will be harder and take longer 
+than you estimate. People usually forget to estimate the total cost of replacement, including 
+development, QA, technical publications, training, and upgrades. Economically, a good rule 
+of thumb is that it costs at least 20 percent of the total investment in the old architecture to 
+create a functionally equivalent new one if you are using experienced people, with no 
+interruptions, and a radically improved development process. If you're on your fourth 
+iteration of a system that has been created over five years with a total investment of $23 
+million, you're probably fooling yourself if you think that you can create the first version of 
+the new system for less than $3–$5 million. More commonly, the cost of creating a 
+functionally equivalent new architecture is usually between 40 and 60 percent of the total 
+investment in the original architecture, depending heavily on the size of the team and the 
+complexity of the system they are replacing. 
+Boundaries Defined 
+During the architectural design process the team makes numerous decisions about what is "in" or "out 
+of" the system. These boundaries, and the manner in which they are created and managed, are vital to 
+the architecture's ultimate success. Boundary questions are innumerable: Should the team write its 
+own database access layer or license one? Should the team use an open-source Web server or license 
+one? Which subteam should be responsible for the user interface? Winning solutions create technical 
+boundaries that support the specific needs of the business. This doesn't always happen, especially in 
+emerging markets where there is often little support for what the team wants to accomplish and it has 
+to create much of the architecture from scratch; poor choices often lead the development team down 
+"rat holes" from which it will never recover. 
+Sustainable, Unfair Advantage 
+This point, which summarizes the previous points, is clearly the most important. A great architecture 
+provides a technically sophisticated, hard to duplicate, sustainable competitive advantage. If the 
+technical aspects of your architecture are easy to duplicate, you'll have to find other ways to compete 
+(better service, superior distribution, and so forth). Architecture still has an important role: A good 
+architecture may still help you gain an advantage in such things as usability or performance. 
+Creating an Architecture 
+A software architecture begins as the result of the collective set of design choices made by the team 
+that created the very first version of a system. These early beginnings, which might be sketches on a 
+whiteboard or diagrams created in a notebook (or on a napkin), represent the intentions of this first 
+development team. When the system is finished, these sketches may not represent reality, and often 
+the only way the architecture can be explained is through a retrospective analysis that updates these 
+initial designs to the delivered reality. The initial version of a software architecture can be like a young child: whole and complete but 
+immature and perhaps a bit unsteady. Over time, and through continued use and multiple release 
+cycles, the architecture matures and solidifies, as both its users and its creators gain confidence in its 
+capabilities while they understand and manage its limitations. The process is characterized by a 
+commitment to obtaining honest feedback and responding to it by making the changes necessary for 
+success. Of course, an immature architecture can remain immature and/or stagnate altogether without 
+feedback. The biggest determinant is usually the market. 
+I've been fortunate to have been part of creating several new product architectures from scratch, and 
+I've learned that the way architecture is actually created is a bit different from the recommendations of 
+many books. These books tell us that when the system is completely new and the problem terrain is 
+somewhat unfamiliar, designers should, for example, "explore alternative architectures to see what 
+works best." This is sensible advice. It is also virtually useless. 
+There are many reasons that this advice is useless, but three of them dominate. Any one can be strong 
+enough to prevent the exploration of alternatives, but all three are usually present at the same time, 
+each working in its own way, sometimes in conjunction with the others, to motivate a different and 
+more pragmatic approach to creating a software architecture. These forces are not "bad"—they just 
+are. 
+The first force is the lack of time in a commercial endeavor to truly explore alternatives. Time really is 
+money, and unless the first version is an utter disaster, the team will almost certainly need to ship the 
+result. They won't be able to wait! The strength of this force usually results in hiring practices that 
+demand that the "architect" of the initial system have sufficient experience to make the right decisions 
+without having to explore alternatives. In other words, hire someone who has already explored 
+alternatives in a different job. 
+The second force, and one that is considerably stronger than the first, is the nature of the problem and 
+its surrounding context, which dictate a relatively small set of sensible architectural choices. A high-
+volume, high-speed, Web site is going to have a relatively standard architecture. An operating system 
+will have a slightly different but no less "standard" architecture. There probably isn't a lot of value in 
+exploring radically different high-level architectures, although there is often some use in exploring 
+alternatives for smaller, more focused, portions of it. These explorations should be guided by the true 
+risks facing the project, and should be carefully designed to resolve them. 
+When You Know It's Going to Fail 
+As you gain experience with different architectures, you can sometimes spot disastrous 
+architectural choices before they are implemented. Then you can either kill the proposed 
+architecture and send the design team back to the drawing board or kill the project. Killing 
+the project may seem a bit drastic, but sometimes this is required, especially when poor 
+choices substantially change the new system's economic projections. 
+In one assignment, the engineering team decided that a full J2EE implementation was 
+needed for a problem that a few dozen Perl scripts could have easily handled—if another 
+part of the application was also modified. In a classic case of "resumé-driven design," the 
+technical lead, who fancied himself an architect, managed to convince several key people in 
+both development and product management that the J2EE implementation was the best 
+choice. The architecture was also beset with a number of tragically flawed assumptions. My 
+personal favorite was that CD-ROM images of up to 600Mb of data were expected to be e-
+mailed as attachments! In the end I became convinced that there was nothing to salvage and ultimately killed both the architecture and the project. We simply could not create and 
+release the desired product within the necessary market window (that period of time when a 
+product is most likely to find a receptive customer). 
+The third, and strongest force, is architectural "goodness," which can only be explored through actual 
+use of the system. Until you put the architecture into the situation it was nominally designed to handle, 
+you don't really know if it is the right one or even if it is a good one. This process takes time, usually 
+many years. 
+Patterns and Architecture 
+The net result of the forces just described is that the creation of the initial architecture must be 
+grounded in a thoroughly pragmatic approach. The emerging discipline of software patterns provides 
+such an approach. Software patterns capture known solutions to recurring problems in ways that 
+enable you to apply that knowledge to new situations. Good patterns have been used in several 
+systems, and the best patterns have been used in dozens or hundreds. Someone, and often, several 
+people, have taken the time to research, understand, and carefully document the problem, and a proven 
+way to solve it, so that others can leverage the experiences learned from systems that are known to 
+work. A software pattern is "pre-digested" knowledge. 
+Architectural patterns capture fundamental structural organizations of software systems. Primarily 
+addressing the technical aspects of architecture presented earlier in this chapter, they provide 
+descriptions of subsystems, define their responsibilities, and clarify how they interact to solve a 
+particular problem. By focusing on a specific class of problem, an architectural pattern helps you 
+decide if that kind or style of architecture is right. 
+The pragmatic approach when creating a software architecture is to explore the various documented 
+patterns and choose one that is addresses your situation. From there, you must tailor the architecture to 
+meet your needs, ultimately realizing it in a working system. The tailoring process and the design 
+choices made are guided by the principles described later in this chapter. If you are familiar with 
+architectural patterns, you might want to read the remainder of this book as a way to "fill in the gaps" 
+in each one. For example, every software architecture can benefit from a well-designed installation 
+and upgrade process or sensibly constructed configuration files. The goal is to use all of these 
+approaches to create and sustain winning solutions. 
+Architectural Evolution and Maturation: Features versus 
+Capabilities 
+Although much emphasis is placed on the initial creation and early versions of an architecture, the fact 
+is that most of us will be spending the majority of our time working within an existing architecture. 
+How a given architecture evolves can be more fascinating and interesting than simply creating its 
+initial version. It is through evolution that we know where we have success, especially when the 
+evolution is based on direct customer feedback. On a personal note, I've faced my greatest managerial 
+challenges and had my most satisfying accomplishments when I've been able to work with software 
+teams in modifying their existing architecture to more effectively meet the needs of the marketplace 
+and position their product for greater success. 
+This process, which involves both evolution and maturation, is driven by actual use of the system by 
+customers. Many companies claim to continually request customer feedback, but the reality is that 
+customer feedback is most actively sought, and most thoroughly processed, when planning for the system's next release. The next release, in turn, is defined by its specified required functionality as 
+expressed in the features marketed to customers. Whether or not these features can be created is 
+dependent on the underlying architecture's capabilities. The interplay of requested or desired features 
+and the underlying capabilities required to support them is how architectures evolve over time. 
+What makes this interplay so interesting is that it takes place within continual technological evolution. 
+In other words, customer feedback isn't always based on some aspect of the existing system, but can 
+be based on an announcement about some technology that could help the customer. In fact, the source 
+of the announcement doesn't have to be a customer, but can quite often be the development team. 
+Regardless of the source or context, it is useful to think of architectural evolution and maturation in 
+terms of features and capabilities. 
+A feature, or function (I use the terms synonymously but prefer feature because features are more 
+closely related to what you market to a customer) defines something that a product does or should do. 
+The entire set of requested features defines the requirements of the product and can be elicited, 
+documented/captured, and managed through any number of techniques. In case you're wondering what 
+a feature is, here is a time-tested definition from Exploring Requirements: Quality Before Design 
+[Weinberg and Gause, 1989]: "To test whether a requirement is actually a [feature], put the phrase 'We 
+want the product to …' in front of it. Alternatively, you can say, 'The product should …'" This 
+approach shows that a wide variety of requirements qualify as features. Here are a few examples: 
+•  Supported platforms. "We want the product to run on Solaris 2.8 and Windows XP." 
+•  Use cases. "The product should allow registering a new user." 
+•  Performance. "We want the product to provide a dial tone within 100 ms of receiving the off-
+hook signal." 
+Note that, as descriptions of features, use cases have an advantage over other forms of documentation 
+because they can put the desired feature into a specific context. The most useful context is based on 
+the goals of the actors involved in the use case—what they are trying to accomplish. Once you know 
+this, and you know that the system can fulfill these goals, you have the data that product management 
+needs to create the value proposition, which informs the business, licensing, and pricing models. 
+Features are most easily managed when clearly prioritized by marketing, and they are best 
+implemented when the technical dependencies between them are made clear by the development team. 
+This is because features are usually related, in that one often requires another for its operation. As 
+stated earlier, because the system architecture determines how easy or hard it is to implement a given 
+feature, good architectures are those in which it is considered easy to create the features desired. 
+Capability refers to the underlying architecture's ability to support a related set of features. The 
+importance of a capability emerges when marketing is repeatedly told that a class of related features, 
+or a set of features that appear to be unrelated on the surface but are related because of technical 
+implementation, is difficult or impossible to implement within the given architecture. Examples in the 
+sidebar on page 12 illustrate this point. 
+The interplay between architectural maturation and evolution is a function of time and release cycle. It 
+is uncommon for the development team to implement most or all of the desired features in the very 
+first release, especially if the product manager specifies requested features in a well-defined, 
+disciplined manner. If all of the desired features aren't implemented in the first release, they often 
+come along shortly thereafter. Because there aren't a lot of customers to provide feedback, the team is 
+likely to continue working on the leftover features from the first release and complete them in the 
+second. The focus of the team is on completing the total set of desired features, so there is usually little time or energy spent on changing the architecture. Instead, the initial architecture matures. 
+Certainly some changes are made to it, but they are usually fairly tame. 
+After the system has been in continuous operation for three or more release cycles, or for two or more 
+years, the initial features envisioned by its creators have typically been exhausted and product 
+managers must begin to incorporate increasing amounts of direct customer feedback into the plans for 
+future releases. This feedback, in the form of newly desired features or substantial modifications to 
+existing features, is likely to mark the beginning of architectural evolution, as the development team 
+creates the necessary capabilities that provide for these features. 
+Of course, not all architectural evolution is driven by customer demand. Companies that proactively 
+manage their products will look for new technologies or techniques that can give them a competitive 
+edge. Incorporating key new technologies into your evolving architecture can give you a sustained 
+competitive advantage. Chapter 3 discusses this in greater detail, and Appendix B includes a pattern 
+language that shows you one way to organize this process. 
+Architectural maturation and evolution are cyclical, with each phase of the cycle building on the 
+previous one. New capabilities are rarely introduced in a mature state, as it is only through actual 
+experience that can we know their true utility. Through feedback, these capabilities mature. In 
+extremely well-tended architectures, capabilities are removed. 
+There is a special situation in which the maturation/evolution cycle must be broken and where 
+capabilities dominate the development team's discussions. This is when you must undertake a 
+complete redesign/rewrite of an existing system. Although many factors motivate a redesign/rewrite, 
+one universal motivator is the fact that the existing system does not have the right capabilities and 
+adding them is too costly, either in terms of time or in terms of development resources. In this 
+situation, make certain your architect (or architecture team) clearly captures the missing capabilities so 
+that everyone can be certain that you're going to start with a solid new foundation. 
+Architectural Capability or Feature Agility? 
+In one system I managed, users could search and collaboratively organize documents into 
+folders. New documents also arrived from external sources on a regular basis. One set of 
+requirements that emerged concerned storing and executing predefined queries against new 
+documents. Another set comprised the notion that when one user modified the contents of a 
+folder another user would receive an e-mail detailing the modification. Both feature sets 
+required the architectural capability of a notification mechanism. Until this capability was 
+implemented none of the desired features could be realized. 
+The primary target market of this system was Fortune 2000 companies, and the original 
+business model was based on a combination of perpetual or annual licenses accessed by 
+named or concurrent user. While these business models are standard in enterprise-class 
+software, they prevented us from selling to law firms, which need to track and bill usage on 
+a metered basis for cost recovery. Working with my product managers, we realized that we 
+could address a new market segment if we provided support for a metered business model. 
+Unfortunately, it was far easier to define the new business models than to implement them, 
+as they required substantial changes to the underlying architectural capabilities. Instead of 
+simply counting the number of named or concurrent users, the development team had to 
+create several new capabilities, such as logging discrete events into secured log files for 
+post processing by a billing system. Until this was done we were unable to address this newly defined market segment. 
+A different system I managed was responsible for creating trial versions of software. 
+Trialware is a powerful marketing tool, created by applying special tools to software after it 
+has been written to add persistent protection to it. Customers of this system asked for 
+increased flexibility in setting trial parameters. Unfortunately, this seemingly simple request 
+was not supported by the underlying architecture, and I had to initiate a major design effort 
+to ensure that the right capabilities were added to the system. 
+A common example of the difference between features and capabilities is when product 
+marketing requests that the user interface be localized in multiple languages. Each language 
+can be captured as a separate feature and is often marketed as such, but unless the 
+underlying architecture has the necessary capability for internationalization, supporting 
+multiple languages can quickly become a nightmare for the entire organization. There are 
+many other examples, especially in enterprise applications: workflow, flexible validation 
+rules, increasing demands for customizations, to name but a few. 
+The motivation for redesign/rewrite (the lack of underlying capabilities) often finds its roots in the 
+delivery of new features to a growing customer base as quickly as possible. Quite simply, success can 
+breed failure when is not properly managed. 
+Architectural degradation begins simply enough. When market pressures for key features are high and 
+the needed capabilities to implement them are missing, an otherwise sensible engineering manager 
+may be tempted to coerce the development team into implementing the requested features without the 
+requisite architectural capabilities. Usually many justifications are provided by everyone involved: 
+Competitors will beat the team to an important customer, or an important customer won't upgrade to 
+the next version, delaying critically needed revenue. Making these decisions is never easy. 
+The almost certain outcome of this well-intentioned act is that the future cost of maintaining or 
+enhancing new features will be quite high. Additionally, because the underlying architectural 
+capabilities have not been added to the system, any other new features depending on them will find 
+themselves in the same predicament. Worse yet, the cost to morale will likely reduce the effectiveness 
+of the team, further compounding the problem—especially if the alleged "market pressures" turn out 
+not to be so pressing. 
+The result is that implementing new features results in the team taking on a technical "debt" that must 
+be repaid in the future.
+[1]
+ The principal of this debt is the cost associated with creating the right 
+underlying capability. It simply won't go away. The interest is the additional burden of sustaining a 
+feature in an architecture that can't support it. This interest increases with every release and increases 
+again as customers continue to demand new features. If things get bad enough—and they can and 
+do—the team might eventually have to scrap the entire architecture and start over. Servicing the debt 
+has become too high. 
+[1]
+ Ward Cunningham is the first person I know of to refer to this as technical debt. 
+While sometimes there really is a critical market window and a shortcut must be taken, or you simply 
+must implement a given feature for an important customer, more often this is just an illusion fostered 
+by impatient and harried executives looking for a supposed quick win. 
+As people mature, they often became wary of taking on unnecessary debt. You cannot wish away debt 
+but have to pay it. When a given set of desired functions require a significant new or modified architectural capability, avoid debt whenever you can. When it comes to implementing needed 
+capabilities, the phrase "Pay me now or pay me later with interest and penalties" truly applies. 
+Entropy Reduction: Paying off Technical Debt 
+after Every Release 
+In the heat of battle a development team will usually need to make some compromises on 
+the "quality" of the code and/or its implementation to get the product finished. It doesn't 
+matter if this team is "agile" or not. To get the product shipped you have to focus on 
+shipping it. This usually means making compromises (hacks, ugly code—you get the 
+picture.). 
+No matter how they get into the code base, unless these compromises are removed the 
+quality of the source base will degrade. After the product is shipped some reasonable 
+amount of time needs to be devoted to improving the source code. I call this "entropy 
+reduction" (ER). A development organization realizes several crucial benefits from the ER 
+process, a few of which are itemized below in no particular order. 
+•  It maintains a focus on source-level quality. Developers know the importance of a 
+very fundamental level of source code quality. The company reduces risk 
+associated with an unmaintainable code base. 
+•  It reinforces good will in the development team. Great developers wince when they 
+compromise the source code in order to ship the product. They'll do it, but they 
+won't like it. If you don't let them go back and clean up, they will become "dead" to 
+quality. If their sense of quality dies, so do your products. 
+•  It substantially improves the maintainability and extensibility of the system. 
+•  It allows the team to clearly understand the specific sets of behavior within the 
+system and makes them aware of the possibilities of really changing it. 
+•  It ensures that any inconsistencies relative to things like the coding standard are 
+addressed. 
+Entropy reduction is not about making substantial changes to the architecture or adding lots 
+of new features. The goal is to hold the external behavior of the system constant while 
+improving its internal structure. 
+Entropy reduction is usually scheduled after a major release, roughly every 9 to 12 months 
+for most products. Within these release cycles your team should be refactoring their source 
+code as needed. Entropy reduction is often about handling refactorings that were postponed 
+so that you could release your system or avoided because they were deemed too big or 
+complex. 
+It is important to establish appropriate rules or guidelines when initiating an ER session. 
+The most important is the requirement that no new features or capabilities be added during 
+ER. To help enforce this rule, try to keep product management from becoming involved. 
+Keep ER as a pure development activity. 
+Functional tests, if they exist, of course need to run. Do not ship the product after ER 
+without a full and complete regression test. 
+Teams vary in their willingness to engage in ER. Those that embrace it are easy to manage. Those that enthusiastically embrace it may be trying to use the process to change the 
+architecture. Be wary! Teams that have had their sense of quality and their desire to tend 
+their architecture beaten out of them by poor management may have to be forced to do it ("I 
+know that this ER thing sounds weird, but this is just the way that I do things, and since 
+what we've done in the past isn't producing the results we want we're going to try something 
+new"). 
+Before engaging in ER the team should create and peer-review a plan that details the 
+specific modules and/or functions they're going to improve. This is important because 
+sometimes a team will propose changes that are a bit too big to accomplish in a one to two 
+week period, which is the amount of time I normally allow for an ER session. To help ER 
+run smoothly here are some best practices that have worked well for me. 
+•  Use code tags. Code tags are a way of identifying sections of the source code that 
+should be fixed in a future ER session. I've had teams use "TODO," "REDO," or 
+even "HACK" to alert readers of the source that something should be fixed. 
+Finding the tags is easy. 
+•  Establish a rhythm. The rhythm of ongoing releases is very important to me. 
+Successful teams develop a nice rhythm, working at a good pace during the 
+majority of the development. It's like a brisk walk—sustainable but fun. Near the 
+end, they work as needed, including 80-hour work weeks, to hit the release date. 
+The sprint to the finish. After the release the team recovers. They rest or work on 
+ER (which should not be mentally challenging). 
+•  Time-box the ER activity. One to two weeks works best. I once tried three weeks, 
+but the process was too hard to control—new features were being added. If you 
+need four weeks or more for productive ER, look in the mirror and say, "The 
+architecture is dead." 
+•  Don't ship the result. You could be making changes all over your code base. Just 
+because your automated unit tests pass, you still can't ship without a full regression 
+test. 
+•  Choose your language carefully. I've used the terms "technical debt" and "entropy 
+reduction" to mean the same basic thing. Different people hear these words in 
+different ways, so consider if the phrase "entropy reduction" will work for your 
+team before you use it. If it won't, consider something else, like "technical debt 
+payback," or "architectural improvement." 
+•  Use ER to reinforce other values you deem important. You can use ER to instill a 
+whole host of values, including source code quality, the importance of finishing on 
+time, responsible management ("incur a little technical debt now and you'll get the 
+time to pay it back after the release"). You can associate cultural artifacts with the 
+first ER session, like a "chaos" game or a toy (a symbol). 
+•  Don't commit unless you can deliver. If you promise an ER session, make certain 
+you can deliver. I almost lost all credibility in a turnaround situation when the CEO 
+of my company told me that I couldn't do an ER session because he had promised a 
+new feature to a key customer. It took some stringent negotiation, including a few 
+heated meetings, but in the end we had the session before we attempted to deliver 
+the promised feature. Avoid this pain and make certain you have appropriate senior 
+executive buy-in for ER. 
+Architectural Care and Feeding In addition to architectural maturation and evolution, which are driven by features and the capabilities 
+that support them, the development team must also care for and feed their architecture. An architecture 
+is like a carefully designed garden. Unless you tend it, it will soon become unruly, overgrown with the 
+wasteful vestiges of dead code. Ignore it long enough and you'll find that your only recourse is to 
+make massive—and very costly—changes to correct the neglect. Architectural care and feeding isn't 
+about adding new features or capabilities; it is about keeping the features and capabilities that you've 
+got in good shape. 
+Consider the following care and feeding forces that shape the architecture. Many of them are 
+discussed in greater detail in subsequent chapters. 
+Technological Currency 
+Every complex application interacts with a wide variety of fundamental technologies. Staying current 
+with technological advances as your product evolves ensures that you won't have to engage in 
+expensive redesign. Technological advances are often the key to providing additional benefits to your 
+users. The result? A double win. It doesn't hurt your marketing department either, as the phrase "new 
+and improved" will actually mean something. 
+Technological Debt 
+Developers are constantly struggling to release the system on time while creating appropriate long-
+term solutions. Successful software teams know when and how to compromise on technical issues in 
+order to hit the ship date. More bluntly, successful software teams know when they need a potentially 
+ugly hack to get the system to a shippable state. The problem with hacks is not in the current release 
+(which needed them to ship) but in subsequent releases, when the so-called compromise makes itself 
+known, often exacting a heavy toll to fix it. 
+These compromises are another kind of technical debt, similar to that incurred when you implement a 
+feature without the underlying capability. Part of architectural care and feeding is paying down this 
+debt. 
+Known Bugs 
+Every complex application ships with bugs, which you can think of as pestiferous weeds. Leaving 
+them in your garden, especially when they are big enough to be seen, can take an unnecessary toll on 
+your development staff. Give them some time to fix the bugs they know about and you'll end up with 
+happier developers—and a better architecture. You also foster a cycle of positive improvement, in 
+which every change leaves the system in a better state. 
+License Compliance 
+Complex applications license critical components from a variety of vendors. As described above, as 
+they upgrade their technology you respond in kind to keep pace. Of course, sometimes you may not 
+need their new technology and are better off directing your development efforts elsewhere. Watch out 
+though: Wait too long and you risk falling out of compliance with your component vendors. 
+Remember to review each vendor's upgrade. Know when you must upgrade your architecture to 
+maintain compliance. License compliance is discussed in greater detail in Chapter 5. I invite you to add your own categories for architectural care and feeding. Be careful not to confuse 
+radical changes in feature sets that require similarly radical changes in architectural design with the 
+kinds of changes described above. Scaling a departmental application designed for 100 users to an 
+enterprise application that can handle 1,000 users or converting an application whose business model 
+is based on an annual license to one based on transaction fees is not the kind of architectural change 
+I'm talking about! Such changes require fundamentally new capabilities and substantial modification 
+of the architecture. 
+Principles First, Second, and Third 
+Creating, maturing, evolving, and sustaining an architecture are guided by the design choices made by 
+architects and developers. All choices are not equal. Some are downright trivial and have no bearing 
+on the architecture; others are quite profound. All software developers, and architects in particular, 
+must hone their ability to recognize better design alternatives. This means, of course, that we must 
+have criteria for evaluating design alternatives and that we must apply them as best we can. The 
+following principles for good architectural design have stood the test of time. 
+Encapsulation 
+The architecture is organized around separate and relatively independent pieces that hide internal 
+implementation details from each other. A good example is a telephone billing system. One part of the 
+system, such as the switch, is responsible for creating, managing, and tracking phone calls. Ultimately, 
+detailed transaction data are created for every phone call (who called whom, for how long, and so 
+forth). These data are fed into separate billing systems, which manage the complexities of calculating 
+a precise fee based on the contract between the telephone company and the customer. 
+Within each of these broadly encapsulated systems are other encapsulations that make sense. For 
+example, the billing system is likely to have separate modules for calculating the basic bill, calculating 
+any discounts, calculating appropriate taxes, and so forth. 
+Interfaces 
+The ways that subsystems within a larger design interact are clearly defined. Ideally, these interactions 
+are specified in such a way that they can remain relatively stable over the life of the system. One way 
+to accomplish this is through abstractions over the concrete implementation. Programming to the 
+abstraction allows greater variability as implementation needs change. 
+Consider a program originally designed to write output to a file. Instead of programming directly to 
+the interface provided by a file, program an output mechanism to the abstract interface, which in many 
+languages is referred to as an output stream. This allows the program to direct output to a file stream, 
+the standard output stream, an in-memory string stream, or any other target consistent with this 
+interface, even, and especially, those not yet envisioned by the original developer. Of course, what is 
+most important is defining the initial interface, something that can almost only be done well through 
+experience. 
+Another area in which the principle of interfaces influences system design is the careful isolation of 
+aspects of the system that are likely to experience the greatest amount of change behind stable 
+interfaces. ODBC and related APIs provide an example of this principle in action. By programming to 
+ODBC, a developer insulates the system from a common dimension of change: the specific selection 
+of a database. Using ODBC a developer can switch relatively easily from one SQL-based database to another. Bear in mind that this flexibility comes with its own special cost—you give up the "goodies" 
+that are present in vendor-specific APIs. 
+Loose Coupling 
+Coupling refers to the degree of interconnectedness among different pieces in a system. In general, 
+loosely coupled pieces are easier to understand, test, reuse, and maintain, because they can be isolated 
+from other pieces of the system. Loose coupling also promotes parallelism in the implementation 
+schedule. Note that application of the first two principles aides loose coupling. 
+Appropriate Granularity 
+One of the key challenges associated with loose coupling concerns component granularity. By 
+granularity I mean the level of work performed by a component. Loosely coupled components may be 
+easy to understand, test, reuse, and maintain in isolation, but when they are created with too fine of a 
+granularity, creating solutions using them can be harder because you have to stitch together so many 
+to accomplish a meaningful piece of work. Appropriate granularity is determined by the task(s) 
+associated with the component. 
+High Cohesion 
+Cohesion describes how closely related the activities within a single piece (component) or among a 
+group of pieces are. A highly cohesive component means that its elements strongly relate to each 
+other. We give the highest marks for cohesion to components whose elements contribute to only one 
+task. 
+Parameterization 
+Components can be encapsulated, but this does not mean that they perform their work without some 
+kind of parameterization or instrumentation. The most effective components perform an appropriate 
+amount of work with the right number and kind of parameters that enable their user to adjust their 
+operation. A sophisticated form of parameterization, referred to as "inversion of control," occurs 
+within frameworks and plug-in architectures. This is where one component hands over processing 
+control to another. 
+Deferral 
+Many times the development team is faced with a tough decision that cannot be made with certainty. 
+Sometimes this is because of technical reasons, as when the team is trying to choose a library to 
+perform a specific function and are not certain which vendor can provide the best performance. 
+Sometimes it is because of business reasons, as when the product management team is negotiating 
+with two or more technology providers for the best possible terms. 
+By deferring these decisions as long as possible, the overall development team gives themselves the 
+best chance to make a good choice. While you can't defer a decision forever, you can quarantine its 
+effects by using the principles of good architectural design. 
+Creating Architectural Understanding Let's return to the definitions of software architecture provided earlier. An important criterion for the 
+development team is that they have some way to identify, describe, communicate, and modify their 
+understanding of the architecture, without resorting to the source code. One or more models must exist 
+in order for the team to actually operate at the "big picture" level. There are a variety of models for 
+doing this, and I've had good success with several of them. Recently, I adopted the Rational "4+1" 
+model, which captures several of the most useful models in one convenient approach (see the 
+references for other models you may wish to consider). 
+Based primarily on resolving the needs of key participants in the software process, the Rational 4+1 
+model recommends four primary views of the architecture, as shown in Figure 1-1. Philippe Kruchten, 
+the creator of 4+1, defines these views as follows: 
+•  Logical view. The logical view provides the static snapshot of the relationships that exist 
+among objects or entities in the development of the system. This view may actually have two 
+or more representations, one of the conceptual model and the other of the realization of the 
+model in a database schema. 
+•  Process view. The process view describes the design's concurrency and synchronization 
+aspects. 
+•  Physical view. The physical view describes the mapping of the software onto the hardware, 
+including distribution of processing components created to achieve such goals as high 
+availability, reliability, fault tolerance, and performance. 
+•  Development view. The development view describes the software's static organization in its 
+development environment. 
+Figure 1-1. Rational 4+1 model 
+ 
+Software designers can organize their architectural decisions around the four views. To make the 
+system easier to understand, each view can be described in the context of few key use cases (all of the 
+use cases constitute the "+1" architectural view. In truth, this approach should be referred to as "n+1", because nothing in it restricts the architect to 
+just four views. Indeed, all of the major disciplines for representing software architectures explicitly 
+recognize the need for multiple views for correct architecture modeling. As near as I can tell, no one 
+dogmatically requires that you use exactly three or five views. Instead, they encourage you to 
+understand the communication properties of a given view and then use this view as needed. 
+This shouldn't be surprising, as the concept of multiple models of complex systems is quite common. I 
+have both built and remodeled homes and in the process have learned to carefully read the many 
+models of the home produced by the architect—from the site plan to the electrical plan to the lighting 
+plan to the elevations and to the plumbing plan. The specialized and skilled workers creating a home 
+need all of these models, and to the extent possible I want to make certain that they will result in a 
+home I will like. 
+The value of plans, like the various viewpoints of architecture promoted by Rational and others, is that 
+they provide artifacts of relatively enduring value to the team. More generally, the parts of the 
+architecture whose capture is worthy of your time, energy, and money deal with the relatively stable 
+aspects of the problem, the problem domain, the business model (see Chapter 4), and the idiosyncratic 
+aspects of the technical solution that exist between all of these things. 
+The Team 
+The architectural creation, maturation, and evolution process cannot be separated from the team 
+associated with each release. In this section I will share some thoughts on the interplay between the 
+architecture and the team. A more complete discussion can be found in my book, Journey of the 
+Software Professional [Hohmann, 1996]. 
+It is natural to first consider the initial development team. Remember that, as the creators of the first 
+system, these people are making design choices based primarily on their experience. While subsequent 
+teams must deal with the choices made by this first team, in some way or another, the first team has no 
+such constraints (this is one powerful reason so many developers are drawn to working on new 
+systems). Because of this, any new architecture, even one based on an architectural pattern, will reflect 
+the idiosyncratic experience of its creators. The number of people involved in creating the 
+architecture, and their relationship with each other, will also profoundly affect the initial architecture. 
+Simply put, there is no way to isolate the team from the architecture. 
+Experience has shown that creation of the initial architecture should be by as small a team as possible, 
+to minimize communication overhead and to maximize team cohesion. As subsystems are defined, 
+planned, or retrospectively justified, the team will naturally allocate responsibilities to reflect the skills 
+of its members. Suggestions for the initial team range from as few as three to a maximum of ten. My 
+recommendation is three to five, with one identified as the architect, primarily to keep the team 
+moving (see Chapter 3 for a more complete description of the role of the architect). 
+With the release of a successful initial architecture, the team often grows to accommodate additional 
+requests for features and capabilities. It is natural to grow the team within the initial architecture's 
+boundaries. Perhaps the user interface, which was once handled by one developer, is expanded to need 
+three. Or perhaps the database, which originally could be managed by a single developer, now needs 
+two. In this manner subteams spontaneously emerge in a way that reinforces the initial architecture. 
+The advantage to this model is that the original team member, who is now part of the subteam, can 
+carry over the overall design and share it with new subteam members. The process of growing the team continues until the team and the architecture have stabilized or until 
+some management-induced limit has been reached. Some companies limit the size of any given team 
+to a specific number of people in order to maintain a fluid, open, and collaborative approach to 
+communication. Other companies allow teams to grow as needed to meet the needs of the system. I 
+consulted on one defense department contract in which the development team consisted of more than 
+150 C++ developers, organized into about a dozen subsystems. Although this was a fairly large team, 
+it was extremely effective primarily because it allowed the demands of the problem to dictate its size 
+and structure. 
+The most important thing to remember is that the team and the system architecture are intertwined. 
+They affect, and are affected by, each other. 
+ 
+Chapter Summary 
+•  Software architecture is focused on the big picture. 
+•  The structure of the team and the structure of the system are inevitably intertwined. 
+•  Architecture concerns both technical and nontechnical issues. 
+•  Key reasons why architecture determines success include: 
+- Longevity: The typical architecture will outlast the team that created it. 
+- Stability: Stable architectures provide the foundation for features and profits. 
+- Competitive advantage: Great architectures create sustainable competitive advantage. 
+- Architectural patterns provide excellent places to begin when creating a new architecture. 
+•  Architecture evolves through features and capabilities. A feature defines something that a 
+product does or should do. A capability refers to the underlying architecture's ability to 
+support a related set of features. 
+•  Architectures, like gardens, require care and feeding. 
+•  Be wary of anyone who claims they are an architect after just one release. 
+ 
+Check This 
+•  The dependencies that exist between subsystem components are clearly identified. 
+•  Each person on the team is working on a subsystem that he or she finds personally interesting. 
+•  Each person on the team is working in a way believed by all to improve productivity. 
+•  Our architecture is profitable. 
+•  We know if our current release is focusing on issues of evolution or issues of maturation. 
+•  We understand the degree of technical debt we've incurred in our system. We can identify 
+such debt (e.g., we have placed special comments in our source code identifying areas to fix). 
+•  We are in proper compliance with all in-licensed components (see also Chapter 5). 
+•  The architect has articulated the principles that are driving architectural choices. 
+•  Our team is about the right size to accomplish our objectives—neither too large nor too small. Try This 
+1.  One way to summarize my position on software architecture is that I see software architecture 
+as organic. This position informs a host of management practices, including such things as 
+spending time in each release caring for and feeding the architecture. What is your position on 
+software architecture? How does this position affect your management practices? 
+2.  Here is an exercise that I've found especially helpful when working with troubled 
+development teams, because it helps me identify potential sources of confusion and/or 
+conflict. Ask members of your team to take a plain sheet of paper and draw the architecture of 
+the system. They have to draw it, meaning that they can't just fish out some diagram and print 
+it. The drawing must be done individually, with no talking between team members. When 
+finished, tape each of the drawings to a wall to create an "architecture gallery." What occurs 
+to you, and each member of your team, as you review these diagrams? Do you find 
+congruence? If not, why not? 
+3.  Do you have a visual representation of your architecture posted in an easily viewed space? If 
+not, why not? If yes, when was the last time it was updated? 
+4.  Can you enumerate the capabilities of your current architecture? 
+5.  Check out the definitions of software architecture posted at http://www.sei.cmu.edu/. Which 
+of the posted definitions work best for you? Why? 
+6.  What are the specific artifacts, or views, that you have created to describe your architecture? 
+Why have you created them? 
+Chapter 2. Product Development Primer 
+Many software developers are at a decided disadvantage in creating winning solutions because they 
+don't understand many basic and important concepts in product management. This chapter outlines 
+crucial concepts and processes in product management, including defining the product manager role. 
+If you're comfortable with these basic principles already you may find it sufficient to skim this 
+chapter. If not, you should read it carefully. 
+What Is Product Management? 
+Like software architecture, product management has a variety of definitions. One that I've found 
+useful is as follows: 
+
+
+
+
+
+
+
+
+
+Automatic Forwarding 
+Conversations between technical support and customers can become pretty tense when something 
+goes wrong. Asking your customers to collect and forward log files to your support organization may result in additional frustration: Nontechnical customers may not know where log files are, and they 
+may not know which ones are needed or how to send them. To make things easier for your customer, 
+consider providing facilities to automatically capture and send log data to technical support. You'll not 
+only get better results, you'll get happier customers. 
+Logging Standards and Libraries 
+Logging standards are either platform independent (such as the W3C Extended Log Format or the 
+Common Log Format for Web servers) or platform dependent (such as Windows Event Logs). Basing 
+your log files on these standards enables you and your customers to use a wide range of freely 
+available analysis tools. An alternative is the several logging libraries available, such as log4j for Java. 
+You should roll your own logging facilities, formats, or external viewers only after you've proven that 
+the readily available, and often no-cost tools won't work for you. 
+Be Careful about Repurposing Log Data 
+Users often discover a variety of uses for log files. Unfortunately, these new uses can subtly 
+conflict with a file's original functions, causing any number of problems. In one system I 
+worked on we recorded various user operations for performance monitoring. It was 
+suggested that we could also use them for billing. While it appeared that all of the data were 
+available, this would have been a dangerous choice. Because the logs were simple flat files, 
+they could be easily changed by the user, completely changing their bill. We had to come up 
+with a different tracking mechanism for billing. 
+Postprocessing Log Data 
+Simply creating log data is often insufficient to meet users' needs described at the start of this chapter. 
+Many times additional post-processing tools are needed to make sense of log data. Consider any of the 
+following. 
+•  Compaction services: Log data can quickly consume a lot of disk space. Web servers on high-
+traffic Web sites can easily generate hundreds of megabytes of data per hour. Sophisticated 
+tools, such as compaction services, can substantially reduce the amount of disk space you 
+need. Simpler approaches, such as a rolling log, in which data is maintained only for a 
+specified reason and then replaced, can also keep logs under control. An example of a rolling 
+log might be one in which only the last 60 minutes of data are stored. 
+•  Synchronization tools: Logs created by several different applications may require 
+synchronization to produce a useful result. A synchronization tool can help ensure that logs 
+will be synchronized properly. 
+•  Log viewers: It often makes sense to create tools that view the contents of logs for users. Of 
+course, if you're using system management tools, such as the Windows Event Manager, these 
+tools are handled for you. 
+Logging Services 
+I've found it helpful to think of logging as a service provided to the development team that abstracts 
+the complexity of implementing good logs. The actual implementation of a logging service varies 
+from architecture to architecture, but in most cases it can be some form of Singleton. Implementing 
+the log file as a centralized service has the following advantages. •  Internationalization: Within the source code you can invoke the logging service with an 
+identifier associated with a given log entry, passing in any additional data as necessary. The 
+logging service can use this identifier to look up any internationalization of the log entry and 
+write these data to the log file. 
+•  Unified time ordering: Logging requests in multi-threaded applications can appear to occur 
+out of order because of slight differences in thread execution. A logging service can help 
+make certain that log requests are written to the log file in a sensible manner. In addition, 
+because only one component has generated timestamps, chances are further reduced that log 
+entries will appear out of order. 
+•  Flexible destinations: The logging service can choose the destination(s) of log entries at run-
+time via configuration files. This allows developers to concentrate on what should be logged 
+and allows operations personnel to choose where it should be logged. 
+•  Consolidation across multiple instances or servers: If you're operating in an environment in 
+which multiple instances of your application are running on one or more servers, consider 
+augmenting log file names or contents with additional information that allows you to 
+disambiguate various data. Examples of such data include the process or thread ID and the IP 
+address of the host machine. 
+Chapter Summary 
+•  Logs help provide information or aid activities in the following areas: 
+- Debugging 
+- Error recovery 
+- Performance tuning 
+- Capacity planning 
+- Behavior tracking and auditing 
+- System configuration management 
+- Operational status 
+•  Logs must be constructed from the perspective of their consumers. This often means you 
+should add additional, contextual information to the log file to aid in its use. It also means you 
+should construct a log file so that it can be easily analyzed. 
+•  Assess the operational impact and/or environment of your log files. Make certain you can 
+handle any error situations such as insufficient disk space. 
+Check This 
+•  We have defined the purpose of each log file. 
+•  We have confirmed the utility of each log file with its intended audience (i.e., it contains the 
+right data in the right format). 
+•  We have taken care to remove all developer-specific debugging information from our log 
+files. •  Our log files follow the same guidelines for internationalization developed for other parts of 
+the user interface. 
+•  Our log files follow the same guidelines for portability developed for other parts of the 
+system. 
+•  Our log files are easily parsed. 
+Try This 
+1.  Perform a log file assessment of your current system. What logs does it produce? Why? Who 
+uses these logs? For what purpose? Are these logs secured? If not, do they need to be Are 
+they plain text? If not, why not? 
+2.  How big are your logs? How much data are you generating? 
+3.  Is any data redundantly logged (e.g., a Web server is already logging some data)? 
+4.  Are logs unique to each day? Are they rolling? 
+5.  Open a sample log. Are there any "silly" entries relative to the target audience? An example 
+would be the name of a function and all of its parameters in a log file designed for behavior 
+tracking and analysis. Such an entry isn't useful to the marketect unless a postprocessing tool 
+can convert it into an appropriate entry. 
+Chapter 15. Release Management 
+Release management ensures that the correct artifacts are shipped to the customers wanting or needing 
+them. It does so by identifying, organizing, and controlling these artifacts; assigning them descriptive 
+labels, and integrating these labels into the appropriate back-office systems through SKUs and/or part 
+numbers. 
+Release management is strongly related to configuration management, which is the process of 
+identifying, organizing, and controlling the various components and related artifacts during system 
+creation. Release management is more effective when it is based on well-known configuration 
+management practices. This chapter discusses important topics in release management, including 
+identification, SKUs, serial numbers, and tarchitectural implications. 
+Yes, You Really Need This 
+Properly organized and executed source code and related artifact configuration management are vital 
+to the success of any development, regardless of idiosyncratic system architecture, development 
+methodology, or implementation language. Practically, this means managing change: tracking changes 
+to system artifacts in a coordinated way, communicating these changes to the people who need to 
+know about them, and sometimes even preventing or delaying changes. Fortunately, there are many 
+best practices in configuration management as it relates to workgroup productivity (I list several good 
+books and Web sites in the bibliography). 
+Configuration management extends beyond promoting teamwork. In a component-based system, 
+components usually don't work with all possible versions of other components. (Just ask your QA 
+team—they'll tell you about the ones they've tested, not every possible combination.) It's a lot easier 
+for a customer or technical support to prevent or diagnose problems when components know their 
+prerequisites. In message-passing systems, messages should have version identifiers so that changes in 
+content or processing rules can be managed. You need release management because your customers need it. They need to know which version of a 
+system should be ordered and which is compatible with previous versions, the patches and/or upgrades 
+that are available and which apply to their situation and in what order, and so forth. The issues are 
+complex, both from the standpoint of the underlying technology and because some of the choices have 
+nothing to do with the underlying technology, as I will describe later in this chapter. 
+Establishing a Baseline 
+Practioners of software configuration management have defined a few basic terms that are useful in 
+managing external deliverables. These are presented in Table 15-1. Managing dependencies or 
+prerequisites is central to effective configuration management, as even very simple software often has 
+components that depend on specific versions of other components. 
+Table 15-1. Configuration Management Terms 
+Term  Definition 
+Program Family The total of all versions of all product components. This chapter focuses on the 
+subset available for external distribution. 
+Component/Artifact The smallest discrete entity identified in the system. Each component or artifact 
+distributed to a customer must be uniquely identified and versioned. The tools the 
+development team uses can track components at a much finer level of granularity, 
+even down to each function or method. A well-managed project places more than 
+just the source code under configuration management: Interfaces, test plans, test 
+cases, technical and end-user documentation, MRDs, and even project plans on 
+large, important projects are all candidates. A good rule of thumb is that any 
+independently replaceable component should be uniquely identified. 
+Version A fixed or "frozen" component or other artifact. In software, it is important to 
+maintain versions of source artifacts (e.g., source code) and things that can be 
+derived from them (e.g., object code, API documentation), because we typically 
+don't distribute the source artifact but the derivations. A derived version can be 
+uniquely recreated from the source. You may need to establish both internal 
+version and external version identifiers. 
+Revision A new version of a component or artifact that is intended to supersede the old. 
+Revisions are usually linearly ordered and are often sequentially numbered to 
+reflect this ordering (e.g., as in a sequentially increasing project build number). 
+Variation An alternative implementation of a component or other artifact. An example is a 
+software component designed to perform the same task on different operating 
+platforms that require slightly different implementations. Variations are not 
+sequentially ordered—they are alternatives. 
+Distribution A version created for distribution to a set of customers, usually made up of one or 
+more certified components and/or artifacts. By definition, a product contains a list 
+or configuration of its components. 
+Release A named and versioned collection of components and artifacts that are generally 
+for external distribution to one or more customers and that have been certified. (It 
+is what tarchitects commonly think of as the product, although marketects use a 
+slightly different definition of "product.") A release can be simple or complex and 
+is often recursively structured. Unlike revisions, releases may not be strictly 
+linear, especially in the case of patches to a major system. 
+Of course, the easiest way to manage dependencies is to make certain that the release has the correct 
+version of all of required components. In practice, however, this is often impossible because of licensing agreements and because not every release contains all components. I'll discuss this issue in 
+greater detail later. 
+Release Management 
+Managing releases involves three factors: what you're releasing, who you're targeting, and why they 
+want it. 
+What You're Releasing 
+You may be releasing something as small as a single patch to one component or something as large as 
+the complete product. A full or complete release is of the entire product, usually to be installed on a 
+fresh system or used to upgrade an existing system. A partial, module, update, or fractional release is 
+some subset of product functionality usually designed to extend the capabilities of a base system, such 
+as an optional module. A patch or update release is some subset of the product, that usually precisely 
+replaces one or more existing components in a working installation that have known errors. In general, 
+patch releases should not be used to add new functionality to an existing system. 
+The determination of a full, partial, or patch release can be quite fluid. You might be in the midst of 
+planning a full release with two major milestones when a competitor makes a major announcement 
+about one of their releases. Your plan then changes to preempt your competitor by converting the first 
+milestone into a full release and the second milestone into a partial release. These factors and a host of 
+others strongly influence a marketect's decision on what to release. 
+Full, partial, and patch releases are all subject to the same release processes—however you've defined 
+them. For example, most release processes require the team to do a virus scan before shipping any bits 
+to a customer. 
+Who You're Targeting 
+You may be targeting internal users in an alpha release; external users, in a beta, limited, or general 
+release. A limited, managed, or controlled release has been targeted to a specific set of customers. An 
+example would be a patch release to customers who have a bug on a single hardware platform. A 
+general release is intended for all of your customers. 
+Marketects and development teams often confuse who they're targeting with what they're releasing. 
+"Who you're targeting" is about scope, whereas "what you're releasing" is about size. When a new 
+virus is discovered, anti-virus vendors want to update their virus definition files quickly. What is being 
+released is relatively small in size but large in scope. It might be referred to as a generally available 
+update on the Web site of the anti-virus vendor. 
+I've found that many companies have trouble targeting their releases, mostly because they don't know 
+enough about their customers. Let's say that you support Solaris and Windows XP and find a 
+relatively easily fixed bug in the XP release. Unless you've kept track of which customers have 
+Windows XP, you'll have to send out the announcement to all of them. It would be far more efficient, 
+and far more compelling, if the announcement was only going to the people who should get the patch. 
+Why They Want It Customer motivation can range from actively working against accepting and installing the release 
+("we can't install that patch in our production system ten days before the holiday shopping season—it's 
+too risky") to overwhelming your Web site because the demand is so great ("We must have it now"). 
+Most releases fall into a middle ground, and usually the marketect has to use carrots (new features, 
+improved performance, reduced bugs, greater reliability) and sticks (lack of support for discontinued 
+platforms or releases, license agreement compliance) as a way of motivating the customer to accept 
+and implement the release. 
+Choosing the right combination of carrots and sticks is one of the marketect's most complex tasks. For 
+example, a new release is often made backward-compatible with a previous release. But should it be 
+made backward-compatible with software that was released three years ago? Probably not, as the 
+aggregate costs of such compatibility, including regression testing, operation verification, and 
+associated support, can be enormous. Of course, losing important, major customers who may not be 
+interested in upgrading their software to a new release can be just as risky, which makes keeping the 
+installed base as current as possible a major job of the marketect. No matter how you keep track of 
+these things, you're going to have "version skippers" and you're going to have to define the upgrade 
+path from whatever version they've got to your current version, regardless of how painful the 
+individual steps in the upgrade are. 
+Release Identification 
+Unlike component identification, which may or may not be publicly exposed, release identification 
+concerns the manner in which a release is identified to a customer. The full identification consists of 
+the product name (see Chapter 9) and versioning information that captures the appropriate product 
+revisions and variations. The goal is to get all of the necessary information in as few names and 
+identifiers as possible, which helps improve overall efficiency. 
+Over the years, I've learned that there is no single, universal algorithm for creating release identifiers. 
+Moreover, you need slightly different algorithms for what you're releasing and who you're targeting. 
+With these caveats in mind, here are algorithms that have worked well for me and proven to be 
+considerably more useful than the seemingly arbitrary identification schemes used by many vendors. 
+Full or Complete Releases 
+Regardless of who you're targeting, full releases are best identified using 
+•  The name of the product 
+•  The four-digit tuple of x.y.z.build to capture revision information 
+•  An arbitrary number of variation identifiers pursuant to the needs of the product 
+The parts of the four-digit tuple x.y.z.build, are defined in Table 15-2. Note that this scheme takes 
+advantage of the natural linear ordering of revisions. 
+It's usually best for marketing to promote only the major and minor identifiers to customers. In other 
+words, when customers are told they'll be receiving version 3.4 of the product, they might really be 
+receiving version 3.4.2.129 or 3.4.7.13. The primary motivation for this is the expense of trying to 
+manage the full tuple in promotional materials, license agreements, sales collateral, and so forth. You 
+don't want to incur the expense of reprinting all these materials because of a maintenance release. By definition, a full release distributed to an existing customer is a complete upgrade. You'll find that 
+customer satisfaction is improved when you only modify components that absolutely must be 
+modified, especially in the case of a dot release. 
+Some people recommend including the target of the distribution in this scheme by inserting an 
+appropriate identifier. For example, you might have A for an alpha/internal release, RC for a release 
+candidate sent to QA, MR for a managed release, and GA for a general release, all inserted to the right 
+of the y or z designator ("SuperDraw 4.5A"). I prefer not to do this because it makes the overall 
+naming convention unnecessarily complex and because it mixes what is being released with who is 
+being targeted. I've also had situations in which a release originally intended only as an alpha was later 
+distributed to a trusted external customer. This change in scope invalidated the release identifier and 
+thereby limited its usefulness. 
+Table 15-2. Release Tuple Definitions 
+Tuple Definition 
+x A major release. One motivation to increment the major release number is when there is some 
+extensive, customer-visible architectural or feature change. These changes, in turn, must be 
+defined and agreed upon by the marketect. Consider a system that manages very large 
+databases. In such a system you might define a major release as any release that 
+•  Changed the structure of these databases because of the rather severe impact upgrading 
+the system had on your customers; 
+•  Modified the published API in a way that makes it incompatible with previous 
+versions; 
+•  Removed functionality (yes, a good marketect will remove unwanted functionality); or,
+•  Added substantial new functionality, such as support for a new operating system. 
+In systems that rely on multiple components, incrementing x on one might mean incrementing x 
+on the other. An example is a client server system, in which clients at release x.*.* are 
+guaranteed to work with servers x.*.* and x–1.*.*, but not servers x+1.*.*. 
+x can also be incremented for purely business reasons. For example, a customer's support 
+contract might state that that their software will be supported for 18 months after the next major 
+release. By incrementing x, you put the customer on a forced path to upgrade (one of the sticks I 
+mentioned earlier). In one company I worked at, we designated our first release of a major 
+enterprise-class system as 5.0, to both build on a legacy of previous releases of a related product 
+and to help us avoid the concerns that many IT administrators have regarding a 1.0 release of 
+the software. 
+Most marketects should establish strong goals to distribute major releases to all customers as 
+quickly as possible. If it is a major release, treat it as such. 
+y A minor release, usually associated with desirable features or other improvements. The minor 
+release number is incremented when marketing deems it justified by the set of features in the 
+release. The decision to increment x or y can seem arbitrary. The marketect should define the 
+events that trigger any increments. (It is easier to define the trigger associated with x than with 
+y.). 
+z A maintenance or "dot" release. Maintenance releases are made available to all customers 
+affected by the contents of the release. Any given dot release should be compatible with other 
+dot releases that share the same major and minor release numbers. 
+build The specific build number associated with the product. For compiled languages, it is easy to 
+compute the build number. For interpreted languages, the build number can be created by a Table 15-2. Release Tuple Definitions 
+Tuple Definition 
+simple program that labels a fully checked-in code base. 
+The build number is rarely presented to the customer unless needed for precise identification 
+purposes, usually in relation to technical support. The build number may be optional if the main 
+component is an aggregate of subcomponents. Suppose a product comprises two subproducts: 
+one, release 1.3.2.29, the other release 3.6.2.19. It might be acceptable to identify your release 
+as 3.4.0.0 or anything else that indicates the composition.  
+Partial Releases 
+Determining the identification scheme for a partial release mostly depends on marketing factors. If the 
+component or artifact can be purchased separately or as an option in the main distribution, it is usually 
+best to have it evolve under its own x.y.z.build identification scheme according to the guidelines given 
+in the previous section. Naming consistency makes it easy for customers to build a mental model of 
+the various optional components. It also makes it easier to construct an overall list of available 
+products. 
+Partial releases that are not sold separately, such as updated anti-virus files, and not expected to be 
+revised in the future, don't have the same complexities associated with a naming convention that 
+revisions do. In this case, partial releases simply need a unique identifier. For most products a 
+specially defined name and a date are usually sufficient. 
+A key issue in creating partial releases is managing the dependencies between their components or 
+functionality and those of the main product. These dependencies may be captured through rules that 
+govern release identifiers or through the design of the architecture, as described later in this chapter. 
+As an example of the rules approach, you might require that every release of a component at version 
+x.y be compatible with every version of the main system designated x.yn, where yn is greater than or 
+equal to y. Thus, "SuperDraw Enhanced Rendering Tool 4.5" would be compatible with "SuperDraw 
+4.5," "SuperDraw 4.6," and so forth. Rules won't do you or your customers any good if you fail to 
+follow them: If SuperDraw were to go through a major upgrade and be released as "SuperDraw 5.0," 
+you would have to modify the release identifier of the enhanced rendering tool to match, even if the 
+code didn't change. While this may seem like busy work, it will save you and your customers a lot of 
+pain (and license agreements may require this). 
+Patch Releases 
+Recall that a patch release is some subset of the product that usually precisely replaces one or more 
+existing components in a working installation that has known errors. Identifying patch releases 
+represents special challenges. Everyone involved usually has a strong opinion on how to identify a 
+patch release, everyone thinks that their way is the best way, and everyone feels like arguing over each 
+point for an endless amount of time! Many poor choices can be made when identifying patch releases. 
+This section provides guidance on easily creating a sensible patch release identification scheme. Patch 
+releases are always associated with something in use, which means that they deal with a customer in a 
+potentially stressful situation. Moreover, the team that creates the patch may not be the team that 
+created the system and so may not be familiar with previous release identification schemes. 
+Because patches are highly dependent on an existing product, it is usually convenient to refer to that 
+product in the patch identifier. At the same time, you don't want to adopt the x.y.z.build numbering 
+convention because patches are rarely revised unless a serious mistake was made in the QA or release process. More important, the linear ordering associated with revisions implies that everything included 
+in the previous release is included in the next highest release unless specifically stated otherwise. 
+Thus, we expect that version 4.5 of our favorite compiler includes and extends the functionality in 
+versions 4.2, 4.3, and 4.4. This is not necessarily true with patch releases. A given patch may or may 
+not include the modifications of a previous patch. Patches are not cumulative unless designed as such. 
+Patches are often associated with emotionally charged events or bugs that take on a life of their own. 
+Since some aspect of these events or bugs usually becomes associated with the patch, I recommend 
+leveraging this by referring to patches by name and possibly by date. The net result is patch names of 
+the form product—x.y{.z{.build}}—patch name. Note that the maintenance release and build number 
+are optional in this naming convention, which in practice allows customers to easily identify the patch 
+they need. The external, customer-facing name might be something like "SuperDraw 4.5 Repaginate 
+Long Documents patch," which means that this patch can be applied to any SuperDraw 4.5.* system. 
+If the patch is focused on a specific dot release, you refer to it in this scheme as "SuperDraw 4.5.2 
+Repaginate Long Documents patch." 
+Especially complex products may call out those areas affected by the patch, primarily because it 
+makes it easier for customers to identify which patches they want to download from a self-service 
+technical support Web site. Let's say that you have a client/server system with an optional workflow 
+module. You might augment the naming convention to be product—x.y{.z{.build}}—product area—
+patch name, as in "SuperDraw 4.5 Repaginate Long Documents Server patch" or "SuperDraw 4.5 E-
+mail Client Notification Workflow patch." 
+Patches that are dependent on other patches can call out those dependencies via documentation. If a 
+large number of patches are associated with a product, I recommend collecting them all in a 
+maintenance release. If this isn't possible, another approach is a service pack that does the same thing. 
+Make certain your documentation is clear on whether or not service packs are cumulative. 
+Note that not everyone agrees with naming patches. Imagine that your patch has an error (yes, it 
+happens). This means that it needs to be versioned, and versions are best handled through numbering. 
+You might version the patch but not include the version identifier unless it's absolutely needed. Thus, 
+your patch would be in the form product—x.y{.z{.build}}—patch name.patch version. If you have a 
+problem with the first version of "SuperDraw 4.5 Repaginate Long Documents Server patch," you can 
+release a second version called "SuperDraw 4.5 Repaginate Long Documents Server patch, version 2." 
+However you choose to resolve this, do not impose an arbitrary limit on the naming, because you'll 
+eventually run into a situation where the limit is exceeded. 
+Very sophisticated architectures are smart enough to package patches together, tracking what is 
+installed and not installed. Some companies do this in their software and allow automatic updates 
+(think of anti-virus software as a simple example). Other companies (such as ManageSoft) do this on 
+behalf of corporate administrators, taking snapshots of the software on various desktops. 
+Let's assume that you want to extend your architecture to include patch management. If so, it will need 
+to be smart enough to understand what is and is not installed. It will need some mechanism for 
+communicating with a remote server, preferably over the Internet, to obtain updates. It should be able 
+to detect if prerequisites are available and if not install them. It needs to be able to determine that an 
+automatic update was installed correctly—it didn't break the system or any settings—and roll back the 
+change if something is wrong. These are very complex requirements, which is why I don't generally 
+recommend this approach. Bug Fixes Don't Have to Be Free 
+When bug fixes are not included as part of the license, the marketect must decide when to 
+fix them. Sometimes the right choice is to fix them as a way to build good will with a 
+customer. Sometimes the right choice is to charge for the fix, which can also build good will 
+with a customer. 
+I once had a customer with an extremely urgent request to fix a bug on an unsupported 
+product. Specifically, they had a perpetual license to use the product, but the version they 
+had installed was no longer supported. In a very real sense, they brought this problem on 
+themselves because they had failed to upgrade their system over the course of several 
+releases. When they contacted us to fix the bug, I originally said "No, if they want the bug 
+fix they can upgrade." 
+As the saying goes, "Money talks …," and my original No turned to Yes once I was able to 
+negotiate a substantial fee for the fix. My team hustled and fixed the bug in record time 
+(even I was a bit surprised at how quick they were!). The customer was so impressed with 
+this service that they subsequently executed the major upgrades they had delayed far too 
+long. 
+Variations 
+Variations, like patches, don't have monotonically increasing revision numbers. Naming them and 
+inserting or appending the name into the overall identification string in a way that makes sense is the 
+best way to handle them. For example, suppose that our SuperDraw client/server system supports 
+Linux and Solaris. The binaries for these operating systems are functionally equivalent but physically 
+different. Thus, you might call a full release of version 4.5 "SuperDraw 4.5 for Linux" and 
+"SuperDraw 4.5 for Solaris." If you require a patch to this release for Linux, you call it the 
+"SuperDraw 4.5 e-mail Notification Workflow Patch for Linux." 
+Things become more complex when the system or component supports multiple variations, usually 
+associated with portability, internationalization, or performance characteristics. Suppose that 
+SuperDraw supports six languages and has two performance options: single- (default) and multiple-
+CPU. Here are some of the ways this might be handled. 
+•  "SuperDraw 4.5, German Language for Linux" for a full release of the single-CPU version 
+•  "SuperDraw 4.5, German Language for Linux, multi-CPU," for a full release of the multi-
+CPU version 
+•  "SuperDraw 4.5 email Notification Workflow Patch, German language, for Linux" 
+As a general rule, the more options, the more complex the name. I consider this a good thing because 
+customers don't deal with these names every day and they often have trouble clearly remembering 
+what they want or need. Verbosity ensures that they are getting the right artifact. 
+SKUs and Serial Numbers 
+Except in the very smallest of companies, products shipped to customers must be identified for a 
+variety of purposes, including inventory tracking and sales reporting. Most companies rely on SKUs 
+to manage these functions in the various corporate systems that help them perform. Software sold in high volumes may also be serialized for unique identification, tracking, and some limited copy 
+protection. 
+SKU Management 
+The changing nature of releases and variations, and their potentially long and descriptive names, puts 
+a great deal of pressure on other corporate systems that must account for sales, shipments, upgrades, 
+or other customer activities. The easiest way to manage this is to establish SKUs (stock keeping units). 
+These are unique release identifiers that enable one release to be distinguished from all others within 
+corporate tracking systems. As an identifier, a SKU is independent of the various textual descriptions 
+of releases that I've described in previous sections. 
+SKUs are used in a variety of circumstances. One example is orders for specific releases. Another is 
+prices, which are not part of the release identifier or product name and must be obtained from a 
+pricing database or system; the primary key to find the price is the SKU. Inventory levels for physical 
+goods are also usually managed through SKUs. Inventory for electronic software distribution doesn't 
+make sense, but since chances are good that you'll do some physical and electronic distribution, SKUs 
+have a place in your inventory management system. 
+Teams often struggle with when to assign a SKU to a release. SKUs introduce many additional tasks 
+into the overall release process, so it is understandable that marketects avoid them unless absolutely 
+necessary. The following guidelines have worked well for me. 
+•  Always assign a SKU to any release that can be sold, regardless of its scope (patch, partial, or 
+full) and target (controlled or general). 
+•  Try to assign a SKU to any general release (a release targeted to all customers), regardless of 
+scope (patch, partial, or full). This makes for convenient tracking of what is globally 
+available. 
+•  Always assign a SKU to any release if your primary customer-tracking and distribution 
+systems are keyed to SKUs and you can track who gets the release. This allows you to know 
+who has what release. 
+•  Avoid SKUs for releases simply posted on self-service Web sites, such as technical support or 
+free-download sites. You're not selling these, so there is no need to create SKUs in your 
+financial systems, and you're not keeping track of who gets them (although perhaps you 
+should). 
+Of course, these recommendations should be followed only if they fit with corporate policy. If your 
+company mandates that all releases, no matter what, have SKUs, then by all means, create them. 
+You can't mandate the format of a SKU, because it is usually under the control of corporate IT, 
+fulfillment, accounting, and the like. You can, however, tell these groups how many SKUs you need 
+and work with them on a format that will enable you to accomplish your objectives. 
+Returning to our example, SuperDraw is one of four product lines at SuperSoft. Other parts of the 
+company, such as accounting and order fulfillment, don't care about the product names or version 
+identifiers. Accounting just wants to track sales results by product line and division, while order 
+fulfillment just wants to make certain that the right deliverable is shipped to the customer. What they 
+care about is the SKU, which is their way of tracking these products. For various reporting reasons, 
+accounting has defined a SKU format—NNNN-MMMM-#, where NNNN is a four-character division 
+identifier, MMMM is a four-character product identifier, and # is a unique product number of arbitrary 
+length—and has defined the division identifiers. Together product management and accounting have defined the product identifiers; product management alone is responsible for assigning unique product 
+numbers. Product management might define the SKUs as shown in Table 15-3. 
+Table 15-3 contains three key logical components: the SKU, the external name, and the fully qualified 
+release identifier. The last component should be extended as needed by product management to ensure 
+that all aspects of the product are properly managed. For example, you may want to include the 
+location of the build in your internal network (e.g., \\buildmaster\SuperDraw\4\5\1{build} if you're 
+building every day). 
+Table 15-3. Example: Assigning SKUs to Products 
+SKU  External Name  Internal Identification 
+DRAW-SERV-
+0001 
+SuperDraw 4.5, German Language for 
+Linux 
+SuperDraw 4.5.1.21, German Language for 
+Linux 
+DRAW-SERV-
+0002 
+SuperDraw 4.5, Russian Language for 
+Linux 
+SuperDraw 4.5.1.20, Russian Language for 
+Linux 
+DRAW-SERV-
+0003 
+SuperDraw 4.5, English Language for 
+Linux 
+SuperDraw 4.5.1.20, English Language for 
+Linux 
+Backend systems often need an estimate of how many SKUs you might need. The number of SKUs 
+associated with a product can be estimated by adding the following: 
+•  The number of full releases multiplied by the number of full release variations (remember to 
+count each kind of variation, such as language, operating system, or platform, separately). For 
+example, if SuperDraw 4.5 runs on 3 operating systems and supports five languages, this 
+produces 1*3*5 = 15 SKUs for each release. You may have to adjust these numbers as 
+releases often add or subtract variations or variation classes). 
+•  The number of partial releases intended to receive a SKU multipled by the number of partial 
+release variations. 
+•  The number of optional components multiplied by the number of optional component 
+variations. 
+•  Any other SKUs that are generated for other reasons. 
+As you can see, SKUs can quickly grow to hundreds or thousands of identifiers—plan accordingly. 
+Serial Numbers, Registration, and Activation 
+A SKU is an identification code that allows a class of products to be tracked for inventory purposes. It 
+can't identify an individual product sold to an individual customer. For that you need a serial number, 
+a unique identifier that does distinguish individual products. Registration is how a customer, who has 
+purchased the unique product, makes themselves known to the vendor who sold it, with the serial 
+number acting as a key that binds the customer to the company. Software activation is a kind of forced 
+registration in which various product features, and possibly even the entire product, are inaccessible 
+until the customer completes an approved registration process. Software activation is closely related to 
+license enforcement (see Chapter 4) as one of the goals of software activation is to ensure that only 
+properly licensed software is allowed to function. 
+In the physical world, serial numbers range from the lot numbers and associated codes printed on 
+vitamin bottles to the identification tag affixed to my PDA. As a digital good, software cannot easily 
+be identified with a unique serial number. Unlike physical goods, digital goods are often trivially 
+copied, and embedding a serial number within the object code at production often represents an 
+expensive change to internal processes. Moreover, unless you've adopted one of the license enforcement schemes described in Chapter 4 to prevent copying or modification of your software, 
+serial numbers can be easily changed. 
+Although serial numbers can be a bother, there are real benefits to using them. By associating a serial 
+number with a product and asking the user to register it with your company, you can collect vital 
+demographic statistics and tailor your marketing campaigns. Consider that once your customers have 
+registered their serial number you can use it to notify them of product upgrades, bug fixes, and product 
+and service offers. Registered customers may be willing to provide you with additional valuable 
+information, including their preferences for new features or their willingness to participate in beta 
+programs. 
+Properly registered serial numbers can help reduce piracy. In the past, when serial numbers were 
+printed on CD sleeves, the sheer size of programs and the difficulty in duplicating CDs were 
+deterrents to piracy, but technological advancements have made such deterrents ineffective, and 
+software developers are continually looking for new ones. 
+Software activation is effective at deterring piracy while increasing the number of users that register 
+their software. Activation processes vary according to need or by software activation vendor. 
+Generally they work something like this. 
+1.  The software publisher prepares the software for distribution. A serial number may be 
+assigned at this time, although serial numbers can be generated dynamically instead. The 
+software is protected in some way to prevent execution until it has been given the proper 
+activation code. 
+2.  The customer purchasing the software, a consumer or an enterprise, installs the software, 
+binding it to the machine. The binding process takes a unique "fingerprint" of the machine, 
+such as the processor ID, motherboard serial number, or MAC address of the primary 
+Ethernet card. This information is usually stored in a secure location to help prevent illegal 
+copying of the software. 
+3.  To use the software, the purchaser contacts the publisher with the serial number or the 
+machine fingerprint, or some combination of the two, and requests an activation code. This 
+process may also force the entity to register with the publisher. The publisher should provide 
+several channels for acquiring the activation code, such as the Internet, e-mail, phone, and 
+fax. During this process, data from the target machine are stored in various corporate 
+databases and the software associated with that serial number is marked as activated. 
+Registering the serial number ensures that it is uniquely identifying a product, while storing 
+the machine fingerprint and binding the software to the machine helps prevent piracy. 
+4.  The activation code is given to the software and stored in a secure location. Depending on the 
+technology that was chosen, it or the license allows the software to be used but only on the 
+designated machine. 
+Adopting a software activation process is a strategic decision. Most companies don't have the 
+resources to create effective activation systems, but several vendors provide them. Offerings must be 
+evaluated relative to existing and planned backend systems and workflows. Managing the backend 
+systems is likely to be a much bigger job than choosing a software activation vendor. 
+ 
+Release Management Influences on Tarchitecture Knowing what the release management requirements are can improve your tarchitecture by 
+encouraging choices that make release management easier. Consider the following. 
+•  Recreate everything. The most important rule of release management is that everything 
+shipped to the customer must be either derived (such as building an executable from source 
+code) or created (such as printing a manual from a Framemaker file). This can create some 
+funny behavior among dedicated workers, especially if they don't trust that IS is backing up 
+their machines. I once had a director who copied every aspect of the source tree, along with 
+all of the tools necessary to build the product, to multiple machines as well as burning 
+multiple CDs, simply because she didn't trust our IT department to properly backup our 
+source code machines. I'm glad she did this, because our IT department failed us more than 
+once—and her backups saved the day. 
+•  Use existing solutions and infrastructure wherever possible. Chances are good that some 
+aspects of your deployment architecture can handle any number of issues associated with 
+technical configuration management. Microsoft, for example, has an extensive (some would 
+say nightmarish) infrastructure for managing components packed as DLLs and their 
+associated dependencies. Learn these infrastructures and leverage them when you can. 
+•  Put version information in your tarchitecture as early as possible. Once you've identified the 
+need for version information, put it in without delay. Retrofitting version information is 
+expensive and painful. 
+•  Components should know their dependencies. In component-based systems, your components 
+should know which versions of other components they can work with. This is easiest with a 
+data-driven approach, perhaps through a special dependency-checking component that 
+processes dependency information stored in a configuration file—for example, when a client 
+is directed at a server that can't support it, instead of failing outright, the client can inform the 
+user of the problem and ideally provide him with some information on how to rectify the 
+situation. 
+•  Messages and protocols should be versioned. Messages sent between components should be 
+versioned so that changes in content or processing rules can be managed. 
+•  Databases and tables within them should have versions. One way to do this is to create a 
+system table that contains the version identifier of each table in the schema. It can be 
+extended to provide release information for specific columns within tables as needed by your 
+application. Versions facilitate upgrading schemas in the field, detecting changes made to 
+released schemas, and ensuring that components that read from and/or write to the database 
+do this properly. 
+•  Any component that can be updated should be versioned. Versioning makes certain that your 
+technical support organization can quickly assess whether a component should be updated in 
+response to a customer problem. It also simplifies the installation of partial and patch releases. 
+•  Internal components should understand the versions of the external components they require. 
+If your system requires Solaris 2.8, check for it. If you know your system has problems 
+running on Windows XP, check for that. 
+•  There must be a way of obtaining versions of all versioned artifacts. This enables technical 
+support to help the customer and is the foundation for customer self-service and automatic 
+software updating. 
+•  Beware the testing and support implications of patches. Creating more components, and 
+providing support and/or backward compatibility for previous releases, can increase testing 
+and verification complexity at an exponential rate. Just because you can provide backward 
+compatibility support, don't think that you must. 
+Chapter Summary •  Release management ensures that the correct artifacts are shipped to the customers who want 
+or need them. It is based on the following concepts: 
+- Program families 
+- Components and artifacts 
+- Versions—a fixed or frozen component or other artifact 
+- Revision—a new version intended to supersede the old 
+- Variation—an alternative implementation 
+- Distribution—a set version created for distribution to a set of customers 
+- Release—a named distribution 
+•  Release management involves three factors: what you're releasing, who you're targeting, and 
+customer motivation. 
+•  Releases must be identified. The four-digit tuple x.y.z.build is a proven way to create release 
+identifiers. 
+•  SKUs are used to manage releases within back-office systems such as accounting and order 
+fulfillment. 
+Check This 
+•  For each release, we have defined what we're releasing and who we're targeting. We have also 
+estimated the customer's motivation for obtaining the release. 
+•  We have a defined system for identifying releases. 
+•  Each release that needs a SKU has one. 
+•  Each release that needs a serial number has one. 
+Try This 
+1.  What corporate systems track releases and SKUs? How do these systems inter-operate? 
+2.  Does your system require serial numbers? Should it? 
+3.  Should you require your customers to register their software? Why or why not? Should you 
+require your customers to activate their software? Why or why not? 
+Chapter 16. Security 
+with Ron Lunde 
+System Architect 
+Aladdin Knowledge Systems, Inc. 
+Most of what you're trying to accomplish with your tarchitecture is making things easy. You want 
+your products and systems to be easy for your users—to install, to configure, to use, and to learn. You 
+want them to be easy for your developers—to understand, to change, to extend, and to repurpose. If 
+problems occur, you want them to be easy to detect, diagnose, and fix. And, you want them to be easy for the ecosystem that inevitably develops around a winning solution—easy for solution providers to 
+extend, easy for system integrators to integrate, and easy for operations to install, maintain, and extend 
+as necessary. 
+The main difference with software security is that it's not about making things easy. It's about making 
+things hard. You want your software to be hard to steal, hard to misuse, and hard to fool. You want to 
+make certain that no one is cheating your business model or using your software against the terms of 
+the license agreement. 
+Security is an essential part of a winning solution, yet it is often overlooked until the system is nearing 
+completion. Just like an effective error- or exception-handling scheme, security must be taken into 
+consideration during the design of tarchitecture. It isn't icing on a cake; it's eggs in the batter, and if it 
+isn't in there at the start, you can't go back and add it when you take it out of the oven and serve it to 
+your customers. 
+In this chapter we'll explore the ways in which software and the data that it manages can be misused 
+and some of the techniques and technologies used to prevent misuse. 
+Keep in mind that security is a huge topic. Many excellent books have been written about security, 
+and on specific aspects of security, such as cryptography. You should find this chapter useful even if 
+you've read those books, since our focus is on how to create a winning solution using the technologies 
+available to you rather than on the details of the technologies themselves. 
+Viruses, Hackers, and Pirates 
+There are four main types of security you need to consider. 
+•  Digital identity management. Most enterprise systems provide services to either humans or 
+other systems in fulfillment of a larger transaction. If you're building an enterprise 
+application, some of the things you're going to be doing include defining different capabilities 
+for different users and the roles that they assume, formally tracking their actions, and 
+verifying that a given user is who he claims to be. 
+•  Transaction security. Communication between the various parts of your system must be 
+secure, so that those parts cannot be replaced by unauthorized components, and so that 
+messages cannot be intercepted, altered, or hijacked. Hackers can exploit holes in transaction 
+security or simply prevent your transactions using denial-of-service attacks. You'll also need 
+to protect against these. 
+•  Software security. You have to protect your software from viruses or hackers. Nobody should 
+be able to alter your software except those you specifically authorize, and nobody should be 
+able to exploit holes in your security to gain unauthorized access to one of your customers' 
+systems. Software security protects your work from viruses, software pirates, and some 
+hacking. One aspect of software security, software piracy (the illegal copying of software), 
+was covered in Chapter 4. 
+•  Information security. The databases and information repositories used by your system need to 
+be secured against unauthorized access or use. In many circumstances, the real target isn't the 
+software that manages the Web site but the detailed transaction history, including such things 
+as credit card numbers, that the software has stored in a database. Unless you take explicit 
+steps to prevent unauthorized access, these data may be at risk. 
+Each type of security requires its own tools and techniques, which we'll cover in greater detail later in 
+this chapter. Some techniques, such as maintaining confidentiality through encryption, can achieve higher security in more than one area. For example, to maintain confidentiality of messages or 
+database records you can encrypt them. 
+Sometimes you may pay very little attention to one type of security and focus all of your attention 
+elsewhere. At other times, you're going to have to explicitly account for all types of security. While 
+information security may not be a strong requirement for a family financial management application 
+running on a personal computer, it is likely to be of paramount importance to an enterprise application 
+that maintains payroll records. While digital identity management isn't needed for a game that you 
+play by yourself, it is critical when playing a multiplayer game for a monthly fee over the Internet! 
+Getting clear on elements of security that are important for your application is key to creating a 
+winning solution. 
+Managing Risk 
+The first thing most security experts will tell you is that there is no such thing as a secure system. You 
+can increase the level of security, but you can never be 100 percent sure that your system is safe from 
+all types of attack. For example, firewalls and intrusion detection tools are commonly used to prevent 
+unauthorized access, but hackers are not the only concern. Disgruntled employees and others with 
+physical access to your computers can create serious problems while completely bypassing the 
+firewalls that are meant to keep hackers out. In fact, the risk management consulting firm Kroll 
+estimates that 80% of all attacks happen from inside the firewall (you did perform a full background 
+check of the temporary secretary before you let him borrow your corporate ID, didn't you?). Just as it 
+is physically impossible to cool matter to absolute zero, it is also exponentially harder to make your 
+system more secure. And you'll never be able to say that you're absolutely secure: You can't prevent 
+every element of crazy human behavior. 
+You can't eliminate risk, but you can manage it. Usually, it isn't difficult to make hacking your system 
+prohibitively expensive so that no real hacker will have the time or money to succeed. Consider 
+software piracy. When large programs were first distributed on CD-ROM, piracy wasn't that bad. You 
+couldn't copy a CD-ROM, and no one wanted to download 100Mb on a 56Kb modem. Those times 
+are long gone, and copying software onto a variety of media or downloading it on high-speed Internet 
+connections has led to a piracy explosion. 
+Just like anything else, it's possible to go too far with security. Storing all of your data in an encrypted 
+format might make your system more secure, but will certainly prevent reasonable integrations with 
+other systems. Security is an area where the marketect and the tarchitect must work together. The 
+marketect must lead the assessments of risk by determining what harm will befall the customer, the 
+company, or other entities if one or more elements of security are compromised. The tarchitect must 
+inform the marketect of ways to handle these problems, as well as make her own assessment of risk 
+(not too many marketects are going to worry about transaction security). Once the perceived risks and 
+mechanisms to handle them are known, the marketect and the tarchitect can make the tough calls on 
+how to deal with potential problems. 
+See No Evil, Speak No Evil 
+How big a problem is security? After all, it's fairly rare to hear of a large corporation having a major 
+security problem. Maybe security is not a wise investment, and everyone would be better off putting 
+their time and efforts in improving other aspects of the system. 
+According to the seventh annual joint FBI/Computer Security Institute (CSI) Computer Crime and 
+Security Survey, 75% of the companies surveyed do not report security problems to law enforcement agencies because of negative publicity or fear of giving their competitors an advantage as a result. The 
+same report showed that of the 500 corporations surveyed 40% reported denial-of-service attacks, 
+20% reported theft of proprietary information, 12% reported financial fraud, and 8% reported 
+sabotage. In fact, security lapses result in hundreds of millions of dollars lost annually. The time to 
+start considering security is right at the start, when you're designing the tarchitecture. 
+If you're working in an environment that doesn't worry about security, start shouting. 
+Digital Identity Management 
+This section explores the most important building blocks of digital identity management, including 
+authorization and authentication. 
+Authorization—Defining Who Can Do What 
+Like many elements of security, there are static and dynamic aspects to authorization. The static 
+aspect deals with defining which entities get rights to perform an operation, access part of the system, 
+or access part of the database. The most common approach is to have a trusted user, such as the 
+system administrator, define user rights by individual or by class. For example, if you're designing a 
+medical records system, you might permit a patient to access all of his own history but not any data 
+about anyone else. 
+The dynamic aspect of authorization concerns checks made to ensure that a given user or entity has 
+the necessary rights to perform the operation or to access a certain part of the system or database. In 
+sophisticated systems these checks need to happen at runtime because the authorization rules may be 
+based on a variety of runtime parameters, including the role the user has assumed while accessing the 
+system, her prior behavior, the state of the system, or even the behavior of others using the system at 
+the same time. 
+There are a number of technologies and rights management systems that you can use, or tie in to, to 
+provide authorization and access control. Lightweight Directory Access Protocol (LDAP) is a 
+common one. Another is role based access control (RBAC), a generic name for technologies that 
+provide authorization based upon user role. If you need to provide file system authorization, ACLs 
+(access control lists) may be all you need. It's a good idea to isolate the systems you use for 
+authorization by wrapping them with your own authorization layer. This way you can swap out one 
+type for another as the requirements of the system change over time. 
+Authentication—Proof of Identity 
+Authentication is the process a system uses to ensure that an entity is who or what it claims to be. This 
+can be important as the precursor to authorization, or it may be required to simply engage in a trusted 
+transaction. The most appropriate authentication technology depends on whether you have a closed or 
+an open system and whether or not you require third-party certification of identity. 
+Closed Systems 
+In closed systems, there is little or no need for an independent third party to certify an identity. The 
+system itself, by its structure and/or operation, provides for acceptable levels of authentication. Many 
+enterprise applications that grant specific rights to authenticated users are closed. Once the system 
+administrator has registered a user ID with the system (either directly or through a directory) and provided it with the necessary system access (e.g., a password and a token), that user is now 
+recognized as an authenticated, certified user whenever she successfully logs in to the system. 
+Authentication in closed systems is usually based on one or more of the following: 
+•  Something you know— for example, a password 
+•  Something you have— for example, a smart card or a computer that has been uniquely 
+identified, either through a machine fingerprint or an actual unique identifier stored in the 
+processor or the motherboard 
+•  Something you are (biometric)— for example, a thumb print or a voice print 
+A combination of any two is normally considered strong authentication. Extremely secure 
+environments may require all three, or multiple applications of each. 
+Of course, the most common, and certainly most insecure, authentication mechanism by far is a 
+simple password, which is usually easily guessed. When system administrators mandate secure 
+passwords, users often make the system even less secure by writing theirs down on a scrap of paper or 
+allowing their favorite Web browser to save them for easy reference. Don't be lulled into a false sense 
+of security because your system requires a password! 
+From a tarchitecture perspective, we recommend abstracting the approach you use for authentication. 
+Many systems start with a simple password system and evolve through use or customer demand to 
+require something stronger. 
+Open Systems 
+Unlike closed systems, open systems require an independent third party to authenticate a user. 
+Examples of open systems include a secure e-mail between two parties, and secure communication 
+links between applications on the Web. In this case we need some kind of certification by a third party 
+that the communicating entities are who they claim to be. 
+We've faced the problems of open systems before, and we've solved them in similar ways. In the 18th 
+century, a gentleman scientist who wanted to visit a member of the Royal Society he hadn't met, to 
+study in his library, for example, brought a letter of introduction from a colleague known to both to 
+show that he could be trusted. If the host wanted to be extra sure that his visitor was who he claimed 
+to be, he would compare the signature of the letter with the signature on correspondence from the 
+mutual colleague, in order to make sure that the letter hadn't been forged. We do the same thing today, 
+except that we now use certificate authorities and digital certificates instead of venerable gentlemen 
+and parchment and ink. These certificates and the trusted third party provide the necessary levels of 
+authentication for open transactions. 
+The idea is that you prove who you are to a trusted third party, who gives you a digital certificate 
+signed with their private key. Anyone can use the trusted third party's public key to verify the 
+certificate, and since they trust the signer and the signer is saying that you are who you claim to be, 
+they can trust you. This hierarchy of trust can extend in a certificate chain—each certificate signed by 
+an agency that vouches for it, until it reaches the top; the certificate authority. 
+Certificate authorities support certificate revocation, which means that if you lose your private key or 
+someone up the certificate chain has their security compromised, the certificate corresponding to the 
+lost key can be revoked. Then you get another certificate, and everything continues as usual—except 
+that anyone presenting the revoked certificate will not be authenticated. The problem with certificate revocation is that sometimes you have to be able to talk to the certificate 
+authority in real time to make sure that a certificate you want to authenticate has not been revoked, 
+and for isolated subnets or disconnected applications this isn't possible. Also, if you run your own 
+certificate authority, you must ensure that your system will work 24 hours a day, 7 days a week. 
+For this reason, you should carefully consider whether your system needs revocable authentication. If 
+you combine certificate-based authentication with other information, it may not be necessary. For 
+example, in one system we know of, the server checked the IP address of the caller as well as the 
+caller's certificate. Even if the client's certificate and private key were stolen, the server would log and 
+disallow the transaction if the originating IP address was incorrect. 
+There are several challenges associated with certificate-based authentication. Let's start with the first 
+step, proving who you are to the trusted third party. Some certificate authorities have a very poor 
+record of verifying these claims, and several multi-million dollar lawsuits have been filed over 
+inappropriate verification procedures. In addition, some certificate authorities have hurt themselves 
+through deceptive marketing practices. Simply put, how can you trust a certificate authority who 
+deceives customers? There is no undisputed world-wide leader in certificate management. There are 
+several for-profit, not-for-profit, quasi-governmental, and governmental certificate authorities, all of 
+which hinder the search for global solutions. 
+In addition to these technical and operational challenges is the challenge of complexity exposed to 
+average users who may wish to use, or who are forced to use, digital certificates. The usability 
+associated with acquiring, managing, and using certificates is abysmal. Until it improves, the use of 
+certificates will continue to remain relatively low. 
+Hybrid Systems 
+Your application may have aspects of both an open and a closed system. Consider corporate e-mail. It 
+is closed, in that a user can probably be acceptably authenticated with the same user ID and password 
+that gave him access to the corporate network when he first logged in. When receiving an e-mail from 
+another internal user, he can be fairly confident that the person who purportedly sent the mail did send 
+it. 
+The system is open, in that this user may need to send and receive secure e-mails to and from external 
+entities. Suppose this same user receives a distressing e-mail from his outside attorney. It would be 
+good if there was a way to certify the identity of the sender. Hybrid systems will increase as we find 
+ways to use Web services and open our business processes to trusted and semitrusted partners. 
+Transaction Security 
+Transaction security is of utmost importance in a client/server application or a Web service. Its 
+objective is to support auditability, integrity, confidentiality, and accountability. It is likely that you're 
+going to employ authentication and authorization as discussed in the previous section in combination 
+with these four security techniques. 
+Auditability—Proof of Activity 
+An auditable system requires authentication and behavior tracking. Together, these enable the system 
+to generate credible reports of activity that can be used in a variety of ways. Consider financial 
+applications that use proof of activity to spot suspicious behavior. For example, a velocity check will 
+spot a sudden higher-than-expected transaction volume coming from the same source, which may be an indication of fraud. Often, audit data is copied to an offsite location managed by a trusted third 
+party, so that it can't be tampered with to remove evidence of transactions. 
+Three motivations dominate the creation of auditable systems. Reactive motivations include the need 
+to respond to government or industry regulations or guidelines. Proactive motivations include the 
+ability to create one or more unique features based on auditable data. Discovery motivations include 
+the desire to analyze data over time in the hope of discovering interesting trends. Each of these are 
+related to the other. A marketect may require that certain parts of the system be auditable to meet a 
+key government regulation, but do so in a way that provides a significant edge over his competitors 
+and provides interesting data for long-term trend analysis. 
+Integrity—Preventing Tampering and Alteration of Data 
+A digest function (also known as a one-way hash) takes a block of data and returns a small byte 
+sequence that represents it. Good digest functions are very random, so that any change to the original 
+data results in a different digest value and so that it is very difficult to find a different block of data 
+that has the same value. Algorithms such as SHA1 and MD5 are well-known digest functions, and 
+they've been exposed to public scrutiny to make sure they meet the above requirements. 
+Digests are normally encrypted with a private key, to create a digital signature. Anyone with the 
+public key can decrypt them running the digest algorithm on the block of data to produce a new digest. 
+If the digests match, the source data has not been altered. The reason we don't simply encrypt the data 
+itself with the private key is that private key encryption is expensive and would take far too long for 
+large blocks of data. The digest algorithm is very fast and produces a small result that is easy to 
+encrypt. The signature for a block of data need not be attached to the data or even stored with it. 
+Generally speaking, integrity is easy to provide—the code that implements the algorithms used is 
+readily available, and much of it is open source—so there's little excuse not to use it if there's a chance 
+it will be needed. Integrity is often correlated with auditability, as a way of proving that the record of 
+system behavior has not changed. 
+Confidentiality—Keeping Data Away from Those Not Entitled to It 
+Encryption also comes to the rescue, when you want to make sure that nobody can intercept your 
+messages or the data stored in your system. Consider the difference between a log file that tracks 
+system activity for billing and a message sent between two systems or a record that contains a credit 
+card. In the case of a log file, you may only need to implement an integrity mechanism to prove that it 
+was not altered. In the case of the credit card, you not only need to prevent a devious person from 
+altering a message or record that contains the number—you also need to prevent him from reading or 
+accessing it in the first place! 
+The most common approach to encrypting data, and one used by systems such as Secure Sockets 
+Layer (SSL), is a two-step process. The first step relies on symmetric key encryption, which is very 
+fast. The sender of the message generates a symmetric key and uses it with an algorithm like RC4 to 
+encrypt the data. In the second step the sender encrypts the symmetric key used in the first step with 
+the public key of the receiver. Public key encryption is much slower than symmetric encryption, but 
+the data being encrypted is so small that it happens very quickly. The sender then sends both the 
+encrypted data and the encrypted key to the receiver. The receiver decrypts the key using his private 
+key and then decrypts the data. This process is a good balance of speed and cryptographic strength. Since SSL is very widespread, we 
+recommend its use whenever possible. We also expect that SSL implementers will adopt even stronger 
+cryptographic algorithms, such as Rijndael instead of RC4. Using the standard means that you get its 
+benefits as it improves (you also get the drawbacks if it's cracked, but, although this is possible, we're 
+comfortable in recommending this standard). 
+Accountability—Holding People Responsible for Their Actions 
+One of the objectives of transaction security is to provide a mechanism for non-repudiation. That 
+means that if you send a message to me, I can later prove that only you could have sent it. 
+Public/private key operations alone permit nonrepudiation, but any operation that relies on 
+public/private key operations will supply that capability. Read that sentence again, slowly. Suppose, 
+for example, that a user logs into a multiuser system using a two-factor authorization scheme (such as 
+a smart card with a password). Even though you have authorized this user, you may not be able to 
+hold her accountable for her actions—unless your system requires strong authentication. 
+Strong accountability requires strong authentication—if all you need to send a message is a smart card 
+containing a digital certificate, someone could steal your card and use it. On the other hand, if you 
+need to enter a password as well, the chance that someone else can send the message decreases. 
+Digital signatures are used along with strong authentication to provide strong accountability. Nobody 
+without your private key can send a message signed by it since all they have is your public key. That 
+means that by saving a digitally signed message a service can later prove that you sent it. 
+Software Security 
+Some of the issues associated with software security were raised in Chapter 4 in the discussion of how 
+license managers enforce the terms and conditions of business and licensing models. In this section 
+we'll cover the topic more thoroughly. 
+Software Security Techniques 
+The first thing most software developers think of when it comes to software security is preventing 
+piracy. This is a good thing, because no matter which reports you read, piracy is a multi-billion dollar 
+problem. Several techniques have emerged for making software more secure, each a bit more 
+complicated and a bit more effective at deterring thieves. 
+Serial Numbers and Activations 
+Recall from Chapter 15 that a serial number is a unique identifier that distinguishes individual 
+products, and that through activation you can bind a legal copy of the software to a specific machine. 
+A more advanced technique uses a digitally signed license with software, so that an application or a 
+service will not run unless a valid license with a valid signature is present. 
+Most people aren't hackers, and most people don't frequent hacker pages on the Internet. Most 
+illegally copied software is passed on by friends and relatives, who may have few qualms about 
+passing along a serial number or a license as well. Serial numbers, software activations, and digitally 
+signed licenses all cut down on casual copying—after all, a serial number can be traced to its official 
+owner if it's posted on the Internet or otherwise gets away. Hackers attack these schemes in a number of ways. The most damaging attack is reverse-engineering 
+the serial number generation algorithm and writing their own. That opens the door for actual software 
+piracy—the selling of illegal copies. 
+Digitally signed licenses are much better—the private key needed to sign the licenses will not be 
+available, so the hacker must either modify the program to bypass software security or replace the 
+embedded public key with one for which the pirate has a private key. That way, the pirate can 
+generate his own licenses. 
+Protecting the Validation Code 
+All of the schemes we've discussed thus far are based on embedding one or more checks in your code 
+that confirm the presence of a valid license. A typical code fragment that does this might look like the 
+this: 
+if (!LicenseIsValid(licenseFileName))  
+{ 
+    ComplainAndExit(); 
+} 
+Surprisingly, it's often trivial for a hacker or a software pirate to bypass this kind of security check, 
+even if you have a highly secure, digitally signed license and even if your license validation routine is 
+difficult to reverse-engineer. All the software hacker has to do is use a disassembler, find the code 
+corresponding to the if statement, and insert a jump around the test or replace the test with no-ops. 
+That means that you can't just use a Boolean return to check your license—you have to be a lot trickier 
+to foil a hacker. 
+Instead of just asking a simplistic yes/no question, more secure approaches actually store something 
+that your application needs to run as encrypted data within the signed license. This might be a critical 
+function, such as an initialization routine or a function that registers subcomponents within the 
+application. The application then verifies the license and decrypts this data, which in turn controls the 
+behavior of the software. You then have to protect the software that performs the license validation 
+and decryption, which is when you realize that the professional license managers described in Chapter 
+4 are actually pretty hard to write! 
+Hardware Binding 
+Hardware binding, as discussed in Chapter 15, is the process of associating or binding information 
+about the software with some kind of hardware. There are two basic choices for hardware binding, 
+each with its own advantages and disadvantages. 
+In machine binding, the software is bound to the machine it runs on. The binding process works by 
+taking a hardware fingerprint of the machine. If too many parameters change, the software stops 
+working. The chief advantage of machine binding is its low cost. The chief disadvantage is that it may 
+prevent users from easily upgrading their machines or moving software to a new machine. It is also 
+the easiest kind of binding for a cracker to crack. 
+In hardware binding, the software is bound to a physical device connected to a serial or USB port, 
+commonly referred to as a dongle. The device must be connected for the software to work. The chief 
+advantage of a dongle is portability and strength of security. The chief disadvantage is cost and 
+management. Software Security Costs/Benefits 
+An important thing to remember about piracy prevention is this: Many, if not most, of the people who 
+run illegal copies would not have bought the software if they hadn't gotten it free. You don't want to 
+make life difficult for your legitimate users, possibly driving them away, in a futile attempt to prevent 
+people from using your software who would never actually buy it. 
+Software security can add significantly to the cost of developing, maintaining, and supporting your 
+software. Obfuscation is often helpful in foiling attempts by hackers, but it can make your programs 
+extremely difficult to debug. Even running a certificate server as a certificate authority can add 
+tremendous cost, given its 24/7 operational requirements. 
+This doesn't mean that we endorse software piracy. Casually copying an application from your work 
+computer to your home computer, purchasing one copy of an operating system and installing it on 
+more than one computer without the necessary license rights, and posting an application on a Web site 
+or making it available via a P2P network are all illegal activities. The best way to address software 
+piracy is to weigh the risks of implementing strong anti-piracy tactics against the potential for lost 
+revenue. If you're selling enterprise-class software or providing your software as a service via an xSP, 
+piracy is not likely to be a problem, partly because of the intense integration and support requirements 
+and partly because of the ease with which piracy can be determined through nontechnical means. If 
+your software requires regular updates of code or data to be useful, piracy may not be that much of a 
+problem. 
+However, if you're losing, or even suspect you're losing, thousands or millions of dollars because of 
+software piracy, do something about it. Explore a new business model, such as a rental. Implement a 
+lightweight protection mechanism and see who breaks it. If you find your software freely available on 
+the hacker Web sites or Usenet lists, (use Google groups to view alt.2600.*), implement stronger 
+forms of protection. You may even be justified in using a hardware-based software protection device. 
+Information Security 
+Many of the same techniques used for transaction security can be adapted for information security, 
+although they are far less effective. 
+To understand information security, ask yourself the question, What if someone had open access to all 
+my files and databases? If your data is encrypted, and you've stored the encryption keys in the 
+database or in a file in the same system, the hacker has the keys to decrypt it. If your data is signed, 
+the hacker can alter it since he has the keys needed to sign it again after it is altered. You can, and 
+should, store these things outside the database or file system managed by the application, but this is an 
+operations nightmare. In addition, other systems frequently want to manipulate these data, and 
+encryption makes them useless for this purpose. 
+As a result, the primary approach to information security is not to protect the information once it's 
+been accessed, but to prevent access to it in the first place. The main tools for doing this are network 
+tools such as firewalls and intrusion detection software and user management tools such as password 
+policy checkers. 
+Password security is an interesting area in itself. Many companies never store passwords in a 
+database—instead, they run a digest algorithm over them and store only the digests. That means that 
+no hacker can steal a whole database full of passwords, since the passwords themselves aren't there. 
+Unfortunately, it also means that if a user loses a password the best you can do is generate a new one—you can't derive it from the result of the digest function any better than a hacker can. Many Web 
+sites operate that way, especially the ones that ask you for a special question they can use to 
+authenticate you should you lose your password and require a new one. 
+Another technique is to store passwords on an internal system not reachable from the Internet but 
+reachable only from a server on a local file system. If a hacker is going to get passwords, he must first 
+hack into the outer system and then use that as a way to get at the inner system. Intrusion detection 
+systems can often foil such attempts. 
+One of the common things that we think of in information security is theft. In the digital world, 
+information theft boils down to illegally copying bits from one computer to another. This may not be 
+your most serious threat. Semantic attacks, in which hackers alter data stored in a database to gain an 
+advantage, are on the increase. For some reason, these attacks seem less harmful, perhaps because 
+Hollywood has created too many cute movies in which the nerdy hacker changes his grades. When 
+that nerdy hacker is changing bank accounts, altering credit histories, or changing voting records, 
+things aren't so funny. 
+Information security should guide your system architecture, but don't attempt to write your own 
+tools—there are many excellent ones already available for that. 
+Secret Algorithms or Secret Keys? 
+The techniques for achieving security are usually based on a mathematically complex algorithm itself 
+in the public domain or whose underlying logic is in the public domain. This may not matter to you—
+unless you're the one picking the algorithm! In fact, choosing an algorithm can be so daunting that you 
+might not want to do it at all 
+You might think that a secret algorithm would be the ultimate in security. After all, one of the best 
+kept secrets of World War II was the Enigma machine, which the Germans used to encrypt and 
+decrypt information. It was only after an Enigma machine was captured intact that the Allies were 
+finally able to start decoding messages. This is why you shouldn't use a secret algorithm. Generally, 
+"security through obscurity" is one of the weakest forms of security available as your secret algorithm 
+can be found, reverse-engineered, or leaked. Given the tremendous ongoing improvements in raw 
+computing power, no algorithm is safe from a brute force cracking attempt. A better choice than a 
+secret algorithm is any of the excellent publicly available algorithms. Public algorithms are under 
+continuous scrutiny. In fact, many mathematicians are hoping to make a name for themselves by 
+finding a cracking method that doesn't require brute force (i.e., try every key). 
+Smart security managers avoid any product or service that uses a secret security algorithm, because it 
+provides no guarantees. On the other hand, secret keys are used all the time and nobody has any issue 
+with them. 
+It can be tempting to come up with your own encryption algorithm, but it's pointless—even if your 
+algorithm is significantly better than others, nobody is going to spend time and money to verify that. 
+Use standard algorithms and secret keys—until quantum computers are readily available, you'll be 
+perfectly safe. 
+Back Doors 
+Another temptation is to put in back doors in your code so that a customer service representative (for 
+example) can get at secure data, even if the customer has lost a password or a certificate. With just the little extra effort it takes to put in a carefully controlled back door, you look like a shining hero, saving 
+the customer from her own foolishness. 
+That's possibly the case. On the other hand, back doors are often poorly implemented and can give 
+way to easy hacks. The result is a lot of wasted time and effort on security. 
+To illustrate this, we'll use the 100th Window Problem. Let's say your company has a large building 
+with 100 windows that are all open, and you rush around locking them all before you leave for the 
+day. Unfortunately, you actually lock only 99 windows, having overlooked one. Even if you have 
+excellent locks and burglar alarms on all the locked windows, a thief can slip in the 100th window and 
+make off with all your corporate goods. The more windows you add, the harder it is to make sure that 
+everything is secure. 
+Generally speaking, there's no point in securing less than 100 percent of the relevant portion of your 
+system. If you're going to do it at all, you must be committed to securing everything. It's better to offer 
+your customers secure offsite escrow of passwords and keys than it is to build in back doors. That 
+way, if they don't take you up on your service and they lose their password or certificate, they can only 
+blame themselves. 
+Also, you're not saying, "By the way, our software is really secure, but we can break the security if 
+you need us to." You're saying "We'll try to help you avoid costly mistakes, but our software is so 
+secure that even we can't break the security." This is a better technical message and a much better 
+marketing message. 
+Customer Support Shouldn't Sneak in through 
+the Back Door 
+One customer of our enterprise-class software system was having trouble managing their 
+database. Customer support was having trouble diagnosing the problem because our 
+customer was unable to run the necessary SQL commands to diagnose the problem. They 
+just didn't have the necessary skill. 
+One of my developers created a very clever solution. He wrote a program that could send an 
+arbitrary SQL to another program installed at the customer's site. This program would apply 
+the query to our customer's database and return the results to technical support. Once 
+installed, it would periodically check for any commands, roughly every few minutes. 
+We sent this program to our customer. They installed it, and a short time later the customer 
+support team resolved the problem. In fact, the solution was so well admired by both 
+customer support and the development team that they lobbied hard to put this into the next 
+release. I said, "No." The risk of creating an inappropriate command and sending it to an 
+unsuspecting customer was simply too great. Even when intentions are good, you have to 
+guard against back doors. 
+—Luke 
+Security and Marketecture The marketing implications of choosing appropriate levels of security are far-reaching. Companies get 
+hacked and, along with their customers, suffer real losses. In fact, in certain domains security can be a 
+significant perceived competitive advantage (just ask Sun's marketing department to tell you about the 
+security of Windows). 
+Areas of Interaction 
+Here are some of the areas in which security most directly interacts with marketecture. 
+Authentication, Business Models, and Operations 
+Two key areas in which strong two-factor authentication can have a significant impact are your 
+business model and your operations model. Business models based on named users should consider 
+strong authentication; when users share user IDs or passwords you lose money. xSP operations 
+personnel, such as an xSP system or network administrator, often have tremendous access to sensitive 
+data. To ensure that you're creating an environment your customers can trust, make certain they know 
+that all activities on their systems are protected through strong, two- or three-factor authentication. 
+Regulatory Impact 
+Applications in many domains are either regulated by specific standards or required to adhere to them 
+(such as the U.S. Federal Information Processing Standards, or FIPS, for many kinds of applications). 
+Clearly, you have to know the standards. Of course, you can exceed a standard's minimum legal 
+requirements, which means that you may be subject to technology export regulations. 
+Industry Growth 
+One of the major reasons for the success of the Internet is its open standards, such as TCP/IP, HTTP, 
+and SMTP. Over the next several years the security industry is going to see a proliferation of 
+standards. By proactively adhering to key standards, some related to the Internet, some not, you're 
+going to give your solution a better chance at being adopted by customers, primarily enterprises, who 
+are beginning to demand standards-based security approaches. Note that many security related 
+standards are already available, such as X.509. 
+Trust 
+While compliance with regulatory requirements may be required, it may not give your application a 
+true competitive advantage, as your competitors are also subject to these requirements. Beyond 
+compliance, which can be thought of as the minimum necessary to be seen as competent, lies trust: the 
+confidence your customers have in your character and integrity and in the ongoing quality of the 
+relationship you've established with them. 
+You've got a competitive advantage when your customers can entrust their data to you, secure in the 
+knowledge that you won't allow inappropriate access or disclosure. You've got a competitive 
+advantage when system administrators can establish and provision user rights in such a way that 
+sensitive corporate information is made available only to those individuals who should have such 
+access. You've got a competitive advantage when your application seamlessly and usably integrates 
+with digital certificate infrastructures in such a way that users can rely on them without becoming 
+mired in incomprehensible technical jargon. All of these, and more, are elements of trust, which is an elusive but extraordinarily powerful element 
+of your corporate brand. When you've got your customer's trust, you have a powerful competitive 
+edge. Approaching security with care and building a strong, secure solution, only enhances that trust. 
+Dispute Resolution 
+Disputes are common in business, and software systems are often involved in or even cause them. 
+Security techniques such as integrity and accountability help ensure that disputes are resolved in a 
+timely manner. Examining your business model, licensing model, and technology in-license 
+agreements can provide you with additional ideas on how security techniques can help in dispute 
+resolution. For example, providing digest functions on log file entries can prevent fighting among 
+technical support teams ("No, it's your bug, and we can prove it—here's our log file!"). Ask your legal 
+team for help in identifying areas in which security technologies can avoid problems. 
+When You Have to Prove Your Point 
+I teach a variety of seminars and classes, and it is always interesting to hear how various 
+parts of a winning solution affect a company. In one class, a student worked for a company 
+that created automated drug dispensing units. She related a story about how the company 
+was involved in a lawsuit that they eventually won. 
+The lawsuit was initiated by the family of a man who was killed because of a drug 
+overdose. The family sued the doctor, who in turn sued the company that made the drug 
+dispensing unit. The key issue in the case was who was at fault: The doctor, who claimed he 
+input the right dosage level but that a faulty unit dispensed too much, or the company, who 
+claimed that its unit performed flawlessly and that the doctor input a lethal dose. 
+The verdict was decided in favor of the company. The proof lay in a close examination of 
+the secured, auditable log files generated by the unit. In constructing the unit the company 
+had foreseen this circumstance, and had consulted with their legal team to make certain they 
+were building a legally defensible log file. 
+—Luke 
+Chapter Summary 
+•  An overall security plan for your application must take into account appropriate risk factors. 
+•  There are four main types of security: 
+- Digital identity management 
+- Transaction security 
+- Software security 
+- Information security 
+•  The primary tools and techniques associated with digital identity management include - Authorization—defining who can do what. 
+- Authentication—proof of identity. Authentication approaches vary tremendously based on 
+whether you're dealing with an open or a closed system. 
+•  The primary tools and techniques associated with transaction security include 
+- Auditability—proof of activity 
+- Integrity—preventing data tampering and alteration 
+- Confidentiality—keeping data away from those not entitled to it 
+- Accountability—holding people responsible for their actions 
+•  The primary tools and techniques associated with software security include 
+- Preventing software piracy and enforcing license compliance (see also Chapters 4 and 15) 
+- Binding the software to a machine or a hardware token 
+- The primary tools and techniques associated with information security are the same used for 
+transaction security, but are far less effective. The main technique is to make certain that the 
+environment in which the data are placed is properly secured. 
+•  Don't invent your own security algorithm. Chances are it will get cracked. Use a publicly 
+available algorithm with a well-formed key. 
+•  Never put in a back door. 
+•  Use security to your advantage. The ultimate brand element is trust, and security can help you 
+get it. 
+Check This 
+•  The accompanying table provides you with a way to check the various kinds of security 
+discussed in this chapter. How do you fare? 
+Type of Security  Assessment 
+Digital identity management 
+How much security is needed? 
+Why do you think you need it? 
+How have you addressed this need? 
+  
+Transaction security 
+How much security is needed? 
+  Type of Security  Assessment 
+Why do you think you need it? 
+How have you addressed this need? 
+Software security 
+How much security is needed? 
+Why do you think you need it? 
+How have you addressed this need? 
+  
+Information security 
+How much security is needed? 
+Why do you think you need it? 
+How have you addressed this need? 
+  
+Try This 
+1.  Imagine who might attempt to defeat the security of your software. Is it a software pirate? An 
+information thief? A temporary worker for whom no background check was performed? A 
+competitor after company secrets? A vandal? Write a one- or two-sentence biography of each. 
+One at a time imagine that you are them. How would you attack your software? 
+2.  Look for mention of your software and your competitor's software in the hacker Usenet 
+groups. Are there serial number generators, or cracks, available? Are people asking for them? 
+3.  Ask yourself what is the worst that can happen. Imagine the worst-case scenarios. Try to put a 
+dollar value on the damage that can be done, and try to estimate the likelihood that the worst 
+case will come to pass. If there's a high likelihood of very expensive damage, it's time to 
+increase your security efforts. 
+4.  Using at least five typical installations of your software, create a picture of how your 
+customers secure your system. How do they manage access to your system? Can you help 
+your customers improve security? How are other elements of your system managed? Even if 
+your application is secure, there may be other routes to your data through third-party tools, 
+and hackers can exploit them. 
+5.  How secure are the components you've licensed? 
+About Ron Lunde 
+Ron Lunde is an amateur orchid grower, a humorist, and an inventor of strange and 
+typically useless things, who is currently employed as a system architect for Aladdin 
+Knowledge Systems. He has 19 years of software development experience as a software 
+architect, a software manager, or a senior engineer in electronic software distribution and 
+license management, digital video editing, source-level debuggers for in-circuit emulation, 
+and automatic ASIC and circuit board test generation. He has also consulted in many other 
+areas. 
+Appendix A. Release Checklist A simple checklist, such as the one here, can help you make certain that you're not overlooking any 
+important items associated with the product release. Feel free to add or remove items, or to phrase the 
+questions differently, as required for your environment. 
+Tracking Information 
+• Product: <insert name> 
+• Version: <x.y.z build> 
+• FCS Date: <FCS = first customer shipment> 
+Engineering/Development 
+•  Are version strings updated with the final version information? 
+•  Is all debugging and test code removed from the software? 
+•  Are all seeded defects removed from the software? 
+Quality Assurance 
+•  Is the final disposition and/or resolution of all defects complete? (No bugs with a status of 
+open, unassigned, fixed but not yet verified, or nondeferred analyze) 
+•  Is the appropriate testing on the final build complete? (Full regression, customer-specified, 
+smoke, etc.) 
+•  Is a program install from the release media onto a clean target machine complete? (CD-ROM, 
+Web site, etc.) 
+•  Is the program successfully installable (Files, registry updates, etc.)? 
+•  Is a program uninstall from the target machine complete? 
+•  If appropriate, is an upgrade install complete? 
+•  Are the final help files included? 
+•  Are the final read-me files included? 
+•  Do all migration scripts pass? 
+•  Have all supported platforms been tested and verified? 
+ 
+Technical Publications 
+•  Release notes 
+•  In-line help in products—documented in Readme, Release Note, and Quickstart 
+•  Updated training materials reviewed by the tarchitect 
+Core Product Management 
+•  Press release 
+•  E-mail campaign to existing customers 
+•  Sales training 
+•  Pricing 
+•  Launch plan 
+•  Sales collateral (white papers, glossies, Web site) Knowledge Transfer—Professional Services 
+•  Can the customer install, upgrade, and integrate the system? 
+•  How long will it take to install, upgrade, and/or integrate the system? 
+•  Do any integrations need to be redone for the installation to work? 
+•  Are all training materials current with the release? 
+Knowledge Transfer—Sales and the Channel 
+•  Can your sales team articulate the benefits of the new release to their existing customers? 
+•  Can your sales team explain the advantages of the new product to new customers? 
+•  Do they understand the complete business model, including any changes to it from the 
+previous release (such as price changes, promotional discounts, and so forth)? 
+•  Can they explain the product in the context of the overall set of solutions offered by the 
+company. 
+Knowledge Transfer—Technical Support 
+•  Is technical support ready to support the product? 
+Release Activities 
+•  Is a final list of the files in the released product available? 
+•  Are the date and time stamps on the released files synchronized? 
+•  Is the final (gold) distribution media available? 
+•  Is a virus scan of the distribution media complete? 
+•  Is a final verification of the correct files on the distribution media complete? 
+•  Is a backup of the build development environment under change control? 
+•  Is the Web site updated? 
+Appendix B. A Pattern Language for Strategic Product 
+Management 
+This appendix introduces a pattern language for strategic product management (see Table B-1). What 
+is unique about the patterns is that they help the marketect and the tarchitect to bridge any gap 
+between their respective disciplines. 
+Table B-1. Strategic Product Management Patterns 
+Problem  Solution  Pattern 
+How do you segment your 
+market? 
+Create a visual representation of the market(s) 
+you're targeting. 
+Market Map 
+What is the right frame of 
+reference for time in your 
+problem domain? 
+Identify the events and rhythms of your 
+market/market segments. 
+Market 
+Events/Market 
+Rhythms 
+How do you ensure that the right 
+features and benefits are being 
+created for your target 
+market(s)? 
+Create a map of the proposed features and their 
+benefits. Tie these to the market(s) you're 
+targeting. 
+Feature/Benefit 
+Map Table B-1. Strategic Product Management Patterns 
+Problem  Solution  Pattern 
+How do you manage the 
+evolution of your technical 
+architecture? 
+Create a roadmap of known technology trends. 
+Include specific and well-known changes you 
+want to make to your architecture so that 
+everyone can plan for them. 
+Tarchitecture 
+Roadmap 
+Applying The Patterns 
+Figure B-1 captures the relationship between the patterns as they are applied. The order shown is one 
+that has worked for me. Like most diagrams that suggest an ordering, the figure fails to show the 
+dynamic way these maps were built. In most cases, I recommend starting with a Market Map, 
+primarily because there is so much confusion among product development teams regarding the target 
+market. However, if you're working in a mature market, or if your marketing communication 
+department already has a precise calendar, you may find that starting with the market events and 
+market rhythms pattern is the best way to begin. 
+Figure B-1. Applying the pattern 
+ The most important point is that instead of arguing which pattern should be first, you should simply 
+pick one to get started. This is because the patterns are part of a system. Like all complex systems, this 
+one is characterized by feedback loops, shown as a dotted line in the figure. It is almost guaranteed 
+that the application of any given pattern will slightly modify the earlier application of another one. 
+Instead of focusing your efforts on making a "single" diagram correct, try starting by identifying one 
+market segment—just about any will do—and then add some market events or features. Try to 
+increase your comfort that the data you need to make sound decisions will emerge, provided you keep 
+iterating over the results. 
+Discontinuous events, such as a competitor releasing a new version faster than expected, a new 
+conference forming around a new industry, or the introduction or maturation of an exciting 
+technology, are likely to motivate a series of coordinated changes in all of these diagrams. For 
+example, in applications that rely on voice technology, the maturation of Voice XML or SALT first 
+captured on the tarchitecture map may cause upward ripples in all of the other maps. You might be 
+able to reach a new market with an awareness of these new technologies, or you might be able to 
+provide some "killer feature" by adding new support for these standards. 
+ 
+Capturing and Sharing the Result 
+I've found that the best way to capture the result of applying these patterns is through a series of large 
+charts located in a publicly accessible dedicated space. A stylized, condensed example of such a 
+display is shown in Figure B-2. The large question mark represents what happens when marketing 
+identifies an unmet need requiring a technology or capability. The final row of the grid is the addition 
+of the real schedule, or a schedule that has been communicated to customers and salespeople perhaps 
+through the product roadmap. Placing the real schedule along the bottom of the diagram ensures that 
+everything is being considered pragmatically. Not shown in this example are market events/market 
+rhythms. These should be added in your application of these patterns. 
+Figure B-2. Sharing the results 
+ Market Map 
+Context 
+You have an idea for a new product and you're trying to understand its potential. You have an existing 
+product and you want to make certain that you're marketing it in the most effective manner possible. 
+Problem 
+How do you segment your market? 
+Forces 
+•  Market segmentation is hard because 
+- Existing markets change. 
+- Predicting emerging markets is as much art as it is science (who knew lasers were for 
+playing music?). 
+•  Market segmentation is critically important because 
+- If you don't segment your market you run the risk of trying to serve all markets, which is 
+almost certain failure. 
+- Different market segments require different solutions. You need to focus to win. 
+•  You can't identify the most profitable segments if you don't segment well. 
+•  You can't meet the needs of every market. 
+•  Usability requires an understanding of the market you're trying to serve. 
+Solution 
+Segment the market by creating classes or groupings of users who share similar characteristics and/or 
+attributes. The characteristics include critical needs, buying patterns, and various attributes that are 
+important to you. The attributes in a consumer market might be age, household income, Internet 
+connectivity, and technical literacy. In a business market they might be revenue, number of 
+employees, geography, and so forth. Name the segment on a piece of paper and then write down its 
+most important descriptive characteristics. Large Post-It notes work well because they can be easily 
+ordered. 
+Concentrate first on the actual users of your current product. (If the users are not the customers—
+people who have purchasing authority—you can address this at a later date.) In this process you will 
+identify common "points of pain" or problems these users face. The results provide input to your 
+Feature/Benefit Map. More important, though, is that you must solve your customers' problems. 
+When you begin this process try to make your segments as well-defined as possible. This will help 
+you focus your efforts. As you examine each segment to make certain it is a viable (profitable) target, you may want to combine it with other segments. A fine-grained approach to market segmentation 
+will give you more flexibility in combining segments should this be needed. 
+Once you have a reasonable number of segments (usually between 6 and 12) order them in terms of 
+which segment you will be addressing first relative to the actual and/or contemplated features of your 
+product. Even before the product is finished some segments will naturally emerge as "easier" to 
+address than others. This may be because of existing relationships (such as channel and/or customer 
+relationships) or because it is simply easier to build a product that pleases a certain segment. As you 
+complete the other maps in this pattern language you can adjust the timeframes associated with the 
+target segments. 
+Provide the market map to all team members, especially user interface designers and QA. User 
+interface designers need the map to understand the needs of the customer. QA requires it to make 
+certain that they are organizing testing according to key customer priorities. 
+Resulting Context 
+Your market is segmented at a sufficient level to support strategic planning. As the needs of one 
+segment are addressed, the next segment can be more precisely analyzed in preparation for the product 
+cycle. 
+Related Patterns 
+•  Market Events/Market Rhythms 
+•  Feature/Benefits Map 
+Market Events/Market Rhythms 
+Context 
+You are trying to establish the market window for a given release or an ongoing series of releases. 
+You have a Market Map to help you explore specific market segments. 
+Problem 
+How do you choose a good target release date? How do you establish an ongoing cycle of releases? 
+Forces 
+•  Customers usually can't accept a release at any time of year. For example, retailers won't 
+accept new software releases during the holiday selling season. 
+•  Customers can't absorb releases that occur too quickly, yet they get frustrated and concerned 
+if releases happen too slowly. 
+•  Developers hate arbitrary release dates. 
+•  Sales activities require plenty of lead time. 
+•  Releases that are too short are almost always bad—low in quality or incomplete. 
+•  Releases that are too long are almost always bad—too many features and lost revenue and 
+market opportunities. •  Organizations (developers, support, QA, release manufacturing, and others) that go too long 
+without releasing a product lose valuable skills. 
+•  Organizations that go too long without releasing aren't fun places to work. 
+Solution 
+Identify and record the key events and rhythms that drive your market. Every domain has them. For 
+example, Comdex and CEBIT are important international conferences that drive many end-consumer 
+computing devices. Consider the following when you're searching for important events. 
+•  Conferences (technical, user group, and so forth) 
+•  Competitors' press releases 
+•  Topics of special issues in publications that focus on your domain and relate to your product 
+or service 
+Events that are held periodically, such as Comdex, also create and establish the rhythm of the market. 
+If you're a successful consumer electronics vendor, Comdex and CEBIT form the foundation of a 
+yearly rhythm known by all market participants and driving all company activities. Other examples of 
+marketplace rhythms include 
+•  The end-of-year holiday season 
+•  In the United States, the school year 
+•  In Europe, summer vacations 
+Once you have identified marketplace events and rhythms use them to create the timing and rhythm of 
+ongoing releases. I've had good luck with regular release cycles of between nine and twelve months. 
+Broad software categories, such as high-end and enterprise systems, often have major releases every 
+twelve months, with dot or maintenance releases following three to four months thereafter. Some 
+software categories, such as operating systems, don't seem to have a rhythm. 
+The maturity of the market segment also affects the release cycle. Immature markets tend to have 
+shorter release cycles and more events—a reflection of the learning going on among market 
+participants. Mature markets tend to have longer release cycles and more established rhythms. 
+Resulting Context 
+Developers are happier because they know that marketing isn't making a date out of thin air. 
+Commonly known dates have an energizing and engaging effect on the entire development 
+organization. Customers are happier because they can engage in realistic strategic planning. They 
+know that sometime in the third quarter they will be receiving a new release and can plan accordingly. 
+Related Patterns 
+•  Market Map 
+Feature/Benefit Map 
+Context You want to make certain that key marketing objectives match key development efforts. You have a 
+Market Map to identify the key market segments you're targeting. 
+Problem 
+What is the best way to capture compelling features and their benefits for each market segment? 
+Forces 
+•  People often think they understand the key features and benefits for a given market segment 
+when they really don't. 
+•  A feature may be a benefit to more than one market segment. 
+•  Features that apply to multiple market segments may not provide the same perceived benefits 
+to each one. 
+•  Developers tend to think of features (cool), while marketing people tend to think of benefits 
+(compelling advantages, reasons to purchase). This gap often results in poorly designed 
+products and/or products that can't win in the market. 
+•  Developers need to understand the nature and intent of future benefits so that they can be 
+certain the tarchitecture is designed to meet them. 
+Solution 
+For each market segment capture the key features and benefits that motivate to purchase the product. 
+It is crucial that you list features and benefits together. Omitting one gives the other inappropriate 
+influence. 
+Choose an ordering for your map that makes the most sense. I've had good results ordering first by 
+time and then by difficulty/complexity. Others get good results from ordering by what the market 
+wants or what sales can sell. Paul Germeraad from Intellectual Assets, Inc., has organized features into 
+a product tree where the edges of the tree are the features in the last release. The features of the next 
+release are placed around those edges. Paul draws lines around the features proposed for the next 
+release. One advantage of this visualization is that the entire company can feel good about the growth 
+of their product. Another is very practical: The expanding size of the perimeter correlates with the 
+growth of the product development organization. As the product tree grows, so do the needs of the 
+team in caring for and feeding it (including the maintenance team). 
+Resulting Context 
+You have a representation of the key features and associated benefits needed to attack target market 
+segments. This will provide the technical team with the data they need to update their tarchitecture 
+map so they can realize these features. 
+Related Patterns 
+•  Market Map 
+•  Tarchitecture Roadmap 
+The Tarchitecture Roadmap Context 
+You are building an application expected to have multiple, ongoing product releases. You have a 
+Market Map and a Feature/Benefit Map to identify specific markets and the features/benefits that they 
+want. You may have an existing architecture that supports one or more markets. 
+Problem 
+How do you manage/leverage technological change? 
+Forces 
+•  No matter how well an application has been architected, changes in technology can invalidate 
+prior assumptions. 
+•  Technologies usually appear on the horizon with enough time to accommodate them if they're 
+planned for. 
+•  Developers like to understand where they are headed. 
+•  Developers like to learn new things. 
+•  Developers want a way to manage the tarchitectural evolution of poorly implemented features 
+or capabilities. The want a way to make both the poor feature/capability known to others and 
+register their desire to change it. 
+•  Technology can enable new features that marketing may want. 
+•  Marketing may demand features that can be supported only by adopting a new technology. 
+•  Competitors' adoption of a new technology may put you in a disadvantageous, reactive state. 
+•  Technical people will argue over emerging technologies. Sometimes the arguments are a way 
+of learning more about the issues. Most of the time the only way to reach consensus is to 
+allow them plenty of time for discussion. 
+Solution 
+Create a technology map that shows how your architecture will evolve. It should relate to the market 
+map and feature/benefit map by showing how specific technologies produce benefits that are desired 
+by key market segments. 
+Review this map whenever important milestones are realized and no less than once every six months. 
+Examples of important internal milestones include code freeze, product shipment, and when 50% of 
+current customers have upgraded to the most recent version. Examples of important external 
+milestones can be a competitor issuing a new product release, new patent discoveries, whenever a 
+member of the technical staff identifies a significant discontinuous technology, or whenever market 
+events occur. 
+The creation and management of the tarchitecture roadmap requires that at least one member of the 
+team scan the external environment for new developments in the field. 
+If marketing has identified a feature that cannot be supported by existing technologies (either directly 
+or because of performance/cost curves) the tarchitecture roadmap can help the team maintain focus by 
+periodically scanning the environment to see if any new technologies have emerged that meet this 
+need. 
+Resulting Context The good news is that you will identify promising technical futures for your product. The bad news is 
+that unless your team has sufficient discipline they will want to explore every possible future—the 
+dreaded "shiny new object" syndrome. 
+Related Patterns 
+•  Market Map 
+•  Feature/Benefits Map 
+References 
+Abdel-Hamid, T. K. and S. E. Madnick. Software Project Dynamics: An Integrated Approach. 
+Englewood Cliffs, NJ: Prentice Hall, 1991. 
+Adelson, B. and E. Soloway. "The Role of Domain Experience in Software Design." IEEE 
+Transactions on Software Engineering, Vol. SE-11, No. 11 (Nov. 1985): 1351–1360. 
+Allen, T. J. "Organizational Structure, Information Technology, and R&D Productivity." IEEE 
+Transactions on Engineering Management, Vol. EM-33 No. 4 (Nov. 1986): 212–217. 
+Belady, L. A. and M. M. Lehman. "A Model of Large Program Development" IBM Systems Journal, 
+Vol. 15, No. 3 (1976): 225–52. 
+Bently, J. and D. Knuth. "Literate Programming" Comm. of the ACM, Vol. 29, No. 5 (May 1986): 
+364–69. 
+Boehm, B. W. Software Engineering Economics Englewood Cliffs, NJ: Prentice Hall, 1981. 
+Christiansen, D. "On Good Designers." IEEE Spectrum, Vol. 24, No. 5 (May 1987). 
+COCKBURN, A.Agile Software Development Boston: Addison-Wesley, 2002. 
+Curtis, B., H. Krasner, and N. Iscoe. "A Field Study of the Software Design Process for Large 
+Systems." Comm. of the ACM, Vol. 31, No. 11 (Nov. 1988). 
+Dijkstra, E. W. "The Humble Programmer" (1972) in ACM Turing Award Lectures, New York: ACM 
+Press, 1987. 
+Free Software Foundation. http://www.fsf.org/ 
+Gamma, E., R. Helm, R. Johnson, and J. Vlissides. Design Patterns: Elements of Reusable Object-
+Oriented Software. Reading, MA: Addison-Wesley, 1995. 
+Gause G., and G. Weinberg. Exploring Requirements Quality Before Design. New York: Dorset 
+House, 1989. 
+Gilb, T. Principles of Software Engineering Management. Reading, MA: Addison-Wesley, 1988. Goldberg, A., and K. Rubin Succeeding With Objects: Decision Frameworks For Project 
+Management. Reading, MA: Addison-Wesley, 1995. 
+Hoare, C. "The Emperor's Old Clothes" (1981) in ACM Turing Award Lectures. New York: ACM 
+Press, 1987. 
+Hunt, D. and D. Thomas. The Pragmatic Programmer: From Journeyman to Master. Boston: 
+Addison-Wesley, 2000. 
+Humphrey, W. S. A Discipline for Software Engineering. Reading, MA: Addison-Wesley, 1995. 
+IEEE Standard Glossary of Software Engineering Terminology, IEEE Standard 729-1983. 
+Kawasaki, G. The Macintosh Way. San Francisco: HarperCollins, 1990. 
+Kruchten, P. See various papers on the 4+1 View of architecture at www.rational.com. 
+Koek, M. http://www.koek.net/pubs/fsl/proj.html (June 1999). 
+Lampson, B. "Hints for Computer System Design." IEEE Software, (Jan. 1984). pp. 11–30. 
+Lehmann, D. R. and R. S. Winer Product Management, 3rd
+ ed. Boston: McGraw-Hill, 2002. 
+Mathis, R.F. "The Last 10 Percent." IEEE Transactions on Software Engineering, Vol. SE-12, No. 6 
+(June 1986): 705–712. 
+Meyers, S. Effective C++. Reading, MA: Addison-Wesley, 1992. 
+Nielsen, J. Usability Engineering. New York: Harcourt Brace, 1993. 
+Open Source: http://www.opensource.org/ 
+Security: http://www.w3.org/Security/ 
+Swartout, W. and R. Balzer. "On the Inevitable Intertwining of Specification and Implementation." 
+Comm. of the ACM, (July 1982). 
+USABILITY http://www.sei.cmu.edu/pub/documents/01.reports/pdf/01tr005.pdf 
+Weick, K. The Social Psychology of Organizing 2nd
+ ed. New York: Random House, 1979. 
+http://zdnet.com.com/2100-1105-877606.html 
+http://csrc.nist.gov/rbac/ 
+Bibliography 
+ Software Development—People and Project Management 
+Software Development—Configuration Management 
+Software Development—Code and Selected Technologies 
+Product Management / Marketing 
+Business Classics 
+Software Architecture 
+Software Development—People and Project Management 
+Brooks, F. P., Jr. The Mythical Man-Month: Essays on Software Engineering. Anniversary ed. 
+Reading, MA: Addison-Wesley, 1995. 
+If you read only one book on software development, make it this one. 
+Hohmann, L. Journey of the Software Professional: A Sociology of Software Development. Prentice-
+Hall, 1996. 
+A comprehensive examination of individual and team productivity, Journey provides both a strong 
+theoretical model and practical advice for improving the effectiveness of individuals and teams. 
+Demarco, T., and T. Lister. Peopleware: Productive People and Teams, 2nd
+ ed. New York: Dorset 
+House, 1999. 
+The timeless classic on creating more effective, more productive organizations, recently updated to 
+include the newest thinking on how to create more effective teams. 
+Beck, K. Extreme Programming Explained. Boston: Addison-Wesley, 2000. 
+XP is taking a lot of development shops by storm. It isn't right for every project, but it is worthwhile to 
+learn more about this approach to project management. 
+Software Development—Configuration Management 
+Appleton, B.http://www.enteract.com/~bradapp/acme/ 
+Appleton maintains an incredibly thorough set of links on software development at his web site. The 
+page listed above contains several useful papers, patterns, and other writings on software 
+configuration management. 
+Babich, W. Software Configuration Management. Reading, MA: Addison-Wesley, 1986. 
+Babich's book is a timeless classic. It is short, direct, and to the point. It provides a solid foundation 
+for understanding configuration management issues. 
+Software Development—Code and Selected Technologies 
+McConnell, S. Code Complete. Redmond, WA: Microsoft Press, 1993. 
+Software developers are paid to produce code and other stuff. Plenty of stuff has been written about 
+the other stuff, much of which is fluff. This is the best book ever written on code. I remain hopeful 
+that Steve updates the book to include modern techniques. Fowler, M. Refactoring: Improving the Design of Existing Code. Reading, MA: Addison-Wesley, 
+1999. 
+Martin's book contains a wealth of practical advice on how to engage in refactoring throughout a 
+system. 
+Schneier, B. Applied Cryptography: Protocols, Algorithms, and Source Code in C, 2nd Edition. New 
+York: John Wiley & Sons, 1995. 
+Although somewhat dated, Schneier's book provides developers with a detailed understanding of 
+many of the lowest set of protocols and standards that form the foundation of many security 
+approaches. 
+Product Management / Marketing 
+Levitt, T. The Marketing Imagination. New York: Free Press, 1986. 
+Arguably the most influential book on modern marketing that has ever been written. Levitt is the 
+inventor of the whole product concept and the first person to focus marketing towards creating 
+customer value. 
+Moore, G. A. Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream 
+Customers. New York: Harper Business, 1999. 
+This book spawned an entire new lexicon in product management. Forget to read this book and you 
+can forget about advancing your career beyond some distressingly boring dead-end assignment. 
+Cooper, R. G. Winning at New Products: Accelerating the Process from Idea to Launch. Cambridge, 
+MA: Perseus Books, 2001. 
+Robert Cooper has written several books about how to create truly useful products. His approach 
+combines common sense, market understanding, and flexibility with rigor and discipline. 
+Davidow, W. H. Marketing High Technology: An Insider's View. New York: Free Press, 1986. 
+A classic and timeless book from a true veteran of silicon valley. What I like best about the book is 
+Davidow's candid approach. According to Davidow, marketing is civilized warfare led by crusaders, 
+not evangalists. Unless you play for keeps don't play at all. 
+Ries, L. and R. Ries. The 22 Immutable Laws of Branding: How to Build a Product or Service into a 
+World-Class Brand. San Francisco: HarperCollins, 1998. 
+This little book has a wealth of good advice on how to manage brands. If you want to know a lot about 
+how marketing folks approach brand management, this is the book to read. 
+Business Classics 
+Porter, M. E. Competitive Strategy: Techniques for Analyzing Industries and Competitors. New York: 
+Free Press, 1980. 
+You can't be an effective marketect or tarchitect without an understanding of strategy. 
+Mintzber, H., and J. B. Quinn. The Strategy Process—Concepts and Contexts. Englewood Cliffs, NJ: 
+Prentice Hall, 1992. 
+Ditto. 
+Software Architecture Buschmann, F., R. Meunier, H. Rohnert, P. Sommerlad, and M. Stal. Pattern-Oriented Software 
+Architecture, Volume 1: A System of Patterns. New York: John Wiley & Sons, 1996. 
+Collectively known as the "Gang of Five," this book contains several useful architectural and system-
+level patterns. 
+Bass, L., P. Clements and R. Kazman. Software Architecture in Practice. Reading, MA: Addison-
+Wesley, 1998. 
+Although the case studies are either simplistic or not relevant to those of us creating real products, this 
+book provides several excellent taxonomies on how to think about various issues in software 
+architecture. Highly recommended. 
+Collins, D. Designing Object-Oriented User Interfaces. Redwood City, CA: Benjamin/Cummings, 
+1995. 
+This book should be required reading for any developer given primary responsibility for the design of 
+the user interface. Collins addresses the proper construction of the system model and shows how they 
+should be implemented. What is especially important is the practical advice on separating the 
+presentation from the underlying implementation details. 
+Fowler, M. Patterns of Enterprise Application Architectures. Boston: Addison-Wesley, 2003. 
+Martin's new book is destined to become a classic for any architect who is building enterprise 
+applications. Martin's book is a great compliment to this book—which is among the reasons they are 
+in the same series! 
+About Luke Hohmann 
+Luke Hohmann graduated from the University of Michigan in 1992 with an M.S.E. in computer 
+science and engineering. While at Michigan, Luke was a member of the Highly Interactive Computing 
+in Education (hi-ce) research group and was principal author of the GPCeditor, a lisp-based Macintosh 
+programming environment that helped high school students learn Pascal. 
+Before attending the University of Michigan, Luke was a competitive pairs figure skater. During his 
+14-year career he garnered numerous honors and awards, and in 1985 he and his partner won the 
+United States National Junior Pairs Championship. Luke has represented the United States in 
+international competition and was a two-time competitor in the United States Olympic Sports Festival. 
+Since then, he has focused on creating great software and winning solutions for customers and clients. 
+Luke has been invited to speak and teach at major industry conferences, including Software 
+Development, OOPSLA, and UML World. A faculty member of the University of Santa Cruz, 
+Extension, Luke's classes are in high demand because of his strong emphasis on learning by doing and 
+his commitment to providing his students with individual coaching. Over the past 10 years, Luke has 
+taught more than 5,000 students in a variety of topics ranging from C++ and Design Patterns to 
+Project Management, Product Management, User Interface Design, and Software Architecture. 
+In 1997 Luke published Journey of the Software Professional: A Sociology of Software Development 
+(Prentice Hall), which captures the deeper theories of cognitive psychology and organizational 
+behavior that form the foundation of successful development teams. Critically acclaimed, Journey has 
+sold more than 8,000 copies world-wide. 
+Luke is noted for his innovative use of low- and high-tech approaches to managing hi-tech products, 
+the organizations that build them, and the customers they serve. Despite hectic work schedules, Luke 
+has held daily meetings with key customers to make sure projects are properly synchronized. When issues of strategy surface Luke leads "sticky note" planning sessions that enable executive, product 
+development, and engineering staffs to create simple, effective, and congruent strategic plans. When 
+more thorough planning is required, Luke has asked that his team follow Stage-Gate development 
+processes, with tough Go/Kill decision criteria built into all activities. Included in this process are the 
+creation of business plans that clearly demonstrate the business value of the proposed project. Other 
+techniques, such as project dashboards, ensure that management can quickly and accurately determine 
+the status of every project. 
+When he began writing this book he lived in the heart of Silicon Valley with his wife and son, Jaren. 
+By the time he finished, the family had grown to include Cres. He hopes that by the time you read his 
+next book he and his wife will have added one or two more children. Luke maintains an active 
+lifestyle, sharing long runs and trips to the gym with his wife and family. A member of the IEEE and 
+ACM, he can be reached at luke@lukehohmann.com. 
+ 

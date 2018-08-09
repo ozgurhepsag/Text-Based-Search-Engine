@@ -1,0 +1,750 @@
+ARTIFICIAL INTELLIGENCE and SOFTWARE ENGINEERING
+
+Preface
+This book is aimed at the computer-literate person who wishes to find out about the reality of exploiting 
+the promise of artificial intelligence in practical, maintainable software systems. It cuts through the 
+hype, so commonly associated with discussions of artificial intelligence, and presents the realities, both 
+the promise and the problems, the current state of the art, and future directions.
+It is not another expert systems book. Expert systems are viewed as just one manifestation of AI in 
+practical software; the issues raised in this book are much broader. Expert systems are discussed, but as 
+a source of lessons about the dangers as well as the beneficial possibilities for adding AI to practical 
+software systems.
+In the opening three chapters, we take a long hard look at the conventional wisdom concerning software 
+engineering—what the goals are, the rationale behind them, and the realities of the situation. This is 
+done in part because efforts to engineer Al-software appear to undermine the accepted foundations of 
+conventional software engineering so we need to determine how solid the foundations really are; it is 
+also done because in attempting to engineer Al-software we subject the standard procedures of software 
+design and development to close scrutiny—our attempts to build robust and reliable AI-software 
+provides a magnifying glass on the conventional procedures.
+Chapter 4 elaborates on the prototyping schemes described in Chapter 3 and uses this well-accepted 
+methodological strategy to take us on into the more contentious domain of evolutionary and exploratory 
+software design and development. This move places us squarely within the general paradigm (i.e. 
+incremental system development) from whence an effective model for engineering Al software will 
+emerge. This chapter concludes with a presentation of the conventional paradigms for software
+  Page viii
+development which sets the scene for the 'new paradigms' which constitute the next chapter.
+Chapters 1 to 4 are somewhat polemical in nature, unashamedly so. Is this appropriate in a text book? 
+Clearly, I believe that it can be, and it is in this case. As attractive as it might be to provide an unbiased 
+presentation of how to build AI software, it is just not possible. How best to build AI software, and even 
+whether it is a reasonable endeavor to embark on in the first place, are controversial topics. I have 
+attempted to present the major competing alternatives whenever possible, and I haven't tried too hard to 
+hide my personal preferences. I don't think that this style of writing is necessarily out of place in a text 
+book. In fact, I think that it is sorely needed in this particular subject area. The prevalence of uncritical 
+texts is largely responsible for the current state of passive acceptance of what should really be hotly 
+debated issues, e.g. that software construction should mirror conventional engineering practice, or that 
+the single key component is an abstract specification which can be complete.
+I clearly don't have an exclusive insight into the problems that permeate the software world; many 
+before me have seriously questioned elements of the conventional wisdom and offered a possible 
+remedy. In Chapter 5 I present just a few of the new paradigms that have been proposed in recent years. 
+This serves to open up the problem, to emphasize the particularly problematic elements, and to reassure 
+you that there is no quick fix that: I have overlooked.
+In Chapter 6 I refocus the narrative and examine specific components of an effective incremental 
+software design and development paradigm—a discipline of exploratory programming. None of these 
+component features appear to be readily available, and some seem to offer little hope of availability, 
+ready or otherwise. One of the intentions of this chapter is to show that despite the actual difficulty of 
+realizing these essential component features, the appearance of impossibility is only an unfortunate 
+illusion.
+The next two chapters present two, very different, sources of reason for guarded optimism for the 
+engineering of AI software. Chapter 7, on Machine Learning, reviews several facets of this complex AI 
+subfield that have had an impact on practical software development. Chapter 8 comprises the main 
+concession to expert systems' technology. As I said at the very beginning, this is not an expert systems 
+book, but this new technology cannot be ignored in a book that deals with the design and development 
+of AI software. However, we do not retell the famous exploits of the star performers in this field, nor do 
+we examine particular mechanisms used to achieve expert-level performances. What we do is to look at 
+how,
+  Page ix
+in general terms, these celebrated AI-software systems were developed, and equally important why so 
+many of them have failed to surmount the prototype stage. The lessons are both positive and negative, 
+and it may be the negative ones that are the most instructive.
+The penultimate chapter attempts to draw together many of the lines of reasoning developed earlier. It 
+attempts to organize these threads of argument into a more coherent whole—the umbrella of software 
+support environments. To conclude this chapter two other seemingly desirable styles of approach to the 
+problems of engineering Al software are examined.
+In the final chapter, Chapter 10, we bring in the 'societal' aspects of the general problem. It is people that 
+build software systems (and that may be the problem, the advocate of automatic programming might be 
+tempted to interject), and for any significant system it is definitely people rather than a single person. 
+Just as software systems are not built in a per-sonless vacuum, they are seldom used in one either. It is 
+all too easy for the 'technician' to focus exclusively on the technical problems and forget that many 
+people are in fact bound up with the problem, and in many different ways. So this last chapter, in 
+addition to providing a summation of all that has gone before, briefly reviews these 'societal' problems 
+of software development. For they cannot be temporarily shelved to be tackled after the technical ones 
+have been solved: they are part and parcel of the technical problems of engineering Al 
+software—indeed, of engineering all large-scale software. And to neglect the people aspect may leave us 
+attempting to solve fictitious, purely technical problems.
+Finally, the embryonic state of the art in the engineering of Al-soft-ware (despite what you might hear to 
+the contrary) means that this is not, and cannot at the present time be, a 'manual' to guide the interested 
+reader through a detailed procedure for constructing robust and reliable Al-software products. Although 
+I do present and discuss specific systems (even a few commercially available systems) whenever 
+possible, the book is by no means saturated with expositions of the shells, tools or environments that you 
+can just go out and buy in order to get on with engineering some Al-software. What you will find (I 
+hope) is a comprehensive and coherent examination of the many problems that engineering Al-software 
+involves, as well as a consideration of the alternative routes to solution of these problems. This book is 
+certainly not the last word on this important subject, but it may be a good start.
+  Page xi
+Acknowledgements
+As with all substantial pieces of work the author cannot take 100 percent of the credit, only of the blame. 
+I would like to thank several anonymous reviewers who helped curb my excesses and Sue Charles who 
+drew most of the figures.
+Derek Partridge
+  Page 1
+CHAPTER 1
+Introduction to Computer Software
+Computers and software systems
+Software systems are programs, usually large ones, running on a computer. Despite several decades of 
+concerted effort, the design, implementation, and maintenance of such systems is more of an art than a 
+science. That is to say, the development and maintenance of such systems are processes dominated by 
+loose guidelines, heuristic principles and inspirational guesswork, rather than formally defined 
+principles and well-defined techniques.
+The advent of electronic digital computers and the subsequent, almost miraculous, advances in 
+electronic circuitry technology have provided mankind with an amazing tool. It has taken humanity into 
+a new age. Electronic computers have opened up possibilities that were hardly dreamed of just a few 
+decades ago. We have rockets that can be accurately guided to the outermost planets and can then take 
+pictures to send back to us. We have a banking system, involving plastic cards and remote automatic 
+tellers, that provides us with astounding financial flexibility, and so on.
+In sum, computers have moved us into domains of unbelievable complexity, and enable us to manage 
+them fairly successfully—most of the time. In fact computers don't just enable us to deal with situations 
+of far greater complexity than we could possibly manage without them, they
+  
+Page 2
+positively lure us into these domains of excessive complexity. The modem computer is an exceedingly 
+seductive device: it tempts us with the promise of its great power, but it also entices the unwary to 
+overstep the bounds of manageable complexity.
+Computer systems designers are well aware of this danger, and that small specialist sector of society 
+whose role is to construct software systems has labored to produce a framework from which reliable, 
+robust, and maintainable, in a phrase, practically useful software systems are likely to be forthcoming. 
+This framework is the central feature of the discipline of software engineering. Observance of the 
+strictures of software engineering can lead to the production of high-quality software systems, but there 
+are no guarantees. Software system design and construction is thus a skilled art (i.e. a blend of artistic 
+flair and technical skill), but then so is much of science in all domains, despite the widespread, naive 
+views to the contrary. So what exactly is software engineering?An introduction to software engineering
+What is software engineering? Well according to one source:
+Software engineering is the introduction of formal engineering principles to the creation and production 
+of software. A scientific or logical approach replaces the perhaps more traditional unstructured (or 
+artistic) methods.
+DTI, Software Engineering Newsletter, Issue No. 7, 1988
+This definition is on the right track, but is perhaps more a definition of some future desired situation 
+than the current reality. And clearly I have some reservations about the 'scientific' aspirations explicitly 
+mentioned in the definition. I don't really know what this word means, but I suspect that it is being 
+(mis)used as a synonym for 'logical'. A further point of contention that will emerge later when we come 
+to a consideration of the promise and problems of artificial intelligence (AI) in practical software 
+systems is that the desire for 'a scientific or logical approach' may be born of a fundamental 
+misconception, and one that AI illuminates.
+Ince (1989) presents an altogether less slick but far more realistic characterization of the essence of 
+software engineering.
+  
+Page 3
+Software engineering is no different from conventional engineering disciplines: a software 
+product has to meet cost constraints; the software engineer relies on results from computer 
+science to carry out system development; a software system has to carry out certain functions, 
+for example in a plant monitoring system those of communicating pressure and temperature 
+readings to plant operators; and a software developer has to work under sets of constraints such 
+as budget, project duration, system response time and program size.
+Ince (1989) p. 4
+This definition (or description) again tries to account for the ''engineering'' part of the label, but it avoids 
+the mythological associations of the term instead of stressing them as in the previous definition. 
+Engineering is not an exact science; it is not a discipline characterized by formal techniques; the "logical 
+approach" (under any formal interpretation of "logical'') has no major role in most types of engineering. 
+In fact, much engineering is saturated with rule-of-thumb procedures which experience has shown will 
+mostly work, i.e. it is just like much of the practice of software system building. Precise calculation and 
+use of formal notations certainly have a role in engineering (as Pamas, 1989, for example stresses) and 
+they also have a role in software engineering. The unanswered questions are: do they have central roles 
+and do they have similar roles within these two disciplines?Yet, it is undeniable that software systems crash with amazing regularity whereas bridges and buildings 
+very seldom fail to perform adequately over long periods of time. This is the crucial difference between 
+these two disciplines that leads us to think that software builders have useful lessons to learn from 
+bridge builders, i.e. real engineers. But coining the name "software engineering" and yet setting a course 
+for the realms of the logicist does not seem to be a rational way to capitalize on the success of real 
+engineers.
+Can we reasonably expect to be able to exploit engineering know-how? Are software systems like 
+bridges, or buildings, or complex machinery? Or is the depth of similarity merely wafer thin? These are 
+difficult questions and, moreover, ones that will intrude on our deliberations quite starkly when we bring 
+AI into the picture. So, before launching into an investigation of software life cycles, I'll indulge in a 
+minor diversion which will be seen to pay off later on in this text.
+  
+Page 4
+Bridges and buildings versus software systems
+Let me tabulate a few differences and similarities between these two sorts of artefacts. First some 
+similarities:
+1. they are both artefacts, i.e. man-made objects;
+2. they are both complex objects, i.e. have many interrelated components;
+3. they are both pragmatic objects, i.e. are destined for actual use in the real world—contrast works 
+of art;
+but there are, of course, some significant differences.
+bridges and buildings software systems
+concrete objects formal-abstraction-based objects
+non-linguistic objects linguistic objects
+non-malleable objects malleable objects
+simple or relatively precise, complex functionality
+unconstrained functionality
+ Some explanation of this tabulation is required, I suspect. There are clearly important differences 
+between an elaborate pile of reinforced concrete and steel (say, a bridge or building) and a computer 
+program (i.e. a software system). The former is a solid physical object which is typically difficult and 
+expensive to change. If, for example, you're curious about the ramifications of two span-supports rather 
+than three, or about the implications of doubling the thickness of a steel girder, the chances of being able 
+to satisfy your curiosity on the engineered product are very slim. The engineer must resort to modeling 
+(i.e. constructing small-scale models, rather than mathematical models—although this is done as well) to 
+answer these sorts of questions, or verify predictions of this nature, as they so often do. Notice that such 
+modeling is an alternative to formal analysis, and not the preferred alternative—it's more expensive, 
+slower, and less accurate. At least, it would have all of these less desirable characteristics if formal 
+analysis were possible, but it usually isn't except in terms of gross approximations (the mathematical 
+models) that need to be supported by empirical evidence such as model building can provide.
+  
+Page 5
+So, because of the fact that engineering is not a formal science, the notion of modeling, of building 
+prototypes, is heavily exploited. Take note of the fact that typically the model (or prototype) and the 
+final engineered product are totally different objects, and they have to be because the impetus for this 
+type of modeling is to be found in the nature of the non-malleability of the engineered final product.
+Software-engineered products (i.e. programs) are quite different with respect to malleability. Programs 
+are very easily alterable. Tentative changes typically cost very little in time, money, or effort. In fact, 
+programs are much too easily alterable; in my terminology, they are highly malleable objects. Thus it 
+would seem that the need to build models in order to explore conjectures, or verify deductions, is absent. 
+Yet modeling, in the sense of building prototypes, is common practice in software engineering. "Have 
+the software engineers misunderstood the nature of their task?" we ask ourselves. I'm very tempted to 
+answer "yes" to this question, but not with respect to the need for prototype model building. Why is this?
+First, notice that a model of a software system itself a software system. This fundamental difference 
+between engineering and software engineering leads to the conclusion that seemingly similar processes 
+(i.e. prototype model building) may serve rather different purposes within these two classes of 
+engineering. At the very least, it should serve as a warning against over-eagerness in equating the 
+activities of real engineers and software engineers, even when they seem to be doing quite similar 
+things.An important difference between the products of engineering and of software engineering stems from 
+the precise nature of the abstract medium used to build programs—it is a linguistic medium. A software 
+system is a statement in a language. It is not a statement in a natural language, and it may appear quite 
+alien to the average linguistically competent, but computationally illiterate, observer. Nevertheless, a 
+software system is a linguistic statement, and although natural languages and formal languages have 
+much less in common than their names would suggest (formal languages: another readily 
+misinterpretable label), there are some significant similarities. One consequence of this feature of 
+software engineered products is that we may be tempted to entertain the view that programs might also 
+be theories—we don't typically spare much thought for the suggestion that bridges might be theories (in 
+structural mechanics?) or even that they might contain their designs (the blueprints are in there 
+somewhere!). Similarly, software engineers are typically not tempted too much to view their artefacts as 
+theories, but, when we later let Al intrude
+  
+Page 6
+into these deliberations, we'll see that this odd notion gathers considerable support in some quarters.
+A most important consequence of the fact that programs are composed of formal linguistic 
+structures—i.e, programs are formal statements—is that they therefore invite being mauled with 
+mechanisms that can boast the unassailable attribute of mathematical rigour. In particular, they are 
+constantly subjected to logical massage, of one sort or another—especially the sorts that hold a promise 
+'proof of correctness.'
+The last-listed point of difference concerns the functionality of acceptable objects—i.e, how they behave 
+in the world. You might be tempted to observe that many engineered objects don't behave, they just are. 
+The function of a bridge is purely passive: it doesn't act on the world, it just sits there and allows things 
+to run over it. So it does have this passive functionality (which is a point of difference with software 
+systems), but more importantly the functionality is relatively simple—crudely put, its function is to sit 
+there without breaking or cracking and let things run over it (not much of an existence I admit, but that's 
+about the extent of it if you're a bridge)."Ah, but certain engineered objects, such as steam engines, do have a complex, active functionality just 
+like software systems." you might respond. "Yes and no," I would reply. They do have complex, active 
+functionality, but it's very different from the functionality of software systems in several crucial 
+respects. It's less tightly constrained and it's much more modular—i.e, engineered products have 
+relatively broad ranges of acceptable functionality, and the overall functionality can be decomposed into 
+relatively independent components. Thus, a building must exhibit complex functionality, both active and 
+passive, but to a good first approximation the adequacy of the doors, doorways, corridors and stairs in 
+supporting movement throughout the structure is independent of the adequacy of the central heating 
+system, and of the performance of the toilets, and of the performance of the roof, etc. The undoubted 
+complex functionality can be broken down, to a reasonable approximation, into relatively independent 
+functional components—this results in a reduction in effective complexity. And, although the doors, 
+doorways, etc. must conform to building codes, almost any reasonably large hole in the wall will operate 
+adequately as a door: something pretty drastic has to happen before it will fail to support the necessary 
+function of providing access from one space to another. Software systems are rather different. We strive 
+for modular functionality and achieve it to varying degrees dependent upon the nature of the problem as 
+well as the skill of the software engineer. But the medium of programming lends itself to a hidden and 
+subtle interaction
+  
+Page 7
+between components that is not possible (and therefore not a problem) when building with nuts, bolts, 
+concrete, steel, plastic, etc. There is also a positive inducement to employ functional cross-links: they 
+can buy software power cheaply in terms of program size and running time (the important issue of 
+software power is considered fully later).
+Finally, there are usually tight constraints on what functionality is acceptable: software systems typically 
+operate under precisely defined functional constraints, if the actual functionality strays from the tight 
+demands of the system specification then it is likely to be inadequate, incorrect, even useless in its 
+designated role. Notice that not all (or even most) of these constraints are explicitly stated; many tight 
+functional requirements become necessary in order to realize the specified requirements given the 
+particular implementation strategy selected. They just emerge as the software engineer strives to develop 
+a correct computational procedure within the web of constraints on the task. These are the implicit 
+functional constraints on the particular software system; they have to be actively searched out and 
+checked for accuracy.
+In his polemic on what should be taught in computer science, Dijkstra makes the preliminary point that 
+modem computer technology introduces two "radical novelties." The particularly relevant one here "is 
+that the automatic computer is our first large-scale digital device" and consequently "it has, unavoidably, 
+the uncomfortable property that the smallest possible perturbations—i.e, changes of a single bit—can 
+have the most drastic consequences." Whereas most engineered artefacts "are viewed as analogue 
+devices whose behavior is, over a large range, a continuous function of all parameters involved" 
+(Dijkstra, 1989, p. 1400).In sum, there are a few similarities between bridges and software systems, but there are many salient 
+differences. So why this general exhortation to try to build and design programs in the mould 
+successfully used for bridges? Is it a misguided campaign fuelled by little more than desperation? What 
+the software people really hope to import into their discipline is product reliability. But are bridges, 
+buildings, and steam engines reliable because the technology is well understood, in the sense of well 
+defined, or because the artefacts are produced as a result of rigid adherence to a complete and precise 
+specification of desired behavior? The answer is not clearly 'Yes'. And yet we find many advocates of 
+"formal methods" in the world of software design and development who appear to subscribe to 
+something like this view. The term "formal methods," when used in the software world, focuses 
+attention on the notions of abstract formalized specifications for software, and provable correctness of a 
+program with respect to such a specification. Gibbins (1990)
+  
+Page 8
+discusses the question "What are formal methods?" and quotes with approval from an Alvey Software 
+Engineering Strategy Document:
+"A formal method is a set of rigorous engineering practices which are generally based on formal 
+systems and which are applied to the development of engineering products such as software or 
+hardware." (p. 278)
+Here we see again an attempt to roll formal techniques and engineering practices and products all into 
+one ball, as if it's indisputable that they meld together well. One question we really ought to ask 
+ourselves is, 'do they?' In "What engineers know and how they know it," Vincenti (1990) discusses the 
+spurious formal bases upon which certain very successful engineering designs were founded. Is the use 
+of formal techniques the key to engineering reliability? Or could it be that well-engineered products are 
+reliable because of a long tradition that has allowed the heuristics to be refined? More importantly, are 
+they reliable because their relative functional simplicity permits the incorporation of redundancy in a 
+similarly simple way? If you want to be sure that the bridge will function adequately, then, when you've 
+finished the crude calculations, you double the size of the spanning girders, pour more concrete into the 
+supporting pillars, etc. What you don't do is set about trying to prove that your calculations will 
+guarantee adequate functioning. The functional complexity of software systems seems to make them 
+unamenable to a similar coarse-grained style of adding redundancy to safeguard performance 
+requirements—i.e, you can't just double the number of statements in a program, or beef up the 
+supporting procedures by adding more of the same statements. So, while the engineering paradigm in 
+general (i.e. formal approximation bolstered by added redundancy and a wealth of experience) may be 
+appropriate, it can be misguided to look too closely and uncritically at the details of engineering 
+practice, and even worse to aspire to a fiction of supposed formal practice.The main point to take from this introductory discussion is that the very basics of the field of software 
+engineering are by no means settled. There is no clear agreement as to what it is exactly that the 
+software engineers ought to be importing from conventional engineering practice, nor how it is best 
+applied for the effective generation of robust and reliable software products. There is general agreement 
+that use of "rigorous engineering principles" and "engineering judgement" are good things, but beneath 
+this most general level of agreement consensus is much harder to find.
+  
+Page 9
+Enough 'setting the scene', it is time to quickly review the orthodox view of the framework for software 
+engineering.
+In the UK, a substantial report from a joint working party of The British Computer Society and The 
+Institution of Electrical Engineers on undergraduate curricula for software engineering gives us the 
+following answer to the question: what is software engineering?
+Software engineering requires understanding and application of engineering principles, design 
+skills, good management practice, computer science and mathematical formalism. It is the task 
+of software engineering to draw together these separate areas of expertise and bring them to 
+bear upon the requirements elicitation, specification, design, verification, implementation, 
+testing, documentation and maintenance of complex and large-scale software systems. The 
+software engineer thus fulfills the role of architect of a complex system, taking account of user 
+requirements and needs, feasibility, cost, quality, reliability, safety and time constraints. The 
+necessity to balance the relative importance of these factors according to the nature of the 
+system and the application gives a strong ethical dimension to the task of the software engineer, 
+on whom the safety or well-being of others may depend, and for whom, as in medicine or in 
+law, a sense of professional morality is a requirement of the job. Sound engineering judgement 
+is required.
+BCS and IEE report on Undergraduate Curricula for Software engineering, June 1989, London, 
+p. 13.
+Now, this is something more like an attempt to capture the nature of software engineering concisely, if 
+not exactly in a nutshell. This characterization makes it clear that the topic is a diverse one, and that the 
+relationship of this discipline to engineering may not be fundamental (just one of many peripheral 
+concerns that impinge on the task of software development). A similar observation can be made about 
+"the logical approach" which is covered, presumably, by "mathematical formalism" in the above. So 
+"engineering principles" and mathematics have a part to play, but neither have been given the lead role, 
+although I'm surprised by the prominence given to "engineering judgement" (whatever that might be) in 
+the last sentence.In addition, what this description of software engineering brings out is the sequence of component 
+activities that are generally agreed to constitute the practice of software engineering: requirements 
+elicitation,
+  
+Page 10
+specification, design, verification, implementation, testing, documentation and maintenance. This 
+sequence actually mirrors quite closely the general sequence of activities known as the software life 
+cycle.The minor exceptions concern verification and documentation. To some, verification suggests the 
+largely academic, toy-program exercise of formally verifying that an algorithm is correct (with respect 
+to the specification) in some absolute sense; it might then be considered inappropriate (or, at least, 
+premature) to include it in a characterization of practical, large-scale software engineering. Validation, 
+with its connotation of checking but without the implication of formal establishment of truth in an 
+absolute sense, is sometimes the preferred term, and each stage of the software development process is 
+validated not just the algorithm that is the final outcome of the design process. The process of 
+documentation is similarly (or certainly should be) a more dispersed one than the simple sequence given 
+above would suggest. The major documentation effort is probably made after the system has been tested 
+and before it has to be maintained, but documentation details should be generated at every stage of 
+software development. After successful testing, it should be mostly a matter of organizing and polishing 
+the documentation for the users of the product.
+So, software engineering can be characterized by the following sequence of processes with the proviso 
+that validation and documentation run throughout the whole sequence.
+Requirements elicitation, analysis or even engineering is the first stage after the decision to construct 
+a software system for some application. Apart from the software people, it primarily involves the future 
+users of the proposed software system. After all, it is for the user that the system is being 
+constructed—isn't it? In any long, drawn-out, complex task, such as software design and construction, 
+mistakes are sure to be made. Extensive studies have made it very clear that the further along you are in 
+the process of completing the task when an error becomes apparent, the more costly it is to correct it. 
+Hence, much emphasis and attention is lavished (or should be) on the requirements phase—it's the 
+cheapest place to find and fix the errors.
+But what errors could you have here? You've not produced any code and no design either (certainly not 
+a detailed design), so how could you have made a mistake? What you get from the requirements stage is 
+the details of what the user does and doesn't want in the desired software system. Therefore, as long as 
+you check the final requirements document with the user: "These are the features you want, right? And 
+these are things you definitely don't want, right?," and the user nods and signs on the dotted line—how 
+could you have made a mistake?
+  Page 11
+Well the requirements document will be a complex object, and it is easy to, for example, include in your 
+list of desirable features two that are incompatible, or even inconsistent. You might want to concede 
+this, but maintain that the user signed off on these requirements so it's the user's problem and not yours. 
+But such a hard-nosed view is not really acceptable when you are the systems expert not the user. You 
+are being paid to develop the software system and so you shoulder the major responsibility for the 
+correctness of the requirements as well as all subsequent stages in the process. Both parties have to agree 
+'in good faith' to work together. It is not helpful to view these early stages as geared towards the 
+production of a formal contract whose precise wording can be subsequently exploited by either party 
+(we shall see the poverty of this approach when we look more closely at specifications in Chapter 3). 
+And, of course, in a complex document there are many hidden problems. For example, it may be that the 
+consequences (either logical or just practical ones) of the requirements conflict. It is true that such a 
+conflict of consequences should be predictable from the document, and in principle I guess the logical 
+ones are, and the practical ones as well, to some reasonable degree. But when dealing with objects of 
+high complexity what may be possible in principle is likely to be impossible in practice.
+So there certainly is room for mistakes in the requirements phase, and there's a high probability that 
+whatever cross-checking and analysis of the requirements you perform, some mistakes will elude you 
+and make their unwelcome presence known at some later (and more costly) stage. Nevertheless, the 
+software engineer can (and should) work to minimize the errors in the system requirements document.
+What happens to the requirements document? It becomes the basis for the system specification. A 
+specification is a statement of what the eventual software system is supposed to do. In an effort to 
+obtain a precise and unambiguous specification, formal or semi-formal notations are typically used for 
+the system specification.
+This is easily illustrated for problems that are simple and well-defined functions like sorting. The user 
+might conceive of the problem as:
+I want a computer program to maintain the stock inventory as a list of items ordered in terms of 
+their part numbers.
+That's a specification of a problem, but not a formal one, and one, moreover, that despite its apparent 
+triviality could well repay the software engineer the cost of a little requirements analysis. Why does the 
+user think that this system will be useful? Is an ordered list really the structure
+  Page 12
+that will best serve the user's needs? And should it really be ordered according to part number? Taking 
+another tack: how big a list are we contemplating? How changeable is it? In what ways does it change? 
+For example, does it grow only from the bottom—i.e, by the addition of new items with new part 
+numbers that are greater than any already on the list? Are the part numbers objects that have an obvious 
+ordering—e.g, simple integers that can be ordered numerically?
+These are the sorts of information that a process of requirements elicitation should uncover. There is 
+general information about whether what the user conceives of as the desired system will really solve the 
+actual problem. And there is more specific information about the special nature of the problem in the 
+user's environment. But let us assume that the simple problem specification survives the requirements 
+analysis intact. The task is then to transform it into a formal specification of WHAT the desired system 
+will do. This is often viewed as a rigorous functional specification (RFS), where the "functional" 
+attribute refers to the fact that the essence of the problem is a functional (i.e. input-output or I-O) 
+relationship. The user knows what information will be input and what the desired system should output. 
+It is the difficult and demanding task of the software engineer to determine HOW to realize the 
+specified function within the multitude of surrounding constraints.
+So what is the RFS for this particular problem? Essentially this is a sorting problem. What the user 
+wants is an implementation of SORT(x) which gives y, where
+the list y is a permutation of the list x and the list y is ordered
+and this is an RFS provided that the terms permutation and ordered are formally defined (which can 
+easily be done—I will not bore you with the details, just take it on trust).
+Now we know exactly what the programming task is: it's to design a correct implementation of the 
+SORT function within the constraints of the particular context of the user's problem—e.g, there will be 
+efficiency considerations of both time and space. But these constraints are typically considered to be 
+secondary to the task of designing a correct implementation of the function. After all, if it's not correct, 
+then what good is the fact that it runs fast and takes up little space in the computer memory? So, the 
+focus on program (or algorithm) correctness seems eminently sensible. We can summarize this view as 
+follows:
+  Page 13
+Conventional software-system design (i.e. conventional programming in looser parlance) is 
+the process of devising correct implementations of well-specified problems.
+This takes as on to the design stage—the process of designing an algorithm to implement the specified 
+function. The emphasis switches from WHAT is to be implemented (captured in the specification) to 
+HOW it is to be implemented, the computational process to be executed by a computer in order to 
+realize the function. Stated in terms of WHAT and HOW:
+Conventional software-system development is the process of designing a correct HOW for a 
+well-defined WHAT.
+There are many ways to realize any given function, good ones and bad ones. It is the software engineer's 
+task to design one of the good ones, where 'good' is an ill-defined notion but characterized by the set of 
+constraints for the task, constraints such as efficiency and maintainability of the final system. This is 
+where the art of software engineering begins to intrude on the task. It is true that there are formal 
+techniques for developing an algorithm from a specification that minimize the necessity for creativity 
+and, more importantly, guarantee that the resultant algorithm is a correct procedure for computing the 
+specification. But these techniques, like so many of their formal brethren, don't (yet?) scale-up to the 
+point where they are usable for the design of practical software systems.
+This leaves the software engineer with the task of designing a computational procedure on the basis of 
+loose guidelines and some firm principles which collectively often go under the name of structured 
+programming or structured design. Apart from principles of modularity, and stepwise decomposition 
+the software engineer typically has an elaborate framework such as SSADM (Structured Systems 
+Analysis and Design Method, see Ashworth and Goodland, 1990) that encompasses general principles 
+as well as formal notations and includes a two-dimensional graphical notation (such as data-flow 
+diagrams—see later) for diagramming the designs developed.
+The design of a large software system is usually broken down into a number of design steps. At the very 
+least there will be a general system design (a general decomposition of the total system into major 
+functional subsystems) and then a detailed design (in which each of the functional subsystems is 
+decomposed into primitive computational components that will realize the desired sub function).
+  Page 14
+Figure 1.1 A specification and a first attempt at a general design
+Thus, to continue with our trivial example, the general design might be to decompose the problem into 
+two subsystems: one to compute permutations of lists, and the other to check ordering in lists. The 
+detailed design can then focus on these two subfunctions quite independently (once the necessary 
+interface has been specified—in this case the permutation subfunction must generate a list and the order-
+checker module must accept that list as input). We might diagram the general design as in Figure 1.1.
+Now that's the beginnings of a design for an algorithm to realize the SORT function. (As a matter of fact 
+it's a bad beginning, but we'll get to that later.) We have two subsystems: one that does permutations and 
+one that checks for ordering, and the interface between them is a list structure. So we are free to work on 
+designing the details of each of these modules quite independently provided that we adhere to the 
+interface constraint: the permutation module must output a list and the ordering-checker must accept this 
+list as input.
+But, as the reader who's paying attention will have noted, this design has some problems. If the list z just 
+happens to be ordered then everything works fine, but if not, the computation is left dangling—i.e, it is 
+not clear what will happen when the ordering check on list z comes out negative. So we must take care 
+of this eventuality; this has been done in Figure 1.2.
+  Page 15
+Figure 1.2 A better design for the SORT algorithm
+Now, Figure 1.2 is a definite improvement over Figure 1.1 (provided that we take note of the newly 
+emerged implicit constraint on the permutation process—i.e, it must generate a new permutation of list x 
+every time it is re-entered). I have used a structured form of English and a flow-chart-type layout to 
+represent my design, and this works quite well for simple examples but more sophisticated notational 
+schemes seem to be required for large-scale designs. Simple flow-charting can support perspicuous 
+representation of designs that are not too complex (which is perhaps the way all designs should be, but 
+many are not and perhaps some never can be). But as designs become more complex, simple flow-
+charting can all too easily give rise to conceptually opaque representations—the powerful image here is 
+of a bowl of spaghetti when faced with a superabundance of arrows criss-crossing each other both up 
+and down the flow-chart.
+Such a situation may be indicative of two things: firstly, a bad design, in which case the designer needs 
+to think again, and secondly, the inadequacy of flow-charts as a representation medium for the problem 
+at hand. The prevalence of bad designs is a continuing problem throughout the engineering world. Good 
+design is hard to define, hard to teach, and hard to do. In the world of software design there has been 
+much concerted effort directed towards the problem of software design. Many design strategies now 
+exist and are composed of principles and guidelines which if applied with care (and flair) should channel 
+software designs into the 'good' rather than the 'bad' category. A further crucial component of most 
+design schemes is a representation structure, a design language, a means of representing with maximum 
+clarity the designs developed (and this feature addresses the second problem mentioned at the head of 
+this paragraph). A good design representation language, sometimes called pro-gram-design languages 
+(PDL), can itself do much to keep the software designer on the path towards a good design. A PDL can 
+do this by, for
+  Page 16
+example, making bad design features awkward or impossible to represent.
+PDLs begun to emerge at the very birth of the term software engineering, i.e. in the late 60s. The HIPO 
+chart (Hierarchy plus Input-Process-Output) was one popular early PDL. SADT (Software Analysis and 
+Design Techniques) from SoftTech Inc. is a graphical scheme, based on hierarchically structured sets of 
+diagrams, for systems analysis and design. Another example is Jackson Design Methodology, developed 
+by Michael Jackson, which assumes that system structure design should reflect the data structures to be 
+used. Finally, I can refer you forward to Chapter 5 where dataflow diagrams are used to represent a 
+specific design.
+There is now considerable support for the view that much of the foregoing (on design strategy and 
+representations) is not only old technology but fast becoming obsolete (or at least severely limited in 
+scope of applicability). As Yourdon (1990, p. 257) puts it: ''Structured techniques, for example, were 
+hailed by some as the productivity solution of the 1970s and 1980s. Computer-aided software 
+engineering (CASE) was promoted in the same way during the second half of the 1980s. Now, some 
+people are suggesting that object orientation is the salvation of the 1990s." And he seems to be one of 
+these people, for he concludes his article on object-oriented analysis (OOA) and object-oriented design 
+(OOD) with: "Object orientation is the future, and the future is here and now" (p. 264).
+So what is this OOA and OOD which has sprung from OOP, object-oriented programming, which 
+first saw light in the form of the language Smalltalk? The first question is: what is an object in the 
+current context?
+An object is a module that encapsulates both function and data.
+That's not much of a definition, but it does capture a particularly salient feature of the object-oriented 
+paradigm: OOP brings together and accords roughly equal status to both the procedural and the data 
+structure aspects of computational problem-solving. The precursor paradigms tended to focus on 
+function and give data a secondary status. Objects unify the ideas of algorithmic and data abstraction. 
+They own the data which they encapsulate and it is only indirectly visible external to the object. Finally, 
+objects typically exist in the well-defined context of other, more general objects, and from which they 
+can inherit certain properties. This inheritance feature has particular significance for us in the context of 
+software reuse, and thus we shall look at it more closely when come to consider questions of software 
+reuse later in this book (Chapter 6).
+  Page 17
+Booch (1991) in his book on OOD presents an illuminating sequence of figures that neatly depicts the 
+history of change in program-design schemes (although he presents them in terms of programming 
+language development which is, of course, closely correlated with design considerations).
+In Figure 1.3 we see a program as a collection of code modules that reference one common pool of 
+global data.
+ 
+Figure 1.3 Program design of the early 60s
+In Figure 1.4 we see further sophistication of the basic idea of code-data separation. In this scheme we 
+see nested subprograms and notions of the scope and visibility of program elements.
+In Figure 1.5 we see the problems of programming-in-the-large being explicitly addressed. Large 
+programs are developed by teams and thus there was a need to enable different parts of the program to 
+be developed independently. This need was met by what Booch calls "modules," and he carves up the 
+program into modules, as illustrated in Figure 1.5.
+  Page 18
+Figure 1.4 Program design of the late 60s
+Figure 1.5 Program design of the 70s
+  Page 19
+Despite the increasing sophistication of techniques for dealing with the code, data was still given 
+nothing like the same amount of consideration. This was the point where object-oriented ideas began to 
+emerge and to reach their first culmination in the Smalltalk languages—Smalltalk80 being the best 
+known. Figure 1.6 illustrates early program design based on OOP.
+Figure 1.6 Early program design based on OOP
+1926-0019a.jpg
+  Page 20
+Here we see that there is little or no global data. In this scheme, function and data are united such that 
+the building blocks are no longer primarily subprograms, blocks of code, but integrated code-data 
+elements, i.e. objects. Notice also that the underlying program structure is no longer a tree structured 
+hierarchy but a network.
+Finally, programming-in-the-large has grown to become programming-in-the-colossal (as Booch nicely 
+puts it) and the object-oriented model scales up to give programs composed of clusters of abstractions 
+built in layers on top of one another (see Figure 1.7).
+ 
+Figure 1.7 The OOP approach to Programming-in-the-colossal
+  Page 21
+In order to conclude this brief review of software design methodology let me give you Booch's 
+definitions of OOA and OOD.
+Object-oriented analysis is a method of analysis that examines requirements from the 
+perspective of the classes and objects found in the vocabulary of the problem domain.
+Object-oriented design is a method of design encompassing the process of object-oriented 
+decomposition and a notation for depicting both logical and physical as well as static and 
+dynamic models of the system under design.
+Booch (1991) p. 37
+Returning to our own (relatively trivial) design problem: having completed the general design, the 
+detailed design would amount to realizing each of these two modules in some formal or semi-formal 
+language which is composed of 'computational primitives'. This means that the elements of the detailed 
+design are structures that each have a relatively straightforward representation within typical 
+programming languages e.g. assignment statements and IF-THEN-ELSE statements.
+The detailed design is an algorithm, and, as you will have gathered from the rather woolly explanation in 
+the preceding paragraph, this important term is not easy to define. An algorithm is a well-specified 
+computational procedure which is independent of any particular computational device. That is to say, it 
+defines the HOW of a specification without the inevitable clutter of a real, executable program—e.g, no 
+declaration statements. Its value and importance lies in the attempt to capture the essence of the 
+computational process in a crisp and clean way. Its fuzziness comes from the fact that what is a 
+computational primitive depends upon what style of computation (e.g. declarative versus procedural) is 
+being contemplated. In more general terms: as soon as we concretize an algorithm, i.e. display it in 
+terms of some representation scheme (usually a formally defined language), we cannot avoid using the 
+particular representational structures that the chosen scheme offers us, and we are barred from using any 
+construct that is not in the representation-language chosen. Hence non-essential (with respect to the 
+original problem) information must become manifest in the chosen representation of the algorithm.
+For purely historical reasons the generally expected (and accepted) language for expressing algorithms 
+is derived from the programming language ALGOL—it is an implementation independent ALGOL. 
+Hence the facetious (but telling) definition:
+  Page 22
+An algorithm is a program written in pidgin ALGOL.
+As an illustration, the detailed design of (i.e. an algorithm to realize) the order-checking module of our 
+sorting system might be:
+input list z;
+assume list is ordered;
+for each element in the list,
+except the last
+begin
+if current element> next element
+then signal list not ordered
+end;
+report list z ordered, or list not ordered
+For those readers who use procedural languages like Pascal, FORTRAN, COBOL, this representation is 
+close to an executable program. But if you're contemplating a final implementation in, say, LISP or 
+Prolog, then this algorithm will need major remodeling before it is useful. In fact, if a Prolog program is 
+the ultimate goal, then the original specification was virtually an executable program; it was certainly an 
+algorithm. Just add some syntactic sugar:
+sort(X,Y):-permnte(X,Y),ordered(Y).
+and four clauses to define permute and ordered and we have an executable PROLOG program.
+So, a specification can be an algorithm, a specification can even be an implementation. This observation 
+lies behind much of the current interest in logic programming. Problems can be formally specified in 
+logic, and Prolog is close to a computational notation for logic.
+From the design stage then we obtain an algorithm—a statement of HOW to compute the desired 
+function. This is the critical point to verify that the algorithm is indeed correct, although many would 
+maintain that really the design and algorithm development process should be composed of correctness-
+preserving transformations thereby automatically providing the guarantee that we now seek. Gries 
+(1981, p. 299) gives a brief history of programming methodology in which he maintains that "When the 
+theory [of proof of program correctness] was first presented, it seemed terribly difficult to prove an 
+existing program correct, and it was soon admitted that the only way to prove a program correct was to 
+develop the
+  Page 23
+proof and program hand-in-hand—with the former leading the way." But although he subscribes to the 
+proof-before-program view, he admits that "one should develop a proof and program hand-in-hand, but 
+the proof should be a mixture of formality and common sense" p. 300. Dijkstra is a major force in the 
+proof-before-program movement, and he promoted it with his notion "weakest preconditions" as a basis 
+for a "calculus for the derivation of programs" (Dijkstra, 1976).
+So, the verification stage is one of proving that the algorithm is a correct procedure for computing the 
+function specified originally. There are many ways to go about this verification, from developing the 
+proof hand-in-hand with the algorithm to application of the proof rules associated with each algorithmic 
+primitive and thus demonstrating that the necessary input is always transformed into the desired output. 
+One thing that is common to all such verification and proof techniques is that they are not yet usable on 
+typical software systems. A variety of reasons are offered to explain this state of affairs. Some maintain 
+that the proofs promise to be more complicated than the programs, and so mechanical proof checking 
+(which is a distant possibility, at best) is essential. Others (such as Dijkstra, 1989, p. 1414) counter this 
+with the assertion that "the presumed dogma that calculational proofs are an order of magnitude too long 
+to be practical has not been confirmed by my experience. On the contrary, well-chosen formalisms 
+provide a shorthand with which no verbal rendering can compete." A more sweeping line of attack 
+challenges the foundations of the verificationists' programme: it claims that "The differences between a 
+program and a proof are so many and so profound... that it is hard to think of any relevant respect in 
+which they are alike" (Halpem, 1990, p. 47, who does detail a wealth of the claimed differences). Table 
+1.1 lists a few of the claimed differences. So "Why," we have to ask (as Halpem does), "do so many 
+people think that proofs and programs are in an important sense similar?" The answer seems to rest on 
+the observation that both proofs and programs appear to be formal syntactic entities. But we should be 
+careful that such appearances are not misleading or just superficial—Halpem argues for both of these 
+qualities in this alleged similarity. Halpem, who argues at length and with great skill, also provides full 
+references back into the literature that comprises this debate. Suffice it to say that what formal 
+verification may deliver for practical software systems, and even how exactly it may make the delivery, 
+are hotly debated issues about which informed opinion can be found at both extremes.
+  Page 24
+Table 1.1 Claimed differences between a program and a proof
+proofs programs
+objective (the theorem) stated formally known 
+unambiguously
+objective not often at all (outside model CS 
+problems)
+objective stated in terms of proof calculus objective not stated in programming terms but 
+in terms external to the program
+fit into the fabric of mathematics—they tend to 
+be interrelated
+do not form one continuous fabric—-each is 
+relatively unique
+often has value in its own right—establishment 
+of a theorem may be quite secondary
+very rarely has any value in itself merely a 
+means to an end, if a better program appears 
+former is discarded without a pang
+subsequent new proofs of a theorem can be 
+significant for a variety of reasons—e.g., more 
+elegant, or innovative approach
+new programs duplicating function of an 
+available one seldom add much to the 
+discipline, only worth is likely to be in 
+efficiency gain
+So, for whatever reason, the software engineer must currently forego the certainties that verification 
+techniques aspire to deliver one day. That is not to say that formal verification techniques have no place 
+in practical software engineering today: right now, well-defined components of the system may be 
+verifiable and verification-based design schemes can provide a useful framework for design even if the 
+verifications themselves have to be a :mixture of "formality and common sense," as Gries admits. 
+  
+Page 25
+On the other hand, even this middle-of-the-road standpoint might well be unacceptable to those who 
+hold that verification is a misconceived notion because it applies only to static abstractions, and software 
+systems are seldom static and are never abstractions—they are objects in the real world and as such can 
+never be subject to 100 per cent guarantees (e.g. certainly Halpern, 1990, De Millo, Lipton and Perlis, 
+1979 and Nelson, 1992, and to a lesser extent, Fetzer, 1988). And this observation brings us to the real 
+world and the next stage of the software engineering process, implementation. Implementation is the 
+transformation of a design into a machine-executable notation—i.e, transformation into a program.
+The program is a real-world object and thus it can't be verified, but it can be tested. Testing is the 
+process of running the program with a specific set of input data and seeing if it gives the correct answer 
+for that particular input.There are several points to note about the testing stage: first, the very fact that a software system can be 
+tested relies on the assumption that its behavior can (in principle, and usually in practice as well) be 
+evaluated as correct or incorrect. At first sight, the necessary existence of such a property of a proposed 
+software system would seem to be no real obstacle at all—but, once again, wait for Al to show its hand 
+for then we shall see that correctness of specific program behavior can easily become a non-resolvable 
+issue.
+Second, there is the much-quoted disparaging remark of Dijkstra's that "testing only shows the presence 
+of errors, not their absence." Testing is thus seen as a weak stopgap, the best that we can do for the 
+moment. The best that can be said of a tested piece of software is that it is free from known error. And in 
+order to make this a strong statement software engineers have developed elaborate testing schemes. 
+There are guidelines about what data values to test (e.g. the barely legal and the barely illegal); there are 
+principles concerning the control structure within the software (e.g. all alternative control paths must be 
+exercised); and there are more global principles about separating the system designers and the testers 
+(e.g. the test data should be constructed by someone who was not involved in the system design and only 
+has the specification to rely on—this sort of strategy tends to eliminate the propagation of implicit, but 
+incorrect assumptions, from specification, through design and implementation, into the finished 
+product). Other testing strategies include such bizarre activities as actively bugging (i.e. purposely 
+introducing errors) software to assess the quality of the tests by the number of these introduced errors 
+the testing strategy actually uncovers.
+  
+Page 26
+When the software has survived the testing phase, it is nearly a product ready for sale on the open 
+market. But what first needs to be done is to generate and organize all the supplementary information 
+that must go with the actual program code. This is information to enable the users (probably not 
+computer experts themselves) to use the system effectively; it may also be detailed technical information 
+to support the subsequent maintainance of this software system over time by, presumably, persons who 
+are computer experts. The generation and organization of all the necessary information is the 
+documentation stage of software engineering. A lot of it may be done by technical writers, rather than 
+the software engineers, but the system designers and implementors should clearly have a significant 
+input into the documents generated.
+Finally, when the tested and documented product has been sold, or delivered if built especially for a 
+particular user, we enter the maintenance stage. Software maintenance is the process of keeping the 
+system going and serving a useful purpose for as long as necessary, or possible, whichever is shorter. In 
+involves two major subprocesses: tracking down and removing (or at least disabling) the errors that 
+show up during day-to-day usage of the software, and changing the software to meet changing user 
+needs.That (fairly) quick tour of software engineering will serve as a grounding in the nature of the task. We 
+can now build on it, extend it, augment it, change it, question it, and even contradict it.
+As mentioned much earlier, the great quest—the driving force behind the push to imbue software 
+practice with engineering principles and judgement—is for reliability of software systems. The lack of 
+such reliability was recognized in the late 60s and the resultant state of affairs was known as the 
+software crisis.
+The software crisis
+So now we have sketched out the general framework within which software engineering operates, and 
+we've also briefly examined the notion of introducing "engineering principles" to reinforce the 
+technology. Why is there this drive to beef up the practice of software engineering? Why is it that, 
+everywhere we look in the software world from academics, for whom computation is an abstract notion 
+way above the trivializing clutter of actual computers, to hard-core systems designers and programmers, 
+people actually working at the code face (as it were), we encounter
+  
+Page 27
+this urge to apologize for the current techniques and to seek improvement? We all know that striving for 
+improvement is an edifying occupation, always to be encouraged, but the ubiquity of this phenomenon 
+does not account for the passion and commitment found among software people. Fundamentally, this 
+common yearning for better methods of software production springs from the recognition that the 
+technology is in a state of crisis—in a phrase, the software crisis.
+What is this software crisis, this driving force that impels both academia and industry alike to seek 

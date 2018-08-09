@@ -1,0 +1,2898 @@
+Probabilistic computation
+4.1 Can tossing coins help?
+Suppose we are trying to solve a decision problem and we have an algorithm
+which, when given an input x ? 
+*
+0 , either outputs ‘true’ or ‘probably false’.
+Assuming that whenever it outputs ‘true’ this is correct, while whenever it
+outputs ‘probably false’ the probability of this being correct is at least 1/2 can
+we use this algorithm to decide ?
+With the correct notion of probability the answer to this question for all
+practical purposes is ‘yes’. However, before formalising this concept of a probabilistic
+(or randomised) algorithm we consider a simple example.
+Let Z[x1, . . . , xn] denote the set of polynomials in n variables with integer
+coefficients. Given two such polynomials f, g ? Z[x1, . . . , xn], can we decide
+efficiently whether they are identical?
+We have to be careful about how the polynomials are presented so that we
+know how to measure the input size. For example the following polynomial
+f (x1, . . . , x2n) = (x1 + x2)(x3 + x4) · · · (x2n-1 + x2n),
+could clearly be encoded using the alphabet  = {*, 0, 1, x, (, ),+, -} with
+input size O(n log n). However, if we expanded the parentheses this same polynomial
+would then seem to have input size O(n2n log n).
+The degree of a polynomial is simply the maximum number of variables,
+counted according to their multiplicities, occuring in a single term when the
+polynomial is expressed in its expanded form. So the above example has degree
+n while
+g(x1, x2, x3) = x2
+1 x3 + x2
+2 x2
+3
++ x3
+3 ,
+has degree 4.
+67
+68 4 Probabilistic computation
+Deciding whether two polynomials f and g are identical is clearly equivalent
+to deciding whether f - g is identically zero so we consider this problem
+instead.
+NON-ZERO POLY
+Input: an integer polynomial f ? Z[x1, . . . , xn].
+Question: is f not identically zero?
+Consider the following ‘probabilistic algorithm’ for this problem. We write
+a ?R A to mean that ‘a is chosen uniformly at random from the set A’, while
+a1, . . . , an ?R A denotes the fact that ‘a1, . . . , an are chosen independently and
+uniformly at random from A’.
+Algorithm 4.1 Probabilistic algorithm for NON-ZERO POLY.
+Input: an integer polynomial f ? Z[x1, . . . , xn] of degree k.
+Algorithm:
+choose a1, . . . , an ?R {1, 2, . . . , 2kn}
+if f (a1, . . . , an) = 0
+then output true
+else output false.
+Intuitively this algorithm shouldwork very well. If f is not identically zero then
+we will only output false if we accidentally choose a root of f , which seems
+rather unlikely. We can always repeat this procedure, and if it ever outputs
+‘true’ then we know that f is not identically zero (since we have found a point
+at which it is non-zero). However, if after repeating this a hundred times with
+independent random choices for a1, . . . , an we always obtain the answer ‘false’
+then we can be almost certain that this is correct.
+An interesting point to note is that Algorithm 4.1 is essentially a probabilistic
+version of a ‘search’ algorithm, similar to the algorithm presented for SAT at
+the beginning of Chapter 3 (Algorithm 3.1). The important difference is that
+we do not try every possible certificate. Instead this algorithm simply chooses
+one possible certificate at random and checks to see if it is good. The intuitive
+reason why this works is that if the input polynomial is not identically zero then
+there are lots of good certificates and the probability that a randomly chosen
+certificate is good will be high. On the other hand if the input polynomial is
+identically zero then there are no good certificates and so the algorithm will
+always correctly answer ‘false’.
+The property of having lots of good certificates will allow us to develop
+efficient probabilistic algorithms, such as the one given above, for other decision
+problems.
+4.1 Can tossing coins help? 69
+Our next result formalises the intuition behind Algorithm 4.1, telling us that
+if we choose integer values in the range {1, . . . , N} then the probability of error
+is small.
+Theorem 4.2 Suppose f ? Z[x1, . . . , xn] has degree at most k and is not identically
+zero. If a1, . . . , an are chosen independently and uniformly at random
+from {1, . . . , N} then
+Pr[ f (a1, . . . , an) = 0] ? k
+N
+.
+Proof: We use induction on n. For n = 1 the result holds since a polynomial of
+degree at most k in a single variable has at most k roots. So let n > 1 and write
+f = f0 + f1x1 + f2x2
+1
++ · · ·+ ft xt1
+,
+where f0, . . . ft are polynomials in x2, x3, . . . xn; ft is not identically zero and
+t ? 0. If t = 0 then f is a polynomial in n - 1 variables so the result holds. So
+we may suppose that 1 ? t ? k and ft is of degree at most k - t.
+We let E1 denote the event ‘ f (a1, . . . , an) = 0’ and E2 denote the event
+‘ ft (a2, . . . , an) = 0’. Now
+Pr[E1] = Pr[E1 | E2] Pr[E2] + Pr[E1 | not E2] Pr[not E2]
+? Pr[E2] + Pr[E1 | not E2].
+Our inductive hypothesis implies that
+Pr[E2] = Pr[ ft (a2, . . . , an) = 0] ? (k - t)
+N
+,
+since ft has degree at most k - t.
+Also
+Pr[E1 | not E2] ? t
+N
+.
+This is true because a1 is chosen independently of a2, . . . , an, so if a2, . . . , an
+are fixed and we know that ft (a2, . . . an) = 0 then f is a polynomial in x1 that
+is not identically zero. Hence f , as a polynomial in x1, has degree t and so has
+at most t roots.
+Putting this together we obtain
+Pr[ f (a1, . . . , an) = 0] ? k - t
+N
++ t
+N
+? k
+N
+as required. 
+Returning to Algorithm 4.1 for NON-ZERO POLY, Theorem 4.2 implies
+that if the input f ? Z[x1, . . . , xn] is not identically zero then with probability
+70 4 Probabilistic computation
+at least 1/2 it will output ‘true’, while if it is identically zero then it will always
+output ‘false’.
+One could argue that being right half of the time is not much good, but we
+can simply repeat the procedure as follows.
+Input: a polynomial f ? Z[x1, . . . , xn] of degree k.
+Algorithm:
+for i = 1 to 100
+choose a1, . . . , an ?R {1, . . . , 2kn}
+if f (a1, . . . , an) = 0 then output true
+next i
+output false.
+This comes much closer to the ordinary idea of an algorithm, since if it ever
+outputs ‘true’ then it is certainly correct, while if it outputs ‘false’ then its
+probability of error is at most 1/2100. Such a procedure, known as a probabilistic
+algorithm, is clearly extremely useful.
+Note that it is also efficient (assuming that we have a source of randomness
+and that evaluating the polynomial at a1, . . . , an can be achieved in polynomial
+time). Such a procedure is known as a probabilistic polynomial time algorithm.
+One obvious problem with such a probabilistic algorithm is that it requires
+randomness. In previous chapters we considered the computational resources
+of time and space. When evaluating a probabilistic algorithm’s efficiency we
+must also take into account the amount of randomness it requires.We measure
+this by the number of random bits used during its computation.We will assume
+(perhaps rather unrealistically) that we have a source of independent random
+bits, such as the outcomes of a series of independent tosses of a fair coin.
+In many probabilistic algorithms we will require more than simple random
+bits. For instance, in our previous example we needed to choose integers uniformly
+at random from an interval. In our next example we consider one possible
+way of doing this using random bits.
+Example 4.3 Choosing an integer a ?R {0, . . . , n} using random bits.
+Weassume that we are given an infinite sequence of independent random bits.
+To choose a random integer a ?R {0, . . . , n} we use the following procedure
+(we suppose that 2k-1 ? n < 2k ),
+read k random bits b1, . . . , bk from our sequence.
+If a = b1 · · · bk belongs to {0, . . . , n} (where a is encoded in binary)
+then output a
+else repeat.
+4.2 Probabilistic Turing machines and RP 71
+On a single iteration the probability that an output is produced is
+Pr[a ? {0, . . . , n}] = n + 1
+2k >
+1
+2
+.
+Thus the expected number of iterations before an output occurs is less than two
+and, with probability at least 1 - 1/2100, an output occurs within a hundred
+iterations.
+Moreover when an output occurs it is chosen uniformly at random from
+{0, . . . , n}. Since if m ? {0, . . . , n} and we let aj denote the value of a chosen
+on the j th iteration of this procedure then
+Pr[Output is m] =
+?
+
+j=1
+Pr[aj = m and a1, . . . , aj-1 ? n + 1]
+= 1
+2k
+?
+
+j=0
+1 - n + 1
+2k
+j
+= 1
+n + 1
+.
+In the next section we will introduce the necessary definitions to formalise the
+idea of efficient probabilistic computation.
+4.2 Probabilistic Turing machines and RP
+In Chapter 2 we said that a problem is tractable if a polynomial time algorithm
+for its solution exists.We were careful not to insist that such an algorithm must
+be deterministic. To clarify this we now take the following view.
+ A problem is tractable if and only if there exists a probabilistic polynomial
+time algorithm for its solution.
+In order to give a formal definition of a probabilistic polynomial time algorithm
+we introduce a new type of Turing machine.
+A probabilistic Turing machine or PTM is a DTM with an extra tape, called
+the coin-tossing tape, which contains an infinite sequence of uniformly distributed
+independent random bits. This tape has a read-only head called the
+coin-tossing head. The machine performs computations similarly to a DTM
+except that the coin-tossing head can read a bit from the coin-tossing tape in a
+single step.
+The transition function now depends not only on the current state and the
+symbol in the current square of the ordinary tape, but also on the random bit in
+the square currently scanned by the coin-tossing head. The transition function
+72 4 Probabilistic computation
+Control
+unit
+Coin-tossing head
+Ordinary tape Read–write head
+Coin-tossing tape
+* * 0 1 0 0 0 0 1 1 0 1 * * * * * *
+1 1 0 1 1 1 0 1 0 1
+Fig. 4.1 A probabilistic Turing machine.
+now tells the machine four things: the new state; the new symbol to write in the
+current square of the ordinary tape; the movement left or right of the read–write
+head and the movement left or right of the coin-tossing head. See Figure 4.1 for
+a picture of such a machine. (Note that since the coin-tossing tape is infinite in
+only one direction the coin-tossing head is not allowed to move off the end of
+the tape.)
+If the underlying DTM is an acceptor DTM then the PTM is an acceptor
+PTM.
+Since the computation of a PTM, M, on an input x ? 
+*
+0 depends not only
+on x but also on the random bits used during its computation, its running time
+is a random variable: tM(x). Indeed, whether a PTM halts on a particular input
+is itself a random variable.
+We say that a PTM is halting if it halts after finitely many steps on every
+input x ? 
+*
+0 , irrespective of the random bits used in its computation. The time
+complexity of a halting PTM, M, is TM : N › N defined by
+TM(n) = max t | there exists x ? n
+0 such that Pr[tM(x) = t] > 0.
+We will say that a PTM, M, has polynomial running time if there exists a
+polynomial p(n) such that TM(n) ? p(n), for every n ? N. So by definition any
+PTM with polynomial running time is halting.
+We will sometimes consider PTMs that may not be halting. For such a PTM,
+M, the time complexity is not defined, however, we can still define its expected
+running time to be ETM : N › N such that
+ETM(n) = max t | there exists x ? n
+0 such that E[tM(x)] = t.
+It is important to note that this is still a measure of ‘worst-case complexity’,
+since for a particular input size n it measures the expected time taken to halt
+for the ‘worst input’ of length n.
+4.2 Probabilistic Turing machines and RP 73
+A PTM, M, has polynomial expected running time if and only if there exists
+a polynomial p(n) such that ETM(n) ? p(n), for every n ? N.
+We can now define the complexity class of languages decidable in randomised
+polynomial time or RP. A language L belongs to RP if and only if
+there is a PTM, M, with polynomial running time such that on any input x ? n
+0 :
+(i) if x ? L then Pr[M accepts x] ? 1/2;
+(ii) if x ? L then Pr[M accepts x] = 0.
+Returning to the probabilistic algorithm for NON-ZERO POLY given on
+page 68. it is easy to see that this could be implemented on a PTM. Moreover
+if the input is the zero polynomial then the algorithm always rejects and so
+condition (ii) above is satisfied. Also, using Theorem 4.2, if the input is a nonzero
+polynomial then with probability at least 1/2 the algorithm accepts. Hence
+condition (i) above is also satisfied. The only question remaining is whether the
+algorithm runs in polynomial time.
+We introduce a restricted version of this language for which this is certainly
+true.
+NON-ZERO POLY DET
+Input: an n × n matrix A = (ai j ) with entries in {0,±1}.
+Question: if C = (ci j) is the n × n matrix with entries ci j = ai j (xi - x j ), is the
+polynomial f (x1, . . . , xn) = det(C) not identically zero?
+The input size in this case is clearly O(n2) and the degree of the polynomial is
+O(n). So Algorithm 4.1 requires us to compute the determinant of an n × n integer
+matrix. This can be achieved in polynomial time (since evaluating a determinant
+can be achieved in polynomial time) hence NON-ZERO POLY DET
+belongs to RP.
+An alternative way of thinking about RP is that it consists of those languages
+L with the property that if x ? L then the probability that a random polynomial
+length string is a succinct certificate of this fact is at least 1/2; while if x ? L
+then no such certificate exists. Hence we have the following result.
+Theorem 4.4 The following containments hold
+P ? RP ? NP.
+Proof: The containment P ? RP is trivial since a DTM is simply a PTM which
+never tosses any coins.
+To see that RP ? NP let L ? RP. Then there exists a PTM M and a polynomial
+p(n) such that if x ? L then
+Pr[M accepts x] ? 1
+2
+,
+74 4 Probabilistic computation
+while if x ? L then
+Pr[M accepts x] = 0.
+So if x ? L then there certainly exists at least one string y ? 
+*
+0 of length at
+most p(|x|) such that M accepts x using y as the random bits on its coin-tossing
+tape. Moreover if x ? L then no such string y exists.
+Thus we can construct a DTM which on input x y mimics the computation
+of M with input x and ‘random bits’ given by y. By the above argument this
+machine shows that L ? NP and so RP ? NP. 
+If a language belongs to RP then we can reduce our probability of mistakenly
+rejecting a correct input by repeating the computation. Our next result shows
+that by repeating the computation polynomially many times we can reduce the
+probability of an error significantly.
+Proposition 4.5 If L ? RP and p(n) ? 1 is a polynomial then there exists a
+polynomial time PTM, M, such that on input x ? n
+0 ;
+(i) if x ? L then Pr[M accepts x] ? 1 - 2-p(n);
+(ii) if x ? L then Pr[M accepts x] = 0.
+Proof: Exercise 4.1 
+We proved in Chapter 3 that PRIME ? NP ? co-NP (see Theorem 3.17). In
+the next section we will prove that COMPOSITE ? RP and hence PRIME ?
+co-RP, the complement of RP. Although it is now known that PRIME ? P this
+result is not simply of theoretical or historical interest. Probabilistic algorithms
+are still by far the most practical way to test for primality.
+Exercise 4.1 h Prove Proposition 4.5.
+4.3 Primality testing
+In cryptography we often need to choose large random prime numbers. This
+can be seen as two distinct problems. First, choosing a large integer at random
+and, second, testing whether or not the chosen integer is prime. Given a source
+of randomness it is straightforward to choose a random integer with exactly
+k bits. Thus we will concentrate on the latter problem. So far we have only
+seen an extremely naive exponential time deterministic algorithm for primality
+testing which is essentially useless (Algorithm 2.4). A major breakthrough
+in primality testing was the discovery of efficient probabilistic algorithms
+4.3 Primality testing 75
+in the 1970s. One of these is the Miller–Rabin algorithm which we present
+below.
+Since 2002 we have also had available the striking fact that there exists a
+deterministic polynomial time algorithm due to Agrawal, Kagal and Saxena.
+However, currently this still has running time O(log6 n) and so for practical
+purposes the Miller–Rabin algorithm is more useful.
+Recall the complementary problem to PRIME.
+COMPOSITE
+Input: integer n.
+Question: is n composite?
+Theorem 4.6 COMPOSITE ? RP.
+The proof of this relies on the following lemma. For an integer n ? 1 we
+denote the set of non-zero residues mod n by
+Z
++
+n
+= {a ? Zn | a = 0}.
+Lemma 4.7 Let n ? 3 be odd and a ? Z
++
+n . Write n - 1 = 2km, with m odd. If
+either of the following two conditions hold then n is composite:
+(i) an-1 = 1 mod n;
+(ii) an-1 = 1 mod n, am = 1 mod n and none of the values in the sequence
+am, a2m, a4m, . . . , a2km are congruent to -1 mod n.
+Proof: If p is prime then a p-1 = 1 mod p for any a ? Z
++
+p , by Fermat’s Little
+Theorem (Appendix 3, Theorem A3.11). Hence if (i) holds then n is composite.
+If (ii) holds then let b be the last integer in the sequence am, a2m, . . . that is
+not congruent to 1 mod n. Then b2 = 1 mod n but b = ±1 mod n. Hence b + 1
+and b - 1 are non-trivial factors of n so n is composite. 
+If a ? Z
++
+n satisfies condition (i) of Lemma 4.7 then it is called a Fermat witness
+for the compositeness of n, while if it satisfies condition (ii) of Lemma 4.7 it is
+called a Miller witness.
+Many composite integers have lots of Fermat witnesses. Unfortunately there
+exist some which have very few. For a composite integer n we define the set of
+Fermat witnesses for n to be
+Fn = {a ? Z
++
+n
+| a is a Fermat witness for n}.
+Note that if a ? Z
++
+n is not a Fermat witness then an-1 = 1 mod n and so there
+exists k ? Z such that
+an-1 - kn = 1.
+76 4 Probabilistic computation
+Now, since gcd(a, n) divides the left-hand side of this equation, we must have
+gcd(a, n) = 1. Hence every a ? Z
++
+n that is not coprime with n is a Fermat
+witness for n.
+A composite integer n is a Carmichael number if the only Fermat witnesses
+for n are those a ? Z
++
+n which are not coprime with n. The smallest example of
+such a number is 561 = 3 · 11 · 17.
+The following result tells us that if we could ignore Carmichael numbers
+then primality testing would be extremely simple. For details of the basic group
+theory we will require, see Appendix 3.
+Proposition 4.8 If n is composite but not a Carmichael number then |Fn| >
+n/2.
+Proof: Recall that the set of integers less than and coprime to an integer n form
+a multiplicative group Z
+*
+n
+= {1 ? a < n | gcd(a, n) = 1}.
+Consider the set B = Z
+*
+n
+\Fn, so
+B = {a ? Z
+*
+n
+| an-1 = 1 mod n}.
+This is easily seen to be a subgroup of Z
+*
+n since
+(i) if a, b ? B then (ab)n-1 = an-1bn-1 = 1 · 1 = 1 mod n, so ab ? B;
+(ii) if a ? B then (a-1)n-1 = (an-1)-1 = 1-1 = 1 mod n, hence a-1 ? B;
+(iii) 1n-1 = 1 mod n, so 1 ? B.
+Hence B is a subgroup of Z
+*
+n. Then, since n is composite but not a Carmichael
+number, there exists b ? Z
+*
+n
+\B. So B is a proper subgroup of Z
+*
+n and hence
+by Lagrange’s theorem (Appendix 3, Theorem A3.1) |B| is a proper divisor of
+|Z
+*
+n
+|. Hence |B| ? (n - 1)/2 and so
+|Fn| = |Z
++
+n
+| - |B| > n/2. 
+In the light of this result we can give a probabilistic polynomial time algorithm
+which can almost test for primality.
+Algorithm 4.9 The Fermat ‘Almost Prime’ Test.
+Input: an integer n ? 2.
+Algorithm:
+choose a ?R Z
++
+n
+if an-1 = 1 mod n
+then output ‘prime’
+else output ‘composite’.
+4.3 Primality testing 77
+This algorithm almost solves our problem. If the input is prime it certainly
+outputs ‘prime’. While if the input is composite, but not a Carmichael number,
+then Proposition 4.8 implies that it will output ‘composite’ with probability at
+least a half. Since this algorithm is also clearly polynomial time we would have
+a very simple primality testing algorithm if Carmichael numbers did not exist.
+Unfortunately they not only exist, there are infinitely many such numbers as the
+following theorem, due to Alford, Granville and Pomerance (1994), implies.
+Theorem 4.10 If C(x) denotes the number of Carmichael numbers less than or
+equal to x then C(x) > x2/7, in particular there are infinitely many Carmichael
+numbers.
+Despite this fact some implementations of cryptosystems which require random
+primes actually use Algorithm 4.9. The justification for this being that since
+there are far more primes than Carmichael numbers of a given size we would
+be incredibly unlucky to choose a Carmichael number by mistake.
+We wish to take a more rigorous approach and so require an algorithm
+which can also recognise Carmichael numbers. In Lemma 4.7 (ii) we described
+a second type of witness for the compositeness of a composite number: the
+Miller witness. The Miller–Rabin primality test makes use of both Fermat and
+Miller witnesses.
+Algorithm 4.11 The Miller–Rabin Primality Test.
+Input: an odd integer n ? 3.
+Algorithm:
+choose a ?R Z
++
+n
+if gcd(a, n) = 1 output ‘composite’
+let n - 1 = 2km, with m odd
+if am = 1 mod n output ‘prime’
+for i = 0 to k - 1
+if am·2i = -1 mod n then output ‘prime’
+next i
+output ‘composite’.
+Theorem 4.12 The Miller–Rabin primality test is a probabilistic polynomial
+time algorithm. Given input n
+(i) if n is prime then the algorithm always outputs ‘prime’;
+(ii) if n is composite then
+Pr[the algorithm outputs ‘composite’] ? 1
+2
+.
+78 4 Probabilistic computation
+Hence COMPOSITE ? RP or equivalently PRIME ? co-RP.
+Proof: The Miller–Rabin test is clearly a probabilistic polynomial time algorithm
+since it involves basic operations such as multiplication, calculation of
+greatest common divisors and exponentiation mod n all of which can be performed
+in polynomial time.
+To see that (i) holds suppose the input n is prime. Then for any a ? Z
++
+n
+we have gcd(a, n) = 1 and so the algorithm cannot output ‘composite’ at line
+2. The only other way it could output ‘composite’ is if am = 1 mod n and
+am·2i = -1 mod n for any 0 ? i ? k - 1. In which case either an-1 = 1 mod n
+and so a is a Fermat witness for n, or an-1 = 1 mod n and so a is a Miller witness
+for n. But by Lemma 4.7 this is impossible, since n is prime.
+It remains to prove (ii). We consider two cases.
+Case 1 The input n is composite but not a Carmichael number.
+Suppose the algorithm outputs ‘prime’. Then either am = 1 mod n or am·2i =
+-1 mod n, for some 0 ? i ? k - 1. In either case an-1 = 1 mod n, so a is not
+a Fermat witness for n. However, by Proposition 4.8 we know that |Fn| > n/2
+and so
+Pr[algorithm outputs ‘composite’] ? 1
+2
+.
+Case 2 The input n is a Carmichael number.
+We consider two sub-cases depending on whether or not n is a prime power.
+(Recall that n is a prime power if n = pk , with p prime and k ? 1.)
+Case 2a The input n is not a prime power.
+Define
+t = max 0 ? i ? k - 1 | ?a ? Z
+*
+n such that am·2i = -1 mod n
+and
+Bt = a ? Z
+*
+n
+| am·2t = ±1 mod n.
+Note that if a ? Bt then the algorithm outputs ‘composite’. Since if the algorithm
+outputs ‘prime’ then either am = 1 mod n or, by the definition of t, there exists
+0 ? i ? t such that am·2i = -1 mod n. In either case this would imply that
+am·2t = ±1 mod n.
+So it will be sufficient to prove that |Bt| ? |Z
+*
+n
+|/2 to complete the proof in
+this case.
+4.3 Primality testing 79
+Now Bt is a subgroup of Z
+*
+n since the following conditions hold
+(i) if a, b ? Bt then (ab)m·2t = am·2t bm·2t = (±1) · (±1) = ±1 mod n, so
+ab ? Bt ;
+(ii) if a ? Bt then (a-1)m·2t = (am·2t )-1 = (±1)-1 = ±1 mod n, so a-1 ? Bt ;
+(iii) 1m·2t = 1 mod n, so 1 ? Bt .
+If we can show that Bt = Z
+*
+n then we will be done, since then Lagrange’s
+Theorem (Appendix 3, Theorem A3.1) implies that |Bt| ? |Z
+*
+n
+|/2.
+The definition of t implies that there exists a ? Z
+*
+n such that am·2t =
+-1 mod n.As n ? 3 is not a prime power,wecan factorise n as n = cd, with 3 ?
+c, d < n and gcd(c, d) = 1. The Chinese Remainder Theorem (Appendix 3,
+Theorem A3.5) implies that there exists b ? Z
++
+n satisfying
+b = a mod c,
+b = 1 mod d.
+These equations in turn imply that b ? Z
+*
+n. However b ? Bt , since
+bm·2t = am·2t = -1 mod c,
+bm·2t = 1m·2t = 1 mod d,
+imply that bm·2t = ±1 mod n. Hence Bt = Z
+*
+n.
+Case 2b The input n is a prime power and a Carmichael number. No Carmichael
+number is a prime power (see Exercise 4.3 for a proof of this). Hence the proof
+is complete. 
+This result shows that COMPOSITE ? RP or equivalently that PRIME ?
+co-RP. There also exists a probabilistic primality test due to Adleman and
+Huang (1987) which shows that PRIME ? RP. Hence PRIME ? RP ? co-RP.
+As we shall see in the next section any language in RP ? co-RP actually has a
+probabilistic algorithm with polynomial expected running time which has zero
+probability of making an error. However, we nowknowthat PRIME ? P, which
+implies all of the aforementioned results.
+Exercise 4.2a Describe the computation of the Miller–Rabin primality test on
+input n = 561 if the random value a ?R Z
++
+561 that is chosen is a = 5. In
+particular does it output ‘prime’ or ‘composite’.
+Exercise 4.3 a Show that if n is a Carmichael number then n is not a prime
+power.
+80 4 Probabilistic computation
+4.4 Zero-error probabilistic polynomial time
+If L ? RP then there exists a polynomial time PTM for L which is always
+correct when it accepts an input but which will sometimes incorrectly reject an
+input x ? L. Similarly if L ? co-RP then there exists a polynomial time PTM
+for L which is always correct when it rejects an input but which will sometimes
+incorrectly accept an input x ? L.
+Formally a language L belongs to co-RP iff there is a PTM, M, with polynomial
+running time such that on any input x ? 
+*
+0 :
+(i) if x ? L then Pr[M accepts x] = 1;
+(ii) if x ? L then Pr[M accepts x] ? 1/2.
+When we introduced PTMs we defined the notion of time complexity only
+for machines that halt on all inputs regardless of the random bits on the cointossing
+tape. Thus if there is a probabilistic polynomial time algorithm for a
+language L which has zero probability of making an error then L ? P. (Simply
+fix any particular sequence of random bits of the correct polynomial length and
+use these to decide any input.) However, if we do not insist that our PTM is
+halting then we can still consider algorithms whose expected running times are
+polynomial and which have zero error probability. Such algorithms are known
+as Las-Vegas algorithms and can be extremely useful, particularly in situations
+where it is essential that the answer is correct.
+A language L is decidable in zero-error probabilistic polynomial time or
+equivalently belongs to ZPP iff there exists a PTM, M, with polynomial
+expected running time such that for any input x ? 
+*
+0 :
+(i) if x ? L then Pr[M accepts x] = 1;
+(ii) if x ? L then Pr[M accepts x] = 0.
+It is not too difficult to show that this class is actually the same as
+RP ? co-RP.
+Proposition 4.13 The classes ZPP and RP ? co-RP are equal.
+Proof: If L ? ZPPthen there exists aPTM M with polynomial expected running
+time p(n) such that M has zero error probability. Hence if M halts on input
+x ? n
+0 then it is always correct (as any finite computation uses finitely many
+random bits and so has strictly positive probability of occurring).
+Form a new PTM N for L by simulating M on input x ? n
+0 for time
+2p(n) and rejecting if M does not halt. Clearly this is a polynomial time
+PTM and it has zero probability of accepting x ? L. Moreover, by Markov’s
+4.5 Bounded-error probabilistic polynomial time 81
+Inequality (Appendix 4, Proposition A4.3),weknowthat the probability that any
+random variable exceeds twice its expected value is at most 1/2. Thus if x ? L
+then
+Pr[M accepts x in time at most 2p(n)] ? 1/2.
+Hence L ? RP. To see that L ? co-RP we simply build another PTM which is
+identical to N except that it accepts if M does not halt in time 2p(n).
+Conversely if L ? RP ? co-RP then there exist polynomial time PTMs M
+and N such that if M accepts it is always correct and if N rejects it is always
+correct. Moreover for any x ? n
+0 if both machines are run on input x the
+probability that one of these events occurs is at least 1/2. So given x ? n
+0
+simply run M and N repeatedly in turn on input x until M accepts or N
+rejects. This gives a PTM with zero-error probability and expected running
+time 2(pM(n) + pN (n)), where pM(n) and pN (n) are polynomial bounds on
+the running times of M and N respectively. Hence L ? ZPP. 
+Unfortunately it is very hard to find any examples of languages in ZPP\P.
+Indeed this class may well turn out to be empty, although proving this would
+be a major new result.
+4.5 Bounded-error probabilistic polynomial time
+For a language to belong to RP or co-RP there must exist a probabilistic polynomial
+time algorithm which makes one-sided errors. A more natural type of
+algorithm to ask for is one that can make errors on any input (either x ? L
+or x ? L) but which is ‘usually correct’. Thus we will consider algorithms
+which have a reasonable chance of accepting an input from the language,
+while also having a reasonable chance of rejecting an input not from the
+language.
+Note that for any language L we can construct a polynomial time PTM, M,
+such that on any input x ? 
+*
+0 :
+(i) if x ? L then Pr[M accepts x] ? 1/2;
+(ii) if x ? L then Pr[M accepts x] ? 1/2.
+We simply let M read a single random bit and accept x iff this is 1. (Equivalently
+toss a coin and accept x iff the coin lands on heads.)
+Such an algorithm is obviously useless, however, ifwecould make the chance
+of accepting a correct input significantly higher and the chance of accepting
+an incorrect input significantly lower this would be useful. This leads to the
+82 4 Probabilistic computation
+class of languages decidable in bounded-error probabilistic polynomial time or
+BPP.
+Alanguage L belongs toBPPiff there is a PTM, M, with polynomial running
+time such that on any input x ? 
+*
+0 :
+(i) if x ? L then Pr[M accepts x] ? 3/4;
+(ii) if x ? L then Pr[M accepts x] ? 1/4.
+We should note that the values 3/4 and 1/4 in this definition are unimportant.
+Any constants c > 1/2 and (1 - c) < 1/2 could be used in their place, indeed
+as we shall see they need not be constants at all.
+Exercise 4.4 Show that replacing 3/4 and 1/4 by 2/3 and 1/3 respectively in
+the definition of BPP does not change the class.
+An important property of BPP (that follows trivially from its definition) is that
+it is closed under complements, that is BPP = co-BPP.
+Our next result says that if a language L belongs to BPP then we can
+essentially decide L in polynomial time. The key idea is that we can boost our
+probability of being correct by repeating the algorithm and taking the majority
+answer.
+Proposition 4.14 If L ? BPP and p(n) ? 1 is a polynomial then there exists
+a polynomial time PTM, M, such that on input x ? n
+0 :
+(i) if x ? L then Pr[M accepts x] ? 1 - 2-p(n);
+(ii) if x ? L then Pr[M accepts x] ? 2-p(n).
+Thus the probability that M makes a mistake is at most 2-p(n).
+Proof: If L ? BPP then there exists a PTM N with polynomial running time
+such that if x ? 
+*
+0 then
+Pr[N makes a mistake on input x] ? 1
+4
+.
+Our new PTM, M works as follows. Let t ? 1, then given x ? n
+0 , M simulates
+2t + 1 independent computations of N on input x and takes the majority vote.
+That is if N accepts more times than it rejects then M accepts, otherwise M
+rejects.
+By symmetry we need only consider the case x ? L. We need to show
+that for a suitable choice of t, the probability that M rejects x is at
+most 2-p(n).
+4.6 Non-uniform polynomial time 83
+Now M rejects x if and only if N accepts x at most t times during the 2t + 1
+computations. Hence
+Pr[M rejects x] ?
+t
+
+k=0
+2t + 1
+k
+3
+4
+k 1
+4
+2t+1-k
+? (t + 1)
+4
+2t + 1
+t
+ 3
+16
+t
+? 22t+1 (t + 1)
+4
+ 3
+16
+t
+? (t + 1)3
+4
+t
+.
+Thus setting t = 8p(n) this probability is less than 2-p(n). Hence M needs to
+simulate N polynomially many times and, since N had polynomial running
+time, so M also has polynomial running time and the result holds. 
+Note that this result can be interpreted as saying that a language in BPP is
+effectively decidable in polynomial time. This justifies our view of BPP as the
+class of ‘tractable languages’.
+We have the following obvious containments between complexity classes
+that follow directly from the definitions, Theorem 4.4 and Proposition 4.13.
+Proposition 4.15 P ? ZPP = RP ? co-RP ? RP ? RP ? co-RP ? BPP.
+With our new plethora of complexity classes comes a whole range of open
+questions.
+(i) Is P = ZPP?
+(ii) Is RP = co-RP?
+(iii) Is RP = NP ? co-NP?
+(iv) Is BPP ? NP?
+(v) Is NP ? BPP?
+(vi) Is RP ? co-RP = BPP?
+4.6 Non-uniform polynomial time
+Thus far we have always considered the task of finding a single algorithm or
+Turing machine to solve a computational problem, but what happens if we are
+allowed to use a collection of machines, one for each input length? Theoretically,
+given any language L and input length n ? 1, there exists a deterministic Turing
+84 4 Probabilistic computation
+machine Mn that decides L for all inputs of length n. If the input alphabet has
+size s then there are sn possible inputs of length n and using a sufficiently
+large number of states Mn can have a ‘look-up’ table of all inputs of length
+n that belong to L and hence accept x ? n
+0 iff x ? L. Moreover it could do
+this in time O(n) in the following way. Let Mn have 3 + (sn+1 - 1)/(s - 1)
+states: a starting state, an accept state, a reject state and one state for each string
+of length at most n. As Mn reads the input x ? n
+0 its state is given by the
+string that it has read so far. Once it has read the whole input its transition
+function can tell it whether to accept or reject depending on whether x belongs
+to L.
+Such a collection of machines would be useless in practice, since the ‘size’
+of Mn would be exponential in n. If we wish to use different machines for
+different input lengths we need to place restrictions on the size of the machines,
+so first we need a definition of the size of a Turing machine.
+The size of a Turing machine is the amount of space required to describe it.
+In order to describe a Turing machine we need to specify the tape alphabet ,
+the set of states  and the transition function ?. If || = s and || = t then the
+transition function may be described by giving a quintuple for each possible
+state/symbol combination thus the size of such a machine is s + t + 5st.
+The obvious restriction to place on a machine if it is to decide inputs of
+length n from a language L in an efficient manner is to insist that its size and
+running time are polynomially bounded. Formally we say that a language L
+is decidable in non-uniform polynomial time if there is an infinite sequence of
+DTMs M1, M2, . . . and a polynomial p(n) such that:
+(i) the machine Mn has size at most p(n);
+(ii) the running time of Mn on any input of size n is at most p(n);
+(iii) for every n and every x ? n
+0 the machine Mn accepts x iff x ? L.
+We denote this class by P/poly. Clearly P ? P/poly. (In fact the containment is
+strict since P/poly contains non-recursive languages, in other words languages
+which are not decidable by any single Turing machine irrespective of their
+running time.)
+It is easy to check that the following result holds.
+Proposition 4.16 If any NP-complete language belongs to P/poly then NP ?
+P/poly.
+We can now show how powerful this new deterministic complexity class really
+is.
+Theorem 4.17 BPP ? P/poly.
+4.6 Non-uniform polynomial time 85
+Proof: The key idea in this proof is that if L ? BPP then for a fixed input
+length n there exists a polynomial time PTM and a single polynomial length
+sequence of coin-tosses such that all inputs of length n are correctly decided by
+this machine using this single sequence of coin-tosses. This allows us to build
+a deterministic Turing machine to decide inputs of length n, with polynomial
+size and running time.
+Let L ? BPP. Without loss of generality we may suppose that 0 = {0, 1}
+so there are exactly 2n distinct input strings of length n. Now, by Proposition
+4.14, there exists a polynomial time PTM, M, such that for every x ? n
+0 :
+(i) if x ? L then Pr[M accepts x] > 1 - 2-n;
+(ii) if x ? L then Pr[M accepts x] < 2-n.
+We may assume that on all inputs of length n the machine M uses exactly q(n)
+coin-tosses, for some polynomial q(n).
+For input x ? {0, 1}n and coin-toss sequence y ? {0, 1}q(n) let
+M(x, y) = 1, M accepts x using the coin-toss sequence y,
+0, M rejects x using the coin-toss sequence y.
+Also let
+L(x) = 1, x ? L,
+0, x ? L.
+For any fixed input x ? {0, 1}n the set of ‘good’ coin-toss sequences for x is
+GC(x) = y ? {0, 1}q(n) | M(x, y) = L(x).
+Properties (i) and (ii) of the machine M imply that
+|GC(x)| > 2q(n)(1 - 2-n). (4.1)
+For a sequence of coin-tosses y ? {0, 1}q(n) the set of ‘good’ inputs for y is
+GI (y) = {x ? {0, 1}n | M(x, y) = L(x)}.
+The following identity must hold, since both sides of this equation count the
+number of pairs (x, y) ? {0, 1}n+q(n) such that M(x, y) = L(x),
+
+x?{0,1}n
+|GC(x)| = 
+y?{0,1}q(n)
+|GI (y)|.
+Using equation (4.1) we have
+
+y?{0,1}q(n)
+|GI (y)| > 2q(n)+n(1 - 2-n).
+86 4 Probabilistic computation
+Function f (x, y)
+0 0
+1 1
+x x
+¬x NOT 1 + x
+Fig. 4.2 The 4 elements of B1, the Boolean functions on one variable.
+Hence there must exist a coin-toss sequence z ? {0, 1}q(n) satisfying |GI (z)| >
+2n - 1. But then |GI (z)| = 2n and so M decides all inputs of length n correctly
+using the single coin-toss sequence z.
+We can now construct a DTM Mn that on input x ? {0, 1}n simulates the
+computation of M with the coin-toss sequence z. This machine clearly decides
+all inputs of length n correctly and has polynomial size and running time. Hence
+L ? P/poly and so BPP ? P/poly. 
+Exercise 4.5 h Prove that if any NP-complete language L belongs to P/poly
+then NP ? P/poly. (Proposition 4.16.)
+4.7 Circuits
+Recall that a Boolean function is a function f : {0, 1}n › {0, 1}.We will denote
+the collection of Boolean functions on n variables by
+Bn = { f | f : {0, 1}n › {0, 1}}.
+It is a straightforward counting exercise to check that there are exactly 22n
+functions in Bn. We list the 4 elements of B1 in Figure 4.2 and the 16 elements
+of B2 in Figure 4.3. The algebraic expressions for these functions, such as
+1 + x + xy for x › y, are evaluated mod 2.
+Examining Figure 4.3 we have 16 different functions in B2 but we can easily
+express all of these functions in terms of {¬,?, ?}. For example
+x - y = (¬x ? y) ? (¬y ? x).
+In fact if we are given a general Boolean function f ? Bn we can easily express
+f using these three functions.
+A Boolean function f is said to be in disjunctive normal form (or DNF) if it
+is written as
+f (x1, . . . , xn) =
+m
+
+k=1
+Ck ,
+4.7 Circuits 87
+Function f (x, y)
+0 0
+1 1
+x x
+y y
+¬x 1 + x
+¬y 1 + y
+x ? y AND xy
+x ? y OR xy + x + y
+x?y NAND 1 + xy
+x?y NOR 1 + x + y + xy
+x › y IF-THEN 1 + x + xy
+¬(x › y) x + xy
+y › x 1 + y + xy
+¬(y › x) y + xy
+x - y IFF 1 + x + y
+¬(x - y) XOR x + y
+Fig. 4.3 The 16 elements of B2, the Boolean functions on two variables.
+where each clause Ck is a conjunction of literals. For example, of the following
+two formulae the first is in DNF while the second is not
+(x1 ? x3 ?¬x7) ? (¬x4 ? x2) ? (x5 ? x6),
+(x3 ? x5) ? (x7 ? x4) ? (¬x6 ? x5) ? (x3 ? x2).
+Theorem4.18 Any Boolean function can be written in disjunctive normal form.
+Proof: If f ? Bn is unsatisfiable then
+f (x1, . . . , xn) = x1 ?¬x1.
+So suppose that f ? Bn is satisfiable.We simply consider each satisfying truth
+assignment in turn. For a variable xi, we write x1
+i for xi and x0
+i for ¬xi . Let
+S f = {(a1, . . . , an) | f (a1, . . . , an) = 1}.
+Then
+f (x1, . . . , xn) = 
+(a1,...,an )?S f
+n
+
+i=1
+xai
+i .
+This follows directly from the fact that the DNF formula on the right hand side
+is true iff one of its conjunctions is true and a literal xai
+i is true iff xi = ai . 
+88 4 Probabilistic computation
+Thus the set of functions {¬,?, ?} can be used to construct any Boolean function.
+But is this a minimal set with this property? No. Since
+x ? y = ¬(¬(x ? y)) = ¬(¬x ?¬y)
+we can express all Boolean functions using {¬, ?}, similarly we could use
+{¬, ?}. These are both minimal sets with this property. We call such a set a
+basis for Bn.
+In fact there is a smaller basis for Bn.
+Proposition 4.19 All Boolean functions can be expressed in terms of ?, that is
+{?} is a basis for Bn.
+Proof: To show this it is sufficient to describe ¬ and ? in terms of ? since we
+already know that {¬, ?} is a basis for Bn. Now
+¬x = x?x and x ? y = (x?y)?(x?y). 
+For a set B of Boolean functions a circuit over B is an acyclic directed graph
+with the following properties:
+(i) any vertex v with degin(v) = 0 is labelled by a variable (these are the
+inputs);
+(ii) every other vertex v is labelled by a function b ? B with degin(v)
+variables (these are the gates);
+(iii) there is a special output vertex w with degout(w) = 0.
+This is best understood by considering an example such as the circuit over
+B = {¬,?, ?} given in Figure 4.4.
+A gate computes its output by reading the inputs from its in-edges and
+applying the Boolean function with which it is labelled to these inputs. It then
+sends the resulting value along all its out-edges.
+A circuit C computes a Boolean function f ? Bn iff it has the property that
+when the inputs are x1 = a1, x2 = a2, . . . , xn = an then the value contained in
+the output vertex is f (a1, a2, . . . , an).
+The size of a circuit C is the number of gates it contains (that is the number
+of vertices in the underlying graph excluding the input and output vertices), we
+denote this by |C|. The depth of a circuit C, denoted by d(C), is the length of a
+longest directed path through the gates (that is the length of a longest directed
+path in the underlying graph from an input vertex to the output vertex). So the
+example in Figure 4.4 has size 4 (since it has 4 gates: ?,¬,?,?) and depth 4
+(the longest directed path through the circuit contains 4 edges).
+4.7 Circuits 89
+x1 x2 x3 x4
+?
+?
+?
+¬
+f
+Fig. 4.4 A circuit computing f (x1, x2, x3, x4) = (x1 ? x2) ? (¬x3 ? x4).
+For any Boolean function f and basis B we define the circuit complexity of
+f with respect to B by
+CB( f ) = min{|C| | C is a circuit over B which computes f }
+and the depth of f with respect to B by
+DB( f ) = min{d(C) | C is a circuit over B which computes f }.
+In the special case B = {¬,?, ?} we omit the subscript B, and write C( f ) and
+D( f ) to denote this.
+Circuits can be used to decide languages in the following way. Assume that
+inputs are encoded in binary, then a family of circuits {Cn}?
+n=1 decides L iff for
+every x ? {0, 1}n the circuit Cn outputs true iff x ? L.
+We can now define the class of languages decidable by polynomial size
+circuits to be
+C-poly = {L ? {0, 1}* | there is a polynomial p(n) and a family of
+circuits, {Cn}?
+n=1 which decide L, satisfying |Cn| ? p(n)}.
+The reader may have noticed that the class C-poly has certain similarities with
+the class P/poly: namely a different circuit/machine is used for each input size
+and the size of the circuit/machine is polynomially bounded. It is not too difficult
+to see that C-poly ? P/poly since given a family of polynomial size circuits
+we can easily construct a family of polynomial sized DTMs with the required
+properties. It is less obvious that the converse also holds.
+90 4 Probabilistic computation
+Theorem 4.20 If L ? 
+*
+0 is decided by a DTM in time T (n) then there exists
+a family of circuits {Cn}?
+n=1 such that Cn decides L on inputs of size n and
+|Cn| = O(T 2(n)).
+Proof: Suppose that L ? 
+*
+0 is decided by a DTM M in time T (n). Fix n ? 1,
+we will describe a circuit Cn that decides L on inputs of size n and satisfies
+|Cn| = O(T 2(n)).
+The DTM M is described by its set of states , its tape alphabet  and its
+transition function ?. Each state can be encoded as a binary string of length
+g = log || + 1, while every symbol can be encoded as a binary string of
+length s = log || + 1. We can then encode its transition function ? as a
+circuit, D, of constant size, with g + s inputs and g + s + 2 outputs. The outputs
+describe the new state, new symbol and whether the head should move left or
+right.
+Since M takes at most T (n) steps it cannot use tape squares other than
+-T (n) up to T (n).We will have T (n) layers in our circuit, one for each possible
+time during the computation. Each layer will consist of 2T (n) + 1 component
+circuits, one for each possible tape square. The components are all identical,
+except those on the last layer and are constructed from the circuit D for ?.
+Let Bi,t be the component circuit corresponding to square i on layer t. Then
+Bi,t is joined to Bi-1,t+1, Bi,t+1 and Bi+1,t+1. The component Bi,t takes three
+types of input.
+(i) Three single bits from Bi-1,t-1, Bi,t-1 and Bi+1,t-1 telling it if the
+read–write head moved from square i ± 1 to i at time t - 1 or if the
+computation has finished and the read–write head is stationary at square i
+at time t - 1.
+(ii) Three binary strings corresponding to the state of the machine, from
+Bi-1,t-1, Bi,t-1 and Bi+1,t-1. (If the read–write head is scanning square i
+at time t then by using the single bits corresponding to the head
+movement the circuit knows which of these is in fact the current state
+of M.)
+(iii) A binary string corresponding to the symbol contained in square i at time
+t from Bi,t-1.
+The computation of Bi,t depends firstly on the single bits telling it whether or not
+the read–write head is currently scanning square i. If this is the case then it computes
+the value of ? using the circuit D with the current state (correctly chosen
+from the three possible states it is given) and the current symbol in square i .
+The component Bi,t then passes the new state to Bi-1,t+1, Bi,t+1 and Bi,t+1.
+It also passes a single bit to Bi-1,t+1, Bi,t+1 and Bi+1,t+1 corresponding to
+4.7 Circuits 91
+D
+Bi,t
+Bi-1,t+1 Bi,t+1 Bi+1,t+1
+head state symbol
+Fig. 4.5 Part of a circuit simulating a Turing machine.
+whether the head moved left, right or remained stationary. Finally it passes the
+new symbol written in square i to Bi,t+1.
+If the head is not currently scanning square i then Bi,t simply passes on the
+three states it received to Bi-1,t+1, Bi,t+1 and Bi+1,t+1, it also passes them zeros
+to tell them that the head is not moving into any of these squares from square i .
+Finally it passes its symbol to Bi,t+1. (Part of the circuit is depicted in Figure 4.5.)
+If M ever reaches a halting state then the component circuits simply pass
+the halting state on without trying to evaluate ? until the final layer is reached.
+The final layer simply checks which square the read-write head is scanning and
+reads off the final state of M.
+Clearly this circuit will decide L on inputs of length n assuming that x is
+encoded as binary and given to the first layer together with the starting state of
+M and starting head position.
+Moreover the size of this circuit is O(T 2(n)), since it is constructed from
+T (n)(2T (n) + 1) component circuits, each of constant size. 
+With a little more work, one can prove the following corollary.
+Corollary 4.21 The classes C-poly and P/poly are equal.
+(This follows from the proof of Theorem 4.20 if we also show that the circuit D
+which computes the transition function of M can be implemented as a circuit
+of size O(|M| log |M|).)
+Theorem 4.17 then implies the following result.
+Corollary 4.22 Any language in BPP has polynomial size circuits.
+92 4 Probabilistic computation
+Exercise 4.6 h Prove by induction on n that there are exactly 22n Boolean
+function on n variables.
+4.8 Probabilistic circuits
+Having previously considered probabilistic Turing machines it is natural to ask
+whether randomness can help in circuit computations.
+Aprobabilistic circuit is an ordinary circuit with some extra inputs y1 . . . , ym
+which are chosen independently and uniformly at random from {0, 1}. We say
+that a probabilistic circuit C computes a function f : {0, 1}n › {0, 1} iff for
+all x1, . . . , xn ? {0, 1}
+Pr[C(x1, . . . , xn, y1, . . . , ym) = f (x1, . . . , xn)] ? 3/4.
+We say that a family of probabilistic circuits {Cn}?
+n=1 decides a language
+L ? {0, 1}* iff Cn computes the function fL,n : {0, 1}n › {0, 1} defined
+by
+fL,n(x) = 1, if x ? L,
+0, otherwise.
+It is not too difficult to see that Theorem 4.17 can be extended to show
+that probabilistic circuits are essentially no more powerful than ordinary
+circuits.
+Theorem 4.23 If f : {0, 1}n › {0, 1} is computed by a probabilistic circuit C
+then it is computed by a deterministic circuit D with |D| = O(n|C|).
+Proof: We first construct a probabilistic circuit Q that has probability greater
+than 1 - 2-n of computing f (x1, . . . , xn) correctly. This can be done by taking
+16n + 1 copies of C and computing the majority of their answers. The analysis
+of this is identical to the proof of Proposition 4.14. This new circuit clearly has
+size O(n|C|).
+By the same argument as that used in the proof of Theorem 4.17 there must
+exist a random sequence y for which Q computes every value of f (x1, . . . , xn)
+correctly. Fixing this random sequence we obtain a deterministic circuit which
+computes f (x1, . . . , xn) and has size O(n|C|). 
+Corollary 4.24 Any language which can be decided by polynomial size
+probabilistic circuits can be decided by polynomial size deterministic
+circuits.
+4.9 The circuit complexity of most functions 93
+4.9 The circuit complexity of most functions
+We sawin Theorem 4.18 that any Boolean function can be written in disjunctive
+normal form. This allows us to give an upper bound on the circuit complexity
+of any f ? Bn.
+Corollary 4.25 Any Boolean function f ? Bn satisfies C( f ) = O(n2n).
+Proof: We can construct a circuit for f ? Bn of size O(n2n) by using its disjunctive
+normal form. 
+Our next result, due to Shannon (1949), shows that in fact ‘most’ Boolean
+functions have large circuit complexity (unfortunately the proof uses the socalled
+probabilistic method and so does not provide any concrete examples of
+such functions).
+Theorem 4.26 Almost every function in Bn satisfies C( f ) ? 2n/n, that is
+lim
+n›?
+|{ f ? Bn | C( f ) ? 2n/n}|
+|Bn|
+= 0.
+Proof: We need to show that if En is defined by
+En = { f ? Bn | C( f ) ? 2n/n},
+then
+lim
+n›?
+|En|
+|Bn|
+= 0.
+Note firstly that the number of Boolean functions on n variables is 22n .
+The result will follow from simply counting the number of circuits with n
+inputs and of size s, which we denote by C(n, s).
+Acircuit (over {?,?, ¬}) with n inputs and s gates is specified by describing:
+(i) the function from {?,?, ¬} at each gate;
+(ii) the one or two inputs to each gate;
+(iii) the choice of the special output gate.
+There are three choices for the function at each gate. The number of possible
+inputs to a gate is 	n+s
+2 
+ (the input could be from one or two of any of the other
+s - 1 gates and n inputs). Finally the number of choices for the output gate is
+s so
+C(n, s) <
+s 	3	n+s
+2 
+
+s
+s!
+.
+94 4 Probabilistic computation
+The factor s! in the denominator is present because the order of the gates is
+unimportant.
+For s ? n and n large we can use Stirling’s formula (see Appendix 1) which
+tells us that s! ? (s/e)s. We also have s1/s ? 2 so
+C(n, s) ? 3e(n + s)2
+s
+
+s
+? 3es n
+s
++ 12s
+.
+Since s ? n we have
+C(n, s) ? (12es)s .
+Moreover there are at least as many circuits with s + 1 gates as there are with
+s gates so
+C(n, s) ? C(n, s + 1).
+Hence if N = 2n/n, n is large and s ? N then C(n, s) ? (12eN)N . Thus
+|En| =
+N
+
+s=1
+C(n, s) ? N(12eN)N = (12e)N NN+1.
+So, since |Bn| = 22n = 2nN, we have
+log|En|
+|Bn|
+ ? N log(12e) + n - (N + 1) log n,
+which tends to -? as n tends to infinity. Therefore
+lim
+n›?
+|En|
+|Bn|
+= 0.
+
+In fact this lower bound essentially gives the true circuit complexity of functions
+in Bn as shown by the following result due to Lupanov (1958).
+Theorem 4.27 If f ? Bn then C( f ) = (1 + o(1)) 2n
+n .
+4.10 Hardness results
+Given that the circuit complexity of most Boolean functions is far from polynomial
+one might hope that we could find examples of problems in NP with nonpolynomial
+circuit complexity. Unfortunately the largest known lower bound
+for the circuit complexity of a problem in NP is in fact linear.
+However, if we restrict the gates of our circuits to belong to M2 = {?, ?}
+then hardness results can be proved.Acircuit is said to be monotone if it contains
+4.10 Hardness results 95
+only gates from M2. A Boolean function is monotone iff it is computable by a
+monotone circuit.
+Consider the Boolean function CLIQUEk,n associated to the decision problem
+CLIQUE. This has 	n
+2
+ inputs corresponding to the possible edges of a graph
+on n vertices and is equal to 1 iff this input graph contains a clique of order k.
+Since the presence of a clique of order k can be checked by a circuit of size 	k
+2
+
+we know that
+C(CLIQUEk,n) = O k
+2
+n
+k
+
+.
+Razborov (1985) in a significant breakthrough obtained a super-polynomial
+lower bound for the complexity of a monotone circuit for CLIQUEk,n. This was
+then improved to the following result by Alon and Boppana (1987).
+Theorem 4.28 If k ? n1/4 then every monotone circuit computing CLIQUEk,n
+contains n(
+?
+k) gates.
+The proof of this result is beyond the scope of this text.
+We end this chapter with an intriguing result relating two fundamental questions
+in complexity theory. Let E be the following complexity class
+E = {L ? 
+*
+0
+| there is a DTM M which decides L and c > 0, such that
+TM(n) = O(2cn)}.
+Theorem 4.29 If there exists a language L ? E and > 0 such that any family
+of circuits {Cn}?
+n=1 computing L satisfies |Cn| ? 2n for n large then BPP = P.
+If no such language exists then P = NP.
+Problems
+4.1a Show that the value 1/2 in the definition of RP can be replaced by
+any other constant 0 < c < 1 without changing the class. What if we
+replace 1/2 by 1/p(n), where p(n) is a polynomial satisfying p(n) ? 2
+and n = |x|?
+4.2a If languages A and B both belong to RP do the following languages
+belong to RP?
+(a) A ? B.
+(b) A ? B.
+(c) AB.
+4.3a Repeat the previous question with RP replaced by
+(a) BPP.
+(b) ZPP.
+96 4 Probabilistic computation
+4.4a Suppose Bob wishes to choose a large ( 2512) prime and rather than
+using the Miller–Rabin test he uses the following algorithm,
+repeat forever
+choose odd n ?R {2512 + 1, . . . , 2513 - 1}
+p ‹ true
+i ‹ 0
+while p is true and i < 200
+i ‹i + 1
+choose a ?R Z
++
+n
+if an-1 = 1 mod n then p ‹ false
+end-while
+if p is true output n
+end-repeat.
+Suppose there are P primes and C Carmichael numbers in the range
+{2512 + 1, . . . , 2513 - 1}.
+(a) If the algorithm outputs n, give a lower bound for the probability
+that n is either prime or a Carmichael number.
+(b) Give a lower bound for the number of values of n you expect the
+algorithm to choose before it finds one which it outputs?
+(c) If P = 2503 and C = 2150 give an upper bound for the probability
+that the output n is not prime.
+4.5h Consider the following probabilistic algorithm for 2-SAT.
+Input: 2-SAT formula f (x1, x2, . . . , xn) = mj
+=1 Cj .
+Algorithm:
+choose a1, a2, . . . , an ?R {0, 1}
+while f (a1, a2, . . . , an) = true
+choose j ?R {k | Ck is not satisfied by a1, . . . , an}
+choose a literal xi ?R Cj
+change the value of ai
+end-while
+output ‘satisfiable’.
+Show that if the input f is satisfiable then the expected number of repetitions
+of the while loop in this algorithm before it outputs ‘satisfiable’
+is O(n2).
+4.6h Show that a language L belongs to BPP iff there exists a polynomial,
+p(n) ? 3, and a polynomial time PTM, M, such that on input x ? n
+0 :
+(a) if x ? L then Pr[M accepts x] ? (1/2) + (1/p(n));
+4.10 Hardness results 97
+(b) if x ? L then Pr[M accepts x] ? (1/2) - (1/p(n)).
+4.7h A perfect matching of a graph G = (V, E) is a set of edges M such that
+each vertex of G is contained in exactly one edge of M. Consider the
+matrix A = (ai j) given by
+ai j =
+??
+?
+xi j , if i is adjacent to j and i < j ,
+-x ji , if i is adjacent to j and i > j ,
+0, otherwise.
+(Each xi j is an indeterminate.)
+(a) Prove that G has a perfect matching iff det A = 0.
+(b) Show that this leads to an RP algorithm to decide if a graph has a
+perfect matching.
+4.8 Show that if A, B are languages, B ? P/poly and A ?m B then A ?
+P/poly.
+4.9 Prove that if L ? P/poly then 
+*
+0
+\L ? P/poly and hence co-P/poly =
+P/poly.
+4.10h Prove that the disjunctive normal form of the Boolean function x1 ?
+x2 ? · · ·? xn contains n2n-1 literals.
+4.11h The threshold function Tm(x1, . . . , xn) is defined by
+Tm(x1, . . . , xn) = 1, if n
+i=1 xi ? m,
+0, otherwise.
+Show, by construction, that for n ? 2 the circuit complexity of
+T2(x1, . . . , xn) is less than 3n. (In fact one can also show that the circuit
+complexity of T2(x1, . . . , xn) is at least 2n - 3.)
+4.12 Let f ? Bn. Use the fact that
+f (x1, . . . , xn) = (x1 ? f (1, x2, . . . , xn)) ? (x1 ? f (0, x2, . . . , xn)),
+to show that C( f ) = O(2n).
+4.13 We say that a Boolean function f ? Bn has property M iff
+(x1, . . . , xn) ? (y1, . . . , yn) =? f (x1, . . . , xn) ? f (y1, . . . , yn),
+where (x1, . . . , xn) ? (y1, . . . , yn) iff for each i we have xi ? yi .
+Showthat a Boolean function can be computed by a monotone circuit
+iff it has property M.
+Further notes
+The first probabilistic algorithm in the sense that we use in this chapter, seems to
+be due to Berlekamp (1970). This was an algorithm for factoring a polynomial
+98 4 Probabilistic computation
+modulo a prime p. It has running time bounded by a polynomial in deg( f )
+and log p, and has probability at least 1/2 of finding a correct factorisation
+of f. However, the real importance of this type of algorithm became much
+more widely appreciated with the announcement in 1974 of the primality test
+of Solovay and Strassen (1977). This was the predecessor of the Miller–Rabin
+test described here and is slightly less efficient than the latter.
+Theorem 4.2 is due to Schwartz (1979) and also independently to Zippel
+(1979).
+The seminal paper on the theory of probabilistic Turing machines is that of
+Gill (1977). In this he introduced the complexity classes RP, BPP and ZPP, as
+well as the much larger class PP probabilistic polynomial time.
+Shannon (1949) was the first to consider measuring the complexity of a
+function by its circuit size. Good treatments of circuit complexity can be found
+in the books of Dunne (1988) and Wegener (1987). The class P/poly was
+introduced by Karp and Lipton (1982).
+Adleman (1978) proved the very striking result that any language in RP
+can be decided by a circuit with polynomial complexity. Its generalisation to
+languages in BPP given in Theorem 4.17 is due to Bennett and Gill (1981).
+Theorem 4.20 showing how to efficiently simulate a DTM by a circuit is due
+to Schnorr (1976) and Fischer and Pippenger (1979).
+The first part of Theorem 4.29 is due to Impagliazzo and Wigderson (1997)
+while the second is due to Kabanets (see Cook (2000)).
+For a good introduction to the theory and application of probabilistic algorithms
+see the book of Motwani and Raghavan (1995).
+5
+Symmetric cryptosystems
+5.1 Introduction
+As described in Chapter 1, a symmetric cryptosystem is one in which both Alice
+and Bob share a common secret key K and both encryption and decryption
+depend on this key.
+Formally we can define such a cryptosystem as a quintuple
+M,K, C, e(·, ·), d(·, ·),
+whereMis the message space, the set of all possible messages, K is the key
+space, the set of all possible keys, and C is the cryptogram space, the set of all
+possible cryptograms. Then
+e :M× K › C,
+is the encryption function and
+d : C × K ›M,
+is the decryption function. To ensure that cryptograms can be decrypted they
+must satisfy the fundamental identity
+d(e(M, K), K) = M,
+for all M ?Mand K ? K.
+Note that this identity implies that there must be at least as many cryptograms
+as messages.
+Proposition 5.1 For any cryptosystem |M| ? |C|.
+Proof: If there were more messages than cryptograms then for any given key
+there would be at least one cryptogram which Bob would be unable to decrypt
+99
+100 5 Symmetric cryptosystems
+(since it would have to correspond to at least two distinct messages). Hence
+|M| ? |C|. 
+Example 5.2 Simple mono-alphabetic substitution
+The message space might consist of all sensible messages in a particular natural
+language such as English or French.
+The key in this cryptosystem is a permutation ? of the alphabet. Toencrypt
+a message M ?MAlice replaces each letter of the message by its image under
+?, so if M = M1 · · · Mn consists of n letters then the cryptogram will be
+C = e(M, ?) = ?(M1) · · · ?(Mn).
+To decrypt Bob simply applies the inverse permutation to each letter of the
+cryptogram in turn.
+In such a cryptosystem each letter a ?  is always encrypted as the same letter
+?(a) ? . Any cryptosystem in which the encryption of each letter is fixed is
+useless since it will be vulnerable to attack via frequency analysis. Informally
+frequency analysis works by observing the different frequencies of letters in
+messages. For example in English we know that E, T and A will all occur far
+more often than J, Q and Z. Using the statistics of letter frequencies it is easy
+to discover the key ? given a short piece of ciphertext.
+Example 5.3 The Vigen`ere cipher
+In the Vigen`ere cipher the key consists of a string of k letters. These are written
+repeatedly below the message (from which all spaces have been removed). The
+message is then encrypted a letter at a time by adding the message and key letters
+together, working mod 26 with the letters taking values A = 0 to Z = 25.
+For example if the key is the three letter sequence KEY then the message
+M = THISISTHEMESSAGE
+is encrypted using
+K = KEYKEYKEYKEYKEYK
+to give the cryptogram
+C = DLGCMQDLCWIQCEEO.
+The Vigen`ere cipher is slightly stronger than simple substitution. To attack it
+using frequency analysis is more difficult since the encryption of a particular
+letter is not always the same.However, it is still trivial to break given a reasonable
+amount of ciphertext.
+5.2 The one time pad: Vernam’s cryptosystem 101
+First the attacker must discover the value of k. This can be done by building
+up frequency statistics for different possible values of k (since for the correct
+value of k, letters that occur a distance k apart in the message are encrypted using
+the same fixed alphabet so they should display the same statistics as letters from
+the underlying language of the message). Once the value of k has been found,
+each letter of the key can be recovered separately using frequency analysis.
+Clearly the longer the key the more secure the cryptosystem will be. Similarly
+the fewer messages that are sent (and intercepted) the more difficult Eve’s job
+will be.
+Exercise 5.1a If Alice uses the Vigen`ere cipher with key ALICE, how does
+Bob decrypt the cryptogram NZBCKOZLELOTKGSFVMA?
+5.2 The one time pad: Vernam’s cryptosystem
+An obvious way of designing a cryptosystem is to represent a message M as a
+string of binary digits or bits and then to encrypt as follows.
+We denote bitwise addition mod 2 by ?. This is also known as exclusive or
+(XOR). Thus, if a, b ? {0, 1} then a ? b = a + b mod 2, while if a, b ? {0, 1}t
+then
+a ? b = (a1 ? b1, a2 ? b2, . . . , at ? bt ) ? {0, 1}t .
+If the message is an n-bit string M ? {0, 1}n then the key K ? {0, 1}n is a secret
+n-bit string that is chosen uniformly at random by taking n independent random
+bits. Alice then forms the cryptogram
+C = e(M, K) = M ? K.
+Thus
+C = (M1 ? K1, M2 ? K2, . . . , Mn ? Kn).
+Clearly, if Bob also knows the key K then he can decrypt by calculating
+M = d(C, K) = C ? K.
+This works since
+C ? K = (M ? K) ? K = M ? (K ? K) = M.
+This cryptosystem is known as the one-time pad or Vernam’s cryptosystem after
+its inventor. It can be seen as an extension of the Vigen`ere cipher, with a random
+key that is exactly the same length as the message.
+102 5 Symmetric cryptosystems
+This system has the following rather nice property. For any cryptogram C
+and any message M there is exactly one key that will result in M being encrypted
+as C. Namely
+K = (M1 ? C1, . . . , Mn ? Cn).
+All of the other ciphers we have examined so far had the property that if Eve tried
+to decrypt an intercepted cryptogram she would know when she had succeeded
+since she would be able to recognise that the message she had recovered made
+sense. With the one-time pad any cryptogram could be the encryption of any
+message, so when attempting to decrypt Eve has no way of telling when she
+has succeeded!
+Although this cryptosystem is certainly secure (it is allegedly used at the
+highest levels of government) it has several major drawbacks.
+The most significant of these is that the secret key must be as long as the
+message, so its use is only practical in situations where the key may be transported
+securely in advance and then stored in total security. If a user is lazy
+and reuses their key then the system quickly becomes less secure. (The name
+one-time pad refers to the fact that the key is used only once.)
+Indeed a historical example of how reuse of a one-time pad is insecure can
+be found in the NSA’s successful decryption of various KGB communications,
+in project VENONA. This was made possible by, among other factors, the
+Soviet’s reuse of pages from one-time pads. (See the NSA website for an article
+by Robert Benson describing these events.)
+Exercise 5.2a A user of the one-time pad encrypts the message 10101 and
+obtains the cryptogram 11111. What was the key?
+5.3 Perfect secrecy
+As was briefly outlined in Chapter 1 there is a classical theory of cryptography
+in which cryptosystems can have ‘perfect secrecy’. This is one of the most
+important concepts developed by Shannon in the 1940s. He defined such a system
+as one in which ‘the adversary [Eve] gains no new information whatsoever
+about the message from the cryptogram’. To define this precisely we need to
+describe Shannon’s probabilistic model of symmetric cryptosystems.
+Each message M ?M has an a priori probability pM > 0 of being sent,
+where
+
+M?M
+pM = 1.
+5.3 Perfect secrecy 103
+The assumption that the pM are non-zero simply means we discard messages
+that are never sent.
+Similarly each key K ? K has an a priori probability qK > 0 of being used
+to encrypt the message, and again
+
+K?K
+qK = 1.
+The assumption that the qK are non-zero simply means that we discard keys
+that are never used.
+These induce an a priori probability rC for each cryptogram C ? C of being
+received, namely
+rC =pMqK ,
+where the sum is over all pairs K ? K, M ?Msuch that e(M, K) = C.
+Since pM > 0 and qK > 0 so rC > 0 for any cryptogram C that can ever be
+received (we discard those that cannot).
+Typically the pM will vary considerably from message to message (in
+most situations some messages are far more likely than others). But in most
+cryptosystems it is hard to envisage the keys not being chosen uniformly at
+random.
+A cryptosystem has the property of perfect secrecy if the adversary learns
+nothing about the message from seeing the cryptogram. To be precise we mean
+that the a posteriori probability distribution on the message space given the
+cryptogram is equal to the a priori probability distribution on the message
+space. The a posteriori probability of a message M having been sent given that
+a cryptogram C is received is
+Pr[M sent | C received] = Pr[M sent ? C received]
+Pr[C received]
+= Pr[C received | M sent]pM
+rC
+= pM
+rC
+qK , (5.1)
+where the sum is over all K such that e(M, K) = C.
+Now for perfect secrecy we require that for each message M and cryptogram
+C the a priori probability of M and the a posteriori probability of M given C,
+should be equal. In other words for every M ?Mand C ? C we have
+pM = pM
+rC
+qK , (5.2)
+where the sum is over all K such that e(M, K) = C.
+104 5 Symmetric cryptosystems
+Perfect secrecy seems an incredibly strong requirement but in fact is realisable.
+However, achieving such a high level of security has a cost.
+Theorem 5.4 In any cryptosystem M,K, C, e, d with perfect secrecy
+|M| ? |C| ? |K|.
+Proof: As we saw in Proposition 5.1 the inequality |M| ? |C| holds for any
+cryptosystem.
+Suppose now that the cryptosystem has perfect secrecy. Then for any pair
+M ?Mand C ? C we have pM > 0 so the right-hand side of Equation (5.2) is
+positive. Hence the sumqK must also be positive, so there is at least one key
+K ? K such that e(M, K) = C. Now, for a fixed message M, the keys which
+result in M being encrypted as different cryptograms must all be distinct. Thus
+there must be at least as many keys as cryptograms. 
+Proposition 5.5 The one time pad has perfect secrecy.
+Proof: We take our message space (and hence cryptogram space and key space)
+to be {0, 1}n. Recall the a priori probabilities: pM that the message M is sent;
+rC that a cryptogram C is received and qK that a key K is used for encryption.
+We need to show that
+Pr[M sent | C received] = pM.
+By definition
+Pr[M sent | C received] = Pr[M sent ? C received]
+rC
+.
+First note that for any message
+M = (M1, M2, . . . , Mn)
+and cryptogram
+C = (C1,C2, . . . ,Cn)
+there is precisely one key K ? K such that e(M, K) = C, namely
+ˆK
+= (M1 ? C1, . . . , Mn ? Cn).
+Moreover, as the key consists of n independent random bits, this key is used
+with probability qˆK
+= 1/2n. Thus
+rC = 
+M?M
+pM
+2n
+= 1
+2n .
+5.3 Perfect secrecy 105
+message bit Mi keystream bit Zi
+ciphertext bit Ci
+mod 2 adder
+Fig. 5.1 A stream cipher.
+Now
+Pr[M sent ? C received] = Pr[M sent ? ˆK used]
+and since the choice of key is independent of the choice of message sent this
+gives
+Pr[M sent ? C received] = pM
+2n .
+Thus
+Pr[M sent | C received] = pM
+2n 2n = pM
+and so the one-time pad has perfect secrecy. 
+The one-time pad is the classic example of a stream cipher, that is a cryptosystem
+in which the message is encrypted a single bit at a time. (See Figure 5.1.)
+Formally in a stream cipher we encrypt a message M ? {0, 1}n a single bit at a
+time using a keystream Z ? {0, 1}n to give the cryptogram
+C = M ? Z.
+If the keystream is a truly random string of length n then this is simply a onetime
+pad, however, in most situations it is unrealistic to expect both Alice and
+Bob to share a secret key of the same length as the message. Instead many other
+stream ciphers have been developed that try (but generally fail) to emulate the
+one-time pad.
+To define a stream cipher we simply need to decide how to generate the
+keystream. Having decided that we cannot expect Alice and Bob to share a
+long secret random key we instead suppose that they both know a short random
+secret key from which they generate a longer keystream which is then used in
+a stream cipher. The general method is described below.
+(1) Setup. Alice and Bob share a small random secret key K ? {0, 1}k . They
+both know how to generate a long keystream Z ? {0, 1}n from K. (Using
+some deterministic process.)
+106 5 Symmetric cryptosystems
+(2) Encryption. Alice encrypts a message M ? {0, 1}n bit by bit using the
+keystream to give the cryptogram, C = M ? Z. She sends this to Bob.
+(3) Decryption. Bob decrypts using the keystream to recover the message as
+M = C ? Z.
+For a stream cipher to be secure the keystream should certainly be ‘unpredictable’.
+Historically many different approaches have been used to generate
+long keystreams from short keys. One popular approach has been the use of
+linear feedback shift registers. We examine these in the next section.
+It is important to note that none of the schemes we will describe in the
+remainder of this chapter are provably secure. Indeed the best we can do is
+to show what is certainly insecure. In Chapter 10 we will consider methods
+for generating unpredictable sequences using formal intractability assumptions.
+There we will see methods for generating sequences that are ‘as good as random’
+assuming, for example, that factoring a product of two large primes is hard.
+The schemes we examine below are important for practical reasons. They
+are easy to implement and are used in a wide range of often computationally
+constrained devices (for example Bluetooth).
+5.4 Linear shift-register sequences
+A linear feedback shift register (LFSR) (see Figure 5.2) is a machine consisting
+of m registers R0, . . . , Rm-1, arranged in a row, together with an XOR gate.
+Each register holds a single bit and may or may not be connected to the XOR
+gate. There are constants ci, 1 ? i ? m which are equal to 1 or 0 depending on
+whether or not there exists a connection between register Rm-i and the XOR
+gate. The machine is regulated by a clock and works as follows.
+Suppose that Xi (t) denotes the content of register Ri at time t and let
+X(t) = (Xm-1(t), . . . , X0(t)),
+denote the state of the machine at time t (this is simply the contents of all the
+registers). Then at time t + 1 the machine outputs Zt+1 = X0(t) and its state at
+time t + 1 is then given by
+Xi (t + 1) = Xi+1(t),
+for 0 ? i ? m - 2 and
+Xm-1(t + 1) = cm X0(t) ? cm-1X1(t) · · ·?c1Xm-1(t).
+5.4 Linear shift-register sequences 107
+Rm-1 Rm-2 R0
+XOR
+output
+Zt
+Fig. 5.2 A linear feedback shift register.
+In other words at each tick of the clock, each register Ri passes the bit it holds
+to its neighbour on the right. The content of the rightmost register, R0, becomes
+the output bit Zt of the machine and the new content of the leftmost register,
+Rm-1, is the output of the XOR gate.
+Thus, if the machine is initialised with a state vector X(0), it will produce
+an infinite stream of bits, which we denote by {Zt | 1 ? t < ?}, where Zt =
+X0(t - 1). If
+X(0) = (Zm, Zm-1, . . . , Z1)
+then the output stream will start
+Z1, Z2, . . . , Zm, . . .
+Note that if X(0) = 0 then the output bits will all be zero.
+The constants ci are called the feedback coefficients. If cm = 1 then the LFSR
+is said to be non-singular. The feedback coefficients define a polynomial
+c(x) = 1 + c1x + c2x2 + · · ·+cmxm,
+known as the feedback polynomial (or alternatively the characteristic or connection
+polynomial).
+For example the LFSR in Figure 5.3 has feedback polynomial 1 + x + x2 +
+x4.
+We say that an LFSR generates a binary sequence {Zn} if for some initial
+state its output is exactly the sequence {Zn}.
+We will say that a sequence {Zt } is periodic with period p ? 1 if Zt+p = Zt
+for all t ? 1 and p is the smallest integer with this property.
+It is an easy exercise to show that any sequence generated by an LFSR will
+ultimately be periodic. That is if we discard some initial bits then the resulting
+108 5 Symmetric cryptosystems
+R3 R2 R1 R0
+XOR
+output
+Zt
+Fig. 5.3 An LFSR with feedback polynomial 1 + x + x2 + x4.
+sequence will be periodic. However, if we wish to use the output of an LFSR to
+help generate a keystream it would be good to know that the output sequence
+does not have too small a period.
+Theorem 5.6 The output sequence of any non-singular LFSR is periodic for
+all initial states. If the machine has m registers then the maximum period is
+2m - 1.
+Proof: Let L be a non-singular LFSR with m registers and feedback polynomial
+c(x) = 1 + c1x + c2x2 + ··· + cmxm, cm = 1.
+If the state of the machine at time t is given by the column vector X(t) then
+X(t + 1) = CX(t), (5.3)
+where C is the matrix given below and arithmetic is performed mod 2
+C =
+?
+??????
+c1 c2 c3 · · · cm-1 cm
+1 0 0 · · · 0 0
+0 1 0 · · · 0 0
+... ...
+...
+. . .
+...
+...
+0 0 0 · · · 1 0
+?
+??????
+.
+Note that detC = cm = 1, so C is a non-singular matrix.
+Using Equation (5.3) we obtain the general identity
+X(t) = CtX(0), (5.4)
+where X(0) is the initial state of the machine.
+IfX(0) = 0 then clearly the output sequence is always zero; thus it is periodic
+with period 1. So we may suppose that X(0) 
+= 0.
+5.4 Linear shift-register sequences 109
+In this case Equation (5.4) implies that X(t) 
+= 0 for all t ? 1. Consider the
+sequence of vectors
+X(0),CX(0), . . . ,CkX(0),
+where k = 2m - 1. Since this is a sequence of 2m non-zero binary vectors of
+length m they cannot all be distinct (since there are only 2m - 1 such vectors
+in total). Hence there exist 0 ? i < j ? k such that
+CiX(0) = C jX(0).
+As C is non-singular so C-1 exists. Hence C-i exists and
+X(0) = C j-iX(0) = X( j - i ).
+So if p = j - i and t ? 0 then
+X(t + p) = Ct+pX(0) = CtC j-iX(0) = CtX(0) = X(t)
+and so the sequence is periodic with period at most
+p = j - i ? k = 2m - 1. 
+The feedback polynomial c(x) of anLFSR is said to be primitive if the following
+two conditions hold.
+(i) c(x) has no proper non-trivial factors.
+(ii) c(x) does not divide xd + 1 for any d < 2m - 1.
+The next result says that such polynomials are good candidates for feedback
+polynomials in the sense that they generate output sequences with maximum
+period. For a proof see Lidl and Niederreiter (1986).
+Theorem5.7 If R is a non-singular LFSR with a primitive feedback polynomial
+then its output sequence will have maximum period on any non-zero input.
+One possibleway to construct a stream cipher from an LFSR, R, is topretend that
+the output sequence of R is a one-time pad and encrypt the message accordingly.
+In other words if R has output sequence Z1, Z2, . . . encrypt each bit of the
+message by
+Ci = Mi ? Zi .
+The following theorem tells us that this is hopelessly insecure.
+Theorem 5.8 If the bit sequence Z1, Z2, . . . is generated by a non-singular
+m-register LFSR, R, and no shorter LFSR also generates this sequence then
+110 5 Symmetric cryptosystems
+the feedback polynomial of R is determined uniquely by any 2m consecutive
+terms of the sequence.
+Proof: Suppose we have 2m consecutive terms of the sequence.Without loss of
+generality we may suppose that these are the first 2m terms. Thus they satisfy
+the following system of equations mod 2
+?
+????
+Zm+1
+Zm+2
+...
+Z2m
+?
+????
+=
+?
+????
+Zm Zm-1 · · · Z1
+Zm+1 Zm · · · Z2
+...
+...
+Z2m-1 Z2m-2 · · · Zm
+?
+????
+?
+????
+c1
+c2
+...
+cm
+?
+????
+. (5.5)
+If the matrix on the right-hand side of Equation (5.5) is invertible then we are
+done since there is then a unique solution to the above system, which gives the
+coefficients of the feedback polynomial of R.
+So suppose, for a contradiction, that this matrix is not invertible. Thus its
+rows are linearly dependent. Moreover the rows of this matrix are consecutive
+states of the machine: X(0), . . . ,X(m - 1), so we have a linear dependence
+m-1
+
+i=0
+biX(i ) = 0,
+where b0, . . . , bm-1 ? {0, 1} are not all zero. Let
+k = max{i | bi 
+= 0}.
+Then k ? m - 1 and, since we are working mod 2, we have
+X(k) =
+k-1
+
+i=0
+biX(i ).
+Now if C is the matrix given by the feedback polynomial of R (as used in the
+proof of Theorem 5.6) then for any t ? 0 we have
+X(t + k) = CtX(k)
+=
+k-1
+
+i=0
+biCtX(i )
+=
+k-1
+
+i=0
+biX(i + t).
+So in particular for t ? 1 we have
+Zt+k =
+k-1
+
+i=0
+bi Zt+i ,
+5.5 Linear complexity 111
+and hence the sequence Z1, Z2, . . . is generated by a k-register LFSR (whose
+feedback polynomial has coefficients b0, b1, . . . , bk-1). This contradicts the
+minimality of m and so proves the result. 
+Theorem 5.8 implies that using the output of an LFSR as the keystream in
+a stream cipher is insecure since it allows Eve to conduct a known-plaintext
+attack.
+Corollary 5.9 Using the output of a single LFSR as the keystream in a stream
+cipher is vulnerable to a known-plaintext attack.
+Proof: Suppose that Alice and Bob use a stream cipher whose keystream is the
+output of an m-register LFSR and Eve knows a portion of plaintext of length
+2m, say Mi+1, Mi+2, . . . , Mi+2m. If she captures the corresponding portion of
+ciphertext Ci+1,Ci+2, . . . ,Ci+2m then she can recover the corresponding portion
+of keystream Zi+1, Zi+2, . . . , Zi+2m (since Z j = Cj ? Mj ).With this she
+can now determine the feedback polynomial of the LFSR, using Theorem 5.8.
+Eve now knows how to construct the LFSR used to generate the keystream.
+She initialises it with the first m bits of the keystream Zi+1, . . . , Zi+m, and then
+generates the remainder of the keystream by simulating the LFSR.
+Thus Eve is able to read the remainder of the message. 
+Exercise 5.3b An enemy knows that the sequence 1011000111 is the output of
+a 5-register LFSR. What is the feedback polynomial of this LFSR?
+5.5 Linear complexity
+Despite the implications of Theorem 5.8, LFSRs are still widely used in cryptography.
+This is mainly because they are extremely easy to implement in
+hardware.We will examine methods of combining the output of several LFSRs
+to give more secure non-linear keystreams for use in stream ciphers. Analysing
+the cryptographic strengths and weaknesses of such schemes is rather difficult
+and in general we can only give minimal necessary requirements. They do not,
+however, give any real guarantee of security. The main measure of security
+that is used in practice in this area of cryptography is ‘proof by resilience’.
+That is if a system resists attacks for a number of years it may be considered
+secure.
+We have already seen one criterion for security: the period of a sequence.
+Clearly if we are to use an LFSR generated keystream then the period of the
+sequence should be large. Another natural measure of how useful a sequence
+may be for cryptographic purposes is the size of its linear complexity.
+112 5 Symmetric cryptosystems
+The linear complexity of a binary sequence {Zn} is defined to be the smallest
+integer L such that there exists an L-register LFSR which generates {Zn}. If no
+such LFSR exists then the sequence has infinite linear complexity.
+(Note that this is a completely different notion of complexity to that of
+computational complexity considered in Chapters 2–4.)
+Our motivation for considering the linear complexity of binary sequences
+is that if we use some complicated method for generating a binary sequence
+to use as a keystream it would be somewhat disconcerting to discover that in
+fact the sequence could be generated by a single LFSR with comparatively
+few registers. Hence we should be careful to use sequences with high linear
+complexity.
+Since the initial m output bits of an m-register LFSR are simply the initial
+contents of the registers then clearly any binary sequence of length n is generated
+by an LFSR with at most n registers.
+Could we combine LFSRs in some way so as to give a sequence of infinite
+linear complexity? No. Any sequence produced by a deterministic finite
+state machine will clearly be ultimately periodic and hence have finite linear
+complexity.
+Given a finite sequence of bits {Zi } of length n we knowthere is an LFSRwith
+n-registers that generates {Zi } so its linear complexity is at most n. However, it
+will often be the case that an LFSR with far fewer registers will also generate
+the same sequence.
+It is not difficult to see that the linear complexity of a binary sequence of
+length n can be determined in polynomial time. Massey (1969) describes what
+is now known as the Berlekamp–Massey algorithm which has running time
+O(n2). We sketch below a conceptually simpler algorithm with running time
+O(n3 log n). It depends on the following lemma.
+Lemma 5.10 There exists a non-singularm-register LFSR which generates the
+sequence Z1, Z2, . . . , Zn iff the following system of equations for c1, . . . , cm
+has a solution mod 2 with cm = 1.
+Zm+1 = c1Zm + c2Zm-1 + ··· + cm Z1,
+Zm+2 = c1Zm+1 + c2Zm + ··· + cm Z2,
+...
+Zn = c1Zn-1 + c2Zn-2 + ··· + cm Zn-m.
+Proof: These equations are simply necessary and sufficient conditions that an
+m-register LFSR with feedback polynomial 1 + c1x + ··· + cmxm and initial
+state (Zm, Zm-1, . . . , Z1) will output Z1, Z2, . . . , Zn. 
+5.6 Non-linear combination generators 113
+Testing whether such a solution exists for a particular 1 ? m ? n can be
+achieved in time O(n3), using Gaussian elimination and so we use this as
+the basis for a simple ‘divide and conquer’ algorithm. Given any sequence
+Z1, . . . , Zn this algorithm will output the feedback polynomial of a minimum
+length LFSR that generates the sequence.
+Proposition 5.11 There is a polynomial time algorithm for computing the linear
+complexity of any binary sequence Z1, . . . , Zn. (The algorithm will also find the
+feedback polynomial of a minimum length LFSR that generates the sequence.)
+Proof: Our algorithm works as follows. First let m = n/2 and test the system
+of equations given by Lemma 5.10 to see if any m-register LFSR generates
+the sequence. If none exists repeat with m = 3n/4 otherwise repeat with
+m = n/4. Repeating in the obvious way we find the linear complexity of the
+sequence together with the feedback polynomial of a minimum length LFSR
+generating the sequence in time O(n3 log n). 
+Weclose this section by emphasising that whereas having high linear complexity
+is desirable in a candidate stream sequence it is far from sufficient. High linear
+complexity does not indicate security but low linear complexity certainly does
+imply insecurity.
+We turn now to the problem of producing a keystream for a stream cipher
+using a combination of several LFSRs.
+Exercise 5.4b
+(i) What is the linear complexity of the sequence 001101111?
+(ii) Give the feedback polynomial of a minimal length LFSR that
+generates this sequence.
+5.6 Non-linear combination generators
+Many different methods have been proposed for generating keystreams from
+combinations of LFSRs. One common idea is to take a number of LFSRs in
+parallel and to use the output of a non-linear function f of the outputs of the
+different machines as the desired keystream.
+Example 5.12 The Geffe generator.
+This was proposed by Geffe in 1973 and is a non-linear combination generator
+with three LFSRs. The combining function is
+f (x1, x2, x3) = x1x2 + x2x3 + x3.
+This combining function has the following attractive property.
+114 5 Symmetric cryptosystems
+Proposition 5.13 Given three LFSRs A, B,C whose feedback polynomials
+are all primitive and whose lengths, a, b, c, are all pairwise coprime the output
+sequence of the corresponding Geffe generator has period (2a - 1)(2b -
+1)(2c - 1) and linear complexity ab + bc + c.
+Another way of using LFSRs to produce more secure bitstreams is to work with
+a single machine, but to output some non-linear function of the lagged output.
+For example, if an LFSR produces the stream {Y (t)}t?0, then we might output
+the stream {Z(t)}t?k where
+Z(t) = f (Y (t), Y (t - 1), . . . , Y (t - k)),
+where f is a suitably chosen non-linear function of k + 1variables. The function
+f is called a filter. This type of system is known as a non-linear filter generator.
+Variations of this theme can use more than one LFSR before applying
+the filter. One attractive system is the shrinking generator, proposed by
+Coppersmith et al. (1994).
+Example 5.14 A shrinking generator sequence.
+Two LFSRs A and S with primitive feedback polynomials are synchronised.
+Suppose they have output sequences At and St respectively. If St = 1 at time t
+then the shrinking generator outputs Zt = At otherwise there is no output. For
+instance if {St } is
+011010100101001
+and {At } is
+101101010010101
+then {Zt } is
+0100001.
+Proposition 5.15 Suppose A and S are LFSRs with a and s registers respectively.
+If both A and S have primitive feedback polynomials and gcd(a, s) = 1
+then any non-trivial output sequence of the corresponding shrinking generator
+has period 2s-1(2a - 1) and linear complexity C satisfying
+a2s-2 < C ? a2s-1.
+Currently, if the feedback polynomials of A and S are known, but the initial
+states are not, then the best attack to recover the initial state vectors takes time
+O(2sa3).
+5.7 Block ciphers and DES 115
+There is a huge literature on this, and other methods of designing stream
+ciphers based on LFSRs. We refer to Menezes, van Oorschot and Vanstone
+(1996).
+5.7 Block ciphers and DES
+Rather than encrypting a message a single bit at a time (as in a stream cipher)
+another common way to encrypt a message is in blocks. Naturally such systems
+are known as block ciphers.
+Formally a block cipher takes a message block of length m and a key of
+length k and produces a cryptogram of length m, so
+e : {0, 1}m × {0, 1}k › {0, 1}m.
+Decryption then satisfies
+d : {0, 1}m × {0, 1}k › {0, 1}m, d(e(M, K)) = M.
+The shared common key K is secret and usually chosen at random. In general
+the form of the encryption function would be publicly known.
+The most important and still most widely used block cipher, despite its age,
+is the Data Encryption Standard or DES. This is an example of a Feistel cipher.
+In general a Feistel cipher is a block cipher that has even block size m = 2n.
+The message block is split into a pair of n-bit half-blocks, M = (L0, R0). The
+encryption is an iterative procedure which operates as follows for some agreed
+number of rounds t. In each round, a new pair of half-blocks, (L j , Rj ), is
+obtained from the previous pair (L j-1, Rj-1) by the rule
+L j = Rj-1, Rj = L j-1 ? f (Rj-1, K j ),
+where K j is the subkey for the j th round, obtained (in some prescribed way)
+from the actual key K, and f is a fixed function. Thus the final cryptogram will
+be C = (Lt , Rt ).
+An important property of the encryption process is that it is invertible by
+anyone who knows how to encrypt. To reverse a single round of the encryption
+process we need to obtain (L j-1, Rj-1) from (L j , Rj ). But note that Rj-1 = L j
+and
+L j-1 = Rj ? f (Rj-1, K j ) = Rj ? f (L j , K j ).
+Hence decryption can be achieved by anyone who possesses the key and knows
+how to encrypt.
+116 5 Symmetric cryptosystems
+To specify a particular Feistel cipher we need to describe two things. First
+the Feistel function used to encrypt the right half-block in each round, that is the
+function f above. Second the key schedule, this is the procedure for generating
+the subkeys K1, . . . , Kt for the different rounds from the original key K. We
+outline some of these details for DES below.
+DES is a Feistel cipher thatwas derived from an IBM cryptosystem known as
+Lucifer developed in the early 1970s. Itwas submitted to the National Institute of
+Standards and Technology (NIST) as a candidate for a government standard for
+encrypting unclassified sensitive information. Despite various criticisms, such
+as changes supposedly made by the NSA to the Feistel function as well as the
+cipher’s small key length, it was approved as a standard and published in 1977.
+DES operates on message blocks of size 64. The key is also apparently 64
+bits, however, only 56 of these are used, the other 8 may be used for parity
+checking or simply discarded. Hence the true key length is 56 bits. In practice
+messages may be longer than 64 bits and in this case a particular operation
+mode must be chosen, we will not discuss this here.
+There are 16 rounds of encryption in DES. First a fixed permutation is
+applied to the 64 bits in the message block, the so-called initial permutation.
+The resulting block is then split in half to give (L0, R0). (The initial permutation
+has no obvious cryptographic significance.)
+The key schedule used to derive the subkeys for each roundworks as follows.
+(i) First 56 bits of the 64-bit key K are extracted. (The other bits are either
+discarded or used for parity checking. For this reason we will simply
+assume that the key length is 56.)
+(ii) The 56 key bits are then split into two halves of 28 bits.
+(iii) In each round both halves are rotated left by one or two bits (depending
+on the round number). Then 24 bits are selected from each half to give
+the subkey of 48 bits for the round.
+As a Feistel cipher the encryption proceeds round by round as described above.
+The Feistel function f is defined as follows. In the j th round it takes the
+current right half-block Rj-1 and the subkey for the j th round K j and does the
+following.
+(i) The 32-bit half-block Rj-1 is expanded to 48 bits using the so-called
+expansion permutation, by duplicating some bits.
+(ii) The subkey K j , that is also 48 bits, is added bitwise to the expanded
+block mod 2.
+(iii) The resulting 48-bit block is then split into eight 6-bit blocks each of
+which undergoes a non-linear transformation mapping each 6-bit block
+5.7 Block ciphers and DES 117
+to 4-bits. This is performed by the so-called S-boxes that are in fact
+lookup tables.
+(iv) A permutation is then applied to the 32-bit output of the S-boxes (the
+so-called P-box).
+This yields f (Rj-1, K j ).
+Finally after the sixteen rounds are complete another permutation is applied
+to (L15, R15), the so-called final permutation. This is simply the inverse of the
+initial permutation.
+The most important aspect of the encryption is the use of the S-boxes that
+introduce non-linearity into the process, without which the system would be
+easy to break. The actual design of the S-boxes has been the source of welldocumented
+controversy over the years. The original design of this aspect was
+altered by the NSA with no reasons given at the time. It has since emerged that
+the original design would have been vulnerable to a particular type of attack
+known as differential cryptanalysis that at the time was not publicly known.
+We will not describe the different known attacks on DES in detail. Perhaps
+the most important point to note is that even now the best known practical
+attack on DES is by brute force, that is searching through all 256 possible keys
+until the correct one is found (in fact we can do slightly better than this but not
+much). Indeed in 1998 a machine costing $250 000 was built that succeeded in
+decrypting a DES-encrypted message after 56 hours (see Electronic Frontier
+Foundation, 1998).
+Although there exist theoretical attacks using both differential and linear
+cryptanalysis these all require huge amounts of known or chosen plaintext and
+so are impractical. Thus although these attacks are theoretically less computationally
+expensive, in practice brute force remains the best attack. That this
+is still true more than thirty years since the invention of DES is a remarkable
+achievement given the sustained attempts to find weaknesses in it. Very few
+cryptosystems have resisted such extensive cryptanalysis.
+Despite the fact that a brute force attack on DES was already known to be
+feasible it was still reaffirmed as a federal standard in 1999. However, it was
+then recommended that a variant known as Triple DES be used instead.
+Triple DES or 3DES as it is sometimes known is a rather ingenious block
+cipher based on DES and developed byWalter Tuchman. It builds on the success
+of DES, while increasing the key length so that brute force attacks become
+impossible (it also has the affect of making the other theoretical attacks more
+difficult). It uses DES three times, each time with a different DES key and so
+has a key length of 3 × 56 = 168 bits. A key in Triple DES is a triple K =
+(K1, K2, K3), where each Ki is a DES key. If we denote encryption under DES
+118 5 Symmetric cryptosystems
+using key Ki by DESKi (·) and denote decryption by DES-1
+Ki
+(·) then a message
+block M of 64 bits is encrypted under Triple DES with key K = (K1, K2, K3)
+as
+C = DESK3 	DES-1
+K2 	DESK1 (M)
+
+ .
+Thus the message is encrypted with DES key K1, ‘decrypted’ with DES key K2
+and finally encrypted again with DES key K3. Note that since encryption and
+decryption are essentially identical this is the same as encrypting three times
+with different DES keys. The reason for using ‘decryption’ in the second stage
+is for backwards compatibility with plain DES since by setting K2 = K3 Triple
+DES simply becomes single DES with key K1.
+An important property of DES encryption exploited by Triple DES is that it
+does not form a group. If it were a group then repeated encryption with different
+keys would be equivalent to a single encryption by some other key, and hence
+Triple DES would be no more secure than DES. The fact that it is not a group
+is evidence in favour of Triple DES being more secure than DES.
+One other rather simple proposal for securingDESagainst brute force attacks
+is DES-X due to Rivest. This uses a 184-bit key consisting of a single 56-bit
+DES key K and two 64-bit keys K1 and K2. Encryption occurs by first simply
+XORing K1 with the message then encrypting with DES using key K and finally
+XORing with K2 so the cryptogram of a 64-bit message block M is
+C = K2 ? DESK (M ? K1),
+where DESK (·) is DES encryption with key K. This system is comparable to
+DES in terms of efficiency and is also backwards compatible with DES, simply
+take K1 and K2 to consist of 64 zeros. It has also been shown to be essentially
+immune to brute force key search (see Kilian and Rogaway (1996)). Although
+DES-X does not give increased security against the theoretical differential and
+linear attacks, if you believe that the only way to crack DES is via brute force
+then DES-X is an attractive replacement for it.
+5.8 Rijndael and the AES
+In January 1997 NIST announced the start of the search for a successor to DES:
+the Advanced Encryption Standard (AES). Thiswould be an unclassified, public
+encryption scheme. Fifteen different designs were submitted and in October
+2000 the scheme Rijndael, named after its inventors Joan Daemen and Vincent
+Rijmen of the COSIC Laboratory at K.U. Leuven in Belgium, was selected to
+5.9 The Pohlig–Hellman cryptosystem 119
+be the new AES. (In fact AES is not precisely Rijndael since the latter supports
+a larger range of block and key lengths.)
+Like DES, AES is a block cipher. The message block size is fixed at 128 bits
+while the key length can be 128, 192 or 256 bits. It is a product cipher and uses 10,
+12 or 14 rounds of encryption depending on the choice of key length. However,
+unlike the previous schemes which were Feistel based and intrinsically linear,
+Rijndael is non-linear. The non-linearity in Rijndael is produced by representing
+bytes as polynomials of degree 7 in Z2[x]. Thus b7b6 . . . b0 is represented by
+the polynomial
+b(x) = b0 + b1x + · · ·+b7x7.
+Addition of bytes is simply ordinary bitwise XOR. Multiplication is by multiplication
+as polynomials modulo the irreducible polynomial 1 + x + x3 + x4 +
+x8.
+Although the finite field structures used in presenting Rijndael make it easy
+to describe algebraically, describing the fine details is time (and space) consuming.
+Indeed, a whole book has recently been produced with the details of
+its description and structure (see Daemen and Rijmen (2004)). Details are also
+available on the Rijndael home-page.
+While the AES was originally developed for use with unclassified material,
+in June 2003 it received the official blessing of the NSA for encryption of
+classified material up to the level of TOP SECRET (with a 192- or 256-bit key).
+As such it is the first publicly available cryptosystem to have been certified for
+classified use by the NSA.
+Like DES, AES has also had more than its fair share of controversy. With
+its long key lengths it is secure against exhaustive key search. Moreover it has
+been designed with differential and linear attacks in mind. However, there has
+been significant interest in the algebraic structure of AES. In particular, papers
+of Courtois and Pieprzyk (2002) and Murphy and Robshaw (2002) showing
+how to recover the AES key from various systems of quadratic equations raised
+questions as to whether algebraic attacks might compromise its security.
+Exercise 5.5a What is the product in Rijndael of the bytes 10110111 and
+10100101?
+5.9 The Pohlig–Hellman cryptosystem
+Apart from the one-time pad, all of the cryptosystems we have described so far
+have relied for their security on their resilience to attack. For example DES may
+120 5 Symmetric cryptosystems
+now be considered past its prime, however, it has withstood attacks incredibly
+well over the years and this resistance to attack has given users confidence in
+its security.
+The next cryptosystem we will consider was one of the first to be based on a
+‘known intractable problem’. That is to say its design was based on a problem
+that was already well known and, crucially, believed to be intractable.
+The Pohlig–Hellman cryptosystem as it is now called was patented in May
+1978. Its security relies on the belief that solving the generalised discrete logarithm
+problem modulo a large prime is difficult.
+GEN DISCRETE LOG
+Input: a prime p and a, b ? Z
+*
+p.
+Output: a solution x to b = ax mod p if it exists.
+Let p be a large integer. We will assume messages are broken into blocks so
+that each block can be represented by M ? Z
+*
+p. The encryption procedure is
+simply exponentiation mod p so
+C = e(M) = Me mod p,
+where e is the secret encryption key. Decryption is then achieved by
+d(C) = Cd mod p,
+provided we can find a ‘correct’ decryption key d.
+Fermat’s Little Theorem (see Appendix 3, Theorem A3.11), tells us that for
+x ? Z
+*
+p
+x p-1 = 1 mod p.
+Hence we can find d whenever e is coprime with p - 1. For in this case e
+has an inverse in the group Z
+*
+p-1 so taking d to be this inverse, we have ed =
+1 mod p - 1 so ed = 1 + k(p - 1) for some integer k. Thus
+Cd = (Me)d = M1+k(p-1) = M mod p
+and d(e(M)) = M as required.
+Note that d can be found in polynomial time from e and p - 1 using Euclid’s
+Algorithm (see Problem 2.7).
+The prime p may be publicly known. If it is, then multiple users can save
+time by using the same prime instead of each having to find a prime of their own.
+For Alice and Bob to use this system they need to share a secret key e coprime to
+p - 1. From this they can both calculate d and hence both will be able to encrypt
+5.9 The Pohlig–Hellman cryptosystem 121
+and decrypt easily. (Note that both operations simply involve exponentiation
+mod p which we saw in Chapter 2 may be achieved in polynomial time.)
+But what does the security of this system rest on?
+Recovering the secret key e in the Pohlig–Hellman cryptosystem using a
+known-plaintext attack requires Eve to solve a special case of the generalised
+discrete logarithm problem.
+To be precise, recovering the key e from the message M and cryptogram
+C = Me mod p is the same as solving an instance of the generalised discrete
+logarithm problem for a triple (p, a, b) where we know that b = ae mod p,
+for some e coprime with p - 1. So if we believe that this is difficult then key
+recovery should be difficult for Eve.
+This idea that ‘breaking the cryptosystem’ requires Eve to solve a wellknown
+‘intractable’ problem will be a recurring theme of the remainder of this
+text.
+Problems
+5.1b Given that the cryptogram below was produced by a Vigen`ere cipher
+with keyword length less than five, do the following.
+(i) Find the length of the keyword.
+(ii) Find the keyword and hence decrypt the cryptogram.
+UWMPP ZYZUB ZMFBS LUQDE IMBFF AETPV.
+(Note that the gaps in the cryptogram should be ignored, they are simply
+an aid to help you keep track of which position each character
+lies in.)
+5.2a Hill’s cipher encrypts a message M of length d in the Roman alphabet
+as follows. We identify the letters A–Z with the elements of Z26. The
+key is a d × d matrix A whose entries are from Z26 and which has an
+inverse mod 26 (that is there exists a matrix B with entries from Z26
+such that AB = BA = Id mod 26). The cryptogram is C = AM.
+(i) Show that Hill’s cipher can be broken by a chosen-plaintext attack.
+(ii) What is the minimum length of chosen-plaintext required to
+recover the key A?
+5.3a If S1 = M1,K1, C1, e1, d1 and S2 = M2,K2, C2, e2, d2 are two
+cryptosystems and M2 = C1, show that for a suitable choice of d
+(which should be described) the following is also a cryptosystem
+M1,K1 × K2, C2, e1(e2(·, ·), ·), d(·, ·). (This is called the product of
+S1 and S2 and is denoted by S1 ? S2.)
+122 5 Symmetric cryptosystems
+5.4 If a message M ? {0, 1}n is encrypted using a one-time pad, show that
+the bits of the resulting cryptogram C ? {0, 1}n are mutually independent
+and uniformly distributed in {0, 1}.
+5.5a Suppose Alice uses the same one time pad to send two messages M1
+and M2 of the same length and Eve intercepts both cryptograms. What
+can she learn about the messages?
+5.6 We say that a symmetric cryptosystem has pairwise secrecy if for any
+pair of messages M1, M2 ?Mand any cryptogram C ? C the probability
+that M1 is encrypted as C is equal to the probability that M2 is
+encrypted as C. (The probability in both cases is given by the random
+choice of key.) Show that a cryptosystem has pairwise secrecy iff it has
+perfect secrecy.
+5.7h Show that the group of all m × m non-singular matrices over Z2 has
+order
+N = 2m(m-1)/2(22 - 1)(23 - 1) · · · (2m - 1).
+Hence show that the period of any output sequence of any non-singular
+m-register LFSR must divide N.
+5.8 Show that if M is a non-singular, m-register LFSR, with a feedback
+polynomial that is irreducible over Z2 then the period of any output
+sequence must divide 2m - 1. (Note that a polynomial is irreducible
+over a field F iff it cannot be expressed as a product of two non-constant
+polynomials over F.)
+5.9a (i) Compute the linear complexity of the sequence 0000101001.
+(ii) Find the feedback polynomial of a minimal length LFSR that
+generates this sequence.
+5.10h Suppose that Zt is the output sequence of a Geffe generator, and the
+output sequences of the three LFSRs are At , Bt and Ct (so Zt = At Bt +
+BtCt + Ct mod 2). Show that
+Pr[Zt = At ] = Pr[Zt = Ct ] = 3
+4
+.
+5.11 Can you think of a way to exploit the result of the previous question to
+mount a known-plaintext attack on a stream cipher whose keystream is
+the output of a Geffe generator?
+5.12b If Eve is to recover a DES key by brute force, given a single messagecryptogram
+pair, she may need to try up to 256 possible DES keys. This
+means that Eve may need to evaluate up to 256 DES encryptions. Now
+consider the following ‘secured’ versions of DES.
+5.9 The Pohlig–Hellman cryptosystem 123
+(i) Suppose Alice and Bob use ‘Double DES’. That is they encrypt a
+64-bit message block M by using DES twice with two different
+DES keys K1 and K2. So
+C = DESK2	DESK1 (M)
+.
+Show that if Eve knows a single message-cryptogram pair then
+she can use a brute force attack that requires 257 DES encryptions
+and decryptions to find the key (rather than the 2112 one might
+naively assume from the new key length of 2 × 56 = 112). (Note
+that with a single message-cryptogram pair Eve cannot be sure to
+recover ‘the’ key, but rather to find the collection of possible keys
+that are consistent with the message-cryptogram pair.)
+(ii) Show that there is a brute force attack on Triple DES, given a
+single message-cryptogram pair, that requires approximately 2112
+DES encryptions and decryptions to recover the collection of
+consistent keys.
+5.13b Denoting the complement of a binary string M by M, DES has the
+following ‘key complementation’ property. For any M ? {0, 1}64 and
+key K ? {0, 1}56
+DESK (M) = DESK (M).
+How can this property be used to reduce the amount of work Eve does
+in a chosen-plaintext attack on DES?
+Further notes
+The formal definition of a cryptosystem and the concept of perfect secrecy go
+back to the original paper of Shannon (1949a). This seminal paper also contains
+Theorem 5.4.We have not used the concept of entropy which Shannon used to
+develop his theory as it seems somewhat peripheral to the main thrust of this
+text. Readers seeking to learn more about this approach can find elementary
+introductions in Goldie and Pinch (1991) and Welsh (1988).
+Linear shift register machines and their output sequences go back at least
+as far as the mid-1950s; see for example Golomb (1955) and Zierler (1955).
+Amusingly a version of Theorem 5.8, showing the insecurity of using the output
+of a single LFSR as a keystream, appears in the same issue of the journal
+Electronic Design in which an article entitled ‘Need to keep digital data secure?’
+suggests exactly this method of encryption! (see Twigg, 1972 and Meyer and
+Tuchman, 1972).
+124 5 Symmetric cryptosystems
+The proof of Proposition 5.13 can be found in Geffe (1973) while that of
+Proposition 5.15 is in Coppersmith et al. (1994).
+For a discussion and analysis of a whole range of stream ciphers based on
+non-linear feedback shift registers see Schneier (1996). The monograph by
+Cusick, Ding and Renvall (2004) is an up-to-date authoritative and advanced
+monograph detailing the relationships between stream ciphers and related number
+theoretic problems. There is much work being continually carried out on
+algebraic attacks on non-linear stream ciphers; see for example the recent paper
+of Courtois (2003).
+The origin of DES and its successors is the set of cryptosystems developed at
+IBM by Feistel and his colleagues; see for example Feistel (1973) and Feistel,
+Notz and Smith (1975). The details of DES can be found in the Federal Information
+Processing Standards Publication 81 (FIPS-81).
+The history, development and details of Rijndael can be found in Daemen
+and Rijmen (2004) or at www.esat.kuleuven.ac.be/˜rijmen/rijndael.
+6
+One way functions
+6.1 In search of a definition
+Having considered classical symmetric cryptography in the previous chapter
+we now introduce the modern complexity theoretic approach to cryptographic
+security.
+Recall our two characters Alice and Bob who wish to communicate securely.
+They would like to use a cryptosystem in which encryption (by Alice) and
+decryption (by Bob using his secret key) are computationally easy but the
+problem of decryption for Eve (who does not know Bob’s secret key) should
+be as computationally intractable as possible.
+This complexity theoretic gap between the easy problems faced by Alice
+and Bob and the hopefully impossible problems faced by Eve is the basis of
+modern cryptography. In order for such a gap to exist there must be a limit to the
+computational capabilities of Eve. Moreover it would be unrealistic to suppose
+that any limits on the computational capabilities of Eve did not also apply to
+Alice and Bob. This leads to our first assumption:
+ Alice, Bob and Eve can only perform probabilistic polynomial time
+computations.
+So for Alice and Bob to be able to encrypt and decrypt easily means that
+there should be (possibly probabilistic) polynomial time algorithms for both
+procedures.
+But exactly how should we formalise the idea that Eve must face a computationally
+intractable problem when she tries to decrypt an intercepted cryptogram
+without Bob’s secret key?
+Suppose that we knew that P = NP and hence that no NP-hard problem has
+a polynomial time algorithm. If Alice and Bob used a cryptosystem in which
+the problem of decryption for Eve was NP-hard, would this guarantee that their
+125
+126 6 One way functions
+cryptosystem is secure? No. Just because there is no polynomial time algorithm
+for a particular problem does not ensure that the problem is always difficult to
+solve. It may be extremely easy in most instances but difficult in a few special
+cases. A cryptosystem with this property would be useless.
+This demonstrates the need for a notion of intractability that is not based on
+worst-case behaviour.
+So might it be reasonable to suppose that Eve should never be able to decrypt
+any cryptogram? Again the answer is no. For instance if Eve simply guesses
+the message each time then there is a small but nevertheless non-zero chance
+that she will be correct.
+So what might be a reasonable notion of security to demand?
+For the moment we hope that Alice and Bob would be happy to use a
+cryptosystem with the following level of security.
+ If Eve uses any probabilistic polynomial time algorithm then the probability
+that she correctly decrypts a cryptogram C = e(M) of a random message M
+is negligible.
+But what do we mean by ‘negligible’? Clearly we need the probability that Eve
+succeeds to be as small as possible, but how small exactly? Since Eve is allowed
+to use any probabilistic polynomial time algorithm we need to be sure that even
+if she repeats her attacks a polynomial number of times she is still unlikely to
+succeed. This leads naturally to the following definition.
+A function r : N › N is negligible if for any polynomial p : N › N, there
+is an integer k0 such that r (k) < 1/p(k) for k ? k0. So a negligible function is
+eventually smaller than the inverse of any (positive) polynomial. We will use
+neg(·) to denote an arbitrary negligible function.
+Note that for the remainder of this text all polynomials will be assumed to
+be positive. That is to say they satisfy p(k) ? 1 for all integers k ? 1.
+The following result tells us that our definition of negligible fits nicely with
+the idea that only polynomial time computations are feasible. It says simply that
+if an algorithm has a negligible chance of success then repeating it polynomially
+many times cannot alter this fact.
+Proposition 6.1 If the probability that an algorithm E succeeds (in some given
+computational task) on inputs of size k is negligible (in k) then the probability
+that it succeeds at least once when repeated polynomially many times is also
+negligible.
+Proof: This is straightforward, see Exercise 6.2. 
+6.1 In search of a definition 127
+In order to capture the precise security properties we require we will forget
+about cryptosystems for the moment and instead introduce the slightly more
+abstract concept of a one-way function.
+Informally a one-way function is a function that is ‘easy’ to compute and
+‘hard’ to invert. Slightly more formally a one-way function is a function f :
+{0, 1}* › {0, 1}* satisfying:
+(1) Easy to compute. The function f is polynomial time computable.
+(2) Hard to invert. Any probabilistic algorithm for inverting f (x), when given
+a random instance y = f (x) (i.e. with x chosen at random), has a
+negligible chance of finding a preimage of y.
+So do such functions exist?We start by considering a candidate one-way function.
+Example 6.2 The function dexp.
+Let p be a prime, g be a primitive root mod p and x ? Z
+*
+p. Define
+dexp(p, g, x) = (p, g, gx mod p).
+The function dexp(p, g, x) is easy to compute since exponentiation mod p can
+be performed in polynomial time (see Proposition 2.12). But how difficult is it
+to invert?
+We define the ‘inverse’ function of dexp to be
+dlog(p, g, y) = x,
+where y = gx mod p. (Note that the inverse function of dexp should really
+return the triple (p, g, x), however, it is clearly easy to find p and g given
+(p, g, y), any ‘difficulty’ in inverting dexp lies in the problem of finding x.)
+Computing dlog is known as the discrete logarithm problem. It is believed
+to be extremely hard. Currently the most efficient algorithm for this problem is
+based on the Number Field Sieve algorithm for factorisation and under plausible
+assumptions has expected running time O(exp(c(ln p)1/3(ln ln p)2/3)).
+However, although the discrete logarithm problem is thought to be hard we
+do not know that this is true. If we wish to base cryptographic protocols on the
+‘hardness’ of the discrete logarithm problem we need to formulate a precise
+intractability assumption, describing exactly howdifficult we believe (or hope!)
+the discrete logarithm problem to be.
+The assumption we make is a natural one given our earlier informal definition
+of cryptographic security. It says that any reasonable adversary (a polynomial
+128 6 One way functions
+time probabilistic algorithm) has a negligible chance of solving a random
+instance of the discrete logarithm problem.
+The Discrete Log Assumption
+For any positive polynomial q(·) and any probabilistic polynomial time algorithm
+A the following holds for k sufficiently large:
+Pr[A(p, g, y) = dlog(p, g, y)] <
+1
+q(k)
+,
+where p is a random k-bit prime, g is a random primitive root mod p and x is
+a random element of Z
+*
+p.
+Note that A(p, g, y) denotes the output of algorithm A on input (p, g, y).
+How realistic is this assumption? It requires the discrete logarithm problem
+to be difficult, not just on average but almost always.
+Our next result shows why such a strong assumption is necessary. If there is
+a ‘small proportion’ of cases for which the discrete logarithm problem is easy
+then it is easy in general.
+Proposition 6.3 Suppose there is a polynomial time algorithm that for any k-bit
+prime p and primitive root g mod p solves the discrete logarithm problem for
+a subset Bp ? Z
+*
+p, where |Bp| ? |Z
+*
+p
+|. Then there is a probabilistic algorithm
+that solves the discrete logarithm problem in general with expected running
+time polynomial in k and 1/.
+Proof: Let A be the given polynomial time algorithm. On input prime p, primitive
+root g and y ? Z
+*
+p we use the following algorithm.
+Input: (p, g, y).
+repeat forever
+c ?R Z
+*
+p
+z ‹ gc mod p
+(*)w ‹ A(p, g, yz mod p)
+If gw = yz mod p then output w - c
+end-repeat.
+First note that if A succeeds in computing dlog(p, g, yz) in line (*) then z =
+gc mod p implies that
+y = gw-c mod p
+and so the algorithm correctly outputs dlog(p, g, y) = w - c.
+6.2 Strong one-way functions 129
+We need to estimate how many times our algorithm will repeat before A
+succeeds.
+Note that the function f : Z
+*
+p
+› Z
+*
+p defined by f (c) = gc y mod p is a bijection
+so the probability that f (c) belongs to Bp, for random c, is equal to
+|Bp|
+|Z*
+p
+|
+? .
+Hence, if the probability that A can compute dlog(p, g, yz) in line (*) is ?, then
+? ? . So the expected number of iterations of the loop is 1/? ? 1/. Then as A
+is a polynomial time algorithm the expected running time of our new algorithm
+for computing dlog(p, g, y) is polynomial in k and 1/. 
+Exercise 6.1 Show that r : N › N is not negligible iff there exists a positive
+polynomial p(·) and infinitely many values of k ? N such that r (k) ?
+1/p(k).
+Exercise 6.2h Prove Proposition 6.1.
+6.2 Strong one-way functions
+In order to complete our definition of a one-way function we need to deal with
+some trivial complications.
+First, what exactly does it mean to ‘invert’ f (x)? Since we will sometimes
+consider functions that are not one-to-one we simply mean that some preimage
+of y = f (x) is found, that is z satisfying f (z) = y. We denote the set of
+preimages of f (x) by
+f -1( f (x)) = {z ? {0, 1}* | f (z) = f (x)}.
+Some functions are hard to invert for a completely trivial reason: the length
+of any preimage is much longer than the length of f (x). A one-way function
+should be hard to invert because it is hard to find a preimage, not because once
+a preimage is found it takes too long to write it down. For example consider the
+function
+f : {0, 1}* › {0, 1}*
+, f (x) = least significant 	log |x|
+ bits of x.
+Clearly any preimage of f (x) is exponentially longer than f (x) itself so no
+algorithm can invert f (x) in polynomial space, let alone polynomial time.
+To avoid this problem we will suppose that the input to any inverting algorithm
+for f (x) includes the length of x, encoded in unary.
+130 6 One way functions
+So if |x| = k then the input to an inverting algorithm is the pair ( f (x), 1k )
+and the output should be a preimage z ? f -1( f (x)). This guarantees that at
+least one preimage of f (x) can be written down in polynomial time.
+Having decided what it means to invert a function and what the input to an
+inverting algorithm should be we can give a formal definition.
+A function f : {0, 1}* › {0, 1}* is strong one-way (or simply one-way) iff
+(1) f is polynomial time computable.
+(2) For any probabilistic polynomial time algorithm A, the probability that A
+successfully inverts f (x), for random x ?R {0, 1}k, is negligible.
+Using our precise definition of negligible we can give an equivalent version of
+condition (2).
+(2) For any positive polynomial q(·) and any probabilistic polynomial time
+algorithm A the following holds for k sufficiently large:
+Pr[A( f (x), 1k ) ? f -1( f (x)) | x ?R {0, 1}k ] ? 1
+q(k)
+.
+We now prove the following easy result.
+Proposition 6.4 Under the Discrete Logarithm Assumption dexp is a strong
+one-way function, where
+dexp(p, g, x) = (p, g, gx mod p).
+Proof: Looking at the definition of a strong one-way function we see that
+(1) follows directly from the fact that dexp is polynomial time computable.
+Condition (2), with f replaced by dexp, is then exactly the Discrete Logarithm
+Assumption. 
+What other functions might be one-way?
+Anyone with even a passing interest in modern cryptography probably knows
+that the security of some widely used cryptosystems is based on the assumption
+that ‘factoring’ is hard. But what exactly does this mean?
+Let mult : {2, 3, . . .} × {2, 3, . . .} › Nbe defined by mult(a, b) = ab. This
+function clearly satisfies condition (1) of the definition of a strong one-way
+function since it is easy compute. But is it hard to invert a random instance? No.
+Simply check if the number c = mult(a, b) is even. If it is, then output (2, c/2)
+else give up. This algorithm will succeed whenever a or b is even which is 3/4
+of the time!
+However, we can define a variant of this function:
+pmult(p, q) = pq, where p and q are both k-bit primes.
+6.2 Strong one-way functions 131
+Factoring a product of two large primes is believed to be extremely difficult.
+Currently the most efficient general purpose factoring algorithms are
+the Quadratic Sieve and the Number Field Sieve. These are both probabilistic
+algorithms and under generally believed assumptions they have expected
+running times O(exp(
+?
+c1 ln N ln ln N)) and O(exp(c2(ln N)1/3(ln ln N)2/3))
+respectively, where c1  1 and c2 depends on the exact algorithm used (which
+in turn may depend on the form of the number being factored) but satisfies
+c2 ? (64/9)1/3  1.923.
+For many years the Quadratic Sieve enjoyed the status of ‘best factoring
+algorithm’ for successfully factoring challenges such as the RSA-129 challenge,
+a 426-bit product of two primes. However, in 1996 the Number Field
+Sieve was used to factor the RSA-130 challenge and currently the largest
+RSA challenge to have been factored is RSA-576, a 576-bit product of two
+primes, its factorisation was completed in Dec 2003 using the Number Field
+Sieve. For more detailed discussion of these algorithms, see Lenstra and Lenstra
+(1993) and for up-to-date information about the RSA factoring challenges, see
+http://www.rsasecurity.com/rsalabs/.
+However, as with the discrete logarithm problem, it is not known that factoring
+the product of two large primes is hard. Hence we need to clearly specify
+an intractability assumption, along the same lines as the Discrete Logarithm
+Assumption.
+Our assumption says that any reasonable adversary when given a number
+that is the product of two randomly chosen k-bit primes should have a negligible
+chance of factoring it.
+The Factoring Assumption
+For any positive polynomial r (·) and probabilistic polynomial time algorithm
+A the following holds for k sufficiently large
+Pr[A(n) = (p, q)] ? 1
+r (k)
+,
+where n = pq and p,q are random k-bit primes.
+Again this gives us a strong one-way function.
+Proposition 6.5 Under the Factoring Assumption pmult is a strong one-way
+function.
+Proof: Clearly pmult is polynomial time computable so condition (1) holds.
+The Factoring Assumption then gives (2). 
+132 6 One way functions
+6.3 One way functions and complexity theory
+Having seen examples of candidate strong one-way functions in the previous
+section we now consider what the existence of such functions would mean for
+complexity theory.
+The following result shows that proving their existence would be a major
+result not only for cryptography, but also for complexity theory.
+Theorem 6.6 If strong one-way functions exist then
+(i) NP = P;
+(ii) there is a language in NP\BPP.
+Proof: We first prove (i).
+Suppose f : {0, 1}* › {0, 1}* is a strong one-way function, we need to
+construct a language L ? NP\P. Define
+L f = {(x, y, 1k ) | there exists u ? {0, 1}k such that f (xu) = y},
+where xu is the concatenation of x and u.
+First note that L f ? NP since given (x, y, 1k ) ? L f a certificate is any u ?
+{0, 1}k such that f (xu) = u. Furthermore since f ? FP we can compute f (xu)
+and check that f (xu) = y in polynomial time.
+Suppose, for a contradiction that P = NP. Then L f ? P and there is a polynomial
+time DTM, M, that decides L f.We can then use the following inverting
+algorithm to invert y = f (x) in polynomial time, contradicting part (2) of the
+definition of a strong one-way function.
+Recall that the input to an inverting algorithm is ( f (x), 1k ), where |x| = k.
+Input: ( f (x), 1k )
+z ‹ Ø (the empty string)
+i ‹ 1
+while i ? k
+if (z0, f (x), 1k-i ) ? L f then z ‹ z0
+else z ‹ z1
+i ‹i + 1
+if f (z) = f (x) output z
+end-while
+It is straightforward to check that this algorithm will successfully invert f (x).
+Moreover each time the algorithm tests ‘(z0, f (x), 1k-i ) ? L f ?’ we can use
+M to obtain an answer in polynomial time. Since all other steps in the algorithm
+can also be performed in polynomial time this is a polynomial time inverting
+algorithm for f (x), contradicting the assumption that f is strong one-way.
+Hence L f ? NP\P as required. This completes the proof of (i).
+6.3 One way functions and complexity theory 133
+To prove (ii) we suppose that L f ? BPP and take a PTM, N, which decides
+L f with exponentially small error probability (as given by Proposition 4.14).
+Using N in our inverting algorithm in place of M our algorithm has a reasonably
+high probability of successfully inverting f (x). Again this contradicts
+the fact that f is strong one-way. The details are left to the reader, see
+Problem 6.8. 
+So simply the existence of any strong one-way function would have important
+implications for complexity theory. But what about our candidate functions? In
+fact if either the Factoring Assumption or the Discrete Logarithm Assumption
+is true then an even stronger result than Theorem 6.6 would hold.
+Theorem 6.7 If the Factoring Assumption or the Discrete Logarithm Assumption
+holds then (NP ? co-NP)\P = Ø.
+Before proving this result it is worth emphasising its importance. It says that if
+either of the two intractability assumptions hold then a very strong complexity
+theoretic result holds, possibly much stronger than simply P = NP. However,
+in the next few chapters we will see that if either of these assumptions fails to
+hold then many cryptographic schemes that are extremely widely used must be
+easy to break!
+To prove this theorem we need to consider how difficult the problems of
+factoring and finding the discrete logarithm really are in complexity theoretic
+terms (as distinct from the ‘state of the art’ best-known techniques for these
+problems that we mentioned earlier).
+We start with factorisation. Given an integer n how difficult is it to find its
+prime factorisation?
+We consider the essentially equivalent problem of finding a single non-trivial
+factor of n. Since n has at most 	log(n)
+ prime factors any algorithm which
+can find a single non-trivial factor of n can be used to obtain its complete
+factorisation if we repeat it 	log(n)
+ times. In particular, a polynomial time
+algorithm to find a single non-trivial factor of n would yield a polynomial time
+algorithm for factorisation in general.
+The following result tells us that in complexity theoretic terms factoring is
+possibly not that difficult. In particular this result shows that unless something
+very surprising happens – namely NP = co-NP, then factorisation is not NPhard.
+Proposition 6.8 The function fac : N › N defined by
+fac(n) = smallest non-trivial factor of n,
+is Turing reducible to a language in NP ? co-NP.
+134 6 One way functions
+Corollary 6.9 If factorisation is NP-hard then NP = co-NP.
+Proof of Proposition 6.8: Consider the following decision problem.
+FACTOR
+Input: integers n and k.
+Question: does n have a non-trivial factor d satisfying d ? k?
+We will show that
+(i) FACTOR belongs to NP ? co-NP;
+(ii) fac ?T FACTOR.
+Clearly FACTOR ? NP since if n has a non-trivial factor d ? k then an obvious
+certificate is the factor itself. To show that FACTOR is in co-NP the certificate
+is simply the prime factorisation of n,
+n =
+m
+
+i=1
+pei
+i .
+The checking algorithm first verifies that the given factorisation of n is correct.
+It then checks that pi > k for each i and finally verifies the primality of each
+pi using the polynomial time primality test of Theorem 3.18.
+We now show that fac is Turing reducible to FACTOR. Suppose there is a
+polynomial time algorithm for FACTOR. Let F(n, k) denote the output of the
+algorithm for FACTOR on input n, k. The following is a ‘divide and conquer’
+algorithm for fac.
+If F(n, n/2) is false then output n (since in this case n is prime and so
+fac(n) = n). Otherwise we now know that fac(n) ? {2, . . . , n/2}. So now
+compute F(n, n/4).We now know that fac(n) belongs to a set of size at most
+n/4. Continuing in this way, after at most O(log n) calls to the algorithm for
+FACTOR we will have found fac(n). Hence fac ?T FACTOR. 
+In fact a similar result also holds for the discrete logarithm problem.
+Proposition 6.10 The function dlog is Turing-reducible to a language in NP ?
+co-NP.
+Proof: This proof has exactly the same structure as that of Proposition 6.8, for
+details see Exercise 6.3. 
+We can now prove Theorem 6.7.
+Proof of Theorem 6.7: Suppose that NP ? co-NP = P then by Proposition
+6.8 there is a polynomial time algorithm for fac, which will return the smallest
+6.4 Weak one-way functions 135
+non-trivial factor of a given integer. Hence the Factoring Assumption cannot
+hold.
+Similarly, Proposition 6.10 implies that ifNP ? co-NP = Pthen the Discrete
+Logarithm Assumption cannot hold. 
+In the next section we will examine a weaker notion of one-way function. This
+will show that we do not need such a strong definition to achieve the same type
+of security.
+The reader who is eager to see the first examples of cryptosystems based on
+the concepts we have introduced so far may safely proceed directly to Chapter 7.
+For the remainder of this text we will use the term one-way function to mean
+strong one-way function.
+Exercise 6.3 Consider the decision problem
+BDLOG
+Input: prime p, primitive root g mod p, y ? Z
+*
+p and t ? Z
+*
+p.
+Question: is dlog(p, g, y) > t?
+(a) Show that BDLOG ? NP ? co-NP.
+(b) Prove Proposition 6.10 by showing that dlog ?T BDLOG.
+6.4 Weak one-way functions
+If we wish to base cryptographic security on one-way functions it would be
+good to have some evidence in favour of their existence.
+Intuitively, if we place weaker constraints on the difficulty of inverting a
+one-way function then we should be readier to believe that they exist.
+The following definition of a weak one-way function fulfils this aim. Informally
+a function is weak one-way if it is always easy to compute but ‘sometimes’
+hard to invert.
+Formally a function f : {0, 1}* › {0, 1}* is weak one-way iff
+(1) f is polynomial time computable.
+(2) For any probabilistic polynomial time algorithm A the probability that A
+fails to invert f (x), for random x ?R {0, 1}k, is non-negligible.
+Note that the term ‘non-negligible’ is not the same as ‘not negligible’. Formally
+a function r : N › N is non-negligible iff there is a positive polynomial q(·)
+such that for k sufficiently large r (k) ? 1/q(k). (For r (·) to be ‘not negligible’
+we simply need the bound r (k) ? 1/q(k) to hold infinitely often.)
+136 6 One way functions
+Using the precise definition of non-negligible we can give a more formal
+version of condition (2).
+(2) There is a positive polynomial q(·) such that for any probabilistic
+polynomial time algorithm A the following holds for k sufficiently large
+Pr[A( f (x), 1k ) ? f -1( f (x)) | x ?R {0, 1}k ] ? 1
+q(k)
+.
+So can we think of any examples of candidate weak one-way functions? Clearly
+a strong one-way function is also weak one-way. But we have already met one
+example of a function that may be weak one-way although it is certainly not
+strong one-way. Recall the function mult : {2, 3, . . .} × {2, 3, . . .} › N, where
+mult(a, b) = a · b.
+Using the same assumption that made pmult a strong one-way function we
+can prove that mult is weak one-way. We will need to use the Prime Number
+Theorem which tells us that a large integer n has probability approximately
+1/ ln n of being prime.
+Theorem 6.11 (Prime Number Theorem) If ?(n) denotes the number of
+primes less than or equal to n then
+lim
+n›?
+?(n) ln n
+n
+= 1.
+This implies the following result.
+Lemma 6.12 If k is sufficiently large then
+Pr[A random k-bit integer is prime] >
+1
+k
+.
+Proof: By the Prime Number Theorem
+lim
+n›?
+?(n) ln n
+n
+= 1.
+So for n ? n0 we have
+ ?(n) ln n
+n
+- 1
+
+
+
+<
+1
+100
+.
+Since ln n = log n/log e and log e > 1.4 we have
+?(n)
+n
+>
+1
+log n
+,
+for n ? n0. Thus, for k sufficiently large, we have
+Pr[A random k-bit integer n is prime] = ?(2k )
+2k >
+1
+k
+.
+
+6.4 Weak one-way functions 137
+Proposition 6.13 Under the Factoring Assumption mult is a weak one-way
+function.
+Proof: Recall that the Factoring Assumption says:
+For any positive polynomial r (·) and probabilistic polynomial time algorithm
+A the following holds for k sufficiently large
+Pr[A(n) = (p, q)] ? 1
+r (k)
+,
+where n = pq and p,q are random k-bit primes.
+Let Ik denote the set of all k-bit integers and Pk denote the set of all k-bit
+primes.
+Lemma 6.12 tells us the probability that a random k-bit integer is prime is at
+least 1/k. Hence the probability that two independently chosen k-bit integers
+are both prime is at least (1/k)2. So a non-negligible proportion of the instances
+of mult to be inverted will consist of a product of two primes and so by the
+Factoring Assumption they will be difficult to invert.
+More formally if A is a probabilistic polynomial time algorithm and n = pq,
+where p, q ?R Pk then the Factoring Assumption implies that
+Pr[A fails to invert n] >
+1
+2
+,
+for k sufficiently large. Moreover Lemma 6.12 implies that if k is sufficiently
+large and a, b ?R Ik then
+Pr[a and b are both prime] ? 1
+k
+2
+.
+Hence if k is sufficiently large, a, b ?R Ik and n = ab then
+Pr[A fails to invert n] ? Pr[A fails to invert n | a, b ? Pk ] Pr[a, b ? Pk ]
+? 1
+2k2 ,
+is non-negligible. Hence under the Factoring Assumption mult is a weak oneway
+function. 
+The existence of weak one-way functions is intuitively more plausible than that
+of strong one-way functions. However, the following result tells us that if weak
+one-way functions exist then so do strong one-way functions.
+Theorem 6.14 Strong one-way functions exist iff weak one-way functions exist.
+A rigorous proof of this result is beyond the scope of this book, we present an
+informal proof below and refer the interested reader to Goldreich (2001).
+138 6 One way functions
+Proof: One implication is trivial: a strong one-way function is also a weak
+one-way function.
+So suppose that f : {0, 1}* › {0, 1}* is a weak one-way function.We need
+to construct a strong one-way function from f .
+Since any adversary fails to invert a non-negligible proportion of instances
+of f (x) we can construct a strong one-way function from f by ensuring that
+for an adversary to invert our new function they must successfully invert f at
+a large number of random values.
+More precisely, let q(·) be the positive polynomial associated with f , given
+by condition (2) of the definition of a weak one-way function. Define g :
+{0, 1}* › {0, 1}* by
+g(x1x2 · · · xm) = f (x1) f (x2) · · · f (xm),
+where m = nq(n) and each xi is of length n.
+For an adversary to invert g they must invert nq(n) values of f (xi ). Since
+the probability of failing to invert any one of the f (xi) is at least 1/q(n) so the
+probability that they manage to invert g is given by
+Pr[Invert g(x1 · · · xm)] = Pr[Invert f (x1), . . . , f (xm)]
+? 1 - 1
+q(n)
+nq(n)
+ e-n.
+Hence the probability that an adversary can invert a random instance of g is
+negligible and so g is a strong one-way function. 
+Beware: this proof is incomplete. A full proof would need to show that if g
+were not a strong one-way function then there exists an adversary who fails to
+invert f with probability less than 1/q(n), contradicting the fact that f is weak
+one-way. In our proof we have made the implicit assumption that an adversary
+who attempts to invert g will do so by inverting each of the f (xi ) for 1 ? i ? m
+but this need not be true!
+Exercise 6.4a Give an example of a function which is neither negligible nor
+non-negligible.
+Problems
+6.1a If r (k), s(k) are negligible functions which of the following are also
+negligible?
+(a) r (k) + s(k),
+6.4 Weak one-way functions 139
+(b) r (k)s(k),
+(c) r (s(k)).
+6.2h Show that if g and h are distinct primitive roots modulo a prime
+p and dlog(p, g, y) is easy to compute for all y ? Z
+*
+p then so is
+dlog(p, h, y).
+6.3h Prove the following extension of Proposition 6.3.
+Suppose that there exists a probabilistic polynomial time algorithm
+A for dlog(p, g, b) satisfying the following conditions.
+There are positive polynomials, q(·) and r (·), such that if p is a k-bit
+prime and g is a primitive root mod p then there exists Bp ? Z
+*
+p, with
+|Bp| ? 1/q(k)|Z*
+p
+|, such that if b ? Bp then
+Pr[A(p, g, b) = dlog(p, g, b)] ? 1
+r (k)
+.
+(So for any prime p and associated primitive root g there exists a nonnegligible
+proportion of the instances of the discrete logarithm problem
+that A has a non-negligible probability of successfully inverting.)
+Show that there is a probabilistic algorithm for computing dlog in
+general with polynomial expected running time.
+6.4a Consider the function fSAT defined as follows. For each Boolean function
+F on n variables and each truth assignment x ? {0, 1}n define
+fSAT(F, x) = (F, F(x)).
+Is fSAT a one-way function?
+6.5b Describe an algorithm, whose running time is polynomial in k, that
+when given the product of two independently chosen, random k-bit
+integers will find a non-trivial factor with probability at least 0.95.
+6.6h Prove that if FACTOR is NP-complete then NP = co-NP.
+6.7h Prove that if FACTOR ? P then there is a polynomial time algorithm
+for factoring any integer.
+6.8h Complete the proof of Theorem 6.6 (ii) to show that if strong one-way
+functions exist then there is a language in NP\BPP.
+6.9h Prove the following strengthening of Theorem 6.7: if either the Factoring
+Assumption or the Discrete Logarithm Assumption hold then
+(NP ? co-NP)\BPP is non-empty.
+6.10a A prime of the form p = 4k + 3 is known as a Blum prime. Assuming
+that approximately a half of all k-bit primes are Blum primes show that
+under the Factoring Assumption no efficient algorithm for factoring
+integers which are the product of two k-bit Blum primes can exist.
+140 6 One way functions
+Further notes
+The term ‘one-way function’ has a variety of meanings and formal definitions
+although the underlying sense is always the same. It should be ‘easy’ to compute
+and ‘hard’ to invert.
+Many texts use the concept of ‘honesty’ to eliminate functions which are
+impossible to invert for the trivial reason that their preimages are too small.We
+have adopted an approach which we feel is a more transparent way of achieving
+the same objective.
+The variations occur in the precise natures of ‘easy’ and ‘hard’. We have
+adopted a fairly strict interpretation here so that our concept of one-way
+(= strong one-way) corresponds to a useful practical cryptosystem.
+There is an extremely weak notion of one-way function, namely that there
+is no deterministic polynomial time computable algorithm which inverts for
+all possible inputs. For this extremely weak notion, Ko (1985) and Grollman
+and Selman (1988) independently prove existence if and only if P equals the
+complexity class UP, which consists of the subclass of NP for which for every
+input there is at most one succinct certificate. For more on this and related
+questions about UP and its relation to counting problems see Chapter 4 of Du
+and Ko (2000) or Welsh (1993).
+Theorem 6.7, showing that if there is a polynomial time algorithm for factoring
+or discrete logarithm then NP ? co-NP = P, was first pointed out by
+Brassard (1979) and independently by Adleman, Rivest and Miller as acknowledged
+by Brassard in his paper.
+Theorem 6.14 showing the surprising result that weak one-way functions
+cannot exist if strong one-way functions do not is attributed by Goldreich (2001)
+to Yao (1982).

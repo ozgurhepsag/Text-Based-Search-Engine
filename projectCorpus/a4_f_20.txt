@@ -1,0 +1,752 @@
+
+Old data is rarely deleted. It is retained according to some corporate policy. Reasons for such policies 
+include the fulfillment of specific legal requirements, such as tax laws. Your customers may require 
+you to produce valid archive copies of the data, and you may need to verify that you can access these 
+copies for anywhere from three to seven years after the upgrade. 
+Certification 
+Upgrades, especially of enterprise-class software systems, must pass through stringent internally 
+defined customer certifications before they can be put into production. This process usually takes at least one to two months and often considerably longer, which is why it is so rare to see enterprise-
+class software upgraded more than once or twice a year. 
+New APIs 
+New APIs are a special form of rework that must be carefully managed to customer needs. Changing 
+them introduces a variety of pain, usually resulting in the upgrade being delayed. For everyone 
+concerned, it is best to avoid this pain if at all possible. Refer to Chapter 8 for a discussion of API 
+management. 
+Once Integrated, Never Upgraded 
+It was a tough decision, but we knew that the changes we made to our underlying server 
+were going to invalidate earlier APIs. In the long run, these changes, and the new APIs, 
+would provide our customers with much more flexibility and functionality. And, since the 
+APIs were rarely used, most customers were not going to be affected. Unfortunately, our 
+analysis indicated that the proposed changes would negatively affect a small number of our 
+largest and most important customers, who had done a lot of custom integration work with 
+the old APIs. The development team found a way to create a partial compatibility layer 
+between the previous API version and the new one, easing, but not erasing, the burden of 
+migrating their systems. Ultimately, for customers upgrading to this new version using these 
+APIs substantial changes would be unavoidable. 
+Most of our customers realized the benefit of the new server and the new APIs, and decided 
+to upgrade. Some, however, held out for a surprisingly long time. One in particular had 
+spent almost $40K in consulting fees to integrate our system with another one, and they 
+didn't want to spend this money again. I knew that they were serious when they spent $20K 
+to fix a bug in the older, unsupported version. Eventually, they did adopt the new system, 
+not by upgrading but by converting to managed services. 
+New Features 
+While customers may be excited to learn that your latest release has several new features, they may 
+not be so excited to learn how to use them. Learning takes time and effort. It requires changing 
+behaviors. Depending on the size of your customer and the magnitude of the upgrade, the cost of 
+learning new features can motivate customers to delay or even cancel the upgrade. 
+Inaccessible System 
+Unless an application is truly mission critical, the upgrade process is likely to make it unavailable to 
+users. This can range from a minor inconvenience, as when I'm upgrading a desktop application, to a 
+major inconvenience, such as when I'm upgrading my operating system, to a completely unacceptable 
+risk, such as when my business is upgrading its customer relationship management (CRM) or 
+employee benefits system. 
+Reversion 
+Change management protocols for important or mission-critical applications always define how to 
+revert to the previous version of the system should anything go wrong in an upgrade. Your 
+architecture can help make reverting relatively easy … or very dangerous. Often, many complicated steps must be followed exactly or the overall process will fail. The order in 
+which these steps are performed, and their management, represents a special kind of customer pain. 
+Understanding the upgrade process by mapping out each step gives you a chance to simplify it. 
+My Pain Is Different 
+The problem with the list of upgrade fears presented is that it is relatively abstract, covering 
+situations that more than likely don't correlate with your specific circumstances. I don't like 
+this because alleviating upgrade pain depends on managing the specific kinds of pain 
+associated with upgrading your system. 
+Therefore, if this chapter is to have any real value, you must create your own list of upgrade 
+pain. Each of the companies I've worked for, and each of my consulting clients, has one. 
+(Not surprisingly, each of them also had a unique architecture!) Until you've created this 
+list, you can't critically examine what you're doing and how you can improve it to make 
+certain you're meeting customer needs. 
+Making Upgrades Less Painful 
+As with installation, there are a variety of ways to make upgrading less painful. For starters, review 
+the algorithm for installing software presented in Chapter 11. Upgrading typically follows the same 
+steps, and this algorithm will help make certain you're not missing anything important and that you're 
+asking your customer to do things in an orderly manner. 
+Choices for Painless Upgrades 
+Upgrading raises some additional issues best handled by the entire development team working 
+together. Consider the following. 
+Number and Timing 
+Customers can't absorb releases that occur too quickly, and they get frustrated and concerned if 
+releases happen too slowly. You have to understand the events and rhythms of your market (see 
+Appendix B) to know how frequently you can create and distribute upgrades. 
+Upgrade Readiness 
+All of the steps I recommended in Chapter 11, such as checking for the necessary disk space and 
+verifying configuration parameters, still apply. In addition, and depending on the upgrade, you may 
+want to examine how the customer is using the current version to determine the best upgrade 
+approach. For example, suppose that your system is composed of several optional features that can be 
+installed as part of a custom configuration. Before simply upgrading various components, you should 
+check what has been installed to make certain you only change what must be changed. A good rule of 
+thumb is that it is best to make the least amount of changes possible when performing either an 
+installation or an upgrade. 
+Data Migration It sounds simple: Take data from version n-1 and migrate it to version n. It might actually be simple, 
+depending on the changes being made in the system. Unfortunately, in the real world of working 
+systems and customer environments things are surprisingly complex. 
+Recall that data is typically stored in two basic formats: Semi-structured data in files, and structured 
+data in a database management system. Data migration for these formats differs in a number of ways, 
+including when the data has to be upgraded and how much work the customer must do during the 
+migration process. 
+It's Easier to Say Yes than No 
+I've earned a reputation of fairly ruthlessly assessing application features. Simply put, if a 
+feature isn't needed, take it out. Of course, like so much advice this is easy to say but hard to 
+do. Removing a feature is usually traumatic because it raises all sorts of questions: Which 
+customers are using this feature? How are they using it? How will they react if we take it 
+away? Attempting to answer all of these questions can be costly and time consuming. Even 
+asking the question can alert customers to a potential change, and there are times when it is 
+best to deal with customers affected by such a decision in a very controlled, and subtle, 
+manner. 
+Virtually the only way to remove a feature is during the upgrade process. Features often 
+correlate in some way with the application's persistent data. By carefully assessing the 
+persistent data of an existing installation, you can often determine if a feature is actually 
+used. If the data indicate that it isn't being used, then you can often relatively quietly drop 
+support for it. 
+In one application we allowed our customers to associate keywords with certain data. We 
+thought this implementation was good enough, but it really wasn't. It was too hard to use 
+and the results weren't all that useful. A more thorough analysis showed that making this 
+feature better would be much more work than originally expected. So, since it wasn't as 
+important as other features, I decided to remove it. The team modified the upgrade 
+procedure and analyzed the database. No keywords meant no use of the feature and safe 
+removal. 
+More generally, it is a good idea to write a program that assesses the current installation to 
+determine the best way to upgrade it. A good assessment will let you know how the system 
+is being used (based on persistent data) and may tell you about any modifications, 
+integrations, or extensions, and it will help you identify any ripple upgrade requirements. 
+Log files, configuration and customization files, and even corporate settings (such as LDAP 
+servers) are sources of potentially useful information that can help you plan a sensible 
+upgrade, including the removal of features. 
+Finally, if you use this technique to help you remove features, remember that removing a 
+feature is more complex than examining persistent data and removing some software. 
+Feature removal requires coordination among the entire development team: Printed and on-
+line technical documentation needs to be updated, services must be informed, and training 
+programs may need to be added. In other words, removing a feature is at least as hard as 
+adding one, often more so (which makes you wonder why features are added so easily in the 
+first place!). For data stored in a database, you have to work out the data migration process because chances are 
+that all of the data must be migrated at once. This can be pretty simple if you're absolutely certain that 
+the customer hasn't modified the schema in any way. If they have, you're going to have to find a way 
+to handle the modifications. You can require your customer to do all of the work (e.g., export all 
+customizations and associated data and then import them after the upgrade), but then, if your customer 
+doesn't want to do this work, you may have to create the tools to do it automatically. I've had the best 
+results with a middle-ground approach, in which developers write special tools that the professional 
+services organization then uses in the field. It is imperative that the services organization understand 
+these tools because there is a good chance they will have to modify them in the field to deal with 
+unique problems that occur only in customer environments. 
+Data stored in a flat file can often be upgraded on demand, such as when an application opens a data 
+file from a previous version but stores it in a new version. It is good practice to warn the user that you 
+are doing this. 
+Upgrade Configuration and Customization Information 
+Like many users of Microsoft Office products, I customize these products according to my personal 
+preferences. Unfortunately these settings are not preserved when I upgrade from one version of Office 
+to another, which is very frustrating. Don't make this mistake with your users. Make certain that you 
+upgrade configuration and customization information. 
+Previous Versions 
+A big problem with migrating data from a previous version to the current version is that probably not 
+all of your customers are going to be running the same version of the old software. If you're releasing 
+version 3.7, you may have to deal with customers who are upgrading from any prior release. Only a 
+careful examination of your customer base will let you know how many previous versions you need to 
+handle. 
+There are two basic strategies for dealing with older versions, and a sensible approach often combines 
+them. The first is a single-step migration, in which you provide a direct path from any previous 
+version to the current version. The second is a multistep migration, in which you pick a subset of the 
+previous versions that can be upgraded to the current version. Customers whose version isn't within 
+this subset must first migrate to one of the versions in the supported set. To make certain you're 
+managing all of the prior versions, draw a directed graph that includes all versions—even versions that 
+are not supported but may still be in use. 
+Coexist or Replace? 
+A special issue in upgrading existing software is whether or not the new version should completely 
+replace one or more existing components or co-exist with them. Resolving this requires a detailed 
+technical understanding of the dependencies between system components as well as marketing's input 
+on the user experience. While successful systems have used both approaches, I recommend replacing 
+components if at all possible. If you don't, you'll confuse your users, who won't know when they 
+should remove the old version (if it wasn't safe to remove it during the upgrade, when will it be safe to 
+do so? And who will remind the user when they should do this?). 
+Which Version Do I Use? 
+As mentioned in Chapter 6, allowing multiple versions of the same application or product on the same system increases testing complexity (the matrix of pain) and often increases 
+support costs. For example, I was confused when I installed an AOL upgrade on my laptop 
+and found that my desktop had two nearly identical shortcuts—one referenced the old 
+version; one the new version. They looked identical, and even more frustrating, not all of 
+the data I had entered into my old version was transferred so I had to do it by hand. I don't 
+mean to single out AOL. All of the applications I use on a regular basis have a variety of 
+upgrade-related problems, ranging from data migration to unknown or unstated ripple 
+upgrade requirements. Given that more money is made in upgrades over the life of a 
+successful application than in its initial sales, you would think that marketects and 
+tarchitects would take the upgrade process more seriously. 
+ 
+Market Maturity and Upgrades 
+In earlier chapters I observed that innovators and early adopters are more tolerant of the many 
+problems in an immature product. They can deal with difficult installations; they can handle APIs that 
+don't work very well; and they often accept poor performance in the expectation that it will improve in 
+a future release. Given that innovators and early adopters are willing to tolerate so many 
+shortcomings, you may be tempted to think that they will also tolerate a poor or faulty upgrade 
+process. 
+My experience tells me that this is not the case. One area in which innovators are just as demanding as 
+the late majority is in software upgrades, especially as it relates to data migration. Simply put, you 
+cannot screw up their data. Innovators may put up with a lot, but trashing their data is beyond even 
+their considerable level of patience. 
+Of course, this is not a justification for a difficult-to-use or otherwise faulty upgrade process. 
+Innovators and early adopters may be reluctant to upgrade precisely because they have invested 
+considerable time and energy into making the application work within their environment. A faulty 
+upgrade process also creates nasty problems in the future, regardless of market segment. If you've ever 
+struggled through an upgrade, you know from personal experience that you're unwilling to upgrade to 
+a new version of anything unless absolutely needed. I once used the same laptop for more than four 
+years simply because I managed to create an extremely stable and reliable environment. Don't provide 
+your customers with a reason to avoid upgrading their software by using their last upgrade against 
+you. 
+ 
+Chapter Summary 
+•  Upgrades can cause considerable customer pain in a variety of ways. Make certain yours 
+doesn't. 
+•  Ongoing technology evolution motivates ripple upgrades. Detail these requirements carefully. 
+•  Don't ever screw up your customers' data during an upgrade. 
+•  Understand just how frequently your customers can absorb an upgrade. They may want an 
+upgrade, but they may not be able to absorb one as quickly as you can create one. 
+•  It helps to have tools to assess upgrade readiness, upgrade impact, and whether or not you can 
+easily remove any unnecessary or unused features. 
+•  All market adopter segments require a good upgrade. Check This 
+•  We have identified all potential areas where an upgrade can cause pain and have tried to 
+minimize them. 
+•  We have tested all data migration paths. 
+•  We have defined the manner in which any customer with a previous version of the system can 
+upgrade to the current version. 
+•  We have defined how long the system will be down because of an upgrade. 
+•  We have provided detailed instructions on how to completely uninstall an upgrade and 
+convert all data to the previous version. 
+•  We have provided tests to confirm successful upgrades and to identify any areas in which the 
+upgrade may have failed. 
+Try This 
+1.  Find a computer that has the second-most-recent version of your software. Use it. Build at 
+least a sample dataset. Now take the most recent version of your software and upgrade to the 
+current system. How do you feel? 
+2.  What kind of data transformations are required by your upgrade process? Is each 
+transformation essential? Can the schema be redesigned to minimize or eliminate these 
+transformations? 
+3.  What was the last feature you removed from your solution? Why did you remove it? 
+Chapter 13. Configuration 
+Complex systems need to be configured to be useful. Unfortunately, configurability is not one of the 
+more commonly discussed "ilities," so systems end up much more difficult to configure than they need 
+to be. For that reason, ease of configuration is a worthwhile goal for both the marketect and the 
+tarchitect. In this chapter I will discuss configuration parameters and some of the things you can do to 
+make your system as easy to configure as possible. 
+Configurability—An Element of Usability 
+The primary reason to care about configurability, which is a dimension of overall usability, is cost. 
+Difficult-to-configure systems 
+•  Are harder to use, increasing operating costs. 
+•  Are harder to tune, resulting in lower actual and perceived performance, which can increase 
+costs by forcing customers to do such things as purchase unnecessary hardware. 
+•  Result in more calls to technical support, increasing technical support costs. 
+•  Require more complex professional services, increasing direct costs to customers because 
+professional services take longer than they should, and decreasing employee satisfaction 
+because very few professional services people get excited about configuring a complex 
+system. 
+•  Increase overall customer frustration, putting you at a competitive disadvantage. 
+A related reason to make configuration easy is based on the architectural nature of the systems you're 
+creating, which are increasingly built using modular approaches. Modular systems increase 
+configuration requirements—a fact that becomes increasingly true in architectures based on Web services. Without a strong commitment to easy configuration, you're going to see configuration costs 
+increase over the life of your application. This is not a pleasant prospect. 
+You must architect ease of configuration. Doing so is in everyone's best interest. In terms of usability, 
+configurability is having the right number of configuration parameters—not too many and not too 
+few—and choosing parameters that affect the system in ways that are material to the user. 
+The System Context 
+Before worrying about the technical details of structuring configuration parameters, let's take a step 
+back and consider what should be configurable. The basic information that needs to be captured in 
+these parameters is the system context—that is, all aspects of the contextual information you need for a 
+properly functioning system. By capturing these data and making them configurable, you provide your 
+customers with the ability to set key parameters at deployment instead of during development. This 
+process of late binding makes your system more flexible and far easier to deploy. 
+Contextual Information 
+Identifying contextual information is the job of the tarchitect, as informed by key members of the 
+development team. Here are some specific areas to consider. 
+Location of Key Files and/or Directories 
+Many complex systems rely on predefined or well-known files and/or directories whose locations are 
+set during system installation and captured in configuration files for the runtime environment. 
+Bootstrapping Data 
+Most technical systems require various kinds of bootstrapping information. Your computer requires a 
+BIOS. Your application requires an entry point for the operating system to begin executing the 
+program. Enterprise-class systems usually require bootstrapping data stored in files in precisely named 
+files and carefully located directories. The most common choice is a subdirectory under the 
+subdirectory containing the application, with one or more well named configuration files. Note that 
+even these bootstrapping data can be lost, and a good defensive design technique is to ensure that the 
+system can perform a reasonable minimum set of functions without it. 
+Portability Switches 
+A special context is one that deals with system portability. For example, a team that worked for me 
+designed a system that could be configured for use with Oracle or SQLServer. The choice was 
+important because the system used slightly different SQL statements that had been tuned for the 
+performance characteristics of each database. 
+Compatibility Controls 
+Development teams face challenges in determining how to support older versions. Instead of making 
+this decision arbitrarily, turn it over to your customer and let them decide via any number of 
+configuration parameters. 
+Performance Parameters Performance parameters range from timeout values to in-memory storage requirements to the number 
+of database connections the system should automatically maintain. Truly sophisticated applications 
+can adjust these parameters based on self-monitoring system performance, but most of us can get 
+away with allowing the user to configure with simpler parameters specified at system startup. 
+Too Much of a Good Thing 
+It started with a well-intentioned development team trying to peacefully resolve differences 
+of opinion on everything from how much default memory should be allocated to the default 
+layout of the user interface. By the time they were finished, I feared that I would need an 
+expert system just to help a customer install and configure our software. 
+We had too many optional configuration parameters. In isolation, each parameter made 
+good sense. In total, they presented to the system administrator a bewildering array of 
+choices. We managed to arrive at a workable solution by creating sensible parameter 
+groupings, with rock-solid in-line help and plenty of examples on how changes to the 
+parameters would affect system performance. Still, I learned my lesson and am more 
+cautious about putting something into a configuration parameter. 
+A good rule of thumb is that something should be a configuration parameter only if the 
+system can't function without it being set, such as a proxy server. If something can vary in a 
+sensible way, or if you simply want to give your users greater flexibility, make it a 
+customization parameter and provide a reasonable default. The difference is subtle but 
+important. Configuration parameters have to be set correctly for the system to operate, 
+which usually means that they must be set by a person who knows what he's doing (e.g., a 
+system administrator). Customization information, which should be an attribute of some 
+object, may never be set at all. 
+By the way, in case you think I'm being overly dramatic about needing an expert system to 
+manage configuration parameters, keep in mind that one of the most famous expert systems 
+ever—XCON—was created specifically to configure DEC VAX computers! 
+ 
+Initialization versus Execution 
+There are basically two times when a system needs to be configured: before execution and during 
+operation. As discussed in the previous section, much if not all of the configuration parameter 
+information is processed during initialization. In addition to reading these data to obtain the required 
+context information, the system must also handle gross errors and/or configuration inconsistencies. A 
+proven approach is to ignore an inconsistency, choose a sensible default, and log the error. If you can't 
+ignore the error, stop processing and inform the user. 
+One drawback of requiring that configuration data be processed during system initialization is that the 
+user may have to shut down and restart for seemingly trivial changes. This may be acceptable for 
+simple systems, but is likely to become intolerable for complex systems. For example, it is often best 
+if log data (discussed in greater detail in Chapter 14), can be turned on and off while the system is 
+running. Or consider configuration data in high-availability systems. Such systems need to be 
+designed so that there is a way to notify the system of important changes to configuration data, or so 
+the system can discover important changes during normal operation on its own. A key consideration is any data that may be useful for problem diagnosis—it's always best to gather the data needed while 
+the system is running, when the error occurs. 
+A special case of complexity in configuration parameters deals with pass-through parameters, that is, 
+parameters set in the context of your application but are actually passed through to in-licensed 
+components. Suppose, for example, that your system relies on a third-party text searching engine. The 
+structure of its configuration parameters will constrain the structure of yours, including whether or not 
+you can set its parameters during system operation. Because of this, the tarchitect must consider which 
+configuration data are best handled during initialization and which are best handled while the system 
+is operating. 
+Setting the Value 
+Once you've determined what values need to be configured and when, you need to consider who can 
+set them. Three entities are common: a human, such as a system administrator; another system, as 
+when two systems negotiate a value or receive commands for inter-operation; or the system itself, 
+when it is architected to auto-configure one or more values. A system can rely on any combination of 
+the three to get the job done. 
+It is assumed that the entity setting the value has been authorized to make changes to configuration 
+parameters, but this doesn't mean that every entity should have this authority. Make certain that each 
+parameter, or each class of parameter, is reviewed so that the full ramifications of changing it are 
+understood. 
+You may not want any individual user to be able to change any given parameter. If not, require 
+configuration data to be stored on a system with administrative access protection, although this isn't a 
+guarantee that the right system administrator will be changing the right value. If needed, you may 
+want to consider creating an audit trail of these data by putting them into a database—a database will 
+give you all the facilities you need to manage the audit. Later in the chapter I will recommend storing 
+configuration data in easily accessible, human-readable files. Unfortunately, these are conflicting 
+recommendations, and you'll have to choose what is best for your situation (no one said being a 
+tarchitect was easy). 
+Interesting challenges can emerge when one or more entities are granted authority to change the same 
+parameters and you have to choose the circumstances under which one entity can override the other. 
+This can be a sticky problem, and it is best to involve the marketect in its resolution as her input will 
+consider your market. I created applications in which the number of active database connections is set 
+either by the system administrator or by the system itself based on an assessment of its own 
+performance. We allowed the system to adjust the value automatically in case the administrator set it 
+to an absurdly low or high value. 
+Setting the Right Value 
+In discussions regarding configuration parameters, the tarchitect and marketect must together meet 
+both the needs of the user affected by the parameter and the needs of the user (or system) setting it. 
+In general, most users are not aware of the full range of configuration parameters that exist for their 
+application. They don't need to be. In writing this chapter I did a quick search on my computer for all 
+files with the extension .ini (I'm writing this book on my trusty laptop running Windows 2000). I 
+had expected to find two to three dozen, so imagine my surprise when I found more than two hundred! 
+A cursory review revealed that most of them weren't really storing configuration parameters of the kind I'm talking about in this chapter but instead were using the Windows facilities as simple 
+persistent storage. 
+However, some, were clearly configuration files as defined in this chapter, with various settings based 
+on user needs. In considering those needs here, remember that increasing the number of configuration 
+parameters increases the likelihood that they may be set to improper or useless values and generally 
+detracts from usability because of increased complexity. 
+The previous sections provided the information you need to give to the entities setting the values. 
+Simply put, they need to know what values to set, how to set them (including formatting and valid 
+values), why to set them, and their effect on system operation. Give this information in the file, not in 
+some external document or hidden on a Web site. Let the entity using the file understand what is 
+happening. 
+The caps.ini file, distributed as part of the Microsoft Platform SDK provides almost all of the 
+answers that a user needs to modify these values. Here is an extract under the section [CAPS 
+FLAGS]. The file could be substantially improved by adding some information about the effect of 
+setting each of these parameters on or off. 
+[CAP FLAGS]  
+# CAP accepts the following parameters: 
+#    *  profile        = (on/off) 
+#    *  dumpbinary     = (on/off) 
+#    *  capthread      = (on/off) 
+#    *  loadlibrary    = (on/off) 
+#    *  setjump        = (on/off) 
+#    *  undecoratename = (on/off) 
+#    *  excelaware     = (on/off) 
+#    *  regulardump    = (on/off) 
+#    *  chronocollect  = (on/off) 
+#    *  chronodump     = (on/off) 
+#    *  slowsymbols    = (on/off) 
+# 
+# Anything value other than on or off is encountered 
+# and the default values will kick in: 
+#               profile        = on 
+#               dumpbinary     = off 
+#               capthread      = on 
+#               setjump        = off 
+#               loadlibrary    = off 
+#               undecoratename = off 
+#               excelaware     = off 
+#               regulardump    = on 
+#               chronocollect  = off 
+#               chronodump     = off 
+#               slowsymbols    = on 
+# 
+# Please notice there are no spaces between the keyword 
+# and the value (either 'off' or 'on') 
+# While the instructions provided in this document are clear (at least to me), they do contain some minor 
+grammatical mistakes. Because such mistakes will happen, involve your technical publications 
+department in preparing configuration file documentation (including its internal documentation). They 
+shouldn't write the initial description of these parameters—that's the job of individual developers as 
+reviewed by the tarchitect. However, they should be involved in the final review process because they 
+know how to structure and communicate important information. 
+Configuration Parameter Heuristics 
+The following heuristics are useful when designing configuration parameters. 
+•  Make them easy to change, even when the rest of the system is down. This means storing 
+them externally, in a simple, easily managed, nonbinary format. 
+•  Store all of the data in one location. If you think you must have them in multiple locations, 
+find a person you trust and convince them that storing the data in multiple locations is a good 
+idea. If both of you continue to think this is a good idea, go ahead and do it. If you are lucky, 
+your trustworthy friend will convince you that this is a poor design choice and will help you 
+choose a better one. 
+•  Store the file in an obvious location with an obvious name. I recommend names like "System 
+Configuration Data" and places like the root directory of the installed application. 
+•  Platform-specific file formats, such as .ini, are okay, but why not use XML? It's simple, as 
+verbose as you need, and easily managed. 
+•  Be careful of things like registry entries. They aren't portable and can be difficult to change 
+for nontechnical users. I don't see a lot of value from use of the registry. 
+•  Make configuration data easy to capture and forward to technical support. It's amazing the 
+number of problems a sharp technical support person can solve once they understand how the 
+system has been configured. 
+•  Make it hard to get the values wrong. If they are wrong, notify the user as soon as possible 
+and either stop execution or continue with sensible defaults. 
+The most resilient designs are based on the idea that configuration parameters are persistent attributes 
+of some entity or object. This enables other objects or subsystems to deal with the information within 
+this object and not worry about how to manage INI or XML files. Because these attributes can often 
+be affixed to different objects, the tarchitect should consider that any of the following may be useful. 
+•  A system context object, for storing information about overall system context 
+•  Per-computer, per-service-instance, per-user, or even per-selectable-user profile objects 
+•  Objects that capture the semantics of the configuration data 
+Keep in mind that, while you don't have to get all of the configuration data you need right at the 
+beginning of the system, retrofitting can be cumbersome, and may require architectural changes. 
+Chapter Summary 
+•  Configuration is an essential aspect of usability. If your system is difficult to configure, your 
+customer won't be able to use it to its fullest capacity. 
+•  Configuration parameters should be designed to capture the system context, which is all of 
+the contextual information needed for the system to function properly. Examples include the 
+location of key files and directories, portability switches, and compatibility controls. •  There are two times when a system needs to be configured: before it begins execution and 
+during its operation. A system that can process value changes while running is good for 
+debugging. 
+•  Customers need support in setting the proper value. Give it to them. 
+Check This 
+•  We have defined all system configuration parameters. For each parameter, we have defined 
+its security and auditability requirements and whether it is used only during initialization or 
+can be changed while the system is running. 
+•  We have documented how to set each value and have provided guidance for setting it 
+correctly. 
+Try This 
+1.  How do you choose when to add new configuration parameters? Who in the team is allowed 
+to do this? 
+2.  Where is the documentation for your configuration parameters stored? Can your users obtain 
+everything they need from the configuration file? 
+3.  How tolerant is your system when the wrong values are set? What happens? Have you tested 
+this? 
+Chapter 14. Logs 
+You just hit your favorite Web site, but it's taking a bit longer than normal to download the start page. 
+You're wondering if the system is hung or if it's just responding more slowly than usual because of 
+increased load. Chances are the site's system administrator is wondering the same thing, and unless the 
+system can log or otherwise display its operational status and related performance, data she may never 
+know. 
+Better Late than Never 
+Sometimes the pressures of getting the release done on time can consume all of your 
+energy. Instead of carefully thinking things through, your overwhelming motivation is just 
+to finish the $@#%&@ software. Since you may not be able to pull yourself out of this line 
+of thinking, it helps to have senior developers who can. 
+We were just completing our first release of a brand-new enterprise-class system. I wasn't 
+thinking about log files at all. Fortunately for me, and our customers, Dave Smith, one of 
+my senior developers, was, and he took it upon himself to add some of the foundation 
+needed for them. Myron Ahn, another senior developer, extended the log file format and 
+structure and made sure that many parts of the system were logging useful information. I 
+can't claim that this first release was a model of logging tarchitecture beauty, but I do know 
+that it served our initial needs very well and was a very useful foundation for logging data 
+in future releases. 
+The importance of this lesson has served me well over time. I've added logging, or have 
+substantially enhanced it, in any number of systems since then. Each time the results were 
+worth the effort. Well-designed logs can help you with a variety of tasks crucial to the marketectural goals of your 
+application. This chapter explores logs, covering such topics as the purpose and audience of log data, 
+the specific content of log files, and log format and management. 
+I Want to Know What's Happening 
+The fundamental motivation for logging data is that someone wants to know something about the 
+system. Table 14-1 captures what people want to know according to category, purpose, and audience. 
+Developers often misuse log files by storing one category of data in a log designed for another—
+debugging information in the operational status log file, say, or behavioral data in the system 
+configuration log file. These mistakes, whether intentional or not, dilute the value of the data, 
+invalidate or seriously complicate postprocessing analysis, and contribute to overall system 
+complexity. 
+Table 14-1. Log File Motivations and Audiences 
+Category  Purpose  Audience 
+Debugging/Error 
+Logs 
+Provide information on system 
+operation as an aide in debugging. 
+During construction, developers are the 
+primary audience. After release, technical 
+support and professional services 
+personnel can use this information to 
+resolve problems in the field. 
+Error Recovery Capture information that can be used 
+to restore the working state of a 
+system in case something crashes. 
+Almost exclusively the domain of the 
+application. An example is a database 
+management system transaction log. 
+Performance 
+Tuning 
+Provide information on one or more 
+aspects of performance, usually with 
+the goal of improving it. 
+Professional services organizations, 
+customer IT organization sites, and end 
+users. 
+Capacity Planning Provide information on actual 
+resources consumed during system 
+operation. 
+Customer IT organizations and end users. 
+Behavior Tracking 
+and Auditing 
+Provide information on how various 
+actors (end users, system components, 
+other systems) interact with the 
+component in question. 
+Marketing organizations (for user/feature 
+profiling) and security organizations (for 
+audit trails). In these cases the content of 
+the log may be similar but how the log is 
+used is different. 
+System 
+Configuration 
+Management 
+Provide information on the system 
+context. These logs are often 
+symmetric with configuration files. 
+As a subset of debugging information, it 
+has the same audience. 
+Operational Status Provide information on the current 
+operational status of the system (e.g., 
+how many transaction requests are in 
+the queue, how many users are 
+connected to it). 
+IT and professional services organizations.
+No Categories Are Better than Two 
+Log data categories are not hard boundaries. Sometimes you're just not certain where the 
+data should be stored because it could be used for more than one purpose or you're not 
+certain who will be using the data or how. One option for handling this situation is to store 
+log data in a single log file that has appropriate identifiers for each type of log event. Postprocessing tools can then read only one file to obtain the data they need. 
+In one application I worked on the system administrator specified in a configuration file the 
+locations of various files required at initialization and used during operation. As the system 
+processed these files, it logged the results. These log data were used in several different 
+ways. 
+•  Developers used them while creating and debugging the system. 
+•  Technical support used them to help customers recover from a system crash. 
+•  Professional services used them for performance tuning and capacity planning. 
+We didn't spend a lot of time debating where to store these data. Instead, we just put them in 
+a single file. 
+A more serious misuse of log files is when a developer uses them for storing nonlogging data. The 
+most flagrant abuse I ever experienced was when one developer used a log file to store persistent data! 
+A good rule of thumb is that log files be read only, in that one system generates log data that other 
+systems consume. There are exceptions to this rule, such as when a system can process its own log 
+data (I've worked on systems that can self-tune key performance parameters based on log file 
+analysis), but they are fairly rare. Application processing of log files should be completely optional: If 
+someone deletes a log file and your application crashes, you've got a design problem that needs to be 
+fixed. 
+ 
+Not Just the Facts 
+A wide variety of information can be included in a log. Table 14-2 details some of it according to the 
+categories described in the previous section. As you look at this table, keep in mind that Murphy's 
+Law really applies here. Specifically, you may not know what you need in a log until you need it, so 
+try to create log data with enough context to make sense of what is happening. In other words, if you 
+are logging information about a complex transaction, don't just log when the transaction started and 
+stopped: log each processing step so that you can understand transaction states. As an alternative, use 
+an approach common in rule-based systems, in which the system should be able to "explain" its 
+behavior. 
+Log data may be provided in real time, or nearly real time, to other applications. This will help you 
+create such things as dynamically updated dashboards that show the status of the system in a rich 
+graphical format. 
+Table 14-2. Techniques to Improve Log Utility 
+Category  Suggested Contents 
+Debugging/Error 
+Logs 
+•  Contextual information. Consider the following entry (from an MS 
+Windows Dr. Watson error logging program—(DrWtsn32)). 
+•  *----> System Information <----* 
+•          Computer Name: LUKELAP 
+•          User Name: Luke Hohmann 
+•          Number of Processors: 1 
+•          Processor Type: x86 Family 6 Model 
+6  Table 14-2. Techniques to Improve Log Utility 
+Category  Suggested Contents 
+•  Stepping 10 
+•          Windows 2000 Version: 5.0 
+•          Current Build: 2195 
+•          Service Pack: None 
+•          Current Type: Uniprocessor Free 
+•          Registered Organization: 
+•          Registered Owner: Luke Hohmann 
+•  Inputs and outputs to each function call or equivalent. Consider multiple 
+debugging levels and whether or not you should record parameter 
+values. Recording parameter values takes some planning because you 
+can't simply dump complex data structures into a log file and expect it 
+to be useful. Serializing these data into XML is a good choice, but you 
+have to be careful about how much data you're adding to the log and 
+how much of a performance hit you'll take in the process. This issue is 
+so complex that you probably won't be able to establish a uniform 
+policy but will instead have to approach each log entry on a case by 
+case basis. 
+•  All main components—for example, in a heavy client client/server 
+system both the client and the server. 
+Performance Tuning  •  Each command and how long it took to execute. If possible, track both 
+elapsed and actual processing times. 
+Capacity Planning  •  Complex systems use a variety of resources. Monitoring usage levels in 
+log files allows you to tune performance. In one application I worked 
+on, the system administrator could specify the initial number of 
+database connections in a configuration file. During operation, the 
+system would create additional connections as needed. By recording the 
+number of connections used as well as any connections that were 
+created in a log file, we provided system administrators with the data 
+necessary to tune their performance. If they specificed 50 initial 
+connections but never used more than 30, they could lower the number 
+and improve performance by freeing up valuable resources. If they 
+specified 50 initial connections and consistently required 80, they could 
+increaes the initial number of connections, again improving overall 
+performance (because creating the connections at startup is faster than 
+creating connections on the fly). 
+Behavior Tracking 
+and Auditing 
+•  Reports of operations/features used, including optional features not 
+used. For example, it is easy to add information to a log file when an 
+optional feature structured as a DLL is invoked. Scanning the log to 
+identify if these features are invoked at all is trivial. 
+•  Highly used features may be sources of new revenue by creative 
+licensing programs, including feature-based licensing. Unused or little 
+used features may be removed in a future release or may become the 
+target of marketing and/or educational campaigns designed to increase 
+use. Logs used for auditing purposes must be trustworthy. 
+System  •  Data in configuration parameters. If any are processed by your system Table 14-2. Techniques to Improve Log Utility 
+Category  Suggested Contents 
+Configuration Input 
+and Processing 
+in an interesting and useful way, add the input and the resultant output 
+or effect to a log file. Many inappropriate configuration parameter 
+values can be overridden by the system. Any resets should be logged for 
+further review and analysis. 
+Operational Status  •  Operational status logs, being most closely associated with enterprise 
+server applications. These applications have specific status 
+requirements. Transaction-based systems may log transaction states 
+(beginning, processing, ending), cumulative requests, outstanding 
+requests, and so forth. Enterprise applications based on concurrent user 
+business models may log logins and logouts, graceful or abrupt session 
+termination, failed login attempts, or total number of users, etc. 
+Operational status logs often correlate to the business model. 
+Logs Are Not Glorified Trace Statements! 
+Once the decision has been made to create any log files, developers usually start stuffing a 
+variety of them with data that is generally useless to anyone but them. To maintain 
+coherence and integrity, especially of logs used by customers and/or technical support 
+organizations, and to meet the team's legitimate debugging needs, I recommend a separate 
+log for developer-centric data. Once this is done the tarchitect can periodically review the 
+contents of a sample log and work with developers to see that the right data ends up in the 
+right log. 
+Log Format and Management 
+Log data can be structured in a variety of ways, including flat files, databases, and direct input from 
+the system to a formal monitoring system, such as HP OpenView or the Windows event log. 
+Log Format 
+Here are some general observations on log format. 
+•  Internationalization: Creating log data in the user's target language can substantially improve 
+usability. It can also score points with customers who prefer to use their native language for 
+all system operations. 
+•  Start with a time stamp: The first entry in a log file should be a time stamp. 
+•  Always add a unique identifier, traceable to the actual source location: Log data are most 
+useful when you know you can return to the source code to interpret what is happening. 
+•  Provide a way to identify transactions: Many log entries are associated with various kinds of 
+transactions. Once an ID is assigned to a transaction, put it in the log. This is the best way to 
+tie together a single transaction's logging data. 
+Flat Files 
+The flat format is probably the most popular for log files. It's faster and more malleable than a 
+database and usually trivially ported. Indeed, when I did a casual search on my laptop for .INI files, (mentioned in Chapter 13) I also did one for .LOG files. Once again I was surprised by the results. I 
+had expected to find, at most, a dozen or so files. Instead I found 132, created by programs ranging 
+from MS Outlook to Adobe Acrobat and my REX6000 PDA. 
+Here are some principles of good flat file design. 
+•  Easy parsing: The contents of the flat file should be easily parsed. A little thought here can 
+save a lot of work later. A good rule of thumb is that it should be trivial to import log data 
+into a relational database or analysis tools like MS Excel. 
+•  Easy reading: Log files that are easily parsed are often—but not always—easy to read. Again, 
+with a little bit of planning you can create log files that are parsed easily by both computers 
+and humans. 
+•  Sensible location: Don't put log files where a user won't expect them, such as the root 
+directory. Put them in a sensible location, preferably one associated with your application or 
+that can be configured by the user/system administrator. 
+•  Sensibly named: I prefer that log file names be easily understood, but sometimes this just isn't 
+possible—for example, when a separate log file is created for each invocation of an 
+application. In these cases, you may want to generate a random name for the file, put it in a 
+sensible location, part of which should be the date the log was created. The format YYYY-
+MM-DD-HH-MM-<log file name> has the advantage of automatically sorting log 
+files by date (using a 24-hour clock). 
+•  No garbage or special characters: Avoid putting anything into the log file that isn't a 
+"normal" character. Use Unicode characters if you're concerned about multibyte languages. 
+•  Documentation: Like configuration files, log files need precise documentation to ensure their 
+proper use. Explain what logs are created and when and how they're created, what different 
+settings will produce, and so forth. 
+•  Reconciliation or audit ID: If you're using different log files, create some kind of identifier 
+than can tie together related entries. If at all possible, use this identifier with third-party 
+applications. 
+Log Management 
+Log management refers to such things as how and when logs are created, updated, and/or deleted and 
+responses to error conditions. Consider the following. 
+Dynamic Logging 
+Complex systems benefit from the ability to configure logging parameters (such as level of detail or 
+kind of operations to log) during operation. This allows customer support to work with customers in 
+real time to resolve key issues. An even more sophisticated approach is to construct your system so 
+that it can decide if you need to log data. If your fraud detector notices that something is amiss, have it 
+log additional information for awhile. 
+Per-Thread Logging 
+Complex servers that distribute operations over multiple architectural layers often service each request 
+in a separate thread. The net result is that log entries from several different components, each running 
+multiple threads, may have to be correlated to produce useful results. If you're using multi-threading, 
+make certain you support per-thread logging. 
+Logging Levels In addition to starting/stopping logging, consider making the level of detail configurable. This is often 
+expressed as logging levels, where you set a number to indicate the amount and kind of information 
+that should be logged. For example, you might set developer logging to the highest number and 
+default logging to something else. This helps prevent your logs from filling up with data that is only 
+needed in specific or special circumstances. 
+A complementary approach to logging levels is to label the various logging data. These labels can be 
+used in conjunction with levels to create a very flexible system. Here are some examples of labels. 
+•  Debug: usually reserved for extended data; turned on when conducting error diagnosis 
+•  Info: provides noteworthy information 
+•  Warning: logs an entry when a potential error condition has been detected, such as when the 
+system has detected a lower-than-desired amount of a critical resource 
+•  Error: logs an entry when an error has occurred 
+Logging levels and labels should work in conjunction with the categories defined earlier. Thus, a 
+warning entry for performance purposes might be generated when the system takes longer than 
+expected to process an event, whereas a warning entry based on operational status may be generated 
+when the system becomes low on memory or disk space. Not all combinations make sense—there is 
+no good definition of a warning or an error for behavioral tracking and usage (unless you're concerned 
+about a feature being over-used). 
+APIs 
+Controlling the behavior of the system with logging levels and labels should be through an 
+appropriately designed set of APIs. 
+Configurable Syntax 
+There are times when a different format is easier to process. For example, Web server logging 
+facilities, like those found in Apache, are completely configurable in syntax and contents. 
+Log Exceptions 
+Exceptions and logging are closely related. Log every exception. 
+Removable 
+Many logs outlive their usefulness, unnecessarily cluttering machines and potentially confusing log 
+consumers. If the date the log was created is part of the file name, removing unnecessary logs 
+becomes that much easier. 
+Security 
+Log data can be sensitive, so you may have to encode it or store it in a privileged location. Depending 
+on the contents of the log, customers may not be willing to share it with your company. 

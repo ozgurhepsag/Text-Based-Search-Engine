@@ -1,0 +1,750 @@
+
+work. A better design would enable the system administrator to tune the number of processors the 
+search service consumes. Make certain that your system's concept of usability extends to other 
+system's. 
+Failure Recovery 
+Systems can fail in a variety of ways. Tarchitectural choices make certain kinds of failures more or 
+less likely. Once a failure occurs, how your system handles it directly affects usability. Ideally, your 
+system handles and recovers from the failure in a reasonable manner, such as when your printer driver 
+attempts to retry your print job. Failure conditions also are fodder for enhancing system design, 
+especially when you can convert previously unhandled failure conditions into automatically handled 
+failure conditions that do not disrupt the user. 
+Even if you handle as many failure conditions as possible, you will likely have to alert the user to 
+some of those associated with your system. You can inform users of any of the following: potential 
+negative effects of the failure and their magnitude, potential and/or recommended recovery 
+procedures, and future preventative actions.  
+The Need for Speed 
+An important aspect of usability is performance, both actual and perceived. Unfortunately, this is quite 
+misunderstood. It is beyond the scope of this book to provide detailed advice on how to create high-
+performance systems. Instead, my focus will be on precisely defining performance-related terms so 
+that the marketect and tarchitect can communicate clearly, and on showing what performance 
+information the development team needs to provide the marketect. 
+Let's Be Clear on What We're Talking About 
+The terminology I use to describe performance is presented in Table 10-1. All of these terms are 
+related to each other. To illustrate, let's say that you want to calculate results for some of these terms 
+for one of your systems. Your first step is to specify, or "fix," one or more of your system 
+configurations. This could mean specifying underlying hardware, amount of disk space, memory size, 
+operating system, database, Web server, and any other applications required. As for configurations, 
+consider the following: 
+Table 10-1. Performance Terminology 
+Term  Definition 
+Throughput Number of bits/transactions per unit of time 
+Performance Time per unit (inverse of throughput) 
+Latency Wait time for response 
+Capacity Number of users (entities) system can support in a given configuration at a fixed level 
+of performance 
+Scalability Ability to increase capacity by adding hardware 
+Reliability The length of time a system can run without failing 
+Response 
+time 
+Total perceived time it takes to process requests (an emotional, subjective qualitative 
+rating, the "human" dimension of performance) 
+•  Below: below the minimum specified configuration—just for testing. 
+•  Minimum: the minimum specified configuration. This should be well below the average 
+configuration in your target market (market configuration). 
+•  Average: slightly below the market configuration. 
+•  Ideal: the market configuration of early adopters and influential end users (demo). 
+•  Max: The best system you can (practically) assemble. 
+The next step is to identify the transaction or operation you want to test, complete with reference data. 
+If you're going to test the performance of a spreadsheet recalculation, the same data must be available 
+for every test run! 
+In this example, I'll assume that your system is server based, constructed in a manner similar to that 
+described in Chapter 8. Once the server is up and running, you can program a test or driver program to 
+simulate a request. Let's say that when you send a single request for a specific, common operation 
+your system responds in .1 second. This is a base level of performance. If you configure your test 
+driver to stimulate your system with up to 10 requests per second, and it runs without failing for 24 
+hours while maintaining the same performance, you also have some baseline data for reliability. As you begin to increase transactions you'll probably notice more interesting things. You might expect 
+the system to fail when the number of transactions exceeds 600 per minute (since 600 x 0.1 = 60 
+seconds). In reality, the system may not fail until the number of transaction exceeds, say, 700 per 
+minute. This shows the difference between latency and throughput on the total system, because parts 
+of various transactions are held in different components as they pass through the various layers. 
+Let's further assume that you can separate the transaction logic from the persistent store. This means 
+that you should be able to increase capacity by adding more machines. You add more machines, but 
+because you have a single, shared database all of these transaction servers are pointed at it. You might 
+find that you can now handle 2,500 transactions per minute before some kind of failure, such as a 
+completely dropped request. This is a measure of the scalability of your system—that is, its ability to 
+add more hardware to improve various performance factors. If you find that you can't improve beyond 
+this, you know you've reached the database server's maximum. Improving this may require you to 
+optimize the server in some special way, such as installing special disk-processing hardware, changing 
+database vendors, or tuning or optimizing it by adding indices or profiling SQL queries. 
+Note that in this example the mechanism used to improve performance shifts as various limits are 
+reached. This is common in complex systems. More memory might buy you better performance—to a 
+point. Then you have to get a faster processor or perhaps faster disk hardware. 
+You might also find that your system does not exhibit linear performance. In fact, complex systems 
+seldom exhibit linear performance curves. Most often, you will have linear responses for small areas 
+of the various curves that are plotted from these data. Don't be surprised if your system "falls over" or 
+"cliffs" when certain tolerances are exceeded. This is the reason for a scalable system (one that you 
+can "throw hardware at" to increase capacity at an acceptable level of performance). 
+My example thus far has assumed that the driver program sends requests uniformly. This does not 
+match reality, in which most non-batch-processing, server-based systems have bursts of activity. Since 
+servers queue requests, it's possible to handle bursts that are significantly higher than the steady-state 
+throughput limit without failure. For example, your original configuration may be able to handle 1,400 
+requests during the first minute as long as no requests come in during the second minute. Since 
+different servers vary in the number of requests they can successfully queue, it's also a good idea to 
+know the queue limit. That will give you the maximum burst that can be handled by the server, which 
+is another factor in reliability. 
+The system's perceived response time may not actually match the performance just described. 
+Performance is typically measured at a layer below the user interface, because the user interface layers 
+can add any number of additional processing steps or transformations that are considered a realistic 
+part of performance. Moreover, response time may be more unpredictable. Still, response time is 
+important, and having a good response time matters because it is associated with our perception of the 
+system and our ability to use it for useful work. Subsecond response times are often required to create 
+the perception that the system is responding to our needs instantaneously. Response times of less than 
+5 to 10 seconds are needed to enable the average user to maintain an uninterrupted flow of thought. 
+Users may lose focus if the response time is greater than 10 seconds. 
+Reliability also deals with the "graceful" handling of failure. If a server crashes when its peak load is 
+exceeded, it's less reliable than a server that sends back an error code in response to the messages it 
+can't handle or that simply refuses to allow a user to log in. 
+Note that it is rare for a system to process only one kind of transaction or operation. Since most 
+systems support a variety of operations, each taking different amounts of time and resources, the ideal 
+way to measure performance is to define a user model that helps you understand the effects of an average user on your system. Some authors recommend a stochastic model of system usage, but this is 
+only appropriate when requests are truly random. Most systems do not have random distribution of 
+requests, so a random model can give misleading data. A better source for good user-model data is the 
+log files associated with the operation of your system in a production environment. 
+In addition to the complexities of testing the system, you should also learn to be conservative in your 
+performance estimates. Real-world conditions can vary quite a bit from lab conditions, causing 
+potentially misleading results. 
+What a Marketect Really Wants with Respect to Performance 
+It is tempting to think that what a marketect really wants is the fastest possible system. This is most 
+obviously true: Of course, everyone wants that. A good engineer hates waste, and poor performance is 
+wasteful. Also, poor performance is harmful to customers, as it forces them to purchase unnecessary 
+and unwanted equipment and/or to limit growth. Still, the fastest possible system is not what a 
+marketect really wants. 
+What a marketect really wants is a way to confidently, reliably, and above all accurately answer 
+performance-related questions. That is more important than simply building the fastest possible 
+system because this is what is needed to create a winning solution. 
+To illustrate what I mean, here are sample questions that I've received from customers regarding 
+various performance attributes. Each of these questions was asked relative to a specific, customer-
+defined system configuration (hardware, storage, network, and so forth). 
+•  How many simultaneous users/connections/sessions will the system support? What is the load 
+on various components? 
+•  How many transactions can be processed with my current hardware [where the hardware is 
+precisely detailed]? 
+The biggest reason that marketects need good answers to such questions is that most of the time 
+customers don't have raw performance queries. Instead, they come with some basic understanding of 
+their needs and their environment and ask for help in creating the required infrastructure support. The 
+marketect needs some way to respond. To get a sense for what I mean, consider the following 
+questions, abstracted from real customer requests. 
+•  We anticipate 200 active and up to 500 casual users. What hardware configuration do you 
+recommend to support these users? 
+•  We estimate that our system will need to support 800 downloads per hour during the new 
+product release. How should we structure our Web infrastructure to support these downloads? 
+•  We estimate that our system will initially handle 2,500,000 requests annually, with a 
+projected 25 percent growth rate. Make certain your hardware estimates account for a three-
+year period and that your design provides for at least 98.5 percent (or 99% or 99.9%) overall 
+system availability. 
+•  If the database size were to grow faster than anticipated, what impact would there be on the 
+system? Where would possible bottlenecks occur, and how would you scale the proposed 
+system to handle them? 
+Questions such as these form the foundation for a long and complex sales process. Answering them 
+well usually requires additional information from the customer, but ultimately, the marketect must 
+have the necessary data to provide accurate answers. One of the most effective ways to communicate this information is through case studies or 
+whitepapers, with an appendix outlining additional performance scenarios. Another method, suitable 
+for complex performance scenarios, is a program that estimates performance under various conditions. 
+Any performance data published by the marketect must be recalculated for each new release or when 
+advances in hardware motivate changes in recommended system configurations. This last point is 
+especially important. As consumers, we have been collectively conditioned by the hardware industry 
+to expect that performance will continually improve. It doesn't matter if we're an end user installing 
+old software on a new computer, or a Fortune 2000 enterprise installing the latest release of their 
+CRM system on a new multiprocessor server. Whenever we invest in new hardware we expect that 
+performance will improve. 
+Of course, we also expect that new releases of existing software will exhibit better performance on 
+existing hardware, even if new features are added. This can be challenging, but reducing performance 
+can seriously lower customer satisfaction. Performance always matters. 
+Responding to the User 
+One of the timeless pieces of advice from the usability literature is that, unless the system can respond 
+truly instantaneously, you're going to need some feedback mechanism. In general, there is a strong 
+correlation between good user feedback and problem/application/system complexity. What has 
+worked well for me is to first broadly characterize the feedback you can provide. Table 10-2 lists the 
+two most important categories. 
+Percent-done progress are your best choice when you need to provide continuous feedback to the user. 
+They reassure the user that the system is processing their request and ideally, they allow him to cancel 
+a task if it takes too long. The very best progress indicators also provide a reasonably accurate 
+estimate of the total amount of time needed to complete the task. Be careful of your estimates—
+tarchitects are notoriously bad at estimating how long something will take, and if you estimate wrong 
+you're going to choose the wrong kind of feedback. 
+Table 10-2. Feedback Mechanisms 
+Feedback  Examples 
+Immediate: task is 
+expected to take less than 
+1–2 seconds 
+Visual changes to common objects, such as briefly changing the cursor to a 
+"mail has arrived" icon when your mail client has downloaded a new e-
+mail message in the background 
+Auditory responses, such as a beep (use sparingly and put under user 
+control) Information messages or other changes displayed in status bars 
+Continuous: task is 
+expected to take more than 
+2 seconds 
+General animation in an animation "loop;" appropriate when you don't 
+know how long a task will take, such as the spinning globe that appears in 
+Microsoft Internet Explorer when it is loading a Web page 
+Percent-done progress indicators that estimate time or effort to complete a 
+task. These can be shown in a status bar (if the task cannot be canceled) or 
+in a separate dialog (if the task can be canceled) 
+Feedback Eliminates Unnecessary Work 
+One client/server system I worked on didn't provide users with enough feedback about their 
+requests. As a result, users would submit the same request over and over, at times overloading the server. The problem went away once we implemented appropriate feedback 
+mechanisms, illustrating the main point of this discussion: Response time and feedback are 
+qualitative, emotional perceptions of system performance. You are far better off creating the 
+right emotional perception of acceptable response before making a large investment to 
+provide cold facts and figures about system throughput. 
+Performance and Tarchitectural Impact 
+The authors of Software Architecture in Practice [Bass 98] note that the performance factors just 
+described are affected by both architectural and nonarchitectural choices. Architectural choices 
+include the allocation of functions among various components, the manner in which these components 
+interoperate and are operationally deployed, the management of state, and the management of 
+persistent data. Different architectural choices affect different factors, and the needs of the overall 
+system must be considered as choices are made. For example, converting a stateful architecture to a 
+stateless one may increase latency but dramatically improve scalability. 
+Nonarchitectural choices include the algorithms for key operations within a single component and any 
+number of technology idioms related to the specific implementation. Examples are implementing a 
+more efficient sort algorithm or slightly restructuring a database to improve query performance 
+Managing performance factors is a complex topic that is beyond the scope of this book. That said, 
+there are some basic tools and tricks that every tarchitect should have when considering them. 
+Throw Hardware at the Problem 
+In many of the systems I worked on, the easiest way to solve a performance issue was to throw some 
+hardware at it—sometimes a bit more memory, sometimes an extra CPU rather than a faster one. The 
+specific ways that you can use hardware are nearly endless, so architect your system to take advantage 
+of the ones that matter most to your customers. 
+Of course, there is a fine balance. Too many engineers believe that throwing hardware at the problem 
+justifies sloppy development practices. I vividly remember a conversation with an engineer whom I 
+ultimately fired because of his poor coding. He worked on a system made up of CGIs written in C++. 
+His coding style produced massive memory leaks, which he claimed were acceptable because all we 
+had to do was purchase additional memory to "cover up" his mistakes. There is no justification for 
+such sloppy development, no matter how much hardware you have at your disposal! 
+Finally, hardware will only work if you understand the "scalability" of your tarchitecture. 
+Use Large-Grained Transactions 
+Performance is typically enhanced in distributed systems when the transactions between components 
+are fairly large. 
+Understand the Effects of Threading on Performance 
+Multi-CPU systems are pretty much the standard for servers. UNIX-based operating systems, such as 
+Solaris, have proven that they can scale to dozens of processors. You should understand how multiple 
+CPUs affect the performance of your architecture. It may not be what you think. In one application we 
+relied on a rather old search engine, thinking that adding processors would help performance. It didn't, 
+because the search engine wasn't multithreaded. Use a Profiler 
+Performance can only be reliably increased if you know what is too slow. One technique is to use a 
+profiler. Be forewarned, however, that a profiler can only identify and improve situations involving 
+nonarchitectural bottlenecks. When it reveals an architectural problem, it often means that you either 
+live with it—or rewrite. 
+Another technique is to run your program on a small number of data elements and then extrapolate the 
+results to a larger number. This can tell you fairly quickly if you're headed in the wrong direction. 
+Handle Normal Operations and Failure Conditions Separately 
+This is a variant of advice I first read in Butler Lampson's excellent paper Hints for Computer System 
+Design [Lampson 1984]. In general, normal operations should be fast. Failure conditions, which 
+presumably happen much less frequently, should be handled appropriately. There is usually very little 
+motivation for quick recovery. 
+Cache Results 
+In its simplest form, a cache saves some previously computed result so that it can be reused. Caches 
+can have an enormous impact on performance in an extraordinary number of circumstances, from 
+operating systems to companies that improve performance factors on the Internet, such as latency, by 
+caching Web pages. If you use a cache, make sure you understand when and how a cached result 
+should be recomputed. Failure to do so inevitably means that your results will be incorrect. The 
+ramifications of this vary considerably by application, but in any case you should know what can go 
+wrong if you are using poor results. Lampson refers to wrong cached results as a hint. Hints, like 
+caches, are surprisingly useful in improving performance. 
+Make sure that your architecture has a programmatic ability to turn caching on and off on-the fly so 
+that you can test its impact. Cache problems are among the most insidious to find and fix. 
+Perform Work in the Background 
+In one system I worked on, one of the most frequent customers requests was to issue print commands 
+as a background task. They were right. We should have designed this in right from the start. There are 
+many processes that can be handled as background tasks. Find them, for doing so will improve 
+usability. 
+Design Self-Service Operations 
+One of most striking examples of improving efficiency in noncomputer systems is self-service. From 
+ATMs to pay at the pump gas, we consumers have many opportunities to serve our own needs. 
+Although not necessarily their intent, self-service operations can improve any number of performance 
+parameters. I've found that this concept also helps in tarchitectural design. For example, by letting 
+client components choose how they process results, I've found ways to dramatically simplify 
+client/server systems. Consider an application that enables the user to download prepackaged data into 
+a spreadsheet and then utilize any number of built-in graphing tools to manipulate the results. Of 
+course, you may have legitimate concerns regarding the distribution of data, but the performance 
+benefits of self-service designs cannot be ignored. 
+Learn the Idioms of Your Implementation Platform Your implementation platform—language, operating system, database, and so forth—all have a wide 
+variety of idioms for using them efficiently. Generally techniques such as passing by reference in C++ 
+or preventing the creation of unnecessary objects in Java, can have a surprisingly large impact on 
+performance. I am not advocating that you simply design for performance. Instead, I'm merely saying 
+that one of the ways to improve overall performance is to make certain you're using your 
+implementation technologies sensibly. The only way to do this is to thoroughly understand your 
+platform. 
+Reduce Work 
+Perhaps this advice is a bit trite, but it is surprising how often an application or system performs 
+unnecessary work. In languages such as Java, C++, and Smalltalk, unnecessary work often takes the 
+form of creating too many objects. In persistent storage, it often means having the application perform 
+one or more operations sequentially when restructuring the data or the operations would enable the 
+database to do the work or would enable the application to produce the same result through batching. 
+A related technique is to use stored procedures or database triggers. The non-database world provides 
+such examples as precomputed values or lazy initialization. 
+Chapter Summary 
+•  Usability is about systems that allow users to accomplish necessary tasks easily, efficiently, 
+and with a minimum of errors. Usability means that users can achieve their goals with little, if 
+any, frustration. 
+•  Usability is a core feature of your product brand. Like your brand, it touches every aspect of 
+the product. 
+•  Winning solutions are usable; usability contributes to long-term profit. 
+•  A mental model is the set of thoughts and structures that we use to explain, simulate, predict, 
+or control objects in the world. 
+•  A conceptual model is some representation of a mental model, in words or pictures, using 
+informal or formal techniques. 
+•  Metaphors are models that help us understand one thing in terms of another. 
+•  Maintainability is enhanced by separating the user interface from the rest of the tarchitecture, 
+even though there is no absolutely certain way to separate the influence of the user interface 
+from the rest of the tarchitecture. 
+•  Performance matters. This isn't a justification for pursuing design decisions purely in the 
+context of performance, but rather an acknowledgment that performance is always important. 
+•  Marketects want a way to confidently, reliably, and, above all, accurately answer performance 
+questions. This is especially important in enterprise software. 
+•  There are a variety of techniques you can use to improve performance, including caching, 
+working in the background, offloading work to other processors, or avoiding work entirely. 
+Check This 
+•  We have tested the usability of key tasks within our system. 
+•  We have captured a conceptual model (perhaps using UML), which we have used, along with 
+our understanding of the user's mental model, to create a system metaphor. 
+•  The system metaphor is readily apparent in the design and implementation of the system. 
+•  We have agreed on the terms that define performance. We have provided a way for marketing 
+and sales to estimate configurations. 
+•  We know when and how to "throw hardware at the problem" and what will happen when we 
+do! Try This 
+1.  Do you have a user model? Are both your team and the marketing and development teams 
+familiar with it? Is it based on real users, or what people think are real users? 
+2.  Pick a reference configuration for your current system. What are the various values for the 
+performance factors described above? 
+3.  What was the last article or book you read about usability? 
+4.  Where could improved usability help you improve your product or service the most? What is 
+the potential economic impact of this improvement? 
+5.  What kinds of feedback does your system provide? How do you know that this feedback is 
+helpful? 
+6.  Ask your marketect for a copy of a recent RFP and her response to it. 
+Chapter 11. Installation 
+Most software must be installed in order to run. Unfortunately, many development organizations defer 
+installation and installation issues as long as they can. When they do get around to it, the results are 
+often perplexing and error prone. The economic implications of poorly designed installation is very 
+real, ranging from tens of dollars for each support call to thousands of dollars for professional services 
+fees that could be avoided if the installation process was easier. Indeed, one of my reviewers pointed 
+out that you can lose a sale based on an onerous evaluation installation. 
+In this chapter I will consider some of the unique challenges associated with designing and 
+implementing a good installation process and the business motivations for doing so. In the next, I will 
+cover upgrades. 
+The Out of Box Experience 
+Usability experts have coined the term "out of box experience" (OOBE) to describe the experience a 
+person has using a computer or other device for the very first time. Some companies excel in creating 
+superior OOBEs, mostly because they care about being excellent in this area. Apple computer has a 
+well-deserved reputation for creating superior OOBEs, starting with the original Macintosh: Simply 
+take it out, plug it in, turn it on, and you're ready to go. This tradition continues with the popular iMac 
+series. 
+In software, the OOBE begins when the person who is going to install the software first acquires it. 
+This could be through purchase of a CD-ROM or DVD at a local store. Alternatively, and 
+increasingly, it could be when the user downloads the software directly onto her machine, either 
+through a technical process, such as secure ftp, or through a more user-friendly distribution process, 
+such as any number of software programs that manage downloading of large files for a user. 
+The Cost of Poor Installation 
+Our enterprise-class software worked great when the server was finally installed. I 
+emphasize finally, because our initial server installation process was so complex and error 
+prone that it required sending at least one, and usually two, members of our professional 
+services team to the customer's site to install the system and verify its initial operation. 
+We didn't think this was a problem because we charged our customers for installation support. Once we created this standard charge, we thought no more about it. Fortunately, 
+our director of customer support challenged our assumptions and analyzed both their real 
+and their opportunity costs. 
+The real-cost calculation showed that we didn't make any money by charging for onsite 
+professional services. Most of time we just broke even; the rest of the time we lost money. 
+Even if we didn't lose any money, however, we certainly lost an opportunity to improve 
+customer satisfaction. The opportunity cost, which measures the alternative uses of a given 
+resource, presented a more sobering analysis. Simply put, was it better to have a member of 
+our extremely limited and valuable professional services team doing "routine" installations 
+or some other activity, such as a custom integration? In this case, common sense was 
+supported by reasonable analysis. 
+The opportunity costs of our poor installation process were substantial, so we took it upon 
+ourselves to improve it to the point where a customer could install the system with no more 
+than one phone call to our technical support team. This turned out to be a bit harder than we 
+expected. At first, we thought we knew all of the problems and how to fix them. We didn't. 
+We eventually used Excel to build a dependency matrix that identified each step of the 
+install and their inter-dependencies. It enabled us to redesign the installation process, 
+removing unnecessary work and identifying good candidates for further automation. The 
+team also did some real out-of-the-box thinking on automation, and used Perl to execute the 
+install. One trick was that the Perl executables were included in our distribution so that Perl 
+could be run from the CD without installing Perl on the target system. This worked 
+surprisingly well (for our server; our client was installed using InstallShield). We eventually 
+achieved our goal, improving customer satisfaction and our profitability at the same time. 
+Perhaps, if I'm lucky, someone from Oracle will read this chapter! 
+The OOBE continues as the customer attempts to install the software. Common packaged software, 
+such as video games or basic productivity tools, is often installed automatically when the user inserts a 
+CD-ROM and an autorun facility starts up. For high-end professional software, installation can be 
+substantially more complex, possibly requiring one or more programs to be executed to verify that the 
+software can be installed properly (more on this later). 
+It is helpful if the marketect establishes some clear goals for the tarchitect regarding installation. One 
+useful goal might be for an "average user" to be able to perform installation without having to make 
+any phone calls to technical support. Of course, the definition of an "average user" varies substantially 
+based on the kind of software you're building. It could be a schoolteacher with basic computer skills or 
+an MCSE-certified system administrator with extensive knowledge of operating systems. For 
+companies that employ use cases, I recommend at least one that captures software installation. 
+Ouch! That Might Hurt 
+We humans are so pain averse that we often attribute pain sensations to only potentially painful 
+events. This, in turn, causes us to fear the event itself. Even if the event doesn't happen, we may still 
+claim to have experienced some mental anguish. Pain, indeed! Understanding this is helpful in 
+understanding how customers may approach the installation experience. 
+Customer Fears 
+Here are some fears that customers have expressed to me about software installations. Too Hard 
+Many users perceive the installation process as too hard. They are justified in this when the 
+installation program advises them to do things that sound dangerous ("Shut down all applications 
+before continuing or you will irreparably damage your computer") or ask them to do things they don't 
+understand ("Do you want to update the system registry?"). In older days, installation was often 
+physically hard, especially on personal computers. I remember shuffling as many as 30 high-density 
+floppy diskettes to install a large program! Fortunately, the difficulties have largely disappeared as the 
+software industry has moved to CD-ROMs, DVDs, and the Internet to distribute software. 
+Too Complex 
+The simplest installation is just copying the right file to the right location on your computer. However, 
+in today's modern operating systems, something as simple as this just doesn't work anymore. Proper 
+installation usually requires a sequence of complex steps, and the entire process can fail if any 
+individual step is not completed perfectly. Mitigate this by providing both typical or standard options 
+and more advanced or custom options. 
+Too Easy to Break Something 
+A major installation concern is for the state of the system if something goes wrong during installation. 
+Too many software applications leave the system in an unknown or unstable state if the install process 
+fails to complete (for whatever reason). This is an unnecessary result of a sloppy or careless 
+installation program. Because it is unnecessary, it is unacceptable. 
+Unknown Amount of Time 
+Users often express frustration because they don't know how long a "typical" installation will take. As 
+a result, they can't plan various activities around it. For example, if I know that installing some 
+software will take more than 20 minutes, I will probably wait until lunch before I begin unless I need 
+the software right away. 
+Too Much Data, Too Many Forms 
+There are few things as frustrating as an installation process that requires you to enter the same data 
+multiple times, or one that requires you to fill out endless forms, and then tells you that you forgot to 
+enter some important code, such as a product serial number. Get all the answers you need up front. 
+Your users and technical support organization will thank you. 
+Installation and Architecture 
+The various definitions of "software architecture" provided in Chapter 1 don't correlate strongly with 
+the concept of installation or installation process. I don't have a problem with this, because the primary 
+reasons "architecture" is of concern deal with such things as efficiently organizing the development 
+team or choosing the best tarchitectural style for a given problem or problem domain. 
+Forces and Choices 
+That said, there are a variety of ways that marketectural or tarchitectural forces and choices influence 
+the installation process, as the next sections describe. Managing Subcomponents 
+In a component-based system, all required components must be present, in the right version and 
+configured the right way, in order for your software to work. Quite often this means making tough 
+choices about whether or not you should install a component or require that the user install it. I've 
+done both. 
+In-Licensing Requirements 
+Some technology license agreements (see Chapter 5) have terms governing the installation of the 
+technology, such as contractually requiring you to use their installer. Of course, the license agreement 
+could state exactly the opposite and require you to write your own installer subject to its terms. 
+License Agreements 
+Your legal department will want to associate some or all of the license agreement with your 
+installation program. This is commonly referred to as an End User License Agreement (EULA). Make 
+certain you're including a EULA as part of the installation process in the manner your legal 
+department requires. For example, you may be required to have a "scroll to the bottom and click" 
+screen that presents the license agreement to the user and halts installation until the user indicates 
+acceptance (usually by clicking on a button). 
+We Pick up after You're Done 
+The specific technologies chosen by the tarchitect can affect the installation process in a 
+number of ways. For example, it is common in well-designed tarchitectures to partition 
+persistent storage in a separate subsystem, both logically and physically. If a relational 
+database is used for the actual storage, quite often the only configuration data needed is the 
+database connection string, a user ID, and a password—provided the database has been 
+properly installed on the target system, the appropriate permissions have been set, and the 
+database is available for your application's use. If the database hasn't been installed, you're 
+going to have to do it. 
+In one application in which we supported both SQLServer and Oracle, we created a two-
+step installation process. The first step required customers to install and configure a variety 
+of software, including the database, before they could install our software. To help them, we 
+provided detailed instructions. 
+The second step was installing and configuring our software. To make this easier we had 
+several steps, including creating a preinstallation program that ensured that each required 
+technology was properly installed and configured. 
+Business Model 
+Some licensing models, such as per-user volume licensing (see Chapter 4) track installation events to 
+count the number of licenses consumed. Others track access or use of a component that may affect the 
+installation process. For example, many large applications offer small features that are installed only 
+when the user attempts to use them (on-demand installation). More generally, your business model 
+can affect how you create your installer, and your installation process can make supporting your 
+business model easier. Partitioning Installation Responsibilities 
+A general tarchitectural concern is the partitioning of responsibilities among various system 
+components. As component capabilities change, the responsibilities we assign to a component may 
+also change, which ultimately can affect the partitioning of components in the delivered system. 
+The increasing sophistication of installation programs, such as InstallShield's Developer, provides a 
+great case study. In the early days of Windows, writing a really great installation program required the 
+tarchitect to create a variety of components to check for the right versions of key files, necessary disk 
+space, and so forth. Such tasks, and many more, are now performed by installation programs. 
+Learning to let these programs do as much work as possible is a practical strategy for handling many 
+complex installation tasks. 
+Installation Environment 
+The environment you're installing into, as well as the environment you're going to support, can have a 
+substantial impact on your installation architecture. Consider an e-mail management tool for the 
+growing market of knowledge workers who work from home. If the tool is really useful, it is 
+inevitable that corporate users will want to adopt it. 
+While both home and office users may require the same core features, the context associated with each 
+is very different. This difference will be expressed in a variety of ways, including the installation 
+process. 
+The home user may be content to install the software via a CD-ROM or a DVD, or through an Internet 
+download. The corporate user, on the other hand, is working in a very different environment. His 
+machine is likely to be under the control of the corporate IT department, and the system administrator 
+will probably want to be in charge of installation—among other things, by installing the software from 
+a centrally controlled server on the internal network; by controlling one or more installation 
+parameters such as where files are stored; and by controlling the specific features installed. When 
+designing your installation process, make certain that you account for the environment of the target 
+market. 
+Installation Roles 
+Many enterprise customers are comprised of people having different roles. System administrators have 
+different responsibilities than database administrators, and both are distinguished from security and 
+network engineers. To make things easier for you and your customers, organize complex installations 
+according to these different roles. For example, database setup and data load scripts (environmental, 
+schema DDL or DML, or data) should be separately organized, allowing database administrators full 
+visibility and necessary control over your installation. This actually saves you time, because chances 
+are each administrator will want this control before installation proceeds anyway. 
+Sensitize Developers 
+Have each developer run through the install process at least once so that they're sensitized to how their 
+work products affect installation. Do this when they're first hired, so that they enter the team with an 
+appreciation of installation issues. 
+How to Install A general algorithm for installing software goes something like this: 
+1.  Installation data collection and precondition verification 
+2.  Installation 
+3.  Postinstallation confirmation 
+Let's review each step in detail. 
+Installation Data Collection and Precondition Verification 
+In this step you collect all data needed in the installation. I really mean all. There's nothing worse than 
+starting a one-hour installation process, walking away for lunch, and then returning to some 
+subcomponent holding up the entire install by asking a minor question, with 50 minutes still to go. 
+To help make certain you're getting all the data, ask your technical publications department to create a 
+simple form that captures all of the necessary information in writing. An even better approach is to 
+capture all of this information in a file for future reference by your customer and your technical 
+support group. Augmenting these forms with case studies of installations on common configurations is 
+also helpful. Ask for all vital configuration information and important customization data, including 
+where the product should be installed, database connection strings, proxy servers, and so forth. Storing 
+these data in a file enables you to easily support corporate installation environments, because you can 
+use this file as input to mass installations. 
+Once you've collected the required data, verify as much of it as possible before you begin the actual 
+installation. Don't start the install until you know that everything works. Your verification activities 
+should include any or all of the following. 
+Free Space 
+Although storage systems continue to make astonishing leaps in capacity, ensuring adequate free 
+space is still very important. It doesn't matter if you're installing into a PDA, a cell phone, a laptop 
+computer, or a server farm. Make certain you have enough free space for the target application, its 
+associated data and working storage, and enough "scratch" space for installation. 
+Connections 
+If your software requires any connections to other entities, check them before you begin the actual 
+installation. I've gone so far as to create installation precondition verification programs that simulate 
+database or external internet server access to ensure that the provided connection information is 
+accurate. I've put the installation process on hold until a valid connection was established. 
+Configurations of Required Entities 
+If you're relying on a specific database to be installed, you're probably also relying on it to be 
+precisely configured for your application. One of my teams spent quite a bit of time debugging a nasty 
+error in which our software wouldn't run on SQLServer. The root cause of the error was an improper 
+SQLServer installation—the default collating sequence was the exact opposite of what our software 
+required! Had we checked this setting before installation, we would have saved a lengthy debugging 
+session. 
+Access Rights Operating systems with sophisticated rights administration capabilities often restrict the modifications 
+associated with installing software to users with appropriate administrative privileges. This is entirely 
+appropriate when software is being installed in an enterprise. Whether it is a server or a desktop, 
+enterprises have a legitimate right to know that the person with the proper training and authorizations 
+is making changes. Unfortunately, what works well for organizations doesn't work nearly as well for 
+end users, who can become confused when installation programs ask for certain kinds of permissions 
+or fail entirely because of inappropriate access rights. While there is no easy or universal solution for 
+the challenges associated with managing access rights, an awareness of the issue can help you choose 
+approaches that minimize the requirements for privileged access. 
+Installation 
+Now you can begin the actual installation, which might be as simple as copying a few files to the 
+proper locations or as complex as reconfiguring several system parts. Here are some things to consider 
+during the installation process. 
+Provide Indication of Progress 
+The user needs to know that the installation is proceeding. In common end-user applications, this is 
+usually achieved through a progress meter. In complex enterprise applications, this is often achieved 
+via a command-line user interface. In either case, provide some form of feedback. 
+Provide a Visual Map 
+Very complex applications organize the installation into steps to give users a form or a map on which 
+they can check off the completion of major activities. 
+Track Progress in a Log File 
+Log files (see Chapter 14) are useful for recording the operations performed and the actions taken 
+during installation. They make recovery from installation failures as well as subsequent removal of the 
+installed software substantially easier. At the very least, your customer/technical support personnel 
+will know what happened. Don't forget to capture user responses to questions raised by the 
+installation. 
+Make Installation Interruptible 
+With many enterprise application installation processes it is assumed that the installer, usually an IT 
+system administrator, is going to be devoting her full and undivided attention to the installation 
+process. This is, at best, wishful thinking, as IT system administrators are extraordinarily busy people. 
+Instead, I recommend that you create your installation process with the expectation that it will be 
+interrupted at least once. 
+This perspective is invaluable in motivating the team to choose interruptible installation options. The 
+best way to do this is to make the installation hands free. That is, after you've gathered and verified the 
+information you need to install the software, everything runs without intervention once it has been 
+initiated. The next best approach is to make the installation process self-aware, so that it can monitor 
+its own progress and restart itself at the appropriate place as needed. You can also provide an 
+installation checklist that tracks each step or explicitly breaks up the installation process into a series 
+of smaller, easily performed and verified, steps. Follow Platform Guidelines 
+Most platforms have specific guidelines on designing your installation process/program. Learn them 
+and follow them. 
+Avoid Forced Reboots 
+If you must force the user to reboot, give them a choice as to when. 
+Avoid Unnecessary Questions! 
+If you can resolve a question or a parameter setting at runtime in a reasonable way, do so! Often the 
+person responsible for the installation is doing it for the first time and so they are probably not familiar 
+with your program. Asking unnecessary or even esoteric questions ("Would you like your database 
+indexed bilaterally?") is therefore, useless at best, and harmful at worst, to your system operation. It is 
+far better to pick sensible defaults that can be changed later, after the user has gained appropriate 
+system experience. 
+There Are No Cross-Platform Guidelines 
+One exception to the admonition to follow platform-specific guidelines is software that 
+must run under various platforms. In this case, it may be substantially easier for the 
+development team to write a cross-platform installer. I've done this on server-side software 
+using Perl. For client-side software, I still recommend following platform guidelines even if 
+it takes more time and energy. The effort is worth it. 
+If you must ask the user a question, make certain they have sufficient reference material to understand 
+it, the effect a particular answer might have, and whether or not the answer is inconsistent with 
+answers to other questions. Since many people simply choose the default answer, make certain your 
+defaults really are the most reasonable values. 
+Postinstallation Confirmation 
+Installation isn't complete until you've confirmed that it was done correctly. This may be as simple as 
+verifying that the right files were copied to the right locations or as sophisticated as executing the 
+installed software and invoking any number of manual and/or automated tests. Unlike installation 
+precondition verification, which focuses on the context in which the software is installed, 
+postinstallation verification should focus on actual system execution. Is it giving the right results? If 
+not, why not? Make certain you log the results from your postinstallation confirmation, so you can use 
+them to resolve any problems. 
+Once the installation has been verified, clean up! Many installation programs create or use temporary 
+storage. Some do a poor job of cleaning up after themselves. Set a good example and clean up any 
+files or modifications. 
+Now that things are working and you've cleaned up, you can do other things to enhance your product's 
+usability. Consider the following. 
+•  Read-me or "notes" files: Most people probably won't read them, but write them anyway. 
+You'll gain critical insights into your product by doing so. •  User registration: Many user registration processes are initiated after the software has been 
+installed. You may, for example, check for an active Internet connection and automatically 
+launch a Web page that allows the user to register your product. From a marketing 
+perspective, you should provide some reasonable incentive for registering other than Spam! 
+Finishing Touches 
+Here are some techniques I have found useful in improving software installations. 
+They Don't Read the Manual 
+That's right: The people who install your software often don't read the manual. This is not an argument 
+against installation manuals. They are vitally important, for no other reason than that they provide 
+development and QA teams with a concrete, verifiable description of system behavior. Of course, I've 
+found that great technical writers can substantially improve manuals and thus the odds that they'll be 
+read. 
+More generally, users don't always do the things we recommend. While this may be unfortunate, it is 
+also part of the reality you must deal with. There are other things you can do to make installation easy. 
+One is to provide some kind visual roadmap of the installation process that can be combined with the 
+checklist described earlier. This gives the installer the context for what is happening and provides 
+them with an overall sense of what is happening at each step of the process. A well-done roadmap can 
+also provide an estimate of how much time each step will take, which can help the installer manage 
+his tasks. 
+Test the Install and Uninstall 
+Both installation and the uninstall must be thoroughly tested. Yes, I know this is common sense, but 
+I've found that many QA teams don't adequately test one or both. This is a very poor choice given the 
+adverse economic effects. Keep in mind the following when testing these options. 
+Test the Installer in the First Iteration 
+Agile development processes (XP, crystal, and SCRUM), and iterative-incremental development 
+processes, share the idea that a system is developed in "chunks." A best practice is to start the 
+installation very early in the product development cycle, usually by the third or fourth iteration. 
+The benefits are substantial. Done properly, it can be included as a step in your automated build 
+process. With each build, the "actual" installation program can be run and configured to install the 
+product correctly. This allows you to begin testing the installation, using it more easily in sales demos, 
+customer evaluations, or even alpha/beta programs. Developing the installation process early can 
+shake out dependencies among system components, ensure that the build is working correctly, and 
+reduce the installer's overall complexity (instead of trying to do it all at once, you're doing it like the 
+rest of the system—a little at a time). 
+Try Various Options 
+Your users will; your testers should. Hopefully, if the development team understands the complexities 
+of testing the various options, they won't provide so many. Automate 
+Complex installations alter the target machine in a variety of ways, from copying files to setting 
+various parameters (such as registry parameters in Windows). The only way you can reliably check 
+the effects of the installation is through automation. Write programs that can accurately assess the 
+system before and after installation or uninstallation. 
+Follow Platform Guidelines 
+As stated earlier, modern operating systems offer guidelines for installing software. They also have 
+guidelines for uninstalling it. Make certain you follow platform guidelines and properly remove what 
+you add or change. 
+Make Installation Scriptable 
+If your product will be installed more than once by a single organization or person, provide 
+automation scripts for your setup. Most installation generators allow you to feed a script to the setup 
+apps they generate so that they run automatically. 
+Even better, provide a way for the installer to take the log from a successful install and generate the 
+installation script from it for future ones. Anyone who has to do 200 identical installs will thank you. 
+Chapter Summary 
+•  Installation is about money. A poor installation usually costs you more than you're willing to 
+admit or quantify. A good one saves you more than you're able to admit or quantify. 
+•  Many users find installation scary. They don't understand the questions and often can't make 
+sense of what's going on. 
+•  Your installation deals with the structure of your architecture. All components and component 
+dependencies must be handled properly. 
+•  Make certain your proposed installation process is supported by all of your license 
+agreements. 
+•  A general algorithm for installing software is 
+- Installation data collection and precondition verification 
+- Installation 
+- Postinstallation confirmation 
+•  Automate your installation process for internal testing, and make it automatable for enterprise 
+environments. 
+•  Test, test, test. 
+Check This 
+•  We have defined how each subcomponent will be handled by the installation process. 
+•  Our installation process meets all technology in-license requirements. 
+•  We have defined the level of skill required of the software installer. This level is reasonable 
+for our product. •  We have a way of verifying the correctness of the installation. 
+•  Our installation process adheres to target platform guidelines wherever possible. 
+•  An average user can perform the installation without referring to the documentation. 
+•  We have tested both installation and uninstallation. 
+Try This 
+1.  Starting with a fresh computer, grab copies of your documentation and your software. Install 
+your software. Perform a standard operation or use case. How do you feel? 
+2.  Who installs your product? What is the definition of an "average installer"? 
+3.  Where is your software installed? 
+4.  How is it installed? 
+5.  What is the expected/required skill level of the installer? 
+6.  How long does it take to install your software? Can lengthy portions be easily interrupted? 
+7.  Can you undo/remove what was installed? 
+8.  How can you diagnose install problems? 
+Chapter 12. Upgrade 
+Chapter 11 covered installation; this chapter focuses on upgrades. Upgrades are often more 
+problematic than installations because they can cause customers substantially more pain: Data can be 
+lost, stable integrations with other systems can break, and old features may work differently (or even 
+not at all). Handling upgrades well is key not just to creating winning solutions but to sustaining them 
+through multiple releases. Given that more money is made on upgrades than on initial sales, and that 
+one of the primary functions of marketing is finding and keeping customers, it is surprising that 
+upgrades receive so little attention from marketects and tarchitects. 
+Like Installation, Only Worse 
+Chapter 11, I discussed some of the fears users may experience when installing your software. 
+Upgrading a software system takes these fears and adds new ones to them. 
+Upgrade Fears 
+Here are some of the upgrade fears I've had to deal with during my career. 
+Pain of Rework 
+Many times an upgrade requires the user, the system administrator, or IT personnel to rework one or 
+more aspects of the system and its underlying implementation. This can take many forms, but usually 
+centers on how your system is integrated with other systems. For example, I have created systems that 
+relied on data produced by various government agencies. In an astonishing case of poor customer 
+management, these agencies every now and then would simply change the format of the data being 
+distributed to customers such as myself, breaking the programs we had written to reprocess it. When 
+this happened we had to scramble, rapidly rewriting a variety of software to maintain business 
+continuity. Clearly the agency knew of these changes before they were instituted. The pain and cost to 
+my company, and to other companies that relied on these data, could have been minimized or avoided 
+had the agency simply considered our needs beforehand. At the very least, they could have warned us 
+of the changes! Ripple Upgrades 
+A ripple upgrade is one that forces you to change otherwise stable system components. The impact 
+can range from changing hardware (e.g., more memory, more or faster processors, more disk space or 
+different peripherals) to changing software (e.g., new operating system, different version of a key 
+DLL). They are caused when you upgrade your software and new features mandate these changes or 
+when a key vendor forces you to upgrade a key in-licensed technology (an inverse ripple). 
+Ripple upgrades are a painful part of technology reality. If you're going to in-license technology—and 
+you will—then you're basing part of your future offerings on one or more in-license components. In 
+many circumstances there is simply no alternative to a ripple upgrade. 
+What you can do is make the ripple upgrade as painless as possible. Clearly identify all dependencies 
+associated with an upgrade. Use ripple upgrades to simplify your matrix of pain by discontinuing 
+support for one or more configurations. 
+Data Migration 
+Data created in version n of the system often requires some kind of transformation to be fully usable 
+in version n+1. New features typically require new schemas. The upgrade process must be constructed 
+in such a way that the user can move data relatively easily from the old schema to the new one. 
+Remember that data migration may go in the other direction. Users of version n+1 may have to create 
+data that can be used by users of version n. The tools for doing this vary considerably based on the 
+application and your choice for a persistent storage. In shrink-wrapped software for personal 
+computers, data is primarily stored in files. In this case you will have to provide facilities for 
+converting files between formats. You should also clearly define the features lost when moving from 
+version n+1 of the system to version n. 
+In enterprise class software, the bulk of the data is stored in relational databases, which usually means 
+you will have to provide special tools for migrating data between versions. In an upgrade, this data is 
+usually converted in one operation. In a conversion, this data may be converted in one operation or on 
+demand as various features in the system are exercised. 
+My friend Ron Lunde points out that careful schema design can dramatically reduce the effort of 
+migrating data between releases. The goal is to separate those aspects of the schema that rarely 
+change, or that shouldn't change at all once created, from those that may change frequently. For 
+example, in many transaction-based applications it is rare to upgrade the transaction data, so carefully 
+separating transaction data from nontransaction data in the schema design can substantially reduce 
+data migration efforts. 
+Data Retention 

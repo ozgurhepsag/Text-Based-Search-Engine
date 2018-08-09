@@ -1,0 +1,751 @@
+not on 
+the technology powering it. For people like me, who rely on their laptop during international travel, 
+the thought of using software only via an Internet connection seems a bit crazy—perhaps in the future, 
+but certainly not now. However, for many, accessing software via a trusted vendor through the 
+Internet is very appealing. I'd like to see certain data, such as financial records, properly maintained 
+for the rest of my life. Other data, such as my digital photos, I want to be shared, making a Web 
+services model a natural fit. Because of these forces, and others that will emerge, I envision a complex 
+environment for consumer software like that for enterprise-class software, creating very interesting 
+choices and tradeoffs for marketects, tarchitects, and their customers. 
+Chapter Summary 
+•  Your deployment architecture is the manner in which the system is deployed for use by a 
+customer. Common choices include 
+- Customer site 
+- Application service provider (ASP) 
+- Managed services provider (MSP) 
+- Variant of a service provider (xSP) 
+- Web services 
+Hybrid models, in which part of the system is deployed at a customer site and part at a service 
+provider will become increasingly common. 
+•  Customer influences that motivate the selection of a deployment architecture include 
+- Control desired 
+- Integration with other systems 
+- Data security/privacy 
+- The ability to handle peak loads 
+- Initial and ongoing costs 
+- Customer confidence in you 
+- Skills and experience of the system's operational staff •  Corporate influences on the selection of a deployment architecture include 
+- Desired and actual sales cycle 
+- Infrastructure investment 
+- Financial model, most notably cash flow 
+- Desire to move quickly and efficiently in managing your customer base 
+- Geographic distribution of your company relative to your customers 
+•  The choice of a deployment architecture does not change the total of work associated with a 
+successfully managed system. It may change the distribution of this work. 
+•  Information appliances are a growing category for deployment architectures in a wide variety 
+of environments. Open-source licensing models, which can lower total costs of ownership, 
+are in part fueling this growth. 
+Check This 
+•  Our deployment architecture matches our target market's need for 
+- Control 
+- Integration 
+- Data security/privacy 
+•  We have sufficient performance models and are sure that our deployment architecture can 
+handle all anticipated workloads (see Chapter 10). 
+•  We have instituted appropriate operational policies. 
+•  We have accounted for the following in our choice of deployment architecture: 
+- Sales model and sales cycle 
+- Required infrastructure investment 
+•  We have defined the amount of work we expect the customer to perform. 
+Try This 
+1.  Using Figure 7-3, identify how your software is deployed and the key forces behind this 
+choice. 
+Figure 7-3. Identifying your software deployment  
+2.  What would you have to do to change your solution from its current deployment to a new 
+one? Would doing so enable you to expand your current market or allow you to reach a new 
+one? 
+Chapter 8. Integration and Extension 
+As described in Chapter 3, integration is the degree to which your system can or must work with other 
+systems, usually programmatically, in order to produce the expected product. Extension refers to the 
+degree with which your system can be extended to produce an augmented product. In this chapter I 
+will discuss the motivations for creating architectures that can be integrated and extended with relative 
+ease and the business ramifications of doing so. 
+Customer Control—The Driving Force 
+The motivations for integration and extension are similar: In complex systems, both provide the ability 
+to create a superior product. In some circumstances, integration and extension shift work from you to 
+your customer. Paradoxically, this can increase customer satisfaction, much like our satisfaction with 
+an ATM machine even though we're assuming responsibilities formerly taken by tellers. Part of the 
+reason is that we're in control, which most of us like even when it means more work. 
+Motivations for Integration/Extension 
+Some of the strongest motivations for creating systems that can be integrated and/or extended with 
+other systems including the ones discussed in the following sections. 
+You Can't Predict, But You Can Plan 
+In today's complex environment it is impossible to predict precisely how your customer will want 
+your system to behave in every context. By providing customers with one or more ways to integrate or 
+extend the system, you won't have predicted the future but you will have planned for it. Plug-in architectures, such as those in Adobe Photoshop or Web browsers, allow components to be added in 
+well-defined ways. They are an excellent example of adding functionality that enhances an existing 
+system. 
+Customers Hate To Hear, "We Can't Do That" 
+When you can't extend a system, you can't respond to customer needs. Ultimately, this means you'll 
+have to eventually say no to a customer request, which, not surprisingly, customers hate to hear. A 
+good strategy for integrating and/or extending your system will help you convert "No" to "Yes, we can 
+do that. It might take a bit of work, but here's what we propose." 
+The Larger Solution Comprises Multiple Smaller Solutions 
+Many enterprise-class business systems are not designed to work in isolation. Instead, they work with 
+a supply chain to solve a larger problem. One example is a Web storefront or online ordering system, 
+which cannot work without integration. In such implementations several systems must be integrated to 
+produce the expected product, including a catalog system, a storefront engine, a content engine, a 
+payment processing engine, and backend order tracking and accounting systems. If you've participated 
+in the creation any of these systems you already know that an easily integrated architecture is essential 
+to success. 
+You Want Information Not In Your Own System 
+There are times when the only way to produce an interesting report or analysis is to integrate the data 
+contained in one system with the data contained in another. A common example of this is when you 
+integrate clickstream data from Web servers with customer purchase transactions. 
+You Want To Increase Switching Costs 
+Switching costs refer to what your customer will pay should they stop using your system and start 
+using another. These costs include a number of things, such as re-integrating your solution into a 
+competitor's. Extension and integration options don't increase switching costs until they are used by 
+your customer. At that point switching costs dramatically increase because your customer not only has 
+to replace your system but also has to replace all of the integrations and extensions they created on top 
+of it. The more proprietary the extension and integration options, the greater the cost to switch. 
+You Want to Create A Product Ecosystem 
+Regardless of your company's success in creating, marketing, and selling your product, you can often 
+achieve greater benefits by sharing your success with other companies. I think of this as creating a 
+product ecosystem, in which various entities interoperate to achieve one or more mutually beneficial 
+goals. A classic example of an ecosystem is the set of companies that create plug-ins for Adobe 
+Photoshop. These plug-ins extend the product in well-defined ways, usually providing specific 
+functions required by niche markets. Key participants in this ecosystem benefit, including Adobe, the 
+company creating the plug-in, and, most important, the customer. 
+Some Assembly Required 
+The Aladdin Privilege Software Commerce Platform (PSCP) includes a storefront engine 
+that software publishers use to sell their goods directly to customers via a Web site or indirectly through a multitier distribution channel that consists of distributors and resellers. 
+Integration with other systems is required in either approach. 
+In the direct approach, the storefront engine must be integrated with credit-card payment 
+and other transaction-processing systems, catalog systems (product descriptions and price 
+quotes), fraud detection systems, and so forth. In the indirect approach, the storefront engine 
+must be integrated into a network of servers linked together to support transactions. In both 
+cases, the system must be integrated with other systems in order to function properly. 
+It's Common Sense 
+A good tarchitect will just about always add some form of API to his system to make it easier to test 
+via a solid automated regression test framework. A good marketect will seek to leverage this technical 
+investment—after all, who knows what the future may bring, and all that may be needed to add this 
+feature to the product is some documentation. 
+Regardless of your motivation, it is essential that the development effort embrace the notion of an API 
+as a commitment to your customer. A customer, partner, or other entity, such as a system integrator or 
+value added reseller (VAR) that chooses your APIs is tightly bound to your product and your 
+company. This commitment is for the long haul. 
+Layered Business Architectures: Logical Structures 
+In one of the most common system architectures for business applications, subsystems are logically 
+and physically arranged in layers (see Figure 8-1). These architectures, which form the foundation for 
+frameworks such as J2EE, provide an excellent case study of integration and extension. In this section 
+I will briefly review layering the architecture. In the next, I will discuss extending the architecture. 
+Figure 8-1. Layered system architecture  
+The User Interface Layer 
+The user interface layer presents information to the user and manages the user's interactions with this 
+information. It is usually graphical—either as a heavy client that runs as an application or a thin or 
+light client that runs in a browser. Other increasingly common forms, include voice and handheld. The 
+user interface layer often must shoulder the bulk of the work in internationalized applications, which 
+are always more difficult than they seem. Some of the worst user interface problems I've had to 
+resolve dealt with internationalization. 
+The most essential thing to keep in mind when constructing the user interface is that it not contain any 
+application or business logic. This kind of logic belongs in other layers. In thinking about where to 
+place application logic, ask yourself the following question: "What parts of my system would have to 
+change if I replaced the current user interface with an entirely new one, such as replacing a 
+geographical user interface with an automated voice response system?" If the answer includes 
+changing substantial portions of your application code (e.g., edit or validation checking), chances are 
+good that your user interface layer contains logic that should be in the services or domain layer. 
+Many enterprise applications split the user interface between two layers—one that deals with the 
+actual presentation of information and one that mediates the "micro workflow" between a given user 
+interface and the services layer. For example, suppose you're creating an application to manage flight 
+reservations. If the specific user interface is a browser, you may be able to acquire all of the necessary 
+data in one screen. If it is a phone, you may need to coordinate multiple dialogs. Because these 
+operations are based on a specific kind of user interface, they belong in the user interface layer. The 
+"micro workflow" layer may be responsible for reformatting any domain-specific data for the 
+interface. I strongly recommend a simple "command-line" interface, which is easy and fast for developers to 
+use, facilitates many forms of automated testing, and is trivially scriptable using a language such as 
+Tcl or Perl. It can also be easily implemented on top of the other layer's model via a simple API. 
+The Services Layer 
+The services layer provides various application-defined services to the user interface and other 
+applications. These services may be simple, such as obtaining the current system date and time, or 
+complex, such as changing or canceling a flight reservation in an airline reservation system. Complex 
+services are often implemented as transactions, with complete transactional semantics (e.g., rollback). 
+Thinking in terms of services is one of the most important steps if you're thinking about exposing 
+some or all of your application functionality in a Web service. 
+There can be a close correlation between services and use cases. At times, a whole use case may be 
+represented as a single service, at other times, individual steps within one may be. CRUD operations 
+(create, reference, update, and delete) are often represented as services as well. 
+The Domain Model Layer 
+The domain model or domain layer represents the fundamental business concepts and rules of your 
+application domain. I consider it an optional layer in enterprise applications, only required when 
+business rules are too complex to be represented in simple services or when object structures are more 
+efficiently represented by in-memory representations. 
+When the domain model is needed, it often emerges as the "core" of the application. In other words, 
+instead of thinking of your architecture in layers, think of it as an onion. The center is the domain 
+model, and other layers are built, or grown, depending on your development method, around it. It 
+needs to be correct. 
+I admit, this visualization suffers a bit because it doesn't consider persistent data. More dangerously, it 
+could imply that the domain model is more important than the persistent data model, when in fact in 
+most applications these two elements of your tarchitecture are equal. However, the onion analogy 
+reinforces that the domain model is the core of a good application. 
+Decoupling the domain layer from the user interface and transaction management layers provides 
+substantial flexibility in system development. We might replace the screen presented to a service agent 
+with an interactive voice response system or a Web page without changing the underlying application 
+logic (provided they have reasonable interfaces and appropriate service objects to make this 
+replacement—more on this later). It also contributes to cohesion: Each layer of the architecture is 
+responsible for a specific set of related operations. 
+I do not mean to imply that the domain model must be constructed before the user interface is 
+designed. While it is often helpful to design the user interface after the preliminary domain model, I 
+have worked on several successful projects in which the user interface was prototyped first, using 
+paper-and-pencil ("lo-fidelity") techniques. Once the user model was validated, the development of 
+the domain model was relatively straightforward. During implementation the domain model was 
+implemented first, and the user interface followed quickly thereafter based on the previously agreed to 
+public interface the domain model provided. 
+The Persistent Data Layer Most business applications rely on a database management system to manage the persistent storage of 
+objects. In enterprise applications the most common approach is to use a relational database and to 
+create a separate layer to manage the mapping between objects or service buyers within the domain 
+and objects within the relational database. 
+This is not as easy as it may sound. Complex object structures, objects comprising data from multiple 
+sources, objects with complex security restrictions (such as operations that can only be performed by 
+certain classes of users), or transactions that involve large numbers of objects all contribute to the 
+challenge of efficiently mapping domain objects to relational databases. 
+For these reasons, there are times when it makes sense to structure the domain model so that it can 
+work easily and efficiently with the underlying database schema. Indeed, if the schema is unusually 
+complex, or if the performance requirements are particularly severe, it may make sense to forego the 
+domain model entirely and simply connect the services layer to the schema. This may seem counter-
+intuitive, especially if you've been trained in object-based design methods. However, the reality of 
+many enterprise applications is that creating a rich domain model and then relying on an object-to-
+relational mapping to store and retrieve objects just isn't worth it. A better approach is to define an 
+appropriate set of services that connect to the database through SQL statements and the occasional 
+stored procedure and/or trigger. 
+Another interesting way that you can relax the formal structure of a layered architecture is by moving 
+business logic into the database. Architectural purists will tell you that this isn't a good thing, and 
+they're right. Moving business logic into the database usually means writing stored procedures and/or 
+triggers, which aren't portable. It also can mean that the persistent data layer team is not using SQL 
+effectively. 
+Still, there are times when it is practically appropriate to carefully move business logic into the 
+database. The first concerns performance. If your design involves iterating over a bunch of records, 
+you're wasting valuable resources by moving data from the database and into another tier. Such logic, 
+especially for very large databases, may be better off in the database. A second motivation is when 
+you're working with data that has very sophisticated constraints, such as when you want to 
+conditionally delete records. A final motivation is when you want to absolutely, positively guarantee 
+that one or more actions are taken no matter how data is manipulated. This is especially important 
+when you allow integration of your system at the database layer. By definition, this approach bypasses 
+whatever business logic has been built into the services or domain layers, making such integrations 
+riskier. By moving critical business logic into the database, you can always make certain it is 
+executed. 
+Variations on a Theme 
+As a generic architecture, Figure 8-1 is a starting point for the design of loosely coupled, highly 
+cohesive systems with the flexibility to handle complex problems. Of course, it is a simplification and 
+abstraction: Distributed computing, legacy systems integration, and/or structural relationships or 
+choices made to support specialized databases or hardware can change the picture. 
+Creating Layered Business Architectures 
+Successful projects rarely build all layers of the architecture at the same time. Most of them build it 
+through a process I refer to as spiking. A spike is a user-visible piece of functionality (usually 
+described by a use case or an XP-style story) that has been completely implemented through all 
+appropriate subsystems or layers of the tarchitecture. It is suitable for alpha (and sometimes) beta testing and is stable enough for the end-user documentation team to begin online help and related end-
+user documentation features. The key attribute of a spike is that it "drives" some specific aspect of 
+functionality through all relevant subsystems (I use the term "nail" to represent a connection made 
+between two subsystems). 
+Spikes are an approach to incremental development. I'm not the first person to advocate them, and I'm 
+certain I won't be the last. That said, I've found that they are a good metaphor for the work of the team. 
+Imagine, if you will, that a single subsystem is a four-by-six board. Your architecture can then be 
+thought of as a series of these boards stacked one on top of the other. A nail joins two boards but a 
+spike drives through all of them. One of my development managers recently pointed out that spiking is 
+both a process and an event—a process because driving the spike through many layers can be hard 
+work and new to many development teams; when finished, it's celebrated as an event. 
+While the first spike proves the basics of the architecture and is the foundation for sound risk 
+management practices, there is still room to adjust the boards to make certain the system is lining up 
+as intended. As more spikes are added, the system becomes more stable. The spikes also come more 
+quickly as the team becomes skilled in driving them through all of the layers. The overall organization 
+also benefits, as the specific functionality of the system is developed over time. 
+If you have had some trouble adopting an iterative development process, consider spiking. However, 
+even teams that have adopted spiking or another iterative approach can have trouble determining 
+where to begin the development efforts. If you get stuck, try starting with either the services layer or 
+the user interface, as shown in the top half of Figure 8-2. 
+Figure 8-2. Spiking the architecture 
+ The top half of Figure 8-2 illustrates the approach of starting with the services layer, preferably with a 
+lo-fidelity user interface prototype to set expectations of how the services may be used by the user 
+interface. With clear and concise interfaces for the services, the user interface team can begin to hoist 
+their functionality on top of them. Note that in many projects the services don't have to be completely 
+implemented before the user interface team begins using them. Many times a service that returns 
+dummy data is more helpful than a service connected to a live data source, because you can move 
+faster with dummy data. In this example, the system is relatively simple, and has no need for a 
+complex domain model. Thus, as services are coded, they are connected to the database and the whole 
+system grows organically through spikes. 
+I place considerable emphasis on defining services because getting service interfaces right makes it is 
+far easier to get the rest of the tarchitecture right. Getting them wrong puts the project at risk, because 
+eventually it will have to be fixed. More importantly, if you're practicing an iterative development 
+model, chances are good that you're going to base the implementation of additional services after 
+existing services. More simply, after a few services are built, future services tend to be built using the 
+same general style. Agile development methods, such as SCRUM, XP, or agile modeling, are 
+especially useful in these first few spikes, because they are designed to provide explicit feedback 
+loops. 
+There are many other ways to build a layered architecture. Another option, shown in the bottom half 
+of Figure 8-2, occurs when the team must deal with substantial amounts of existing data or when the 
+persistent storage requirements are extremely demanding. In this case, it is safer to start with the 
+design of the database and let it inform the design of the services and domain layers. There is a strong 
+correlation between complex persistent storage requirements and complex domain models. Later in 
+the project the user interface is hoisted on top of the services layer. 
+If there are sufficient resources, multiple layers can be addressed in parallel. The key to this approach 
+is to establish early on the core subsystems of the architecture. This is best accomplished by agreeing 
+on subsystem interfaces early in the development of the project and using continuous daily or weekly 
+builds to ensure that subsystems remain in sync. 
+If you're going to attempt parallel development, make certain the development team agrees on which 
+layer will be driving the other layers. Something has to come first, and a good rule of thumb is that it 
+should be either the services or the domain layer. This doesn't mean that you'll get everything right—
+just that you'll have an agreed upon way to get started. 
+Suppose, for example, that in a complex application you agree that the domain model will drive 
+development. As domain objects and complex business rules are implemented, they are exposed 
+through services and connected to a persistent store. During the development of a given use case it is 
+quite possible that the user interface development team will discover that an important attribute was 
+missed during analysis. Rather than adding this attribute (and its associated semantics) only to the user 
+interface, the user interface team should negotiate with other teams, starting with the domain team to 
+add it (and its associated semantics) to the appropriate domain objects. The domain team, should, in 
+turn, negotiate with the database team to ensure that the appropriate changes are made to the persistent 
+storage model. 
+Spike Every Layer 
+The approaches I've described above are simplifications of real world projects. Every team 
+building a layer architecture must take into account their unique environment and address 
+their idiosyncratic circumstances. In practice, this means that a spike plan must be crafted for each project in such a way that key needs are addressed and key risks are managed. 
+What is essential is that spikes are organized so that the team is "pushing" functionality 
+through all layers of their system. While I've had great success using spikes, the times that 
+they've failed me is when the development team didn't include all of the layers of the 
+application. 
+In one client/server system, we had some problems when the server team created a spike 
+plan that didn't include the client. We created our server—a model of a three layer 
+architecture (service, domain, and database) and forgot that the client needed to interface 
+with this architecture. When we hoisted the user interface of the client on top of this model 
+we identified several problems that would have been easily resolved had we spiked all of 
+the layers. 
+Unfortunately, there can be an unpleasant wait for all layers to catch up with each other. I have found 
+that a two-stage process works best. First, the domain layer makes the necessary changes, allows the 
+services layer to change to support the user interface, and simulates changes to the database model 
+through an "in-memory" database. This allows the user interface team to proceed and allows the 
+domain team to verify the changes to the application. While this is happening the database team is 
+making their changes. When finished, the domain is connected to the database layer, and the entire 
+application works. No matter what, you should spike the architecture as often as possible to reduce 
+risk. 
+Integration and Extension at the Business Logic Layers 
+There are many technical approaches to creating systems that can be integrated and/or extended. This 
+section draws from my experience creating the necessary architectural infrastructure for enterprise 
+class software systems. The techniques are easily adapted to other kinds of application architectures. 
+Refer to Figure 8-3 as you read this section and the next one. 
+Figure 8-3. Integration and extension techniques 
+ 
+Technologies and Locus of Control Before talking about integration or extension approaches, it is important to distinguish between the 
+technologies that are used to create these features and the locus of control when performing the 
+integration of extension. 
+The technology part is easy. A well designed services architecture and/or design model should be able 
+to support whatever technology is required by your target market. In practice, this means that you will 
+be supporting multiple kinds of integration technologies. More modern technologies, such as 
+Enterprise Java Beans or Web services, may need to sit alongside more traditional technologies, such 
+as COM or plain old C libraries. You may even be required to support the same functionality with 
+slightly different implementation semantics, as when you are required to support multiple standards 
+that each address the same functionality but have not been unified (such as the cryptographic 
+standards PKCS11 and the Microsoft CAPI). 
+The locus of control question is a bit more challenging. In general, either the caller is in control or the 
+system is in control. When the caller is in control, they are most likely treating your application as a 
+service that creates and produces a result. The call may be blocking or non-blocking, and you may or 
+may not provide status. Ultimately, though, the caller is in control. 
+When the system is in control you're almost always using either a registration or callback model in 
+which the caller registers some aspect of functionality to the system. The system then invokes this 
+functionality at predefined events. Ultimately, the system is in control (or should be). These two 
+approaches are discussed in greater detail in the next sections. 
+Integration through APIs 
+Application programming interfaces (APIs) expose one or more aspects of functionality to developers 
+of other systems. They are based on the idea that the other developer is creating an application that is 
+the primary locus of control; your system becomes a set of services accessed through any means 
+appropriate—for example, a library, such as C or C++ library; a component, such as a COM, 
+JavaBean, or Enterprise JavaBean (EJB); a Web service; and/or a message-oriented interface. The use 
+of APIs is primarily associated with the desire to integrate your application into some other 
+application. 
+If you have constructed your application according to the principles espoused earlier, it is usually easy 
+to create APIs that allow customers access to your system's functionality. The most direct approach is 
+to expose the services layer first, possibly exposing other layers as required. This is far superior to 
+allowing your customer direct access to your database, which bypasses all of the business logic 
+associated with your application. 
+Consider the following items as you create APIs: 
+Platform Preferences 
+While C-based interfaces may be the universal choice, every platform has some variant that works 
+best. For example, if you're creating an application under MS Windows, you will almost certainly 
+want to provide a COM-based interface. Other customers may require a J2EE approach and demand 
+EJBs that can be integrated into their application. 
+Market Segment Preferences In addition to the pressures exerted on an API by the platform, different market segments may also 
+exhibit preferences for one approach or another. If you're working with innovators, chances are good 
+that they will want to use the most innovative approaches for integrating and/or extending your 
+system. As of the writing of this book, this means providing Web services. In the future, who knows? 
+Other market segments may request different approaches. You may need to support them all. 
+Partner Preferences 
+In Chapter 2 I discussed the importance of the context diagram for identifying possible partners in 
+creating an augmented product. Your partners will have their own preferences for integration. 
+Understanding them will help you create the integration and extension approaches most likely to gain 
+their favor. 
+Naming Conventions 
+If you have ever been frustrated by a vendor providing a nonsensical API, you should have all of the 
+motivation you need to create one that is sensibly named and sensibly structured. Try to remember 
+that making it easy to use your APIs is in your best interests. 
+Security and Session Data 
+Many business applications manage stateful data, often based on the concept of a user who is logged 
+in and working with the application (a session). State or session data may be maintained in any 
+number of ways. For example, in Web applications a session is often managed by embedding a 
+session identifier in each transaction posted to the server once the user has logged in, either as part of 
+the URL or as part of the data in the Web page. If you're using a heavy client (e.g., a Windows client 
+application) you can manage state or session data directly in the client or share it between the client 
+and the server. 
+Developing APIs for applications that rely on session data is harder than developing them for 
+applications that don't. You have to provide your customers with a means to specify and manage 
+session-related parameters, such as timeouts and security protocols. Depending on how your 
+application works with other applications, you may need a way to identify another application through 
+a user ID so that rights can be managed. You may also need facilities for managing session data as 
+functions are invoked. If your server manages session data through an opaque session identifier, for 
+example, you have to tell your customers not to modify this handle. 
+Exposing Only What Customers Need 
+Be careful about liberally exposing all of the APIs in your system. Every one you expose increases the 
+work in creating and sustaining your product. It is also unlikely that every exposed function provides 
+the same value to your customer; not everything is needed. In a complex system, different operations 
+exhibit different performance profiles and make different demands on underlying system resources. 
+Some APIs may invoke complex functions that take a long time to execute and should only be used 
+with proper training. You don't want your customer to accidentally bring the system to a grinding halt 
+through improper API use. 
+Timing Is Everything 
+Your documentation (discussed later in this chapter) must make certain that session management semantics are clearly presented to your customer. I remember helping a 
+customer track down one particularly troublesome bug—that wasn't a bug at all—in a multi-
+user, Web-based application. Each logged-in user represented a session. Because sessions 
+consumed valuable server resources and because each one counted against one concurrent 
+user, we associated a session timeout parameter that could be set to forcibly log off a user in 
+cases of inactivity or error. 
+The underlying application allowed system administrators to associate various application 
+functions with specific user IDs. Thus, "user ID 1" could perform a different set of 
+operations than "user ID 2." Our API was constructed to follow this convention. 
+Specifically, applications wishing to use the functions provided by the server were forced to 
+log in to it just like a human user. This enabled the system administrator to control the set of 
+functions that an external application was allowed to use. 
+Our customer had set the session timeout parameter to expire sessions after 20 minutes of 
+inactivity, but then they wrote an application that expected a session to last an arbitrary 
+amount of time! Since normal and "programmatic" users were accessing the same 
+transaction model, both were held to the same session management restrictions. To solve 
+the immediate problem the customer modified the application to relog in if their session 
+expired. They were unhappy with this solution, so we eventually accommodated them by 
+allowing session timeout data to be set on a per-user basis. The customer then modified the 
+session timeout parameter associated with the user ID representing their external 
+application, and everything worked just as they wished. 
+Tarchitects should work carefully with marketects to define the smallest set of APIs that makes sense 
+for the target market. Because there may be many constituents to satisfy, consider defining sets: one 
+(or more) for internal use and one for integration/extension, possibly governed through security access 
+controls. I know of one large application development team that created three APIs: one for the team's 
+internal use, one for use by other application development teams within the same company, and one 
+for external customers. The APIs differed in functionality and performance based on such things as 
+error checking and calling semantics. 
+APIs Stabilized over Multiple Releases 
+It can be difficult to predict the APIs needed in the first few releases of a product, and it is rare that 
+you get it right the first time. Be forewarned that it may take several releases to stabilize the right APIs 
+for a given target market. 
+Clearly Understood Options 
+Your application may provide for certain features that are simply not available in the API. Stating 
+what can—and cannot—be done with an API makes it considerably easier for a customer or system 
+integration consultant to determine the best way to approach a complex problem. 
+Extension through Registration 
+Registration is a process whereby the capabilities of your application are extended in one or more 
+ways by developers who register a component or callback function with your system. Unlike 
+integration through APIs, your system remains the locus of control, calling the registered component 
+at predefined events. Registration is related to the Observer design pattern or the publish–subscribe 
+models of message queuing systems but is not the same thing. When using registration, your application actually hands over control to the registered component. In the latter, your application 
+notifies other components of events but may not hand over control. A great example of registration-
+based extension is your Web browser, whose functionality can be extended through well-defined 
+plugins. When the right mime type is encountered, application control is transferred to the 
+appropriately registered plugin. Registration-based APIs include callbacks, listeners, plugins (such as 
+a Web browser), and event notification mechanisms. Consider the following when providing for 
+registration-based solutions. 
+Define the Registration Model 
+Provide developers with detailed technical information on the language(s) that can be used to create 
+registerable components, when and how these components are registered, how to update registered 
+components, and so forth. Some applications require that plug-ins be in a specific directory and follow 
+a platform-specific binary model. Other applications require that all components register themselves 
+through a configuration file. Some allow you to change registered components while the application is 
+running; others require you to restart the application to acquire new or updated components. You have 
+a wide variety of choices—just make certain you're clear on those you have chosen. 
+Define the Event Model 
+The specific events available to the developer, when they occur, the format of the notification 
+mechanism, and the information provided in a callback must all be made available to developers. 
+Define Execution Control Semantics 
+Execution control semantics refer to such things as blocking or nonblocking calls, thread and/or 
+process management, and any important timing requirements associated with external components. 
+Some applications transfer control to a plug-in to process a request within the same process space. 
+Others invoke a separate process, then hand over control to the plug-in. Still others invoke the 
+registered component as a simple function and block, awaiting the results. 
+Define Resource Management Policies 
+All decisions regarding resource management, from provisioning to management and recovery, must 
+be defined. Consider all resources that may affect your application or that may be required for a 
+successful integration, including, but not limited to, memory, file handles, processing power, and 
+bandwidth. 
+Define Error/Exception Protocols 
+Errors and exceptions in one application often must be propagated through your API to another 
+application. You may also have to define conversion semantics; that is, what might be an "error" in 
+one application may be an "exception" in another. 
+Integration and Extension of Persistent Data 
+In the vast majority of cases, you don't want your customer directly accessing or changing your 
+schema or the data it contains. It is simply too risky. Direct access bypasses the validation rules that 
+usually lie within the services or domain layer, causing corrupt or inaccurate data. Transaction-
+processing rules that require the simultaneous update or coordination of multiple systems are only likely to be executed if they are invoked through the proper services. Upgrade scripts that work just 
+fine in QA can break at a customer's site if the schema has been modified. 
+All of that said, there are times when a customer wants access to persistent data—and there are times 
+you want to give it to them. They may want to write their own reports or extract data for use in other 
+systems, and it may just be easier and faster to let them do this on their own without your intervention. 
+Or they may need to extend the system with additional data that meets their needs now rather than 
+wait for a release that may be months away. Of course, your marketect may also push to allow 
+customers direct access to persistent data as this makes switching costs exorbitantly high. 
+Since chances are good that you're going to have to provide some access to your persistent data; the 
+following sections describe a few techniques that should help. 
+Views 
+Providing a layer of indirection between components is one of the broadest and most time-tested 
+principles of good design. With reduced coupling, well-placed layers of indirection enhance 
+flexibility. 
+Putting Business Logic in the Database 
+One of the most generally accepted principles of enterprise application architecture is to put 
+business logic within the services layer and/or the domain model layer of the architecture. 
+However, while this is a good principle, it isn't an absolute rule that should be dogmatically 
+followed. Many times a well-defined stored procedure or database trigger is a far simpler 
+and substantially more efficient solution. Moreover, you may find that the only way to 
+safely offer integration options to your customer is to put certain kinds of logic in the 
+database: I would rather rely on the database to invoke a stored procedure than rely on a 
+customer to remember to call the right API! 
+Views are logical databases constructed on top of physical schemas. They provide a layer of 
+indirection between how the data is used in a schema and how it is defined. The value of a view is that 
+it gives you some flexibility in changing the underlying schema without breaking applications or 
+components that rely on a specific schema implementation. It is useful in a variety of situations, such 
+as when you want to give your customer a schema optimized for reporting purposes. The first, and 
+many times most important, way to provide access to persistent data is always through a view. 
+User Fields 
+Many times you know that a user will want to add some of their own data to a schema but you don't 
+want to provide a lot of tools or infrastructure to support this, because creating these tools and 
+associated infrastructure is likely to cost a lot of time and money to develop. A simple approach to 
+providing for extensible data is to define extra fields in key tables that can be customized by a user. 
+Simply throw in a few extra ints, dates, and strings, and provide a way to edit them in your user 
+interface. The result often produces user interfaces with labels like: "User Date 1" or "Customer 
+String". This simple approach can be surprisingly effective! 
+Unfortunately, it has plenty of drawbacks. Database purists feel nauseous when they find systems 
+based on user fields because the database has not been properly modeled. You can't run reports on 
+these data because there are no semantically meaningful fields for query manipulation—select column_42 from TBL_USERDATA where column_41 > 100 is not very 
+understandable. Different users may interpret the data in different ways, further compounding the 
+errors ("I thought I was supposed to put the date of the last purchase in the second field, not the fourth 
+field"). This can be mitigated by providing system administrators with tools to edit the field labels 
+(instead of "User Date 1" the field might say "Date of Last Purchase"), but this does not solve the 
+problem. The lack of data modeling means that data is highly suspect, as it is stored without the 
+application of any business rules such as basic edit checks. 
+You'll have to judge whether or not the relatively trivial ease with which user columns can be added to 
+the database are appropriate for your application. 
+Hook Tables 
+Suppose you have created an inventory-tracking and warehouse management system. Each operation 
+on an item, such as adding it to the inventory and storing it in the warehouse, is represented by a 
+discrete transaction. Your customer, while pleased with the core functionality of the application, has 
+defined additional data they want associated with certain transactions, and they want to store them in 
+the same database as that used by your application to simplify various operational tasks, such as 
+backing up the system. As with every other request, your customer wants these data added to the 
+system now. They don't want to wait until the next release! 
+Hook tables are one way to solve this problem. They give your customer a way of extending the 
+persistent storage mechanism that can be preserved over upgrades. The proper use of hook tables 
+requires coordination among multiple layers in your architecture, so be careful with them. 
+Begin creating hook tables by identifying those aspects of the schema the customer wishes to extend. 
+Next identify the events that are associated with the most basic operations on these data: create, 
+update, and delete. Include operations that are initiated or handled by any layer in your architecture, 
+including stored procedures. Take care, as you need to identify every such operation. 
+Now, create the hook tables. A hook table's primary key is equivalent to the primary key of a table in 
+your current schema; it has been designed to allow customers to add new columns. The primary key 
+should be generated by your application using a GUID or an MD5 hash of a GUID. Avoid using auto-
+increment fields, such as automatically incremented integers, for this key, as such fields make 
+database upgrading difficult. 
+Create, update, and delete modifications to the primary table are captured as events, and a registration 
+or plug-in architecture is created to allow customers to write code that responds to them. Thus, when 
+some action results in a new record being added to your database, a notification event is received by 
+customer code. Upon receiving this notification, your customer can perform whatever processing they 
+deem appropriate—creating, updating, and/or deleting the data they have added to the schema under 
+their control. 
+In general, event notification comes after all of the work has been done by your application. In a 
+typical creation sequence using a plug-in architecture, your application performs all of the work 
+necessary to create a record and does the insertion in both the main application table (with all of its 
+associated data) and the hook table. The hook table insertion is easy, as all it contains is the primary 
+key of the main table. The list of plug-ins associated with the hook table is called, with the newly 
+created primary key passed as a parameter. More sophisticated structures allow pre- and postprocessing transactions to be associated with the 
+hook table to an arbitrary depth. Preprocessing can be important when a customer wishes to perform 
+work on data that is about to be deleted and is commonly required when you're coordinating 
+transactions that span multiple databases. 
+Hook tables are not designed to work in every possible situation you may encounter, mostly because 
+they have a number of limitations. Relational integrity can be difficult to enforce, especially if your 
+customer extends the hook table in surprising ways. Because hook tables might also introduce 
+unacceptable delays in transaction-processing systems they should be kept small. You also have to 
+modify your upgrade scripts so that they are aware of the hook tables. 
+Spreadsheet Pivot Tables 
+Quite often a customer asks for dynamic reporting capabilities that may be difficult to support in your 
+current architecture. Before trying to create such capabilities, see if your customer is using or has 
+access to any of the powerful spreadsheet programs that provide interactive data analysis. I've had 
+good results with Microsoft Excel, so I'll use it as my example. 
+Excel provides a feature called a pivot table that allows hierarchically structured data to be 
+dynamically manipulated by users. With a pivot table, users can quickly sort, summarize, subtotal, and 
+otherwise "play" with the data, and they can arrange it in a variety of formats. My experience is that 
+once introduced to pivot tables users quickly learn to manipulate them to suit their own needs. 
+Pivot tables are based on extracts of your application data. Once these data have been exported they 
+are no longer under your control. Security, privacy, and accuracy are thus just some of the concerns 
+that accompany any use of extended data, and pivot tables are no exception. Pivot tables are often 
+associated with ETL scripts, discussed in the next section. 
+Extract, Transform, and Load Scripts 
+Extract, transform, and load (ETL) scripts refer to a variety of utility programs designed to make it 
+easier to manipulate structured data stored within databases. Extract scripts read data from one or 
+more sources, extracting a desired subset and storing it in a suitable intermediate format. Transform 
+scripts apply one or more transformations on the extracted data, doing everything from converting the 
+data to a standard format to combining them with other data to produce new results. Finally, load 
+scripts take the results of the transform scripts and write them to a target, usually another database 
+optimized for a different purpose than the source database. 
+If your application is in use long enough, chances are good that customers are going to want to extract 
+and/or load data directly to the schema, bypassing the domain layer. There are several reasons to do 
+this, including the fact that the programmatic model provided by the API is likely to be too inefficient 
+to manage transformations on large data sets. A special case of ETL scripts concerns upgrades, when 
+you need to migrate from one version of the persistent storage model to another. Although it may be 
+tempting to let your customers do this work, there are distinct tarchitectural and marketectural 
+advantages to doing it yourself. 
+Charging for ETL Scripts 
+Recall from Chapter 2 that the key to effective pricing is relating pricing to the value 
+perceived by your customer. Prepackaged ETL scripts are an excellent example of this. In one application we created several of them to help our customers write customized reports. I 
+estimated that these scripts, which were fully tested and documented, cost us about $50K to 
+create, and would cost a customer even more to create. We were able to charge about $25K 
+for them, which quickly became one of our most profitable modules. Another advantage 
+was that these scripts further tied the customer to our application. 
+From a tarchitectural perspective, providing specifically tuned ETL scripts helps ensure that your 
+customers obtain the right data, that transformations are performed appropriately, and that load 
+operations don't break and/or violate the existing schema structure. An alert marketect can also take 
+advantage of productized ETL scripts. As part of the released product, these scripts will be tested and 
+documented, considerably enhancing the overall product value. 
+Tell Them What's Going On 
+Even though I generally recommend against giving your customers direct access to your schema, I 
+also recommend that you provide them with complete information about it so that they can gain a 
+proper understanding of your system's operation. This means technical publications that detail the data 
+dictionary, data, table, and naming conventions, important semantics regarding the values of any 
+special columns, and so forth. Such documents become invaluable, usually motivating customers to 
+work within the guidelines you have established for system integration. The lack of usable, accurate 
+technical documentation is the real source of many integration problems. 
+Business Ramifications 
+Providing ways for the system to be integrated has a number of business ramifications for both the 
+marketect and the tarchitect. Handle all of them and you increase your chances for success. Miss any 
+of them and you may seriously cripple your product's viability. 
+Professional Services 
+The various technical options for integrating a system can create a bewildering array of choices for a 
+customer. Too often, customers are left unsure of the best way to integrate a system within their 
+environment or they fear that the integration process will take too long, cost too much, and ultimately 
+result in failure. Some of this fear is justified, as many large-scale integration projects don't realize key 
+corporate objectives. To address these issues, vendors of systems designed to be integrated or 
+extended should establish a professional services organization to help customers achieve their 
+integration goals, answer their questions, and reduce the time necessary to integrate a system within 
+the customers environment. 
+The marketect should help create the professional services, outlining their offerings, business, and 
+licensing models, and providing assistance in setting and pricing models. The degree of control can 
+vary. I've worked in organizations where my product managers had complete responsibility for 
+establishing professional services. In other companies, professional services itself was responsible for 
+prices and creating some offerings, in close collaboration with product management. My strong 
+preference is that product management set the standard service offerings because this forces them to 
+understand the needs of their target market. The most essential work of the marketect is in mediating 
+requests from professional services to development. 
+The marketect also plays a key role in determining how professional services are organized. The two 
+basic choices are inhouse and a partnership with an external firm. In practice, these choices are mixed according to the size of the company and the complexity of the integration. Smaller firms have small 
+professional services organizations and rely heavily on partners; larger firms can afford to bring more 
+of this inhouse. This is a decision of strategic importance, and the marketect should provide data that 
+help senior executives make the best one. My own experience is that smaller companies do a very 
+poor job of enlisting the aide of larger consulting partners, to their detriment. 
+Development (or engineering) plays a strong, but indirect, role in assisting customers, not working 
+directly with them, but instead with professional services, making certain that they understand the 
+product and its capabilities. A key service that development can provide is the creation of sample 
+programs that demonstrate how to use APIs. I've found it especially beneficial if one or more members 
+of the development team, including the tarchitect, help professional services create some of the initial 
+customer solutions. The feedback on the structure, utility, and usability of the APIs is invaluable, and 
+both professional services and developers welcome the opportunity to work on real customer 
+problems instead of artificial examples. 
+The tarchitect assists the marketect in selecting external professional services partners. Like any other 
+developer, the tarchitect should assess a potential partner's skills, examine their portfolio of successful 
+projects, and interview the potential partner's key customers to assess their overall satisfaction with the 
+quality of work. 
+Training Programs 
+Training programs are required for the successful use of just about any system. The trick to creating a 
+winning solution is making certain that the training program matches the specific requirements of the 
+target user. End users, for example, are typically given a base of training materials that show them 
+how to use the application for common purposes. As systems increase in sophistication, so do the 
+required training materials. Training is an excellent investment, because well designed training 
+programs improve customer satisfaction and reduce support costs. 
+The primary role of the marketect in creating end user training is to coordinate the efforts of technical 
+publications, quality assurance, and development to ensure that the training materials are created and 
+are technically correct. A tarchitect committed to usability can play a surprisingly influential role in 
+this process, ensuring that the training materials are not only accurate but truly represent, capture, and 
+convey "best practices." 
+The basic training provided to end users must be substantially augmented for systems designed to be 
+extended and/or integrated. Returning to the Adobe Photoshop example, training programs must 
+clearly detail how a developer is to write a plug-in. For enterprise-class systems they can be 
+surprisingly extensive, including several days of introductory to advanced training in dedicated 
+classrooms. 
+When designing training solutions for the target market, the marketect must take into account all of 
+the system's stakeholders. In one enterprise class system I worked on, we designed training programs 
+for 
+•  Developers who wanted to integrate the system with other systems 
+•  System administrators who wanted to ensure that the system was configured for optimal 
+performance How Do I Add a Document? 
+One of the most frustrating experiences I ever had was when I was working for a company 
+that used Lotus Notes. When I joined the company, I received a total of three minutes of 
+Notes training. Specifically, I was taught how to log in, read, and send e-mail. 
+Over the next several months I watched other people in the organization use Lotus Notes in 
+ways that seemed mystical to me. While they were successfully using Notes' collaboration 
+and file management tools, I was struggling to manage my calendar. It took me several 
+months of trial and error to achieve a modicum of skill. 
+You might wonder if I used the built-in help and tutorial materials to learn more about the 
+system. I tried this, but to no avail. In my opinion, these materials were useless. I've been 
+left with a very poor impression of Lotus Notes, which is sad because my problems could 
+have been easily corrected by a motivated marketect working in partnership with a similarly 
+motivated tarchitect. 
+•  Solution partners who were integrating their software into our software 
+•  Consulting partners who used our system to provide enhanced consulting services to our 
+mutual clients 
+This list is not exhaustive and can include programs to service different constituents depending on the 
+specific system. What is important is that complex systems rarely stand alone, that many different 
+people within a company touch these systems, and that their ability to use the system can be improved 
+through the right training. 
+I've found that training materials often suffer from a number of flaws, several of which can be 
+mitigated or even removed by involving the tarchitect. One flaw is that APIs and example programs 
+are often incorrect: In extreme cases, examples don't compile, and they fail to represent best practices. 
+Also, they fail to expose the full set of features associated with the product, which is especially 
+serious, because it exposes your product to serious competitive threats (smart competitors will see 
+these flaws and use them to their advantage). A slightly less serious, but related, flaw, is that the 
+examples provided don't have sufficient context for developers using the APIs to build a good mental 
+model of the system. The result is that it takes developers far longer to effectively use your system's 
+APIs. 
+Certification 
+The next logical step beyond training is certification. This is a rare step and one that is required only 
+for systems with sufficiently large market shares. Certification is almost exclusively the domain of the 
+marketect. In deciding whether or not to create a certification program, I recommend considering the 
+following factors. 
+Product Ecosystem 
+Certification makes sense in product ecosystems characterized by many third parties who provide 
+services to customers and by customers who want to know that their service providers have achieved 
+some level of proficiency in their offerings. One example is hardware markets, like storage area 
+networks (SANs) that are typically sold and distributed through value-added resellers (VARs). Another is IT/system integration and management markets, where certifications such as the Microsoft 
+certified systems engineer (MCSE) have value. 
+Competitive Edge 
+Certification must provide a personal competitive edge that will motivate employees to invest their 
+time, energy, and money in acquiring it. 
+Currency 
+Well-designed certification programs include ongoing educational requirements. In general, the more 
+specialized the knowledge, the shorter its half-life. If you're not willing to invest the time to create an 
+ongoing program, don't start one. 
+Professional Recognition 
+A well-designed certification program involves professional recognition. In practice, this means that 
+certification must be hard enough to attain that you have to work for it. If anyone can obtain the 
+certification, why bother? 
+Independent Certification 
+Although many companies benefit by designing and managing their own certification programs, it is 
+often better if a program is designed and managed by an independent organization. This usually 
+reduces overall design and implementation costs and has the chance to include marketplace 
+acceptance. For example, the Computerized Information System Security Professional (CISSP) 
+certification, created and managed by an independent third party, is a demanding program that 
+requires detailed knowledge of a wide variety of vendor-neutral concepts as well as specific 
+knowledge of various vendor's products. Working with the CISSP, a security vendor could ensure that 
+their products are properly covered without incurring the expenses associated with a comprehensive 
+training program. 
+Academic Credentials 
+Some certification programs can be used toward a university degree. This is, of course, an added 
+advantage. 
+User Community 
+A healthy and active user community provides a number of benefits to the marketect and the 
+tarchitect. For the marketect, user communities provide primary data on desired features, product uses, 
+and product futures. For the tarchitect, understanding the user community means understanding how 
+people are really using your application. For example, I am always amazed at how creatively people 
+can use an API if given the chance! 
+User communities don't magically happen. They need to be nurtured. The marketect, especially, 
+should seek to foster a healthy and active user community. Here are some activities that can help in 
+this endeavor. 
+Community Web Site Establish a corporately supported community Web site where customers can share tips and techniques 
+regarding all aspects of your system. If you provide an API, have sections where they can post 

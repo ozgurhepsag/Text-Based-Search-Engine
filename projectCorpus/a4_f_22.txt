@@ -1,0 +1,750 @@
+
+whether a given structure is deducible from another structure. It is an abstract formalism whose 
+guarantees are necessarily limited to abstract symbol structures. Real programs running on real 
+computers cannot be verified. Nevertheless, verification of the underlying algorithm might be very good 
+start towards eliminating the software crisis. When (or if) large-scale algorithms become verifiable, we 
+may have won a major battle, if not the war.
+There are many sophisticated arguments about the sagacity of the urge to verify in computer software 
+development (in Chapter 1, I briefly reviewed them and provided pointers to the major contributions). 
+Fortunately, we can sidestep all these deep and devious arguments and just work from the standpoint 
+that today, and for the foreseeable future, formal verification techniques are not available to deal with 
+large software systems. So SAV, whether desirable or not, or impossible or not, is just not an option that 
+we have. We must, for the time being at least, employ another methodological framework.
+Specify and test—the SAT methodology
+Given than we can't completely specify programs, but we can go as far along that road as we wish to, 
+we'll stick with specifying our problems, deciding what we want the computer system to do before we 
+launch into how we might get it to do what we want. And given that we can't even come close to 
+verifying our algorithms, we'll reluctantly abandon that key notion and settle (only temporarily) for the 
+stopgap technique of testing for program correctness. This sort of argument leads us to the essence of the 
+fundamental methodology embraced by the vast majority of the software world—Specify-And-Test, the 
+SAT methodology.
+To some software engineers it is the correct foundation upon which to build more fancy structures for 
+the development of robust and reliable software systems. To others it is a weakened version of SAV, and 
+is used with distaste, to be abandoned just as soon as something more SAV-like becomes available.
+  Page 56
+So, the two anchor points of the methodology for practicing software engineers are: first, specify exactly 
+what is wanted and, finally, test that the system delivers what was specified. Specification, in particular, 
+has been explored immediately above. But the notion of testing software in order to ascertain its 
+reliability has only been mentioned in passing here and there. At this point, we can collect what we 
+know about testing, and consolidate our views on this critical aspect of the software development 
+process.
+Testing for reliability
+Perhaps the most famous comment about software testing, as we've already noted, is that of Dijkstra:
+Testing shows the presence, not the absence of bugs in Buxton and Randell (1970) p. 21.
+This sort of observation is generally taken to mean that testing is a no-hope process, that is perhaps 
+better than nothing—but not much better. So testing finds its way into the practice of software 
+engineering only because verification techniques are not up to scratch.
+I think that testing is generally being sold short. Testing is not a perfect solution but then there are no 
+perfect solutions for guaranteeing the correctness of real-world artifacts. The software engineers might 
+do better to cease gazing wistfully into the realms of logical proof, and to concentrate on improving 
+testing strategies—as indeed many of them do.
+The best that can be said of a tested software system is that it is free from known error, but if you've 
+been through a sophisticated search for errors then "free from known error" can be a strong statement to 
+make. Good testing regimes have been developed, and the programs that survive them are robust and 
+reliable systems.
+The strategies for constructing sophisticated test data are wide ranging and comprehensive—and have 
+been outlined in Chapter 1. The tests should, you may remember, probe all the limits of the data 
+values—thus for our sorting problem we should include input that is a maximum-length list, a list just 
+under maximum length, and a list just over. Tests should exercise all control paths in the program—thus 
+sorted and reverse-sorted test lists would check for correct functioning of both branches of the IF-
+statement in our algorithm, and so on.
+  Page 57
+Testing, despite its much-maligned basis, is the foundation upon which software reliability is built. So 
+much time and effort goes into this feature of the software development process.
+The strengths
+I have spent a considerable amount of space on criticizing the fundamentals of conventional software 
+engineering, especially when these are applied, without due thought, to AI system building. But 
+specification, testing and even verification have their roles to play when AI is countenanced—in fact, 
+they need to be exploited to the full, but not mindlessly in the belief that they must be a good thing. We 
+must not waste the accumulated wisdom of several decades of experience and research, but wastage may 
+occur from misuse as well as underuse.
+AI systems need to be specified as fully as possible before we embark on designing the system, but 
+certain features of the problem will be identified as exploratory ones. It is no help to over-specify a 
+feature just for the sake of having a precise specification to implement, because an important 
+requirement of AI designs is that they are easily modifiable. Such a characteristic is nice to have in 
+conventional software systems (it makes the maintenance and inevitable changes that much easier), but 
+it is not a prime requirement—in AI it is, because change (in response to behavioral feedback) is an 
+integral part of the development of an adequate system.
+Testing as a component of system development methodology is, I have argued, typically undervalued. It 
+is not a perfect solution, but it's the best we have, and, as long as we are aware of its weaknesses, it will 
+continue to be a valuable foundation for robust and reliable software products. Testing is not a weak 
+substitute for verification, but a valid procedure in its own right, that can be used to great effect provided 
+it is used within its limitations (just like any scheme).
+This brings me to verification: I've portrayed myself as an anti-verificationist thus far, but nothing's all 
+bad, not even verification. The formal verification of components of software systems has its part to play 
+in the overall quest for robust and reliable software products, but it is certainly not the key strategy and it 
+may not even be of major importance. In attempting to maximize the use of both research and past 
+experience in building software systems, we are well advised to formally specify and verify, whenever 
+possible, the algorithms that comprise as much as possible of our AI systems. This might be possible for 
+large portions of the
+  Page 58
+framework for the AI components, a framework which can be formally specified at the outset. In 
+addition, it might be possible for subfunctions of the adequate system once an incremental procedure has 
+converged on a good enough approximation to the AI problem being tackled.
+The weaknesses
+So, despite my derogatory remarks, there are certain strengths associated with conventional software 
+development that can, and must, be exploited in AI system development. But what are the weaknesses? 
+We need to know these so that we can circumvent them, or formulate more appropriate substitutes.
+A general source of weakness in software system development strategies stems from having too much 
+faith in dubious assumptions, mostly ones associated with guarantees of correct software 
+systems—complete specifications, formally verified systems, system design as a series of correctness-
+preserving transformations, software systems as abstract formal objects independent of user context, etc. 
+These sorts of approaches seem to offer the very best of all worlds: software that is guaranteed correct. 
+The temptation is thus to push to achieve practical viability with these techniques, and to leave less 
+ambitious strategies without the benefit of serious and sustained development effort. These less 
+promising techniques, such as testing, are used as stopgaps to be replaced by, in this case, formal 
+werification methods just as soon as possible. But, if it should turn out that the golden promises (or at 
+least, glittering hopes) of formal methodologists cannot, in fact, be cashed out in practice, then software 
+technology will have been held back by the years of neglect of the 'lesser' techniques.
+Testing is quite a good example here because it has been extensively developed by the commercial 
+sector as their prime software validation tool, yet it has been hardly considered by the academics for it is 
+unnecessary if the software can be verified. For example, the word ''testing" does not even occur in the 
+index (let alone as a section of the text) of either Jones(1980) Software Development: a rigorous 
+approach or Gries (1981) The Science of Programming, and both are prestigious works in the area of 
+software science. Ince (1989), in his tutorial guide Software Engineering, makes the point in his preface 
+that his book includes testing "a task often omitted from other books."
+This failure to give first-class status to tasks such as testing produces not only a weakness within the 
+developing science of software
+  Page 59
+construction but, in addition, spills over into poor system-design practice. If you think that your design 
+will be correct then it is a waste of time and effort to design in checks and error traps (other than for 
+incorrect input data). Once you realize that your design is not correct, it may be quite awkward (even 
+impossible) to retro-fit the necessary checks and traps. Within a perfect technology redundancy is a 
+negative term, but within an imperfect technology, it is essential: it can be the saviour of systems.
+This last example also serves as a rejoinder to the charge that although formal methods may never 
+achieve their ultimate goal, we may, by plugging away at them, go considerably further along the road 
+than currently seems possible. So we must keep pushing on with these formal methods as that's the only 
+way to learn what their real limitations are. And this is all well and good, provided that the informal 
+methods don't suffer as a consequence. If we develop program design methods as if redundancy is a bad 
+(or pointless) thing, then that may mean that we close the door on some good ways to introduce 
+redundancy when we finally find that it is needed.
+That's enough of the general weaknesses that spring from excessive zeal with respect to a desire for 
+perfection. It's time to look more closely at the anchor points of practical software science: specification 
+and testing, and since we've been discussing testing, I'll consider that first.
+What are the requirements for testing?
+Some less-than-serious readers might be tempted to answer this question with "an inability to do things 
+right"—meaning failure to verify software is the reason for falling back on a testing regime. This is not 
+the sort of answer that I have in mind. I dealt with the general grounds for testing as opposed to 
+verification, what I want to focus your attention on here is the question of what is necessary before we 
+can test a piece of software.
+The answer is not tricky but it has serious consequences. Testing requires that the behavior of the 
+software can be clearly judged to be either correct or incorrect with respect to the specific test data. 
+When you run some test data through a software system you must be able to decide whether the resultant 
+behavior of the system is correct or not. This is obvious (I hope), and not much of a requirement you 
+might think. After all if you can't even judge the correctness of your system with respect to a set of 
+specific data values then what hope is there for attaining general correctness?
+  Page 60
+Now consider an AI-ish software system: let's say an expert system for medical diagnosis. We present 
+the system with a set of symptoms, and, many logical inferences later, out comes a diagnosis. Is it the 
+correct one? We show the output to a human expert diagnostician, and she responds: "Yes, this is 
+exactly what I would have diagnosed." (And let's be charitable and assume that a poll of all other experts 
+in this domain supports her positive response). So our software performed correctly on this test, or did 
+it? It clearly did as well as we could have hoped, but was it correct in some abstract sense? The answer 
+is, no, because there is not an abstract sense of correctness in many parts of this domain, and this is itself 
+characteristic of many AI problems (recall the table of differences between AI and conventional 
+software engineering problems given in Chapter 2). In the medical domain much totally consensual 
+decision making is viewed as an agreement on what seems to be best given the current state of 
+knowledge; it is not seen as correct in some absolute and timeless sense. An abstract notion of 
+correctness is typically patchy in its applicability to AI problems—i.e, there are often some clearly 
+correct and incorrect behaviors of an AI software system but there are also behaviors that defy such a 
+simple binary labeling scheme.
+Referring once more to the table of differences in Chapter 2, you will see that the difference in typical 
+problem definition is crucial here. Most AI problems are defined (if that's the word) by the behavior of 
+the only intelligent systems known—i.e, you, me, and a few other specimens of homo sapiens. And this 
+sort of problem definition can quite easily exclude any comprehensive notion of correctness in an 
+absolute sense.
+What's the correct meaning of the sentence "I saw you looking"? It all depends on who said it, who they 
+said it to, what the circumstances were, what the speaker's goals were, what the speaker believed that the 
+hearer believed, and so on. The potentially relevant contextual information is endless, and so the original 
+question can, with some justification, be classed as not very meaningful (I hesitate to write simply 
+meaningless, because that is not the only alternative to entirely meaningful). There is no correct meaning 
+(nor set of correct meanings) for a given sentence. Application of a binary decision procedure to 
+program output in this domain (as in many other AI domains) just doesn't seem to be appropriate.
+Sparck Jones (1990), for example, raises just this awkward issue with respect to her research on 
+developing software for summarizing stories. There is no correct summary. There are many incorrect 
+summaries, but there are also similarly many different, but adequate, summaries. She states that "we 
+have no clear functional basis for evaluation."(p. 280)
+  Page 61
+They are systems designed to meet some need and "this implies a performance measure related to the 
+system's purpose, which may be more or less easy to find. But it is a measure of acceptability, not of 
+truth."(p. 281)
+So the basis for testing software systems, in the classical sense, cannot be assumed when we move to AI 
+software. The weak notion of testing is further weakened by the patchiness of the abstract notion of 
+correctness. This news, although not to be applauded, is also not to be taken as a reason for abandoning 
+all hope of practical AI software systems. There are other approaches to evaluation, as implied by 
+Sparck Jones in the previous paragraph, and we shall explore some of them in later chapters of this 
+book.
+The point for the moment is that with AI software the unitary, abstract notion of a traditional testing 
+stage at the bottom of the waterfall (i.e. correct/incorrect decisions on all program output) in software 
+development is unlikely to be usable in its conventional form.
+What's in a specification?
+We've already spent considerable time on various aspects of software specification—whether it can ever 
+be complete, why it should be formal, etc.—but it is a very important element of the software design 
+process, so we need to go further. (See Partridge and Falton, 1995, for a catalogue of interpretations)
+Ince (1990, p. 261) lists the following properties that, in general, a software system specification should 
+exhibit:
+• it should be unambiguous
+• it should be free of design and implementation directives
+• it should enable the developer to reason about the properties of the system it describes
+• it should be free of extraneous detail
+• it should be partitioned
+• it should be understandable by the customer
+This is something of a wish list: it is a list of features that we would like our specifications to exhibit, 
+and we should strive to construct them in accordance with this list. It is a list of tendencies whose 
+presence within a specification we should attempt to maximize rather than a list of clear
+  Page 62
+goals to be achieved. Thus, we have already seen how specifications and implementations tend to 
+intertwine. So the second of the above-listed desiderata is not achievable in an absolute sense, but (all 
+other things being equal) the fewer implementation directives that we have in a specification the better.
+What I want to concentrate upon in this section is not the technical issues of formal specification, but 
+issues that stem from the necessary interrelationships between a formal specification and the relevant 
+humans—system designers and users.
+A specification for a large software system is a large and complex document, and it is, moreover, a 
+document that contains many implicit consequences—i.e. a specification will specify many problem 
+features implicitly. Thus in our trivial sorting problem, the specification implies that there is a well-
+defined order relation for list elements. This is nowhere explicitly said in the specification, but is 
+implicitly specified in the specification by the stipulation that the resultant list be an ordered permutation 
+of the original list.
+In a large and complex specification it is difficult enough to comprehend all that is specified explicitly, 
+and it is, of course, much more difficult to gain full knowledge of all that is specified implicitly. So, 
+there is a big difference between having a precise specification of a problem, and having a full grasp of 
+all that is in fact specified.
+Compounding the problem is the fact that a specification typically specifies only what is true—or, put 
+another way, it specifies what the eventual system will do, and says nothing about what it won’t do. So 
+our specification for sorting doesn’t specify that it won’t sort tree structures, and that it won’t sort lists 
+of images, etc. There are clearly many more things that a given software system won’t do than it will do. 
+Hence, it would make little sense to attempt to explicitly specify what the system will not do, as well as 
+what it will do. But, having said that, there are some aspects of what a specification excludes that may 
+be worth explicitly stating, perhaps because they may be loosely implied by the specification, or perhaps 
+because it would be particularly damaging to wrongly assume them, etc. Our specification for sorting, 
+for example, is not expected to cover the possibility of infinite lists. We have not explicitly excluded this 
+possibility, but its exclusion is implicit in, for example, the exhaustive check for ordering. If exclusion 
+of infinite lists is an intended constraint (and one suspects that it is) then maybe it should be explicitly 
+excluded in the specification. On the other hand, if this exclusion is thought too obvious (in that it makes 
+no sense to include infinite lists),
+  Page 63
+then explicit inclusion of this list-length constraint within the specification might be viewed as 
+unnecessary clutter. Unfortunately, one person’s unnecessary clutter is another’s essential detail—this is 
+a rider on the fourth-listed desideratum given above.
+The third of the desirable properties listed—i.e. the one concerning facilitation of reasoning about the 
+properties of the specified system—addresses yet another point of communication between specification 
+and the interested human parties. In this case we are concerned to provide the system developer with the 
+facility to link by reasoned argument the specification (which is the developer’s major interest and 
+responsibility) with the behavioral properties of the desired system (the customer’s major interest). This 
+sort of linkage is necessary in order to check that the system specified is indeed the system that the 
+customer ordered.
+Now, we can extend our statement, about the difference between having a specification and having a full 
+grasp of all that is specified, to encompass also full knowledge of what has been excluded from the 
+desired system’s behavior. In sum, we have to avoid equating the possession of a specification (formal 
+or not) with knowing what has, and what hasn’t, been specified. This might sound like really bad news, 
+and in truth it’s nothing to rejoice about. But is it a special problem for software systems developers? 
+No, and yes, are the answers (in that order).
+No, it’s a problem that occurs with the development of any complex system. The specification (if I can 
+use that word in this context) of a building or a bridge will similarly embody unforeseen implications in 
+the resultant artefact. What do they do about it? In part, the engineer tackles this problem by building 
+models, prototypes, in order to explore the implicit features of the specification, and we shall discuss 
+this strategy in the following subsection.
+But first, I still have to tell you about the “yes” answer. The problem of system features and limitations 
+hidden within the folds of the specification is much worse for the software engineer than for the real 
+engineer—in general. And this aggravation of the problem is due to the tight constraints on acceptable 
+functionality typically found in software systems but not in, say, buildings (we dealt with this point of 
+difference in Chapter 1). The upshot of this crucial difference is that the engineer has considerable 
+freedom to make adjustments to his building while it is being built-i.e. as the implicit features of the 
+specification are elaborated, by the act of construction, and thus become manifest as specific problems. 
+In the world of tight and highly interrelated constraints to be found in software systems, the software 
+engineer dabbles with individual, specific problems
+Page 64
+as they arise in the implementation at his peril. Such a procedure is a recipe for chaos.
+So how is the software engineer to explore the hidden features of a specification? He or she builds 
+prototype systems.
+Prototyping as a linkA prototype is a small-scale version of the desired system, one that facilitates the exploration of a 
+maximum of the implications of the specification with a minimum of resource commitment. As you can 
+see, the name is something of a misnomer in the software context.
+Floyd (1984) sees prototyping as consisting of four steps:
+1. functional selection
+2. construction
+3. evaluation
+4. further use
+Step 1, functional selection, refers to the choice of functions (or range of features) that the prototype will 
+exhibit—this will be some subset of the functionality of the final product. The difference in functional 
+scope between the prototype and the final system can be delimited by two extremes:
+"the system functions implemented are offered in their intended final form but only selected 
+functions are included"—this is vertical pro-totyping
+"the functions are not implemented in detail as required in the final system; thus they can be 
+used for demonstration, part of their effect being omitted or simulated"—this is horizontal 
+prototyping (Floyd, 1984, p. 4).
+Thus a vertical prototype of the sorting problem would an implementation of the order-checking module 
+without the permutation function preceding it. This prototype could be used to explore the accuracy and 
+efficiency of, say, various order-checking strategies. Whereas, if we implemented both modules such 
+that they could deal with, say, lists of integers of length ten, then we would have a horizontal prototype. 
+And, of course,
+  
+Page 65
+all intermediate mixes are possible. The second feature, construction, refers to the time and effort needed 
+to put the prototype together. Clearly, the amount of effort needed should be much less than for the final 
+system, and this is achievable by judicious use of functional selection as well as use of prototyping tools. 
+In prototyping, with respect to conventional software engineering, the emphasis is on the intended 
+evaluation (what you are expecting to learn that will result in a better specification of the final system), 
+it is not on long-term use—this may be obvious, but it's not true when AI enters the picture.The evaluation step is the crucial one, for the whole point of the prototype is to gather information that 
+will improve the development of the final system. What information is being sought from the prototype 
+and how it will be gathered (e.g. by providing the necessary resources in terms of personnel and time) 
+should all be clearly set out before the prototype is built. It should not be the case that we build a quick 
+and dirty version of the proposed system and see what we can learn from it.
+Further use of the prototype leads us into the domain of incremental system development 
+methodologies. At one extreme, the prototype is a learning vehicle, and having learned all that we can 
+from it, it is thrown away. There is not much choice about this in real engineering. The model building 
+or model bridge can be broken up and discarded, or it can be put on display to gather dust, but what 
+cannot be done with it is to use it as part of the actual building or bridge for which it was a prototype. 
+But the software engineer has this option. A software prototype is exactly the same sort of thing as a 
+software product: they are both software systems, programmed artifacts (a point that we mentioned in 
+Chapter 1).
+In fact, it can take a considerable act of will-power for the software designer to throw away the 
+prototype. However little time and effort was expended on the prototype, it was by no means negligible, 
+so why waste it? The overriding temptation is to make maximal use of the prototype in the final system, 
+and this is not necessarily a bad thing. It all depends on the sort of prototyping that you have embarked 
+upon.
+Three broad classes of prototyping are sometimes distinguished:
+• prototyping for exploration,where the emphasis is on clarifying requirements and desirable 
+features of the target system and where alternative possibilities for solutions are discussed
+• prototyping for experimentation,where the emphasis is on determining the adequacy of a 
+proposed solution before investing in large-scale implementation of the target system
+  
+Page 66
+• prototyping for evolution, where the emphasis is on adapting the system gradually to changing 
+requirements, which cannot reliably be determined in one early phase (Floyd, 1984, p. 6).These three classes of prototyping are fuzzy, let’s not try to hide that fact. But they are, nevertheless, a 
+useful starting point. Exploratory prototyping is directed towards elucidating the system users' vision of 
+the final product for the software engineer. It contributes primarily towards the construction of the 
+specification. Experimental prototyping is the form that accords most closely with my introduction to 
+the need for prototyping to uncover implicit features of a specification. It focuses on the behavior of the 
+specified system, and allows a user to determine if the proposed system will in fact do what was 
+envisaged and will not exhibit any undesired behaviors. The third class, evolutionary prototyping, is the 
+one that will lead us on to the incremental development methodologies of AI. It is not, in fact, 
+prototyping at all in a strict sense, and it is sometimes referred to as versioning. An evolutionary 
+prototype is not built, evaluated and discarded; it is built, evaluated, modified, and reevaluated, which 
+leads us to a Run-Understand-Debug-Edit cycle (or more memorably RUDE cycle) as a possible basis 
+for system development.
+One can quite easily accept prototyping as a legitimate component of the software life cycle, and yet 
+utterly reject the incremental notion encapsulated in the RUDE cycle. Consider the case of the wax bell 
+as it was once put to me: if you want to make a bell, do you take a block of metal and carve away at it 
+until it’s a bell? No. You make a protoptype out of wax. It is quick, cheap and easy to model with a wax 
+prototype. But it also has some disadvantages: it will droop in hot weather, it goes “phlub” instead of 
+“ding-dong,” it’s a fire hazard, bees will tend to nibble at it, etc. However, this is all beside the point, 
+which is that when you are happy with your prototype you can take it to a foundry where they will make 
+a metal bell out of it using various proven techniques. So, if you want a piece of Al software you don’t 
+want to hack it directly out of LISP (carving out a metal bell). It makes more sense to explore and model 
+with a more humanly understandable, malleable, mathematical medium ( the wax). Then conventional 
+computer science can use established techniques to turn the mathematical description into a machine-
+executable form (the foundry). The RUDE approach, when exposed as the metal carving exercise, looks 
+to be clearly the wrong option to go for.
+However, there is a response to this argument. Although it certainly appears to be eminently sensible to 
+model with a wax bell rather than start carving away at a lump of metal from the outset, despite the 
+disadvan
+  Page 67
+tages of wax as a medium for bells, certain disadvantages may be crucial. Take, for example, the tone 
+disadvantage: a wax bell doesn’t ring like a bell, in fact, it doesn’t ring at all. Now, the main reason for 
+making a bell is usually to obtain an object that can produce a ringing sound. So exploration of the space 
+of potential bells using wax models may well allow us to find a pleasing-looking bell shape that is also 
+within the technical and budgetry constraints. But the resultant metal bell may not ring with a pleasing 
+sound. Indeed, it may not ring at all, in which case the project could hardly be counted as a success. The 
+point here is that a prototype in a different (more convenient modeling) medium—i.e. a conventional 
+engineering prototype—may necessarily lack, by virtue of the prototyping medium used, one or more 
+crucial features of the desired final product. This inadequacy of the modeling medium may be obvious, 
+and therefore not a real problem, in the case of the wax bell, but will it always be so obvious when the 
+goal is a large software system?
+When we increase the complexity of what we are trying to build by several orders of magnitude over 
+and above that exhibited by the bell problem, there may be aspects of the desired system that are not 
+addressed by any conceivable prototype (partly because we cannot know all of the implications of a 
+large and complex system before we have such a system). Thus prototyping in the more conventional 
+engineering sense certainly has its advantages, but it also has its limitations. The ultimate prototype is 
+some crude version of the final system that will itself become the final system as a result of evolutionary 
+development. To take us solidly back to the world of software systems, I can draw your attention to 
+Turski and Maibaum (1987) who consider a range of possible formalisms as candidates for the modeling 
+medium for software development. They review the advantages and disadvantages of each as well as 
+their applicability to various software domains.
+One can argue the toss about the virtues of various modeling mediums as vehicles to support a 
+prototyping expedition (as we can similarly argue about so many of the claims in this field). There is, 
+however, some empirical data available pertaining to the implications of prototyping as opposed to 
+specifying. The existence of real data is a rare occurrence in this area and thus we should not ignore it. 
+Boehm, Gray and Seewaldt (1984) conducted an experiment to compare prototyping and specifying as 
+techniques for software development. Seven teams each tackled the same 2-4K source-code lines 
+project. The specifying teams were constrained to produce a requirements specification and a design 
+specification before any implementation. And the prototyping teams had to produce and exercise a 
+prototype by week five (the midpoint of the over-
+Page 68
+all project). The seven versions of the final system were compared both quantitatively (e.g. lines of code 
+and pages of documentation) and qualitatively (e.g. maintainability and ease of use). Because of the 
+small number of (small) teams involved and the use of limited subjective evaluation, the results should 
+be thought of as no more than suggestive, certainly not definitive. But with this disclaimer in mind, it 
+may be useful to see the major conclusions.1. Prototyping tended to produce a smaller product, with roughly equivalent performance, using less 
+effort—almost half the size from almost half the effort. The specifiers often found themselves 
+overcommitted by their specifications. "Words are cheap," they ruefully remarked.
+2. Prototyping did not tend to produce higher "productivity" (measured as delivered source-code 
+instructions per man hour). However, when "productivity" was measured in equivalent user satisfaction 
+per man hour, prototyping was superior.
+3. Prototyping did tend to provide expected benefits such as:
+• better human-machine interfaces
+• always having something that works
+• a reduced deadline effect at the end of the project
+4. Prototyping tended to create several negative effects such as:
+• less planning and designing, and more testing and fixing
+• more difficult integration due to lack of interface specification
+• a less coherent design
+The authors comment that these last negative effects from prototyping will become particularly critical 
+on larger products. In summary, they say that both prototyping and specifying have valuable advantages 
+that complement each other, and that for most large projects a mix of these two approaches is the best 
+strategy. This last point fits in nicely with Boehm's (1988) "spiral model" of software development 
+which we shall discuss in the next chapter (it is illustrated in Figure 4.7).
+I wish to present prototyping as the link which can take us smoothly from the thoroughly respectable 
+procedure of building a small-scale, throwaway model of a proposed system in order to gain useful 
+information before a major commitment is made, to the highly dubious process of continually re-
+modeling successive, inadequate versions ora system in the hope that a system with the desired 
+characteristics will be forthcoming. The first procedure is prototyping in its strictest sense and the other 
+is software system development at its worst, but it is also prototyping in
+  Page 69
+which a large number of prototypes are built and maximum use is made of each 'prototype' in the final 
+system. All intermediate positions in this spectrum of possibilities provide us with possible strategies for 
+software system development. An interesting question is: at what point do we leave behind the strategies 
+that can give us robust and reliable software and enter the realms of no-hope methodologies? As I shall 
+demonstrate in the next chapter, AI software system development seems to demand a strategy 
+somewhere towards the undesirable end of this range of possibilities. Let's hope that it doesn't 
+necessitate that we cross the 'no-hope' threshold (if there is one).
+  Page 71
+CHAPTER 4
+An Incremental and Exploratory Methodology
+Classical methodology and Al problems
+Within the previous chapters we have seen mention of a number of different ways in which AI does not 
+mesh well with conventional software engineering both theory and practice. In general, the notion of a 
+more or less linear progression from problem specification to tested software system does not look as 
+though it will be readily applicable to AI software systems. In AI we usually have no abstract 
+specification of the problem which is even close to complete or comprehensive, and the basis for 
+comprehensive testing (let alone verification) also seems to be missing on many occasions.
+It is at this point that we can clearly see the sense behind the dismissive view of AI disseminated by 
+Dijkstra, Hoare, and many other Computer Scientists. They habitually talk of problems ''that admit 
+nicely factored solutions" as being "the only problems that we can really solve in a satisfactory manner" 
+(Dijkstra, 1972). And that the only way to significantly increase the level of confidence in our programs 
+is to give a convincing proof of correctness.
+Does this mean that we must abandon the idea of robust and reliable (and therefore practical) AI 
+software? Or does it mean that we must find a way to curb the worst of AI's excesses and constrain the 
+problems to fit with the SAV (or SAT) methodology? Or does it mean that we must generate a new 
+software system development methodology, one that is
+  
+Page 72
+tailored to the idiosyncrasies of AI problems? It is, of course, this last option that I shall concentrate on 
+in the remainder of this book. But the reader should realize that to tread this path we have little more 
+than blind faith to sustain us. The eminently sensible alternative takes us away from AI and back to a 
+more concerted study of model computer science problems.
+AI software systems have been built and demonstrated, sometimes to great acclaim, within the last three 
+decades. So, it is possible to build AI software, but it has been primarily demonstration systems. There is 
+a world of difference between software that will be judged successful if it performs impressively on a 
+few well-chosen examples administered by a doting parent, and software that needs to run the gauntlet 
+of disinterested, or even downright hostile, users day after day. Nevertheless, we might learn something 
+from a study of the way that AI demonstration systems are typically constructed.The RUDE cycle
+When we come to study the strategies actually used for building AI demonstrations, we find (not too 
+surprisingly) that these somewhat ad hoc systems are built in similarly ad hoc ways, but some general 
+features are discernible. In particular, AI systems tend to be built incrementally—an evolutionary 
+paradigm is used. The essence of these incremental methodologies is captured in the notion of the 
+RUDE cycle.
+The fundamental elements of all incremental system development procedures are:
+1. Run the current version of the system
+2. Understand the behavior observed
+3. Debug the underlying algorithm to eliminate undesired behavioral characteristics and introduce 
+missing, but desired, ones
+4. Edit the program to introduce the modifications decided upon.
+An illustration of this general procedure is provided in Figure 4.1.
+  
+Page 73
+Figure 4.1 "The RUDE cycle"The RUDE cycle as a basis for software development has its problems. That much should be obvious 
+from our earlier discussion of the problems that beset all software development together with an 
+inspection of the RUDE cycle itself—lack of a clear initial specification and criterion for success, and its 
+iterative framework containing no guarantee of termination. But is there any hope that it might form the 
+core of a methodology for developing robust and reliable AI software? Can we develop a discipline of 
+incremental software development? First, we need to look more closely at the problems associated with 
+this process.
+  Page 74
+How do we start?
+The first question, which I glossed over in my brief introduction to the RUDE cycle, is where do we get 
+the first version of our system from? How do we start this process of incremental development?
+What we need is a runnable prototype. Hence, the first link-up with the last section of the previous 
+chapter. We can construct a first version of the proposed AI software in much the same way as we 
+construct prototype systems in conventional software engineering. But the AI context does introduce 
+some salient differences in the prototyping strategy.
+To begin with, in AI we have no illusions about our specification: it is either incomplete, or the 
+specification of an intractible problem, or both. We are aiming only for a software system that is an 
+adequate approximation to the initial problem, and adequacy is primarily a behavioral characteristic. 
+And, if this isn't bad enough, behavioral adequacy is not a readily decidable property like behavioral 
+correctness, such as conventional testing strategies enjoy. Faint-hearted readers, and those who were 
+never too convinced that AI software was a good idea in first place, can, at this point and with the 
+strength of conviction born of sure knowledge, abandon all hope for practical AI software—and join the 
+confirmed non-believers led by Dijkstra. But the rest of us will push on to see what can be done with 
+this seemingly hopeless state of affairs.
+Our AI-system prototype is thus not a prototype at all (in the strict sense of a throwaway experiment): it 
+is a first version (hopefully) of what will subsequently become an adequate, practical AI system. In this 
+respect it is quite like the notion of evolutionary prototyping as described at the end of the previous 
+chapter. The main difference is that we are not versioning in order to adapt the system to changing 
+requirements, but versioning in order to find an adequate approximation to the requirements.
+This first version is a probe into the vast space of behaviors that surround the ideal (but impossible) 
+solution to the problem. The point is that the probe is not a disposable one to be discarded after we have 
+learned all we can about a particular locality of solution space. It is to be an evolving probe, and like a 
+ferret in a rabbit warren it should work its way around the space until it finds an adequate solution. 
+Unfortunately, this cute simile breaks down when we observe that the ferret will actively explore the 
+potential rabbit-space of the warren, while our first version of a software system will do nothing of the 
+sort in its problem space—it will just sit there, reporting on its immediate locality, but making absolutely 
+no effort to look elsewhere. It is, of course, the AI-software engineer who does the ferreting (as it were) 
+on the basis of the information gained from the passive probe.
+  Page 75
+The AI-software engineer must gather behavioral data from this first version of the software, analyze its 
+import, and then devise a second version of the software to probe in a potentially more-adequate part of 
+the space. And this is, of course, just another rendering of the RUDE cycle. All this should make it very 
+clear that a major requirement of the first version system is that it should be readily modifiable—such a 
+requirement has no force if the version is a throwaway prototype. A second crucial requirement is that it 
+does run, and the further the better (see the Wizard-of-Oz approach later in this chapter).
+Malleable software
+Software that is readily modifiable is malleable software; it should exhibit a maximum of functional 
+flexibility. The reader with a good memory for details will recall that malleability with respect to 
+software systems received a mention at the very beginning of this book. In that context, I was 
+contrasting bridges and buildings with software systems and making the point that software systems are 
+highly malleable objects. But at that point the emphasis was simply on how easy it is to alter software 
+systems, at this juncture we have the extra constraint that they must be alterable to achieve some 
+predefined behavioral goal (i.e. introduce new behaviors, modify in specific ways existing behaviors, 
+and eliminate undesired behaviors). So now we are discussing malleability as a reshaping to achieve 
+some desired form (modeling in its basic sense, re-modeling would be more accurate if interior 
+designers had not hijacked the term). And there is still an extra complication to add in: we want to 
+change the structure of a program not to achieve a new structure, but primarily to achieve a new 
+behavior—this discontinuity between means and ends is not at all helpful. What does all this amount to 
+in practice?
+Modularity, as always when we are called upon to manage complexity, is an obvious strategy to support 
+malleability. Malleability, as a characteristic of software systems, has two main aspects: we must be able 
+to understand the working of the system—and hence make good judgements about what changes to 
+introduce; and the system must exhibit a maximum of functional decoupling—so that the identified 
+change can be introduced with minimal effect on other subfunctions that we do not wish to modify. 
+These two aspects are both supported by a modular approach to system design.
+The rather nasty phenomenon shift that occurs when we must reason from function (system behavior) to 
+form (how to modify that behavior by
+  Page 76
+changing the program), and from form to function, is a considerable hindrance to the versioning process. 
+This leads to another guideline for version construction: minimize this discontinuity by choosing a form 
+that accurately reflects function.
+Every programmer is familiar with this strategy. You can see it at work when you compare a high-level 
+language program (in say FORTRAN or COBOL) with its compiled equivalent. They both have the 
+same content and exhibit the same behaviors, but the difference in discontinuity between form and 
+function is vast. In fact, this discontinuity for the compiled version is so devastating for attempts to 
+reason between form and function that it proves to be an effective block on such ventures. Hence, a 
+software vendor will typically sell only the object code of the software, and refuse you access to the 
+source code knowing that this is a foolproof way to prevent you from working out how it does what it 
+does, and from meddling effectively with the system. Compiling is a fairly easy technical exercise, 
+decompiling is not. To some extent, it is a decompiling exercise that is demanded in incremental system 
+development that is driven by behavioral inadequacies.
+I have discussed this problem previously (Partridge, 1986), and so can terminate this presentation with a 
+couple of further examples and a summarizing illustration, all from the earlier work.
+Most people who have had the good fortune to program a computer will probably have come across the 
+formal notation called Backus-Naur Form (BNF). It is used to define the syntax of programming 
+languages, and does so most successfully. BNF is particularly successful, I believe, because it is a 
+representation scheme that clearly displays (rather than masks) the content of what it is defining—i.e, 
+the form of BNF is transparent to its function. This may be an easy example in that the content of what 
+BNF defines is syntactic structure, but it is far superior to, say, English as a representation scheme in 
+this particular role.
+MacLennan (1987, p. 160-165) is, it seems, making this very point about BNF. He presents the 
+following precise definition (assuming a prior definition of digit) of a number.
+1. An unsigned integer is a sequence of one or more digits.
+2. An integer has one of the following three forms: it is either a positive sign ('+') followed by an 
+unsigned integer, or a negative sign ('-') followed by an unsigned integer, or an unsigned integer 
+preceded by no sign.
+3.  A decimal fraction is a decimal ('.') immediately followed by an unsigned integer.
+  Page 77
+4. An exponent part is a sub-ten symbol ('10') immediately followed an integer.
+5. A decimal number has one of three forms: It is either an unsigned integer, or a decimal fraction, 
+or an unsigned integer followed by a decimal fraction.
+6.  A unsigned number has one of three forms: It is either a decimal number, or an exponent part, or 
+a decimal number followed by an exponent part.
+7. Finally, a number can have any one of these three forms: It can be a positive sign ('+') followed 
+by an unsigned number, or a negative sign ('-') followed by an unsigned number, or an unsigned number 
+preceded by no sign.
+As MacLennan says, "We have a feeling that we have read a very precise specification of what a number 
+is without having a very clear idea of what they look like." At this point one typically starts making up 
+examples in order to understand what has been defined. The above definition can be contrasted with the 
+BNF one given in Figure 4.2.
+Figure 4.2 A BNF definition of 'number'
+<unsigned integer> ::= <digit>
+   
+<unsigned integer><digit>
+<integer> ::= + <unsigned integer>
+   
+- <unsigned integer>
+   
+<unsigned integer>
+<decimal fraction> ::= <unsigned integer>
+<exponent part> ::= 10<integer>
+<decimal number> ::= <unsigned integer>
+   
+. <decimal fraction>
+   
+<unsigned integer><decimal fraction>
+<unsigned number> ::= <decimal number>   
+<exponent part>
+   
+<decimal number> <exponent part>
+<number> ::= + <unsigned number>
+   
+- <unsigned number>
+   
+<unsigned number>
+  
+Page 78
+Given some brief tutoring on how to interpret the BNF symbols (such as 'which means 'or', and '::=' 
+which means 'is defined as'), and a certain familiarity with recursive definitions, the BNF definition 
+exhibits a much smaller distance (distance of representation in Figure 4.3) between form and function 
+than does the English definition. The BNF definition would be much easier to modify as one can 'see' 
+how changes in the structure will yield changes in the function (i.e. what structures it defines) much 
+more easily than with the English definition.
+Figure 4.3 (derived from Figure 4.5 in Partridge, 1986) provides a schematic summary of this notion of 
+discontinuity (or distance of representation) together with the distance of successive approximations (or 
+versions of the system) from a position of adequacy within the problem space.
+ 
+Figure 4.3 A schematic illustration of form-content distance and adequacy distance for successive versions of a system  
+Page 79
+Al muscles on a conventional skeleton
+In accord with the earlier exhortations to exploit conventional software engineering wisdom as 
+completely as possible, a first version of the AI system should be structured so as to separate out and 
+localize the effects of the AI as much as is possible within the system. The essential metaphor here is 
+one of a body: the rigid and robust bones provide a firm basis for the muscles to operate from and 
+together great power can be produced. To stretch this metaphor to the limit: huge increases in body 
+power (usually called muscle power) can be obtained by building up the muscles on the rigid, fixed 
+skeleton.
+For our first version of an AI system we want it to be mostly a robust, reliable, and well-defined 
+skeleton of conventional software. To this framework we can then attach the AI muscles that will 
+provide greater power to the overall system but need to be closely confined and controlled if they are to 
+be developed effectively.An echo of this strategy is found in conventional software system design strategies: a proposed software 
+system can be tested top-down (i.e. general design decisions before implementation details) by 
+constructing the framework of the system with dummy functions and procedures. These dummy 
+structures, sometimes called stubs, either do nothing or simply return a fixed value, or whatever is 
+necessary to test the general system structure before commitment is made to a detailed design of these 
+stubs.
+Clearly, the suggested AI muscles are just such stubs, although how to elaborate the essential details is 
+no longer a clear-cut procedure. In conventional software engineering, once you've tested and are happy 
+with the general framework it is then a fairly straightforward task to design and implement a mechanism 
+to realize each of the well-defined stub functions. In the AI analogue we are faced with the more 
+demanding task of exploring (typically heuristic) designs and implementations that represent an 
+acceptable compromise between adequacy and cost in terms of time and space.
+A recent proposal takes this methodological strategy one step further: as part of the Wizard-of-Oz 
+enhancement of the RUDE cycle, Mc Kevitt and Partridge (1990) propose that in the interests of getting 
+prototypes working to the full as early as possible (and thereby gaining a maximum of informative 
+feedback) the system stubs should be active rather than · passive. An undeveloped AI muscle can be 
+replaced by a 'hidden' human who supplies, on demand, appropriate, intelligent information. More 
+mature readers will recall the hidden human who was in fact the 'brains' of the Wizard Of Oz and hence 
+the name of this approach (younger
+  
+Page 80
+readers for whom this attempted explanation is still a mystery may want to read the book or see the 
+classic film in order to attain enlightenment). As understanding of the problem develops (and it is 
+expected to develop more quickly as a result of feedback from experimentation with a comprehensive 
+and robust working system), computational alternatives to the Wizard will begin to emerge, and so the 
+role of the Wizard atrophies. The point of the 'hidden' Wizard is so that the behavior of the hybrid 
+prototype can be under normal conditions—i.e, without system users reacting unnaturally to the 
+knowledge that there is another human 'in the loop.'
+This proposal has yet to be evaluated comprehensively, but has been employed with success in the 
+development of the OSCON interface to UNIX (Mc Kevitt, 1990). Clearly, there are some restrictions 
+on its scope of applicability, but it would appear to be a useful technique whenever the system under 
+development (AI software or not, incidently) is one that interacts directly with human users.We see the general strategy of isolating AI muscles at work in the current plague of knowledge-based 
+systems. To a first approximation the AI, in the sense of the heuristics to be developed, is encapsulated 
+in individual rules, and the rule-base as a whole is separated off from the processing mechanism 
+(inference engine, if you will). First versions of the system can employ very basic, non-heuristic rules in 
+order to facilitate the construction of a strong skeleton within which heuristic rules and even heuristic 
+reasoning mechanisms can later be introduced.
+Finally, Bader, Edwards, Harris-Jones and Hannaford (1988) criticize the basic RUDE cycle for just this 
+reason, as well as the lack of control in the iterative process of version development which, as it 
+happens, is the next subtopic to be addressed. We'll see the details of the methodology of Bader et al. in 
+the next chapter. Incidently, it's called the POLITE methodology—decompile that acronym if you can.
+How do we proceed?
+Let's be kind and assume that we have a first version of our software up and running on a computer 
+system. The task now is to see how it behaves (test it, in more classical language), understand the 
+observed behavior, and modify the current version so as to give a more adequate subsequent version. 
+This is a procedure that is fraught with danger—why?
+"Things are always best at the beginning," said Pascal, apparently (in French one suspects). It is not 
+clear what he was referring to—choux creme, marriage, who knows?—it certainly wasn't the working 
+week, nor
+  
+Page 81
+was it software systems, but it just goes to show how a universal truth is timeless: computer software 
+wasn't around in the time of Pascal (even FORTRAN hadn't been invented), but his observation 
+encompasses this new phenomenon quite comfortably.
+Brooks (1975), who gives the quotation from Pascal, goes on to elaborate: ''Systems program building is 
+an entropy-decreasing process, hence inherently metastable. Program maintenance is an entropy-
+increasing process, and even its most skillful execution only delays the subsistence of the system into 
+unfixable obsolescence" (p. 123).
+This is not good news for the incremental system development methodology; it seems to indicate that, 
+starting with an inadequate software system, we can, after a long sequence of modifications, expect to 
+arrive, with some certainty, at only the heat death of our project—i.e. unmanageable chaos. Lehman and 
+Belady (1985) have edited a complete book entitled Program Evolution, and they provide general 
+support for Brooks's pessimistic outlook. Figure 4.4 is an empirically determined curve which shows 
+that system complexity seems to rise inexorably with each successive modification.
+ 
+Figure 4.4 Software system complexity as a function of successive modification from Lehman and Belady, 1985, p. 357  
+Page 82
+They have even formulated five laws of program evolution, of which the second is particularly pertinent 
+to our current concerns:
+The second law of program evolution
+As a large program is continuously changed, its complexity, which reflects deteriorating 
+structure, increases unless work is done to maintain or reduce it. (p. 253)
+They point out that the concepts of structure and complexity are imprecisely defined (in this context), 
+and, in particular, complexity (as referred to above) is not the computer science concept of algorithmic 
+complexity. They say, "from the engineering point of view complexity relates strongly to the macro and 
+micro structures of a program. The programmer and the user must be able to visualize and understand 
+the linkages between the various parts of the program and its code... in a software engineering context 
+the term complexity is used to express the degree to which a program is intelligible... and we claim that 
+this depends... primarily... on the extent and pattern of program interconenctivity [sic.] on program 
+structure" (p. 253).
+As the notion of program complexity is important for us we might do well to follow up on Lehman and 
+Belady's further explication of the notion. They state:
+• Program complexity is relative. An absolute measure of understandability cannot be formulated.• Program complexity is relative to a level of perception. A program may be studied at, say, 
+functional, subsystem, component, module and instruction levels. The topology or pattern of 
+interconnections at each level will be largely formed from a subset of the interconnections at the next 
+lower level. Each will be a representation of system complexity. Which one is selected will depend on 
+the objective of the study.
+• Program complexity is relative to prior knowledge about the program and its use. In particular we 
+may distinguish between the internal, intrinsic and external complexity of a program. The former we 
+define as that which reflects only the structural attributes of the code. It expresses inversely the relative 
+ease with which a program may, without prior knowledge, be understood directly from the object text. A 
+formal definition would add the assumption
+  
+Page 83
+that comprehension of the semantic intent of individual statements requires no effort.
+For a well-structured program the internal complexity will be related to an intrinsic complexity 
+that reflects the variety, extent and interconnectedness of the various aspects of the application 
+parts of the problem addressed by the program.
+External complexity is seen as an inverse measure of the ease with which a program text may 
+be understood when read in conjunction with its documentation. In the limit it would measure 
+the difficulty of understanding the code when accessible, complete and consistent 
+documentation that describes the intent of individual code sections and their joint action in 
+unambiguous terms, is readily available. External complexity really measures the remnant 
+difficulty of understanding when the program and its documentation are read and absorbed 
+sequentially. With well structured documentation, however, the external complexity measure at 
+one level is likely to be closely related to the internal complexity at a (the next) higher level.
+(Lehman and Belady, 1985, pp. 254-5, authors' emphasis)
+They go on to note that directives about software system modification often contain statements of 
+objectives (in addition to the raw functional requirement) like achievement at minimum cost and by a 
+certain date, etc., but there is seldom one requiring minimization of structural degradation. They ask: 
+why is this?
+The answer, they suggest, is not because structural degradation cannot be quantified, but because the 
+ultimate purpose of the modification is economic gain, and that is assessed on completion of the change 
+in terms of cost-effectiveness. The value of good structure, however, is long term. It's a property whose 
+benefits are apparent only in a negative sense, in that the system does not deteriorate, or that there is a 
+comparative absence of subsequent problems when the system is changed.In the context of the RUDE cycle the emphases might be quite different. For any modification (except 
+the last) will have to result in a modifiable system, and this property is likely to be exercised fairly 
+immediately by the same person who did the previous modification. Any modification is thus part of a 
+sequence; it is not a one-off process whose undesirable consequences will only come home to roost at 
+some much later date and to the discomfiture (most likely) of somebody else.
+  
+Page 84
+The prognostication for evolving software systems is not good, but it is not as bad as a superficial 
+inspection might lead us to conclude. In particular, this second law of thermodynamics (i.e. that entropy 
+always tends to increase) is true of the universe when taken as a whole—it's true on average if you like. 
+This means that there can be local phenomena for which entropy is steadily decreasing over any period 
+of time, and indeed such islands of entropic decrease do exist—you and I are just two such islands 
+standing up and defying the second law of thermodynamics. The not so good (one might almost say, 
+bad) news is that it will, most likely, get us in the end, but then software system don't have to last 
+forever either. So, some things, things like you and me, are not "always best at the beginning." (I 
+certainly wasn't if my mother is to be believed.) It's true that we're generally not best at the end either, 
+but the point is that complex systems can and do improve over time with successive modifications.
+At this point, you might feel obliged to dampen the current buoyancy of the narrative by noting that you 
+and I are organic systems that actively adapt and modify ourselves. Programmed systems are not 
+organic: modifications must be explicitly introduced by some external force. This might suggest that my 

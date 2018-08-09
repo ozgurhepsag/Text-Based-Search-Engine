@@ -1,0 +1,2539 @@
+
+Complexity and Cryptography
+Basics of cryptography
+The Oxford English Dictionary gives the following definition of cryptography.
+‘A secret manner of writing, either by arbitrary characters, by using letters
+or characters in other than their ordinary sense, or by other methods intelligible
+only to those possessing the key; also anything written in this way. Generally,
+the art of writing or solving ciphers.’
+Cryptography is an ancient art, and until relatively recently the above definition
+would have been quite adequate. However, in the last thirty years it has
+expanded to encompass much more than secret messages or ciphers.
+For example cryptographic protocols for securely proving your identity online
+(perhaps to your bank’s website) or signing binding digital contracts are
+now at least as important as ciphers.
+As the scope of cryptography has broadened in recent years attempts have
+been made to lay more rigorous mathematical foundations for the subject. While
+cryptography has historically been seen as an art rather than a science this has
+always really depended on which side of the ‘cryptographic fence’ you belong.
+We distinguish between cryptographers, whose job it is to design cryptographic
+systems, and cryptanalysts, whose job it is to try to break them. Cryptanalysts
+have been using mathematics to break ciphers for more than a thousand years.
+Indeed Mary Queen of Scots fell victim to a mathematical cryptanalyst using
+statistical frequency analysis in 1586!
+The development of computers from Babbage’s early designs for his
+‘Difference Engines’ toTuring’s involvement in breaking the Enigma code owes
+much to cryptanalysts desire to automate their mathematically based methods
+for breaking ciphers. This continues with the National Security Agency (NSA)
+being one of the largest single users of computing power in the world.
+One could argue that cryptographers have been less scientific when designing
+cryptosystems. They have often relied on intuition to guide their choice
+of cipher. A common mistake that is repeated throughout the history of
+1
+2 1 Basics of cryptography
+cryptography is that a ‘complicated’ cryptosystem must be secure. As we will
+see those cryptosystems which are currently believed to be most secure are
+really quite simple to describe.
+The massive increase in the public use of cryptography, driven partly by
+the advent of the Internet, has led to a large amount of work attempting to put
+cryptography on a firm scientific footing. In many ways this has been extremely
+successful: for example it is now possible to agree (up to a point) on what it
+means to say that a cryptographic protocol is secure. However, we must caution
+against complacency: the inability to prove that certain computational problems
+are indeed ‘difficult’ means that almost every aspect of modern cryptography
+relies on extremely plausible, but nevertheless unproven, security assumptions.
+In this respect modern cryptography shares some unfortunate similarities with
+the cryptography of earlier times!
+1.1 Cryptographic models
+When discussing cryptographic protocols we necessarily consider abstract, idealised
+situations which hopefully capture the essential characteristics of the realworld
+situations we are attempting to model. In order to describe the various
+scenarios arising in modern cryptography it is useful to introduce a collection
+of now infamous characters with specific roles.
+The players
+Alice and Bob are the principal characters. Usually Alice wants to send a secret
+message to Bob. Bob may also want her to digitally sign the message so that
+she cannot deny sending it at a later date and he can be sure that the message
+is authentic. Generally Alice and Bob are the good guys, but even this cannot
+always be taken for granted. Sometimes they do not simply send messages. For
+example they might try to toss a coin down the telephone line!
+Eve is the arch-villain of the piece, a passive eavesdropper who can listen in to
+all communications between Alice and Bob. She will happily read any message
+that is not securely encrypted. Although she is unable to modify messages in
+transit she may be able to convince Alice and Bob to exchange messages of her
+own choosing.
+Fred is a forger who will attempt to forge Alice’s signature on messages to
+Bob.
+Mallory is an active malicious attacker. He can (and will) do anything that
+Eve is capable of. Even more worryingly for Alice and Bob he can also modify
+1.2 A basic scenario: cryptosystems 3
+Alice C Bob
+C = e(M) M = d(C)
+Fig. 1.1 Alice and Bob using a cryptosystem.
+or even replace messages in transit. He is also sometimes known as the ‘man
+in the middle’.
+Peggy and Victor are the key players in identification schemes. In general
+Peggy (the prover) must convince Victor (the verifier) of her identity. While
+Victor must be careful that Peggy really is who she claims to be, Peggy must
+also make sure that she does not provide Victor with information that will allow
+him to impersonate her at a later stage.
+Trent is a trusted central authority who plays different roles in different situations.
+One important responsibility he has is to act as a digital ‘passport agency’,
+issuing certificates to Alice and Bob which allow them to identify themselves
+convincingly to each other, hopefully enabling them to thwart Mallory.
+Conveniently all of our characters have names starting with distinct letters
+of the alphabet so we will sometimes refer to them by these abbreviations.
+1.2 A basic scenario: cryptosystems
+The first situation we consider is the most obvious: Alice and Bob wish to
+communicate secretly.We assume that it is Alice who sends a message to Bob.
+The fundamental cryptographic protocol they use is a cryptosystem or cipher.
+Formally Alice has a message or plaintext M which she encrypts using an
+encryption function e(·). This produces a cryptogram or ciphertext
+C = e(M).
+She sends this to Bob who decrypts it using a a decryption function d(·) to
+recover the message
+d(C) = d(e(M)) = M.
+The above description explains how Alice and Bob wish to communicate but
+does not consider the possible attackers or adversaries they may face. We first
+need to consider what an adversary (say Eve the eavesdropper) is hoping to
+achieve.
+Eve’s primary goal is to read as many of Alice’s messages as possible.
+4 1 Basics of cryptography
+Alice C Bob
+C = e(M,K ) M = d(C,K)
+Fig. 1.2 Alice and Bob using a symmetric cryptosystem.
+Alice C Bob
+C = e(M) M = d(C,K)
+Fig. 1.3 Alice and Bob using a public key cryptosystem.
+We assume that Eve knows the form of the cryptosystem Alice and Bob are
+using, that is she knows the functions d(·) and e(·). Since she is eavesdropping
+we can also assume that she observes the ciphertext C.
+At this point Alice and Bob should be worried.We seem to be assuming that
+Eve knows everything that Bob knows. In which case she can simply decrypt
+the ciphertext and recover the message!
+This reasoning implies that for a cryptosystem to be secure against Eve there
+must be a secret which is known to Bob but not to Eve. Such a secret is called
+a key.
+But what about Alice, does she need to know Bob’s secret key? Until the
+late twentieth century most cryptographerswould have assumed that Alice must
+also know Bob’s secret key. Cryptosystems for which this is true are said to be
+symmetric.
+The realisation that cryptosystems need not be symmetricwas the single most
+important breakthrough in modern cryptography. Cryptosystems in which Alice
+does not know Bob’s secret key are known as public key cryptosystems.
+Given our assumption that Eve knows the encryption and decryption functions
+but does not know Bob’s secret key what type of attack might she mount?
+The first possibility is that the only other information Eve has is the ciphertext
+itself.Anattack based on this information is called a ciphertext only attack (since
+Eve knows C but not M). (See Figure 1.4.)
+To assume that this is all that Eve knowswould be extremely foolish. History
+tells us that many cryptosystems have been broken by cryptanalysts who either
+had access to the plaintext of several messages or were able to make inspired
+guesses as to what the plaintext might be.
+1.2 A basic scenario: cryptosystems 5
+Alice Bob
+Eve
+C
+C
+C = e(M) M = d(C,K)
+Fig. 1.4 Eve performs a ciphertext only attack.
+Alice Bob
+Eve
+C
+C,M
+C = e(M) M = d(C,K)
+Fig. 1.5 Eve performs a known plaintext attack.
+A more realistic attack is a known plaintext attack. In this case Eve also
+knows the message M that is encrypted. (See Figure 1.5.)
+An even more dangerous attack is when Eve manages to choose the message
+that Alice encrypts. This is known as a chosen plaintext attack and is the
+strongest attack that Eve can perform. (See Figure 1.6.)
+On the face of it we now seem to be overestimating Eve’s capabilities to
+influence Alice and Bob’s communications.However, in practice it is reasonable
+to suppose that Eve can conduct a chosen plaintext attack. For instance she may
+be a ‘friend’ of Alice and so be able to influence the messages Alice chooses
+to send. Another important possibility is that Alice and Bob use a public key
+6 1 Basics of cryptography
+Alice Bob
+Eve
+C
+M
+C,M
+C = e(M) M = d(C,K)
+Fig. 1.6 Eve performs a chosen plaintext attack.
+Alice C Mallory Bob
+C = e(M)
+??
+??
+Fig. 1.7 Alice and Bob using a cryptosystem attacked by Mallory.
+cryptosystem and so Eve can encrypt any message she likes since encryption
+does not depend on a secret key.
+Certainly any cryptosystem that cannot withstand a chosen plaintext attack
+would not be considered secure.
+From now on we will assume that any adversary has access to as many
+chosen pairs of messages and corresponding cryptograms as they can possibly
+make use of.
+There is a different and possibly even worse scenario than Eve conducting a
+chosen plaintext attack. Namely Mallory, the malicious attacker, might interfere
+with the cryptosystem, modifying and even replacing messages in transit. (See
+Figure 1.7.)
+The problems posed by Mallory are rather different. For example, he may
+pretend to be Bob to Alice and Alice to Bob and then convince them to divulge
+secrets to him! We will see more of him in Chapter 9.
+We now need to decide two things.
+(1) What can Eve do with the message-cryptogram pairs she obtains in a
+chosen message attack?
+(2) What outcome should Alice and Bob be happy with?
+1.3 Classical cryptography 7
+There are two very different approaches to cryptographic security, depending
+essentially on how we answer these questions.
+Historically the first rigorous approach to security was due to Shannon
+(1949a). In his model Eve is allowed unlimited computational power and Alice
+and Bob then try to limit the ‘information’ Eve can obtain about future messages
+(and Bob’s secret key) given her message-cryptogram pairs. He was able
+to show that there are cryptosystems that are perfectly secure in this model.
+However, he also showed that any such cryptosystem will have some rather
+unfortunate drawbacks, principally the key must be as long as the message that
+is sent.
+Modern cryptography is based on a complexity theoretic approach. It starts
+with the assumption that Eve has limited computational resources and attempts
+to build a theory of security that ensures Eve is extremely unlikely to be able
+to read or obtain any useful information about future messages.
+We briefly outline the two approaches below.
+1.3 Classical cryptography
+Consider the following situation. Alice wishes to send Bob n messages. Each
+message is either a zero or a one. Sometime earlier Alice and Bob met and
+flipped an unbiased coin n times. They both recorded the sequence of random
+coin tosses as a string K ? {H, T}n and kept this secret from Eve.
+Alice encrypts her messages M1, M2, . . . , Mn as follows.
+Ci = e(Mi ) =  Mi , if Ki = H,
+Mi ? 1, if Ki = T.
+(Here ? denotes ‘exclusive or’ (XOR), so 0 ? 0 = 1 ? 1 = 0 and 1 ? 0 =
+0 ? 1 = 1.)
+Alice then sends the cryptograms C1, . . . ,Cn to Bob, one at a time.
+Bob can decrypt easily, since he also knows the sequence of coin tosses, as
+follows
+Mi = d(Ci ) = Ci , if Ki = H,
+Ci ? 1, if Ki = T.
+So encryption and decryption are straightforward for Alice and Bob. But what
+about Eve? Suppose she knows both the first n - 1 cryptograms and also the
+corresponding messages. Then she has n - 1 message-cryptogram pairs
+(C1, M1), (C2, M2), . . . , (Cn-1, Mn-1).
+8 1 Basics of cryptography
+If Eve is then shown the final cryptogram Cn what can she deduce about
+Mn?
+Well since Kn was a random coin toss there is a 50% chance that Cn = Mn
+and a 50% chance that Cn = Mn ? 1. Since Kn was independent of the other
+key bits then knowledge of these will not help. So what can Eve do?
+Suppose for the moment that the messages that Alice sent were also the result
+of another series of independent coin tosses, that is they were also a random
+sequence of zeros and ones. In this case Eve could try to guess the message Mn
+by tossing a coin herself: at least she would have a 50% chance of guessing
+correctly. In fact this is the best she can hope for!
+But what if the messages were not random? Messages usually contain useful
+(non-random) information. In this case Eve may know something about how
+likely different messages are. For instance she may know that Alice is far more
+likely to send a one rather than a zero. If Eve knows this then she could guess
+that Mn = 1 and would be correct most of the time. However, she could have
+guessed this before she saw the final cryptogram Cn. Eve has gained no new
+information about the message by seeing the cryptogram. This is the basic idea
+of perfect secrecy in Shannon’s model of cryptography.
+ The cryptogram should reveal no new information about the message.
+This theory will be developed in more detail in Chapter 5.
+1.4 Modern cryptography
+Modern cryptography starts from a rather different position. It is founded on
+complexity theory: that is the theory of how easy or difficult problems are to
+solve computationally.
+Modern cryptographic security can informally be summarised by the following
+statement.
+ It should not matter whether a cryptogram reveals information about the
+message. What matters is whether this information can be efficiently
+extracted by an adversary.
+Obviously this point of view would be futile if we were faced with an adversary
+with unbounded computational resources. So we make the following assumption.
+ Eve’s computational resources are limited.
+1.4 Modern cryptography 9
+If we limit Eve’s computational resources then we must also limit those
+of Alice and Bob. Yet we still require them to be able to encrypt and decrypt
+messages easily. This leads to a second assumption.
+ There exist functions which are ‘easy’ to compute and yet ‘hard’ to invert.
+These are called one-way functions.
+Given this assumption it is possible to construct cryptosystems in which there
+is a ‘complexity theoretic gap’ between the ‘easy’ procedures of decryption
+and encryption for Alice and Bob; and the ‘hard’ task of extracting information
+from a cryptogram faced by Eve.
+To discuss this theory in detail we need to first cover the basics of complexity
+theory.
+2
+Complexity theory
+2.1 What is complexity theory?
+Computers have revolutionised many areas of life. For example, the human
+genome project, computational chemistry, air-traffic control and the Internet
+have all benefited from the ability of modern computers to solve computational
+problems which are far beyond the reach of humans. With the continual
+improvements in computing power itwould be easy to believe that any computational
+problem we might wish to solve will soon be within reach. Unfortunately
+this does not appear to be true. Although almost every ‘real’ computational
+problem can, in theory, be solved by computer, in many cases the only known
+algorithms are completely impractical. Consider the following computational
+problem.
+Example 2.1 The Travelling Salesman Problem.
+Problem: given a list of n cities, c1, c2, . . . , cn and an n × n symmetric matrix
+D of distances, such that
+Di j = distance from city ci to city c j ,
+determine an optimal shortest tour visiting each of the cities exactly once.
+An obvious naive algorithm is: ‘try all possible tours in turn and choose the
+shortest one’. Such an algorithm will in theory work, in the sense that it will
+eventually find the correct answer. Unfortunately it will take a very long time to
+finish! If we use this method then we would need to check n! tours, since there
+are n!ways to order the n cities. More efficient algorithms for this problem exist,
+but a common trait they all share is that if we have n cities then, in the worst
+case, they may need to perform at least 2n operations. To put this in perspective
+suppose we had n = 300, a not unreasonably large number of cities to visit.
+10
+2.1 What is complexity theory? 11
+If we could build a computer making use of every atom in the Earth in such a
+way that each atom could perform 1010 operations per second and our computer
+had started its computation at the birth of the planet then it would still not have
+finished! In fact, not only would the computation not yet be complete, as the
+figures below show, it would have barely started. It seems safe to describe such
+a computation as impractical.
+# seconds in the lifetime of the Earth ? 4.1 × 1017
+# atoms in the Earth ? 3.6 × 1051
+# operations performed by our computer ? 1.5 × 1079
+2300  2 × 1090.
+Such an example highlights the difference between a problem being computable
+in theory and in practice. Complexity theory attempts to classify problems that
+can theoretically be solved by computer in terms of the practical difficulties
+involved in their solution.
+All computers use resources, the most obvious being time and space. The
+amount of resources required by an algorithm gives a natural way to assess its
+practicality. In simple terms if a problem can be solved in a ‘reasonable’ amount
+of time by a computer that is not ‘too large’ then it seems natural to describe
+the problem as tractable.
+In complexity theory we seek to classify computational problems according
+to their intrinsic difficulty. There are two fundamental questions which we will
+consider.
+ Is a problem  intrinsically ‘easy’ or ‘difficult’ to solve?
+ Given two problems, 1 and 2, which is easier to solve?
+In order to show that a problem is ‘easy’ to solve it is sufficient to give an example
+of a practical algorithm for its solution. However, to show that a problem
+is intrinsically ‘difficult’ we need to show that no such practical algorithm can
+exist. In practice this has proved very difficult. Indeed, there are very few examples
+of natural computational problems that have been proven to be intrinsically
+difficult, although it is suspected that this is true of a large number of important
+problems.
+The second question is an obvious way to proceed given the inherent difficulty
+of the first, and progress in this direction has been far greater. Suppose
+we are given a computational problem and asked to find a practical algorithm
+for its solution. If we can show that our new problem is ‘at least as difficult’
+as a well-known intractable problem then we have a rather good excuse for
+our inability to devise a practical algorithm for its solution. A central result in
+12 2 Complexity theory
+complexity theory (Cook’s Theorem) which we will see in Chapter 3 shows
+that there is a rather large class of natural problems that are all ‘as difficult as
+each other’.
+In order to make sense of the above questions we will require a formal model
+of computation capturing the essential properties of any computer. The model
+we adopt is the deterministic Turing machine, however, we will first consider
+some examples.
+Consider the simplest arithmetic operation: integer addition. Given two integers
+a ? b ? 0 we wish to calculate a + b. In order to describe an algorithm
+for this problem we need to decide how we wish to encode the input. We will
+consider two possibilities: unary and binary.
+If the input is in unary then a and b are simply strings of ones of lengths a
+and b respectively.We define two basic operations: ++ and --. If a is a string
+of ones then a++ is formed from a by appending a ‘1’ to a, while a-- is
+formed from a by deleting a ‘1’ from the end of a.
+In the following algorithm and elsewhere we use the notation ‘a ‹ b’ to
+mean ‘let a be set equal to the value of b’.
+Algorithm 2.2 Unary integer addition.
+Input: integers a ? b ? 0 encoded in unary.
+Output: a + b in unary.
+Algorithm:
+while b = 0
+a ‹ a++
+b ‹ b--
+end-while
+output a
+It is easy to see that this algorithm works, but is it efficient? The while
+loop is repeated b times and on each repetition three operations are performed:
+checking b = 0, increasing a and decreasing b. So the running
+time of this algorithm, measured by the number of operations performed, is
+3b + 1 (the output is another operation). This demonstrates two important
+ideas.
+ The running time of an algorithm is measured in terms of the number of
+‘basic operations’ performed.
+ The running time of an algorithm will usually depend on the size of the
+input.
+2.1 What is complexity theory? 13
+One obvious objection to the previous example is that unary encoding is a
+very inefficientway to describe an integer.Afar more natural encoding is binary.
+To encode an integer a ? 0 inbinarywerepresent it by a string of zeros and ones,
+say anan-1 · · · a1, such that a = nk
+=1 ak2k-1.We usually insist that the shortest
+possible string is used and so an = 1 (unless a = 0). For example, the number
+49 is encoded as 110001 rather than 000110001 or 00000000000110001. A bit
+is simply a binary digit, so for example 49 is a 6-bit integer, since the binary
+encoding of 49 contains 6 binary digits.
+In order to describe a binary addition algorithm we introduce a function
+sum(a, b, c) that takes three binary digits as its input and outputs their sum.
+That is
+sum : {0, 1} × {0, 1} × {0, 1} › {0, 1, 2, 3}, sum(a, b, c) = a + b + c.
+Algorithm 2.3 Binary integer addition.
+Input: integers a ? b ? 0 encoded in binary as an · · · a1 and bn · · · b1.
+Output: a + b in binary.
+Algorithm:
+c ‹ 0
+for i = 1 to n
+if sum(ai , bi , c) equals 1 or 3
+then di ‹ 1
+else di ‹ 0
+if sum(ai , bi , c) ? 2
+then c ‹ 1
+else c ‹ 0
+next i
+if c = 1
+then output 1dndn-1 · · · d1
+else output dndn-1 · · · d1.
+Again it is easy to check that this algorithm works, but how does it compare
+to our previous algorithm in terms of efficiency? As before we will consider
+each line of the algorithm as a ‘basic operation’ and calculate the algorithm’s
+running time as the number of basic operations performed. If a ? b ? 0 and
+a, b both have n binary digits then n ? log a + 1, where log a is the base two
+logarithm of a and m is the integer part of the real number m. Our algorithm
+performs n iterations of the while loop and on each iteration it performs six
+operations. So the running time of this algorithm, measured as the number of
+14 2 Complexity theory
+operations, is at most 6log a + 9. This compares very favourably with our
+previous algorithm. For example, if the two numbers whose sum we wished
+to calculate were a = 31 323 and b = 27 149 then our first algorithm would
+perform more than fifty thousand operations, while our second algorithmwould
+perform less than a hundred. This highlights another key idea.
+ The intrinsic difficulty of a problem may depend on the encoding of the
+input.
+In practice there is nearly always a ‘natural’ way to encode the input to a
+problem. The guiding principle being that the encoding should describe the
+input as succinctly as possible. Given that the running time of an algorithm will
+depend on the input size we clearly need to have a fixed notion of ‘input size’.
+This will always be the length of the natural encoding of the input.
+Since the running time of most algorithms depends on the size of the input
+it is natural to consider the performance of an algorithm in terms of its running
+time over all inputs of a fixed size. There are two obvious ways one might do
+this. We could consider either the average-case running time or the worst-case
+running time. The vast majority of work in complexity theory deals with worstcase
+analysis and we will always take this approach. (See Levin (1986) for a
+succinct introduction to average-case complexity theory.)
+ When evaluating the performance of an algorithm we always consider the
+worst possible case.
+Consider the following basic algorithm for testing whether an integer is
+prime.
+Algorithm 2.4 Naive Primality Testing.
+Input: an integer N ? 2.
+Output: true if N is prime and false otherwise.
+Algorithm:
+D ‹ 2
+P ‹true
+while P is true and D ?
+?
+N
+if D divides N exactly
+then P ‹false
+else D ‹ D + 1
+end-while
+output P
+2.1 What is complexity theory? 15
+How well does this algorithm perform? This depends very much on the input
+N. If N is chosen ‘at random’ then we have a fifty-fifty chance that N will be
+even. In this case our algorithm would terminate after a single while loop (since
+D = 2 would divide N). However, if the input N is a large prime then it is
+easy to see that the while loop will be repeated 
+?
+N - 1 times. So by our
+principle of evaluating an algorithm’s efficiency according to its performance
+in the worst possible case, this algorithm has running time O(
+?
+N). (For an
+explanation of the O-notation see Appendix 1.)
+The obvious question to ask is whether this is efficient? Remember that the
+natural encoding of an integer is as a binary string, so the size of the input
+is in fact n = log N + 1. Thus the running time of our algorithm, in terms
+of the input size, is O(2n/2). As the size of our input increases the running
+time of this algorithm grows exponentially. Such an algorithm is clearly highly
+impractical: for a 1024-bit integer the running time is essentially 2512. This is
+not only beyond the limits of modern computers but arguably beyond the reach
+of any that we could envisage. Yet to use some modern cryptosystems we must
+be able to test the primality of such numbers.
+We need an algorithm whose running time does not grow exponentially
+as the input size increases. An obvious growth rate that is much slower than
+exponential is polynomial. Moreover most of the algorithms that have proved
+useful in real situations share the property that their running time is polynomial.
+This observation provides us with our fundamental notion of a practical
+algorithm.
+ An algorithm is practical if and only if it has polynomial running time.
+Hence, if a problem has an algorithm whose running time grows polynomially
+with the input size then we consider the problem to be tractable. Justification
+for this is provided in the table below. This demonstrates how, as the input
+size grows, any exponential time algorithm quickly becomes impractical, while
+polynomial time algorithms scale reasonably well. A word of caution: an algorithm
+with running time O(n1000) is clearly impractical. However, polynomial
+time algorithms for ‘natural’ problems almost always have low degree polynomial
+running time in practice.
+n n2 2n
+10 100 1024
+100 10 000 1.26 × 1030
+1000 106 1.07 × 10301
+16 2 Complexity theory
+Control
+unit
+2–way infinite tape
+Read–write head
+* * 0 1 0 0 0 0 1 1 0 1 * * * * * *
+Fig. 2.1 A deterministic Turing machine.
+To proceed any further we require a formal model of computation. In the next
+section we describe the classical example of such a model: the deterministic
+Turing machine.
+Exercise 2.1a Give a polynomial time algorithm for each of the following
+problems. In each case describe its running time in terms of the number
+of ‘basic operations’ performed.
+(i) Multiplication of two integers encoded in binary.
+(ii) Computing the matrix product of two n × n integer matrices.
+(iii) Calculating the determinant of an n × n integer matrix.
+(iv) Sorting n integers a1, . . . , an.
+2.2 Deterministic Turing machines
+A deterministic Turing machine or DTM consists of:
+(i) a finite alphabet  containing the blank symbol *;
+(ii) a 2-way infinite tape divided into squares, one of which is the special
+starting square. Each square contains a symbol from the alphabet . All
+but a finite number of the squares contain the special blank symbol *,
+denoting an empty square;
+(iii) a read–write head that examines a single square at a time and can move
+left (‹) or right (›);
+(iv) a control unit along with a finite set of states  including a distinguished
+starting state, ?0, and a set of halting states. (See Figure 2.1.)
+The computation of a DTM is controlled by a transition function
+? :  ×  ›  ×  × {‹,›}.
+2.2 Deterministic Turing machines 17
+Initially the control unit is in the starting state ?0 and the read–write head
+is scanning the starting square. The transition function tells the machine what
+to do next given the contents of the current square and the current state of the
+control unit. For example, if the control unit is in state ?cur, and the current
+square contains the symbol ?cur, then the value of ?(?cur, ?cur) tells the machine
+three things:
+(i) the new state for the control unit (if this is a halting state then the
+computation ends);
+(ii) the symbol to write in the current square;
+(iii) whether to move the read–write head to the left or right by one square.
+We use 0 to denote \{*}, the alphabet of non-blank symbols.We will denote
+the collection of all finite strings from 0 by 
+*
+0. For x ? 
+*
+0 we denote
+the length of x by |x|. The set of strings of length n from 
+*
+0 is denoted
+by n
+0 .
+The computation of a DTM on input x ? 
+*
+0 is simply the result of applying
+the transition function repeatedly starting with x written in the first |x| tape
+squares (these are the starting square and those to the right of it). If the machine
+never enters a halting state then the computation does not finish, otherwise
+the computation ends when a halting state is reached. A single application of
+the transition function is called a step.
+A configuration of a DTM is a complete description of the machine at a
+particular point in a computation: the contents of the tape, the position of the
+read–write head and the current state of the control unit.
+If a DTM machine halts on input x ? 
+*
+0 then the content of the tape once
+the machine halts is called the output.
+We say that a DTM computes a function f : 
+*
+0
+› 
+*
+0 if the machine halts
+on every input x ? 
+*
+0 , and the output in each case is f (x).
+To give an idea of what a DTM looks like we give a simple example: a
+machine to perform addition of integers encoded in unary (see Algorithm 2.5).
+In order to define a DTM we need to describe the set of states , the alphabet
+ and the transition function ?. We represent the transition function by a list
+of quintuples. The first two entries of each quintuple represent the current state
+and the content of the current square, while the last three entries represent the
+new state, the new symbol to write in the current square and the movement (left
+or right) of the read–write head. To save us the trouble of having to describe the
+value of the transition function for all state/symbol combinations we assume
+that if the machine encounters a state/symbol combination that is not listed then
+18 2 Complexity theory
+the machine simply halts. (In an attempt to make the machine description more
+readable we place comments marked by # next to each instruction.)
+It is easy to check that this machine will compute a + b in unary, given the
+correct input, but how long will the computation take? The obvious way to
+measure time on a DTM is as the number of steps the machine takes before
+halting. If the input is a and b then it is easy to check that the machine will take
+a + b + 2 steps.
+Previously we saw algorithms for unary and binary addition and in those
+cases the binary addition algorithm was far more efficient. So a natural question
+to ask is how does this unary addition DTM compare with a DTM that performs
+addition of integers with the input encoded in binary?
+Algorithm 2.5 Unary Addition DTM
+The set of states is  = {?0, ?1, ?2, ?3}. The starting state is ?0 and the only
+halting state is ?3. The alphabet is  = {*, 1,+, =}.
+Input: integers a, b ? 0 in unary with +,=. (For example to compute 5 + 2
+we would write ‘11111 + 11 =’ on the machine’s tape, with the leftmost
+symbol of the input in the starting square.)
+Output: a + b in unary.
+(?0, 1, ?1, *,›) #a = 0, reading a
+(?0,+, ?2, *,›) #a = 0, erase + read b
+(?1, 1, ?1, 1,›) #reading a
+(?1,+, ?2, 1,›) #replace + by 1 read b
+(?2, 1, ?2, 1,›) #reading b
+(?2,=, ?3, *,‹) #finished reading b, erase = halt.
+Our binary addition DTM (see Algorithm 2.6) works in an obvious way.
+It takes the two least significant bits of a and b and forms the next bit of the
+answer, while storing a carry bit on the front of the answer. To get an idea of
+how it works try an example. Figure 2.2 shows a few steps in the computation
+of 5 + 2.
+(Note that in Algorithm 2.6 we use abbreviations to reduce the number
+of values of the transition function which we need to describe. For example
+(?3/?4, 0/1, s, s,‹) is an abbreviation for (?3, 0, ?3, 0,‹), (?3, 1, ?3, 1,‹),
+(?4, 0, ?4, 0,‹) and (?4, 1, ?4, 1,‹). The letter s denotes the fact that the
+state/symbol remain the same.)
+2.2 Deterministic Turing machines 19
+Fig. 2.2 Binary addition of 5 + 2: computation steps 0, 8, 12, and 19.
+Algorithm 2.6 Binary Addition DTM
+The set of states is  = {?0, ?1, . . . , ?24} the starting state is ?0, the only
+halting state is ?24. The alphabet is  = {*, 0, 1,+, =}.
+Input: integers a ? b ? 0 in binary with +,=. (For example to compute
+31 + 18 we would write ‘= 11111 + 10010’ on the machine’s tape, with
+the symbol ‘=’ in the starting square.)
+Output: a + b in binary.
+(?0,=, ?1,=,›) #move the head to the right end of the input
+(?1, 0/1/+, ?1, s,›) # 
+(?1, *, ?2, *,‹) #found end of input
+(?2, 0, ?3, *,‹) #the least significant bit of b is 0
+(?2, 1, ?4, *,‹) #the least significant bit of b is 1
+(?2,+, ?5,+,‹) #no more bits of b
+(?3/?4, 0/1, s, s,‹) #keep moving left until we have finished
+read b
+(?3,+, ?5,+,‹) #finished reading b
+(?4,+, ?6,+,‹) # 
+20 2 Complexity theory
+(?5,=, ?23,* ›) #no more bits of a erase =
+(?5/?6, *, s, *,‹) #moving left looking for a
+(?5, 0, ?7, *,‹) #sum of least significant bits of a and b is 0
+(?5, 1, ?8, *,‹) #sum of least significant bits of a and b is 1
+(?6, 0, ?8, *,‹) #sum of least significant bits of a and b is 1
+(?6, 1, ?9, *,‹) #sum of least significant bits of a and b is 2
+(?7/?8/?9, 0/1, s, s,‹) # moving left looking for =
+(?7,=, ?10,=,‹) #finished reading a, found =
+(?8,=, ?11,=,‹) # 
+(?9,=, ?12,=,‹) # 
+(?10/?11/?12, 0/1, # moving left looking for the end of the answer
+s, s,‹)
+(?10, *, ?13, *,›) #finished reading answer, now find the carry bit
+(?11, *, ?14, *,›) # 
+(?12, *, ?15, *,›) # 
+(?13, 0, ?16, 0,‹) #carry bit and least sig bits of a and b sum to 0
+(?13, 1, ?16, 1,‹) #carry bit and least sig bits of a and b sum to 1
+(?14, 0, ?16, 1,‹) #carry bit and least sig bits of a and b sum to 1
+(?14, 1, ?17, 0,‹) #carry bit and least sig bits of a and b sum to 2
+(?15, 0, ?17, 0,‹) #carry bit and least sig bits of a and b sum to 2
+(?15, 1, ?17, 1,‹) #carry bit and least sig bits of a and b sum to 3
+(?13,=, ?18,=,‹) #first part of answer is 0
+(?14,=, ?19,=,‹) #first part of answer is 1
+(?15,=, ?20,=,‹) #first part of answer is 0 and carry bit is 1
+(?16, *, ?21, 0,›) #set carry bit to 0 and now return to start
+(?17, *, ?21, 1,›) #set carry bit to 1 and now return to start
+(?18, *, ?16, 0,‹) #first part of answer is 0
+(?19, *, ?16, 1,‹) #first part of answer is 1
+(?20, *, ?17, 0,‹) #first part of answer is 0 and carry bit is 1
+(?21, 0/1/ = /*, ?21, # return to start
+s,›)
+(?21,+, ?22,+,›) #finished rereading a, found +
+(?22, 0/1, ?22, s,›) #now rereading b
+(?22, *, ?2, *,‹) #reached start of the input
+(?23, *, ?23, *,›) #keep moving right
+(?23,+, ?24, *,›) #erase + and halt
+2.2 Deterministic Turing machines 21
+Input a, b Unary machine steps Binary machine steps
+10 22 < 200
+1000 2000 < 900
+106 2 × 106 < 3000
+2100 2.5 × 1030 < 65 000
+Fig. 2.3 Comparison of running times of unary and binary addition DTMs.
+One obvious difference between our two DTMs is that using binary encoding
+for the input results in a far more complicated machine, but which is more
+efficient? If the binary addition DTM is given input a ? b ? 0, where a is a
+k-bit integer, then it is reasonably easy to see that the machine takes at most
+2k + 3 steps before the read–write head is positioned on the rightmost nonblank
+symbol and the control unit is in state ?2. The machine then takes at most
+6(k + 2) steps before it is again in state ?2 and the read–write head is again
+scanning the rightmost non-blank symbol. The machine does this k times, once
+for each bit in a. Finally it erases the equals and plus signs. In total it takes
+less than 6(k + 2)2 steps. For large inputs this machine is clearly much more
+efficient as the table in Figure 2.3 shows.
+Having compared the running time of these two machines we introduce the
+formal definitions of time complexity.
+Time complexity
+If a DTM halts on input x ? 
+*
+0 , then its running time on input x is the number
+of steps the machine takes during its computation. We denote this by tM(x).
+Recall that we wish to assess the efficiency of an algorithm in terms of its
+worst-case behaviour. For this reason we define the time complexity of a DTM
+M that halts on every input x ? 
+*
+0, to be the function TM : N › N given by
+TM(n) = max t | there exists x ? n
+0 such that tM(x) = t.
+In practice we will rarely want to work directly with Turing machines. Higher
+level descriptions of algorithms, such as the binary addition algorithm given in
+Algorithm 2.3, are much easier to use. However, if our model of computation is
+to be robust then a high-level algorithm should have a running time (measured
+in terms of the number of ‘basic operations’ it performs) that is similar to the
+running time of a DTM implementation of the same algorithm. To make this
+precise we need to be clear as to what we mean by ‘similar’.
+We will consider the running times of different algorithms to be similar if
+they differ only by a polynomial factor. Consider the example of binary addition.
+In our high-level version, Algorithm 2.3, the running time on input a ? b was
+22 2 Complexity theory
+O(log a) while for our DTM the running time was O(log2 a). Thus, for this
+example at least, our model is robust.
+Since we consider an algorithm to be practical if and only if it has polynomial
+running time, our assumption that the DTM model of computation is robust can
+be phrased as follows.
+The Polynomial-time Church–Turing Thesis
+Any practical deterministic algorithm can be implemented as a DTM with
+polynomial running time.
+Exercise 2.2b Describe explicitly a DTM with alphabet  = {*, 0, 1}, that on
+input 1n outputs 1n * 1n. That is it takes a string of n ones and replaces it
+by two strings of n ones, separated by a blank square. What is the time
+complexity of your machine?
+Exercise 2.3b Describe a DTM with alphabet {*, 0, 1, 2} that on input
+x1x2 · · · xn, a binary string (so each xi = 0/1), outputs the reversed string
+xn · · · x2x1. What is the time complexity of your machine?
+2.3 Decision problems and languages
+A large part of complexity theory deals with a rather special type of problem:
+those for which the output is either true or false. For example the problem of
+deciding if a number is prime.
+PRIME
+Input: an integer n ? 2.
+Question: is n prime?
+This is an example of a decision problem. We introduce a special type of DTM
+that is particularly useful for examining such problems.
+Acceptor DTMs
+An acceptor DTM is an ordinary DTM with exactly two halting states: ?T and
+?F. These should be thought of as corresponding to true and false respectively.
+An input x ? 
+*
+0 is accepted by an acceptor DTM if the machine halts in
+state ?T on input x and rejected if it halts in state ?F.
+Any set of strings L ? 
+*
+0 is called a language. If M is an acceptor DTM
+then we define the language accepted by M to be
+L(M) = x ? 
+*
+0
+| M accepts x.
+2.3 Decision problems and languages 23
+If M is an acceptor DTM, L = L(M) and M halts on all inputs x ? 
+*
+0 , then
+we say that M decides L. For an acceptor DTM M that halts on all inputs we
+denote the halting state on input x by M(x).
+There is an obvious correspondence between languages accepted by acceptor
+DTMs and decision problems. For example we can associate the decision
+problem PRIME with the language
+LPRIME = x | x is the binary encoding of a prime number.
+Note that in order to obtain this correspondence we needed to choose a natural
+encoding scheme for the input to the decision problem, in this case binary.
+For a general decision problem, , we have the associated language
+L = x ? 
+*
+0
+| x is a natural encoding of a true instance of .
+An acceptor DTM which decides the language L, can be thought of as an
+algorithm for solving the problem . Given an instance of  we simply pass
+it to the machine, in the correct encoding, and return the answer true if the
+machine accepts and false if it rejects. Since the machine always either accepts
+or rejects, this gives an algorithm for the problem .
+Complexity classes and P
+The aim of complexity theory is to understand the intrinsic difficulty of computational
+problems. When considering a decision problem a natural way to
+measure its difficulty is to consider the time complexity of machines that decide
+the associated language.
+Since we wish to classify problems in terms of their relative (and hopefully
+absolute) difficulty, we will be interested in collections of languages which
+can all be decided by DTMs with the same bound on their time complexity.
+Any such collection of languages is called a complexity class. A fundamental
+complexity class is the class of polynomial time decidable languages, or P. This
+is our initial working definition of the class of ‘tractable’ languages.
+P = L ? 
+*
+0
+| there is a DTM M which decides L and a polynomial,
+p(n) such that TM(n) ? p(n) for all n ? 1.
+If  is a decision problem for which L ? P we say that there is a polynomial
+time algorithm for .
+Although complexity classes contain languages not problems, we will often
+abuse notation and write  ? C if a problem  satisfies L ? C, where C is a
+complexity class.
+24 2 Complexity theory
+So far we have seen very few examples of decision problems. In the remainder
+of this chapter we will consider some of the most important examples,
+mainly from the fields of logic and graph theory.
+SATisfiability
+The classic example of a decision problem is Boolean satisfiability. A Boolean
+function is a function f : {0, 1}n › {0, 1}. We interpret ‘1’ as true and ‘0’ as
+false.
+The basic Boolean functions are negation (NOT), conjunction (AND) and
+disjunction (OR). If x is a Boolean variable then the negation of x is
+x = 1, if x is false,
+0, otherwise.
+A literal is a Boolean variable or its negation. The conjunction of a collection
+of literals x1, . . . , xn is
+x1 ? x2 · · · ? xn = 1, if all of the xi are true,
+0, otherwise.
+The disjunction of a collection of literals x1, . . . , xn is
+x1 ? x2 · · · ? xn = 1, if any of the xi are true,
+0, otherwise.
+A Boolean function, f , is said to be in conjunctive normal form (or CNF) if it
+is written as
+f (x1, . . . , xn) =
+m
+
+k=1
+Ck ,
+where each clause, Ck, is a disjunction of literals. For example consider the
+following two Boolean functions
+f (x1, . . . , x6) = (x1 ? x3 ? x5) ? (x4 ? x2) ? (x5 ? x6),
+g(x1, . . . , x6) = (x3 ? x5) ? (x3 ? x4) ? (x6 ? x5) ? (x3 ? x2).
+Of these f is in CNF but g is not.
+A truth assignment for a Boolean function, f (x1, . . . , xn), is a choice of
+values x = (x1, . . . , xn) ? {0, 1}n for its variables.Asatisfying truth assignment
+is x ? {0, 1}n such that f (x) = 1. If such an assignment exists then f is said to
+be satisfiable.
+Boolean satisfiability, otherwise known as SAT, is the following decision
+problem.
+2.3 Decision problems and languages 25
+SAT
+Input: a Boolean function, f (x1, . . . , xn) = mk
+=1 Ck, in CNF.
+Question: is f satisfiable?
+We require a natural encoding scheme for this problem.We can use the alphabet
+ = {*, 0, 1,?,?, ¬}, encoding a variable xi by the binary representation of
+i . The literal xi can be encoded by adding a ¬ symbol at the front.We can then
+encode a CNF formula, f (x1, . . . , xn) = mk
+=1 Ck, in the obvious way using
+the alphabet . For example the formula
+f (x1, . . . , x5) = (x1 ? x4) ? (x3 ? x5 ? x2) ? (x3 ? x5),
+would be encoded as
+‘1 ? 100 ? 11?¬101 ? 10?¬11 ? 101’.
+Since no clause can contain more than 2n literals the input size of aCNFformula
+with n variables and m clauses is O(mn log n).
+An important subproblem of SAT is the so-called k-SAT, for k ? 1.
+k-SAT
+Input: a Boolean formula in CNF with at most k literals in each clause.
+Question: is f satisfiable?
+Clearly the problem 1-SAT is rather easy. Any satisfying truth assignment for f
+in this case must set every literal appearing in f to be true. Thus f is satisfiable
+if and only if it does not contain both a literal and its negation. This can clearly
+be checked in polynomial time and so 1-SAT ? P. For k ? 2 the difficulty of
+k-SAT is less obvious and we will return to this question later.
+Graph problems
+Another source of important decision problems is graph theory. (For basic
+definitions and notation see Appendix 2.) Obvious real world problems related
+to graphs include the travelling salesman problem, tree alignment problems in
+genetics and many timetabling and scheduling problems.
+As before we need to describe a natural encoding scheme for graphs. Suppose
+the graph we wish to encode, G = (V, E), has n vertices andm edges. There are
+two obvious ways to encode this on a DTM tape. We could use the adjacency
+matrix, A(G). This is the n × n symmetric matrix defined by
+A(G)i j = 1, if {vi, vj} ? E,
+0, otherwise.
+26 2 Complexity theory
+This matrix could then be transcribed as a binary string of length n(n + 1) on the
+machine’s tape, with each row separated by the symbol &. With this encoding
+scheme the input size would be O(n2).
+An alternative way to encode a graph is via a list of edges. Suppose
+E = {e1, e2, . . . , em}. Then we can encode the graph by a list of 2m binary
+numbers (corresponding to the vertices in the m edges) each separated by the
+symbol &. In this case the input size would be O(m log n).
+Which of these two encodings is shorter depends on how many edges are
+present in the graph.However, unless the graphs we are considering contain very
+few edges the input size of the two encodings will differ only by a polynomial
+factor. So if we are only interested in whether an algorithm has polynomial
+running time then we will be able to work with whichever encoding scheme is
+more convenient.
+A simple decision problem for graphs is k-CLIQUE, where k ? 2 is an
+integer. It asks whether or not a graph contains a clique of order k. (That is a
+collection of k vertices among which all possible edges are present.)
+k-CLIQUE
+Input: a graph G.
+Question: does G contain a clique of order k?
+A very similar problem is CLIQUE.
+CLIQUE
+Input: a graph G of order n and an integer 2 ? k ? n.
+Question: does G contain a clique of order k?
+CLIQUE is our first example of a problem with ‘mixed input’. In such cases we
+have to be careful to correctly identify the input size.We followthe obvious rule
+that the input size is the sum of the input sizes of the various parts of the input.
+So in this case the input is a graph, which has input size O(n2), using the adjacency
+matrix, and an integer 2 ? k ? n, with input size O(log k) using binary
+encoding. Hence the total input size for CLIQUEis O(n2) + O(log k) = O(n2).
+Although the problems k-CLIQUE and CLIQUE seem superficially very
+similar we can in fact show that the former belongs to P while the status of the
+latter is unclear (although it is generally believed not to lie in P).
+Proposition 2.7 If k ? 2 then k-CLIQUE ? P.
+Proof: Consider the following algorithm for k-CLIQUE.
+Input: a graph G = (V, E).
+Output: true if and only if G contains a clique of order k.
+2.3 Decision problems and languages 27
+Algorithm:
+for each W ? V such that |W| = k
+if every pair of vertices in W forms an edge in E then output true
+next W
+output false.
+We will measure the running time of this algorithm in terms of the number of
+edges whose presence it checks. For a single set W of size k there are k
+2 edges
+that need to be checked. The number of possibilities for the set W is n
+k. Hence
+the total number of edges checked by the algorithm is at most k
+2n
+k. Since k
+is a constant that is independent of the input the running time of this algorithm
+is O(nk ) which is polynomial in n. Hence k-CLIQUE ? P. 
+But why does the same argument not imply that CLIQUE ? P? As noted above
+the input size of CLIQUE is O(n2). Hence any polynomial time algorithm for
+CLIQUE must have running time bounded by a polynomial in n. However, ifwe
+used the above algorithm to try to decide an instance of CLIQUE with k =
+?
+n
+then, in the worst case, it would need to check 
+?
+n
+2 ?n
+n possible edges and
+so would have running time (n
+?
+n/2) which is not polynomial in n. Whether
+CLIQUE belongs to P is not known. In Chapter 3 we will see why this is such
+an important question.
+A k-colouring is an assignment of k colours to the vertices of a graph G
+such that no edge joins two vertices of the same colour. Formally it is a function
+f : V › {1, 2, . . . , k} satisfying f (x) = f (y) for all edges {x, y} ? E. A
+graph G is said to be k-colourable if and only if a k-colouring of G exists.
+Questions related to colourings of graphs are another source of important
+decision problems. For an integer k ? 1 the problem k-COL asks whether or
+not a graph is k-colourable.
+k-COL
+Input: a graph G.
+Question: is G k-colourable?
+Proposition 2.8 2-COL belongs to P.
+Proof: This is very straightforward. See Exercise 2.4. 
+We will return to the question of how difficult k-COL is for k ? 3 in the next
+chapter.
+We noted earlier that 1-SAT trivially belongs to P. Our next result tells us that
+2-SAT also belongs to P, but this requires a little more work. Its proof uses the
+fact that if we can solve a certain graph decision problem (REACHABILITY)
+in polynomial time, then we can solve an instance of 2-SAT in polynomial time.
+28 2 Complexity theory
+The idea of using an algorithm for a problem 1 to help us to solve a problem
+2 is a recurring theme in complexity theory. It corresponds in an obvious way
+to the concept of a subroutine in a computer program.
+Proposition 2.9 2-SAT belongs to P.
+Proof: Suppose f (x1, . . . , xn) = mk
+=1 Ck is our input to 2-SAT. Then each
+clause, Ck, is the disjunction of at most two literals. If any clause contains a
+single literal, xi, we may suppose the clause is replaced by xi ? xi and so every
+clause in f contains exactly two literals.
+We define an associated digraph G f = (V, E) whose vertices consist of the
+literals
+V = {x1, . . . , xn, x1 . . . , xn}
+and whose edges are defined by
+E = {(a, b) | a ? b is a clause in f }.
+Note that G f has the property that (a, b) ? E ?? (b, a) ? E.
+Consider the following decision problem for digraphs.
+REACHABILITY
+Input: a digraph G = (V, E) and two vertices v,w ? V.
+Question: is there a directed path from v to w in G?
+We claim that:
+(a) f is unsatisfiable if and only if there is a variable xi for which there are
+directed paths from xi to xi and from xi to xi in the digraph G f .
+(b) REACHABILITY belongs to P.
+We will prove (a) below but (b) is left as a simple exercise. (See Exercise 2.5.)
+We can now describe a polynomial time algorithm for 2-SAT. First define a
+function r : V × V › {1, 0} by
+r (v,w) = 1, if there is a directed path from v to w in G f .
+0, otherwise.
+Input: a 2-SAT formula f .
+Output: true if f is satisfiable and false otherwise.
+Algorithm:
+Construct the graph G f
+for i = 1 to n
+if r (xi ,xi ) = 1 and r (xi ,xi ) = 1 then output false
+next i
+output true
+2.3 Decision problems and languages 29
+The fact that this algorithm correctly decides whether or not the input is
+satisfiable follows directly from claim (a) above. But why is this a polynomial
+time algorithm?
+First, the construction of G f can be achieved in polynomial time since we
+simply need to read the input and, for each clause (a ? b), we insert two edges
+into our graph: (a, b) and (b, a). Second, the function r (·, ·) can be evaluated
+in polynomial time (by claim (b) above). Finally the for loop in the algorithm
+is repeated at most n times and so r (·, ·) is called at most 2n times. Hence this
+is a polynomial time algorithm.
+We now give a proof of claim (a). First suppose that for some 1 ? i ? n
+there are directed paths in G f from xi to xi and from xi to xi. We will show
+that in this case f is unsatisfiable since no truth value can be chosen for xi .
+The two directed paths imply that the following clauses belong to f :
+(xi ? y1), (y1 ? y2) , . . . , (y j-1 ? yj ), (y j
+? xi ),
+(xi ? z1), (z1 ? z2) , . . . , (zk-1 ? zk ), (zk ? xi ).
+The clauses in the first rowimply that xi cannot be true while those in the second
+row imply that xi cannot be false. Hence f is unsatisfiable.
+Conversely suppose that for each 1 ? i ? n there is no directed path in G f
+from xi to xi or there is no directed path from xi to xi. For a literal a we define
+R(a) to be the literals which can be reached by directed paths from a (together
+with a itself). We also define R(a) to be the negations of the literals in R(a).
+We construct a satisfying truth assignment using the following procedure.
+i ‹ 1
+while i ? n
+if r (xi , xi ) = 0
+then a ‹ xi
+else a ‹ xi
+set all literals in R(a) to be true
+set all literals in R(a) to be false
+if any variable has yet to be assigned a truth value
+then i ‹ min{ j | x j is unassigned}
+else i ‹ n + 1
+end-while
+To see that this works we need to check that we never have both v and v in
+R(a). If we did then there would exist directed paths from a to v and from a
+to v. But G f has the property that there is a directed path from c to d if and
+only if there is a directed path from d to c. Hence in this case there would be a
+30 2 Complexity theory
+directed path from v to a. Thus there would be a directed path from a to a (via
+v), contradicting our assumption that no such path exists (since r (a, a) = 0).
+Finally we note that we cannot run into problems at a later stage since if we
+choose an unassigned literal b such that r (b, b) = 0 then there is no directed
+path from b to a literal which has already been assigned the value false (if there
+were then you can check that b would also have already been assigned the value
+false). 
+Exercise 2.4h Let G be a graph.
+(i) Show that the following are equivalent (for terminology see
+Appendix 2):
+(a) G is bipartite;
+(b) G is 2-colourable;
+(c) G does not contain any odd length cycles.
+(ii) Show that 2-COL ? P.
+Exercise 2.5 h Complete the proof of Proposition 2.9 by showing that
+REACHABILITY belongs to P.
+2.4 Complexity of functions
+Although we have defined complexity classes for languages, we will also
+consider the complexity of functions. For example, consider the function
+fac(n) : N › N,
+fac(n) = d, the smallest non-trivial factor of n if one exists,
+n, otherwise.
+An efficient algorithm for computing fac(n) would break many of the most
+commonly used cryptosystems. For this reason determining the complexity of
+this function is an extremely important problem.
+In order to discuss such questions we need to extend our definitions of
+complexity to functions.
+The class of tractable functions, the analogue of the class P of tractable
+languages, is
+FP = { f : 
+*
+0
+› 
+*
+0
+| there is a DTM M that computes f and a
+polynomial p(n) such that TM(n) ? p(n) for all n ? 1}.
+If f ? FP then we say that f is polynomial time computable.
+2.4 Complexity of functions 31
+One example we have already seen of a function in FP is addition of binary
+integers. In fact all of the basic integer arithmetic operations are polynomial
+time computable. Our next result is a proof of this for multiplication.
+Proposition 2.10 If mult : Z
++ × Z
++ › Z
++ is defined by mult(a, b) = ab then
+mult ? FP.
+Proof: First note that multiplication by two is easy to implement. For a binary
+integer a we simply shift all of its digits left by a single place and add a zero
+to the right of a. We denote this operation by 2 × a. Consider the following
+algorithm.
+Algorithm 2.11 Integer Multiplication.
+Input: n-bit binary integers a = an · · · a1 and b = bn · · · b1.
+Output: mult(a, b) in binary.
+Algorithm:
+m ‹ 0
+for i = 1 to n
+if bi = 1 then m ‹ m + a
+a ‹ 2 × a
+next i
+output m.
+It is easy to see that this algorithm works. The fact that it runs in polynomial
+time follows simply from the observation that the for loop is repeated at most n
+times and each line of the algorithm involves basic polynomial time operations
+on integers with at most 2n bits. Hence mult ? FP. 
+Another important example of a polynomial time computable function is exponentiation.
+We have to be careful, since given integers a and b we cannot in
+general write down ab (in binary) in less space than O(b) and this would be
+exponential in the input size which is O(log a + log b).We can avoid this problem
+if we work modulo an integer c.
+Proposition 2.12 The function exp(a, b, c) : Z
++ × Z
++ × Z
++ › Zc, defined by
+exp(a, b, c) = ab mod c, belongs to FP.
+Proof: We will use the following algorithm.
+32 2 Complexity theory
+Algorithm 2.13 Exponentiation.
+Input: binary integers a = ak · · · a1, b = bm · · · b1, c = cn · · · c1.
+Output: ab mod c.
+Algorithm:
+e ‹ 1
+for i = 1 to m
+if bi = 1 then e ‹ mult(e, a) mod c
+a ‹ mult(a, a) mod c
+next i
+output e.
+Since mult ? FP and all of the integers being multiplied in Algorithm 2.13
+are bounded above by c then each line of Algorithm 2.13 can be performed in
+polynomial time. The for loop is repeated m times so the whole algorithm is
+polynomial time. Hence exp ? FP. 
+Our final example of a polynomial time computable function is the greatest
+common divisor function gcd : N × N › N
+gcd(a, b) = max{d ? 1 | d divides a and d divides b}.
+Proposition 2.14 The function gcd belongs to FP.
+Proof: The obvious example of a polynomial time algorithm for computing the
+greatest common divisor of two integers is Euclid’s algorithm.
+Algorithm 2.15 Euclid’s algorithm
+Input: binary integers a ? b ? 1.
+Output: gcd(a, b).
+Algorithm:
+r0 ‹ a
+r1 ‹ b
+i ‹ 1
+while ri = 0
+i ‹i + 1
+ri ‹ri-2 mod ri-1
+end-while
+output ri-1.
+2.5 Space complexity 33
+If the input integers are a ? b ? 1 then the algorithm proceeds by repeated
+division with remainder. (In each case qi = ri-2/ri-1.)
+a = q2b + r2, 0 ? r2 < b,
+b = q3r2 + r3, 0 ? r3 < r2,
+r2 = q4r3 + r4, 0 ? r4 < r3,
+...
+...
+rk-3 = qk-1rk-2 + rk-1, 0 ? rk-1 < rk-2,
+rk-2 = qkrk-1 + rk , rk = 0.
+The algorithm halts when rk = 0 and then outputs gcd(a, b) = rk-1. It is easy
+to check that this algorithm is correct. (For integers c and d we denote the fact
+that c divides d exactly by c|d.)
+First note that rk = 0 implies that rk-1|rk-2 and hence rk-1|rk-3. Continuing
+up the array of equations we see that rk-1|ri for any 2 ? i ? k - 2 and hence
+rk-1|a and rk-1|b. Thus rk-1| gcd(a, b). Conversely if d|a and d|b then working
+from the first equation down we see that d|ri for 2 ? i ? k so gcd(a, b)|rk-1.
+Hence rk-1 = gcd(a, b) as required.
+To complete the proof we need to show that this is a polynomial time algorithm.
+Each line of Algorithm 2.15 can be executed in polynomial time (since
+the basic arithmetic operations involved can be performed in polynomial time).
+We simply need to prove that the number of times the while loop is repeated is
+bounded by a polynomial in the input size: log a + log b.
+Consider the relative sizes of ri and ri+2 for 2 ? i ? k - 2. Since qi+2 ? 1,
+ri = qi+2ri+1 + ri+2 and 0 ? ri+2 < ri+1, we have ri+2 < ri /2. Hence the
+while loop is repeated at most 2log a times and so Algorithm 2.15 is polynomial
+time. 
+Exercise 2.6b Show that the divisor function, div : Z
++ × N › Z
++, defined by
+div(a, b) = a/b, belongs to FP.
+2.5 Space complexity
+Up to this point the only computational resource we have considered is time.
+Another resource that limits our ability to perform computations is space. We
+now introduce the necessary definitions to discuss the space complexity of a
+DTM.
+If aDTMhalts on input x ? 
+*
+0 , then the space used on input x is the number
+of distinct tape squares examined by the read–write head of the machine during
+its computation. We denote this by sM(x).
+34 2 Complexity theory
+If M is a DTM that halts for every input x ? 
+*
+0 , then the space complexity
+of M is the function SM : N › N defined by
+SM(n) = max s | there exists x ? n
+0 such that sM(x) = s.
+The most important space complexity class is the class of languages that can
+be decided in polynomial space,
+PSPACE = {L ? 
+*
+0
+| there is a DTM M which decides L and a
+polynomial, p(n), such that SM(n) ? p(n) for all n ? 1}.
+Clearly space is a more valuable resource than time in the sense that the amount
+of space used in a computation is always bounded above by the amount of time
+the computation takes.
+Proposition 2.16 If a language L can be decided in time f (n) then L can be
+decided in space f (n).
+Proof: The number of squares examined by the read–write head of any DTM
+cannot be more than the number of steps it takes. 
+This yields the following obvious corollary.
+Corollary 2.17 P ? PSPACE.
+Another important time complexity class is the class of languages decidable in
+exponential time
+EXP = L ? 
+*
+0
+| there is a DTM M which decides L and a
+polynomial, p(n), such that TM(n) ? 2p(n) for all n ? 1.
+Our next theorem tells us that although space may be more valuable than time,
+given an exponential amount of time we can compute anything that can be
+computed in polynomial space.
+Theorem 2.18 P ? PSPACE ? EXP
+Proof: We have already seen that P ? PSPACE, sowe prove PSPACE ? EXP.
+Suppose a language L belongs to PSPACE. Then there exists a polynomial
+p(n) and a DTM M such that M decides L and halts after using at most p(|x|)
+tape squares on input x ? 
+*
+0 . The basic idea we use is that since M halts it
+can never enter the same configuration twice (where a configuration consists of
+the machine’s state, the position of the read–write head and the tape contents)
+since if it did then it would be in an infinite loop and so never halt.
+2.5 Space complexity 35
+To be precise consider an input x ? n
+0. If || = m and || = k then at
+any point in the computation the current configuration of the machine can be
+described by specifying:
+(i) the current state,
+(ii) the position of the read–write head,
+(iii) the contents of the tape.
+There are k possibilities for (i) and, since the computation uses at most p(n)
+tape squares, there are at most p(n) possibilities for (ii). Now, since each tape
+square contains a symbol from  and the contents of any square that is not
+visited by the read–write head cannot change during the computation, there
+are mp(n) possibilities for (iii). Hence in total there are kp(n)mp(n) possible
+configurations for M during its computation on input x.
+Can any of these configurations ever be repeated? Clearly not, since if they
+were then the machine would have entered a loop and would never halt. Hence
+tM(x) ? kp(n)mp(n).
+So if q(n) is a polynomial satisfying
+log k + log p(n) + p(n) logm ? q(n),
+then L can be decided in time 2q(n) and so L ? EXP as required. 
+It is known that P = EXP, for a proof see for example Hopcroft and Ullman
+(1979). However, whether PSPACE = EXP is a major open problem. If this
+were true it would imply that P = PSPACE and this is not known. An example
+of a language which is in EXP but not known to belong to PSPACE is given by
+the following decision problem.
+EXP BOUNDED HALTING
+Input: a DTM M, a string x and a binary integer n ? 1.
+Question: does M halt on input x in time n?
+Problems
+2.1 Let f (n) = nlog n. Let p(n) and q(n) ? n be polynomials. Show that for
+n sufficiently large f (n) satisfies
+p(n) < f (n) < 2q(n).
+2.2b A palindrome is a a binary string that is identical when read in either
+direction, e.g. 0010100 or 11011011. Describe a DTM that decides the
+36 2 Complexity theory
+language
+LPAL = {x ? 
+*
+0
+| x is a palindrome}.
+(a) What is the time complexity of your machine?
+(b) Show that LPAL can be decided by a DTM that uses space O(n).
+(c) What lower bounds can you give for the time complexity of any
+DTM that decides LPAL?
+2.3b Describe a DTM for deciding unary divisibility. That is it takes input
+a, b in unary and accepts if a divides b exactly otherwise it rejects.
+2.4b Consider the following generalisation of a DTM. A k-tape DTM is a
+machine with k tapes and k corresponding read–write heads (one for
+each tape). The transition function now takes the current machine state,
+and the contents of the k squares currently scanned by the k read–write
+heads and returns the new state for the machine, the new symbol to
+write in each of the k current squares and the movements left or right
+of the k read–write heads. Describe a 3-tape DTM for binary integer
+multiplication. (Do not describe this machine in detail, simply sketch
+how it works when given input a * b.) What is the time complexity of
+your machine in O-notation? (As before a single step is one application
+of the transition function.)
+2.5a Let COMPOSITE be the following decision problem.
+COMPOSITE
+Input: an integer n ? 2.
+Question: is n composite?
+Show that COMPOSITE ? P if and only if PRIME ? P.
+2.6a ABoolean formula f (x1, . . . , xn) is indisjunctive normal form, orDNF,
+if it is written as
+f (x1, . . . , xn) =
+m
+	
+k=1
+Ck ,
+where here each clause, Ck, is a conjunction of literals (e.g. x1 ? x3 ?
+x7). Show that the following problem belongs to P.
+DNF-SAT
+Input: a Boolean formula f in DNF.
+Question: is f satisfiable?
+2.7b If a ? Z
+*
+n then the inverse of a mod n is the unique b ? Z
+*
+n such that
+ab = 1 mod n. Show that given n ? Z and a ? Z
+*
+n the inverse of a mod
+n can be computed in polynomial time using Euclid’s algorithm. Find
+the inverse of a = 10 mod 27.
+2.5 Space complexity 37
+2.8h Show that the square root function, sqrt(n) : Z
++ › Z
++, sqrt(n) =
+
+?
+n, belongs to FP.
+2.9a The Fibonacci sequence {Fn}?
+n=0 is defined by F0 = F1 = 1 and Fn =
+Fn-1 + Fn-2 for n ? 2.
+(a) Show that if we use Euclid’s algorithm to calculate the greatest
+common divisor of Fn and Fn-1 the number of division steps is
+n - 1.
+(b) Show that Fn ? 2n.
+(c) Give a lower bound on the worst-case performance of Euclid’s
+algorithm in terms of the number of division steps performed
+when given two n-bit integers.
+2.10h Karatsuba’s method for multiplication. Consider the following method
+for integer multiplication. Given two n-bit integers
+a = 2n/2u + v and b = 2n/2x + y,
+where u, v, x and y are (n/2)-bit integers, we can obviously compute
+ab using four multiplications of (n/2)-bit integers
+ab = 2nux + 2n/2(uy + vx) + vy.
+Let Mn denote the time taken to multiply two n-bit integers using this
+method. Ignoring the time taken to perform additions and multiplications
+by powers of 2 show that this gives Mn = O(n2).
+Karatsuba showed that you can reduce the number of multiplications
+required from four to three, using the fact that
+uy + vx = (u + v)(x + y) - ux - vy.
+Show that in this case we have Mn = O(nlog2 3).
+2.11b Suppose that a language L is decided in space S(n) by a DTM with
+alphabet  and set of states . What upper bound can you give for the
+time required to decide L?
+2.12a For an acceptor DTM M and x ? 
+*
+0 , let iM(x) be the amount of ink
+used in M’s computation on input x. This is defined to be the number of
+times M writes a new non-blank symbol in a square. (So iM(x) counts
+all transitions of M except those that replace a symbol by * or leave the
+symbol unchanged.) The ink complexity of M is then defined by
+IM(n) = max i | there exists x ? n
+0 such that iM(x) = i.
+Show that LPAL (defined in Problem 2.2) can be decided by a DTM that
+uses no ink. (That is a machine M such that IM(n) = 0.)
+38 2 Complexity theory
+Further notes
+Turing machines as a formal model of computation were introduced by A.
+Turing (1936) and their equivalence to other classical notions of computability
+resulting in the Church–Turing thesis was a major part of recursion theory; see
+for example the classical text by Rogers (1967).
+The origins of complexity theory can be traced back to Hartmanis and Stearns
+(1965) though the notion of P as a fundamental class is generally attributed to
+Cobham (1964) and Edmonds (1965).
+We note that some large instances (up to 25 000 cities) of the Travelling
+Salesman Problem (TSP) have been solved using cutting plane methods. See
+Dantzig, Fulkerson and Johnson (1954) and Applegate et al. (2003). However,
+no TSP algorithm is known which is guaranteed to always perform less than 2n
+operations on an input of n cities.
+Proposition 2.9 that 2-SAT is in P was pointed out by Cook (1971).
+3
+Non-deterministic computation
+3.1 Non-deterministic polynomial time – NP
+Consider the following algorithm for the decision problem SAT.
+Algorithm 3.1 Naive SAT-solver.
+Input: a Boolean formula f (x1, . . . , xn) in CNF.
+Output: true if f is satisfiable and false otherwise.
+Algorithm:
+for each possible truth assignment x ? {0, 1}n
+if f (x) = 1 then output true.
+next x
+output false
+This algorithm is completely impractical since if f is unsatisfiable then it will
+try all 2n possible truth assignments before halting and so in the worst case it
+has exponential running time. Unfortunately there are no known algorithms for
+SAT that perform significantly better. A naive explanation for this is that the
+obvious way to show that a formula f is satisfiable is to find a satisfying truth
+assignment. But there are too many possible truth assignments to be able to
+check them all in polynomial time.
+Consider some of the other decision problems we have seen so far. In most
+cases we could give a similar ‘search algorithm’ to the one described above
+for SAT. For example, a search algorithm for 3-COL could simply consider all
+3n possible 3-colourings of a given graph, and check to see if any of them are
+legal. Again this would give an exponential time algorithm.
+But why are these algorithms so slow? Given a possible truth assignment
+for an instance of SAT we can quickly check whether it is satisfying. Similarly,
+39
+40 3 Non-deterministic computation
+Decision Problem Succinct Certificate
+SAT A satisfying truth assignment for the input formula f
+3-COL A legal 3-colouring of the input graph G
+k-CLIQUE A clique of order k in the input graph G
+COMPOSITE A proper non-trivial factor of the input integer n
+Fig. 3.1 Examples of decision problems with succinct certificates.
+given a possible 3-colouring of a graph we can quickly verify whether it is a
+legal colouring. These algorithms have exponential running time because in
+the worst case they need to check an exponential number of possible truth
+assignments or colourings. However, if a given instance of SAT is satisfiable
+then we know there must exist a satisfying truth assignment. Equally, if a graph
+is 3-colourable then a legal 3-colouring of it must exist.
+Previously we considered algorithms for solving decision problems. In this
+chapter we consider a different type of question. We wish to identify those
+decision problems, such as SAT or 3-COL, with the property that if a given
+instance of the problem is true then there exists a ‘succinct certificate’ of this
+fact.
+One way of looking at this question is to consider the following hypothetical
+situation. Suppose we had an instance, f (x1, . . . , xn), of SAT which we knewto
+be satisfiable. Could we convince a sceptical observer of this fact in a reasonable
+amount of time? Certainly, simply give the observer the instance f together with
+a satisfying truth assignment x. Where this truth assignment has come from is
+not our concern, the important point is that if f is satisfiable then such a truth
+assignment must exist. Our observer could then check that this truth assignment
+satisfies f . The observer’s checking procedure could clearly be implemented
+as a polynomial time algorithm. Thus a satisfying truth assignment is a succinct
+certificate for the satisfiability of f , since it certifies that f is satisfiable and
+can be checked quickly.
+As we have already noted, many decision problems have obvious succinct
+certificates. (See Figure 3.1.)
+It is important to emphasise that the certificate being checked in each of the
+above examples need not be found in polynomial time.We are simply asserting
+that, if an instance of a particular decision problem is true, then there exists a
+succinct certificate which when presented to a sceptical observer allows him or
+her to verify in polynomial time that a particular instance of the problem is true.
+Consider the example of COMPOSITE. In this case a succinct certificate
+proving that a particular integer n is composite is a proper, non-trivial factor
+of the input. Given such a factor we can easily check in polynomial time that
+3.1 Non-deterministic polynomial time – NP 41
+it divides n exactly (finding such a factor in polynomial time is a completely
+separate problem). Our sceptical observer could use the following polynomial
+time checking algorithm in this case.
+Algorithm 3.2 Factor checking.
+Input: integer n and possible factor d.
+Output: true iff d is a proper non-trivial factor of n.
+Checking algorithm:
+if d divides n exactly and 2 ? d ? n - 1
+then output true
+else output false.
+If n is composite then for a suitable choice of d the checking algorithm will
+verify this fact. However, if n is prime then no matter what value of d is given
+to the checking algorithm it will always output false. Moreover this is clearly a
+polynomial time algorithm.
+It is important to note that we cannot deduce that a number n is prime simply
+because this checking algorithm, when given n and a particular possible factor
+d, gives the answer false. If n is composite but d is not a factor of n then
+this algorithm will output false. We are simply claiming that if this checking
+algorithm is given a composite integer n together with a factor d then it will
+output true and furthermore if n is composite then such a factor exists.
+When a decision problem  has a succinct certificate which can be used
+to check that a given instance is true in polynomial time then we say that
+the associated language L is accepted in non-deterministic polynomial time.
+Equivalently we say that L belongs to the complexity class NP.
+We can formalise this definition as follows. For x, y ? 
+*
+0 we let x y denote
+the string consisting of x followed by a blank square, followed by y. A language
+L ? 
+*
+0 is said to belong to NP if there is a DTM M and a polynomial p(n)
+such that TM(n) ? p(n) and on any input x ? 
+*
+0 :
+(i) if x ? L then there exists a certificate y ? 
+*
+0 such that |y| ? p(|x|) and
+M accepts the input string x y;
+(ii) if x ? L then for any string y ? 
+*
+0 , M rejects the input string x y.
+In other words a language L belongs to NP if there is a polynomial time algorithm
+which when given an input x ? L, together with a correct polynomial
+length certificate y, accepts x; but when given an input x ? L will always
+reject, no matter which incorrect certificate y is given.
+42 3 Non-deterministic computation
+An obvious question to ask is how the class NP is related to P. It is easy to
+see that P ? NP.
+Proposition 3.3 P ? NP.
+Proof: If L ? P then there is a polynomial time DTM that decides L. Hence
+we do not need a certificate to verify that a particular input x ? 
+*
+0 belongs to
+L. Our checking algorithm simply takes an input x ? 
+*
+0 and decides whether
+or not x belongs to L directly, in polynomial time. 
+Checking a certificate seems to be a far easier task than deciding if such a
+certificate exists. Indeed it is widely believed that P = NP. However, this is
+currently one of the most important open problems in theoretical computer
+science. It is one of the seven ‘Millennium Problems’ chosen by the Clay
+Institute with a prize of $1 000 000 offered for its solution.
+Howmuch larger can NP be than P? Our next result says that any language in
+NP can be decided in polynomial space.We simply try each possible certificate
+in turn. Since any possible certificate is of polynomial length, we can check all
+possible certificates using a polynomial amount of space by reusing the same
+tape squares for successive certificates.
+Theorem 3.4 NP ? PSPACE.
+Proof: Suppose that L ? NP then there is a polynomial, p(n), and a DTM M
+such that TM(n) ? p(n) and on any input x ? 
+*
+0 :
+(i) if x ? L then there is a certificate y ? 
+*
+0 such that |y| ? p(|x|) and M
+accepts the input string x y;
+(ii) if x ? L then for any string y ? 
+*
+0 , M rejects the input string x y.
+We form a new DTM N that on input x produces each possible string y ? 
+*
+0
+of length at most p(|x|) in turn and mimics the computation of M on the string
+x y. Since M always halts after at most p(|x|) steps, each time we simulate
+the computation of M on x y at most 2p(|x|) + 1 tape squares are required
+and these squares can be reused for each possible y. We also need some tape
+squares to store x and the current possible certificate y at each stage so that we
+can restart the next stage of the computation with the string x z where z is the
+next possible certificate after y. So in total N will use space O(p(|x|) + |x|).
+If x ? L then when we reach a good certificate y such that M would accept
+x y we make N halt in state ?T. If x ? L then at no point would M accept x y
+and so after trying each possible certificate in turn we halt N in state ?F. The
+DTM N clearly decides L in polynomial space. Hence L ? PSPACE and so
+NP ? PSPACE. 
+3.2 Polynomial time reductions 43
+It is generally believed that NP = PSPACE although this is not known to be
+true. For an example of a language that belongs to PSPACE but is not believed
+to belong to NP see Exercise 3.2.
+Exercise 3.1 a For each of the following decision problems describe a certificate
+to show that it belongs to NP. In each case say whether or not you believe
+it also belongs to P.
+(i) SUBSET SUM
+Input: a finite set of positive integers A and an integer t.
+Question: is there a subset of A whose sum is exactly t?
+(ii) DIV 3
+Input: a finite set A ? Z
++.
+Question: is there a subset S ? A such thats?S s is divisible by
+three?
+(iii) GRAPH ISOMORPHISM
+Input: two graphs G and H.
+Question: are G and H isomorphic?
+(iv) HAMILTON CYCLE
+Input: a graph G.
+Question: is G Hamiltonian?
+Exercise 3.2 Prove that QBF, defined below, belongs to PSPACE.
+QBF
+Input: a quantified Boolean formula
+F = (Q1x1)(Q2x2) · · · (Qnxn)B(x1, . . . , xn),
+where B(x1, . . . , xn) is a Boolean expression in the variables x1, . . . , xn
+and each Qi is a quantifier ? or ?.
+Question: is F true?
+3.2 Polynomial time reductions
+There are many situations where the ability to solve a problem1 would enable
+us to also solve a problem 2. The simplest example of this phenomenon is
+when we can convert an instance, I, of 1 into an instance, f (I ), of 2 and by
+solving f (I ) obtain an answer for I . Consider the following decision problem.
+(Recall that an independent set in a graph is a collection of vertices containing
+no edges.)
+44 3 Non-deterministic computation
+INDEPENDENT SET
+Input: a graph G and an integer k.
+Question: does G contain an independent set of order k?
+This is obviously closely related to the problem CLIQUE. Suppose we had
+an efficient algorithm for CLIQUE then given an instance of INDEPENDENT
+SET, consisting of a graph G and an integer k, we could form the graph Gc,
+the complement of G. This is the graph on the same vertex set as G but with
+an edge present in Gc if and only if it is missing from G. Now pass Gc and
+k to our algorithm for CLIQUE. It will return the answer true if and only if
+the original graph contained an independent set of order k. Hence the ability to
+solve CLIQUE would also allow us to solve INDEPENDENT SET. Moreover
+the conversion from an instance of INDEPENDENT SET to an instance of
+CLIQUE could clearly be achieved in polynomial time.We formalise this idea
+of a polynomial time reduction as follows.
+If A, B ? 
+*
+0 and f : 
+*
+0
+› 
+*
+0 satisfies x ? A ?? f (x) ? B, then f
+is a reduction from A to B. If in addition f ? FP then f is a polynomial
+time reduction from A to B. When such a function exists we say that A is
+polynomially reducible to B and write A ?m B.
+The following simple but important lemma shows why the symbol ?m is
+appropriate. It says that if A ?m B and B is ‘easy’ then so is A.
+Lemma 3.5 If A ?m B and B ? P then A ? P.
+Proof: If A ?m B and B ? P then there exist two DTMs, M and N, with the
+following properties:
+(i) M computes a function f : 
+*
+0
+› 
+*
+0 satisfying x ? A ?? f (x) ? B;
+(ii) there is a polynomial p(n) such that TM(n) ? p(n);
+(iii) N decides the language B;
+(iv) there is a polynomial q(n) such that TN (n) ? q(n).
+We now construct a polynomial time DTM which will decide A. Given an input
+x ? n
+0 we give x as input to M, to obtain f (x). We then pass f (x) to N and
+accept or reject according to whether N accepts or rejects f (x).
+Since M computes a reduction from A to B and N decides the language
+B, our new DTM certainly decides A. To see that it runs in polynomial time
+we note that the time taken to compute f (x) by M is at most p(n). Moreover
+TM(n) ? p(n) implies that | f (x)| ? p(n) + n. This is because the machine M
+starts with a string of length n on its tape and halts after at most p(n) steps,
+so when it halts it cannot have more than p(n) + n non-blank tape squares.
+3.3 NP-completeness 45
+Thus the time taken by N on input f (x) is at most q(p(n) + n). Hence the total
+running time of our new machine is at most p(n) + q(p(n) + n), which is still
+polynomial in n, the input size. Hence A ? P as required. 
+A similar result is clearly true if we replace P by NP.
+Lemma 3.6 If B ? NP and A ?m B then A ? NP.
+Our next result says that if B is at least as difficult as A, and C is at least as
+difficult as B, then C is at least as difficult as A. More succinctly the relation
+?m is transitive.
+Lemma 3.7 If A ?m B and B ?m C then A ?m C.
+Both Lemmas 3.6 and 3.7 are routine to prove and are left as exercises for the
+reader. (See Exercises 3.3 and 3.4.)
+Exercise 3.3h Prove that if A and B are languages, B ? NP and A ?m B then
+A ? NP (Lemma 3.6).
+Exercise 3.4h Prove that if A, B and C are languages, A ?m B and B ?m C
+then A ?m C (Lemma 3.7).
+3.3 NP-completeness
+Having introduced the notion of one language being at least as difficult as
+another language an obvious question to ask is: does NP contain ‘hardest’
+languages? By this we mean do there exist examples of languages that belong
+toNPand which are at least as difficult as any other language inNP. Accordingly
+we define a language L to be NP-complete if
+(i) L ? NP,
+(ii) if A ? NP then A ?m L.
+The fact that such languages exist is probably the most important result in
+complexity theory. The fact that most languages arising in practice that belong
+to NP but which are not known to belong to P are in fact NP-complete makes
+this even more intriguing.
+Before proving the existence of NP-complete languages we give two results
+showing how important NP-complete languages are. The first says that determining
+the true difficulty of any NP-complete language is an incredibly important
+question since if any NP-complete language is tractable then they all are.
+46 3 Non-deterministic computation
+Proposition 3.8 If any NP-complete language belongs to P then P = NP.
+Proof: Since P ? NP it is sufficient to show that NP ? P. Suppose L is NPcomplete
+and also belongs to P. If A ? NP then A ?m L and so Lemma 3.5
+implies that A ? P. Hence NP ? P as required. 
+Our next result will allow us to prove that many languages are NP-complete
+once we find a single ‘natural’ example of such a language.
+Proposition 3.9 If L is NP-complete, A ? NP and L ?m A then A is also
+NP-complete.
+Proof: This follows directly from Lemma 3.7. 
+The following result due to Cook (1971) is the fundamental theorem of
+complexity theory. It provides a very natural example of an NP-complete
+language.
+Theorem 3.10 SAT is NP-complete.
+Before giving the proof of Theorem 3.10 we prove an easier result.
+Theorem 3.11 NP-complete languages exist.
+Proof: The following language is NP-complete.
+BOUNDED HALTING (BH)
+Input: pM x 1t , where pM is a description of a DTM M; 1t is a string of t ones
+and x ? 
+*
+0 .
+Question: Does there exist a certificate y ? 
+*
+0 such that M accepts x y in time
+bounded by t?
+BH belongs to NP since a certificate is simply y ? 
+*
+0 such that the DTM M
+accepts x y in at most t steps.
+We now wish to show that any language L ? NP is polynomially reducible
+to BH. Let L ? NP and M be a DTM for L given by the definition of NP, with
+corresponding polynomial p(n).Nowconsider the function f (x) = pM x 1p(|x|).
+Then f ? FP, since pM is independent of x (it depends only on the language
+L); x can be copied in linear time and the string 1p(|x|) can be written in time
+O(p(|x|)).
+Moreover, x ? L if and only if there exists a certificate y ? 
+*
+0 such that x y
+is accepted by M in time p(|x|). But by definition of BH this is true if and only
+if pM x 1p(|x|) ? BH. Thus x ? L ?? f (x) ? BH.
+Hence L ?m BH and so BH is NP-complete. 
+3.3 NP-completeness 47
+This is an interesting theoretical result but of little practical use when trying
+to find other examples of NP-complete languages. In order to do this we need
+to give a more natural example of an NP-complete language. For this reason
+we now give a proof of Cook’s Theorem.
+Proof of Theorem 3.10: First note that SAT ? NP: a succinct certificate is a
+satisfying truth assignment.We need to show that for any language L ? NP we
+have L ?m SAT.
+Let L ? NP then, by definition of NP, there exists a DTM M and a polynomial
+p(n) such that TM(n) ? p(n) and on any input x ? 
+*
+0 :
+(i) if x ? L then there exists y ? 
+*
+0 such that |y| ? p(|x|) and M accepts
+the input string x y;
+(ii) if x ? L then for any string y ? 
+*
+0 , M rejects the input string x y.
+Our polynomial reduction from L to SAT will take any possible input x ? 
+*
+0
+and construct an instance of SAT, say Sx , such that Sx is satisfiable if and
+only if x ? L. Using the definition of NP this is equivalent to saying that Sx
+is satisfiable if and only if there exists a certificate y ? 
+*
+0 , with |y| ? p(|x|),
+such that M accepts the input x y.
+Let the alphabet be  = {?0, . . . , ?l } and the set of states be  =
+{?0, . . . , ?m}. We will suppose that the blank symbol * is ?0, the initial state is
+?0 and the accept state is ?1. We note that if M accepts x y in time p(n), for
+some y ? 
+*
+0 , then the only tape squares which can ever possibly be scanned
+are those a distance at most p(n) from the starting square. Labelling the tape
+squares with the integers in the obvious way, with the starting square labelled
+by zero, we note that only the contents of tape squares -p(n), . . . , p(n) can
+play a role in M’s computation.
+For x ? 
+*
+0 we construct Sx from seven collections of clauses involving the
+following variables:
+sqi, j,t , sci,t and stk,t .
+We think of these variables as having the following meanings (when they are
+true):
+ sqi, j,t – ‘at time t square i contains symbol ?j ’,
+ sci,t – ‘at time t the read-write head is scanning square i ’,
+ stk,t – ‘at time t the machine is in state ?k ’.
+In order to construct the groups of clauses we will frequently wish to ensure
+that exactly one of a collection of variables, say z1, . . . , zs, is true. We use the
+48 3 Non-deterministic computation
+following notation to show how this can be achieved in CNF
+Unique(z1, . . . , zs ) =
+ s
+
+i=1
+zi
+
+?
+
+
+1?i<j?s
+(zi ? z j )
+
+.
+It is easy to see that Unique(z1, . . . , zs) is true if and only if exactly one of the
+variables z1, . . . , zs is true.
+The different collections of clauses in Sx ensure that different aspects of M’s
+computation are correct.
+(i) The read–write head cannot be in two places at the same time.
+At any time t exactly one tape square is scanned by the read–write head:
+C1 =
+p(n)
+
+t=0
+Uniquesc-p(n),t, . . . , scp(n),t .
+(ii) Each square contains one symbol.
+At any time t each tape square contains exactly one symbol:
+C2 =
+p(n)
+
+i=-p(n)
+p(n)
+
+t=0
+Unique(sqi,0,t, . . . , sqi,l,t ).
+(iii) The machine is always in a single state.
+At any time t the machine M is in a single state:
+C3 =
+p(n)
+
+t=0
+Unique(st0,t, . . . , stm,t ).
+(iv) The computation starts correctly.
+At time t = 0 the squares -p(n), . . . ,-1 are blank, the squares
+0, 1, . . . , n contain the string x = ?j0?j1
+· · · ?jn-1?jn and the squares
+n + 1 up to p(n) can contain anything (since any string in these squares
+could be a possible certificate y ? 
+*
+0 ). Moreover the starting position of
+the read–write head is at square zero and the initial state is ?0:
+C4 = sc0,0 ? st0,0 ?
+n
+
+i=0
+sqi, ji ,0 ?
+-1
+
+i=-p(n)
+sqi,0,0.
+(v) The computation ends in acceptance.
+At some time t ? p(n) M enters the accept state ?1:
+C5 =
+p(n)
+
+t=0
+st1,t .
+3.3 NP-completeness 49
+(vi) Only the symbol in the current square can change.
+Only the symbol in the current square at time t can be changed at time
+t + 1:
+C6 =
+p(n)
+
+i=-p(n)
+l
+
+j=0
+p(n)
+
+t=0
+(sci,t ? sqi, j,t ? sqi, j,t+1) ? (sci,t ? sqi, j,t ? sqi, j,t+1).
+(vii) The transition function determines the computation.
+If at time t the machine is in state ?k , the read–write head is scanning
+square i , and this square contains symbol ?j then
+?(?k, ?j ) = (?p, ?q , b)
+describes the new state, the new symbol to write in square i and whether
+the read–write head moves left or right. (We have b = -1 if it moves left
+and b = 1 if it moves right.)
+C7 =
+p(n)
+
+i=-p(n)
+l
+
+j=0
+p(n)
+
+t=0
+m
+
+k=0
+(stk,t ? sci,t ? sqi, j,t ) ? (stp,t+1 ? sqi,q,t+1 ? sci+b,t+1).
+(Note that for simplicity we have not written C7 in CNF, it would be trivial to
+correct this.)
+It is easy to see that if we define Sx to be the Boolean formula given by the
+conjunction of all the above collections of clauses we have an instance of SAT.
+Moreover it is not too difficult to check that the size of Sx is polynomial in the
+input size. (You can check that the number of variables in Sx is O(p(n)2) and
+the total number of clauses is O(p(n)3).)
+Furthermore Sx is clearly satisfiable if and only if M accepts x y, for some
+certificate y ? 
+*
+0, in time at most p(n). (Given a satisfying assignment for Sx
+we can actually read off a good certificate: it will be described by the variables
+corresponding to the contents of tape squares n + 1 up to p(n) at time
+t = 0.) 
+Although the proof of Cook’s theorem is rather involved, once we have this
+single ‘natural’ example of an NP-complete language we can proceed to show
+thatmany other languages areNP-complete, using Proposition 3.9. Indeedmany
+thousands of languages associated to decision problems from many different
+areas are now known to be NP-complete.
+Recall the decision problem k-SAT from the previous chapter.
+k-SAT
+Input: a Boolean formula f in CNF with at most k literals per clause.
+Question: is f satisfiable?
+50 3 Non-deterministic computation
+We know that 2-SAT belongs to P (this was Proposition 2.9) so how much
+more difficult can 3-SAT be?
+Proposition 3.12 3-SAT is NP-complete.
+Proof: Clearly 3-SAT ? NP since a succinct certificate is a satisfying truth
+assignment. Thus, by Proposition 3.9, the proof will be complete if we show
+that SAT ?m 3-SAT.We show this using a method known as local replacement:
+we take an instance f of SAT and change it locally so as to give an instance
+g( f ) of 3-SAT such that g( f ) is satisfiable if and only if f is satisfiable.
+Given an instance of SAT
+f (x1, . . . , xn) =
+m
+
+i=1
+Ci ,
+we leave clauses with at most three literals unchanged. Now consider a clause
+Ci = (z1 ? z2 ? ··· ? zk ) with at least four literals, so k ? 4. Introduce k - 3
+new variables y1, . . . , yk-3 and replace Ci by the conjunction of k - 2 new
+clauses each containing three literals
+Di = (z1 ? z2 ? y1) ? (z3 ? y1 ? y2) ? (z4 ? y2 ? y3)
+? ··· ? (zk-2 ? yk-4 ? yk-3) ? (zk-1 ? zk ? yk-3).
+We claim that:
+(i) the restriction of any satisfying truth assignment for Di to z1, z2, . . . , zk is
+a satisfying truth assignment for Ci .
+(ii) Any truth assignment satisfying Ci may be extended to a satisfying truth
+assignment for Di .
+If we can prove these two claims then we will have shown that there is a function
+g : 
+*
+0
+› 
+*
+0 satisfying f ? SAT if and only if g( f ) ? 3-SAT. The clauses in
+g( f ) are simply those clauses in f which contain less than four literals together
+with the k - 2 clauses defined by Di above for each clause Ci in f containing
+more than three literals. The fact that g belongs to FP follows from the fact
+that a clause with k ? 4 literals is replaced by a collection of k - 2 clauses
+each containing 3 literals, hence |g( f )| = O(| f |), which is certainly polynomial
+in | f |. Thus SAT ?m 3-SAT and so, by Proposition 3.9, 3-SAT is NPcomplete.
+We now need to prove the two claims. The first part is easy. Take a satisfying
+truth assignment for Di. If (i) does not hold then each z j must be false, but then
+yj = 1 for j = 1, . . . , k - 3 and so the last clause in Di is not satisfied. This
+contradiction proves (i).
+3.3 NP-completeness 51
+To see that (ii) is also true suppose we have a satisfying truth assignment
+for Ci, so at least one of the z j is true. If z1 = 1 or z2 = 1, then setting each
+yj equal to 0 satisfies Di . Similarly if zk-1 = 1 or zk = 1 then setting each yj
+equal to 1 satisfies Di. So we may suppose that k ? 5 and
+l = min{ j | z j = 1}
+satisfies 3 ? l ? k - 2. Setting yj = 1 for 1 ? j ? l - 2 and yj = 0 for l -
+1 ? j ? k - 3 satisfies Di . Hence (ii) also holds. 
+Our next example of an NP-complete problem is from graph theory.
+3-COL
+Input: a graph G.
+Question: is G 3-colourable?
+Proposition 3.13 3-COL is NP-complete.
+Proof: Clearly 3-COL ? NP, since given a colouring of a graph G it is easy
+to check that it is legal and that it uses at most 3 colours. We will show
+that 3-SAT ?m 3-COL, using a proof method known as component or gadget
+design.
+Given an instance of 3-SAT
+f (x1, . . . , xn) =
+m
+
+i=1
+Ci ,
+we construct a graph G f with the property that G f is 3-colourable if and only
+if f is satisfiable. The graph G f has two vertices for each variable: xi and xi ,
+three special vertices T, F and R (we think of these as true, false and red) and
+a collection of six vertices corresponding to each clause, say ai , bi , ci , di , ei , fi
+for clause Ci .
+The edges of G f are as follows:
+(i) {xi , xi } for each i = 1, . . . , n (these ensure that we cannot colour xi and
+xi with the same colour);
+(ii) {R, T }, {T, F}, {F, R} (so vertices T, F and R all receive distinct
+colours);
+(iii) {xi , R}, {xi , R} for each i = 1, . . . , n (this ensures each literal is coloured
+the same colour as vertex T or F and hence is either ‘true’ or ‘false’);
+(iv) The edges corresponding to clause Ci = (x ? y ? z) are {x, ai }, {y, bi },
+{ai , bi }, {ai , ci }, {bi , ci }, {ci , di }, {z, ei }, {di , ei }, {di , fi }, {ei , fi }, { fi , F}.
+(See Figure 3.2 to see how these work.)
+52 3 Non-deterministic computation
+F
+x
+y
+z
+ai
+bi
+ci di
+ei
+fi
+Fig. 3.2 Edges corresponding to a clause in the 3-SAT to 3-COL reduction.
+We claim that G f is 3-colourable if and only if the formula f has a satisfying
+truth assignment.
+Suppose first that G f is 3-colourable. Take a 3-colouring, c, of G f using the
+colours 0, 1 and ‘red’. The edges of type (ii) ensure that the vertices T, F and R
+receive different colours so we may suppose that they are coloured by name,
+that is c(F) = 0, c(T ) = 1 and c(R) = red. Now the edges of types (i) and (iii)
+ensure that for i = 1, . . . , n one of xi and xi is coloured 1 while the other is
+coloured 0. This gives an obvious truth assignment for f which we will now
+show is satisfying.
+Suppose it does not satisfy f , then there is a clause Ci = (x ? y ? z) in
+which each of the literals x, y and z are false, so the corresponding vertices are
+coloured 0. However, if we consider Figure 3.2 (and the edges of type (iv)) then
+c(x) = c(y) = c(z) = 0 implies that c(ai ) = 1 and c(bi ) = red or vice-versa.
+This then implies that c(ci ) = 0 and so c(di ) = 1 and c(ei ) = red or vice-versa.
+This in turn implies that c( fi ) = 0, but this is impossible since { fi , F} is an
+edge and c(F) = 0. Hence f is satisfied by this truth assignment.
+Conversely suppose that f is satisfiable. Take a satisfying truth assignment
+and consider the partial colouring of G f that it yields. So we colour the vertices
+xi , xi , R, T, F in the obvious way with the colours 0, 1 and red. It remains for
+us to show that we can colour the ‘clause vertices’ but this is always possible:
+we simply need to check that so long as at least one literal vertex in each clause
+has colour 1 then the whole clause component can be coloured in such a way
+that clause vertex fi is also coloured 1 (see Exercise 3.5). This shows that G f
+is 3-colourable as required.
+Hence we have a reduction from 3-SAT to 3-COL. That this is a polynomial
+time reduction follows from the fact that G f has 2n + 3 + 6m vertices and
+3n + 3 + 11m edges and so |G f | is bounded by a polynomial in | f |. 
+3.3 NP-completeness 53
+We saw in the previous chapter that for any integer k ? 2 the problem k-
+CLIQUE belongs to P (see Proposition 2.7).We also noted that the polynomial
+time algorithm we gave had running time O(nk ) and did not yield a polynomial
+time algorithm for the problem CLIQUE. The following result explains why
+such an algorithm may be impossible to find.
+Proposition 3.14 CLIQUE is NP-complete.
+Proof: We will show that SAT ?m CLIQUE. Given an instance of SAT,
+f (x1, . . . , xn) =
+m
+
+i=1
+Ci
+we construct a graph G f with the property that G f has a clique of order m if
+and only if f is satisfiable.
+The vertices of G f are
+V(G f ) = {(a, i ) | a is a literal in clause Ci }.
+The edges are
+E(G f ) = {{(a, i ), (b, j )} | i = j and a = b}.
+The number of vertices in V(G f ) is simply the number of literals in f counted
+according to the number of clauses they appear in, so this is O(| f |). The number
+of edges is then at most O(|V|2) = O(| f |2). Hence this is a polynomial
+time construction. It remains to show that this yields a reduction from SAT to
+CLIQUE.
+Suppose that f is a satisfiable instance of SAT. Take a satisfying truth assignment
+for f and for each clause, Ci , choose a literal ai ? Ci such that ai is true.
+The corresponding vertices of V(G f ) form a clique of order m in G f , since if
+we take two such vertices (ai , i ) and (aj , j ) then i = j and ai , aj are both true
+so ai = a j .
+Conversely suppose G f has a clique of order m, then the vertices in the
+clique are (a1, 1), . . . , (am,m). Setting each ai to be true gives a satisfying
+truth assignment for f , since each clause is now satisfied. This is possible since
+whenever we set ai to be true we know that we never need to set ai to also be
+true, since otherwise we would have an edge {(ai , i ), (ai , j )} with i = j . 
+Exercise 3.5 Complete the proof of Proposition 3.13 by showing that any
+partial colouring of the graph in Figure 3.2 in which at least one of the
+vertices x, y or z receives colour 1, the others receive colour 0 and vertex
+F receives colour 0 can be completed to give a proper 3-colouring of this
+graph with the colours 0, 1 and red.
+54 3 Non-deterministic computation
+3.4 Turing reductions and NP-hardness
+One unfortunate restriction of polynomial time reductions is that we have to
+convert an instance of one problem into a single instance of another. There
+are situations where the ability to solve a problem 1 efficiently will allow
+us to solve a problem 2 efficiently, but in the process we need to be able to
+solve more than one instance of 1. For example in the proof of Proposition
+2.9 we saw that 2-SAT could be solved by repeatedly calling a subroutine for
+REACHABILITY.
+This more general type of reduction is often very useful and indeed is the
+reduction commonly used in practice, such as when an algorithm calls a subroutine
+repeatedly.
+Informally a function f is Turing-reducible to a function g if a polynomial
+time algorithm for computing g would yield a polynomial time algorithm for
+computing f .
+To describe Turing-reducibility more precisely we introduce a new type
+of Turing machine: a deterministic oracle Turing machine (DOTM). Such a
+machine has an extra tape known as the query tape and a special state: ?Q, the
+query state. There is also an oracle function O associated with the machine.
+A DOTM behaves exactly like an ordinary DTM except in two respects. First,
+it can read and write to the query tape. Second, when the machine enters the
+query state ?Q it takes the string y currently written on the query tape and in
+a single step replaces it by the string O(y). Note that the time taken to write
+the query y on the query tape does count as part of the machine’s computation
+time and if the machine wishes to read the string O(y) once it has been written
+this also counts towards the computation time, but the machine takes just a
+single step to transform the string y into the string O(y). We say that a DOTM
+with oracle function O is a DOTM equipped with an oracle for O. The output
+of a DOTM is, as before, the contents of the ordinary tape once the machine
+halts.
+A function f is said to be Turing-reducible to a function g, denoted by
+f ?T g, if f can be computed in polynomial time by a DOTM equipped with
+an oracle for g.
+A function f is said to be NP-hard if there is an NP-complete language L
+such that L ?T f , where here we identify L with fL , the function corresponding
+to the language
+fL : 
+*
+0
+› {0, 1}, fL (x) = 1, x ? L
+0, x ? L.
+3.4 Turing reductions and NP-hardness 55
+Thus an NP-hard function is ‘at least as difficult’ as any language in NP in
+the sense that a polynomial time algorithm for computing such a functionwould
+yield a polynomial time algorithm for every language in NP. (Simply replace
+each call to the oracle for f by a call to a subroutine using the polynomial
+time algorithm.) Note that a language can be NP-hard and in particular any
+NP-complete language is also NP-hard.
+Recall the graph decision problem.
+MAX CLIQUE
+Input: a graph G and an integer k.
+Question: does the largest clique in G have order k?
+This problem is clearly at least as difficult as theNP-complete problem CLIQUE
+but there is no obvious way to show that it belongs to NP (since there is no
+obvious certificate) nor is there an obvious polynomial reduction from CLIQUE
+to MAX CLIQUE. However, it is very easy to show that MAX CLIQUE is
+NP-hard.
+Example 3.15 MAX CLIQUE is NP-hard.
+Suppose we had an oracle for MAX CLIQUE then we could solve an instance
+of the NP-complete problem CLIQUE in polynomial time using the following
+simple algorithm.
+Input: a graph G = (V, E) with |V| = n, and an integer k.
+Output: true if and only if G has a clique of order k.
+Algorithm:
+for i = k to n
+if MAX CLIQUE is true for (G, i ) then output true
+next i
+output false
+Since this algorithm makes at most n - k + 1 calls to the oracle for MAX
+CLIQUE and each instance of MAX CLIQUE is of essentially the same size
+as the input we have shown that CLIQUE ?T MAX CLIQUE. Hence MAX
+CLIQUE is NP-hard (since CLIQUE is NP-complete ).
+It is interesting to note that it is currently not known whether the notion
+of Turing-reduction is strictly more powerful than polynomial reduction when
+considering problems in NP. By this we mean that the collection of languages,
+L ? NP, for which every other language in NP is Turing-reducible to L is not
+known to be different from the class of NP-complete languages.
+56 3 Non-deterministic computation
+Exercise 3.6 h Let #SAT be the function, mapping Boolean formulae in CNF
+to Z
++ defined by
+#SAT( f ) = |{a ? {0, 1}n | f (a) = 1}|.
+Show that #SAT is NP-hard.
+3.5 Complements of languages in NP
+If L ? 
+*
+0 is a language then the complement of L is
+Lc = 	x ? 
+*
+0
+| x ? L
+.
+If C is a complexity class then the class of complements of languages in C is
+denoted by
+co-C = 	L ? 
+*
+0
+| Lc ? C
+.
+The most important example of such a class is co-NP, the collection of complements
+of languages in NP. From our definitions a language L ? 
+*
+0 belongs
+to co-NP if and only if there is a DTM M and a polynomial p(n) such that
+TM(n) ? p(n) and on any input x ? 
+*
+0 :
+(i) if x ? L then there exists a certificate y ? 
+*
+0 such that |y| ? p(|x|) and
+M accepts the input string x y;
+(ii) if x ? L then for any string y ? 
+*
+0 , M rejects the input string x y.
+For a decision problem the complementary language has a very natural interpretation:
+simply reverse true and false in the output. For example consider the
+problem
+UNSAT
+Input: a Boolean formula f in CNF.
+Question: is f unsatisfiable?
+Since SAT ? NP so UNSAT ? co-NP by definition. But what about SAT itself?
+To prove that SAT belongs to co-NP we would need to describe a succinct
+certificate for a Boolean CNF formula to be unsatisfiable. After a few moments
+thought it appears that the only way to convince a sceptical observer that an
+instance of SAT is unsatisfiable is by asking the observer to check every possible
+truth assignment in turn and verify that none of them are satisfying, but this is
+3.5 Complements of languages in NP 57
+obviously an exponential time algorithm. It is not known whether SAT belongs
+to co-NP, indeed this is an extremely important open problem.
+This highlights an important difference between the classes P and NP. In the
+case of a language in P we have a polynomial time DTM that can decide L and
+hence by reversing the output of our DTM we have a polynomial time DTM for
+deciding Lc, thus P = co-P. For NP this is no longer the case. If L ? NP we
+cannot simply take the DTM given by the definition of NP and produce a new
+DTM to show that Lc ? NP. The question of whether NP and co-NP are equal
+is probably the second most important open problem in complexity theory, after
+the P versus NP question.
+Our next result explains why there is no obvious certificate to show that
+SAT ? co-NP: if there were then NP would equal co-NP.
+Proposition 3.16 If L is NP-complete and L belongs to co-NP then NP =
+co-NP.
+Proof: For any two languages A and B it is easy to see that if A ?m B and
+B ? co-NP then A ? co-NP (by a similar argument to that used in the proof of
+Lemma 3.5). Now suppose that L is NP-complete and L ? co-NP. If A ? NP
+then A ?m L and hence A ? co-NP. Thus NP ? co-NP. But nowif A ? co-NP
+then Ac ? NP ? co-NP and so A ? NP. Hence NP = co-NP. 
+We could clearly define the class of co-NP-complete languages analogously to
+the class of NP-complete languages and it is easy to check that this is simply
+the class of complements of NP-complete languages.
+As noted earlierP = co-P so, sinceP ? NP,we also haveP ? NP ? co-NP.
+Whether or not P is equal to NP ? co-NP is another extremely important open
+problem.
+We noted previously that the language COMPOSITE belongs to NP, since
+a succinct certificate for an integer to be composite is a proper, non-trivial
+divisor. We now consider the complementary language PRIME, consisting of
+binary encodings of prime integers. Given an integer n it is far from obvious
+howonewould convince a sceptical observer that n is prime in polynomial time.
+There is no immediately obvious succinct certificate for primality. The fact that
+such a certificate does in fact exist is given by a classical theorem of Pratt (1975).
+Theorem 3.17 The language PRIME belongs to NP ? co-NP.
+In fact far more is true, we have the following outstanding result due to Agrawal,
+Kayal and Saxena (2002).
+Theorem 3.18 The language PRIME belongs to P.
+58 3 Non-deterministic computation
+The proof of Theorem 3.18 is not too hard but depends on number theoretic
+results which are beyond the scope of this text. We will however give a proof
+of the weaker Theorem 3.17 since it contains concepts which are useful for
+later chapters and also provides one of the very few examples of a non-trivial
+NP-algorithm.
+Proof of Theorem 3.17: (For definitions see Appendix 3).
+The fact that COMPOSITE ? NP implies that PRIME ? co-NP so we need
+to show that PRIME ? NP.
+We need to describe a succinct certificate for the fact that an integer n is
+prime. If n is a prime then, by Appendix 3, Theorem A3.8, there exists a
+primitive root g mod n. So g satisfies gn-1 = 1 mod n but gd = 1 mod n for
+any proper divisor d of n - 1. Conversely suppose g ? Z
+*
+n satisfies
+(i) gn-1 = 1 mod n and
+(ii) gd = 1 mod n for any proper divisor d of n - 1,
+then Appendix 3, Proposition A3.6 together with (i) above imply that
+ord(g)|(n - 1). Moreover condition (ii) above then implies that ord(g) = n - 1.
+Finally Appendix 3, Theorem A3.7 says that ord(g)|?(n) and so (n - 1)|?(n).
+This can only happen if ?(n) = n - 1, in which case n is prime. We will use
+this to describe a succinct certificate for the primality of a prime n.
+We will not require a certificate for the primality of 2 since our checking
+algorithm will recognise this automatically. Let C(n) denote the certificate for
+a prime n ? 3, C(n) will consist of:
+(1) an integer g satisfying gn-1 = 1 mod n but gd = 1 mod n for any proper
+divisor d of n - 1;
+(2) a list of primes p1 < p2 < · · · < pr and exponents ei such that
+n - 1 = ri
+=1 pei
+i ;
+(3) certificates C(p2), . . . ,C(pr ) for the primality of the odd primes
+p2, p3, . . . , pr (note that p1 = 2 since n is odd).
+By our earlier argument condition (1) will ensure that n is prime, so we need
+to describe a polynomial time checking algorithm that will verify that conditions
+(1)–(3) actually hold for a particular input n and possible certificate
+C(n).
+In order to be able to verify (1) efficiently we use the factorisation of n - 1
+given in (2) together with the simple fact that if a ? Zn and there exists a proper
+divisor d of n - 1 such that ad = 1 mod n then there is a divisor of n - 1 of
+the form di = (n - 1)/pi such adi = 1 mod n.
+We can now describe our checking algorithm.
+3.5 Complements of languages in NP 59
+Algorithm 3.19 Prime certificate checking.
+Input: integer n and possible certificate C(n).
+Algorithm:
+if n = 2 then output true
+if n - 1 = ri
+=1 pei
+i then output false
+if an-1 = 1 mod n then output false
+if a(n-1)/2 = 1 mod n then output false
+for i = 2 to r
+if a(n-1)/pi = 1 mod n then output false
+if C(pi) is not a valid certificate for the primality of pi
+then output false
+next i
+output true.
+At this point it should be clear that if n is prime then there exists a certificate
+C(n) which this algorithm will accept. While if n is composite then no matter
+what certificate is given, Algorithm 3.19 will reject.
+In order to complete the proof we need to verify that this is a polynomial
+time algorithm. Recall that the input is an integer n and so the input size is
+O(log n). Note that the number of prime factors of n counted according to their
+multiplicity is at most log n since otherwise their product would be greater than
+2log n = n. Hence, with the possible exception of the line checking the certificate
+C(pi ), each line of Algorithm 3.19 can be executed in polynomial time. We
+will measure the time taken by this algorithm by the total number of lines of
+the algorithm that are executed; we denote this by f (n). (Note that when a
+certificate C(pi) is checked we imagine a new version of the algorithm starts
+and count the number of lines executed accordingly.)
+Our algorithm ‘knows’ that 2 is prime and so does not need to check a
+certificate for this fact, it terminates after a single line and so f (2) = 1.
+Now, if n is an odd prime, then we have
+f (n) = 5 + 3(r - 1) +
+r
+
+i=2
+f (pi ).
+= 5 +
+r
+
+i=2
+( f (pi ) + 3).
+Setting g(n) = f (n) + 3 we have
+g(n) = 8 +
+r
+
+i=2
+g(pi ).
+60 3 Non-deterministic computation
+We nowuse induction on n to showthat g(n) ? 8 log n. This is true for n = 2
+since f (2) = 1 and so g(2) = 4 < 8. Assuming this also holds for all primes
+p < n we have
+g(n) ? 8 +
+r
+
+i=2
+8 log pi
+= 8 + 8 log
+ r
+
+i=2
+pi
+
+? 8 log((n - 1)/2) + 8
+= 8 log(n - 1)
+< 8 log n.
+Hence f (n) ? 8 log n - 3 and so Algorithm 3.19 is a polynomial time checking
+algorithm and PRIME ? NP. 
+Example 3.20 Certificate of primality for n = 103.
+A certificate for 103 is
+C(103) = {5, (2, 1), (3, 1), (17, 1),C(3),C(17)}
+C(3) = {2, (2, 1)}, C(17) = {3, (2, 4)}.
+This is a certificate for 103 since 5 is a primitive root mod 103, 102 = 21 ×
+31 × 171 and C(3),C(17) are certificates for the primality of 3, 17 respectively.
+The certificate for 3 is C(3) since 2 is a primitive root mod 3 and 2 = 21. Finally
+the certificate for 17 is C(17) since 3 is a primitive root mod 17 and 16 = 24.
+Exercise 3.7 a Describe a certificate of primality for 79, as given by Pratt’s
+Theorem.
+3.6 Containments between complexity classes
+The question of whether P and NP are equal has been central to complexity
+theory for decades. We know that P ? NP ? co-NP ? NP and it is generally
+believed that all of these containments are strict.
+We have seen plenty of examples of languages that either are NP-complete
+or belong to P. Also the complement of any NP-complete language is clearly
+co-NP-complete so we could easily give lots of examples of such languages.
+Natural examples of languages which are in NP ? co-NP but which are not
+known to belong to P are relatively scarce. One such example is given by the
+following decision problem.
+3.6 Containments between complexity classes 61
+FACTOR
+Input: integers n and k.
+Question: does n have a non-trivial factor d, satisfying 1 < d ? k?
+Clearly FACTOR ? NP since an obvious certificate is a factor d satisfying
+1 < d ? k. We will show that FACTOR ? co-NP in Chapter 6. However, it is
+not known whether FACTOR ? P. If this were true then it would have a very
+significant impact on cryptography as we shall see later.
+Wehave yet to see an example of a language that belongs toNPbut is believed
+neither to be NP-complete nor to belong to co-NP. One possible example is
+given by GRAPH ISOMORPHISM described below.
+Recall that two graphs G = (VG, EG) and H = (VH, EH) are said to be isomorphic
+if there is a bijection f : VG › VH such that { f (v), f (w)} ? EH ??
+{v,w} ? EG. Consider the following decision problem.
+GRAPH ISOMORPHISM
+Input: two graphs G and H.
+Question: are G and H isomorphic?
+This clearly belongs to NP since an obvious certificate is an isomorphism, yet
+it is not known to be NP-complete. It is also difficult to see how it could belong
+to co-NP since the only obvious way to convince a sceptical observer that two
+graphs are not isomorphic is to run through all possible bijections between the
+vertex sets and check that none of these are isomorphisms.
+If P = NP then the following result due to Ladner (1975) tells us that there
+must exist languages in NP which neither belong to P nor are NP-complete.
+(Again GRAPH ISOMORPHISM is an obvious candidate language for this
+class.)
+Theorem 3.21 If P = NP then there exists a language in NP\P that is not
+NP-complete.
+One approach to the question of whether P equals NP is the so-called pisomorphism
+conjecture of Berman and Hartmanis (1977) which if proved
+would imply that P = NP.
+Two languages over possibly different tape alphabets, A ? 
+*
+0 and B ? 
+*
+0,
+are p-isomorphic if there exists a function f such that:
+(i) f is a bijection between 
+*
+0 and 
+*
+0;
+(ii) x ? A ?? f (x) ? B;
+(iii) both f and f -1 belong to FP.
+Conjecture 3.22 All NP-complete languages are p-isomorphic.
+62 3 Non-deterministic computation
+EXP
+NP
+co-NP
+P
+PSPACE
+Fig. 3.3 Containments between complexity classes.
+Theorem 3.23 If the p-isomorphism conjecture is true then P = NP.
+Proof: If P = NP then all languages in P are NP-complete, but there are finite
+languages in P and these cannot be p-isomorphic to infinite languages. 
+Figure 3.3 summarises what we currently knowabout the complexity classes
+introduced so far. Note that this picture may ‘collapse’ in many different ways.
+In particular if P = NP or NP = co-NP or indeed P = PSPACE, then this
+picture would look extremely different.
+3.7 NP revisited – non-deterministic Turing machines
+Until now we have carefully avoided defining non-deterministic Turing
+machines, since the most important non-deterministic complexity class, NP,
+can be defined easily without their use. However, for completeness we introduce
+them now.
+3.7 NP revisited – non-deterministic Turing machines 63
+Anon-deterministic Turing machine orNTM is defined similarly to an acceptor
+DTM with one important difference. Instead of a transition function it has a
+transition relation, so that at any point in a computation there are a number of
+possible actions it can take and it chooses one of these non-deterministically.
+Recall that the transition function of a DTM is a single valued function
+? :  ×  ›  ×  × {‹,›}.
+For an NTM we have a transition relation
+ ? ( × ) × ( ×  × {‹,›}) .
+Given the content of the tape square currently being scanned, together with
+the current state of the machine, an NTM has a choice of possible actions, one
+of which is chosen non-deterministically. More precisely if N is an NTM;
+the machine is currently in state ?c and the content of the current square
+being scanned is ?c, then at the next step N chooses a possible action nondeterministically
+from the set
+(?c, ?c) = {(?n, ?n,mn) | ((?c, ?c), (?n, ?n,mn)) ? }.
+This determines what to write in the current square; the new state for N and the
+movement of the read-write head.
+Given x ? 
+*
+0 a computation on input x is the result of starting the machine
+with x written on the input tape and then applying the transition relation repeatedly,
+halting if a halting state is reached. (Note that for any given input x there
+will typically be more than one possible computation.)
+We say that an input x ? 
+*
+0 is accepted by anNTMif there is a computation
+on input x that halts in state ?T. Such a computation is called an accepting
+computation.
+We say that an NTM is halting if for every input x ? 
+*
+0 and every possible
+computation on input x the machine halts after finitely many steps. From now
+on we will consider only halting NTMs.
+For an NTM, M, we define the language accepted by M to be
+L(M) = {x ? 
+*
+0
+| x is accepted by M}.
+Similarly to the case for a DTM a step in a computation is simply the result of
+applying the transition relation once. For x ? L(M) we define the time taken to
+accept x to be the number of steps in the shortest accepting computation, that
+is
+tM(x) = min{t | there is an accepting computation of M on input x that
+halts in t steps}.
+64 3 Non-deterministic computation
+The time complexity of M is then defined to be
+TM(n) = max{t | ?x ? L(M) such that |x| = n and tM(x) = t}.
+The set of possible computations of an NTM on a particular input can easily
+be represented by a tree. A single possible computation is a path from the root
+to a leaf. Assuming that the machine is halting every possible computation is
+finite and so the tree is also finite. In this case the time taken to accept an input
+x is simply the length of the shortest path in the tree that ends in the state ?T.
+It is intuitively obvious that a language L is accepted by a polynomial time
+NTMif and only if it belongs to NP. The key idea is to consider the computation
+tree of a polynomial time NTM. At any node in the tree there are a finite number
+of choices for the transition to the next stage. Hence a possible certificate string
+y ? 
+*
+0 for an input x ? 
+*
+0 is simply a list of branch choices telling us which
+branch of the computation tree to follow at each stage of the computation. If
+x ? L then there is a polynomial length path in the tree leading to the state ?T
+and this path can be described by a polynomial length string y. While if x ? L
+then no path leads to the accepting state and so no string y can describe an
+accepting path in the tree. Hence we have the following theorem.
+Theorem 3.24 The class of languages accepted by polynomial time NTMs is
+equal to NP.
+Problems
+3.1h Consider the following decision problem.
+PARTITION
+Input: a finite set of positive integers A.
+Question: is there a partition of A = B ?' C such that
+
+b?B
+b =
+c?C
+c?
+Showthat PARTITION ?m SUBSET SUM. (SUBSETSUMis defined
+on page 43.)
+3.2h If A ? 
+*
+0 then Ac = {x ? 
+*
+0
+| x ? A}. Show that A ?m B implies
+Ac ?m Bc.
+3.3h Show that if P = NP then there is a polynomial time algorithm which,
+when given a SAT formula f , will output ‘unsatisfiable’ if f is unsatisfiable
+or a satisfying truth assignment if one exists.
+3.4h Show that k-COL is NP-complete for k ? 4.
+3.5h Given a graph G = (V, E) and an integer k ? 1 a vertex cover of order k
+is a collection of k vertices, W ? V, such that any edge e ? E contains
+3.7 NP revisited – non-deterministic Turing machines 65
+at least one vertex from W. Show that the problem VERTEX COVER
+defined below is NP-complete.
+VERTEX COVER
+Input: a graph G and an integer k.
+Question: does G have a vertex cover of order k?
+3.6h Show that the following subproblem of 3-COL is still NP-complete.
+3-COL MAX DEGREE 4
+Input: a graph G in which every vertex has degree at most 4.
+Question: is G 3-colourable?
+3.7a Does the following decision problem belong to P or NP?
+GOLDBACH
+Input: an even integer n ? 2.
+Question: do there exist prime numbers p and q such that n = p + q?
+3.8 The following decision problems are not known to belong to NP. In
+each case explain why it is difficult to produce a suitable certificate.
+(a) UNSAT
+Input: a Boolean CNF formula f .
+Question: is f unsatisfiable?
+(b) MAX CLIQUE
+Input: a graph G and an integer k.
+Question: is k the maximum order of a clique in G?
+3.9h Prove that MAX CLIQUE belongs to PSPACE.
+3.10b Consider the following problem.
+TRAVELLING SALESMAN
+Input: a list of cities c1, . . . , cn and an n × n symmetric matrix of positive
+integers giving the distances between each pair of cities.
+Output: a shortest tour of the cities, where a tour is an ordering of
+the cities and the length of a tour is the sum of the distances between
+consecutive cities (including the distance from the last back to the first).
+Assuming that HAMILTON CYCLE (defined on page 43) is NPcomplete
+show that TRAVELLING SALESMAN is NP-hard.
+3.11h The chromatic number of a graph G is defined by
+?(G) = min{k | G is k-colourable}.
+Show that computing ?(G) is NP-hard.
+3.12h Prove that if A ?T B and B ?T C then A ?T C.
+66 3 Non-deterministic computation
+3.13h Two languages are said to be Turing equivalent if they are Turing
+reducible to each other. Prove that any two NP-complete languages
+are Turing equivalent.
+3.14h Prove that if A ? co-NP and B is NP-complete then A ?T B.
+3.15a Let NPC denote the class of NP-complete languages and let NPTC
+denote the set of languages in NP which are complete under Turing
+reductions. Prove that NPC ? NPTC. Is the containment strict?
+Further notes
+The notions of both polynomial and Turing reducibility were familiar tools in
+recursive function theory, as was the notion of nondeterminism. The class of
+languages NP was introduced in 1971 by S. Cook who proved that SAT was
+NP-complete under Turing reducibility. Karp (1972) then used SAT to show
+that 21 other natural problems were NP-complete under polynomial reductions.
+These includedVERTEXCOVER, CLIQUE,HAMILTONCYCLEand k-COL
+(k ? 3).
+Independently Levin (1973) developed a similar theory using tilings rather
+than satisfiability, with the result that Theorem 3.10 is sometimes referred to as
+the Cook–Levin theorem.
+It should also be noted that several authors/texts use Turing reducibility
+rather than polynomial reducibility in their definition of NP-completeness. It
+is also interesting to note that G¨odel may have been the first to consider the
+complexity of an NP-complete problem as, according to Hartmanis (1989), he
+asked von Neumann in a (1956) letter how many Turing machine steps are
+needed to verify that a Boolean formula is true.
+The book by Garey and Johnson (1979) contains a vast array of NP-complete
+problems from a wide range of disciplines.
+The proof that PRIMES is in P by Agrawal, Kayal and Saxena (2002)
+aroused widespread interest in both cryptographic and complexity communities.
+Whether it will lead to a fast (practical) deterministic algorithm for testing
+primality is a question of ongoing research interest.
+Both PRIMES and GRAPH ISOMORPHISM were discussed in Cook’s
+original 1971 paper and it is intriguing to consider whether there will one day
+be a proof that the latter is also in P.
+It is nowmore than twenty years since Luks (1982) showed that testing graph
+isomorphism for graphs of degree at most d is polynomial for any fixed d. (The
+algorithm of Luks is polynomial in the number of vertices but exponential in d.)

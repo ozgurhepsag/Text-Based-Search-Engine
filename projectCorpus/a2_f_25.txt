@@ -1,0 +1,700 @@
+The increased familiarity with Chávez, stockpiling of foreign currency
+reserves, and the boom in global markets explain the relatively mild change
+in the EMBI prior to 2006. His declarations about moving toward a vague
+21st-century socialism since 2005 did not mark a clear shift away from the
+general state-centered, prodomestic producer economy that he had been
+pursuing since at least 2003. The EMBI increased after his re-election,
+because he believed that he had a new mandate to change the “geometry of
+power,” which meant substantially altering the 1999 constitution. The effort
+proved unsuccessful, but what is relevant is that Chávez’s move to accelerate
+the transition to 21st-century socialism through a very vague set of 69
+constitutional amendments rendered the policy environment unpredictable,
+driving up risk, even despite record prices for petroleum and robust dollar
+reserves. Thus, even when domestic and economic fundamentals are strong,
+policy uncertainty can drive risk.
+Conclusion
+There is little quantitative and qualitative support for partisan explanations
+of sovereign risk related to elections in Argentina, Brazil, Mexico,
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1313
+and Venezuela between 1994 and 2007. This is true of both simple partisan
+(right-left difference) and more sophisticated partisan accounts that
+distinguish between incumbent and challenging leftist candidates and
+between radical and institutional lefts. These results question how
+important the right-left scale is in studies of Latin America. The data
+also control for party system institutionalization, a variable often
+ignored in the analysis of how elections affect financial markets. The
+data show that older party systems in Latin America do not necessarily lead
+to increased stability and predictability of the political system, as is
+claimed by the literature on partisanship (Mainwaring, 1999).
+The quantitative analysis is strongest in support of the role of external
+vulnerability and risk tolerance. This finding confirms conventional wisdom
+among market professionals, that risk is based on ability to pay debt, which
+is best represented by access to foreign currency. Foreign reserves are critical
+for emerging markets, particularly during downturns in global liquidity,
+because many emerging market borrowers issue debt in foreign currencies,
+creating a potentially unsustainable currency mismatch (Eichengreen &
+Hausmann, 2005). The obvious policy implication is that governments
+should try to denominate their debt in local currency and should maintain
+foreign currency reserves that exceed what may be considered adequate
+under noncrisis situations.
+But how large the stock of foreign currency reserves should be to
+ensure confidence in a government’s ability to meet its debt obligations is
+subject to perception. This is where the policy environment enters and the
+issue of uncertainty emerges. A reserve of 30 billion U.S. dollars may be
+sufficient in one context but not in another. More important, for emerging
+market countries, it may be both at the same time, as was the case in
+Brazil in 2002, when perceptions of policy uncertainty led to the negative
+interpretation of foreign reserves driving the market. If economic fundamentals
+allow for multiple equilibria, policy clarity can explain perceptions
+of risk. Moreover, as is the case in the postelectoral period in
+Venezuela in 2006, political uncertainty can drive sovereign risk even in
+the face of record reserves and commodity prices. Thus, tracing interactions
+between policy uncertainty, policies chosen, and vulnerability to
+external events best explains perceptions of sovereign movement during
+electoral periods.
+Future research should examine these processes during ministerial shuffles
+and other periods of change between elections. It should also examine
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1314 Comparative Political Studies
+whether the relationship that credit markets perceive between risk and
+uncertainty is echoed in other arenas such as equity markets.
+Notes
+1. Venezuela’s market is less important, but due to the foreign policy of president Chávez,
+the purchase of the debt of neighboring countries, and the burgeoning local currency debt
+market, it is becoming increasingly important.
+2. This is measured in terms of basis points, in which 100 basis points is the equivalent
+of 1%.
+3. When there is greater liquidity, interest in investing in emerging markets, or when
+commodity prices are high, investors will be less exacting. Perception that certain other countries
+or regions are “hot” can reduce market demand for the debt of a particular country and
+increase risk. Similarly, internal dynamics of capital markets can punish one country for the
+failures of another, ironically even if the former is seen as relatively successful. This was the
+case in 2001, when traders who lost money or could not sell Argentine debt sold Brazilian debt
+to cover their losses, increasing Brazil’s Emerging Markets Bond Index.
+4. Part of this is due to low levels of partisan ideology and/or policy clarity among many
+political parties (Mainwaring, 1999) and a relative convergence left and right in Latin America
+about economic policies in the most recent wave of democratization.
+5. The more recent classifications are considered to be preliminary by Coppedge (Personal
+communication, July 6, 2007).
+6. For example, the de la Rua Coalition was center left, but Nestor Kirchner was replaced
+by Eduardo Duhalde, a conservative. The Brazilian elections were also coded slightly differently.
+Given that there was significant continuity between the Itamar Franco and Fernando
+Henrique Cardoso administrations, both were coded as center.
+7. The dependent and independent variables were tested for unit root problems using the
+Dickey-Fuller test and detected problems only in the Consumer Price Index variable. Given that
+it did not present consistent effects on Emerging Markets Bond Index, it does not appear to be
+a substantial problem. A violation of homoskedasticity was detected in the pooled sample using
+the Breusch-Pagan/Cook-Weisberg test for heteroskedasticity as well as a problem of first order
+correlation, using the Wooldridge test for autocorrelation in panel data. This was corrected by
+using cross-sectional time-series Feasible Generalized Least Squares regression for the pooled
+data and Prais-Winsten AR(1) regression for country-specific analysis.
+8. As stated earlier, left to right labels are not uncontroversial. Coppedge (1998) labels
+the Partido Justicialista (Peronist party) as center-right, and so that distinction is maintained
+here. Duhalde was clearly an opponent of the Peronists who surrounded president Menem, but
+he stressed social concerns more than Menem did.
+9. All electoral data are from Georgetown University’s Political Database on the
+Americas: http://pdba.georgetown.edu/Elecdata/elecdata.html
+10. The linkage to Chávez is very important, as Evo Morales success seems to have been
+boosted by Chávez’s support, whereas Felipe Calderón and Alan Garcia were able to gain
+points by associating Andrés Manuel López Obrador and Ollanta Humala with Chávez.
+11. Unlike previous efforts at controlling inflation, the real plan was more credible, largely
+because of the successful negotiation with Congress by Edmar Bacha, secretary of economic
+policies at that time, to anchor the new currency through fiscal restraint.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1315
+References
+Alesina, A., Roubini, N., & Cohen, G. D. (1997). Political cycles and the macroeconomy.
+Cambridge, MA: MIT Press.
+The Americas: Adios Menem, hallo Kircher? Argentina’s presidential election. (2003, May 3).
+The Economist, p. 57.
+The Americas: It’s all Chavez. (1998, July 4). The Economist, pp. 30-31.
+Argentina fighting Menem. (1995, April 22). The Economist, pp. 42-43.
+Argentina shades of grey. (1994, December 10). The Economist, pp. 38-39.
+Beck, T., Clarke, G., Groff, A., Keefer, P., & Walsh, P. (2001). New tools in comparative
+political economy: The database of political institutions. World Bank Economic Review,
+15(1), 165-176.
+Bernard, W., & Leblang, D. (2006). Democratic processes and financial markets: Pricing
+politics. New York: Cambridge University Press.
+Block, S. A., & Vaaler, P. M. (2004). The price of democracy: sovereign risk ratings, bond
+spreads and political business cycles in developing countries. Journal of International
+Money and Finance, 23(6), 917-946.
+Buxton, J. (2003). Economic policy and the rise of Hugo Chávez. In S. Ellner & D. Hellinger
+(Eds.), Venezuelan politics in the Chávez era: Class, polarization and conflict (pp. 113-
+130). Boulder, CO: Lynne Rienner.
+Cardoso, F. H., & Faletto, E. (1979). Dependent development. Berkeley: University of
+California Press.
+Castañeda, J. G., & Navia, P. (2007). The year of the ballot. Current History, 106(697),
+51-57.
+Coppedge, M. (1998). The dynamic diversity of Latin American party systems. Party Politics,
+4(4), 547-568.
+Cukierman, A. (1992). Central bank strategy, credibility and independence. Cambridge, MA:
+MIT Press.
+Cukierman, A., Webb, S., & Neyapti, B. (1992). Measuring the independence of central banks
+and its effect on policy outcomes. The World Bank Economic Review, 6, 353-398.
+Dietz, H., & Myers, D. J. (2007). From thaw to deluge: Party system collapse in Venezuela
+and Peru. Latin American Politics and Society, 49(2), 59-86.
+Eckstein, H. (1975). Case studies and theory in political science. In F. Greenstein & N. Polsby
+(Eds.), Handbook of political science (pp. 79-138). Reading, MA: Addison-Wesley.
+Eichengreen, B., & Hausmann, R. (Eds.). (2005). Other people’s money: Debt denomination and
+financial instability in emerging market economies. Chicago: University of Chicago Press.
+Franzese, R. J., Jr. (2002). Electoral and partisan cycles in economic policies and outcomes.
+Annual Review of Political Science, 5, 369-421.
+Garrett, G. (1998). Global markets and national politics: Collision course or virtuous circle?
+International Organization, 52(4), 787-824.
+George, A. L., & Bennett, A. (2005). Case studies and theory development in the social sciences.
+Cambridge, MA: MIT Press.
+Herron, M. C. (2000). Estimating the economic impact of political party competition in the
+1992 British election. American Journal of Political Science, 44(2), 320-331.
+Hibbs, D. A., Jr. (1977). Political parties and marcoeconomic policy. American Political
+Science Review, 70(4), 1467-1487.
+Leaders: Change, please; Mexico’s presidential election. (2006, July 1). The Economist, p. 10.
+Leaders: Menem’s final days. (1999, May 29). The Economist, pp. 15-16.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1316 Comparative Political Studies
+Leblang, D. A. (2002). The political economy of speculative attacks in the developing world.
+International Studies Quarterly, 46(1), 69-92.
+Lebowitz, M. A. (2006). Constuyámoslo ahora: El Socialismo para el siglo XXI [We will build
+it now: Socialism of the 21st century] (M. Harnecker, J. Duckworth, et al., Trans.).
+Caracas, Venezuela: Centro Internacional Miranda.
+Mahon, J. E., Jr. (1996). Mobile capital and Latin American development. University Park:
+Pennsylvania State University Press.
+Mainwaring, S. P. (1999). Rethinking party systems in the third wave of democratization: The
+case of Brazil. Stanford, CA: Stanford University Press.
+Moffett, M., & Fritsch, P. (1998, September 14). Real politics: Brazil strives to steady its
+markets as election adds to uncertainty—to back currency, it hoists interest rates, but that
+threatens the economy—leftist challenge to Cardoso. Wall Street Journal, p. A1.
+Mosley, L. (2003). Global capital and national governments. New York: Cambridge University
+Press.
+Singh, A. (2005, October). Global context and regional outlook for Latin America and the
+Caribbean. Paper presented at a symposium sponsored by the Banco de la Republica Bogota,
+Colombia. Retrieved February 1, 2008, from www.imf.org/external/np/speeches/2005/
+101305.htm
+Sola, L. (2006). Financial credibility, legitimacy and political discretion: The Lula da Silva government.
+In L. Sola & L. Whitehead (Eds.), Statecrafting monetary authority: Domestic and
+financial order in Brazil (pp. 237-267). Oxford, UK: Centre for Brazilian Studies.
+Spanakos, A. P., & Renno, L. R. (2006). Elections and economic turbulence in Brazil:
+Candidates, voters and investors. Latin American Politics and Society, 48(4), 1-26.
+Starr, P. K. (1999). Capital flows, fixed exchange rates, and political survival: Mexico and
+Argentina, 1994-1995. In P. Oxhorn & P. K. Starr (Eds.), Markets & democracy in Latin
+America: Conflict or convergence (pp. 203-238). Boulder, CO: Lynne Rienner.
+Vaaler, P. M., Schrage, B. N., & Block, S. A. (2006). Elections, opportunism, partisanship and
+sovereign ratings in developing countries. Review of Development Economics, 10(1), 154-170.
+Wallerstein, I. (2004). World Systems Theory: An introduction. Durham, NC: Duke University
+Press.
+Anthony Peter Spanakos is an assistant professor in the Department of Political Science and
+Law at Montclair State University and an adjunct assistant professor in the Department of
+Politics at New York University. His research has focused on policy reform and democratization
+in Latin America. He is the coeditor of Reforming Brazil (2004) and has published in
+Latin American Politics and Society, Latin American Research Review, and Dados.
+Lucio R. Renno is an associate professor at the Graduate Studies and Research Center on the
+Americas at the University of Brasilia. His research interests include legislative studies and voting
+behavior. He has articles published in the American Journal of Political Science, Electoral Studies,
+Legislative Studies Quarterly, Journal of Legislative Studies, Journal of Politics, among others
+The Independence of
+International Organizations
+CONCEPT AND APPLICATIONS
+YORAM Z. HAFTEL
+Department of Political Science
+University of Illinois at Chicago
+ALEXANDER THOMPSON
+Department of Political Science
+Ohio State University
+Despite its widespread use in studies of domestic political institutions, the concept of “independence”
+has not been systematically applied to the study of international institutions. Most arguments regarding the
+ability of international organizations (IOs) to promote cooperation and mitigate conflict rely on the implicit
+assumption that such institutions possess some independence from states, and yet the field has failed to conceptualize—
+let alone measure—this institutional characteristic. Extracting insights from the theoretical literatures
+on both international and domestic institutions, the authors distill several design features that lend
+independence to political institutions and then generate coding rules for measuring the independence of IOs.
+Based on an original data set of regional integration arrangements, the authors then use regression analysis to
+test several propositions for explaining variation in IO independence, shedding light on some important
+theoretical and empirical puzzles in international relations.
+Keywords: international organizations; regional integration; institutional design; independence
+Recent international relations (IR) scholarship has become increasingly concerned
+with issues of institutional variation and design. Theorists have identified several
+dimensions along which international institutions vary, including their degree of formality
+(Lipson 1991; Abbott and Snidal 1998), hierarchy (Weber 1997; Lake 1999),
+legalization (Goldstein et al. 2001), and institutionalization (Stone Sweet, Sandholtz,
+and Fligstein 2001; Haftel 2004b).1 In each case, the literature identifies trade-offs
+253
+AUTHORS’ NOTE: The authors are listed in alphabetical order. An earlier version of this article was
+presented at the 2003 annual convention of the International Studies Association, Portland, Oregon. For
+valuable comments, we thank Ian Hurd and Jon Pevehouse. Matthew Scherbarth provided research assistance
+and helpful suggestions. The data and an appendix are available online at http://jcr.sagepub.com/cgi/
+content/full/50/2/253/DC1/.
+JOURNAL OF CONFLICT RESOLUTION, Vol. 50 No. 2, April 2006 253-275
+DOI: 10.1177/0022002705285288
+© 2006 Sage Publications
+1. The most comprehensive treatment of institutional variation is Koremenos, Lipson, and Snidal
+(2004).
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+associated with creating andworking through institutions that vary along these dimensions.
+Typically, this involves some form of increased transaction costs or constraints
+as institutions exhibit high values on these dimensions, which are traded off for political
+benefits such as the ability to credibly commit, signal, fill in incomplete contracts,
+or gain legitimacy for policies. Understanding how international institutions matter in
+world politics, as both an independent and a dependent variable, hinges on such
+questions of variation and design.
+The purpose of this article is to conceptualize and measure another dimension
+of international institutions, their independence, and to test several propositions for
+explaining its variation. The notion of independence subsumes key aspects of the various
+institutional dimensions listed above and does so in a more politically meaningful
+way. The independence of an institution largely determines its authority and
+influence—in short, its ability to shape international politics. Among the most intriguing
+questions for students of IR is whether international institutions should be treated
+as actors in their own right rather than as epiphenomenal (the realist position), as simple
+arenas within which states interact (the traditional neoliberal position), or as social
+contexts that shape state interests (a typical constructivist position). Evidence is
+mounting that international organizations (IOs), in particular, should be treated as
+independent agents that play an active and even strategic role (Snidal and Thompson
+2003, 223-4; Hawkins and Jacoby 2006).
+IR scholars have focused indirectly on institutional independence and related concepts.
+International applications of principal-agent theory have investigated the conditions
+under which states delegate authority to IO agents. In some cases, these agents
+possess a significant degree of “autonomy” or “discretion” and may engage in actions
+not anticipated by their state principals (Hawkins et al. 2006; Pollack 2003; Nielson
+and Tierney 2003; Majone 2001). Others stress the role of IO bureaucracies. To serve
+their own interests and increase their power, international bureaucracies, like others,
+strive “to maximise their budget, their staff and their independence” (Vaubel 1996,
+195). Borrowing from sociological institutionalism, Michael Barnett and Martha
+Finnemore (2004) go farther, arguing that IOs can become autonomous sites of
+authority because their bureaucracies possess legitimate authority and control over
+expertise. Nowhere is the stress on supranational actors as drivers of IO influence
+more pronounced than in studies of the European Union (EU) (Alter 1998; Sandholtz
+and Stone Sweet 1998).
+This literature suffers from two important weaknesses. First, scholars tend to focus
+on a few “usual suspects”—including the International Monetary Fund (IMF), the
+World Bank, certain United Nations (UN) specialized agencies, and EU institutions—
+when they address the issue of IOs as independent actors. These institutions are by no
+means representative of the universe of international organizations; in particular, they
+have unusually large staffs and substantial resources at their disposal. This promotes
+an exaggerated sense of the degree and nature of independent behavior as well as a
+misleading focus on bureaucracies as the main source of IO independence. Second,
+the theoretical literature on institutional design and independence has tended to
+overlook issues of measurement.
+254 JOURNAL OF CONFLICT RESOLUTION
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Indeed, the political science study of IOs seems to have split into two branches, one
+largely theoretical and the other explicitly empirical with a quantitative focus. Grand
+theorists tend to focus on conceptualizing institutional design features with little attention
+to operationalization beyond particular cases.2 The quantitative literature, on the
+other hand, tends to treat IOs as homogeneous black boxes, with insufficient attention
+to variation among them.3 One of our goals is to bridge these traditions by starting with
+a variable that is both conceptually rich and theoretically grounded, on one hand, and
+operationalizable and thus practical for empirical research, on the other.
+In the next section, we provide a theoretical discussion of IO independence. Borrowing
+from IR theory as well as the literature on institutional independence at the
+domestic level—regarding central banks, judiciaries, and executive agencies—we discuss
+what independence entails in terms of both the institution’s design features and
+the structure of the relationship between political actors and the institution. In the third
+section, we operationalize IO independence. We propose six institutional design features
+that determine the degree of independence of an IO and present a protocol for
+coding IOs on the dimension of independence. The coding scheme is applied to a sample
+of regional integration arrangements (RIAs). The fourth section offers a test of several
+hypotheses—including the distribution of power among member states, the
+degree of trade interdependence among them, the duration of the institution, and the
+number and heterogeneity of members—for explaining variation in IO independence.
+The final section summarizes our main conclusions, points to some limitations of the
+study, and offers additional research suggestions.
+CONCEPTUALIZING IO INDEPENDENCE
+Despite an enormous literature on independence as a characteristic of domestic
+political institutions, the IR field has largely ignored it.We highlight a handful of notable
+exceptions that provide a foundation for its informed conceptualization. We also
+borrow from the literature on institutions at the domestic level for further insight into
+the qualities that render an institution independent. Our conceptualization highlights
+three interrelated elements of institutional independence: autonomy, neutrality, and
+delegation.
+Perhaps the most direct effort to address independence in an IR context comes from
+Kenneth Abbott and Duncan Snidal (1998, 9), who define institutional independence
+as “the authority to act with a degree of autonomy.” This is consistent with Robert
+Dahl’s (1982, 16) proposition that to be independent “in a political sense is to be not
+under the control of another,” which he characterizes as a state of “autonomy.” Barnett
+Haftel, Thompson / INTERNATIONAL ORGANIZATIONS 255
+2. Some of the best empiricalwork on international organization (IO) design and independence is in
+the form of case studies. Our point is that these studies rarely offer away to measure variables across cases so
+that findings can be replicated and generalized.
+3. This is true, for example, of the quantitative literature on sanctions (L. Martin 1992; Drury 1998)
+and of the literature on conflict and IOs (Russett, Oneal, and Davis 1998; Russett and Oneal 2001; Mansfield
+and Pevehouse 2000). There are some recent efforts to capture institutional variation in large-n analysis,
+including Bearce and Omori (2005); Boehmer, Gartzke, and Nordstrom (2004); Haftel (2004b, forthcoming);
+Koremenos (2005); and Pevehouse and Russett (forthcoming).
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+and Finnemore (2004) offer a similar conceptualization of autonomy in the context of
+IOs, which they understand as independence from states. In the most general terms,
+then, independence for an IO is the ability to operate in a manner that is insulated from
+the influence of other political actors—especially states. Thus, autonomy is a key element
+of any conceptualization of political independence.
+This notion of insulation from the control of other actors is an important ingredient
+of independence in domestic polities as well. It is precisely because of their autonomy
+that independent judiciaries are able to serve as commitment mechanisms, providing
+“an institutional apparatus that is capable of restraining us from giving in to momentary
+temptations of lawlessness” (Ferejohn 1999, 374; see also North and Weingast
+1989). Similarly, a cross-national study of central banks finds that independence is
+determined by the extent of executive branch authority to manipulate the careers of
+bank officials and the ability of the bank to resist government influence in monetary
+policy making (Cukierman,Webb, and Neyapti 1992). Autonomy is thus affected by
+both ex ante influence and ex post efforts at control or punishment. For example, executive
+agencies are least independent when legislators include a legislative veto as part
+of the statute creating a newagency, thereby reducing its autonomy (E. Martin 1997).
+Returning to the IR literature, in his application of principal-agent theory to EU
+institutions, Giandomenico Majone (2001) notes that the independence of an agent is a
+function of its autonomy but also of its preferences (see also Thompson 2006). To be
+truly independent, an agent must have preferences distinct from its principal or principals.
+AsKeohane, Moravcsik, and Slaughter (2000, 459) propose with respect to international
+courts and tribunals, independence measures “the extent to which adjudication
+is rendered impartially with respect to concrete state interests.” As a general
+principle, then, an independent actor has interests that are neutral or impartial with
+respect to other political actors. The notion of neutrality is the second key element on
+which we build.
+The neutrality principle is echoed by scholars of domestic judicial independence as
+well. For a judiciary to be independent, it must act as a “neutral third” in disputes
+(Shapiro 1981). In addition to their commitment function, independent central banks
+also provide information regarding policy choice and their consequences. Their ability
+to do so depends on their expertise and perceived neutrality, which render the information
+credible (Bernhard 1998). Daniel Carpenter (2001) makes a similar point in the
+context of domestic bureaucracies: the most authoritative bureaucracies have interests
+that are distinct from the powerful politicians that seek to control them. Their role as
+independent actors depends on this impartiality.
+However, even if an actor has autonomy and neutral interests, it may still have very
+little influence. The issue of delegation must also be considered. Delegation of authority
+to a bureaucracy (to make and implement rules) or to a third-party dispute settlement
+mechanism (to resolve conflicts) has been identified as a key element of an institution’s
+degree of legalization (Abbott and Snidal 2000). As institutional properties,
+independence and delegation are tightly intertwined (Keohane, Moravcsik, and
+Slaughter 2000). International institutions with significant delegated authority have
+the power to set agendas and shape policies through the exercise of discretion (Pollack
+256 JOURNAL OF CONFLICT RESOLUTION
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+2003) and to impose “sovereignty costs” on states in certain situations (Abbott and
+Snidal 2000).
+The notion of discretion, in particular, has occupied scholars concerned with
+domestic institutions. Some executive agencies are tightly constrained by rules defining
+their authority, while others are granted more discretion and thus influence (Horn
+1995). Bureaucracies with “proposal power” have the greatest independence and can
+constrain the choices available to the executive and legislature (Bendor, Glazer, and
+Hammond 2001, 252). Similarly, a central bank with greater latitude in terms of the
+policy goals it can pursue has more independence from the government. It should be
+noted that discretion is partly a function of control mechanisms, which can be used to
+constrain or punish institutional actors. Thus, the elements of autonomy and delegation
+are inextricably linked.
+In the next section, we build on these three institutional properties—autonomy,
+neutrality, and delegation—to identify a set of specific features that lend independence
+to an international institution. We conclude that variation in IO independence is
+largely a reflection of institutional design in such areas as decision-making procedures
+(especially relevant to the issues of autonomy and neutrality), the existence and discretion
+of supranational bureaucracies (to capture neutrality and delegation), and the
+existence and legalization of third-party dispute settlement (to capture autonomy,
+neutrality, and delegation).
+OPERATIONALIZING IO INDEPENDENCE
+Here we outline the institutional design features we believe are most important for
+measuring IO independence and develop a scheme for coding international institutions
+on the independence dimension. For each of three aspects of institutional
+design—decision making, supranational bureaucracy, and dispute settlement—we
+propose two indicators for our measure, for a total of six. We use examples from our
+data set of regional integration arrangements4 to illustrate our points. After outlining
+the coding scheme, we offer some basic descriptive statistics for the data.
+DECISION-MAKING PROCEDURES
+The nature of decision-making and rule creation procedures is a major component
+of independence insofar as it determines howmuch control individual states have over
+IO activities. Just as more decentralized power (i.e., the presence of multiple veto players)
+lends independence to central banks by making it more difficult to overturn their
+decisions (Moser 1999), and just as the unilateral power of a government to veto court
+Haftel, Thompson / INTERNATIONAL ORGANIZATIONS 257
+4. The online appendix contains basic information for these organizations. They are primarily
+designed to facilitate economic cooperation, although many also have political and security components.
+While some are not highly formalized, they all go beyond mere treaties insofar as they have regular meetings
+and well-specified decision-making procedures.We thus refer to them as “organizations” rather than rely on
+more general terms such as institutions or regimes.
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+decisions undermines judicial independence, IO independence is partly a function of
+the number of states required to control decision making. The issue of who is making
+decisions and how closely these decision makers are tied to national interests is also
+important. Accordingly, we identify two dimensions of decision-making procedures,
+voting rules and the body that makes major decisions, and explain how they relate to
+independence.5
+Voting rules have important implications for the degree of IO independence, especially
+with respect to the autonomy dimension. A key distinction is between decisions
+made by consensus, or unanimity, and decisions made by some type of majority rule.
+As the size of the veto group becomes larger, states increasingly relinquish control. In
+other words, majority rule forces states to countenance decisions with which they disagree,
+leading to a loss of control and some pooling of sovereignty (Moravcsik 1998,
+67). Rule by consensus, on the other hand, is intended to protect state sovereignty and
+reign in IO autonomy since no obligation can be imposed without each member’s consent
+(Koremenos, Lipson, and Snidal 2001, 772).
+Our sample reveals that nearly all RIAs follow a consensus rather than a majority
+voting rule to preserve national prerogative. “The ‘ASEAN [Association of Southeast
+Asian Nations] way’ of decision-making by consensus,” for example, “has served as a
+rationalization for the unwillingness of member states to transfer any decision-making
+authority to regional institutions” (Ravenhill 1995, 860). The only exception is the EU.
+With the Single European Act in 1986, the European Community moved from unanimity
+to weighted voting, in the form of the qualified majority voting (QMV) formula,
+in most issue areas.6 Although the QMV procedure provides larger states with
+more voting power, it also ensures that no single state can block the integration process,
+as France did in the 1960s.7 Representing perhaps the ultimate manifestation of
+independence, in some areas member states would require unanimous support to
+oppose an EU-level policy: European Central Bank policies and European Court of
+Justice rulings could only be overturned through treaty revisions. Because majority
+rule is rare among IOs, in our coding scheme, we make a dichotomous distinction
+between those institutions that have a meaningful majority rule procedure and those
+that do not (i.e., we do not distinguish a simple majority from versions of super-majority),
+8 assigning the former a point and the latter a zero.
+The question of what decision-making body holds the power to make decisions has
+important implications for the functioning of an IO and its independence. Because IOs
+are composed of governments, the ultimate authority to make decisions lies in the
+hands of the heads of state, who typically wield the most influence of any national
+258 JOURNAL OF CONFLICT RESOLUTION
+5. Joseph Nye (1971, 40) provides a related discussion.
+6. TheTreaty of Nice extended the scope of qualified majority voting(QMV)to include some 90 percent
+of issues. For more on this and its implications, seeWood and Yes7ilada (2002, 111-3). Some sensitive
+issues still require unanimity.
+7. Similarly, Jeffrey Schott (2000) argues that theWorld Trade Organization’s consensus rule is hindering
+the current negotiating round by allowing small groups of states to hold up the process.
+8. Several regional integration arrangements (RIAs), such as the Andean Pact and the CommonMarket
+of Eastern and Southern Africa, employ majority voting on some procedural issues.We do not count such
+practices as a meaningful majority rule.
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+political actor in the context of IOs (Moravcsik 1994). Nevertheless, the degree of
+involvement of heads of state in an IO varies, and even when their meeting (e.g., the
+Presidential Council, the Conference of Heads of State, or the like) is the highest
+authority, this does not necessarily mean that it makes most decisions. In some cases,
+the main decision-making body is a ministerial council—usually composed of foreign
+or finance ministers in the case of RIAs.
+We argue that IOs in which a ministerial council (or other body of representatives)
+is the most important decision-making body are more independent than IOs in which
+heads of state are the key decision makers. In the latter, national interests tend to dominate,
+and ministers, if they do meet, are constrained in their ability to promote distinct
+goals of the organization or the member state community. As one observer of African
+RIAs notes, “The lack of decision-making authority on the part of the Council of Ministers
+constitutes an institutional sword of Damocles. Because the Council runs the
+risk of seeing its decisions amended or overturned by the Authority [of heads of state],
+the Council of Ministers has a natural propensity to avoid new or daring initiatives”
+(Ntumba 1997, 308-9). In cases where decision-making power is delegated to a ministerial
+council—for example, the EU, the Andean Pact, and ASEAN—the process benefits
+from greater flexibility and at least a modicum of neutrality from state interests. In
+some cases, a minister or other delegate will begin to identify with the IO and the member
+state community, and while heads of states may delegate more or less discretion to
+their individual representatives, control over these agents will always be imperfect.
+The U.S. Environmental Protection Agency often defied White House positions during
+UN climate negotiations, pursuing interests more closely aligned with the EU and
+environmentalists than with the president (Bodansky 2001, 38).
+This distinction has added importance since heads of state often fail to meet on a
+regular basis. In regional organizations that are managed primarily by heads of state,
+infrequent meetings can undermine their ability to function. A comparison between
+two RIAs illustrates this point. In the Arab Maghreb Union (AMU), the Presidential
+Summit is the sole decision-making organ; as such, cooperation “relies upon the ability
+of the heads of state to meet regularly in order to build the architecture of a regional
+organization” (Mortimer 1999, 178). The fact that the summit was convened only six
+times in nine years (instead of eighteen times, as planned) resulted in an IO thatwas in
+“a state of, at best, prolonged hibernation” (Mortimer 1999, 177). In the Andean Pact,
+on the other hand, although the Presidential Council is formally the institution’s highest
+authority, most decisions are made by the Council of Foreign Ministers and the
+Commission. Like AMU, the Andean Presidential Council did not meet on a regular
+basis in the early 1990s due to political divisions. Although the lack of summit meetings
+did hamper the advancement of the Andean Pact, the RIA nevertheless made considerable
+progress at this time precisely because heads of state were not the primary
+decision makers (Mendoza 1998).
+In sum, we contend that an IO in which a ministerial council (or its equivalent) is the
+most important decision-making body is more independent than one dominated by
+heads of state, ceteris paribus.We assign one point to the former and zero otherwise.
+Haftel, Thompson / INTERNATIONAL ORGANIZATIONS 259
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+SUPRANATIONAL BUREAUCRACY
+The existence of a supranational bureaucracy, typically embodied in a secretariat or
+a commission, is an important sign of IO independence. By supranational bureaucracy,
+we refer to a permanent technical and administrative body that manages the
+operation of the IO on a regular basis (Jacobson 1984, 89). The staff is intended to
+function as management and technical experts who do not represent individual governments
+and are insulated from political influence in the performance of their duties.
+Article 213 of the Treaty of Rome, for example, requires that “the Members of the
+Commission shall, in the general interest of the Community, be entirely independent
+in the performance of their duties.” In other words, bureaucratic interests are neutral
+with respect to individual national interests.
+This independence varies among secretariats, of course, and some IOs do not even
+possess a separate bureaucracy. These institutional features are an important component
+of independence, as evidenced by the frequent objection among state leaders that
+secretariats are too institutionalized or have too much capacity.9We capture variation
+in supranational bureaucracy independence with two indicators: the existence of a distinct
+secretariat or its equivalent and the authority of this body to initiate policy. These
+are intended to capture whether an IO has a neutral bureaucracy and the extent to
+which this bureaucracy is delegated meaningful discretion.
+The existence of a supranational bureaucracy that manages the operation of the IO
+is the most basic requirement for this criterion. When states endowIOs with a secretariat
+or commission, they are delegating to a centralized authority and generating independence
+in the process. As Koremenos, Lipson, and Snidal (2001, 771) observe,
+“Centralization is controversial, politically and conceptually, because it touches so
+directly on national sovereignty.” It is unsurprising, then, that not all IOs have a secretariat.
+Our survey of existing RIAs reveals several such instances: the administration
+of the Southern African Customs Union (SACU) is managed through the Finance
+Department of South Africa, the Bangkok Agreement lacks a secretariat and is coordinated
+by the Economic and Social Commission for Asia and the Pacific, and the North
+American Free Trade Agreement has three separate national secretariats. We assign
+one point to an IO that has a permanent secretariat or commission and zero otherwise.
+When there is a permanent secretariat, the authority of the supranational bureaucracy
+must also be considered. Building on discussions of discretion in the context of
+central banks and executive agencies, we propose that an important sign of IO independence
+is the degree of responsibility that the member states delegate to the organization’s
+bureaucracy. Most secretariats perform informational and operational roles;
+that is, they prepare meetings and documents, provide technical assistance, and ensure
+the day-to-day functioning of their organizations.10 At the same time, some IO bureaucracies
+are provided with additional and much more active responsibilities. In particu-
+260 JOURNAL OF CONFLICT RESOLUTION
+9. Association of Southeast Asian Nations (ASEAN) governments, for example, resisted the creation
+of a permanent Asia Pacific Economic Cooperation (APEC) secretariat due to fears of lost sovereignty.
+Some ministers even complained about secretariat officials being connected by e-mail, arguing that it
+reflected too much “institutionalization” (see Funabashi 1995, 139).
+10. This categorization of functions builds on Jacobson (1984).
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+lar, some secretariats and commissions can initiate and recommend policies and
+thereby promote the goals of the organization, prerogatives that greatly enhance
+bureaucratic authority. We focus on the power to initiate and recommend as an
+important source of independence.
+The European Commission represents the ideal type for secretariats with the power
+to initiate. The commission plays a crucial agenda-setting role and indeed has the sole
+right of initiative in almost all “first pillar” matters (Majone 2001; Pollack 2003). As
+Leon Lindberg (1971, 85) points out with respect to the European Commission, “possession
+of a formal right to initiate most policy proposals, to be present as these are discussed
+by the governments, and to participate actively in the discussion . . . have also
+been important resources [of the commission’s strength].” The bureaucracies of the
+Andean Pact and theWest African Economic and Monetary Union (WAEMU) enjoy
+similar powers. In contrast, as one scholar of African regionalism points out, many
+secretariats are delegated little authority: “expected only to ensure the smooth functioning
+of the community machinery on a day-to-day basis, they are severely handicapped
+in doing anything else by the lack of any real decision-making power”
+(Ntumba 1997, 313). An observer of the Central American Common Market (CACM)
+complains that the regional secretariat lacks “the powers to remove obstacles in the
+path to greater integration” (Bulmer-Thomas 1998, 320). Without the power to initiate,
+secretariats such as these cannot set agendas and break political logjams that hinder
+movement toward further cooperation. To capture this variation in secretariat discretion,
+we assign one point to an IO whose bureaucracy can initiate policies or make
+recommendations and zero otherwise.
+THIRD-PARTY DISPUTE SETTLEMENT
+Dispute settlement reflects an important institutional dimension of IO independence
+and captures elements of the autonomy, neutrality, and delegation principles. The
+presence of a centralized mechanism for solving disputes facilitates exchange and
+cooperation among political and economic actors at the domestic level and among
+states (North and Weingast 1989; Yarbrough and Yarbrough 1997, 134-5). International
+dispute settlement mechanisms (DSMs) are potentially constraining, however,
+because states must delegate important judicial powers to neutral third parties. Typically,
+theseDSMsare designed with substantial autonomy, such that states cannot control
+or overturn decisions. We propose that the most independent dispute settlement
+procedure must be automatic (states must not be able to bypass the procedure) and
+binding (states must not be able to ignore or veto the ruling), and the judges themselves
+must be drawn from a standing body (so that they cannot be screened and selected on
+an ad hoc basis, ensuring neutrality). These features correspond to those identified
+in the IR literature on legalization and dispute settlement (Smith 2000; Goldstein
+et al. 2001; Posner and Yoo 2005). Few DSMs meet all three criteria—exceptions
+are the European Court of Justice and the World Trade Organization’s (WTO’s)
+mechanism—and there is considerable variation.
+James McCall Smith (2000) offers a five-point scale for measuring DSMs along a
+continuum of legalization: none, low,medium, high, and very high.We employ Smith’s
+Haftel, Thompson / INTERNATIONAL ORGANIZATIONS 261
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+measurement and data in this article but for simplicity and symmetry collapse his categories
+into just three: none, low, and high. For our coding purposes, a low level of
+legalization refers to an instance in which third-party review is automatic and binding
+but judges are picked from an ad hoc roster, while a high level of legalization entails a
+standing tribunal as well as automaticity and bindingness.11 Under the category of
+third-party dispute settlement, then, we assign one point to each level of legalization
+for a maximum of two points.12
+INDEPENDENCE ACROSS RIAS: DESCRIPTIVE STATISTICS
+Having outlined our composite indicator of independence, in this subsection we
+present several descriptive statistics of our data set of regional integration arrangements
+with an eye toward demonstrating the variable’s validity and usefulness.
+Table 1 presents the six indicators and reports the number of times each trait occurs
+in the thirty RIAs of the sample. As discussed above, the indicators are constructed as
+“dummies,” such that RIAs score one point for trait present and zero for trait absent.
+Our sample includes all existing RIAs for which information is available and is thus
+close to the universe. Data for the indicators were collected from several primary and
+secondary sources,13 as well as through direct communication with RIA officials. Cod-
+262 JOURNAL OF CONFLICT RESOLUTION
+TABLE 1
+Coding Rules and Occurrence of Traits in Sample
+Coding Rule Occurrences of Trait
+Decision-making procedures
+1. Are decisions made by majority rule? 1
+2. Does a council of ministers hold decision-making power? 16
+Supranational (regional) bureaucracy
+3. Is there a permanent secretariat? 25
+4. Can the secretariat make recommendations or initiate? 4
+Dispute settlement mechanism
+5. Is there a binding dispute settlement mechanism? 11
+6. Is there a standing tribunal? 7
+11. Collapsing Smith’s (2000) categories does not result in a great deal of information loss for our purposes.
+One category omitted from our measure is the presence of nonbinding third-party review. Since states
+are free to ignore such a review, we assume that it adds little to institutional independence.Asecond omitted
+category captures whether nonstate actors have legal standing in the dispute settlement mechanism (DSM),
+an issue that does not relate directly to automaticity or bindingness.
+12. For coding purposes, we do take into account whether theDSMhas actually been implemented. In
+the case of more than one RIA, including the Arab Maghreb Union (AMU) and the Economic Community of
+Central African States, states have agreed on paper to form regional tribunals but have not done so (Mortimer
+1999, 81; Union of International Associations 1999-2000, 565).
+13. We relied especially on various years of the Union of International Association’s Yearbook of
+International Organizations; the International Monetary Fund’s “Directory of Economic, Commodity and
+Development Organizations” (available online at http://www.imf.org/external/np/sec/decdo/contents.htm);
+United Nations Conference on Trade and Development (UNCTAD1996); electronic searches of periodicals
+through the Lexis-Nexis database; and Web sites of the RIAs.
+Downloaded from jcr.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+ing of the indicators regarding dispute settlement mechanisms relies on Smith (2000),
+as outlined above.
+Since these institutions change over time, albeit slowly, we have clustered our measurements
+in the same year, 1996, for purposes of comparison. Our focus on RIAs
+serves as a useful first cut at understanding variation in IO independence more generally.
+Beginning with a fairly unified sample has advantages: the examination of organizations
+of similar type makes comparisons of institutional features and independence
+more meaningful by allowing us to control for some factors. Of course, we may not be
+able to generalize from our sample to all IOs—those with universal memberships and
+in different issue areas may exhibit different patterns, for example. Comparing independence
+across types of organizations raises a number of interesting theoretical questions
+and is precisely the type of empirical research that our variable facilitates, as we
+discuss in the Conclusion.
+Figure 1 reports the distribution of RIAs on our independence scale.Acursory look
+reveals that considerable variation does exist. The distribution can be described as a
+right-tailed bell curve; in other words, most RIAs exhibit a low level of independence,
+and only a few exhibit no independence or a high level of independence.
+We can also examine more closely the level of independence of specific RIAs. Figure
+2 presents the level of independence of each RIA, differentiating the three major
+components: decision-making procedures, regional bureaucracy,14 and dispute settlement
+mechanism. Looking at the aggregate measures, we observe that the EU is the
+most independent IO, followed by the Andean Community; the Central European Free
+Trade Agreement, the Group of 3 (G3), and SACU are the least independent RIAs,
+each with zero points.
+Haftel,Since these institutions change over time, albeit slowly, we have clustered our measurements
+in the same year, 1996, for purposes of comparison. Our focus on RIAs
+serves as a useful first cut at understanding variation in IO independence more generally.
+Beginning with a fairly unified sample has advantages: the examination of organizations
+of similar type makes comparisons of institutional features and independence
+more meaningful by allowing us to control for some factors. Of course, we may not be
+able to generalize from our sample to all IOs—those with universal memberships and
+in different issue areas may exhibit different patterns, for example. Comparing independence
+across types of organizations raises a number of interesting theoretical questions
+and is precisely the type of empirical research that our variable facilitates, as we
+discuss in the Conclusion.
+Figure 1 reports the distribution of RIAs on our independence scale.Acursory look
+reveals that considerable variation does exist. The distribution can be described as a
+right-tailed bell curve; in other words, most RIAs exhibit a low level of independence,
+and only a few exhibit no independence or a high level of independence.
+We can also examine more closely the level of independence of specific RIAs. Figure
+2 presents the level of independence of each RIA, differentiating the three major
+components: decision-making procedures, regional bureaucracy,14 and dispute settlement
+mechanism. Looking at the aggregate measures, we observe that the EU is the
+most independent IO, followed by the Andean Community; the Central European Free
+Trade Agreement, the Group of 3 (G3), and SACU are the least independent RIAs,
+each with zero points.
+Haftel, Thompson / INTERNATIONAL ORGANIZATIONS 263
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+0 1 2 3 4 5 6
+Independence
+Number of RIAs
+Figure 1: Distribution of Independence Scores
+14. For our sample, regional bureaucracies are the appropriate subset of supranational bureaucracies.

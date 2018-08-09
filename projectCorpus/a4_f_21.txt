@@ -1,0 +1,759 @@
+constantly to improve their tools and working methods? The software crisis is the name given to the 
+state of the software industry to emphasize the fact that most practical software systems contain errors 
+and are inherently unreliable, and yet many crucial functions within our society rely on the accuracy of 
+such systems.
+The name was coined and accepted as an accurate reflection of the current state of affairs in the late 60s. 
+In the past twenty years much concentrated effort, resulting in more disciplined programming languages, 
+principles and guidelines for good system design, sophisticated support software, improved design-and-
+development languages, and advances in formal techniques, has taken a good deal of the edge off the 
+original crisis. But, working in precisely the opposite direction, the moves to more ambitious software 
+projects (such as real-time and safety-critical applications as well as simply larger and more complex 
+systems) has undermined, perhaps negated, the impact of the general improvements. So despite 
+enormous advances within both the science and the technology of software design, it is not clear that the 
+nature of the crisis has changed much, or lessened in severity.If there were, say, a similar long-term crisis in regular engineering then we would think twice before 
+driving over a new bridge, resist the impulse to slam doors in buildings, and generally proceed with 
+caution in order that these edifices and erections should not crack, split, break off at the edges, or even 
+collapse into a more stable state of lower potential energy. Software products are typically not treated 
+with a great deal of circumspection, but then neither do they seem to kill many people or cause the 
+collapse of significant sectors of society. Why is this? Perhaps there isn't really a software crisis after 
+all? Or perhaps the significance of software systems within society is overrated, as such things often are 
+by the people who are responsible for them?
+  
+Page 28
+I think that neither of these proffered answers is correct, but that they both have a significant element of 
+truth in them. For the software purist, the technology is in crisis. We can't prove that our software 
+systems do what they're supposed to do, and we can guarantee that they contain errors which may, or 
+may not, be obvious when they occur. Added to the difficulty of findings errors, which we know must 
+be there, we can't guarantee to correct them either, certainly not without introducing other errors that 
+offer no more promise of being findable or fixable than the original ones. This sort of description does 
+begin to sketch out a state of affairs that may merit the label ''crisis."
+On the other hand, the competent software practitioner can challenge the "crisis" descriptor. If software 
+is constructed in accordance with a stringent development methodology, validated at every step, 
+thoroughly tested before use, and used wisely then we can guarantee software reliability—at least, to the 
+same degree that we can guarantee any complex artefacts in the real world. From this viewpoint, the 
+only reason for "crisis'' in the industry is sheer professional incompetence somewhere along the line. 
+This is not to say that there are not a lot of very bad software systems around. It is just to say that the 
+existence of bad products is due to the prevalence of professional incompetence rather than flaws in the 
+basic methodology.
+Our practitioner might continue with something like: software systems are objects in the real world, they 
+are not mathematical abstractions. Thus it is foolish to expect proofs of correctness, and hence 
+guaranteed correctness in some absolute sense. So if you want to call this state of affairs one of "crisis," 
+then there will always be a software crisis. The more rational view is to work towards a technology that 
+will maximize confidence in the products but always bear in mind, with respect to application area and 
+usage, that the software is not guaranteed in some absolute sense.
+And formalism does, of course, have an important part to play in the development of a software 
+technology that regularly delivers robust, reliable and maintainable products. We have every reason to 
+expect valuable contributions from formal semantic definitions of the various languages used (from 
+requirements and specification languages through to implementation languages), from formal analytical 
+techniques for increasing our understanding of these complex objects (i.e. large programs), and from 
+formal proof techniques (for clearly some system components can be based on proven abstractions).  
+Page 29
+In sum, the problems that constitute the software crisis have by no means all been solved, but the worst 
+effects of the crisis can be avoided by a combination of a professional approach to system development, 
+and sensible application and use of the systems so constructed. In addition, further progress will 
+undoubtedly be made in the development of tools and techniques both formal and purely 
+methodological. But the point that we have to bear in mind is: what does AI do to this situation? And we 
+shall get to this issue later in this book.
+A demand for more software power
+One of the contributing forces to the continued impact of the software crisis is, as mentioned above, the 
+desire for more ambitious software systems—we can view this as a demand for more software power. 
+So what is the nature of this desired increase in software power? It takes a number of forms. Let me list 
+them and then consider each one in turn.
+1. Responsiveness to human users
+2. Software systems in new types of domains
+3. Responsiveness to a dynamic usage environment
+4. Software systems with self-maintenance capabilities
+Before attempting to explain this list, I should make it clear that this is very much a wish list for what 
+will be achievable at some future date in terms of increasing software power; it is not a statement of 
+current possibilities. But what we do currently see is various attempts in the software world to move in 
+the direction of one or more of these types of increases in software power.
+Responsiveness to human users
+Software that is responsive to its users should be self-explanatory. But there is broad range of degrees of 
+responsiveness in various dimensions. It might be said that user-responsive software has been with us 
+for years. The bank's computer system, for example, treats its customers as individuals: it recognizes 
+them (by means of a plastic card and a code number); it accesses their personal account; and deals with 
+it in the manner that they request. It is thus responsive to each customer as an individual,
+  Page 30
+but not in the same way as a human cashier is. There is a qualitative difference in user responsiveness 
+between the computer system and the human. The human approach (in its better manifestations) typifies 
+the level of user responsiveness to individuals that we should work towards. And when we have made 
+some significant progress down this particular road we shall similarly have increased the power of 
+software systems. Currently they are limited to treating everyone as much the same (some sort of 
+average human being); when, in the future, they can recognize and respond subtly to some of our many 
+individual differences, we shall have entered a new age of software systems.
+What advances would such a move necessitate? Basically, the computer system would have to be 
+capable of building and maintaining an up-to-date model of each individual user, and then the more 
+familiar a person was to the system, the more individual treatment he or she could expect. But currently 
+we have little idea of what the basic information that characterizes an individual is (let alone how to 
+represent it within the computer system). In addition, we have similarly sparse knowledge of what sorts 
+of perception and automatic modification mechanisms would be necessary to keep the user models up to 
+date.
+Software systems in new types of domains
+This aspect of increased software power is based on the observation that if the range of applicability of a 
+technology is increased then the power of that technology can be said to have increased. The 
+construction of robust and reliable software systems in domains which were previously beyond the state 
+of the art implies that more powerful software systems have become available.
+At the moment, there are many niches of society that are not (and cannot be) populated with software 
+systems. These potential application domains are currently viewed as inappropriate for a number of 
+different (but interrelated) reasons: the problem is too ill-defined, the domain is too changeable, 
+acceptable solutions are highly context dependent and open to debate—there are not enough clear 'rights' 
+and 'wrongs'. Examples of such currently intractable domains are management decision-making, house-
+cleaning and natural-language communication. The production of useful working systems in these areas, 
+which are currently viewed as closed to software technology, would again signal an advance in software 
+power.
+  Page 31
+What's required to effect this sort of qualitative leap in the technology? A lack of clear right and wrong 
+answers in the problem domain would seem to require a change in software system validation 
+techniques, as simple testability to ascertain correct or incorrect behavior would no longer always apply. 
+Highly changeable, or dynamic, applications suggest a need for sophisticated self-adaptivity, and we 
+have little idea how to achieve this in a robust and reliable way.
+Responsiveness to dynamic usage environments
+This feature actually forms part of both of the previous ones, but it is, I believe, sufficiently important to 
+merit a subsection all to itself. A major block to many aspects of increasing the power of software 
+systems is the fact that all eventualities have to be figured out in advance and the software designed to 
+cope with them. In many new domains, and for more ambitious software systems in everyday 
+applications, there appears to be no possibility of foreseeing (and thus designing the software to 
+accommodate) all of the possible outcomes of the problem solving strategy within the particular problem 
+situation. In fact, I can make a much stronger statement than this: we cannot foresee (and thus design 
+for) enough of the possible outcomes to enable us to implement self-adaptive software systems except at 
+an extremely crude level. We must either avoid applying software systems in highly dynamic domains 
+or we must content ourselves with dealing with only the static core of the problem, and perhaps a few 
+major variants.
+Take the house-cleaning robot as an example: such a robot will never clean the same house twice, not 
+because it makes such a mess the first time that it is never used again (I am assuming that a mature and 
+appropriate technology has been developed!), but because at the level of cleaning details such as 
+furniture in certain positions, the scattering of dirt and debris, etc., every house is constantly changing, 
+never to return to the exact configuration that it has just left.
+Good house-cleaning requires almost continual creative problem solving on the part of the cleaner, not 
+high-level creativity perhaps, but creative problem-solving that is way beyond the current state of the art 
+in computer software technology.
+  Page 32
+Software systems with self-maintenance capabilities
+This fourth aspect of software power is unique in this list because it is not really tied to the other three, 
+although it is likely to become a necessity if significant advances are made towards realizing any of the 
+other three features of software power. Quite simply, if software systems could monitor their own 
+performance, report problems, suggest solutions, and even implement them (once they had been 
+confirmed by some trusted human), we would have a minor miracle on our hands. However, software 
+that embodies almost any part of this list of desiderata would be software that is qualitatively more 
+powerful than any which exists today.
+Self-explanation capabilities, which exist in a crude form in some expert systems, is a first step in this 
+direction in practical software systems. It is possible to ask, say, a diagnostic system "how did you arrive 
+at that diagnosis?," and it will respond with a trace of the reasoning process employed to get from the 
+symptoms given to the diagnosis generated. It is then usually possible to further query the particular 
+reasoning chain generated by asking "why did you conclude that X was true?" where X is some 
+intermediate conclusion within the diagnosis presented. This feature is, in reality, little more than an 
+automatic trace of the execution path, but it is, nevertheless, a first step in the direction of a self-
+maintenance capability. There are other, more ambitious examples, such as the TEIRE-SIAS system that 
+assisted a domain expert in automatically debugging itself, but it was, and it remains, a demonstration 
+system in AI research.
+A need for Al systems
+This last point finally makes explicit a general theme that has been running under the last few 
+subsections, but has been left unsaid. Now is the time to say it: each of these advances in software power 
+will need to draw heavily on the field of AI before it will succeed. If we want to upgrade the power of 
+software systems in the ways that I've been suggesting, then we shall have to incorporate AI into 
+practical software systems.
+Hence this first chapter ends with the reasons why I believe that software engineers should be interested 
+in adding AI to practical software systems. The next chapter will explore the extra problems that such a 
+move to add AI might cause bearing in mind our earlier discussion of software engineering methodology 
+and the software crisis.
+  Page 33
+CHAPTER 2
+Al Problems and Conventional SE Problems
+What is an Al problem?
+It's all very well to suggest that we need to incorporate some AI into practical software systems in order 
+to boost their power, but what exactly is this AI stuff? Before I venture to answer this question, let me 
+put to you a simpler question: at what height is a person tall? I imagine that you feel quite confident 
+about the meaning of the word "tall" and about the concept of "tall people," but can you then give me a 
+definition of "tall" such that I can apply the term only when appropriate? No, you can't do this, and 
+similarly I cannot give you a definition of AI such that you will be able to clearly decide between AI 
+software and non-AI software. This is unfortunate, and it causes a lot of problems. But what it does not 
+mean is that the term AI has no useful meaning, any more than it means that the term ''tall person" is 
+devoid of useful content. Therefore, in order to gain the comfortable warm feeling that comes with 
+knowledge of what important terms like AI mean, in a general sense at least, we must spend some time 
+looking at example AI problems and noting their salient features. But first, for those readers who really 
+do like a succinct definition, here's a popular one for AI:
+Artificial Intelligence: is that field of computer usage which attempts to construct 
+computational mechanisms for activities that are considered to require intelligence when 
+performed by humans.
+  
+Page 34
+This 'definition' is not way off-line, and it does provide a starting point for those readers who lack any 
+preconceptions in this area. But just to quickly make the point that this definition is less than perfect: 
+note that an ability to perform complicated mental calculations is a sign of human intelligence, but that 
+this a straightforward and thoroughly conventional application of computer technology—there is no 
+demand for the art and artifice of AI in most numerical computation.This type of definition of AI is a behavioral one: it specifies the nature of AI in terms of what the system 
+can do, rather than how it does it. As we shall see below, such performance-mode specification is an 
+important feature of AI. Such a definition might be termed an external definition, the alternative is an 
+internal or mechanistic definition. And there are a number of mechanistic definitions of AI. They are 
+particularly popular in the subdomain of expert systems where part of the definition of an expert system 
+typically mentions that the system's behavior is generated by an inference engine and a knowledge base. 
+On a broader front, the notion of AI systems typically implies the use of heuristic mechanisms—i.e, 
+rules of thumb, practical strategies that are shown to work well most of the time but with no general 
+guarantees. In Europe particularly, the term Knowledge-Based System is taken as virtually synonymous 
+with AI system, and this, note, is a description of how the system works rather than what it can do.
+In order to approach the notion of AI, let me present and discuss a tabularization that contrasts AI and 
+non-AI problems.
+AI Problems Conventional software problems
+1. incomplete, performance-mode 
+definitions
+complete, abstract definitions
+2. solutions adequate/ inadequate solutions testably correct/incorrect
+3. poor static approximations quite good static approximations
+4. resistant to modular approximation quite good modular approximations
+5. poorly circumscribable accurately circumscribable
+Let's start with point (1), the problem specification issue. 
+  
+Page 35
+III-defined specificationsMy point (1), tabulated above, amounts to the statement that AI problems are ill-defined. They are 
+typically defined (if that's the word) by aspects of the behavior of the only intelligent systems 
+known—i.e. you and me. This is a performance-mode definition in that it is only our problem-solving 
+behavior that is directly observable, the mechanisms by which we achieve our incredible performances 
+can only be inferred by indirect means. You might now be tempted to point out that a performance-mode 
+definition is just the RFS that we looked at in the last chapter—a functional, or input-output relationship, 
+is the very thing that is directly observable in human problem-solving. This is true, but not very helpful 
+because of the nature of the RFS obtained by the observation of humans using their intelligence to solve 
+problems.
+To start with, the functional specification is not rigorous, so it's not really an RFS anyway. But, more 
+importantly, it is both incomplete and composed of enumerated instances (and/or approximate 
+generalizations). A traditional RFS, by way of contrast, is complete and captured by an accurate 
+generalization. As an example of this difference, consider the problem of finding the square roots of 
+numbers. An AI-style definition would have to be based on observations of the human performance of 
+this task: "What's the square root of 9?" response 3 - "What's the square root of 25?" response 5 - and so 
+on. I'll not bore you with the details (you can probably construct some more of them yourself). What sort 
+of functional specification do we end up with? It's a partial enumeration of input-out-put pairs that are 
+part of the square root function. They are, incidently, part of many other functions as well, e.g. in the 
+above case the specific examples also fit the function that computes the square root of odd numbers 
+greater than 8, and the function that just takes odd numbers to odd numbers.
+A proper RFS for this problem would be:
+square_root (x) is y such that y*y=x, and x>0
+and this is very different from the AI-type functional specification:
+square_root (9) —> 3 and square_root (25) —> 5
+This is in fact a caricature that makes the specification problem in AI seem less of a problem than it 
+actually is. For in a real AI application both the input and the output information may be ill-defined, i.e. 
+we may be unsure of the scope of the necessary input information as well as how best
+  Page 36
+to represent it, and the related output may be similarly hard to pin down accurately. For example, in the 
+area of medical diagnosis, the input-out-put pairs elicited from the expert diagnostician will be a 
+collection of symptoms yielding a diagnosis of a specific disease. Looking at the input: do we have all 
+the relevant symptoms? Are the ones that we have represented accurately? For example, is blood 
+pressure really the relevant symptom, or is it something else that happens to affect blood pressure? 
+There is no suggestion here that the human diagnostician may be trying to mislead us, but rather the 
+question: can we be sure that he or she hasn't inadvertently misarticulated what is something of an innate 
+skill? The diagnostician may not realize that he or she is taking body-language clues, for example, into 
+account when diagnosing a patient. On the output side: different diagnosticians may come up with 
+differing diagnoses for the same set of symptoms, and it may be difficult to single out any one diagnosis 
+as the correct one. What exactly is a diagnosis? It is surely more than just the general name of a disease, 
+like bacterial meningitis? But how much more? Merely degrees of severity and more specificity within 
+the particular disease class? Or does a diagnosis need to take into account information about the 
+patient—age, general physical condition, etc.?
+Even this expert-system-type example is relatively benign, for a specification (however ill-defined) can 
+be based upon overt input-output pairs, and ones moreover in which both the input and the output are 
+(fairly) directly observable. Consider now the problem of natural-language processing (NLP). The input 
+may be directly observable (i.e. a sentence, say, in English—although the real scope of the input needed 
+to support 'understanding' is open to debate again), but what about the output? The meaning extracted 
+exists only in the head of the processor. Answers to the questions of what is represented, and how it is 
+represented, clearly cannot be based on direct observation. So, in this case, we don't even have much 
+clear idea of what sort of output should contribute to any individual input-output mapping.
+As a slightly more concrete example, consider the problem of generating summaries of stories written in 
+English. You and I, and most of our friends can do this quite reasonably—so it's clearly 'doable'. But 
+given exactly the same input stow, we would all generate different summaries: some might be judged 
+wrong (or, more likely, inaccurate) and others might be judged as essentially the same. Nevertheless, it 
+is hard to imagine that we could reduce the variety of observed input-output pairs to a clean and well-
+defined set—which would be, of course, still only a partial characterization of the function that we seek.
+  Page 37
+The summarization of stories is, perhaps, an extreme example, but it does illustrate the difficulties 
+associated with specifying AI problems. And, of course, these difficulties don't disappear when we 
+tackle more tractable AI problems. They just become somewhat less obvious.
+So now you know what's meant by an incomplete performance-mode definition—a partial non-RFS, 
+might be another way to describe it—and that's the sort of specification that we must deal with in AI. 
+Before we leave this subtopic I should draw your attention to the use of inductive generalization in 
+expert systems' technology (described in Chapter 7). This approach to knowledge elicitation can be 
+viewed as the production of a generalized 'specification' from a partial performance-mode one.
+Correct versus 'good enough' solutions
+The example just given can also be used to illustrate the second point of distinction tabulated above. 
+Irrespective of how you do it, let's suppose that you produce a program that is meant to implement the 
+square_root function. "Is this a correct implementation?" is a reasonable question to ask. And, although 
+it cannot be answered with certainty (despite the fact that the underlying algorithm might be formally 
+verified), we can test the program and decide quite catagorically whether it is correct for the actual input 
+values tested. We enter "9," and we get the answer "3." We enter "25," and we get the answer "5.'' Quite 
+elated by these two instances of correct behavior, we go for something more ambitious: we enter "16," 
+and to our unbounded joy the answer is "4." All of these answers are correct (I leave the proof of this 
+bald assertion as an exercise for the reader).
+So now we know that the implementation is correct for the particular instances tested at least. We know 
+nothing at all about its correctness with respect to the vast majority of the potential computations that it 
+has been designed to be capable of performing. And this is the very problem that the advocates of 
+verification quite rightly point out when confronted by a tested software system. This is then bad 
+enough, but consider the plight of the designer of the story-summarizing system. How is it to be tested?
+We input a story of the sort that the system was designed to summarize, and out comes a summary. Is 
+the summary correct? Well, most likely, there is no single correct summary nor even a set of alternative 
+correct summaries. There might well be some clearly incorrect summaries, but, in general, the 
+straightforward notion of decidably correct or incorrect system behavior even for specific inputs is 
+difficult to pin down for many AI problems. Outputs are more likely to be judged as adequate, or 'as
+  Page 38
+good as our resident expert would have done', etc. With AI problems we typically find that for a given 
+input there is a multiplicity of 'good enough' solutions rather than solutions which are clearly correct or 
+incorrect. So, for AI problems, we often find that the relatively simple property of decidably correct or 
+incorrect input-output pairs is absent. Thus the basis even for testing is missing.
+This sort of revelation about the nature of AI systems should appal all self-respecting software 
+engineers, but, unfortunately, justified dismay makes the realization no less true. It just means that the 
+actual problems to be tackled are worse than you thought.
+It's the HOW not the WHAT
+One significant objection to the characteristic features of AI problems that I am advocating here, which 
+any but the totally AI naive should be wanting to challenge me with, is that some AI problems are both 
+completely and precisely specifiable in a thoroughly conventional way—the problem of playing chess is 
+a case in point. Chess has long been considered to be an AI problem, and although I would maintain that 
+it does not typify the nature of AI, it is an AI problem. But the problem of playing chess is completely 
+specifiable, and in a formal abstract way. Have we then completely undermined the significance of this 
+supposedly salient feature of AI problems? Not at all, you'll be pleased to learn. Chess is representative 
+of a sub-class of AI problems: the sub-class that are AI problems in practice but not in principle. This is, 
+in fact, not a major sub-class, but it has had more than its fair share of exposure because it is one of the 
+more tractable sub-classes. And it is, of course, eminently sensible to explore the more tractable sub-
+classes before we turn our attention to their more difficult brethren—hence the attention and exposure 
+AI problems like chess have received. But we must, at the same time, be careful to recognize that certain 
+features of this sub-class are not general features of AI problems. This means that solution strategies 
+which exploit the non-characteristic sub-class features may not be applicable within the general class of 
+AI problems.
+So why is chess an AI problem? Not only is chess a formally specifiable problem, but there is also a 
+well-known, simple algorithm to play perfect chess. The point is that this algorithm is computationally 
+intractable—i.e, it cannot be used in practice because its space and time requirements far exceed any 
+conceivable resources. In addition, the best human experts do not play perfect chess, which suggests (but 
+does not
+  Page 39
+prove) that they employ heuristic strategies in their play. So chess is an AI problem in practice, but not 
+in principle. Chess has a curious RFS: two different input states (i.e. the initial board configuration and 
+whether the system is black or white) mapping to a win (or perhaps a draw) situation. The input and 
+output structures are well defined, as are all the possible ways of transforming input to output (i.e. the 
+legal moves of chess). Nevertheless, we have an AI problem, and this is a consequence of quite simple, 
+but overwhelming complexity—the various options are quite easy to work out, it's just the sheer number 
+of possibilities that defeats the analytical approach (for any conceivable computer). A point of 
+significance for us here is that such problems are not typical AI problems, but formal games and puzzles 
+are often used as the exemplars of AI techniques. So you must beware of such examples. To have 
+validity in AI in general, the technique demonstrated must not rely on the non-AI characteristics of the 
+example problem—they often do.
+This sub-class of AI problems illuminates a further useful, and quite general, feature of AI software 
+development. We can view most (perhaps all) AI problems as completely specifiable in principle. So, 
+for example, forecasting the future of the economy might be considered a completely specifiable 
+problem if we're prepared to specify all of the contextual features—i.e, full details of the current state of 
+the economy, similar details of all other national economies, details of the current trends in public 
+opinion, a detailed knowledge of global weather patterns, etc. Clearly, we could never get all the 
+necessary information, but in principle it's possible (it all depends on your principles).
+If you'll suspend disbelief for a moment and accept that AI problems are completely specifiable in 
+principle, we can then see AI programming (or system development if you prefer) as:
+the search for an adequate approximation to a well-specified, but formally intractable, problem
+and cast in terms of hows and whats:
+AI system development is a process a discovering an adequate HOW to approximate an 
+impossible WHAT.
+In other words, we can contrast conventional programming with AI programming in terms of reversing 
+the significance of HOWs (the algorithms) and WHATs (the specifications). Given that these two 
+processes, both called programming or system development, are fundamentally
+  Page 40
+different we can then begin to appreciate that adding AI to practical software systems may demand a 
+radical change in system development strategies.
+The problem of dynamics
+Point (3) relates back to our earlier discussion of the problems caused by dynamic usage environments 
+for software systems. Many AI problems are inherently dynamic—i.e, they change with time. "Many 
+aspects of the world we inhabit have these properties. Nevertheless, we have software systems 
+performing quite well in dynamic niches—so what's the big deal with AI?" you might demand.
+The point is that current software does operate in dynamic niches but it tackles only a static 
+approximation to the fundamentally dynamic problem. Hence, such software is sometimes severely 
+limited in power (i.e. what it can actually do in the niche it occupies), and is nearly always in need of an 
+upgrade—partly because some features of the original problem structure have changed. The very fact 
+that there is a software system operating adequately in some niche is indicative of the fact that there is a 
+quite good static approximation to the problem. The niches where we don't yet see computer software, 
+e.g. management decision making, are characterized, in part, by being dynamic and resistant to 
+reasonable static approximations.
+The quality of modular approximations
+A key strategy for coping with complex systems is to modularize them—i.e. break the total system into 
+a collection of more-or-less independent and simpler subsystems. And, like the previous feature, 
+modularization implies approximation, but in this case the degree of approximation involved can be 
+completely counterbalanced by the exchange of information between the modules. So, complex 
+problems are made more intellectually manageable by breaking them into independent subproblems, and 
+then adding the inter-module interaction necessary to yield an accurate reconstruction of the original 
+problem.
+As a trivial example, consider once again our sorting problem. Our RFS of the problem did, in fact, 
+break it into two modules: a subproblem of permutation, and another of order checking. The interaction 
+between these two modules was primarily the passing of a list of values from one
+  Page 41
+module to the other (although, as our crude design for an algorithm shows, the necessary interaction is a 
+little more complicated). It is then quite possible, even easy, to accurately modularize the sorting 
+problem, and this is the case with most problems to which conventional software engineering is applied.
+Another aspect of similarity with the previous distinctive feature is that it is not the problems as such 
+which are accurately modularizable, but that only readily modularizable versions of the problems are 
+tackled in conventional software engineering. So, as with the static-dynamic dimension of problems, we 
+may well see AI applied to seemingly quite conventional problems but the AI version will be more 
+ambitious and realistic—it will be a manifestation of the problem to which we would like to apply 
+software technology, but whose component subfunctions are too tightly inter-coupled to permit veridical 
+modularization using conventional software technology.
+A more realistic example is natural-language processing. There are now many commercially available 
+software systems that boast natural-language interfaces of one sort or another. The obvious, but wrong, 
+conclusion is that natural-language processing (NLP) is a solved problem. The correct inference is that 
+certain highly-simplified manifestations of the NLP problem are accurately modularizable, and are thus 
+amenable to solution by conventional software technology. In fact, a reasonable argument to make is 
+that these commercial systems embody such a gross simplification of the NLP problem that it is no 
+longer an NLP problem—it is a small, formal language with some English-like syntax.
+A more ambitious attempt to develop an NLP system was the HEARSAY project of the 70s. The goal 
+was to develop a computer system to "understand" (i.e. extract meaning, not just words and syntax, 
+from) spoken English. The obvious, but simplistic, modularization scheme involves a module for 
+analysis of the speech signal in terms of phonemes, then a module to extract words from the phonetic 
+information, next a syntactic module would generate a syntactic interpretation of the word strings, and 
+finally a semantic module could generate a meaning representation with the output of each module 
+feeding successively into the input of the next. This modularization (which was in actuality a good deal 
+more sophisticated than I have suggested) could not be made to work (although the project "met its 
+goals," but that's another story) because the modularization destroyed too much of the essential structure 
+of the original problem. If phonetic, syntactic, semantic, etc. modules are used then they are so tightly-
+intercoupled that they can't realistically be treated as independent modules. One interesting spin-off 
+from this project was the
+  Page 42
+"blackboard architecture"—a strategy for supporting modularization of highly-intercoupled modules, 
+and one that is found in a number of expert systems shells.
+We should note here that, as with skinning cats, there is more than one way to modularize a problem. 
+And I don't just mean that we can often modularize a given problem in several alternative ways, I mean 
+that there are alternative bases for determining what a module should embrace. What this can lead to is 
+fundamentally different, alternative modularizations of a given problem. In particular, 'object-based' 
+modules stemming from the object-oriented paradigm, will be quite different from the more traditional 
+modules derived from the structured methodologies of the 70s and 80s which placed enormous 
+emphasis on modeling of functions, and de-emphasized the modeling of data. One way to characterize 
+an object-based module is that it encapsulates both behavior and state—i.e. both function and 
+data—whereas in the more traditional modularization schemes these two aspects of computation are 
+kept well separate and data is usually a secondary consideration. Object-oriented analysis and design 
+were introduced in Chapter 1.
+Context-free problems
+The final point of difference tabulated (point 5) refers to yet another aspect of approximation—roughly, 
+how well a self-contained approximation to the problem can be formulated independent of its context. 
+Elsewhere (Partridge, 1986), I have discussed this point at length and characterized AI problems as 
+exhibiting tightly coupled context-sensitivity, while more conventional software engineering problems 
+exhibit only loosely coupled context-sensitivity.
+It is easily illustrated with the square-root problem and the story summarizer. Abstract mathematical 
+problems, like square root, are at an extreme of the context-sensitivity continuum—in fact, they are 
+largely context free. The problem of square root can be specified independent of all aspects of the real 
+world. The only context necessary is that of mathematics. Thus a program to compute square roots can 
+be written and used as a context-free function. The correctness of this program is independent of the 
+context of its use—e.g. it is not affected by the source of the numbers that it receives as input, nor by the 
+various uses to which its output may be applied.
+Consider now the story summarizing system. We already know that there is no reasonable notion of a 
+correct summary, but, in addition, the
+  Page 43
+adequacy of the range of potential summaries will vary drastically dependent upon who is assessing it. 
+The merit of the individual summaries (or the 'correctness' of the program, if you prefer) will depend 
+upon the source of the input story (e.g. who wrote it, and why), the intended use of the summary (e.g. to 
+support a particular line of argument, or to be indexed as an abstract of the original), and finally on the 
+biases and prejudices of the human expert doing the judging.
+Natural language, to take the extreme example, cannot be accurately represented as a set of 
+sentences—there is no set of meaningful sentences, and there is no set even of grammatical sentences, 
+under any normal interpretation of the notion of a set. Natural language is just not that sort of 
+phenomenon. It is a thoroughly dynamic and open-ended phenomenon defined in a loose way by the 
+population of its users and how they care to use it. How good a static, modular, and well-circumscribed 
+approximation we can eventually develop remains an interesting open question. But there is every 
+indication that it will have to be treated as an AI problem—perhaps open-ended and dynamic—before 
+we'll see computers with anything like a sophisticated ability to process English.
+In order to emphasize this important element of distinction, I'll provide you with examples from a totally 
+different domain: the plant world. When wandering in the desert of New Mexico (to pick a location at 
+random), the alert pedestrian will become aware of at least two rather different sorts of plants: certain 
+more-or-less standard trees and bushes, such as the mesquite tree, together with a range of non-standard, 
+solid, prickly rather than leafy, growing organisms, i.e. cacti. The mesquite tree is a system that is 
+closely coupled to its context, while the cactus tends to be quite loosely coupled, almost context free. If 
+you dig up a mesquite tree and transplant it immediately, it will die. If you rip up a cactus, and leave it 
+sitting on a shelf in the garage, it will probably last for months, even years—it could even flower! A 
+cactus deprived of soil, water and light (i.e. its normal context) is still a viable, self-contained system, a 
+mesquite tree is not. AI problems tend to be like mesquite, and conventional computer science problems 
+like cacti.
+One of the conclusions the practicing, or even just aspiring, software engineer should draw from the 
+foregoing is that AI problems are just not the sort of problems for which we should be trying to engineer 
+reliable software systems. It just doesn't seem sensible to pursue these largely chimerical phenomena 
+with an intent to capture them in the framework of the explicit and precisely defined logic of a computer 
+system. AI problems may be all very well as fodder for esoteric research projects, which have only to 
+produce a fragile demonstration system, but to continue
+  
+Page 44
+working on AI problems as a basis for practical software systems is tantamount to lunacy. Strong 
+support for this view can easily be found, and it certainly has some merit, but for the moment let's put it 
+on ice, and take a closer look at the fundamentals of what the software engineer does.  Page 45
+CHAPTER 3
+Software Engineering Methodology
+A chapter on software engineering methodology may occasion some surprise in the alert reader who has 
+read and remembers the contents of Chapter 1. In the first chapter, software engineering was explained 
+by sketching out the task that software engineers perform, and the stages in a 'standard' software 
+development life cycle. The sequence of stages presented comprises a methodology. In this chapter I 
+want to focus attention on the ubiquitous skeletons that underlie the two major methodological variants 
+(one osseous infrastructure for each). Just as the amazing diversity of mammals rests on but a single 
+skeletal design, so the two basic bone structures of software methodology can, and are, fleshed out in 
+many different ways. It is, however, useful to take a hard look at the essential elements of software 
+methodology before we move on to consider the well-padded elaborations that software engineers and 
+AI people actually use, or reject. In this way we can obtain a clear view of the range of problems that AI 
+software introduces into the conventional life cycle: a view unobscured by the various embellishments 
+that each practical methodology carries with it. With a clear appreciation of these problems in mind, we 
+will then be in a position to explore the classical AI-system development life cycle, and see why, despite 
+its problems, it may provide the best basis for engineering AI software.
+  
+Page 46
+Specify and verify—the SAV methodology
+Let us start out by trying to do things properly. The keystones of the best (some might say, the only 
+acceptable) way to develop reliable software systems are:
+1. complete, prior specification of the problem, and
+2. subsequent verification of the claim that the algorithm designed correctly implements the 
+specification.
+There are, of course, many detailed frameworks that will accommodate these two key ideas, but I shall 
+lump them all together as the Specify-And-Verify or SAV approach to software system construction.Advocates of the SAV methodology have to face a number of problems even if they are concerned only 
+with the implementation of conventional software systems. First, problem specifications can seldom be 
+complete. I am very tempted to replace "seldom" in the preceding sentence by "never," but am restrained 
+by the fact that the sub-class of problems, which, one might reasonably argue, can be completely 
+specified, are a collection of problems that add weight to my general argument—so I shall single this 
+sub-class out for attention.
+The sub-class of (perhaps) completely specifiable problems is the collection of abstract formal problems, 
+such as factorization of integers, computing prime numbers, greatest common divisors, eight-queens 
+problem, etc. Another way to characterize this sub-class (or at least pick out some simple exemplars of 
+the sub-class) is that it is typified by the collection of example problems to be found in presentations of 
+the power of the SAV methodology—I'll call it the set of model computer science problems.I believe 
+that this sub-class differs significantly from typical software engineering problems, and that failure to 
+appreciate the essential differences has always plagued (and continues to aggravate) the search for a 
+solution to the software crisis. For when the arguments and strategies are developed using the model 
+computer science problems as examples, and the results then have to be applied to practical software 
+problems, that's a sure recipe for repeated disappointment—unless the crucial differences between these 
+two classes of problems are taken into account.
+In order to support my contention that there are crucial differences, here's another tabulation of essential 
+differences which can be compared with the one in Chapter 2. It will provide a basis for discussion of 
+my claim that there are essential differences, even if you find this tabulation fails short of being 
+indisputable evidence that I'm right.
+  
+Page 47
+Practical software problems Model computer science problems
+1. fairly complete, abstract definitions complete, abstract definitions
+2. solutions testably correct/ incorrect solutions provably correct/ incorrect
+3. quite good static approximations perfect static approximations
+4. quite good modular approximations perfect modular approximations
+5. accurately circumscribable completely circumscribable
+I would hope that this table is quite meaningful without much additional information. I've already given examples of 
+model computer science problems. Examples of practical software problems are inventory management, payroll 
+production, process-control problems, and so on—i.e. problems without an AI flavor, but real-world problems rather than 
+simple elements of a grand abstraction like mathematics.To press home the fundamental nature of this new category of problem, let me take you back to my 
+earlier analogy with life in the desert. If mesquite trees are AI problems, and cacti are conventional 
+software engineering problems, then what are the model computer science problems? The answer is: 
+they are the smooth pebbles which are strewn along each and every arroyo (or dry gulch). A pebble 
+exhibits a remarkable detachment from its context. It will typically continue to thrive in the complete 
+and permanent absence of air, water, nutrients and light. In actuality, it's a radically different category of 
+object, and it would be considered to be the height of foolishness to develop techniques for dealing with 
+pebbles and expect to apply these techniques to plants. This analogy may contain a dash of exaggeration, 
+but perhaps no more than that.
+The myth of complete specification
+The first column in this table is very like the second column in the previous tabulation of problem-class 
+differences (in Chapter 2). I have changed the column heading, but there's nothing significant in that. 
+But what you may be suspicious about is that I have made a small change to
+  
+Page 48
+the first entry—I've added the word ''fairly." Why did I do this? I did it because "fairly complete" is a 
+more accurate characterization of the sort of specification available to practical software system 
+designers. The notion of a "complete specification" is a convenient fiction that we could live with in 
+Chapter 2, but now that your appreciation of the software engineer's task has matured I can tell it like it 
+really is (and, of course, model computer science problems had not been separated off in Chapter 2 
+either).
+The myth about complete specification of software problems has been discussed at length by Waters 
+(1989), and I can do no better than quote at length from his argument. He begins by saying that the 
+purpose of a specification "is to state the minimally acceptable behavior of a program completely and 
+exactly. The implementor is allowed to create any program that satisfies the specification." It is often 
+said that a specification functions like a contract between the two, but, as Waters points out, "contracts 
+only work well when both parties are making a good faith effort to work toward a common end. If good 
+faith breaks down, it is always possible for one party to cheat the other without violating the contract."
+The problem with specifications (and contracts) is that it is not possible for them to be complete. This is 
+true, because no matter how trivial the program in question, there is essentially no limit to what you 
+have to say. You do not just want some particular input/output relationship. You want a certain level of 
+space and time efficiency. You want reasonable treatment of erroneous input. You want compatibility 
+with other programs you have. You want documentation and other collateral work products. You want 
+modifiability of the program in the face of change. You want the implementation process to be 
+completed at a reasonable cost. You want feedback from the implementor about the contradictions in 
+what you want.The only way to deal with the impossibility of consistently nailing down everything you want is to 
+assign specifications a different role in the programming process. Instead of setting them up as a 
+defensive measure between adversaries, use them as a tool for communication between colleagues. 
+Under the assumption that the implementor will make a good faith effort to create a quality program, 
+many of the points outlined above can go unsaid. In addition, things should be set up to encourage the 
+implementor to help evolve the specification into a good one.
+There are several points of particular interest for us here. First, the complete-specification notion, which 
+is clearly violated by most AI problems, may be a non-starter even for conventional software problems. 
+If
+  
+Page 49
+this is true, then there is nothing special about AI; it is just an extreme, in this respect. This is, I think, 
+quite important for such a change of viewpoint (i.e. from AI as something rather different from 
+conventional SE, to AI and conventional SE being similar and yet rather different from model CS 
+problem solving), if justified, provides a radical new perspective on the problems of engineering AI 
+software. I shall thus probe this issue a little more before moving on to consider the notion of 
+verifiability.
+And second, there is the very general point about complete precision when dealing with computers. 
+There is a deep-seated and widespread belief in the computer world that we must specify completely and 
+precisely whatever it is that we wish a computer system to do for us. Sloppiness is not to be encouraged 
+in the arena of high technology. The upshot of this philosophy is that, most of the time, communicating 
+with computer systems is a pedantic chore that only the most dedicated of humans are willing to tackle. 
+Now, there are certainly occasions when high-precision communication is absolutely essential: take, for 
+example, safety critical applications of computer technology (although I might add that the pedantry of 
+the interface bears no necessary relation to the correctness or appropriateness of the instructions 
+accepted by the system). However, there are also many applications of computer technology in which a 
+'forgiving' or tolerant computer system, with appropriate safeguards, would be most beneficial. Recent 
+years, with, for example, the Macintosh computers, have given us a glimpse of a viable alternative. But 
+it is taking a long time for the technologists to make computers generally available to those of us who 
+are unwilling to learn the fine details of some pedantic communication protocol. It is possible that 
+commitment to complete and precise specification may be the root cause of this obstacle to more general 
+usage of computers.
+As an example of the impossibility of specification completeness, consider the earlier RFS for sorting a 
+list of values:SORT(x)gives y,
+where the list y is a permutation of the list x,
+and the list y is ordered
+Suppose that the elements of list x happen to be strings of characters: what does an ordered list mean 
+exactly? Dictionary order, then whose dictionary? And dictionaries typically only deal with alphabetic 
+characters, how shall we treat non-alphabetic symbols in our list of objects to be ordered ? In more 
+general terms, the notion of ordering is not well defined for many types of objects. So are there 
+unspecified restrictions on the
+  
+Page 50
+sorts of objects that can constitute the list x? Or is the order-checking module actually more complex 
+that we might at first have thought?
+What are the biggest lists that the resultant program is expected to deal with? Will they cause storage 
+problems in main memory? What sort of efficiency is required before the program can be used 
+effectively? and so on. There are, as Waters points out, an endless stream of further questions that might 
+need to be answered before the implementor can guarantee that the program produced will effectively 
+satisfy the need which originally gave rise to the specification.
+You may find my short list of 'incompletenesses' unconvincing, but remember that it came from a 
+problem that is both quite trivial and relatively well defined (compared to most AI problems). Is it hard 
+to believe that a realistically large and less abstract problem would give rise to an endless supply of such 
+unaddressed issues, however extensive the specification? Is it conceivable that this wouldn't be the case?
+Requirements analysis can, and should, go a long way towards uncovering and resolving the hidden 
+features of proposed software systems, but it can never be exhaustive. In fact, Rich and Waters (1988) 
+argue at length for the "Myth: Requirements can be complete." They choose the example of withdrawing 
+money from a bank teller machine; the initial requirements might be:
+After the customer has inserted the bank card, entered the correct password, and specified how 
+much is to be withdrawn, the correct account must be indentified, debited by the specified 
+amount and the cash dispensed to the customer, etc.
+This is, of course, nowhere near complete, but could it ever be?To start with, a lot of details are missing regarding the user interface: What kinds of directions 
+are displayed to the customer? How is the customer to select among various accounts? What 
+kind of acknowledgement is produced? To be complete, these details must include the layout of 
+every screen and printout, or at least a set of criteria for judging acceptability of these layouts. 
+Even after the interface details are all specified, the requirement is still far from complete. For 
+example, consider just the operation of checking the customer's password. What are passwords 
+to be compared against? If this involves a central repository of password information, how is 
+this to be protected against potential fraud within the bank? What kind of response time is 
+required? Is anything to be done to prevent possible tampering with
+  
+Page 51
+bank cards? Looking deeper, a truly complete requirement would have to list every possible 
+error that could occur—in the customer's input, the teller machine, the central bank computer, 
+the communication lines—and state exactly how each error should be handled. (Rich and 
+Waters, 1988, p.42)
+For Rich and Waters, "At best, requirements are only approximations," and the subsequent 
+specifications cannot be expected to fill in the holes by merely a move to more formal precision. This 
+viewpoint causes them to see software development as a process in which the developer must be 
+oriented towards making reasonable assumptions about unspecified properties, rather than trying to 
+minimally satisfy specified properties.
+A closely related point is whether specification can be completed before implementation begins, for the 
+model that requires complete specification prior to implementation clearly implies that complete 
+specification is possible. "This model," write Swartout and Balzer (1982), "is overly naive, and does not 
+match reality. Specification and implementation are, in fact, intimately intertwined because they are, 
+respectively, the already-fixed and the yet-to-be-clone portions of a multi-step system development... It 
+was then natural [i.e. when multi-step methodologies were accepted], though naive, to partition this 
+multi-step development process into two disjoint partitions: specification and implementation. But this 
+partitioning is entirely arbitrary. Every specification is an implementation at some other higher level 
+specification" (p. 26 in Agresti, 1986, reprint).
+Swartout and Balzer emphasize that it is still of the utmost importance to keep unnecessary 
+implementation decisions out of specifications and to perform maintenance by "modifying the 
+specification and reoptimizing the altered definition. These observations should indicate that the 
+specification process is more complex and evolutionary than previously believed and they raise the 
+question of the viability of the pervasive view of a specification as a fixed contract between a client and 
+an implementer.'' (p. 27)There are clearly some grounds for challenging the key notion of complete specification; it is thus all the 
+more surprising that so little debate and discussion surrounds this central question. I've nailed my 
+colours to the mast with the heading to this subsection, but the question merits more than expressions of 
+belief or disbelief, and efforts to implement practical AI software will force the necessary further 
+discussion upon the software community.
+  
+Page 52
+One often hears of the plea for more "formal methods" in software design and development (the general 
+notion was introduced in Chapter 1). The origin of this advocacy for a more formal approach was 
+perhaps the general, and quite justified, dissatisfaction with software specifications couched in natural-
+language. There are several good critiques that expose the weaknesses of specifications resting on the 
+inherent informality of say, English, however assiduous the specifiers are in their vain attempts to chase 
+away errors of omission, ambiguities, contradictions, etc.—see Hill (1972) or Meyer (1985). Meyer 
+(1985) lists the following "seven sins of the specifier" and uses them to highlight the weaknesses of 
+natural-language specification and then the strengths of formal specification.
+ 
+The Seven Sins of the Specifier
+noise an element that does not carry information relevant to any feature of the 
+problem; variants: redundancy, remorse
+silence a feature of the problem that is not covered by any element of the text
+overspecification an element that corresponds not to a feature of the problem but to a feature 
+of a possible solution
+contradiction two or more elements that define a feature of the system in an incompatible 
+way
+ambiguity an element that makes it possible to interpret a feature of the problem in at 
+least two different ways
+forward reference an element that uses features of the problem not defined until later in the 
+text
+wishful thinking an element that defines a feature of the problem in such a way that a 
+candidate solution cannot realistically be validated with respect to this 
+featureIt is generally agreed that a move to more formal specification of software systems should contribute to the goal of more 
+reliable software products. A number of formal languages, known as specification languages, are now available. The 
+Vienna Development Method (VDM), originally designed for programming language specification by the IBM laboratory 
+in Vienna, is one such specification language (see Andrews, 1990, for a short tutorial and Jones, 1986, for a more 
+exhaustive treatment). Another popular specification language is Z developed by The Programming 
+  
+Page 53
+Research Group at Oxford University (see Ince, 1990, for a short tutorial, and Ince, 1988, for an 
+extensive one).
+And, as we have seen, the move to make software development an engineering science is sometimes 
+viewed as a substantial shift into the realms of formal logic. In recent years, we have witnessed the 
+blossoming of the logic programming movement, and within this general area there is advocacy of logic 
+as a formal specification language (and also as a formal requirements-specification language as we shall 
+see in Chapter 5). The significance of this movement, from our current perspective, is that, as its 
+advocates point out, a specification couched in (an appropriate subset of) logic is also an executable 
+program—a Prolog program. Hence the whole spectrum of knotty problems occasioned by the need to 
+design algorithms to meet specifications collapses to nought.
+As you might guess, this sort of good news is just too good to be true. For a start, a logically correct 
+specification may be a computationally intractable algorithm. As an example, consider our specification 
+of the SORT problem. The algorithm embodied in the logical specification, i.e. a permutation generator 
+followed by an order-checker, is much too inefficient to use. So a correct specification is only part of the 
+problem, and it may be only a small part. But we might note at this point (for it is addressed more fully 
+before the end of this chapter) that although an executable logic-based specification may constitute an 
+impractically inefficient program, it may, nevertheless, serve quite admirably as a prototype of the final 
+system. The practical constraints (of, say, excessive running time for large data sets) that must be 
+accommodated by the final product may be avoidable without penalty within a precursory prototyping 
+exercise.
+A second hitch in the logic programmer's world-view becomes apparent when we are contemplating AI 
+programming rather than conventional programming. A quote from Kowalski (1984), illustrates this 
+misconception neatly. He says: "Good programmers start with rigid, or at least formal, software 
+specifications and then implement them correctly first time round" (p. 95). In fairness I ought to add that 
+Kowalski is not focusing on AI software, but it is clearly meant to be within the compass of his 
+comments. As you will see in Chapter 5, Kowalski feels that although some trial and error (i.e. 
+exploratory activity) is unavoidable, it can be packed neatly away in requirements analysis once we use 
+an executable requirements specification language such as Prolog. As you will realize from our earlier 
+characterizations of conventional as distinct from AI system development, his somewhat bald assertion 
+(quoted above) may be a little over the top with respect to conventional notions of  
+Page 54
+programming, but for AI programming it misses the point completely: the construction of AI software 
+centres on finding an adequate tractable approximation to an intractable problem. Subsequent to the task 
+of finding this adequate approximation, a more conventional specification may be forthcoming, but this 
+is merely the tidying up after the difficult work has been done.
+Hogger(1988) tries to build in a realization that AI system development is fundamentally exploratory by 
+noting that the current version of a system may well be an approximation to what we are aiming at, but it 
+is, nevertheless, a specification of a particular computation. Then we should separate the correctness of 
+our approximation from its aptness as an adequate solution to the problem. And, moreover, a logic-based 
+analysis of our current approximation will enable us to formally comprehend the implications of 
+exploratory changes introduced. Interesting as it is, there are a number of threads of reasoning in this 
+proposal which invite discussion. But let me just point out that even if a logic-based analysis of a large 
+program is possible, it will tell us only about "the logical impact" of our updates. Is there any necessary 
+relation between "logical impact" and intended meaning—i.e. (to use Hogger's terms) can the logical 
+correctness of the representation of the current approximation be expected to have any significant 
+bearing on the central problem, the aptness of the approximation? Whilst the correctness of the 
+representation would be a nice thing to know about, and constitute a real advance, it probably goes only 
+a little way towards solving the fundamental problems of exploratory software development.
+So, movements like logic programming are not to be dismissed out of hand, but neither are they to be 
+taken on board, especially in an AI context, in the spirit that any move to a more formal basis must be an 
+advance—they are sometimes an advance up a cul de sac, a long one perhaps, but not one with the goals 
+that we have in mind at the end of it.
+What is verifiable?
+Verification is the second key point in the SAV methodology. In Chapter 1 we explored this notion a 
+little and saw that a wide spectrum of opinions are available: from program verification being a totally 
+misguided idea right through to it being our only real hope for elimination of the software crisis. At this 
+point I want to emphasize what this positive hope is and why it may be seen as the only route to reliable 
+software systems.
+  Page 55
+Verification is the process of constructing a logical proof that a given algorithm is functionally 
+equivalent to a specification, and hence that the algorithm correctly implements the specification. 
+Formal verification will provide us with a general assurance that our algorithm will always deliver 
+output as characterized by the specification. It is this general assurance that testing can never deliver (as 
+will be made clear below).
+Logic is a syntactic exercise. It can be used to determine whether two structures are equivalent, or 

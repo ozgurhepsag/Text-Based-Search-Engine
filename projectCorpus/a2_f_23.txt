@@ -1,0 +1,729 @@
+nge rate regimes are less dollarized, which may be interpreted as evidence
+that fixed exchange rates provide a monetary commitment mechanism
+that reduces hedging. Finally, capital account openness is positively associated
+with foreign currency substitution. This result suggests that globalization
+tends to increase the use of foreign currency as a store of value, suggesting
+a link between globalization and economic volatility to the extent that dollarization
+contributes to financial crises (Levy-Yeyati, 2006).
+I explore several alternative political explanations and test the robustness
+of the results in Models 4 to 8. Model 4 includes a dummy for election years
+to pick up the effects of uncertainty associated with political transitions. This
+variable enters with a negative sign, perhaps contrary to expectations. Model
+5 includes a variable that measures partisan distance between the executive
+and the four largest parties of the legislature.12 The results suggest that polarization
+is strongly correlated with foreign currency deposits, perhaps in line
+with theories emphasizing how polarized veto players may contribute to
+policy rigidity, which may be problematic, especially in times of crisis
+(MacIntyre, 2001). To further probe whether the effect of veto players may
+be non-linear, Model 6 includes the squared value of checks; the estimates do
+not support nonlinearities. I substitute polcon for checks as a robustness test
+in Model 7. The estimated coefficient is positive and significant, consistent
+with checks. The model reported in column 8 lags the right-hand-side variables
+by 1 year to control for possible reverse causation in the relationship
+between dollarization and the economic fundamentals. The hypothesized
+negative relationship between veto players and foreign currency substitution
+remains consistent and robust.
+Since the theory suggests that the durability of formal institutional constraints
+contribute to the property rights of investors, a second set of models
+reported in Table 4 probe the effects of political institutions on foreign currency
+substitution using 5-year averages over the period 1975-2004. The
+dependent variable in each of the specifications in Table 4 is the 5-year average
+of the foreign currency deposit ratio. Columns 1 and 2 include the institutional
+measures checks and polity, respectively. As before, only checks
+enters with the expected negative coefficient in the bivariate model. Column
+3 probes the robustness of the relationship to the inclusion of period and
+regional fixed effects; column 4 adds the economic control variables. The
+negative relationship between checks and currency substitution holds at
+higher than a 95% level of confidence. In Model 5, polcon enters significant
+and with the expected negative sign.
+University of Brasilia, Brazil
+Partisan theories of political economy expect that bondholders will panic
+with the election of a left-wing presidential candidate. The latter seems to be
+what happened in Brazil in the 2002 presidential elections. However, quantitative
+analysis of perceptions of sovereign credit risk in Argentine, Brazilian,
+Mexican, and Venezuelan presidential elections from 1994 until 2007 shows
+no real evidence of a link between partisanship and perceptions of risk, even
+if the left-right divide is further broken down into left, center-left, centerright,
+right. Instead, international and domestic economic fundamentals have
+a stronger influence on risk evaluations. Qualitative analysis of the individual
+presidential elections shows the importance of policy uncertainty in explaining
+why certain electoral periods seemed more critical than others and how
+bondholders select between multiple equilibria. This research helps shift
+political analysis away from partisanship and more in the direction of policies
+and articulation.
+Keywords: partisan theories; political economy; political uncertainty;
+sovereign risk; Latin America
+Bondholders panicked when Lula da Silva was likely to win the
+Brazilian presidency in 2002 but had no such concern during his
+Authors’ Note: The authors would like to thank Chap Lawson, Kurt Weyland, Octavio
+Amorim, David Samuels, Michael Coppedge, Taylor Boas, Carlos Pereira, Marcelo Salomon,
+Luis San Vicente Portes, Jim Caporaso, and three anonymous reviewers at Comparative
+Political Studies for their comments. They would also like to thank Amit Khuram, JP Morgan
+Chase, and Bernard Weis for their assistance with the data.
+Comparative Political Studies
+Volume 42 Number 10
+October 2009 1292-1316
+© 2009 SAGE Publications
+10.1177/0010414009331711
+http://cps.sagepub.com
+hosted at
+http://online.sagepub.com
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1293
+re-election bid in 2006. Nor did the victories of left-leaning Cristina
+Fernández in Argentina or even the re-election of Hugo Chávez in Venezuela
+have much of an effect. The most recent literature argues that it is not the
+left per se but a shift to the left that leads to concern among bondholders
+(Vaaler, Schrage, & Block, 2006). This would explain the reactions to the
+aforementioned elections but not the lack of response to Andrés Manual
+López Obrador almost winning the presidency in Mexico in 2006. An
+alternative answer might be that risk was minimal because international
+economic conditions were highly favorable to commodity producers and
+international reserves were considerable (Singh, 2005). But does this explanation
+hold up over time, particularly during episodes of depressed global
+liquidity and demand for commodities?
+This article finds that, contrary to much of the political economy literature
+on the subject, party ideology is not an important determinant in movements
+in sovereign risk during presidential elections in emerging markets,
+whereas external vulnerability, global appetite for risk, and predictability of
+policies are. Based on financial data during national elections in Argentina,
+Brazil, Mexico, and Venezuela between 1994 and 2007, the article uses a
+multimethod approach of qualitative, historical analysis of electoral campaigns
+combined with quantitative, statistical analysis of bond spread
+movements, partisan ideology, party system institutionalization, reserves,
+and other factors.
+The article begins with brief reviews of partisan and structural approaches
+and the role of uncertainty in explaining election-related outcomes. It then
+explains the data and classification of elections used. The subsequent section
+presents quantitative and qualitative analyses, with the intention of testing
+theories emerging from perspectives that emphasize partisan identity, global
+conditions, and policy uncertainty. Most specifically, it quantitatively tests the
+following hypotheses based on the partisan approach, which bondholders
+perceive: a victory of the left as negative; a shift from right to left as negative;
+left to right as positive; and left to left as neutral; a distinction between left,
+center-left, center-right, and right; and so on. An additional variable measuring
+party system institutionalization is included to see if this conditions partisan
+response. Statistical analyses also test assumptions of the importance of global
+conditions and domestic vulnerability by including in the model international
+reserve holdings, market volatility, and commodity prices. Historical analysis
+of each electoral episode complements and advances the statistical tests by
+indicating that interactions between policy uncertainty and external vulnerability,
+not partisanship, explain variance in perception of sovereign risk during
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1294 Comparative Political Studies
+elections. The inclusion of qualitative analysis is important in contextualizing
+political phenomena to explain why outcomes differ when international market
+conditions appear to be similar.
+Elections and the Economy: Theoretical Models
+No single theory can explain the complex relationship between political
+moments, such as elections, on financial and economic variables. The
+central claim in this article is that a combination of global economic conditions,
+local foreign currency reserves, and domestic policy uncertainty, rather
+than partisanship and ideology, provides the most complete understanding
+of the relationship between elections and the economy in a globalized world.
+Partisan Models
+Although classical partisan models of political economy emphasize how
+the partisan identity of a government affects economic indicators in developed
+countries (Alesina, Roubini, & Cohen, 1997; Hibbs, 1977), recent
+contributions analyze developing countries and give more attention to the
+way that electoral periods affect financial markets as opposed to macroeconomic
+indicators. Using financial market data from 1975-1998 for 78
+developing countries, David Leblang (2002) found that speculative attacks
+are most likely to occur during a left-wing government and after an election.
+Block and Vaaler (2004) and Vaaler et al. (2006), using data from 20
+developing countries, find that financial markets are most concerned about
+a shift to the left during elections but not the re-election of a candidate of
+the left. These studies seem to confirm the basic premises of partisan theories:
+(a) that market actors distinguish politicians of the left and the right;
+(b) once in office, politicians justify such distinctions; and (c) market actors
+make investment decisions during electoral periods based on the ideology
+of the likely victor.
+Although these studies are very interesting as large-N studies, they are
+limited by the need to maintain comparability of data (George & Bennett,
+2005). For example, they face a problem of what Herron (2000) calls
+“magnitude of partisanship,” or how far the distance is between left and
+right (p. 327). Investors are unlikely to consider the partisan effect of a
+Michael Foot or a Tony Blair identical, though statistical analysis labels
+them both as left. Similarly, if Castañeda is correct, there should be markedly
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1295
+different responses to Latin America’s moderate, institutionalist left; and its
+radical, populist, and anti-institutionalist left (Castañeda & Navia, 2007).
+Moreover, even if the left-right divide can be assumed to be equivalent in
+large-N studies, the analyst must also understand the meaning in terms of
+the institutionalization of the party system (Mainwaring, 1999).
+This article adopts a two-pronged strategy to evaluate the effect of partisanship
+and the electoral cycle on risk perceptions. First, it includes a
+specific variable for party system institutionalization, which conditions the
+clarity of party’s ideology and brand names (Vaaler et al., 2006). Second, it
+investigates in detail the role of partisan explanations vis-à-vis other theories
+through an in-depth discussion of each country.
+Global Constraints
+New partisan research recognizes the importance of contextual variation—
+specifically that “in small, open economies, domestic policy makers
+may retain less autonomy over some policies . . . than in larger, less-exposed
+economies” (Franzese, 2002, p. 371). External constraints on domestic
+policy making have long been a concern in Latin America, and much of
+the international political economy literature seems to argue that globalization
+weakens the role of domestic politics, making autonomous policy
+making impossible (Cardoso & Faletto, 1979; Garrett, 1998; Wallerstein,
+2004).
+Susan Strange (as cited in Garrett, 1998) warned that although “states were
+once the masters of markets, now it is markets which, on many crucial
+issues, are the masters over the governments of states” (p. 787). In his study
+of capital mobility and development in Latin America, Mahon (1996) finds
+support for the idea of a virtual senate of asset holders because of constraints
+they impose on domestic policy; a similar argument is made by
+Mosley (2003), who argues that investors have a powerful voice in emerging
+market countries’ political arenas.
+Without a doubt, world commodity prices and risk tolerance on global
+capital markets play a fundamental role in providing constraints and opportunities
+for emerging markets. Similarly, capital flows into and out of one
+emerging market are often very influenced by events in another emerging
+market or in the region as a whole. But contagion is often exaggerated and
+bondholders do distinguish on the basis of policy choices and investment
+climates particular to an emerging market.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1296 Comparative Political Studies
+Uncertainty
+A third hypothesis is that bondholders pay careful attention to domestic
+policies and give considerable attention to electoral campaigns, shifting
+financial assets not on the basis of politician ideology but on the presence
+or absence of clear and credible policy. Spanakos and Renno (2006) make
+this claim in their study of economic and financial responses to electoral
+periods in Brazil (2006). Similarly, Starr (1999) argues that Argentine
+economy adjusted better than that of Mexico in 1994-1995, because the former
+“operated in a relatively certain electoral environment,” whereas the coalition
+supporting the latter was diverse and unable to find consensus (p. 204).
+The current article contributes to improving the persuasiveness of the
+uncertainty hypotheses through increasing the number of observations of
+the within-case studies found in Spanakos and Renno (2006) and Starr
+(1999) from 3 and 2 observations, respectively, to 14 distinct electoral
+episodes spread over four countries within the same region. It is clear that
+this hypothesis cannot be easily quantified and tested statistically and there
+are no available measures of campaign uncertainty regarding candidates’
+proposals. Therefore, the article uses process tracing to identify interaction
+effects between policy uncertainty and external vulnerability.
+Data and Variables
+This article analyzes sovereign bond market reaction to electoral campaigns
+and postelectoral periods in Argentina, Brazil, Mexico, and Venezuela
+between 1994 and 2007, using a monthly time-series data set for each case.
+These countries were selected because of the importance of their markets,1
+and they display a range of partisan and policy orientations, offering a
+diverse set of situations that can be analyzed. Argentina, Brazil, and
+Venezuela all witnessed some shift toward the left in the period studied.
+Although Mexico had no governments of the left, the candidate of the left
+came within 1 percentage point of winning the 2006 elections. The shift
+toward the left in the 2002 election in Brazil, in all analyzed elections in
+Venezuela, and to a lesser extent in 2003 in Argentina and 2006 in Mexico,
+constitutes “crucial cases” in evaluating partisan theories (Eckstein, 1975,
+p. 118). The other observations produce results unexpected by partisan
+accounts—namely, support for Chávez in 2004 coincided with a decrease
+in risk; his election in 2006 had little effect, yet the re-election of Menem
+(Argentina, 1995) and Cardoso (Brazil, 1998) did.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1297
+The indicator of risk, the dependent variable in both quantitative and
+qualitative analysis, is JP Morgan Chase’s Emerging Markets Bond Index
+(EMBI). The EMBI is the price that investors are willing to pay for the
+sovereign debt of a given country at a specific moment in time. It is the
+spread of the yield of a sovereign bond relative to that of a U.S. Treasury
+bond (considered a zero-risk benchmark) of a similar maturity.2 Increasing
+in the cost of government borrowing raises the cost of borrowing across the
+economy, slowing growth and increasing indebtedness. When debt is
+denominated in foreign currency, this places additional pressures on monetary
+policy and foreign exchange reserves.
+The EMBI is not a pure measure of political risk. First, it reflects the
+dynamics within international capital markets, which are external to
+domestic political events.3 Second, it is largely determined by the government’s
+ability to pay its debt, which is based on the size (relative to exports),
+maturity (how long before it must make payments), and composition of
+debt (if denominated in a foreign currency or linked to some benchmark
+rate). Finally, the EMBI includes perceptions of willingness to pay debt.
+Candidates claiming that they will not pay foreign debt while locals are
+starving (e.g., Lula in the 1980s) or governments that prioritize redistribution
+of assets over protection of property rights of asset holders drive up
+political risk (e.g., Chávez since 1998).
+Despite these limitations, the EMBI is the benchmark used by bondholders
+(whose behavior is being studied) and is also used in a number of
+political economy studies (Bernard & Leblang, 2006). Moreover, it is the
+best available measure of investor perception of sovereign credit risk and a
+baseline indicator of general credit risk.
+Although risk can be quantified based on probabilistic statistical projections,
+uncertainty resists such methods. Given a situation where a government
+will loosen monetary policy to spur spending, analysts can predict the
+possible effect that this will have on inflation and evaluate this in terms of
+the present value of a debt instrument. When a new president comes into
+office and has given no signals whether previous monetary policies will be
+continued, loosened, or abandoned altogether, uncertainty exists, making it
+more difficult to make accurate predictions of risk. The distinction between
+risk and uncertainty is largely heuristic, however, as bondholders, particularly
+in emerging markets, tend to conflate the two. Because bondholders
+must make decisions about portfolio allocations regardless of the quantifiability
+of conditions of uncertainty, there is a tendency to overshoot estimations
+of uncertainty and for this to play a more significant role in analysis
+of emerging market bond markets.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1298 Comparative Political Studies
+The independent variables included in the analysis are derived from the
+theories discussed previously. A first central variable is the indicator of
+ideological change during the electoral period. A caveat must be made in
+identifying presidential candidates as being on the left or right, because
+partisan identification in Latin America is not always straightforward.4 This
+article will label parties following Michael Coppedge’s work on parties and
+party systems in Latin America (Coppedge, 1998).5 Certain adjustments
+were made because Coppedge identifies parties and winning candidates but
+does not identify caretaker regimes (see Table 1).6
+The impact of Coppedge’s (1998) classification of elections is tested
+through the inclusion in the model of dummy variables for each of the distinct
+types of changes that occurred in the elections. So all center-right to
+center-left changes become a dummy variable and so forth for all the other
+types of elections.
+Party institutionalization is measured as the average age of the top two
+governing parties and the main opposition parties or a subset of according
+to the situation in each country, as defined in the Database of Political
+Institutions (Beck, Clarke, Groff, Keefer, & Walsh, 2001). This variable is
+included in the model to control for the inchoate characteristics of certain
+Latin American party systems, which could weaken the influence of parties
+and ideology on economic turbulence. The expectation is that older party
+systems will decrease risk, because it increases the brand names of parties.
+Party system should also condition the uncertainty present in elections in
+which there are changes toward the left. This situation occurred in the
+presidential elections of the 1999 and 2003 in Argentina, 2002 in Brazil,
+and 1998 in Venezuela. An interaction term was added for the Brazilian
+elections in which a center coalition stayed in power.
+Another set of political determinants of risk is associated with traditional
+electoral cycle variables. The first one indicates the 6 months prior to the election,
+with a regressive count from –6 to the –1, from the farthest away month to the
+closest one. As an election approaches, there should be greater risk and therefore
+a positive effect on the EMBI. The second electoral cycle indicator is a progressive
+count of the 6 months after the election, ranging from 1 to 6. The relationship
+here should be negative with EMBI, because as one moves away from
+elections, risk should decline as a victor appears and begins to choose ministers
+and coalition partners. This reduces uncertainty surrounding eventual government
+policy. Thus, the election variable, a dummy indicating the month of the
+election, should also have a positive effect on risk assessment.
+The next set of variables examines the claim that it is vulnerability to
+external events that explain perceptions of country risk regardless of
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1299
+Table 1
+Partisan direction of Electoral Change
+by Election in Argentina, Brazil, Mexico, and Venezuela
+Country and Election Year Incumbent Winner Partisan Direction
+Argentina 1994 Menem Menem Center Right–Center
+Right (re-election)
+Argentina 1999 Menem De La Rua Center Right–Center Left
+Argentina 2003 Duhalde Kirchner Center Left–Left
+Brazil 1994 Franco Cardoso Center–Center
+(same coalition)
+Brazil 1998 Cardoso Cardoso Center–Center
+(re-election)
+Brazil 2002 Cardoso Lula Center–Left
+Brazil 2006 Lula Lula Left–Left (re-election)
+Mexico 1994 Salinas Zedillo Center Right–Center
+Right (same party)
+Mexico 2000 Zedillo Fox Center Right–Center
+Right
+Mexico 2006 Fox Calderon Center Right–Center
+Right (same party)
+Venezuela 1998 Caldera Chavez Centera–Left
+Venezuela 2000 Chavez Chavez Left–Left (re-election)
+Venezuela 2004 Chavez Chavez Left–Left (confirmation)
+Venezuela 2006 Chavez Chavez Left–Left (re-election)
+a. Rafael Caldera ran as an independent in 1994. His coalition leaned toward the center-left
+during its first 2 years and toward the center-right during its last 2 years. Thus, he is coded as
+centrist.
+domestic political events. The analysis used the level of foreign currency
+reserves as a proxy for access to foreign (hard) currency and vulnerability
+to financial crises more generally. This variable was obtained in the
+International Financial Statistics data set from the International Monetary
+Fund and was logged to increase comparability. Because credit risk is what
+is being investigated and so much Latin American debt has been historically
+denominated in dollars or linked to the value of the dollar, this indicator is
+especially important.
+In addition to the vulnerability to the external environment, it is also
+important to take into consideration the liquidity of the global market and
+its appetite for risk. Two variables are included in the model. The Chicago
+Board Options Exchange Volatility Index, which indicates volatility over a
+period of 30 days in the S&P 500 is a widely used indicator of risk appetite
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1300 Comparative Political Studies
+among investors. Because investors consider global market conditions, the
+lower the volatility in the S&P 500, the more willing investors should be to
+purchase higher risk instruments, such as emerging market bonds. In addition,
+as the export profiles of the economies analyzed earn a significant
+portion of money from commodities and emerging markets are more likely
+to receive investment booms when commodity prices increase, a measure
+of global commodity prices, PALLFNFW, derived from the International
+Monetary Fund is used. The PALLFNFW is a combined measure of the
+price indices for all fuel and nonfuel commodities. This indicator is used,
+because it is the most holistic index of commodity prices and all of the
+governments analyzed here, to varying degrees, export petroleum and/or
+natural gas, as well as other commodities.
+The model also controls for local factors including the Consumer Price
+Index and Central Bank independence, the latter measured by the length of
+tenure of each bank’s president or governor (Cukierman, 1992; Cukierman,
+Webb, & Neyapti, 1992). The expectation is that longer tenure is perceived
+by investors to mean more independence and therefore should reduce the
+effect of elections on uncertainty.
+Analysis
+Analysis
+The pooled sample of countries is analyzed using cross-sectional timeseries
+linear models with feasible generalized least squares correcting for
+AR(1) autocorrelation within panels and heteroskedasticity across panels.
+A model is tested with the conditional effect of party system age (Model 2)
+and without interaction terms (Model 1). Fixed effects by country are estimated
+to control for other country-specific factors that are not modeled. For
+each individual country, Prais-Winsten AR(1) regression is used with robust
+standard errors, which corrects serious autocorrelation problems found
+within panels and for cross-panel heteroskedasticity violation.7 A lagged
+term of the dependent variable to control for possible layover effects from
+1 month to the next is also included in the models.
+Results are presented in Table 2. The most influential variables in explaining
+EMBI variation over time and space are the lagged term of the dependent
+variable, the natural logarithm of international reserves, and Central Bank
+independence. Volatility Index (VIX) is influential in the pooled sample and
+in Brazil, whereas commodity prices are significant for Mexico. All vary in
+the expected direction. That is, the size of the reserves, central bank independence,
+and commodity prices all have a negative correlation with the
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1301
+EMBI. The same relationship exists in most cases between the VIX and the
+EMBI. The political variables, however, perform very poorly. None is statistically
+significant, which indicates that the electoral cycle, characteristic of the
+change in parties and levels of party institutionalization do not affect risk
+evaluations. This suggests that sovereign risk is relatively indifferent to the
+political situation. The exception here is Brazil, in which the election month,
+a change from center to left (Cardoso to Lula in 2002), and the interaction
+between party institutionalization and center to left change all influence risk.
+The election month always has a soothing effect on risk, and during the
+actual month of the election, risk normally decreases. The change from
+Cardoso to Lula did affect risk, but it appears to be an isolated effect when
+compared to the other Latin American countries analyzed here. The effect
+of the change from center to left was also conditional on the level of party
+institutionalization in Brazil. For a 1-unit change in year of party system,
+there was a significant reduction in the negative impact of the center to left
+change that occurred in 2002. Therefore, in Brazil, party system institutionalization
+has the expected theoretical effect. But the absence of a party
+system effect suggests that the effect in Brazil in 2002 may have been
+caused not by the youth of the Workers’ Party per se but the uncertainty
+generated by the potential of its leading a government coalition. The possibility
+that regression analysis in this and the other elections analyzed
+might be missing part of the story or important interactive effects leads to
+the next section, which qualitatively analyzes the 14 cases.
+A Historical Analysis of Uncertainty and Elections
+The elections that most significantly increased the perception of sovereign
+risk were those of 1995 in Argentina, 1998 and 2002 in Brazil, and 1998 in
+Venezuela. The partisan effect here is ambiguous at best. Even the policy
+uncertainty hypothesis is not completely straightforward, as there may have
+been more policy uncertainty in other elections. However, the interaction
+between policy uncertainty and external economic conditions and domestic
+reserves explain why these four episodes generated the greatest risk. The
+next section relies on process-tracing through within-case analysis to identify
+when and how policy uncertainty and external vulnerability produced
+sensations of risk (George & Bennett, 2005, ch. 10). The analysis highlights
+results unexpected by partisan theories such as the increase in the EMBI
+during the 1995 elections in Argentina, the 1998 elections in Brazil, the
+lack of change in the 2006 elections in Mexico, and the decrease during the
+Argentina
+The three presidential elections studied here show the re-election in
+1995 of Carlos Menem, the center-right president; the 1999 election of
+Gustavo de la Rua, leading a center-left coalition; and the 2003 victory of
+Nestor Kirchner, a leftist peronist.8 Risk peaked 2 to 3 months prior to all
+elections, but the most troubling were the elections of 1995 and 2003, not
+1999 and 2003, as partisan theories predict (see Table 3). The question is,
+what explains why the re-election of Menem coincided with an increase in
+perception of risk? And does that explanation hold for the slight increase in
+1999 and significant increase in 2003?
+Menem eliminated hyperinflation, and his victory over Frepaso’s José
+Octávio Bordón was by 20 points.9 The margin of victory and the re-election
+of a market-preferred center-right candidate should not have contributed to
+an increase in risk. At one point, Bordón’s Frepaso coalition did threaten
+the Menem candidacy, but as The Economist (“Argentina shades,” 1994)
+reported, “no serious candidate today . . . proposes even to reverse the freemarket
+reforms” (p. 38); nor was there any challenge to the convertibility
+plan (which constitutionally established the peso as equal to 1 dollar). What
+was concerning was how Argentina would adjust to the fallout from the
+devaluation of the Mexican peso, which had affected perception of creditworthiness
+in the region as a whole. These concerns slowed support for
+Bordón as “Argentines think . . . who better to find solutions, ask Peronists,
+than the slayers of hyperinflation?” (“Argentina fighting,” 1995, p. 43). To
+bond holders, a vote for Menem meant the continuation of a relatively
+predictable and credible set of policies and policy makers. Nevertheless,
+the increased electoral strength of Frepaso and the increased independence
+of Peronist politicians meant that the next government would face more
+constraints on its ability to make potentially unpopular reforms. This can
+be seen by the increase in the EMBI following the elections, which suggests
+that there were indeed governability concerns. These concerns were
+exacerbated by the shift toward risk aversion that followed the Mexican
+devaluation. As investors became more risk averse, the premium on
+reserves and policy uncertainty increased. Thus, the best explanation for
+the unexpected rise in the EMBI in 1995 is due to an interaction of political
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Comparative Political Studies
+uncertainty—related to Menem’s ability to maintain governability and discipline
+over his coalition—and the change in investor sentiment following
+Mexico’s devaluation. That said, Menem’s popular support and credibility
+served as a break on the increased perception of credit risk. It is clear that the
+role of party ideology of the victorious party was irrelevant.
+The 1999 election had a much less significant effect, although the twoterm
+president was replaced by a shift toward the left. Both Eduardo
+Duhalde, two-term Peronist governor of Buenos Aires province, and centrist
+Fernando de la Rua, a former mayor of Buenos Aires representing the
+center-left Frepaso coalition, critiqued Menem, but neither offered a break
+with fundamental macroeconomic policies. Even still, the size of a debt
+essentially denominated in dollars had become worrisome and “[i]nvestors
+have started to worry that Argentina’s exchange rate, even though its parity
+with the dollar is written into law, could yet go the way of its much less
+rigidly pegged counterpart in Brazil” (“Leaders,” 1999, p. 15). To this end,
+both candidates insisted on their maintenance of the currency board, thus
+giving clear signals of policy continuity. However, unlike the 1995 elections,
+global conditions were more favorable. Thus, with little uncertainty
+about broad fundamental issues, there was no reason to expect a short-term
+spark that would deepen concern, though worries remained about the longterm
+policy mix.
+In 2003, Menem challenged a progressive coalition of Peronists behind
+Nestor Kirchner. The Economist (“The Americas,” 2003) writes: “[i]n policy
+terms, the run-off is a battle between Mr. Menem’s glitzy conservatism
+and Mr. Kirchner’s nebulous social democracy” (p. 57). The ambiguity of
+Kirchner’s proposals as well as his status as an unknown governor of
+Patagonia forced Kirchner to engage credibility-building exercises such as
+securing support from caretaker president Eduardo Duhalde who, despite
+having defaulted and devalued, regained credibility among bondholders.
+Kirchner’s post-Washington consensus left-wing appeal was bolstered by
+linking himself to Lula rather than Chávez.10 Finally, his trump card was
+publicly declaring that he would maintain Roberto Lavagna as finance minister,
+a definitive commitment to maintain policies that were considered
+credible and predictable (“The Americas,” 2003, p. 57). In addition, the
+2003 election occurred as global growth and particularly commodity prices
+were rapidly rising. The increase in the EMBI, however, despite improving
+commodity prices, global liquidity, and a return of investment to Argentina,
+suggests that the international environment was not enough. Kirchner’s
+attempts to reduce policy uncertainty clearly helped but were insufficient as
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1307
+both his vision of post-Washington Consensus, and the possible governability
+issues that he might face were never persuasively settled during the campaign.
+The postelection increase in the EMBI supports this latter point.
+Brazil
+The Brazilian EMBI increased prior to the 1998 and 2002 elections, but
+there was little effect prior to the 2006 elections, and it decreased prior to the
+1994 elections. The increase in the pre-electoral periods in 2002 and the lack
+of concern in 2006 is predicted by partisan theories, but that of 1998 is not
+(Vaaler et al., 2006). As with the 1995 elections in Argentina, an examination
+of the unexpected rise in risk in 1998 explains the limitations of partisan
+approaches. The evidence suggests that the concern in 1998 was about
+Cardoso’s ability to respond to exchange rate pressures introduced by international
+crisis, not about Cardoso per se or the credibility of his particular
+group of policy makers. In contrast, in 2002, the concern was the inability to
+predict what policies Lula might pursue as president particularly amid risk
+aversion on global markets and moderate levels of external vulnerability.
+The ideology of the Workers’ Party candidate did not play a significant role
+in increasing perception of sovereign risk.
+Fernando Henrique Cardoso, the finance minister who was credited as
+having engineered the remarkably successful exchange-rate based stabilization
+real plan,11 won the 1994 presidential elections against Lula da Silva
+of the Workers’ Party. As support for Cardoso’s candidacy increased, the
+likelihood of continuation of policies that were considered viable by bondholders
+increased, and the perception of default risk decreased considerably.
+In addition, the interest of bondholders to re-enter Latin American
+markets in the early 1990s contributed to a reduction in perception of risk.
+The Brazilian electoral campaign of 1998 followed the Asian (1997) and
+Russian (1998) crises, which centered around currency mismatches and current
+account problems and led to several devaluations and one major default.
+The realities of electoral politics forced president and candidate Cardoso to
+defend the real prior to the elections, creating considerable opportunities for
+speculation, reducing foreign reserves, and driving up the EMBI (as debt
+levels were harder to sustain). One month before the elections, Cardoso
+increased interest rates to defend the real, while Lula proposed a referendum
+on whether capital controls should be imposed (Moffett & Fritsch, 1998). It
+is not surprising that despite the vulnerability of the Brazilian market to the
+global financial malaise, bondholders believed that Cardoso could more
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1308 Comparative Political Studies
+credibly weather the storm of contagion and constrain inflationary impulses
+of a possible devaluation than Lula could. Nevertheless, the appeal for
+Lula’s discourse and the potential risks of holding together a reform coalition
+following a potential devaluation was a concern, as is evidenced by the
+postelection increase in the EMBI (when the devaluation occurred). Thus, as
+in the case of the Argentine elections in 1995, external factors spurred an
+increase the risk associated with governability, but the selection of the preferred
+candidate contained perceptions of risk.
+In 2002, Lula, now a center-left moderate, was the forerunner among a
+field of candidates who ubiquitously proposed a rather ambiguous concept:
+change. Given Lula and the Workers’ Party’s historic resistance to policies
+that bondholders favored and the Workers’ Party’s lack of experience in
+national governments, there were questions about what Lula would do once
+in office. The clarity demanded by bondholders was especially important,
+given the debt default in Argentina in December of the previous year and
+the generally low risk tolerance in capital markets. Lula’s “Letter to the
+Brazilian People” outlined a sense of fiscal responsibility and moderate
+principles, but before and after releasing that letter, he also spoke of renegotiating
+contracts and made comments about future monetary and fiscal
+policy that conflicted with the very content of his letter (Spanakos &
+Renno, 2006). The increase in the EMBI led to increased interest rates, a
+weakening of the exchange rate, and accelerating inflation, which contributed
+to exploding Brazilian debt, as some 80% of debt was based on those
+rates. The collapse of Argentina was troubling for investors, but commodity
+prices were increasing throughout the campaign. Thus, the international
+environment presented a situation of multiple equilibria. The ambiguous
+content and inability to predict policies of a future Lula government
+encouraged bondholders to favor the more negative equilibrium and created
+a space for an attack on the real.
+Once elected, Lula decreased uncertainty through several credibilitybuilding
+exercises (the choice of Antonio Palocci as finance minister and
+Henrique Meirelles as central bank governor, as well as increasing the fiscal
+surplus target set by the International Monetary Fund agreement; see Sola,
+2006), which set clear guidelines for the type of policies that would characterize
+his government. The shift to policies endorsed by his predecessor and
+investors was crucial in the rapid reduction in the EMBI in 2003 and its
+continued decline during his term in office. His re-election in 2006 posed no
+threat, because his policies were both predictable and had received relatively
+favorable reviews from market analysts. In addition, 2006 was a year of
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1309
+robust global growth, considerable liquidity in international markets, and
+high prices for commodities, which reduced the financing pressures on
+nearly all emerging markets.
+Mexico
+Although the Mexican sample only provides victories of the center right,
+it contains the elections that produced the end of a one-party regime (2000)
+and intensely contested elections (2006). The lack of a significantly
+increase in the EMBI during the pre-electoral periods is because all
+Mexican elections took place during relatively good moments for global
+capital markets, the role of Central Bank autonomy, and policy convergence
+among Partido Revolucionario Institucional (PRI or Institutional Revolutionary
+Party) and Partido Acción Nacional (PAN or National Action Party)
+technocrats and politicians.
+The beginning of the North American Free Trade Agreement in January
+1994 was an event highlighted by the Chiapas Rebellion and the assassinations
+of PRI presidential candidate Luis Donaldo Colosio and PRI president
+José Francisco Ruiz Massieu. Pressures on the government were considerable,
+yet neither of the two preeminent candidates, the PRI’s Ernesto
+Zedillo nor Diego Fernández de Cevallos, proposed any significant change
+in either monetary or fiscal policy. An increase in the U.S. federal funds rate
+placed pressure on the peso, which forced the government to spend foreign
+currency reserves and shift toward dollar-denominated short-term bonds
+with high interest rates. But importantly, it was not until after Zedillo took
+office and, as a response to the reduction of reserves, devalued the currency
+that the EMBI increased considerably. In addition, despite concerns about
+Chiapas, Mexico had been enjoying a foreign investment boom and led
+emerging market countries in regaining the attention of global investors.
+Thus, the election took place during a period of generous global credit
+markets and domestic policy clarity, though there was domestic tightening
+of credit and an increase in concern about political risk.
+The critical political transition—the first time an opposition candidate had
+been allowed to win the presidency since the Mexican Revolution—made
+possible by the 2000 elections generated only a moderate increase in the
+EMBI. The victorious PAN was a probusiness party, and its candidate,
+Vicente Fox, a liberal, made it clear that political change was about eliminating
+authoritarianism and corruption, not reversing economic reforms. There
+were concerns about whether the PRI, as it moved to the opposition, would
+become more populist and less liberal, but concerns about the Mexican government’s
+future policies and willingness to meet its debt obligations
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1310 Comparative Political Studies
+were limited. In addition, although the U.S. stock market had crashed, the
+real economy in the United States had not yet slowed and Mexican reserves
+remained strong. As such, the external environment remained relatively favorable.
+Thus, in the midst of relatively favorable external conditions and clarity
+about macroeconomic policy, political transition did not increase risk.
+Felipe Calderón, a political conservative and supporter of free market
+enterprise, represented no threat to markets when he won the 2006 elections
+as the candidate of the PAN. Andrés Manuel Lopez Obrador’s (known in
+Mexico as AMLO) program for government was remarkably similar to that
+of Lula and other center-left leaders, and he sent road shows to Wall Street
+to assure them of his commitment to fiscal responsibility and his respect for
+central bank independence. Although he had been critical of fiscal constraint
+under neoliberal governments, he demonstrated fiscal responsibility
+while he was governor of the Federal District. The Economist (“Leaders,”
+2006) rejected the idea raised by the Calderón campaign that AMLO was
+“a Mexican version of Hugo Chavez,” though it was not clear if he was a
+“modern social democrat” like Lula (p. 10).
+Why did electing Lula panic markets while almost electing AMLO did
+not? Here the perception of Central Bank autonomy in conditioning policy
+choices and maintaining policy continuity seems to explain why electing
+Lula panicked markets while almost electing AMLO did not. Although The
+Economist was concerned about contempt that AMLO had shown for institutions,
+such as the Central Bank, the Mexican Central Bank had been de
+jure and de facto independent since 1993 and was widely regarded for its
+competence and nonpartisan analysis. This is distinct from the election of
+Lula in 2002, where the Central Bank’s recently achieved de facto autonomy
+was the result of the relationship between Cardoso and his Central Bank
+governors. It had not been institutionalized, and Lula had rejected legislation
+to make autonomy and/or independence formal. AMLO’s critiques
+were unlikely to change Central Bank direction, although it was unclear
+whether Lula would follow up on statements about widening the band for
+inflation targets and reducing the role of the finance ministry vis-à-vis the
+planning ministry, either of which would have considerably reduced Central
+Bank autonomy. Finally, the high price of petroleum, Mexico’s main export,
+and the general state of Mexico’s debt profile also contributed to a muted
+sense of risk. The perception of a low-risk institutional environment continued
+after the election even amid AMLO’s postelectoral protests and setting
+up of a “shadow government.” As a result, the potential victory of AMLO
+might have introduced some policy uncertainty, but Central Bank autonomy
+and domestic and international fundamentals tempered this concern.
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+Spanakos, Renno / Sovereign Risk, Ideology, and Presidential Elections 1311
+Venezuela
+The Venezuelan data are especially troublesome for partisan theories.
+Chávez’s victory in 1998 is linked to a rapid rise in the EMBI, a mild
+increase in the pre-electoral period of 2000, a decrease throughout the recall
+election of 2004, and a moderate increase following the 2006 elections.
+What then explains why perception of risk increased only when Chávez was
+first elected in 1998 and a few months after his re-election in 2006?
+The 1998 elections provided clear evidence that the two-party dominance
+of the Punto Fijo system was over (Dietz & Myers, 2007). In 1998,
+Chávez, a former coup leader with no governing experience, was supported
+by a broad but largely uncoordinated base of voters disenchanted with systemic
+parties and who applauded that he was “the only candidate to attack
+the market economics that the Caldera government belatedly accepted two
+years ago” (“The Americas,” 1998, p. 30). He proposed a more participatory
+republic based on a vague ideology of “Bolivarianism,” which combined
+elements of socialism, neostructuralism, and radical democracy. His
+enormous popularity was concerning to bondholders who identified him as
+a maverick who was entering a political vacuum where he would be capable
+of making very significant and unpredictable changes. His anticapitalist
+and anti-imperialist rhetoric gave clear signals that he was likely to use the
+oil wealth available to redistribute assets as opposed to paying debt.
+Moreover, given the low value of petroleum, Chávez would have few policy
+instruments available to make the social changes that he proposed, which
+could lead toward fiscal irresponsibility.
+In office, Chávez showed policy restraint and even endorsed some conservative
+macroeconomic policies, while he continued to launch philippics
+against oligarchs (Buxton, 2003). So in 2000, he was hardly the candidate
+favored by the market, but bondholders had a better idea of how to separate the
+rhetoric from the policies. Importantly, the considerable support for the 1999
+constitution and the overwhelming victory of Chávez and the coalition of parties
+and movements associated with him conferred a legitimacy and predictability
+to the system. What was less predictable was whether Chávez would follow
+a developmentalist, state-led growth approach to macroeconomic policy or
+whether he would move toward socialism, as critics alleged (Lebowitz, 2006).
+The ambiguity of future policies while new rules of the game were being established
+occurred alongside a recovery in global petroleum prices, which
+improved the government’s ability to continue to meet its foreign debt obligations
+and which were—and remained until 2007—fairly minimal, given the
+value of petroleum as potential collateral. Like the other countries studied here,
+Downloaded from cps.sagepub.com at Dokuz Eylul Universitesi on September 25, 2011
+1312 Comparative Political Studies
+commodity prices are inversely correlated with risk, though the considerable
+value of petroleum, particularly since 2004, has provided assurances for
+Venezuela’s debt, even though it has pursued policies that are considered
+unwise and unsustainable by the majority of analysts of that market.
+During the recall referendum of 2004, Chávez solidified his support,
+which was particularly essential in reducing policy uncertainty and concerns
+about regime stability following the April coup of 2002 and the general
+strike at the end of that year. Chávez was able to consolidate his regime
+in 2003 due to increased petroleum prices and the introduction of “social
+Missions.” By the time the recall election occurred in 2004, the economy
+was growing robustly, and state-directed social development programs
+were a regular part of Venezuelan life. This, combined with the lack of
+credibility of the opposition, led to a resounding victory for the government
+in the recall election of 2004. The significant decrease in the EMBI during
+the election campaign, thus, had nothing to do with a move away from a
+leftist politician or the moderation of that politician. If anything, Chávez
+became more committed to using fiscal policy in very aggressive ways to
+promote social equity. Rather, the decline in risk was due to the increased
+value of petroleum vis-à-vis the small foreign debt stock and the increasing
+consolidation of new rules of the game by Chávez.

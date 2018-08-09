@@ -1,0 +1,2401 @@
+Public key cryptography
+7.1 Non-secret encryption
+Until relatively recently cryptosystems were always symmetric. They relied on
+the use of a shared secret key known to both sender and receiver.
+This all changed in the 1970s. Public key cryptosystems, as they are now
+called, revolutionised the theory and practice of cryptography by relying for
+their impenetrability on the existence of a special type of one-way function
+known as a trapdoor function. Using these the need for a shared secret key was
+removed. Hence James Ellis and Clifford Cocks of the Government Communication
+Headquarters (GCHQ), Cheltenham in the UK, who first discovered this
+technique, named it ‘non-secret encryption’.
+For a fascinating account of how this discovery was made see Chapter 5 of
+Singh (2000). He recounts how key distribution was a major problem for the
+UK military in the late 1960s. In 1969 Ellis came up with the idea of what we
+now call a ‘trapdoor function’. Informally this is a one-way function which can
+be inverted easily by anyone in possession of a special piece of information:
+the trapdoor.
+This was exactly the same idea as Diffie, Hellman and Merkle came up with
+several years later, but like them Ellis was unable to find a way of implementing
+it.
+It was three years later in November 1973 that Cocks, a young recruit to
+GCHQ, came up with the very simple solution (essentially the RSA cryptosystem)
+whichwas rediscovered several years later by Rivest, Shamir and Adleman
+(1978).
+141
+142 7 Public key cryptography
+7.2 The Cocks–Ellis non-secret cryptosystem
+We now examine the cryptosystem proposed by Cocks, in response to the
+‘existence proof’ of Ellis of the possibility of non-secret encryption.
+Suppose that Alice wishes to send a secret message to Bob. The Cocks–Ellis
+cryptosystem works as follows.
+(1) Setup.
+(i) Bob secretly chooses two large distinct primes p, q such that p does
+not divide q - 1 and q does not divide p - 1. Bob then publishes his
+public key n = pq.
+(ii) In order for Bob to be able to decrypt he uses Euclid’s algorithm to
+find numbers r, s satisfying pr = 1 mod q - 1 and
+qs = 1 mod p - 1.
+(iii) He then uses Euclid’s algorithm once more to find u,v satisfying
+up = 1 mod q and vq = 1 mod p. His private key (or trapdoor) that
+will enable him to decrypt is (p, q, r, s, u, v).
+(2) Encryption. Alice has a message M which she splits into a sequence of
+numbers M1, M2, . . . , Mt where each Mi satisfies 0 ? Mi < n. She then
+encrypts these blocks as
+Ci = Mn
+i mod n,
+and sends the encrypted blocks to Bob.
+(3) Decryption.
+(i) Bob recovers a message block (mod p and q) as
+ai = Cs
+i mod p and bi = Cr
+i mod q.
+(ii) He can then recover the message block as:
+upbi + vqai = Mi mod n.
+Before checking that Bob’s decryption process actually works we consider a
+toy example.
+Example 7.1 Toy example of the Cocks–Ellis cryptosystem.
+Suppose Bob chooses p = 5 and q = 7 (these satisfy the conditions of (1)(i)).
+He then publishes his public key n = 35.
+If Alice wishes to send the message M = 10 she calculates
+1035 = 5 mod 35
+and sends C = 5 to Bob.
+7.2 The Cocks–Ellis non-secret cryptosystem 143
+Bob then calculates (using Euclid’s algorithm) r = 5 and s = 3. (We can
+check that 5 × 5 = 25 = 1 mod 6 and 3 × 7 = 21 = 1 mod 4.)
+He then calculates
+a = C3 = 53 = 0 mod 5 and b = C5 = 55 = 3 mod 7.
+Next Bob uses Euclid’s algorithm once more to find u = v = 3. (Again we can
+check that 3 × 5 = 15 = 1 mod 7 and 3 × 7 = 21 = 1 mod 5.)
+He then recovers the message as
+upb + vqa = (3 × 5 × 3) + (3 × 7 × 0) = 45 = 10 mod 35.
+In order to prove that the decryption process works in general we will need
+to use both the Chinese Remainder Theorem and Fermat’s Little Theorem. (See
+Appendix 3, Theorems A3.5 and A3.11.)
+Proposition 7.2 Decryption in the Cocks–Ellis system works.
+Proof: First note that since up = 1 mod q and vq = 1 mod p we have
+upbi + vqai = ai mod p and upbi + vqai = bi mod q.
+So if we can show that Mi = ai mod p and Mi = bi mod q then the Chinese
+Remainder Theorem implies that
+upbi + vqai = Mi mod n,
+and hence the decryption process works.
+Now, if Mi = 0 mod p, then working mod p, we have
+Cs
+i
+= Mns
+i
+= Msqp
+i mod p.
+Then sq = 1 mod p - 1 implies that sq = 1 + t(p - 1), for some integer t.
+So, using Fermat’s Little Theorem, we have
+Cs
+i
+= M(1+t(p-1))p
+i
+= Mp
+i
+= Mi mod p.
+Hence Mi = ai mod p. Note that this also holds if Mi = 0 mod p.
+Similarly we have Mi = bi mod q. Hence by the Chinese Remainder Theorem
+the decryption process recovers the message block Mi . 
+Thus we see that this cryptosystem ‘works’ in the sense that decrypting a
+cryptogram yields the original message, but does it have the other properties
+we might require of a secure system?
+We have yet to decide exactly what these properties should be, but we attempt
+to do this now.
+144 7 Public key cryptography
+There are three distinct aspects of a cryptosystem that are of crucial importance.
+(1) Setup. Before starting communications Bob must choose a public/private
+key pair and publish his public key. This task is only performed once but
+must still be computationally feasible for the cryptosystem to be viable.
+(2) Encryption/Decryption. The encryption of a message by Alice and
+decryption of a cryptogram by Bob (using his trapdoor or private key)
+should be easy.
+(3) Security. Given a random choice of public key and a random message it
+should be extremely unlikely that Eve can recover the message from the
+cryptogram and public key alone.
+We note that the security condition (3) is in some respects rather weak and we
+will consider stronger conditions in Chapter 10.
+So how does the Cocks–Ellis system measure up to these requirements?
+Well it is certainly easy to setup. Bob needs to choose two primes p and q
+and compute n, r, s, u and v before he can start to use the system. The Prime
+Number Theorem (see Appendix 3, Theorem A3.4) tells us that if k is large
+then a random k-bit integer has probability greater than 1/k of being prime.
+Hence Bob expects to choose at most k random integers before he finds a prime.
+Bob can use a polynomial time primality test to check randomly chosen k-bit
+integers for primality and so would expect to find two primes p and q with the
+required properties in polynomial time.
+Once p and q have been found Bob can then easily compute r, s, u and v
+using Euclid’s algorithm. He can also calculate the public key n by a single multiplication.
+Overall the setup is feasible since it can be achieved in polynomial
+expected time.
+Encryption for Alice is easy since she can perform exponentiation mod n
+in polynomial time. Decryption for Bob is also easy since it simply involves
+exponentiation and multiplication (since he knows his private key) and so can
+be performed in polynomial time.
+The security of this system also seems rather strong. Eve appears to face
+a rather difficult task if she is to decrypt an intercepted cryptogram, namely
+‘computing nth roots mod n’. The obvious way to attack this problem is to
+factorise n, since this then allows Eve to calculate Bob’s private key easily. But
+factorisation is a well-studied problem that is widely believed to be difficult, as
+we saw in the previous chapter.
+This suggests that Eve will not be able to easily read Alice’s messages.
+Unfortunately we have no guarantee that Eve will attack this system via factorisation.
+To be more certain of its security we would need to show that there
+7.3 The RSA cryptosystem 145
+is no alternative technique that Eve could use to recover the message from the
+cryptogram without factoring the public key.
+Exercise 7.1a Suppose Alice and Bob communicate using the Cocks–Ellis
+cryptosystem. If Bob’s public key is n = 77 find the encryption of the
+message M = 15. Find Bob’s private key in this case and use his decryption
+process to recover M.
+7.3 The RSA cryptosystem
+The most widely used and well-known public key cryptosystem is RSA, due to
+Rivest, Shamir and Adleman who announced the scheme in 1977. It received
+a huge amount of attention at the time and is now almost certainly the most
+famous cryptosystem of all time.
+This system is very similar to the Cocks–Ellis system of the previous section
+and works as follows.
+(1) Setup. Bob secretly chooses two large distinct primes p and q and then
+forms his public modulus n = pq. He then chooses his public exponent e
+to be coprime to (p - 1)(q - 1), with 1 < e < (p - 1)(q - 1). The pair
+(n, e) is his public key and he publishes this. His private key is the unique
+integer 1 < d < (p - 1)(q - 1) such that
+ed = 1 mod (p - 1)(q - 1).
+(2) Encryption. Alice has a message M which she splits into a sequence of
+blocks M1, M2, . . . , Mt where each Mi satisfies 0 ? Mi < n. She then
+encrypts these blocks as
+Ci = Me
+i mod n,
+and sends the encrypted blocks to Bob.
+(3) Decryption. Bob decrypts using his private key d by calculating
+Mi = Cd
+i mod n.
+Proposition 7.3 Decryption in RSA works.
+Proof: Since ed = 1 mod (p - 1)(q - 1) there is an integer t such that ed =
+1 + t(p - 1)(q - 1). Thus
+Cd
+i
+= Med
+i
+= Mt(p-1)(q-1)+1
+i
+= Mi mod p,
+146 7 Public key cryptography
+since either Mi = 0 mod p and so both sides are zero or else Fermat’s
+Little Theorem implies that Mp-1
+i
+= 1 mod p. Similarly Cd
+i
+= Mi mod q. The
+Chinese Remainder Theorem then implies that Cd
+i
+= Mi mod n. 
+Example 7.4 Toy example of RSA.
+Suppose Bob chooses the primes p = 7 and q = 11. So n = 77, (p - 1)(q -
+1) = 60 and he takes e = 7, since 7 and 60 are coprime. Bob then calculates
+his private key to be d = 43, since
+43 × 7 = 301 = 1 mod 60.
+Hence Bob’s public key is the pair (n, e) = (77, 7) and his private key is d = 43.
+If Alice wants to send the message M = 4 she encrypts it as
+C = Me = 47 = 16 384 = 60 mod 77.
+Bob then decrypts using his private key and recovers the message
+M = Cd = 6043 = 4 mod 77.
+We now consider the three important aspects of this system: setup, encryption/
+decryption and security.
+The setup is easy. Bob can choose two k-bit primes by choosing random
+integers and testing for primality using a polynomial time test. He then forms
+n by multiplication. To find e he can simply choose random k-bit integers until
+he finds one that is coprime with (p - 1)(q - 1). To find d he uses Euclid’s
+algorithm. Hence the whole setup can be achieved in polynomial expected time.
+(See Exercise 7.2 for more details.)
+Both encryption, by Alice, and decryption, by Bob, are simply exponentiation
+mod n and so can be achieved in polynomial time.
+Finally Eve again seems to face an intractable problem, namely ‘computing
+eth roots mod n’. Again the obvious way to do this is to factorise n. Since if Eve
+can factor n then she will be able to compute Bob’s private key from his public
+key and hence read any message he receives. Hence we know that if factoring
+is easy then RSA is insecure. However, the converse is not known to be true.
+Indeed whether breaking RSA is equivalent to factoring is a longstanding open
+problem. We will return to RSA and its security in Section 7.6.
+We note that although RSA encryption and decryption is efficient in the
+sense that Alice and Bob have polynomial time algorithms for these tasks, in
+practice RSA and all the other public key cryptosystems we will consider are
+far slower than symmetric cryptosystems such as DES or AES. For this reason
+they are often simply used to solve the problem of sharing a secret key for use
+7.4 The Elgamal public key cryptosystem 147
+in a symmetric cryptosystem. For example Alice might send Bob a Triple DES
+key encrypted with his RSA public key. They can then switch to Triple DES for
+the remainder of their communications. Since Alice can send a different key
+each time they initiate communications such a key is known as a session key.
+In the next section we introduce another important public key cryptosystem
+the security of which is based on the discrete logarithm problem.
+Exercise 7.2 Show that Bob can easily choose an RSA key by proving the
+following.
+(a) Use the Prime Number Theorem to show that if Bob chooses
+random odd k-bit integers then he expects to choose polynomially
+many before he finds two primes.
+(b) Show that if Bob chooses random k-bit integers he expects to
+choose polynomially many before he finds one that is coprime with
+(p - 1)(q - 1), where p and q are k-bit primes.
+(c) Hence explain how Bob can choose both public and private RSA
+keys in polynomial expected time.
+7.4 The Elgamal public key cryptosystem
+The Elgamal public key cryptosystem based on the discrete logarithm problem
+was proposed by Elgamal in 1985. It works as follows.
+(1) Setup. Bob’s public key is a triple (p, g, gx mod p), where p is a prime, g
+is a primitive root mod p and x ? Z
+*
+p. Bob’s private key is x.
+(2) Encryption. Alice encrypts a message M using the following protocol. We
+assume that 0 ? M ? p - 1 (if not Alice can split the message into
+blocks in the obvious way).
+(i) Alice selects a random integer y ? Z
+*
+p and computes k = gy mod p
+and d = M(gx )y mod p.
+(ii) Alice then sends Bob the cryptogram C = (k, d).
+(3) Decryption. Bob decrypts as follows using his private key
+M = k p-1-xd mod p.
+Proposition 7.5 Decryption in the Elgamal cryptosystem works.
+Proof: Working mod p throughout we have
+k p-1-x = k-x = g-xy mod p,
+148 7 Public key cryptography
+so the message is recovered as
+k p-1-xd = g-xyd = g-xyMgxy = M mod p.
+
+Example 7.6 Toy example of the Elgamal cryptosystem
+Suppose Bob chooses p = 29, g = 2 and x = 5.
+Since 25 = 3 mod 29 his public key is (29, 2, 3) and his private key is 5.
+For Alice to encrypt the message M = 6 she selects a random y say y = 14
+and computes
+k = gy = 214 = 28 mod 29
+and
+d = M(gx )y = 6 × 314 = 23 mod 29.
+Alice then sends the pair (28, 23) to Bob.
+To decrypt Bob computes
+k p-1-x = 2823 = 28 mod 29.
+He then recovers M as
+k p-1-xd = 28 × 23 = 6 mod 29.
+Clearly encryption by Alice and decryption by Bob (using his private key) can
+be performed easily. Slightly less obvious is how Bob generates his key. He
+needs to choose a k-bit prime p, a primitive root g mod p and x ? Z
+*
+p. We saw
+earlier that choosing a k-bit prime is easy (he simply chooses odd k-bit integers
+at random and tests for primality using a polynomial time test). However, there
+is no obvious efficient algorithm for generating primitive roots modulo a given
+prime p. In fact there is not even an efficient algorithm for testing whether a
+particular value h ? Z
+*
+p is a primitive root mod p. Hence in theory there is no
+efficient algorithm for generating an Elgamal public key, however, in practice
+this does not cause major problems (see Exercise 7.3).
+So how secure is this cryptosystem?
+The following problem is simply the discrete logarithm problem by another
+name and so is generally believed to be hard.
+ELGAMAL PRIVATE KEY
+Input: Elgamal public key (p, g, gx mod p).
+Output: private key x.
+But what about the following possibly easier problem?
+7.4 The Elgamal public key cryptosystem 149
+ELGAMAL
+Input: Elgamal public key (p, g, gx mod p) and cryptogram (k, d).
+Output: message M.
+This problem is in fact Turing equivalent to the following problem.
+DIFFIE–HELLMAN
+Input: prime p, a primitive root g mod p, gx mod p and gy mod p.
+Output: gxy mod p.
+Note that we will see more on this last problem in Chapter 9 when we consider
+the problem of secure key exchange.
+Proposition 7.7 The problemsELGAMALand DIFFIE–HELLMAN are Turing
+equivalent.
+Proof: Suppose we have an algorithm for DIFFIE–HELLMAN. Then given
+an Elgamal public key (p, g, gx mod p) and cryptogram (k, d) we have k =
+gy mod p and so using our algorithm for DIFFIE–HELLMAN we can compute
+gxy mod p.
+We can then easily find the inverse of gxy mod p using Euclid’s algorithm
+and hence recover the message M = d(g-xy) mod p as required.
+Conversely suppose we have an algorithm for ELGAMAL. If we are given
+(p, g, gx mod p, gy mod p) then we can use the algorithm for ELGAMAL to
+decrypt the cryptogram (gy mod p, 1), encrypted with the Elgamal public key
+(p, g, gx mod p).
+This algorithm will then return the corresponding message, which is
+g-xy mod p since 1 = Mgxy mod p. Using Euclid’s algorithm we can then
+find the inverse of g-xy mod p to give gxy mod p as required.
+Hence ELGAMAL and DIFFIE–HELLMAN are Turing equivalent. 
+As with the relationship between RSA and factorisation it is not known
+whether breaking the Elgamal cryptosystem is equivalent to solving the discrete
+logarithm problem.
+One obvious security advantage of the Elgamal cryptosystem over RSA
+is that if the same message is sent twice then it is highly unlikely that the
+same cryptogram will be used on both occasions. (This is due to the use of
+randomness in the encryption process. We will consider other cryptosystems
+with this property in Chapter 10.)
+Exercise 7.3b
+(a) Let p be a prime. Describe a polynomial time algorithm for
+checking whether h ? Z
+*
+p is a primitive root mod p, given h, p and
+the prime factorisation of p - 1.
+150 7 Public key cryptography
+(b) A prime q such that p = 2q + 1 is also prime is called a Sophie
+Germain prime, while p is said to be a safe prime. It is conjectured
+that there are infinitely many Sophie Germain primes and that if
+?S(x) denotes the number of such primes less than or equal to x then
+?S(x) ~ Cx
+(log x)2 ,
+where C  1.3203. Assuming that this conjecture is true describe a
+probabilistic algorithm with polynomial expected running time for
+generating an Elgamal key.
+7.5 Public key cryptosystems as trapdoor functions
+Having seen some examples of public key cryptosystems we will now attempt
+to formalise the properties we would like them to possess in general.
+We start by noting that a cryptosystem is not a single function. Rather it is a
+family of functions. For example the RSA cryptosystem defines the family of
+functions
+RSAn,e : Zn › Zn, RSAn,e(x) = xe mod n,
+where n = pq is the product of two primes and e is coprime to (p - 1)(q - 1).
+We attempt to capture the concept of a public key cryptosystem using the
+following definition of a family of trapdoor functions
+F = { fi : Di › Di | i ? I }.
+The different properties of the family correspond to the different properties we
+require of a public key cryptosystem. Namely setup, encryption and decryption
+should all be easy but breaking the system should be hard.
+(1) Setup. First Bob chooses a key length k. Once he has done this there
+should be a probabilistic polynomial time algorithm for ‘key generation’.
+This should take an input 1k , where k is the key length, and output a pair
+(i, ti ) where i ?R I ? {0, 1}k is Bob’s public key of size k and ti is the
+corresponding trapdoor, Bob’s private key.
+So in the case of RSA i would be a public key pair (n, e) and ti would
+be the corresponding private key d. (Note that to obtain a public key of
+size k Bob should choose two (k/4)-bit primes. This would then ensure
+that his public modulus n has size k/2 and his public exponent e has size
+at most k/2, so his public key (n, e) has size k.)
+7.5 Public key cryptosystems as trapdoor functions 151
+(2) Encryption. There should be a probabilistic polynomial time algorithm
+that given a public key i ? I and a message M ? Di outputs the
+cryptogram C = fi (M). This ensures that Alice can easily encrypt any
+message M ? Di, given Bob’s public key.
+In the case of RSA this is simply exponentiation by the public exponent
+e mod n.
+(3) Decryption. Since Bob needs to be able to decrypt there should exist a
+probabilistic polynomial time algorithm that given the cryptogram
+C = fi (M), the public key i and the trapdoor (or private key) ti outputs
+the message M.
+In the case of RSA this is simply exponentiation by the private key d
+mod n.
+(4) Security. Recovering the message should be difficult for Eve.
+Recalling our definition of a one-way function we formulate this as
+follows. For any probabilistic polynomial time algorithm A, the
+probability that A successfully inverts a cryptogram C = fi (M), where M
+is a random message and i is a random public key of size k, is negligible.
+Formally we have
+Pr[ fi (A(i,C)) = C | i ?R I ? {0, 1}k , M ?R Di , fi (M) = C] ? neg(k).
+So under what type of intractability assumption would the RSA cryptosystem
+give a family of trapdoor functions?
+We need to assume that any adversary with a polynomial time probabilistic
+algorithm has a negligible chance of recovering a message from a cryptogram,
+given that both the public key and the message were chosen at random. Formally
+we have the following.
+The RSA Assumption
+For any probabilistic polynomial time algorithm A and polynomial r (·) the
+following holds for k sufficiently large
+Pr[A(n, e, RSAn,e(x)) = x] <
+1
+r (k)
+,
+where the probability is taken over all integers n = pq with p, q distinct random
+k-bit primes, all e coprime with (p - 1)(q - 1), all x ? Zn and all random bits
+used by A.
+Proposition 7.8 Under the RSA Assumption, the family {RSAn,e}n,e is a family
+of trapdoor functions.
+152 7 Public key cryptography
+Proof: In Section 7.3 we described all the necessary probabilistic polynomial
+time algorithms for key generation, encryption and decryption.
+Under the RSA Assumption, the security condition (4) also holds. 
+So under the hypothesis that the RSA Assumption holds, the RSA cryptosystem
+defines a family of trapdoor functions. This gives a certain guarantee
+of security (so long as you believe the RSA Assumption).
+We will now examine some related security questions. Notably the relationship
+between the security of RSA and factorisation. In order to do this we
+introduce the following problems.
+RSA
+Input: RSA public key (n, e) and C = Me mod n, a cryptogram.
+Output: the message M.
+RSA PRIVATE KEY
+Input: RSA public key (n, e).
+Output: the corresponding private key d.
+RSA FACTOR
+Input: an integer n, the product of two distinct primes p, q.
+Output: p and q.
+We have the following easy result relating the relative difficulties of these
+problems.
+Proposition 7.9 RSA ?T RSA PRIVATE KEY ?T RSA FACTOR.
+Proof: If Eve has an efficient algorithm for factoring a product of two primes
+then she can easily compute the RSA private key from the public key (since
+she can factor she can do this using the same algorithm as Bob). Hence
+RSA PRIVATE KEY ?T RSA FACTOR.
+Also if Eve can compute the RSA private key easily from the public key then
+she can easily recover plaintext from ciphertext (since she can find the private
+key she simply decrypts using Bob’s decryption algorithm). Hence RSA ?T
+RSA PRIVATE KEY. 
+Since factorisation is an extremely well-studied problem, which is in general
+believed to be ‘hard’, we would like to be able to say that the problem
+RSA (recovering plaintext from ciphertext) is equivalent to factoring. Unfortunately
+this is currently a long-standing open problem. However, we will see in
+Section 7.7 that the problem of recovering the RSA private key from the public
+key is essentially equivalent to factoring.
+7.6 Insecurities in RSA 153
+7.6 Insecurities in RSA
+Because of its widespread use in real applications there has been a great deal of
+effort expended in trying to break RSA. While it appears that so far it has resisted
+any such attack these efforts have resulted in a series of ‘health warnings’ about
+possible ways the system may be compromised. We list some of the better
+known ones below.
+When the prime factors of either p - 1 or q - 1 are all small, factoring
+techniques introduced by Pollard (1974) enable n = pq to be factored quickly.
+This is also true if the prime factors of p + 1 or q + 1 are all small, as was
+shown by Williams (1982).
+Proposition 7.10 If the primes p and q in RSA are chosen to be ‘close’ then
+RSA is insecure.
+Proof: If p and q are ‘close’ then (p + q)/2 is not much larger than
+?
+pq (we
+know that it is always at least as big). Now, assuming p > q, we can write
+x = p + q
+2
+, y = p - q
+2
+,
+so n = pq = x2 - y2 = (x - y)(x + y). Hence if Eve can express n as the
+difference of two squares then she can factor n. To do this she tests each number
+in turn from 
+
+?
+n, 
+
+?
+n + 1 . . . , until she find a value s such that s2 - n is a
+square. This happens when s = x = n + y2.
+If p = (1 + )
+?
+n, with  > 0, then Eve needs to test approximately
+p + q
+2
+-
+?
+n = 2
+?
+n
+2(1 + )
+,
+values of s before she is successful. This is feasible if  is sufficiently
+small. 
+Example 7.11 Primes p and q are too close.
+If n = 56759 then 
+
+?
+n = 239 so testing s = 239 and 240 we find that
+2402 - n = 2402 - 56759 = 841 = 292.
+Hence
+n = (240 + 29)(240 - 29) = 269 × 211.
+A more striking result due toWiener (1990) tells us that the RSA private key d
+should not be too small.
+154 7 Public key cryptography
+Proposition 7.12 Suppose n = pq is an RSA modulus, with q < p < 2q. If
+the private key satisfies d < 13
+n1/4 then Eve can recover d from the public key
+(n, e) in polynomial time.
+The proof of this is an elegant use of approximation by continued fractions.
+This result was improved by Boneh and Durfee (2000) who raised the bound
+on d to O(n0.292). They conjectured that if d < n1/2 then there should exist an
+efficient algorithm to determine d from the public key. With this in mind there
+is a strong case for choosing d to be large.
+Proposition 7.13 A small RSA public exponent e makes sending multiple copies
+of the same message dangerous.
+Proof: See Exercise 7.5. 
+Since choosing a public modulus n requires a user to perform a primality test
+which is non-trivial it is tempting to think of ways to simplify the process of
+choosing an RSA key. In particular could more than one user safely use the
+same public modulus?
+For example, suppose a trusted central authority chooses n = pq, publishes
+n and then securely distributes distinct encryption/decryption pairs, (ei , di ), to
+the users of a network. Superficially this looks like a good way of reducing the
+initial setup costs for the users, however, it is completely insecure. If Eve knows
+the public modulus n and any (e, d) pair then (as we will showin Theorem 7.15)
+she has a probabilistic algorithm to factor n with polynomial expected running
+time. Hence any user of the network could read the messages sent to any other
+user. The proof of this is rather involved and is contained in the next section.
+Another problem with two users sharing the same public modulus was
+pointed out by Simmons (1983).
+Proposition 7.14 If the same message M is encrypted with coprime public
+exponents e1 and e2 and common public modulus n then the message can easily
+be recovered from the cryptograms and public keys.
+Proof: Since gcd(e1, e2) = 1, Eve can use Euclid’s algorithm to find h, k ? Z
+such that he1 + ke2 = 1. If the two cryptograms are C1 and C2 then the message
+can now be recovered as
+M = Mhe1+ke2 = Ch
+1Ck
+2 mod n.
+
+An amusing variation on this attack due to Joye and Quisquater (1997)
+considers the problem of Bob’s public exponent becoming corrupted (see
+Problem 7.8).
+7.7 Finding the RSA private key and factoring 155
+Exercise 7.4 b Given the RSA public key (n, e) = (62821427, 5) find the private
+key d. (You may suppose that the public key was chosen insecurely.)
+Exercise 7.5 h Alice, Bob and Carol have RSA public keys (nA, 3), (nB, 3) and
+(nC, 3). If Dave sends the same message M to all three of them, show
+that Eve can recover M in polynomial time using only the public keys
+and the three cryptograms.
+7.7 Finding the RSA private key and factoring
+Although we do not knowwhether breaking RSA (in the sense of systematically
+recovering messages from cryptograms) is equivalent to factoring, we can show
+that recovering the RSA private key is equivalent to factoring in the following
+sense.
+Theorem 7.15 Given both RSA keys (n, e) and d there is a probabilistic algorithm
+for factoring n which has polynomial expected running time.
+We first prove a simple result showing that anyone who can calculate square
+roots mod n = pq can also factor n. (This is not used directly in the proof of
+Theorem 7.15 but shows where one of the key ideas comes from.)
+Proposition 7.16 Given a polynomial time algorithm for computing square
+roots mod n = pq there exists a probabilistic algorithm for factoring n with
+polynomial expected running time.
+Proof: Given a square x2 mod n there are exactly four square roots,
+±x,±y mod n. If we know x and y then
+(x - y)(x + y) = x2 - y2 = 0 mod n.
+Hence pq divides (x + y)(x - y). But we know that x = ±y mod n so either
+p divides x + y and q divides x - y or vice-versa. In either case we can easily
+find one of the prime factors of n by calculating gcd(x + y, n) using Euclid’s
+algorithm. We can then find the other prime factor by division.
+So if we know two square roots x and y such that x = ±y mod n then we
+can factor n easily.
+We nowdescribe a probabilistic algorithm for factoring n given a polynomial
+time algorithm for computing square roots mod n. Let A be the polynomial time
+algorithm for computing square roots mod n. Our factoring algorithm works as
+follows.
+156 7 Public key cryptography
+Input: an integer n = pq, with p and q prime
+repeat
+x ?R Z
+*
+p
+z ‹ x2 mod n
+y ‹ A(z)
+if y = ±x mod n then
+s ‹ gcd(x + y, n)
+output s, n/s
+end-repeat.
+Clearly the probability of success on a single iteration is 1/2, since this is the
+probability that the algorithm A returns a square root y of x2 mod n that satisfies
+y = ±x mod n. Hence this algorithm has polynomial expected running time.
+Moreover its output is the factorisation of n. 
+The proof of Theorem 7.15 is based on the Miller–Rabin primality test (see
+Theorem 4.6). It gives a probabilistic algorithm which, when given the public
+and private RSA keys, will with high probability find a non-trivial square root
+of 1 (that is c such that c2 = 1 mod n but c = ±1 mod n). As we saw in Proposition
+7.16 this ability to find a non-trivial square root allows us to factor n via
+Euclid’s algorithm.
+The proof also requires the Chinese Remainder Theorem (see Appendix 3,
+Theorem A3.5) and Lagrange’s Theorem (see Appendix 3, Theorem A3.1).
+Proof of Theorem 7.15: Given the RSA keys (n, e) and d we know that de =
+1 mod (p - 1)(q - 1). Hence there exists an integer a ? 2 and an odd integer
+b such that de - 1 = 2ab.
+Our algorithm for factoring n is as follows:
+Input: RSA public and private keys: (n, e) and d.
+divide de - 1 by 2 to obtain a, b, with b odd such that de - 1 = 2ab.
+repeat
+x ?R Zn.
+c ‹ gcd(x, n)
+(*) ifc = 1 then c is a prime factor of n so output c, n/c
+y ‹ xb mod n
+i ‹ 1
+while i ? a - 1
+if y2i = ±1 mod n and y2i+1 = 1 mod n then
+c ‹ gcd(y2i + 1, n)
+(**) output c, n/c
+7.7 Finding the RSA private key and factoring 157
+i ‹i + 1
+end-while
+end-repeat
+If the algorithm outputs at line (*) then c = p or c = q so we have factored n.
+If the algorithm outputs at line (**) then y2i is a non-trivial square root 1 mod
+n. Hence pq|(y2i - 1)(y2i + 1) but pq does not divide (y2i - 1) or (y2i + 1)
+and so gcd(y2i + 1, n) = p or gcd(y2i + 1, n) = q. Hence c = p or c = q and
+we have factored n.
+We will show that with probability at least 1/2 we succeed during a single
+iteration of this algorithm. Since a single iteration of the algorithm can be
+performed in polynomial time this will imply that the algorithm has polynomial
+expected running time.
+If the algorithm chooses x ?R Zn that is not coprime with n then it outputs
+the factorisation of n at line (*). Thus we may suppose that x ?R Z
+*
+n.
+Define the integer t by
+t = max 0 ? s ? a - 1 | there exists x ? Z
+*
+n such that x2sb = 1 mod n.
+Consider the set
+Bt = x ? Z
+*
+n
+| x2t b = ±1 mod n.
+If we showthat Bt is a subgroup ofZ
+*
+n then Lagrange’s Theorem implies that |Bt |
+divides |Z
+*
+n
+|. If we also show that Bt = Z
+*
+n then |Bt | < |Z
+*
+n
+| (since Bt ? Z
+*
+n).
+From this we can deduce that |Bt| ? |Z*
+n
+|/2.
+This then implies that for x ?R Z
+*
+n we have
+Pr[x ? Bt ] = 1 -
+|Bt |
+|Z*
+n
+|
+? 1
+2
+and hence
+Pr x2t b = ±1 mod n ? 1
+2
+.
+But by definition of t we know that x2t+1b = 1 mod n and so with probability
+at least 1/2 the algorithm outputs a factor of n at line (**).
+It remains to show that Bt is a subgroup of Z
+*
+n and Bt = Z
+*
+n. To see that Bt
+is a subgroup of Z
+*
+n is easy:
+(i) 12t b = 1 mod n =? 1 ? Bt .
+(ii) x ? Bt =? (x-1)2t b = (±1)-1 = ±1 mod n =? x-1 ? Bt .
+(iii) x, y ? Bt =? (xy)2t b = (±1)(±1) = ±1 mod n =? xy ? Bt .
+158 7 Public key cryptography
+So finally we simply need to show that Bt = Z
+*
+n. To do this we need to find
+w ? Z
+*
+n
+\Bt .
+By definition of t there exists z ? Z
+*
+n such that z2t b = v = 1 mod n. If v =
+-1 then we are done, since z ? Bt. So we may suppose v = -1. Now, by the
+Chinese Remainder Theorem, there exists w ? Z
+*
+n such that
+w = z mod p,
+w = 1 mod q.
+We will show that w ? Bt . Clearly
+w2t b = z2t b = -1 mod p,
+w2t b = 12t b = 1 mod q.
+But this implies that w2t b = ±1 mod n since
+w2t b = 1 mod n =? w2t b = 1 mod p and w2t b = 1 mod q;
+w2t b = -1 mod n =? w2t b = -1 mod p and w2t b = -1 mod q.
+Hence w2t b = ±1 mod n and so w ? Bt, as required. 
+The following deterministic version of this result was given by May (2004).
+Theorem 7.17 If n = pq is an RSA public modulus and p, q have the same
+bit length then there is a polynomial time deterministic algorithm for factoring
+n, given the RSA keys (n, e) and d.
+(See Problem 7.5 for a weaker version of this result.)
+Exercise 7.6 a Illustrate Theorem 7.15 by using the above algorithm to factorise
+n = 21 631 given that e = 23 and d = 16 679.
+7.8 Rabin’s public key cryptosystem
+When considering the RSA cryptosystem we could not be sure that recovering
+plaintext systematically from ciphertext was as difficult as factoring. The next
+public key cryptosystem we will consider was the first example of a provably
+secure system, in the sense that the problem of recovering plaintext systematically
+from ciphertext is known to be computationally equivalent to a wellstudied
+difficult problem: factorisation.
+Recall that a prime p that is congruent to 3 mod 4 is called a Blum prime.
+Rabin’s cryptosystem works as follows.
+7.8 Rabin’s public key cryptosystem 159
+(1) Setup. Bob chooses two distinct k-bit Blum primes, p and q, (so p and q
+are both congruent to 3 mod 4). He then publishes his public key n = pq,
+while the pair (p, q) remains secret as his private key.
+(2) Encryption. Alice has a message M which she splits into a sequence of
+numbers M1, M2, . . . , Mt where each Mi satisfies 0 ? Mi < n. She then
+encrypts these blocks as
+Ci = M2
+i mod n.
+and sends the encrypted blocks to Bob.
+(3) Decryption. Bob can recover the message block Mi by computing the four
+square roots of Ci mod n using the algorithm described below. Bob then
+needs to decide which of the four possibilities is Mi .
+Clearly the setup is easy to perform: Bob simply chooses random integers of
+the form 4k + 3 and tests them for primality until he finds two primes.
+Encryption is also easy since squaring can be performed in polynomial time.
+It is less obvious that decryption can also be achieved easily given the private
+key (p, q), however, this is also true.
+Proposition 7.18 Given the factorisation of n = pq into distinct primes p and
+q, both congruent to 3 mod 4, computing square roots mod n is easy.
+Proof: Since p and q are distinct primes they are coprime. Hence we can use
+Euclid’s Algorithm to compute h and k such that hp + kq = 1 (in polynomial
+time).
+Let C = M2 mod n be the number whose square roots we are required to
+calculate. Set
+a = C(p+1)/4 mod p, b = C(q+1)/4 mod q
+and
+x = (hpb + kqa) mod n, y = (hpb - kqa) mod n.
+We claim that the four square roots of C mod n are ±x,±y. We will check that
+x2 = C mod n (the other case is similar).
+Using the Chinese Remainder Theorem (Appendix 3, Theorem A3.5) it is
+sufficient to prove that x2 = C mod p and x2 = C mod q.
+Working mod p we note that if M = 0 mod p then C, a and b are all congruent
+to 0 mod p and so x2 = C mod p. So suppose that M = 0 mod p. Working
+mod p throughout we have
+x2 = (hpa + kqa)2 = (kq)2a2 = (1 - hp)2C(p+1)/2
+= C(p+1)/2 = C · C(p-1)/2 = C · Mp-1 = C mod p,
+160 7 Public key cryptography
+where the last equality follows from Fermat’s Little Theorem.
+Similarly x2 = C mod q and hence by the Chinese Remainder Theorem
+x2 = C mod n.
+Since all the computations required to calculate±x and±y can be performed
+in polynomial time this completes the proof. 
+This result shows that, given a cryptogram C, Bob can easily recover the four
+square roots of C mod n. However, this still leaves the problem of deciding
+which of these square roots is the original message. There are various ways of
+solving this problem, depending on the type of message being transmitted.
+If the messages have a special structure, for instance if they consist simply of
+English text, then there is no problem since it is almost certain that only one of
+the square roots will yield a meaningful message. However, if the messages do
+not have such a special structure then a possible solution is to pad the message,
+say by appending a string of zeros before encrypting. In this case Bob simply
+needs to check the four square roots to see which of them ends in the correct
+string of zeros. Again it is almost certain that there will be only one possibility.
+Having seen that decryption and encryption can both be performed efficiently
+in Rabin’s cryptosystem we now examine its security.
+If Eve were able to systematically recover plaintext efficiently from ciphertext
+then she must be able to compute square roots mod n. But we have already
+seen that this is equivalent to being able to factor n.
+Theorem 7.19 Systematically recovering plaintext from ciphertext in the Rabin
+cryptosystem is equivalent to factoring.
+Proof: An algorithm for systematically recovering plaintext from ciphertext
+in Rabin’s cryptosystem is precisely an algorithm for computing square roots
+mod n. So Proposition 7.16 implies that any efficient algorithm for the former
+problem yields an efficient algorithm for factoring.
+Conversely an efficient algorithm for factoring allows us to calculate the
+private key (p, q) from the public key n = pq and hence allows us to decrypt
+in Rabin’s cryptosystem. 
+This theorem along with the efficient algorithms for the setup and encryption/
+decryption processes yields the following result.
+Theorem 7.20 Consider the family of functions
+{RABINn : Zn › Zn}n, RABINn(x) = x2 mod n,
+where n = pq is a product of distinct k-bit Blum primes.
+Under the Factoring Assumption this is a family of trapdoor functions.
+7.9 Public key systems based on NP-hard problems 161
+Proof: We have already outlined efficient algorithms for the setup, encryption
+and decryption processes.
+To see that the security condition also holds note that if an adversary’s
+probability of inverting a cryptogram produced by encrypting a random message
+with a random instance of Rabin’s cryptosystem is not negligible then, by
+Theorem 7.19, their probability of factoring n = pq is also not negligible. This
+is impossible under the Factoring Assumption. 
+Exercise 7.7a Bob uses Rabin’s cryptosystem with public key n = 77. If he
+receives the cryptogram C = 71 find the four possible messages.
+7.9 Public key systems based on NP-hard problems
+The public key systems we have examined so far have all been based on problems
+that are Turing reducible to problems in NP ? co-NP and hence are not
+NP-hard unless NP = co-NP (see Propositions 6.8 and 6.10). A few cryptosystems
+based on NP-hard problems have been proposed and we will examine two
+examples below.
+One of the earliest examples of a public key cryptosystem was due to Merkle
+and Hellman (1978). It was based on the intractability of the following NPcomplete
+problem.
+SUBSET SUM
+Input: a finite set of positive integers A and an integer t
+Question: is there a subset of A whose sum is exactly t?
+The Merkle–Hellman cryptosystem uses the fact that although this problem is
+NP-complete it is easy to solve when the set A is a super-increasing sequence
+{a1, . . . , an}. That is, if ai > i-1
+j=1 aj for all 2 ? i ? n.
+Lemma 7.21 There is a polynomial time algorithm for deciding SUBSET
+SUM when the sequence {a1, . . . , an} is super-increasing. Moreover this algorithm
+will find the corresponding subset when it exists and this subset is
+unique.
+Proof: See Exercise 7.8 
+The Merkle–Hellman cryptosystem works as follows.
+(1) Setup. Bob’s secret private key consists of a super-increasing sequence
+{b1, . . . , bn}, and coprime integers h and d, withbi < d. He forms the
+162 7 Public key cryptography
+public key (a1, . . . , an) where
+ai = hbi mod d
+and publishes this.
+(2) Encryption. If Alice wishes to send a message M, an n-bit number with
+binary representation M1, . . . , Mn, to Bob she computes the cryptogram
+C =
+n
+
+i=1
+Miai .
+Since each Mi is either zero or one the message defines a subset of the
+{a1, . . . , an} (namely the subset formed by taking those ai for which
+Mi = 1) and the cryptogram is the sum of the members of this subset.
+(3) Decryption. Bob decrypts by first computing h-1 mod d, the inverse of h
+in Z
+*
+d and then computing h-1C mod d. He then needs to solve an
+instance of SUBSET SUM with a super-increasing sequence which, by
+Lemma 7.21, is easy. This yields the Mi since
+h-1C = h-1Miai =Mibi mod d.
+Clearly the setup and encryption are easy to perform. Moreover Lemma 7.21
+implies that decryption is also straightforward for Bob.
+Superficially the security of this system looks good. For Eve to recover the
+message from the cryptogram she must solve an instance of SUBSET SUM
+given by the sequence {a1, . . . , an} and the integer C. But this is in general
+NP-hard.
+Moreover, both encryption and decryption are much faster than in RSA so
+there was considerable optimism about the future of this system. However, in
+1982 Shamir announced that he had broken the Merkle–Hellman system using
+Lenstra–Lenstra–Lov´asz (L3) lattice basis reduction. What Shamir had shown
+was that most cases of SUBSET SUM that arise in this cryptosystem can be
+solved rather easily.
+Note that the general problem SUBSET SUM is still intractable and this
+result says nothing about whether P = NP.
+Various other knapsack-based public key systems have been suggested over
+the years, however, most have proved insecure and in general they are rather
+unpopular.
+Another public key cryptosystem based on an NP-hard problem was proposed
+by McEliece in 1978. The basic idea of his scheme is to ‘hide’ the
+message by introducing errors. It is based on the following NP-complete
+problem.
+7.9 Public key systems based on NP-hard problems 163
+DECODING LINEAR CODES
+Input: a k × n binary matrix G, a vector y ? {0, 1}n and a positive integer t.
+Question: does there exist a vector z ? {0, 1}k with at most t non-zero entries
+such that zG = y mod 2?
+A k × n binary matrix G generates a t-error correcting linear code iff for any
+two vectors z1, z2 ? {0, 1}n with at most t non-zero entries and any two distinct
+vectors x1, x2 ? {0, 1}k we have
+x1G + z1 = x2G + z2.
+Thus if we use G to encode a vector x ? {0, 1}k as xG then even if up to t
+errors occur in the transmission of the vector xG the resulting ‘garbled’ vector
+xG + z can still be uniquely decoded as x.
+The related NP-hard problem of error correction is the following.
+ERROR CORRECTING LINEAR CODES
+Input: a k × n binary matrix G, an integer t and a vector C ? {0, 1}n, such that
+C = xG + z mod 2,
+where z ? {0, 1}n has at most t non-zero entries.
+Output: x if it is unique otherwise output fail.
+McEliece’s public key cryptosystem works as follows.
+(1) Setup.
+(i) Bob chooses a k × n binary matrix G for which the problem of error
+correcting up to t errors is easy. (That is he has an efficient algorithm
+for this task.)
+(ii) Bob chooses a random k × k invertible binary matrix S and a random
+n × n permutation matrix P.
+(iii) Bob computes H = SGP and publishes his public key (H, t). His
+private key is (S, G, P).
+(2) Encryption. If Alice wishes to encrypt a message M ? {0, 1}k then she
+chooses a random vector z ? {0, 1}n containing t ones. She then sends the
+cryptogram C = MH + z to Bob.
+(3) Decryption. Bob decrypts by first computing D = CP-1. He then uses
+his efficient decoding algorithm for G to decode D as M. Finally he
+recovers the message as M = MS-1.
+McEliece proposed the use of Goppa codes in this system since efficient decoding
+algorithms are known for these codes. He also suggested the parameter sizes
+of n = 1024, k ? 524 and t = 50. This results in a public key of size at least
+164 7 Public key cryptography
+219. This relatively large public key size and the fact that the cryptogram is
+significantly longer than the message may have been reasons why other public
+key cryptosystems have been preferred in practice. (For example in RSA
+a 1024-bit public modulus results in a public key of size at most 2048 and a
+1024-bit message results in a 1024-bit cryptogram.)
+Proposition 7.22 Decryption in McEliece’s cryptosystem works.
+Proof: Bob forms
+D = CP-1 = (MH + z)P-1 = MSG + zP-1.
+Since Bob has an efficient decoding algorithm for G that will correct up to t
+errors and zP-1 ? {0, 1}n contains t ones, he can use his decoding algorithm
+to recover M = MS from D. Finally M = MS-1 as required. 
+Exercise 7.8h Describe a polynomial time algorithm which when given
+the super-increasing sequence {a1, . . . , an} and an integer t ? 1 solves
+the SUBSET SUM problem for this input and finds the corresponding
+unique subset when it exists. Hence deduce that decryption works and
+can be achieved efficiently in the Merkle–Hellman cryptosystem.
+Exercise 7.9a Suppose that Alice sends Bob a message using McEliece’s
+cryptosystem and Bob has public key (H, t). Eve intercepts the cryptogram
+C = MH + z and attempts to recover the message as follows:
+she chooses k columns of H at random and forms Hk , the restriction of
+H to these columns. If Ck and zk are the restrictions of C and z to these
+columns then Ck = MHk + zk . Moreover if zk is the all zero vector and
+Hk is invertible then Eve can recover M by inverting Hk .
+(a) Show that the probability that this attack succeeds is at most
+n-t
+k 	/n
+k	.
+(b) Give a lower bound on the expected number of attempts she would
+need to succeed if n = 1024, t = 50 and k = 524.
+7.10 Problems with trapdoor systems
+Recall that in Shannon’s theory of cryptography we could attain perfect secrecy
+(at the cost of an extremely long shared key). In simple terms this meant that
+Eve learnt nothing about the message by seeing the cryptogram.
+With public key systems based on trapdoor functions we have dispensed
+with the need for a shared secret key but our level of security is much lower. In
+7.10 Problems with trapdoor systems 165
+the trapdoor model Eve learns everything about the message from seeing the
+cryptogram. The security of the system is based on the assumption that (given
+her limited computational powers) she has a negligible chance of recovering
+the message from the cryptogram.
+For example given an RSA cryptogram C together with the public key (n, e)
+Eve knows that the message is
+M = Cd mod n,
+where d can in principle be calculated from n and e. So there is no uncertainty
+about which message has been sent. However, although Eve has all the information
+required to find M she cannot because this is computationally infeasible.
+There are at least three obvious problems with this model of security.
+(1) Partial information may leak. Just because Eve has a negligible chance of
+recovering the message from the cryptogram does not imply that she
+learns nothing about the message. Indeed, one-way functions often leak
+bits of information.
+(2) Messages are not random. Our assumption that Eve has a negligible
+chance of recovering a random message is all very well but messages are
+not random. The structure of the message space may well mean that the
+system is insecure despite the fact that the trapdoor assumption holds.
+For example suppose Alice only sends messages of the form:
+‘Transfer X dollars into my bank account.’
+If Eve knows this then (since encryption is public) she can encrypt
+messages of this form with different values of X until she finds the unique
+one that gives the cryptogram she has observed. This allows her to recover
+the message easily.
+(3) Multiple message insecurity. We have already seen that RSA is insecure if
+the same message is sent more than once using a low exponent key.
+In general if Alice and Bob use RSA then Eve can tell when Alice sends
+Bob the same message twice, since she will see the same cryptogram on
+both occasions. Such information may be extremely useful.
+So having outlined some of the problems with trapdoor systems what could we
+aim for in a definition of security for a public key cryptosystem?
+Consider the analogy between encryption and sending letters in sealed
+envelopes. If Alice sent Bob a letter in a sealed envelope and Eve was not
+allowed to open it what could she hope to learn about its contents? Well she
+might well be able to make a reasonable guess as to the length of the letter (by
+166 7 Public key cryptography
+weighing it or examining the size of the envelope). However, this is essentially
+all she could expect to learn without actually opening the envelope.
+Ideally a cryptosystem should have the same property: Eve should be unable
+to learn anything about the message except possibly its length.
+We will consider a model of security that captures this in Chapter 10:
+polynomial indistinguishability. Informally in this model a cryptosystem is
+secure if for any pair of ‘reasonable’ messages, M1, M2, Eve has no way of
+telling which of the two messages has been sent given both messages and the
+cryptogram.
+Clearly any deterministic public key cryptosystem will fail this test since
+given a pair of messages M1, M2 and a cryptogram C, Eve can easily check
+if C = e(M1) or C = e(M2). So secure cryptography will require probabilistic
+encryption.
+Problems
+7.1a Bob has chosen his RSA public modulus n = pq and now wishes to
+choose his public exponent e. Compare the complexity of the following
+algorithms for choosing an RSA public exponent e, to be coprime with
+(p - 1)(q - 1).
+Algorithm A. Choose k-bit odd integers at random and test for primality.
+When a prime is found check it does not divide (p - 1)(q - 1).
+Algorithm B. Choose k-bit odd integers at random and test whether they
+are coprime with (p - 1)(q - 1).
+7.2h Recall that ?(n) = #{1 ? a < n | gcd(a, n) = 1}. Show that for any
+integer n we have
+?(n) = n
+
+p|n
+1 - 1
+p
+
+.
+7.3b Show that knowledge of an Elgamal user’s public key (p, g, gx mod p)
+enables an adversary to recover the least significant bit of the private
+key x.
+7.4b Consider the following two problems:
+RSA FACTOR
+Input: an integer n, the product of two distinct primes p, q.
+Output: p and q.
+RSA PHI
+Input: an integer n, the product of two distinct primes p, q.
+Output: ?(n) = #{1 ? a < n | gcd(a, n) = 1}.
+7.10 Problems with trapdoor systems 167
+Show that these problems are Turing equivalent (that is they are
+Turing reducible to each other).
+7.5h Let n = pq be an RSA public modulus, where p, q both have the
+same bit length. Show that if the public and private exponents satisfy
+ed ? n3/2 then there is a polynomial time algorithm for factoring
+n.
+7.6a Suppose that in choosing his Elgamal public key Bob chooses g to be an
+arbitrary integer in the range 2 ? g ? p.Will the resulting cryptosystem
+still work?
+7.7a Suppose Bob chooses his RSA public modulus as follows. He fixes a
+key length k and generates a random odd k-bit integer a. He then tests
+a, a + 2, a + 4 . . . for primality and stops once he has found two primes
+p and q. He then forms the public modulus n = pq. Explain why this
+method is insecure.
+7.8h Alice and Bob are using RSA to communicate but Alice’s copy of
+Bob’s public exponent e has become corrupted, with a single bit being
+flipped. Suppose that Alice encrypts a message with this corrupted
+public exponent e and Bob then realises her mistake and asks her to
+resend the message, encrypted with the correct public exponent e. Show
+that Eve can recover the message from Bob’s public key and the two
+cryptograms.
+7.9b If (n, e) is an RSA public key then 0 ? M ? n - 1 is a fixed point of the
+cryptosystem iff Me = M mod n, that is the encryption of M is itself.
+How many fixed points are there for a given RSA public key (n, e),
+where n = pq?
+7.10h Show that if Bob has RSA public key (n, 3) and both M and M + 1 are
+sent to Bob by Alice then Eve can recover M from the two cryptograms.
+7.11h Carol uses Rabin’s cryptosystem to send the same message to both Alice
+and Bob. Show that an adversary can recover the message given only
+the two cryptograms and the public keys.
+7.12h Suppose Alice and Bob use Rabin’s cryptosystem and his public key is
+n. If Alice sends a message M to Bob but he loses his private key before
+he has a chance to read the message then explain why it is insecure for
+Bob to simply choose a new public key n*
+> n and ask Alice to resend
+the message.
+7.13a If ?1(x) and ?3(x) denote the number of primes less than or equal to x
+which are of the form 4k + 1 and 4k + 3 respectively then
+lim
+x›?
+?1(x)
+?3(x)
+= 1.
+168 7 Public key cryptography
+Hence show that there is a probabilistic algorithm for generating Blum
+primes which has polynomial expected running time.
+7.14h Prove that there are infinitely many Blum primes.
+7.15a Suppose that (an) is a super-increasing sequence with the property that
+if (bn) is any other super-increasing sequence then an ? bn. What is an?
+7.16a Suppose a message spaceMconsists of k-bit binary strings in which
+no more than 5 entries are non-zero. These are encrypted using the
+RSA cryptosystem. Prove that an enemy will be able to decrypt any
+cryptogram in polynomial time. Is the same true if Elgamal is used in
+place of RSA?
+7.17a Alice sends Bob the same message twice using McEliece’s cryptosystem
+with his suggested parameters n = 1024, t = 50 and k = 524.
+Assuming that she uses different random ‘error’ vectors, z1 and z2,
+explain how Eve can detect that the same message has been sent twice
+just from examining the cryptograms.
+Further notes
+The presentation of the Cocks–Ellis cryptosystem in Section 7.2 is based on
+the technical notes of Cocks (1973) which were not released to the public until
+1997.
+There is a huge research literature on the RSA and Elgamal public key
+systems. A good account of attacks can be found in Menezes, van Oorschot,
+and Vanstone (1996) and more recently for RSA in Boneh (1999).
+Theorem 7.15 which shows that knowledge of the decryption exponent as
+well as the public key (n, e) leads to an expected polynomial time algorithm
+for factoring n was noted in the original RSA paper.
+Aharder version of the question whether breakingRSAis as hard as factoring
+is to ask whether breaking low exponent RSA (LE-RSA) is as hard as factoring.
+Boneh andVenkatesan (1998) make progress towards showing that any efficient
+algebraic reduction from factoring to breaking LE-RSA can be converted into
+an efficient factoring algorithm. This means that breaking LE-RSA cannot be
+equivalent to factoring under algebraic reductions unless factoring is easy. (An
+algebraic reduction is restricted to only performing arithmetic operations but,
+for example, is not allowed to compute x ? y.)
+We note that Theorem 7.20 relating the security of Rabin’s cryptosystem
+to factoring is only true if messages are chosen at random. In particular, if we
+insist that messages are of a special form so as to enable unique decryption, it
+is no longer true.
+7.10 Problems with trapdoor systems 169
+Exercise 7.5 is a special case of H°astad’s broadcast attack (1988). Problem
+7.10 is a special case of an attack due to Coppersmith et al. (1996).
+The language SUBSET SUM used in the knapsack cryptosystem was one
+of the original 21 problems proved to be NP-hard by Karp (1972). The L3-
+algorithm of Lenstra, Lenstra and Lovász (1983) used by Shamir (1983) in
+breaking the knapsack-based system was a landmark in the theory of NPhardness.
+It showed that the problem of factoring polynomials in one variable
+with rational coefficients and of fixed degree could be achieved in polynomial
+time. Kaltofen (1982 and 1985) extended this to polynomials in any fixed
+number of variables.
+For elementary introductions to the theory of linear codes (as used in
+McEliece’s cryptosystem) see Hill (1986) or Welsh (1988).
+The use of elliptic curves in public key cryptosystems seems to have been
+first proposed by Koblitz (1987) and Miller (1986) and there is now a huge
+literature on this topic. However, the mathematical background needed for this
+is beyond the scope of this book.
+8
+Digital signatures
+8.1 Introduction
+The need to authenticate both the contents and origin of a message is crucial in
+any communications network. Consider the following problematic situations in
+which Alice and Bob face the forger Fred. In each case we suppose that Bob is
+Alice’s banker.
+(1) Suppose Fred sends Bob a message claiming to come from Alice asking
+him to transfer $1000 into Fred’s account. If Bob has no way of verifying
+the origin of this message then Alice is in trouble.
+(2) Suppose Fred intercepts a message from Alice to Bob asking him to
+transfer $1000 into Carol’s account. If Fred can alter the message so that
+‘Carol’ is replaced by ‘Fred’ then again there is trouble.
+(3) Suppose Fred intercepts a message from Alice to Bob asking him to
+transfer $1000 into Fred’s account. Fred stores the message and resends it
+to Bob whenever he is short of cash!
+In each case Fred can succeed if no proper system of message authentication is
+in place.
+Historically the handwritten signature has been the preferred method for
+authentication of messages. A digital signature is a method for achieving this
+based on cryptography.
+Ideally a digital signature should provide the same guarantees as a handwritten
+signature, namely it should satisfy:
+(1) Unforgeability. Only Alice should be able to sign her name to a message.
+(2) Undeniability. Alice should not be able to deny she signed at a later stage.
+(3) Authentication. The signature should allow the contents of the message to
+be authenticated.
+170
+8.2 Public key-based signature schemes 171
+For Alice’s signature to be unforgeable it must rely on some secret known only
+to her, namely her secret or private key. Moreover in order to provide message
+authentication the signature must also depend on the contents of the message
+being signed.
+The original concept of a digital signature based on public key cryptography
+was proposed by Diffie and Hellman (1976) and was shown to be practically
+viable by Rivest, Shamir and Adleman in the RSA paper (1978). There is now
+a huge literature on the subject and a plethora of different schemes exist. We
+will only introduce the basic concepts here.
+8.2 Public key-based signature schemes
+Most of the public key cryptosystems we saw in the previous chapter can
+be used as digital signature schemes. The key ingredient required is that the
+cryptosystem must be commutative. That is, not only does
+d(e(M) = M
+need to hold, but also
+e(d(M)) = M.
+For example, if Alice wishes to send a signed message to Bob she computes the
+signature S = dA(M) (that is she ‘decrypts’ the message using her private key)
+and sends the pair (M, S) to Bob. He can verify that the message did indeed
+come from Alice by using her (publicly-known) encryption function to check
+that
+eA(S) = eA(dA(M)) = dA(eA(M)) = M.
+Using the RSA cryptosystem this process yields the following signature
+scheme.
+Example 8.1 The RSA signature scheme
+(1) Setup. Alice chooses an RSA public key (n, e) and private key d.
+(2) Signing. If Alice wishes to sign the message M, 0 ? M < n she computes
+the signature
+S = Md mod n
+and sends the pair (M, S) to Bob.
+172 8 Digital signatures
+(3) Verification. Bob verifies the signature by using Alice’s public key to
+check that
+M = Se mod n.
+On the face of it this scheme looks secure: signing in general seems to require
+knowledge of Alice’s private key. We saw in the previous chapter (Theorem
+7.15) that recovering the private key from the public key in the RSA cryptosystem
+is equivalent to factoring, so under the Factoring Assumption this is hard.
+However, we will see later that this scheme is far from perfect.
+In the next section we will consider exactly what it means for a signature
+scheme to be secure.
+Exercise 8.1a Suppose Alice has RSA public key n = 143, e = 103 and private
+key d = 7. What is the signature corresponding to the message M = 8?
+8.3 Attacks and security of signature schemes
+What kind of attacks can the forger Fred perpetrate on a signature scheme?
+We list the four basic attacks in order of increasing severity.
+Direct attack
+Fred only knows Alice’s public key. (He does not see any message-signature
+pairs).
+Known-signature attack
+Fred knows Alice’s public key and also has a collection of message-signature
+pairs: (M1, S1), . . . , (Mt , St ), signed by Alice. (The messages are taken from
+those actually sent by Alice.)
+Chosen-message attack
+Fred knows Alice’s public key and has (somehow!) convinced her to sign a
+collection of messages of his own choice: (M1, S1), . . . , (Mt , St ).
+Adaptive-chosen-message attack
+Fred knows Alice’s public key and convinces Alice to sign a sequence of messages
+of his ownchoice: (M1, S1), . . . , (Mt , St ), with the choice of each message
+Mi dependent on the signatures of the earlier messages.
+So what does it mean for Fred to break a signature scheme? His aim is to
+produce forgeries, that is message-signature pairs (M, S) for which S is Alice’s
+signature of M.
+8.3 Attacks and security of signature schemes 173
+In order of increasing difficulty (for Fred) we have the following types of
+breaks.
+Existential forgery
+Fred can forge the signature of at least one message whose signature he has not
+already seen.
+Selective forgery
+Fred can forge the signature of at least one message of his choice whose signature
+he has not already seen.
+Universal forgery
+Fred can forge the signature of any message.
+Total break
+Fred manages to recover Alice’s private key (and hence can create forgeries at
+will).
+So how does the RSA-based scheme described above stand up to attack?
+Proposition 8.2 The RSA signature scheme is
+(a) existentially forgeable under a direct attack;
+(b) universally forgeable under a chosen-message attack.
+Proof: If Alice’s public key is (n, e) then Fred can choose any 0 ? R < n, and
+form
+Y = Re mod n.
+Then the pair (Y, R) is a valid message-signature pair since when Bob checks
+he finds that Re = Y mod n and so it passes the verification procedure. Hence
+(a) holds.
+For (b), if Fred wishes to sign the message M then he chooses a random R,
+1 ? R < n, and asks Alice to sign the messages M1 = MR mod n and M2 =
+R-1 mod n. (Note that if R-1 mod n does not exist then d = gcd(R, n) = 1
+and so Fred can factor n as d, n/d.)
+If these messages have signatures S1 and S2 then M has signature S1S2 mod n
+since
+Md = (MRR-1)d = (MR)d (R-1)d = S1S2 mod n. 
+Another well-known signature scheme is based on the Elgamal cryptosystem.
+174 8 Digital signatures
+Example 8.3 The Elgamal signature scheme
+(1) Setup. Alice chooses an Elgamal public key (p, g, y) and private key x,
+where p is a prime, g is a primitive root modulo p, x ?R Z
+*
+p is random
+and y = gx mod p.
+(2) Signing. To sign the message M, where 0 ? M < p, Alice does the
+following.
+(a) She selects a random k, 1 ? k ? p - 2 satisfying gcd(k, p - 1) = 1.
+(b) She computes
+S1 = gk mod p and S2 = k-1(M - xS1) mod (p - 1).
+(c) Her signature for the message M is the pair (S1, S2) which she sends
+to Bob together with the message M.
+(3) Verification. To check the signature Bob does the following.
+(a) He computes
+V = yS1 SS2
+1
+= (gx )S1 (gk )S2 mod p
+and
+W = gM mod p.
+(b) Bob accepts Alice’s signature iff V = W mod p.
+It is a straightforward exercise to showthat the Elgamal signature schemeworks
+(in the sense that Bob accepts correctly signed messages).
+As with the Elgamal cryptosystem this scheme can clearly be totally broken
+by an adversary who can solve the discrete logarithm problem efficiently. It is
+also universally forgeable by anyone who can solve the Diffie–Hellman problem
+(although the best current method of solving the Diffie–Hellman problem is via
+the discrete logarithm).
+As with the RSA system this signature scheme is vulnerable to existential
+forgery.
+Proposition 8.4 The Elgamal signature scheme is existentially forgeable under
+a direct attack.
+Proof: Suppose Fred chooses a ? Zp-1 and b ? Z
+*
+p-1 and computes
+S1 = ga yb mod p and S2 = -S1b-1 mod p - 1.
+We can then check that (S1, S2) is a valid signature of the message
+M = aS2 mod p - 1.
+8.3 Attacks and security of signature schemes 175
+Bob computes
+V = yS1 SS2
+1
+= y-S2b(ga yb)S2 = gaS2 = gM = W mod p,
+and so accepts Fred’s forgery. 
+There are many variants of the Elgamal signature scheme. One important example
+is the Digital Signature Algorithm (DSA). This was first proposed by NIST
+in 1991 and was developed by the NSA. In its original form it aroused some
+controversy. It was not until May 1994 after several modifications had been
+made that it became the Digital Signature Standard (DSS).
+Example 8.5 The Digital Signature Algorithm
+(1) Setup. A global public key (p, q, g) is constructed as follows:
+(a) p is a prime of exactly N bits, where N is a multiple of 64 in the range
+512 ? N ? 1024 (so 2N-1 < p < 2N );
+(b) q is a prime of 160 bits which divides p - 1;
+(c) g = h(p-1)/q mod p, where h is a primitive root mod p. In other
+words g is an element of order q in Z
+*
+p.
+(d) Alice chooses a private key xA, 1 < xA < q and publishes her public
+key yA = gxA mod p.
+(2) Signing. For Alice to sign a message M, satisfying 0 ? M < q, she
+chooses a random k, 1 < k < q and computes
+S1 = gk mod p mod q and S2 = k-1(M + xAS1) mod q.
+Her signature for M is the pair (S1, S2), which she sends to Bob together
+with the message M.
+(3) Verification. Bob verifies her signed message as follows.
+(a) He computes
+W = S-1
+2 mod q, U1 = MW mod q, U2 = S1W mod q
+and
+V = gU1 yU2
+A mod p mod q.
+(b) Bob accepts iff V = S1.
+Proposition 8.6 The Digital Signature Algorithm works.
+Proof: First note that
+(M + xAS1)W = kS2S-1
+2
+= k mod q. (8.1)
+176 8 Digital signatures
+Now
+V = gU1 yU2
+A mod p mod q
+= gMWgxA S1W mod p mod q,
+since gq = 1 mod p. So
+V = g(M+xA S1)W mod p mod q.
+Using (8.1) we obtain
+V = gk mod p mod q
+= S1.
+So for a correctly signed message the verification procedure works. 
+Exercise 8.2 a Alice uses the Elgamal signature scheme to sign the message
+M = 30. If her public key is (71, 7, 58), her private key is x = 4 and
+when signing she chooses k = 3 what is her signature?
+Exercise 8.3a Show that the Elgamal signature scheme works in the sense that
+the verification procedure accepts correctly signed messages.
+8.4 Signatures with privacy
+None of the signature schemes we have examined so far has attempted to hide
+the contents of the message being signed. Indeed the message is always sent to
+Bob unencrypted along with the signature and is used by Bob in the verification
+process. This allows Bob to verify that the message is authentic. However, this
+also enables an eavesdropper to obtain the contents of the message very easily.
+In many situations the fact that the signed message can be verified by anyone
+may be extremely useful. However, if Alice also wishes to keep the contents of
+the message secret then she must also encrypt the signature using Bob’s public
+key.
+The general protocol would then be as follows.
+Example 8.7 A generic signature with privacy scheme.
+(1) Setup. Alice and Bob both choose public/private key pairs.
+(2) Signing. Alice signs a message M using her private key as S = dA(M).
+(3) Encryption. She then encrypts the signature using Bob’s public key as
+C1 = eB(S) and encrypts the message as C2 = eB(M) and sends the pair
+(C1,C2) to Bob.
+8.4 Signatures with privacy 177
+(4) Decryption. Bob uses his private key to decrypt and recover the signature
+as
+dB(C1) = dB(eB(S)) = S.
+He also recovers the message as
+dB(C2) = dB(eB(M)) = M.
+(5) Verification. He then verifies the signature using Alice’s public key and
+accepts iff
+eA(S) = eA(dA(M)) = M.
+In practice this may not be possible, since we are combining elements of both
+Alice and Bob’s cryptosystems. The problem is that the signature S may not lie
+in the domain of Bob’s cryptosystem and so Alice cannot then encrypt it with
+his public key. (For instance if they are using RSA and Alice’s public modulus
+nA is larger than Bob’s public modulus nB then S may not satisfy 0 ? S < nB.
+In this case Alice cannot encrypt S with Bob’s public key as required in step
+(3) above.)
+To avoid this problem Rivest, Shamir and Adleman proposed the following
+public key system for signatures and secrecy.
+Example 8.8 The RSA signature scheme with privacy.
+(1) Setup.
+(a) A large value, say h = 21024, is announced by Alice.
+(b) Each user of the system chooses two RSA public key pairs, one for
+encryption, (n, e), and one for signing, (m, f ), satisfying m < h < n.
+(2) Signing. Suppose Alice wishes to sign a message M, where 0 ? M < mA,
+and send it securely to Bob. If Alice’s private key, corresponding to her
+signature public key (mA, f A), is dA then Alice computes her signature as
+S = MdA mod mA.
+(3) Encryption. Since 0 ? S < mA < h < nB Alice can now encrypt her
+signature using Bob’s encryption public key (nB, eB) to give
+C1 = SeB mod nB
+which she sends to Bob together with C2 = MeB mod nB.
+(4) Decryption. Bob decrypts C1 to recover the signature as
+S = CdB
+1 mod nB,
+178 8 Digital signatures
+where dB is Bob’s private key corresponding to his encryption public key
+(nB, eB). He also recovers the message as M = CdB
+2 mod nB.
+(5) Verification. Finally Bob verifies the signature using Alice’s signing
+public key (mA, f A) and accepts the signature iff
+M = S f A mod mA.
+8.5 The importance of hashing
+There are two major problems with the public key-based signature schemes we
+have seen.
+(1) They are existentially forgeable.
+(2) If the message is long then the signature will take a long time to compute.
+(Recall that in practice most public key cryptosystems are not used to
+encrypt long messages, rather they are used to encrypt short session keys.)
+The common solution employed to overcome both of these problems is the use
+of a hash function. We give only an informal definition of what this is.
+A hash function h should map a (possibly lengthy) message to a small digest
+h(M), called the hash of the message. Ideally it has the following properties.
+(H1) The length of h(M) should be small so that it can signed efficiently.
+(H2) The function h should be a publicly known one-way function.
+(H3) It should ‘destroy algebraic relationships’ between messages and
+signatures.
+(H4) It should be ‘collision-resistant’, that is it should be difficult to find two
+messages with the same hash value.
+Of all these conditions the last two are the most difficult to formalise. Before
+examining what these conditions mean we describe how to use a hash function
+in a signature scheme.
+Assuming that Alice and Bob have chosen a hash function h, the public keybased
+signature schemes we have described in previous sections can be adapted
+so that rather than signing the message, M, Alice instead signs the hash of the
+message, h(M). To be precise the new scheme works as follows.
+Example 8.9 A generic ‘hash then sign’ signature scheme.
+(1) Setup.
+(a) Alice and Bob first agree on a hash function h to use.
+(b) Alice then chooses her public and private keys and publishes her
+public key.
+8.5 The importance of hashing 179
+(2) Signing. If Alice wishes to sign a message M she does the following.
+(a) She first computes the hash of the message, H = h(M).
+(b) She then uses her private key to sign the hash, as S = dA(H).
+(c) Finally she sends the pair (M, S) to Bob.
+(3) Verification. Bob checks the signature as follows.
+(a) He computes the hash of the message H = h(M).
+(b) He uses Alice’s public key to check that the signature is authentic and
+accepts iff the following identity holds
+eA(S) = eA(dA(H)) = H.
+One immediate advantage of this type of scheme is that rather than signing
+a message by ‘decrypting’ a possibly lengthy message Alice now signs by
+computing the hash of the message and then ‘decrypting’ this short hash value.
+This will generally result in significant efficiency savings.
+Nowthat we knowhowAlice and Bob will use a hash function in their signature
+scheme we can return to the definition of a hash function and in particular
+discuss the last two conditions: (H3) ‘destroying algebraic relationships’ and
+(H4) ‘collision-resistant’.
+To motivate condition (H3), recall the attack on the RSA scheme that showed
+it was universally forgeable under a chosen-message attack (see Proposition 8.2
+(b)). This result relied on the fact that if
+M = M1M2 mod n
+and Mi has signature Si then the signature of M is
+S = S1S2 mod n.
+If we want a hash function to be useful in thwarting such an attack then we need
+to make sure that the following identity does not hold
+h(M1)h(M2) = h(M) mod n.
+This is because if it does then the attack described in Proposition 8.2 (b) still
+works. This is an example of the type of algebraic relationship which the hash
+function should destroy.
+In general the exact ‘algebraic properties’ that we wish the hash function to
+destroy will vary from one signature scheme to another.
+The other condition, of ‘collision-resistance’, refers to a problem that is
+actually introduced by using hash functions, rather than an existing problem in
+signature schemes. If we wish to ensure that a forger Fred cannot substitute his
+message for a message M which Alice has signed then it is essential that Fred
+180 8 Digital signatures
+cannot find another message M such that h(M) = h(M). Since if he can find
+such a message, then he can replace M by M and, since both messages have
+the same hash value, the signature for M will still be valid as a signature for M.
+Thus we say that a hash function h is collision-resistant if it is computationally
+infeasible for an adversary to find two messages M1 and M2 such that
+h(M1) = h(M2) (such a pair of messages is known as a collision). However, this
+is rather difficult to make precise. Since a hash function maps long messages
+to short hash values and in general there will be a large number of possible
+messages (far greater than the number of possible hash values) there will generally
+be lots of pairs of messages that have the same hash value. When this is
+true there clearly exists an extremely short algorithm for describing collisions:
+it simply outputs two messages that collide! However, in reality what matters
+is whether anyone can actually figure out what this algorithm is.
+A family of widely used hash functions is described in the Secure Hash Standard
+(FIPS 180-2). These consist of SHA-1, which is the hash function designated
+for use in the Digital Signature Standard, together with SHA-256, SHA-
+384 and SHA-512. These functions map messages to hash values of lengths
+160, 256, 384 and 512 bits respectively. Despite the fact that the compression
+involved implies that there are an extremely large number of possible messages
+that collide (SHA-1 maps a message space of size 2264 to a hash space of size
+2160) no-one has yet found even a single pair of messages that collide! (However,
+a recent attack on SHA-1 requiring work of order 263 to find a single collision
+suggests that this may not hold true for much longer.)
+As a concrete example of a hash function consider the following, due to
+Chaum, van Heijst and Pfitzmann (1992).
+Let p be a safe prime, that is p is of the form 2q + 1, where q is also prime.
+Let a, b be distinct primitive roots modulo p and define
+h : Zq × Zq › Z
+*
+p, h(x, y) = axby mod p.
+It can be shown (by case analysis see Problem 8.10) that given a single collision
+for h there is a polynomial time algorithm to compute loga b mod p. However,
+as we will see in the next section, to withstand even the simplest attack p must
+be large.
+8.6 The birthday attack
+There are various attacks on ‘hash then sign’ signature schemes, the most basic
+of which is the birthday attack. This attack is loosely motivated by the following
+scenario.
+8.6 The birthday attack 181
+Suppose that Fred wishes to forge Alice’s signature for a particular message
+M1. Unsurprisingly Alice is unwilling to sign M1, however, she is willing to
+sign another message M2. Now almost certainly the values h(M1) = h(M2) and
+so a valid signature for M2 is not a valid signature for M1. However, if Alice
+is willing to sign M2 she may well also be willing to sign a message M
+2 that
+differs from M2 in a few bits (for instance suppose some of the spaces in the
+message are replaced by tabs). Also Fred may be satisfied with a signature of
+a message M
+1 that only differs from M1 in a few bits. With this in mind, Fred
+produces two lists of possible messages
+M1 = {M1,1, M1,2, . . . , M1,n}
+and
+M2 = {M2,1, M2,2, . . . , M2,n}.
+The first list consists of messages obtained from M1 by changing a few bits and
+are all messages that Fred would like Alice to sign but which she would never
+be willing to sign. The second list consists of messages obtained from M2 by
+changing a few bits and are all messages that Alice would be willing to sign.
+Now all Fred needs to do is to find a pair M
+1
+?M1 and M
+2
+?M2 such that
+h(M
+1) = h(M
+2). Fred can then ask Alice to sign the message M
+2 (which she is
+happy to do) and later he can claim that Alice in fact signed the message M
+1 (a
+message that she would never have willingly signed).
+If the hash function h is truly collision-resistant then Fred will fail, since this
+attack requires him to find a collision. However, it shows how the ability to find
+even a single collision may have disastrous consequences for the security of a
+signature scheme. This leads us to consider the question of how Fred might go
+about finding a single collision for an arbitrary hash function.
+Our next result, describing the birthday attack, shows that Fred may not
+need to examine too many messages before he finds a collision. To be precise
+it says that if Fred generates random messages and computes their hash values
+then with probability at least 1/2 he finds a collision after generating
+?
+2|R|
+messages, where |R| is the total number of possible hash values for the hash
+function in question. Thus if we wish a hash function to be collision-resistant
+we must ensure that it maps messages to hash values consisting of t-bits, where
+2(t+1)/2 =
+?
+2|R| is sufficiently large that generating 2(t+1)/2 random messages
+and corresponding hash values is infeasible for Fred.
+Theorem 8.10 If h : {0, 1}m › {0, 1}t , 3 ? t < m, n = 2(t+1)/2	 and
+M1, . . . , Mn ?R {0, 1}m are chosen independently at random then
+Pr[There is a collision] >
+1
+2
+.
+182 8 Digital signatures
+Proof: Let us assume to start with that the hash function h is regular, that is
+for every possible hash value y ? {0, 1}t the number of messages M ? {0, 1}m
+satisfying h(M) = y is exactly 2m-t .
+Thus for any fixed hash value y ? {0, 1}t and random message M we have
+Pr[h(M) = y] = 1
+2t .
+Now if Fred chooses n random messages independently from {0, 1}m then the
+probability that they all have distinct hash values is the same as the probability
+that if n balls are thrown independently and uniformly at random into 2t bins
+then no bin contains more than one ball. The total number of ways of throwing
+n balls into 2t bins is 2tn, whereas the number of ways of throwing n balls
+into 2t bins so that no bin contains more than one ball is n!2t
+n . Hence we
+have
+Pr[No collision] = 2t
+n
+ n!
+2tn
+=
+n-1
+
+i=1
+1 - i
+2t
+
+.
+We can now use the inequality 1 - x ? e-x for 0 ? x ? 1 to give
+Pr[No collision] ?
+n-1
+
+i=1
+e-i/2t
+.
+Using the fact that
+1 + 2 + · · ·+(n - 1) = n(n - 1)
+2
+,
+we obtain
+Pr[No collision] ? e-n(n-1)/2t+1
+.
+So for n = 2(t+1)/2	 the probability that no collision occurs is at most exp(-1 +
+1/2(t+1)/2). Using the fact that t ? 3 we have
+Pr[No collision] ? e-3/4 <
+1
+2
+.
+Hence
+Pr[There is a collision] >
+1
+2
+.
+If h is not regular, that is certain hash values are more likely than others, the
+result also holds (see Exercise 8.4 for details). 
+8.6 The birthday attack 183
+This last result tells us that for a hash function to be secure against the
+birthday attack it must be true that generating 2t/2 messages and corresponding
+hash values is infeasible (where the hash value is a t-bit string). However, it
+says nothing about a lower bound on when this attack might succeed. In fact
+if the hash function is regular then the birthday attack is unlikely to succeed if
+fewer than 2t/2 messages are generated.
+Proposition 8.11 If h : {0, 1}m › {0, 1}t is regular, 3 ? t < m, n = 2(t-k)/2
+and M1, . . . , Mn ?R {0, 1}m are chosen independently at random then
+Pr[There is a collision] <
+1
+2k+1 .
+Proof: Since h is regular we know that for each y ? {0, 1}t we have |h-1(y)| =
+2m-t . Let Fi be the event that the ith message has a hash value that is the same
+as one of the earlier messages. Then
+Pr[Fi ] ? i - 1
+2t ,
+so
+Pr[There is a collision] = Pr[F2 ? F3 ? ··· ? Fn]
+?
+n
+
+i=2
+Pr[Fi ]
+?
+n
+
+i=2
+i - 1
+2t
+= n(n - 1)
+2t+1 .
+Hence
+Pr[There is a collision] <
+n2
+2t+1
+? 2t-k
+2t+1
+= 1
+2k+1 .
+
+In fact one can show that the more ‘irregular’ the hash function is the quicker
+the birthday attack will succeed. Intuitively this is not surprising. As an extreme
+case think of a hash function that maps all messages to a single hash value. For
+details see Bellare and Kohno (2004).
+Note that the hash function SHA-1 maps messages to hash values of 160 bits.
+So this result says that if SHA-1 is regular then the birthday attack is infeasible
+since 280 messages are required. In general for any attack on a hash function to
+be taken seriously it must do better than the birthday attack.
+184 8 Digital signatures
+Exercise 8.4h
+(a) Show that if p1 + p2 + ··· + pN = 1 and pi ? 0 for 1 ? i ? N
+then for k ? N
+pi1 pi2
+· · · pik
+? N
+k
+ k!
+Nk ,
+where the sum is over all choices of distinct i1, . . . ik satisfying
+1 ? i j ? N for 1 ? j ? k.
+(b) Hence complete the proof of Theorem 8.10 by showing that if a
+hash function h is not regular then the success probability of the
+birthday attack is at least as good as when h is regular.
+Problems
+8.1a Estimate the complexity of the signing procedure of the RSA scheme.
+How does this compare with the time needed to verify a signature?
+8.2a Repeat the above for the Elgamal signature scheme (assume that Alice
+uses a safe prime, that is p = 2q + 1, with q also prime).
+8.3h Suppose Alice uses a signature scheme based on Rabin’s cryptosystem
+with public key n and private key (p, q). So the signature of a message
+M is S such that S2 = M mod n. Can all messages 0 ? M < n be
+signed? Given that she restricts her message space to those messages
+that can be signed show that Fred can totally break this scheme using
+a chosen-message attack. (That is Fred can recover Alice’s private key
+using an attack where he is first shown Alice’s public key and then
+chooses messages for Alice to sign.)
+8.4a Show that if Fred sees two message-signature pairs (M1, S1) and
+(M2, S2) in the RSA scheme then he can forge the signature to the
+message M1M2 mod n.
+8.5h Show that the DSA scheme is existentially forgeable under a direct
+attack.
+8.6a Suppose Alice sends two different messages M1 to Bob and M2 to Carol,
+and provides signatures for each message using the DSA. Show that if
+Alice is lazy and instead of choosing two different random values of
+k (in step (2) of the DSA) she uses the same value for both signatures
+then it is possible for Eve to recover her private key xA from the signed
+messages.
+8.7h Let h : {0, 1}m › {0, 1}t be a hash function, with t ? m - 1. Showthat
+if h can be inverted in polynomial time then there is a probabilistic
+8.6 The birthday attack 185
+algorithm for finding a collision with polynomial expected running
+time.
+8.8h Suppose that h :M› His a hash function which sends messages M ?
+Mto hash values h(M) ? H. If N(h) denotes the number of unordered
+pairs of messages which collide and sy = |h-1(y)| for y ? H, prove
+that
+2N(h) =
+y?H
+s2
+y
+- |M|.
+Hence show that N(h) is minimised when the sy are all equal.
+8.9h Prove that in a non-leap year, if at least 23 people are in a room then
+the probability that a pair share the same birthday is at least 1/2.
+8.10 Consider the hash function h : Zq × Zq › Z
+*
+p defined by
+h(x, y) = axby mod p,
+where a, b are distinct primitive roots mod p and p, q are prime with
+p = 2q + 1.
+(a) Show that if
+h(x1, y1) = h(x2, y2),
+with (x1, y1) = (x2, y2), then d = gcd(y2 - y1, p - 1) is either 1
+or 2.
+(b) Show that if d = 1 then
+loga b = (x1 - x2)(y2 - y1)-1 mod p - 1.
+(c) Show that if d = 2 and z = (y2 - y1)-1 mod q then
+loga b = (x1 - x2)z mod p - 1
+or
+loga b = q + (x1 - x2)z mod p - 1.
+(d) Deduce that if an adversary can find a collision in polynomial time
+then they can calculate loga b mod p in polynomial time.
+8.11a If the hash function of the previous question is to resist the birthday
+attack how large should p be? (You may suppose that no forger is
+able to produce more than 280 messages and corresponding hash
+values.)
+186 8 Digital signatures
+Further notes
+We have given just a brief introduction to signature schemes. The origin of the
+concept appears to be the seminal paper of Diffie and Hellman (1976) and the
+first practical method was the RSA scheme in (Rivest, Shamir and Adleman,
+1978).
+The Elgamal scheme was introduced in the 1985 paper containing his public
+key cryptosystem. Other early schemes based on symmetric cryptosystems were
+proposed by Lamport (1979) and Rabin (1978).
+Hash functions have a much longer history. They have many noncryptographic
+applications: Knuth (1973) traces them back to work at IBM in 1953.
+The introduction of the concept of a one-way hash function seems to have
+been the papers of Rabin (1978), Merkle (1978) and Davies and Price (1980).
+Mitchell, Piper and Wilde (1992) is an interesting review of digital signatures
+which also treats hash functions while Menezes, van Oorschot and Vanstone
+(1996) is an invaluable source for both signatures and hashing. More recent
+surveys are Pedersen (1999) and Preneel (1999).
+The cryptographic hash function SHA-1 was introduced as a Federal Information
+Processing Standard (FIPS-180-1) in 1995 by the National Institute of
+Standards and Technology (NIST) as a technical revision aimed at improving
+security of an earlier version SHA-0 introduced as FIPS-180 by NIST in 1993.
+For more details on the construction and implementation of SHA-1 and its
+relation to earlier families of hash functions see Chapter 9 of Menezes, van
+Oorschot and Vanstone (1996). The book by Pfitzmann (1996) and the chapter
+on signature schemes in Goldreich (2004) provide an up-to-date account of the
+state of current knowledge in this area.
+9
+Key establishment protocols
+9.1 The basic problems
+We saw in Chapter 5 that the one-time pad is a cryptosystem that provides
+perfect secrecy, so why not use it? The obvious reason is that the key needs to
+be as long as the message and the users need to decide on this secret key in
+advance using a secure channel.
+Having introduced public key cryptography in Chapter 7 one might wonder
+why anyone would want to use a symmetric cryptosystem. Why not simply
+use RSA or some other public key cryptosystem and dispense with the need to
+exchange secret keys once and for all?
+The problem with this approach is that symmetric cryptosystems are generally
+much faster. For example in 1996, DES was around 1000 times faster than
+RSA. In situations where a large amount of data needs to be encrypted quickly
+or the users are computationally limited, symmetric cryptosystems still play an
+important role. A major problem they face is how to agree a common secret
+key to enable communications to begin.
+This basic ‘key exchange problem’ becomes ever more severe as communication
+networks grow in size and more and more users wish to communicate
+securely. Indeed while one could imagine Alice and Bob finding a way to
+exchange a secret key securely the same may not be true if you have a network
+with 1000 users. For each pair of users to agree on a secret key seems
+to require 1000
+2  = 499 500 secure channels (one for each pair of users). Moreover
+if a new user joins the network another 1000 secure channels need to be
+established!
+For the majority of this chapter we will examine methods for establishing
+secret keys securely without the use of a secure channel. However, we first
+considerways to reduce the number of secure communications needed to enable
+all of the users of a network to communicate securely with each other.
+187
+188 9 Key establishment protocols
+Suppose a network contains N users, each of whom may wish to communicate
+securely with any other user. If users generate the keys themselves then
+before two users, Alice and Bob, can communicate they need to agree on a key.
+This would seem to require the existence of N
+2  secure channels to enable each
+pair of users to securely agree a common secret key. This is clearly prohibitive
+for large networks so we will suppose that there is a trusted central authority
+whose job it is to distribute keys to the users.
+In this model we would seem to require the following conditions to
+hold.
+(1) The existence of N secure communication channels (one from the trusted
+authority to each user).
+(2) Each user needs to be able to securely store N - 1 distinct keys (one for
+each other user).
+This may still be too much, for instance if the users have limited storage capabilities
+then they may not be able to store N - 1 distinct keys.
+9.2 Key distribution with secure channels
+Several schemes have been proposed to alleviate the above problems. Below
+we present one of the simplest such schemes. It requires the intervention of
+a trusted authority, Trent or T , who is responsible for distributing the keys. It
+reduces the number of separate secure keys that need to be sent to (and stored
+by) each user but, in its simplest version, has the downside that if any group of
+two or more users collaborate then they can compute the keys of all the other
+pairs of users in the system. The first such scheme, due to Blom (1984), relied on
+the theory of maximum distance separable (MDS) codes, the simplified version
+we present here is due to Blundo et al. (1993).
+(1) Suppose there are N users. The trusted authority, T , chooses a large prime
+p > N which he makes public.
+(2) Each user Ui in turn chooses a distinct zi ?R Z
+*
+p which is made
+public.
+(3) The trusted authority T chooses random a, b, c ?R Z
+*
+p and generates the
+polynomial
+f (x, y) = a + b(x + y) + cxy.
+The form of the polynomial is public but a, b and c remain secret.
+9.2 Key distribution with secure channels 189
+(4) Using a secure channel T sends each user Ui the coefficients of the
+polynomial
+gi (x) = f (x, zi ) mod p,
+that is he sends di = a + bzi mod p and ei = b + czi mod p to Ui .
+(5) Now if Ui and Uj wish to communicate they form the common key
+gi (z j ) = f (z j , zi ) = f (zi , z j ) = gj (zi ).
+This reduces the number of secure messages that need to be sent to 2N, instead
+of N(N - 1), since two messages are sent to each user rather than N - 1.
+Moreover each user only needs to store the two coefficients rather than N - 1
+different keys.
+To see that it impossible for a user Uk to compute the key of two other users
+Ui , Uj , consider the following.
+User Uk needs to compute
+Ki j = f (zi , z j ) = a + b(zi + z j ) + c(zi z j ).
+He or she knows the coefficients of gk (x) and zi , z j . Hence he or she can form
+the following system of linear equations in the unknowns a, b, c:
+a + b(zi + z j ) + czi z j = Ki j
+a + bzk = dk
+b + czk = ek .
+The determinant of the matrix of coefficients is (zk - zi )(zk - z j ) = 0. So for
+any possible value of the secret key ˆKi j there is a unique choice of a, b, c
+that satisfies this system. However, since a, b, c were chosen at random this
+means that all possible values of ˆKi j are equally likely to be correct and so it is
+impossible for Uk to determine the secret key Ki j .
+However, if two users Ui and Uj cooperate then they can determine all of
+the keys in the system. This is because they have four equations in the three
+unknowns a, b, c, namely:
+a + bzi , a + bz j , b + czi , b + cz j .
+Hence they can find a, b, c and so calculate gk (x) for any k. This then allows
+them to find all the keys in the system.
+Example 9.1 A toy example of the key distribution scheme with secure channels.
+(1) Suppose there are three users so N = 3 and Trent chooses p = 11 and
+makes this public.
+190 9 Key establishment protocols
+(2) The users choose random zi ?R Z
+*
+11, say z1 = 3, z2 = 9, z3 = 4 and make
+these public.
+(3) Trent chooses random a, b, c ?R Z
+*
+11, say a = 2, b = 5 and c = 8. He
+then forms the polynomial
+f (x, y) = 2 + 5(x + y) + 8xy mod 11.
+(4) Using secure channels Trent sends the coefficients of gi (x) = f (x, zi) to
+user Ui. So he sends d1 = 6, e1 = 7 to U1; d2 = 3, e2 = 0 to U2 and
+d3 = 0, e3 = 4 to U3.
+(5) If U1 and U2 wish to communicate they form the following common key:
+g1(z2) = g1(9) = 6 + 7 · 9 = 3 mod 11, g2(z1) = 3 + 0 · 3 = 3 mod 11.
+9.3 Diffie–Hellman key establishment
+So far we have rather unrealistically assumed the existence of secure channels
+to facilitate key distribution. We would now like to dispense with this
+assumption, but how then can Alice and Bob possibly establish a shared secret
+key?
+Although this seems on the face of it to be an impossible problem an ingenious
+solution to it was proposed in the mid-1970s by Diffie and Hellman. Their
+key establishment protocol works as follows.
+Alice and Bob wish to agree on a common secret key to use in a symmetric
+cryptosystem. We assume that a key for their cryptosystem is simply a large
+integer.
+First Alice publicly announces a large prime p and a primitive root g mod
+p. The protocol then proceeds as follows:
+(1) Alice chooses a secret random integer 1 < xA < p - 1 and computes
+yA = gxA mod p. She then sends yA to Bob.
+(2) Bob does the same as Alice, choosing a secret random integer
+1 < xB < p - 1 and computing yB = gxB mod p. He then sends yB to
+Alice.
+(3) Alice forms the key K = yxA
+B mod p and Bob forms the same key
+K = yxB
+A mod p.
+Note that at the end of this protocol Alice and Bob really do both possess the
+same key since
+yxB
+A
+= gxA xB = gxB xA = yxA
+B mod p.
+9.3 Diffie–Hellman key establishment 191
+Example 9.2 A toy example of Diffie–Hellman key establishment.
+(1) Suppose Alice chooses the prime 19 and primitive root 2.
+(2) Alice chooses xA = 5 and calculates
+yA = gxA = 25 = 13 mod 19.
+She then sends 13 to Bob.
+(3) Bob chooses xB = 6 and calculates
+yB = gxB = 26 = 7 mod 19.
+He then sends 7 to Alice.
+(4) Alice then computes
+K = yxA
+B
+= 75 = 11 mod 19.
+(5) Similarly Bob computes
+K = yxB
+A
+= 136 = 11 mod 19.
+Hence Alice and Bob do share a common secret key at the end of the protocol.
+Now let us consider its security. It is certainly vulnerable to an enemy who
+can compute discrete logarithms. Indeed the security of the Diffie–Hellman
+key establishment protocol depends on the belief that the following problem
+(which we have already discussed in connection with the Elgamal cryptosystem)
+is ‘hard’.
+DIFFIE–HELLMAN
+Input: prime p, primitive root g, gx mod p and gy mod p with x, y ? Z
+*
+p.
+Output: gxy mod p.
+This problem is obviously related to the problem of computing dlog(p, g, b)
+for prime p, primitive root g and b ? Z
+*
+p.
+For example it is easy to see that
+(a) Any efficient algorithm for the DIFFIE–HELLMAN problem renders the
+Diffie–Hellman key establishment protocol insecure.
+(b) DIFFIE–HELLMAN is Turing-reducible to dlog.
+A problem which has remained open for a number of years is whether the
+converse of (b) is also true. Namely is dlog Turing-reducible to DIFFIE–
+HELLMAN?
+A well-known attack on the discrete logarithm problem is via the algorithm
+of Pohlig and Hellman (1978). This is feasible if the prime factors of p - 1 are
+192 9 Key establishment protocols
+small. More precisely, if p - 1 has factorisation
+p - 1 = pa1
+1 pa2
+2
+· · · pat
+t ,
+then the Pohlig–Hellman algorithm has running time dominated by
+O
+ t
+
+j=1
+aj ln(p - 1) +
+t
+
+j=1
+?
+pj
+
+multiplications. Hence an ideal choice of p in either Diffie–Hellman or Elgamal
+would be p = 2q + 1, with q also prime. In other words: take p to be a safe
+prime.
+Other insecurities in Diffie–Hellman have been pointed out by van Oorschot
+and Wiener (1996) (see Problem 9.6).
+As we shall see in the next chapter the problem of recovering the most
+significant bit of x given y = gx mod p, p and g is essentially as hard as
+computing the entire discrete logarithm x. For the Diffie–Hellman problem itself
+we have the following result due to Boneh and Venkatesan (1996) relating the
+difficulty of computing the most significant bits of the shared key to the problem
+of recovering the entire shared key.
+Proposition 9.3 Let p be a k-bit prime, g ? Z
+*
+p,  > 0 and n = k. If there
+exists an efficient algorithm that computes the n most significant bits of gab
+given p, g, ga and gb then there is an efficient algorithm that computes all of
+gab, given p, g, ga and gb.
+It is widely believed that the problem DIFFIE–HELLMAN is hard. If it is
+then Diffie–Hellman key establishment is secure against attack by a passive
+adversary (such as Eve). However, even if it is hard there is still a glaring
+insecurity in the Diffie–Hellman key establishment protocol as it stands. This is
+because an active adversary, Mallory, can mount a ‘man in the middle attack’.
+Proposition 9.4 The Diffie–Hellman key establishment protocol is vulnerable
+to a ‘man in the middle attack’.
+Proof: Recall that the protocol starts with Alice publicly announcing a large
+prime p and a primitive root g mod p. Mallory now alters the protocol as
+follows.
+(1) Alice chooses a secret integer 1 < xA < p - 1 and computes yA = gxA
+mod p. She then sends yA to Bob.
+(M1) Mallory intercepts Alice’s communication of yA and replaces it by
+yM = gxM mod p, where xM is known to Mallory. He then sends this to
+Bob.
+9.4 Authenticated key distribution 193
+(2) Bob does the same as Alice, choosing an integer 1 < xB < p - 1 and
+computes yB = gxB mod p. He then sends yB to Alice.
+(M2) Mallory intercepts Bob’s communication of yB and again replaces it by
+yM. He then sends this to Alice.
+(3) Alice forms the key KAM = yxA
+M mod p and Bob forms the key
+KBM = yxB
+M mod p.
+(M3) Mallory now also calculates the two keys as KAM = yxM
+A mod p and
+KBM = yxM
+B mod p.
+At the end of the key establishment protocol Alice and Bob have different keys
+which are both known to Mallory. Once they start communicating Mallory can
+intercept, decrypt and then re-encrypt messages at will so Alice and Bob will
+never know that he is reading (and possibly altering) their messages. 
+The reason that Mallory can perform this ‘man in the middle attack’ is that
+Alice and Bob have no way (in the current protocol) of knowing the identity of
+the other user. What is required is an authentication process to be built into the
+scheme so that Mallory cannot impersonate them.
+Exercise 9.1a Alice and Bob use the Diffie–Hellman protocol with prime p =
+11 and primitive root g = 2.
+(i) If Alice sends Bob yA = 9 what was her choice of xA?
+(ii) If the final common key KAB is 3 then what did Bob send to Alice
+as yB?
+Exercise 9.2 Prove that DIFFIE–HELLMAN is Turing reducible to dlog.
+9.4 Authenticated key distribution
+We noted above that the Diffie–Hellman key establishment protocol is insecure
+when faced with an active adversary who can intercept communications and
+introduce his or her own messages. If Mallory interposes himself between Alice
+and Bob he can fool them both into sharing two distinct common keys with him.
+He can then read and possibly alter any messages they exchange.
+In order to solve this problem Alice and Bob need to be certain that they
+are communicating with each other. In other words they need to introduce
+authentication into the key establishment protocol.
+An obvious way to do this is to use certificates which have been signed by
+a trusted authority, as we describe below.
+194 9 Key establishment protocols
+For example, the Diffie–Hellman key establishment protocol could be
+adapted as follows.
+Setup:
+(1) Trent publicly announces a prime p and primitive root g mod p.
+(2) Alice and Bob each choose secret private keys a and b respectively
+satisfying 1 < a, b < p - 1. They then form their public keys
+KA = ga mod p and KB = gb mod p.
+(3) Alice and Bob register their public keys with Trent who verifies their
+identities and provides them with certificates CA and CB respectively. A
+certificate is a message containing the user’s identity and public key,
+which has been signed by Trent using a digital signature scheme as
+described in Chapter 8.
+Protocol:
+(1) If Alice and Bob wish to communicate Alice sends CA to Bob and Bob
+sends CB to Alice.
+(2) Alice and Bob now each check that the other’s certificate is valid and
+extract the public key of the other user. This involves checking that the
+certificate was signed by Trent and that each certificate does correctly
+identify the other user. (Note that this requires them to trust Trent and also
+to have authentic copies of Trent’s public key to verify his signature.)
+(3) Finally they form a common key for communication by computing
+KAB = (KA)b = gab = (KB)a mod p.
+This scheme solves the earlier problem of authentication, however, it has a
+different drawback. What if Alice and Bob wish to communicate frequently?
+In the original Diffie–Hellman protocol they would choose a different key each
+time but now their key is fixed: unless they go back to Trent and ask him to
+issue new certificates based on new public keys they will always use the same
+common key for their communications.
+A different solution to the authenticated key establishment problem, which
+does not suffer from this shortcoming was proposed by the NSA. Known as the
+Key Exchange Algorithm (KEA) it was declassified in 1998. It essentially mixes
+the original Diffie–Hellman protocol with the authenticated version described
+above and works as follows.
+Setup:
+(1) Trent publicly announces a 1024-bit prime p, a 160-bit prime divisor q of
+p - 1 and an element g ? Z
+*
+p of order q.
+9.4 Authenticated key distribution 195
+(2) Alice and Bob each choose secret private keys a and b respectively,
+satisfying 1 ? a, b ? q - 1. They then form their public keys
+KA = ga mod p and KB = gb mod p.
+(3) Alice and Bob register their public keys with Trent who verifies their
+identities and provides each of them with a certificate CA and CB
+respectively. As before these certificates consist of messages containing
+the user’s public key and identity which have been digitally signed by
+Trent.
+Protocol:
+1. If Alice and Bob wish to communicate Alice sends CA to Bob and Bob
+sends CB to Alice.
+2. Alice and Bob now each check that the other’s certificate is valid and
+extract the public key of the other user. This involves checking that the
+certificate was signed by Trent and that each certificate correctly identifies
+the other user.
+3. Alice chooses random 1 ? rA ? q - 1 and sends RA = gr
+A mod p to Bob.
+4. Bob then chooses random 1 ? rB ? q - 1 and sends RB = gr
+B mod p to
+Alice
+5. Alice then performs the following checks and terminates the protocol if
+any are failed:
+(i) She checks that 1 < RB < p.
+(ii) She checks that (RB)q = 1 mod p.
+6. Bob performs analogous checks on the information Alice has sent him.
+7. Finally Alice and Bob each form the common secret key
+KAB = (KB)rA + (RB)a = (KA)rB + (RA)b mod p.
+Example 9.5 Toy example of the Key Exchange Algorithm.
+Setup:
+(1) Trent chooses the primes p = 43 and q = 7 a divisor of p - 1 = 42. He
+then takes g = 4. (Since 4 is an element of order 7 in Z
+*
+43.)
+(2) Alice and Bob choose a = 5 and b = 2 respectively so their public keys
+are KA = 45 = 35 mod 43 and KB = 42 = 16 mod 43.
+(3) Alice and Bob register these public keys with Trent who issues them with
+certificates CA and CB that he signs.
+Protocol:
+(1) Alice and Bob exchange certificates.
+196 9 Key establishment protocols
+(2) Alice and Bob verify that that each other’s certificate is valid and extract
+the other’s public key.
+(3) Alice chooses rA = 6 and sends RA = 46 = 11 mod 43 to Bob.
+(4) Bob chooses rB = 3 and sends RB = 43 = 21 mod 43 to Alice.
+(5) Alice checks:
+(i) 1 < RB = 21 < 43.
+(ii) Rq
+B
+= 217 = 1 mod 43.
+(6) Bob checks:
+(i) 1 < RA = 11 < 43.
+(ii) Rq
+A
+= 117 = 1 mod 43.
+(7) Alice and Bob both form the common secret key
+KAB = 166 + 215 = 353 + 112 = 39 mod 43.
+(Note that in reality the primes p and q used in the Key Exchange Algorithm
+should be 1024-bit and 160-bit integers respectively.)
+Exercise 9.3 a Prove that if Alice and Bob use the Key Exchange Algorithm
+then they do obtain a common key.
+9.5 Secret sharing
+We have seen a number of ingenious methods for exchanging keys for use in
+cryptosystems, however, there still remains the problem of how to store a secret
+key securely and reliably. One could suggest we simply encrypt the key before
+storing it, but this is not a solution: if we did this we would simply have a new
+secret key to store.
+A second problem is that a user with a secret private key faces a dilemma if
+he or she simply stores the key as it is. For instance the user could store the key
+in a single secure location (his or her head or hard-drive) but a single accident
+(lapse of memory, hard-drive failure) could then render the key lost forever.
+An alternative is to store copies of the key in several locations, but this only
+improves the reliability of key storage at the cost of compromising secrecy.
+Another scenario which we would like to consider is how to manage the
+storage of a key which needs to be accessible to groups of users rather than
+individuals. For example a company using a digital signature scheme might
+want it to be impossible for any single employee to be able to sign a company
+document, but for various groups of people to be able to do this.
+One of the first to consider this problem was Shamir in 1979 who proposed
+an extremely elegant solution which we describe below.
+9.6 Shamir’s secret sharing scheme 197
+We formalise the problem as follows. There is a secret number K (this could
+represent a key or some other digital secret) and we wish to store it both reliably
+and securely. To achieve this we form ‘secret shares’ K1, K2, . . . , Km such that
+(1) knowledge of any n of the secret shares makes K easily computable;
+(2) knowledge of n - 1 or fewer secret shares leaves K completely
+undetermined.
+This is called an (n,m)-threshold scheme.
+Before we present Shamir’s implementation of such a threshold scheme we
+examine how such a scheme could be used to solve the two problems described
+above.
+If Alice has a private key she wishes to keep secret yet also wishes to store
+reliably she could use a (n, 2n - 1)-threshold scheme. She forms the 2n - 1
+secret shares and stores each in a different secure location. This is extremely
+reliable since as long as Alice does not lose more than half of the secret shares
+she can recover her secret key. It is also secure since an adversary would need
+to steal more than half of the secret shares to be able to discover Alice’s secret
+key.
+A company wishing to allow only groups of employees to sign documents
+simply needs to decide how large the groups should be. For example if it was
+decided that any two employees should be able to sign then a (2,m)-threshold
+scheme would be fine. Simply distribute a single secret share to each employee.
+Then any two employees can recover K using their secret shares and hence sign.
+Moreover, if certain highly trusted employees are required to be able to sign
+individually then they would simply be given two secret shares each instead of
+one.
+9.6 Shamir’s secret sharing scheme
+Shamir’s scheme is based on polynomial interpolation and relies on the fact
+that given n points (x1, y1), . . . , (xn, yn) with the xi distinct, there is exactly
+one polynomial q(x) of degree n - 1 such that q(xi ) = yi for 1 ? i ? n.
+We assume that first of all the secret K is known only to a ‘dealer’ whose
+job it is to create and distribute the secret shares K1, K2, . . . , Km.
+Let p be a prime larger than m and K. To obtain the ‘secret shares’ the dealer
+chooses independent random coefficients a1, a2, . . . , an-1 ?R Z
+*
+p and forms the
+polynomial
+q(x) = an-1xn-1 + ··· + a2x2 + a1x + K mod p
+198 9 Key establishment protocols
+The dealer then distributes to the m people the ‘secret shares’ q(1), . . . , q(m),
+where all calculations are performed mod p. So the secret share Ki is given by
+Ki = q(i ) mod p and this is known only to person i .
+If an entity (possibly Alice or a group of company employees) knows the
+values of n secret shares together with their corresponding indices, say,
+(Kb1 , b1), (Kb2 , b2) . . . (Kbn , bn),
+then they can find the coefficients of q(x) using Lagrange interpolation. They
+can then recover K by evaluating q(0) = K.
+To be precise they use the following formulae for interpolation
+q(x) =
+n
+
+j=1
+qj (x), qj (x) = Kbj 
+k= j
+ x - bk
+bj - bk
+
+.
+Now suppose an adversary (Eve or a corrupt small group of employees) has
+gained access to n - 1 or fewer of the secret shares can they calculate K? No.
+Given any n - 1 secret shares the value of K is equally likely to be any number
+in Z
+*
+p.
+For each possible value of the secret ˆK (together with the n - 1 secret shares
+Kb1, . . . Kbn-1 ) there is exactly one polynomial ˆq(x) of degree n - 1 satisfying
+ˆq(0) = ˆK and ˆq(bi ) = Kbi , for i = 1, . . . , n - 1.
+However, since the coefficients of q(x) were random these polynomials are all
+equally likely and so our adversary is forced to conclude that all possible values
+of the secret K are equally likely given the information they possess. Hence the
+true value of the secret K remains completely undetermined.
+Shamir noted that this scheme also has the following useful properties.
+(1) The size of each secret share is not too large, it is simply a pair of integers
+from Z
+*
+p.
+(2) Pieces can be dynamically added as required, simply calculate a new
+secret share Kn+1 = q(n + 1).
+(3) The secret shares can be changed without altering the secret K. The
+dealer simply chooses a new random polynomial with the same constant
+term K. Changing the polynomial frequently adds to the security of the
+scheme since any adversary who has gathered some secret shares
+generated with one polynomial will have to start this process again each
+time the polynomial is changed.
+(4) If different numbers of secret shares are given to different people one can
+build a hierarchical scheme in which the ‘importance’ of the individuals
+determines how many of them need to collaborate to recover K. For
+9.6 Shamir’s secret sharing scheme 199
+instance Shamir gives the example of a (3, n)-threshold scheme in which
+ordinary company executives have a single secret share each, the
+vice-presidents have two each and the president has three. In this setup K
+can be recovered by either any three executives, or any two executives one
+of whom is a vice-president or the president alone.
+Problems
+9.1 The following describes a generalisation of the key distribution scheme
+with secure channels of Section 9.2.
+Suppose Trent used the following polynomial
+f (x, y) =
+k
+
+i=1
+k
+
+j=1
+ai j xi y j
+and
+gi (x) = f (x, zi ) mod p.
+(a) Show that if ai j = aji then any pair of users Ui and Uj can
+communicate securely using
+Ki j = gi (z j ) = gj (zi ) mod p.
+(b) Show that any k + 1 users can determine all the keys.
+(c) Show that this system is secure against attacks by any group of k
+users.
+9.2a Suppose Alice, Bob and Carol wish to agree a common secret key using
+an adapted version of the Diffie–Hellman key establishment protocol. If
+they wish to share a common key K = gabc mod p, where a was chosen
+by Alice, b was chosen by Bob and c was chosen by Carol, show that
+they can do this using six separate communications.
+9.3a Burmester–Desmedt conference keying. Consider the following generalisation
+of Diffie–Hellman for establishing a common key between a
+group of t ? 2 users.
+(1) Setup. Trent announces a large prime p and primitive root g mod
+p.
+(2) Key generation. A group of t users U0, . . . ,Ut-1 wish to form a
+common key.
+(i) Each Ui chooses random 1 ? ri ? p - 2 and sends yi = gri
+mod p to all of the t - 1 other users.
+(ii) Each Ui computes zi = (yi+1 y-1
+i-1)ri mod p and sends this to
+all of the t - 1 other users.
+200 9 Key establishment protocols
+(iii) Each Ui then computes
+Ki = ytri
+i-1zt-1
+i zt-2
+i+1
+· · · z2
+i+t-3zi+t-2 mod p,
+where the indices are understood mod t.
+(a) Show that at the end of this protocol the t users all share a
+common key which you should find.
+(b) Show that for a passive adversary to obtain this common key from
+the communications is as hard as solving the Diffie–Hellman
+problem.
+9.4a Let 0 <  < 1 and A be a polynomial time algorithm that on
+input (p, g, y) with p prime, g a primitive root mod p and y ?
+{1, 2, . . . , (p - 1)} outputs dlog(p, g, y). Show that if Alice and
+Bob use the Diffie–Hellman key establishment procedure with publicly
+known prime p and primitive root g then an adversary armed with algorithm
+A has a probabilistic algorithm for obtaining their common key
+with polynomial expected running time.
+9.5 Prove that if Alice and Bob use the Diffie–Hellman key establishment
+protocol and choose their private keys xA and xB independently and
+uniformly at random from Z
+*
+p then the resulting key KAB is uniformly
+distributed in Z
+*
+p.
+9.6a Alice and Bob agree to use a safe prime p = 2q + 1 in the Diffie–
+Hellman protocol, together with primitive root g. Suppose that Alice
+sends yA = gxA mod p to Bob and Bob sends yB = gxB mod p to Alice.
+Show that if Mallory replaces yA by yq
+A and yB by yq
+B then he knows
+that the common key KAB will be one of ±1.
+How many possible values would there be for KAB if p = rq + 1,
+where r > 2 is an integer?
+9.7h Alice and Bob use the Diffie–Hellman protocol. Show that Eve can
+easily decide whether their common key KAB is a quadratic residue
+mod p, given yA, yB, p and g.
+9.8h Prove that the language defined below belongs to NP.
+PRIMITIVE
+Input: prime p and integer t.
+Question: is there a primitive root g mod p satisfying g ? t?
+9.9h For any prime p there are ?(p - 1) primitive roots mod p. Also for any
+integer n ? 5 we have
+?(n) >
+n
+6 ln ln n
+.
+9.6 Shamir’s secret sharing scheme 201
+Use these facts to show that there is a probabilistic algorithm with
+polynomial expected running time which when given a prime p together
+with the prime factorisation of p - 1 finds a primitive root mod p.
+9.10a Shamir’s three pass protocol. Shamir suggested the following scheme
+for secure communication which requires neither a shared secret key
+nor a public key.
+First choose a symmetric cryptosystem that is commutative in the
+following sense. If Alice and Bob’s encryption functions are eA(·)
+and eB(·) respectively then for any message M we have eA(eB(M)) =
+eB(eA(M)).
+(a) If Alice wishes to send a message M to Bob she encrypts it as
+C = eA(M).
+(b) Bob then encrypts C and returns eB(C) to Alice.
+(c) Alice then decrypts this as
+dA(eB(C)) = dA(eB(eA(M))) = dA(eA(eB(M))) = eB(M)
+and returns this to Bob.
+(d) Finally Bob decrypts this as M = dB(eB(M)).
+Consider some of the symmetric cryptosystems we sawin Chapter 5 and
+decide, first, whether they commute and, second, whether they would
+be secure if used in this way. In particular would it be secure to use the
+one-time pad in this scheme?
+Further notes
+There is now a huge literature on key distribution and key management. Blom
+(1984) appears to have been the initiator of the idea of reducing the required
+number of secure channels while providing security against a fixed size coalition.
+Other schemes are given in Matsumoto and Imai (1987) and Gong and
+Wheeler (1990). A very readable account of this theory can be found in Blundo,
+De-Santis, Herzberg,Kutten,Vaccaro andYung (1993), which also contains the
+scheme presented in the text.
+The Diffie–Hellman protocol, announced publicly in 1976,was the first practical
+solution to the key distribution problem. However, the underlying idea had
+been proposed earlier (in 1969) by James Ellis of GCHQ and a practical implementation
+in almost exactly the same format as the Diffie–Hellman protocol
+was discovered previously by MalcolmWilliamson (also of GCHQ) in 1974 as
+reported by Ellis in his history of non-secret encryption published in (1997).
+(See also Williamson (1974, 1976).)
+202 9 Key establishment protocols
+It should also be mentioned that in 1974 Merkle discovered a key agreement
+scheme which used the same abstract idea but a different implementation (based
+on puzzles). This system was submitted for publication in 1975 but did not
+appear until 1978: see Merkle (1978).
+The Burmester–Desmedt conference keying protocol, generalising the
+Diffie–Hellman protocol to more than two parties (see Problem 9.3) appears in
+Burmester and Desmedt (1995).
+The idea of using threshold schemes for secret sharing was independently
+proposed by Blakley (1979) and Shamir (1979). Blakley’s proposal was different
+from Shamir’s; it was based on subsets of vector spaces and has led to some
+interesting questions in matroid theory. See for example Seymour (1992) and
+Blakley and Kabatyanskii (1997).
+The attack on Diffie–Hellman raised in Problem 9.6 is described in van
+Oorschot and Wiener (1996) which also contains an interesting treatment of
+computing discrete logarithms, particularly when the exponent is known to be
+short.

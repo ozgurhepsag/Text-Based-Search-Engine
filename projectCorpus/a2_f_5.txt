@@ -1,0 +1,3133 @@
+Part II: Gaining Access and Securing the Gateway
+The second entry establishes a connection to the FTP proxy. The third line allows ftp connections
+to the firewall itself. Examine the configuration of the ftp-gw proxy application first.
+The ftp-gw proxy, like the other Toolkit applications, reads the lines in the netperm-table file
+that start with the application name, ftp-gw. Table 7.7 lists clauses that are understood by
+ftp-gw.
+Table 7.7
+The ftp-gw Program Rules
+Rule Description
+userid user Specifies a numeric userid or the name of a password file
+entry. If this value is specified, ftp-gw will set its userid
+before providing service.
+directory pathname Specifies a directory to which ftp-gw will chroot(2) prior to
+providing service.
+denial-msg filename Specifies the name of a file to display to the remote user if
+he or she is denied permission to use the proxy. If this
+option is not set, a default message is generated. When the
+denial-msg file is displayed to the remote user, each line is
+prefixed with the FTP codes for permission denied.
+welcome-msg filename Specifies the name of a file to display as a welcome banner
+upon successful connection. If this option is not set, a
+default message is generated.
+help-msg filename Specifies the name of a file to display if the “help” command
+is issued. If this option is not set, a list of the internal
+commands is printed.
+denydest-msg filename Specifies the name of a file to display if a user attempts to
+connect to a remote server from which he or she is restricted.
+If this option is not set, a default message is
+generated.
+timeout secondsvalue Specifies the idle timeout value in seconds. When the specified
+number of seconds elapses with no activity through the proxy
+server, it will disconnect. If this value is not set, no timeout is
+enforced.
+If these options are not used, default values are used instead. When these options are used,
+however, the ftp-gw rules look like this:
+ftp-gw: denial-msg /usr/local/etc/ftp-deny.txt
+ftp-gw: welcome-msg /usr/local/etc/ftp-welcome.txt
+How to Build a Firewall 345
+ftp-gw: help-msg /usr/local/etc/ftp-help.txt
+ftp-gw: timeout 3600
+ftp-gw: denydest-msg /usr/local/etc/ftp-badest.txt
+By using the Host Access rules, you can control who has access to your private network using
+ftp, or to whom your internal users can connect to.
+Host Access Rules
+The host rules that permit and deny access to the ftp proxy can be modified by a number of
+additional options. The host rules use the format:
+ftp-gw: deny-hosts unknown
+ftp-gw: hosts 192.33.112.* 192.94.214.*
+In this example, hosts that cannot be found in the DNS in-addr.arpa domain are unknown,
+and therefore denied; hosts connecting from the network 192.33.112 and 192.94.214 are
+allowed to connect to the proxy. The optional parameters—each begin with a hyphen—
+further restrict the hosts that can connect to the proxy by limiting where they can connect.
+Like the other proxy agents, a number of options, listed in table 7.8, are available for controlling
+the proxy.
+Table 7.8
+Host Access Options
+Option Description
+-dest pattern Specifies a list of valid destinations. If no list is specified, all -dest
+-dest { pattern1 pattern2 ... } destinations are considered valid. The -dest list is processed in
+the order it appears on the options line. -dest entries preceded
+with a “!” character are treated as negation entries.
+-auth Specifies that the proxy should require a user to authenticate
+with a valid userid prior to being permitted to use the gateway.
+-passok Specifies that the proxy should permit users to change their
+passwords if they are connected from the designated host. Only
+hosts on a trusted network should be permitted to change
+passwords, unless token-type authenticators are distributed to all
+users.
+346 Part II: Gaining Access and Securing the Gateway
+The use of an IP address instead of a domain name does not alter the rule. Before the connection
+is permitted, the tn-gw application attempts to validate the IP address. If the returned
+host matches one of the rules, then the rule is applied. Otherwise, the connection is dropped.
+Verifying the FTP Proxy
+Verifying the operation of the FTP proxy involves testing each of the rules and connection
+points. For example, if you are allowing FTP sessions to originate from the private network,
+but deny FTP access to hosts outside the private network, then the ftp-gw rules would look
+like:
+ftp-gw: permit-hosts 206.116.65.* -log { retr stor }
+This can only be verified by attempting to establish an FTP session from a host on the LAN
+and going out to the public network. To prove the proper operation of the proxy, a connection
+from the public network to a machine on the private network must be attempted. The
+following command sequence illustrates the use of telnet to access the firewall from a host
+on the internal network:
+C:\WINDOWS>ftp pc.unilabs.org
+Connected to pc.unilabs.org.
+220-Welcome to the URG Firewall FTP Proxy
+220-
+220-To report problems, please contact Network Security Services at 555-1212 or
+220-by e-mail at security@org.com
+220
+User (pc.unilabs.org:(none)): chrish@nds.fonorola.net
+331-(----GATEWAY CONNECTED TO nds.fonorola.net----)
+331-(220 nds.fonorola.net FTP server (Version A) ready.)
+331 Password required for chrish.
+Password:
+230 User chrish logged in.
+ftp>
+Notice that the user was allowed access to the ftp proxy, and an FTP session was established to
+the machine nds.fonorola.net. The converse for this rule then must also be true: any host
+outside the private network is not permitted access to the ftp proxy. The following output
+illustrates this restriction:
+bash$ ftp pc.unilabs.org
+Connected to pc.unilabs.org.
+500-
+500-**** ATTENTION ****
+500-
+500-Your attempt to use this server’s ftp proxy is not permitted due to
+500-organizational security policies. Your connection attempt has been logged
+500-and recorded.
+500-
+How to Build a Firewall 347
+500-If you believe that you are an authorized site, please contact Jon Smith
+500-at 555-1212 ext 502, or e-mail to ftpadmin@org.com.
+500
+ftp>
+In this situation, the user on the system nds.fonorola.net attempted to connect to the firewall,
+but because its IP address [204.191.124.252] is not within the address space specified on the
+ftp-gw rule, the connection is denied, and the message shown here appears. Remember that
+this message is from the denial-msg rule in the configuration file.
+Connecting through the FTP Proxy
+Establishing a connection through the proxy involves connecting to the ftp port and then
+specifying the host to connect to. The target specification, however, is not quite what you
+might expect:
+$ ftp 204.191.3.150
+Connected to 204.191.3.150.
+220 pc.unilabs.org FTP proxy (Version V1.3) ready.
+User (204.191.3.150:(none)): anonymous@ftp.fonorola.net
+331-(----GATEWAY CONNECTED TO ftp.fonorola.net----)
+331-(220 net FTP server (Version wu-2.4(1) Fri Apr 21 22:42:18 EDT 1995) ready.)
+331 Guest login ok, send your complete e-mail address as password.
+Password:
+230-
+230- Welcome to i*internet Inc.
+230- Anonymous FTP Server
+230-
+230-We are currently in the process of deploying the Washington
+230-University Anonymous FTP Server.
+230-
+230 Guest login ok, access restrictions apply.
+ftp>
+When establishing a connection through the proxy, you first run the ftp command and
+connect to the firewall, which serves as the host. After you are connected, you must specify the
+username and the site to connect to. This is done using the syntax:
+user@site
+After validating that the site is indeed one that is allowed, the proxy connects to the FTP server
+on the remote system and starts to log in using the supplied username. The remote server then
+prompts for the user’s password, and if it is correct, allows the connection.
+348 Part II: Gaining Access and Securing the Gateway
+Allowing FTP with netacl
+It is fairly common to restrict the proxy from connecting to the firewall for FTP services, but
+occasionally you may need to upgrade software or change text files and messages. For this
+reason, you may need to enable FTP access. This can be done using the services of netacl. With
+netacl, you can restrict what machines can connect to the firewall to specific machines within
+the local network. Consider the sample configuration entries in the following command:
+netacl-ftpd: permit-hosts 204.191.3.* -exec /usr/libexec/ftpd -A -l
+This entry for netacl allows systems on the 204.191.3 network to connect to the FTP server
+through netacl. The entry also locks out all other systems, as you can see when one of them
+tries to access the FTP server:
+ftp> open 198.53.166.62 2021
+Connected to 198.53.166.62.
+421 Service not available, remote server has closed connection
+ftp>
+From this message it appears that there is no server listening on port 2021, when in fact there
+is. netacl does not allow the request because the IP address where the request originated does
+not match the rule established previously.
+If you’re not sure whether you will ever need access for FTP services to the firewall, the safest
+thing to do is to not allow this type of access except when absolutely necessary. This means
+that netacl can be set up in the netperm-table file, but commented out, thereby making it
+unavailable. Furthermore, the proxy must be configured to prevent connections to the firewall
+on the FTP port.
+Configuring the Sendmail Proxy: smap
+and smapd
+Two components are used for the successful delivery of mail through the firewall: smap and
+smapd. The smap agent is a client that implements a minimal version of SMTP. The smap
+program accepts messages from the network and writes them to disk for future delivery by
+smapd. smap is designed to run under chroot as a non-privileged process; this setup overcomes
+potential security risks from privileged mailers that can be accessed from over a network.
+The smapd daemon periodically scans the mail spool area maintained by smap and delivers any
+messages that have been gathered and stored. Mail is delivered by sendmail, and the spool file
+is deleted. If the mail cannot be delivered normally, smapd can be configured to store spooled
+files to an area for later examination.
+How to Build a Firewall 349
+These two applications can share configuration information in the netperm-table file if desired.
+Some of the operations are different, so different steps need to be taken when configuring the
+two applications.
+Installing the smap Client
+The smap client runs whenever a connection request is received on the smtp port of the
+firewall. This is done by adding an entry for smtp to the /etc/inetd.conf file:
+smtp stream tcp nowait root /usr/local/etc/smap smap
+After /etc/inetd.conf has been updated, the inetd process must be restarted so that smap
+accepts connections. This can be checked by connecting manually to the smtp port:
+pc# telnet pc 25
+Trying 206.116.65.3...
+Connected to pc.unilabs.org.
+Escape character is ‘^]’.
+220 pc.unilabs.org SMTP/smap Ready.
+helo
+250 Charmed, Im sure.
+help
+214-Commands
+214-HELO MAIL RCPT DATA RSET
+214 NOOP QUIT HELP VRFY EXPN
+quit
+221 Closing connection
+Connection closed by foreign host.
+pc#
+As you can see, smap implements a minimal SMTP implementation, and spools the mail into
+the specified spool area. In the spool directory, it may be required that an etc directory with
+system specific configuration files be installed. A recommended setup is to build smap so that
+it is completely standalone—it does not depend on other libraries and will run without fail.
+Configuring the smap Client
+The smap client reads its configuration from the netperm-table file by looking for the lines
+beginning with smap. If the line applies to both smap and smapd, the two programs can be
+listed on the same line by separating them with a comma:
+smap, smapd: userid 6
+The rules for smap are listed in table 7.9.
+350 Part II: Gaining Access and Securing the Gateway
+Table 7.9
+smap Rules
+Rule Description
+userid name Specify the userid under which smap should run. The name can be either a
+name from the password database, or a numeric userid. This userid should
+be the same as that under which smapd runs, and should have write
+permission to the spool directory.
+directory pathname Specifies the spool directory where smap should store incoming messages.
+A chroot system call is used to irrevocably make the specified directory the
+root file system for the remainder of the process.
+maxbytes value Specifies the maximum size of messages to gather, in bytes. If no value is
+set, message sizes are limited by the amount of disk space in the spool area.
+maxrecip value Specifies the maximum number of recipients allowed for any message. This
+option is only for administrators who are worried about the more esoteric
+denial of service attacks.
+timeout value Specifies a timeout, after which smap should exit if it has not collected a
+message. If no timeout value is specified, smap will never time out a
+connection.
+As you can see in table 7.9, some items are common between the smap and smapd applications.
+These similarities will be discussed later. For now, develop a configuration section for
+the smap application.
+The userid, directory, and timeout values are self-explanatory. However, unlike the directory
+clauses for the other applications, the smap client also uses the directory to save incoming
+messages. Consequently, these form the basis of your configuration:
+smap: userid 6
+smap: directory /var/spool/smap
+smap: timeout 3600
+The maxbytes value specifies the size of the largest email message. If the message is larger than
+the maxbytes value, the message size is truncated. If maxbytes is not included in the configuration
+information, then the maximum message size is the size of the available space in the spool
+area. The final clause specifies the maximum number of recipients that can be attached to the
+mail message. This is not a commonly-used option. The completed entry for the netperm-table
+file looks like this:
+How to Build a Firewall 351
+smap: userid 6
+smap: directory /var/spool/smap
+smap: timeout 3600
+smap: maxbytes 10000
+smap: maxrecip 20
+If you set the value of maxbytes too small, users may not be able to receive some messages
+because of the message’s size. This type of problem reveals itself in the log files. Lines that
+resemble the following indicate the incoming mail message is too large to process:
+Oct 29 12:09:52 pc smap[868]: connect host=unknown/198.53.64.9
+Oct 29 12:09:59 pc smap[868]: exiting too much data
+No other warnings of this problem occur. This is the only way the firewall operator can check
+to see if large messages are the reason why mail isn’t being sent.
+At this point, you have installed and configured the smap application. It is not very difficult to
+complete its setup.
+Installing the smapd Application
+Unlike smap, which is started from inetd on a connection by connection basis, smapd is
+started from the /etc/rc.local script and runs the entire time the system is running. The
+daemon startup is added to the file /etc/rc.local and then the system is rebooted. The following
+shows the addition of the command to the rc.local file:
+echo “Starting Firewall Mail Processor ...”
+/usr/local/etc/smapd
+Because sendmail is not running in daemon mode, messages that cannot be delivered and are
+queued must be delivered by periodically invoking sendmail to process the queue. To do this,
+add a line similar to the following to the crontab file:
+0,30 * * * * /usr/sbin/sendmail -q > /dev/null 2>&1
+This ensures that any messages that cannot be successfully delivered by the smapd application
+will be properly handled.
+Configuring the smapd Application
+The configuration of the smapd application is no more difficult than configuring smap. They
+generally run without a problem. Like smap, smapd reads its configuration from the netpermtable
+file; it accepts no command-line arguments. The smap application reads the mail queue
+on a periodic basis and delivers mail to the remote system. Rules that are available to build the
+smapd configuration file are listed in table 7.10.
+352 Part II: Gaining Access and Securing the Gateway
+Table 7.10
+smapd Rules
+Rule Description
+executable pathname Specifies the pathname of the smapd executable. For historical reasons,
+smapd forks and execs copies of itself to handle delivering each
+individual message. THIS ENTRY IS MANDATORY.
+sendmail pathname Specifies an alternate pathname for the sendmail executable. smapd
+assumes the use of sendmail but does not require it. An alternate mail
+delivery system can replace sendmail, but it should be able to accept
+arguments in the form of: executable -f fromname recip1 [recip2 ...
+recipN]. The exit code from the mailer is used to determine the status
+of delivery; for this reason, replacements for sendmail should use
+similar exit codes.
+baddir pathname Specifies a directory where smapd should move any spooled mail that
+cannot be delivered normally. This directory must be on the same
+device as the spool directory because the rename(2) system call is
+employed. The pathname specified should not contain a trailing “/”.
+userid name Specifies the userid that smapd should run under. The name can be
+either a name from the password database, or a numeric userid. This
+userid should be the same as that under which smap runs, and should
+have write permission to the spool directory.
+directory pathname Specifies the spool directory in which smapd should search for files.
+smapd should have write permission to this directory.
+wakeup value Specifies the number of seconds smapd should sleep between scans of
+the spool directory. The default is 60 seconds.
+Some options are common for smap and smapd. Nevertheless, you can build a separate
+configuration for smapd, such as the one shown here:
+smapd: executable /usr/local/etc/smapd
+smapd: sendmail /usr/sbin/sendmail
+smapd: userid 6
+smapd: directory /var/spool/smap
+smapd: baddir /var/spool/smap/bad
+smapd: wakeup 900
+This configuration defines the operating parameters for smapd. The executable rule identifies
+the location of the smapd program. This rule is mandatory. The sendmail option specifies
+where the sendmail program is found. Alternate programs such as zmailer or smail can be used
+in place of sendmail, as long as they conform to the exit codes used within sendmail.
+The userid and directory rules specify the user under which the smapd binary executes, and the
+home directory used for that configuration. The baddir value is related to directory. The value
+How to Build a Firewall 353
+assigned to directory provides the name of the directory where the in transit mail messages are
+stored; a bad directory will be created there to save any undelivered or questionable messages.
+The last value for smapd specifies how long the delay is between the processing of the queue.
+The default is 60 seconds; this example uses a 15 minute window.
+Configuring DNS for smap
+For mail to be successfully and correctly routed through the firewall, MX records need to be
+published in the zone’s DNS files to identify where SMTP mail is to be sent. This is done by
+adding MX, or mail exchanger, records to the DNS providers for the network domain, or
+zone. The zone information shown here provides some information regarding how this is
+configured.
+Server: nic.fonorola.net
+Address: 198.53.64.7
+unilabs.org nameserver = nic.fonorola.net
+unilabs.org nameserver = fonsrv00.fonorola.com
+unilabs.org preference = 10, mail exchanger = mail.fonorola.net
+unilabs.org preference = 1, mail exchanger = pc2.unilabs.org
+unilabs.org preference = 5, mail exchanger = nis.fonorola.net
+unilabs.org
+origin = nic.fonorola.net
+mail addr = chrish.fonorola.net
+serial = 95102902
+refresh = 10800 (3 hours)
+retry = 1800 (30 mins)
+expire = 3600000 (41 days 16 hours)
+minimum ttl = 86400 (1 day)
+unilabs.org nameserver = nic.fonorola.net
+unilabs.org nameserver = fonsrv00.fonorola.com
+nic.fonorola.net internet address = 198.53.64.7
+fonsrv00.fonorola.com internet address = 149.99.1.3
+mail.fonorola.net internet address = 198.53.64.8
+pc2.unilabs.org internet address = 198.53.166.62
+nis.fonorola.net internet address = 198.53.64.14
+>
+This output is from the nslookup command. Despite how this looks, you are in fact looking
+for the lines that contain the description mail exchanger, which are
+unilabs.org preference = 1, mail exchanger = pc2.unilabs.org
+unilabs.org preference = 5, mail exchanger = nis.fonorola.net
+unilabs.org preference = 10, mail exchanger = mail.fonorola.net
+When mail for the domain unilabs.org is to be sent from a host, that host will first try to locate
+the unilabs.org domain itself. The rule determining which host will be contacted first is simple:
+the host that has the lowest preference value is the first to be contacted. In the sample setup
+you’ve watched develop throughout this chapter, the host pc2.unilabs.org, which is the
+firewall, will be contacted first to see if it can in fact accept the email. A recommended setup is
+354 Part II: Gaining Access and Securing the Gateway
+to give the firewall the lowest priority on the system, so that no other machines can be directly
+contacted by the outside world.
+If the machine with the lowest preference value is not available, then the next system is
+contacted—in this case, nis.fonorola.net. If the mail is delivered to nis.fonorola.net, then the
+sendmail daemon on nis will now take responsibility for attempting to deliver it to the lowest
+preference value machine, pc2.unilabs.org. The same is true should the second mail system not
+be available and the mail server must then contact the third system. The behavior described
+here may not be what happens in all situations. For example, the system nis.fonorola.net could
+simply decide to attempt delivery itself and not use the next MX record. The operation of
+sendmail is controlled by the sendmail.cf file on the remote machine. Remember that when
+you make changes to your DNS, you must restart or reload the DNS so that the new information
+is integrated into the DNS.
+Configuring the HTTP Proxy
+The HTTP proxy, http-gw, does more than simply provide a mechanism for HTTP requests
+to be sent through the firewall. It also provides support for Gopher clients, so that Gopher,
+Gopher+, and FTP requests can originate from a Gopher client, and for HTPP, Gopher,
+Gopher+, and FTP requests to be passed through from a WWW client.
+The HTTP proxy also supports “proxy aware” clients, and supports clients that are not
+designed to work with these daemons. Before examining how to enable these services, first
+examine the steps required to place the proxy into operation, and also look at the configuration
+rules for this proxy.
+By default, an HTTP or Gopher server usually runs on TCP/IP ports 80 and 70, respectively.
+These will not be running on the firewall, so it is necessary to configure inetd to accept
+connections on these ports and start the proxy agent. This is done by adding the following line
+to the /etc/services file:
+gopher 70/tcp
+httpd 80/tcp
+With these lines added, inetd now knows on what ports to listen. inetd must then have the
+appropriate lines added to its configuration file, inetd.conf:
+httpd stream tcp nowait root /usr/local/etc/http-gw http-gw
+gopher stream tcp nowait root /usr/local/etc/http-gw http-gw
+With the inetd configuration file now updated, inetd must be restarted, or instructed to read
+its configuration file using the kill -1 command. When these steps are completed, the http-gw
+proxy is ready to configure.
+http-gw reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, retrieving all rules specified for “http-gw.” The “ftp-gw” rules are also
+How to Build a Firewall 355
+retrieved and are evaluated when looking for host rules after all the http-gw rules have been
+applied. Table 7.11 lists configuration rules applicable to this proxy.
+Table 7.11
+http-gw Proxy Rules
+Option Description
+userid user Allows the system administrator to specify a numeric userid or the name
+of a password file entry. If this value is specified, http-gw will set its
+userid before providing service. Note that this option is included mostly
+for completeness; http-gw performs no local operations that are likely to
+introduce a security hole.
+directory pathname Specifies a directory to which http-gw will chroot prior to providing
+service.
+timeout secondsvalue Used as a dead-watch timer when the proxy is reading data from the net.
+Defaults to 60 minutes.
+default-gopher server Defines a gopher server to which requests can be handed off.
+default-httpd server Defines an HTTP server to which requests can be handed off if they
+came from a WWW client using the HTTP protocol.
+ftp-proxy server This defines an ftp-gw that should be used to access FTP servers. If not
+specified, the proxy will do the FTP transaction with the FTP server.
+The ftp-gw rules will be used if there are no relevant http-gw rules, so
+this is not a major problem.
+The userid, directory, and timeout values serve the same functions as the other proxy agents in
+the Toolkit. However, you need to examine the rules that the default-httpd server, defaultgopher
+server, and default-ftp server play. To understand their impact, you need to examine
+how a non-proxy aware and a proxy aware WWW client operate.
+Non-Proxy Aware HTTP Clients
+A non-proxy aware HTTP client, such as the Internet Explorer Version 1.0 from Microsoft,
+cannot communicate with a proxy. The user must configure the client to connect first to the
+firewall, and then to go to the desired site. To do this, the user must specify the URL in the
+format:
+http://firewall_system/http://destination
+as in
+http://pc.unilabs.org/http://www.unilabs.org
+356 Part II: Gaining Access and Securing the Gateway
+The client will pass the request for http://www.unilabs.org to the firewall. The firewall then
+establishes the connections required to bring the requested information to the client.
+Although a proxy-aware client can still use this format, this is the only format that can be used
+with non-proxy HTTP clients. World Wide Web clients are also capable of accessing FTP and
+Gopher services. Table 7.12 lists the URL formats used for each of these services.
+Table 7.12
+Supported URL Formats
+Service URL
+HTTP http://firewall_name/http://www_server
+Gopher http://firewall_name/gopher://gopher_server
+FTP http://firewall_name/ftp://FTP_server
+Internet users who work with non-proxy aware clients need to make changes to their WWW
+client if a firewall is installed after the users have developed and built their hotlists. In these
+situations, their WWW client hotlists will have to be edited to include the firewall in the URL.
+Using a Proxy Aware HTTP Client
+A proxy aware HTTP client such as Netscape Navigator or NCSA Mosaic does not have these
+problems. However, some application-specific configuration is required to make it work.
+Although nothing additional must be done on the HTTP proxy side, the client must be
+configured with the appropriate proxy information.
+Aside from this application-specific customization, there are no other difficulties in using the
+proxy aware client. When these WWW clients have been configured, they are much easier for
+the end user to handle because there is less confusion in accessing sites.
+All World Wide Web clients can access Gopher (and FTP) sites. As you have seen, if the client
+is aware of the proxy, access to these different types of Internet sites is much simpler to set up.
+Accessing a gopher server with a World Wide Web browser is much easier than with many
+Gopher clients, if the World Wide Web browser is proxy-aware. Connecting to the gopher
+server is as simple as specifying a URL:
+http://firewall_host_name/gopher://gopher_server_name
+This syntax allows the connection to the external gopher server through the firewall.
+How to Build a Firewall 357
+Host Access Rules
+Up to this point in the chapter, you have seen how the user interacts with the proxy. Now
+examine how you can alter the operation of the proxy by applying some host access rules.
+Some of these rules have been examined already, and are important enough to mention again.
+The host access rules may include optional parameters to further control the session. Some of
+these parameters include restricting the allowable functions. The rules and their parameters are
+included in table 7.13.
+Table 7.13
+Host Access Rules
+Option Descriptions
+Hosts host-pattern [host-pattern ...] [options] Rules specify host and access permissions.
+Permit-hosts host-pattern [host-pattern ...] Typically, a host rule will be in the form of:
+options] http-gw: deny-hosts unknown
+Deny-hosts host-pattern [host-pattern ...] http-gw: hosts 192.33.112.* 192.94.214.*
+-permit function Only the specified functions are
+-permit { function [function ...] } permitted. Other functions will be
+denied. If this option is not specified,
+then all functions are initially permitted.
+-deny function Specifies a list of Gopher/HTTP
+-deny { function [function ...] } functions to deny.
+-gopher server Make server the default server for
+this transaction.
+-httpd server Makes server the default HTTP server
+for this transaction. This will be used
+if the request came in through the
+HTTP protocol.
+-filter function Removes the specified functions when
+-filter { function [function ...] } rewriting selectors and URLs. This
+rule does not stop the user from
+entering selectors that the client will
+execute locally but this rule can be
+used to remove them from retrieved
+documents.
+358 Part II: Gaining Access and Securing the Gateway
+Several host patterns may follow the “hosts” keyword; the first optional parameter after these
+patterns begins with “-”. Optional parameters permit the selective enabling or disabling of
+logging information.
+Some basic configuration rules are shown here to help you understand how the options for
+host rules are used:
+http-gw: userid www
+# http-gw: directory /usr/local/secure/www
+http-gw: timeout 1800
+http-gw: default-httpd www.fonorola.net
+http-gw: default-gopher gopher.fonorola.net
+http-gw: permit-hosts 206.116.65.*
+The permit-hosts line establishes what hosts or networks are allowed to pass through the
+firewall using the proxy. To deny access to specific hosts or networks, use a line similar to:
+http-gw: deny-hosts 206.116.65.2
+When this type of setup is in operation, a user who is trying to use the proxy from this
+machine receives a Sorry, access denied error message.
+The permit-host rules can include function definitions that are permitted or denied depending
+on the established criteria in the rule. The proxy characterizes each transaction as one of a
+number of functions. For the deny options the request is used; for filter options the returned
+selectors are used. These functions are listed in table 7.14.
+Table 7.14
+Function Definitions
+Function Description
+dir Fetching Gopher menus. Getting a directory listing via FTP. Fetching an
+HTML document.
+read Fetching a file of any type. HTML files are treated as read even though they
+are also dir.
+write Putting a file of any type. Needs Gopher+ since only available to Gopher+
+and HTTP/1.x.
+ftp Accessing an FTP server.
+plus Gopher+ operations. HTTP methods other than GET.
+wais WAIS index operations.
+exec Operations that require a program to be run; that is, telnet.
+How to Build a Firewall 359
+Function controls enable the firewall administrator to specifically set up what will and will not
+be allowed to pass through the proxy. If no deny or permit functions are specified, every
+function is permitted. Consider, for example, a setup that would not allow file transfers using
+the -deny ftp command:
+http-gw: userid www
+# http-gw: directory /usr/local/secure/www
+http-gw: timeout 1800
+http-gw: default-httpd www.fonorola.net
+http-gw: default-gopher gopher.fonorola.net
+http-gw: permit-hosts 206.116.65.* -deny ftp
+# http-gw: deny-hosts 206.116.65.2
+http-gw: deny-hosts unknown
+By using this deny request to restrict the use of the ftp command, users can no longer request
+an FTP session through the http-gw proxy. A sample error message would look like:
+use file fig11.pcx
+In this configuration, any attempt to establish an FTP session using either the following syntax
+or a WWW page will result in failure:
+ftp://ftp.somewhere.com
+Note If you are concerned about FTP transfers, and you have disabled the ftp-gw proxy to
+prevent FTP transfers, you need to carefully consider the value of disabling the ftp
+commands in the HTTP protocol set. Closing one door but leaving a related one
+open is not wise.
+Few of the current Gopher clients are capable of interacting as well as proxy-aware WWW
+clients. To use a Gopher client, you must configure the default gopher server that is used to
+establish the connection to the firewall. From here you will have to configure jumping off
+points to different gophers.
+Because of the looming difficulty associated with Gopher clients, the use of Gopher via the
+World Wide Web interface is popular and widely accepted. Clearly, this capability indicates
+that there is more flexibility within the HTTP architecture.
+Configuring the X Windows Proxy
+The x-gw X Windows proxy is provided to allow a user-level X Windows interface that
+operates under the tn-gw and rlogin-gw access control. Recall from the earlier discussion of the
+tn-gw command that this command enables an X session through the gateway.
+The proxy operates by allowing clients to be started on arbitrary hosts outside the firewall, and
+then requesting a connection to the specified display. When the X connection request by the
+360 Part II: Gaining Access and Securing the Gateway
+client is made, the x-gw proxy displays a window that is running on a virtual display on the
+firewall. Upon receiving the connection request, x-gw displays the window on the user’s real
+display. This display prompts for confirmation before proceeding with the connection. If the
+user agrees to accept the connection, x-gw passes the data from the virtual display to the user’s
+real display.
+The x-gw proxy can be started from a telnet or rlogin sequence, as shown by this output:
+% telnet pc
+Trying 206.116.65.3...
+Connected to pc.unilabs.org.
+Escape character is ‘^]’.
+pc.unilabs.org telnet proxy (Version V1.3) ready:
+tn-gw-> x
+tn-gw-> exit
+Disconnecting...
+Connection closed by foreign host.
+At this point a window pops up on the user’s display that shows the port number of the proxy
+to use; the window also serves as the control window. Choosing the Exit button will close all
+multiple X connections.
+Although the x-gw proxy is advanced and user-friendly, some issues concerning this proxy need
+to be mentioned. The major issue is that this proxy relies on the X11 Athena Widget set. If
+your system does not have the X11 libraries or the Athena Widget set, this proxy will not
+compile, and you will be forced to live without it. Fortunately, very few people allow the use of
+X windows applications through their firewall.
+Understanding the Authentication Server
+The TIS Firewall Toolkit includes extensive authentication mechanisms. The TIS authentication
+server consists of two components: the actual server itself, and a user authentication
+manager, which is used to interact with and configure the server.
+The authentication server, known as authsrv, is designed to support multiple authentication
+processes independently. This server maintains an internal user database that contains a record
+for each user. The information stored for each user consists of:
+n The user’s name
+n The user’s group
+n The user’s long name
+n The last successful authentication
+How to Build a Firewall 361
+Passwords may be plaintext for local users, or encrypted for all others. The only time plaintext
+passwords would be used is when the administrator wants to control access to firewall services
+by users on the protected network.
+Plaintext passwords should never be used for authentication by users on nonsecure
+networks.
+Users in the authsrv database can belong to different groups; a group administrator can be
+named who can only manage the users in that group. authsrv also contains support for
+multiple forms of authentication, including:
+n Internal plaintext passwords
+n Bellcore’s S/Key
+n Security Dynamics SecurID
+n Enigma Logics Silver Card
+n Digital Pathways SNK004 Secure Net Key
+Note The Bellcore S/Key mechanism that is included with the Toolkit does not include the
+complete software. The entire S/Key distribution can be downloaded via FTP from
+thumper.bellcore.com.
+When compiling authsrv, the administrator needs to decide which authentication forms will be
+supported locally. It is typical to find multiple forms in use by a single company depending on
+cost and availability. For each proxy in the Toolkit, authentication can be enabled or disabled,
+or fit certain criteria, such as incoming must authenticate, and outgoing requires no authentication.
+Authsrv should be run on as secure a host as possible, which is generally the firewall itself. To
+configure the authentication server, you must find an unused TCP/IP port number and add it
+to /etc/services. For example, if you use port 7777 as the TCP port, the following line would
+be added to the /etc/services file.
+authsrv 7777/tcp # TIS Toolkit Authentication
+Authsrv is not a daemon. It runs whenever a connection request is made on the specified TCP
+port. Consequently, it is necessary to add an entry to the /etc/inetd.conf file, such as this
+example:
+authsrv stream tcp nowait root /usr/local/etc/authsrv authsrv
+After the required entries are placed in the /etc/services and /etc/inetd.conf files, inetd must
+be reloaded or restarted using the kill command. At this point, individual clients must be
+Warning
+362 Part II: Gaining Access and Securing the Gateway
+configured to use the authentication server when required. Keep in mind that not all operations
+need to require authentication.
+To configure a given proxy, you must use the port number and the authserver keyword
+specifying the host to connect to for the authentication server. To see this in action, consider
+adding authentication to the FTP proxy. For the FTP proxy to be able to use the authentication
+server, you must tell it to use authserver rule:
+# Use the following lines to use the authentication server
+ftp-gw: authserver localhost 7777
+When the FTP proxy is activated, requests must be. authenticated. The permit-hosts entry,
+however, has the flexibility to take advantage of the authentication system. For example,
+consider the permit-hosts entry in the following:
+ftp-gw: permit-hosts 206.116.65.* -log { retr stor } -auth { stor }
+The permit-hosts entry says that all retrieve and store file requests to the FTP proxy are logged,
+and all store file requests are blocked until the user has authenticated. This process will be
+demonstrated later in this chapter after you learn how to configure the users in the authentication
+database.
+The Authentication Database
+The authentication server must also be configured to accept connections from specific clients.
+This prevents unwanted attempts to probe the authentication server from hosts running
+software that needs no authentication. The authentication server reads its rules from the
+netperm-table, which can include rules listed in table 7.15.
+Table 7.15
+Authentication Server Rules
+Rule Description
+database pathname Specifies the pathname of the authsrv database. The database
+is stored as a dbm(3) file with a third file used for locking. If
+the software is built with a compiled-in database name, this
+option need not be set; otherwise, it is mandatory.
+nobogus true Indicates that authsrv should return “user-friendly” error
+messages when users attempt to authenticate and fail. The
+default message is to simply respond, “Permission Denied.”
+or to return a bogus challenge. If nobogus is set, attempts to
+log on will return more explicit error messages. Sites that are
+concerned about attempts to probe the authentication server
+should leave this option disabled.
+How to Build a Firewall 363
+badsleep seconds Establishes a “sleep time” for repeated bad logins. If a user
+attempts to authenticate five times and fails, his user record
+is marked as suspicious, and he cannot log on again. If the
+badsleep value is set, the user may attempt to log in again
+after the set number of seconds has expired. If the badsleep
+value is 0, users can attempt to log in as many times as they
+would like. The default value is to effectively disable the
+account until an administrator re-enables it manually.
+userid name Specifies the userid under which authsrv should run. The
+name can be either a name from the password database, or a
+numeric user-ID.
+hosts host-pattern [key] Specifies that authsrv should permit the named host or
+addresses to use the service. Hosts that do not have a
+matching entry are denied use of the service. If the optional
+key is specified, and the software is compiled with DESencrypted
+communications, all traffic with that client will be
+encrypted and decrypted with the specified key.
+operation user id telnet-gw host Operation rules are stored in netperm-table. For each
+operation user id ftp-gw host put user/group the name is specified followed by the service
+destination [optional tokens] [time start end]. The user/
+group field indicates whether the record is for a user or a
+group. The name is either the username or the group
+name. The service can be a service specified by the proxy
+(usually ftp-gw, tn-gw, or rlogin-gw). The destination can
+be any valid domain name. The optional tokens are checked
+for a match, permitting a proxy to send a specific operation
+check to the authentication server. The time field is optional
+and must be specified time start_time end_time; start_time
+and end_time can be in the range 00:00 to 23:59.
+If no other systems on the private network require access to the authsrv, then clients and the
+server should be configured to accept connections only using the localhost name or IP address
+127.0.0.1. The authentication server configuration rules shown earlier illustrate a sample
+configuration for the server.
+The example shown here establishes the following rules for the authentication server:
+authsrv: hosts 127.0.0.1
+authsrv: database /usr/local/etc/fw-authdb
+Rule Description
+364 Part II: Gaining Access and Securing the Gateway
+authsrv: badsleep 1200
+authsrv: nobogus true
+n Identifies that the localhost is allowed to access the server
+n Specifies that the authentication database is found in /usr/local/etc/fw-authdb
+n The user cannot attempt to authenticate after five bad logins until 1,200 seconds have
+expired
+n Prints more verbose messages about authentication failures
+The operation rule is essential to administrators who want to restrict the commands that can
+be executed by certain users at certain times. This is done by adding configuration rules
+consisting of the user, the operation, and the time restrictions to the netperm-table. These
+rules apply to the authsrv command and not to the individual proxies themselves. Consider the
+example shown here:
+authsrv permit-operation user chrish telnet-gw relay.cdnnet.ca time 08:00 17:00
+authsrv deny-operation user paulp telnet-gw mailserver.comewhere.com time
+å17:01 07:59
+authsrv permit-operation group admin telnet-gw * time 08:00 17:00
+You can see that through careful consideration, the availability of various services can be tightly
+controlled depending on the environment and the organization’s security policy. With the
+authentication server configured and ready, users must now be added so that they can be
+authenticated whenever necessary.
+Adding Users
+Before a user can be authenticated by the server, the user must be added to the database. This
+can be done by using the authsrv command. When invoking authsrv on the firewall with a
+userid of zero, authsrv grants administrative privileges for the database.
+The authentication server has a number of commands, listed in table 7.16, for user administration.
+Table 7.16
+Administrator Commands for Authentication Setup
+Command Description
+adduser username [longname] Adds a user to the authentication database. Before the
+authentication server permits the use of this command, the
+administrator must first be authenticated to the server as an
+administrator or a group administrator. If the user is a group
+administrator, the newly created user is automatically
+initialized as a member of that group. When a user is added,
+the user is initially disabled. If a long name is provided, it will
+How to Build a Firewall 365
+be stored in the database. Long names should be quoted if
+they contain whitespace.
+deluser username Deletes the specified user from the authentication database.
+Before an administrator can use this command, he or she
+must first be authenticated to the server as the administrator
+or group administrator of the group to which the user
+belongs.
+display username Displays the status, authentication protocol, and last login of
+the specified user. Before the authentication server permits
+the use of this command, the administrator must first be
+authenticated to the server as the administrator or as the
+group administrator of the group to which the user belongs.
+enable username Enables or disabled the specified user’s account for login.
+or disable username Before this command can be used, the administrator must
+first be authenticated to the server as the administrator or
+group administrator of the group to which the user
+belongs.
+group user groupname Sets the specified user’s group. To use this command, the
+administrator must first be authenticated to the server as the
+administrator. Group administrators do not have the power
+to “adopt” members.
+list [group] Lists all users that are known to the system, or the members
+of the specified group. Group administrators may list their
+own groups, but not the entire database. The list displays
+several fields, including:
+n user. The login ID of the user.
+n group. The group membership of the user. If none is
+listed, the user is in no group.
+n longname. The user’s full name. This may be left blank.
+n status. Contains codes indicating the user’s status.
+password [username] text Sets the password for the current user. If an optional
+username is given and the authenticated user is the administrator
+or group administrator, the password for the specified
+user is changed. The password command is polymorphic
+depending on the user’s specified authentication protocol. For
+example, if the user’s authentication protocol is plaintext
+passwords, it will update the plaintext password. If the
+authentication protocol is SecurID with PINs, it will update
+the PIN.
+Command Description
+continues
+366 Part II: Gaining Access and Securing the Gateway
+proto user protoname Sets the authentication protocol for the specified user to the
+named protocol. Available protocols depend on the compiledin
+support within authsrv. To change a user’s authentication
+protocol, the administrator must be authenticated to the
+server either as the administrator or group administrator of
+the user’s group.
+quit or exit Disconnects from the authentication server.
+superwiz user Sets the specified user as a global administrator. This
+command should only be used with deliberation; global
+administrative privileges are seldom used because the group
+mechanism is powerful enough.
+wiz user Sets or turns off the group administrator flag on the
+or unwiz user specified user. To issue this command, the administrator
+must be authenticated to the server as the administrator.
+? or help Lists a short synopsis of available commands.
+To illustrate the use of these administrator commands, suppose you want to add a new user to
+the database. To do this, make sure you are logged in as root on the firewall, and run the
+authsrv command:
+pc# pwd
+/usr/local/etc
+pc# ./authsrv
+authsrv#
+At this point, you can run any command shown in table 7.16. To add a user, use both the
+username and the long name with the command:
+authsrv# adduser chrish “Chris Hare”
+ok - user added initially disabled
+authsrv#
+Notice that the user, although added, is initially disabled. No password is associated with the
+user. At this point, you need to set a password for the user, and specify the group to which the
+user belongs.
+authsrv# password chrish whisper
+Password for chrish changed.
+authsrv# group chrish production
+set group
+authsrv#
+Table 7.16, Continued
+Administrator Commands for Authentication Setup
+Command Description
+How to Build a Firewall 367
+Now that the password and group membership are changed, identify the authentication
+protocol that will be used for this user. Available protocols depend on the protocols that were
+compiled when authsrv was built.
+authsrv# proto chrish plaintext
+Unknown protocol “plaintext”, use one of: none password
+authsrv# proto chrish password
+changed
+authsrv# enable chrish
+enabled
+authsrv#
+If an unknown protocol is used when you set the protocol type, authsrv lists the available
+authentication protocols. In this instance, the only options available are none and password.
+After the authentication protocol is set, the user chris is enabled. At this point, the user chris
+can authenticate him- or herself using the authentication server.
+Before you give the user free rein, however, establish for this user the wizard for group administrator
+privileges, and superwiz, which grants global administrator privileges. Normally this
+wouldn’t be done because global administrative privileges supersede the privileges of the group
+administrator.
+authsrv# wiz chrish
+set group-wizard
+authsrv# superwiz chrish
+set wizard
+With these additional privileges set, you can list the information from the authsrv database
+using the list command.
+authsrv# list
+Report for users in database
+user group longname status proto last
+---- ----- -------- ------ ----- ----
+chrish production Chris Hare y G passw never
+authsrv#
+This output shows the username, the group that the user belongs to, the long name, the status
+flags, authentication protocol, and when the user last authenticated. The status field includes
+the following information:
+Letter Description
+b Account locked due to too many failed logins
+n Account disabled
+y Account enabled
+G Group Wizard flag set
+W Global Wizard flag set
+368 Part II: Gaining Access and Securing the Gateway
+The list command displays information for all the users; the display command shows more
+information for a given user.
+authsrv# display chrish
+Report for user chrish, group production (Chris Hare)
+Authentication protocol: password
+Flags: WIZARD GROUP-WIZARD
+authsrv#
+As you can see, this command provides information similar to the list command, but includes
+a text explanation of the flags set for this user.
+As many users as needed can be added in this manner, although you can see that this is a
+tedious job for even a small organization.
+The Authentication Shell—authmgr
+The authsrv command enables a local user access to the firewall host to manipulate the
+database; the authmgr program also allows users to manipulate the database such access, but
+from a trusted host on the network or through the local host. Unlike the authsrv command,
+the authmgr program requires that the user log in to authenticate him- or herself to the
+database. If the user is not enabled or in the database, the connection is refused. Here is a short
+authmgr session.
+pc# ./authmgr
+Connected to server
+authmgr-> login
+Username: admin
+Password:
+Logged in
+authmgr-> list
+Report for users in database
+user group longname status proto last
+---- ----- -------- ------ ----- ----
+paulp copy n G passw never
+chrish production Chris Hare y W passw never
+admin manager Auth DBA y W passw Fri Oct 27 23:47:04 1995
+authmgr-> quit
+pc#
+All the commands and functionality that are part of the authsrv command are also part of
+authmgr. This may be apparent, but keep in mind that the authmgr command actually
+established a TCP session to the authsrv program.
+Database Management
+Two more commands are available for manipulating the authentication database: authload and
+authdump. The authload command manipulates individual records in the database; it does not
+How to Build a Firewall 369
+truncate an existing database. It is useful when you need to add a bunch of new entries to the
+database, or when you need to share databases between sites. If you have users who share
+similar information between sites, the existing records will be overwritten with newer information
+when this information is loaded by the authload command.
+The authdump command creates an ASCII backup copy of the information in the database.
+This ASCII copy contains all the information regarding the user account. The passwords
+however, are encrypted, so that they cannot be read and used to circumvent the security
+provided by the Toolkit.
+The authdump command reads the contents of the authentication database and writes the
+ASCII text. A sample execution of the command is here:
+pc# ./authdump
+user=chrish
+longname=Chris Hare
+group=production
+pass=cY8IDuONJDQRA
+flags=2
+bad_count=0
+proto=p
+last=0
+user=admin
+longname=Auth DBA
+group=manager
+pass=tx6mxx/lUy2Mw
+flags=2
+If the command is executed and the output is redirected to a file, the program prints a dot for
+each record dumped, along with a report of the total records processed:
+pc# ./authdump > /tmp/auth
+...
+3 records dumped
+pc#
+If you have this information stored somewhere else in a human-readable form (except for the
+passwords), you can re-create the user database if the firewall ever needs to be rebuilt.
+The authload program can take the output of the authdump program and reload the database.
+The authload command is valuable if the user database was destroyed, or you have a large
+number of users to add at once. In this manner, new records can be added to the ASCII file
+and only the new records will be loaded into the authentication database. Consider the new
+entry added to this ASCII dump file:
+user=terrih
+longname=Terri Hare
+group=production
+370 Part II: Gaining Access and Securing the Gateway
+pass=
+flags=0
+bad_count=0
+proto=p
+last=
+Now you can load the records into the database, using input redirection because the information
+is in the ASCII dump file:
+pc# ./authload < /tmp/auth
+....
+4 records loaded
+pc#
+This results in a report showing the number of records that have been loaded. You can then
+verify the status of the additional records using the authmgr “list” command:
+pc# ./authmgr
+Connected to server
+authmgr-> login
+Username: admin
+Password:
+Logged in
+authmgr-> list
+Report for users in database
+user group longname status proto last
+---- ----- -------- ------ ----- ----
+paulp copy n G passw never
+terrih production Terri Hare y passw never
+chrish production Chris Hare y W passw never
+admin manager Auth DBA y W passw Sat Oct 28 01:45:32 1995
+authmgr->
+At this point, it is important to note that the new account terrih is enabled, but there is no
+password. A password should be assigned as quickly as possible to prevent fraudulent use of the
+firewall, and potential loss of security of the network.
+As an added measure of safety, it is advised to add a line to root’s crontab to make “backups”
+of the authentication database. The following shows a sample entry:
+0 1 * * * /usr/local/etc/authdump > /usr/local/etc/auth.backup
+The cron command will run the authdump command at 1:00 AM, every morning. This
+ensures a reliable backup of your database in ASCII format. If the information on your server
+does not change very often, you probably should adjust the timing of the cron execution of
+authdump.
+Authentication at Work
+You might now be interested in seeing how the authentication server operates. Each of the
+proxies has the option of being configured to operate with the authentication server. The
+How to Build a Firewall 371
+example shown here focuses on the FTP proxy. The FTP proxy’s configuration can be found
+in the section “Configuring the FTP Gateway.”
+ftp-gw: denial-msg /usr/local/etc/ftp-deny.txt
+ftp-gw: welcome-msg /usr/local/etc/ftp-welcome.txt
+ftp-gw: help-msg /usr/local/etc/ftp-help.txt
+ftp-gw: authserver localhost 7777
+ftp-gw: timeout 3600
+ftp-gw: permit-hosts 206.116.65.* -log { retr stor } -auth { stor }
+Recall from earlier discussions that the last line of this configuration is actually what causes the
+authentication to be performed. In fact, it is fairly specific in that any request to retrieve a file
+from the remote, or to store a file on the remote results in that operation being logged by the
+proxy. In addition, the store command to save a file on the remote system is not permitted
+until the user authenticates him- or herself to the proxy. This process is illustrated here:
+pc# ftp pc
+Connected to pc.unilabs.org.
+220-Welcome to the URG Firewall FTP Proxy
+220-
+220-To report problems, please contact Network Security Services at 555-1212 or
+220-by e-mail at security@org.com
+220
+Name (pc.unilabs.org:chrish): chrish@nds.fonorola.net
+331-(----GATEWAY CONNECTED TO nds.fonorola.net----)
+331-(220 nds.fonorola.net FTP server (Version A) ready.)
+331 Password required for chrish.
+Password:
+230 User chrish logged in.
+Remote system type is Unix.
+Using binary mode to transfer files.
+ftp> put /tmp/trace
+local: /tmp/trace remote: /tmp/trace
+200 PORT command successful.
+500 command requires user authentication
+ftp> quote authorize chrish
+331 Enter authentication password for chrish
+ftp> quote response whisper
+230 User authenticated to proxy
+ftp> put /tmp/trace
+local: /tmp/trace remote: /tmp/trace
+200 PORT command successful.
+150 Opening BINARY mode data connection for /tmp/trace.
+226 Transfer complete.
+2181 bytes sent in 0.0061 seconds (3.5e+02 Kbytes/s)
+ftp> quit
+221 Goodbye.
+For FTP clients that do not know which proxy is used for authentication, the ftp quote
+command must be used to “speak” with the authentication server on the firewall. During this
+process, the password that is submitted by the user is echoed on-screen, and is therefore visible
+to anyone in the immediate vicinity.
+372 Part II: Gaining Access and Securing the Gateway
+This is just one example of authentication use with proxies; countless more examples could be
+used. Hopefully, the information and examples you have seen so far on proxies and the
+authentication server should help you design a secure firewall.
+Using plug-gw for Other Services
+The applications you have read about so far cover about 80 percent of the network traffic.
+What about TIS Toolkit support for the Network News Transport Protocol (NNTP) or even
+the Post Office Protocol (POP)? Both of these services, and many others, are available through
+the plug-gw application. This application provides plugboard type connections; that is, it
+connects a TCP/IP port on the firewall to another host using the same or a different TCP port
+number. This functionality makes it easy to provide other services through the firewall. The
+next few sections examine the operation and configuration of plug-gw by looking specifically at
+their services.
+Configuring plug-gw
+plug-gw reads the configuration lines that start with plug-gw: from the netperm-table file—
+just like the other Toolkit applications. The clauses listed in table 7.17 are used with the pluggw
+application.
+Table 7.17
+plug-gw Rules and Clauses
+Rule Description
+timeout seconds Specifies a timeout value, after which inactive connections
+are disconnected. If no timeout is specified, the
+default is to remain connected until one side or the other
+closes its connection.
+port portid hostpattern [options] Specifies a connection rule. When a connection is made,
+a match is searched for on the port-id and calling host.
+The port-id may be either a numeric value (such as 119)
+or a value from /etc/services (such as “nntp”). If the
+calling port matches, then the host-pattern is checked for
+a match following the standard address matching rules
+employed by the firewall. If the rule matches, the
+connection will be made based on the remaining options
+in the rule, all of which begin with “-”.
+How to Build a Firewall 373
+-plug-to host Specifies the name or address of the host to connect to.
+This option is mandatory.
+-privport Indicates that a reserved port number should be used
+when connecting. Reserved port numbers must be
+specified for protocols, such as rlogin, which rely on them
+for “security.”
+-port portid Specifies a different port. The default port is the same as
+the port used by the incoming connection.
+The purpose of plug-gw is to allow for other services to be passed through the firewall with
+additional logging to track the use of these services. The availability of this service means that
+additional service specific applications do not need to be created unless required. Some
+applications do not have extended authentication mechanisms in them; plug-gw makes their
+use with firewalls much less of a bother.
+The rules available for plug-gw, when used on a POP connection, look like this:
+plug-gw: port 110 206.116.65.* -plug-to 198.53.64.14
+This line indicates that any connection received on port 110 (Post Office Protocol) from the
+206.116.65 network is to be connected to 198.53.64.14. Additional options for the rule allow
+for the specification of a priveleged port number. Few services actually require these. The final
+option allows for the specification of an alternate port number should the same service be
+running on a different port number at the remote end.
+As with the other services, the host pattern that is specified with the port command allows for
+both the allowed and non-allowed network or host IP addresses to be specified.
+plug-gw and NNTP
+The NNTP news protocol is used for reading Internet newsgroups. This protocol also performs
+news feeds and is often used to provide news reading services at the workstation level.
+The configuration of the plug-gw proxy for an Internet news feed is essentially the same as the
+configuration for a news reader.
+In both cases, the NNTP port is defined in the etc/services file as 119. You must configure the
+plug-gw line as follows:
+plug-gw: port 119 206.116.65.* -plug-to 198.53.64.1
+Rule Description
+374 Part II: Gaining Access and Securing the Gateway
+This means that any connections received on port 119 from the local LAN will be directed to
+the same port on the system at 198.53.64.1.The two major reasons for handling NNTP with
+plug-gw are to allow NNTP client access through the firewall, and to allow for a newsfeed.
+For the firewall to accept news connections, inetd must be configured to start the plug-gw
+application whenever a connection request is made for the NNTP port. This is done by adding
+the following line to the /etc/inetd.conf file and restarting inetd:
+nntp stream tcp nowait root /usr/local/etc/plug-gw plug-gw 119
+If you configure plug-gw but forget this step, the TIS firewall Toolkit will seem not to
+operate—no log messages will print to the files or to the console.
+To configure an NNTP client, such as WinVN for the PC-based architecture, you must set up
+WinVN so that it knows where to connect. Normally, this would be the actual NNTP server
+that you want to access, but in this case, it is the name or IP address of the firewall. On the
+firewall, the appropriate line in the netperm-table file must be included to specify where the
+NNTP client requests are to go. If several NNTP servers are available for reading news, you
+may want to separate them onto different network ports on the firewall, so that traffic can be
+sent to the different sites. Consider this sample part of the netperm-table file:
+plug-gw: port 2119 206.116.65.* -plug-to 198.53.64.1 -port 119
+plug-gw: port 2120 206.116.65.* -plug-to 198.53.64.5 -port 119
+In this scenario, when users want to read news from the 198.53.64.5 server, they must connect
+to the firewall on port 2120. Figure 7.3 illustrates the configuration of the WinVN client for
+access to news through the firewall.
+Figure 7.3
+Configuring WinVN to
+use the NNTP proxy.
+How to Build a Firewall 375
+Regardless of the news reader client software that you use, it needs to be configured to use the
+firewall as the connection point or news host.
+What if different news servers are available that your hosts are permitted to connect to? How
+does the system administrator configure multiple hosts at the same TCP/IP service port? The
+answer is to specify a different port on the firewall, and let plug-gw redirect to the correct port
+on the remote system. This is done by using a rule in the nbetperm-table file:
+plug-gw: port 2120 206.116.65.* -plug-to 198.53.64.5 -port 119
+According to this command, if a connection on port 2120 is requested, redirect that request on
+port 119 or the host at 198.53.64.5. This is only part of the solution. The /etc/services file
+should also be edited to add a news NNTP service entry to show the new service port for this
+connection. For example, the following line specifies that the service nntp-a is on port 2120:
+nntp-a 2120/tcp readnews untp # USENET News Transfer Protocol
+The next step is to tell inetd that connections on this port are to be sent to the plug-gw
+application. This is done by adding the following line to the /etc/inetd.conf file and restarting
+inetd.
+nntp-a stream tcp nowait root /usr/local/etc/plug-gw plug-gw 2120
+When the user wants to use this alternate server, he or she must reconfigure the news client
+software, as shown in figure 7.4, to point to the new services port.
+Although you can set up your firewall so that NNTP clients can read news, this is generally not
+a popular setup. A much more realistic configuration would be for the clients to interact with a
+local news server. This configuration requires the firewall to allow for a news feed to be passed
+through to the internal news server.
+Figure 7.4
+Configuring WinVN and
+NNTP.
+376 Part II: Gaining Access and Securing the Gateway
+To do this, the external news server and the internal news client must be set up so that they
+pass their information through the firewall. The trick is understanding what configuration
+information must be placed in the news server configuration files on both ends. For the
+purpose of this discussion, assume that the news server software in use is INN 1.4. The file
+hosts.nntp provides information regarding what hosts are permitted to connect to the INN
+NNTP server. Consider the news server and firewall configuration shown in figure 7.5.
+Private Network Public Network
+Firewall
+Internal
+News Server
+External
+News Server
+$cat hosts.nntp
+gatekeeper.myorg.com
+$cat hosts.nntp
+gatekeeper.myorg.com
+Figure 7.5
+News client and server.
+Normally, the hosts.nntp file on each news server contains the name or IP address of the other
+news server that is allowed to connect to it. In this case, the name of the machine that goes in
+both hosts.nntp files is in fact the name or IP address of the firewall. This is because the
+firewall actually establishes a connection from one network to the other, and from one server
+to the other using the correct service port. With the hosts.nntp file correctly configured, there
+will be no problems passing news through the firewall.
+plug-gw and POP
+When you first think about using plug-gw with the TIS plug-gw application, the obvious
+question that comes to mind is “How do I configure things for authentication?” The trick is to
+remember which machine is actually performing the authentication. The firewall using pluggw
+does no authentication. It merely accepts the incoming connection on the named port, and
+establishes a connection from itself to the named system on the same or different port.
+To see this in operation, you can establish a telnet connection to the POP port. Consider the
+sample output shown here:
+$ telnet 206.116.65.3 110
++OK UCB Pop server (version 2.1.2-R3) at 198.53.64.14 starting.
+How to Build a Firewall 377
+USER chrish
++OK Password required for chrish.
+PASS agdfer
++OK chrish has 0 message(s) (0 octets).
+QUIT
+Connection closed by foreign host.
+$
+Notice that the connection to the firewall was established at 206.116.65.3. The remote system
+[198.53.64.14] does not normally list its IP address in the output; a modified version of the
+POP server was used to show the IP instead of the name.
+Unfortunately, simply adding the entries to the netpwrm-table file is not enough. Like NNTP,
+inetd must be configured to accept connections on the POP service port, 110. This is done by
+adding the following line to the /etc/inetd.conf file and restarting inetd:
+pop stream tcp nowait root /usr/local/etc/plug-gw plug-gw 110
+With the firewall now accepting POP service requests, plug-gw must be configured to redirect
+those POP requests to the appropriate server. This is done by adding this next line to the
+netperm-table file:
+plug-gw: port 110 206.116.65.* -plug-to 198.53.64.14
+After it is added, POP service requests received by the firewall are redirected to the specified
+server.
+The preceding example shows the process of establishing a POP session using telnet, but how
+do you configure a workstation that relies on POP to pass traffic through the firewall? Figure
+7.6 shows a configuration screen from the Eudora 1.52 shareware e-mail package:
+Figure 7.6
+Setup for a POP e-mail
+package.
+In this example, the user@hostname specification for the POP server identifies the real user
+name, but specifies the IP address for the firewall. The IP or name of the firewall can be used
+interchangeably in this field. The only reason for using the IP address rather than the name is
+if you have a DNS reliability problem, or to ensure that you connect to the correct host.
+378 Part II: Gaining Access and Securing the Gateway
+Consequently, when the incoming connection is received on port 110, plug-gw starts a session
+to the remote host specified in the plug-gw rule. This results in the mail being transferred from
+the remote end through the firewall to the workstation.
+Incidentally, the POP mail client in use is irrelevant. The plug-gw configuration has been
+tested with Eudora, Microsoft Exchange, and Pegasus Mail; every package tested functions
+properly.
+The Companion Administrative Tools
+A set of support tools are included with the TIS Toolkit to assist in the setup and ongoing
+administration of the firewall. These include a port scanner, a network subnet ping manager,
+and log analysis and reporting tools.
+Note Depending upon the version and completeness of the Toolkit you downloaded,
+some services and programs may not be installed or compiled automatically. It is
+strongly suggested that you retrieve the lastest version and patches directly from the
+the TIS FTP site.
+portscan
+The portscan program attempts to connect to every TCP port on a given machine. The default
+operation is to connect to each port in sequence on the named host/. The portscan program’s
+scan of the machine pc.unilabs.org, for example, was answered by the following ports:
+pc# ./portscan pc.unilabs.org
+ftp
+telnet
+gopher
+httpd
+pop
+nntp
+who
+2021
+2023
+2120
+7777
+pc#
+You can see from the output of portscan that very few ports are in fact in operation on the
+machine that was contacted.
+How to Build a Firewall 379
+netscan
+This is a network ping program. It accepts as an argument a network address and starts to ping
+each address on the network. Its default output is a list of each of the addresses that responded
+to the ping, along with the host’s name. The use of netscan in default mode is shown in this
+example:
+pc# ./netscan 198.53.32
+198.53.32.5
+Vaxxine-GW.Toronto.fonorola.net (198.53.32.6)
+198.53.32.9
+Harte-Lyne-gw.Toronto.fonorola.net (198.53.32.10)
+198.53.32.13
+Globe-n-Mail-GW.Toronto.fonorola.net (198.53.32.14)
+^C
+pc#
+This output shows that the first host that responded to a ping was 198.53.32.5. Notice that
+even though the program pings each address in turn, there is not always a response. This
+indicates that either no device exists, or netscan attempted to contact a device that does not
+respond to pings.
+A verbose mode is also available with netscan. In verbose mode, addresses that respond to a
+ping are placed with their name or address flush left; addresses that did not respond are
+indented one tab space. This mode is enabled by using the -v option on the command line:
+pc# ./netscan -v 198.53.32
+trying subnet 198.53.32
+198.53.32.1
+198.53.32.2
+198.53.32.3
+198.53.32.4
+198.53.32.5
+Vaxxine-GW.Toronto.fonorola.net (198.53.32.6)
+198.53.32.7
+198.53.32.8
+198.53.32.9
+Harte-Lyne-gw.Toronto.fonorola.net (198.53.32.10)
+198.53.32.11
+198.53.32.12
+198.53.32.13
+^C
+pc#
+This tool helps determine what hosts are on a network, which may affect how you specify the
+configuration rules for your network.
+380 Part II: Gaining Access and Securing the Gateway
+Reporting Tools
+The TIS Toolkit, configured as a firewall, logs transactions and requests processed by Toolkit
+applications, and records the outcome of these requests. The log file messages are recorded
+through the syslog daemon. The files used to save the details are listed in /etc/syslog.conf, and
+vary from system to system. The TIS Toolkit applications all interact with the syslog service
+and send logging information and status messages for the lifetime of the connection.
+You can periodically peruse the log files, or use the reporting programs included with the
+Toolkit to search out and report usage of the firewall. Because the logging is performed using
+the syslogd service, the log messages observe the standard format:
+Date Time hostname program[PID]: message
+This format appears in the log file looking like this:
+Oct 4 02:42:14 pc ftp-gw[1763]: permit host=stargazer.unilabs.org/204.191.3.147
+åuse of gateway
+A wide variety of log messages can be displayed in the syslog file. Some of these are illustrated
+in the following output:
+cannot connect to server 198.53.64.14/110: No route to host
+cannot connect to server 198.53.64.14/110: Operation timed out
+cannot connect to server nis.fonorola.net/110: Connection refused
+cannot connect to server nis.fonorola.net/110: Operation timed out
+cannot get our port
+connect host=stargazer.unilabs.org/206.116.65.2 destination=198.53.64.14/110
+connect host=unknown/206.116.65.2 destination=198.53.64.14/110
+connected host=pc.unilabs.org/204.191.3.150 to nds.fonorola.net
+content-type= multipart/x-mixed-replace;boundary=ThisRandomString
+content-type= text/html
+deny host=204.191.3.150/pc.unilabs.org connect to fox.nstn.ca
+deny host=pc.unilabs.org/204.191.3.150 service=ftpd
+deny host=stargazer.unilabs.org/204.191.3.147 destination=sco.sco.com
+deny host=unknown/206.116.65.2 service=110
+disconnect host=stargazer.unilabs.org/206.116.65.2 destination=198.53.64.14/110
+åin=3512 out=92 duration=8
+disconnect host=unknown/206.116.65.2 destination=198.53.64.14/110 in=0 out=0
+åduration=75
+exit host=pc.unilabs.org/204.191.3.150 dest= in=0 out=0
+exit host=pc.unilabs.org/204.191.3.150 dest= in=0 out=0 user=unauth duration=2
+exit host=pc.unilabs.org/204.191.3.150 dest=nds.fonorola.net in=35 out=21
+åuser=unauth duration=37
+How to Build a Firewall 381
+exit host=pc.unilabs.org/204.191.3.150 dest=none in=0 out=0 user=unauth
+åduration=14
+exit host=stargazer.unilabs.org/204.191.3.147 cmds=1 in=0 out=0 user=unauth
+åduration=2
+exit host=stargazer.unilabs.org/204.191.3.147 no auth
+failed to append to file (null)
+failed to connect to http server iback.gif (80)
+fwtksyserr: cannot display denial-msg /usr/local/etc/tn-deny.txt: No such file or
+ådirectory
+fwtksyserr: cannot display help file /usr/local/etc/tn-help.txt: No such file or
+ådirectory
+fwtksyserr: cannot display help message /usr/local/etc/rlogin-help.txt: No such
+åfile or directory
+fwtksyserr: cannot display welcome /usr/local/etc/rlogin-welcome.txt: No such file
+åor directory
+fwtksyserr: cannot display welcome /usr/local/etc/tn-welcome.txt: No such file or
+ådirectory
+log host=stargazer.unilabs.org/206.116.65.2 protocol=HTTP cmd=dir
+dest=www.istar.ca path=/
+log host=stargazer.unilabs.org/206.116.65.2 protocol=HTTP cmd=dir dest=iback.gif
+åpath=/
+log host=stargazer.unilabs.org/206.116.65.2 protocol=HTTP cmd=get dest=www.nstn.ca
+åpath=/cgi-bin/test/tide.cgi
+Network connection closed during write
+permit host=pc.unilabs.org/204.191.3.150 connect to 204.191.124.252
+permit host=pc.unilabs.org/204.191.3.150 connect to chrish@nds.fonorola.net
+permit host=pc.unilabs.org/204.191.3.150 use of gateway
+permit host=stargazer.unilabs.org/204.191.3.147 connect to mail.fonorola.net
+permit host=stargazer.unilabs.org/204.191.3.147 destination=204.191.3.150
+permit host=stargazer.unilabs.org/204.191.3.147 service=ftpd execute=/usr/libexec/
+åftpd
+permit host=stargazer.unilabs.org/204.191.3.147 service=ftpd execute=/bin/cat
+permit host=stargazer.unilabs.org/204.191.3.147 service=telnetd execute=/usr/
+libexec/telnetd
+permit host=stargazer.unilabs.org/204.191.3.147 use of gateway
+permit host=stargazer.unilabs.org/206.116.65.2 use of gateway (Ver p1.4 / 1)
+These log messages do not represent a complete list. The only way to see a complete list of
+possible log messages and their exact meanings is to perform a line-by-line review of the TIS
+Toolkit code, and then document each item individually.
+The Toolkit includes a number of reporting tools that can be used to analyze the log records
+saved by the syslog service. These shell scripts, listed in table 7.18, are in the fwtk/tool/admin/
+reporting directory.
+382 Part II: Gaining Access and Securing the Gateway
+Table 7.18
+syslog Report Generating Scripts
+Script Name Description
+authsrv-summ.sh Summarizes auth server reports
+daily-report.sh Runs the report scripts on a daily basis
+deny-sum.sh Reports on denial of services
+ftp-summ.sh Summarizes ftp-gw traffic
+http-summ.sh Summarizes the http-gw traffic
+netacl-summ.sh Summarizes netacl accesses
+smap-summ.sh Summarizes smap email records
+tn-gw-summ.sh Summarizes tn-gw and rlogin-gw traffic
+weekly-report.sh Top-level driver that calls each summary report generator
+The reporting tools included in the TIS Toolkit are not installed automatically when the
+Toolkit applications are compiled and installed. They must be installed later by changing to
+the directory tools.admin.reporting and running the make install command. This copies all the
+files to the same directory in which the Toolkit applications were copied.
+The Authentication Server Report
+The authentication server report identifies various authentication operations that are carried out
+on the server. A typical report of authsrv-summ.sh looks like this:
+pc# ./authsrv-summ.sh < /var/log/messages.0
+Top 100 permitted user authentications (total: 6)
+Logins User ID
+------ -------
+4 admin
+2 chrish
+Top 100 failed user authentications (total: 2)
+Attempts Username
+-------- --------
+1 paulp
+1 chrish
+How to Build a Firewall 383
+Authentication Management Operations
+-----------------------------------
+administrator ADDED admin
+administrator ADDED admin
+administrator ADDED chrish
+administrator ADDED chrish
+administrator ADDED paulp
+administrator DELETED admin
+administrator DELETED chrish
+administrator ENABLED admin
+administrator ENABLED chrish
+administrator GROUP admin manager
+administrator GROUP chrish production
+administrator GROUP paulp copy
+administrator GWIZ chrish
+administrator GWIZ chrish
+administrator GWIZ paulp
+administrator PASSWORD admin
+administrator PASSWORD chrish
+administrator PROTOCOL admin
+administrator PROTOCOL chrish
+administrator UN-GWIZ chrish
+administrator WIZ admin
+administrator WIZ chrish
+Notice that this and all the other reporting tools expect to read their data from the standard
+input stream. These reporting tools can do this by using the cat command with a pipe, or by
+redirecting the input stream from the log file.
+The authsrv summary report lists the total authentication requests made and by whom, the
+denied authentication, and the authentication database management operations. If you run
+this report after a heavy period of user administration, it will be quite verbose.
+The Service Denial Report
+The purpose of the service denial report is to identify hosts that attempted to connect through
+the firewall and were not permitted. The report reads through the specified log file and
+reports on:
+n The top 100 network service users
+n The top 100 denied service users
+n The total service requests by service
+384 Part II: Gaining Access and Securing the Gateway
+A sample execution of deny-summ.sh looks like this:
+pc# ./deny-summ.sh < /var/log/messages.0
+Authentication Failures
+Failures Proxy: Host - ID
+-------- ----------------
+1 s: disable - paulp
+1 ftp-gw: pc.unilabs.org/206.116.65.3 - chrish
+Top 100 network service users (total: 152)
+Connects Host/Address
+-------- ------------
+120 stargazer.unilabs.org/206.116.65.2:
+11 pc.unilabs.org/206.116.65.3:ftp
+5 stargazer.unilabs.org/206.116.65.2:telnet
+3 stargazer.unilabs.org/206.116.65.2:telnetd
+3 stargazer.unilabs.org/206.116.65.2:ftpd
+3 pc.unilabs.org/206.116.65.3:telnet
+2 stargazer.unilabs.org/206.116.65.2:ftp
+2 pc.unilabs.org/206.116.65.3:
+1 unknown/206.116.65.2:
+1 pc.unilabs.org/206.116.65.3:telnetd
+1 pc.unilabs.org/206.116.65.3:ftpd
+Top 100 Denied network service users (total: 12)
+Connects Host/Address
+-------- ------------
+2 stargazer.unilabs.org/206.116.65.2:telnet
+2 pc.unilabs.org/206.116.65.3:ftp
+1 unknown/206.116.65.2:110
+1 stargazer.unilabs.org/206.116.65.2:telnetd
+1 stargazer.unilabs.org/206.116.65.2:110
+1 stargazer.unilabs.org/206.116.65.2:
+1 pc.unilabs.org/206.116.65.3:2120
+1 pc.unilabs.org/206.116.65.3:119
+1 pc.unilabs.org/206.116.65.3:110
+1 pc.unilabs.org/206.116.65.3:
+Service Requests
+Requests Service
+-------- -------
+125
+15 ftp
+10 telnet
+5 telnetd
+4 ftpd
+3 110
+1 2120
+1 119
+How to Build a Firewall 385
+The report can be used to highlight sites that have attempted unauthorized connections to the
+firewall; the report also highlights sites that are authorized to connect, but whose users do not
+know how, or have forgotten their passwords. All of these examples may be legitimate problems,
+or potential security breaches.
+The FTP Usage Report
+The FTP usage report identifies sites that are connected to FTP services through the firewall. It
+identifies the number of connections, the origin of the connection, and the amount of data
+transferred. A sample execution of ftp-summ.sh looks like this:
+pc# cat /var/log/messages* | ./ftp-summ.sh
+FTP service users (total: 23)
+Connects Host/Address
+-------- ------------
+13 stargazer.unilabs.org/204.191.3.147
+5 pc.unilabs.org/206.116.65.3
+3 pc.unilabs.org/204.191.3.150
+2 stargazer.unilabs.org/206.116.65.2
+Denied FTP service users (total: 4)
+Connects Host/Address
+-------- ------------
+2 pc.unilabs.org/206.116.65.3
+2 nds.fonorola.net/204.191.124.252
+FTP service output thruput (total Kbytes: 6)
+KBytes Host/Address
+------ ------------
+6 pc.unilabs.org/206.116.65.3
+FTP service input thruput (total Kbytes: 4)
+KBytes Host/Address
+------ ------------
+3 pc.unilabs.org/206.116.65.3
+0 stargazer.unilabs.org/206.116.65.2
+0 stargazer.unilabs.org/204.191.3.147
+pc#
+As you can see in this report, several service denials occurred on this firewall. A couple came
+from an external site, but also an internal host attempted to access the site. Many sites choose
+to not allow FTP at all because of the potential problems associated with pirated software or
+virus infected software.
+386 Part II: Gaining Access and Securing the Gateway
+The HTTP Usage Report
+The HTTP usage report identifies traffic that has been passed through the http-gw application.
+The report covers connection requests, denied service requests, and input and output through
+the proxy. A sample HTTP usage report looks like this:
+pc# cat /var/log/messages* | ./http-summ.sh
+HTTP service users (total: 130)
+Connects Host/Address
+-------- ------------
+127 stargazer.unilabs.org/206.116.65.2
+2 pc.unilabs.org/206.116.65.3
+1 unknown/206.116.65.2
+Denied HTTP service users (total: 1)
+Connects Host/Address
+-------- ------------
+1 stargazer.unilabs.org/206.116.65.2
+HTTP service output thruput (total Kbytes: 1)
+KBytes Host/Address
+------ ------------
+1 stargazer.unilabs.org/206.116.65.2
+HTTP service input thruput (total Kbytes: 315)
+KBytes Host/Address
+------ ------------
+315 stargazer.unilabs.org/206.116.65.2
+pc#
+A few requests out through the firewall may result in a much higher rate of information input
+to the firewall. You can see this in list 4; 1 KB of data out through the firewall resulted in 315
+KB from the remote end.
+The netacl report
+Recall that netacl is a method of allowing access to the services on the firewall itself, such as
+telnet. This program enables administrators and other users to operate directly on the firewall
+without the need to be on the console.
+The netacl report identifies the connects that have been made to the firewall and on what
+services, as well as the origin of the requests. A sample execution of the netacl-summ.sh
+command is shown here:
+pc# cat /var/log/messages* | ./netacl-summ.sh
+Top 100 network service users (total: 40)
+Connects Host/Address
+-------- ------------
+19 stargazer.unilabs.org/204.191.3.147
+13 stargazer.unilabs.org/206.116.65.2
+4 unknown/206.116.65.2
+How to Build a Firewall 387
+2 unknown/204.191.3.147
+2 pc.unilabs.org/206.116.65.3
+Top 100 Denied network service users (total: 11)
+Connects Host/Address
+-------- ------------
+6 pc.unilabs.org/204.191.3.150
+2 stargazer.unilabs.org/204.191.3.147
+1 stargazer.unilabs.org/206.116.65.2
+1 nds.fonorola.net/204.191.124.252
+1 mail.fonorola.net/198.53.64.8
+Service Requests
+Requests Service
+-------- -------
+32 ftpd
+18 telnetd
+In a previous section in this chapter, only telnet and ftp service were configured to be available
+with netacl. This setup was chosen so that you, the network administrator, could update files
+and interact with the firewall from places other than the console. The denied requests result
+from other hosts attempting to connect to your netacl ports (telnet was 2023, and ftp was
+2021).
+This report identifies sites that are attempting to log in or ftp directly to the firewall itself,
+rather than log in to a site behind the firewall.
+The Mail Usage Report
+Another important piece of information for the administrator is knowing how much mail is
+flowing through the firewall. Many sites do not allow any traffic other than mail through the
+firewall; for this reason, knowledge of the amount of information available helps determine if
+the chosen hardware platform is in fact doing the job. The mail usage report generator identifies
+for the administrator the number of messages received per user, and how many bytes in mail
+traffic were handled by the firewall.
+The following sample execution of the mail report, smap-summ.sh, illustrates this script’s
+importance:
+pc# cat /var/log/messages* | ./smap-summ.sh
+Total messages: 10 (22 Kb)
+Top 100 mail recipients (in messages)
+Messages
+Count Kb Address
+----- -- -------
+2 7.6 skhan@compmore.net
+2 7.6 chrish
+2 2.9 74507.3713@compuserve.com
+388 Part II: Gaining Access and Securing the Gateway
+1 1.5 chrish@fonorola.net
+1 1.1 chrish@unilabs.org
+1 0.9 denny@nstn.ca
+1 0.9 chrish@nds.fonorola.net
+Top 100 mail senders (in messages)
+Messages
+Count Kb Address
+----- -- -------
+9 21.4 chrish@unilabs.org
+1 1.1 news@news.compmore.net
+Top 100 mail recipients (in kilobytes)
+Messages
+Count Kb Address
+----- -- -------
+2 7.6 skhan@compmore.net
+2 7.6 chrish
+2 2.9 74507.3713@compuserve.com
+1 1.5 chrish@fonorola.net
+1 1.1 chrish@unilabs.org
+1 0.9 denny@nstn.ca
+1 0.9 chrish@nds.fonorola.net
+Top 100 mail senders (in kilobytes)
+Messages
+Count Kb Address
+----- -- -------
+9 21.4 chrish@unilabs.org
+1 1.1 news@news.compmore.net
+The telnet and rlogin Usage Report
+The telnet and rlogin usage report (tn-gw-summ.sh) combines activity through the firewall of
+the telnet and rlogin services. This report identifies the following:
+n The number of connections
+n The connecting host
+n Characters input to the firewall for transmission to the public network
+n Characters received by the firewall for the private network
+n Denied connections
+The following report provides a sample execution of tn-gw-summ.sh:
+How to Build a Firewall 389
+Top 100 telnet gateway clients (total: 43)
+Connects Host/Address Input Output Total
+-------- ------------ ----- ------ -----
+17 stargazer.unilabs.or 924 177 1101
+16 pc.unilabs.org/204.1 97325 1243 98568
+3 stargazer.unilabs.or 274 6 280
+3 mailhost.unilabs.org 26771 717 27488
+2 unknown/204.191.3.14 27271 710 27981
+1 unknown/206.116.65.4 10493 701 11194
+1 pc.unilabs.org/206.1 0 0 0
+Top 100 telnet gateway clients in terms of traffic
+Connects Host/Address Input Output Total
+-------- ------------ ----- ------ -----
+16 pc.unilabs.org/204.1 97325 1243 98568
+3 mailhost.unilabs.org 26771 717 27488
+2 unknown/204.191.3.14 27271 710 27981
+1 unknown/206.116.65.4 10493 701 11194
+17 stargazer.unilabs.or 924 177 1101
+3 stargazer.unilabs.or 274 6 280
+1 pc.unilabs.org/206.1 0 0 0
+Top 100 Denied telnet gateway clients (total: 20)
+Connects Host/Address
+-------- ------------
+14 stargazer.unilabs.or
+2 stargazer.unilabs.or
+2 204.191.3.150/pc.uni
+1 unknown/204.191.3.14
+1 mail.fonorola.net/19
+This report provides details on who is connecting through the firewall, how much traffic is
+being generated, and who is being denied. You can see, for example, that stargazer.unilabs.org
+is in both the connections and denied lists. This may indicate that at one point the site was
+denied, and then later authorized to use the telnet or rlogin gateways.
+Where to Go for Help
+Help with the TIS Toolkit is easy to find. Discussions on general Internet security-related
+topics can be found in the Usenet newsgroups:
+alt.2600
+alt.security
+comp.security
+390 Part II: Gaining Access and Securing the Gateway
+You can also find help by joining the mailing list concerned with a general discussion of
+firewalls and security technology:
+firewalls@greatcircle.com
+To subscribe to the mailing list, send a message to:
+majordomo@greatcircle.com
+with the text
+subscribe firewalls
+in the body of the message.
+To reach users familiar with the TIS Toolkit applications and their configuration, contact this
+mailing list:
+fwall-users-request@tis.com
+In addition, the TIS Toolkit includes a large amount of documentation on firewalls. If you
+plan to make significant use of the Toolkit you should join the TIS discussion lists first. Before
+you commit to an operating system and hardware platform, ask questions on this mailing list;
+probably many of the list’s readers have had similar questions and experiences.
+Sample netperm-table File
+This section lists a sample netperm-table file. To help you understand this file better, a
+prodigious amount of comments are included. In addition, a wide variety of options are
+included so that you can see how the examples used in the chapter would appear when
+configuring the TIS Toolkit.
+#
+# Sample netperm configuration table
+#
+# Change YOURNET to be your network IP address
+# Change YOURADDRESS to be the IP address of a specific host
+#
+# Example netacl rules:
+# ---------------------
+# if the next 2 lines are uncommented, people can get a login prompt
+# on the firewall machine through the telnet proxy
+How to Build a Firewall 391
+# This is okay, but means that anyone who is authorized to connect to the
+# firewall box through the proxy can get a login prompt on the firewall.
+# In most circumstances, it is to provide tight controls on who can log in
+# directly to the firewall.
+#netacl-telnetd: permit-hosts 127.0.0.1 -exec /usr/libexec/telnetd
+#netacl-telnetd: permit-hosts YOURADDRESS -exec /usr/libexec/telnetd
+#
+# This rule says that only telnet sessions through netacl from these two hosts
+# will be accepted.
+netacl-telnetd: permit-hosts 206.116.65.2 206.116.65.3 -exec /usr/libexec/telnetd
+#
+# if the next line is uncommented, the telnet proxy is available
+#netacl-telnetd: permit-hosts * -exec /usr/local/etc/tn-gw
+#
+# if the next 2 lines are uncommented, people can get a login prompt
+# on the firewall machine through the rlogin proxy
+#netacl-rlogind: permit-hosts 127.0.0.1 -exec /usr/libexec/rlogind -a
+#netacl-rlogind: permit-hosts YOURADDRESS 198.6.73.2 -exec /usr/libexec/rlogind -a
+#
+# if the next line is uncommented, the rlogin proxy is available to any host
+#netacl-rlogind: permit-hosts * -exec /usr/local/etc/rlogin-gw
+#
+# The next line allows FTP sessions from the specified network(s) to the
+# firewall system itself.
+netacl-ftpd: permit-hosts 206.116.65.* -exec /usr/libexec/ftpd -A -l
+#
+# Uncommenting the next line will turn off FTP and print a message to that
+# effect whenever someone attempts to access the FTP port.
+# netacl-ftpd: permit-hosts 206.116.65.147 -exec /bin/cat /usr/local/etc/noftp.txt
+#
+# to enable finger service uncomment these 2 lines
+#netacl-fingerd: permit-hosts YOURNET.* -exec /usr/libexec/fingerd
+#netacl-fingerd: permit-hosts * -exec /bin/cat /usr/local/etc/finger.txt
+#
+# Example smap rules:
+# -------------------
+# These rules control the operation of the SMAP and SMAPD applications.
+smap: userid 6
+smap: directory /var/spool/smap
+smap: timeout 3600
+#
+# Change this to increase/decrease the maximum message size that will be
+# permitted.
+smap: maxbytes 10000
+smap: maxrecip 20
+392 Part II: Gaining Access and Securing the Gateway
+#
+# This configuration section is for the SMAPD application
+#
+smapd: executable /usr/local/etc/smapd
+smapd: sendmail /usr/sbin/sendmail
+smapd: userid 6
+smapd: directory /var/spool/smap
+smapd: baddir /var/spool/smap/bad
+smapd: wakeup 900
+#
+# Example ftp gateway rules:
+# --------------------------
+# These rules control the operation of the FTP proxy
+#
+# Use the following lines to configure the denial, welcome and help messages
+# for the proxy.
+ftp-gw: denial-msg /usr/local/etc/ftp-deny.txt
+ftp-gw: welcome-msg /usr/local/etc/ftp-welcome.txt
+ftp-gw: help-msg /usr/local/etc/ftp-help.txt
+#
+# Use the following lines to use the authentication server
+ftp-gw: authserver localhost 7777
+#
+# set the timeout
+ftp-gw: timeout 3600
+# uncomment the following line if you want internal users to be
+# able to do FTP with the internet
+# ftp-gw: permit-hosts 206.116.65.*
+#
+# the following line logs all get and put requests, and authorizes put
+# requests.
+ftp-gw: permit-hosts 206.116.65.* -log { retr stor } -auth { stor }
+# uncomment the following line if you want external users to be
+# able to do FTP with the internal network using authentication
+#ftp-gw: permit-hosts * -authall -log { retr stor }
+#
+# Example telnet gateway rules:
+# -----------------------------
+tn-gw: denial-msg /usr/local/etc/tn-deny.txt
+tn-gw: welcome-msg /usr/local/etc/tn-welcome.txt
+tn-gw: help-msg /usr/local/etc/tn-help.txt
+tn-gw: timeout 3600
+tn-gw: prompt “Enter Command>”
+#
+# the following line permits a telnet only to hosts in the .fonorola.net
+# domain. All other requests are denied.
+#tn-gw: permit-hosts 206.116.65.* -dest *.fonorola.net -dest !* -passok -
+åxok
+How to Build a Firewall 393
+tn-gw: permit-hosts 206.116.65.* -passok -xok
+# tn-gw: deny-hosts * -dest 206.116.65.150
+# if this line is uncommented incoming traffic is permitted WITH
+# authentication required
+# tn-gw: permit-hosts * -auth
+# Example rlogin gateway rules:
+# -----------------------------
+#rlogin-gw: permit-hosts YOURNET.* -passok -xok
+rlogin-gw: denial-msg /usr/local/etc/rlogin-deny.txt
+rlogin-gw: welcome-msg /usr/local/etc/rlogin-welcome.txt
+rlogin-gw: denydest-msg /usr/local/etc/rlogin-dest.txt
+#rlogin-gw: help-msg /usr/local/etc/rlogin-help.txt
+rlogin-gw: timeout 3600
+rlogin-gw: prompt “Enter Command>”
+rlogin-gw: permit-hosts 206.116.65.* -dest *.fonorola.net -dest !* -passok -xok
+rlogin-gw: deny-hosts * -dest 206.116.65.150
+# if this line is uncommented incoming traffic is permitted WITH
+# authentication required
+#rlogin-gw: permit-hosts * -auth -xok
+# Example auth server and client rules
+# ------------------------------------
+authsrv: hosts 127.0.0.1
+authsrv: database /usr/local/etc/fw-authdb
+authsrv: badsleep 1200
+authsrv: nobogus true
+authsrv: permit-hosts localhost
+# clients using the auth server
+*: authserver 127.0.0.1 7777
+# X-forwarder rules
+tn-gw, rlogin-gw: xforwarder /usr/local/etc/x-gw
+#
+# Plug-gw
+# ----------
+# The following rules provide examples on using plug-gw to access other
+# services, such as POP mail and NNTP.
+#
+# Uncomment the next line to allow NNTP connections to be routed to an
+# external news server for news reading.
+#
+# plug-gw: port 119 YOURNET.* -plug-to NEWS_SERVER_IP
+#
+# Uncomment the next line to allow POP mail connections from the private
+# network to an external POP mail host.
+#
+394 Part II: Gaining Access and Securing the Gateway
+# plug-gw: port 110 YOURNET.* -plug-to POP_MAIL_HOST_IP
+#
+# HTTP-GW
+# --------
+# This section provides some examples for the http-gw proxy
+#
+http-gw: userid www
+# http-gw: directory /usr/local/secure/www
+http-gw: timeout 1800
+http-gw: default-httpd www.fonorola.net
+http-gw: default-gopher gopher.fonorola.net
+http-gw: permit-hosts 206.116.65.*
+# http-gw: deny-hosts 206.116.65.2
+http-gw: deny-hosts unknown
+Manual Reference Pages
+The following manual pages are taken from the TIS Toolkit and modified to fit within the
+formatting of this book. Many sections that have been empty were omitted, and should not be
+construed to replace the actual manual pages included with the Toolkit. The sections not
+generally included are BUGS, SEE ALSO, and FILES.
+These manual pages have been formatted to make reading and referencing them easier. Each
+manual page includes the following sections:
+n Synopsis
+n Description
+n Options
+n Installation
+Command-specific sections are also included. While setting up and configuring your firewall,
+this section will prove to be an invaluable aid.
+Authmgr—Network Authentication Client Program
+Synopsis
+authmgr
+How to Build a Firewall 395
+Description
+authmgr is a client-side interface to the authentication daemon authsrv. authmgr is useful if an
+administrator wants to access the authentication server over a network, or wants to encrypt the
+connection. The authmgr program passes most of its commands directly over a network to
+authsrv. All commands supported by authsrv are supported by authmgr with the same syntax;
+authmgr also accepts the login [username] command, which automates authentication to
+authsrv.
+Options
+authmgr takes no command-line options, reading its configuration information from the
+firewall Toolkit configuration file netperm-table. All configuration rules in netperm-table for
+application “authmgr” are read, and the following clauses and parameters are recognized:
+authserver hostname [port] [key]
+This command specifies the hostname or network address where the authentication server is
+running. If the optional port is specified, it is used as a numeric service port value. If the
+optional key is specified, all traffic with the server is DES-encrypted using the shared key. Keys
+must match between client and server.
+If compiled-in values for authserver and port are provided, they will be used as a default if
+there are none specified in netperm-table.
+Installation
+To install authmgr, configure the authserver option in netperm-table to contain the address of
+the authentication server system. Check connectivity by attempting to log in.
+authsrv—Network Authentication Third-Party
+Daemon
+Synopsis
+authsrv via inetd
+396 Part II: Gaining Access and Securing the Gateway
+Description
+authsrv functions as a simple third-party authentication server, and provides an integrated
+interface for multiple forms of authentication, such as passwords, one-time passwords, and
+token authentication systems. authsrv maintains a database of user and group records with a
+simple administrative interface that permits an authenticated administrator to manage user
+records locally or over a network. authsrv maintains extensive logs of transactions, authentication
+failures and successes, and all changes to its database. authsrv also can be configured to
+perform basic security operations such as disabling user accounts automatically when there are
+more than a set number of failed login attempts.
+Many commercial products for authentication include their own programming interface; for
+this reason, the simultaneous support of multiple forms of authentication within a single piece
+of software is cumbersome. authsrv multiplexes authentication schemes and uses a simple
+protocol with the client software, permitting administrators to add or drop authentication
+schemes easily without the need to modify client code. Currently authsrv contains support for
+Digital Pathways Secure Net Key, Security Dynamics SecurID, Bellcore S/Key, and plaintext
+passwords.
+authsrv’s basic authentication protocol uses ASCII text, with newline indicating the end of a
+line. When a client connects to the authentication server, it issues a request to authenticate a
+user:
+authorize userID
+authenticate userID
+To which the server will respond with one of two options:
+password
+challenge challengestring
+The client program should prompt the user for a (non-echoing) password if it receives the
+“password” response, or it should prompt the user with the returned challenge string if it
+receives the “challenge” response. The client program should forward the user’s password or
+challenge response to which the server will either respond “OK” or respond with an arbitrary
+text string that should be returned to the user. The client program forwards the response in the
+form of:
+response responsestring
+In some cases, the server may respond with “OK” followed by additional text on the same line.
+Additional text may contain information of interest to the user (such as, “OK. Change your
+password soon”).
+authsrv can also be invoked from the terminal directly for administrative purposes. If it is
+invoked from a terminal with the current user-id being 0 (“root”) it will automatically grant
+administrative privileges to the session. This is based on the pragmatic realization that if
+How to Build a Firewall 397
+someone has system privileges on the host serving the authentication database, they already
+effectively have administrative privileges.
+Generally, authsrv is designed to run on a secured system that is relatively restricted to users. In
+a firewall environment, the firewall host itself is a good candidate for running authsrv because
+typically the bastion host is secured, and is where the client software that uses authsrv is
+running. To ease administration, authsrv can be managed remotely using a client program
+with optional DES-encrypted communications between the client and server.
+Groups and Users
+authsrv supports a group and user configuration. Each user may be assigned to a group,
+consisting of a short arbitrary string name. Two levels of permissions are used in authsrv:
+administrator and group administrator. A group administrator can create, enable, disable, and
+delete users from that group, but may not create additional group administrators or groups.
+The overall system administrator can create new groups (by simply assigning someone to a
+group that previously did not exist) and can hand out group administration privileges. This
+setup provides a flexible management environment—a variety of management schemes can be
+implemented. To implement a monolithic management scheme, simply create several administrators
+and have them manage the database. To implement a hierarchical management scheme,
+create several group administrators and let each manage a group separately. Another setup can
+be used that eliminates the administrator user-id. All operations can be performed at a group
+level, and new groups can be created by running authsrv in administrator mode on the system
+where the database resides.
+Options
+authsrv takes no command-line options, reading its configuration information from the
+firewall Toolkit configuration file netperm-table(5). All configuration rules in netperm-table
+for application “authsrv” are read, and the following clauses and parameters are recognized:
+database pathname
+This command specifies the pathname of the authsrv database. The database is stored as a
+dbm(3) file with a third file used for locking. If the software is built with a compiled-in
+database name, this option need not be set, otherwise it is mandatory.
+The following command indicates that authsrv should return “user-friendly” error messages
+when users attempt to authenticate and fail:
+nobogus true
+The default message is simply to respond, “Permission Denied,” or to return a bogus challenge.
+If nobogus is set, attempts to log in will return more explicit error messages. Site administrators
+concerned about attempts to probe the authentication server should leave this option
+disabled.
+398 Part II: Gaining Access and Securing the Gateway
+The following command establishes a “sleep time” for repeated bad logins:
+badsleep seconds
+If a user attempts to authenticate five times and fails, their user record is marked as suspicious,
+and they cannot log in again. If the badsleep value is set, the user may attempt to log in again
+after that many seconds has expired. If the badsleep value is 0, users may attempt (and fail) to
+log in as many times as they would like. The default value is to effectively disable the account
+until an administrator re-enables it manually.
+To specify the userid that authsrv should run under, use a name from the password database,
+or a numeric userid in the command:
+userid name
+To specify that authsrv should permit the named host or addresses to use the service, add this
+command:
+hosts host-pattern [key]
+Hosts that do not have a matching entry are denied use of the service. If the optional key is
+specified, and the software is compiled with DES-encrypted communications, all traffic with
+that client will be encrypted and decrypted with the specified key.
+Commands
+The following command implements the first part of the authentication sequence:
+authorize username
+If the authorize command is issued after a user has already authenticated to the authentication
+server, their current authentication is cleared.
+To implement the second part of the authentication sequence, the following command is used.
+This is returned in response to a password or challenge query from the authentication server:
+response <text>
+To disconnect from the authentication server, issue:
+quit or exit
+To display the status, authentication protocol, and last login of the specified user, issue the
+command:
+display username
+Before the authentication server permits the use of this command, the user must first be
+authenticated to the server as the administrator, or the group administrator of the group to
+which the user belongs.
+How to Build a Firewall 399
+To add a user to the authentication database, enter the command:
+adduser username [longname]
+Before the authentication server permits the use of this command, the user must first be
+authenticated to the server as the administrator or as a group administrator. If the user is a
+group administrator, the newly created user is automatically initialized as a member of that
+group. When a user is added, he or she is initially disabled. If a long name is provided, it will
+be stored in the database. Long names should be quoted if they contain white space, as in this
+example:
+adduser mjr “Marcus J. Ranum”
+To delete the specified user from the authentication database, use the command:
+deluser username
+Before this command can be used, the user must first be authenticated to the server as the
+administrator or group administrator of the group to which the user being deleted belongs.
+The following commands enable and disable the specified user’s account for login:
+enable username
+disable username
+Before this command can be used, the user must first be authenticated to the server as the
+administrator or group administrator of the group to which the user being enabled or disabled
+belongs.
+To set the password for the current user, issue:
+password [username] text
+If an optional username is given and the authenticated user is the administrator or group
+administrator, the password for the specified user is changed. The password command is
+polymorphic depending on the user’s specified authentication protocol. For example, if the
+user’s authentication protocol is plaintext passwords, the command will update the plaintext
+password. If the authentication protocol is SecurID with PINs, it will update the PIN.
+The following command sets the authentication protocol for the specified user to the named
+protocol:
+proto user protoname
+Available protocols depend on the compiled-in support within authsrv. To change a user’s
+authentication protocol, the user must be authenticated to the server either as the administrator
+or group administrator of the user’s group. To set the specified user’s group, use the
+command:
+group user groupname
+400 Part II: Gaining Access and Securing the Gateway
+To use this command, a user must first be authenticated to the server as the administrator.
+Group administrators do not have the power to “adopt” members.
+The following commands set and unset the group administrator flag on the specified user. To
+issue this command, a user must be authenticated to the server as the administrator.
+wiz user
+unwiz user
+This command sets the specified user as a global administrator:
+superwiz user
+The superwiz command should be used with caution. Usually the group
+mechanism is powerful enough for most system maintenance. For this reason, global
+administrative privileges are seldom used.
+To list all users that are known to the system, or the members of the specified group, use the
+command:
+list [group]
+Group administrators may list their own groups, but not the entire database. The list displays
+several fields, including:
+n user. The login ID of the user.
+n group. The group membership of the user. If none is listed, the user is in no group.
+n longname. The user’s full name. This may be left blank.
+n status. Contains codes indicating the user’s status. If this field is marked “y” the user is
+enabled and may log in. If marked “n” the user’s login is disabled. If marked “b” the
+users login is temporarily disabled because of too many bad login attempts. Users flagged
+with a “W” have the administrator bit set; users flagged with a “G” have the group
+administrator bit set.
+n proto. Indicates the form of authentication in use for the login.
+n last. Indicates the time of the last successful or unsuccessful login attempt.
+To list a short synopsis of available commands, use this command:
+? or help
+To determine if the named user is allowed to perform the specified service, use the command:
+operation user username service dest [other tokens] [time low# high#]
+Warning
+How to Build a Firewall 401
+The service might be any one of the application gateway such as telnet-gw, ftp-gw, or rlogingw.
+The destination is any valid IP domain. The optional tokens are matched as wildcards to
+permit a proxy to specify more detailed operations. If a matching rule is found, the appropriate
+response is returned to the client. If no match is found, a message indicating that no match was
+found is returned to the client program. Here is an example:
+operation user mjr telnet-gw relay.tis.com operation user mjr ftp-gw relay.tis.com
+åput
+Operation rules are stored in netperm-table. For each user/group the name is specified
+followed by the service destination [optional tokens] [time start end]. The user/group field
+indicates whether the record is for a user or a group. The name is either the username or the
+group name. The service can be any service specified by the proxy (usually ftp-gw, tn-gw, or
+rlogin-gw); the destination can be any valid domain name. The optional tokens are checked for
+a match, permitting a proxy to send a specific operation check to the authentication server.
+The time field is optional and must be specified time start_time end_time. The start_time and
+end_time parameters can be in the range 00:00 to 23:59. Here are a string of commands that
+specify who can use a service and when:
+authsrv permit-operation user mjr telnet-gw relay.tis.com time 08:00 17:00
+authsrv deny-operation user mjr telnet-gw relay.tis.com time 17:01 07:59
+authsrv permit-operation group admin telnet-gw * time 08:00 17:00
+authsrv deny-operation user mjr telnet-gw relay.tis.com time 17:01 07:59
+authsrv permit-operation group admin telnet-gw *.com
+authsrv deny-operation group admin ftp-gw *.com put time 00:00 23:59
+Installation
+To install authsrv, configure the database option in netperm-table and initialize the database.
+To initialize the database, use the command su to go to the root directory, run authsrv at the
+command line, then issue the following commands:
+#
+# authsrv
+-administrator modeauthsrv#
+list
+Report for users in database
+user group longname ok? proto last
+---- ----- -------- --- ----- ----
+authsrv# adduser admin ‘Auth DBA’
+ok - user added initially disabled
+authsrv# ena admin
+enabled
+authsrv# proto admin Snk
+changed
+authsrv# pass ‘160 270 203 065 022 034 232 162’ admin
+Secret key changed
+authsrv# list
+402 Part II: Gaining Access and Securing the Gateway
+Report for users in database
+user group longname ok? proto last
+---- ----- -------- --- ----- ----
+admin Auth DBA ena Snk never
+authsrv# quit
+#
+In this example, the administrator account is established, then enabled, a protocol is assigned,
+and the initial password is set. The format of the set password depends on the authentication
+protocol used for the record. In this example, the administrator record is using a SecureNet
+Key, so the password record consists of the shared secret key used by the device.
+After the database is initialized, add necessary hosts entries to netperm-table, install authsrv in
+inetd.conf, then restart inetd. Verify that authsrv is running by telnetting to the service port.
+Note Ensure that the database is protected against casual perusal by checking its file
+permissions.
+ftp-gw—FTP Proxy Server
+Synopsis
+ftp-gw [autheduser] [user@host]
+Description
+ftp-gw provides pass-through FTP proxy services with logging and access control. When ftpgw
+is invoked from inetd, it reads its configuration and checks to see if the system that has just
+connected is permitted to use the proxy. If not, ftp-gw shuts down the connection, displays a
+message, and logs the connection. If the peer is permitted to use the proxy, ftp-gw enters a
+command loop in which it parses all FTP requests and passes them to a remote FTP server.
+Any FTP request can be selectively logged or blocked by the proxy.
+Two methods are supported to permit users to specify the system they want to FTP to through
+the proxy. The most commonly used is encoding the destination system name in the
+username:
+% ftp gatekeeper
+Connected to gatekeeper.
+220 gatekeeper FTP proxy (Version 1.0) ready.
+Name (host:user): user@somplace
+331-(----GATEWAY CONNECTED TO someplace----)
+331-(220 someplace FTP server (Version 5.60/mjr) ready.)
+331 Password required for user.
+Password:
+230 User user logged in.
+Remote system type is Unix.
+How to Build a Firewall 403
+Using binary mode to transfer files.
+ftp> quit
+221 Goodbye.
+%
+A second means of specifying the remote through the proxy is through the passerve servername
+option, which causes the proxy to immediately connect to the specified remote system. This is
+useful in supporting modified ftp clients that “understand” the proxy.
+Options
+-a autheduser
+This option is provided for versions of ftpd that may exec( ) the proxy if given a user@host type
+address, where the user has already authenticated to the ftpd. If this option is provided, ftp-gw
+will treat the session as if it has been authenticated for the specified user. If this option is
+enabled, care should be taken to ensure that the FTP gateway is running on a host with
+restricted access, to prevent local users from attempting to spoof the authentication. The
+version of ftpd used should only pass this parameter when the user has been adequately
+authenticated.
+-u user@host
+This option enables a user@host destination to be passed directly to the proxy, for versions of
+ftpd that recognize user@host addresses.
+ftp-gw reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, and retrieves all rules specified for “ftp-gw”. The following configuration
+rules are recognized:
+userid user
+These rules specify a numeric user-id or the name of a password file entry. If this value is
+specified, ftp-gw will set its user-id before providing service. Note that this option is included
+mostly for completeness; ftp-gw performs no local operations that are likely to introduce a
+security hole.
+To specify a directory to which ftp-gw will chroot(2) prior to providing service, use the
+command:
+directory pathname
+The name of a file to display to the remote user if he or she is denied permission to use the
+proxy is entered with the command:
+denial-msg filename
+If this option is not set, a default message is generated. When the denial-msg file is displayed to
+the remote user, each line is prefixed with the FTP codes for permission denied.
+404 Part II: Gaining Access and Securing the Gateway
+To specify the name of a file to display as a welcome banner upon successful connection, use
+the command:
+welcome-msg filename
+If this option is not set, a default message is generated. The help command can also be used to
+display a particular file you want to use for help. To specify the file to use if help is issued, use
+the command:
+help-msg filename
+If this option is not set, a list of the internal commands is printed.
+To specify the name of a file to display if a user attempts to connect to a remote server for
+which he or she is restricted, use the command:
+denydest-msg filename
+If this option is not set, a default message is generated.
+The following command specifies the idle timeout value in seconds:
+timeout seconds
+When the specified number of seconds elapses with no activity through the proxy server, it will
+disconnect. If this value is not set, no timeout is enforced.
+The following rules specify host and access permissions:
+hosts host-pattern [host-pattern2 ...] [ options ]
+Typically, a hosts rule will be in the form of:
+ftp-gw: deny-hosts unknown
+ftp-gw: hosts192.33.112.* 192.94.214.* -log { retr stor }
+There may be several host patterns following the “hosts” keyword, ending with the first
+optional parameter beginning with “-”. Optional parameters permit the selective enabling or
+disabling of logging information. Sub-options include:
+n -noinput. Specifies that no matter what, the proxy should not accept input over a
+PORT. Attempts to do so result in the port being closed.
+n -nooutput. Specifies that no matter what, the proxy should not transmit output over a
+PORT. Attempts to do so result in the port being closed.
+How to Build a Firewall 405
+n -log. Specifies that a log entry to the system log should be made whenever the listed
+operations are performed through the proxy. (See ftpd for a list of known FTP operations).
+The format is as follows:
+-log operation
+-log { operation1 operation2 ... }
+n -authall. Specifies that the proxy should permit no operation (other than the quit
+command) until the user has authenticated to the server. The format is as follows:
+-auth operation
+-auth { operation1 operation2 ...}
+n -auth. Specifies that the operations listed should not be permitted until the user has
+authenticated to the server. The format is as follows:
+-dest pattern
+-dest { pattern1 pattern2 ... }
+n -dest. Specifies a list of valid destinations. If no list is specified, all destinations are
+considered valid. The -dest list is processed in the order it appears on the options line.
+-dest entries preceded with a ‘!’ character are treated as negation entries. The following
+rule permits hosts that are not in the domain “mit.edu” to be connected:
+-dest !*.mit.edu -dest *
+n -deny. Specifies a list of FTP operations to deny. By default, all operations are permitted.
+The format is as follows:
+-deny operation
+-deny { operation1 operation2 ... }
+Authentication
+Unless the user is employing a version of the FTP client program that has support for authentication
+through challenge/response, he or she will be required to employ the quote command to
+communicate directly with the proxy. For authentication, the proxy recognizes the following
+options:
+authorize username
+auth username (shorthand form)
+response password
+resp password (shorthand form)
+If the proxy requires authentication, attempts to use the service requested will
+ånot be permitted.
+% ftp gatekeeper
+Connected to gatekeeper.
+220 gatekeeper FTP proxy (Version 1.0 stable) ready.
+406 Part II: Gaining Access and Securing the Gateway
+Name (host:user): user@somplace
+500 command requires user authentication
+Login failed.
+ftp> quote auth mjr
+331 Challenge “655968”
+ftp> quote response 82113
+230 Login Accepted
+ftp> user user!@somplace
+331-(----GATEWAY CONNECTED TO someplace----)
+331-(220 someplace FTP server (Version 5.60/mjr) ready.)
+331 Password required for user.
+Password:
+Unfortunately, whenever the quote command is used passwords are visible. If authentication is
+being used, it should be of a changing-password or token authentication form, to eliminate the
+threat of passwords being seen or tapped through a network.
+Installation
+To install ftp-gw, place the executable in a system area, then modify /etc/inetd.conf. The TCP
+service port on which to install the FTP proxy will depend on local site configuration. If the
+gateway machine that is to run the proxy does not require the presence of local FTP service,
+the proxy can be installed on the FTP service port. If the firewall doubles as an anonymous
+FTP archive, the proxy should be installed at another port.
+To use the proxy there, the FTP client application ftp must support the use of an alternate
+service port. Most BSD Unix versions of the FTP client do, but some PC or Macintosh
+versions do not. After inetd.conf has been modified, restart or reload inetd. Verify installation
+by attempting a connection, and then monitoring the system logs.
+Typical configuration of the proxy in a firewall setup includes the use of rules, which block all
+systems that are not in the DNS from using the proxy, but permit all systems on the internal
+protected network to use the proxy. Here is an example:
+ftp-gw: deny-hosts unknown ftp-gw: hosts 192.33.112.*
+192.94.214.* -log { retr stor }
+http-gw—Gopher/HTTP Proxy
+Synopsis
+http-gw [ options ](invoked from inetd)
+Description
+http-gw provides Gopher and HTTP proxy services with logging and access control. This
+program allows Gopher and Gopher+ client to access Gopher, Gopher+, and FTP servers. It
+also allows WWW clients such as Mosaic to access HTTP, Gopher, and FTP servers. Both
+How to Build a Firewall 407
+standard and proxy-aware WWW clients are supported. The proxy supports common use of
+the Gopher, Gopher+, and HTTP protocols. Except where noted, client means Gopher,
+Gopher+, WWW, or proxy aware WWW clients; server means Gopher, Gopher+, HTTP, or
+FTP servers.
+Proxy aware clients should be configured to use the proxy. Non proxy aware clients should be
+set up so that their HOME PAGE is the proxy. If you are installing a firewall on a system that
+already includes users with Gopher or WWW access, these users need to edit their Hotlists to
+route the requests through the proxy.
+n WWW (URLs). Insert the string http://firewall/ in front of the existing URL.
+n Gopher. Change the Gopher menu information from
+Host=somehost
+Port=someport
+Path=somepath
+to
+Host=firewall
+Port=70
+Path=gopher://somehost:someport/somepath
+This example assumes that the proxy has been configured to be on the default HTTP and
+Gopher ports (80 and 70, respectively).
+Options
+n -d file. This option can only be used if the proxy was compiled with BINDDEBUG. It
+allows debugging information to be written to the specified file.
+n -D. This option turns on the debugging log if specified. The proxy must be compiled
+with BINDDEBUG for the option to be recognized.
+Operation
+htttp-gw is invoked from inetd(8); it reads its configuration and checks to see if the system that
+has just connected is permitted to use the proxy. If not, it returns a message/menu and logs the
+connection. If the peer is permitted to use the proxy, http-gw reads in a single line request
+which it then decodes. If needed, more lines are read from the client. Most requests carry the
+information that the proxy needs in the first line.
+When a user initiates a request, the client determines three pieces of information: host, port,
+and a selector. The client then connects to the host on the port and sends the selector. When
+using a proxy, the host and port refer to the proxy itself. The proxy has to determine the host
+and port from information contained in the selector. The proxy does this by re-writing the
+information it passes back to the client. Both Gopher and WWW clients do none or only
+408 Part II: Gaining Access and Securing the Gateway
+minimal processing on the selector. If the proxy cannot find it’s special information in the
+selector, it looks in it’s configuration file to see if a server has been defined to which it can
+hand off the request.
+The proxy has to process three types of information:
+n Gopher menus. These contain a description (displays for the user), a selector, a host,
+and a port. The first character of the description tells the client the type of information
+the entry refers to.
+n HTML files. Contains hypertext that can contain embedded links to other documents.
+The proxy has to parse the HTML file and re-write the links so that the client routes the
+request through the proxy.
+n Other data files. Roughly classified as text or binary data. The proxy passes the data
+through without changing it.
+The proxy encodes the extra information into the selector by converting it into a URL
+(Universal Resource Locator). This is also the form of selector that is used in HTML
+documents.
+When building a Gopher Menu from an FTP directory list, the proxy has to guess what
+Gopher type to specify by looking at the file extension. The following table lists gopher types
+and their related extensions.
+Description Gopher Type Extensions
+GIF Image g .gif
+DOS archives 5 .zip .zoo .arj .arc .lzh
+DOS binaries 9 .exe .com .dll .lib .sys
+Misc Images I .jpg .jpeg .pict .pct .tiff .tif .pcx
+Unix binaries 9 .tar .z .gz
+MAC archives 4 .hqx
+Misc sounds s .au .snd .wav
+HTML Documents h .html .htm
+Misc Documents 9 .doc .wri
+Directories 1 Filenames that end in /
+Plain text 0 All other extensions
+How to Build a Firewall 409
+Configuration
+http-gw reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, retrieving all rules specified for “http-gw” and “ftp-gw.” The “ftpgw”
+rules are consulted when looking for host rules after the “http-gw” rules have been
+searched. The following configuration rules are recognized:
+userid user
+Specifies a numeric user-id or the name of a password file entry. If this value is specified, httpgw
+will set its user-id before providing service. Note that this option is included mostly for
+completeness; HTTP-GW performs no local operations likely to introduce a security hole.
+directory pathname
+Specifies a directory to which http-gw will chroot(2) prior to providing service.
+timeout secondsvalue
+The preceding value is used as a dead-watch timer when the proxy is reading data from the net.
+Defaults to 60 minutes.
+default-gopher server
+The default-gopher option specifies a Gopher server that receives handed off requests.
+default-httpd server
+The default-httpd option defines an HTTP server that receives handed off requests if the
+requests come from a WWW client using the HTTP protocol.
+ftp-proxy server
+The ftp-proxy server option defines an ftp-gw that should be used to access FTP servers. If this
+rule isn’t specified, the proxy will do the FTP transaction with the FTP server. Because the ftpgw
+rules will be used if there are no relevant http-gw rules, this is not a major problem.
+hosts host-pattern [host-pattern ...] [options]
+deny-hosts host-pattern [host-pattern ...]
+The deny-hosts rule specifies host and access permissions. Typically, a hosts rule will be in the
+form of:
+http-gw: deny-hosts unknown
+http-gw: hosts 192.33.112.* 192.94.214.*
+Several host patterns may follow the “hosts” keyword, ending with the first optional parameter
+beginning with “-”. Optional parameters permit the selective enabling or disabling of logging
+information.
+permit-hosts options
+410 Part II: Gaining Access and Securing the Gateway
+The permit-hosts rule can use options. Some of the options take parameters. The functions are
+defined later (see “Gopher Functions”).
+-permit function
+-permit { function [function ...] }
+The -permit option permits only the specified functions. Other functions will be denied. If this
+option is not specified then all functions are initially permitted.
+-deny function
+-deny { function [function ...] }
+The -deny option specifies a list of Gopher/HTTP functions to deny.
+-gopher server
+The -gopher option makes the specified server the default server for this transaction.
+-httpd server
+The -httpd option makes server the default HTTP server for this transaction. This will be used
+if the request came in through the HTTP protocol.
+-filter function
+-filter { function [function ...] }
+The -filter option removes the specified functions when rewriting selectors and URL’s. This
+option does not stop the user from entering selectors that the client will execute locally, but
+this option can be used to remove selectors from retrieved documents.
+The following options are also acceptable because they can be specified on an ftp-gw config
+line:
+-noinput
+The -noinput option disables data read functions.
+-nooutput
+The -nooutput option disables data write functions.
+-log function
+-log { function [function ...] }
+The -log option specifies that a log entry to the system log should be made whenever the listed
+functions are performed through the proxy.
+-authall
+The -authall option specifies that all functions require the user to be authenticated.
+How to Build a Firewall 411
+-auth function
+-auth { function [function ...] }
+The -auth option specifies that the functions listed require the user to be authenticated.
+-dest pattern
+-dest { pattern [pattern ...] }
+The -dest option specifies a list of valid destinations. If no list is specified, all destinations are
+considered valid. The -dest list is processed in the order it appears on the options line. -dest
+entries preceded with a ‘!’ character are treated as negation entries. For example, the following
+rule permits hosts that are not in the domain “mit.edu” to be connected.
+:-dest !*.mit.edu -dest *
+Gopher Functions
+The proxy characterizes each transaction as one of a number of functions. For the deny options
+the request is used. For filter options the returned selectors are used.
+Function Description
+dir Fetching Gopher menus
+Getting a directory listing via FTP
+Fetching an HTML document (this is being studied)
+read Fetching a file of any type
+HTML files are treated as read even though they are also of dir format
+write Putting a file of any type
+Needs plus because it is only available to Gopher+ and HTTP/1.x
+ftp Accessing an FTP server
+plus Gopher+ operations
+HTTP methods other than GET
+wais WAIS index operations
+exec Operations that require a program to be run, such as telnet. (See
+“Security.”)
+Security
+The most important security configuration you need to be aware of is the way certain functions
+are handled by the client, server, and proxy programs. When the client wants to perform
+certain actions, such as telnet, the client program often runs the telnet command to perform
+412 Part II: Gaining Access and Securing the Gateway
+the function. If the client passes arguments to the program, there is a chance of rogue commands
+along with the intended command. Gopher requests to do FTP operations cause the
+server to run the FTP program. Again, the server could be tricked into running rogue commands
+with the commands to run the FTP program.
+Most client programs only know how to display a small number of data types; they rely on
+external viewers to handle the other data types. Again, this arrangement jeopardizes security
+because of the chance that client programs can be tricked into running rogue commands.
+Installation
+To install HTTP-GW place the executable in a system area, then modify /etc/inetd.conf. The
+TCP service port on which to install the Gopher/HTTP proxy depends on local site configuration.
+You would normally configure the proxy to be on ports 70 and 80. 70 is the normal
+Gopher port and 80 is the normal HTTP port. After inetd.conf has been modified, restart or
+reload inetd. Verify installation by attempting a connection and monitoring the system logs.
+Typical configuration of the proxy in a firewall situation involves rules to block all systems that
+are not in the DNS from using the proxy, but to permit all systems on the internal protected
+network to use the proxy, as in this example:
+http-gw: deny-hosts unknown
+http-gw: hosts 192.33.112.* 192.94.214.*
+login-sh—Authenticating Login Shell
+Synopsis
+login-sh (invoked from /bin/login)
+Description
+login-sh provides a simple interface to the authentication service for login by replacing the
+user’s login shell with a “wrapper” that requires the user to authenticate first; the program then
+executes the real login shell. login-sh may be used in conjunction with or as a replacement for
+passwords in the password file /etc/passwd. The user’s actual login shell information is stored
+in an external file.
+Note that login-sh runs as the user with his or her permissions. This is attractive because it
+separates the authentication policy from the permissions granting policy (/bin/login).
+Options
+login-sh reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, retrieving all rules specified for “login-sh.” The following configuration
+rules are recognized:
+How to Build a Firewall 413
+authserver address port
+This command specifies the network address and service port of the authentication server to
+use.
+shellfile pathname
+The shellfile command specifies a file containing information about users’ login shells (the
+shell configuration file). Empty lines and lines with a pound sign (#) as the first character are
+discarded or treated as comments. The format of the shell configuration file is a list of entries,
+one per line:
+userid executable parameter-0 [parameter-1] [parameter-n]
+The first three values must be defined. The userid field matches the login name of the user
+invoking login-sh from the /etc/passwd file. The second field should specify the executable
+pathname of the program to run after authentication is completed. The third and remaining
+fields are parameters to pass to the executable program, starting at parameter zero. Many
+command interpreters check the name of parameter zero (argv[0]) to determine if they are a
+login shell. When you use these command interpreters, make sure you define them with their
+required forma—typically a leading dash “-”.
+Installation
+To install login-sh place the executable in a system area, and then define the shellfile and
+authserver options in netperm-table. Systems that are using login-sh should have all programs
+that permit users to change their login shells disabled, or should have the setuid bit stripped.
+File entries for users’ passwords should resemble this example:
+mjr::100:10:Marcus J Ranum:/home/mjr:/usr/local/etc/login-sh
+A sample shellfile entry for mjr is shown here:
+mjr /usr/bin/ksh -ksh
+Note in the example that the pathname (/usr/bin/ksh) and the first parameter for the program
+(“-ksh”) are different. A minimum of two parameters must exist for each login shell that is
+defined.
+Users who want both password authentication and secondary authentication can set passwords
+on their entries in /etc/passwd and also use login-sh.
+414 Part II: Gaining Access and Securing the Gateway
+netacl—TCP Network Access Control
+Synopsis
+netacl servicename (invoked from inetd)
+Description
+netacl provides a degree of access control for TCP-based services invoked from inetd(8). When
+a server is started, inetd invokes netacl with the name of the service requested, rather than the
+actual server. netacl then searches its permissions information (read from netperm-table ) to see
+if the host initiating the connection is authorized. If the host is authorized, the real server
+process is invoked; otherwise, netacl exits. Acceptance or rejection of the service is logged
+through the syslog facility.
+netacl duplicates functionality found in other tools such as log_tcp by Wietse Venema, but is
+included with the Toolkit because it is a simpler implementation, contains no support for
+UDP services, and shares a common configuration file with the rest of the Toolkit components.
+Options
+netacl accepts one parameter: the name of the service it is to provide. This service name is
+appended to the string “netacl-” to generate the name by which rules are read from the
+netperm-table configuration file. If invoked with no parameters, the service is assumed to be
+the program name, just in case an administrator needs to replace the executable of some
+daemon with a copy of netacl. For example, if netacl is invoked using the following command,
+it will retrieve all the configuration rules for netacl-in.telnetd:
+netacl in.telnetd
+The following configuration rules are recognized:
+hosts [options]
+The hosts rule specifies a host permission rule. Host permission rules are in the form:
+netacl-in.telnet permit-hosts host1 host2 -options
+netacl-in.telnet deny-hosts host1 host2 -options
+Following the permit-hosts or deny-hosts clause is a list of host names or IP-addresses that can
+contain wildcards. Host names are searched in order until the first option (starting with a ‘-’) is
+encountered, at which point, if there is a match for that rule, it will be accepted. If the rule
+is a deny-hosts rule, the program will log the denial of the service and exit. If the rule is a
+How to Build a Firewall 415
+permit-hosts rule, the options will be processed and executed in order. If no rule is explicitly
+permitting or denying a service, the service is denied. Options include:
+n -exec executable [args]. Specifies a program to invoke to handle the service. This
+option must be the final option in the rule. An -exec option must be present in every
+rule.
+n -user userid. userid is the numeric UID or the name from a login in /etc/passwd that is
+used to invoke the program.
+n -chroot rootdir. Specifies a directory to which netacl should chroot(2) prior to
+invoking the service program. This requires that the service program be present, and the
+pathname for the executable be relative to the new root.
+Examples
+In this example, the \ line wraps have been added to fit lines on the page. \-escapes are not
+permitted in netperm-table—they are here only as part of the example.
+netacl-in.telnetd: permit-hosts 192.33.112.* -exec /usr/etc/in.telnetd
+netacl-in.ftpd: permit-hosts unknown -exec /bin/cat /usr/local/etc/noftp.txt
+netacl-in.ftpd: permit-hosts 192.33.112.* -exec /usr/etc/in.ftpd
+netacl-in.ftpd: permit-hosts * -chroot /home/ftp -exec /bin/ftpd -f
+In this example, netacl is configured to permit telnet only for hosts in a particular subnet. ftpd
+is configured to accept all connections from systems that do not have a valid DNS name
+(“unknown”) and to invoke cat to display a file when a connection is made. This provides an
+easy and flexible means of politely informing someone that he or she is not permitted to use a
+service. Hosts in the specified subnet are connected to the real FTP server in /usr/etc/in.ftpd.
+Connections from other networks are connected to a version of the FTP server that is already
+chrooted to the FTP area, effectively making all FTP activity “captive.”
+Installation
+To install netacl, place the executable in a system area, then modify /etc/inetd.conf as desired,
+replacing entries for the servers that will be controlled via netacl. For example, the FTP service
+might be configured as follows (syntax may differ slightly depending on O/S version):
+ftp stream tcp nowait root /usr/local/etc/netacl in.ftpd
+After inetd.conf has been modified, restart or reload inetd. Verify installation by attempting a
+connection and monitoring the system logs.
+416 Part II: Gaining Access and Securing the Gateway
+plug-gw—Generic TCP Plugboard Proxy
+Synopsis
+plug-gw portnumber/name (invoked from inetd)
+Description
+plug-gw provides pass-through TCP services with logging and access control for generic
+connection-oriented applications such as NNTP. When plug-gw is invoked from inetd, it
+reads its configuration and checks to see if the system that has just connected is permitted to
+use the proxy. If not, it shuts down and logs the connection. If the peer is permitted to use the
+proxy, plug-gw determines (based on its configuration) what host to connect to on the “other
+side.”
+Note The service port plug-gw is servicing must be specified on the command line.
+Options
+plug-gw reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, and retrieves all rules specified for “plug-gw.” The following configuration
+rules are recognized:
+timeout seconds
+The timeout rule specifies a timeout value to wait until an inactive connection is disconnected.
+If no timeout is specified, the default is to remain connected until one side or the other closes
+its connection.
+port portid hostpattern [options]
+The port option specifies a connection rule. When a connection is made, a match is searched
+for on the port-id and calling host. The port-id may be either a numeric value (such as 119) or
+a value from /etc/services (such as “nntp”). If the calling port matches, then the host-pattern is
+checked for a match, following the standard address matching rules employed by the firewall.
+If the rule matches, the connection will be made based on the remaining options in the rule, all
+of which begin with ‘-’. Sub-options include:
+n -plug-to host. Specifies the name or address of the host to connect to. This option is
+mandatory.
+n -privportt. Indicates that a reserved port number should be used when connecting.
+Reserved port numbers must be specified for protocols such as rlogin, which rely on
+them for “security.”
+n -port- portid. Specifies a different port. The default port is the same as the port used
+by the incoming connection.
+How to Build a Firewall 417
+Installation
+To install plug-gw place the executable in a system area, then modify inetd.conf to install pluggw
+for whatever services will be plugboarded. Reinitialize inetd and test by connecting to the
+port.
+plug-gw was designed to permit “tunneling” NNTP traffic through firewalls, but it can be used
+for a variety of purposes such as permitting remote access to a single service on a single host.
+Typically, when configured for NNTP traffic, the user’s software is configured so that internal
+NNTP connections to the outside news server connect to the firewall and are automatically
+plugboarded to the external NNTP server, and vice versa. The USENET news software must
+then be configured so that both the internal and external NNTP servers believe they are
+exchanging news with the firewall machine.
+Examples
+The following entries permit NNTP transfer through a firewall bastion host. In this example
+the interior news server host is “foo.us.org” (111.11.1.11) and the externam news server is
+“nntp.outside.someplace” (222.22.2.22). The bastion host, where the software is installed, is
+“bastion.us.org.” On the bastion host, you place an entry for the NNTP service in inetd.conf:
+nntp stream tcp nowait root /usr/local/etc/plug-gw plug-gw nntp
+The plug gateway is invoked as “plug-gw nntp” to inform it that it is providing NNTP service.
+The configuration entries in netperm-table are as follows:
+plug-gw: timeout 60
+plug-gw: port webster 111.11.1.* -plug-to WEBSTER.LCS.MIT.EDU -port webster
+plug-gw: port nntp 111.11.1.11 -plug-to 222.22.2.22 -port nntp
+plug-gw: port nntp 222.22.2.22 -plug-to 111.11.1.11 -port nntp
+Whenever 111.11.1.11 connects to the bastion host, it is automatically connected to
+222.22.2.22’s nntp service. The news software on 111.11.1.11 should be configured to believe
+that its news server is the bastion host “bastion.us.org”—the host from which it transfers and
+receives news. Note too that a simple webster service is provided by plugging webster on
+another host over the Internet to the webster service port on the bastion host.
+Bugs
+Because incoming connection hosts can be wildcarded, plug-gw works well in a many-to-one
+relationship but does not work at all in a one-to-many relationship. If, for example, a site has
+three news feeds, it is easy to configure plug-gw to plugboard any connections from those three
+hosts to an internal news server. Unfortunately, the software will have to be modified if
+multiple instances of plug-gw are on the same port, or the internal news server’s software
+cannot support connecting on a non-standard port.
+418 Part II: Gaining Access and Securing the Gateway
+rlogin-gw—rlogin Proxy Server
+Synopsis
+rlogin-gw (invoked from inetd)
+Description
+rlogin-gw provides pass-through rlogin proxy services with logging and access control. When
+rlogin-gw is invoked from inetd, it reads its configuration and checks to see if the system that
+has just connected is permitted to use the proxy. If not, it shuts down, displays a message, and
+logs the connection. If the peer is permitted to use the proxy, rlogin-gw checks the username
+that is provided as part of the rlogin protocol, and if it is in the form user@host, an attempt is
+made to reconnect to the host and log in as that user. If no host is specified, rlogin-gw enters a
+command loop in which it waits for a user to specify the following:
+n The system the user want to connect to
+n The X-gateway the user wants to invoke
+Options
+rlogin-gw reads its configuration rules and permissions information from the firewall configuration
+netperm-table, where it retrieves all rules specified for “rlogin-gw.” The following
+configuration rules are recognized:
+directory pathname
+This rule specifies a directory to which rlogin-gw will chroot(2) prior to providing service.
+prompt string
+The prompt rule specifies a prompt for rlogin-gw to use while it is in command mode.
+timeout seconds
+The timeout rule specifies the time, in seconds, the system remains idle before disconnecting
+the proxy. Default is no timeout.
+denial-msg filename
+The denial-msg rule specifies the name of a file to display to the remote user if he or she is
+denied permission to use the proxy. If this option is not set, a default message is generated.
+help-msg filename
+The help-msg rule specifies the name of a file to display if the “help” command is issued. If
+this option is not set, a list of internal commands is printed.
+denydest-msg filename
+How to Build a Firewall 419
+The denydest-msg rule specifies the name of a file to display if a user attempts to connect to a
+remote server for which he or she is restricted. If this option is not set, a default message is
+generated.
+authserver hostname [portnumber [cipherkey] ]
+The authserver rule specifies the name or address of a system to use for network authentication.
+If tn-gw is built with a compiled-in value for the server and port, the built-in values will
+be used as defaults but can be overridden if specified in the command line. If the server
+supports DES-encryption of traffic, an optional cipherkey can be provided to secure communications
+with the server.
+hosts host-pattern [host-pattern2 ... ] [ options]
+The hosts rules specify host and access permissions. Typically, a hosts rule will be in the
+form of:
+rlogin-gw: deny-hosts unknown
+rlogin-gw: hosts 192.33.112.* 192.94.214.*
+Several host patterns might follow the “hosts” keyword, ending with the first optional parameter
+beginning with “-”. Optional parameters are:
+-dest pattern
+-dest pattern1 pattern2 ...
+The -dest option specifies a list of valid destinations. If no list is specified, all destinations are
+considered valid. The -dest list is processed in the order it appears on the options line. -dest
+entries preceded with a “!” character are treated as negation entries. The following rule permits
+hosts that are not in the domain “mit.edu” to be connected.
+-dest !*.mit.edu -dest *
+-auth
+The -auth option specifies that the proxy should require a user to authenticate with a valid
+user-id prior to being permitted to use the gateway.
+-passok
+The -passok option specifies that the proxy should permit users to change their passwords if
+they are connected by the designated host. Only hosts on a trusted network should be permitted
+to change passwords, unless token-type authenticators are distributed to all users.
+Installation
+To install rlogin-gw place the executable in a system area, then modify inetd.conf to reflect the
+appropriate executable path. The rlogin proxy must be installed on the rlogin port (port 513)
+in order to function without requiring modified clients. Verify installation by attempting a
+connection and monitoring the system logs.
+420 Part II: Gaining Access and Securing the Gateway
+smap—Sendmail Wrapper Client
+Synopsis
+smap (invoked from inetd)
+Description
+The smap client implements a minimal version of SMTP, accepting messages from over the
+network and writing them to disk for future delivery by smapd. smap is designed to run under
+chroot(2) as a non-privileged process. This arrangement overcomes potential security risks
+presented by privileged mailers running where they can be accessed from over a network.
+smap is invoked from inetd and exits when its session is completed. Each session’s mail is
+recorded in a temporary file in its spool directory, with the SMTP envelope encoded in the
+heading of the file. To coordinate processing with smapd the file is locked while it is being
+written. As a secondary means of signaling when a message is completely gathered, the mode of
+the file, which is initially 644, is changed to 755. In this manner the system can identify
+truncated or partial files left after a system crash or reboot.
+Options
+smap takes no command-line options. All configuration rules in netperm-table for application
+“smap” are read, and the following clauses and parameters are recognized:
+userid name
+The userid option specifies the userid that smap should run under. The name can be either a
+name from the password database, or a numeric user-ID. This userid should be the same as the
+ID under which smapd runs, and should have write permission to the spool directory.
+directory pathname
+The directory option specifies the spool directory where smap should store incoming messages.
+A chroot(2) system call is used to irrevocably make the specified directory the root filesystem
+for the remainder of the process.
+maxbytes value
+maxbytes specifies the maximum size of messages to gather, in bytes. If no value is set, message
+sizes are limited by the amount of disk space in the spool area.
+maxrecip value
+The maxrecip option specifies the maximum number of recipients allowed for any message.
+This option is only for administrators who are worried about the more esoteric denial of
+service attacks.
+How to Build a Firewall 421
+timeout value
+This option specifies a timeout, after which smap should exit if it has not collected a message.
+If no timeout value is specified, smap will never time out a connection.
+Installation
+To install smap, locate the spool directory where mail will be collected. Identify the userid that
+smap will run as (generally daemon), and make sure that it owns the spool directory. Install
+smap in /etc/inetd.conf as follows (pathnames may change):
+smtp stream tcp nowait root /usr/local/etc/smap smap
+After modifying /etc/inetd.conf you need to signal inetd to reload its configuration information;
+you also need to make sure that sendmail is no longer running on the system.
+In the spool directory, it may be necessary to make an /etc directory with system-specific
+configuration files if the C support library on the host Unix requires them. Usually, the best
+recommendation is to build smap so that it is completely standalone; that is, a statically-linked
+executable that is linked to a resolver library that will not crash if it is unable to read /etc/
+resolv.conf. A small number of support files (/etc/hosts, /etc/resolv.conf) may be required. Be
+careful not to install any device files or executables in the spool directory. Test installation by
+using telnet to connect to the SMTP port.
+Note smap assumes that smapd will also be running on the system.
+smapd—Sendmail Wrapper Daemon
+Synopsis
+smapd (invoked from rc.local)
+Description
+The smapd daemon periodically scans the mail spool area maintained by smap and delivers any
+messages that have been gathered and stored. Mail is delivered via sendmail and the spool file is
+deleted. If the mail cannot be delivered normally, smapd can be configured to store spooled
+files to an area for later examination.
+Options
+smapd takes no command-line options, and reads its configuration information from the
+firewall Toolkit configuration file netperm-table. All configuration rules in netperm-table for
+application “smapd” are read, and the following clauses and parameters are recognized:
+executable pathname
+422 Part II: Gaining Access and Securing the Gateway
+The executable option specifies the pathname of the smapd executable itself. For historical
+reasons, smapd forks and execs copies of itself to handle delivering each individual message.
+This entry is mandatory.
+sendmail pathname
+The sendmail option specifies an alternate pathname for the sendmail executable. smapd
+assumes the use of sendmail but does not require it. An alternate mail delivery system can
+replace sendmail, but to do so it needs to be able to accept arguments in the form of:
+executable -f fromname recip1 [recip2 ...]
+The reason for this requirement is the exit code from the mailer is used to determine the status
+of delivery. Replacements for sendmail should use similar exit codes.
+baddir pathname
+The baddir option specifies a directory where smapd should move any spooled mail that
+cannot be delivered normally. This directory must be on the same device as the spool directory
+because the rename(2) system call is employed. The pathname specified should not contain a
+trailing forward slash (/).
+userid name
+The userid option specifies the userid under which smapd should run. The name can be either
+a name from the password database, or a numeric user-ID. This userid should be the same as
+the one smap uses when it runs, and should have write permission to the spool directory.
+directory pathname
+The directory option specifies the spool directory in which smapd should search for files.
+smapd should have write permission to this directory.
+wakeup value
+wakeup specifies the number of seconds smapd should sleep between scans of the spool
+directory. The default is 60 seconds.
+Installation
+To install smapd configure the executable and directory options in netperm-table and add
+them to /etc/rc.local. A sample netperm-table configuration for ssmap and smapd looks like
+this:
+# email wrapper control
+smap, smapd: userid 4
+smap, smapd: directory /mail/inspool
+smapd: executable /usr/local/etc/smapd
+smap: maxrecip 4000
+smap: maxbytes 1048576
+smap: timeout 3600
+How to Build a Firewall 423
+In this example, both smap and smapd are running with user-id #4 (uucp) in the spool
+directory /mail/inspool. Because sendmail is not running in daemon mode, messages that
+cannot be delivered and are queued must be delivered by periodically invoking sendmail to
+process the queue. To do this, add something similar to the following line in the crontab file:
+0,30 * * * * /usr/lib/sendmail -q > /dev/null 2>&1
+tn-gw—telnet Proxy Server
+Synopsis
+tn-gw [invoked from inetd]
+Description
+tn-gw provides pass-through telnet proxy services with logging and access control. When tn-gw
+is invoked from inetd, it reads its configuration and checks to see if the system that has just
+connected is permitted to use the proxy. If not, tn-gw shuts down the connection, displays a
+message, and logs the connection. If the peer is permitted to use the proxy, tn-gw enters a
+command loop in which it waits for a user to specify:
+n The system he or she wants to connect to
+n The X-gateway he or she wants to invoke
+c[onnect] hostname [port]
+Connects to a host.
+sol-> telnet otter
+Trying 192.33.112.117 ...
+Connected to otter.
+Escape character is ‘^]’.
+otter telnet proxy (Version V1.0) ready:
+tn-gw-> help
+Valid commands are:
+connect hostname [port]
+x-gw [display]
+help/?
+quit/exit
+tn-gw-> c hilo
+HP-UX hilo A.09.01 A 9000/710 (ttys1)
+login: Remote server has closed connection
+Connection closed by foreign host.
+sol->
+Because of limitations in some telnet clients, options negotiation may possibly fail; such an
+event will cause characters not to echo when typed to the tn-gw command interpreter.
+x-gw [display/hostname]
+424 Part II: Gaining Access and Securing the Gateway
+The x-gw option invokes the x-gateway for connection service to the user’s display. The default
+display (without the argument) is the connecting hostname followed by port number 0.0.
+Options
+tn-gw reads its configuration rules and permissions information from the firewall configuration
+table netperm-table, where it retrieves the rules specified for “tn-gw.” The following configuration
+rules are recognized:
+userid user
+This option specifies a numeric user-id or the name of a password file entry. If this value is
+specified in-gw will set its user-id before providing service. Note that this option is included
+mostly for completeness; tn-gw performs no local operations that are likely to introduce a
+security hole.
+directory pathname
+directory specifies a directory to which tn-gw will chroot(2) prior to providing service.
+prompt string
+The prompt option specifies a prompt for tn-gw to use while it is in command mode.
+denial-msg filename
+denial-msg specifies the name of a file to display to the remote user if he or she is denied
+permission to use the proxy. If this option is not set, a default message is generated.
+timeout seconds
+The timeout option specifies the number of seconds the system should remain idel before it
+disconnects the proxy. Default is no timeout.
+welcome-msg filename
+welcome specifies the name of a file to display as a welcome banner after a successful connection.
+If this option is not set, a default message is generated.
+help-msg filename
+The help option specifies the name of a file to display if the “help” command is issued. If this
+option is not set, a list of internal commands is printed.
+denydest-msg filename
+The denydest-msg option specifies the name of a file to display if a user attempts to connect to
+a restricted remote server. If this option is not set, a default message is generated.
+authserver hostname [portnumber [cipherkey]]
+How to Build a Firewall 425
+The authserver option specifies the name or address of a system to use for network authentication.
+If tn-gw is built with a compiled-in value for the server and port, these values will be used
+as defaults but can be overridden if specified as above with the authserver clause. If the server
+supports DES-encryption of traffic, an optional cipherkey can be provided to secure communications
+with the server.
+hosts host-pattern [host-pattern2 ... ] [ options]
+The hosts rules specify host and access permissions. Typically, a hosts rule will be in the
+form of:
+tn-gw: deny-hosts unknown
+tn-gw: hosts 192.33.112.* 192.94.214.*
+Several host patterns may follow the “hosts” keyword; the last pattern appears right before the
+optional parameter, which begins with “-”. Optional parameters include:
+-dest pattern
+-dest pattern1 pattern2 ...
+-dest specifies a list of valid destinations. If no list is specified, all destinations are considered
+valid. The -dest list is processed in the order it appears on the options line. -dest entries
+preceded with a “!” character are treated as negation entries. For example, the following rule
+permits hosts that are not in the domain “mit.edu” to be connected.
+-dest !*.mit.edu -dest *
+-auth
+The -auth option specifies that the proxy should require a user to authenticate with a valid
+userid prior to being permitted to use the gateway.
+-passok
+The -passok option specifies that the proxy should permit users to change their passwords if
+they are connected by the designated host. Only hosts on a trusted network should be allowed
+to change passwords, unless token-type authenticators are distributed to all users.
+Installation
+To install tn-gw place the executable in a system area, then modify inetd.conf to reflect the
+appropriate executable path. The telnet proxy must be installed on the telnet port (port 23) to
+function properly. This is because many client-side implementations of the telnetd command
+disable options processing unless they are connected to port 23. In some installations this may
+cause a dilemma.
+In a conventional firewall, where the proxy server is running on a system that does not support
+user access, one solution is to install tn-gw on the telnet port, and to install telnetd on another
+port so that the systems administrator still can access the machine. Another option is to permit
+426 Part II: Gaining Access and Securing the Gateway
+rlogind to run with netacl protecting it so that only a small number of administrative machines
+can even attempt to log in. Verify installation by attempting a connection, and monitoring the
+system logs.
+x-gw—X Gateway Service
+Synopsis
+x-gw [display/hostname]
+Description
+x-gw provides a user-level X connection service under tn-gw and rlogin-gw access control.
+Clients can be started on arbitrary Internet hosts, and can then request to display on a virtual
+display running on the firewall. When the connection request arrives, x-gw pops up a window
+on the user’s real display asking for confirmation before permitting the connection. If granted,
+x-gw passes data between the virtual display and the user’s real display.
+To run X through the firewall, exceptions have to be made in router configuration rules to
+permit direct connectivity to ports from 6000 to 6100 on internal systems. x-gw searches for
+an unused lowest port for the X connection, starting from 6010 and listening for connections.
+Each time an X client application on a remote system starts, a control connection window
+pops up on the user’s screen asking for confirmation before permitting the connection. If
+granted, the connection is handled by an individual x-gw child daemon to serve multiple
+simultaneous connections separately with its own buffed data flow. The child daemon cleans
+up the buffed data and exits if a connection is closed by either end.
+Example
+The following example illustrates establishing a connection through the telnet proxy, and
+starting the X gateway:
+sol-> telnet wxu
+Trying 192.33.112.194...
+Connected to wxu.tis.com.
+Escape character is ‘^]’.
+wxu.tis.com telnet proxy (Version V1.3) ready:
+tn-gw-> x
+tn-gw-> exit
+Disconnecting...
+Connection closed by foreign host.
+A window pops up on the user’s screen showing the port number of the proxy to use, and acts
+as the control window. Clicking on the exit button will close all multiple simultaneous X
+connections.
+How to Build a Firewall 427
+Options
+display/hostname
+The display option specifyiesa destination display where the user wants applications to appear.
+By default x-gw will use the connecting host name followed by port number: 0.0, if the
+argument is not specified. The 0.0 port is also a default number if the user sets the display to a
+host name.
+Installation
+To install x-gw place the executable in a system area, then modify netperm-table to reflect the
+appropriate executable path. The location of x-gw is compiled into the components of the
+firewall Toolkit in tn-gw and rrlogin-gw, based on the netperm-table.
+SATAN and the Internet Inferno 429
+SATAN and the Internet Inferno
+C H AP T E R C H AP T E R C H A P T E R C H A PT ER C H A PTE R CHA P TER CHAPT E R C H A P T E R
+W
+8
+e walked together towards the shining light,
+discussing things that here are best kept silent,
+as there they were most fitting for discussion.”
+—Dante Alighieri, Inferno
+Some people think that open discussion of network
+security problems is an invitation to disaster. Claiming
+“security through obscurity” to be an additional layer of
+protection, they are content to trust software creators
+and vendors to protect their systems. The release of the
+SATAN program in April 1995 created an uproar
+with this group. A few of them even tried to get the
+government to halt SATAN’s release.
+430 Part II: Gaining Access and Securing the Gateway
+SATAN, a Unix program that quickly checks for the presence of vulnerabilities on remote
+systems, offers an easy way for the average user to quickly examine the network security of
+computer systems. Although a few other similar programs had been available before, including
+an early version of SATAN, no other program ever caught the imagination of the media to the
+extent that SATAN did. The interesting name, the uniqueness of one of the creators, and the
+topic of Internet security certainly added to the publicity of SATAN; however, SATAN did
+contribute materially to network security monitoring in other ways.
+SATAN features an easy-to-use interface, an extensible framework, and a scaleable approach to
+checking systems. First, the user interface consists of HTML pages that are used through a
+Web browser such as Mosaic or Netscape. A user can learn quickly and easily to use SATAN
+by pointing and clicking on these Web pages. Second, although SATAN is available with
+several security tests built in, the general structure of SATAN permits a user to easily add
+additional probes. Finally, SATAN can easily be used to check many systems in a quick,
+automated scan. These three innovations made the release of SATAN a significant advance in
+the field of network security programs.
+The primary contribution of SATAN, however, is its novel approach to security. It takes the
+view that the best way a system administrator can ensure the security of a system is by considering
+how an intruder would try to break into it. The creators of SATAN first created the
+program to automate attacks, described in a paper called “Improving the Security of Your Site
+by Breaking Into It” (Farmer & Venema, 1993).
+An analogy might clarify the importance of SATAN. In some ways, the Internet can be
+compared to an electronic version of a large neighborhood. If, one night, you forget to lock
+one of your windows in your neighborhood, it may not matter. If you live in a nice neighborhood,
+you might leave it open on purpose. However, if a burglar tried to break into your house
+on the night that a window was left open, it would certainly simplify his job.
+Now, imagine that someone invented a device that would scan a neighborhood and report all
+the houses that had windows or doors unlocked. In the hands of a conscientious apartment
+manager or policeman, such a tool would help to ensure the safety of the neighborhood. In the
+hands of a burglar, however, such a tool would make finding a vulnerable home quite easy.
+SATAN is that device for the Internet.
+Using SATAN, hackers anywhere in the world can scan every networked system on the
+Internet. These potential intruders do not have to be particularly bright, because SATAN is
+easy to use. These intruders do not have to have accounts on the target systems, or even be in
+the same country as the systems, because the Internet offers worldwide connectivity. These
+intruders do not even have to know about the existence of the systems, because network ranges
+can be used for targets.
+For a conscientious system administrator, SATAN can be used to ensure the safety of the
+networked hosts. However, because every intruder in the world can quickly identify vulnerable
+hosts, it “raises the bar” of required security to new heights. If you “live in a nice neighborhood,”
+meaning that your network is behind a well-maintained firewall and the vast majority
+SATAN and the Internet Inferno 431
+of users are trustworthy, you may not need as much security. However, for hosts directly on
+the Internet, relying on the obscurity of open windows is no longer acceptable. The windows
+must always be locked.
+Before describing the SATAN program in great detail, this chapter investigates the nature of
+network attacks. A detailed explanation of how a hacker, with nothing more than Internet
+access, would manually gather information about a target is then presented. Next, the exact
+details on the security holes searched for by SATAN are studied, as well as other network
+holes. Finally, SATAN is examined, including an example of extending SATAN to cover a new
+security problem.
+The important message that SATAN brings is this: thinking like an intruder can help you to
+improve the security of your systems.
+This section describes some of the general issues surrounding network security, the topic that
+SATAN was designed to investigate. Although no designer consciously puts security holes into
+software, tensions frequently exist between a software program’s ease of use, its functionality,
+and its security. Such tension, combined with the ever-present opportunity for programming
+mistakes by the software designers, have frequently resulted in software programs that include
+security holes. Add configuration errors (netgroup mistakes), user shortcuts (xhost +), and
+organizational policy mistakes (NFS servers on the Internet) to these design flaws, and the
+result is a catalog of vulnerabilities for a wily intruder to prey upon.
+The Nature of Network Attacks
+Some network engineers say that the only way to ensure a networked computer system’s
+security is to use a one-inch air gap between the computer and the network; in other words,
+only a computer that is disconnected from the network can be completely secure from network
+attacks. Although this is a drastic solution, there is always a trade-off between offering functionality
+and introducing vulnerabilities.
+An organized attack on your system will attempt to compromise every software service you
+offer to the network, such as an FTP archive or web server. For example, permitting electronic
+mail to cross from the Internet into your internal organizational network means that the
+firewall must have a network daemon, such as sendmail, listening on the SMTP port (TCP/25)
+and willing to enter into an SMTP protocol exchange with anyone on the Internet. If there are
+weaknesses in the protocol, errors in the design of the daemon, or misconfiguration problems,
+your system and network may be vulnerable. Even though an Internet service, such as NCSA’s
+httpd web server, may be considered quite secure today, new releases may introduce vulnerabilities.
+For example, the introduction of the SITE EXEC command in newer versions of ftpd
+led to the introduction of a security vulnerability. Administrators must be vigilant against
+assuming the long-term security of any Internet service. As new vulnerabilities are discovered,
+administrators can add scans to SATAN to search for these vulnerabilities.
+432 Part II: Gaining Access and Securing the Gateway
+The network protocols themselves can be made secure. New servers that implement the
+modified protocols must be used, however. A protocol and service is “secure enough” when it
+has only ITL Class 0 vulnerabilities, as explained later in this chapter. For example, protocols
+such as FTP or telnet, which currently send the password in the clear over the network, can be
+modified to use encryption. Network daemons, such as sendmail or fingerd, can be made more
+secure by vendors through code review and patching. However, misconfiguration problems,
+such as the improper specification of netgroups, can lead to vulnerabilities. Also, organizational
+policies can be very difficult to enforce. For example, even though the IT department of an
+organization recommends that all computer systems avoid using “+ +” in .rhosts files, it can be
+difficult to enforce this rule. The IT deparment can use SATAN to enforce organizational
+policies by periodically using SATAN to scan all the hosts in the organization.
+It is rare to find an organization that has complete control over its computer network. Only
+the smallest organizations can easily claim daily control over the configuration of all their
+computer systems. In a large organization, policies and IT groups can and should try to set
+guidelines for systems, such as not permitting unrestricted NFS access, but the distributed
+nature of networked systems make this control uncertain.
+Many groups and individuals are able to make daily configuration changes to systems on the
+network, and one vulnerability on any host can endanger the entire network. For example, 500
+computers on the U.S. Department of Defense’s Milnet network were successfully attacked in
+early 1995 because of a single unauthorized Internet gateway that accidentally offered a
+vulnerability (Leopold, 1995).
+With such a dynamic and distributed environment, frequent automated verification is a
+valuable tool for control. An IT organization can use SATAN to gain such control.
+Internet Threat Levels (ITL)
+Before looking at potential holes, it is useful to create a classification scale to categorize security
+holes. This has not been done previously and is introduced in this book as a suggestion for
+vendors and organizations when prioritizing security problems. This is called the Internet
+Threat Level scale, or ITL scale. The lowest threat falls into ITL Class 0, and the greatest threat
+falls into ITL Class 9. Table 8.1 provides descriptions of each ITL Class.
+Most security problems can be classified into three major categories, depending on the severity
+of the threat posed to the target systems:
+n Local threats
+n Remote threats
+n Threats from across firewalls

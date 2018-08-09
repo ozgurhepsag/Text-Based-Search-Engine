@@ -1,0 +1,750 @@
+•  Don't commit unless you can deliver. If you promise an ER session, make certain 
+you can deliver. I almost lost all credibility in a turnaround situation when the CEO 
+of my company told me that I couldn't do an ER session because he had promised a 
+new feature to a key customer. It took some stringent negotiation, including a few 
+heated meetings, but in the end we had the session before we attempted to deliver 
+the promised feature. Avoid this pain and make certain you have appropriate senior 
+executive buy-in for ER. 
+Architectural Care and Feeding In addition to architectural maturation and evolution, which are driven by features and the capabilities 
+that support them, the development team must also care for and feed their architecture. An architecture 
+is like a carefully designed garden. Unless you tend it, it will soon become unruly, overgrown with the 
+wasteful vestiges of dead code. Ignore it long enough and you'll find that your only recourse is to 
+make massive—and very costly—changes to correct the neglect. Architectural care and feeding isn't 
+about adding new features or capabilities; it is about keeping the features and capabilities that you've 
+got in good shape. 
+Consider the following care and feeding forces that shape the architecture. Many of them are 
+discussed in greater detail in subsequent chapters. 
+Technological Currency 
+Every complex application interacts with a wide variety of fundamental technologies. Staying current 
+with technological advances as your product evolves ensures that you won't have to engage in 
+expensive redesign. Technological advances are often the key to providing additional benefits to your 
+users. The result? A double win. It doesn't hurt your marketing department either, as the phrase "new 
+and improved" will actually mean something. 
+Technological Debt 
+Developers are constantly struggling to release the system on time while creating appropriate long-
+term solutions. Successful software teams know when and how to compromise on technical issues in 
+order to hit the ship date. More bluntly, successful software teams know when they need a potentially 
+ugly hack to get the system to a shippable state. The problem with hacks is not in the current release 
+(which needed them to ship) but in subsequent releases, when the so-called compromise makes itself 
+known, often exacting a heavy toll to fix it. 
+These compromises are another kind of technical debt, similar to that incurred when you implement a 
+feature without the underlying capability. Part of architectural care and feeding is paying down this 
+debt. 
+Known Bugs 
+Every complex application ships with bugs, which you can think of as pestiferous weeds. Leaving 
+them in your garden, especially when they are big enough to be seen, can take an unnecessary toll on 
+your development staff. Give them some time to fix the bugs they know about and you'll end up with 
+happier developers—and a better architecture. You also foster a cycle of positive improvement, in 
+which every change leaves the system in a better state. 
+License Compliance 
+Complex applications license critical components from a variety of vendors. As described above, as 
+they upgrade their technology you respond in kind to keep pace. Of course, sometimes you may not 
+need their new technology and are better off directing your development efforts elsewhere. Watch out 
+though: Wait too long and you risk falling out of compliance with your component vendors. 
+Remember to review each vendor's upgrade. Know when you must upgrade your architecture to 
+maintain compliance. License compliance is discussed in greater detail in Chapter 5. I invite you to add your own categories for architectural care and feeding. Be careful not to confuse 
+radical changes in feature sets that require similarly radical changes in architectural design with the 
+kinds of changes described above. Scaling a departmental application designed for 100 users to an 
+enterprise application that can handle 1,000 users or converting an application whose business model 
+is based on an annual license to one based on transaction fees is not the kind of architectural change 
+I'm talking about! Such changes require fundamentally new capabilities and substantial modification 
+of the architecture. 
+Principles First, Second, and Third 
+Creating, maturing, evolving, and sustaining an architecture are guided by the design choices made by 
+architects and developers. All choices are not equal. Some are downright trivial and have no bearing 
+on the architecture; others are quite profound. All software developers, and architects in particular, 
+must hone their ability to recognize better design alternatives. This means, of course, that we must 
+have criteria for evaluating design alternatives and that we must apply them as best we can. The 
+following principles for good architectural design have stood the test of time. 
+Encapsulation 
+The architecture is organized around separate and relatively independent pieces that hide internal 
+implementation details from each other. A good example is a telephone billing system. One part of the 
+system, such as the switch, is responsible for creating, managing, and tracking phone calls. Ultimately, 
+detailed transaction data are created for every phone call (who called whom, for how long, and so 
+forth). These data are fed into separate billing systems, which manage the complexities of calculating 
+a precise fee based on the contract between the telephone company and the customer. 
+Within each of these broadly encapsulated systems are other encapsulations that make sense. For 
+example, the billing system is likely to have separate modules for calculating the basic bill, calculating 
+any discounts, calculating appropriate taxes, and so forth. 
+Interfaces 
+The ways that subsystems within a larger design interact are clearly defined. Ideally, these interactions 
+are specified in such a way that they can remain relatively stable over the life of the system. One way 
+to accomplish this is through abstractions over the concrete implementation. Programming to the 
+abstraction allows greater variability as implementation needs change. 
+Consider a program originally designed to write output to a file. Instead of programming directly to 
+the interface provided by a file, program an output mechanism to the abstract interface, which in many 
+languages is referred to as an output stream. This allows the program to direct output to a file stream, 
+the standard output stream, an in-memory string stream, or any other target consistent with this 
+interface, even, and especially, those not yet envisioned by the original developer. Of course, what is 
+most important is defining the initial interface, something that can almost only be done well through 
+experience. 
+Another area in which the principle of interfaces influences system design is the careful isolation of 
+aspects of the system that are likely to experience the greatest amount of change behind stable 
+interfaces. ODBC and related APIs provide an example of this principle in action. By programming to 
+ODBC, a developer insulates the system from a common dimension of change: the specific selection 
+of a database. Using ODBC a developer can switch relatively easily from one SQL-based database to another. Bear in mind that this flexibility comes with its own special cost—you give up the "goodies" 
+that are present in vendor-specific APIs. 
+Loose Coupling 
+Coupling refers to the degree of interconnectedness among different pieces in a system. In general, 
+loosely coupled pieces are easier to understand, test, reuse, and maintain, because they can be isolated 
+from other pieces of the system. Loose coupling also promotes parallelism in the implementation 
+schedule. Note that application of the first two principles aides loose coupling. 
+Appropriate Granularity 
+One of the key challenges associated with loose coupling concerns component granularity. By 
+granularity I mean the level of work performed by a component. Loosely coupled components may be 
+easy to understand, test, reuse, and maintain in isolation, but when they are created with too fine of a 
+granularity, creating solutions using them can be harder because you have to stitch together so many 
+to accomplish a meaningful piece of work. Appropriate granularity is determined by the task(s) 
+associated with the component. 
+High Cohesion 
+Cohesion describes how closely related the activities within a single piece (component) or among a 
+group of pieces are. A highly cohesive component means that its elements strongly relate to each 
+other. We give the highest marks for cohesion to components whose elements contribute to only one 
+task. 
+Parameterization 
+Components can be encapsulated, but this does not mean that they perform their work without some 
+kind of parameterization or instrumentation. The most effective components perform an appropriate 
+amount of work with the right number and kind of parameters that enable their user to adjust their 
+operation. A sophisticated form of parameterization, referred to as "inversion of control," occurs 
+within frameworks and plug-in architectures. This is where one component hands over processing 
+control to another. 
+Deferral 
+Many times the development team is faced with a tough decision that cannot be made with certainty. 
+Sometimes this is because of technical reasons, as when the team is trying to choose a library to 
+perform a specific function and are not certain which vendor can provide the best performance. 
+Sometimes it is because of business reasons, as when the product management team is negotiating 
+with two or more technology providers for the best possible terms. 
+By deferring these decisions as long as possible, the overall development team gives themselves the 
+best chance to make a good choice. While you can't defer a decision forever, you can quarantine its 
+effects by using the principles of good architectural design. 
+Creating Architectural Understanding Let's return to the definitions of software architecture provided earlier. An important criterion for the 
+development team is that they have some way to identify, describe, communicate, and modify their 
+understanding of the architecture, without resorting to the source code. One or more models must exist 
+in order for the team to actually operate at the "big picture" level. There are a variety of models for 
+doing this, and I've had good success with several of them. Recently, I adopted the Rational "4+1" 
+model, which captures several of the most useful models in one convenient approach (see the 
+references for other models you may wish to consider). 
+Based primarily on resolving the needs of key participants in the software process, the Rational 4+1 
+model recommends four primary views of the architecture, as shown in Figure 1-1. Philippe Kruchten, 
+the creator of 4+1, defines these views as follows: 
+•  Logical view. The logical view provides the static snapshot of the relationships that exist 
+among objects or entities in the development of the system. This view may actually have two 
+or more representations, one of the conceptual model and the other of the realization of the 
+model in a database schema. 
+•  Process view. The process view describes the design's concurrency and synchronization 
+aspects. 
+•  Physical view. The physical view describes the mapping of the software onto the hardware, 
+including distribution of processing components created to achieve such goals as high 
+availability, reliability, fault tolerance, and performance. 
+•  Development view. The development view describes the software's static organization in its 
+development environment. 
+Figure 1-1. Rational 4+1 model 
+ 
+Software designers can organize their architectural decisions around the four views. To make the 
+system easier to understand, each view can be described in the context of few key use cases (all of the 
+use cases constitute the "+1" architectural view. In truth, this approach should be referred to as "n+1", because nothing in it restricts the architect to 
+just four views. Indeed, all of the major disciplines for representing software architectures explicitly 
+recognize the need for multiple views for correct architecture modeling. As near as I can tell, no one 
+dogmatically requires that you use exactly three or five views. Instead, they encourage you to 
+understand the communication properties of a given view and then use this view as needed. 
+This shouldn't be surprising, as the concept of multiple models of complex systems is quite common. I 
+have both built and remodeled homes and in the process have learned to carefully read the many 
+models of the home produced by the architect—from the site plan to the electrical plan to the lighting 
+plan to the elevations and to the plumbing plan. The specialized and skilled workers creating a home 
+need all of these models, and to the extent possible I want to make certain that they will result in a 
+home I will like. 
+The value of plans, like the various viewpoints of architecture promoted by Rational and others, is that 
+they provide artifacts of relatively enduring value to the team. More generally, the parts of the 
+architecture whose capture is worthy of your time, energy, and money deal with the relatively stable 
+aspects of the problem, the problem domain, the business model (see Chapter 4), and the idiosyncratic 
+aspects of the technical solution that exist between all of these things. 
+The Team 
+The architectural creation, maturation, and evolution process cannot be separated from the team 
+associated with each release. In this section I will share some thoughts on the interplay between the 
+architecture and the team. A more complete discussion can be found in my book, Journey of the 
+Software Professional [Hohmann, 1996]. 
+It is natural to first consider the initial development team. Remember that, as the creators of the first 
+system, these people are making design choices based primarily on their experience. While subsequent 
+teams must deal with the choices made by this first team, in some way or another, the first team has no 
+such constraints (this is one powerful reason so many developers are drawn to working on new 
+systems). Because of this, any new architecture, even one based on an architectural pattern, will reflect 
+the idiosyncratic experience of its creators. The number of people involved in creating the 
+architecture, and their relationship with each other, will also profoundly affect the initial architecture. 
+Simply put, there is no way to isolate the team from the architecture. 
+Experience has shown that creation of the initial architecture should be by as small a team as possible, 
+to minimize communication overhead and to maximize team cohesion. As subsystems are defined, 
+planned, or retrospectively justified, the team will naturally allocate responsibilities to reflect the skills 
+of its members. Suggestions for the initial team range from as few as three to a maximum of ten. My 
+recommendation is three to five, with one identified as the architect, primarily to keep the team 
+moving (see Chapter 3 for a more complete description of the role of the architect). 
+With the release of a successful initial architecture, the team often grows to accommodate additional 
+requests for features and capabilities. It is natural to grow the team within the initial architecture's 
+boundaries. Perhaps the user interface, which was once handled by one developer, is expanded to need 
+three. Or perhaps the database, which originally could be managed by a single developer, now needs 
+two. In this manner subteams spontaneously emerge in a way that reinforces the initial architecture. 
+The advantage to this model is that the original team member, who is now part of the subteam, can 
+carry over the overall design and share it with new subteam members. The process of growing the team continues until the team and the architecture have stabilized or until 
+some management-induced limit has been reached. Some companies limit the size of any given team 
+to a specific number of people in order to maintain a fluid, open, and collaborative approach to 
+communication. Other companies allow teams to grow as needed to meet the needs of the system. I 
+consulted on one defense department contract in which the development team consisted of more than 
+150 C++ developers, organized into about a dozen subsystems. Although this was a fairly large team, 
+it was extremely effective primarily because it allowed the demands of the problem to dictate its size 
+and structure. 
+The most important thing to remember is that the team and the system architecture are intertwined. 
+They affect, and are affected by, each other. 
+ 
+Chapter Summary 
+•  Software architecture is focused on the big picture. 
+•  The structure of the team and the structure of the system are inevitably intertwined. 
+•  Architecture concerns both technical and nontechnical issues. 
+•  Key reasons why architecture determines success include: 
+- Longevity: The typical architecture will outlast the team that created it. 
+- Stability: Stable architectures provide the foundation for features and profits. 
+- Competitive advantage: Great architectures create sustainable competitive advantage. 
+- Architectural patterns provide excellent places to begin when creating a new architecture. 
+•  Architecture evolves through features and capabilities. A feature defines something that a 
+product does or should do. A capability refers to the underlying architecture's ability to 
+support a related set of features. 
+•  Architectures, like gardens, require care and feeding. 
+•  Be wary of anyone who claims they are an architect after just one release. 
+ 
+Check This 
+•  The dependencies that exist between subsystem components are clearly identified. 
+•  Each person on the team is working on a subsystem that he or she finds personally interesting. 
+•  Each person on the team is working in a way believed by all to improve productivity. 
+•  Our architecture is profitable. 
+•  We know if our current release is focusing on issues of evolution or issues of maturation. 
+•  We understand the degree of technical debt we've incurred in our system. We can identify 
+such debt (e.g., we have placed special comments in our source code identifying areas to fix). 
+•  We are in proper compliance with all in-licensed components (see also Chapter 5). 
+•  The architect has articulated the principles that are driving architectural choices. 
+•  Our team is about the right size to accomplish our objectives—neither too large nor too small. Try This 
+1.  One way to summarize my position on software architecture is that I see software architecture 
+as organic. This position informs a host of management practices, including such things as 
+spending time in each release caring for and feeding the architecture. What is your position on 
+software architecture? How does this position affect your management practices? 
+2.  Here is an exercise that I've found especially helpful when working with troubled 
+development teams, because it helps me identify potential sources of confusion and/or 
+conflict. Ask members of your team to take a plain sheet of paper and draw the architecture of 
+the system. They have to draw it, meaning that they can't just fish out some diagram and print 
+it. The drawing must be done individually, with no talking between team members. When 
+finished, tape each of the drawings to a wall to create an "architecture gallery." What occurs 
+to you, and each member of your team, as you review these diagrams? Do you find 
+congruence? If not, why not? 
+3.  Do you have a visual representation of your architecture posted in an easily viewed space? If 
+not, why not? If yes, when was the last time it was updated? 
+4.  Can you enumerate the capabilities of your current architecture? 
+5.  Check out the definitions of software architecture posted at http://www.sei.cmu.edu/. Which 
+of the posted definitions work best for you? Why? 
+6.  What are the specific artifacts, or views, that you have created to describe your architecture? 
+Why have you created them? 
+Chapter 2. Product Development Primer 
+Many software developers are at a decided disadvantage in creating winning solutions because they 
+don't understand many basic and important concepts in product management. This chapter outlines 
+crucial concepts and processes in product management, including defining the product manager role. 
+If you're comfortable with these basic principles already you may find it sufficient to skim this 
+chapter. If not, you should read it carefully. 
+What Is Product Management? 
+Like software architecture, product management has a variety of definitions. One that I've found 
+useful is as follows: 
+Broadly speaking, the product manager has two responsibilities. First, the product manager is 
+responsible for planning activities related to the product or product line. Thus, the product manager's 
+job involves analyzing the market, including customers, competitors, and the external environment, 
+and turning this information into marketing objectives and strategies for the product. Second, the 
+product manager must get the organization to support the marketing programs recommended in the 
+plan. [Lehmann and Winer, 2002] 
+My own definition is a bit simpler: Product management is the comprehensive set of activities 
+required to create and sustain winning solutions. It is like software architecture in that it is also about 
+"the big picture." In reality, though, the big picture of product management is an even bigger picture 
+than that of software architecture. Product managers deal with everything from pricing the product to 
+creating data sheets, from defining and educating the sales channel to monitoring the behavior of 
+competitors. The job is no less difficult than that of an architect and in some ways is considerably 
+harder.  
+Why Product Management Matters 
+Perhaps I've convinced you that architecture matters. Now a potentially more difficult task is 
+convincing you that product management matters. I'm hopeful that I can do this, because product 
+management is as at least as important as software architecture, if not more so. 
+Let me start with the blunt approach: Technology alone doesn't win. That you're first, fastest, best, 
+coolest, or "obvious" does not mean that you will win in the market. Product management matters 
+because simply building the technically right product isn't enough. A host of complex and interrelated 
+activities, from establishing pricing models to building useful partnerships, is needed to ensure total 
+product success. If any one of these vital activities are weak the product is at risk of failure. 
+Successful product management provides the same benefits as a successful software architecture. 
+Chief among these is profitability, in that successful product management will create truly profitable 
+products and companies. Unlike software, where terminated projects are considered failures, 
+successful product managers routinely subject projects to rigorous examination and terminate those 
+that are no longer likely to meet business objectives. What I find most appealing in this approach is 
+that product managers are proactive in terminating projects, whereas many software project managers 
+and architects tend to be reactive—perfectly willing to continue working on a poor project until 
+someone else kills it—and it doesn't have to be this way. This is a topic I will explore later in this 
+chapter. 
+Perhaps the most important reason that product management matters, especially from the perspective 
+of the architect and the development team, is that it should represent the voice of the customer. Good 
+product managers engage in many activities, including direct and indirect market research, that put 
+them in a position to guide the development organization. When you ask them what the customer 
+needs, they can answer. And because their answer is rooted in data and experience, you can believe 
+them and act on their advice in building the system. In practice, these data are captured and expressed 
+in such things as business plans and marketing requirements documents (MRDs). However, before the 
+MRD is created or the system is built, the successful product manager will have already completed 
+several steps in a successful product development process. Before considering some of the important 
+documents associated with successful product management, let's review this process. 
+Product Development Processes: Creating Release 1.0 
+The product development process is the biggest big-picture perspective on the product. My experience 
+is that software development processes, from waterfall to spiral to XP, are each more effective when 
+considered and conducted in this context. This section presents a conceptual foundation of a 
+successful product development process associated with a first release. In the next section, I will show 
+how this foundation can be used to deal with subsequent releases. 
+The process presented in Figure 2-1 organizes product development in stages. These stages, and some 
+of the product management and engineering activities associated with each, are presented to the right. 
+I'm focusing only on product management and engineering. Other activities such as finance, legal, 
+quality assurance, and technical publications, are clearly important to the overall product development 
+process, but a detailed description of their involvement is beyond the scope of this book. 
+Figure 2-1. Product management and engineering processes  
+As you review these steps, keep in mind that the actual sizes of the product management and 
+engineering teams are quite different. A product management team is usually very small when 
+compared with the total engineering/development team. I've worked on products where two to four 
+product managers were easily able to keep 30 to 40 developers busy. Some of my friends report even 
+greater variability. One friend told me about a product manager who was able to keep a team of 50 
+developers satisfied. 
+Another key difference concerns the distribution of work. In the early phases of the project, product 
+management may be perceived as doing more work than engineering. This is partly because the 
+product management team is producing more tangible results, but mostly because, in a well-run 
+product development process, the early documents created by the product management team are the 
+"high stakes" ones. Many decisions, including those that will affect the product for many years, are 
+being made during the development of these early documents, most notably the business plan. Taking 
+care to create good ones is worth the results. Bright clever ideas form the foundation of the initial product. The best of these fill us with enough 
+passion to take the considerable leap necessary to create a product. Some companies actually 
+formalize this aspect of the overall process in a subprocess called ideation. 
+Concept Proposal 
+The purpose of the concept proposal is to establish sufficient motivation for producing the product. 
+Usually created by a small team, the concept proposal includes enough business data to justify the 
+market and enough technical data to justify feasibility. If neither of these conditions is met, the project 
+is gracefully terminated, in a process I describe in greater detail later in this chapter. 
+Product Proposal/Business Plan 
+The product proposal/business plan is the key document created by the team to justify the product. It 
+outlines a number of important elements so that the business can be certain that the project is justified. 
+It is so important that I will discuss it in depth later. 
+Note that during this phase of product development it is not uncommon for engineering to be doing 
+literally nothing while marketing is creating the business plan. 
+Development Plan 
+After approval of the business plan, the two teams begin the highly collaborative development 
+planning. In this phase, the primary responsibility of marketing is to clarify and prioritize market 
+needs, expressing them as desired features of the target product. In turn, the primary job of 
+engineering is to analyze the dependencies within these features, identify necessary architectural 
+capabilities, create some crude estimates of time required to complete various tasks, evaluate 
+technology solutions, and begin to identify needed resources. Marketing should also take primary 
+responsibility for including other teams, as needed, in the development of the product. 
+The results of this process can range from a formal marketing requirements document (MRD) to an 
+informal set of user stories written on cards and taped to a wall. Indeed, in one system I managed we 
+generated requirements by simply directing questions to a very experienced member of the team, 
+secure in our knowledge that this person would answer each question with unfailing consistency. This 
+was an unorthodox way to obtain and manage requirements, but it worked great. It illustrates that the 
+development team should let the size of the project, the size of the team, and the complexity of the 
+product dictate the formality of the development planning process. Regardless of its ultimate form, the 
+true requirement of a requirement is that it be expressed with a sufficient level of clarity to enable the 
+development team to egage in useful work. 
+At this point the development team will also create whatever analysis, design, or other 
+predevelopment artifacts they feel are appropriate given their project and their chosen development 
+process. The challenge is, of course, in determining the artifacts needed for success. Sometimes 
+informal processes and artifacts work great, as when a development team sketches the design for a 
+new user interface on a whiteboard using an existing system as a model. At other times formal 
+processes and artifacts are required, as when a development team is working on a hardware device and 
+must create a solution within a narrow set of weight, power consumption, and size constraints. Just 
+about every development team should be conducting some experiments based on the continued 
+advancement of various Web-based collaborative technologies. It's surprising how easy it is to 
+improve communication within geographically distributed teams with just a Web site and a digital 
+camera! A useful description of design documents, and the value they provide to the team, is found in Agile 
+Software Development [Cockburn 2002]. Alistair refers to design documents as the residue produced 
+by the development team as they create the system. The goal is to create the minimum amount of 
+residue needed for current and future success. I've found this perspective useful, as it helps me 
+determine if a given design document is worth creating. That said, you must take care in your 
+definition of "development team." My own definition explicitly includes technical publications and 
+QA. These teams can both contribute to the development planning process and benefit from their 
+inclusion in it. 
+Disciplined development organizations usually hold a final review meeting at this point before 
+development begins. The purpose of this review is to assess whether the product can be created within 
+time and cost estimates and to kill the project if it cannot. While it is relatively rare to find 
+organizations killing projects after this stage (most are killed after the concept proposal; many, after 
+the business plan), a well-run product management organization will stop work when it becomes clear 
+that the product cannot be created in a way that will make it a winning solution. 
+Development 
+The next phase of the process deals with actually building the system. I find this stage interesting 
+because product management now focuses its attention on what happens after the product is 
+released—before it is even built. Engineering, on the other hand, is actually creating the product. 
+There are a wide variety of options, here, including traditional development methods and the newer 
+agile methods, such as XP, SCRUM, and Crystal, but since many authors have written a great deal 
+about development and development processes, I won't go into the details. What I will say is that you 
+should adjust your development process according to a variety of factors, including the size of the 
+team and its geographical distribution and the nature of the product. A complete discussion of how 
+these, and other, variables can affect the team and its processes, can be found in my book, Journey of 
+the Software Professional. 
+Modern development practices mandate that working systems should be delivered in reasonably well-
+defined pieces that cascade or overlap. Specifically, development does not happen "all at once." 
+Instead, it is staggered or overlapped so that working versions of the system can be delivered to QA, 
+technical publications, alpha testers, key customers, and other important stakeholders. One example of 
+overlap is when a working system is given to QA to perform initial testing and to refine final test plans 
+while the development team continues to work on the next set of deliverables. 
+Final Quality Assurance 
+The next key phase of the development process is final quality assurance, which comprises a range of 
+activities, each providing a different kind of business value. The foundation is testing—that is, 
+checking that the system created reasonably matches the requirements and providing the product 
+manager with data to help her determine if the system is good enough to ship to the customer (see 
+Appendix C for a thorough discussion of "good enough" software). These data include bug trends, bug 
+reports, workarounds for known problems, and so forth, which the product manager uses, along with 
+other data, to make the ultimate business decision: when to ship and to whom. This decision should be 
+made in collaboration with others involved in the development process. 
+I've been fortunate to work with world-class quality assurance managers. Building on the solid 
+foundation of testing, they understand business strategy and can actively participate in the ship 
+decision. If you're similarly fortunate, learn to include QA's point of view. If not, try to educate your 
+team on the business issues surrounding the product—in the long run you'll get better results. Quality assurance teams can contribute to development areas beyond testing, such as the following: 
+•  Monitoring and, at times, enforcing development process agreements 
+•  Collecting and publishing testing and nontesting metrics 
+•  Assisting developers in root-cause problem analysis (some problems only appear during 
+testing) 
+•  Helping support and services organizations understand workarounds and/or replicate 
+customer issues 
+•  Managing the source code system and the daily build process, especially when the build 
+process is highly dependent on automation 
+•  Assisting developers in proactively designing the application to make testing easier and/or 
+helping to choose designs that are likely to be more correct 
+•  Participating in the requirements management process, including testing the requirements 
+Participation in these areas is not concerned with final quality assurance, which is only one part of 
+product development. Rather, they represent the broadening of QA's role and its inclusion in other 
+development processes. Ultimately, QA participation in any of these activities depends on the specific 
+skills and experiences of the QA team. 
+Since modern development requires QA involvement, you might argue against the need for final 
+quality assurance. This sounds good in theory, but every complex system that I've worked on has 
+required final quality assurance before delivery to a customer. Instead of trying to eliminate final 
+quality assurance through developer-centric automated testing, leverage this testing with final QA. 
+The net result is higher quality. 
+Prelaunch 
+On or near the successful completion of the system, the development process moves into the 
+prelaunch phase. Depending on the estimated time of final quality assurance, prelaunch can happen in 
+parallel with this phase or after. One way to characterize this phase is that the work of the engineering 
+team begins to decrease while that of product management begin to increase. The engineering team 
+prepares to hand its work to services and support, prepares the source code for maintenance and future 
+development, and often takes a short break to catch up on sleep. Product management, on the other 
+hand, is often a whirlwind of activity, doing a variety of things to ensure that the product is successful 
+in the marketplace, including everything from preparing sales collateral to meeting with key analysts 
+to make certain they understand the new product. 
+Beware of QA Automation Blinders 
+I'm a strong proponent of the agile development methods, especially those such as XP, that 
+place a heavy emphasis on test driven design. In this approach, developers create test cases 
+before they write any code. As the code is created it is constantly run against these test 
+cases. By the time you've released the system the typical team will have created several 
+thousand test cases for a moderately complex system. 
+Unfortunately, some people believe that test driven design and extensive, automated tests 
+make the need for final quality assurance obsolete. This is a dubious claim, and as the 
+complexity of your software system increases so, too, does the need for final quality 
+assurance for several reasons, including the inevitable blinders that QA automation puts on your developers. 
+To illustrate, one of the products I managed protected software from being illegally copied 
+by binding the software to a given machine through a "hardware fingerprint." The exact 
+composition of the fingerprint is proprietary, but it includes several physical machine 
+parameters that can collectively identify a machine while allowing the end user to modify 
+several of them (e.g., the processor id or the amount of physical memory). Changing just 
+one or two of these won't invalidate the fingerprint, but change enough of them and the 
+software will stop working to prevent piracy. 
+One of the values used in the fingerprint is the MAC address of the primary Ethernet card. 
+In a Macintosh, this is supposed to be built-in, so my developers created a series of 
+automated tests to ensure the MAC address was always present. They never thought of 
+actually removing the NIC card because they had automation blinders on. Our QA team was 
+able to crash the program in about 10 minutes by simply removing the NIC card and 
+running the automated tests, primarily because they were not wearing automation blinders. 
+More generally, the process of creating and testing the machine fingerprint is characterized 
+by a rather large number of tests that cannot be automated. In these cases, final QA is 
+essential because they aren't blinded by automation, and they were willing to take the time 
+to create the necessary physical configurations needed to properly certify the product. 
+There are other equally important reasons to engage final QA. Multiplatform development 
+requires a careful allocation of resources. What I've found works best is to have the 
+development team create and test the software on the two or three most prevalent or most 
+important platforms. Final QA then confirms the operation of the software on the rest. This 
+approach saves time by saving developers from the inevitable setup and teardown costs 
+associated with loading and testing the program on each platform, and it saves money by 
+allowing the development organization to make a significant investment in a QC lab that 
+can truly represent customer environments. 
+The importance of security in computer systems is yet another strong motivation for final 
+QA performed by a separate organization. It is very hard to thoroughly test your own 
+systems for such security loopholes as buffer overflows or inappropriately modifying 
+system resources in a way that leaves them vulnerable to an attack. It is far better to have a 
+separate QA organization perform security tests. 
+Launch 
+While engineering often celebrates the creation of the "golden master," product management usually 
+waits until a launch event. This may be as simple as the official press release or as complex as a 
+special event managed by a public relations firm. A final, but critical, step in the launch phase is some 
+kind of customer-focused monitoring and feedback. When engineering returns from the party, they 
+should be ready to address issues and escalations coming from the field. 
+It Isn't Like That 
+Experienced readers may feel that this interpretation of the product development process has several 
+flaws. Rather than allowing any of these flaws to prevent or distract you from reading further, let me 
+try to address them now. It Is a Waterfall Process and Those Don't Work 
+True, the process presented is reminiscent of a "waterfall", but there are several substantial 
+differences. The most important is that the traditional waterfall described the development phase and 
+related primarily to engineering, not product management. The stages associated with it (requirements, 
+analysis, design, implementation, and test) rarely had sufficiently tough evaluation criteria applied to 
+the work products to fix or address them if they were found lacking in some key measure. 
+Companies that have effective product development practices are most well known for the manner in 
+which the results of each stage are subjected to strictly defined "go/kill" criteria. The overall process is 
+referred to as "stage gate": After each stage, there is a gate, if you do not meet the gate's criteria, the 
+project is killed. These are usually precisely defined financial criteria, which differ dramatically from 
+the very loosely defined criteria for results of a waterfall process. 
+The careful examination and then termination of a project are what most strongly distinguish a stage 
+gate process from a waterfall process. Software developers often mourn the termination of a project. 
+Product managers who are using a stage gate process celebrate it, because it means that the overall 
+process is working. The proof of this is that well-run product-focused companies may kill a project 
+even during beta testing if it finds, despite prior market research and acceptable development costs, 
+that the product does not meet the needs of the market! Examples abound in the retail sector, where 
+countless thousands of new food products and packaging ideas are introduced into small, target 
+markets and then killed before their launch into larger markets. 
+It Presents All Stages as If They Were of Equal Importance 
+This is not my intention. While all of the stages are important, the two most critical stages are concept 
+proposal and product proposal/business plan. To a large extent, the results of these stages drive the 
+rest of the process. It is product management's job to do the hard work associated with these stages to 
+ensure lasting success, which ultimately means creating a sober, credible concept proposal and 
+business plan that demonstrates that the proposed product can become a winning solution. 
+It Doesn't Detail Any Time 
+The amount of time associated with each stage is far too variable to make any estimates as to how 
+long any one stage should take. 
+Where Is the Iteration? 
+When software developers think of iteration, they tend to think of iterative construction practices, like 
+XP or SCRUM. When product managers think of iteration, they tend to think of a variety of 
+techniques that enable them to sharply define the product before construction begins, such as primary 
+and secondary market research, focus groups, and test marketing on prototypes. The differences and 
+their effects are profound. 
+The single biggest differentiator of success in new product development is the amount of homework 
+done before construction is initiated. A successful product will have a full and complete business plan, 
+with clear and sharp definitions for the product, its core features, its target market, the planned-for 
+business model, and so forth. Of course, any of these may change during construction based on new 
+data, but before construction begins the product must be defined. I am not advocating a return to waterfall construction practices, as my experience with them is that 
+they don't work. Perhaps the following analogy will help me make my point. Imagine that you are an 
+explorer and you've just crossed a mountain pass and entered a strange new land. You have at your 
+disposal a variety of gear that can help you navigate mountains, valleys, deserts, rain forests, deep 
+lakes, and fast-moving streams. You also have a small, single-person helicopter for reconnaissance. 
+Do you just jump in and start exploring, or do you fire up the helicopter, take a look around, and plot 
+your course? 
+Good explorers fire up the helicopter and plot their course. They know that to the North lies 
+mountains, to the East is a lake, the West has a desert, the South, a rich and deep forest. Armed with 
+this knowledge, they can plot a course: first South, then West, then East, and then, finally, North. 
+Along the way they can prepare the gear they will need, handle issues associated with the terrain as 
+they are navigating it, and build detailed knowledge through exploration. 
+The same goes for product managers. The foundational definition of a product could be 48 high-level 
+use cases, organized in 6 groups. None of the use cases are defined in any detailed way, but their 
+collective structure provides a coherent definition of the desired product. Before any single use case or 
+group of use cases is constructed, the product development team (product management and 
+engineering) detail them (generate more detailed requirements, create or update necessary design 
+documents, and so forth) so that they can do a good job creating the system. 
+It Doesn't Prescribe a Development Process 
+That's correct: Personally, I prefer to use agile development processes. As a manager, I prefer to use 
+the processes that my team believes will help them succeed. From the perspective of the product 
+manager, overall product development process and decisions are usually more important than the 
+idiosyncratic development process followed by the development team. 
+It Doesn't Identify the Level of Collaboration Between Groups within 
+Stages 
+So what? Collaboration between product management and engineering/development is essential to 
+creating winning solutions. There should be constant communication among these groups. Figure 2-1 
+shouldn't have to show this. 
+The Business Plan 
+The business plan distinguishes itself from all other development documents as it is the foundation for 
+all the work associated with the product. It does not guide a specific release but an overall family or 
+set of releases. 
+Product managers have to prepare a business plan that justifies the development of the system. 
+Developers have the right to receive such a plan so that they know their efforts are not in vain. Note 
+that the creation of the business plan usually precedes the creation of the first architecture. In this 
+sense, then, you can expect a business plan associated with the first release but not necessarily every 
+release. 
+A well-written business plan is rarely more than 15 to 20 pages and includes the kind of information 
+shown in Table 2-1. Table 2-1. Business Plan Sections 
+Topic / Section  Description 
+Executive Overview Brief (two-paragraph) overview of the plan. A good rule of thumb is that a 
+harried senior executive should be able to read and understand the basic contents 
+of the business plan within five minutes. 
+Strategic Fit What is to be accomplished. Show the proposed new products within the current 
+strategy of the company. For product line extensions (or new releases of an 
+existing system) show how the strategy is further enhanced. 
+Market Analysis Who will buy, why they will buy, how they will use this product, and the 
+anticipated size of the market. Describe customers by segments (e.g., 
+researchers, lawyers). Specify target companies (Fortune 500, etc.), and the 
+target market. Market segmentation and market analysis are so important that I 
+will discuss them several times over the course of the book. 
+Financial Analysis A simple summary of detailed financial information found later in the plan. It 
+must address, in format and content, the criteria required by the company 
+building the product. 
+Product Description Brief description of the product, with an emphasis on target market benefits. If 
+this is a new release, describe the most essential new functions. This is not an 
+MRD, which details requirements, but more of an overview that demonstrates 
+key criteria from the perspective of the marketplace. 
+Competitive 
+Analysis and Product 
+Differentiation 
+An overview of the competitive landscape. I find it helpful to categorize 
+competitors and then perform a SWOT[*]
+ analysis of both the category and the 
+key competitors within it. The end result is a specific statement outlining how 
+your product will compete. 
+Product Positioning The relationship of this product to existing products and the target market. 
+Positioning is especially important because it guides what will be conveyed to 
+the target market through various promotional activities (discussed further later 
+in this chapter). 
+Marketing Strategy How this product will be promoted and sold. In the initial development of a 
+business plan it is usually sufficient to state if the release is going to be a big, 
+noisy event going to all customers or a low-key, managed event going to a 
+specific subset (as in a patch or maintenance release). 
+Channel Strategy How the product reaches customers. This section should detail such things as 
+how the product will be sold (direct or indirect, via the Web, and so forth). 
+Support Model How this product will be supported. How the customer will come up to speed on 
+its use. 
+Impact Analysis What impact this product will have on other products. 
+Business Model The proposed business model, including pricing. 
+Revenue Forecast A simple but believable forecast of revenue. Trust your instincts on this, and 
+learn to cut projections in half. Most marketing plans are overly optimistic on 
+revenue and growth. 
+Cost Analysis An estimate of engineering, support, and marketing costs. Estimate both 
+nonrecurring and recurring costs. 
+Critical Risks Any risks that may prevent you from completing your objective. Include 
+dependencies with other projects, critically needed but not as yet allocated 
+resources, and so forth. 
+Product Extensions 
+and Futures 
+Key extensions to this product. Show that it has a future. I recommend using a 
+variety of roadmaps, discussed in Chapter 4 and again in Appendix A. [*]
+ A SWOT analysis details the perceived strengths of a given competitor, its perceived weaknesses, 
+opportunities that your company/product can exploit, and threats that your competitors can make against 
+you. 
+Product Development Processes: Creating Release n.n.n 
+As with software architecture, we spend a lot of time and energy creating the first release. In reality, 
+however, most product development comes in subsequent releases. The primary changes to the 
+product development process presented in the "Product Development Processes" Section are as 
+follows. 
+•  The concept and product proposal are likely to be skipped. The value of the product proposal 
+substantially lessens as a product matures. This is because there is less work associated with 
+identifying and targeting a given market and more work associated with identifying how to 
+acquire the next adopter segment (see below) or the next niche within a defined market. 
+Rigorous companies may spend some time writing a product proposal, but this is usually 
+foregone in favor of the MRD. 
+•  The business plan is, at best, updated to reflect the new release. The business plan that 
+justified the initial development is often only marginally updated to reflect the new release. 
+This is not a flaw but a reflection of its now higher-level, broader perspective. 
+•  The MRD becomes the central document of the release. The MRD, which in the first release 
+captured only those features essential for entering the market, becomes the central document 
+in a subsequent release. To understand why this is so, think of the product in its full context, 
+which can be likened to an ecosystem and includes internal and external stakeholders 
+(developers, QA, marketing communications, partners, customers, and so forth) as well as 
+influencers (trade press, industry analysts, competitors, and so forth). The ecosystem of 
+release 1.0 is likely to be relatively simple, especially for a technology product. The 
+ecosystem of a successful product matures with it, and that associated with release n.n.n is 
+usually considerably more complex. Furthermore, the needs of the constituent stakeholders 
+are different, as described further below. The best document to capture these data for release 
+n.n.n. is the MRD, not the business plan. 
+•  The prelaunch and launch phases vary significantly depending on the release. Depending on 
+the release, the prelaunch and launch phases may be more important for release n.n.n than for 
+release 1.0! Consider Microsoft promoting Windows XP, Apple promoting OSX, or Sun 
+promoting Solaris 2.8. These launches were substantially larger and "more important" than 
+the launch of their predecessors. 
+ 
+Augmenting the Product Development Process 
+A common concern, and one that I share, is that a sensible product development process will become 
+bogged down in useless detail or busy work. To prevent this, I've found it helpful to augment the 
+development process described with a few key concepts and processes. 
+Successive Freezing 
+In the early stages of development I give the responsible team maximum flexibility in managing their 
+work products. However, when the time comes for others to make committed decisions on these 
+products, they must be frozen. As a result, the concept of successively freezing various deliverables 
+becomes important. In this approach, various deliverables become frozen over the product lifecycle. While product managers may examine a wide variety of markets for a proposed idea in the concept 
+phase, they must usually narrow this down to a specific target market in the business plan. For this 
+release, then, the target market is frozen. It may then be further stratified into niche markets, with the 
+focus one niche as the target for the launch activities. 
+On the development side, you may choose to freeze the requirements, then the user interface, then the 
+database schema, then the APIs that exist among subsystems, and finally the code itself. Note that 
+freezing is not designed to prevent change. Instead, the term "frozen" describes a decision that can 
+only change through a relatively formal change-control process, described next. 
+Change Management Protocols 
+Change protocols refer to the degree of formality associated with changing a given outcome. The most 
+lenient change protocol is none. An example of this is when a developer is free to check out source 
+code, make changes to it, and check it back in to the source management system. A formal change 
+management protocol exists when a proposed change must be approved by a committee. 
+I've found that many developers become uncomfortable with change management protocols. This is 
+because they often misunderstand their fundamental purpose. The goal is not to stifle creativity (as 
+expressed in desired changes to the product) but to ensure that the right people are informed of the 
+change before it is made so that they can properly prepare for it. 
+Suppose you want to change the layout of the user interface. Before it is frozen, you're free to change 
+it as you see fit. Once frozen, changes need to be managed, if for no other reason than that you have to 
+coordinate changes to the help system, the end user documentation, and the training materials. There 
+might also be changes required in the automated unit tests created by QA and perhaps in updated 
+reference materials for technical support. That's several different groups that must be notified of a 
+potentially simple change. 
+More generally, the change management process must include those stakeholders affected by the 
+change to make certain that they understand, approve, and can correctly process it. Candidates include 
+technical publications, QA, product management, technical support, and release engineering. In 
+product-centric organizations, change management meetings should be organized and chaired by 
+product management. In other organizations, they should be organized and chaired by the project or 
+program manager running the overall project. 
+Documentation Balance 
+One of the most important things that every manager must learn for herself, in her own way, 
+is that there is simply no universal formula for creating the right set of documents needed 
+for a given project. I've created very successful systems using agile methods and a 
+minimum of documentation. I've also had projects fail for lack of key documentation. At 
+times I've taken great care to build precise requirements reminiscent of a waterfall process, 
+with the kind of success that makes you wonder why everyone doesn't simply adopt 
+waterfall and be done with it. Finally, I've also produced carefully written and researched 
+documents only to find them producing a system that no one needed or wanted. 
+Lest you think there is no hope and just randomly pick a process, here are two guidelines 
+that have worked well for me. Early releases should be created using as agile a process as 
+possible. While you and your team may have a lot of experience in the problem domain, 
+you don't have experience with your new product, how your target market and competitors will respond to your offering, or whether or not the business model you've chosen is the best 
+one. Agile processes are often the best way to maximize market feedback. Over time, as the 
+product solidifies and the market matures, you're going to spend more time responding to 
+the needs of the market, including the need for reliability and predictability in deliverables. 
+Thus, development organizations with mature products often find a transition from agile to 
+more formal methods to be appropriate. This transition may sound easy, but it isn't, and 
+many organizations face severe, and sometimes fatal, challenges in making it. 
+It is vitally important to understand how your team wishes to develop their product. 
+Surprisingly, I've worked with teams that completely reject agile methods because they 
+consider them the domain of "hacks" who don't know how to specify and build reliable 
+software systems. These teams demand MRDs and related documents; they have a process 
+and they follow it. As you can guess, I adjust my own preference for agile processes to meet 
+their needs. Forcing a given team to adopt an approach that they don't believe in, either in 
+their development process or in the language they're using to create the system, is a certain 
+recipe for failure. 
+Recycle Bin 
+At several points during the project the team may find that they've bitten off more than they can chew. 
+Rather than throw out potentially useful ideas, I recommend creating a recycle bin where they can be 
+stored for future use. A given idea may resurface in a later release or in a future iteration. In a sense, 
+the recycle bin also functions as a pressure valve, reducing (at times) the pressure felt by the 
+development team to get every requested feature into the release. 
+Crucial Product Management Concepts 
+This section addresses some vitally important concepts in product management and product 
+marketing, some of which will be referenced in future chapters. All of them are useful because they 
+affect, in very serious ways, your system and its architecture. 
+The Four Ps of Marketing 
+The activities involved in product management are often summarized as the Four Ps of Marketing. 
+You may encounter them when working with product management, so it is useful to understand what 
+they mean. 
+Product (Offering) 
+What you're offering to your customer. It could be a product or it could be a service; most likely, it is 
+some combination of the two. Later in this chapter, and in Chapter 3, we'll discuss the product concept 
+in greater depth. 
+Price (and the Business Model) 
+Your business model is the manner in which you charge customers for your products or services—the 
+way you make money. A pricing model defines how much you will charge. Selecting a business 
+model and defining its associated pricing model are among the most challenging areas of product 
+management. The best business models charge customers in a way that is congruent with the value customers 
+perceive with the product. The best pricing models maximize the revenue for the company without 
+leaving customers feeling that they've paid too much. Charge too little and you're leaving money on 
+the table; charge too much and your product won't grow and you leave yourself vulnerable to a 
+competitor. Pricing can also be counter-intuitive. It is not correlated to technical difficulty. Features 
+that may be difficult to implement, like a sophisticated user interface or a report generator, are not 
+always those that you can charge for. Pricing is not easily correlated to cost. It may cost you a lot of 
+money to license a search engine, an embedded database, or a realtime operating system, but chances 
+are you won't be able to pass these costs directly on to your customer. Instead, they will become 
+buried in your pricing model. 
+Effective pricing is related to the perceived value of your product. The implications of this are 
+profound and deal more with psychology than technology. A complete discussion of pricing, which 
+may or may not affect your architecture, is beyond the scope of this book. However, business models, 
+which form the foundation of pricing, are intimately associated with your architecture and are 
+discussed extensively in Chapter 4. 
+Place (Distribution Channel) 
+The manner in which your product or offering is delivered to your customer. There are several 
+perspectives on the channel for software products. One concerns how the bits are delivered to the 
+customer (e.g., via the Web or perhaps on a DVD). Another perspective concerns who is authorized to 
+offer the product/service to a customer. Consider an enterprise application that can be deployed at a 
+customer's site or through a third-party service provider. In this case, the service provider is acting as a 

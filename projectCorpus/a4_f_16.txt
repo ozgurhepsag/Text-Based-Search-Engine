@@ -1,0 +1,751 @@
+
+more control over your release cycle. 
+These costs can only be justified by a sufficiently large target market. One company I worked with 
+supported Solaris–Oracle and Windows–SQLServer. Approximately 90 percent of their installed base 
+ran Windows-SQLServer, accounting for more than 80 percent of total corporate revenue. The cost to 
+support a cross-platform product was not recovered and the company actually lost money on a 
+spurious marketing claim. 
+The following conditions should be met before building cross-platform solutions. 
+•  Your market analysis identifies sufficient revenue to justify the incremental total product 
+development and support costs associated with each platform. 
+•  You have included the total cost associated with developing, testing, and supporting all of the 
+supported platforms. This means the necessary hardware and the skills necessary to maintain 
+and configure these machines. 
+•  You have sufficient development resources to allow you to create, test, and support multiple 
+platforms. 
+•  You understand the relative impact the various platforms you must support have on your 
+development efforts and can manage it. For example, if you're going to support Solaris and 
+Windows you have to account for their differing release schedules. 
+A good rule of thumb is that it is easier to justify a portable technology than a portable application. By 
+technology, I mean a solution designed to be a component of a larger solution. Examples include 
+relational databases and communication libraries offered to large target markets. The classic example 
+of Oracle in the book Crossing the Chasm [Moore 1999] shows how a portable technology helped a 
+company win significant market share. 
+Portability Is Always about the Money 
+I've managed both ends of the portability spectrum. We explicitly designed a new kind of 
+enterprise-class system for an emerging market that was not portable but was designed to 
+run only on Microsoft products—MS Windows NT/2000 and SQLServer—using Microsoft 
+development tools. Our first challenge was selling the system to Sun Microsystems. As you 
+can guess, the initial response was "No thanks, we don't want a system based on Microsoft 
+technology " (although the original wording associated with the rejection was a bit 
+stronger). Sun wanted us to port the system to Java/J2EE running on Solaris and Oracle. We 
+also received a no from Pfizer on the grounds that our Microsoft-based solution didn't fit 
+their corporate Solaris–Oracle requirements. 
+It was difficult to handle these early rejections because we knew that Sun and Pfizer would 
+be good customers and we were a young and hungry startup. But a simple cost analysis 
+showed that we couldn't afford to port the application with the available resources. When 
+we asked Sun for the necessary development funds, they said no. I don't blame them, for we 
+estimated that the job would cost several million dollars. 
+Although the situation seemed bleak, everyone supported the decision to maintain a 
+platform-specific focus—an amazing show of discipline, especially given our hunger for 
+revenue. Nonetheless, we kept improving our technology and growing our customer list. 
+After each release, we would talk again with Sun and Pfizer. Eventually, something amazing happened: The system had reached the point where its feature set was so 
+compelling that the two companies simply couldn't live without it. Furthermore, their 
+competitors were adopting the system, which provided them with additional incentive to 
+license it. And they did—first Pfizer and later Sun. The key lesson I learned is that building 
+a good solution on a single platform is more important than building a mediocre solution on 
+many. 
+At the other end of the portability spectrum, I managed server software that ran on 
+Microsoft, Sun, and Linux operating systems and client software that ran on Windows and 
+Macintosh. Unlike the previous example, these were not complete applications (solutions) 
+but core technologies embedded in our customers' environments as part of a larger solution. 
+In this case, the technology requirements justified a portable solution. On the server side, 
+the revenue distribution was almost evenly split between customers running Windows and 
+UNIX. On the client side, our biggest customers, including Adobe, Symantec, Macromedia, 
+Corel, and Roxio, required both Windows and Macintosh. Indeed, they continually asked us 
+to port our technology to additional platforms. This confirms that listening to your 
+customers and making certain portable solutions will be profitable solutions is your best 
+approach. 
+Applications, which are rarely designed to be a component of a larger solution, can often achieve a 
+large and profitable enough market share within a given operating environment so that portability 
+doesn't make sense. Countless applications from profitable companies run only one operating system 
+(e.g., Sun Solaris, MS Windows, IBM 360). These companies, for a variety of reasons, have decided 
+to focus on a target environment. 
+Rules of thumb are just that: rules of thumb. There are also numerous counter-examples of platform-
+specific technologies and portable applications. Examples of portable applications include any number 
+of mid-range server or desktop applications. Concrete examples are some of the mid-range graphics 
+tools that run on both Macintosh and Windows platforms. For the average user, these tools are 
+acceptable. For the professional, they aren't, and professionals turn to high-end, platform-specific tools 
+that are tuned to leverage all of the capabilities of a given platform. There are also many examples of 
+platform-specific technologies, such as network accelerators that run only on Solaris, or serial port 
+expansion cards that run only on Wintel platforms. The issues are complex, but all of them boil down 
+to well-defined target markets that ultimately determine how the development team should create the 
+application. 
+Creating Portable Applications 
+Let's assume that there is sufficient economic justification for writing a portable application. The 
+following sections describe some techniques I've found helpful in making this happen. 
+Use an Interpreted Language 
+From Lisp to Smalltalk, Java, and Perl, interpreted languages have an immediate portability advantage 
+over compiled languages because the interpreter provides a much-needed layer of insulation from the 
+underlying operating system. Of course, this doesn't mean that interpreters are foolproof, because 
+differences in operating systems often find their ways into them. In fact, resource handling, threading, 
+file system manipulations, network libraries, and user interfaces all present challenges to the 
+portability of interpreted languages. Still, as a general rule such languages make sense if you're 
+planning on building a portable system (provided, of course, that you have made certain that your 
+language has an interpreter on every platform you intend to support). If you're using a compiled language, you have to be sure that a compiler exists on every target 
+platform. In addition, you need to educate the development team on the specific idioms that enhance 
+portability within that language. If you're using C or C++, these techniques include using carefully 
+designed source code management and build systems that select the proper file for a given target 
+platform as well as conditionally include specific source code based on the language. Conditionally 
+compiled code is more challenging than normal code because it is harder to write and maintain than its 
+platform-specific counterparts, but the overall process is quite manageable. I know, because I've done 
+it. You can too. 
+Use Standards-Based Persistent Storage 
+By persistent storage, I mean the ability to store and retrieve data on persistent media, such as a hard 
+drive. For simple data use XML stored within whatever file abstraction is provided by the target 
+platform. For complex, structured data use a relational database accessed through an intermediary 
+layer like OBDC, Java's JDBC, or Perl's ODB. Although ANSI SQL is far less portable than it should 
+be, try to use it. Limit the use of vendor-specific embedded procedures, such as Transact SQL. 
+Make Business Logic Portable 
+The area of your system that should be the most portable is your business logic. As detailed in Chapter 
+8, a well-architected system isolates business logic. This code should be easliy portable to other 
+environments. If it isn't, further investigation is warranted to ensure that the development staff is not 
+making poor implementation choices. 
+Closer to the User Means Less Portability 
+The backend infrastructure holds the areas of greatest portability. Moving from the server or backend 
+toward the user, portability tends to decrease. Indeed, despite a variety of vendor claims to the 
+contrary, the user interface is the area of lowest portability, because of substantial device differences 
+in color schemes, fonts, display resolutions, and so forth. These realities, which don't appear likely to 
+change, suggest a very practical approach in which the greatest investments in portability are in 
+backend or infrastructure (e.g., invest in server-side portability before client-side portability). 
+Use XML for Standardized, Interoperable Communications between 
+Subsystems 
+In complex distributed systems that run on different platforms, you will eventually have to resolve the 
+issue of subsystem interoperation. Fortunately, you won't have work too hard, for the bright and 
+talented people who invented the core technologies powering Web services, including XML, SOAP, 
+WSDL, and XSLT, have already done all the heavy lifting. Use XML to support interoperable 
+communications between subsystems—you'll be happy you did! 
+When an application is centralized on a single platform, or when you require extremely high 
+performance, you might want to consider a non-XML solution. Converting in-memory data into XML 
+and back consumes a fair amount of resources and is not the best choice for every situation. Do this 
+very carefully, as my own experience shows that XML is, in general, the most flexible solution, even 
+though it is slower. 
+Avoid Hiding The Power of a Specific Platform in the Name of 
+Portability Consider database portability. While the major vendors claim to support ANSI SQL, they all provide 
+vendor-specific variants tailored to different operations. Oracle's commands for manipulating 
+hierarchies are too powerful to ignore for many applications. SQLServer 2000 commands for 
+manipulating XML are just too fast to ignore. Challenge the notion that portability must mean taking 
+the "lowest common denominator." Structure your tarchitecture to take advantage of the power of 
+specific platforms. 
+The Matrix of Pain 
+Let's assume that you've made the decision to support more than one platform. Perhaps the market is 
+fragmented and supporting multiple platforms is the only way you can create sufficient revenue. 
+Perhaps your target market simply demands multiple platforms. This is common in enterprise software 
+when a customer standardizes on one platform for its IT infrastructure. Or perhaps your development 
+organization has chosen a very low cost and highly portable implementation, such as a Web solution 
+written in Perl that interfaces to MySQL, making the actual cost to support an additional platform 
+extremely low. 
+One of the most important things that can be done to minimize the pain of portability is to make 
+certain that development and QA understand the relative priorities of the market. Without clear 
+priorities, everyone is going to waste precious time developing and testing the wrong parts of the 
+system or not sufficiently testing the parts that matter the most to customers. The best technique for 
+prioritizing is to create market-driven configuration matrices for use by development and QA (the 
+matrix of pain). They are a variant of the all pairs technique used by QA for organizing test cases. The 
+marketect should drive this process, with participation from development, QA, services, sales, and 
+support. 
+Suppose that you're building a Web-based system and you want to support the following: 
+•  Five operating systems on two platforms (Solaris 2.7 and 2.8, MS Windows NT 3.5.1 and 4.0, 
+and XP Server) 
+•  Two Web servers (IIS and Apache, omitting versions for simplification) 
+•  Two browsers (Netscape and Internet Explorer) 
+•  Four databases (Oracle 8i and 9i, SQLServer 7.0 and 2000). 
+The total number of possible combinations for development and testing is thus {OS x Web server x 
+Browser x DB } = { 5 x 2 x 2 x 4 } = 80, which, I'll take as a given, is too many for your QA staff. (If 
+your QA staff is large enough to handle all 80 combinations it's too large.) Your QA manager 
+estimates that his team of three people can handle perhaps 7 to 9 configurations. Your development 
+manager follows the QA manager's lead, under the agreement that development will work on the 
+primary configuration and QA will certify all others. As is common in cross-platform development, 
+the strongest constraints come from QA, not development. Thus, you have to trim 80 possible 
+configurations down to 7 to 9, in way that ensures that your most important configurations are 
+covered. 
+Step 1: Remove Configurations 
+A simple reading of the list of supported components demonstrates that many don't make sense. No 
+company that I know of runs SQLServer 2000 on Solaris 2.8! In addition, the marketect may 
+explicitly choose not to support a possible configuration. For example, she may know that Oracle 8i is 
+only supported on Solaris 2.6 because an important customer has not yet migrated to Solaris 2.7. Discussions with this customer indicate that when it migrates to Solaris 2.7 it will still use Oracle 8i 
+until the system has proven itself stable, when it will migrate to Oracle 9i. 
+Table 6-1 identifies impossible configurations. It shows an interesting effect. Because you need one of 
+each of the elements to create a complete configuration, the total number of configurations is 
+dramatically reduced. There is only one supported configuration for Solaris 2.6: Apache, Netscape, 
+and Oracle 8i, and only two for Solaris 2.7. 
+Table 6-1. Impossible Configurations 
+   Operating System 
+   Solaris  MS Windows 
+   2.6  2.7  NT 3.5.1  NT 4.0  XP Server 
+Apache PC PC PC PC PC 
+IIS NA NA PC PC PC 
+Netscape PC PC PC PC PC 
+IE NA NA PC PC PC 
+Oracle 8i PC PC NS PC PC 
+Oracle 9i NS PC NS PC PC 
+SQLServer 7 NA NA PC PC PC 
+SQLServer 2000 NA NA NS PC PC 
+Total Configurations (39): 1 2 4 16 16 
+PC = Possible configuration; 
+NS = Not supported; 
+NA = Not applicable 
+          
+Step 2: Rank-Order Configurations 
+Although 39 is smaller than 80, this matrix is still not sufficiently prioritized. The next step in making 
+it manageable is to work with other groups to prioritize every possible/supported configuration. In the 
+process you will gain insight into a variety of things, including which configurations 
+•  Are actually installed in the field, by actual or perceived frequency of installation 
+•  Are used by the largest, most profitable, or otherwise "most important" customers 
+•  Are going to be most heavily promoted by marketing in the upcoming release (these have to 
+work) 
+•  Are most easily or capably supported by the support organization 
+•  Are most likely to provide you with the coverage you need to test full functionality 
+A variety of techniques achieve a suitable prioritization. I've spent the bulk of my career working in 
+enterprise-class software, and for most of the products I worked on we were able to prioritize the most 
+important configurations pretty quickly (usually in one afternoon). Once you're finished, consider 
+color-coding individual cells red, yellow, and blue for "must test," "should test," and "would like to 
+test but we know we probably won't get to it" to convert your matrix into an easily referenced visual 
+aide. 
+For larger, more complex software or for developers or managers who insist on numbers, presumably 
+because they believe that numbers will lead to a better decision, assign to each major area a number 
+between 0 and 1 so that all the areas add up to 1. These numbers represent consensually created priorities. Suppose that in discussing the matrix it becomes apparent that no known customers actually 
+use Netscape or Oracle 8i on Windows XP Server, nor are any expected to. This results in a further 
+reduction of configurations to be tested, as shown in Table 6-2. 
+Step 3: Make the Final Cut 
+You still have more work to do, as 29 configurations are clearly too many. You have to finalize this 
+matrix and get the configurations down to a manageable number. Be forewarned: This will take at 
+least two passes. As you begin this process, see if you can find additional information on the 
+distribution of customer configurations, organized as a Pareto chart. This will prove invaluable as you 
+make your final choices. 
+Table 6-2. Configurations to be Tested 
+   Operating System 
+   Solaris  MS Windows 
+   2.6  2.7  NT 3.5.1  NT 4.0  XP Server 
+Apache 1 1 0.2 0.5 0.3 
+IIS       0.8 0.5 0.7 
+Netscape 1 1 0.2 0.2 0 
+IE       1 0.8 1 
+Oracle 8i 1 0.5     0.1 0 
+Oracle 9i     0.5     0.3 0.3 
+SQLServer 7       1 0.5 0.2 
+SQLServer 2000         0.1 0.5 
+Totals (29): 1 2 4 16 6 
+In the first pass, consider the impact of the installed base. Suppose that only 20 percent of it uses 
+Solaris but accounts for 53 percent of overall revenue. In other words, you're going to be testing all 
+three Solaris configurations! This leaves you with four to six possible configurations for MS 
+Windows. 
+Your product and technical maps (see Appendix B) tell you that NT 3.5.1 is going to be phased out 
+after this release and that only a few customers are using it. Based on this information, everyone 
+agrees that one configuration—NT 3.5.1 with IIS, IE, and SQLServer 7—will be okay. 
+You know you need to test Apache and Netscape. Furthermore, you believe that most customers are 
+going to be on NT 4.0 for quite some time and so you want QA to concentrate its efforts here. 
+With your knowledge of the architecture you believe that the database access layer uses the same SQL 
+commands for Oracle and SQLServer on any given operating system. Just to be sure, you ask your 
+tarchitect or development manager to run a quick binary comparison on the source code. Yes, the SQL 
+is the same. This doesn't mean that the databases will operate in the same manner but just that if you 
+certify your code on one of them, such as Oracle 8i, you have reasonable evidence that it should work 
+on the other. This knowledge produces Table 6-3. Note that all major configurations are tested at least 
+once. 
+Unfortunately, you have 14 configurations, which is at least five more than your estimates allow. 
+Removing IIS from NT 4.0 removes four more configurations. The final set is listed in Table 6-4, 
+which is more than you think you can test in the allotted time. From here, you'll have to find 
+additional ways to either test the product as you wish or further reduce the number of configurations. The most likely way to make the cut is by obtaining more hardware, either internally or from your 
+customers, or by a beta program in which your beta customers handle testing configurations that QA 
+won't. 
+Table 6-3. Simplifying Configurations 
+   Operating System 
+   Solaris  MS Windows 
+   2.6  2.7  NT 3.5.1  NT 4.0  XP Server 
+Apache 
+   
+  
+ 
+  
+IIS      
+     
+Netscape 
+   
+  
+ 
+  
+IE      
+     
+Oracle 8i 
+   
+  
+ 
+  
+Oracle 9i    
+ 
+    
+ 
+SQLServer 7      
+   
+  
+SQLServer 2000          
+ 
+Totals (14): 1 2 1 8 2 
+Table 6-4. Final Configuration Set 
+   Operating System 
+   Solaris  MS Windows 
+   2.6  2.7  NT 3.5.1  NT 4.0  XP Server 
+Apache 
+   
+  
+ 
+  
+IIS      
+ 
+  
+ 
+Netscape 
+   
+  
+ 
+  
+IE      
+     
+Oracle 8i 
+   
+  
+ 
+  
+Oracle 9i    
+ 
+    
+ 
+SQLServer 7      
+   
+  
+SQLServer 2000          
+ 
+Totals (10): 1 2 1 4 2 
+I have intentionally simplified this example. In a real Web-based system, you would probably support 
+more versions of the browser (4 to 8) and more versions of the Web server (2 to 4), and you would 
+probably specify other important variables, such as proxies and firewalls. You also need to add an 
+entry for each version of the application that might exist on the same platform in order to check for 
+any negative interactions between them. These would dramatically increase the potential number of 
+configurations. In one multiplatform, multilingual, Internet-based client application, we had more than 
+4,000 possible configurations. We were able to reduce this to about 200 tested configurations—with a 
+lot of work. 
+This approach to prioritizing works for smaller numbers of configurations, but it starts to break down 
+when there are a lot of configuration elements or a lot of possible values for each element. When this 
+happens, you need a more automated approach for organizing your initial set of configurations and 
+then prioritizing them based on the market parameters I mentioned earlier. This is referred to as the all 
+pairs technique, and it ensures that all pairings of parameters are covered in the test cases without 
+covering all combinations. James Bach has posted a free tool to calculate all pairs test cases at 
+www.satisfice.com. I want to stress that the output of all pairs should be reviewed to ensure that the market issues presented earlier are covered. Specifically, when you get into a "don't care" condition, 
+prioritize based on marketing needs. 
+Understanding the matrix of pain makes it crystal clear that every time you add another platform you 
+increase the total workload associated with your system. 
+Beware the Promises You Make 
+Be vigilant about managing contracts and stating what you support. I once inherited a contract that had 
+us supporting "Macintosh OS 8.1 and later." This committed our marketing team to a future that we 
+didn't want to embrace. More drastically, it created a nearly impossible task for my development team! 
+Practice vigilance when creating portable software with respect to contracts. At the very least, make 
+certain that the versions and platforms you support are very clearly identified. You may also want to 
+specify individual support policies for various platforms, such as limiting the amount of time in which 
+you will provide support for an older platform. 
+Chapter Summary 
+•  Portability advocates make many claims to support their desires. Common claims include 
+- Addressing a new target market 
+- Supporting existing customers, who may prefer a different platform but have accepted the 
+current one 
+•  The real reasons you may have, or may be creating, a portable application are often not as 
+grandiose. They may include 
+- Developers thinking it is easy and/or cool 
+- One or two early innovators or early adopters demanding different solutions 
+Carefully check whatever claims your portability champion is making. 
+•  The only valid business case for creating portable applications is that you'll profit by doing 
+so. Marketects are often good at modeling the revenue, but not necessarily the costs, of 
+creating portable applications. 
+•  Creating portable applications is harder than you think. And it will take longer than you want. 
+•  It is usually easier to justify a portable technology than a portable application. 
+•  There are a variety of proven ways to create portable applications. Learn them. 
+•  Your "matrix of pain" is the complete set of configurations that must be tested in a given 
+release. To create a manageable matrix of pain 
+- Remove configurations that don't make sense or are explicitly not supported 
+- Rank-order the remaining configurations 
+- Review the result and make the final cut •  Always be explicit about the configurations you support. Be very cautious about committing 
+to support new configurations. 
+Check This 
+•  Each platform that we support has sufficient development, quality assurance, technical 
+support, and sales resources. 
+•  We have allocated sufficient time to test on each supported platform. 
+•  We have made entries in our tarchitecture map that capture the significant releases of our 
+platform vendors. 
+•  We have created a market-driven configuration matrix to help guide our testing efforts. 
+Try This 
+1.  What platforms do you support? Why? 
+2.  What is the market share of each platform? the cost/benefit of each platform? 
+3.  What might happen if you dropped support for a platform? added support for a platform? 
+Chapter 7. Deployment Architecture 
+Enterprise-class software systems have seen many phases of evolution. Centralized mainframe 
+systems evolved into client/server systems, client/server systems evolved into distributed systems, and 
+distributed systems, still in their infancy, are now being recast as reconfigurable Web services. Each 
+of these deployment architectures spawned many variants. Emerging Web architectures extend these 
+ideas and add new ones, bringing alleged new benefits for users and keeping both marketects and 
+tarchitects busy. Not surprisingly, we are also carrying each of these major architectural styles into the 
+future, as much for the unique advantages they offer as for the legacy systems they've left behind. 
+The wide variety of deployment architectures for enterprise-class software is starting to more strongly 
+influence deployment architectures for common packaged software applications ("shrink wrapped" 
+applications that usually cost less than $500). We're now seeing traditional applications offered as 
+services. As bandwidth continues to increase and hardware devices become more sophisticated, the 
+number of deployment choices increases. 
+I use the term deployment architecture to describe the manner in which a customer deploys a system. 
+This is related to the UML definition of deployment architecture but my focus is more on the strategic 
+implications of a deployment choice and less on the lower-level decisions such as how to allocate 
+work in a multiprocessor computer system. Emerging Web technologies and business models present 
+tarchitects and marketects with considerable creative flexibility. This chapter will help you sort 
+through some of the business and technical issues associated with choosing a deployment architecture 
+so that your customer will see your choice as a winning solution. 
+ 
+Deployment Choices 
+Common choices for software deployment architectures are discussed in the following sections. 
+Customer Site This type of deployment is the most traditional and the most common. The software is installed at the 
+customer's site and is configured, operated, and maintained by the customer. For common packaged 
+software for the consumer market, such as I'm using to write this book, it means I've purchased, 
+installed, and configured it on my laptop. Enterprise-class software, such as corporate finance system, 
+warehouse management, and customer relationship management (CRM), is almost always controlled 
+by the corporate IT department. 
+Enterprise-class software is usually installed and configured through a consulting assignment. The 
+system vendor may provide professional services to the customer or subcontract them to a major 
+consulting firm (such as EDS, Bearing Point, or Accenture). The duration of the assignment is often a 
+function of the system's effect on existing corporate processes, any or all of which may have to be 
+substantially modified before, during, and often after the installation. 
+Application Service Provider 
+An application service provider (ASP) operates an application for the customer, offering a limited set 
+of services, and rarely a complete solution. For example, the ASP may provide "24/7" system 
+monitoring, routine backups, and automatic access to additional internet bandwidth, but not 
+application technical support. The specific services provided by the ASP must be negotiated. 
+ASPs are slightly more common for business applications, although that is changing. For example, 
+many early ASPs offered large enterprise applications to smaller customers. Newer ASPs offer 
+consumer applications, such as estate or tax planning software, as a service. 
+I'm not making a distinction between a software publisher that offers its application as an ASP and a 
+software publisher that licenses its application to a third party that then offers it as an ASP. These 
+distinctions, while important for the publisher and the third-party provider, are largely irrelevant for 
+the purposes of this chapter. 
+Managed Service Provider 
+A managed service provider (MSP) extends the concept of an ASP by offering an array of services in 
+addition to the operation of the application. In marketing terms, an ASP competes at the level of the 
+generic/expected product while an MSP competes at the level of the expected/augmented product. The 
+exact services offered vary, but usually they include extensive monitoring and backup, and possibly 
+call center support, commerce operations/management, and security/firewall management. Early 
+MSPs targeted the business market. Some recent ones target very specific consumer markets, such as 
+corporate e-mail hosting or digital photo appliances. 
+MSPs focused on very well-defined specialized hardware market niches will continue to emerge. For 
+example, in the financial services industry some very large MSPs offer online banking services to 
+millions of consumers. Of course, you don't know this because the MSP has allowed the bank offering 
+these services full branding control. 
+In both ASP and MSP, relationships it is common for service level agreements (SLAs) to precisely 
+define acceptable performance parameters. Also, when the application is a traditional software system, 
+at least some customer data is stored at the service provider. This has important tactical and strategic 
+implications for security and operations that extend far beyond the service actually being offered. 
+Transactional (Web Service) A transaction deployment is one that computes an answer in a single, whole transaction, often through 
+Web service protocols. It commonly provides services to individual users, such as when you ask for a 
+map on the Internet. In certain cases end user data may be stored at the service provider, but this is 
+rarely corporate data. This style of system is not yet common in enterprise software, but recent efforts 
+to build complex systems around collections of transactional Web services may dramatically increase 
+its use. Web-service based application architectures will eventually become common for every type of 
+application. This does not mean that they will "win," because they are not appropriate to every market 
+segment. It does mean that we are going to be faced with increasingly sophisticated choices. 
+The four broad categories just outlined capture the basic deployment options. Savvy marketects have 
+created subtle variants to gain a competitive or positioning edge. For example, some service providers 
+classify themselves as "Internet business service provider" (IBSPs), focusing on a single element of a 
+complex solution (e.g., loan portfolio management for banks). Others define themselves as enterprise 
+application providers (EAPs) and focus on a single kind of enterprise-class system, in the hope that 
+they can leverage that experience across their entire customer base. In the framework presented above, 
+IBSPs and EAPs would be classified as either managed service providers or application service 
+providers, depending on the specific services they offer. 
+The Hybrid Deployment Architecture 
+I've been presenting deployment architectures as relatively exclusive choices: either ASPs 
+or MSPs. In fact, there is no technical requirement that the deployment architecture be all 
+one way or another. As is true with other aspects of tarchitecture, it is often best to let your 
+customer and the problem guide you in your choice. 
+One of the more successful tarchitectures I helped create was a true hybrid. In this case, 
+customers needed realtime access to more than five terabytes of data and required certain 
+kinds of private transactional data. The solution was straightforward: Put some parts of the 
+design, such as the transactional data, at the customer's site; put other parts, such as the five 
+terabytes of data, at a service provider. Making this hybrid architecture work was a bit of a 
+challenge, but the benefits to our customers were worth our efforts. 
+ 
+Customer Influences on Deployment Architectures 
+Choosing a deployment architecture that meets your customer's expectations is an important part of a 
+winning solution. Consider the following customer concerns when making this choice. 
+Control and Integration 
+Customers vary in their perceived need to control the software system. As a reasonably sophisticated 
+end user of software, I want to control what extensions or changes I make to my system. Thus, I don't 
+want a managed service for my laptop because I want to be able to add or remove software as I see fit. 
+But I don't want to control everything! I just want my high speed internet connection firewall to 
+"work" without spending a lot of time configuring or adjusting it. 
+Customers of enterprise-class software have similar demands for control, expressed in a number of 
+ways. They may want to control the system's operational infrastructure. Specifically, they may believe 
+that the control afforded by a system operating onsite is absolutely crucial for mission-critical 
+applications ("I know exactly who is going to answer the pager if the system breaks and how long it will take them to fix it"). Conversely, they may be happy to give control to a service provider based on 
+their perception that the service provider can provide high-quality, uninterrupted service. 
+Another issue associated with control is the long-term retention and management of data. Service 
+providers who approach this topic carefully may be able to argue that they can do a better job than the 
+customer. Alternatively, the customer may already have sophisticated policies, and may simply feel 
+more confident in their own ability to manage data. 
+It is imperative that the marketect understand the control issues that are most important to the target 
+ASP or MSP customer. Failing to do so will prevent you from creating a winning solution. 
+Conversely, understanding the deeper concerns that your target customer has regarding deployment 
+will enable you to handle them with skill. 
+As integration needs increase so does the likelihood that the system will be deployed at the customer 
+site. This can range for integration between common desktop applications to linking your CRM 
+system with your inventory management and fulfillment system. 
+Data Security/Privacy and Peak Loads 
+The nature of the data manipulated by the system influences customer perceptions of an appropriate 
+deployment architecture. Hospital payroll data, for example, may not be viewed as sensitively as 
+patient records. As a result, the hospital may opt for a managed service solution for payroll processing 
+but license patient record management from a reputable vendor and run it internally. A professional 
+services firm, on the other hand, may have a strong need for privacy with respect to payroll data and 
+require that it be managed inhouse. In the case of my home firewall, there is no data to manage, so 
+there is no need for data security. Nonetheless, I purchased a hardware-based firewall because I didn't 
+want to pay a monthly service fee to my ISP. You need to understand your customer's relationship to 
+the data managed by your application, as developers can easily make poor choices based on faulty 
+assumptions. I will talk more about data later in this chapter. 
+Depending on the application, it can be more cost-effective to place the application at an ASP/MSP 
+whose equipment and/or communications bandwidth can handle peak loads that are not cost-effective 
+to handle with your own dedicated equipment. 
+Costs and Vendor Confidence 
+There are times when an xSP (meaning either an ASP or an MSP) can offer a sophisticated, expensive 
+application at a fraction of what it would cost the customer to license and deploy it onsite. Sometimes 
+this is because the xSP can sublicense an application in way that provides access to smaller 
+businesses. Other times it's because the customer doesn't have to invest in the total infrastructure 
+needed to make the solution work. 
+How does your customer perceive you? Are you a stereotypical Internet startup with programmers 
+sleeping on cots, or are you an EDS- or IBM-style systems integration firm where formal dress is still 
+common? Put another way, would you trust your company's most sensitive data to an Internet startup 
+that can't properly manage its internal servers' passwords? Answering these questions will help you 
+understand why a customer may be somewhat reluctant to entrust the operation of its mission-critical 
+system to your company's engineers. 
+Earlier I mentioned that failed ASPs have made customers wary about trusting their data and 
+operations to outside parties. Be aware that your promotional materials may have to move beyond simply touting the benefits of your solution to providing access to detailed financial statements in an 
+effort to demonstrate that you have long-term viability in the marketplace. This is often referred to as 
+a viability test, and unless you can demonstrate that your company will be viable for the next few 
+years, you may not win the deal. 
+As stated earlier, another aspect of confidence concerns the manner in which you archive and retain 
+your customer's data. As your total solution evolves, you will inevitably change the kind of data you're 
+storing. Reassuring customers that they can always get at old data is important to your complete 
+solution design. 
+Customer Skills and Experiences and Geographic Distribution 
+Your application and its deployment architecture will dictate the skills and experience required by 
+your customer's staff. If the application has relatively simple operational requirements, this isn't really 
+a factor. It is when the application exhibits complex operational requirements that the choices become 
+interesting. 
+The easiest deployment choice, from the perspective of the vendor, is to make your customer 
+responsible for all system operation. They have to care for and feed the application—monitoring it, 
+backing it up, administering it, and so forth. All of these are skills that must be learned. 
+If you elect to offer the application as an xSP or license an xSP to offer the application on your behalf, 
+you or your xSP partner will have to assume the responsibility to meet the needs of your customer. Be 
+careful, as customers often place greater demands on xSPs than on their own MIS staff. One or the 
+other of you will have to hire a staff with enough experience and skills to create the necessary data 
+center. You can subcontract this, and many companies do, but you still need someone with the 
+necessary experience to manage the subcontractor. 
+It is important to consider the operational culture associated with the deployment architecture. If your 
+company started as a highly dynamic, "let's just get it done" entrepreneurial venture, you may find it 
+hard to switch to the more formal demands of data center operation. In an entrepreneurial company, 
+for example, data center security is often lax; in an xSP, data centers require tight operational control. 
+It can often be easier for a customer to provide an application to geographically dispersed employees 
+or workgroups when an xSP manages it. 
+As you consider how customers influence your choices, keep in mind that your target customer will 
+provide you with the strongest requirements for a deployment architecture. Earlier in the book I talked 
+about the dangers of resumé-driven design, in which designers make technical choices in order to pad 
+their resumés. I've witnessed the same phenomenon in choosing a deployment architecture. Investor-
+driven design swept through Silicon Valley in the late 1990s as many startups were capitalizing on the 
+growing popularity of xSPs. Many of these xSPs subsequently failed, for reasons that included an 
+inability to understand their customer's true motivations for a deployment architecture. Unfortunately, 
+some failures were truly catastrophic. Many customers irretrievably lost crucial corporate data when 
+these companies went under. Such losses have made corporations justifiably wary about storing key 
+data at a service provider. 
+Please Disregard Those Credit Cards 
+One of my clients running a managed service had a rather embarrassing episode when the director of managed services operations distributed a spreadsheet that detailed the growth in 
+customer transaction revenues. Unfortunately, he forgot to delete the worksheet that 
+contained the complete customer contact information, including credit card numbers! As 
+you can guess, much more appropriate operational controls were put in place after this 
+incident. As the vendor, you should make certain this kind of mistake never happens. As a 
+potential customer of an ASP or MSP, you have the right to demand a careful review and 
+audit of all operational procedures. 
+For this reason, and others, it is essential that the marketect choosing a deployment architecture work 
+to understand not just customer requirements but corporate objectives as well. 
+When the Risk Really Is Too Great 
+One client of mine had created a traditional, enterprise-class system for manipulating 
+extremely sensitive data that represented hundreds of millions of dollars worth of 
+intellectual property. The initial customer-site deployment model was a success because 
+customers were allowed complete control over its every aspect. Unfortunately, it came with 
+a rather high price tag, and my client felt that they had to offer an ASP model to broaden 
+their market. Unfortunately, they failed to understand that the factors described above are 
+not isolated from each other. Instead, each is considered and weighed against another in the 
+context of a winning solution. 
+In this specific example, the extreme sensitivity of the data meant that my client would have 
+to build a substantial infrastructure and ensure that the data center was operated under 
+exceptionally stringent conditions. However, they had neither the organizational nor 
+operational maturity to undertake this task. In addition, many of the target customers were 
+global companies who required 24/7 access and support. Preliminary research also indicated 
+that customers didn't want an ASP—they wanted an MSP. Sadly, my client chose not to 
+invest in the additional infrastructure to create an MSP until the new model had proven 
+successful. 
+I urged my client to avoid offering the ASP and to create a truly winning solution. To my 
+dismay, they went ahead with their plans and introduced the new model. It failed, and the 
+company eventually went bankrupt. 
+Corporate Influences on Deployment Architecture 
+The marketect must consider more than customer requirements when choosing a deployment 
+architecture. Sustainable winning solutions require the marketect to understand the capabilities, 
+desires, needs, and short- and long-term strategies of the corporation offering the solution. Here are 
+some of the strongest corporate influences on deployment architectures. 
+Sales Cycle 
+The sales cycle refers to the length of time and number of steps it takes a corporation to make a sale. 
+In general, it is correlated to the price and complexity of the software. Consumer software, with low 
+price points, simpler implementation and integration requirements, and very few decision makers 
+(usually one or two) has a relatively short sales cycle. Enterprise-class software, with substantially 
+higher price points, complex implementation and integration requirements, and many decision makers 
+(usually a committee with or without approval authority) usually has a longer one. When a corporation is considering a multimillion dollar purchase, they're going to think about it carefully. I've been 
+involved with sales that took two years or more. 
+In general, most consumer software is still deployed on a PC (a customer site deployment), so I won't 
+discuss its relationship to the sales cycle further. Business software is a different matter. If you seek a 
+shorter sales cycle, consider deploying your software as an xSP or licensing it to one that is properly 
+qualified. The sales cycle is usually shorter and the implementation cycle should be. This is important, 
+as once customers have made the commitment to your product they're going to want it up and running 
+as quickly as possible. Watch out, though. Choosing this option without understanding customer 
+influences is not going to create a winning solution. 
+Experience with xSPs indicates an even more complex situation than I've just described. There are 
+times when a customer wants to use an xSP as a quick starter solution and then migrate it to their site 
+(for an on-site deployment). I've also had to manage reverse migrations, in which customer-site 
+deployments were migrated to a service provider primarily because of the service provider's superior 
+infrastructure. While this kind of deployment migration is extremely rare at the moment, I expect that 
+it will become more common in the future. 
+Infrastructure Investment 
+When an application provider considers offering their solution as an xSP or Web service, they must 
+carefully consider the investment needed to create a long-term, viable offering. Companies with a 
+service-based applications model routinely underestimate the often significant investment that is 
+required to create a reliable infrastructure capable of handling projected demands. 
+You don't have to create a solid infrastructure, but then you risk poor customer service. Investment 
+calculations must include technical resources (such as hardware and infrastructure) and nontechnical 
+resources (experienced data center staff, support staff, and so forth). Unless your corporation has the 
+necessary capital and willpower to invest in a solid infrastructure, I recommend against an xSP or 
+Web service. 
+Cash Flow 
+Like sales cycle and infrastructure investment, cash flow must be carefully modeled. Suppose, for 
+example, that an MSP offers a complex enterprise application to customers on a rental basis, with no 
+minimum contract. If they are paying an annual license (common), they have a single payment due at 
+the beginning of their year of service. If their customers are paying a rental, it may not be enough for 
+the MSP to pay for the next annual license. Ultimately, xSPs must take a careful, sober approach to 
+managing the cash reserves needed for successful long-term operations. 
+Flexibility 
+An installed base of customers who use your software on their premises can limit your ability to 
+rapidly innovate and improve it. Customers who have invested time and money in a given release are 
+usually reluctant to modify it. As a result, chances are good that if you go with customer-site 
+deployment you will be supporting several releases in the field simultaneously. 
+This is one of the most appealing aspects of offering your solution as an xSP or Web service. By 
+maintaining complete control, you gain considerable flexibility in such things as upgrade schedules. In 
+an emerging market, where rapid release cycles are often required for growth, you have the luxury of 
+upgrading as often as necessary. Patches can be quickly obtained and installed by development. Of course, appropriate care must be taken whenever you modify your own operational environment, but 
+installing a new release in an operational environment that you control is usually much easier that 
+coordinating upgrades across dozens, hundreds, or thousands of customers. 
+Geographic Distribution 
+If you're trying to sell an application to a global company, they have the right to expect that the 
+deployment will provide them with the necessary support and service. When they choose a customer-
+site deployment, they can control the level of service provided by their inhouse MIS staff, including 
+such things as the language used to answer the phone. When considering an xSP, they may require 
+that it provide local customer support throughout the world. 
+A global company may also make unforeseen technical demands on the total solution. If an 
+application is deployed inhouse, the customer is responsible for installing and maintaining it as 
+appropriate, subject to the license terms. If, on the other hand, you're providing the application as an 
+xSP, you may have to install it in multiple locations around the world to guarantee such things as 
+performance and availability. Communications networks are fast and increasing in speed every day, 
+but for the most part locally maintained applications and data are faster. 
+Service, Not Price 
+Early xSPs competed on price. Most of them have not survived. Second- and third-generation xSPs 
+have begun to compete on service—convenience, reliability, support and so forth. They have a chance 
+to make it in the long run, provided they maintain their service focus. 
+Choosing a Software Deployment Architecture 
+Figure 7-1 illustrates the rough relationships that exist between customers, corporate influences, and 
+deployment architectures. It also captures the effects that one dimension often has on the others. For 
+example, if your enterprise-class customer has a high need for integration with existing or legacy 
+systems, wants more control over system operations, and is dealing with highly sensitive data, chances 
+are good that they will favor a system that can be deployed at their site under the control of their MIS 
+staff. Relaxing these constraints makes other deployment choices viable and in many cases even 
+preferable. 
+Figure 7-1. Choosing a deployment architecture  
+I've intentionally simplified many of the variables that are associated with deployment architecture in 
+the figure. For example, even if the customer has a high preference for deploying the system on site, 
+they may still choose an ASP/MSP if the skills of their operational staff are insufficient or if the 
+application's peak demands will exceed inhouse capabilities. The variables in black—control, 
+integration, and data—all share the same effect on the choice of deployment architecture (when high, 
+deploy at the customer site). The variables in gray are on an opposite scale—when high, deploy as an 
+ASP, MSP, or Web service. 
+The upper right corner of Figure 7-1 captures some of the corporate influences previously described. 
+The figure also shows the migrations between various deployment options as light gray lines. 
+ 
+Deployment Architectures and the Distribution of Work 
+No matter what deployment architecture you choose, someone is going to have to install, maintain, 
+administer, and support it. These basic service and support functions can't be ignored. In a customer-
+site deployment, or when integrating with a Web service, the customer is responsible for the bulk of 
+the workload. In an ASP, these responsibilities are shared. In an MSP and transactional service, they 
+are the service providers. The various deployment choices shift the locus of control among the entities, 
+as shown in Figure 7-2. 
+Figure 7-2. Distribution of work in deployment architectures  
+The Information Appliance 
+A completely different kind of deployment architecture, and one that can be operated almost equally 
+well at a customer site, as an ASP, or as an MSP, is the information appliance—a specialized device 
+that provides one or more specific functions designed to create a better total solution for a well-
+defined target market. Examples of information appliances include 
+•  Linksys EtherFast DSL Firewall/4-port hub. I have installed this in my home to provide me 
+with a simple firewall and 4-port LAN. 
+•  Aladdin Knowledge Systems, Inc., eSafe appliance. This provides anti-virus and malicious 
+mobile code protection for enterprises. 
+•  TiVo and Replay digital video recorders. These provide a single device for managing 
+television viewing. 
+Several trends motivate the growth of information appliances. One of the biggest is the continued 
+adoption of the Linux operating system, which is reliable, free from expensive licensing models, and 
+easily customized and embedded. While there are other excellent choices for appliance operating 
+systems, most of them come with a license fee, which directly increases total cost but provides little 
+additional value to users. 
+One point in favor of proprietary operating systems is any tools they have created to support a specific 
+market niche, making them better than similar tools available on Linux. In other words, there is no 
+simple way to make the choice; you will have to compare a full set of issues, among them license fees, 
+development tools and related infrastructure, and development team experience. What is undeniable is 
+that Linux is the platform of choice for a growing number of information appliance vendors. 
+Another important trend is the need to simplify complex solutions. Appliance vendors usually place a 
+premium on simplicity. Just install the appliance and set a few simple parameters. Many times you 
+don't have or need things like keyboards, monitors, or even expansion slots. The absence of such items 
+simultaneously drives down costs and simplifies use. 
+Information appliances are not appropriate for every kind of software, particularly any system that 
+creates or manages data or that requires substantial customization or programmatic integration, or that 
+just runs better on existing hardware. That said, the move toward Linux and other open source software will continue, as will our desire to reduce complexity for our customers. Thus, we will see 
+the continued growth of single and multi-function information appliances. 
+Deployment Choice Influences on Software Architecture 
+A given deployment choice may exhibit any of the following influences on your software architecture. 
+Flexible, Parameterized, or No Integration Options 
+A system deployed at a customer's site has the greatest demand for flexible integration options. A 
+system deployed as an ASP or MSP may require flexible integration, but the xSP vendor is often not 
+motivated to provide it because of its extremely high costs. In fact, the more standard the xSP can 
+make the offering, the better. Standardized offerings are simpler to create, simpler to manage, and 
+more profitable to operate. Any deployment choice can be offered with no integration options, which 
+is surprisingly appropriate when you're creating a system with very well defined functions and 
+relatively simple boundaries. 
+Upgrade Policies 
+Different deployment architectures make different upgrade demands. For systems deployed at a 
+customer site upgrades must be carefully planned to be minimally disruptive. This can be especially 
+challenging if the customer has crucially important data or has extensively integrated the production 
+system with a large amount of their own programming. For this reason, enterprise-class systems 
+deployed onsite are rarely upgraded more than once every nine months. In contrast, I know of one 
+world-class MSP that safely modifies their production system approximately every 10 to 12 weeks, 
+rapidly introducing new features to their customers in an emerging market. They are able to do this 
+because early in the development of the system they made substantial changes to make upgrading 
+easier. Upgrades are discussed more thoroughly in Chapter 12. 
+Data Protection and Access 
+Application data maintenance must be appropriate based on the application, the users, and the data's 
+sensitivity/importance. When the system is deployed at a customer site all responsibility for handling 
+these issues, especially as they relate to corporate data, is the customer's. As mentioned earlier, the 
+converse is also true: Storing customer data at, or as, an xSP requires that the xSP or your engineering, 
+product development and operations staffs follow strictly defined guidelines that deal with proper data 
+handling. Would you let your company manage your confidential information? 
+Migration Options 
+I expect an increase in the number of solutions that can be deployed either as ASPs/MSPs or on a 
+customer-site. Furthermore, I suspect that these solutions will ultimately need to support migrations as 
+previously described in this chapter. The possible effects of migration should be considered in the 
+overall design of your architecture. 
+ 
+The Future of Consumer Software Web services enthusiasts paint a picture of the future in which savvy, Web-connected users won't 
+license software for use on their home computer, but instead, will connect to a Web service via a 
+persistent, reliable, high-speed Internet connection and license the software on a rental or subscription 
+basis. Fortunately, the deployment architectures presented here, which are currently most applicable to 
+enterprise-class software, will guide you in navigating this brave new Web services world. 
+Like enterprises, users will make their deployment choices based on the quality of the solution

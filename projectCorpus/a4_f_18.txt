@@ -1,0 +1,751 @@
+
+questions, receive official and unofficial answers, share sample programs, and so forth. 
+Educational Materials 
+Distribute unsupported educational and sample programs with your core product so that customers can 
+learn how to create such applications on their own. These programs should be created or certified by 
+your development or professional services organization (or both). Make certain that this kind of 
+reference and/or sample code is high quality—you don't want your customers to emulate poor 
+practices. The programs themselves don't have to be tested to the same level of detail as the released 
+software, but it should use the system in a corporately approved manner. 
+Thanks, But I Think I'll Build My Own User 
+Interface 
+My team had labored mightily to build a great user interface—not a good one but a great 
+one, a testament to usability. When we learned of a "power user" who loved our system and 
+wanted to share some of his ideas for improving it, we jumped at the chance. 
+After a long day of travel, we arrived at his cramped office. He was a senior research 
+scientist working for a major chemical company, and amid the many stacks of paper on his 
+desk was a workstation. With an excited wave of his hand, he motioned us over to review 
+his use of our system. Imagine our surprise when we watched him type a few values into 
+Excel, hit a button, and then manipulate the results in a pivot table. What happened to our 
+beautiful user interface? "Oh, it was nice, but it didn't really meet my needs. Fortunately, 
+you guys built a really cool COM API, so I just programmed what I wanted in Excel. Isn't it 
+great?" Yes, it was. 
+Mailing List 
+A very low-cost way to stay in touch with your customers is an e-mail mailing list. Such a list is a 
+marketing program and should be managed by your outbound marketing department. However, the 
+contents of each e-mail should be driven by the marketect in consultation with development, QA, 
+support, and professional services. 
+User Conferences 
+It is vitally important to have one or more user conferences. Depending on the size of your user base, 
+this can be a single annual event or multiple conferences throughout the year around the world. 
+Organizing an effective user conference is a very specialized skill, and, like your mailing list, its 
+objectives and structure should be driven by the marketect. However, the conference itself should be 
+managed and run by your outbound marketing department. 
+License Agreements 
+The marketect needs to review proposed license agreements to make certain that the legal team does 
+not put in language unnecessarily restricting use of the API. Such language is usually added with good 
+intentions, but the end result can put the customer in a tough position. At the same time, as discussed in Chapter 5, license agreements for in-licensed technology must be examined to make sure rights to 
+in-licensed technologies are clearly defined. 
+No License for Testing 
+Simplistic license agreements often inadvertently prevent customers from utilizing systems 
+as intended by marketects and tarchitects. In one enterprise-class system I worked on, the 
+original terms of the license agreement restricted the use of our system on only one 
+hardware configuration, however, it did allow them full and free access to our API. The 
+problem was that the agreement did not meet the legitimate needs of the customer to install 
+the system on development and staging (or "model office") configurations to create and test 
+their integrations and extensions before installing them on production hardware. 
+One way around this problem is to make certain that your legal team understands your 
+objectives for use of the API. If you've designed a system to be integrated and/or extended, 
+your customers are going to need development and testing licenses. Some vendors charge 
+for these; others provide them as part of the basic license. (I recommend against charging 
+because that will inhibit customers from integrating and extending their systems.) 
+Regardless of whether or not you choose to charge for them, you need to make certain that 
+they are clearly defined. 
+Managing APIs over Multiple Releases 
+Earlier in this chapter I noted that publishing an API, or any other technique for extending and 
+integrating your system, is an important public commitment to the people relying on it. The level of 
+commitment to an external API for customers is very different from that developers may have to an 
+API they are creating for other members of the development team. It is relatively easy to negotiate 
+changes to an API within a team—healthy teams do this frequently during development. However, it 
+is very difficult to negotiate changes to an external, published API, especially when hundreds or 
+thousands of customers have created applications that rely on it. I've read how Web services will 
+change all of this, but I don't believe it. An external, published API represents a serious commitment 
+to your customers. You can't change it on a whim. 
+Like other aspects of your system, however, the techniques you use to provide extension and 
+integration, including APIs, will change over time. Early versions of the system may not expose the 
+right kinds of services or may not expose the right services using the proper underlying technology. 
+The trick is to carefully manage the evolution of APIs so that the customers relying on this 
+integration/extension technique will have time to plan for and accommodate any changes. 
+Techniques 
+Here are some approaches to consider in managing APIs. 
+Give Plenty of Warning 
+Customers should know about extension and integration changes as soon as possible. A good rule of 
+thumb is to announce changes planned for release n+1 in release n. To help in the transition from the 
+old to the new API, provide tools to identify the old ones and, when possible, automatically convert 
+the old ones to new ones. Provide One Release of Overlap 
+Once the new APIs are released in version n, the old APIs should not be fully deprecated until release 
+n+1. In other words, an API must be removed in no less than two full releases of the product. 
+Provide Backward Compatibility Layers 
+Once the API is no longer officially supported you may find it helpful to offer an "unsupported" 
+backward compatibility API (or layer), provided that the underlying functionality of the product hasn't 
+changed. This API is often implemented as an optional module that can be installed as needed by 
+users. Be careful with this approach, as it may create a false sense of security among your users that 
+portions of the API will always be there. 
+Provide Automated Tools That Identify or Convert Calls To Deprecated APIs 
+Provide tools that can automatically identify and/or convert calls to deprecated APIs and convert them 
+to the new platform. These tools benefit your application by making it that much easier to move to the 
+upgraded version. 
+ 
+Chapter Summary 
+•  Integration is the process of programmatically linking your system with others. 
+•  Extension is the process of adding new functionality to your system through well-defined 
+approaches, such as plug-in architectures. 
+•  Integration and extension enable your customers to create the product they seek. As a bonus, 
+it creates tighter customer relationships and decreases the likelihood that a customer will 
+leave you for a competitor. 
+•  The layered architectural pattern, which organizes various system functions in logical and 
+physical layers, provides several excellent choices for integration and extension in enterprise-
+class software systems. The primary layers of a layered architecture are 
+- User interface 
+- Services 
+- Domain model 
+- Persistent data 
+Sublayers may exist within these layers, and other layers may be created to handle specialized 
+requirements. 
+•  Whatever the structure of your architecture, build it in spikes—that is, user-visible 
+functionality driven through all layers or subsystems. 
+•  There are several ways to provide integration and extension points at the services and domain 
+model layers. For example, 
+- Programmatic techniques, such as exposing an API - Registration techniques, such as creating a plug-in architecture (like a Web browser) 
+•  Integration and extension of persistent data can be accomplished through 
+- Views 
+- Hook tables 
+- Spreadsheet pivot tables 
+- Extract, transform, and load (ETL) scripts 
+•  The business ramifications of applications that can be extended and/or integrated include 
+- A professional services organization to guide your customers in these activities 
+- Training programs to ensure that your customers understand how to do this on their own 
+- Certification programs to create an ecosystem associated with your application 
+- A community of users around your application 
+- License agreements that explicitly support integration and extension 
+•  Any customer-facing method for integrating and/or extending your application must be 
+carefully managed. You're making a public commitment to stability. Honor it. 
+Check This 
+•  For each way the system can be extended or integrated, we have the necessary supporting 
+materials to ensure that our customers can create the desired extensions or integrations. 
+•  We have used the context diagram to define how our application might be integrated with 
+other applications. 
+•  We have established naming conventions to create a consistent API. 
+•  The performance and resource implications of each call to our API are well documented. 
+Try This 
+1.  To what degree can your system be integrated with other systems? How do you know that 
+your techniques work for your target market? 
+2.  To what degree can your system be extended? How do you know that your techniques work 
+for your target market? 
+3.  What kind of certification program have you established? 
+4.  What kinds of third-party consultants have worked with your application? What information 
+are you providing to them? How are you using their knowledge and experience to improve 
+your application? 
+5.  What steps have you taken to foster a user community? 
+Chapter 9. Brand and Brand Elements Product, service, or corporate brands, and their related elements, have a substantial impact on your 
+solution. Recall from Chapter 2 that branding is vital to your total success. You can create a great 
+technology, and even a good solution, but a winning solution will be reflected and supported by a 
+winning brand. 
+Brand elements, which are often woven throughout the product and become, often surprisingly, part of 
+the architecture, need to be managed. Among other things, you need to select which elements will 
+become part of your solution, how these relate to the brand elements of other products, when and how 
+to change them, and how your partners may modify them. In this chapter I will explore brand and 
+brand element management and their influence on creating and sustaining a winning solution. 
+Brand Elements 
+The brand elements most likely to impact your product are names, slogans, graphic symbols, designs, 
+other customer-facing or customer-visible elements, and even URLs. Elements can be registered for 
+legal protection as trademarks by the U.S. Patent and Trademark Office (USPTO). Registered 
+trademarks have special restrictions on their usage—a topic explored later in this section. 
+Names 
+The brand elements often having the biggest effect on your system are the various names associated 
+with your product and your company. Here are some of the areas in which names can affect your 
+tarchitecture. 
+Physical Location of System Components 
+Most deployment models, including service provider models such as an ASP or MSP, result in one or 
+more software components being installed on the customer's or user's computer. These range from 
+simple browser plug-ins to the full executable and its supporting files, including DLLs, sample data, 
+documentation, and help files. Once you have identified the platform-recommended location for the 
+software, chances are you will still have to create a subdirectory or subfolder for storing your 
+application components. I recommend the combination of your company name/product 
+name/subcomponent name or, in rare cases, just the product name/subcomponent name. 
+This approach has several advantages. It gives you additional branding information for your company 
+and product, and it supports expansion in multiple ways: You can conveniently add subcomponents to 
+a given product or add products. Even if you sell just a single product, you're likely to create 
+additional modules, over time, and you're going to need a place to store them. 
+If you support multiple versions of your application or product on the same system, it may be 
+convenient to incorporate version numbers in directory names, although this may become irrelevant as 
+operating systems increasingly support the management of component and component versions. 
+Regardless of operating system support, carefully consider your choice because multiple versions on 
+the same system increase testing complexity (remember the matrix of pain?) and often increase 
+version support costs. See Chapters 12 and 15 for more information on supporting multiple versions of 
+the same product. 
+This approach does not remove all risks associated with identifying the right physical location to store 
+or install a product. A company, product, or subcomponent name, or a concatenation of the three, may 
+be longer than the allowed length of a subdirectory or subfolder name. Any of these may contain 
+special characters not allowed by the supporting operating system. While rare when using fully qualified names, there is always the possibility of name collision. Special symbols that may be 
+associated with the product in printed material, such as ©, ®, or ™, are probably not allowed. Despite 
+the potential challenges, your company name/product name/module subcomponent is the best place to 
+start when determining the physical location of your product. 
+Names of Key Components 
+Complex products often have many sellable components, and in addition to the overall product, 
+marketects must name them as well. It is best if the marketect or another person trained in marketing 
+does the naming. This is an important, strategic decision, and you want to make certain that it is made 
+by individuals with the proper training and background. Some companies allow developers to name 
+products. I don't approve, because developer-created names are often confusing. 
+As for customer-visible technical components and/or features, I encourage marketects to include 
+developers in this naming because the goal is often "technically" accurate names that convey exactly 
+what is going on. These names can be exciting, and a good marketect can use their straightforward, 
+direct, and descriptive nature to quickly educate a potential customer on key features and also 
+differentiate the product from the competition. Creative technical names may also be easier to protect. 
+Developers Should Name Variables, Not 
+Products 
+Product names are extremely important, especially in the consumer market. Product and 
+marketing managers spend a lot of time trying to create good ones, and they should. A well-
+named product has a significantly greater chance for success than a poorly named one. Like 
+a good class, variable, or function name, a good product name has many desirable 
+attributes: It is short, it describes or highlights one or more positive attributes, it is a good fit 
+for the company, it can be legally protected via a trademark, it has a freely available URL, it 
+is unique, and it can be easily pronounced and spelled by members of the target market. 
+This is just to name a few! 
+Here are some of my favorite high-technology product names and why I like them: 
+•  Palm. Can you think of a better name for a hand-held computer? 
+•  Latitude. It sounds like a computer made for people on the go, and it is. 
+•  Photoshop. A software workshop for image manipulation. 
+•  Easy CD Creator. The product lives up to its name—a double win! 
+I'll admit that product names are often less important in the enterprise market than in the 
+consumer market in which other brand elements dominate. There are many reasons for this, 
+chief of which is that customers of enterprise software often refer to the company more than 
+the product: Siebel Sales, Oracle Financials, SAP R3, Tibco ActiveExchange. There are a 
+few exceptions, such as OpenView (from HP), or CICS, DB2, and VTAM (from IBM). In 
+some sense, product name versus company name is a bit of a toss-up when it comes to 
+enterprise software—as long as one of them is good and drives your branding strategy, 
+you're probably OK. 
+The desirable attributes of a product name are sufficiently different from those of technical 
+names that it is almost always better to ask your marketing experts to do the naming. I've 
+inherited a few projects in which product names were created by developers. In a few cases this was okay, as customers found these names acceptable and the names addressed a 
+sufficient number of attributes. Most other times, a name had to be changed because it was 
+too "geeky," the company couldn't secure a trademark, it was too close to a competitor's 
+name, or it conveyed a poor brand (such as when a name seemed cool to a developer but a 
+customer viewed it negatively). As discussed later in this chapter, changing the name of a 
+product is an expensive operation that can often can be avoided simply by letting someone 
+skilled in product marketing select the name to begin with. 
+To illustrate just how important it is to review names, one of my developers actually named 
+a database upgrade program after himself! We missed the name in our review, and the 
+program was actually shipped to customers. Quite an embarrassment. 
+Tarchitects and developers should realize that developer-created component names, which probably 
+had a strong correlation to the tarchitecture in its first few releases, are much less likely to maintain 
+this strong correlation over subsequent releases. If a developer-created name catches on, you're going 
+to want to keep it. At the same time, chances are good that the team will want to modify the 
+underlying implementation and possibly even the tarchitecture over time. The result is that the 
+"technical" name and its underlying implementation will diverge. 
+Instead of fighting this divergence, accept it. Names associated with the marketecture evolve more 
+slowly than the tarchitecture and its implementation. The usually substantial cost of changing a 
+component name is not justified just because you want to maintain a strong correlation between the 
+marketecture and the tarchitecture. 
+I realize that these are somewhat paradoxical arguments. Fortunately, the marketect is the final arbiter 
+and selector of customer-visible names. By working with developers, a skilled marketect can usually 
+select the best names possible. 
+Names May Or May Not Be Internationalized 
+One element of internationalization that needs marketectural and tarchitectural consideration is that 
+the actual name of the product may be different in different target markets. Installing the product in a 
+U.S.-centric directory structure may cause confusion among your user population in countries where 
+English is not dominant. In addition, many product names that make good sense in English must be 
+translated into different names in other languages. Any good marketing book can provide horror 
+stories about good product names created in one culture that were horrible in another. Ultimately, you 
+have to check all names before blindly assuming that locally created names will work on a global 
+scale. If you suspect that this might be a problem, make certain that you're storing brand elements in 
+appropriate resource files or are using some other technique to extend your internationalization 
+architecture into brand elements. 
+Configuration and Log Files May Contain Brand Elements 
+Product and company names can affect the location, name, content, and structure of configuration and 
+log files. 
+Error, Diagnostic, and Information Messages May Contain Brand Elements 
+Messages presented must often refer to the marketing names for key components or functional areas 
+of the product. If they don't, your user and technical support organizations can be confused on how to 
+identify and resolve problems in the field. Names Are Volatile, Especially in the First Release 
+The first release of any project is where names are most volatile. This volatility can have negative 
+effects on, for example, the source code management system. I recommend that developers refer to the 
+product through a code name for the first release, such as the name of a fruit or a mythological 
+creature. You don't want to create entries in your source code management system that closely reflect 
+a product name that may change two or three times before the release date. Because names may 
+change during any release, continue using this code name for as long as the product is in development. 
+Graphics, Slogans, and Other Brand Elements 
+It seems obvious, but sometimes development organizations forget that graphical user interfaces 
+(GUIs) will be affected by graphics and iconic brand elements. Similarly, voice-based user interfaces 
+will be affected by slogans and other brand elements. While many of these effects are not 
+tarchitectural, they should be addressed by the development team. Pay attention to the following areas. 
+Icons and Splash Screens 
+Product management should approve every icon and/or graphic presented to the user, as they are all 
+brand elements. I worked on two projects where the product didn't have a logo until we realized that 
+some kind of icon on the desktop was necessary. In the first project, I was fortunate to have a 
+developer who was also a skilled graphic artist. He created a logo that marketing approved, and it later 
+became the approved trademark. On the other project, we had to add time to our schedule for an 
+outside design firm to create the necessary icons and splash screens, have marketing approve the 
+design, and ensure that the icon was sized correctly and used the right colors. As you might guess, we 
+missed our initially projected delivery date. 
+Brand Colors 
+Companies often specify everything they can about their brand, including specific colors, presentation 
+templates, and document templates that are either associated with the brand or must be used with the 
+product. Tarchitects should check in with marketects to determine the effects that any of these brand 
+elements may have on the architecture. 
+Voice Branding 
+An emerging area of brand management is voice-based user interfaces. Picking the right voice talent is 
+a powerful way to make certain your brand is properly represented. 
+When to Use the Trademark (™) Symbol 
+There are legal implications to the proper use of various brand elements, especially those that have 
+been registered as trademarks. Here are the most important things to keep in mind. 
+Protect Your Legal Rights 
+Trademarks are based on use. Failing to use a mark may result in losing your legal right to it. 
+Give Notice You have to tell the person viewing the registered information that it is, in fact, a registered trademark. 
+The easiest way to do this is to use the symbol ® (referred to as a mark). There are other ways—
+consult your inhouse legal counsel for the preferred approach, as it may differ from the above. Do not 
+use the ® symbol if the mark has not been registered with the USPTO. Surprisingly, the government 
+claims that to do so is a crime. Instead, use the ™ symbol for unregistered trademarks. 
+Use Marks Only as Adjectives 
+A mark should never be used as a noun or verb, never be pluralized, and never be used in the 
+possessive form. 
+Include Registered Trademarks in the Distribution and/or Prominently Display Them 
+on Usage 
+Traditionally, marks were affixed to goods and services. In the world of software, they must somehow 
+be displayed to the user, so include them in the distribution, installation, and execution of your 
+software. 
+Domain Names Can Be Trademarked, Subject to Certain Restrictions 
+If you've created an interesting URL for your product, service, or company, you may want to register 
+it as a trademark. Additional information can be found at http://www.uspto.gov/. 
+Managing In-License Brands 
+In-licensed technology may have any number of branding requirements. The marketect and tarchitect 
+should work together to ensure that brand elements of in-licensed components or technologies are 
+properly handled. 
+Click OK to Continue 
+In one project I worked on we wanted to operate a key in-licensed technology as a service 
+under Windows' NT. This would allow us to automatically restart the service if it failed. 
+Unfortunately, the licensor required us to display a splash screen for at least 10 seconds, 
+with an OK button, to ensure that a human operator would see the licensor's brand. The 
+service wouldn't start until the button was clicked. The licensor was unwilling to negotiate 
+this requirement, and we needed to make certain that the component could be started and 
+managed as a service. We solved the problem by writing a manager program that would 
+start the service and sleep for 11 seconds. If the splash screen was still displayed it would 
+simulate clicking on OK. 
+Brand Element Customizations 
+Depending on the type of software you create, your target customer might have legitimate 
+requirements to override or customize key brand elements. Some reasons for customization include 
+software sold as a component in another system, software deployed in a service model (where the 
+service provider wants its own brand recognition), or standalone software, integrated into a larger 
+solution by a value-added reseller (VAR), where the VAR wants its own brand recognition. More generally, whoever supports the software or whoever is most visible to the user often wants brand 
+recognition. 
+Marketects should be able to identify requirements for brand element customizations fairly early in the 
+development cycle. Knowing which elements need to change is essential because you'll still have to 
+install the software, name key components, and present messages to the user. In addition, make certain 
+you know which brand elements may be customized and which must be customized. The former will 
+require sensible defaults; the latter will require a way to handle the customization process. 
+Include precise details about every brand element that may or must be customized. These details 
+include bitmap size, supported graphic file formats, default brand elements, and so forth. Keep in 
+mind contract requirements in this process, as the specific requirements of brand element 
+customization may be contractual. 
+Changing Brand Elements 
+Changing brand elements is usually harder than changing other parts of the system that are seen by the 
+user, such as in an internationalized user interface that can be readily localized to different languages. 
+There are two primary reasons for this. 
+First, brand elements change quite slowly and are therefore not generally required to support change. 
+This is unlike internationalized software, which has been designed to support change. I am not 
+advocating that you create requirements to support changing brand elements, unless this is specifically 
+required as part of your overall strategy. Specific requirements to support changing brand elements are 
+usually rare. 
+Second, brand influences a product and its architecture in very subtle ways. The product development 
+team (marketing, engineering, QA, technical publications—everyone associated with creating a 
+winning solution) often doesn't realize the full requirements when one or more brand elements are 
+changed. I vividly remember the challenges one of my teams faced when we decided to change a 
+product name. We debated, and eventually changed, a large number of items that didn't initially 
+appear to be related to the change. These ranged from the labels used in our source code management 
+system to the categories in our bug-tracking system (more on this later). 
+Of course, there are many legitimate reasons to change brands and brand elements. Products and 
+components do change names. Companies change names, either voluntarily or because a company is 
+acquired or a product line is sold from one company to another. 
+Product Areas to Change 
+When you're faced with changing a brand or brand elements, consider these product areas. 
+Subsystem Names 
+A tarchitect must name a subsystem or a component something. Ideally, the name is functional, but 
+quite often it is related to the product or the brand. As described earlier, it also happens that functional 
+or technical names become part of the product and brand. Changing the name of a product or any of 
+its brand elements may motivate internal subsystem or other component name changes. 
+Source Code Repositories It is easier for everyone if the product and brand element names either are not reflected in the source 
+code repository (i.e., use code names) or match, as closely as possible, the product names. If you name 
+repository structures after products, keep them synchronized. It is very confusing to track down a set 
+of changes when the source code repository refers to a product that no longer exists! 
+QA and Technical Support Tracking Systems 
+Good QA and technical support systems provide bug categorizations. These categorizations inevitably 
+reflect product and brand elements and should be maintained in close alignment with the actual 
+products. This is especially important if you utilize any kind of customer self-service solutions, such 
+as a Web site where customers can review problem case histories (which also reinforces that your 
+brand is really your total customer experience, including technical support!). 
+Physical Location of Components 
+As described earlier in this chapter, it is often easiest to place physical components where they reflect 
+the company, the product, and the module. Your upgrade process may have to account for this. If you 
+change any components, be patient. I've worked on products where it took two full releases before all 
+changes associated with the new product name were implemented, including upgraded versions of the 
+product. 
+Naming and Structure Of APIs 
+APIs often reflect, either by name or by function, a variety of brand elements. Company or product 
+names, for example, may appear as prefixes on functions and functions may be organized or grouped 
+according to product-specific branding requirements. Because of this, changing the name of the 
+product or any of its associated brand elements may even require changes to your APIs. 
+Error, Information, and Diagnostic Messages 
+Because any of these may contain references to corporate or product brand elements, each needs to be 
+examined for potential changes. 
+QA and Test Automation Infrastructure 
+If you're changing any subsystems, error messages, or user interfaces, or your automated build system 
+or any externally visible APIs, chances are good that you'll also have to make some modifications to 
+your QA and test automation infrastructure. 
+Sales Collateral 
+Sales collateral refers to all materials created to support sales. This includes Web sites, whitepapers, 
+case studies, "glossies," and so forth. These also require changes if the brand or brand elements 
+change. 
+QA and Change 
+The QA effort to change a brand or key brand elements is often substantial. With so many parts of the 
+system changing, and with the potential for tarchitectural change, you have to perform a full QA 
+cycle. One of my teams had to track down a particularly nasty bug when the installer, under certain 
+circumstances, put the new software in the old location! Fortunately, this was captured in the beta testing process (which is essential when brand elements change because it gives your customers time 
+to adjust). 
+ 
+Chapter Summary 
+•  Brand elements have a subtle but pervasive impact on your tarchitecture, ranging from the 
+icons that represent the product to the location where they are stored. 
+•  Product names are the domain of the marketect. Good subcomponent and feature names may 
+come from developers (but are still controlled by the marketect). 
+•  Internationalization poses special challenges to brand elements. It pays to hire a specialist if 
+you're going to go international (and chances are good that you are). 
+•  Understand how to use various legal designations associated with product names. 
+•  Technology in-licenses may impose brand element requirements. 
+•  Review all aspects of the total customer experience when considering changes to a product 
+name. 
+ 
+Check This 
+•  All required brand elements have been identified and approved. 
+•  All brand elements have been internationalized as required. 
+•  Error, diagnostic, and log files have been checked for approved brand elements. 
+•  All marks, including ® and ™, are used properly. 
+•  Any brand elements that may be replaced or changed by a partner or technology licensee have 
+been identified and fully specified. 
+ 
+Try This 
+1.  How are brand elements used in your application? Consider products and their names, 
+graphics, URLS, and so forth. 
+2.  Are there any plans for changing brand elements in the current or a near-future release? How 
+do you intend to manage this process? 
+3.  Do you work on software that requires you to give your customers brand or brand element 
+control? How do you do this? 
+4.  How do you coordinate brand elements with other product lines? 
+Chapter 10. Usability 
+Winning solutions are usable. They may not be perfect. They may not win design awards from fancy 
+committees where people dress in black, sip champagne, and pontificate on issues like "convergence." 
+But they are usable: With them users can accomplish necessary tasks easily, efficiently, and with a 
+minimum of errors. They enable users to achieve their goals with little, if any, frustration. I've already touched on two important but overlooked aspects of usability: deployment and 
+integration/extension architectures. Subsequent chapters will focus on usability in the context of 
+operations and maintenance—notably, installations and upgrades. This chapter briefly explores some 
+other important aspects of usability, concentrating on performance and scalability. Simply put, just 
+about everything the tarchitect does affects usability in one way or another. Gaining an appreciation of 
+usability, of how architectural decisions affect it, and of how it affects architecture, is critical to 
+creating winning solutions. 
+As you read this chapter, keep in mind that usability is a very large topic, and several terrific books 
+have been written about it. Even if you've read other books, however, you'll find this chapter useful 
+because it discusses usability in the context of a winning solution. My primary focus is how 
+tarchitecture impacts usability, with an emphasis on performance factors. This differs from books that 
+address process or technology. 
+Usability Is about Money 
+Historically, usability was associated with the user interface, and human–computer interaction (HCI) 
+professionals concentrated their work here. This makes perfect sense, because most of our 
+understanding of a given system and its usability is shaped by the user interface. 
+But usability is much deeper than the user interface. In my view, it relates to the complex choices that 
+users of the system make to accomplish one or more tasks easily, efficiently, enjoyably, and with a 
+minimum of errors. Many, although not all, of these choices are directly influenced by your 
+tarchitecture. In other words, if your system is perceived as "usable," it will be usable because it was 
+fundamentally architected that way. 
+This view of usability makes certain demands on marketects and tarchitects. For different reasons, 
+both must understand users and the context in which they work. The marketect needs these data to 
+ensure that the system is providing a competitive edge, that it is meeting users' most important needs, 
+and that it is providing the necessary foundation for a long-term relationship. The tarchitect needs 
+these data to create the deeper capabilities—from performance to internationalization—that result in 
+usable systems. 
+As a trivial example, consider users in different domains. An application designed to help a 
+biochemist manage the vast amount of data created by automated experiment equipment is vastly 
+different from the airport self-service kiosk where I obtain a boarding pass before taking a flight. A 
+clear understanding of what makes these systems usable can only be acquired by understanding 
+representative users and the context in which they work. The marketect needs to understand the use 
+cases associated with user goals and motivations, how creating these systems will serve user needs, 
+and so forth. The tarchitect must also understand the uses cases associated with these systems, even 
+though the technology that underlies each solution is radically different. 
+More subtly, understanding users and the context in which they work is important for the quantitative 
+and qualitative dimensions of usability. Quantitative aspects of usability address such things as 
+performance and data entry error rates. Qualitative aspects address such things as satisfaction and 
+learnability. Because no application can maximize every possible quantitative or qualitative value, 
+tradeoffs must be made. Good tradeoffs produce usable applications and winning solutions. 
+There are a variety of techniques you can use to gain an understanding of users, including observation, 
+interviews, questionnaires, and direct experience. The last is one of my favorites, a technique I refer to 
+as experiential requirements. Simply put, perform the tasks of your users as best you can to understand how to create a system they find usable. This approach isn't appropriate for all situations 
+(e.g., surgery or auto racing), but it is one of the best for many. 
+The fundamental, almost overpowering, reason to create usable systems is money. A large amount of 
+compelling data indicates that usability pays for itself quickly over the life of the product. Whereas a 
+detailed summary of the economic impact of usability is beyond the scope of this book, I will mention 
+one system I worked on that was used by one of the world's largest online retailers. A single phone 
+call to customer support could have destroyed the profits of a dozen or more successful transactions, 
+so usability was paramount. Other applications may not be quite as sensitive to usability, but my 
+experience demonstrates that marketects and tarchitects routinely underestimate usability's 
+importance. Benefits of usable systems include any or all of the following, each of which can be 
+quantified. 
+Market Demands and Usability 
+When you go to the store to purchase software you can refuse to buy any application that 
+does not appear to meet your needs—including your subjective preferences. This effect of 
+market forces drives the designers of shrink-wrapped software to create systems that are 
+increasingly easy to use. 
+Unfortunately, software designers in large corporations are usually not driven by market 
+forces. Instead, they typically attend to the needs of senior management. As a result, the 
+usability of many applications in these corporations is abysmal: Poorly designed, 
+manipulative, and even hostile applications denigrate the users' dignity and humanity. 
+If you are a tarchitect working on an internal application in a large corporation, I urge you 
+to pay special attention to the suggestions listed in the rest of this chapter. You may not be 
+driven by the same market forces as are tarchitects creating shrink-wrapped applications, 
+but the benefits of usability are as applicable within the corporation as they are in the 
+marketplace. 
+•  Reduced training costs 
+•  Reduced support and service costs 
+•  Reduced error costs 
+•  Increased user productivity 
+•  Increased customer satisfaction 
+•  Increased maintainability 
+It is generally not possible to achieve every possible benefit of usability simultaneously. For example, 
+a system that is easy to learn for novices is likely to be far too slow for experts. Because of this, it is 
+vital that marketects and tarchitects work together to ensure that the correct aspects of usability are 
+being emphasized in the project. 
+Mental Models, Metaphors, and Usability 
+Once you've gained a concrete understanding of how users approach their tasks, you can begin to 
+understand the mental models associated with these tasks. A mental model is the set of thoughts and 
+structures we use to explain, simulate, predict, or control objects in the world. It is shaped by the task 
+and the tools used to accomplish it, which means that it can change over time. As far as I know, there 
+is no language or notation that formally documents mental models. At best, mental models are informal observations that the development team can use to create more usable systems. Consider a 
+designer creating a new project planning tool. Through several interviews she has discovered that 
+managers think of dependencies within the project as a web or maze instead of a GANTT or PERT 
+chart. 
+In creating the new planning tool, the development team will create one or more conceptual models to 
+share their understanding with others. A conceptual model is some representation of a mental model, 
+in words or pictures, using informal or formal techniques—for example, a UML class diagram of the 
+primary concepts in the system. 
+An understanding of mental models, and the clarifying role of conceptual models, forms the creative 
+foundation of metaphors that can be used in the creation or modification of a system. Metaphors are 
+models that help us understand one thing in terms of another. Tarchitects often use metaphors to 
+structure their application architectures. In one system I worked on, we had to support message 
+passing between distributed systems in such a way that any system in the chain could add data to or 
+remove it from the core message without altering the core message contents. To help explain this 
+concept to potential customers, I created the metaphor of a Velcro-covered ball, where the ball 
+represented the core message and the data that customers could add to the message were "attached" or 
+"removed" much like we could attach or remove pieces of Velcro to the ball. 
+A well-chosen metaphor shapes both the tarchitecture and the user interface. In the project planning 
+example described above, the system's underlying tarchitecture could easily have one or more 
+functions to manipulate project plans in terms of a web or a maze. This choice, in turn, could provide 
+creative ways of organizing tasks, displaying information, or providing notification of critical path 
+dependencies. 
+Metaphors are often most apparent when considering the marketecture, primarily because those 
+chosen by a tarchitect must be communicated in a targeted manner to a well-defined market. 
+Metaphors can influence a variety of brand elements, including names and iconic representations of 
+products or processes. They often affect the pricing model, by highlighting areas of the system that are 
+of greatest value to the defined market segment. Entirely new products rely on metaphor to both 
+explain how they work and provide marketects with the vehicle for shaping future customers' mental 
+models about them, how they work, and the benefits they provide. All of these are reasons for close 
+collaboration between marketects and tarchitects in the development of the system metaphor. In the 
+example of a project planning tool, the marketect may prefer the metaphor of a maze over that of a 
+web because a maze better fits the product's positioning. 
+The final benefit associated with well-chosen metaphors, and arguably the most important reason to 
+pursue them, is their effect on usability. They substantially improve system usability by tapping into 
+users' existing mental models of their work and how that work should be performed. Training costs are 
+substantially reduced, satisfaction improves, and overall comfort with the system increases. An 
+excellent catalog of prospective metaphors can be found in Designing Object-Oriented User 
+Interfaces [Collins 1995]. 
+Tarchitectural Influences on User Interface Design 
+You can find quite a lot of tarchitectural advice, including my description of layered architectures in 
+Chapter 8, that recommends separating the user interface logic and design from the rest of the 
+underlying system. This is good advice because elements of design such as business logic should be 
+maintained in a manner that allows multiple representations. It is also true that the user interface 
+should have maximum flexibility in presenting data meaningfully for the intended user. Consider an 
+application that monitors processes on a factory floor. One of the monitoring devices may be a thermostat integrated with a specific piece of equipment. The user interface designer should be free to 
+represent the thermostat in whatever way makes most sense: as a gauge, a dial, a simple numerical 
+display, or perhaps something even more creative that hasn't been done before. 
+That said, my experience shows that in most applications there is no practical way to purely separate 
+the user interface from the rest of the tarchitecture. In fact, as application complexity increases you 
+often have to rely on the idiosyncratic benefits provided by a given kind of user interface, whether it 
+be command line, graphical, haptic, auditory, or any combination thereof. 
+Areas of Influence 
+The next sections describe some specific areas where tarchitecture influences user interface design and 
+usability. 
+Cardinality 
+Cardinality refers to the number of entities that participate in a given relationship. It is an important 
+element of overall tarchitectural and user interface design because the techniques associated with 
+storing, processing, and representing small numbers of entities vary quite a bit from those associated 
+with storing, processing, and representing large numbers. As cardinality increases, the demand for 
+visual representations of the data and their interactions also increases. Fortunately, the number of tools 
+available for visualizing large data sets continues to increase. make certain you understand how 
+cardinality may affect your user interface. 
+Feedback 
+One of the most important heuristics associated with creating usable systems is providing various 
+kinds of feedback to the user. Feedback assumes a variety of forms, including informational messages, 
+responses to user actions (such as a menu being displayed when selected by the user), progress meters, 
+and so forth. The tarchitecture must be created with an awareness of feedback demands. 
+Consider the effects of a progress meter, which indicates that the system is processing a request or 
+transaction that is going to take a fairly long time. The portion of the system servicing the request 
+must be designed to allow periodic feedback on its processing status. This can be relatively simple, 
+such as when you issue a request to perform some operation over a finite number of elements and 
+processing each element takes a well-known amount of time. It can also be quite complex, as there are 
+many operations for which you cannot predict in advance the time to complete. Note that this fact also 
+influences the kind of progress meter chosen, another example of how underlying tarchitectural issues 
+influence the design of the user interface. 
+A special form of feedback concerns early validation, in which the system performs partial validation 
+or near realtime evaluation on every piece of entered data. A trivial example is a data input field for a 
+numeric part number that only accepts numeric characters. A more complex example is an input 
+screen that can partially validate data or an input screen that enables/disables various controls based 
+on previously entered data. Early validation can't be performed on many Web-based systems because 
+the underlying capabilities of HTML and a browser can't support it. More generally, the devices used 
+to access the system do not affect usability in a uniform manner—the capabilities of every device 
+must be separately understood to ensure you're getting the best usability. 
+Explicit User Models One way to take advantage of your understanding of mental models is to create an explicit model of 
+users' understanding in your system and adjust system behavior to it over time. This technique is used 
+in everything from my word processor, which automatically corrects spelling mistakes, to my favorite 
+online bookstore, which recommends books according to my previous purchases. 
+Workflow Support 
+System architectures and markets often mature together. This is one reason that so many initial system 
+releases have poor workflow support and many mature releases have one or more elements that in 
+some way provide explicit workflow support. As the market and use of the system mature, product 
+development teams can capture best practices and codify them through any number of simple (e.g., 
+wizards, animated help systems) or complex (e.g., scriptable workflow engines) workflow support 
+structures. Workflow support usually builds on top of the understanding we develop of the users' 
+mental models and is in itself a kind of explicit user model. 
+Transaction Support 
+Many of the operations performed in a system can be thought of as transactions—for example, simply 
+typing a character into a program that supports undo. Inevitably, transactions, and transaction 
+semantics, affect the user interface and vice versa. Consider a Web site that provides flight 
+information, constructed according to the layered architecture presented in Chapter 8. In extending 
+this system to support a voice-based user interface, you're likely to find that the underlying domain 
+objects and many of the services are perfectly reusable but certain transaction-oriented services are 
+not. This is because transactions are often designed to support a particular kind of user interface 
+capability. For the interface just described, you can create a very large transaction object that captures 
+many fields from the user in a single screen. This is simply not possible in a voice-based interface, 
+where user input must be obtained via small "chunks" because of the complexity of asking the user to 
+correct errors. 
+Another example is the presentation of information to the user. In a graphical interface, it is easy to 
+provide the user with cues as to how the information is sorted. Thus, your Web-based e-mail program 
+might present all of the messages in your inbox, with simple visual cues as to how they are sorted. In a 
+voice-based interface, you probably won't be able to reuse this logic when presenting information to 
+the user; the underlying logic that obtains these data will also need to change. 
+Error Response 
+How you gather, validate, and respond to user input errors is determined by a complex interaction 
+between your underlying system architecture, your user interface, and the user's tasks. My favorite 
+C++ compiler presents a hyperlinked list of errors in a window; selecting an error takes me to the 
+place in the source code where the compiler thinks the error occurred. This doesn't work for an e-
+commerce Web site, which must respond to errors with some kind of notification screen (perhaps the 
+fields are in red or preceded by an asterisk). The choices made regarding error presentation will likely 
+affect the underlying tarchitecture. 
+Internationalization and Localization 
+In internationalization the underlying tarchitecture supports multiple languages and localized data 
+formats. In localization a given language and style of interaction and/or presentation is specified. The 
+ramifications are substantial and range from formatting monetary values, dates, and numbers to hiring 
+special firms to translate all user information into the supported languages. Operating systems and their platforms provide the infrastructure for determining the user's language. It is up to you to take 
+advantage of this. 
+It is important to consider everything presented to the user when localizing an application: Error 
+messages, informational messages, dialogs, input/output formats, log files, and even the names of 
+external APIs are all internationalization candidates. 
+There are several areas in which the development team can make design choices that make 
+internationalization efforts difficult. Some of the more common mistakes include using fixed-size 
+dialogs and dialog components, embedding information displayed to users within source code, and 
+failing to use the services provided by modern operating systems to select the property localization 
+information at run time. 
+Internationalization efforts include converting fixed-size dialog and dialog components to handle 
+variable width text, allowing for text that flows right-to-left as well as left-to-right, and multi-byte or 
+double-byte character sets. Information displayed to the user should never be embedded within the 
+source code, but should instead be referenced by an identifier that is passed to a component that 
+converts the identifier to the appropriate output at runtime, based on appropriate localization 
+settings.This component can be used for everything from the information displayed in error dialogs to 
+that written to log files (localizing log files can have dramatic effects in customer satisfaction). The 
+foundation of all of these techniques is proper use of operating system facilities to select localization 
+information and settings at runtime. This is an ongoing area of improvement, and tarchitects should 
+routinely monitor operating system upgrades for internationalization/localization improvements. 
+Details, Details, Details 
+Some of my greatest challenges have been in creating software for use around the world. In 
+a project in which our technology was embedded in other systems, one Japanese customer 
+continually refused our deliverables because of spelling or grammatical mistakes. Their 
+attention to detail was extraordinary, and I was generally glad to make their requested 
+changes because I believed that it improved overall product quality. But when they 
+submitted a change that reverted the user interface to a previous version, I realized that they 
+were conducting their own beta tests to see which version their customers liked best—and 
+forcing us to pay for it. Normally, I wouldn't have minded, but their beta testing was starting 
+to negatively affect our other Japanese customers. 
+In another project we needed to localize the client to support 16 languages on both 
+Macintosh and Windows platforms. We spent about a week chasing down bugs in the 
+Macintosh translation. As it turned out, our internationalization vendor used a Windows 
+character set when creating the files. The resultant bug was extraordinarily hard to find, but 
+once found, it was easy to fix. 
+In general, localized software requires a strong beta program conducted with customers 
+and/or partners who are experts in the highest-priority target languages. Most development 
+organizations simply don't have the necessary diversity to properly test the results of the 
+translations provided by your localization vendor. 
+Because of the far reaching impacts of internationalization and localization, marketects should specify 
+their target languages very early in the development process as well as those languages likely to be 
+used down the road. If in doubt, assume the possibility of Far Eastern and Right-to-Left languages, 
+and design the architecture accordingly. Canceling Requests 
+Usability in many kinds of systems can be substantially improved when requests that may take a long 
+time to process or consume many resources can be cancelled. Users feel more in control, and overall 
+system performance can improve as the system is not engaged in unnecessary work. The option to 
+cancel an operation can also provide excellent hooks to system administrators to tune system 
+performance, especially in multi-user systems. 
+If you're building a single-user, desktop application, creating a tarchitecture that can cancel requests 
+can be pretty easy. If you're building any system that shares state with other systems or users, is based 
+on a client/server architecture, or relies on cascading the request through multiple components, this 
+can be hard or impossible. Creating cancelable requests in these systems requires careful tarchitectural 
+design. When a client initiates a cancelable request, it must be given some kind of identifier to 
+reference that request in the future. The server must be extended to associate request identifiers with 
+requests, ensure that requests can be terminated, and properly recover system resources. This can be 
+very challenging, especially when requests are distributed among third-party, in-licensed components. 
+To illustrate, one system I worked on allowed users to initiate requests that invoked the services of 
+two in-licensed components: a database from one vendor and a search engine from another. 
+Coordinating the cancellation process between these technology components took a fair amount of 
+programming, but the results were worth it. 
+I am not differentiating between traditional kinds of enterprise class systems or those based on Web 
+services and service oriented architectures. In fact, I'm concerned that many of the published 
+approaches to creating Web services and service oriented architectures do not address request 
+cancellation. Suppose, for example, that a Web service takes a long time to compute a result or 
+consumes a large amount of resources doing so. It should be possible to cancel these requests once 
+they have been initiated, for all of the reasons described above. Web services don't change this aspect 
+of usability, and it is important to understand that request-cancellation semantics must be an early 
+consideration in tarchitectural design. 
+Each request should be assessed to determine if cancellation makes sense. Small requests that can be 
+quickly computed do not warrant the overhead associated with cancellation. 
+Undoing Requests 
+In addition to canceling requests, usability is generally improved when a user can undo the result of a 
+request. Like cancellation, this can be pretty easy to implement in the domain of single-user, desktop-
+oriented software. In the domain of enterprise-class software, when system state is shared among 
+technology components and users, the concept of undoing a request may not make sense or may be 
+impossible. 
+Suppose, for example, you've created a system that allows users to collaboratively work on documents 
+stored into folders on a shared server. At time t0, Pradeep adds a document. At time t1, Sally deletes it. 
+While Pradeep may think that he can undo the operation, in reality he cannot. This example can be 
+extended to a large number of scenarios and can occur whenever two or more entities share state. 
+Sophisticated tarchitectural design, especially in the domain of transaction management as well as the 
+use of publish–subscribe protocols, can enable you to provide substantial undo capabilities, even in 
+the presence of a shared state. For example, in the previous example the system could keep track of 
+the number of entities that have access to the shared folder. If a single entity is using the folder then 
+single-user semantics, including such things as undo, could apply. Transactions can be extended to attempt an undo operation on behalf of a user; chances are probably good that it will succeed. Finally, 
+rich user interfaces that maintain close correlation with the persistent state of the application can 
+provide users with the information they need to determine if undo makes sense. 
+Compensating Transactions 
+Certain classes of business transactions cannot be cancelled or undone. For example, suppose your 
+employer incorrectly calculates your payroll and automatically deposits the amount in your account. 
+Chances are good that the money will be in your bank account before you receive the payroll stub and 
+notify your manager of the error. The operation can't be undone or canceled. In this scenario the 
+system must be extended through the use of compensating transactions. I've included compensating 
+transactions in the section of usability because most business systems that fail to include them are very 
+hard to use. You can't escape the effects of a compensating transaction, and adding them early in the 
+design substantially improves usability. 
+Timeouts 
+Systems that require a session with another system or the user often have a variety of timeouts. 
+Choosing the wrong value can lower usability, consume unnecessary system resources, and ultimately 
+require the user to work more to accomplish her desired tasks. This is one area where sensibly chosen 
+defaults can really help your application be perceived as truly usable. Default values are not enough, 
+and session-related parameters must be under the control of the system administrators. 
+Network Availability/Speed 
+Many architectures use networks, but they don't have the luxury of an always-on connection, speed 
+guarantees, or notification of a change in these states. Consider the context of the user as you address 
+network issues. Chances are good that their context will differ from yours—plan accordingly. 
+Shared Resources 
+All systems have one or more resources that are shared. For example, I've worked with searching 
+systems that take over all available processors in a multiprocessor system, leaving none for other 
