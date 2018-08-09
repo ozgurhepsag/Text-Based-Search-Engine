@@ -1,0 +1,827 @@
+The Philosophy of History
+Georg Wilhelm Friedrich Hegel
+With Prefaces by Charles Hegel
+and the Translator, J. Sibree, M.A.
+“The History of the World is not intelligible apart from a
+Government of the World.” — W. V. Humboldt
+	
+
+Kitchener
+2001
+Batoche Books
+52 Eby Street South
+Kitchener, Ontario
+N2G 3L1
+Canada
+email: batoche@gto.net
+Table of Contents
+Translator’s Introduction ........................................................ 5
+Charles Hegel’s Preface ....................................................... 11
+Introduction. ......................................................................... 14
+Geographical Basis of History. ......................................... 96
+Classification of Historic Data ........................................ 121
+Part I: The Oriental World ................................................. 128
+Section I: China .............................................................. 132
+Section II: India .............................................................. 156
+Section II. (Continued). India Buddhism. ..................... 185
+Section II: Persia. ............................................................ 191
+Chapter I. The Zend People ........................................ 194
+Chapter II. The Assyrians, Babylonians, Medes, and
+Persians. ................................................................... 200
+Chapter III. The Persian Empire and its Constituent Parts.
+................................................................................. 206
+Persia ........................................................................ 207
+Syria and the Semitic Western Asia ......................... 209
+Judaea ...................................................................... 213
+Egypt ........................................................................ 217
+Transition to the Greek World ................................. 240
+Part II: The Greek World ................................................... 243
+Section I: The Elements of the Greek Spirit. .................. 245
+Section II: Phases of Individuality Æsthetically Conditioned
+........................................................................................ 258
+Chapter I. The Subjective Work of Art ...................... 258
+Chapter II. The Objective Work of Art ...................... 261
+Chapter III. The Political Work of Art ....................... 268
+The Wars with the Persians ...................................... 274
+Athens ...................................................................... 277
+Sparta ....................................................................... 280
+The Peloponnesian War ........................................... 284
+The Macedonian Empire .......................................... 290
+Section III: The Fall of the Greek Spirit. ........................ 294
+Part III: The Roman World ................................................ 296
+Section I: Rome to the Time of the Second Punic War. .. 301
+Chapter I. — The Elements of the Roman Spirit ......... 301
+Chapter II. — The History of Rome to the Second Punic War
+..................................................................................... 314
+Section II: Rome from the Second Punic War to the Emperors
+........................................................................................ 324
+Section III: ..................................................................... 332
+Chapter I. Rome Under the Emperors. ....................... 332
+Chapter II. Christianity. ............................................... 337
+Chapter III. The Byzantine Empire. ............................ 353
+Part IV: The German World. .............................................. 358
+Section I: The Elements of the Christian German World.
+........................................................................................ 364
+Chapter I. The Barbarian Migrations. .......................... 364
+Chapter II Mohametanism. ......................................... 372
+Chapter III. The Empire of Charlemagne. ................... 377
+Section II: The Middle Ages ........................................... 383
+Chapter I. The Feudality and the Hierarchy. .............. 383
+Chapter II. The Crusades. ............................................ 407
+Chapter III. The Transition from Feudalism to Monarchy.
+..................................................................................... 417
+Art and Science as Putting a Period to the Middle Ages
+................................................................................. 427
+Section III: The Modern Time. ....................................... 430
+Chapter I. The Reformation ......................................... 431
+Chapter II. Influence of the Reformation on Political
+Development. ........................................................... 446
+Chapter III. The Éclaircissement and Revolution ........ 458
+Notes .................................................................................. 477
+Translator’s Introduction
+Hegel’s Lectures on the Philosophy of History are recognized
+in Germany as a popular introduction to his system; their form is
+less rigid than the generality of metaphysical treatises, and the
+illustrations, which occupy a large proportion of the work, are
+drawn from a field of observation more familiar perhaps, than
+any other, to those who have not devoted much time to
+metaphysical studies. One great value of the work is that it
+presents the leading facts of history from an altogether novel
+point of view. And when it is considered that the writings of
+Hegel have exercised a marked influence on the political
+movements of Germany, it will be admitted that his theory of the
+universe, especially that part which bears directly upon politics,
+deserves attention even from those who are the most exclusive
+advocates of the “practical.”
+A writer who has established his claim to be regarded as an
+authority, by the life which he has infused into metaphysical
+abstractions, has pronounced the work before us, “one of the
+pleasantest books on the subject he ever read.”1
+And compared with that of most German writers, even the
+style may claim to be called vigorous and pointed. If therefore in
+its English dress the “Philosophy of History“ should be found
+deficient in this respect, the fault must not be attributed to the
+original.
+It has been the aim of the translator to present his author to the
+public in a really English form, even at the cost of a
+circumlocution which must sometimes do injustice to the merits
+of the original. A few words however have necessarily been used
+in a rather unusual sense; and one of them is of very frequent
+occurrence. The German “Geist,” in Hegel’s nomenclature,
+includes both intelligence and will, the latter even more
+expressly than the former. It embraces in fact man’s entire
+mental and moral being, and a little reflection will make it
+obvious that no term in our metaphysical vocabulary could have
+been well substituted for the more theological one, “Spirit,” as a
+fair equivalent. It is indeed only the impersonal and abstract use
+of the term that is open to objection; an objection which can be
+met by an appeal to the best classical usage; viz., the rendering
+of the Hebrew  and Greek  in the authorized version
+of the Scriptures. One indisputable instance may suffice in
+G.W.F. Hegel, The Philosophy of History, 6
+confirmation: “Their horses [i.e., of the Egyptians] are flesh and
+not spirit.” (Isaiah xxxi. 3.) It is pertinent to remark here, that the
+comparative disuse of this term in English metaphysical
+literature, is one result of that alienation of theology from
+philosophy with which continental writers of the most opposite
+schools agree in taxing the speculative genius of Britain — an
+alienation which mainly accounts for the gulf separating English
+from German speculation, and which will, it is feared, on other
+accounts also be the occasion of communicating a somewhat
+uninviting aspect to the following pages.
+The distinction which the Germans make between
+“Sittlichkeit” and “Moralität,” has presented another difficulty.
+The former denotes conventional morality, the latter that of the
+heart or conscience. Where no ambiguity was likely to arise, both
+terms have been translated “morality.” In other cases a stricter
+rendering has been given, modified by the requirements of the
+context. The word “moment” is, as readers of German
+philosophy are aware, a veritable crux to the translator. In Mr. J.
+R. Morell’s very valuable edition of Johnson’s Translation of
+Tennemann’s “Manual of the History of Philosophy,” the
+following explanation is given: “This term was borrowed from
+mechanics by Hegel (see his “Wissenschaft der Logik,” Vol. 3,
+P. 104, Ed. 1841). He employs it to denote the contending forces
+which are mutually dependent, and whose contradiction forms an
+equation. Hence his formula, Esse = Nothing. Here Esse and
+Nothing are momentums, giving birth to Werden, i.e., Existence.
+Thus the momentum contributes to the same oneness of
+operation in contradictory forces that we see in mechanics,
+amidst contrast and diversity, in weight and distance, in the case
+of the balance.” But in several parts of the work before us this
+definition is not strictly adhered to, and the translator believes he
+has done justice to the original in rendering the word by
+“successive” or “organic phase.” In the chapter on the Crusades
+another term occurs which could not be simply rendered into
+English. The definite, positive, and present embodiment of
+essential being is there spoken of as “ein Dieses,” “das Dieses,”
+etc., literally “a This,” “the This,” for which repulsive
+combination a periphrasis has been substituted, which, it is
+G.W.F. Hegel, The Philosophy of History, 7
+believed, is not only accurate but expository. Paraphrastic
+additions, however, have been, in fairness to the reader, enclosed
+in brackets [ ]; and the philosophical appropriation of ordinary
+terms is generally indicated by capitals, e.g., “Spirit,”
+“Freedom,” “State,” “Nature,” etc.
+The limits of a brief preface preclude an attempt to explain the
+Hegelian method in its wider applications; and such an
+undertaking is rendered altogether unnecessary by the facilities
+which are afforded by works so very accessible as the translation
+of Tennemann above mentioned, Chalybseus’s “Historical
+Development of Speculative Philosophy, from Kant to Hegel,”
+Blakey’s “History of the Philosophy of Mind,” Mr. Lewes’s
+“Biographical History of Philosophy,” besides treatises devoted
+more particularly to the Hegelian philosophy. Among these latter
+may be fairly mentioned the work of a French professor, M.
+Vera, “Introduction à la Philosophie de Hegel,” a lucid and
+earnest exposition of the system at large; and the very able
+summary of Hegel’s “Philosophy of Right,” by T. C. Sandars,
+late fellow of Oriel College, which forms one of the series of
+“Oxford Essays” for 1855, and which bears directly on the
+subject of the present volume.
+It may, nevertheless, be of some service to the reader to
+indicate the point of view from which this “Philosophy of
+History” is composed, and to explain the leading idea.
+The aim and scope of that civilizing process which all hopeful
+thinkers recognize in history, is the attainment of Rational
+Freedom. But the very term freedom supposes a previous
+bondage; and the question naturally arises: “Bondage to what?”
+— A superficial inquirer may be satisfied with an answer
+referring it to the physical power of the ruling body. Such a
+response was deemed satisfactory by a large number of political
+speculators in the last century, and even at the beginning of the
+present; and it is one of the great merits of an influential thinker
+of our days to have expelled this idolum fori, which had also
+become an idolum theatri, from its undue position; and to have
+revived the simple truth that all stable organizations of men, all
+religious and political communities, are based upon principles
+which are far beyond the control of the One or the Many. And in
+G.W.F. Hegel, The Philosophy of History, 8
+these principles or some phase of them every man in every clime
+and age is born, lives and moves. The only question is: Whence
+are those principles derived? Whence spring those primary
+beliefs or superstitions, religious and political, that hold society
+together? They are no inventions of “priestcraft” or “kingcraft,”
+for to them priestcraft and kingcraft owe their power. They are
+no results of a Contrat Social, for with them society originates.
+Nor are they the mere suggestions of man’s weakness, prompting
+him to propitiate the powers of nature, in furtherance of his
+finite, earthborn desires. Some of the phenomena of the religious
+systems that have prevailed in the world might seem thus
+explicable; but the Nihilism of more than one Oriental creed, the
+suicidal strivings of the Hindoo devotee to become absorbed in
+a divinity recognized as a pure negation, cannot be reduced to so
+gross a formula; while the political superstition that ascribes a
+divine right to the feebleness of a woman or an infant is
+altogether untouched by it. Nothing is left therefore but to
+recognize them as “fancies,” “delusions,” “dreams,” the results
+of man’s vain imagination — to class them with the other
+absurdities with which the abortive past of humanity is by some
+thought to be only too replete; or, on the other hand, to regard
+them as the rudimentary teachings of that essential intelligence
+in which man’s intellectual and moral life originates. With Hegel
+they are the objective manifestation of infinite reason — the first
+promptings of Him who having “made of one blood all nations
+of men for to dwell on the face of the earth, hath determined the
+times before appointed, and the bounds of their habitation, if
+haply they might feel after and find him” — 	   
+. And it is these  , these determined
+and organic epochs in the history of the world that Hegel
+proposes to distinguish and develop in the following treatise.
+Whatever view may be entertained as to the origin or
+importance of those elementary principles, and by whatever
+general name they may be called — Spontaneous, Primary, or
+Objective Intelligence — it seems demonstrable that it is in some
+sense or other to its own belief, its own reason or essential being,
+that imperfect humanity is in bondage; while the perfection of
+social existence is commonly regarded as a deliverance from that
+G.W.F. Hegel, The Philosophy of History, 9
+bondage. In the Hegelian system, this paradoxical condition is
+regarded as one phase of that antithesis which is presented in all
+spheres of existence, between the subjective and the objective,
+but which it is the result of the natural and intellectual processes
+that constitute the life of the universe, to annul by merging into
+one absolute existence. And however startling this theory may be
+as applied to other departments of nature and intelligence, it
+appears to be no unreasonable formula for the course of
+civilization, and which is substantially as follows: In less
+cultivated nations, political and moral restrictions are looked
+upon as objectively posited; the constitution of society, like the
+world of natural objects, is regarded as something into which a
+man is inevitably born; and the individual feels himself bound to
+comply with requirements of whose justice or propriety he is not
+allowed to judge, though they often severely test his endurance,
+and even demand the sacrifice of his life. In a state of high
+civilization, on the contrary, though an equal self-sacrifice be
+called for, it is in respect of laws and institutions which are felt
+to be just and desirable. This change of relation may, without any
+very extraordinary use of terms, or extravagance of speculative
+conceit, be designated the harmonization or reconciliation of
+objective and subjective intelligence. The successive phases
+which humanity has assumed in passing from that primitive state
+of bondage to this condition of rational freedom form the chief
+subject of the following lectures.
+The mental and moral condition of individuals and their social
+and religious conditions (the subjective and objective
+manifestations of reason) exhibit a strict correspondence with
+each other in every grade of progress. “They that make them are
+like unto them,” is as true of religious and political ideas as of
+religious and political idols. Where man sets no value on that
+part of his mental and moral life which makes him superior to the
+brutes, brute life will be an object of worship and bestial
+sensuality will be the genius of the ritual. Where mere inaction
+is the finis bonorum, absorption in nothingness will be the aim of
+the devotee. Where, on the contrary, active and vigorous virtue
+is recognized as constituting the real value of man — where
+subjective spirit has learned to assert its own freedom, both
+G.W.F. Hegel, The Philosophy of History, 10
+against irrational and unjust requirements from without, and
+caprice, passion, and sensuality, from within, it will demand a
+living, acting, just, and holy, embodiment of Deity as the only
+possible object of its adoration. In the same degree, political
+principles also will be affected. Where mere nature
+predominates, no legal relations will be acknowledged but those
+based on natural distinction; rights will be inexorably associated
+with “caste.” Where, on the other hand, spirit has attained its
+freedom, it will require a code of laws and political constitution,
+in which the rational subordination of nature to reason that
+prevails in its own being, and the strength it feels to resist
+sensual seductions shall be distinctly mirrored.
+Between the lowest and highest grades of intelligence and will,
+there are several intervening stages, around which a complex of
+derivative ideas, and of institutions, arts, and sciences, in
+harmony with them, are aggregated. Each of these aggregates has
+acquired a name in history as a distinct nationality. Where the
+distinctive principle is losing its vigor, as the result of the
+expansive force of mind of which it was only the temporary
+embodiment, the national life declines, and we have the
+transition to a higher grade, in which a comparatively abstract
+and limited phase of subjective intelligence and will — to which
+corresponds an equally imperfect phase of objective reason — is
+exchanged for one more concrete, and vigorous — one which
+develops human capabilities more freely and fully, and in which
+right is more adequately comprehended.
+The goal of this contention is, as already indicated, the selfrealization,
+the complete development of spirit, whose proper
+nature is freedom — freedom in both senses of the term, i.e.
+liberation from outward control — inasmuch as the law to which
+it submits has its own explicit sanction — and emancipation
+from the inward slavery of lust and passion.
+The above remarks are not designed to afford anything like a
+complete or systematic analysis of Hegel’s “Philosophy of
+History,” but simply to indicate its leading conception, and if
+possible to contribute something towards removing a prejudice
+against it on the score of its resolving facts into mystical
+paradoxes, or attempting to construe them à priori. In applying
+G.W.F. Hegel, The Philosophy of History, 11
+the theory, some facts may not improbably have been distorted,
+some brought into undue prominence, and others altogether
+neglected. In the most cautious and limited analysis of the past,
+failures and perversions of this kind are inevitable: and a
+comprehensive view of history is proportionately open to
+mistake. But it is another question whether the principles applied
+in this work to explain the course which civilization has
+followed, are a correct inference from historical facts, and afford
+a reliable clue to the explanation of their leading aspects. The
+translator would remark, in conclusion, that the “Introduction”
+will probably be found the most tedious and difficult part of the
+treatise; he would therefore suggest a cursory reading of it in the
+first instance, and a second perusal as a resume of principles
+which are more completely illustrated in the body of the work.
+J. Sibree.
+Charles Hegel’s Preface
+The changed form in which Hegel’s lectures on the Philosophy
+of History are re-issued, suggests the necessity of some
+explanation respecting the relation of this second edition both to
+the original materials from which the work was compiled, and to
+their first publication.
+The lamented Professor Gans, the editor of the “Philosophy of
+History,” displayed a talented ingenuity in transforming lectures
+into a book; in doing so he followed for the most part Hegel’s
+latest deliveries of the course, because they were the most
+popular, and appeared most adapted to his object.
+He succeeded in presenting the lectures much as they were
+delivered in the winter of 1830–31; and this result might be
+regarded as perfectly satisfactory, if Hegel’s various readings of
+the course had been more uniform and concordant, if indeed they
+had not rather been of such a nature as to supplement each other.
+For however great may have been Hegel’s power of condensing
+the wide extent of the phenomenal world by thought, it was
+impossible for him entirely to master and to present in a uniform
+shape the immeasurable material of history in the course of one
+semester. In the first delivery in the winter of 1822–23, he was
+chiefly occupied with unfolding the philosophical idea, and
+G.W.F. Hegel, The Philosophy of History, 12
+showing how this constitutes the real kernel of history, and the
+impelling soul of world-historical peoples. In proceeding to treat
+of China and India, he wished, as he said himself, only to show
+by example how philosophy ought to comprehend the character
+of a nation; and this could be done more easily in the case of the
+stationary nations of the East, than in that of peoples which have
+a bona, fide history and a historical development of character. A
+warm predilection made him linger long with the Greeks, for
+whom he always felt a youthful enthusiasm; and after a brief
+consideration of the Roman World he endeavored finally to
+condense the Mediaeval Period and the Modern Time into a few
+lectures; for time pressed, and when, as in the Christian World,
+the thought no longer lies concealed among the multitude of
+phenomena, but announces itself and is obviously present in
+history, the philosopher is at liberty to abridge his discussion of
+it; in fact, nothing more is needed than to indicate the impelling
+idea. In the later readings, on the other hand, China, India, and
+the East generally were more speedily despatched, and more time
+and attention devoted to the German World. By degrees the
+philosophical and abstract occupied less space, the historical
+matter was expanded, and the whole became more popular.
+It is easy to see how the different readings of the course
+supplement each other, and how the entire substance cannot be
+gathered without uniting the philosophical element which
+predominates in the earlier, and which must constitute the basis
+of the work, with the historical expansion which characterizes
+the latest deliveries.
+Had Hegel pursued the plan which most professors adopt, in
+adapting notes for use in the lecture room, of merely appending
+emendations and additions to the original draught, it would be
+correct to suppose that his latest readings would be also the most
+matured. But as, on the contrary, every delivery was with him a
+new act of thought, each gives only the expression of that degree
+of philosophical energy which animates his mind at the time;
+thus, in fact, the two first deliveries of 1822–23 and 1824–25,
+exhibit a far more comprehensive vigor of idea and expression,
+a far richer store of striking thoughts and appropriate images,
+than those of later date; for that first inspiration which
+G.W.F. Hegel, The Philosophy of History, 13
+accompanied the thoughts when they first sprang into existence,
+could only lose its living freshness by repetition.
+From what has been said, the nature of the task which a new
+edition involved is sufficiently manifest. A treasury of thought
+of no trifling value had to be recovered from the first readings,
+and the tone of originality restored to the whole. The printed text
+therefore was made the basis, and the work of inserting,
+supplementing, substituting, and transforming (as the case
+seemed to require), was undertaken with the greatest possible
+respect for the original. No scope was left for the individual
+views of the editor, since in all such alterations Hegel’s
+manuscripts were the sole guide. For while the first publication
+of these lectures — a part of the introduction excepted —
+followed the notes of the hearers only, the second edition has
+endeavored to supplement it by making Hegel’s own manuscripts
+the basis throughout, and using the notes only for the purpose of
+rectification and arrangement. The editor has striven after
+uniformity of tone through the whole work simply by allowing
+the author to speak everywhere in his own words; so that not
+only are the new insertions taken verbatim from the manuscripts,
+but even where the printed text was retained in the main, peculiar
+expressions which the hearer had lost in transcription, were
+restored.
+For the benefit of those who place vigor of thought in a formal
+schematism, and with polemical zeal assert its exclusive claim
+against other styles of philosophizing, the remark may be added
+that Hegel adhered so little to the subdivisions which he had
+adopted, that he made some alterations in them on occasion of
+every reading of the course — treated Buddhism and Lamaism,
+e.g., sometimes before, sometimes after India, sometimes
+reduced the Christian World more closely to the German nations,
+sometimes took in the Byzantine Empire, and so on. The new
+edition has had but few alterations to make in this respect.
+When the association for publishing Hegel’s works did me the
+honor to intrust me with the re-editing of my father’s
+“Philosophy of History,” it also named as advocates of the
+claims of the first edition, and as representatives of Professor
+Gans, who had been removed from its circle by death, three of its
+G.W.F. Hegel, The Philosophy of History, 14
+members, Geh. Ober-Regierungs Rath Dr. Schulze, Professor
+von Henning, and Professor Hotho, to whose revision the work
+in its new shape was to be submitted. In this revision, I not only
+enjoyed the acquiescence of those most estimable men and
+valued friends in the alterations I had made, but also owe them
+a debt of thanks for many new emendations, which I take the
+opportunity of thus publicly discharging.
+In conclusion, I feel constrained to acknowledge that my
+gratitude to that highly respected association for the praiseworthy
+deed of love to science, friendship, and disinterestedness, whose
+prosecution originated it and still holds it together, could be
+increased only by the fact of its having granted me also a share
+in editing the works of my beloved father.
+Charles Hegel.
+Philosophy of History.
+Introduction.
+The subject of this course of Lectures is the Philosophical
+History of the World. And by this must be understood, not a
+collection of general observations respecting it, suggested by the
+study of its records, and proposed to be illustrated by its facts,
+but Universal History itself.2 To gain a clear idea, at the outset,
+of the nature of our task, it seems necessary to begin with an
+examination of the other methods of treating History. The
+various methods may be ranged under three heads:
+I. Original History.
+II. Reflective History.
+III. Philosophical History.
+I. Of the first kind, the mention of one or two distinguished
+names will furnish a definite type. To this category belong
+Herodotus, Thucydides, and other historians of the same order,
+whose descriptions are for the most part limited to deeds, events,
+and states of society, which they had before their eyes, and
+whose spirit they shared. They simply transferred what was
+passing in the world around them, to the realm of representative
+intellect. An external phenomenon is thus translated into an
+internal conception. In the same way the poet operates upon the
+G.W.F. Hegel, The Philosophy of History, 15
+material supplied him by his emotions; projecting it into an
+image for the conceptive faculty. These original historians did,
+it is true, find statements and narratives of other men ready to
+hand. One person cannot be an eye or ear witness of everything.
+But they make use of such aids only as the poet does of that
+heritage of an already-formed language, to which he owes so
+much: merely as an ingredient. Historiographers bind together
+the fleeting elements of story, and treasure them up for
+immortality in the Temple of Mnemosyne. Legends, Balladstories,
+Traditions, must be excluded from such original history.
+These are but dim and hazy forms of historical apprehension, and
+therefore belong to nations whose intelligence is but half
+awakened. Here, on the contrary, we have to do with people fully
+conscious of what they were and what they were about. The
+domain of reality — actually seen, or capable of being so —
+affords a very different basis in point of firmness from that
+fugitive and shadowy element, in which were engendered those
+legends and poetic dreams whose historical prestige vanishes, as
+soon as nations have attained a mature individuality.
+Such original historians, then, change the events, the deeds,
+and the states of society with which they are conversant, into an
+object for the conceptive faculty. The narratives they leave us
+cannot, therefore, be very comprehensive in their range.
+Herodotus, Thucydides, Guicciardini, may be taken as fair
+samples of the class in this respect. What is present and living in
+their environment is their proper material. The influences that
+have formed the writer are identical with those which have
+moulded the events that constitute the matter of his story. The
+author’s spirit, and that of the actions he narrates, is one and the
+same. He describes scenes in which he himself has been an actor,
+or at any rate an interested spectator. It is short periods of time,
+individual shapes of persons and occurrences, single, unreflected
+traits, of which he makes his picture. And his aim is nothing
+more than the presentation to posterity of an image of events as
+clear as that which he himself possessed in virtue of personal
+observation, or life-like descriptions. Reflections are none of his
+business, for he lives in the spirit of his subject; he has not
+attained an elevation above it. If, as in Caesar’s case, he belongs
+G.W.F. Hegel, The Philosophy of History, 16
+to the exalted rank of generals or statesmen, it is the prosecution
+of his own aims that constitutes the history.
+Such speeches as we find in Thucydides (for example) of
+which we can positively assert that they are not bona fide reports,
+would seem to make against out statement that a historian of his
+class presents us no reflected picture; that persons and people
+appear in his works in propria persona. Speeches, it must be
+allowed, are veritable transactions in the human commonwealth;
+in fact, very gravely influential transactions. It is indeed, often
+said, “Such and such things are only talk;” by way of
+demonstrating their harmlessness. That for which this excuse is
+brought may be mere “talk”; and talk enjoys the important
+privilege of being harmless. But addresses of peoples to peoples,
+or orations directed to nations and to princes, are integrant
+constituents of history. Granted that such orations as those of
+Pericles — that most profoundly accomplished, genuine, noble
+statesman — were elaborated by Thucydides, it must yet be
+maintained that they were not foreign to the character of the
+speaker. In the orations in question, these men proclaim the
+maxims adopted by their countrymen, and which formed their
+own character; they record their views of their political relations,
+and of their moral and spiritual nature; and the principles of their
+designs and conduct. What the historian puts into their mouths is
+no supposititious system of ideas, but an uncorrupted transcript
+of their intellectual and moral habitudes.
+Of these historians, whom we must make thoroughly our own,
+with whom we must linger long, if we would live with their
+respective nations, and enter deeply into their spirit: of these
+historians, to whose pages we may turn not for the purposes of
+erudition merely, but with a view to deep and genuine
+enjoyment, there are fewer than might be imagined. Herodotus
+the Father, i.e., the Founder of History, and Thucydides have
+been already mentioned. Xenophon’s Retreat of the Ten
+Thousand, is a work equally original. Caesar’s Commentaries are
+the simple masterpiece of a mighty spirit. Among the ancients,
+these annalists were necessarily great captains and statesmen. In
+the Middle Ages, if we except the Bishops, who were placed in
+the very centre of the political world, the Monks monopolize this
+G.W.F. Hegel, The Philosophy of History, 17
+category as naive chroniclers who were as decidedly isolated
+from active life as those elder annalists had been connected with
+it. In modern times the relations are entirely altered. Our culture
+is essentially comprehensive, and immediately changes all events
+into historical representations. Belonging to the class in question,
+we have vivid, simple, clear narrations — especially of military
+transactions — which might fairly take their place with those of
+Caesar. In richness of matter and fulness of detail as regards
+strategic appliances, and attendant circumstances, they are even
+more instructive. The French “Mémoires,” also, fall under this
+category. In many cases these are written by men of mark,
+though relating to affairs of little note. They not unfrequently
+contain a large proportion of anecdotal matter, so that the ground
+they occupy is narrow and trivial. Yet they are often veritable
+masterpieces in history; as those of Cardinal de Retz, which in
+fact trench on a larger historical field. In Germany such masters
+are rare. Frederick the Great (“Histoire de Mon Temps”) is an
+illustrious exception. Writers of this order must occupy an
+elevated position. Only from such a position is it possible to take
+an extensive view of affairs — to see everything. This is out of
+the question for him, who from below merely gets a glimpse of
+the great world through a miserable cranny.
+II. The second kind of history we may call the reflective. It is
+history whose mode of representation is not really confined by
+the limits of the time to which it relates, but whose spirit
+transcends the present. In this second order a strongly marked
+variety of species may be distinguished.
+I. It is the aim of the investigator to gain a view of the entire
+history of a people or a country, or of the world, in short, what
+we call Universal History. In this case the working up of the
+historical material is the main point. The workman approaches
+his task with his own spirit; a spirit distinct from that of the
+element he is to manipulate. Here a very important consideration
+will be the principles to which the author refers the bearing and
+motives of the actions and events which he describes, and those
+which determine the form of his narrative. Among us Germans
+this reflective treatment and the display of ingenuity which it
+occasions assume a manifold variety of phases. Every writer of
+G.W.F. Hegel, The Philosophy of History, 18
+history proposes to himself an original method. The English and
+French confess to general principles of historical composition.
+Their standpoint is more that of cosmopolitan or of national
+culture. Among us each labors to invent a purely individual point
+of view. Instead of writing history, we are always beating our
+brains to discover how history ought to be written. This first kind
+of Reflective History is most nearly akin to the preceding, when
+it has no farther aim than to present the annals of a country
+complete. Such compilations (among which may be reckoned the
+works of Livy, Diodorus Siculus, Johannes von Müller’s History
+of Switzerland) are, if well performed, highly meritorious.
+Among the best of the kind may be reckoned such annalists as
+approach those of the first class; who give so vivid a transcript
+of events that the reader may well fancy himself listening to
+contemporaries and eye- witnesses. But it often happens that the
+individuality of tone which must characterize a writer belonging
+to a different culture is not modified in accordance with the
+periods such a record must traverse. The spirit of the writer is
+quite other than that of the times of which he treats. Thus Livy
+puts into the mouths of the old Roman kings, consuls, and
+generals such orations as would be delivered by an accomplished
+advocate of the Livian era, and which strikingly contrast with the
+genuine traditions of Roman antiquity (e.g., the fable of
+Menenius Agrippa). In the same way he gives us descriptions of
+battles, as if he had been an actual spectator; but whose features
+would serve well enough for battles in any period, and whose
+distinctness contrasts on the other hand with the want of
+connection and the inconsistency that prevail elsewhere, even in
+his treatment of chief points of interest. The difference between
+such a compiler and an original historian may be best seen by
+comparing Polybius himself with the style in which Livy uses,
+expands, and abridges his annals in those periods of which
+Polybius’s account has been preserved. Johannes von Müller has
+given a stiff, formal, pedantic aspect to his history, in the
+endeavor to remain faithful in his portraiture to the times he
+describes. We much prefer the narratives we find in old Tschudy.
+All is more naive and natural than it appears in the garb of a
+fictitious and affected archaism.
+G.W.F. Hegel, The Philosophy of History, 19
+A history which aspires to traverse long periods of time, or to
+be universal, must indeed forego the attempt to give individual
+representations of the past as it actually existed. It must
+foreshorten its pictures by abstractions; and this includes not
+merely the omission of events and deeds, but whatever is
+involved in the fact that Thought is, after all, the most trenchant
+epitomist. A battle, a great victory, a siege, no longer maintains
+its original proportions, but is put off with a bare mention. When
+Livy, e.g., tells us of the wars with the Volsci, we sometimes
+have the brief announcement: “This year war was carried on with
+the Volsci.”
+2. A second species of Reflective History is what we may call
+the Pragmatical. When we have to deal with the Past, and
+occupy ourselves with a remote world, a Present rises into being
+for the mind — produced by its own activity, as the reward of its
+labor. The occurrences are, indeed, various; but the idea which
+pervades them — their deeper import and connection — is one.
+This takes the occurrence out of the category of the Past and
+makes it virtually Present. Pragmatical (didactic) reflections,
+though in their nature decidedly abstract, are truly and
+indefeasibly of the Present, and quicken the annals of the dead
+Past with the life of to-day. Whether, indeed, such reflections are
+truly interesting and enlivening, depends on the writer’s own
+spirit. Moral reflections must here be specially noticed — the
+moral teaching expected from history; which latter has not
+infrequently been treated with a direct view to the former. It may
+be allowed that examples of virtue elevate the soul, and are
+applicable in the moral instruction of children for impressing
+excellence upon their minds. But the destinies of peoples and
+states, their interests, relations, and the complicated tissue of
+their affairs, present quite another field. Rulers, Statesmen,
+Nations, are wont to be emphatically commended to the teaching
+which experience offers in history. But what experience and
+history teach is this — that peoples and governments never have
+learned anything from history, or acted on principles deduced
+from it. Each period is involved in such peculiar circumstances,
+exhibits a condition of things so strictly idiosyncratic, that its
+conduct must be regulated by considerations connected with
+G.W.F. Hegel, The Philosophy of History, 20
+itself, and itself alone. Amid the pressure of great events, a
+general principle gives no help. It is useless to revert to similar
+circumstances in the Past. The pallid shades of memory struggle
+in vain with the life and freedom of the Present. Looked at in this
+light, nothing can be shallower than the oft-repeated appeal to
+Greek and Roman examples during the French Revolution.
+Nothing is more diverse than the genius of those nations and that
+of our times. Johannes v. Müller, in his “Universal History,” as
+also in his “History of Switzerland,” had such moral aims in
+view. He designed to prepare a body of political doctrines for the
+instruction of princes, governments, and peoples (he formed a
+special collection of doctrines and reflections — frequently
+giving us in his correspondence the exact number of
+apophthegms which he had compiled in a week); but he cannot
+reckon this part of his labor as among the best that he
+accomplished. It is only a thorough, liberal, comprehensive view
+of historical relations (such e.g., as we find in Montesquieu’s
+“Esprit des Lois”) that can give truth and interest to reflections
+of this order. One Reflective History, therefore, supersedes
+another. The materials are patent to every writer: each is likely
+enough to believe himself capable of arranging and manipulating
+them; and we may expect that each will insist upon his own spirit
+as that of the age in question. Disgusted by such reflective
+histories, readers have often returned with pleasure to a narrative
+adopting no particular point of view. These certainly have their
+value; but for the most part they offer only material for history.
+We Germans are content with such. The French, on the other
+hand, display great genius in reanimating bygone times, and in
+bringing the past to bear upon the present condition of things.
+3. The third form of Reflective History is the Critical. This
+deserves mention as pre-eminently the mode of treating history
+now current in Germany. It is not history itself that is here
+presented. We might more properly designate it as a History of
+History; a criticism of historical narratives and an investigation
+of their truth and credibility. Its peculiarity in point of fact and of
+intention, consists in the acuteness with which the writer extorts
+something from the records which was not in the matters
+recorded. The French have given us much that is profound and
+G.W.F. Hegel, The Philosophy of History, 21
+judicious in this class of composition. But they have not
+endeavored to pass a merely critical procedure for substantial
+history. They have duly presented their judgments in the form of
+critical treatises. Among us, the so-called “higher criticism,”
+which reigns supreme in the domain of philology, has also taken
+possession of our historical literature. This “higher criticism” has
+been the pretext for introducing all the anti-historical
+monstrosities that a vain imagination could suggest. Here we
+have the other method of making the past a living reality; putting
+subjective fancies in the place of historical data; fancies whose
+merit is measured by their boldness, that is, the scantiness of the
+particulars on which they are based, and the peremptoriness with
+which they contravene the best established facts of history.
+4. The last species of Reflective History announces its
+fragmentary character on the very face of it. It adopts an abstract
+position; yet, since it takes general points of view (e.g., as the
+History of Art, of Law, of Religion), it forms a transition to the
+Philosophical History of the World. In our time this form of the
+history of ideas has been more developed and brought into
+notice. Such branches of national life stand in close relation to
+the entire complex of a people’s annals; and the question of chief
+importance in relation to our subject is, whether the connection
+of the whole is exhibited in its truth and reality, or referred to
+merely external relations. In the latter case, these important
+phenomena (Art, Law, Religion, etc.) appear as purely accidental
+national peculiarities. It must be remarked that, when Reflective
+History has advanced to the adoption of general points of view,
+if the position taken is a true one, these are found to constitute —
+not a merely external thread, a superficial series — but are the
+inward guiding soul of the occurrences and actions that occupy
+a nation’s annals. For, like the soul-conductor Mercury, the Idea
+is in truth, the leader of peoples and of the World; and Spirit, the
+rational and necessitated will of that conductor, is and has been
+the director of the events of the World’s History. To become
+acquainted with Spirit in this its office of guidance, is the object
+of our present undertaking. This brings us to
+III. The third kind of history — the Philosophical. No
+explanation was needed of the two previous classes; their nature
+G.W.F. Hegel, The Philosophy of History, 22
+was self-evident. It is otherwise with this last, which certainly
+seems to require an exposition or justification. The most general
+definition that can be given, is, that the Philosophy of History
+means nothing but the thoughtful consideration of it. Thought is,
+indeed, essential to humanity. It is this that distinguishes us from
+the brutes. In sensation, cognition, and intellection; in our
+instincts and volitions, as far as they are truly human, Thought is
+an invariable element. To insist upon Thought in this connection
+with history may, however, appear unsatisfactory. In this science
+it would seem as if Thought must be subordinate to what is
+given, to the realities of fact; that this is its basis and guide: while
+Philosophy dwells in the region of self-produced ideas, without
+reference to actuality. Approaching history thus prepossessed,
+Speculation might be expected to treat it as a mere passive
+material; and, so far from leaving it in its native truth, to force it
+into conformity with a tyrannous idea, and to construe it, as the
+phrase is, “à priori.” But as it is the business of history simply to
+adopt into its records what is and has been — actual occurrences
+and transactions; and since it remains true to its character in
+proportion as it strictly adheres to its data, we seem to have in
+Philosophy, a process diametrically opposed to that of the
+historiographer. This contradiction, and the charge consequently
+brought against speculation, shall be explained and confuted. We
+do not, however, propose to correct the innumerable special
+misrepresentations, trite or novel, that are current respecting the
+aims, the interests, and the modes of treating history, and its
+relation to Philosophy.
+The only Thought which Philosophy brings with it to the
+contemplation of History, is the simple conception of Reason;
+that Reason is the Sovereign of the World; that the history of the
+world, therefore, presents us with a rational process. This
+conviction and intuition is a hypothesis in the domain of history
+as such. In that of Philosophy it is no hypothesis. It is there
+proved by speculative cognition, that Reason — and this term
+may here suffice us, without investigating the relation sustained
+by the Universe to the Divine Being — is Substance, as well as
+Infinite Power; its own Infinite Material underlying all the
+natural and spiritual life which it originates, as also the Infinite
+G.W.F. Hegel, The Philosophy of History, 23
+Form — that which sets this Material in motion. On the one
+hand, Reason is the substance of the Universe; viz., that by
+which and in which all reality has its being and subsistence. On
+the other hand, it is the Infinite Energy of the Universe; since
+Reason is not so powerless as to be incapable of producing
+anything but a mere ideal, a mere intention — having its place
+outside reality, nobody knows where; something separate and
+abstract, in the heads of certain human beings. It is the infinite
+complex of things, their entire Essence and Truth. It is its own
+material which it commits to its own Active Energy to work up;
+not needing, as finite action does, the conditions of an external
+material of given means from which it may obtain its support,
+and the objects of its activity. It supplies its own nourishment,
+and is the object of its own operations. While it is exclusively its
+own basis of existence, and absolute final aim, it is also the
+energizing power realizing this aim; developing it not only in the
+phenomena of the Natural, but also of the Spiritual Universe —
+the History of the World. That this “Idea” or “Reason” is the
+True, the Eternal, the absolutely powerful essence; that it reveals
+itself in the World, and that in that World nothing else is
+revealed but this and its honor and glory — is the thesis which,
+as we have said, has been proved in Philosophy, and is here
+regarded as demonstrated.
+religionIsis and that of Mithra had been extended through the whole
+Roman World; Spirit, lost in the outward and in limited aims,
+yearned after an Infinite. But the West desired a deeper, purely
+inward Universality — an Infinite possessed at the same time of
+positive qualities. Again, it was in Egypt — in Alexandria, viz.,
+they have thus bestowed upon us a valuable gift, in point of form,
+we can use and enjoy it without becoming victims to that sterile
+Understanding — without regarding it as the ne plus ultra of
+Wisdom and Reason. They were its victims, living beneath its
+sway; but they thereby secured for others Freedom of Spirit —
+viz., that inward Freedom which has consequently become
+To the constrained, non-spiritual, and unfeeling intelligence of
+the Roman world we owe the origin and the development of
+positive law. For we saw above, how in the East, relations in
+their very nature belonging to the sphere of outward or inward
+morality, were made legal mandates; even among the Greeks,
+morality was at the same time juristic right, and on that very
+account the constitution was entirely dependent on morals and
+disposition, and had not yet a fixity of principle within it, to
+counterbalance the mutability of men’s inner life and individual
+subjectivity. The Romans then completed this important
+separation, and discovered a principle of right, which is external
+— i.e. one not dependent on disposition and sentiment. While

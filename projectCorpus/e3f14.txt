@@ -1,0 +1,1997 @@
+SCIENCE IN THE SERVICE OF
+BIOLOGICAL SURVEY
+It follows from the considerations in Chapter 1 that a continuing assessment
+of the biological resources (species, communities, and ecosystems) of the United
+States will ultimately benefit the nation in many ways. The body of information
+that will be developed by the National Partnership for Biological Survey will help
+the country to meet many objectives and address such issues as the preservation
+of biota, the maintenance of ecosystems, and the sustainable use of biological
+resources.
+One of the most important uses of the scientific information gathered by the
+National Partnership will be to assist decision-makers in addressing existing
+biological resource issues and anticipating future ones. The research activities
+discussed in this chapter are essential for gathering scientifically reliable
+information to support the decision-making process. Decisions based on
+inadequate, unreliable, or incorrect information can be unwise and costly. The
+chapter first reviews general criteria for setting priorities and then discusses
+strategies for conducting research on the species of plants, animals, fungi, and
+microorganisms of the
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY59
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+United States; the communities and ecosystems in which they occur; and the
+trends that affect the distribution and abundance of populations of individual
+species and of communities and ecosystems. As in all work of the National
+Partnership, success will require the extensive cooperation of scientists of many
+disciplines and from many institutions. Later chapters address the information
+needs of users and mechanisms to coordinate and manage the work of the
+Partnership.
+Three themes will be emphasized here and in later chapters. First, priorities
+must be set for much research on biological resources in a new way that is more
+directly responsive to our nation's needs for better conservation, management, and
+sustainable use of those resources. Second, inventory, monitoring, and other
+research activities must expand beyond traditional, disciplinary lines to
+encompass well-designed, large-scale, interdisciplinary research initiatives on
+selected taxa, ecosystems, and geographic regions. Third, new interdisciplinary
+research initiatives must be explicitly designed to investigate functional
+relationships across different levels of biological organization, different spatial
+scales, and different temporal scales; the research needs to range from microsites
+to ecoregions, from individuals to higher taxonomic groups united by a common
+history, and from days and weeks to geological epochs. These initiatives will
+need to involve geological, hydrological, atmospheric, social, and other sciences
+as well as various areas of biology. The need for interdisciplinary environmental
+research has also been recognized by other NRC committees (NRC, 1990,
+1993b).
+SETTING PRIORITIES
+There will always be more scientific questions to be addressed and more
+environmental concerns to be met than available human and financial resources
+can support. Therefore, priorities must be set.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY60
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+No single criterion can be used to establish these priorities. Many scientific
+needs exist within the National Partnership and among its clients, and the
+information produced and managed by the NPBS will have many uses. But one
+of the strengths of the Partnership is that multiple criteria for setting priorities can
+be brought together. Potential priorities can be comprehensively evaluated, and
+individual agencies and organizations can take specific responsibility for
+addressing them.
+Priorities for the National Partnership should be based on the degree to
+which proposed research advances one or more of the following goals:
+• Understanding the status and trends of biological resources that are
+changing rapidly, are rare, or are threatened by such factors as
+metropolitan growth, renewable land use, nonrenewable-resource
+extraction, and natural changes in the environment.
+• Learning about biological resources that are identified as important by
+legal mandates or for economic reasons, such as their status as possible
+sources of new products.
+• Performing research that will guide the remediation and restoration of
+damaged or degraded ecological systems.
+• Evaluating biological resources (species, groups of evolutionarily related
+species, communities, ecological systems, and landscapes) that are
+clearly important for science and society but for which relatively little
+information exists.
+• Doing studies that might lead to the maintenance or enhancement of
+biological diversity and to the long-term sustainability and functional
+integrity of ecological systems.
+• Understanding ecological processes that provide services, such as
+control of nutrient and soil loss, assimilation and degradation of
+pollutants, and maintenance of biological diversity.
+• Converting small investments of human and financial resources to
+relatively large returns in understanding of the status and trends of
+biological resources.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY61
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Several general considerations are important in developing priorities. An
+examination of existing records concerning the past geographic occurrence and
+condition of species and ecological systems provides a context in which to
+measure their current status and trends. The same is true for the examination of
+past management experiences or studies, especially if the information has been
+gathered in a standard way and is documented (NRC, 1986). For example, the
+projects for which environmental impact statements are written are potentially
+valuable experiments, but they are usually treated as one-time sets of
+observations, rather than as predictions of the consequences of planned
+manipulations. As a result, there is usually no monitoring to determine the effects
+of the projects. Such information would be of special importance in remediation
+and restoration, and those projects are often the only way to generate such
+information. Finally, priorities should be chosen to enable the National
+Partnership to carry out its work efficiently and cost-effectively.
+The committee believes that the scientific activities and programs of the
+NBS should focus both on its responsibilities as the main biological research
+agency within the Department of the Interior and on its proposed role as the lead
+agency for the National Partnership. The large amounts of land managed by DOI
+(Fig. 1.1), along with the department's other responsibilities with regard to the
+nation's biota, make NBS especially important in providing key elements of a
+program to assess the status and trends of biological resources. The committee
+therefore recommends the following:
+Recommendation 2-1: NBS should perform research needed for the
+management of lands within the jurisdiction of DOI and species for which
+it has responsibility. It should also ensure, both through its own scientific
+activities and its proposed role of national leadership, that needed research
+is performed to fulfill the central purpose envisioned for the National
+Partnership—to generate the information required to
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY62
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+understand the current status of the nation's biological resources, how that
+status is changing, and the causes of the changes.
+Given the wide range of national needs identified in Chapter 1, the broad
+distribution of relevant research efforts in federal and nonfederal organizations,
+the wide range of management needs within the Department of the Interior, and
+the short time available to examine these programs and needs in preparation for
+this report, the committee believed that it would be most helpful by focusing its
+attention on research needs at the level of the National Partnership rather than
+concentrating on specific recommendations for NBS research activities. For this
+reason, most of the recommendations in this chapter apply to the Partnership as a
+whole and not specifically to the NBS or other participants. However, the
+committee recognizes that many factors will influence the formal creation of the
+proposed National Partnership and believes that DOI should work to ensure that
+needed research is done by NBS or other entities no matter what specific form the
+Partnership eventually takes. The recommendations below provide a general
+framework to help members of the National Partnership to develop their research
+programs, but more detailed examination, based on this framework, of research
+needs and priorities of key participants, including the NBS, could be usefully
+performed by an independent group of experts.
+SCIENTIFIC RESEARCH ON THE STATUS OF BIOLOGICAL
+RESOURCES
+If the National Partnership for Biological Survey is to realize its purpose, it
+must greatly strengthen our understanding of the distributions and the factors that
+govern the distributions of species and higher taxa, communities, ecosystems,
+landscapes, and marine realms of the United States. To achieve that goal, the
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY63
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+work of the Partnership should meet the following objectives in assessing the
+status of the nation's biological resources:
+• To determine the identities and distributions of species that live in the
+United States. Discovering, describing, and classifying these species
+will make possible the accurate and efficient identifications needed for
+many purposes by decision-makers, scientists, and other users. Species
+need to be understood in the context of their groups, and that
+understanding necessitates broad, comparative studies of the species in
+these groups and access to large, representative collections. For species
+whose geographic ranges extend beyond the United States, information
+is needed about their distributions in other countries.
+• To use knowledge of relationships among species to produce predictive classifications. A classification that accurately reflects the relationships
+among species should improve our ability to predict which species are
+likely to have particular properties, even if they have not yet been
+studied in detail (Wheeler, 1990).
+• To determine the physical and biological factors that govern the
+distributions of species. Management and conservation decisions
+affecting particular species are problematic in the absence of information
+about such basic aspects of their biology.
+• To understand the population biology of species selected for intensive study, management, or conservation. Detailed understanding of the
+biology of populations will permit predictions about the consequences
+of decisions that lead to expansion or contraction of the geographic
+ranges of species.
+• To determine the types and locations of communities and ecosystems in
+the United States. Management strategies that deal explicitly with
+ecological units require accurate distributional information for these
+units.
+• To determine the factors that govern the distributions of communities and ecosystems. Unless the factors that shape and limit the distribution
+of individual communities are known, decisions intended to manage
+them sustainably might prove ineffectual.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY64
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+• To understand the effects of human settlement patterns (metropolitan growth, renewable land use, and nonrenewable-resource use) on
+species, communities, and ecosystems. Much of the current decrease in
+biological diversity in the United States is concentrated at the rapidly
+expanding urban-rural interface. Research is needed on the effects of
+suburbanization on biological resources, and on ways of reducing or
+mitigating these effects, and on the levels at which settlement can
+coexist with viable ecosystems.
+What Species Occur in the United States? Where Do They
+Occur? How are They Related?
+We need to know what species live in the United States, where they live, and
+how they are related to one another in an evolutionary sense. Modern
+classifications reflect patterns of common ancestry and can be helpful in
+predicting the occurrence of properties of poorly known organisms. Although no
+substitute for research on individual species, they are thus vital tools in the search
+for and management of biological resources and provide a frame of reference for
+biological research. For example, botanists can use classifications to decide
+where to search for chemicals of potential value to industry and medicine, and
+entomologists can use them to predict which parasites hold promise for the
+control of agricultural pests.
+The United States has unparalleled taxonomic research capabilities in its
+public and private museums, botanical gardens, universities, and government
+agencies. In general, taxonomic research has not been focused specifically on the
+goals that the NPBS will fulfill, but the Flora of North America, Moths of North
+America, Birds of North America, similar current projects, and state biological
+surveys are important examples of the kind of taxonomic research that the
+National Partnership should perform. Australia (see Box 2.1) and Costa Rica have
+established national organi
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY65
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 2.1: ENVIRONMENTAL RESOURCES INFORMATION
+NETWORK: AUSTRALIA'S RESPONSE TO THE NEED FOR
+ACCESS TO NATIONAL BIOLOGICAL SURVEY DATA
+Australia has pioneered a two-pronged approach to surveying and
+monitoring its flora and fauna. Within the Australian National Parks and
+Wildlife Service, the Biodiversity Directorate administers the Australian
+Biological Resources Study (ABRS), the purpose of which is to collect and
+document information on the biota of Australia. The Environmental
+Resources Information Network (ERIN) Directorate is responsible for
+developing an information-management system and for assembling data on
+the flora and fauna and analyzing them for management purposes.
+ABRS maintains editorial centers for its flora and fauna series and
+provides grants to taxonomic specialists to undertake the research
+necessary to classify and describe the plants, animals, and microorganisms
+of Australia. The grants address the highest-priority needs and are in the
+form of binding contractual agreements that specify products and a delivery
+schedule. This scheme ensures that careful scientific work will be done in a
+timely manner and that scientific attention is focused where it is most
+needed.
+ERIN's mission is to provide geographically related environmental
+information of an extent, quality, and availability required for planning and
+decision-making. ERIN contracts with taxonomic specialists and uses data
+from the flora and fauna series to create its backbone of taxonomic
+information. It contracts with institutions that maintain biological collections
+to computerize data on the identities and places of collection of those
+specimens. This information is brought together with information on
+physical properties of the continent—climate, topography, soils, etc.—and
+with information on vegetation, ownership, and conservation status through
+geographic information systems (GISs). ERIN has developed computer
+programs that can predict how a species' distribution might change if
+average temperature increases or decreases; its programs can show
+correlations among species distributions; and its system can model
+expected impact on a species' distribution and population viability if part of
+its habitat is lost, for instance, through development. Individual institutions
+and specialist groups take responsibility, as custodians, for the quality and
+reliability of data made available to ERIN. Data standards have been
+established cooperatively between ERIN and the custodians to facilitate
+data transfer and sharing.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY66
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+ERIN has several large-scale data-analysis projects. One is the
+Landcover Project, which aims to collate data on the distribution of species
+that make up the dominant groups of plants in the Australian landscape.
+Another project is the Murray-Darling Basin Project, which is reviewing the
+availability of environmental data for the area, defining the major
+ecosystems of the basin and assessing the relationship between the
+ecosystems and conservation reserves, and developing a strategic plan for
+the conservation of the ecosystems. A third project is the National Marine
+Information System, a comprehensive computerized marine-science
+information base that will include significant data on all aspects of Australian
+marine environments, including fisheries, mineral resources, ocean currents
+and climate, and the distribution of marine life around the Australian
+coastline.
+By bringing together the expert knowledge of its biologists, the
+information held in its rich museum collections, and the innovative and
+focused use of data-management, analytical, and mapping computer
+programs, the Australian National Parks and Wildlife Service has
+assembled a powerful and far-reaching tool for understanding and
+managing its natural resources.
+zations to study and document biodiversity. Their experiences suggest that
+even small investments in taxonomic research can yield results of importance to
+decision-makers.
+Recommendation 2-2: The National Partnership should determine
+what specimens and data representing the U.S. biota exist in the nation's
+institutional collections, both public and private.
+Specimen collections are useful for many purposes (see Box 2.2). The large
+holdings in the United States should be studied and assessed, and the resulting
+information should be synthesized and made available. By taking stock of the
+information already available, scientists will be able to find the gaps in our
+knowledge and take steps to fill them. Some groups of organisms are poorly
+represented in collections and poorly understood. Examples
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY67
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 2.2: COLLECTIONS
+Within public and private institutional collections in the United States
+are millions of specimens that document two centuries of exploration of our
+country and contain a rich trove of information about our flora and fauna.
+Such specimens are usually parts of organisms (a branch of a tree, a blood
+sample from a bird), entire animals or plants, or a number of individuals from
+a population. They are accompanied by information about where and when
+they were collected, what the place was like, and what other organisms
+were present. The specimens and their associated data give insight into the
+ideas of the researchers who have studied them. Collections of specimens
+are a critical component of the NPBS. In all but a few well-known taxa,
+identifications of species must be based on voucher specimens, without
+which frequent misidentifications are certain to be made. Faulty
+management decisions are likely to result from incorrect identifications.
+Collections are the repository for most of what we know about species
+diversity and are constantly pressed into use for new and often unexpected
+purposes. The tissues and organs of collected organisms may contain
+valuable information about the environment at the times they were
+collected. For example:
+• Specimens collected 100 years ago can give an indication of what kinds
+of plants and animals lived at the place of collection then, what the soil,
+water, or climate was like, etc. By comparing historical and current
+collections, it is possible to monitor change in conditions. For instance,
+the decline in fresh-water mollusks in Pennsylvania was demonstrable
+only because of the existence of specimens collected over many
+decades from diverse sites.
+• Knowledge of the concentrations of mercury occurring naturally in fish
+ruled out pollution as the source of the mercury, because the specimens
+were collected before pollution began.
+• Many specimens have been studied by specialists over the years and
+provide documentation for their own research. As researchers try to
+identify newly collected samples, they can use these vouchers to
+determine how well new samples fit within the range of variation for a
+given species as it was understood by earlier specialists. Vouchers are
+kept for samples used in chemical, ecological, or other kinds of studies
+so that later researchers can confirm the identity of the samples used.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY68
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+• Specimens for a given species, genus, or family that have been collected
+from throughout the geographical area where the group occurs make it
+possible to compare variation in characteristics of that group from place
+to place or over time. Plant breeders can search for specimens of a
+given species with some desired characteristic, such as larger tubers or
+earlier flowering times, and learn where plants with that characteristic
+grow and under what conditions.
+• Samples of organisms are preserved so as to retain the most information
+possible. Often, they are simply air-dried; sometimes, they are liquid-
+preserved or frozen. It is possible to analyze the chemical contents of the
+specimens; with new techniques, the DNA of century-old and
+irreplaceable specimens can be probed. Changes in the chemical
+components of habitats can sometimes be monitored, as well. For
+instance, collections of egg shells of birds were useful in learning about
+the effects of DDT.
+Natural history collections contain information that is invaluable to our
+understanding of biodiversity, its history, its current status, and its future.
+They are an essential resource for the study and management of the
+biodiversity of our nation.
+include mites, nematodes, many groups of fungi, and marine invertebrates.
+For bacteria, DNA or RNA probes might reveal the extent of diversity, but these
+organisms are poorly known. Collections of bacteria in culture are indispensable
+for the further understanding of the group. Even for such well-known groups as
+plants and vertebrates, there are geographic gaps in our knowledge, and the
+available records might not have been gathered recently enough to indicate the
+present status of individual species.
+Precise knowledge of what materials and data already exist will facilitate the
+timely provision of information to those who need it and will help scientists to
+identify gaps that warrant research. Tens of millions of specimens and facts have
+been accumulated through more than two centuries of exploration of the
+biological
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY69
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+diversity of the United States. However, because of the immensity of the
+country's collections and how they are dispersed, management of this information
+was impractical before the existence of modern computer technologies. The
+NPBS, with the NBS taking the lead, should assess, as rapidly and completely as
+possible, what we now know about the distribution of species in the country on
+the basis of records of collections. It should also determine the importance of this
+information for current and future research efforts.
+Recommendation 2-3: The NPBS should discover, describe, classify, and
+map U.S. species of selected taxa.
+The National Partnership should go beyond an inventory of information and
+collections and take decisive and forward-looking actions to fill important gaps
+already known to exist in our knowledge of U.S. biological resources. Taxa
+should be chosen on the basis of their economic, societal, or scientific importance
+and the length of time required to complete the task. Among those appropriate for
+immediate study are terrestrial, fresh-water, and marine vertebrates (all classes);
+plants (bryophytes and vascular plants); macrofungi; and selected fresh-water,
+marine, and terrestrial invertebrates (mollusks, crustaceans, mosquitoes, beetles,
+butterflies, moths, spiders, and ticks). Special attention should be given to taxa
+that occur in the areas where regional collaborative pilot projects are established
+(see Recommendation 2-13).
+More complete species inventories and classifications for selected taxa will
+support environmental research of both immediate and long-term priority. For
+example, vertebrate, plant, fungus, and arthropod surveys in old-growth forests of
+the Pacific Northwest would improve the scientific basis for policies related to
+resource use and conservation. In such inventory work, special attention should
+be given to preserving specimens for DNA, protein, and other analyses that are
+particularly useful for evaluating relationships but are not usually possible with
+older specimens.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY70
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+The Department of the Interior should initiate studies that pertain to its
+missions, including vertebrates, plants, fungi, and arthropods. The U.S.
+Department of Agriculture (USDA) should sponsor research through the Forest
+Service on taxa that occur in forest lands, committing an appropriate portion of
+its resources to address private-forest issues, and it should substantially increase
+support for its systematics-research laboratories (especially those studying fungi
+and insects). The National Oceanic and Atmospheric Administration (NOAA)
+should extend its research efforts to include noncommercial marine fishes and
+increase its survey, inventory, and taxonomic research efforts on marine
+invertebrate groups. The National Institutes of Health, the Department of
+Defense, USDA, and the Department of Energy should conduct or sponsor
+research on mosquitoes, ticks, and other vectors of disease and on potential
+sources of medicines, feedstocks, biomaterials, and foods.
+Recommendation 2-4: Taxonomic specialists, collections, and
+databases should be established for large and important taxa for which
+research resources are inadequate, including taxa that live in terrestrial
+environments (e.g., fungi, nematodes, and arthropods), marine
+environments (e.g., polychaetes, crustaceans, and mollusks), and freshwater
+environments (e.g., protists, mollusks, and other invertebrates).
+The United States needs to have specialists in all major and important taxa
+and on taxa for which no experts exist throughout the world. Species of many
+large and ecologically or economically important groups are unknown or
+currently unidentifiable because of a lack of relevant expertise. Clearly, an
+adequate scientific research program must include the training of specialists,
+support of surveys and taxonomic research, and the building of comprehensive
+collections of diverse taxa.
+Our lack of knowledge of microorganisms and invertebrates, which are
+estimated to make up as much as 88% of all species, seriously hampers our ability
+to understand and manage ecosys
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY71
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+tems. Fungi and arthropods associated with nutrient cycling in forests, for
+example, are only poorly known. For many parks and other protected areas, such
+groups as fungi and lichens, for which there are few available specialists, are little
+known or understood. Organisms that prey on or infect insects hold promise for
+cost-effective and environmentally benign control of insect pests, but the relevant
+parasitic wasps, nematodes, fungi, and protozoans have been little studied.
+Important proposals have been made to address this deficiency on a global scale
+(e.g., Hawksworth and Ritchie, 1993), and our national programs ought to be
+integrated with such efforts and constructed so to support them.
+Our lack of information on marine habitats is also critical. Of the 70 phyla
+of living organisms, 43 are either exclusively marine (20) or partially marine
+(23), but gaps in our taxonomic knowledge of many groups of marine organisms
+are numerous and broad (Ray, 1988).
+For fungi, algae, and bacteria, which are critical in the functioning of
+ecosystems, organizations that maintain living collections, such as the American
+Type Culture Collection, should be supported. The functioning of the multi-
+billion-dollar biotechnology effort in the United States alone demands the
+maintenance of such facilities and underscores the need to add to their collections
+rationally and aggressively. From a scientific point of view, this approach
+constitutes the only way to gain an adequate, comparative, verifiable
+understanding of the groups involved. In a more general sense, the living
+collections of botanical gardens, zoos, and insectaria are comparable, and such
+groups as the Center for Plant Conservation, which assembles genetically
+adequate samples of the threatened and endangered plants of the United States,
+ought also to be encouraged and supported.
+Why Do Species Occur Where They Do?
+Surveys of species distribution, abundance, and population
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY72
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+structures provide only part of the information necessary for managing the
+nation's biotic resources. An understanding of ecological requirements of species
+is also needed for their management, protection, and restoration, as well as for
+developing models that can be used to predict their likely distributions and
+responses to environmental changes. We need basic knowledge of the natural
+history of species, their patterns of genetic variation, habitat requirements,
+interactions among widely separated populations, life-history characteristics,
+feeding habits, reproductive biology, interactions with pollinators, predators and
+competitors, and vulnerability to anthropogenic disturbance and habitat
+fragmentation.
+Because detailed biological information would be desirable for hundreds of
+thousands of species, adopting criteria for determining the order in which species
+are chosen for study is crucial. Species can be selected on the basis of whether
+they might be ecological indicators; are important to the functioning of
+ecosystems; represent distinct phylogenetic (evolutionary) lineages; represent
+taxa that are believed to be declining; have potential or demonstrated economic,
+scientific, or societal worth; or are at the margins of their geographic
+distributions. For example, although details of projected climate change due to
+carbon dioxide emissions cannot be predicted, monitoring populations at the
+extremes of their distributions might permit early detection of the effects of
+potential climate change. A high priority should therefore be placed on
+establishing baseline data on the current status of indicator taxa at range
+extremes.
+The National Biological Survey should perform research on ecological
+requirements for taxa from ecosystems of current national concern (e.g., Pacific
+Northwest old-growth forests or coastal estuaries) and from diverse, biologically
+significant ecosystems (e.g., native forests of Hawaii or unique areas within our
+national parks, such as the Great Smoky Mountains National Park). USDA should
+lead research on taxa that fall within its mission, such as agriculturally important
+insect and plant pests, such beneficial species as pathogenic nematodes and
+predatory
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY73
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+insects, and introduced species; the national forests should be of primary
+concern. NOAA should target both marine fishes and little-known marine
+invertebrates for detailed study; for example, the recent decline of Caribbean reef
+corals, including those in U.S. waters, might be largely the result of the
+catastrophic decline in a single species of sea urchin (Lessios, 1988). The U.S.
+Geological Survey should provide leadership in researching the histories of
+species and ecosystems as interpreted from the fossil and geological record.
+Taxonomists and ecologists should participate in the selection of species, and
+priority should be given to team research.
+Recommendation 2-5: Identify and thoroughly study the biology of selected species that have significant economic, scientific, or aesthetic value
+or play a key role in a threatened biogeographic area or ecological habitat.
+Because informed management decisions depend on detailed understanding
+of the biological habits and requirements of species, it is important to identify
+species relevant to environmental issues of high priority and initiate the process
+of accumulating fundamental knowledge about them. For example, the population
+biology of threatened and endangered species is obviously a subject of high
+interest (Falk and Holsinger, 1991). Targeted research on selected species should
+inform the NPBS about future needs, as well as urgent existing problems. Special
+attention should be given to key species in the pilot project areas described under
+Recommendation 2-13.
+What Communities and Ecosystems Occur in the United
+States? Where Do They Occur?
+Recommendation 2-6: The NPBS should develop classifica-
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY74
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+tion systems for ecological units—such as communities, ecosystems, and
+landscapes—that will provide consistent terminology for recognizing,
+mapping and monitoring trends in the distribution and status of those units.
+The NPBS should also move rapidly to define a set of core ecosystem
+attributes and protocols for sampling, measuring, and recording those
+attributes. NBS should play a major direct role in these efforts.
+Classification systems for communities, ecosystems, and landscapes are
+needed for recognizing and mapping them and for communicating information
+about their status, distributions, and trends. There are currently no broadly
+accepted classification schemes for such ecological units above the level of
+species, and no single classification system is likely to serve all management
+purposes. Community classifications for terrestrial, fresh-water, and marine
+habitats have been established by The Nature Conservancy and have proved
+useful for setting conservation priorities. However, classification schemes for
+aquatic systems are generally poorly developed and rarely applied.
+Ecological classifications are extremely important for the management of
+biological resources on an ecosystem and regional basis, and they need to be
+developed as fully as possible according to broadly based criteria. The same
+criteria can be used to design specific classification systems for particular
+purposes.
+With the advent of better technologies for handling spatial data,
+classification and mapping are no longer limited by such a priori constraints as
+the need to limit a map to four colors. Instead, geographic phenomena can be
+described with a set of attributes that can be selectively weighted and combined
+for a posteriori classification and mapping. For example, specific terrestrial units
+within a region can be described in a database according to their geology,
+geomorphology, vegetation height, canopy leaf type, vertical stratification, and
+canopy floristic composition. Regional vegetation or ecosystem patterns can then
+be remapped in many ways on the basis of different classification rules.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY75
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+That approach obviates a single, general-purpose classification system and
+can serve a wide range of users. Because the basis for classification is more
+value-neutral than with traditional systems, resulting information will have a
+stronger scientific basis. Thus, although we need standard ecosystem
+classification schemes for monitoring and reporting purposes, the databases from
+which the classifications are generated should record preclassified ecosystem
+data. To that end, the National Partnership should give high priority to defining a
+set of core attributes for characterizing vegetation, habitats, and ecosystems and
+then establishing standard methods for measuring and recording those attributes
+(see, for example, Bolton, 1991; DiCastri et al., 1992). Eventually, this approach
+will lead to national and international databases that can be analyzed to uncover
+patterns in ecosystem structure and composition and to evolve more functional
+classification systems.
+Useful classification systems will permit clear delineation of all included
+ecological units. They should serve as a predictive base for anticipating
+interactions among ecosystems and their physical environments. The ecological
+units recognized should correspond to the distribution of constituent species
+whose protection is likely to afford protection to the entire community. A
+hierarchical structure of such classification systems is likely to prove useful, even
+though effective conservation and management strategies would normally deal
+with subordinate levels within the system (Bourgeon, 1988; Orians, 1993).
+Why are Ecosystems Found Where They are?
+Recommendation 2-7: The National Partnership, with the direct
+involvement of NBS, should stimulate research to understand and develop a
+predictive theory of keystone linkages and keystone species and should work
+toward developing predictive models that facilitate sustainable
+management of communities and ecosystems in the United States.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY76
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Valuable though ecological classification systems might be, they contain
+little information about why ecosystems are found where they are. The members
+and kinds of species living together in ecological assemblages are determined by
+both local and regional processes, including current and historical interactions
+between organisms and the physical environment. Individual species have
+specific ranges of tolerance of physical environmental conditions, but the actual
+range of environments occupied is reduced by interactions with other species.
+Competition, predation, and parasitism happen only among organisms living in
+the same area, but the kinds and numbers of individuals available to interact
+depend on regional-scale processes. For example, a small isolated community is
+likely to receive many immigrants that belong to species living in adjacent but
+different communities, whereas most immigrants to portions of large, extensive
+communities come from other parts of the same ones. Interactions with humans
+occur at all spatial scales. The result of all these interactions is a recognizable,
+but not identical, assemblage of species that occupies a particular zone of
+environmental conditions.
+The interactions that structure ecological assemblages range from strong to
+weak. Ecologists refer to very strong interactions as keystone linkages and to
+species that exert the strongest influences on the composition and functioning of
+the assemblages of which they are a part as keystone species. Keystone linkages
+and species are often identified empirically after the fact. Ecological theory
+cannot yet predict where keystone features will be found, although experience
+shows that some higher taxa, such as large echinoderms in the ocean, typically
+play a keystone role. Developing a predictive capability is important because it
+would enable direction of attention to elements and interactions whose
+maintenance is critical to the continued and undiminished production of
+important ecosystem services.
+Recommendation 2-8: The NPBS should encourage research on
+restoration of degraded environments.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY77
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Terrestrial and aquatic ecosystems of the United States have been degraded
+by human activity. Although restoration has been attempted often, it has rarely
+been successful (NRC, 1992). Understanding why communities and ecosystems
+are found where they are and how they interact with adjacent assemblages is also
+necessary as a foundation for methods of restoring degraded and damaged
+ecosystems. To restore a community, we must know what the community was
+like before it was degraded, how many and what kinds of organisms are likely to
+arrive in the area without human assistance, and what conditions are necessary if
+arriving individuals are likely to colonize successfully.
+Research is needed on restoration methods that will work in the highly
+varied terrestrial and aquatic environments of the United States. Successful
+restoration also depends on historical analyses that permit an assessment of the
+types of ecosystems that can persist in an area.
+Efforts in restoration biology can take advantage of the large-scale
+''experiments'' represented by major development projects that are required to file
+environmental impact statements (EISs). The EIS amounts to a prediction of the
+extent and kind of impact a project will ultimately have on the local environment.
+Scientists can learn much from this process if EISs are done in such a way as to
+establish a baseline and if appropriate follow-up monitoring is done to learn the
+eventual ecological impact. Properly done, such "experimentation" can reveal
+what kinds of projects have more or fewer environmental impacts than expected.
+It might not be practical to treat all EISs this way, at least initially; but specific
+case studies can be chosen to represent common classes of environmental
+problems for which knowledge of the success or failure of specific management
+decisions could inform future approaches.
+Recommendation 2-9: The NPBS should identify target areas for
+restoration. As a pilot project, NBS should lead the Partnership in an
+assessment of the rivers of the United States
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY78
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+to identify those most appropriate for restoration according to biological indicators. The effort should be coordinated with current work of the Corps
+of Engineers, the U.S. Fish and Wildlife Service, the Environmental Protection Agency (EPA), and the U.S. Forest Service.
+An important role for the NPBS would be to identify target areas for
+restoration. As an example, consider the flowing waters of the United States,
+which have been highly affected by human activity. We lack an inventory of the
+rivers of the United States that would permit setting priorities for restoration of
+rivers or river segments (NRC, 1992). There is a need for a national river
+inventory that would place the nation's rivers in three categories: healthy,
+degraded, or highly degraded. Rivers characterized as "degraded" should be
+selected for aggressive restoration efforts. Mildly degraded rivers could be
+improved with a modest investment. Within that class, restoration priorities can
+be based on potentially valuable species, recreational value of the ecosystem, or
+other criteria. A similar inventory could prove useful for targeting restoration
+efforts in other types of ecosystems.
+Recommendation 2-10: Current chemical assessments of pollution
+sites (terrestrial, fresh-water, and marine) should be augmented by NPBS
+research to develop biological assessment protocols.
+The detection and characterization of polluted sites (fresh-water, marine, and
+terrestrial) by EPA and other agencies now rely almost exclusively on chemical
+assessments of habitats. Among the many species that have such habitats are
+many that might serve as biological indicators of pollution. Research should be
+done to identify such indicator species and learn enough about their biology to
+make it possible to recognize warning signs of particular kinds of pollution.
+Pollution assessment through such biological approaches is potentially more
+cost-effective, quicker,
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY79
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+and more useful than chemical methods. The indicators should also prove useful
+for tracking the remediation of basic pollution problems.
+Interactions among Ecosystems
+The survival of species and the maintenance of essential ecological services
+commonly depend on patterns of species migration and transport of materials
+among ecosystems over an enormous range of spatial scales. Thus, local changes
+in one ecosystem might have major consequences far beyond their immediate
+range of obvious impact. Examples include the suspected reduction of North
+American songbirds due to tropical and temperate habitat destruction and
+fragmentation effects, including lower productivity and survival (Terborgh,
+1989); decreases in salmon due to migration restrictions, nonpoint pollution, and
+sedimentation; and decreases in aquatic species due to point and nonpoint
+pollution, sedimentation, introduction of exotic species, changes in hydrology,
+and loss of wetlands (Thorne-Miller and Catena, 1991). Most such examples
+involve either outright habitat destruction that interrupts the movements,
+breeding, or seasonal survival of widely ranging species; increases in the natural
+flux of materials from terrestrial "source" to aquatic "sink" habitats; or
+unexpected impacts on one habitat as a direct result of modifications made in
+another. In any case, effects can be highly specific, as in the interruption of the
+life cycle of symbionts that depend on particular hosts, or much more general, as
+exemplified by the dramatic alteration of the entire Lake Erie ecosystem by the
+accumulation of nutrients. Impacts can move from one terrestrial habitat to
+another, from terrestrial to aquatic habitats, or from fresh-water to marine
+habitats. The pesticide DDT, for example, applied to agroecosystems, became
+concentrated as it moved up terrestrial and aquatic food chains (Carson, 1962).
+Many harmful ecosystem interactions can be restricted to a
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY80
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+single watershed or forest, but most are broader in scope and transcend local or
+even regional political boundaries. The National Partnership can play a critical
+coordinating role in the identification of important shifts in ecosystem
+interactions and the gathering of existing and new information on the magnitude
+of habitat alteration or the material flux responsible. These activities should lead
+to the identification of a small number of critical model systems for intensive
+study. The systems should be included in the group of projects referred to in
+Recommendation 2-13. Important candidate systems that are already the focus of
+considerable local and federal attention include the effects of agriculture and land
+development on fresh-water and marine ecosystems in South Florida (see
+Box 2.3), and the loss of flyway habitat of migrating birds (see Box 4.1)
+DETECTING TRENDS IN BIOLOGICAL RESOURCES
+The purpose of studying trends is to identify biological resources that are
+changing in quality and quantity and to determine why they are changing. The
+resources whose changes are of interest include species and their constituent
+populations, evolutionarily related groups of species, ecological communities, and
+ecosystems.
+The importance of identifying trends in the condition of resources and
+determining the causes of changes is highlighted by the increasing evidence of
+rapid declines in important groups of organisms. For example, a rapid decline in
+populations of at least half the species of mushrooms has been documented in
+Europe (Arnolds, 1988, 1991; Gulden et al., 1992). Those fungi are fundamental
+to healthy ecosystems because they form intimate associations with plant roots,
+and the associations increase the rate at which the roots absorb nutrients from the
+soil and make it possible for plants to survive in the particular ecosystems where
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY81
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 2.3: SOUTH FLORIDA AND THE EVERGLADES
+The South Florida landscape is dominated by a series of closely linked
+wetlands and aquatic ecosystems that extend from the Kissimmee River
+and Lake Okeechobee in the North through the Everglades and Florida Bay
+to the Florida Keys in the South. The Everglades is the largest wetland
+ecosystem in the contiguous 48 states and has been the subject of intense
+controversy about the ecological effects of drastically reduced and altered
+patterns of water drainage and increased nutrient inputs from North to
+South due to flood control, agriculture, and human settlement.
+Attempts to assess status and trends of terrestrial and marine biota in
+South Florida have been hampered by ignorance of the biology of many
+species, especially invertebrates and lower plants, which have been ignored
+except by a few systematists. For example, the endangered Florida Snail
+Kite is almost exclusively dependent for its food on one species of fresh-
+water mollusk, the apple snail. A real-estate developer would never plan a
+human community without serious consideration of the location of
+supermarkets. Yet, agencies have been forced to make major decisions
+about habitat protection for the Snail Kite with very little knowledge about its
+sole source of food (National Audubon Society, 1992).
+Failure to monitor components of adjacent ecosystems (e.g., wading
+birds in the Everglades, phytoplankton in Florida Bay, and reef corals in the
+Keys) has delayed understanding of their close interdependence. This
+failure has greatly increased the probable costs for environmental
+restoration over what would have been required if the necessary scientific
+assessments had been made sooner.
+There is also no well-established regional infrastructure to bring
+together status and trends data on organisms and conditions in disparate
+environments. Moreover, much existing information is effectively
+unavailable for lack of local resources and personnel to access and
+interpret crucial remote sensing data, as for algal abundance and
+productivity in Florida Bay.
+The management authority for different biota, habitats, and water
+resources is fragmented—scattered among federal, state, and county
+agencies that work under different and sometimes conflicting missions and
+mandates. For example, the U.S. Army Corps of Engineers and the South
+Florida Water Management District share responsibilities for
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY82
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+water-resource management. The U.S. Fish and Wildlife Service, the
+National Park Service, the National Oceanic and Atmospheric
+Administration, the Florida Bay and Biscayne Bay State Parks, the Florida
+Game and Freshwater Fish Commission, and the Florida Department of
+Environmental Protection all have jurisdiction over various marine and
+terrestrial protected areas and wildlife in the region. Counties and state
+agencies share jurisdiction over land-use planning, zoning, development,
+and resource use. Much ecologically important land is owned privately.
+While some is managed for conservation, most is used for agriculture or
+human settlement.
+South Florida is by no means unique in this fragmentation of authority,
+which interferes with the abilities of agencies and the private sector to
+address a common set of environmental problems and needs. Closer
+coordination is clearly needed.
+Important local initiatives have begun. Secretary Babbitt recently
+announced an agreement among major parties to reduce harmful nutrients
+and improve water flow to the Everglades. This initiative and subsequent
+actions would be greatly assisted by the proposed National Partnership for
+Biological Survey. For example, cooperative studies involving the National
+Biological Survey, the Corps of Engineers, the South Florida Water
+Management District, and universities could use existing water-control
+structures to determine how Everglades ecological communities respond to
+different water-supply regimes. Such knowledge is essential for effective
+restoration and sustainable use of this great wetland.
+they occur. The causes of the decline are not fully known, but both air
+pollution and acid rain are suspected contributors. Determining the causes is
+made more difficult by the decrease in the number of taxonomists and ecologists
+studying fungi and by lack of sufficient attention paid in the past to the
+distributions of fungi.
+The trends portion of a status and trends program should have the following
+objectives:
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY83
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+• To identify trends in a timely manner so that corrective actions can be
+taken while multiple options are available. Typically, the later a
+corrective action is taken, the fewer and more expensive are the ones
+that remain. Generally, an ounce of prevention is worth a pound of
+environmental restoration.
+• To learn how local actions, both individually and collectively, influence
+processes and products elsewhere. Spatial interconnectedness is
+important. As projects study selected ecosystems in detail, potential
+impacts of ecosystems and their components on one another should also
+be monitored.
+• To reduce uncertainty about risks so that expensive remedial actions are
+not undertaken unnecessarily. Faced with great uncertainty about risks,
+decision-makers are likely to take action to avoid any risk because they
+cannot afford to remain passive when the possibility of great risk cannot
+be ruled out. The more accurate the available information, the more
+appropriate and cost-effective the steps taken will be.
+• To evaluate the effectiveness of management decisions. One of the
+requisites of adaptive management is that options that are chosen should
+be evaluated by monitoring the changes in the managed resource, and
+the management plan then revised accordingly.
+• To direct attention to areas where problems are most likely to develop in
+the near future. Among such areas are urban expansion zones, estuaries,
+rivers, and zones of intensive resource management and extraction.
+Data Useful for Determining Trends and Their Causes
+Trends in the status of biological resources cannot be identified or
+understood unless a solid database on the identification and distribution of the
+resources is available. Collections and related literature are a primary source of
+information on the past status of
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY84
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+species and ecosystems. The information they contain needs to be computerized
+and made efficiently and rapidly available. Sampling procedures need to be set up
+to ensure that records of selected taxa and ecosystems are kept up to date.
+Historical information on several time scales is needed:
+• Within recorded history. Data on the distributions and status of natural
+resources within historical time are provided by specimens in museums
+and herbaria, photographs, written records, archival aircraft and satellite
+imagery, and oral histories. Such information is especially valuable
+because it is potentially more complete than information from the more
+distant past, because the causes of changes are likely to be human
+actions similar to those operating today, and because it can help predict
+what resource status is potentially achievable if the adverse effects of
+human actions are sufficiently reduced in the future.
+• Within postglacial times. Paleoclimatologists and paleoecologists are
+able to reconstruct climates during the last glacial period and the period
+during which the glaciers retreated to approximately their current
+positions. They can also reconstruct shifts in the distributions of
+organisms and ecological communities that accompanied climatic
+changes. Those long-term records reveal that the ranges of species
+shifted at varying rates and that species assemblages differed strikingly
+from any found today. If climate change occurs, whether naturally or as a
+result of human activity, information about ecological responses to past
+change will be useful for managing ecological communities in the face
+of future shifts.
+• Over geological times spans. Although data on long-term, evolutionary
+changes in the earth's biota are inevitably less complete than data from
+the more recent past, they provide valuable insights into the evolution of
+the groups of species found today, how they achieved their current
+distributions, and what happened when organisms from different
+geographic regions interacted with one another for the first time. For
+example, when
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY85
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+North America and South America were joined by the formation of the
+Panamanian land bridge about 3 million years ago, many species of
+mammals crossed that bridge in both directions. At first, there was in
+increase in the number of mammalian species in South America, but
+over time many groups of South American mammals became extinct,
+probably as a result of competition with and predation by North
+American mammals (Marshall, 1985).
+Given that human activities are resulting in massive exchanges of species
+between continents, extinctions and ecological adjustments of biotas will
+continue to increase in intensity in the future. For example, invasion of alien
+species is the major cause of extinctions in the Hawaiian Islands today (see
+Box 2.4) and has had substantial effects on many mainland ecosystems (Mooney
+and Drake, 1986). Detecting invasions of exotic species and minimizing the
+impacts of their colonization of the United States is an important use that
+decision-makers will make of information from the National Partnership.
+Data on Current Trends
+Because the dominant organisms in many ecological systems, such as trees
+and corals, are long-lived, many important changes in ecological communities
+and ecosystems are too slow for us to sense directly (Jackson, 1992). Our abilities
+to interpret slowly operating cause-effect relationships are even poorer.
+Therefore, processes acting over decades are hidden and reside in what has been
+called the invisible present (Magnuson, 1989). In the invisible present, change
+can be occurring but undetected because of confounding factors. Only long-term
+sustained monitoring and research can reveal these slow but important changes.
+Recommendation 2-11: The National Partnership should identify and monitor the status and trends of organisms sensitive to climatic and pollution
+factors, such as amphibians,
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY86
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+mollusks, songbirds, reef corals and other marine invertebrates, and fungi.
+Changes in distributions and abundance of species are important indicators
+of impending problems. They can direct attention to areas where improved
+understanding of the causes of changes will be especially useful to decision-
+makers. Species whose ranges and abundance are increasing provide signals as
+valuable as those from species whose distributions and abundance are
+decreasing. Studies at the margins of ranges of species are particularly important
+for understanding the patterns of adaptation of those species to extreme
+conditions and their likely response to change.
+Recommendation 2-12: The NPBS should perform research to identify
+the most useful biological indicators of ecological trends.
+Because the goods and services that the nation receives from ecological
+communities depend, in part, on their functional integrity, indicators of
+functional-integrity are important to develop and monitor. Whereas ecologists can
+identify general indicators, much work needs to be done to determine which
+attributes are most usefully measured in particular ecological communities and
+for particular management purposes (Karr, 1987). Some indicators will have
+direct relevance to policy or management objectives (e.g., responsible use of an
+economically valuable species whose viability depends on specific functional
+properties of an ecosystem). Others will serve primarily as signals to direct
+general attention to a region or type of ecological community. All indicators
+should be judged against standards of repeatability and precision so that changes
+and trends can be unambiguously detected.
+Before a monitoring and assessment program is established, considerable
+investment is needed to identify the most useful indicators. Procedures for doing
+so include workshops, seminars,
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY87
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 2.4: HAWAII AND THE PACIFIC ISLANDS: AN URGENT
+CONSERVATION PRIORITY
+Strikingly different from the continental United States are the island
+systems of the Pacific Ocean for which the United States has current or
+historical responsibility. These comprise some 2,300 islands in eight
+political jurisdictions extending over an area much larger than that of the 48
+states. In these islands, there are more endemic organisms per unit of land
+area than anywhere else in the United States and possibly more than
+anywhere else on earth. Over three-quarters of the bird and plant
+extinctions in the United States have occurred in Hawaii, where 34% of the
+country's endangered plant species and 40% of the nation's endangered
+bird species are found; another 30 bird species in Micronesia are proposed
+for federal listing. Thus, the Pacific is a priority for preserving biodiversity,
+with its rapidly changing political and economic situations—and time is
+running out. These island habitats and their associated marine communities
+can be dealt with effectively only through well-coordinated field research
+focusing on species inventories, adequate ecological information, and
+especially the role of alien-species invasion in island communities. In
+dealing with Hawaii, the unincorporated U.S. territories, American Samoa
+and Western Samoa, the Commonwealth of the Northern Mariana Islands,
+the Republic of Palau, the Federated States of Micronesia, and the
+Republic of the Marshall Islands, the organization of a separate office within
+the NBS and of special attention within the NPBS seems indispensable.
+In Hawaii, making up only 0.2% of the land area of the United States,
+there are more than 10,000 unique species of plants, animals, fungi, and
+microorganisms—more than 90% of all the native species there. Starting
+with the arrival of the Polynesians 1,500 years ago and accelerating after
+the arrival of Europeans nearly 300 years ago, humans have already
+destroyed 90% of the dry forests, 61% of the mesic forests, 42% of the wet
+forests, and 3% of the subalpine forests of these ecologically diverse
+islands. Yet biodiversity is of critical importance to the future of Hawaii, in
+relation to land development, tourism, the preservation of unique species
+and for many other reasons. The integrated approach of the NPBS can
+powerfully influence the course of development and the future of
+biodiversity there.
+Nonnative species are a special threat in Hawaii and throughout the
+Pacific. Their populations should be monitored closely through a coop
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY88
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+and, where necessary, pilot projects. Retrospective analyses might help to
+identify indicators that would have been especially useful in the recent past if they
+had been used systematically. The NBS should be directly involved in this
+research.
+erative effort of the federal, state, local, and nongovernment agencies
+involved. Controlling these alien species is of critical importance for the
+preservation of native communities, to protect agriculture, and to retain
+options for the future. For example, banana poka (Passiflora mollissima)
+has already smothered over 70,000 acres of native forest on two islands
+and threatens to spread rapidly over additional forested areas. The brown
+tree snake (Boiga irregularis ) introduced on Guam has brought about the
+extinction of nine of the 11 species of native land birds since 1975. Hawaii
+is invaded successfully by at least 20 new nonnative invertebrates each
+year, with as many as 39 recorded for a single year (Nature Conservancy
+of Hawaii, 1992). Some of these species are destructive to native species,
+others are injurious to agriculture, and still others cause problems for human
+health.
+Cooperation among a number of different entities—including several
+departments of the state government; conservation groups led by The
+Nature Conservancy; the University of Hawaii's Center for Conservation,
+Research, and Training and other units; botanical gardens linked by the
+Center for Plant Conservation; and the Bishop Museum—appears to offer a
+promising direction for developing appropriate strategies for the
+management of biodiversity in Hawaii in the context of regional
+development. The recent adoption of a State Natural Area Partnership
+program, which will provide 2:1 matching funds to private landowners for
+long-term stewardship on their lands, is of special importance nationally and
+would doubtless work well in other areas. The development of a State
+Secretariat for Conservation, housed at and partly funded by the University
+of Hawaii, is another promising effort to contribute to the integration of
+conservation efforts in Hawaii. The kind of partnership among federal
+agencies that is envisioned in the NPBS could complete the picture and
+make the single area that represents one of our most critical conservation
+priorities a model for the rest of the country.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY89
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+REGIONAL COLLABORATIVE PROJECTS
+Recommendation 2-13: The NPBS should establish pilot projects in key
+selected regions of the United States, in which terrestrial, fresh-water, and
+marine communities and their interactions will be identified, characterized,
+mapped, and monitored.
+Our nation's biological resources are so great that management strategies
+aimed at single species are often impractical or ineffective in preserving or
+restoring them. Therefore, effective management requires that assessments of
+status extend from individual species to the ecosystems in which they live and
+that these assessments include an understanding of key mechanisms and the
+processes that regulate them. A more detailed knowledge of what makes
+ecosystems work as they do and how they are being affected by human activities
+that fragment and degrade them will help us to deal with the increasingly complex
+legal questions pertaining to land use and water management.
+To develop this cross-scale and multidisciplinary information, the NBS
+should work with other members of the National Partnership to choose a series of
+pilot projects targeted at areas that are changing rapidly because of different types
+of human activity (for example, metropolitan development, agricultural
+expansion, and resource extraction); areas of high biodiversity; areas in which
+diverse fresh-water, terrestrial, and marine ecosystems interact closely; and areas
+that are ecologically unique. A series of workshops should be conducted to
+determine which areas to select and how to design the projects.
+The projects should be designed to produce detailed ecological
+understanding of a range of ecosystems for comparison with other studies as
+starting points for long-term monitoring and as the first pieces in a national
+network that should ultimately include all major kinds of ecosystems. Equally
+important, these projects can serve to develop and refine methods for conducting
+future re
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY90
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+search more efficiently and effectively. Some of these sites would be ideal places
+to conduct all-taxa biological inventories (Yoon, 1993).
+These projects should not be limited to taxonomic and ecological research.
+Evolutionary changes often accompany environmental ones and merit careful
+analysis. For example, the evolution of resistance to chemical pesticide has often
+occurred within a few generations or years (Georghiou, 1972). The genetic
+structure of salmon populations can change rapidly and markedly in a few
+generations in response to the rearing and releasing of hatchery fish (Gross,
+1991). On a longer time scale, understanding the changes that have occurred in
+North American environments through geological time provides a baseline for
+comparison of the current status and trends. The projects should also involve
+other disciplines as appropriate, such as geology, hydrology, atmospheric
+science, and the social sciences.
+If the sites of the studies are well chosen, the projects can be especially
+useful in producing the kinds of scientific information that is needed to manage
+ecosystems effectively. They can also provide important opportunities for cost-
+effective collaboration among participants and for implementing an adaptive
+approach to priority-setting and management. Such an approach could be
+especially useful in areas like southern Florida, where many agencies and other
+organizations have separate or overlapping jurisdictions in one watershed and can
+operate under different or conflicting mandates (Box 2.3). In many cases, the
+studies might be able to take advantage of existing research and management
+programs (e.g., in reserves or long-term research areas) run under the auspices of
+various participants.
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY91
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+SCIENCE IN THE SERVICE OF BIOLOGICAL SURVEY92
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+3
+MEETING THE INFORMATION NEEDS
+OF NPBS CLIENTS
+One of the most important uses of the scientific information gathered by the
+National Partnership for Biological Survey is to assist decision-makers in
+addressing existing issues and in anticipating future ones related to biological
+resources. Recommendations made in the previous chapter for setting priorities
+for research and data-gathering emphasize factors relating to both near-term and
+long-term resource management. The research activities outlined in Chapter 2 are
+essential for gathering scientifically reliable information on which credible and
+reliable decisions can be made with a high level of confidence. Decisions based
+on inadequate, unreliable or incorrect information might be unwise and costly.
+To respond effectively to information needs at all levels (local, regional,
+national, and international), NPBS and National Biological Survey (NBS) data
+and information policies and programs must move from problems to solutions. To
+do so, the National Partnership must address the following questions:
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS93
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+• Who are the current and potential users of the kinds of information that
+the NPBS will produce, and how can their needs be met? In particular,
+how can research findings be communicated to decision-makers in ways
+that foster understanding and promote appropriate interpretation and
+use?
+• How should NPBS information be collected and managed to serve
+modeling and prediction efforts in support of biological-resource
+management?
+• How can the NPBS make the best use of the rapidly evolving technology
+and systems in information management?
+• How should information collection and management be coordinated
+among NPBS participants?
+Those questions should be addressed as soon as possible to produce a
+detailed information model describing the flow of information from collection
+and analysis to dissemination and use. The model should address general
+conceptual issues, such as designing stronger linkages between scientific
+information and decision-making, identifying key environmental variables and
+relevant spatial and temporal scales, and assigning clear institutional
+responsibilities to minimize redundancy. It should also deal with technical issues,
+such as data format, data-exchange protocols, quality assurance and control, and
+hardware and software requirements.
+This chapter highlights some central issues for linking scientific information
+to decision-making and offers recommendations on the quality, availability, and
+dissemination of information.
+INFORMATION NEEDS
+The National Partnership will have to provide information on biological
+resources in an easily interpretable form and in a timely manner to a wide array
+of resource managers, city planners, conservationists, scientists, and others. Its
+databases will have to
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS94
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+be able to answer standard questions about plants, animals, and microorganisms,
+such as ''Where does this species occur?'' and questions that require more
+complicated data analysis, such as "What species occur in a given vegetation
+type, and which of them occur in other vegetation types as well?" Answers to
+those kinds of questions should be available simply, quickly, and conveniently, to
+anyone who needs them.
+Mechanisms must be developed to provide reliable answers to complex user
+queries that require new analysis and interpretation of existing data. Resource-
+management decisions are themselves sources of information about biological
+processes, and data accumulated from them should be incorporated in databases
+and made available to be used in future decision-making.
+Some specific needs for NPBS data are the following:
+• Public agencies need better biological data to guide acquisition of land
+and water rights for reserves; set priorities for research, management,
+and restoration programs; zone local land use and regulate use of public
+and private lands; locate and design public-works projects; and
+coordinate resource management both domestically and across
+international borders.
+• The private sector needs better information on the distribution of legally
+protected resources; on the impacts of metropolitan growth on
+ecological resources, renewable land use and nonrenewable natural
+resources and ways to reduce those impacts; on the distribution of
+species of potential economic value; and on the biological impacts of
+pollutants.
+• Decision-makers need readily available information on status and trends
+to alert them to issues that require legislative or regulatory attention and
+to assess the effectiveness of current programs.
+• Research scientists need improved access to biological data to help
+direct and design their research.
+• The public needs information on local organisms and habitats, on the
+ecological role of humans in the environment, and on regional and
+national trends.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS95
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Despite increasing management attention to ecosystem patterns and
+processes, much planning and development is still based on single species. In the
+absence of abundance or trend data for most species, inferences about status and
+about conservation risk must be drawn from incomplete distribution data and
+habitat models. Box 3.1 illustrates how spatial data can be integrated to model
+distribution and management status, in this case for the orange-throated whiptail
+lizard (Cnemidophorus hyperythrus). The example highlights several important
+points:
+• Species distributions are almost never known with certainty. Rather, they
+are modeled by integrating information from such widely disparate
+sources as biogeographic atlases, museum collections, habitat-
+relationship information, and habitat maps derived from environmental
+data and remote sensing imagery. Users of distribution information must
+be clearly informed as to who produced it, how the results were
+obtained, the information scale, potential biases, and inaccuracies. This
+knowledge of information quality is needed to ensure appropriate use of
+the information. Even for an easily observed and relatively well-known
+species, existing collection and sighting data are likely to be dated or
+biased. Computerization of existing data must be weighted in a way that
+recognizes the differences in precision of different records.
+• For conservation and management, knowing where a species occurs is
+less useful than knowing what processes allow the species to persist in
+some areas and not others. This requires observation, experimentation,
+and modeling to develop good life-history information and an
+understanding of ultimate controls on species' distributions and
+abundances. For both practical and scientific reasons, we are unlikely to
+have this knowledge in detail for most species in the near future. Until it
+is available, we will have to depend largely on the best available survey
+and monitoring data, correlative analyses, and scientific judgment.
+• Hierarchical integration and spatial display of existing
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS96
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+distribution and habitat information is a powerful tool for revealing
+information content and sampling biases in the data and for setting
+priorities among taxa and areas for research and management.
+Integration also helps to highlight possible spatial interactions among
+neighboring regions and ecosystems.
+Only a small fraction of existing biological data and information is now used
+in planning and decision-making. These activities require information that differs
+in kind and formats from what is typically generated by systematists and field
+biologists, (see below), and the results of academic and agency research are
+communicated poorly to decision-makers (NRC, 1993b). Managers complain
+that relevant information is scarce, hard to find, and scattered among many
+institutions. Furthermore, available information is often out of date and not
+applicable to local problems. Regional planners are stymied by the uneven
+geographic coverage of existing data and by the difficulty of integrating
+information produced by different agencies at different times with different
+methods of sampling, classification, and mapping.
+There is wide agreement on the urgent need to organize existing biological
+information and make it more readily available and to coordinate future data
+collection and exchange (e.g., NRC, 1993a, b). This is a substantial task, and
+neither its importance nor its difficulty should be underestimated. Data on a wide
+array of topics, ranging from species distributions to socioeconomic activity, and
+from many disciplines and sources must be integrated. Only a tiny fraction of
+these data is now readily accessible for integration. Existing data are unevenly
+documented and do not constitute a representative sample of all the nation's
+biological resources.
+Despite the size of the task, a national biological information system is
+clearly attainable. Although they are far smaller than what is proposed in this
+report, the experiences of ERIN in Australia (see Box 2.1), INBio (the National
+Biodiversity Institute) in Costa Rica, and a number of U.S. state initiatives show
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS97
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 3.1: THE UTILITY AND LIMITATION OF SPECIES
+DISTRIBUTION DATA
+The accompanying diagram and figures show how disparate spatial
+data can be integrated in a GIS to represent the distribution and
+conservation status of a species. The process is illustrated for the orange-
+throated whiptail (Cnemidophorus hyperythrus), a lizard native to coastal
+Southern California and Baja California. The species is considered
+threatened in California because it depends on coastal sage scrub, a
+habitat that has been severely reduced and fragmented by urban
+development. Together with the California Gnatcatcher and the Cactus
+Wren, the whiptail now serves as a "target species" for ongoing
+multispecies conservation planning efforts in the region (Hollander et al., in
+press).
+Distribution data for the whiptail are exceptionally good because it is
+easy to observe, occurs in accessible areas, and has been sampled
+intensively during the course of recent environmental impact studies.
+Available information includes life-history notes, a coarse map of range
+limits, and a table of habitat preferences, which are provided by the
+California Wildlife Habitat Relationships (WHR) System (Zeiner et al. 1990);
+remotely sensed Thematic Mapper imagery of Orange, Riverside, and San
+Diego Counties (Panel A); digital maps of land ownership (Panel B);
+museum collection data and sightings spanning the past century (Panel C);
+and maps of suitable habitats as defined by vegetation in the WHR System
+and mapped at two different scales with 1990 Thematic Mapper satellite
+imagery (map boundaries from the California Gap Analysis) and 1991
+aerial photography (regions with small crosshatching in Panel D were
+mapped as part of San Diego Counties Multispecies Conservation Plan-
+MSCP). The processing steps necessary to produce Panel D—which is a
+composite of field sighting data, habitat maps within the range limits of the
+species, and the location of existing nature reserves—are shown in the
+accompanying flow chart.
+This example illustrates both the utility and limitations of existing
+information for mapping species distributions and assessing their conser
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS98
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+vation status. Specifically, existing museum collection data vary in date
+and locational precision. In this case, 349 museum specimens could be
+mapped with certainty only to the nearest USGS 7.5-minute quadrangle,
+providing a crude representation of the range of the species.
+Sighting data are both very dynamic and potentially very biased. Most
+observations of the lizard were collected after 1985 for projects requiring
+environmental impact reports. These sightings are clustered at the margins
+of urban and agricultural areas in San Diego County, where most
+development is occurring.
+Habitat mapping and GIS modeling provide a means of extrapolating
+the potential distribution of the species. In this instance, we have highlighted
+areas within the range limits of the species that support vegetation classified
+as suitable habitat by a statewide habitat relationships system. The
+potential distribution is somewhat different, depending on whether 1:24,000
+or 1:100,000 scale vegetation maps are used. Even the very general pattern
+predicted by WHR and vegetation data is suspect, because the small
+amount of life-history information available for the species suggests that it is
+limited more by its major food item, a termite, than by vegetation.
+Compiling the information in Panels A-D took considerable time, effort,
+and technology, yet it provides only a sketch of the species distribution, to
+say nothing of abundance or trends. Most other species will be even more
+challenging than the whiptail, which is readily observable and has received a
+great deal of attention. However, with GIS relational modeling and display,
+the distribution of a species can be inferred by extrapolating along several
+lines of evidence. Different data sets can be compared and contrasted,
+helping to reveal biases and uncertainties. Further study of the species can
+be productively focused on poorly surveyed areas, and existing habitat
+models can be refined on the basis of patterns of agreement and
+disagreement between predicted and observed distributions.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS99
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS100
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS101
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Processing Flow in Species Distribution Mapping
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS102
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+that biological data collection, exchange, and integration are both practical
+and cost-effective. Nevertheless, an effective National Partnership will require
+substantial cultural and institutional changes to build stronger bridges among the
+broad spectrum of producers and users of biological data.
+Recommendation 3-1: Under the leadership of the NBS, the National
+Partnership should develop a National Biotic Resource Information System.
+This should be a distributed federation of databases designed to make
+existing information more accessible and to establish mechanisms for
+efficient, coordinated collection and dissemination of new data and
+information. The NBS should take the lead in promoting standards for
+sampling, measurement, data recording, and data transfer. It should
+support continuing state efforts to develop regional and statewide environmental databases and should work closely with and support database
+development in museums, universities, and other appropriate organizations.
+It should also participate in interagency initiatives to coordinate collection
+and management of biodiversity data by the federal government.
+The Need for Spatial Data
+Until recently, most research biologists have received little training in
+cartography or spatial analysis. They might have consulted maps or even prepared
+them as part of their investigations, but most biologists view mapping as
+peripheral to their research. Most ecological field research has been conducted on
+small geographic scales, and collections and field plots have rarely been precisely
+located spatially (i.e., "georeferenced"). In contrast, maps are a mainstay of
+planners and decision makers, who must locate and quantify resources and site
+projects over large planning areas.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS103
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+That difference in perspectives has contributed to the separation of research
+and management and has reduced the usefulness of much existing biological
+information for management purposes. However, the separation is rapidly
+disappearing as ecologists and conservation biologists pay increased attention to
+spatial heterogeneity at landscape and regional levels and to the role of spatial
+pattern in ecosystem functioning, species persistence, and the maintenance of
+biological diversity.
+New technologies have revolutionized mapping over the last 20 years. They
+include aircraft-and satellite-borne remote sensors, global positioning systems for
+satellite-based location and navigation, and spatial-data handling tools, such as
+geographic information systems (GISs), visualization, and spatial-decision
+support systems. Maps, once primarily a vehicle for communicating research
+results, are now themselves used as data to derive new information. Furthermore,
+many spatial data are now acquired and stored in what has been referred to as
+"value-neutral" form (e.g., as actual measurements, rather than categories or
+assessments). While creating new opportunities for spatial analysis, these
+advances place a new burden on producers of spatial data for fuller
+documentation of data sources, data content, accuracy, scale, appropriate use, and
+other characteristics. This documentation is called "metadata"—e.g., data about
+data.
+Those scientific and technological advances have led to rapid growth and
+evolution of a National Spatial Data Infrastructure (NSDI) that is leading to a far
+more accurate and detailed representation of earth features and phenomena
+(NRC, 1993a). Biologists lag well behind physical scientists in establishing
+coordinated efforts to develop standard spatial-data sets. For example, detailed
+maps of vegetation do not exist for the United States, nor for many of its regions.
+We lack even reliable range maps for most organisms, including many
+vertebrates and plants. The NPBS will need to remedy these deficiencies to take
+full advantage of current and future capabilities in spatial mapping.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS104
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Recommendation 3-2: Under the leadership of the NBS, the National
+Partnership should recognize and participate actively in the evolving National Spatial Data Infrastructure. It should promote greater awareness and use of existing spatial data and technologies; increase efforts to locate
+field data spatially; adopt, where appropriate, existing standards for
+mapping and spatial-data handling; and increase the involvement of
+biologists in federal efforts to develop spatial-data and metadata standards.
+Specific Needs Include
+• Increased training of biologists in modern spatial analytical theory and
+spatial statistics (Levin, 1993).
+• Fuller use of existing spatial data and technologies, such as global
+positioning systems, remote sensing, and GISs for biological survey and
+monitoring, specifically to achieve fuller coordination of ground
+sampling and mapping activities through carefully designed, multistage
+mapping and monitoring schemes. This will require a new level of
+interaction between traditional field biologists and systematists,
+landscape ecologists, and earth-system scientists and increased federal
+and state support for application of remote sensing to biological survey
+and monitoring, especially by the National Aeronautics and Space
+Administration (NASA) and the Department of the Interior.
+• Increased standardization of collection and documentation of spatial
+biological data, including development of a detailed model for
+biodiversity data (i.e., defining biodiversity variables and their possible
+transformations, functional relationships, computer representations, and
+documentation) and then establishment, adoption, and implementation
+of data and metadata standards for describing, classifying, and mapping
+biological features, as described by the Interior Geographic Data
+Committee (1992).
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS105
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+COORDINATION AND MANAGEMENT OF DATA AND
+INFORMATION
+A Federated Database Approach
+Biological information is produced and maintained by diverse federal, state,
+and local agencies and private organizations. Collectively, this is a vast effort, and
+no organization or centralized facility could effectively compile, maintain, and
+distribute all relevant information. A more realistic goal is to link existing and
+new biological databases into a distributed federation of NPBS databases. Such a
+linkage must occur both physically over networks and logically through the use
+of appropriate software and data standards.
+Many pieces of a distributed biological database are already in place or
+under development, notably taxonomic databases (such as the Flora of North
+America), conservation databases (such as the Natural Heritage and Gap Analysis
+databases), monitoring data (such as the National Science Foundation's [NSF]
+Long Term Ecological Research [LTER] sites and the Breeding Bird Survey), and
+the databases maintained by statewide natural history surveys (such as those in
+Illinois and Kansas).
+Consistency and documentation of data content, quality, performance, and
+exchange are essential for ensuring the usability of scientific data. Data that are to
+be useful decades after they are collected have special documentation
+requirements (Bowser, 1986). The integration of existing biological databases is
+seriously impeded by the lack of data standards. To be effective, the development
+of new standards must build from heterogeneous sources and be phased to allow
+existing data to be transferred to a more uniform database environment.
+Recommendation 3-3: The NPBS should develop and adopt
+appropriate standards for data quality assurance and quality
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS106
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+control and metadata content. The standards should be established by
+federal agencies in close collaboration with states and the private sector and
+should build on current efforts, such as those of the Federal Geographic Data
+Committee, the Interior Geographic Data Committee, the Interagency Task
+Force on Water Quality Monitoring, the Freshwater Imperative, the
+Interagency Working Group on Data Management for Global Change, and
+Systematics Agenda 2000.
+Environmental and socioeconomic databases are evolving rapidly through
+numerous state efforts, as well as such federal initiatives as the U.S. Global
+Change Data and Information System (GCDIS); the NSF LTER network; the
+NASA Earth Observing System Data and Information System (EOSDIS); the
+Environmental Protection Agency (EPA) Environmental Monitoring and
+Assessment Program (EMAP); EPA's revised water-quality information system,
+STORET; the Census Bureau's Topologically Integrated Geographic Encoding
+and Referencing system; the National Oceanic and Atmospheric Administration's
+climatological, meteorological, and oceanographic databases; the U.S.
+Geological Survey National Mapping Division and National Water Quality
+Information System; and the Department of Energy's Carbon Dioxide Information
+Analysis Center database. Those are some of the major building blocks of the
+National Spatial Data Infrastructure referred to above. They have developed
+independently of most biological databases, notably the museum collections and
+state biological surveys.
+Recommendation 3-4: The NPBS should develop its databases in
+conjunction with the major federal environmental and socioeconomic
+databases to minimize redundancy, to avoid conflicting terminology and
+classification systems, and to maintain consistent data standards and
+formats.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS107
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Limits to Federation
+Much of the information generated and managed by the NPBS will be
+housed in and exchanged over computer networks. Many producers and
+consumers of NPBS data do not yet have network access, but most will have it
+soon. Already, 5-10 million people in 50 countries are linked via Internet.
+Free sharing of data raises issues of proprietorship and appropriate use.
+Some individuals and institutions distribute primary data only after they have had
+time to conduct their own analyses and publish the results. Even more important,
+integrating data can require a commitment of time and resources far beyond what
+most institutions can afford.
+Recommendation 3-5: Full and open sharing of biological data on a
+timely basis should be an objective of NPBS data management, and adequate
+funds should be made available to meet this objective. The objective should
+apply foremost to data acquired with public funds. Conventions and
+protocols for sharing of primary data should be developed cooperatively
+among NPBS participants. Under NBS leadership, the NPBS should move
+quickly to produce a data and information policy for establishment,
+maintenance, and distribution of long-term national and international
+biological data and derived information.
+Learning from Others
+The human-genome project has been described as the first truly ''big-
+science'' project in biology. It has as its primary product, huge databases of
+complex genetic information. The National Center for Atmospheric Research
+stores and manipulates large volumes of data that can readily be visually browsed
+and retrieved across Internet. The four national supercomputers supported by
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS108
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+NSF manage large amounts of astronomical data. When fully functional, NASA's
+EOSDIS will process at least 30,000 digital images per day while managing or
+linking to a wide range of biological and geophysical databases.
+Recommendation 3-6: NPBS data managers should consult with the
+Human Genome Project, EOSDIS information scientists, the National
+Center for Atmospheric Research, the NSF supercomputer centers, and
+other large database programs to take advantage of the lessons and
+products from these efforts to manage large volumes of biological and
+geophysical data and to expedite the development of an effective,
+distributed database environment.
+Custodianship
+Data quality assurance and control are best achieved through the clear
+assignment of custodianship for subsets of the data to appropriate experts or
+organizations. Curators must be appointed with the responsibility for overseeing
+the long-term quality, currency, and consistency of the data. That will help to
+transform databases from passive collections of information into something more
+similar to the scientific literature, which relies upon an active set of editors and
+reviewers to ensure its quality. To support the custodians, tools must be
+developed to encourage those who contribute to databases but do not have
+curatorial obligations to take responsibility for the quality of their submissions.
+Examples of custodial tools include standardized submission formats and
+intelligent software for screening submitted data.
+Recommendation 3-7: NPBS data managers should develop
+mechanisms to ensure the clear assignment of custodial relationships for
+data sets and to develop appropriate support tools for the custodians.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS109
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+Data Archiving
+The utility of data on status and trends will increase with the length of the
+record. A National Biotic Resources Information System will be most useful if it
+can archive biological data for many years or even centuries. A highly distributed
+system with many different custodians, as proposed here, is potentially vulnerable
+to loss of a dataset if the custodianship falters. Mechanisms should be developed
+to ensure that the data archives of NPBS custodians are preserved beyond the life
+span of individuals and institutions. For example, regional and national sites
+might have to be designated as repositories for data for which custodians cease to
+exist.
+Recommendation 3-8: NPBS data managers should identify a small
+network of organizations to form the core of a national biological archive for
+data that merit preservation but have no active custodian. The NPBS should
+also develop clear guidelines for documentation, storage, and retrieval of
+these data.
+Functional Requirements for NPBS Data Management
+To be effective and useful, distributed databases must meet a number of
+functional requirements, among which the key ones are the following:
+• Network interfaces. Distributed databases work best when the data are
+available through standard interfaces over networks, such as Internet.
+Effective interfaces between databases can be developed only if all the
+databases have a standard means of allowing other computer programs to
+interact with them. Public-domain programs that are now appearing—
+such as GOPHER, MOSAIC, WAIS, and WWW—make it possible to
+provide integrated access into multiple databases easily and
+inexpensively.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS110
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+• Distributed queries. A user of NPBS information should be able to query
+multiple databases. Success depends on the degree of consistency among
+databases regarding taxonomic conventions, use of terms, geographic
+addressing schemes, data-management systems, and analytical software.
+Users should not be required to know all synonyms and geographic
+transformations, nor should they be expected to maintain many
+functionally equivalent software packages. Meeting the goal of a fully
+distributed database will require adoption of standard names and terms
+(or system-supported synonyms) and vendor-independent data
+representations.
+• Queries on different scales and levels of organization. Users of NPBS
+information systems will want to query the systems at different
+conceptual levels. For example, how many cricetine rodent species live
+in Ingham County? In Michigan? In the United States? What are the
+status and trends of fish populations of the Upper Peninsula of
+Michigan? Which of these populations are endangered? Supporting
+those different queries will require that the survey information system
+support hierarchical classifications so that questions can be posed and
+answered easily at different taxonomic or geographical levels. Because
+the classifications will change over time, they must be implemented in a
+manner that allows easy modification.
+• Vertical and horizontal integration of spatial data. Relevant information
+on biological resources must flow to local and county decision-makers
+and resource managers. Information must also support larger-scale
+analyses to place local actions in perspective and to address regional and
+national management issues and those which span administrative
+boundaries. Meeting these needs will sometimes require vertical
+integration—combining information about a place from many scales
+(e.g., species collection points, 1:24,000 vegetation maps, and 1:100,000
+soil maps); information must be brought to a common scale of
+representation for analysis. Alternatively, information might be available
+on one scale but from different sources for different parts of the area
+being examined; this information requires horizontal integration—
+information pieced together with a common classification system and
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS111
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+definitions. In other words, information must be managed to support
+vertical integration (across space and time scales) and horizontal
+integration (across space and time on a fixed scale).
+• Flexible system design. Modern hardware and software systems have
+useful lives of at most a few years. Therefore, NPBS databases must be
+designed in a way that will facilitate their transfer across multiple future
+computer platforms. That is best achieved by using, where possible,
+commercially available products that adhere to extant standards. Custom
+software can be difficult, sometimes impossible, to transport to new
+systems. The National Institute of Standards and Technology has
+substantial expertise in this regard and should be consulted in the
+planning of the NPBS data system.
+Recommendation 3-9: NPBS data managers should meet the key
+functional requirements for an effective distributed database. Among them
+are standard interfaces, an ability to query multiple databases easily and
+across taxonomic and geographic scales, and easy transport of the data to
+new computer platforms as they are developed.
+INFORMATION MANAGEMENT IN NBS
+Consolidation and Coordination of DOI Survey and
+Monitoring Data
+DOI has proposed initiating a National Biological Status and Trends
+(NBST) program at the NBS. It will be a coordinated monitoring program based
+on existing activities in DOI, including the National Wetlands Inventory, the
+Waterfowl Inventory, the Park Service Inventory and Monitoring Program, the
+Gap Analysis Program, the Breeding Bird Survey, the Global Change Research
+Program, Biomonitoring of Environmental Status and Trends, and the Great
+Lakes Fisheries Assessment. DOI proposes
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS112
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+to initiate the program by consolidating databases, designing a statistically valid
+monitoring network capable of biennially assessing biological status and trends,
+developing standardized data collection and management protocols, and
+establishing rigorous quality-assurance and quality-control procedures.
+The committee believes that such an effort is central to the NBS and strongly
+endorses the concept, but the program's scope should evolve as the NBS and
+other DOI survey and monitoring activities are extended to other taxonomic
+groups, ecosystem types, and geographic areas, as discussed in Chapter 2. The
+NBST program should include the management, archiving, and analysis of DOI
+survey and monitoring data of national extent or significance. At the same time,
+the NBST program must be coordinated with other important monitoring
+programs outside DOI. Continuing efforts like the joint Fish and Wildlife
+Service-Smithsonian initiative, Standard Methods for Measuring Biological
+Diversity, should be accompanied by similar initiatives concerned with
+management, exchange, and integration of biological survey and monitoring
+data, such as The Nature Conservancy's Heritage Program, and broadly based
+projects, such as the Flora of North America. The integrated management
+schemes being developed for southern Florida (see Box 2.3) and California (see
+Box 3.2) constitute excellent regional examples of the need for infrastructure
+sufficient to bring together status and trends data of organisms and conditions in
+disparate environments.
+Recommendation 3-10: The NBS should establish a National
+Biological Status and Trends (NBST) program that builds from existing DOI
+survey and monitoring programs eventually to include a broader range of taxonomic groups, ecosystem types, and geographic areas. At the outset,
+staff should be appointed and mechanisms developed to ensure that the
+NBST program is effectively linked to related federal survey and monitoring
+initiatives and to other pertinent databases.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS113
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+BOX 3.2: NEW APPROACHES TO INFORMATION
+MANAGEMENT AND CONSERVATION PLANNING IN
+CALIFORNIA
+California's biodiversity is extraordinary for its richness (e.g., 5,862
+flowering plant species, or one-fourth of all flowering plant species in the
+conterminous United States) and a high level of endemism (e.g., 24% of all
+flowering plant species). Unfortunately, this biodiversity has been seriously
+threatened by human activities, and the state leads the nation in federally
+listed threatened and endangered species.
+As with other states, there is no single repository for data on
+California's biodiversity. The data are scattered across many institutions,
+and general standards have not been established for data collection,
+classification, or transfer or for database design. The state of California is
+now moving rapidly toward coordinated collection and management of
+biodiversity data. In 1991, a Biodiversity Memorandum of Understanding
+was signed by major federal and state agencies, with the intent of promoting
+interagency cooperation in conserving biodiversity across administrative
+boundaries. A California Council on Biological Diversity, established to
+promote this new approach, was charged to
+• Develop cooperative biological inventory projects.
+• Identify and agree to more consistent management of riparian and other
+sensitive areas.
+• Share management expertise.
+• Share funding to accomplish conservation projects.
+• Develop mitigation and trading banks to allow flexibility for development
+and conservation projects.
+• Work with researchers to ensure necessary advancement in knowledge
+and technology.
+To meet those goals, the council has divided the state into 10
+"bioregions" that are defined mainly by physiographic and biogeographic
+features. A new process, Natural Community Conservation Planning
+(NCCP), has as its objective active conservation of native plants and
+animals and their habitats through an expanded system of natural reserves.
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS114
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+An NCCP pilot project in the threatened coastal sage-scrub natural
+community of southern California has recently been completed; it
+exemplifies the kind of effort required to implement proactive conservation
+strategies in areas under intense population and economic pressure.
+Applying GIS modeling to available socioeconomic and ecological data, a
+scientific review panel defined core and satellite habitat areas on the basis
+of the extent and quality of coastal sage-scrub vegetation and identified
+three target species—the California Gnatcatcher, the Cactus Wren, and the
+orange-throated whiptail lizard (Box 3.1)—to help efforts to plan and design
+reserves. The panel also attempted to define the extent and location of
+allowable development of remaining habitats. Finally, a research agenda
+was proposed to help resolve unanswered questions bearing on
+conservation of the community and its component biodiversity. It addressed
+six basic subjects: biogeographic inventory and mapping, monitoring of
+trends in selected taxa, dispersal characteristics and corridor-use patterns
+of target and other animal species, demography and population viability
+analysis, survey and autecology of sensitive plants and animals, and
+genetic studies.
+The NCCP project in southern California underscores several user
+needs that the NBS must meet if it is to be effective: the need for better
+organization of and access to highly dispersed biological data; the need for
+information at all levels of biological organization, ranging from genes to
+communities; the need for distribution and monitoring data on species and
+habitats at both local and regional scales; the need to account for
+socioeconomic pressures and trends; and the critical need for information
+on spatial characteristics such, as species' dispersal traits and effects of
+habitat patch size and arrangement on population viability.
+NBS COORDINATION OF A NATIONAL DISTRIBUTED
+DATABASE
+Most biodiversity data are produced locally and are dynamic. Therefore, the
+NBS should not attempt to develop a large, central
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS115
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+ized database facility to store and distribute biodiversity data. Instead, both the
+National Partnership and the NBS specifically should evolve a highly distributed
+network of databases connected through the Internet and by other appropriate
+means. Because most biodiversity data are maintained within states or by local
+jurisdictions and institutions, the NPBS will always be a highly decentralized,
+largely bottom-up effort. It is critical that this effort be well coordinated to
+minimize redundancy and to allow integration of data, but there will probably
+never be a single database of databases that will direct users to all relevant
+sources. The ERIN approach (as described in Chapter 2) was logical for
+Australia, where relatively few electronic databases existed earlier, but the United
+States already has a large number of such databases. Instead, data-sharing must
+be fostered through creative use of network tools. The NBS can contribute to this
+effort by taking the following steps:
+Recommendation 3-11: The NPBS and the NBS should develop a
+highly distributed federation of databases, rather than a larger centralized database facility. To facilitate the sharing of data among the databases, the
+NBS should:
+• Establish a moderate-sized facility with personnel and computing
+capabilities for archiving and distributing regional and national
+NBS data sets and for meeting the proposed goals of a National
+Biological Status and Trends program.
+• Use existing tools and develop new ones to help NPBS users locate
+data and information, both digital and nondigital. For example,
+the NBS should explore the establishment of region-specific and
+program-specific NBS database directories and a national directory
+of these directories that are accessible through powerful national
+information networks, such as Internet.
+• Promote the adoption of data standards by NPBS partners by
+cooperating with existing efforts (e.g., ABC, 1993), by
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS116
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+convening technical workshops and committees, and by providing
+leadership in developing and applying new standards for biological
+data.
+INFORMATION DISSEMINATION
+The National Partnership will supply data and information ranging from raw
+measurements to complex analysis and interpretation, and the results will be
+published in maps, graphical products, and reports. The Partnership (including the
+NBS) should use existing media and channels of information exchange whenever
+possible, including scientific journals, other publications, extension services
+(e.g., those of the U.S. Geological Survey and the U.S. Department of
+Agriculture), and information networks. Carefully reviewed technical reports
+containing original data or their interpretation should also be prepared as needed.
+Primary printed products must include map and graphical representations of
+spatial or time-series data for biogeographic areas, ecosystems, habitats, and
+species.
+To ensure appropriate use, data must be subject to strong quality assurance
+and control. Published data sets should receive professional review before they
+are distributed. General guidelines for documentation and review of biological
+data are few, and development of such guidelines should be given high priority.
+For reasons of efficiency and utility, dissemination of NPBS information should
+be structured in the context of user interest in particular regions, habitats, or taxa.
+That means that users will have to define their queries precisely and consistently,
+including the level of detail and scale. In answering those queries, NPBS
+information should be presented to highlight what is and is not known by means
+of diverse, user-friendly formats that are readily accessible to users of varied
+background and expertise. That will help to ensure correct interpretation and
+appropriate use. For example, the implications of the reported presence or
+absence of a
+MEETING THE INFORMATION NEEDS OF NPBS CLIENTS117
+About this PDF file: This new digital representation of the original work has been recomposed from XML files created from the original paper book, not from the original
+typesetting files. Page breaks are true to the original; line lengths, word breaks, heading styles, and other typesetting-specific formatting, however, cannot be retained,
+and some typographic errors may have been accidentally inserted. Please use the print version of this publication as the authoritative version for attribution.
+Copyright © National Academy of Sciences. All rights reserved.
+A Biological Survey for the Nation
+http://www.nap.edu/catalog/2243.html
+given species depend greatly on the nature of the studies on which the report is
+based.
+Software tools must be responsive to and readily accessible to all users, from
+both the public and the private sectors. Needs range from primary data to various
+kinds of derived products.
+Recommendation 3-12: To facilitate use of the data that it generates, the
+National Partnership should develop software tools for data visualization and
+analysis, for data reformatting and conversion, for trend analysis of
+monitoring data, for spatial interpolation of sighting and collection data, and
+for GIS habitat modeling.
+Assessments and Communication of Results to Decision-
+Makers
+One of the challenges that the National Partnership must address is the
+effective communication of research results to resource managers, planners, and
+legislators. Much more is required than data summaries, technical reports, and
+professional articles. Those users have questions whose answers are not obvious
+in existing research products. Rather, policy and management actions often
+require reinterpretation of existing information. It is here that data and
+information are most vulnerable to inappropriate use and interpretation and that

@@ -1,0 +1,422 @@
+Since Java was first released, its user interface facilities have been a significant weakness. The
+Abstract Window Toolkit (AWT) was part of the JDK from the beginning, but it really wasn't
+sufficient to support a complex user interface. It supported everything you could do in an HTML
+form, and provided free-standing frames, menus, and a few other objects, but you'd be hard-pressed
+to implement an application as complex as Quicken or Lotus Notes. AWT also had its share of
+portability problems; it relied heavily on the runtime platform's native user interface components,
+and it wasn't always possible to hide differences in the way these components behaved.
+JDK 1.1 fixed a number of problems—most notably, it introduced a new event model that was
+much more efficient and easier to use—but it didn't make any major additions to the basic
+components. We got a ScrollPane and a PopupMenu, but that was about it. Furthermore, AWT still
+relied on the native components, and therefore continued to have portability problems.
+In April of 1997, JavaSoft announced the Java Foundation Classes, or JFC, which supersedes (and
+includes) AWT. A major part of the JFC is a new set of user interface components that is much
+more complete, flexible, and portable. These new components are called "Swing." (The JFC also
+includes a comprehensive facility for 2D graphics, printing, and "drag-and-drop.") With Swing, you
+can design interfaces with tree components, tables, tabbed dialogs, tooltips, and many other features
+that computer users have grown accustomed to.
+In addition to the new components, Swing makes three major improvements on the AWT. First, it
+doesn't rely on the runtime platform's native components. It's written entirely in Java, and creates its
+own components. This new approach should solve the portability problem, since components don't
+inherit the weird behaviors from the runtime environment. Second, because Swing is in complete
+control of the components, it's in control of the way components look on the screen, and gives you
+more control of how your applications look. You can choose between several pre-built "look-andfeels,"
+or you can create your own if you want your software to show your personal style. This
+feature is called "Pluggable Look-and-Feel" or PLAF. Third, Swing makes a very clear distinction
+between the data a component displays (the "model") and the actual display (the "view"). While the
+fine points of this distinction are appreciated mostly by computer scientists, it has important
+implications for all developers. This separation means that components are extremely flexible. It's
+easy to adapt components to display new kinds of data that their original design didn't anticipate, or
+to change the way a component looks without getting tangled up in assumptions about the data it
+represents.
+The first official release of Swing, for use with JDK 1.1, took place in the spring of 1998. Swing
+(and the rest of JFC) is a part of JDK 1.2, and is currently revolutionizing Java user interface
+development. This book shows you how to join the revolution.
+Java Swing O’Reilly
+What This Book Covers
+This book gives a complete introduction to the entire Swing component set. Of course, it shows you
+how to use all of the components: how to display them on the screen, register for events, and get
+information from them. You'd expect that in any Swing book. This book goes much further. It goes
+into detail about the model-delegate architecture behind the components, and discusses all of the
+data models. Understanding the models is essential when you're working on an application that
+requires something significantly
+Since Java was first released, its user interface facilities have been a significant weakness. The
+Abstract Window Toolkit (AWT) was part of the JDK from the beginning, but it really wasn't
+sufficient to support a complex user interface. It supported everything you could do in an HTML
+form, and provided free-standing frames, menus, and a few other objects, but you'd be hard-pressed
+to implement an application as complex as Quicken or Lotus Notes. AWT also had its share of
+portability problems; it relied heavily on the runtime platform's native user interface components,
+and it wasn't always possible to hide differences in the way these components behaved.
+JDK 1.1 fixed a number of problems—most notably, it introduced a new event model that was
+much more efficient and easier to use—but it didn't make any major additions to the basic
+components. We got a ScrollPane and a PopupMenu, but that was about it. Furthermore, AWT still
+relied on the native components, and therefore continued to have portability problems.
+In April of 1997, JavaSoft announced the Java Foundation Classes, or JFC, which supersedes (and
+includes) AWT. A major part of the JFC is a new set of user interface components that is much
+more complete, flexible, and portable. These new components are called "Swing." (The JFC also
+includes a comprehensive facility for 2D graphics, printing, and "drag-and-drop.") With Swing, you
+can design interfaces with tree components, tables, tabbed dialogs, tooltips, and many other features
+that computer users have grown accustomed to.
+In addition to the new components, Swing makes three major improvements on the AWT. First, it
+doesn't rely on the runtime platform's native components. It's written entirely in Java, and creates its
+own components. This new approach should solve the portability problem, since components don't
+inherit the weird behaviors from the runtime environment. Second, because Swing is in complete
+control of the components, it's in control of the way components look on the screen, and gives you
+more control of how your applications look. You can choose between several pre-built "look-andfeels,"
+or you can create your own if you want your software to show your personal style. This
+feature is called "Pluggable Look-and-Feel" or PLAF. Third, Swing makes a very clear distinction
+between the data a component displays (the "model") and the actual display (the "view"). While the
+fine points of this distinction are appreciated mostly by computer scientists, it has important
+implications for all developers. This separation means that components are extremely flexible. It's
+easy to adapt components to display new kinds of data that their original design didn't anticipate, or
+to change the way a component looks without getting tangled up in assumptions about the data it
+represents.
+The first official release of Swing, for use with JDK 1.1, took place in the spring of 1998. Swing
+(and the rest of JFC) is a part of JDK 1.2, and is currently revolutionizing Java user interface
+development. This book shows you how to join the revolution.
+Java Swing O’Reilly
+
+What This Book Covers
+This book gives a complete introduction to the entire Swing component set. Of course, it shows you
+how to use all of the components: how to display them on the screen, register for events, and get
+information from them. You'd expect that in any Swing book. This book goes much further. It goes
+into detail about the model-delegate architecture behind the components, and discusses all of the
+data models. Understanding the models is essential when you're working on an application that
+requires something significantly
+
+Copyright 1998 O'Reilly Associates, Inc. All rights reserved.
+Printed in the United States of America.
+Published by O'Reilly Associates, Inc., 101 Morris Street, Sebastopol, CA 95472.
+Java and all Java-based trademarks and logos are trademarks or registered trademarks of Sun
+Microsystems, Inc.in the United States and other countries. O'Reilly Associates, Inc. is
+independent of Sun Microsystems.
+The O'Reilly logo is a registered trademark of O'Reilly Associates, Inc. Many of the designations
+used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where
+those designations appear in this book, and O'Reilly Associates, Inc. was aware of a trademark
+claim, the designations have been printed in caps or initial caps. The use of the jukebox image in
+association with Java™ Swing is a trademark of O'Reilly Associates, Inc.
+While every precaution has been taken in the preparation of this book, the publisher assumes no
+responsibility for errors or omissions, or for damages resulting from the use of the information
+
+The modern Turkish Army has its foundations in remnants of the Ottoman forces[dn 2] after the Armistice of Mudros at the end of World War I. After the rise of Turkish resistances (Kuva-yi Milliye) in Anatolia, Mustafa Kemal and his colleagues formed the Grand National Assembly (GNA) in Ankara on April 23, 1920, Kâzým Karabekir's XV Corps was the only corps which at that time had any combat value.[8] On November 8, 1920, the GNA decided to establish a standing army (Düzenli ordu) instead of irregular troops (Kuva-yi Milliye, Çerkes Ethem's Kuva-yi Seyyare etc.).[1] On August 26, 1922, the Army of the Grand National Assembly[9][10] (Büyük Millet Meclisi Ordusu) launched the general offensive known as the Great Offensive (Büyük Taarruz) against the Greek forces around Kara Hisâr-ý Sâhip. Nureddin's 1st Army and Yakub Shevki's 2nd Army encircled the main body of Major General Nikolaos Trikoupis's group and defeated it near Dumlupýnar. Fahreddin's V Cavalry Corps entered Smyrna (Izmir) on September 9, 1922. Þükrü Naili's III Corps entered Constantinople (Istanbul) peacefully on October 6, 1923. Subsequently to the founding of the Republic of Turkey, the Army of the GNA was reorganized into three army inspectorates (ordu müfettiþliði, 1st, 2nd and 3rd army inspectorate).
+During World War II, Turkey mobilized more than 1 million personnel. The Turkish Army order of battle in 1941 shows a number of formations. The command of the Turkish Army was formed on July 1, 1949 and Nuri Yamut was appointed as the first commander of the Turkish Army.[2]
+[edit]Cold War Era
+[edit]Korean War
+Main article: Korean War
+The Turkish Army participated in the Korean War as a member state of the United Nations, suffering 731 deaths in combat out of the 5000 soldiers of the Turkish Brigade there, which fought at battles of Kunu-ri (Kunu-ri) where it was credited with saving the U.S. 2nd Infantry Division from encirclement.[11] The brigade fought also at Gimnyangjang-ni (Kumyangjang-ni), 'Operation Ripper,' or the Fourth Battle of Seoul, and Vegas ("Vegas").
+After Turkey joined NATO on February 18, 1952, the government initiated a comprehensive modernization program for its Armed Forces.
+[edit]Invasion of Cyprus
+Main article: Turkish invasion of Cyprus
+In July 1974, Turkey invaded Cyprus, following a coup organized by EOKA-B and led by Nikos Sampson who ousted the democratically elected Cypriot President Archbishop Makarios III in order to establish Enosis (Union) between Greece and Cyprus. The coup was backed by the Greek military junta in Athens.
+The Turkish invasion of Cyprus can be divided into two distinct Turkish offensives, the first being "Atilla 1", which commenced in the early hours of July 20, 1974, with an amphibious landing force forming a beachhead at Kyrenia's Five Mile Beach (sa comprised only infantry troops, but was supported by rolling air and naval artillery attacks, and met with limited resistance from the Cyprus National Guard, which was in disarray as a result of the July 15, 1974 coup. The majority of fighting ceased on the 23rd of July, though sporadic clashes continued after this date until the 14th of August.[12] "Atilla 1" successfully achieved its objective of forming a bridgehead with the Turkish Cypriot enclave of Agyrta-Nicosia.[13]
+
+
+Turkish troops during a NATO exercise
+The second Turkish offensive began on August 14, 1974, as Greek and Turkish Cypriot representatives met in Geneva to discuss the situation on the island. Turkish pleas for international intervention having failed and very slow diplomatic progress, in addition to being confined to an undefensible and non-viable region in Cyprus, Turkish Armed forces took action again. Despite a UN ceasefire in place (several had already been disregarded),[13] the Turkish Army, massively reinforced from weeks of build-up, launched an all-out surprise attack on ill-prepared Greek Cypriot and Greek units. With little answer to the masses of armour, mechanised units, artillery and air support that the Turks could bring to bear, virtually all Greek Cypriot defences collapsed in a matter of days, and by August 16, 1974, Turkish forces, spearheaded by the 28th and 39th Infantry Divisions, had extended to capture some 37% of the island, including the towns of Famagusta, Varosha and Morphou.[14]
+The conflict in Cyprus resulted in the de-facto division of the island between the Turkish Cypriot controlled north and the Greek Cypriot controlled south. Turkey still maintains troops in Cyprus, since a political solution could not yet be achieved and since many members of the Turkish Cypriot community fear a return to the intercommunal violence which occurred between 1963 and 1974.[15]
+[edit]Units and equipments
+According to official British military reports in 1974, the Turkish Army included the First Army (II, III, V, and XV Corps), Second Army (IV, VI, and VII Corps) and Third Army (VIII, IX, and XI Corps). There were also three Interior Zones with three recruit training divisions and four recruit training brigades.[16] For a long period, these formations were grouped under the NATO headquarters LANDSOUTHEAST at Izmir, led by a Turkish Army four-star General. After the fall of the Soviet Union the headquarters became Joint Command Southeast for a period, before becoming Allied Air Component Command Izmir in 2004.[17]
+In 1981/82, the Army had 1 armoured division, 2 mechanised infantry Divisions, and 14 Infantry Divisions, with 3000 M47 MBTs, 500 M48 MBTs, as well as 70 Leopard 1A3 on order, for a total of 3570 tanks.[18]
+Until the dissolution of the Warsaw Pact in 1990, the Army had a static defense mission of countering any possible attack on Thrace by Soviet and Warsaw Pact forces and any attack by the Soviet Transcaucasus Military District on the Caucasus frontier. The Third Army was responsible for holding the Caucasus line with about one third of the Army's total strength of one armoured, two mechanised, and fourteen infantry divisions (1986 data).[19] When the General Staff attempted to shift 120,000 troops to the frontier with Iraq in 1990, they discovered, the writers of the U.S. Library of Congress Country Studies said, that there were serious deficiencies in the Army's ability to respond to crises that could erupt suddenly in distant regions.[20] The Army was even less prepared for a situation requiring the deployment and logistical support of forces in operations beyond Turkey's borders.
+[edit]Modernization
+See also: Modern equipment and uniform of the Turkish Army
+
+
+The Minister of National Defense of South Korea Lee Sang-Hee at the inauguration ceremony for the design and development contract of MÝTÜP Altay
+Towards the end of the 1980s, a restructuring and modernization process has been initiated by the Turkish Armed Forces, which still continues today. The final goal of Turkey is to produce indigenous military equipment and to become increasingly self-sufficient in terms of military technologies.[21]
+The then-Army Commander said of further modernization efforts in 2006:
+Gen. Büyükanýt, who sent crucial messages regarding the future of the Land Forces, said that the country's own instabilities should also be taken into consideration. He reported that the land forces will shrink considerably within the next eight years. But he said that despite this process, the force's capacities will be increased. "The Land Forces aim at being equipped with new opportunities and capabilities in order to carry out its duty in full strength against a large variety of threats, varying from classical threats to asymmetrical ones. "The targets for our land forces are to be realized through 'Forces 2014' project. This project aims to shrink the forces without undermining its combat capabilities. On the contrary, under the plan the efficiency of the force will increase. "Within this period of time the Land Forces will gradually decrease by 20 to 30 percent in terms of number of personnel and forces formations. It will be equipped with modern arms and war devices as the distinct features of this new formation. Thus the battle capability will be given to high-ranking brigades. Moreover with the Combat Zone Management System, the land tactical map will be numerically formed in real-time or close to real-time and a constant tracking will be provided," said Büyükanýt. (The New Anatolian, Evren Deðer, 10 August 2006)[22]
+At present, the primary main battle tanks of the Turkish Army are the Leopard 2A4 and the M60T. There are also around 400 Leopard 1 and 750 M60 Patton variants in service (excluding the M60T which were upgraded with the 120 mm MG253 guns), but the Turkish Army retains a large number of older vehicles. More than 2,800 M48 Pattons are still in service (upgraded with the 105 mm M68 guns) though only around 1,300 of these are stored as reserve MBTs,[23] while the rest are mostly transformed into other types of military vehicles (such as cranes, MBT recovery vehicles and logistical support vehicles) or used as spare parts hulks.
+Turkey plans to build a total of 1,000 new MÝTÜP Altay MBTs, in four separate batches of 250 units, with the MÝTÜP Turkish National Tank Project.[24] The tanks will be produced by the Turkish firm Otokar, and share some of the systems that are used in the K2 Black Panther main battle tank of South Korea.
+Turkey has inked a deal with the US to buy six CH-4 helicopters, or Chinooks, for $400 million. Because of financial constraints, however, the Undersecretariat for the Defense Industry, or SSM, Turkey’s procurement agency, later wanted to buy only six CH-47Fs, five for the Army and one for the Special Forces Command, leaving a decision on the remaining eight platforms for the future. Contract negotiations between the SSM, the U.S. government and Boeing were launched last year.[25]
+[edit]Structure
+
+See also: List of formations of the Turkish Army 2008
+
+
+The Turkish-built T-155 Fýrtýna 155mm self-propelled howitzer of the Turkish Army
+The structure of the Turkish Army has historically had two facets: operational and administrative. The operational chain consists of the field fighting formations, and the administrative the arms and service branches - infantry, armour, artillery etc.
+[edit]Operational organisation
+The Turkish Army has since the mid 1960s operated on a corps-division-brigade system, with a varying number of divisions and brigades assigned to a corps. The IISS Military Balance 1966-67 recorded a total strength of 360,000, with 16 infantry divisions (14 NATO assigned), 4 armoured brigades (Zýrhlý tugay) with M47 Patton tanks, armoured cavalry regiments, and two parachute battalions.[26] At some point in the 1960s the Army apparently utilised the Pentomic structure for a period, before adopting the American ROAD divisional organisation.[16] Back in the early 1970s, there was a 6th Infantry Division based at Istanbul.
+The army's 14 armoured brigades are the most powerful brigades in the restructured organisation; each includes two armoured, two mechanised infantry and two self-propelled artillery battalions.[20] The 17 mechanised brigades each have two armoured, two mechanised and one artillery battalion. The army's nine infantry brigades each have four infantry battalions and one artillery battalion, while the four commando brigades have three commando battalions.
+From 1992 the Army began to change from a corps-division-regiment structure to a corps-brigade arrangement,[20] with divisions remaining on Cyprus and for certain special other cases, such as for NATO's reaction forces. In accordance with NATO’s new strategy in the early 1990s, Turkey agreed to commit forces to NATO’s ACE Rapid Reaction Corps. 'Therefore, the decision was made to create a new division. Thus, the old 1 Inf Div which had been abolished many years ago was reactivated and renamed as 1 TU Mech Inf Div and attached to 4 TU Corps on 30 November 1993.’[27] This division was later disbanded, and appears to have been replaced within III Corps by the 52nd Armoured Division, formed later on.
+The Military Balance, 1994-1995 also lists the following units: the Presidential Guard regiment, an infantry regiment, five border defense regiments (Brigades (?)), and twenty-six border defense battalions. The fate of these independent units under the reorganization remains unclear.
+
+
+The Turkish-built J-600T Yýldýrým Short-range ballistic missile on an F-600T launching vehicle of the Turkish Army
+In late 2002 the III Corps, with its headquarters near Istanbul, was certified as one of the six NATO High Readiness Force-Land (HRF-L) headquarters and gained the additional title of the Rapidly Deployable Turkish Corps (RDTC). A year later, Jane's Defense Weekly reported on 9 July 2003 that as part of force restructuring, its four existing armies would be reorganized into a Western Army, in Istanbul, and the Eastern Army would replace 2nd Army in Malatya.[28] This plan does not appear to have been carried out.
+The Army announced plans in mid 2004 to abolish four brigades across Turkey.[29][dead link] The arms and equipment of the brigades closed will be kept in depots. The plan involves the disbandment of:
+The 33rd Mechanized Brigade in Kýrklareli on the north-west border with Greece and Bulgaria
+The 7th Mechanized Brigade in Kars/Kaðýzman near the eastern border with Armenia
+The 10th Infantry Brigade in Van/Erciþ on the eastern border with Iran
+The 9th Armoured Brigade in Çankýrý in central Anatolia
+The IISS and the Turkish Army's website give differing figures as to the number of formations in the Army. The official site gives totals of 9 Army Corps, 1 Infantry Division, 2 Mechanized Infantry Divisions, 1 Armored Division, 1 Training Division, 11 Infantry / Motorized Infantry Brigades, 16 Mechanized Infantry Brigades, 9 Armored Brigades, 5 Para-Commando Brigades, 1 Army Aviation Brigade, 2 Artillery Brigades, 5 Training Brigades and one Humanitarian Aid Brigade.[30]
+The IISS Military Balance 2008 lists the Turkish Land Forces with four Army HQ, 10 corps HQ, 17 armoured brigades, 15 mechanised infantry brigades, two infantry divisions, 11 infantry brigades, 1 Special Force command HQ, five commando brigades, one combat helicopter battalion, four aviation regiments, three aviation battalions (totalling 1 tspt and 2 trng battalions), and four training/artillery brigades.[31]
+[edit]Force structure
+Turkish Land Forces
+Türk Kara Kuvvetleri
+Components
+Turkish Army
+Structure
+List of formations 2008
+Administration
+Ýlker Baþbuð
+Overseas Deployments
+Forces in Cyprus
+Equipment
+Modern equipment
+History
+History
+Timeline
+Personnel
+Officer rank insignia
+Other ranks insignia
+The Turkish Army is organised into the following commands:[32] The information below is unconfirmed and may be out of date; it seems likely now that the Training and Doctrine Command controls all the artillery and infantry training brigades.
+Land Forces Command (Turkish: Kara Kuvvetleri Komutanlýðý (KKK)) - Ankara
+1st Army Command - Istanbul
+2nd Corps Gelibolu (4th Mechanized Brigade, Keþan, 18 (Çanakkale), 54, 55, 65 Brigades)
+3rd Corps (Turkey) at Ayazaga, Þiþli in Istanbul (the NATO Rapid Deployable Corps - Turkey) 3rd (TU) Corps was established at Kirklareli on March 14, 1911.[33] It took part in the First Balkan War, the Second Balkan War, the Gallipoli Campaign, operations in the Caucasus 1916-1917, and operations in Palestine in 1918. It then took part in the Battles of Kutahya and Sakarya in 1921, and the 'Great Attack' of 1922.
+52nd Armoured Division (Istanbul/Hadýmköy)[34]
+1st, 2nd Armoured Brigades, 66th Mechanised Infantry Brigade
+5th Corps at Çorlu (3, 95 Armd Bdes, 8 Mech Inf Bde)
+2nd Army Command - Malatya
+6th Corps at Adana (5 Armd, 39 Mech Inf Bdes)
+7th Corps at Diyarbakýr
+3rd Infantry Division HQ at Yüksekova[35]
+6th Mechanised Brigade
+16th Mechanised Brigade
+70th Mechanised Infantry Brigade, Mardin,[36]
+6th Infantry Brigade
+8th Corps at Elazýð (20th, 172nd Armoured Bdes; 172nd Armd Bde now at Silopi[37])
+3rd Army Command - Erzincan
+9th Corps at Erzurum (4, 1st Mech Inf [1], 12, 14, 25, 2, 9 Mech Inf Bdes, 34, 48, 49, 51, 59 Bdes)
+4th Corps at Mamak (1 Inf, 28 Mech Inf, 58 Arty Bde, Trng Div/Armd School)
+Aegean Army Command - Ýzmir (also called the 4th Army)
+57th Artillery Training Brigade (Izmir), 19th Infantry Brigade (Edremit), 11th Motorised Infantry Brigade (Denizli), 3rd Infantry Training Brigade (Antalya), 1st Infantry Training Brigade (Manisa).[38]
+Cyprus Turkish Peace Force Command (within the Agean Army command structure[39]) - Kyrenia, Northern Cyprus
+28th and 39th Divisions, 14th Armoured Brigade (in Paþaköy (Asha), Cyprus)[40]
+Training and Doctrine Command (Ankara)
+Logistics Command (Ankara)
+Turkish Military Academy (Ankara)
+Army Aviation Command (operates the fleet of helicopters and UAVs used by the Turkish Army)
+General Staff controlled units (Güvercinlik Army Air Base, Ankara)
+Special Aviation Group Command
+General Staff Electronic Systems (GES) Aviation Group Command
+Mapping General Command
+Unmanned Aerial Vehicle (UAV) Center Command (Batman Air Base)
+Army Aviation Command
+Army Aviation School Command (Güvercinlik Army Air Base)
+5th Main Maintenance Center Command
+1st Army Aviation Regiment (Güvercinlik Army Air Base)
+2nd Army Aviation Regiment (Malatya Erhaç Airport)
+contained herein.
+
+3rd Army Aviation Regiment (Gaziemir Air Base, Izmir)
+4th Army Aviation Regiment (Samandýra Army Air Base, Istanbul)
+7th Army Aviation Group Command (Diyarbakýr Air Base)
+Northern Cyprus Turkish Army Aviation Unit Command (Karter Air Base, Pýnarbaþý)[41]
+It is not fully clear whether the Cyprus Turkish Peace Force in Northern Cyprus was actually designated XI Corps.[42] It appears that XV Corps, formerly in the First Army, has disbanded.
+There are 5 Commando Brigades also known as Blue Berets in the Turkish Army. Commandos are special trained soldiers with 6 month additional land warfare trainings in known schools as Foça, Burdur, Egirdir or Kayseri Commando School. In Eðirdir (Isparta) there is a Commando training school specialized in mountain climbing and mountain warfare. In Kayseri there is an Air Mobile Commando school specialized in airborne landings. In Foça, there is a commando school specialized in combined arms. All soldiers graduated will have a blue beret[citation needed]. The Commando brigades include:
+1st Commando Brigade Kayseri (Airborne)
+2nd Commando Brigade Bolu
+3rd Commando Brigade Siirt
+4th Commando Brigade Tunceli
+Mountain and Commando Brigade Hakkari.
+[edit]Administrative branches
+Combatant
+General Staff
+Infantry
+Cavalry
+Armoury
+Army aviation
+Battle Supporting
+Artillery
+Bulwark
+Air defence
+Correspondence
+Intelligence
+Battle Supporting & Service
+Communications
+Ordnance
+Supplies
+Personnel
+Cartography
+Transportation
+Finance
+Instructor
+Judge
+Military Band
+Medical, Dental and Pharmaceutical Corps
+Veterinary Corps
+Engineer, Chemist and Technician Corps
+[edit]See also
+
+List of Commanders of the Turkish Land Forces
+[edit]Footnotes
+
+
+
+
+
+
+
+The Korean War (25 June 1950 – armistice signed 27 July 1953[28]) was a conventional war between South Korea, supported by the United Nations, and North Korea, supported by the People's Republic of China (PRC), with military material aid from the Soviet Union. The war was a result of the physical division of Korea by an agreement of the victorious Allies at the conclusion of the Pacific War at the end of World War II. The Korean peninsula was ruled by Japan from 1910 until the end of World War II. Following the surrender of Japan in 1945, American administrators divided the peninsula along the 38th Parallel, with United States troops occupying the southern part and Soviet troops occupying the northern part.[29]
+The failure to hold free elections throughout the Korean Peninsula in 1948 deepened the division between the two sides, and the North established a Communist government. The 38th Parallel increasingly became a political border between the two Koreas. Although reunification negotiations continued in the months preceding the war, tension intensified. Cross-border skirmishes and raids at the 38th Parallel persisted. The situation escalated into open warfare when North Korean forces invaded South Korea on 25 June 1950.[30] It was the first significant armed conflict of the Cold War.[31]
+The United Nations, particularly the United States, came to the aid of South Korea in repelling the invasion, but within two months the defenders were pushed back to the Pusan perimeter, a small area in the south of the country, before the North Koreans were stopped. A rapid UN counter-offensive then drove the North Koreans past the 38th Parallel and almost to the Yalu River, and the People's Republic of China (PRC) entered the war on the side of the North.[30] The Chinese launched a counter-offensive that pushed the United Nations forces back across the 38th Parallel. The Soviet Union materially aided the North Korean and Chinese armies. In 1953, the war ceased with an armistice that restored the border between the Koreas near the 38th Parallel and created the Korean Demilitarized Zone (DMZ), a 2.5-mile (4.0 km) wide buffer zone between the two Koreas. Minor outbreaks of fighting continue to the present day.
+With both North and South Korea sponsored by external powers, the Korean War was a proxy war. From a military science perspective, it combined strategies and tactics of World War I and World War II: it began with a mobile campaign of swift infantry attacks followed by air bombing raids, but became a static trench war by July 1951.
+Contents [hide]
+1 Background
+1.1 Etymology
+1.2 Japanese rule (1910–1945)
+1.3 Soviet invasion of Manchuria (1945)
+1.4 Chinese Civil War (1945–1949)
+1.5 Korea divided (1945–1949)
+2 Course of the war
+2.1 The conflict begins (June 1950)
+2.1.1 Factors in US intervention
+2.1.2 United Nations Security Council Resolutions
+2.1.3 Comparison of military forces
+2.2 United Nations response (July – August 1950)
+2.3 Escalation (August – September 1950)
+2.4 Battle of Inchon (September 1950)
+2.5 UN forces cross partition line (September – October 1950)
+2.6 China intervenes (October – December 1950)
+2.7 Fighting around the 38th parallel (January – June 1951)
+2.8 Stalemate (July 1951 – July 1953)
+2.9 Armistice (July 1953 – November 1954)
+2.10 Division of Korea (1954–present)
+3 Characteristics
+3.1 Casualties
+3.2 Armored warfare
+3.3 Aerial warfare
+3.3.1 Bombing North Korea
+3.4 Naval warfare
+3.5 U.S. threat of atomic warfare
+3.6 War crimes
+3.6.1 Civilian deaths and massacres
+3.6.2 Bodo League anti–communist massacre
+3.6.3 Prisoners of war
+3.6.4 Starvation
+4 Aftermath
+4.1 Effect on China
+4.2 Defection
+4.3 Proxy war
+4.4 DMZ
+4.5 Racial integration of U.S. Forces
+4.6 Turkey
+4.7 Post-war economies
+4.8 ROK Anti-communism
+4.9 ROK Anti-Americanism sentiments
+4.10 "G.I. Babies" and U.S. immigration law
+5 Popular culture
+6 See also
+7 Notes
+8 References
+9 Further reading
+9.1 Combat studies, soldiers
+9.2 Origins, politics, diplomacy
+9.3 Reference sources
+9.4 Primary sources
+10 External links
+10.1 Historical
+10.2 Media
+10.3 Organizations
+10.4 Memorials
+Background
+
+Etymology
+In the United States, the war was initially described by President Harry S. Truman as a "police action" as it was conducted under the auspices of the United Nations.[32] Colloquially, it has been referred to in the United States as The Forgotten War or The Unknown War. The issues concerned were much less clear than in previous and subsequent conflicts, such as World War II and the Vietnam War.[33][34] To a significant degree, the war has been "historically overshadowed by World War II and Vietnam".[35]
+In South Korea the war is usually referred to as "625" or the 6–2–5 Upheaval (yug-i-o dongnan), reflecting the date of its commencement on 25 June.[36] In North Korea the war is officially referred to as the Fatherland Liberation War (Choguk haebang chonjaeng). Alternatively, it is called the Choson chonjaeng ("Choson war", Choson being what North Koreans call Korea).[37] In the People's Republic of China the war is called the War to Resist U.S. Aggression and Aid Korea (traditional Chinese: ??????; simplified Chinese: ??????; pinyin: Kàngmeiyuáncháo zhànzheng).[38][39] The "Korean War" (????/????; pinyin: Cháoxian zhànzheng) is more commonly used today. Cháoxian is the Chinese pronunciation of the Korean name "Choson".
+Japanese rule (1910–1945)
+Main article: Korea under Japanese rule
+Upon defeating the Qing Dynasty in the First Sino-Japanese War (1894–96), the Empire of Japan occupied the Korean Empire – a peninsula strategic to its sphere of influence.[40] A decade later, defeating Imperial Russia in the Russo-Japanese War (1904–05), Japan made Korea its protectorate with the Eulsa Treaty in 1905, then annexed it with the Japan–Korea Annexation Treaty in 1910.[41][42]
+Korean nationalists and the intelligentsia fled the country, and some founded the Provisional Korean Government in 1919, which was headed by Syngman Rhee in Shanghai. This government-in-exile was recognized by few countries. From 1919 to 1925 and beyond, Korean communists led and were the primary agents of internal and external warfare against the Japanese.[40]:23[43]
+Korea under Japanese rule was considered to be part of the Empire of Japan as an industrialized colony along with Taiwan, and both were part of the Greater East Asia Co-Prosperity Sphere. In 1937, the colonial Governor–General, General Jiro Minami, commanded the attempted cultural assimilation of Korea's 23.5 million people by banning the use and study of Korean language, literature, and culture, to be replaced with that of mandatory use and study of their Japanese counterparts. Starting in 1939, the populace was required to use Japanese names under the Soshi-kaimei policy. In 1938, the Colonial Government established labor conscription.[citation needed]
+In China, the National Revolutionary Army and the Communist People's Liberation Army helped organize refugee Korean patriots and independence fighters against the Japanese military, which had also occupied parts of China. The Nationalist-backed Koreans, led by Yi Pom-Sok, fought in the Burma Campaign (December 1941 – August 1945). The Communists, led by Kim Il-sung, fought the Japanese in Korea and Manchuria.[citation needed]
+During World War II, the Japanese used Korea's food, livestock, and metals for their war effort. Japanese forces in Korea increased from 46,000 soldiers in 1941 to 300,000 in 1945. Japanese Korea conscripted 2.6 million forced laborers controlled with a collaborationist Korean police force; some 723,000 people were sent to work in the overseas empire and in metropolitan Japan. By 1942, Korean men were being conscripted into the Imperial Japanese Army. By January 1945, Koreans comprised 32% of Japan's labor force. In August 1945, when the United States dropped atomic bombs on Hiroshima and Nagasaki, around 25% of those killed were Koreans.[43] At the end of the war, other world powers did not recognize Japanese rule in Korea and Taiwan.
+Meanwhile, at the Cairo Conference (November 1943), Nationalist China, the United Kingdom, and the United States decided "in due course Korea shall become free and independent".[44] Later, the Yalta Conference (February 1945) granted to the Soviet Union European "buffer zones"—satellite states accountable to Moscow—as well as an expected Soviet pre-eminence in China and Manchuria,[45] in return for joining the Allied Pacific War effort against Japan.[45]
+Soviet invasion of Manchuria (1945)
+Main article: Soviet invasion of Manchuria (1945)
+Toward the end of World War II, as per a US-Soviet agreement, the USSR declared war against Japan on 9 August 1945.[43][46] By 10 August, the Red Army occupied the northern part of the Korean peninsula as agreed, and on 26 August halted at the 38th parallel for three weeks to await the arrival of US forces in the south.[40]:25[40]:24
+On 10 August 1945, with the 15 August Japanese surrender near, the Americans doubted whether the Soviets would honor their part of the Joint Commission, the US-sponsored Korean occupation agreement. A month earlier, Colonel Dean Rusk and Colonel Charles H. Bonesteel III divided the Korean peninsula at the 38th parallel after hurriedly deciding (in thirty minutes) that the US Korean Zone of Occupation had to have a minimum of two ports.[47][48][49][50][51]
+Explaining why the occupation zone demarcation was positioned at the 38th parallel, Rusk observed, "even though it was further north than could be realistically reached by US forces, in the event of Soviet disagreement ... we felt it important to include the capital of Korea in the area of responsibility of American troops", especially when "faced with the scarcity of US forces immediately available, and time and space factors, which would make it difficult to reach very far north, before Soviet troops could enter the area."[45] The Soviets agreed to the US occupation zone demarcation to improve their negotiating position regarding the occupation zones in Eastern Europe, and because each would accept Japanese surrender where they stood.[40]:25
+Chinese Civil War (1945–1949)
+Main article: Chinese Civil War
+After the end of Second Sino-Japanese War, the Chinese Civil War resumed between the Chinese Communists and the Chi
+
+Etymology
+In the United States, the war was initially described by President Harry S. Truman as a "police action" as it was conducted under the auspices of the United Nations.[32] Colloquially, it has been referred to in the United States as The Forgotten War or The Unknown War. The issues concerned were much less clear than in previous and subsequent conflicts, such as World War II and the Vietnam War.[33][34] To a significant degree, the war has been "historically overshadowed by World War II and Vietnam".[35]
+In South Korea the war is usually referred to as "625" or the 6–2–5 Upheaval (yug-i-o dongnan), reflecting the date of its commencement on 25 June.[36] In North Korea the war is officially referred to as the Fatherland Liberation War (Choguk haebang chonjaeng). Alternatively, it is called the Choson chonjaeng ("Choson war", Choson being what North Koreans call Korea).[37] In the People's Republic of China the war is called the War to Resist U.S. Aggression and Aid Korea (traditional Chinese: ??????; simplified Chinese: ??????; pinyin: Kàngmeiyuáncháo zhànzheng).[38][39] The "Korean War" (????/????; pinyin: Cháoxian zhànzheng) is more commonly used today. Cháoxian is the Chinese pronunciation of the Korean name "Choson".
+Japanese rule (1910–1945)
+Main article: Korea under Japanese rule
+Upon defeating the Qing Dynasty in the First Sino-Japanese War (1894–96), the Empire of Japan occupied the Korean Empire – a peninsula strategic to its sphere of influence.[40] A decade later, defeating Imperial Russia in the Russo-Japanese War (1904–05), Japan made Korea its protectorate with the Eulsa Treaty in 1905, then annexed it with the Japan–Korea Annexation Treaty in 1910.[41][42]
+Korean nationalists and the intelligentsia fled the country, and some founded the Provisional Korean Government in 1919, which was headed by Syngman Rhee in Shanghai. This government-in-exile was recognized by few countries. From 1919 to 1925 and beyond, Korean communists led and were the primary agents of internal and external warfare against the Japanese.[40]:23[43]
+Korea under Japanese rule was considered to be part of the Empire of Japan as an industrialized colony along with Taiwan, and both were part of the Greater East Asia Co-Prosperity Sphere. In 1937, the colonial Governor–General, General Jiro Minami, commanded the attempted cultural assimilation of Korea's 23.5 million people by banning the use and study of Korean language, literature, and culture, to be replaced with that of mandatory use and study of their Japanese counterparts. Starting in 1939, the populace was required to use Japanese names under the Soshi-kaimei policy. In 1938, the Colonial Government established labor conscription.[citation needed]
+In China, the National Revolutionary Army and the Communist People's Liberation Army helped organize refugee Korean patriots and independence fighters against the Japanese military, which had also occupied parts of China. The Nationalist-backed Koreans, led by Yi Pom-Sok, fought in the Burma Campaign (December 1941 – August 1945). The Communists, led by Kim Il-sung, fought the Japanese in Korea and Manchuria.[citation needed]
+During World War II, the Japanese used Korea's food, livestock, and metals for their war effort. Japanese forces in Korea increased from 46,000 soldiers in 1941 to 300,000 in 1945. Japanese Korea conscripted 2.6 million forced laborers controlled with a collaborationist Korean police force; some 723,000 people were sent to work in the overseas empire and in metropolitan Japan. By 1942, Korean men were being conscripted into the Imperial Japanese Army. By January 1945, Koreans comprised 32% of Japan's labor force. In August 1945, when the United States dropped atomic bombs on Hiroshima and Nagasaki, around 25% of those killed were Koreans.[43] At the end of the war, other world powers did not recognize Japanese rule in Korea and Taiwan.
+Meanwhile, at the Cairo Conference (November 1943), Nationalist China, the United Kingdom, and the United States decided "in due course Korea shall become free and independent".[44] Later, the Yalta Conference (February 1945) granted to the Soviet Union European "buffer zones"—satellite states accountable to Moscow—as well as an expected Soviet pre-eminence in China and Manchuria,[45] in return for joining the Allied Pacific War effort against Japan.[45]
+Soviet invasion of Manchuria (1945)
+Main article: Soviet invasion of Manchuria (1945)
+Toward the end of World War II, as per a US-Soviet agreement, the USSR declared war against Japan on 9 August 1945.[43][46] By 10 August, the Red Army occupied the northern part of the Korean peninsula as agreed, and on 26 August halted at the 38th parallel for three weeks to await the arrival of US forces in the south.[40]:25[40]:24
+On 10 August 1945, with the 15 August Japanese surrender near, the Americans doubted whether the Soviets would honor their part of the Joint Commission, the US-sponsored Korean occupation agreement. A month earlier, Colonel Dean Rusk and Colonel Charles H. Bonesteel III divided the Korean peninsula at the 38th parallel after hurriedly deciding (in thirty minutes) that the US Korean Zone of Occupation had to have a minimum of two ports.[47][48][49][50][51]
+Explaining why the occupation zone demarcation was positioned at the 38th parallel, Rusk observed, "even though it was further north than could be realistically reached by US forces, in the event of Soviet disagreement ... we felt it important to include the capital of Korea in the area of responsibility of American troops", especially when "faced with the scarcity of US forces immediately available, and time and space factors, which would make it difficult to reach very far north, before Soviet troops could enter the area."[45] The Soviets agreed to the US occupation zone demarcation to improve their negotiating position regarding the occupation zones in Eastern Europe, and because each would accept Japanese surrender where they stood.[40]:25
+Chinese Civil War (1945–1949)
+Main article: Chinese Civil War
+After the end of Second Sino-Japanese War, the Chinese Civil War resumed between the Chinese Communists and the Chinese Nationalists. While the Communists were struggling for supremacy in Manchuria, they were supported by the North Korean government with materiel and manpower.[52] According to Chinese sources, the North Koreans donated 2,000 railway cars worth of material while thousands of Korean "volunteers" served in the Chinese People's Liberation Army (PLA) during the war.[53] North Korea also provided the Chinese Communists in Manchuria with a safe refuge for non-combatants and communications with the rest of China.[52]
+The North Korean contributions to the Chinese Communist victory were not forgotten after the creation of the People's Republic of China in 1949. As a token of gratitude, between 50,000 to 70,000 Korean veterans that served in the PLA were sent back along with their weapons, and they would later play a significant role in the initial invasion of South Korea.[52] China promised to support the North Koreans in the event of a war against South Korea.[54] The Chinese support created a deep division between the Korean Communists, and Kim Il-Sung's authority within the Communist party was challenged by the Chinese faction led by Pak Il-yu, who was later purged by Kim.[55]
+After the formation of the People's Republic of China in 1949, the Chinese government named the Western nations, led by the United States, as the biggest threat to its national security.[56] Basing this judgment on China's century of humiliation beginning in the early 19th century,[57] American support for the Nationalists during the Chinese Civil War,[58] and the ideological struggles between revolutionaries and reactionaries,[59] the Chinese leadership believed that China would become a critical battleground in the United States' crusade against Communism.[60] As a countermeasure and to elevate China's standing among the worldwide Communist movements, the Chinese leadership adopted a foreign policy that actively promoted Communist revolutions throughout territories on China's periphery.[61]
+Korea divided (1945–1949)
+See also: Division of Korea
+At the Potsdam Conference (July–August 1945), the Allies unilaterally decided to divide Korea—without consulting the Koreans—in contradiction of the Cairo Conference.[40]:24[48]:24–5[62]:25[63]
+On 8 September 1945, Lt. Gen. John R. Hodge of the United States arrived in Incheon to accept the Japanese surrender south of the 38th parallel.[48] Appointed as military governor, General Hodge directly controlled South Korea via the United States Army Military Government in Korea (USAMGIK 1945–48).[64]:63 He established control by restoring to power the key Japanese colonial administrators and their Korean police collaborators.[31] The USAMGIK refused to recognise the provisional government of the short-lived People's Republic of Korea (PRK) because he suspected it was communist. These policies, voiding popular Korean sovereignty, provoked civil insurrections and guerrilla warfare.[41] On 3 September 1945, Lieutenant General Yoshio Kozuki, Commander, Japanese Seventeenth Area Army, contacted Hodge, telling him that the Soviets were south of the 38th parallel at Kaesong. Hodge trusted the accuracy of the Japanese Army report.[48]
+In December 1945, Korea was administered by a US–USSR Joint Commission, as agreed at the Moscow Conference (1945). The Koreans were excluded from the talks. The commission decided the country would become independent after a five-year trusteeship action facilitated by each régime sharing its sponsor's ideology.[40]:25–6[65] The Korean populace revolted; in the south, some protested, and some rose in arms;[41] to contain them, the USAMGIK banned strikes on 8 December 1945 and outlawed the PRK Revolutionary Government and the PRK People's Committees on 12 December 1945.
+On 23 September 1946 an 8,000-strong railroad worker strike began in Pusan. Civil disorder spread throughout the country in what became known as the Autumn uprising. On 1 October 1946, Korean police killed three students in the Daegu Uprising; protesters counter-attacked, killing 38 policemen. On 3 October, some 10,000 people attacked the Yeongcheon police station, killing three policemen and injuring some 40 more; elsewhere, some 20 landlords and pro-Japanese South Korean officials were killed.[66] The USAMGIK declared martial law.
+The right-wing Representative Democratic Council, led by nationalist Syngman Rhee, opposed the Soviet–American trusteeship of Korea, arguing that after 35 years (1910–45) of Japanese colonial rule most Koreans opposed another foreign occupation. The USAMGIK decided to forego the five year trusteeship agreed upon in Moscow, given the 31 March 1948 United Nations election deadline to achieve an anti-communist civil government in the US Korean Zone of Occupation.
+On 3 April what began as a demonstration commemorating Korean resistance to Japanese rule ended with the Jeju massacre of as many as 60,000 citizens by South Korean soldiers.[67]
+On 10 May, South Korea convoked their first national general elections that the Soviets first opposed, then boycotted, insisting that the US honor the trusteeship agreed to at the Moscow Conference.[40]:26[68][69][70]
+North Korea held parliamentary elections three months later on 25 August 1948.[71]
+The resultant anti-communist South Korean government promulgated a national political constitution on 17 July 1948, elected a president, the American-educated strongman Syngman Rhee on 20 July 1948. The elections were marred by terrorism and sabotage resulting in 600 deaths.[72] The Republic of Korea (South Korea) was established on 15 August 1948.[73] In the Russian Korean Zone of Occupation, the USSR established a Communist North Korean government[40]:26 led by Kim Il-sung.[74] President Rhee's régime expelled communists and leftists from southern national politics. Disenfranchised, they headed for the hills, to prepare for guerrilla war against the US-sponsored ROK Government.[74]
+As nationalists, both Syngman Rhee and Kim Il-Sung were intent upon reunifying Korea under their own political system.[40]:27 With Joseph Stalin and Mao Zedong fighting over the control of the Korean Peninsula,[75] the North Koreans gained support from both the Soviet Union and the People's Republic of China. They escalated the continual border skirmishes and raids and then prepared to invade. South Korea, with limited matériel, could not match them.[40]:27 During this era, at the beginning of the Cold War, the US government assumed that all communists, regardless of nationality, were controlled or directly influenced by Moscow; thus the US portrayed the civil war in Korea as a Soviet hegemonic maneuver.[76]
+In October 1948, South Korean left-wing soldiers rebelled against the government's harsh clampdown in April on Jeju island in the Yeosu-Suncheon Rebellion.[77]
+The Soviet Union withdrew as agreed from Korea in 1948. U.S. troops withdrew from Korea in 1949, leaving the South Korean army relatively ill-equipped. On 24 December 1949, South Korean forces killed 86 to 88 people in the Mungyeong massacre and blamed the crime on communist marauding bands.[78]
+Course of the war
+
+The conflict begins (June 1950)
+
+
+Territory often changed hands early in the war, until the front stabilized.
+In April 1950 Kim Il-sung travelled to Moscow and secured Stalin's support for a policy to unify Korea under his authority. Although agreeing with the invasion of South Korea in principle, Stalin refused to become directly involved in Kim's plans, and advised Kim to enlist Chinese support instead. In May 1950 Kim visited Beijing, and succeeded in gaining Mao's endorsement. At the time, Mao's support for Kim was largely political (he was contemplating the invasions of Taiwan and Tibet), and was unaware of Kim's precise intentions or the timing of Kim's attack. When the Korean war broke out, the Chinese were in the process of demobilizing half of the PLA's 5.6 million soldiers.[79]
+After the US missions had left the People's Republic of China, CIA China station officer Douglas Mackiernan volunteered to remain and conduct spy operations. Afterward, he and a team of indigenous personnel then escaped China in a months-long horse trek across the Himalaya mountains; he was killed within miles of Lhasa. His team delivered the intelligence to headquarters that invasion was imminent. Thirteen days later on 25 June 1950, the North Korean People's Army (KPA) crossed the 38th parallel border and invaded South Korea. Mackiernan was posthumously awarded the CIA Intelligence Star for valor.[80]
+Under the guise of counter-attacking a South Korean provocation raid, the KPA crossed the 38th parallel behind artillery fire at dawn on Sunday 25 June 1950.[40]:14 The KPA said that Republic of Korea Army (ROK Army) troops, under command of the régime of the "bandit traitor Syngman Rhee", had crossed the border first, and that they would arrest and execute Rhee.[48] Both Korean armies had continually harassed each other with skirmishes and each continually staged raids across the 38th parallel border.
+On 27 June, Rhee evacuated from Seoul with government officials. Rhee ordered the Bodo League massacre, which started on 28 June.[81]
+On 28 June, South Korea bombed the bridge across the Han River to stop the North Korean army.[82]
+Early on in the fighting, South Korea put its forces under the authority of the United Nations Command (Korea).[citation needed]
+Factors in US intervention
+The Truman Administration was caught at a crossroads. Before the invasion, Korea was not included in the strategic Asian Defense Perimeter outlined by Secretary of State Acheson.[83] Military strategists were more concerned with the security of Europe against the Soviet Union than East Asia. At the same time, the Administration was worried that a war in Korea could quickly widen into another world war should the Chinese or Soviets decide to get involved as well.
+One facet of the changing attitude toward Korea and whether to get involved was Japan. Especially after the fall of China to the Communists, "…Japan itself increasingly appeared as the major East Asian prize to be protected". US East Asian experts saw Japan as the critical counterweight to the Soviet Union and China in the region. While there was no United States policy that dealt with South Korea directly as a national interest, its proximity to Japan pushed South Korea to the fore. "The recognition that the security of Japan required a non-hostile Korea led directly to President Truman’s decision to intervene… The essential point… is that the American response to the North Korean attack stemmed from considerations of US policy toward Japan."[83] The United States wanted to shore up Japan to make it a viable counterweight against the Soviet Union and China, and Korea was seen as integral to that end.
+The other important part of committing to intervention lay in speculation about Soviet action in the event that the United States intervene. The Truman administration was fretful that a war in Korea was a diversionary assault that would escalate to a general war in Europe once the US committed in Korea. At the same time, "[t]here was no suggestion from anyone that the United Nations or the United States could back away from [the conflict]".[84] In Truman’s mind, this aggression, if left unchecked, would start a chain reaction that would destroy the United Nations and give the go ahead to further Communist aggression elsewhere. Korea was where a stand had to be made, the difficult part was how. The UN Security council approved the use of force to help the South Koreans and the US immediately began using air and naval forces in the area to that end. The Administration still refrained from committing on the ground because some advisors believed the North Koreans could be stopped by air and naval power alone.[84] Also, it was still uncertain if this was a clever ploy by the Soviet Union to catch the US unawares or just a test of US resolve. The decision to commit ground troops and to intervene eventually became viable when a communiqué was received on 27 June from the Soviet Union that alluded it would not move against US forces in Korea. "This opened the way for the sending of American ground forces, for it now seemed less likely that a general war—with Korea as a preliminary diversion—was imminent".[84] With the Soviet Union’s tacit agreement that this would not cause an escalation, the United States now could intervene with confidence that other commitments would not be jeopardized.
+United Nations Security Council Resolutions
+On 25 June 1950, the United Nations Security Council unanimously condemned the North Korean invasion of the Republic of Korea, with United Nations Security Council Resolution 82. The USSR, a veto-wielding power, had boycotted the Council meetings since January 1950, protesting that the Republic of China (Taiwan), not the People's Republic of China, held a permanent seat in the UN Security Council.[85] After debating the matter, the Security Council, on 27 June 1950, published Resolution 83 recommending member states provide military assistance to the Republic of Korea. On 27 June President Truman ordered US air and sea forces to help the South Korean régime. On 4 July the Soviet Deputy Foreign Minister accused the US of starting armed intervention on behalf of South Korea.[86]
+The USSR challenged the legitimacy of the war for several reasons. The ROK Army intelligence upon which Resolution 83 was based came from US Intelligence; North Korea was not invited as a sitting temporary member of the UN, which violated UN Charter Article 32; and the Korean conflict was beyond UN Charter scope, because the initial north–south border fighting was classed as a civil war. The Soviet representative boycotted the UN to prevent Security Council action, and to challenge the legitimacy of the UN action; legal scholars posited that deciding upon an action of this type required the unanimous vote of the five permanent members.[87][88]
+Comparison of military forces
+The North Korean Army launched the "Fatherland Liberation War" with a comprehensive air–land invasion using 231,000 soldiers, who captured scheduled objectives and territory, among them Kaesong, Chuncheon, Uijeongbu, and Ongjin. Their forces included 274 T-34-85 tanks, some 150 Yak fighters, 110 attack bombers, 200 artillery pieces, 78 Yak trainers, and 35 reconnaissance aircraft.[48] In addition to the invasion force, the North Korean KPA had 114 fighters, 78 bombers, 105 T-34-85 tanks, and some 30,000 soldiers stationed in reserve in North Korea.[48] Although each navy consisted of only several small warships, the North Korean and South Korean navies fought in the war as sea-borne artillery for their in-country armies.
+In contrast, the ROK Army defenders were vastly unprepared, and the political establishment in the south, while well aware of the threat to the north, were unable to convince American administrators of the reality of the threat. In South to the Naktong, North to the Yalu (1961), R.E. Appleman reports the ROK forces' low combat readiness as of 25 June 1950. The ROK Army had 98,000 soldiers (65,000 combat, 33,000 support), no tanks (they had been requested from the US military, but requests were denied), and a 22–piece air force comprising 12 liaison-type and 10 AT6 advanced-trainer airplanes. There were no large foreign military garrisons in Korea at invasion time, but there were large US garrisons and air forces in Japan.[48]
+Within days of the invasion, masses of ROK Army soldiers—of dubious loyalty to the Syngman Rhee régime—were either retreating southwards or were defecting en masse to the northern side, the KPA.[40]:23
+United Nations response (July – August 1950)
+
+
+A US howitzer position near the Kum River, 15 July.
+
+
+Korean civilians pass an M-46 tank
+
+
+A GI comforts a grieving infantryman.
+Despite the rapid post–Second World War Allied demobilizations, there were substantial US forces occupying Japan; under General Douglas MacArthur's command, they could be made ready to fight the North Koreans.[40]:42 Only the British Commonwealth had comparable forces in the area.
+On Saturday, 24 June 1950, US Secretary of State Dean Acheson informed President Truman by telephone, "Mr. President, I have very serious news. The North Koreans have invaded South Korea."[89][90] Truman and Acheson discussed a US invasion response with defense department principals, who agreed that the United States was obligated to repel military aggression, paralleling it with Adolf Hitler's 1930s aggressions, and said that the mistake of appeasement must not be repeated.[91] In his autobiography, President Truman acknowledged that fighting the invasion was essential to the American goal of the global containment of communism as outlined in the National Security Council Report 68 (NSC-68) (declassified in 1975):
+"Communism was acting in Korea, just as Hitler, Mussolini and the Japanese had ten, fifteen, and twenty years earlier. I felt certain that if South Korea was allowed to fall Communist leaders would be emboldened to override nations closer to our own shores. If the Communists were permitted to force their way into the Republic of Korea without opposition from the free world, no small nation would have the courage to resist threat and aggression by stronger Communist neighbors."[92]
+President Truman announced that the US would counter "unprovoked aggression" and "vigorously support the effort of the [UN] security council to terminate this serious breach of peace."[90] In Congress, the Joint Chiefs of Staff Chairman General Omar Bradley warned against appeasement, saying that Korea was the place "for drawing the line" against communist expansion. In August 1950, the President and the Secretary of State obtained the consent of Congress to appropriate $12 billion to pay for the military expenses.[90]
+Per State Secretary Acheson's recommendation, President Truman ordered General MacArthur to transfer materiel to the Army of the Republic of Korea while giving air cover to the evacuation of US nationals. The President disagreed with advisors who recommended unilateral US bombing of the North Korean forces, and ordered the US Seventh Fleet to protect the Republic of China (Taiwan), whose Nationalist Government asked to fight in Korea. The US denied the Nationalist Chinese request for combat, lest it provoke a communist Chinese retaliation.[93] Because the US had sent the Seventh Fleet to "neutralize" the Taiwan Strait, Chinese premier Zhou Enlai criticized both the UN and US initiatives as "armed aggression on Chinese territory."[94]
+The Battle of Osan, the first significant American engagement of the Korean War, involved the 540-soldier Task Force Smith, which was a small forward element of the 24th Infantry Division.[40]:45 On 5 July 1950, Task Force Smith attacked the North Koreans at Osan but without weapons capable of destroying the North Koreans' tanks. They were unsuccessful; the result was 180 dead, wounded, or taken prisoner. The KPA progressed southwards, pushing back the US force at Pyongtaek, Chonan, and Chochiwon, forcing the 24th Division's retreat to Taejeon, which the KPA captured in the Battle of Taejon;[40]:48 the 24th Division suffered 3,602 dead and wounded and 2,962 captured, including the Division's Commander, Major General William F. Dean.[40]:48 Overhead, the KPAF shot down 18 USAF fighters and 29 bombers; the USAF shot down five KPAF fighters.[citation needed]
+By August, the KPA had pushed back the ROK Army and the Eighth United States Army to the vicinity of Pusan, in southeast Korea.[40]:53 In their southward advance, the KPA purged the Republic of Korea's intelligentsia by killing civil servants and intellectuals.[40]:56 On 20 August, General MacArthur warned North Korean leader Kim Il-Sung that he was responsible for the KPA's atrocities.[40][73]:56 By September, the UN Command controlled only the Pusan perimeter, enclosing only about 10% of Korea, in a line partially defined by the Nakdong River.
+Although Kim's early successes had led him to predict that he would end the war by the end of August, Chinese leaders were more pessimistic. To counter the possibility of American invasion, Zhou Enlai secured a Soviet commitment to have the USSR support Chinese forces with air cover, and deployed 260,000 soldiers along the Korean border, under the command of Gao Gang. Zhou commanded Chai Chengwen to conduct a topographical survey of Korea, and directed 

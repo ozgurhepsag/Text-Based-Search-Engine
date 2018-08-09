@@ -1,0 +1,265 @@
+AIDS
+From Wikipedia, the free encyclopedia
+For other uses, see AIDS (disambiguation).
+
+Acquired immunodeficiency syndrome (AIDS)
+Classification and external resources
+
+The red ribbon is a symbol for solidarity with HIV-positive people and those living with AIDS.
+ICD-10	B24.
+ICD-9	042
+DiseasesDB	5938
+MedlinePlus	000594
+eMedicine	emerg/253
+MeSH	D000163
+List of abbreviations used in this article
+AIDS: Acquired immune deficiency syndrome
+HIV: Human immunodeficiency virus
+CD4+: CD4+ T helper cells
+CCR5: Chemokine (C-C motif) receptor 5
+CDC: Centers for Disease Control and Prevention
+WHO: World Health Organization
+PCP: Pneumocystis pneumonia
+TB: Tuberculosis
+MTCT: Mother-to-child transmission
+HAART: Highly active antiretroviral therapy
+STI/STD: Sexually transmitted infection/disease
+Acquired immune deficiency syndrome or acquired immunodeficiency syndrome (AIDS) is a disease of the human immune system caused by the human immunodeficiency virus (HIV).[1][2][3] This condition progressively reduces the effectiveness of the immune system and leaves individuals susceptible to opportunistic infections and tumors. HIV is transmitted through direct contact of a mucous membrane or the bloodstream with a bodily fluid containing HIV, such as blood, semen, vaginal fluid, preseminal fluid, and breast milk.[4][5] This transmission can involve anal, vaginal or oral sex, blood transfusion, contaminated hypodermic needles, exchange between mother and baby during pregnancy, childbirth, breastfeeding or other exposure to one of the above bodily fluids.
+AIDS is considered a pandemic.[6] In 2009, the World Health Organization (WHO) estimated that there are 33.4 million people worldwide living with HIV/AIDS, with 2.7 million new HIV infections per year and 2.0 million annual deaths due to AIDS.[7] In 2007, UNAIDS estimated: 33.2 million people worldwide had AIDS that year; AIDS killed 2.1 million people in the course of that year, including 330,000 children, and 76% of those deaths occurred in sub-Saharan Africa.[8] According to UNAIDS 2009 report, worldwide some 60 million people have been infected, with some 25 million deaths, and 14 million orphaned children in southern Africa alone since the epidemic began.[9]
+Genetic research indicates that HIV originated in west-central Africa during the late nineteenth or early twentieth century.[10][11] AIDS was first recognized by the U.S. Centers for Disease Control and Prevention in 1981 and its cause, HIV, identified in the early 1980s.[12]
+Although treatments for AIDS and HIV can slow the course of the disease, there is no known cure or vaccine. Antiretroviral treatment reduces both the mortality and the morbidity of HIV infection, but these drugs are expensive and routine access to antiretroviral medication is not available in all countries.[13] Due to the difficulty in treating HIV infection, preventing infection is a key aim in controlling the AIDS pandemic, with health organizations promoting safe sex and needle-exchange programmes in attempts to slow the spread of the virus.
+Contents [show]
+History and origin
+
+Main article: Origin of AIDS
+AIDS was first reported June 5, 1981, when the U.S. Centers for Disease Control (CDC) recorded a cluster of Pneumocystis carinii pneumonia (now still classified as PCP but known to be caused by Pneumocystis jirovecii) in five homosexual men in Los Angeles.[14] In the beginning, the CDC did not have an official name for the disease, often referring to it by way of the diseases that were associated with it, for example, lymphadenopathy, the disease after which the discoverers of HIV originally named the virus.[15][16] They also used Kaposi's Sarcoma and Opportunistic Infections, the name by which a task force had been set up in 1981.[17]
+In the general press, the term GRID, which stood for gay-related immune deficiency, had been coined.[18] The CDC, in search of a name, and looking at the infected communities coined “the 4H disease,” as it seemed to single out Haitians, homosexuals, hemophiliacs, and heroin users.[19] However, after determining that AIDS was not isolated to the gay community,[17] the term GRID became misleading and AIDS was introduced at a meeting in July 1982.[20] By September 1982 the CDC started using the name AIDS, and properly defined the illness.[21]
+The earliest known positive identification of the HIV-1 virus comes from the Congo in 1959 and 1960 though genetic studies indicate that it passed into the human population from chimpanzees around fifty years earlier.[11] A recent study states that a strain of HIV-1 probably moved from Africa to Haiti and then entered the United States around 1969.[22]
+The HIV virus descends from the related simian immunodeficiency virus (SIV), which infects apes and monkeys in Africa. There is evidence that humans who participate in bushmeat activities, either as hunters or as bushmeat vendors, commonly acquire SIV.[23] However, only a few of these infections were able to cause epidemics in humans, and all did so in the late 19th—early 20th century. To explain why HIV became epidemic only by that time, there are several theories, each invoking specific driving factors that may have promoted SIV adaptation to humans, or initial spread: social changes following colonialism,[24] rapid transmission of SIV through unsafe or unsterile injections (that is, injections in which the needle is reused without being sterilised),[25] colonial abuses and unsafe smallpox vaccinations or injections,[26] or prostitution and the concomitant high frequency of genital ulcer diseases (such as syphilis) in nascent colonial cities.[27][28] See the main article Origin of AIDS.
+One of the first high profile victims of AIDS was the American actor Rock Hudson, a known homosexual who had been married and divorced earlier in life, who died on 2 October 1985 having announced that he was suffering from the virus on 25 July that year. It had been diagnosed during 1984.[29] A notable British casualty of AIDS that year was Nicholas Eden, a Member of Parliament and son of the late prime minister Anthony Eden.[30] Eden junior, a lifelong bachelor, was also a known homosexual.[31] The virus claimed perhaps its most famous victim yet on 24 November 1991, when British rock star Freddie Mercury, lead singer of the band Queen, died from an AIDS related illness having only announced that he was suffering from the illness the previous day;[32] however he had been diagnosed as HIV positive during 1987.[33] One of the first high profile heterosexual victims of the virus was Arthur Ashe, the American tennis player. He was diagnosed as HIV positive on 31 August 1988, having contracted the virus from blood transfusions during heart surgery earlier in the 1980s. Further tests within 24 hours of the initial diagnosis revealed that Ashe had AIDS, but he did not tell the public about his diagnosis until April 1992.[34] He died, aged 49, as a result of the AIDS virus on 6 February 1993.[35]
+A more controversial theory known as the OPV AIDS hypothesis suggests that the AIDS epidemic was 
+inadvertently started in the late 1950s in the Belgian Congo by Hilary Koprowski's research into a 
+poliomyelitis vaccine.[36][37] According to scientific consensus, this scenario is not supported by
+ the available evidence.[38][39][40]
+
+Signs and symptoms
+
+
+
+Main symptoms of AIDS.
+
+
+X-ray of Pneumocystis pneumonia (PCP). There is increased white (opacity) in the lower lungs on both sides, characteristic of PCP
+The symptoms of AIDS are primarily the result of conditions that do not normally develop in individuals with healthy immune systems. Most of these conditions are infections caused by bacteria, viruses, fungi and parasites that are normally controlled by the elements of the immune system that HIV damages.
+Opportunistic infections are common in people with AIDS.[41] These infections affect nearly every organ system.
+People with AIDS also have an increased risk of developing various cancers such as Kaposi's sarcoma, cervical cancer and cancers of the immune system known as lymphomas. Additionally, people with AIDS often have systemic symptoms of infection like fevers, sweats (particularly at night), swollen glands, chills, weakness, and weight loss.[42][43] The specific opportunistic infections that AIDS patients develop depend in part on the prevalence of these infections in the geographic area in which the patient lives.
+Pulmonary
+Pneumocystis pneumonia (originally known as Pneumocystis carinii pneumonia, and still abbreviated as PCP, which now stands for Pneumocystis pneumonia) is relatively rare in healthy, immunocompetent people, but common among HIV-infected individuals. It is caused by Pneumocystis jirovecii.
+Before the advent of effective diagnosis, treatment and routine prophylaxis in Western countries, it was a common immediate cause of death. In developing countries, it is still one of the first indications of AIDS in untested individuals, although it does not generally occur unless the CD4 count is less than 200 cells per µL of blood.[44]
+Tuberculosis (TB) is unique among infections associated with HIV because it is transmissible to immunocompetent people via the respiratory route, and is not easily treatable once identified.[45] Multidrug resistance is a serious problem. Tuberculosis with HIV co-infection (TB/HIV) is a major world health problem according to the World Health Organization: in 2007, 456,000 deaths among incident TB cases were HIV-positive, a third of all TB deaths and nearly a quarter of the estimated 2 million HIV deaths in that year.[46] Even though its incidence has declined because of the use of directly observed therapy and other improved practices in Western countries, this is not the case in developing countries where HIV is most prevalent. In early-stage HIV infection (CD4 count >300 cells per µL), TB typically presents as a pulmonary disease. In advanced HIV infection, TB often presents atypically with extrapulmonary (systemic) disease a common feature. Symptoms are usually constitutional and are not localized to one particular site, often affecting bone marrow, bone, urinary and gastrointestinal tracts, liver, regional lymph nodes, and the central nervous system.[47]
+Gastrointestinal
+Esophagitis is an inflammation of the lining of the lower end of the esophagus (gullet or swallowing tube leading to the stomach). In HIV-infected individuals, this is normally due to fungal (candidiasis) or viral (herpes simplex-1 or cytomegalovirus) infections. In rare cases, it could be due to mycobacteria.[48]
+Unexplained chronic diarrhea in HIV infection is due to many possible causes, including common bacterial (Salmonella, Shigella, Listeria or Campylobacter) and parasitic infections; and uncommon opportunistic infections such as cryptosporidiosis, microsporidiosis, Mycobacterium avium complex (MAC) and viruses,[49] astrovirus, adenovirus, rotavirus and cytomegalovirus, (the latter as a course of colitis).
+In some cases, diarrhea may be a side effect of several drugs used to treat HIV, or it may simply accompany HIV infection, particularly during primary HIV infection. It may also be a side effect of antibiotics used to treat bacterial causes of diarrhea (common for Clostridium difficile). In the later stages of HIV infection, diarrhea is thought to be a reflection of changes in the way the intestinal tract absorbs nutrients, and may be an important component of HIV-related wasting.[50]
+Neurological and psychiatric
+HIV infection may lead to a variety of neuropsychiatric sequelae, either by infection of the now susceptible nervous system by organisms, or as a direct consequence of the illness itself.[51]
+Toxoplasmosis is a disease caused by the single-celled parasite called Toxoplasma gondii; it usually infects the brain, causing toxoplasma encephalitis, but it can also infect and cause disease in the eyes and lungs.[52] Cryptococcal meningitis is an infection of the meninx (the membrane covering the brain and spinal cord) by the fungus Cryptococcus neoformans. It can cause fevers, headache, fatigue, nausea, and vomiting. Patients may also develop seizures and confusion; left untreated, it can be lethal.
+Progressive multifocal leukoencephalopathy (PML) is a demyelinating disease, in which the gradual destruction of the myelin sheath covering the axons of nerve cells impairs the transmission of nerve impulses. It is caused by a virus called JC virus which occurs in 70% of the population in latent form, causing disease only when the immune system has been severely weakened, as is the case for AIDS patients. It progresses rapidly, usually causing death within months of diagnosis.[53]
+AIDS dementia complex (ADC) is a metabolic encephalopathy induced by HIV infection and fueled by immune activation of HIV infected brain macrophages and microglia. These cells are productively infected by HIV and secrete neurotoxins of both host and viral origin.[54] Specific neurological impairments are manifested by cognitive, behavioral, and motor abnormalities that occur after years of HIV infection and are associated with low CD4+ T cell levels and high plasma viral loads.
+Prevalence is 10–20% in Western countries[55] but only 1–2% of HIV infections in India.[56][57] This difference is possibly due to the HIV subtype in India. AIDS related mania is sometimes seen in patients with advanced HIV illness; it presents with more irritability and cognitive impairment and less euphoria than a manic episode associated with true bipolar disorder. Unlike the latter condition, it may have a more chronic course. This syndrome is less often seen with the advent of multi-drug therapy.
+Tumors
+
+
+Kaposi's sarcoma
+Patients with HIV infection have substantially increased incidence of several cancers. This is primarily due to co-infection with an oncogenic DNA virus, especially Epstein-Barr virus (EBV), Kaposi's sarcoma-associated herpesvirus (KSHV) (also known as human herpesvirus-8 [HHV-8]), and human papillomavirus (HPV).[58][59]
+Kaposi's sarcoma (KS) is the most common tumor in HIV-infected patients. The appearance of this tumor in young homosexual men in 1981 was one of the first signals of the AIDS epidemic. Caused by a gammaherpes virus called Kaposi's sarcoma-associated herpes virus (KSHV), it often appears as purplish nodules on the skin, but can affect other organs, especially the mouth, gastrointestinal tract, and lungs. High-grade B cell lymphomas such as Burkitt's lymphoma, Burkitt's-like lymphoma, diffuse large B-cell lymphoma (DLBCL), and primary central nervous system lymphoma present more often in HIV-infected patients. These particular cancers often foreshadow a poor prognosis. Epstein-Barr virus (EBV) or KSHV cause many of these lymphomas. In HIV-infected patients, lymphoma often arises in extranodal sites such as the gastrointestinal tract.[60] When they occur in an HIV-infected patient, KS and aggressive B cell lymphomas confer a diagnosis of AIDS.
+Invasive cervical cancer in HIV-infected women is also considered AIDS-defining, it is caused by human papillomavirus (HPV).[61]
+In addition to the AIDS-defining tumors listed above, HIV-infected patients are at increased risk of certain other tumors, notably Hodgkin's disease, anal and rectal carcinomas, hepatocellular carcinomas, head and neck cancers, and lung cancer. Some of these are causes by viruses, such as Hodgkin's disease (EBV), anal/rectal cancers (HPV), head and neck cancers (HPV), and hepatocellular carcinoma (hepatitis B or C). Other contributing factors include exposure to carcinogens (cigarette smoke for lung cancer), or living for years with subtle immune defects.
+Interestingly, the incidence of many common tumors, such as breast cancer or colon cancer, does not increase in HIV-infected patients. In areas where HAART is extensively used to treat AIDS, the incidence of many AIDS-related malignancies has decreased, but at the same time malignant cancers overall have become the most common cause of death of HIV-infected patients.[62] In recent years, an increasing proportion of these deaths have been from non-AIDS-defining cancers.
+Other infections
+AIDS patients often develop opportunistic infections that present with non-specific symptoms, especially low-grade fevers and weight loss. These include opportunistic infection with Mycobacterium avium-intracellulare and cytomegalovirus (CMV). CMV can cause colitis, as described above, and CMV retinitis can cause blindness.
+Penicilliosis due to Penicillium marneffei is now the third most common opportunistic infection (after extrapulmonary tuberculosis and cryptococcosis) in HIV-positive individuals within the endemic area of Southeast Asia.[63]
+An infection that often goes unrecognized in AIDS patients is Parvovirus B19. Its main consequence is anemia, which is difficult to distinguish from the effects of antiretroviral drugs used to treat AIDS itself.[64]
+
+Sexual transmission
+Main article: sexually transmitted disease
+Sexual transmission occurs with the contact between sexual secretions of one person with the rectal, genital or oral mucous membranes of another. Unprotected sexual acts are riskier for the receptive partner than for the insertive partner, and the risk for transmitting HIV through unprotected anal intercourse is greater than the risk from vaginal intercourse or oral sex.
+However, oral sex is not entirely safe, as HIV can be transmitted through both insertive and receptive oral sex.[78][79] Sexual assault greatly increases the risk of HIV transmission as condoms are rarely employed and physical trauma to the vagina or rectum occurs frequently, facilitating the transmission of HIV.[80]
+Drug use has been studied as a possible predictor of HIV transmission. Perry N. Halkitis found that methamphetamine usage does significantly relate to unprotected sexual behavior. The study found methamphetamine users to be at a higher risk for contracting HIV.[81]
+Other sexually transmitted infections (STI) increase the risk of HIV transmission and infection, because they cause the disruption of the normal epithelial barrier by genital ulceration and/or microulceration; and by accumulation of pools of HIV-susceptible or HIV-infected cells (lymphocytes and macrophages) in semen and vaginal secretions. Epidemiological studies from sub-Saharan Africa, Europe and North America suggest that genital ulcers, such as those caused by syphilis and/or chancroid, increase the risk of becoming infected with HIV by about fourfold. There is also a significant although lesser increase in risk from STIs such as gonorrhea, chlamydia and trichomoniasis, which all cause local accumulations of lymphocytes and macrophages.[82]
+Transmission of HIV depends on the infectiousness of the index case and the susceptibility of the uninfected partner. Infectivity seems to vary during the course of illness and is not constant between individuals. An undetectable plasma viral load does not necessarily indicate a low viral load in the seminal liquid or genital secretions.
+However, each 10-fold increase in the level of HIV in the blood is associated with an 81% increased rate of HIV transmission.[82][83] Women are more susceptible to HIV-1 infection due to hormonal changes, vaginal microbial ecology and physiology, and a higher prevalence of sexually transmitted diseases.[84][85]
+People who have been infected with one strain of HIV can still be infected later on in their lives by other, more virulent strains.
+Infection is unlikely in a single encounter. High rates of infection have been linked to a pattern of overlapping long-term sexual relationships. This allows the virus to quickly spread to multiple partners who in turn infect their partners. A pattern of serial monogamy or occasional casual encounters is associated with lower rates of infection.[86]
+HIV spreads readily through heterosexual sex in Africa, but less so elsewhere. One possibility being researched is that schistosomiasis, which affects up to 50% of women in parts of Africa, damages the lining of the vagina.[87][88]
+Blood products
+
+
+CDC poster from 1989 highlighting the threat of AIDS associated with drug use
+This transmission route is particularly relevant to intravenous drug users, hemophiliacs and recipients of blood transfusions and blood products. Sharing and reusing syringes contaminated with HIV-infected blood represents a major risk for infection with HIV.
+Needle sharing is the cause of one third of all new HIV-infections in North America, China, and Eastern Europe. The risk of being infected with HIV from a single prick with a needle that has been used on an HIV-infected person is thought to be about 1 in 150 (see table above). Post-exposure prophylaxis with anti-HIV drugs can further reduce this risk.[89]
+This route can also affect people who give and receive tattoos and piercings. Universal precautions are frequently not followed in both sub-Saharan Africa and much of Asia because of both a shortage of supplies and inadequate training.
+The WHO estimates that approximately 2.5% of all HIV infections in sub-Saharan Africa are transmitted through unsafe healthcare injections.[90] Because of this, the United Nations General Assembly has urged the nations of the world to implement precautions to prevent HIV transmission by health workers.[91]
+The risk of transmitting HIV to blood transfusion recipients is extremely low in developed countries where improved donor selection and HIV screening is performed. However, according to the WHO, the overwhelming majority of the world's population does not have access to safe blood and between 5% and 10% of the world's HIV infections come from transfusion of infected blood and blood products.[92]
+Perinatal transmission
+The transmission of the virus from the mother to the child can occur in utero during the last weeks of pregnancy and at childbirth. In the absence of treatment, the transmission rate between a mother and her child during pregnancy, labor and delivery is 25%.
+However, when the mother takes antiretroviral therapy and gives birth by caesarean section, the rate of
+ transmission is just 1%.[93] The risk of infection is influenced by the viral load of the mother at birth,
+ with the higher the viral load, the higher the risk. Breastfeeding also increases the risk of transmission
+ by about 4 %.[94]
+
+Pathophysiology
+
+
+This section may require cleanup to meet Wikipedia's quality standards. (Consider using more specific cleanup instructions.) Please help improve this section if you can. The talk page may contain suggestions. (April 2008)
+The pathophysiology of AIDS is complex, as is the case with all syndromes.[95] Ultimately, HIV causes AIDS by depleting CD4+ T helper lymphocytes. This weakens the immune system and allows opportunistic infections. T lymphocytes are essential to the immune response and without them, the body cannot fight infections or kill cancerous cells. The mechanism of CD4+ T cell depletion differs in the acute and chronic phases.[96]
+During the acute phase, HIV-induced cell lysis and killing of infected cells by cytotoxic T cells accounts for CD4+ T cell depletion, although apoptosis may also be a factor. During the chronic phase, the consequences of generalized immune activation coupled with the gradual loss of the ability of the immune system to generate new T cells appear to account for the slow decline in CD4+ T cell numbers.
+Although the symptoms of immune deficiency characteristic of AIDS do not appear for years after a person is infected, the bulk of CD4+ T cell loss occurs during the first weeks of infection, especially in the intestinal mucosa, which harbors the majority of the lymphocytes found in the body.[97] The reason for the preferential loss of mucosal CD4+ T cells is that a majority of mucosal CD4+ T cells express the CCR5 coreceptor, whereas a small fraction of CD4+ T cells in the bloodstream do so.[98]
+HIV seeks out and destroys CCR5 expressing CD4+ cells during acute infection. A vigorous immune response eventually controls the infection and initiates the clinically latent phase. However, CD4+ T cells in mucosal tissues remain depleted throughout the infection, although enough remain to initially ward off life-threatening infections.
+Continuous HIV replication results in a state of generalized immune activation persisting throughout the chronic phase.[99] Immune activation, which is reflected by the increased activation state of immune cells and release of proinflammatory cytokines, results from the activity of several HIV gene products and the immune response to ongoing HIV replication. Another cause is the breakdown of the immune surveillance system of the mucosal barrier caused by the depletion of mucosal CD4+ T cells during the acute phase of disease.[100]
+This results in the systemic exposure of the immune system to microbial components of the gut’s normal flora, which in a healthy person is kept in check by the mucosal immune system. The activation and proliferation of T cells that results from immune activation provides fresh targets for HIV infection. However, direct killing by HIV alone cannot account for the observed depletion of CD4+ T cells since only 0.01–0.10% of CD4+ T cells in the blood are infected.
+A major cause of CD4+ T cell loss appears to result from their heightened susceptibility to apoptosis when the immune system remains activated. Although new T cells are continuously produced by the thymus to replace the ones lost, the regenerative capacity of the thymus is slowly destroyed by direct infection of its thymocytes by HIV. Eventually, the minimal number of CD4+ T cells necessary to maintain a sufficient immune response is lost, leading to AIDS
+
+Cells affected
+The virus, entering through which ever route, acts primarily on the following cells:[101]
+Lymphoreticular system:
+CD4+ T-Helper cells
+Macrophages
+Monocytes
+B-lymphocytes
+Certain endothelial cells
+Central nervous system:
+Microglia of the nervous system
+Astrocytes
+Oligodendrocytes
+Neurones – indirectly by the action of cytokines and the gp-120
+The effect
+The virus has cytopathic effects but how it does it is still not quite clear. It can remain inactive in these cells for long periods, though. This effect is hypothesized to be due to the CD4-gp120 interaction.[101]
+The most prominent effect of HIV is its T-helper cell suppression and lysis. The cell is simply killed off or deranged to the point of being function-less (they do not respond to foreign antigens). The infected B-cells can not produce enough antibodies either. Thus the immune system collapses leading to the familiar AIDS complications, like infections and neoplasms (vide supra).
+Infection of the cells of the CNS cause acute aseptic meningitis, subacute encephalitis, vacuolar myelopathy and peripheral neuropathy. Later it leads to even AIDS dementia complex.
+The CD4-gp120 interaction (see above) is also permissive to other viruses like Cytomegalovirus, Hepatitis virus, Herpes simplex virus, etc. These viruses lead to further cell damage i.e. cytopathy.
+Molecular basis
+For details, see:
+Structure and genome of HIV
+HIV replication cycle
+HIV tropism
+Diagnosis
+
+The diagnosis of AIDS in a person infected with HIV is based on the presence of certain signs or symptoms. Since June 5, 1981, many definitions have been developed for epidemiological surveillance such as the Bangui definition and the 1994 expanded World Health Organization AIDS case definition. However, clinical staging of patients was not an intended use for these systems as they are neither sensitive, nor specific. In developing countries, the World Health Organization staging system for HIV infection and disease, using clinical and laboratory data, is used and in developed countries, the Centers for Disease Control (CDC) Classification System is used.
+WHO disease staging system
+Main article: WHO Disease Staging System for HIV Infection and Disease
+In 1990, the World Health Organization (WHO) grouped these infections and conditions together by introducing a staging system for patients infected with HIV-1.[102] An update took place in September 2005. Most of these conditions are opportunistic infections that are easily treatable in healthy people.
+Stage I: HIV infection is asymptomatic and not categorized as AIDS
+Stage II: includes minor mucocutaneous manifestations and recurrent upper respiratory tract infections
+Stage III: includes unexplained chronic diarrhea for longer than a month, severe bacterial infections and pulmonary tuberculosis
+Stage IV: includes toxoplasmosis of the brain, candidiasis of the esophagus, trachea, bronchi or lungs and Kaposi's sarcoma; these diseases are indicators of AIDS.
+
+
+HIV test
+Main article: HIV test
+Many people are unaware that they are infected with HIV.[104] Less than 1% of the sexually active urban population in Africa has been tested, and this proportion is even lower in rural populations. Furthermore, only 0.5% of pregnant women attending urban health facilities are counseled, tested or receive their test results. Again, this proportion is even lower in rural health facilities.[104] Therefore, donor blood and blood products used in medicine and medical research are screened for HIV.
+HIV tests are usually performed on venous blood. Many laboratories use fourth generation screening tests which detect anti-HIV antibody (IgG and IgM) and the HIV p24 antigen. The detection of HIV antibody or antigen in a patient previously known to be negative is evidence of HIV infection. Individuals whose first specimen indicates evidence of HIV infection will have a repeat test on a second blood sample to confirm the results.
+The window period (the time between initial infection and the development of detectable antibodies against the infection) can vary since it can take 3–6 months to seroconvert and to test positive. Detection of the virus using polymerase chain reaction (PCR) during the window period is possible, and evidence suggests that an infection may often be detected earlier than when using a fourth generation EIA screening test.
+Positive results obtained by PCR are confirmed by antibody tests.[105] Routinely used HIV tests for infection in neonates and infants (i.e., patients younger than 2 years),[106] born to HIV-positive mothers, have no value because of the presence of maternal antibody to HIV in the child's blood. HIV infection can only be diagnosed by PCR, testing for HIV pro-viral DNA in the children's lymphocytes.[107]
+Prevention
+
+Estimated per act risk for acquisition
+of HIV by exposure route (US only)[108]
+Exposure Route	Estimated infections
+per 10,000 exposures
+to an infected source
+Blood Transfusion	9,000[109]
+Childbirth (to child)	2,500[93]
+Needle-sharing injection drug use	67[110]
+Percutaneous needle stick	30[111]
+Receptive anal intercourse*	50[112][113]
+Insertive anal intercourse*	6.5[112][113]
+Receptive penile-vaginal intercourse*	10[112][113][114]
+Insertive penile-vaginal intercourse*	5[112][113]
+Receptive oral intercourse*§	1[113]
+Insertive oral intercourse*§	0.5[113]
+* assuming no condom use
+§ source refers to oral intercourse
+performed on a man
+The three main transmission routes of HIV are sexual contact, exposure to infected body fluids or tissues, and from mother to fetus or child during perinatal period. It is possible to find HIV in the saliva, tears, and urine of infected individuals, but there are no recorded cases of infection by these secretions, and the risk of infection is negligible.[115] Anti-retroviral treatment of infected patients also significantly reduces their ability to transmit HIV to others, by reducing the amount of virus in their bodily fluids to undetectable levels.[116]
+Sexual contact
+The majority of HIV infections are acquired through unprotected sexual relations between partners, one of whom has HIV. The primary mode of HIV infection worldwide is through sexual contact between members of the opposite sex.[117][118][119]
+During a sexual act, only male or female condoms can reduce the risk of infection with HIV and other STDs. The best evidence to date indicates that typical condom use reduces the risk of heterosexual HIV transmission by approximately 80% over the long-term, though the benefit is likely to be higher if condoms are used correctly on every occasion.[120]
+The male latex condom, if used correctly without oil-based lubricants, is the single most effective available technology to reduce the sexual transmission of HIV and other sexually transmitted infections. Manufacturers recommend that oil-based lubricants such as petroleum jelly, butter, and lard not be used with latex condoms, because they dissolve the latex, making the condoms porous. If lubrication is desired, manufacturers recommend using water-based lubricants. Oil-based lubricants can be used with polyurethane condoms.[121]
+Female condoms are commonly made from polyurethane, but are also made from nitrile and latex. They are larger than male condoms and have a stiffened ring-shaped opening with an inner ring designed to be inserted into the vagina keeping the condom in place; inserting the female condom requires squeezing this ring. Female condoms have been shown to be an important HIV prevention strategy by preliminary studies which suggest that overall protected sexual acts increase relative to unprotected sexual acts where female condoms are available.[122] At present, availability of female condoms is very low and the price remains prohibitive for many women.
+Studies on couples where one partner is infected show that with consistent condom use, HIV infection rates for the uninfected partner are below 1% per year.[123] Prevention strategies are well known in developed countries, but epidemiological and behavioral studies in Europe and North America suggest that a substantial minority of young people continue to engage in high-risk practices despite HIV/AIDS knowledge, underestimating their own risk of becoming infected with HIV.[124][125]
+Randomized controlled trials have shown that male circumcision lowers the risk of HIV infection among heterosexual men by up to 60%.[126] It is expected that this procedure will be actively promoted in many of the countries affected by HIV, although doing so will involve confronting a number of practical, cultural and attitudinal issues. However, programs to encourage condom use, including providing them free to those in poverty, are estimated to be 95 times more cost effective than circumcision at reducing the rate of HIV in sub-Saharan Africa.[127]
+Some experts fear that a lower perception of vulnerability among circumcised men may result in more sexual risk-taking behavior, thus negating its preventive effects.[128] However, one randomized controlled trial indicated that adult male circumcision was not associated with increased HIV risk behavior.[129]
+Studies of HIV infection rates among women who have undergone female genital cutting (FGC) have reported mixed results; for details see Female genital cutting#HIV.
+A three-year study in South Africa, completed in 2010, found that an anti-microbial vaginal gel could reduce infection rates among women by 50% after one year of use, and by 39% after two and a half years. The results of the study, which was conducted by the Centre for the Aids Programme of Research in South Africa (CAPRISA), were published in Science magazine in July 2010, and were then presented at an international aids conference in Vienna.[130]
+Body fluid exposure
+Health care workers can reduce exposure to HIV by employing precautions to reduce the risk of exposure to contaminated blood. These precautions include barriers such as gloves, masks, protective eyeware or shields, and gowns or aprons which prevent exposure of the skin or mucous membranes to blood borne pathogens. Frequent and thorough washing of the skin immediately after being contaminated with blood or other bodily fluids can reduce the chance of infection. Finally, sharp objects like needles, scalpels and glass, are carefully disposed of to prevent needlestick injuries with contaminated items.[131] Since intravenous drug use is an important factor in HIV transmission in developed countries, harm reduction strategies such as needle-exchange programmes are used in attempts to reduce the infections caused by drug abuse.[132][133]
+
+
+Mother-to-child
+Current recommendations state that when replacement feeding is acceptable, feasible, affordable, sustainable and safe, HIV-infected mothers should avoid breast-feeding their infant. However, if this is not the case, exclusive breast-feeding is recommended during the first months of life and discontinued as soon as possible.[134] It should be noted that women can breastfeed children who are not their own; see wet nurse.
+Education
+One way to change risky behavior is health education. Several studies[citation needed] have shown the positive impact of education and health literacy on cautious sex behavior. Education works only if it leads to higher health literacy and general cognitive ability. This ability is relevant to understand the relationship between own risky behavior and possible outcomes like HIV-transmission.[135] In July 2010, a UNAIDS Inter-Agency Task Team (IATT) on Education commissioned literature review found there was a need for more research into non-African[clarification needed] (especially non-South African contexts), more research on the actual implementation of sex-education programmes (such as teacher training, access to related services through schools and the community, or parental attitudes to HIV and AIDS education) and more longitudinal studies on the deeper complexities of the relationship between education and HIV.[136]
+Management
+
+See also HIV Treatment and Antiretroviral drug.
+There is currently no publicly available vaccine for HIV or cure for HIV or AIDS. The only known methods of prevention are based on avoiding exposure to the virus or, failing that, an antiretroviral treatment directly after a highly significant exposure, called post-exposure prophylaxis (PEP).[137] PEP has a very demanding four week schedule of dosage. It also has very unpleasant side effects including diarrhea, malaise, nausea and fatigue.[138]
+Antiviral therapy
+
+
+Abacavir – a nucleoside analog reverse transcriptase inhibitor (NARTI or NRTI)
+
+
+The chemical structure of Abacavir
+Current treatment for HIV infection consists of highly active antiretroviral therapy, or HAART.[139] This has been highly beneficial to many HIV-infected individuals since its introduction in 1996 when the protease inhibitor-based HAART initially became available.[13] Current optimal HAART options consist of combinations (or "cocktails") consisting of at least three drugs belonging to at least two types, or "classes," of antiretroviral agents.
+Typical regimens consist of two nucleoside analogue reverse transcriptase inhibitors (NARTIs or NRTIs) plus either a protease inhibitor or a non-nucleoside reverse transcriptase inhibitor (NNRTI). Because HIV disease progression in children is more rapid than in adults, and laboratory parameters are less predictive of risk for disease progression, particularly for young infants, treatment recommendations are more aggressive for children than for adults.[140] In developed countries where HAART is available, doctors assess the viral load, CD4 counts, rapidity of CD4 decline and patient readiness while deciding when to recommend initiating treatment.[141] Traditionally, treatment has been recommended for otherwise asymptomatic patients when CD4 cell counts fall to 200–250 cells per microliter of blood. However, beginning treatment earlier (at a CD4 level of 350 cells/microliter) may significantly reduce the risk of death.[142]
+Standard goals of HAART include improvement in the patient’s quality of life, reduction in complications, and reduction of HIV viremia below the limit of detection, but it does not cure the patient of HIV nor does it prevent the return, once treatment is stopped, of high blood levels of HIV, often HAART resistant.[143][144] Moreover, it would take more than the lifetime of an individual to be cleared of HIV infection using HAART.[145]
+Despite this, many HIV-infected individuals have experienced remarkable improvements in their general health and quality of life, which has led to the plummeting of HIV-associated morbidity and mortality.[146][147][148] In the absence of HAART, progression from HIV infection to AIDS occurs at a median of between nine to ten years and the median survival time after developing AIDS is only 9.2 months.[67] HAART is thought to increase survival time by between 4 and 12 years.[149][150]
+For some patients, which can be more than fifty percent of patients, HAART achieves far less than optimal results, due to medication intolerance/side effects, prior ineffective antiretroviral therapy and infection with a drug-resistant strain of HIV. Non-adherence and non-persistence with therapy are the major reasons why some people do not benefit from HAART.[151] The reasons for non-adherence and non-persistence are varied. Major psychosocial issues include poor access to medical care, inadequate social supports, psychiatric disease and drug abuse. HAART regimens can also be complex and thus hard to follow, with large numbers of pills taken frequently.[152][153][154]
+Side effects can also deter people from persisting with HAART, these include lipodystrophy, dyslipidaemia, diarrhoea, insulin resistance, an increase in cardiovascular risks and birth defects.[155] Anti-retroviral drugs are expensive, and the majority of the world's infected individuals do not have access to medications and treatments for HIV and AIDS. However, the costs of anti-retroviral drugs have fallen recently in low-income countries. Moreover, patients' quality of life indices benefit from anti-retroviral treatment especially if healthcare services are adequate.[156] In the absence of a cure for AIDS, anti-retroviral treatment is likely to be a cost-effective strategy for enhancing well-being of AIDS patients and their dependents.
+
+Complementary and alternative medicine
+In the US, approximately 60% of HIV patients use various forms of complementary or alternative medicine (CAM).[157] Despite the widespread use of CAM by people living with HIV/AIDS, the effectiveness of these therapies has not been established.[158] A 2005 Cochrane review of existing high-quality scientific evidence concluded: "There is insufficient evidence to support the use of herbal medicines in HIV-infected individuals and AIDS patients."[159] Acupuncture has only been proposed for symptomatic relief, but not to treat or cure HIV or AIDS.[160]
+Vitamin or mineral supplementation has shown benefit in some studies. Daily doses of selenium can suppress HIV viral burden with an associated improvement of the CD4 count. Selenium can be used as an adjunct therapy to standard antiviral treatments,[161][162] but cannot itself cure the infection. More evidence is needed before it can be established that selenium supplementation reduces mortality rates. There is some evidence that vitamin A supplementation in children reduces mortality and improves growth.[163] A large Tanzanian trial in immunologically and nutritionally compromised pregnant and lactating women showed a number of benefits to daily multivitamin supplementation for both mothers and children.[163] Dietary intake of micronutrients at RDA levels by HIV-infected adults is recommended by the World Health Organization (WHO).[164] The WHO further states that several studies indicate that supplementation of vitamin A, zinc, and iron can produce adverse effects in HIV positive adults.[164]
+Prognosis
+
+Without treatment, the net median survival time after infection with HIV is estimated to be 9 to 11 years, depending on the HIV subtype,[8] and the median survival rate after diagnosis of AIDS in resource-limited settings where treatment is not available ranges between 6 and 19 months, depending on the study.[165] In areas where it is widely available, the development of HAART as effective therapy for HIV infection and AIDS reduced the death rate from this disease by 80%, and raised the life expectancy for a newly diagnosed HIV-infected person to about 20 years.[166]
+As new treatments continue to be developed and because HIV continues to evolve resistance to treatments, estimates of survival time are likely to continue to change. Without antiretroviral therapy, death normally occurs within a year after the individual progresses to AIDS.[67] Most patients die from opportunistic infections or malignancies associated with the progressive failure of the immune system.[167] The rate of clinical disease progression varies widely between individuals and has been shown to be affected by many factors such as host susceptibility and immune function[68][69][72] health care and co-infections,[67][167] as well as which particular strain of the virus is involved.[74][168][169]
+Even with anti-retroviral treatment, over the long term HIV-infected patients may experience neurocognitive disorders, osteoporosis, neuropathy, cancers, nephropathy, and cardiovascular disease. It is not always clear whether these conditions result from the infection, related complications, or are side effects of treatment.[170][171][160][58][59][172][155][173]
+The largest cause of AIDS morbidity today, globally, is tuberculosis co-infection, see AIDS#
+Pulmonary_infections. In Africa, HIV is the single most important factor contributing to the increase
+ in the incidence of TB since 1990.[174]
+
+Society and culture
+
+Stigma
+
+
+Ryan White became a poster child for HIV after being expelled from school because of his infection.
+Main article: Discrimination against people with HIV/AIDS
+AIDS stigma exists around the world in a variety of ways, including ostracism, rejection, discrimination and avoidance of HIV infected people; compulsory HIV testing without prior consent or protection of confidentiality; violence against HIV infected individuals or people who are perceived to be infected with HIV; and the quarantine of HIV infected individuals.[181] Stigma-related violence or the fear of violence prevents many people from seeking HIV testing, returning for their results, or securing treatment, possibly turning what could be a manageable chronic illness into a death sentence and perpetuating the spread of HIV.[182]
+AIDS stigma has been further divided into the following three categories:
+Instrumental AIDS stigma—a reflection of the fear and apprehension that are likely to be associated with any deadly and transmissible illness.[183]
+Symbolic AIDS stigma—the use of HIV/AIDS to express attitudes toward the social groups or lifestyles perceived to be associated with the disease.[183]
+Courtesy AIDS stigma—stigmatization of people connected to the issue of HIV/AIDS or HIV- positive people.[184]
+Often, AIDS stigma is expressed in conjunction with one or more other stigmas, particularly those associated with homosexuality, bisexuality, promiscuity, prostitution, and intravenous drug use.
+In many developed countries, there is an association between AIDS and homosexuality or bisexuality, and this association is correlated with higher levels of sexual prejudice such as anti-homosexual attitudes.[185] There is also a perceived association between AIDS and all male-male sexual behavior, including sex between uninfected men.[183]
+Economic impact
+Main article: Economic impact of AIDS
+
+
+Changes in life expectancy in some hard-hit African countries.
+                     Botswana
+                     Zimbabwe
+                     Kenya
+                     South Africa
+                     Uganda
+HIV and AIDS affects economic growth by reducing the availability of human capital.[186] Without proper nutrition, health care and medicine that is available in developed countries, large numbers of people suffer and die from AIDS-related complications. They will not only be unable to work, but will also require significant medical care. The forecast is that this will probably cause a collapse of economies and societies in countries with a significant AIDS population. In some heavily infected areas, the epidemic has left behind many orphans cared for by elderly grandparents.[187]
+The increased mortality has results in a smaller skilled population and labor force. This smaller labor force consists of increasingly younger people, with reduced knowledge and work experience leading to reduced productivity. An increase in workers’ time off to look after sick family members or for sick leave lowers productivity. Increased mortality reduces the mechanisms that generate human capital and investment in people, through loss of income and the death of parents.
+By affecting mainly young adults, AIDS reduces the taxable population, in turn reducing the resources available for public expenditures such as education and health services not related to AIDS resulting in increasing pressure for the state's finances and slower growth of the economy. This results in a slower growth of the tax base, an effect that is reinforced if there are growing expenditures on treating the sick, training (to replace sick workers), sick pay and caring for AIDS orphans. This is especially true if the sharp increase in adult mortality shifts the responsibility and blame from the family to the government in caring for these orphans.[187]
+On the level of the household, AIDS results in both the loss of income and increased spending on healthcare by the household. The income effects of this lead to spending reduction as well as a substitution effect away from education and towards healthcare and funeral spending. A study in Côte d'Ivoire showed that households with an HIV/AIDS patient spent twice as much on medical expenses as other households.[188]
+Religion and AIDS
+Main article: Religion and AIDS
+The topic of religion and AIDS has become highly controversial in the past twenty years, primarily because many prominent religious leaders have publicly declared their opposition to the use of condoms,[189][Full citation needed] which scientists feel is currently the only means of stopping the epidemic.[citation needed] However, there is a growing openness to faith-based methods due to the failure rates associated with condoms.[189] Other issues involve religious participation in global health care services[citation needed] and collaboration with secular organizations such as UNAIDS and the World Health Organization.[citation needed]
+The religious approach to prevent the spread of AIDS according to a report by American health expert Matthew Hanley titled The Catholic Church and the Global Aids Crisis argues that cultural changes are needed including a re-emphasis on fidelity within marriage and sexual abstinence outside of it.[189]
+

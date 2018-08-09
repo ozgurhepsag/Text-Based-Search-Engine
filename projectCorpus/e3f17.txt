@@ -1,0 +1,468 @@
+REFACE
+
+The Department of the Interior has begun the process of forming a new agency, the National Biological Survey (NBS). As described by Secretary of the Interior Bruce Babbitt:
+
+The National Biological Survey will produce the map we need to avoid the economic and environmental "train wrecks" we see scattered across the country. NBS will provide the scientific knowledge America needs to balance the compatible goals of ecosystem protection and economic progress. Just as the U.S. Geological Survey gave us an understanding of America's geography in 1879, the National Biological Survey will unlock information about how we protect ecosystems and plan for the future.
+
+An important distinction exists between the ordinary use of the word survey and its use in National Biological Survey. Confusion about the meaning of the word sometimes arises in discussions about the NBS, and it is worthwhile to clarify the difference between the two at the outset. The NBS will be a new administrative entity in the Department of the Interior (DOI). Formed from a reorganization of programs in DOI, it will have responsi-
+bilities for inventorying, mapping, and monitoring biotic resources; performing basic and applied research on species, groups of species, populations, and ecosystems; and providing the scientific support and technical assistance needed for management and policy decisions in DOI. Thus, it includes far more than the inventorying and mapping functions that the use of the word survey might imply.
+
+The idea of a national biological survey has a long history in the United States, beginning with the formation of the Division of Biological Survey in the Department of Agriculture at the end of the last century. After that division was transferred to DOI in 1939 and made part of the U.S. Fish and Wildlife Service, the survey component gradually declined. But with concerns over loss of habitats and species and calls for more effective regional land management, professional organizations, nongovernment organizations, individual scientists, and members of Congress have increasingly called for a new biological survey.
+
+In February 1993, the Secretary of the Interior requested advice from the National Research Council on the formation of the NBS. The National Research Council thereupon assembled a committee that included both scientists and persons with experience in government, industry, and public-interest organizations. The Committee on the Formation of the National Biological Survey conducted its study under the auspices of an ad hoc oversight body, the Commission on the Formation of the National Biological Survey, drawn from the membership of the Commission on Life Sciences and the Commission on Geosciences, Environment, and Resources.
+
+The committee worked from March to September 1993. Its timetable was designed to accommodate the schedule that DOI set for administratively establishing the NBS. The committee was charged with addressing issues related to the scope and direction of the NBS embodied in the following questions:
+    What should the National Biological Survey in the Department of the Interior be, if it is to serve the needs of the department and others?
+
+    How should information relevant to the survey be managed?
+
+    How can existing and new survey-related activities and information be made most useful for policy, management, and scientific purposes within and outside the Department of the Interior?
+
+    How can federal and other entities best collaborate for these purposes?
+
+It is important to note that the charge did not include a study of the question of whether or not the NBS should exist on a detailed evaluation of DOI's specific proposal, but rather the scope and direction of NBS in the context of the larger national picture. In developing answers to those questions, the committee considered a wide range of current and potential elements of a survey appropriate to the Department of the Interior and other locations. Many of the activities of a national biological survey—such as basic and applied research, monitoring, inventory, and information management—are going on, not only in DOI but in other federal agencies, such as the U.S. Forest Service, the National Oceanic and Atmospheric Administration, the Environmental Protection Agency, the National Science Foundation, the National Aeronautics and Space Administration, and the Department of Defense. Many of the activities occur in state agencies, state biological surveys, universities, museums (including the Smithsonian Institution), and private organizations, such as The Nature Conservancy's Heritage Programs, which maintain inventory databases in state offices throughout the country. There are also a number of international efforts, such as the World Conservation Monitoring Center in England, and national efforts, such as the Australian ABRS-ERIN (Australian Biological Resources Study-Environmental Resources Information Network) complex and the biodiversity institutes in Taiwan, Mexico (CONABIO, Comisión
+Nacional para el Conocimiento y Uso de la Biodiversidad), and Costa Rica (INBio, Instituto Nacional de Biodiversidad).
+
+During its inquiries and deliberations, the committee discovered a wide range of national needs, a broad distribution of relevant efforts and resources already occurring in federal and nonfederal organizations in a relatively uncoordinated fashion, and a wide range of management needs within the Department of the Interior. These findings, combined with the short time available to examine these programs and needs in preparation for this report, led the committee to conclude that it would be more effective in fulfilling Secretary Babbitt's wish that its work help provide a vision for the National Biological Survey if it approached the first two questions above in the context of the broader needs, opportunities, and activities as they related to the stated goals of the NBS rather than concentrating on the details of its proposed structure or specific research agenda, except to the extent that such an examination seemed essential to deal with the broader issues.
+
+This report proposes a research agenda for the National Biological Survey that is far broader than the existing research effort in the Department of the Interior but that is also focused and has priorities according to likely immediate and long-term user needs. A National Biotic Resources Information System is envisioned to make reliable biological information more accessible to diverse users. The report also describes how the many public and private entities involved in current research on biological resources can work together in a new entity, which the committee has called the National Partnership for Biological Survey, to provide comprehensive information that will be useful for decision-makers at all levels of government and outside government. The recommendations of this committee, if followed, should provide the United States with a framework for making decisions about the management, use, and protection of its biological resources.
+
+While this report represents the work of the committee, it benefited greatly from the support of professional staff from the National Research Council: Eric Fischer, who helped the committee refine the report, and Deborah Stine who contributed to the preparation and administrative organization of the study. Their resumes are included with those of the panel in Appendix B because of their intellectual contributions, which advanced the committee's efforts throughout the study. The report was greatly improved by the diligent work of its editor, Norman Grossblatt. In addition, invaluable support was provided by Paulette Adams, Robin Harp, Karen Plaut, and Helene Mokhiber.
+
+The panel also acknowledges with appreciation presentations made at meetings of the committee by the following persons:
+
+Senator Daniel Akaka, U.S. Senate
+
+Randy Alberte, Department of Defense
+
+Bruce Babbitt, Secretary of the Interior
+
+William Brown, Waste Management Inc.
+
+John Busby, Australian Environmental Resources Information Network
+
+Faith Campbell, National Resources Defense Council
+
+Peter Dangermond, Dangermond Associates
+
+Paul Dayton, Marine Life Research Group, University of California, San Diego
+
+Pam Eaton, Wilderness Society
+
+George Frampton, Department of the Interior
+
+Jim Gosz, National Science Foundation
+
+Kim Harris, The Nature Conservancy of Hawaii
+
+John Heissenbuttal, American Forests & Paper Association
+
+Elaine Hoagland, Association of Systematics Collections
+
+Robert Hoffmann, National Museum of Natural History
+
+Alan Holt, The Nature Conservancy
+
+Stephen Hubbell, National Institute of Environment
+
+Robert Irvin, National Wildlife Federation
+
+Kenneth Kaneshiro, University of Hawaii
+
+Ted LaRoe, Co-chair NBS Implementation Task force
+
+Thomas Lovejoy, Science Advisor to the Secretary of the Interior
+Ed Martinko, Environmental Protection Agency
+
+Alison Merow, Center for Marine Conservation
+
+Alma Peaty, American Mining Congress
+
+Max Peterson, International Association of Fish & Wildlife Agencies
+
+Clair Reiniger, Designwrights Collaborative Inc.
+
+John Sawhill, The Nature Conservancy
+
+Jorge Soberón, Universidad Nacional Autonoma de Mexico
+
+Bruce Stein, The Nature Conservancy
+
+Bob Szaro, USDA/U.S. Forest Service
+
+Frank Talbot, National Museum of Natural History
+
+William Weeks, The Nature Conservancy
+
+Donna Weiting, National Oceanic and Atmospheric Administration
+
+Donald Wilson, Smithsonian
+
+Peter Raven
+
+Chairman
+EXECUTIVE SUMMARY
+
+The idea of a national biological survey has a long history in the United States, beginning with the formation of the Division of Biological Survey in the U.S. Department of Agriculture at the end of the last century. After that division was transferred to the Department of the Interior (DOI) in 1939 and made part of the U.S. Fish and Wildlife Service, the survey component gradually declined.
+
+In recent years, increasing concerns about the nation's biological resources have led to calls for a new biological survey. Secretary of the Interior Bruce Babbitt has recently initiated the process of forming a National Biological Survey (NBS) within DOI. To create the new agency, the Secretary is combining portions of the biological research and survey activities from DOI bureaus.
+
+As identified in the department's FY 1994 budget justification to Congress, the mission of the NBS is ''to gather, analyze, and disseminate the information necessary for the wise stewardship of our Nation's natural resources, and to foster an understanding of our biological systems and the benefits they provide to society. The NBS will act as an independent science bureau without advocating positions on resource management issues and without regulatory or land and water development authorities.''
+
+In February 1993, Secretary Babbitt requested advice from the National Research Council on the formation of the NBS. In response, the Committee on the Formation of the National Biological Survey, was formed, consisting of scientists and persons with experience in government, industry, and public-interest organizations. The committee conducted its study from March to September 1993. This timetable was designed to ensure that DOI received timely advice on its activities.
+
+The committee was charged with addressing scientific, functional, information, and coordination issues related to the scope and direction of the NBS in the context of the larger national picture. It is important to note that the charge included neither an examination of whether or not the NBS should be established nor a detailed evaluation of DOI's specific proposal. In addressing its charge, the committee discovered a wide range of national needs, a broad distribution of relevant efforts and resources already occurring in federal and nonfederal organizations in a relatively uncoordinated fashion, and a wide range of management needs within the Department of the Interior. These findings, combined with the short timeframe, led the committee to conclude that it would be most effective in fulfilling its charge if it focused on the broader needs, opportunities, and activities as they related to the stated goals of the NBS rather than concentrating on the details of its structure or specific research agenda, except to the extent that such an examination seemed essential to deal with the broader issues.
+
+This report proposes a research agenda for the National Biological Survey that is far broader than the existing research effort in the Department of the Interior but that is also focused according to likely immediate and long-term user needs. A National Biotic Resources Information System is envisioned to make reliable biological information more accessible to diverse users. The report also describes how the many public and private entities involved in current research on biological resources can work together in a new entity, which the committee has called the National Partnership for Biological Survey, to provide comprehensive information that will be useful for decision-makers at all levels of government and outside government.
+WHAT NEEDS WILL A BIOLOGICAL SURVEY FOR THE NATION ADDRESS?
+
+A biological survey for the nation will provide information that is critical for addressing a number of issues:
+
+    Finding ways to preserve the nation's biological heritage. Achieving this goal requires extensive information on the current status and trends in distribution and abundance of species and on relationships among species, and an understanding of the ecological processes on which they depend.
+
+    Managing biological resources in a sustainable manner. Sustainable use depends on accurate knowledge of the identity, distributions, and ecology of the species being used and those with which they interact.
+
+    Maintaining essential ecological services, such as water supply, flood and erosion control, and climate amelioration. We need to understand how natural ecological services operate and to what extent they depend on the biological richness and diversity of ecosystems.
+
+    Understanding the impact of human settlement patterns (metropolitan growth, renewable land use, and nonrenewable-resource extraction) on biological resources. The impact of daily human activity has had and will continue to have a great effect on the nation's biota.
+
+    Maintaining contributions of our nation's biota to the aesthet    ic quality of life. We need to know how species and ecosystems contribute to our quality of life and how patterns of human use affect those contributions.
+
+    Understanding the effects of climate change. To anticipate the nature and intensity of ecological changes that might be induced by natural or anthropogenic climate change, we need information on how past climate change affected species and biological communities.
+
+    Deriving new economic wealth from biological resources. Only a small fraction of species have been tested for potentially valuable chemicals, foodstuffs, or materials, and ecological information on the nature of the natural products of wild species is fragmentary.
+
+    Restoring degraded environments. Restoring environments that are degraded by erosion, depletion, pollution, or the invasion of nonnative species will require accurate information on the ecological and physical processes affected by degradation and knowledge of which species can best establish themselves on degraded sites.
+
+Some common weaknesses exist in the availability of information to address those issues. In some instances, data have been collected but are not organized in useful ways. In many cases, data are unavailable, have not been collected over a sufficiently long time for trends to be separated from short-term variations, have been collected only in a few localities, or have not been recorded in a format that can be used to make decisions about the management, use, and conservation of the nation's biological resources.
+
+Many national and local agencies have responsibilities for understanding and managing the nation's biological resources, but there is no effective cross-institutional framework for identifying and conducting research of the highest priority, coordinating research activities, or making information available in a coherent
+and usable way to the many agencies and other organizations that need it.
+HOW CAN A BIOLOGICAL SURVEY FOR THE NATION BE CREATED?
+
+The National Biological Survey is a critical step toward assembling a comprehensive assessment of the nation's biological resources, but it cannot by itself come close to meeting the full range of needs and objectives in scientific research, inventory, and information management that a biological survey for the nation must fulfill. The NBS should therefore have a dual mission: to meet the scientific research and information needs of DOI for management of the lands within its jurisdiction and species for which it has responsibility (and geographic areas that affect either of the above) and to provide national leadership and vision for this comprehensive assessment. To achieve the best possible results, this assessment must be a coordinated national effort at all organizational and jurisdictional levels. This joint enterprise can be called the National Partnership for Biological Survey. The committee therefore recommends the following:
+
+The United States, under the leadership of the Department of the Interior, should establish a National Partnership for Biological Survey (NPBS). This will be a new national, multisector, cooperative program of federal, state, and local agencies; museums; academic institutions; and private organizations. Its purpose will be to collect, house, assess, and provide access to the scientific information needed to understand the current state of the nation's biological resources (status), how that status is changing (trends), and the causes of the changes.
+
+The mandate and mission of DOI make it the logical agency to lead the development and implementation of the National Partnership. The department has broad research and management responsibilities for the biological resources of the nation and strong links to key nonfederal partners, and by initiating the formation of the National Biological Survey, it has already indicated its willingness to take on a leadership role.
+
+Although the National Partnership does not yet exist formally, many of its elements do.
+
+    The Department of the Interior (DOI) is the nation's largest land manager and the steward of many of the wild living resources of the United States. It also has a historically strong partnership with the states.
+
+    The National Biological Survey (NBS) will provide scientific research and information within DOI to help manage the lands and species for which the department has responsibility.
+
+    Other federal agencies should participate. Major partners should include the Department of Agriculture (USDA), especially the Forest Service, the Soil Conservation Service, and the Agricultural Research Service; the National Oceanic and Atmospheric Administration (NOAA) in the Department of Commerce; the Department of Defense, including the U.S. Army Corps of Engineers; the Environmental Protection Agency; and the National Science Foundation.
+
+    All fifty states have natural resource agencies charged with the management of the state's fish and wildlife resources. Many states have their own biological surveys. Natural Heritage Data Centers, coordinated nationally by The Nature Conservancy (TNC), exist in every state.
+
+    The Smithsonian Institution is a national leader in the development of specimen-based databases and houses extensive collections of organisms. It also hosts the Biological Survey Unit staff of the U.S. Fish and Wildlife Service and biologists from NOAA and USDA.
+
+    Museums are the major depositories of the biological specimens and associated data that constitute a primary resource for the
+    NPBS. They are involved in specimen-gathering, identification, collections management, research, data development and analysis, and information dissemination.
+
+    Universities have advanced programs in research and training in the scientific disciplines that the National Partnership will require.
+
+    Nongovernmental organizations include some major landholders, managing land for the conservation of biological diversity. Several have established databases on biological resources.
+
+    Cooperative programs and existing national networks deal with large components of the North American biota.
+
+    Native American groups in the United States use and often manage lands that contain over 20 million acres of habitats that harbor endangered species, old growth forests, rare communities, and unique ecosystems.
+
+    Puerto Rico, U.S. territories, and possessions contain important biological resources under federal and local jurisdiction.
+
+    Private landholders and user groups should contribute to and benefit from the NPBS. Private landholders own most of the land in the United States. The associations representing the private-sector—focused on such groups as land developers, home builders, and the agriculture, forestry, mining, and grazing industries—should find that information from the NPBS will add greater certainty to future land-use planning.
+
+    Thousands of individual scientists perform critical research and generate and possess detailed knowledge necessary for the success of the NPBS.
+
+    Foreign biological sources have knowledge and expertise that is especially important in areas contiguous to U.S. holdings. No one country can house the best, or only, specialists on all groups of organisms. DOI and other agencies have special international responsibilities relevant to the Partnership under various laws, treaties, and agreements.
+
+The major missing elements required to create an effective National Partnership are some key programmatic components and mechanisms for horizontal and vertical integration and coordination of the ongoing independent efforts. The recommendations below are intended to help provide these missing elements. Some are directed specifically to the National Biological Survey and some to the broader Partnership. The latter class also applies to NBS in its proposed role as a leader of the NPBS. The committee recognizes that various factors may affect the specific form that the Partnership eventually takes, but believes that the functions and needs it identified are relevant to any attempt to create an effective biological survey for the nation.
+WHAT ARE THE NECESSARY FUNCTIONAL CAPABILITIES OF THE NATIONAL PARTNERSHIP?
+
+To carry out its responsibilities, the Partnership, including NBS, must have several specific functional capabilities. It must be
+
+    Able to conduct credible science. The fundamental purpose of the NPBS is to provide a rational and objective scientific basis for meaningful stewardship of the nation's biological resources. The scientific credibility and reputation of the Partnership are therefore of utmost importance.
+
+    Able to stimulate and coordinate appropriate research. The National Partnership should be broadly based scientifically. It should also be broadly connected, both nationally and internationally, and its programs should be designed to gather information that will be of maximum use in guiding further activities.
+
+    Organized for program continuity. Data on status and trends of the nation's biological resources become increasingly valuable as the length of the record increases. Interruptions would seriously reduce the value of these data.
+    User friendly and adapted to a variety of users. Users need timely, accurate, and easily interpreted information that will vary widely in scope and purpose. The NPBS will need to facilitate access to information in a variety of forms for many different users and uses.
+
+The National Partnership will provide new information and much more powerful tools for managing, using, and preserving biological resources. It will provide a stronger information base on biological resources, an organized framework for collaboration and priority-setting, and economies of scale and more efficient use of research resources.
+HOW WILL THE NATIONAL PARTNERSHIP STRENGTHEN THE INFORMATION BASE FOR PLANNING AND OPERATIONAL DECISIONS?
+Performing Research
+
+One of the most important uses of the scientific information gathered by the National Partnership is to assist decision-makers in addressing existing issues about biological resources and in anticipating future ones. The National Partnership should develop a strong, scientifically credible research program designed to meet this goal.
+
+The research of the Partnership should identify changes in biological resources and determine why those changes are happening. It should identify trends in a timely manner so that actions can be taken while multiple options are available, determine how local actions influence events elsewhere, reduce the chances of taking costly remedial actions unnecessarily, evaluate the effectiveness of management decisions, and direct attention to areas where problems are most likely to develop in the near future, such as urban expansion zones, estuaries, rivers, and zones of intensive resource extraction.
+
+Key scientific objectives of the National Partnership for Biological Survey should include the following:
+
+    Determining what specimens and data representing the U.S. biota exist in the nation's institutional collections.
+
+    Discovering, describing, classifying, and mapping U.S. species of selected taxa.
+
+    Establishing taxonomic specialists, collections, and databases for large and important taxa.
+
+    Studying the biology of selected species of importance.
+
+    Developing classification systems for ecological units and a set of core ecosystem attributes and protocols.
+
+    Developing predictive models to facilitate sustainable management.
+
+    Performing research on the restoration of degraded environments.
+
+    Performing research to develop biological protocols for pollution and to identify useful biological indicators of ecological trends.
+
+    Establishing collaborative pilot projects for interdisciplinary research on biological resources in selected regions of the United States. These projects should target areas that are changing rapidly because of human activity, have high biodiversity, have diverse co-occurring ecosystems of different types, or are unique ecologically.
+
+The committee believes that the scientific activities and programs of the NBS should focus both on its responsibilities as the main biological research agency within the Department of the Interior and on its proposed role as the lead agency for the National Partnership. The large amounts of land managed by DOI, along with the department's other responsibilities with regard to the nation's biota, make NBS especially important in providing key elements of a program to assess the status and trends of biological resources. The committee therefore recommends the following:
+
+NBS should perform research needed for the management of lands within the jurisdiction of DOI and species for which it has responsibility. It should also ensure, both through its own scientific activities and its proposed role of national leadership, that needed research is performed to fulfill the central purpose envisioned for the National Partnership—to generate the information required to understand the current status of the nation's biological resources, how that status is changing, and the causes of the changes.
+
+The committee believes that DOI should work to ensure that needed research is done by NBS or other entities no matter what specific form the Partnership eventually takes. To fulfill its scientific mission, the NBS will need additional staff in a number of scientific disciplines. It should perform a systematic assessment of needs based on existing staff capabilities and program requirements and develop and implement a plan to hire needed experts. This should be the activity of highest priority for the application of additional budget and staffing resources. Agencies whose participation is essential to the success of the Partnership, such as the National Science Foundation, should receive increased funding so that the Partnership can take full advantage of the nation's relevant scientific expertise. Funding increases will also be needed for other appropriate agencies. legislators, and regulators. These users have questions whose answers are not obvious in existing research products. The NBS and others involved in the Partnership should consult with users to find ways of disseminating information so that it can be applied most effectively.
+
+There is an urgent need to organize existing information and make it more readily available and to coordinate future data collection and exchange. The committee therefore recommends that
+
+Under the leadership of NBS, the Partnership should develop a National Biotic Resource Information System. This should be a distributed federation of databases designed to make existing information more accessible and to establish mechanisms for efficient, coordinated collection and dissemination of new information.
+
+An effective National Biotic Resource Information System will require substantial cultural and institutional changes to build stronger bridges among the broad spectrum of producers and users of biological data. The NBS should take the lead in promoting standards for biological-survey data and for meeting the key requirements for an effective distributed database. It should collaborate with other federal initiatives to develop national and global environmental databases and should also support database development by states, museums, and universities. The NBS will need to commit adequate resources to ensure that its diverse user community receives timely dissemination of reliable, high-quality data and information presented in a variety of formats.
+
+The National Partnership should establish well-coordinated efforts to develop standard sets of spatial data. For example, sufficiently detailed, computerized maps of actual vegetation do not exist for much of the United States. To remedy these deficiencies, the NPBS should participate in the National Spatial Data Infrastructure; promote greater awareness and use of spatial data and technologies; increase efforts to locate field data spatially; adopt, where appropriate, existing standards for mapping and spatial data handling; and increase the role of biologists in efforts to develop standards for spatial data.
+
+To meet the growing needs of all sectors of society for biodiversity data and information, the NPBS should have a strong capability for publication and product communication—increased online access to data, reports, and bibliographies; publication of selected data sets on CD-ROM and other media; and expanded publication of synthetic documents. The NPBS should produce appropriate paper publications such as instructional materials, range and habitat maps, atlases of distribution and trends in regional biodiversity, floras and faunas, field guides and manuals, taxonomic monographs, and summaries of surveys and trends. The most important paper publications will be peer-reviewed scientific articles and reports.
+
+Software tools must be responsive and readily accessible to all users. The NPBS should expand efforts to develop tools for data visualization and analysis, for data reformatting and conversion, for trend analysis of monitoring data, for spatial interpolation of sighting and collection data, and for Geographic Information System (GIS) habitat modeling.
+HOW WILL THE NATIONAL PARTNERSHIP PROVIDE AN ORGANIZED FRAMEWORK FOR COLLABORATION AMONG ITS PARTICIPANTS?
+Organization and Coordination of the NPBS
+
+Coordination among its various participants is a key to the success of the Partnership. Because it will be a national program that cuts across political, jurisdictional, and geographic boundaries, it will need a mechanism through which all sectors involved can advocate, justify, and discuss proposed programs and activities that will affect them. Because the scope and activities of the National Partnership are quite broad, and because of the extensive amount of intergovernmental and nongovernmental coordination required, the committee believes that no existing model for national coordination is readily adaptable to the National Partnership. A unique and innovative process is probably needed. It therefore recommends the following:
+
+Formal mechanisms should be established for coordination among the entities with responsibilities for the National Partnership for Biological Survey. The mechanisms should collectively exhibit the five characteristics described below.
+
+The coordination mechanisms should
+
+    Provide for high-level, balanced input from diverse participants and users into the development and implementation of the Partnership.
+
+    Take full advantage of the federated structure of American government, in particular the states.
+
+    Have a clear lead organization with primary responsibility and authority for fostering coordination.
+
+    Provide for continuity of involvement by participants and users.
+
+    Be designed to encourage active, voluntary participation.
+
+Coordination among nonfederal participants might be accomplished via a standing body of appropriate representatives. The link to federal programs could be provided through the Secretary of the Interior. In the committee's view, what is needed is a high-level forum for the discussion, development, and implementation of policies and priorities for all nonfederal stakeholders in the National Partnership, not merely an advisory body. The forum could identify and recommend national (not solely federal) policies and priorities for biological-resource assessment (not management decisions) and make recommendations for all segments of the Partnership, both federal and nonfederal. It could also review NPBS programs for their appropriateness to policies and priorities and recommend appropriate changes. Recommendations for programs would be passed to the appropriate entity for action and feedback. Each representative would work directly within the sector of the community (e.g., museums, etc.) that he or she represents to implement policies and priorities.
+
+An effective mechanism for federal coordination might be an interdepartmental committee on biological survey. Such a committee could be chaired by the Secretary of the Interior and include the heads of key federal departments and agencies involved in the Partnership. The mechanism should provide cross-agency coordination of federal policies and participation in the Partnership and it should identify federal-agency priorities for the conduct of biological research and resource assessments. The interagency committee would be both a forum for high-level policy discussion and coordination and a framework for increased day-to-day interaction at the working level.
+
+Appropriate mechanisms also need to be established to obtain scientific advice for the Partnership and to ensure proper data management. These mechanisms would identify priorities for research and protocols for surveys and inventories; establish procedures for quality assurance in research and data management, including the development of database standards; plan the development of the NPBS data network; and develop recommendations for ensuring access to data by public and private users. One way to obtain the necessary advice and guidance would be to establish committees in science and data management.
+Coordination within DOI
+
+The director of the NBS must be an acknowledged and respected professional leader in the biological-science community and should be selected in a way that helps to ensure the scientific independence of the agency. A chief scientist should be similarly appointed and should be free of management responsibilities other than for the development of scientific programs.
+
+Much of the work of the NBS will serve needs within DOI. For example, in many instances, a DOI land manager might require on-site scientific expertise. Land-management bureaus should retain a small cadre of scientific expertise to address unique site-specific and short-term biological resources issues and to facilitate interaction between the bureaus and the NBS.
+
+The secretary should establish an office in each state to facilitate joint NBS activities and to provide a communication channel among state agencies, private and individual participants, and federal agencies. This may be the most important consideration for ensuring that the NBS achieves liaison with all possible contributors.
+
+Because a state organizational structure for the NBS is recommended, neither the NPBS or the NBS needs alternative geographical bases. Nonetheless, collection, analysis, and dissemination of data might, for some purposes, be categorized by ecological criteria that do not necessarily correspond with any political boundaries, such as watersheds, vegetation zones, or wildlife migration routes.
+HOW WILL THE NPBS PROVIDE AN ORGANIZED STRUCTURE WITH STATED PRIORITIES FOR ACQUIRING NEEDED INFORMATION ABOUT BIOLOGICAL RESOURCES?
+
+The NPBS research program should be well-balanced between the conduct of new fundamental research designed to advance science and the conduct of more practical research focused on near-term problem-solving. A robust national biological research program must encompass the entire spectrum. Because the NPBS must address many scientific needs and because the resulting information has many uses, no single criterion can be used to establish priorities.
+
+A strength of the NPBS is that multiple criteria for setting priorities can be brought together under its coordinating framework. Priorities should be based on the degree to which proposed research advances the following goals:
+
+    Evaluation of biological resources that are demonstrably or potentially important but for which relatively little information exists.
+
+    Information required for the maintenance of biological diversity and the long-term sustainability of ecological systems.
+
+    Understanding of the status and trends of biological resources that are changing rapidly, are rare, or are threatened by factors such as land use, natural patterns or harvesting activities, or natural changes in the environment.
+
+    Information about biological resources that are identified as important according to legal mandates or because of their current or potential economic value.
+
+    Understanding of ecological processes that provide services, such as control of nutrient and soil loss, degradation of pollutants, and maintenance of biological diversity.
+
+    Conduct of studies whereby relatively small investments will yield large returns in understanding.
+
+    Information that will guide the remediation and restoration of damaged or degraded ecological systems.
+
+HOW WILL THE NATIONAL PARTNERSHIP PROVIDE IMPROVED PROGRAMMATIC EFFICIENCIES AND ECONOMIES OF SCALE?
+
+Through its coordinating mechanisms and ability to set priorities, the National Partnership can provide increased efficiency in the use of scientific resources. Redundancies can be avoided or eliminated. Full use can be made of resources. Collaboration among public and private organizations can permit the development of projects that would be far too large or difficult for a single organization. Investments made now to improve the knowledge base should pay off in the future by lessening the risk of costly political conflict and the need for expensive environmental repair efforts.
+Research
+
+Extensive biological research and inventory programs exist in several federal agencies. The proposed coordination mechanisms will permit better evaluation, prioritization and, where appropriate, reprogramming of current spending on programs relevant to the goals of the Partnership. Where necessary, the NBS should develop cooperative agreements. Effective leveraging of the other federal programs will necessitate some funding increases in the NBS budget to support these activities. Such increases in investment by the NBS will be more cost-effective than undertaking large new programs.
+Information Management
+
+Much of the information generated by the Partnership will be exchanged over computer networks through a distributed federation of databases, which will be more cost-effective and efficient than a large centralized database. A federated approach that takes full advantage of advances in information technology will permit rapid, easy access to a wide array of databases distributed around the country. To facilitate the sharing of data among participants, the NBS should establish a facility for archiving and distributing regional and national data sets and for meeting the goals of DOI's new National Biological Status and Trends Program, which will be part of NBS.
+
+NPBS data management should ensure that its databases coevolve with the major federal environmental and socioeconomic databases to minimize redundancy, to avoid conflicting terminology and classification systems, and to maintain consistent data standards and formats.
+HOW SHOULD THE NATIONAL PARTNERSHIP BE IMPLEMENTED
+
+Implementation of both the NBS and the Partnership should be phased in according to a well-planned strategy that provides for early results. The strategy should identify specific near-term, intermediate-term, and longer-term priorities. Otherwise, too many tasks might be initiated at one time, programs might be started before clear goals have been established, and results might therefore fall short of needs and expectations. The committee therefore recommends as follows:
+
+Development of the National Partnership and the National Biological Survey should be guided by a single strategic implementation plan developed under the leadership of the Department of the Interior with the full participation of NPBS partners. Some proposed key elements of the plan are listed below.
+Near-Term Priorities (Immediately to within 1 Year)
+
+NBS
+
+    Appoint key leaders
+    Phase in personnel transfers
+
+    Assess existing national biological databases
+
+    Identify priorities for additional information
+
+    Assess collections
+
+    Establish register of taxonomic specialists
+
+    Develop national research plan
+
+    Initiate regional collaborative pilot projects
+
+    Establish data-management office headed by senior official
+
+NPBS
+
+    Establish national coordination mechanisms
+
+    Develop FY 1995 budget initiative for DOI, NSF, and other agencies involved
+
+    Develop strategic plan for information management
+
+    Develop national research plan
+
+    Initiate regional collaborative pilot projects
+
+Intermediate-Term Priorities (within 3 Years)
+
+NBS
+
+    Broaden mix of scientific disciplines
+
+    Establish or expand research programs in environmental indicators
+
+    Establish or expand research programs in inventories of areas rich in biological diversity, unique ecosystems, and potential candidate areas for restoration
+
+    Develop series of manuals, monographs and atlases and system of ecological classifications based on attributes
+
+    Establish moderate-size data-management facility
+NPBS
+
+    Develop multiyear authorization
+
+    Establish national data network
+
+Long-Term Priorities (within 5 Years)
+
+NBS
+
+    Develop strong capability in ecological analysis
+
+    Broaden scientific priorities to include research efforts in restoration biology
+
+    Expand inventories
+
+    Develop predictive models
+
+    Fill information gaps
+
+NPBS
+
+    Develop programs to deploy new information technology
+
+    Evaluate data-management programs.
+
+Although priorities might change over time, the committee believes that phasing the steps outlined above according to a well-planned strategy will lead to a successful NBS and National Partnership. Establishing the priorities outlined here will help both the NBS and the NPBS to provide quickly the kinds of results that are essential if they are to show their value to the nation.
+WHAT ARE THE LIMITS TO THE NATIONAL PARTNERSHIP?
+
+The National Partnership has the potential to serve the nation well as it grapples with increasingly contentious and challenging issues in managing its biological resources. Yet, the very richness and diversity of our biological resources mean that decisions will often need to be made from incomplete information. Even when sufficient information is available, government must respond to public concerns that might influence decisions in a direction different from that indicated by scientific findings.
+
+The NPBS will provide a much stronger information base from which to make decisions about the nation's biological resources, but hard choices and conflicts will remain. The National Partnership will be most useful in preventing costly environmental confrontations if it has a paramount scientific function, maintains a long-term commitment to scientific excellence, and is well-integrated across its membership.
+1
+THE VALUE OF A BIOLOGICAL SURVEY FOR THE NATION
+
+We Americans are increasingly aware of how much our well-being depends on the diversity of living organisms and the integrity of ecological communities. We depend directly on other species for new and improved sources of food, fiber, construction materials, and medicines. In addition, much of our economic base is related to income from all those resources and from tourism and recreation. For example, recreational hunting and fishing are enjoyed by tens of millions of Americans each year and create a major demand for the effective management of habitats that contain game species and other wildlife.
+
+Natural diversity also has many indirect values. It is the source of genes from wild organisms that can be incorporated into domesticated species to improve production and to provide resistance to diseases and pests. Biodiversity is the foundation of biotechnology, an important and growing economic activity.
+
+The nation's ecosystems provide such valuable environmental services as controlling floods, conserving and forming soils, assimilating pollutants, and moderating local climates. Loss of ecological habitats has caused problems in each of these areas. In addition to those explicit ecological services, natural resources provide important recreational, aesthetic, and spiritual values to our culture.
+
+Recognizing the value of its biological resources, this country has promulgated laws and policies to protect plants and animals from extinction. It has also demonstrated a strong commitment to wise, responsible, scientifically based stewardship of its biological resources through regulatory programs, acquisition of public lands, and an array of private conservation efforts. (As used in this report, the term biological resources refers to living organisms, their products, and the ecosystems in which they occur that are actually or potentially useful materially, ecologically, scientifically, or aesthetically or that are protected under law, treaty, or other legal instrument.)
+
+Despite those endeavors, the nation's biological diversity is in decline, and there are many unanswered questions about how it should be managed to support sustainably all the goods and services on which we depend. For example, off Florida's Key Largo, coral reef area decreased in abundance by 30% in the last 20 years (Wilson, 1992). In the United States alone, over 760 species of fishes, crayfish, and fresh-water mussels (44% of all the species in these groups) are considered to be at risk (Stein, 1992); only 70 (24%) of the 297 species of freshwater mussels in the United States are considered to have stable populations (Williams et al., 1993). A national survey of endangered species of plants conducted in 1988 revealed that over 780 native taxa (of a total of some 20,000 species) are facing possible extinction by the end of the 1990s (Falk, 1991). Additional taxa are added to the list annually as new threats are discovered and the decline of populations continues.
+
+Nationally, 775 species of plants and animals have been listed as threatened or endangered, and there is an enormous backlog of candidate species that have been nominated for listing. Recovery programs have been developed for only about half the listed species and have been implemented for fewer. It should be clear that the nation is facing a decline in its living natural resources and, more important, that the current legal and institutional structures are inadequate to protect these resources.
+
+Human activities are widely recognized to be a major contributor to the decline. The rapid and continuing growth in the land occupied by our metropolitan areas and our patterns of resource development and use are both putting pressure on the country's ecological systems. The broad extent of the pressure and its specific effects are poorly understood.
+
+Declines in the quantity and quality of the nation's biological resources are due in part to a lack of basic knowledge of its biota, ignorance of trends, and inefficient use of existing information. We do not know how our alteration and degradation of ecosystems affect their ability to provide in a sustainable way the goods and services on which our society depends, nor do we understand the impacts of human activities on these ecosystems. We do not even know, for many groups of organisms, how many species occur in the United States and where they live. In many of these cases, and even among many species that are known, we have little information about their ecological relationships.
+
+Such a lack of information is critical because we continually make important, and often irreversible, decisions concerning these resources. The societal consequences to society of these deficiencies are certain to increase in the future. The constantly growing pressures of human society on the environment guarantee that maintaining the functional integrity of ecological systems will become ever more difficult. (By functional integrity we mean the capacity of communities to maintain their productivity, cycling of nutrients, and species composition in the face of environmental stresses. A community has lost its functional integrity when it is no longer capable of maintaining those functional attributes.) The consequences of loss of or harm to natural resources are costly to both the public and private sectors.
+
+Frustration with the current process is now shared among natural-resource users and managers, scientists, and the public at large. No clear national agenda or strategy exists for integrating the many programs directed at understanding our biological resources.
+
+Recognizing the need for change and a better means of informing its own decision-making efforts, the Department of the Interior (DOI) is in the process of reorganizing to form a new agency, the National Biological Survey (NBS). The NBS will not be a survey in the everyday sense of the word, although it will include strong survey-like elements. The purpose of this Committee of the National Research Council (NRC), entitled the Committee on the Formation of the National Biological Survey, is to provide guidance as to the scope and direction of the NBS in the context of both national needs and those within DOI.
+
+As identified in its FY 1994 budget justification to Congress, the mission of this new agency is ''to gather, analyze, and disseminate the information necessary for the wise stewardship of our Nation's natural resources, and to foster an understanding of our biological systems and the benefits they provide to society. The NBS will act as an independent science bureau [within DOI] without advocating positions on resource management issues and without regulatory or land and water development authorities.''
+
+To create the NBS, the Secretary of the Interior has proposed combining substantial portions of the biological research and survey activities in three DOI bureaus—the Fish and Wildlife Service (FWS), the National Park Service (NPS), and the Bureau of Land Management (BLM)—with smaller portions of five other departments—the Minerals Management Service, the Office of Surface Mining Reclamation and Enforcement, the Bureau of Reclamation, the U.S. Geological Survey (USGS), and the Bureau of Mines.
+
+The committee believes that the National Biological Survey will be a critical first step toward assembling a comprehensive assessment of the nation's biological resources. However, to achieve the best possible results, there must be a coordinated national effort that draws on existing programs and strengths at all organizational and jurisdictional levels. The work of the NBS must be integrated with the continuing efforts of other relevant federal agencies, state surveys, museums, academic institutions, and other entities. This joint, integrated enterprise can be called the National Partnership for Biological Survey (NPBS). This National Partnership would be a new national, multisector program to facilitate the collection, housing, assessment, and use of scientific information needed to understand the current and historical state of the nation's biological resources, how that state is changing and projected to change, and the natural and human-induced causes of the changes. The NPBS would provide a substantial amount of new information and much more powerful opportunities for analysis than those available now. It would provide the scientific information that is needed to develop appropriate strategies for managing our nation's biological resources (including mitigation and restoration), their use, and their preservation.
+
+Although the Partnership will necessarily be a highly collaborative undertaking, it will require clear leadership to be coordinated effectively. With the formation of the National Biological Survey, the committee believes that the most logical federal leader is DOI. The mission and mandates of the department encompass broad research and management responsibilities for the natural resources of the nation. DOI also has strong links to key nonfederal partners, including the states and universities. By initiating the formation of the National Biological Survey, the department has implicitly indicated its willingness to take on this role. After examining various alternative possibilities, the committee concluded that no other federal office or agency possesses all the necessary characteristics. The regulatory focus of such agencies as the Environmental Protection Agency (EPA) can create problems in an attempt to lead the kinds of long-term research efforts that the National Partnership will need to perform (NRC 1985, 1993b). Other agencies are either more narrowly focused on specific components of the nation's biological resources—e.g., the National Oceanic and Atmospheric Administration focuses on marine environments, and the U.S. Department of Agriculture focuses on forests and agricultural systems—or do not have management responsibilities or as strong ties to key users as does DOI.
+
+Many of the elements of the National Partnership already exist. Thousands of scientists are working on relevant projects and programs scattered throughout federal, state, and local agencies; academe; museums; nongovernment organizations; and the private sector. But major elements are missing and must be supplied if an effective National Partnership is to be created. In addition to some key additional programmatic components, the NPBS will need effective mechanisms for horizontal and vertical integration and coordination. This report will identify key needs that the new National Partnership should address and recommend ways to supply the missing elements. Some of the recommendations in this report are directed specifically to the National Biological Survey and some to the National Partnership. The latter class also applies to NBS in its proposed role as leader of the NPBS. The committee recognizes that various factors may affect the specific form that the Partnership eventually takes but believes that the functions and needs identified in its findings and recommendations are relevant to any attempt to create a biological survey for the nation.
+
+Recommendation 1-1: The United States, under the leadership of the Department of the Interior, should establish a National Partnership for Biological Survey. This will be a new national, multisector, cooperative program of federal, state, and local agencies; museums; academic institutions; and private organizations. The purpose will be to collect, house, assess, and provide access to the scientific information needed to understand the status of the nation's biological resources, the trends in the changes of that status, and the causes of those changes. PURPOSE OF THE NATIONAL PARTNERSHIP FOR BIOLOGICAL SURVEY
+
+Some common weaknesses exist in the availability of information to address the issues discussed above and later in this chapter. In some instances, data have been collected but are not organized in useful ways. In many cases, data are unavailable, have not been collected over a sufficiently long time for trends to be separated from short-term variations, have been collected only in a few localities, or have not been recorded in a format that can be used to make decisions about the management, use, and conservation of the nation's biological resources.
+
+Many national and local agencies and organizations have responsibilities for understanding and managing the nation's biological resources, but there is no effective cross-institutional framework for identifying and conducting research of the highest priority, coordinating among current and future research activities, or making information available in a coherent and usable way to the many agencies and other organizations that have responsibilities for protecting, restoring, and managing biological resources.
+
+The National Partnership for Biological Survey, designed to remedy these deficiencies and weaknesses, would have the abilities to generate new information; to manage, analyze, and interpret the information through the development and use of organized databases; and to communicate information in appropriate and readily understood formats to a wide variety of users. The purpose of the National Partnership is to develop the scientific basis for effective protection, restoration, use, and management of the nation's biological resources. More specifically, its objectives are to document and assess past and present status and trends of the nation's biota and ecological systems, to predict future trends, to analyze and interpret available data on biological resources, and to provide information to those responsible for managing, utilizing, and conserving those resources.PARTICIPANTS IN THE NATIONAL PARTNERSHIP FOR BIOLOGICAL SURVEY
+
+The institutions and other elements described below are obvious contributors to the goals and objectives of the NPBS. The group is heterogeneous, and participants will vary in the nature and extent of their participation. Many already produce relevant information. Others have responsibility for major components of the nation's biological resources and, in the opinion of the committee, should benefit from developing or participating in programs and other activities that contribute to information about these resources.
+
+    Department of the Interior. DOI is the nation's largest land manager and the steward of many of the wild living resources of the United States. It also has wide-ranging hands-on responsibility for its trust lands and a historically strong partnership with the states. Elements within DOI that have important land-management responsibilities include BLM, NPS, and FWS. The USGS will be especially important with respect to the kinds of interdisciplinary research that will be critical for the success of the National Partnership (see Box 1.1). Other bureaus have regulatory responsibilities and pertinent expertise. All will need to interact closely with the NBS and will be involved with the National Partnership as users or participants.
+
+    National Biological Survey. The NBS will provide scientific research and information to help DOI manage the lands within its bureaus and manage species for which it has legal responsibility (as well as lands that affect either of the above); it is also the appropriate agency to assume leadership and vision for the NPBS. In name and intent, the NBS should be a catalyst for the National Partnership, providing a forum for efforts to coordinate the actions of the participants in the NPBS.
+
+    Other federal agencies. Several other federal agencies conduct programs and activities that will be important elements of
+Box 1.1: Three Examples of the Importance of Geological Information
+
+Geologic Habitat of the Mexican Spotted Owl in Santa Fe National Forest, New Mexico
+
+Some 113,000 acres were surveyed for Mexican Spotted Owls in the Jemez and Cuba Ranger Districts of Santa Fe National Forest. A total of 18 territories were found. All core areas and roosting and nesting locations are in canyons with steep cliffs. All nests were in cliffs in narrow canyons. No nests or roosts were on mesa tops in either district. Foraging habitat is diverse, ranging from mixed conifer with heavy overstory to open, nonforested areas in an old forest-fire burn in the Jemez District. Nest sites, especially in the Jemez District and the eastern portion of the Cuba District, are in steep canyons exposing a volcano-stratigraphic unit identified by the U.S. Geological Survey (USGS) as the Otowi member of the Bandelier Tuff. The Otowi member is 600 ft thick and is a nonwelded to densely welded ash flow (incandescent avalanche) deposit, characteristically containing abundant accidental pumice and lithic fragments. As mapped by USGS, it includes 0-30 ft of basal, bedded, air-fall pumice. The steep canyons, whose walls consist of Otowi, provide shelter, owing to deep pockets formed in the canyon walls from the weathering out of large pumice fragments. The deep pockets provide a cool nest in summer, warmth in the winter, and protection from severe rain and snow storms. The single exception to the Otowi outcrop association is a spotted owl territory in the Cuba District in the Golondrino Diversity unit. Owls there also nest in steep-walled canyons, but the cliffs are composed of sandstone with deep joints (fissures). In the 1992 nesting season, a pair of the owls nested in a tree adjacent to the canyon walls. These cliffs and canyons in the Jemez and Cuba Ranger Districts can be classified as important habitat. The mesa tops beyond a quarter of a mile on either side of the canyons can be classified as potential foraging habitat.
+
+Geologic Habitat of the California Desert Tortoise
+
+To comply with the Endangered Species Act, Department of Defense officials issued a contract to a consulting firm to determine the population of desert tortoises on one of its bases in the Mojave Desert. Field biologists went about the time-consuming task of trying to develop and implement an effective method to count the tortoises. The fact that they tend to burrow to escape the searing desert heat made the task difficult. After many frustrating months, one of the biologists crossed paths with a geologist who was studying earthquakes and environmental hazards in the region. The geologist was using satellite images and geologic maps covering the tortoise area. The biologists immediately noticed a spatial correlation between concentrations of tortoises and what they termed "the green splotches on the image." The geologist explained that "the green splotches" represented a particular rock type (a unique metamorphic rock) that weathered to soil more rapidly in the desert climate than outcrops of all the other rocks that surround it. The geologist hypothesized that the tortoise had defined its habitat on the basis of geology, reasoning that the need to burrow had caused the animals to seek out readily "diggable" substrates. Given this insight, the biologists went about the task of mapping tortoise habitat in other areas of the military base on the basis of the images' ''green splotches," thus saving substantial time and cost (R. Dokka, Louisiana State University, Baton Rouge, pers. commun., Sept. 1, 1993).
+
+Geologic Habitat of the Red Hills Salamander
+
+The Red Hills salamander (Phaeognathus hubrichti) is a plethodontid salamander whose entire range is confined to a small area of southern Alabama (Dodd, 1991). The salamander is federally listed as threatened and prefers forested, steep-sloped ravines, and bluff faces for its habitat. International Paper's Forest Environmental Quality Guidelines for managing its habitat (adopted in March 1977) cover almost 30,000 acres of forest located within the salamander's historic range and require periodic population surveys.
+
+During the company's soil survey of its southern ownership, soil scientists examined this area in detail because of its unique geological characteristics and the presence of this species. As the survey proceeded, the scientists were able consistently to predict where salamander burrows would occur on the basis of geologic formation and slope within the Red Hills physiographic province. This province consists of hilly terrain of Eocene age that comprises two principal formations, the Tallahatta and Hatchetigbee. The Red Hills salamander is found predominantly in the Tallahatta Formation, which consists of claystone, gray thin-bedded siltstone, and various yellowish gray sands and clays. When the species is observed in the Hatchetigbee Formation, outcroppings of the Tallahatta occur in close proximity.
+
+In early 1992, a population survey was conducted in conjunction with the Alabama Natural Heritage Program (J. McGlincy, W. Dennis, S. Hindman, and S.G. Haines, International Paper Co., Bainbridge, GA, unpublished material, June 3, 1993). The survey was designed to focus on topography and geology identified in the soil survey as most likely to be occupied by the salamander but also included a representative sample of nontypical habitat. Ninety-two percent of survey sites occupied by the salamander occurred on the Tallahatta/Hatchetigbee formations with slopes of 30% or greater.
+
+Soils underlain by or containing siltstone outcrops are the primary habitat determinant. Such sites are typically forested with mature hardwood or mixed hardwood-pine stands that occur on steep slopes. The siltstone, which is moist and easy to burrow through, and the microclimate created by the overstory provide the moist environment required for the salamander's survival.
+
+The integration of population, soil, geologic formation, slope, and vegetative data permits a more refined characterization of preferred habitat for the Red Hills salamander and its occurrence on company lands. This ensures that the habitat is adequately protected during the course of regular forestry activities.
+the NPBS. Among them are the Forest Service and Soil Conservation Service in the U. S. Department of Agriculture (USDA), where the Agricultural Research Service likewise has important capabilities in the taxonomy and inventory of many noxious and pest species and their relatives; the National Oceanic and Atmospheric Administration (NOAA) in the Department of Commerce, which has several units and programs concerned with marine and     coastal organisms and ecosystems; the U.S. Army Corps of Engineers, which issues permits for the development of wetlands and coastal areas, constructs major public-works projects, and has extensive capabilities in freshwater biology; EPA, which has broad environmental responsibilities; the National Aeronautics and Space Administration, which is the lead agency in earth remote sensing, and is the largest sponsor of national and international global-change research; and the National Science Foundation, which provides grants for research into the systematics, ecology, and evolution of the nation's biological resources, making possible much of the research that takes place in universities and freestanding research institutions throughout the United States, and which also runs the Long Term Ecological Research (LTER) program. EPA's Environmental Monitoring and Assessment Program (EMAP—see Box 1.2) and the National Biological Survey are complementary programs with different but related missions. Although it is beyond the scope of this report to compare the two programs in detail, they clearly need to work together. An examination of EMAP is being conducted by another NRC committee which has issued an interim report (NRC, 1992).
+
+In addition, the Department of Defense manages extensive land holdings through all four of the uniformed services, and each carries out activities pertinent to the National Biological Survey, pursuant to compliance with federal, state, and local laws and regulations and in connection with the long-term management of their lands.
+
+    States. All 50 states have natural-resource agencies responsible for the management of their fish and wildlife resources. Those agencies have a statutory mandate to protect, preserve, enhance, and manage some or all of the wildlife resources of the state for their esthetic, educational, scientific, economic, and recreational value. The state wildlife agencies have inventory and monitoring programs with substantial databases on many species.
+
+    About 20% of the states have biological surveys of long-estab    lished (1836) to recent (1993) origin. The state surveys often have broad missions and comprehensive research and monitoring capabilities that are directly pertinent to the goals and objectives of the NPBS. State natural heritage data centers, coordinated nationally by The Nature Conservancy, exist in every state, although the organizational placement of the program varies from state to state. This network provides detailed information on endangered, threatened, and selected rare species, and an ecologically based inventory of areas of special importance are found in the state databases. (See Boxes 2.3, 2.4, and 3.2 for examples of how that information is used.)
+
+    The Smithsonian Institution. The Smithsonian Institution has proposed the establishment of a National Biodiversity Center to
+    help build its capabilities for dealing with biodiversity around the world, including the United States. The institution has devoted much effort to the development of specimen-based databases and is a national leader in this field. It hosts the Biological Survey Unit staff of FWS, and the National Marine Fisheries Service taxonomy groups, and systematists at USDA. The National Museum of Natural History houses extensive collections of organisms from the United States. The institution has the potential to become a major contributor to the NPBS, especially if it is successful in achieving the goals it has established for itself.
+ Museums. Museums generally, as collection stewards, are the major depositories of the biological specimens and associated data that constitute a primary source for the NPBS. Large nongovernment museums—such as the Missouri Botanical Garden, American Museum of Natural History, Field Museum of Natural History, Bishop Museum, New York Botanical Garden, Academy of Natural Sciences of Philadelphia, and California Academy of Sciences—are comparable with the Smithsonian Institution in the size and importance of their holdings and must be enlisted in the NPBS effort. Other large museums, such as the Florida Museum of Natural History, are affiliated with universities; they and such holders of extensive collections as the University of Michigan, University of Texas, Ohio State University, Cornell University, Harvard University, University of Kansas, and University of California are important not only because of the size and quality of their holdings, but because of the special and crucial role that they play, in their university settings, in training scientists for efforts like the NPBS. Museums and their scientific staffs are involved in specimen-gathering, identification, collection management, research, data development and analysis, and information dissemination. They not only will be the repositories of the specimens gathered during the course of pursuing the objectives of the NPBS, but should participate directly in planning the research effort and other activities.
+
+    Universities. Institutions of higher learning are a major
+

@@ -1,0 +1,332 @@
+
+Website	For Java Developers
+ Java Programming at Wikibooks
+Java is a programming language originally developed by James Gosling at Sun Microsystems (which is now a subsidiary of Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode (class file) that can run on any Java Virtual Machine (JVM) regardless of computer architecture. Java is a general-purpose, concurrent, class-based, object-oriented language that is specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere." Java is currently one of the most popular programming languages in use, particularly for client-server web applications.[9][10]
+The original and reference implementation Java compilers, virtual machines, and class libraries were developed by Sun from 1995. As of May 2007, in compliance with the specifications of the Java Community Process, Sun relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java, GNU Classpath, and Dalvik.
+Contents [hide]
+
+
+Duke, the Java mascot
+James Gosling, Mike Sheridan, and Patrick Naughton initiated the Java language project in June 1991.[11] Java was originally designed for interactive television, but it was too advanced for the digital cable television industry at the time.[12] The language was initially called Oak after an oak tree that stood outside Gosling's office; it went by the name Green later, and was later renamed Java, from Java coffee, said to be consumed in large quantities by the language's creators.[13] Gosling aimed to implement a virtual machine and a language that had a familiar C/C++ style of notation.[14]
+Sun Microsystems released the first public implementation as Java 1.0 in 1995. It promised "Write Once, Run Anywhere" (WORA), providing no-cost run-times on popular platforms. Fairly secure and featuring configurable security, it allowed network- and file-access restrictions. Major web browsers soon incorporated the ability to run Java applets within web pages, and Java quickly became popular. With the advent of Java 2 (released initially as J2SE 1.2 in December 1998–1999), new versions had multiple configurations built for different types of platforms. For example, J2EE targeted enterprise applications and the greatly stripped-down version J2ME for mobile applications (Mobile Java). J2SE designated the Standard Edition. In 2006, for marketing purposes, Sun renamed new J2 versions as Java EE, Java ME, and Java SE, respectively.
+In 1997, Sun Microsystems approached the ISO/IEC JTC1 standards body and later the Ecma International to formalize Java, but it soon withdrew from the process.[15] Java remains a de facto standard, controlled through the Java Community Process.[16] At one time, Sun made most of its Java implementations available without charge, despite their proprietary software status. Sun generated revenue from Java through the selling of licenses for specialized products such as the Java Enterprise System. Sun distinguishes between its Software Development Kit (SDK) and Runtime Environment (JRE) (a subset of the SDK); the primary distinction involves the JRE's lack of the compiler, utility programs, and header files.
+On November 13, 2006, Sun released much of Java as open source software under the terms of the GNU General Public License (GPL). On May 8, 2007, Sun finished the process, making all of Java's core code available under free software/open-source distribution terms, aside from a small portion of code to which Sun did not hold the copyright.[17]
+Sun's vice-president Rich Green has said that Sun's ideal role with regards to Java is as an "evangelist."[18]
+Following Oracle Corporation's acquisition of Sun Microsystems in 2009–2010, Oracle has described itself as the "steward of Java technology with a relentless commitment to fostering a community of participation and transparency".[19]
+Principles
+There were five primary goals in the creation of the Java language:[20]
+It should be "simple, object-oriented and familiar"
+It should be "robust and secure"
+It should be "architecture-neutral and portable"
+It should execute with "high performance"
+It should be "interpreted, threaded, and dynamic"
+Versions
+Main article: Java version history
+Major release versions of Java, along with their release dates:
+JDK 1.0 (January 23, 1996)
+JDK 1.1 (February 19, 1997)
+J2SE 1.2 (December 8, 1998)
+J2SE 1.3 (May 8, 2000)
+J2SE 1.4 (February 6, 2002)
+J2SE 5.0 (September 30, 2004)
+Java SE 6 (December 11, 2006)
+Java SE 7 (July 28, 2011)
+Practices
+
+Java Platform
+Main articles: Java (software platform) and Java Virtual Machine
+One characteristic of Java is portability, which means that computer programs written in the Java language must run similarly on any hardware/operating-system platform. This is achieved by compiling the Java language code to an intermediate representation called Java bytecode, instead of directly to platform-specific machine code. Java bytecode instructions are analogous to machine code, but are intended to be interpreted by a virtual machine (VM) written specifically for the host hardware. End-users commonly use a Java Runtime Environment (JRE) installed on their own machine for standalone Java applications, or in a Web browser for Java applets.
+Standardized libraries provide a generic way to access host-specific features such as graphics, threading, and networking.
+A major benefit of using bytecode is porting. However, the overhead of interpretation means that interpreted programs almost always run more slowly than programs compiled to native executables would. Just-in-Time compilers were introduced from an early stage that compile bytecodes to machine code during runtime.
+Implementations
+Sun Microsystems officially licensed the Java Standard Edition platform for Linux,[21] Mac OS X,[22] and Solaris. In the past Sun licensed Java to Microsoft but the license expired without renewal.[23] Because Windows does not ship with a Java software platform, a network of third-party vendors and licensees[24] develop them for Windows and other operating system/hardware platforms.
+Sun's trademark license for usage of the Java brand insists that all implementations be "compatible". This resulted in a legal dispute with Microsoft after Sun claimed that the Microsoft implementation did not support RMI or JNI and had added platform-specific features of their own. Sun sued in 1997, and in 2001 won a settlement of US$20 million, as well as a court order enforcing the terms of the license from Sun.[25] As a result, Microsoft no longer ships Java with Windows, and in recent versions of Windows, Internet Explorer cannot support Java applets without a third-party plugin. Sun, and others, have made available free Java run-time systems for those and other versions of Windows.
+Platform-independent Java is essential to the Java EE strategy, and an even more rigorous validation is required to certify an implementation. This environment enables portable server-side applications, such as Web services, Java Servlets, and Enterprise JavaBeans, as well as with embedded systems based on OSGi, using Embedded Java environments. Through the GlassFish project, Sun is working to create a fully functional, unified open source implementation of the Java EE technologies.
+Sun also distributes a superset of the JRE called the Java Development Kit (commonly known as the JDK), which includes development tools such as the Java compiler, Javadoc, Jar, and debugger.
+Performance
+Main article: Java performance
+Programs written in Java have a reputation for being slower and requiring more memory than those written in C.[26] However, Java programs' execution speed improved significantly with the introduction of Just-in-time compilation in 1997/1998 for Java 1.1,[27] the addition of language features supporting better code analysis (such as inner classes, StringBuffer class, optional assertions, etc.), and optimizations in the Java Virtual Machine itself, such as HotSpot becoming the default for Sun's JVM in 2000. Currently, Java 2.0 code has approximately half the performance of C code.[28] However, Java 5.0 has been shown to run at native speeds that sometimes match and occasionally beat the speed of C and C++.[citation needed]
+Some platforms offer direct hardware support for Java; there are microcontrollers that can run Java in hardware instead of a software JVM, and ARM based processors can have hardware support for executing Java bytecode through its Jazelle option.
+Automatic memory management
+Java uses an automatic garbage collector to manage memory in the object lifecycle. The programmer determines when objects are created, and the Java runtime is responsible for recovering the memory once objects are no longer in use. Once no references to an object remain, the unreachable memory becomes eligible to be freed automatically by the garbage collector. Something similar to a memory leak may still occur if a programmer's code holds a reference to an object that is no longer needed, typically when objects that are no longer needed are stored in containers that are still in use. If methods for a nonexistent object are called, a "null pointer exception" is thrown.[29][30]
+One of the ideas behind Java's automatic memory management model is that programmers can be spared the burden of having to perform manual memory management. In some languages, memory for the creation of objects is implicitly allocated on the stack, or explicitly allocated and deallocated from the heap. In the latter case the responsibility of managing memory resides with the programmer. If the program does not deallocate an object, a memory leak occurs. If the program attempts to access or deallocate memory that has already been deallocated, the result is undefined and difficult to predict, and the program is likely to become unstable and/or crash. This can be partially remedied by the use of smart pointers, but these add overhead and complexity. Note that garbage collection does not prevent "logical" memory leaks, i.e. those where the memory is still referenced but never used.
+Garbage collection may happen at any time. Ideally, it will occur when a program is idle. It is guaranteed to be triggered if there is insufficient free memory on the heap to allocate a new object; this can cause a program to stall momentarily. Explicit memory management is not possible in Java.
+Java does not support C/C++ style pointer arithmetic, where object addresses and unsigned integers (usually long integers) can be used interchangeably. This allows the garbage collector to relocate referenced objects and ensures type safety and security.
+As in C++ and some other object-oriented languages, variables of Java's primitive data types are not objects. Values of primitive types are either stored directly in fields (for objects) or on the stack (for methods) rather than on the heap, as commonly true for objects (but see Escape analysis). This was a conscious decision by Java's designers for performance reasons. Because of this, Java was not considered to be a pure object-oriented programming language. However, as of Java 5.0, autoboxing enables programmers to proceed as if primitive types were instances of their wrapper class.
+Java contains multiple types of garbage collectors. By default, HotSpot uses the Concurrent Mark Sweep collector, also known as the CMS Garbage Collector. However, there are also several other garbage collectors that can be used to manage the Heap. For 90% of applications in Java, the CMS Garbage Collector is good enough.[31]
+Syntax
+
+Main article: Java syntax
+The syntax of Java is largely derived from C++. Unlike C++, which combines the syntax for structured, generic, and object-oriented programming, Java was built almost exclusively as an object-oriented language. All code is written inside a class, and everything is an object, with the exception of the primitive data types (integers, floating-point numbers, boolean values, and characters), which are not classes for performance reasons.
+Unlike C++, Java does not support operator overloading or multiple inheritance for classes. This simplifies the language and aids in preventing potential errors and anti-pattern design.
+Java uses similar commenting methods to C++. There are three different styles of comments: a single line style marked with two slashes (//), a multiple line style opened with /* and closed with */, and the Javadoc commenting style opened with /** and closed with */. The Javadoc style of commenting allows the user to run the Javadoc executable to compile documentation for the program.
+Example:
+ This is an example of a single line comment using two slashes
+ 
+ This is an example of a multiple line comment using the slash and asterisk.
+   This type of comment can be used to hold a lot of information or deactivate
+   code but it is very important to remember to close the comment. */
+ 
+
+  This is an example of a Javadoc comment; Javadoc can compile documentation
+   from this text.
+ 
+Examples
+
+Hello world
+The traditional Hello world program can be written in Java as:[32]
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Display the string.
+    }
+}
+To compare this to other programming languages see the list of hello world program examples.
+Source files must be named after the public class they contain, appending the suffix .java, for example, HelloWorldApp.java. It must first be compiled into bytecode, using a Java compiler, producing a file named HelloWorldApp.class. Only then can it be executed, or 'launched'. The Java source file may only contain one public class but can contain multiple classes with less than public access and any number of public inner classes.
+A class that is not declared public may be stored in any .java file. The compiler will generate a class file for each class defined in the source file. The name of the class file is the name of the class, with .class appended. For class file generation, anonymous classes are treated as if their name were the concatenation of the name of their enclosing class, a $, and an integer.
+The keyword public denotes that a method can be called from code in other classes, or that a class may be used by classes outside the class hierarchy. The class hierarchy is related to the name of the directory in which the .java file is located.
+The keyword static in front of a method indicates a static method, which is associated only with the class and not with any specific instance of that class. Only static methods can be invoked without a reference to an object. Static methods cannot access any class members that are not also static.
+The keyword void indicates that the main method does not return any value to the caller. If a Java program is to exit with an error code, it must call System.exit() explicitly.
+The method name "main" is not a keyword in the Java language. It is simply the name of the method the Java launcher calls to pass control to the program. Java classes that run in managed environments such as applets and Enterprise JavaBean do not use or need a main() method. A Java program may contain multiple classes that have main methods, which means that the VM needs to be explicitly told which class to launch from.
+The main method must accept an array of String objects. By convention, it is referenced as args although any other legal identifier name can be used. Since Java 5, the main method can also use variable arguments, in the form of public static void main(String... args), allowing the main method to be invoked with an arbitrary number of String arguments. The effect of this alternate declaration is semantically identical (the args parameter is still an array of String objects), but allows an alternative syntax for creating and passing the array.
+The Java launcher launches Java by loading a given class (specified on the command line or as an attribute in a JAR) and starting its public static void main(String[]) method. Stand-alone programs must declare this method explicitly. The String[] args parameter is an array of String objects containing any arguments passed to the class. The parameters to main are often passed by means of a command line.
+Printing is part of a Java standard library: The System class defines a public static field called out. The out object is an instance of the PrintStream class and provides many methods for printing data to standard out, including println(String) which also appends a new line to the passed string.
+The string "Hello, world!" is automatically converted to a String object by the compiler.
+A more comprehensive example
+
+import javax.swing.JOptionPane;
+ 
+public class OddEven 
+    "input" is the number that the user gives to the computer
+    private int input;  a whole number("int" means integer)
+ 
+ 
+  This is the constructor method. It gets called when an object of the OddEven type
+  is being created.
+ 
+    public OddEven() 
+ 
+  In most Java programs constructors can initialize objects with default values, or create
+  other objects that this object might use to perform its functions. In some Java programs, the
+  constructor may simply be an empty function if nothing needs to be initialized prior to the
+  functioning of the object.  In this program's case, an empty constructor would suffice, even if
+  it is empty. A constructor must exist, however if the user doesn't put one in then the compiler
+  will create an empty one.
+ 
+ 
+ 
+     This is the main method. It gets called when this class is run through a Java interpreter.
+    public static void main(String[] args) 
+        
+          This line of code creates a new instance of this class called "number" (also known as an
+          Object) and initializes it by calling the constructor.  The next line of code calls
+          the "showDialog()" method, which brings up a prompt to ask you for a number
+         
+        OddEven number = new OddEven();
+        number.showDialog();
+    
+ 
+    public void showDialog() 
+        
+         "try" makes sure nothing goes wrong. If something does,
+         the interpreter skips to "catch" to see what it should do.
+        
+        try 
+            
+             The code below brings up a JOptionPane, which is a dialog box
+             The String returned by the "showInputDialog()" method is converted into
+             an integer, making the program treat it as a number instead of a word.
+             After that, this method calls a second method, calculate() that will
+             display either "Even" or "Odd."
+            
+            input = Integer.parseInt(JOptionPane.showInputDialog("Please Enter A Number"));
+            calculate();
+         catch (NumberFormatException e) 
+            
+             Getting in the catch block means that there was a problem with the format of
+             the number. Probably some letters were typed in instead of a number.
+            
+  
+The import statement imports the JOptionPane class from the javax.swing package.
+The OddEven class declares a single private field of type int named input. Every instance of the OddEven class has its own copy of the input field. The private declaration means that no other class can access (read or write) the input field.
+OddEven() is a public constructor. Constructors have the same name as the enclosing class they are declared in, and unlike a method, have no return type. A constructor is used to initialize an object that is a newly created instance of the class.
+The calculate() method is declared without the static keyword. This means that the method is invoked using a specific instance of the OddEven class. (The reference used to invoke the method is passed as an undeclared parameter of type OddEven named this.) The method tests the expression input % 2 == 0 using the if keyword to see if the remainder of dividing the input field belonging to the instance of the class by two is zero. If this expression is true, then it prints Even; if this expression is false it prints Odd. (The input field can be equivalently accessed as this.input, which explicitly uses the undeclared this parameter.)
+OddEven number = new OddEven(); declares a local object reference variable in the main method named number. This variable can hold a reference to an object of type OddEven. The declaration initializes number by first creating an instance of the OddEven class, using the new keyword and the OddEven() constructor, and then assigning this instance to the variable.
+The statement number.showDialog(); calls the calculate method. The instance of OddEven object referenced by the number local variable is used to invoke the method and passed as the undeclared this parameter to the calculate method.
+input = Integer.parseInt(JOptionPane.showInputDialog("Please Enter A Number")); is a statement that converts the type of String to the primitive data type int by using a utility function in the primitive wrapper class Integer.
+Special classes
+
+
+}
+The import statements direct the Java compiler to include the javax.swing.JApplet and java.awt.Graphics classes in the compilation. The import statement allows these classes to be referenced in the source code using the simple class name (i.e. JApplet) instead of the fully qualified class name (i.e. javax.swing.JApplet).
+The Hello class extends (subclasses) the JApplet (Java Applet) class; the JApplet class provides the framework for the host application to display and control the lifecycle of the applet. The JApplet class is a JComponent (Java Graphical Component) which provides the applet with the capability to display a graphical user interface (GUI) and respond to user events.
+The Hello class overrides the paintComponent(Graphics) method (additionally indicated with the annotation, supported as of JDK 1.5, Override) inherited from the Container superclass to provide the code to display the applet. The paintComponent() method is passed a Graphics object that contains the graphic context used to display the applet. The paintComponent() method calls the graphic context drawString(String, int, int) method to display the "Hello, world!" string at a pixel offset of (65, 95) from the upper-left corner in the applet's display.
+
+The import statements direct the Java compiler to include all of the public classes and interfaces from the java.io and javax.servlet packages in the compilation.
+The Hello class extends the GenericServlet class; the GenericServlet class provides the interface for the server to forward requests to the servlet and control the servlet's lifecycle.
+The Hello class overrides the service(ServletRequest, ServletResponse) method defined by the Servlet interface to provide the code for the service request handler. The service() method is passed a ServletRequest object that contains the request from the client and a ServletResponse object used to create the response returned to the client. The service() method declares that it throws the exceptions ServletException and IOException if a problem prevents it from responding to the request.
+The setContentType(String) method in the response object is called to set the MIME content type of the returned data to "text/html". The getWriter() method in the response returns a PrintWriter object that is used to write the data that is sent to the client. The println(String) method is called to write the "Hello, world!" string to the response and then the close() method is called to close the print writer, which causes the data that has been written to the stream to be returned to the client.
+JavaServer Pages
+Main article: JavaServer Pages
+JavaServer Pages (JSP) are server-side Java EE components that generate responses, typically HTML pages, to HTTP requests from clients. JSPs embed Java code in an HTML page by using the special delimiters <% and %>. A JSP is compiled to a Java servlet, a Java application in its own right, the first time it is accessed. After that, the generated servlet creates the response.
+Swing application
+Main article: Swing (Java)
+Swing is a graphical user interface library for the Java SE platform. It is possible to specify a different look and feel through the pluggable look and feel system of Swing. Clones of Windows, GTK+ and Motif are supplied by Sun. Apple also provides an Aqua look and feel for Mac OS X. Where prior implementations of these looks and feels may have been considered lacking, Swing in Java SE 6 addresses this problem by using more native GUI widget drawing routines of the underlying platforms.
+This example Swing application creates a single window with "Hello, world!" inside:
+
+
+Java libraries are the compiled bytecodes of source code developed by the JRE implementor to support application development in Java. Examples of these libraries are:
+The core libraries, which include:
+Collection libraries that implement data structures such as lists, dictionaries, trees, sets, queues and double-ended queue, or stacks
+XML Processing (Parsing, Transforming, Validating) libraries
+Security
+Internationalization and localization libraries
+The integration libraries, which allow the application writer to communicate with external systems. These libraries include:
+The Java Database Connectivity (JDBC) API for database access
+Java Naming and Directory Interface (JNDI) for lookup and discovery
+RMI and CORBA for distributed application development
+JMX for managing and monitoring applications
+User interface libraries, which include:
+The (heavyweight, or native) Abstract Window Toolkit (AWT), which provides GUI components, the means for laying out those components and the means for handling events from those components
+The (lightweight) Swing libraries, which are built on AWT but provide (non-native) implementations of the AWT widgetry
+APIs for audio capture, processing, and playback
+A platform dependent implementation of Java Virtual Machine (JVM) that is the means by which the byte codes of the Java libraries and third party applications are executed
+Plugins, which enable applets to be run in Web browsers
+Java Web Start, which allows Java applications to be efficiently distributed to end-users across the Internet
+Licensing and documentation.
+Documentation
+
+Main article: Javadoc
+Javadoc is a comprehensive documentation system, created by Sun Microsystems, used by many Java developers. It provides developers with an organized system for documenting their code. Javadoc comments have an extra asterisk at the beginning, i.e. the tags are /** and */, whereas the normal multi-line comment tags comments in Java and C are set off with /* and */.
+Editions
+
+See also: Free Java implementations#Class library
+Java editions
+
+Java Card
+Micro Edition (ME)
+Standard Edition (SE)
+Enterprise Edition (EE)
+PersonalJava (discontinued)
+Sun has defined and supports four editions of Java targeting different application environments and segmented many of its APIs so that they belong to one of the platforms. The platforms are:
+Java Card for smartcards.
+Java Platform, Micro Edition (Java ME) — targeting environments with limited resources.
+Java Platform, Standard Edition (Java SE) — targeting workstation environments.
+Java Platform, Enterprise Edition (Java EE) — targeting large distributed enterprise or Internet environments.
+The classes in the Java APIs are organized into separate groups called packages. Each package contains a set of related interfaces, classes and exceptions. Refer to the separate platforms for a description of the packages available.
+The set of APIs is controlled by Sun Microsystems in cooperation with others through the Java Community Process program. Companies or individuals participating in this process can influence the design and development of the APIs. This process has been a subject of controversy.
+Sun also provided an edition called PersonalJava that has been superseded by later, standards-based Java ME configuration-profile pairings.
+Notes
+
+
+Gosling, James, A brief history of the Green project.[dead link] Java.net, no date [ca. Q1/1998]. Retrieved April 29, 2007.
+Gosling, James; Joy, Bill; Steele, Guy L., Jr.; Bracha, Gilad (2005). The Java Language Specification (3rd ed.). Addison-Wesley. ISBN 0-321-24678-0.
+Lindholm, Tim; Yellin, Frank (1999). The Java Virtual Machine Specification (2nd ed.). Addison-Wesley. ISBN 0-201-43294-3.
+External links
+
+	Look up Java in Wiktionary, the free dictionary.
+	Wikibooks has a book on the topic of
+Java Programming
+	Wikiversity has learning materials about Java
+	Wikimedia Commons has media related to: Java (programming language)
+java.com - Java for end-users
+Oracle's Developer Resources for Java Technology.
+Java SE 6 API Javadocs
+Oracle's Beginner's tutorial for Java SE Programming
+A Brief History of the Green Project
+Michael O'Connell: Java: The Inside Story, SunWord, July 1995.
+Patrick Naughton: Java Was Strongly Influenced by Objective-C (no date).
+David Bank: The Java Saga, Wired Issue 3.12 (December 1995).
+Shahrooz Feizabadi: A history of Java in: Marc Abrams, ed., World Wide Web – Beyond the Basics, Prentice Hall, 1998.
+Patrick Naughton: The Long Strange Trip to Java, March 18, 1996.
+Open University (UK): M254 Java Everywhere (free open content documents).
+is-research GmbH: List of programming languages for a Java Virtual Machine.
+
+View page ratings
+Rate this page
+What's this?
+Trustworthy
+Objective
+Complete
+Well-written
+I am highly knowledgeable about this topic (optional)
+
+
+Simple English
+This page was last modified on 12 September 2011 at 05:11.
+
+Etymology
+In the United States, the war was initially described by President Harry S. Truman as a "police action" as it was conducted under the auspices of the United Nations.[32] Colloquially, it has been referred to in the United States as The Forgotten War or The Unknown War. The issues concerned were much less clear than in previous and subsequent conflicts, such as World War II and the Vietnam War.[33][34] To a significant degree, the war has been "historically overshadowed by World War II and Vietnam".[35]
+In South Korea the war is usually referred to as "625" or the 6–2–5 Upheaval (yug-i-o dongnan), reflecting the date of its commencement on 25 June.[36] In North Korea the war is officially referred to as the Fatherland Liberation War (Choguk haebang chonjaeng). Alternatively, it is called the Choson chonjaeng ("Choson war", Choson being what North Koreans call Korea).[37] In the People's Republic of China the war is called the War to Resist U.S. Aggression and Aid Korea (traditional Chinese: ??????; simplified Chinese: ??????; pinyin: Kàngmeiyuáncháo zhànzheng).[38][39] The "Korean War" (????/????; pinyin: Cháoxian zhànzheng) is more commonly used today. Cháoxian is the Chinese pronunciation of the Korean name "Choson".
+Japanese rule (1910–1945)
+Main article: Korea under Japanese rule
+Upon defeating the Qing Dynasty in the First Sino-Japanese War (1894–96), the Empire of Japan occupied the Korean Empire – a peninsula strategic to its sphere of influence.[40] A decade later, defeating Imperial Russia in the Russo-Japanese War (1904–05), Japan made Korea its protectorate with the Eulsa Treaty in 1905, then annexed it with the Japan–Korea Annexation Treaty in 1910.[41][42]
+Korean nationalists and the intelligentsia fled the country, and some founded the Provisional Korean Government in 1919, which was headed by Syngman Rhee in Shanghai. This government-in-exile was recognized by few countries. From 1919 to 1925 and beyond, Korean communists led and were the primary agents of internal and external warfare against the Japanese.[40]:23[43]
+Korea under Japanese rule was considered to be part of the Empire of Japan as an industrialized colony along with Taiwan, and both were part of the Greater East Asia Co-Prosperity Sphere. In 1937, the colonial Governor–General, General Jiro Minami, commanded the attempted cultural assimilation of Korea's 23.5 million people by banning the use and study of Korean language, literature, and culture, to be replaced with that of mandatory use and study of their Japanese counterparts. Starting in 1939, the populace was required to use Japanese names under the Soshi-kaimei policy. In 1938, the Colonial Government established labor conscription.[citation needed]
+In China, the National Revolutionary Army and the Communist People's Liberation Army helped organize refugee Korean patriots and independence fighters against the Japanese military, which had also occupied parts of China. The Nationalist-backed Koreans, led by Yi Pom-Sok, fought in the Burma Campaign (December 1941 – August 1945). The Communists, led by Kim Il-sung, fought the Japanese in Korea and Manchuria.[citation needed]
+During World War II, the Japanese used Korea's food, livestock, and metals for their war effort. Japanese forces in Korea increased from 46,000 soldiers in 1941 to 300,000 in 1945. Japanese Korea conscripted 2.6 million forced laborers controlled with a collaborationist Korean police force; some 723,000 people were sent to work in the overseas empire and in metropolitan Japan. By 1942, Korean men were being conscripted into the Imperial Japanese Army. By January 1945, Koreans comprised 32% of Japan's labor force. In August 1945, when the United States dropped atomic bombs on Hiroshima and Nagasaki, around 25% of those killed were Koreans.[43] At the end of the war, other world powers did not recognize Japanese rule in Korea and Taiwan.
+Meanwhile, at the Cairo Conference (November 1943), Nationalist China, the United Kingdom, and the United States decided "in due course Korea shall become free and independent".[44] Later, the Yalta Conference (February 1945) granted to the Soviet Union European "buffer zones"—satellite states accountable to Moscow—as well as an expected Soviet pre-eminence in China and Manchuria,[45] in return for joining the Allied Pacific War effort against Japan.[45]
+Soviet invasion of Manchuria (1945)
+Main article: Soviet invasion of Manchuria (1945)
+Toward the end of World War II, as per a US-Soviet agreement, the USSR declared war against Japan on 9 August 1945.[43][46] By 10 August, the Red Army occupied the northern part of the Korean peninsula as agreed, and on 26 August halted at the 38th parallel for three weeks to await the arrival of US forces in the south.[40]:25[40]:24
+On 10 August 1945, with the 15 August Japanese surrender near, the Americans doubted whether the Soviets would honor their part of the Joint Commission, the US-sponsored Korean occupation agreement. A month earlier, Colonel Dean Rusk and Colonel Charles H. Bonesteel III divided the Korean peninsula at the 38th parallel after hurriedly deciding (in thirty minutes) that the US Korean Zone of Occupation had to have a minimum of two ports.[47][48][49][50][51]
+Explaining why the occupation zone demarcation was positioned at the 38th parallel, Rusk observed, "even though it was further north than could be realistically reached by US forces, in the event of Soviet disagreement ... we felt it important to include the capital of Korea in the area of responsibility of American troops", especially when "faced with the scarcity of US forces immediately available, and time and space factors, which would make it difficult to reach very far north, before Soviet troops could enter the area."[45] The Soviets agreed to the US occupation zone demarcation to improve their negotiating position regarding the occupation zones in Eastern Europe, and because each would accept Japanese surrender where they stood.[40]:25
+Chinese Civil War (1945–1949)
+Main article: Chinese Civil War
+After the end of Second Sino-Japanese War, the Chinese Civil War resumed between the Chinese Communists and the Chinese Nationalists. While the Communists were struggling for supremacy in Manchuria, they were supported by the North Korean government with materiel and manpower.[52] According to Chinese sources, the North Koreans donated 2,000 railway cars worth of material while thousands of Korean "volunteers" served in the Chinese People's Liberation Army (PLA) during the war.[53] North Korea also provided the Chinese Communists in Manchuria with a safe refuge for non-combatants and communications with the rest of China.[52]
+The North Korean contributions to the Chinese Communist victory were not forgotten after the creation of the People's Republic of China in 1949. As a token of gratitude, between 50,000 to 70,000 Korean veterans that served in the PLA were sent back along with their weapons, and they would later play a significant role in the initial invasion of South Korea.[52] China promised to support the North Koreans in the event of a war against South Korea.[54] The Chinese support created a deep division between the Korean Communists, and Kim Il-Sung's authority within the Communist party was challenged by the Chinese faction led by Pak Il-yu, who was later purged by Kim.[55]
+After the formation of the People's Republic of China in 1949, the Chinese government named the Western nations, led by the United States, as the biggest threat to its national security.[56] Basing this judgment on China's century of humiliation beginning in the early 19th century,[57] American support for the Nationalists during the Chinese Civil War,[58] and the ideological struggles between revolutionaries and reactionaries,[59] the Chinese leadership believed that China would become a critical battleground in the United States' crusade against Communism.[60] As a countermeasure and to elevate China's standing among the worldwide Communist movements, the Chinese leadership adopted a foreign policy that actively promoted Communist revolutions throughout territories on China's periphery.[61]
+Korea divided (1945–1949)
+See also: Division of Korea
+At the Potsdam Conference (July–August 1945), the Allies unilaterally decided to divide Korea—without consulting the Koreans—in contradiction of the Cairo Conference.[40]:24[48]:24–5[62]:25[63]
+On 8 September 1945, Lt. Gen. John R. Hodge of the United States arrived in Incheon to accept the Japanese surrender south of the 38th parallel.[48] Appointed as military governor, General Hodge directly controlled South Korea via the United States Army Military Government in Korea (USAMGIK 1945–48).[64]:63 He established control by restoring to power the key Japanese colonial administrators and their Korean police collaborators.[31] The USAMGIK refused to recognise the provisional government of the short-lived People's Republic of Korea (PRK) because he suspected it was communist. These policies, voiding popular Korean sovereignty, provoked civil insurrections and guerrilla warfare.[41] On 3 September 1945, Lieutenant General Yoshio Kozuki, Commander, Japanese Seventeenth Area Army, contacted Hodge, telling him that the Soviets were south of the 38th parallel at Kaesong. Hodge trusted the accuracy of the Japanese Army report.[48]
+In December 1945, Korea was administered by a US–USSR Joint Commission, as agreed at the Moscow Conference (1945). The Koreans were excluded from the talks. The commission decided the country would become independent after a five-year trusteeship action facilitated by each régime sharing its sponsor's ideology.[40]:25–6[65] The Korean populace revolted; in the south, some protested, and some rose in arms;[41] to contain them, the USAMGIK banned strikes on 8 December 1945 and outlawed the PRK Revolutionary Government and the PRK People's Committees on 12 December 1945.
+On 23 September 1946 an 8,000-strong railroad worker strike began in Pusan. Civil disorder spread throughout the country in what became known as the Autumn uprising. On 1 October 1946, Korean police killed three students in the Daegu Uprising; protesters counter-attacked, killing 38 policemen. On 3 October, some 10,000 people attacked the Yeongcheon police station, killing three policemen and injuring some 40 more; elsewhere, some 20 landlords and pro-Japanese South Korean officials were killed.[66] The USAMGIK declared martial law.
+The right-wing Representative Democratic Council, led by nationalist Syngman Rhee, opposed the Soviet–American trusteeship of Korea, arguing that after 35 years (1910–45) of Japanese colonial rule most Koreans opposed another foreign occupation. The USAMGIK decided to forego the five year trusteeship agreed upon in Moscow, given the 31 March 1948 United Nations election deadline to achieve an anti-communist civil government in the US Korean Zone of Occupation.
+On 3 April what began as a demonstration commemorating Korean resistance to Japanese rule ended with the Jeju massacre of as many as 60,000 citizens by South Korean soldiers.[67]
+On 10 May, South Korea convoked their first national general elections that the Soviets first opposed, then boycotted, insisting that the US honor the trusteeship agreed to at the Moscow Conference.[40]:26[68][69][70]
+North Korea held parliamentary elections three months later on 25 August 1948.[71]
+The resultant anti-communist South Korean government promulgated a national political constitution on 17 July 1948, elected a president, the American-educated strongman Syngman Rhee on 20 July 1948. The elections were marred by terrorism and sabotage resulting in 600 deaths.[72] The Republic of Korea (South Korea) was established on 15 August 1948.[73] In the Russian Korean Zone of Occupation, the USSR established a Communist North Korean government[40]:26 led by Kim Il-sung.[74] President Rhee's régime expelled communists and leftists from southern national politics. Disenfranchised, they headed for the hills, to prepare for guerrilla war against the US-sponsored ROK Government.[74]
+As nationalists, both Syngman Rhee and Kim Il-Sung were intent upon reunifying Korea under their own political system.[40]:27 With Joseph Stalin and Mao Zedong fighting over the control of the Korean Peninsula,[75] the North Koreans gained support from both the Soviet Union and the People's Republic of China. They escalated the continual border skirmishes and raids and then prepared to invade. South Korea, with limited matériel, could not match them.[40]:27 During this era, at the beginning of the Cold War, the US government assumed that all communists, regardless of nationality, were controlled or directly influenced by Moscow; thus the US portrayed the civil war in Korea as a Soviet hegemonic maneuver.[76]
+In October 1948, South Korean left-wing soldiers rebelled against the government's harsh clampdown in April on Jeju island in the Yeosu-Suncheon Rebellion.[77]
+The Soviet Union withdrew as agreed from Korea in 1948. U.S. troops withdrew from Korea in 1949, leaving the South Korean army relatively ill-equipped. On 24 December 1949, South Korean forces killed 86 to 88 people in the Mungyeong massacre and blamed the crime on communist marauding bands.[78]
+Course of the war
+
+The conflict begins (June 1950)
+
+
+Territory often changed hands early in the war, until the front stabilized.
+In April 1950 Kim Il-sung travelled to Moscow and secured Stalin's support for a policy to unify Korea under his authority. Although agreeing with the invasion of South Korea in principle, Stalin refused to become directly involved in Kim's plans, and advised Kim to enlist Chinese support instead. In May 1950 Kim visited Beijing, and succeeded in gaining Mao's endorsement. At the time, Mao's support for Kim was largely political (he was contemplating the invasions of Taiwan and Tibet), and was unaware of Kim's precise intentions or the timing of Kim's attack. When the Korean war broke out, the Chinese were in the process of demobilizing half of the PLA's 5.6 million soldiers.[79]
+After the US missions had left the People's Republic of China, CIA China station officer Douglas Mackiernan volunteered to remain and conduct spy operations. Afterward, he and a team of indigenous personnel then escaped China in a months-long horse trek across the Himalaya mountains; he was killed within miles of Lhasa. His team delivered the intelligence to headquarters that invasion was imminent. Thirteen days later on 25 June 1950, the North Korean People's Army (KPA) crossed the 38th parallel border and invaded South Korea. Mackiernan was posthumously awarded the CIA Intelligence Star for valor.[80]
+Under the guise of counter-attacking a South Korean provocation raid, the KPA crossed the 38th parallel behind artillery fire at dawn on Sunday 25 June 1950.[40]:14 The KPA said that Republic of Korea Army (ROK Army) troops, under command of the régime of the "bandit traitor Syngman Rhee", had crossed the border first, and that they would arrest and execute Rhee.[48] Both Korean armies had continually harassed each other with skirmishes and each continually staged raids across the 38th parallel border.
+On 27 June, Rhee evacuated from Seoul with government officials. Rhee ordered the Bodo League massacre, which started on 28 June.[81]
+On 28 June, South Korea bombed the bridge across the Han River to stop the North Korean army.[82]
+Early on in the fighting, South Korea put its forces under the authority of the United Nations Command (Korea).[citation needed]
+Factors in US intervention
+The Truman Administration was caught at a crossroads. Before the invasion, Korea was not included in the strategic Asian Defense Perimeter outlined by Secretary of State Acheson.[83] Military strategists were more concerned with the security of Europe against the Soviet Union than East Asia. At the same time, the Administration was worried that a war in Korea could quickly widen into another world war should the Chinese or Soviets decide to get involved as well.
+One facet of the changing attitude toward Korea and whether to get involved was Japan. Especially after the fall of China to the Communists, "…Japan itself increasingly appeared as the major East Asian prize to be protected". US East Asian experts saw Japan as the critical counterweight to the Soviet Union and China in the region. While there was no United States policy that dealt with South Korea directly as a national interest, its proximity to Japan pushed South Korea to the fore. "The recognition that the security of Japan required a non-hostile Korea led directly to President Truman’s decision to intervene… The essential point… is that the American response to the North Korean attack stemmed from considerations of US policy toward Japan."[83] The United States wanted to shore up Japan to make it a viable counterweight against the Soviet Union and China, and Korea was seen as integral to that end.
+The other important part of committing to intervention lay in speculation about Soviet action in the event that the United States intervene. The Truman administration was fretful that a war in Korea was a diversionary assault that would escalate to a general war in Europe once the US committed in Korea. At the same time, "[t]here was no suggestion from anyone that the United Nations or the United States could back away from [the conflict]".[84] In Truman’s mind, this aggression, if left unchecked, would start a chain reaction that would destroy the United Nations and give the go ahead to further Communist aggression elsewhere. Korea was where a stand had to be made, the difficult part was how. The UN Security council approved the use of force to help the South Koreans and the US immediately began using air and naval forces in the area to that end. The Administration still refrained from committing on the ground because some advisors believed the North Koreans could be stopped by air and naval power alone.[84] Also, it was still uncertain if this was a clever ploy by the Soviet Union to catch the US unawares or just a test of US resolve. The decision to commit ground troops and to intervene eventually became viable when a communiqué was received on 27 June from the Soviet Union that alluded it would not move against US forces in Korea. "This opened the way for the sending of American ground forces, for it now seemed less likely that a general war—with Korea as a preliminary diversion—was imminent".[84] With the Soviet Union’s tacit agreement that this would not cause an escalation, the United States now could intervene with confidence that other commitments would not be jeopardized.
+United Nations Security Council Resolutions
+On 25 June 1950, the United Nations Security Council unanimously condemned the North Korean invasion of the Republic of Korea, with United Nations Security Council Resolution 82. The USSR, a veto-wielding power, had boycotted the Council meetings since January 1950, protesting that the Republic of China (Taiwan), not the People's Republic of China, held a permanent seat in the UN Security Council.[85] After debating the matter, the Security Council, on 27 June 1950, published Resolution 83 recommending member states provide military assistance to the Republic of Korea. On 27 June President Truman ordered US air and sea forces to help the South Korean régime. On 4 July the Soviet Deputy Foreign Minister accused the US of starting armed intervention on behalf of South Korea.[86]
+The USSR challenged the legitimacy of the war for several reasons. The ROK Army intelligence upon which Resolution 83 was based came from US Intelligence; North Korea was not invited as a sitting temporary member of the UN, which violated UN Charter Article 32; and the Korean conflict was beyond UN Charter scope, because the initial north–south border fighting was classed as a civil war. The Soviet representative boycotted the UN to prevent Security Council action, and to challenge the legitimacy of the UN action; legal scholars posited that deciding upon an action of this type required the unanimous vote of the five permanent members.[87][88]
+Comparison of military forces
+The North Korean Army launched the "Fatherland Liberation War" with a comprehensive air–land invasion using 231,000 soldiers, who captured scheduled objectives and territory, among them Kaesong, Chuncheon, Uijeongbu, and Ongjin. Their forces included 274 T-34-85 tanks, some 150 Yak fighters, 110 attack bombers, 200 artillery pieces, 78 Yak trainers, and 35 reconnaissance aircraft.[48] In addition to the invasion force, the North Korean KPA had 114 fighters, 78 bombers, 105 T-34-85 tanks, and some 30,000 soldiers stationed in reserve in North Korea.[48] Although each navy consisted of only several small warships, the North Korean and South Korean navies fought in the war as sea-borne artillery for their in-country armies.
+In contrast, the ROK Army defenders were vastly unprepared, and the political establishment in the south, while well aware of the threat to the north, were unable to convince American administrators of the reality of the threat. In South to the Naktong, North to the Yalu (1961), R.E. Appleman reports the ROK forces' low combat readiness as of 25 June 1950. The ROK Army had 98,000 soldiers (65,000 combat, 33,000 support), no tanks (they had been requested from the US military, but requests were denied), and a 22–piece air force comprising 12 liaison-type and 10 AT6 advanced-trainer airplanes. There were no large foreign military garrisons in Korea at invasion time, but there were large US garrisons and air forces in Japan.[48]
+Within days of the invasion, masses of ROK Army soldiers—of dubious loyalty to the Syngman Rhee régime—were either retreating southwards or were defecting en masse to the northern side, the KPA.[40]:23
+United Nations response (July – August 1950)
+
+
+A US howitzer position near the Kum River, 15 July.
+
+
+Korean civilians pass an M-46 tank
+
+
+A GI comforts a grieving infantryman.
+Despite the rapid post–Second World War Allied demobilizations, there were substantial US forces occupying Japan; under General Douglas MacArthur's command, they could be made ready to fight the North Koreans.[40]:42 Only the British Commonwealth had comparable forces in the area.
+On Saturday, 24 June 1950, US Secretary of State Dean Acheson informed President Truman by telephone, "Mr. President, I have very serious news. The North Koreans have invaded South Korea."[89][90] Truman and Acheson discussed a US invasion response with defense department principals, who agreed that the United States was obligated to repel military aggression, paralleling it with Adolf Hitler's 1930s aggressions, and said that the mistake of appeasement must not be repeated.[91] In his autobiography, President Truman acknowledged that fighting the invasion was essential to the American goal of the global containment of communism as outlined in the National Security Council Report 68 (NSC-68) (declassified in 1975):
+"Communism was acting in Korea, just as Hitler, Mussolini and the Japanese had ten, fifteen, and twenty years earlier. I felt certain that if South Korea was allowed to fall Communist leaders would be emboldened to override nations closer to our own shores. If the Communists were permitted to force their way into the Republic of Korea without opposition from the free world, no small nation would have the courage to resist threat and aggression by stronger Communist neighbors."[92]
+President Truman announced that the US would counter "unprovoked aggression" and "vigorously support the effort of the [UN] security council to terminate this serious breach of peace."[90] In Congress, the Joint Chiefs of Staff Chairman General Omar Bradley warned against appeasement, saying that Korea was the place "for drawing the line" against communist expansion. In August 1950, the President and the Secretary of State obtained the consent of Congress to appropriate $12 billion to pay for the military expenses.[90]
+Per State Secretary Acheson's recommendation, President Truman ordered General MacArthur to transfer materiel to the Army of the Republic of Korea while giving air cover to the evacuation of US nationals. The President disagreed with advisors who recommended unilateral US bombing of the North Korean forces, and ordered the US Seventh Fleet to protect the Republic of China (Taiwan), whose Nationalist Government asked to fight in Korea. The US denied the Nationalist Chinese request for combat, lest it provoke a communist Chinese retaliation.[93] Because the US had sent the Seventh Fleet to "neutralize" the Taiwan Strait, Chinese premier Zhou Enlai criticized both the UN and US initiatives as "armed aggression on Chinese territory."[94]
+The Battle of Osan, the first significant American engagement of the Korean War, involved the 540-soldier Task Force Smith, which was a small forward element of the 24th Infantry Division.[40]:45 On 5 July 1950, Task Force Smith attacked the North Koreans at Osan but without weapons capable of destroying the North Koreans' tanks. They were unsuccessful; the result was 180 dead, wounded, or taken prisoner. The KPA progressed southwards, pushing back the US force at Pyongtaek, Chonan, and Chochiwon, forcing the 24th Division's retreat to Taejeon, which the KPA captured in the Battle of Taejon;[40]:48 the 24th Division suffered 3,602 dead and wounded and 2,962 captured, including the Division's Commander, Major General William F. Dean.[40]:48 Overhead, the KPAF shot down 18 USAF fighters and 29 bombers; the USAF shot down five KPAF fighters.[citation needed]
+By August, the KPA had pushed back the ROK Army and the Eighth United States Army to the vicinity of Pusan, in southeast Korea.[40]:53 In their southward advance, the KPA purged the Republic of Korea's intelligentsia by killing civil servants and intellectuals.[40]:56 On 20 August, General MacArthur warned North Korean leader Kim Il-Sung that he was responsible for the KPA's atrocities.[40][73]:56 By September, the UN Command controlled only the Pusan perimeter, enclosing only about 10% of Korea, in a line partially defined by the Nakdong River.
+Although Kim's early successes had led him to predict that he would end the war by the end of August, Chinese leaders were more pessimistic. To counter the possibility of American invasion, Zhou Enlai secured a Soviet commitment to have the USSR support Chinese forces with air cover, and deployed 260,000 soldiers along the Korean border, under the command of Gao Gang. Zhou commanded Chai Chengwen to conduct a topographical survey of Korea, and directed L
