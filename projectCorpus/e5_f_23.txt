@@ -1,0 +1,614 @@
+For other uses, see Biology (disambiguation).
+
+
+
+Biology deals with the study of the many varieties of living organisms. Clockwise from top left: Salmonella typhimurium, Phascolarctos cinereus, Athyrium filix-femina, Amanita muscaria, Agalychnis callidryas, and Brachypelma smithi
+Biology is a natural science concerned with the study of life and living organisms, including their structure, function, growth, origin, evolution, distribution, and taxonomy.[1] Biology is a vast subject containing many subdivisions, topics, and disciplines. Among the most important topics are five unifying principles that can be said to be the fundamental axioms of modern biology:[2]
+Cells are the basic unit of life
+New species and inherited traits are the product of evolution
+Genes are the basic unit of heredity
+An organism regulates its internal environment to maintain a stable and constant condition
+Living organisms consume and transform energy.
+Subdisciplines of biology are recognized on the basis of the scale at which organisms are studied and the methods used to study them: biochemistry examines the rudimentary chemistry of life; molecular biology studies the complex interactions of systems of biological molecules; cellular biology examines the basic building block of all life, the cell; physiology examines the physical and chemical functions of the tissues, organs, and organ systems of an organism; and ecology examines how various organisms interact and associate with their environment.[3]
+Contents [hide]
+1 History
+2 Foundations of modern biology
+2.1 Cell theory
+2.2 Evolution
+2.3 Genetics
+2.4 Homeostasis
+2.5 Energy
+3 Research
+3.1 Structural
+3.2 Physiological
+3.3 Evolutionary
+3.4 Systematics
+3.5 Ecology
+4 Branches of biology
+5 See also
+6 Notes and references
+7 Further reading
+8 External links
+History
+
+Main article: History of biology
+
+
+Ernst Haeckel's Tree of Life (1879)
+The term biology is derived from the Greek word ß???, bios, "life" and the suffix -????a, -logia, "study of." It appears in German (as biologie) as early as 1791, and may be a back-formation from the older word amphibiology (meaning the study of amphibians) by deletion of the initial amphi-.
+Although biology in its modern form is a relatively recent development, sciences related to and included within it have been studied since ancient times. Natural philosophy was studied as early as the ancient civilizations of Mesopotamia, Egypt, the Indian subcontinent, and China. However, the origins of modern biology and its approach to the study of nature are most often traced back to ancient Greece.[4] While the formal study of medicine dates back to Hippocrates (ca. 460 BC – ca. 370 BC), it was Aristotle (384 BC – 322 BC) who contributed most extensively to the development of biology. Especially important are his History of Animals and other works where he showed naturalist leanings, and later more empirical works that focused on biological causation and the diversity of life. Aristotle's successor at the Lyceum, Theophrastus, wrote a series of books on botany that survived as the most important contribution of antiquity to the plant sciences, even into the Middle Ages.
+Scholars of the medieval Islamic world who wrote on biology included al-Jahiz (781–869), Al-Dinawari (828–896), who wrote on botany,[5] and Rhazes (865–925) who wrote on anatomy and physiology. Medicine was especially well studied by Islamic scholars working in Greek philosopher traditions, while natural history drew heavily on Aristotelian thought, especially in upholding a fixed hierarchy of life.
+Biology began to quickly develop and grow with Antony van Leeuwenhoek's dramatic improvement of the microscope. It was then that scholars discovered spermatozoa, bacteria, infusoria and the sheer strangeness and diversity of microscopic life. Investigations by Jan Swammerdam led to new interest in entomology and built the basic techniques of microscopic dissection and staining.[6]
+Advances in microscopy also had a profound impact on biological thinking itself. In the early 19th century, a number of biologists pointed to the central importance of the cell. In 1838 and 1839, Schleiden and Schwann began promoting the ideas that (1) the basic unit of organisms is the cell and (2) that individual cells have all the characteristics of life, although they opposed the idea that (3) all cells come from the division of other cells. Thanks to the work of Robert Remak and Rudolf Virchow, however, by the 1860s most biologists accepted all three tenets of what came to be known as cell theory.[7]
+Meanwhile, taxonomy and classification became a focus in the study of natural history. Carolus Linnaeus published a basic taxonomy for the natural world in 1735 (variations of which have been in use ever since), and in the 1750s introduced scientific names for all his species.[8] Georges-Louis Leclerc, Comte de Buffon, treated species as artificial categories and living forms as malleable—even suggesting the possibility of common descent. Though he was opposed to evolution, Buffon is a key figure in the history of evolutionary thought; his work influenced the evolutionary theories of both Lamarck and Darwin.[9]
+Serious evolutionary thinking originated with the works of Jean-Baptiste Lamarck. However, it was the British naturalist Charles Darwin, combining the biogeographical approach of Humboldt, the uniformitarian geology of Lyell, Thomas Malthus's writings on population growth, and his own morphological expertise, that created a more successful evolutionary theory based on natural selection; similar reasoning and evidence led Alfred Russel Wallace to independently reach the same conclusions.[10]
+The discovery of the physical representation of heredity came along with evolutionary principles and population genetics. In the 1940s and early 1950s, experiments pointed to DNA as the component of chromosomes that held genes. A focus on new model organisms such as viruses and bacteria, along with the discovery of the double helical structure of DNA in 1953, marked the transition to the era of molecular genetics. From the 1950s to present times, biology has been vastly extended in the molecular domain. The genetic code was cracked by Har Gobind Khorana, Robert W. Holley and Marshall Warren Nirenberg after DNA was understood to contain codons. Finally, the Human Genome Project was launched in 1990 with the goal of mapping the general human genome. This project was essentially completed in 2003,[11] with further analysis still being published. The Human Genome Project was the first step in a globalized effort to incorporate accumulated knowledge of biology into a functional, molecular definition of the human body and the bodies of other organisms.
+Foundations of modern biology
+
+Much of modern biology can be encompassed within five unifying principles: cell theory, evolution, genetics, homeostasis, and energy.[2]
+Cell theory
+Main article: Cell theory
+
+
+Cells in culture, stained for keratin (red) and DNA (green)
+Cell theory states that the cell is the fundamental unit of life, and that all living things are composed of one or more cells or the secreted products of those cells (e.g. shells). All cells arise from other cells through cell division. In multicellular organisms, every cell in the organism's body derives ultimately from a single cell in a fertilized egg. The cell is also considered to be the basic unit in many pathological processes.[12] Additionally, the phenomenon of energy flow occurs in cells in processes that are part of the function known as metabolism. Finally, cells contain hereditary information (DNA) which is passed from cell to cell during cell division.
+Evolution
+
+
+Natural selection of a population for dark coloration.
+Main article: Evolution
+A central organizing concept in biology is that life changes and develops through evolution, and that all life-forms known have a common origin. Introduced into the scientific lexicon by Jean-Baptiste de Lamarck in 1809,[13] evolution was established by Charles Darwin fifty years later as a viable theory when he articulated its driving force: natural selection.[14][15] (Alfred Russel Wallace is recognized as the co-discoverer of this concept as he helped research and experiment with the concept of evolution.)[16] Evolution is now used to explain the great variations of life found on Earth.
+Darwin theorized that species and breeds developed through the processes of natural selection and artificial selection or selective breeding.[17] Genetic drift was embraced as an additional mechanism of evolutionary development in the modern synthesis of the theory.[18]
+The evolutionary history of the species—which describes the characteristics of the various species from which it descended—together with its genealogical relationship to every other species is known as its phylogeny. Widely varied approaches to biology generate information about phylogeny. These include the comparisons of DNA sequences conducted within molecular biology or genomics, and comparisons of fossils or other records of ancient organisms in paleontology.[19] Biologists organize and analyze evolutionary relationships through various methods, including phylogenetics, phenetics, and cladistics. (For a summary of major events in the evolution of life as currently understood by biologists, see evolutionary timeline.)
+The theory of evolution postulates that all organisms on the Earth, both living and extinct, have descended from a common ancestor or an ancestral gene pool. This last universal common ancestor of all organisms is believed to have appeared about 3.5 billion years ago.[20] Biologists generally regard the universality and ubiquity of the genetic code as definitive evidence in favor of the theory of universal common descent for all bacteria, archaea, and eukaryotes (see: origin of life).[21]
+Genetics
+Main article: Genetics
+
+
+A Punnett square depicting a cross between two pea plants heterozygous for purple (B) and white (b) blossoms
+Genes are the primary units of inheritance in all organisms. A gene is a unit of heredity and corresponds to a region of DNA that influences the form or function of an organism in specific ways. All organisms, from bacteria to animals, share the same basic machinery that copies and translates DNA into proteins. Cells transcribe a DNA gene into an RNA version of the gene, and a ribosome then translates the RNA into a protein, a sequence of amino acids. The translation code from RNA codon to amino acid is the same for most organisms, but slightly different for some. For example, a sequence of DNA that codes for insulin in humans also codes for insulin when inserted into other organisms, such as plants.[22][23]
+DNA usually occurs as linear chromosomes in eukaryotes, and circular chromosomes in prokaryotes. A chromosome is an organized structure consisting of DNA and histones. The set of chromosomes in a cell and any other hereditary information found in the mitochondria, chloroplasts, or other locations is collectively known as its genome. In eukaryotes, genomic DNA is located in the cell nucleus, along with small amounts in mitochondria and chloroplasts. In prokaryotes, the DNA is held within an irregularly shaped body in the cytoplasm called the nucleoid.[24] The genetic information in a genome is held within genes, and the complete assemblage of this information in an organism is called its genotype.[25]
+Homeostasis
+Main article: Homeostasis
+
+
+The hypothalamus secretes CRH, which directs the pituitary gland to secrete ACTH. In turn, ACTH directs the adrenal cortex to secrete glucocorticoids, such as cortisol. The GCs then reduce the rate of secretion by the hypothalamus and the pituitary gland once a sufficient amount of GCs has been released.[26]
+Homeostasis is the ability of an open system to regulate its internal environment to maintain stable conditions by means of multiple dynamic equilibrium adjustments controlled by interrelated regulation mechanisms. All living organisms, whether unicellular or multicellular, exhibit homeostasis.[27]
+To maintain dynamic equilibrium and effectively carry out certain functions, a system must detect and respond to perturbations. After the detection of a perturbation, a biological system normally respond through negative feedback. This means stabilizing conditions by either reducing or increasing the activity of an organ or system. One example is the release of glucagon when sugar levels are too low.
+Energy
+
+
+Basic overview of energy and human life.
+The survival of a living organism depends on the continuous input of energy. Chemical reactions that are responsible for its structure and function are tuned to extract energy from substances that act as its food and transform them to help form new cells and sustain them. In this process, molecules of chemical substances that constitute food play two roles; first, they contain energy that can be transformed for biological chemical reactions; second, they develop new molecular structures made up of biomolecules.
+The organisms responsible for the introduction of energy into an ecosystem are known as producers or autotrophs. Nearly all of these organisms originally draw energy from the sun.[28] Plants and other phototrophs use solar energy via a process known as photosynthesis to convert raw materials into organic molecules, such as ATP, whose bonds can be broken to release energy.[29] A few ecosystems, however, depend entirely on energy extracted by chemotrophs from methane, sulfides, or other non-luminal energy sources.[30]
+Some of the captured energy is used to produce biomass to sustain life and provide energy for growth and development. The majority of the rest of this energy is lost as heat and waste molecules. The most important processes for converting the energy trapped in chemical substances into energy useful to sustain life are metabolism[31] and cellular respiration.[32]
+Research
+
+Structural
+
+
+Schematic of typical animal cell depicting the various organelles and structures.
+Main articles: Molecular biology, Cell biology, Genetics, and Developmental biology
+Molecular biology is the study of biology at a molecular level.[33] This field overlaps with other areas of biology, particularly with genetics and biochemistry. Molecular biology chiefly concerns itself with understanding the interactions between the various systems of a cell, including the interrelationship of DNA, RNA, and protein synthesis and learning how these interactions are regulated.
+Cell biology studies the structural and physiological properties of cells, including their behaviors, interactions, and environment. This is done on both the microscopic and molecular levels, for single-celled organisms such as bacteria as well as the specialized cells in multicellular organisms such as humans. Understanding the structure and function of cells is fundamental to all of the biological sciences. The similarities and differences between cell types are particularly relevant to molecular biology.
+Anatomy considers the forms of macroscopic structures such as organs and organ systems.[34]
+Genetics is the science of genes, heredity, and the variation of organisms.[35][36] Genes encode the information necessary for synthesizing proteins, which in turn play a large role in influencing (though, in many instances, not completely determining) the final phenotype of the organism. In modern research, genetics provides important tools in the investigation of the function of a particular gene, or the analysis of genetic interactions. Within organisms, genetic information generally is carried in chromosomes, where it is represented in the chemical structure of particular DNA molecules.
+Developmental biology studies the process by which organisms grow and develop. Originating in embryology, modern developmental biology studies the genetic control of cell growth, differentiation, and "morphogenesis," which is the process that progressively gives rise to tissues, organs, and anatomy. Model organisms for developmental biology include the round worm Caenorhabditis elegans,[37] the fruit fly Drosophila melanogaster,[38] the zebrafish Danio rerio,[39] the mouse Mus musculus,,[40] and the weed Arabidopsis thaliana.[41][42] (A model organism is a species that is extensively studied to understand particular biological phenomena, with the expectation that discoveries made in that organism provide insight into the workings of other organisms.)[43]
+Physiological
+Main article: Physiology
+Physiology studies the mechanical, physical, and biochemical processes of living organisms by attempting to understand how all of the structures function as a whole. The theme of "structure to function" is central to biology. Physiological studies have traditionally been divided into plant physiology and animal physiology, but some principles of physiology are universal, no matter what particular organism is being studied. For example, what is learned about the physiology of yeast cells can also apply to human cells. The field of animal physiology extends the tools and methods of human physiology to non-human species. Plant physiology borrows techniques from both research fields.
+Physiology studies how for example nervous, immune, endocrine, respiratory, and circulatory systems, function and interact. The study of these systems is shared with medically oriented disciplines such as neurology and immunology.
+Evolutionary
+Evolutionary research is concerned with the origin and descent of species, as well as their change over time, and includes scientists from many taxonomically oriented disciplines. For example, it generally involves scientists who have special training in particular organisms such as mammalogy, ornithology, botany, or herpetology, but use those organisms as systems to answer general questions about evolution.
+Evolutionary biology is partly based on paleontology, which uses the fossil record to answer questions about the mode and tempo of evolution,[44] and partly on the developments in areas such as population genetics[45] and evolutionary theory. In the 1980s, developmental biology re-entered evolutionary biology from its initial exclusion from the modern synthesis through the study of evolutionary developmental biology.[46] Related fields often considered part of evolutionary biology are phylogenetics, systematics, and taxonomy.
+Systematics
+ 
+
+A phylogenetic tree of all living things, based on rRNA gene data, showing the separation of the three domains bacteria, archaea, and eukaryotes as described initially by Carl Woese. Trees constructed with other genes are generally similar, although they may place some early-branching groups very differently, presumably owing to rapid rRNA evolution. The exact relationships of the three domains are still being debated.
+Main article: Systematics
+Multiple speciation events create a tree structured system of relationships between species. The role of systematics is to study these relationships and thus the differences and similarities between species and groups of species.[47] However, systematics was an active field of research long before evolutionary thinking was common.[48] The classification, taxonomy, and nomenclature of biological organisms is administered by the International Code of Zoological Nomenclature, International Code of Botanical Nomenclature, and International Code of Nomenclature of Bacteria for animals, plants, and bacteria, respectively. The classification of viruses, viroids, prions, and all other sub-viral agents that demonstrate biological characteristics is conducted by the International Code of Virus classification and nomenclature.[49][50][51][52] However, several other viral classification systems do exist.
+Traditionally, living things have been divided into five kingdoms: Monera; Protista; Fungi; Plantae; Animalia.[53]
+However, many scientists now consider this five-kingdom system outdated. Modern alternative classification systems generally begin with the three-domain system: Archaea (originally Archaebacteria); Bacteria (originally Eubacteria); Eukaryota (including protists, fungi, plants, and animals)[54] These domains reflect whether the cells have nuclei or not, as well as differences in the chemical composition of the cell exteriors.[54]
+Further, each kingdom is broken down recursively until each species is separately classified. The order is: Domain; Kingdom; Phylum; Class; Order; Family; Genus; Species.
+There is also a series of intracellular parasites that are "on the edge of life"[55] in terms of metabolic activity, meaning that many scientists do not actually classify these structures as alive, due to their lack of at least one or more of the fundamental functions that define life. They are classified as viruses, viroids, prions, or satellites.
+The scientific name of an organism is generated from its genus and species. For example, humans are listed as Homo sapiens. Homo is the genus, and sapiens the species. When writing the scientific name of an organism, it is proper to capitalize the first letter in the genus and put all of the species in lowercase. Additionally, the entire term may be italicized or underlined.[56][57]
+The dominant classification system is called the Linnaean taxonomy. It includes ranks and binomial nomenclature. How organisms are named is governed by international agreements such as the International Code of Botanical Nomenclature (ICBN), the International Code of Zoological Nomenclature (ICZN), and the International Code of Nomenclature of Bacteria (ICNB).
+A merging draft, BioCode, was published in 1997 in an attempt to standardize nomenclature in these three areas, but has yet to be formally adopted.[58] The BioCode draft has received little attention since 1997; its originally planned implementation date of January 1, 2000, has passed unnoticed. However, a 2004 paper concerning the cyanobacteria does advocate a future adoption of a BioCode and interim steps consisting of reducing the differences between the codes.[59] The International Code of Virus Classification and Nomenclature (ICVCN) remains outside the BioCode.
+Ecology
+
+
+Mutual symbiosis between clownfish of the genus Amphiprion that dwell among the tentacles of tropical sea anemones. The territorial fish protects the anemone from anemone-eating fish, and in turn the stinging tentacles of the anemone protects the clown fish from its predators
+Main articles: Ecology, Ethology, Behavior, and Biogeography
+Ecology studies the distribution and abundance of living organisms, and the interactions between organisms and their environment.[60] The habitat of an organism can be described as the local abiotic factors such as climate and ecology, in addition to the other organisms and biotic factors that share its environment.[61] One reason that biological systems can be difficult to study is that so many different interactions with other organisms and the environment are possible, even on the smallest of scales. A microscopic bacterium responding to a local sugar gradient is responding to its environment as much as a lion is responding to its environment when it searches for food in the African savanna. For any given species, behaviors can be co-operative, aggressive, parasitic, or symbiotic. Matters become more complex when two or more different species interact in an ecosystem. Studies of this type are within the province of ecology.
+Ecological systems are studied at several different levels, from individuals and populations to ecosystems and the biosphere. The term population biology is often used interchangeably with population ecology, although population biology is more frequently used when studying diseases, viruses, and microbes, while population ecology is more commonly when studying plants and animals. As can be surmised, ecology is a science that draws on several disciplines.
+Ethology studies animal behavior (particularly that of social animals such as primates and canids), and is sometimes considered a branch of zoology. Ethologists have been particularly concerned with the evolution of behavior and the understanding of behavior in terms of the theory of natural selection. In one sense, the first modern ethologist was Charles Darwin, whose book, The Expression of the Emotions in Man and Animals, influenced many ethologists to come.[62]
+Biogeography studies the spatial distribution of organisms on the Earth,[63] focusing on topics like plate tectonics, climate change, dispersal and migration, and cladistics.
+Branches of biology
+
+These are the main branches of biology:[64][65]
+Aerobiology — the study of airborne organic particles
+Agriculture — the study of producing crops from the land, with an emphasis on practical applications
+Anatomy — the study of form and function, in plants, animals, and other organisms, or specifically in humans
+Astrobiology — the study of evolution, distribution, and future of life in the universe—also known as exobiology, exopaleontology, and bioastronomy
+Biochemistry — the study of the chemical reactions required for life to exist and function, usually a focus on the cellular level
+Bioengineering — the study of biology through the means of engineering with an emphasis on applied knowledge and especially related to biotechnology
+Biogeography — the study of the distribution of species spatially and temporally
+Bioinformatics — the use of information technology for the study, collection, and storage of genomic and other biological data
+Biomathematics or Mathematical Biology — the quantitative or mathematical study of biological processes, with an emphasis on modeling
+Biomechanics — often considered a branch of medicine, the study of the mechanics of living beings, with an emphasis on applied use through prosthetics or orthotics
+Biomedical research — the study of the human body in health and disease
+Biophysics — the study of biological processes through physics, by applying the theories and methods traditionally used in the physical sciences
+Biotechnology — a new and sometimes controversial branch of biology that studies the manipulation of living matter, including genetic modification and synthetic biology
+Building biology — the study of the indoor living environment
+Botany — the study of plants
+Cell biology — the study of the cell as a complete unit, and the molecular and chemical interactions that occur within a living cell
+Conservation Biology — the study of the preservation, protection, or restoration of the natural environment, natural ecosystems, vegetation, and wildlife
+Cryobiology — the study of the effects of lower than normally preferred temperatures on living beings.
+Developmental biology — the study of the processes through which an organism forms, from zygote to full structure
+Ecology — the study of the interactions of living organisms with one another and with the non-living elements of their environment
+Embryology — the study of the development of embryo (from fecundation to birth). See also topobiology.
+Entomology — the study of insects
+Environmental Biology — the study of the natural world, as a whole or in a particular area, especially as affected by human activity
+Epidemiology — a major component of public health research, studying factors affecting the health of populations
+Ethology — the study of animal behavior
+Evolutionary Biology — the study of the origin and descent of species over time
+Genetics — the study of genes and heredity
+Herpetology — the study of reptiles and amphibians
+Histology — the study of cells and tissues, a microscopic branch of anatomy
+Ichthyology — the study of fish
+Integrative biology — the study of whole organisms
+Limnology — the study of inland waters
+Mammalogy — the study of mammals
+Marine Biology — the study of ocean ecosystems, plants, animals, and other living beings
+Microbiology — the study of microscopic organisms (microorganisms) and their interactions with other living things
+Molecular Biology — the study of biology and biological functions at the molecular level, some cross over with biochemistry
+Mycology — the study of fungi
+Neurobiology — the study of the nervous system, including anatomy, physiology and pathology
+Oceanography — the study of the ocean, including ocean life, environment, geography, weather, and other aspects influencing the ocean
+Oncology — the study of cancer processes, including virus or mutation oncogenesis, angiogenesis and tissues remoldings
+Ornithology — the study of birds
+Population biology — the study of groups of conspecific organisms, including
+Population ecology — the study of how population dynamics and extinction
+Population genetics — the study of changes in gene frequencies in populations of organisms
+Paleontology — the study of fossils and sometimes geographic evidence of prehistoric life
+Pathobiology or pathology — the study of diseases, and the causes, processes, nature, and development of disease
+Parasitology — the study of parasites and parasitism
+Pharmacology — the study and practical application of preparation, use, and effects of drugs and synthetic medicines
+Physiology — the study of the functioning of living organisms and the organs and parts of living organisms
+Phytopathology — the study of plant diseases (also called Plant Pathology)
+Psychobiology — the study of the biological bases of psychology
+Sociobiology — the study of the biological bases of sociology
+Structural biology — a branch of molecular biology, biochemistry, and biophysics concerned with the molecular structure of biological macromolecules
+Virology — the study of viruses and some other virus-like agents
+Zoology — the study of animals, including classification, physiology, development, and behavior (See also Entomology, Ethology, Herpetology, Ichthyology, Mammalogy, and Ornithology)
+See also
+
+	Book: Biology
+Wikipedia books are collections of articles that can be downloaded or ordered in print.
+	Biology portal
+	Environment portal
+	Ecology portal
+	Earth_sciences portal
+Main article: Outline of biology
+Conservation biology
+The Journal of Life Sciences
+List of biological websites
+List of biologists
+List of Russian biologists
+List of biology topics
+Lists of biology journals and magazines
+Periodic Table of Life Sciences in Tinbergen's four questions
+[show]v · d · eTopics related to biology
+Notes and references
+
+^ Based on definition from Aquarena Wetlands Project glossary of terms.
+^ a b Avila, Vernon L. (1995). Biology: Investigating life on earth. Boston: Jones and Bartlett. pp. 11–18. ISBN 0-86720-942-9.
+Researchers have discovered that the vesicular stomatitis virus (VSV) kills certain types of cancer cells. While cancer viruses have the potential to cause cancer, this virus actually helps to prevent cancer in two ways. VSV destroys cancer cells and also inhibits their ability to escape immune system detection. When viruses infect cells, they take control over cellular machinery to cause the cells to produce more viruses. Some viruses cause cells to produce certain molecules that prevent the host's immune system from detecting them. These molecules are overexpressed in cancers such as melanoma, testicular cancer, ovarian cancer and certain types of leukemia.
+
+As stated by researcher Søren Skov, "We were able to demonstrate that the virus kills cancer cells. The results also show that VSV effectively blocks the production of the immunostimulatory molecules which certain types of cancer overexpress to destroy the immune system and thus the chances of survival." The researchers believe that further studies with VSV could lead to new types of therapies for cancer treatment. These treatments could boost the immune system increasing its ability to fight cancer. Virus therapy treatments would also allow for specific targeting of cancer cells without the risk of harming healthy cells.
+
+Learn more about this study:
+
+Virus as a Potential Future Cancer Medicine? Science Daily
+Comments (0)PermalinkShare
+How Cells Are Protected From Carbon Monoxide
+Thursday September 22, 2011
+
+Red Blood Cell
+Carbon monoxide (CO) binds to hemoglobin in blood cells resulting in CO poisoning.
+Image Credit: CDC/Janice H. Carr
+Carbon monoxide (CO) gas is colorless, odorless, tasteless and toxic. It is not only produced by fuel burning devices, but is also produced as a by-product of cellular processes. If carbon monoxide is produced naturally during normal cell functions, why aren't organisms poisoned by it? Scientists believe that because CO is produced in much lower concentrations than seen in CO poisoning, cells are protected from its toxic effects. CO binds to proteins in the body known as haemproteins or hemoproteins. Hemoglobin found in blood and cytochromes found in mitochondria and the endoplasmic reticulum are examples of hemoproteins. When CO binds to hemoglobin in blood cells, it prevents oxygen from binding to the protein molecule leading to disruptions in vital cell processes such as cellular respiration.
+
+According to researcher Nigel Scrutton, "Our work identifies a mechanism by which haemproteins are protected from carbon monoxide poisoning at low, physiological concentrations of the gas. Working with a simple, bacterial haemprotein, we were able to show that when the haemprotein 'senses' the toxic gas is being produced within the cell, it changes its structure through a burst of energy and the carbon monoxide molecule struggles to bind with it at these low concentrations." The researchers were surprised to discover that the simple mechanism of the hemoprotein changing structure is the means by which CO poisoning is prevented. They stated that without this structural change, CO would bind to the hemoprotein up to a million times more tightly.
+
+Learn more about this study:
+
+How Organisms Avoid Carbon Monoxide Poisoning Science Daily
+Comments (0)PermalinkShare
+Natural Killer Cell Function
+Friday September 16, 2011
+
+This electron micrograph image shows a lytic granule (yellow) within the actin network (blue) at the immune synapse of a natural killer cell.
+Credit: Gregory Rak and Jordan Orange, Children's Hospital of Philadelphia
+Natural killer (NK) cells are cells of the immune system that contain granules with chemicals inside. When NK cells come across a tumor cell or a cell that is infected with a virus, they surround and destroy the diseased cell by releasing the chemical containing granules. These chemicals break-down the cell membrane of the diseased cell, ultimately causing it to burst. With the aid of newly developed microscope technology, researchers have observed how these granules are transported from the NK cells to their intended target cell.
+
+Once a cell is targeted by an NK cell, the NK cell attaches to the corrupted cell at a site called the immunological synapse. Located within the synapse is a dense network of microtubule filaments consisting of a protein known as F-actin. F-actin helps to maneuver the granules through the synapse where they can reach their intended target. The researchers intend to perform further studies focusing on the mechanisms involved in the movement of the granules through the immunological synapse. It is hoped that this information will lead to the development of new methods for the treatment of immune disorders.
+
+Learn more about this study:
+
+Super-Resolution Imaging Reveals Natural Killers' M.O. Science Daily
+Comments (0)PermalinkShare
+Beetle Defense Against Egg Parasite
+Thursday September 15, 2011
+
+This is a seed beetle egg stack. The blackened parts of the eggs tell of a wasp hijacking them to raise their own larvae. But once pried open, the egg stack reveals a third egg, left unharmed under the protection of the upper two.
+Credit: Joseph Deas
+Researchers have discovered a unique defense mechanism employed by seed beetles to protect their young from parasitic wasps. They lay eggs on seed pods and then stack the eggs, two to four eggs high, to protect the egg on the bottom. The eggs on the top do not develop into beetles, but are in effect 'dummy eggs' that cover the bottom egg. The wasp Uscana semifumipennis attacks seed beetle eggs, injecting them with its own eggs. The wasp larvae consume the nutrients intended for the developing beetle. The beetle larvae never form and the interior of the egg becomes black. When beetle eggs are stacked, the wasp attacks the eggs on the top of the stack first. These eggs are not the same as the egg on the bottom of the stack. They weigh less and are thought to contain less yolk.
+
+According to researcher Joseph Deas, "You can tell when an egg has been parasitized because the egg will start to darken and blacken. The beetle 
+larva by that time will never form because all of the yolk is going inside the wasp larva. And then you can see little red eyes in there; the beetles don't have red eyes. It looks very evil." The beetles use the egg stacking method to create a buffer between their egg and the attacking wasp. The researchers discovered that when wasps attacked stacked eggs, the eggs on the top did not have enough nutrients to support the developing wasp. Those wasps died, but the egg on the bottom of the stack was protected from attack and the beetle developed normally. It was also discovered that the larger the egg stack, the less likely it was for the bottom egg to be parasitized.
+I. Scientific Method A.Inquiry Based – based on observation
+B.Proceeds logically & serially
+C.Initiated by observation
+D. Steps: 1.Observation of the action/change/phenomena/etc. 2.Repeatability – is the observed phenomena regular/repeatable? i.Only if repeatable is it possible to scientifically study the behavior
+3.Mechanism – How does it work?
+4.Hypothesis: If action is repeatable & mechanism observed – select hypothesis to test
+i.Principle of Parsimony – the choice of the easiest hypothesis to test first (Occam’s Razor) 5.Before experimenting map out the possible outcomes i. Hypotheses: a.Wrong – choose another experiment b.Right – hypothesis may be a possible explanation 6.By nature science can disprove but cannot prove i.There are only increasing probabilities of truth E.Theory – as close to scientific truth s is possible II. Chemical Foundations A.Atomic Theory – protons (+), neutrons, electrons (-)
+1.Proton count = atomic number
+2.Electrons – their arrangement in discreet outer shells dictate the atom’s chemical properties
+3.Atomic mass:protons + neutrons (= baryons – “heavy particles”) (electrons have little mass)
+4.Each proton + neutron = 1 Dalton or Atomic Mass Unit
+5.Isotope – atom with the same number of protons but differing numbers of neutrons: neutron
+count doesn’t change the chemical properties of the element as they’re determined by the
+electron arrangement and electron arrangement is determined by the proton count
+i.Mass # = single atom weight | Atomic Wt = average of all naturally occurring isotopes
+ii.126 C? Protons + Neutrons = 12|Protons = 6
+6.Charges: p+ , e- B.Ion – any particle with a net charge: caused by the gain or loss of electrons
+1.Cation – positively charged ion
+2.anion – negatively charged ion
+C.Ionic Bonds – bond formed by attraction of ion charges
+1.Atoms have basic desire to complete outer shell to become chemically inert
+2.Loss of electron = + charge, gain of electron = - charge
+3.These charged particles attract and bond – Ionic Bonding(ex. F- & Na+? NaF)
+i.Strength of tendency to form ionic bonds dictated by distance from center of period tbl. 4.Ionic bonds are not molecules – instead form crystals (due to mutual attraction of all + and – atoms amongst each other) D.Covalent Bonds – bonds sharing electrons in outer levels – not gaining or losing electrons 1.Symmetrical covalent bond (H2, O2, N2, ) has nopolarity - bond shares electrons 50:50 (diagram?) 2.Asymmetrical covalent bond results in one atom having larger pull on
+electrons, making the electrons more likely to orbit the heavier
+element(s) and less likely to orbit the lighter element resulting in
+polarity: A.K.A.el ectronegati vit y (see 1st diagram on page 2)
+i.Electronegativity – having a greater tendency to pull electrons and thus
+partially charge, or polarize, the covalently bonded molecu
+
+
+
+i.Ex: maltose = glucose + glucose; lactose = glucose + galactose; sucrose = glucose + fructose 3.Polysaccharides – very large carbohydrates, joining hundreds to thousands of monomers I. Biological Polymers 1.Monomers – the base, or “repeating, unit 2.Condensation, a.k.a. dehydration synthesis, reactions form most polymers from base monomers 3.Formation of poly-“sugars” (a.k.a. polysaccharides) i.Starch – storage sugar/polysaccharide of plants made up entirely of glucose monomers
+(through 1-4 linkages, number 1 C to number 4 C)
+a.Because of the angles of the bonds the polymer forms a helical shape
+ii.Glycogen – storage sugar/polysaccharide of animals a.More extensively branched than that of plants iii.Cellulose – structural polysaccharide that comprises cell walls of plant cells a.Consists of glucose monomers, but all C-OH bonds between glucose monomers are of the ß form. b.Cell walls of plants are many parallel cellulose molecules held together by hydrogen
+bonds between the hydroxyl groups of the glucose monomers (arranged as
+microfibrils)
+J.Lipids – grouped together for their hydrophobic properties – waxes, oils, fats, etc. 1.Fats – large molecules, but not polymers. i.Consist of one glycerol backbone and three fatty acids – Glycerol is an alcohol with three carbons, each bearing a hydroxyl group? ii.Fatty acids have long carbon skeleton with a carboxyl group at one end
+(thus giving it the “acid”
+nomenclature)
+iii.Three fatty acids joined by ester linkage (C-O-C bond between the glycerol’s hydroxyl group and the fatty acid’s carboxyl group) results in a triglyceride, a.k.a. fat.
+iv.Ester bonds between the glycerol & fatty acids produce H2O, and are condensation synth.
+v.Fatty acid with no double bonds, all being single C-H bonds, is saturated
+vi.Fatty acid with double bonded C within the chain is
+unsaturated (mono, poly, etc) 2. Phospholipids i.Composed oftwo fatty acids rather than three, with the third hydroxyl group of the glycerol molecule joined to a phosphate group (quite polar) ii.Tail end of phospholipid is a fatty acid hydrocarbon, and hydrophobic iii.Head end of phospholipids is very polar phosphate group, and thus hydrophilic 3.Steroids (sterol-based lipids)ex. Cholesterol i.Comprised of C skeleton of four interconnected rings (fig.?) 4.Waxes – long chain fatty acids tightly packed and bonded to long chain alcohols or carbon rings.Are malleable and hydrophilic. V. Proteins
+
+A.Amino acid – an amino group (-NH3+), a carboxyl group (-COO-), the H+ atom, and one or more
+atoms called it’s R group
+1.Amino acids are the monomers that polymerize into protein polymers
+2.21 amino acids of human biological concern
+3.Bonds between amino acids are peptide bonds ( –C–N–C– bonds, like esters but using N)
+i.Dehydration synthesis/condensation reaction joins the amino acids
+ii.Grouping of multiple amino acids is a polypeptide (chain)
+iii.In peptide bond production there is always a carboxyl group (COOH) at one end and a
+nitrogen (-NH2) left over at the other – C terminus & N terminus B. Structure 1.The sequence of amino acids in the polypeptide chain is the Primary Structure 2.Secondary Structure is the regular H bonding in the chain, resulting in either a helix or ß pleated sheet 3.Tertiary structure – domain formation, irregular bonding from Hydrogen bonds, disulfide bridges (of the sulfhydryl group), ionic bonding and hydrophobic interactions 4.Quaternary structure – the final structure of the polypeptide chain, which determines the function of the protein. C. Denaturation 1.Any change or disruption of the 4th protein structure (change of heat, pH, etc) disables the protein from doing its job D. Nucleotides 1.All nucleotides comprised of a sugar-phosphate backbone and one nitrogenous base
+i.ATP – contains three phosphate groups attached to its sugar.
+ii.Because the phosphate groups are very polar the release of those
+bonds is extremely exegetic 2. Nucleic Acids i.Formed by nucleotide monomers – covalent bonds form between the sugar of one nucleotide and the phosphate group of the next ii. DNA – a.made up of 4 deoxyribonucleotide monomers (the nitrogenous bases are what differentiate them) Adenine, Guanine, Thymine, Cytosine
+b.pentose (5 C sugar) bonded to nitrogenous base (AGTC) and to phosphate group
+c.DNA contains the instructions for day to day operation and reproduction of the cell
+d.Secondary structure of DNA, formed by H bonding, is what forms the double helix
+iii.RNA – composed of ribonucleotide monomers
+a.Single stranded – integral in protein synthesis
+b.Substitute thymine base of DNA for uracil base
+VI. Cell Theory A.Cell – functional unit of all living things – the smallest unit with the properties of life 1.All have a region of DNA, all have cytoplasm, all have plasma membrane B. Types 1.Prokaryotic – primitive cells – no membranous fixed inner structure or nucleus 2.Eukaryotic – has a true nucleus and is a more complex cell.Plant & animal cells are eukaryotes C.Cell Structure – General Cellular Parts 1.Plasma membrane – selective barrier allowing passage of oxygen, nutrients and waste to cell i.Consists of a lipid bilayer that selectively prevents water soluble substances from crossing 2.Nucleus – contains the DNA of eukaryotes – directly communicates with the (rough) ER
+
+
+i.Nucleolis – mass of proteins & copies of genes coding for ribosomal RNA 3.Nucleoid – region of cytoplasm in prokaryotes containing DNA 4.Endoplasmic Reticulum (ER) i.Smooth ER – assists in the packaging and transport of materials in the cell ii.Rough ER – contains protein clumps (ribosomes) on membrane wall, synthesizes lipids, 5.Ribosomes – contained on wall of rough ER and in cytoplasm – assist in TRANSLATION of proteins 6.Mitochondria – primary ATP manufacturer of the cell (thus “powerhouse”) – have their own DNA and divide on their own 7.Golgi Body – manufacture & packaging of inner & extra cellular materials (proteins & lipids) 8.Vesicles – membrane bound grouping of cellular material act as cellular material transporters i.Lysosomes – type/subset of vesicle that can open up and release digestive enzymes breaking down cells ii.Peroxisomes – hold enzymes for digesting fatty acids, amino acids and H2O2
+9.Chloroplasts (plant cell) – photosynthetic cell, transfers sunlight & water into ATP
+10. Central Vacuole (plant cell) – stores amino acids, sugars, ions and waste, takes up 50 to 90%
+of the plant cell interior 11. Cytoskeleton – structurally supports, gives shape to and moves eukaryotic cell (not present in
+prokaryotes)
+i.Microtubules – largest skeletal elements, regulates cell organelle placement and
+movement
+ii.Microfilaments – smallest skeletal elements, reinforce cell shape, reconfigure surface, etc
+iii.Intermediate filaments – mid sized elements, help reinforce the nucleus
+Actionbioscience.org
+This site provides articles on a range of issues, including biodiversity, human genome, biotechnology, evolution and the environment.
+Biology Online
+This site provides biology notes on cell biology, genetics & evolution, control & development, biological regulation, adaptation, and freshwater ecology. Also provides a dictionary for biological terminology and links to other useful websites.
+Bursary Topics
+Lecture notes from Otago School of Medical Sciences, New Zealand. Includes: biocontrol, GM plants, GM animals, biotechnology, molecular biology techniques, gene therapy, cancer, heart disease, proteins, and HIV & AIDS.
+Examcentre
+This site aims to help students taking science related topics to pass their courses. Choose from the many topics listed to view study notes. At the end each topic is a list of questions, so you can test your knowledge on the material you have just studied.
+Gondar Design Sciences
+This UK site is devoted to helping students learn more about science. Learn about specific areas in biology, ecology and chemistry. Also has a section on essay writing, homework, and making investigations.
+Human Biology Guide
+Revision notes designed for the AQA Human Biology (A-Level/GCE) specifications. Several books and other resources were summarised and combined to make this set of notes.
+Mark Rothery's Biology Web Site
+Aimed mainly at AQA (B) AS and A Level students, this website id divided up into the five modules and provides background lecture notes, key facts, and past paper questions.
+S-Cool! - A-Level Biology Revision Guide
+This website is designed for AS and A2 Biology students and covers a range of topics from biological molecules and cells, to Evolution and Genetic engineering.
+The Open Door Web Site
+Aimed for more junior biology students, this is a great place to get started. Includes various topic chapters, facts and figures, laboratory work, and quizzes.
+Welcome to the Biology Web
+An online textbook and laboratory manual designed speciafically for UK students.
+Discovery of Nucleic Acids - Friedrich Miescher, 1869
+
+Miescher isolated the nuclei of white blood cells obtained from pus cells. His experiments revealed that nuclei contained a chemical that contained nitrogen and phosphorus but no sulfur. He called the chemical nuclein because it came from nuclei. It later became known as nucleic acid.
+
+Proteins Produce Genetic Traits - Archibald Garrod, 1909
+
+Garrod noticed that people with certain genetic abnormalities (inborn errors of metabolism) lacked certain enzymes. This observation linked proteins (enzymes) to genetic traits.
+
+Genetic Material can Transform Bacteria - Frederick Griffith, 1931
+
+When Streptococcus pneumoniae (pneumococcus) bacteria are grown on a culture plate, some produce smooth shiny colonies (S) while others produce rough colonies (R). This is because the S strain bacteria have a mucous (polysaccharide) coat, while R strain does not.
+
+Mice infected with the S strain die from pneumonia infection but mice infected with the R strain do not develop pneumonia.
+
+
+
+Griffith was able to kill bacteria by heating them. He observed that heat-killed S strain bacteria injected into mice did not kill them. When he injected a mixture of heat-killed S and live R bacteria, the mice died. Moreover, he recovered living S bacteria from the carcasses.
+
+
+
+He concluded that some substance needed to produce the mucous coat was passed from the dead bacteria (S strain) to the live ones (R strain); they became transformed.
+
+This must be due to a change in the genotype associated with the transfer of the genetic material.
+
+The transforming material is DNA - Oswald Avery, Colin MacLeod, and Maclyn McCarty, 1944
+
+Prior to the work of Avery, MacLeod, and McCarty, the genetic material was thought to be protein. Avery, MacLeod, and McCarty worked to determine what the transforming substance was in Griffith's experiment (above).
+
+They purified chemicals from the heat-killed S cells to see which ones could transform live R cells into S cells. They discovered that DNA alone from S bacteria caused R bacteria to become transformed.
+
+They also discovered that protein-digesting enzymes (proteases) and RNA-digesting enzymes (RNAse) did not affect transformation, so the transforming substance was not a protein or RNA. Digestion with DNase did inhibit transformation, so DNA caused transformation.
+
+They concluded that DNA is the hereditary material, but not all biologists were convinced.
+
+More Evidence: The Genetic Material is DNA - Alfred D. Hershey and Martha Chase, 1952
+
+Hershey and Chase worked with viruses that infect bacteria called bacteriophages.
+
+The bacteriophage becomes attached to the bacteria and its genetic material then enters the bacterial cell. The bacterial cell treats the viral genetic material as if it was its own and subsequently manufactures more virus particles. Hershey and Chase worked to discover whether it was protein or DNA from the viruses that entered the bacteria.
+
+They grew a virus population in medium that contained radioactive phosphorus and another in medium that contained radioactive sulfur. Viruses grown in the presence of radioactive phosphorus contained radioactive DNA but not radioactive protein because DNA contains phosphorus but protein does not. Similarly, viruses grown on radioactive sulfur contained radioactive protein but not radioactive DNA because DNA does not contain sulfur.
+
+      
+
+Radioactive bacteriophages were allowed to attach to E. coli bacteria. Then as the infection proceeded, the viral coats were removed from the bacteria by agitating them in a blender. The viruses particles were separated from the bacteria by spinning them in a centrifuge.
+
+                                     
+
+Bacteria that were infected with viruses that had radioactive DNA were radioactive, indicating that DNA was the material that passed from the virus to the bacteria. Bacteria that were infected with viruses that had radioactive proteins were not radioactive. This indicates that proteins did not enter the bacteria from the viruses. DNA is therefore the genetic material that is passed from virus to bacteria.
+
+      
+
+Discovery of the Structure of DNA
+
+Erwin Chargaff, 1940’s and early 50's
+
+DNA was thought to contain equal amounts of A, T, T, and C. Chargaff found that the base composition of DNA differs among species.
+
+His data showed that in each species, the percent of A equals the percent of T, and the percent of G equals the percent of C. so that 50% of the bases were purines (A + G) and 50% were pyrimidines (T + C)
+
+Chargafff’s rule: The amount of A = T and the amount of G = C.
+
+M.H.F. Wilkins and Rosalind Franklin, early 50’s
+
+Wilkins and Franklin studied the structure of DNA crystals using X-rays.
+
+They found that the crystals contain regularly repeating subunits.
+
+Structures that are close together cause the x-ray to bend more than structures that are further apart. The X pattern produced by DNA suggested that DNA contains structures with dimensions of 2 nm, 0.34 nm, and 3.4 n. The dark structures at the top and bottom of their X-ray photograph of DNA indicate that DNA contains repeating units, suggesting a helix.
+
+James Watson and Francis H.C. Crick, 1953
+
+Watson and Crick used Chargaff's base data and Franklin’s X-ray diffraction data to construct a model of DNA.
+
+The model showed that DNA is a double helix with sugar-phosphate backbones on the outside and the paired nucleotide bases on the inside, in a structure that fit the spacing estimates from the X-ray diffraction data.
+
+Chargaff's rules showed that A = T and G = C, so there was complementary base pairing of a purine with a pyrimidine, giving the correct width for the helix.
+
+The paired bases can occur in any order, giving an overwhelming diversity of sequences.
+
+Properties of Genetic Material
+
+DNA is an ideal genetic material because it can store information, is able to replicate, and is able to undergo changes (mutate).
+
+
+
+Structure of DNA
+
+DNA is composed of units called nucleotides. Each nucleotide contains a phosphate group, a deoxyribose sugar, and a nitrogenous base.
+
+
+
+The nucleotides joined together to form a chain. The phosphate end of the chain is referred to as the 5' end. The opposite end is the 3' end.
+
+
+
+DNA is composed of two chains of nucleotides linked together in a ladder-like arrangement with the sides composed of alternating deoxyribose sugar and phosphate groups and the rungs being the nitrogenous bases as indicated by the diagram below.
+
+
+
+The "A" of one strand is always paired with a "T" on the other. Similarly, the "G" of one strand is paired with a "C" on the other.
+
+The two strands are held together by hydrogen bonds (electrostatic attraction). Two hydrogen bonds hold adenine to thymine. Three bonds attach cytosine to guanine as indicated in the diagram above.
+
+During the process of cell division, the DNA becomes tightly coiled, forming structures called chromosomes. The diagram below is a portion of a double-stranded chromosome showing the centromere and a portion of the base sequence. The diagram does not show the extensive looping and coiling and the proteins associated with coiling. Notice that the base sequence in the two chromatids is identical.
+
+
+
+How is Information Stored?
+
+The diagram below shows that one strand of the DNA double-helix serves as a template for the construction of mRNA. The sequence of nucleotides in this DNA strand is complimentary (opposite) the sequence in mRNA. The diagram also shows that the sequence of nucleotides in mRNA determines the amino acids in the protein. For example GUG in mRNA (or CAC in DNA) codes for valine (see below).
+
+The strand of DNA that contains the genetic code is called the anti-sense strand. It is often referred to as the template strand. The other strand (the sense strand) is not used. Notice that the sense strand has the same base sequence as mRNA except that mRNA has U instead of T.
+
+
+
+The codes in DNA are copied to produce mRNA. Each three-letter code in mRNA (called a codon) codes for one amino acid. The sequence of amino acids in proteins is therefore most directly determined by the sequence of bases in mRNA, which in turn, are determined by the sequence of bases in DNA.
+
+There are four letters in the genetic alphabet (A, T, G, and C) and each codon contains three letters. It is therefore possible to have 64 different codons. Because there are only 20 different amino acids and 64 possible codons, some amino acids have several different codons.
+
+Terminators are codes that indicate the end of a genetic message (gene).
+
+An initiator codon (usually AUG) indicates where the genetic information begins.
+
+DNA replication
+
+
+DNA helicase unwinds the DNA molecule by breaking hydrogen bonds. 
+
+The area in a DNA molecule where unwinding is occurring is called a replication fork. In the diagram, it looks like an upside-down Y.
+
+
+RNA primase adds an RNA primer.
+
+The direction of synthesis is from 5’ to 3’.
+
+The red color represents RNA.
+
+
+The enzyme that will synthesize new DNA is called DNA polymerase. It cannot initiate a new strand, it can only elongate a strand that is already present. Synthesis of new DNA therefore cannot begin until a short strand of nucleotides is added. This short strand is called a primer. Primase creates an RNA primer and then DNA polymerase lengthens this strand by adding DNA nucleotides. The RNA primer will later be removed and replaced by DNA.
+
+
+DNA polymerase III lengthens the strand that is being synthesized by adding nucleotides that are complimentary to those on the template strand (A paired with T and G paired with C).
+
+The arrows indicate the direction of synthesis: 5' to 3'.
+
+It proofreads the new strand as it synthesizes it. Incorrectly paired bases are removed and the correct one is inserted (discussed below).
+
+	
+The DNA polymerase molecule on the right cannot proceed further.
+
+
+This diagram shows that helicase continues to unwind the DNA.
+
+
+DNA polymerase on the right side is able to continue lengthening the strand continuously.
+
+
+DNA polymerase cannot synthesize DNA on the right side of the diagram because it needs an RNA primer. Recall that DNA polymerase can lengthen a strand but it cannot initiate synthesis. The RNA primer is synthesized by primase, indicated by the green structure in the diagram above.
+
+
+DNA polymerase can now attach and add nucleotides.
+
+ 
+
+
+After a primer is synthesized (red), DNA polymerase can lengthen the strand.
+
+
+The next two diagrams show that another molecule of DNA polymerase, called DNA polymerase I, removes the RNA primer and replaces it with DNA.
+
+	
+Notice that there is a gap between the two DNA strands on the right.
+
+	
+	
+	
+	 
+Because the direction of synthesis is from 5' to 3', the strand on the left in the diagram is synthesized continuously but the strand on the right is synthesized in fragments. The strand that is synthesized continuously is called the leading strand. The strand that is synthesized in fragments is called the lagging strand.
+
+The fragments are called Okazaki fragments.
+
+
+DNA ligase catalyzes the formation of covalent bonds between the Okazaki fragments.
+
+
+	
+Link
+
+The link below may be a helpful summary.
+
+http://www.johnkyrk.com/DNAreplication.html
+
+Replication Forks
+
+DNA synthesis occurs at numerous different locations on the same DNA molecule (hundreds in a human chromosome).
+
+These form bubbles of replication with a replication fork at the growing edge.
+
+The replication rate of eukaryotic DNA is 500 to 5000 base pairs per minute.
+
+A human cell typically requires a few hours to duplicate the 6 billion base pairs.
+
+Repair of damaged DNA
+
+Changes in the DNA code are called mutations. Repair enzymes repair most of the errors that occur in DNA. There are three different classes of repair mechanisms.
+
+1. Proofreading corrects errors made during the DNA replication process.
+2. Mismatch repair corrects base pair mismatching (A-T and G-C).
+3. Excision repair removes and replaces small segments of damaged DNA.
+
+Errors corrected as a result of DNA synthesis
+
+Proofreading
+
+The overall error rate during DNA replication in E.coli is one base in one million (106). 
+
+DNA polymerase proofreads the new strand of DNA as it is synthesized and it removes mismatched bases and replaces them with the correct bases.
+
+After proofreading, the error rate is 1 in 1 billion (109) base pairs.
+
+Mismatch Repair
+
+After DNA is replicated, some enzymes function to locate mismatched base pairs, remove a short segment of nucleotides containing the error, and replace the segment with the correct nucleotides. The new segment is then sealed to the original strand by DNA ligase. Recall that this is the enzyme that seals the Okazaki fragments during DNA synthesis.
+
+When repair enzymes detect a pairing error, how do they know which DNA strand contains the error? The repair enzymes are capable of distinguishing between the original strand of DNA and the new strand that contains the error because the new strand is not methylated. Methylation involves adding methyl groups (CH3) after DNA is synthesized. Shortly after DNA is synthesized, however, the new strand is not yet methylated.. Mismatch repair enzymes are able to detect which strand is not methylated.
+
+Other Mutations
+
+A number of environmental agents such as radiation (UV, X-rays, radioactive elements) and chemicals (pesticides, cigarette smoke) can cause mutations (changes) in DNA. 
+
+A number of enzymes monitor the DNA and repair these changes. For example, excision repair occurs when a mutated segment of DNA is removed and replaced with a new segment.
+
+A common type of mutation caused by ultraviolet radiation occurs when two thymines become bonded to each other, forming a kink in the DNA molecule. This type of mutation, called a thymine dimer, can result in incorrect nucleotides being paired with it when the strand is replicated. To repair this mutation, an enzyme removes a segment of DNA that contains the dimer and replaces the removed nucleotides with nucleotides complimentary to the opposite strand. The new DNA is then bonded to the original strand with DNA ligase.
+
+Xeroderma pigmentosum is a genetic disease in which some repair enzymes do not function.
+
+Organization of DNA
+
+Chromosome Structure
+
+Chromosomes are structures composed of condensed DNA and associated proteins. When DNA condenses, the molecule becomes wrapped around proteins called histones. The histones are then arranged in a coiled pattern to produce a larger fiber. This larger fiber is further compacted by looping to produce looped domains. The looped domains are coiled and compacted to produce chromosomes.
+
+Heterochromatin and Euchromatin
+
+Chromatin is DNA and its associated protein. Heterochromatin is DNA that is coiled and condensed. In this state, it is not transcribed. Euchromatin is less condensed and is actively transcribed.
+
+During interphase, looped domains may be attached to protein supporting structures on the inside of the nuclear membrane. Some of the DNA is coiled and compacted but other parts are not.
+
+Unknown Function
+
+Less than 5% of eukaryotic DNA functions to code for proteins. Approximately 1.5% of human DNA codes for protein. The function of the remaining DNA is not known but perhaps much of it has no function. In the past, noncoding DNA was sometimes called "junk DNA" because its function was not well understood.
+
+Some parts of the DNA contain more genes than other parts. The gene-rich portions are rich in G and C while the noncoding DNA is rich in A and T. The light bands on chromosomes are gene-rich regions.
+
+Highly Repetitive Sequences
+
+10-25% of eukaryotic DNA consists of sequences of 5 to 10 nucleotides repeated 100,000 to 1,000,000 times.
+
+This type of DNA probably does not code for proteins. A large proportion of this type of DNA is found at the tips of the chromosomes and at the centromere.
+
+Telomeres
+
+DNA polymerase is not capable of initiating the synthesis of DNA; it can only elongate a strand that has already been started. Normally, an RNA primer functions to begin the process, allowing DNA polymerase to attach and finish synthesizing the strand. 
+
+
+
+A DNA polymerase molecule will then replace the RNA nucleotides with DNA nucleotides. This is not a problem for primers that are not located on the 3' end of a DNA strand because DNA polymerase extends the DNA strand that is already there.

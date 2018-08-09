@@ -1,0 +1,379 @@
+"Maths" and "Math" redirect here. For other uses of "Mathematics" or "Math", see Mathematics (disambiguation) and Math (disambiguation).
+
+
+
+Euclid, Greek mathematician, 3rd century BC, as imagined by Raphael in this detail from The School of Athens.[1]
+Mathematics (from Greek µ???µa máthema "knowledge, study, learning") is the study of quantity, space, structure, and change.[2][3] Mathematicians seek out patterns[4][5] and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proofs, which are arguments sufficient to convince other mathematicians of their validity. The research required to solve mathematical problems can take years or even centuries of sustained inquiry. However, mathematical proofs are less formal and painstaking than proofs in mathematical logic. Since the pioneering work of Giuseppe Peano, David Hilbert, and others on axiomatic systems in the late 19th century, it has become customary to view mathematical research as establishing truth by rigorous deduction from appropriately chosen axioms and definitions. When those mathematical structures are good models of real phenomena, then mathematical reasoning often provides insight or predictions.
+Through the use of abstraction and logical reasoning, mathematics evolved from counting, calculation, measurement, and the systematic study of the shapes and motions of physical objects. Practical mathematics has been a human activity for as far back as written records exist. Rigorous arguments first appeared in Greek mathematics, most notably in Euclid's Elements. Mathematics continued to develop, for example in China in 300 BC, in India in AD 100[citation needed], and in the Muslim world in AD 800, until the Renaissance, when mathematical innovations interacting with new scientific discoveries led to a rapid increase in the rate of mathematical discovery that continues to the present day.[6]
+The mathematician Benjamin Peirce called mathematics "the science that draws necessary conclusions".[7] David Hilbert said of mathematics, "We are not speaking here of arbitrariness in any sense. Mathematics is not like a game whose tasks are determined by arbitrarily stipulated rules. Rather, it is a conceptual system possessing internal necessity that can only be so and by no means otherwise."[8] Albert Einstein stated that "as far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality."[9]
+Mathematics is used throughout the world as an essential tool in many fields, including natural science, engineering, medicine, and the social sciences. Applied mathematics, the branch of mathematics concerned with application of mathematical knowledge to other fields, inspires and makes use of new mathematical discoveries and sometimes leads to the development of entirely new mathematical disciplines, such as statistics and game theory. Mathematicians also engage in pure mathematics, or mathematics for its own sake, without having any application in mind. There is no clear line separating pure and applied mathematics, and practical applications for what began as pure mathematics are often discovered.[10]
+Contents [hide]
+1 Etymology
+2 History
+3 Inspiration, pure and applied mathematics, and aesthetics
+4 Notation, language, and rigor
+5 Fields of mathematics
+5.1 Foundations and philosophy
+5.2 Pure mathematics
+5.2.1 Quantity
+5.2.2 Structure
+5.2.3 Space
+5.2.4 Change
+5.3 Applied mathematics
+5.3.1 Statistics and other decision sciences
+5.3.2 Computational mathematics
+6 Mathematics as profession
+7 Mathematics as science
+8 See also
+9 Notes
+10 References
+11 Further reading
+12 External links
+Etymology
+
+The word "mathematics" comes from the Greek µ???µa (máthema), which means in ancient Greek what one learns, what one gets to know, hence also study and science, and in modern Greek just lesson.
+The word máthema comes from µa????? (manthano) in ancient Greek and from µa?a??? (mathaino) in modern Greek, both of which mean to learn.
+The word "mathematics" in Greek came to have the narrower and more technical meaning "mathematical study", even in Classical times.[11] Its adjective is µa??µat???? (mathematikós), meaning related to learning or studious, which likewise further came to mean mathematical. In particular, µa??µat??? t???? (mathematik? tékhne), Latin: ars mathematica, meant the mathematical art. In Latin, and in English until around 1700, the term "mathematics" more commonly meant "astrology" (or sometimes "astronomy") rather than "mathematics"; the meaning gradually changed to its present one from about 1500 to 1800. This has resulted in several mistranslations: a particularly notorious one is Saint Augustine's warning that Christians should beware of "mathematici" meaning astrologers, which is sometimes mistranslated as a condemnation of mathematicians.
+The apparent plural form in English, like the French plural form les mathématiques (and the less commonly used singular derivative la mathématique), goes back to the Latin neuter plural mathematica (Cicero), based on the Greek plural ta µa??µat??? (ta mathematiká), used by Aristotle, and meaning roughly "all things mathematical"; although it is plausible that English borrowed only the adjective mathematic(al) and formed the noun mathematics anew, after the pattern of physics and metaphysics, which were inherited from the Greek.[12] In English, the noun mathematics takes singular verb forms. It is often shortened to maths or, in English-speaking North America, math.
+History
+
+Main article: History of mathematics
+
+
+Greek mathematician Pythagoras (c.570-c.495 BC), commonly credited with discovering the Pythagorean theorem.
+The evolution of mathematics might be seen as an ever-increasing series of abstractions, or alternatively an expansion of subject matter. The first abstraction, which is shared by many animals,[13] was probably that of numbers: the realization that a collection of two apples and a collection of two oranges (for example) have something in common, namely quantity of their members.
+In addition to recognizing how to count physical objects, prehistoric peoples also recognized how to count abstract quantities, like time – days, seasons, years.[14] Elementary arithmetic (addition, subtraction, multiplication and division) naturally followed.
+Since numeracy pre-dated writing, further steps were needed for recording numbers such as tallies or the knotted strings called quipu used by the Inca to store numerical data.[citation needed] Numeral systems have been many and diverse, with the first known written numerals created by Egyptians in Middle Kingdom texts such as the Rhind Mathematical Papyrus.[citation needed]
+
+
+Mayan numerals
+The earliest uses of mathematics were in trading, land measurement, painting and weaving patterns and the recording of time. More complex mathematics did not appear until around 3000 BC, when the Babylonians and Egyptians began using arithmetic, algebra and geometry for taxation and other financial calculations, for building and construction, and for astronomy.[15] The systematic study of mathematics in its own right began with the Ancient Greeks between 600 and 300 BC.[16]
+Mathematics has since been greatly extended, and there has been a fruitful interaction between mathematics and science, to the benefit of both. Mathematical discoveries continue to be made today. According to Mikhail B. Sevryuk, in the January 2006 issue of the Bulletin of the American Mathematical Society, "The number of papers and books included in the Mathematical Reviews database since 1940 (the first year of operation of MR) is now more than 1.9 million, and more than 75 thousand items are added to the database each year. The overwhelming majority of works in this ocean contain new mathematical theorems and their proofs."[17]
+Inspiration, pure and applied mathematics, and aesthetics
+
+Main article: Mathematical beauty
+
+
+Sir Isaac Newton (1643-1727), an inventor of infinitesimal calculus.
+Mathematics arises from many different kinds of problems. At first these were found in commerce, land measurement, architecture and later astronomy; nowadays, all sciences suggest problems studied by mathematicians, and many problems arise within mathematics itself. For example, the physicist Richard Feynman invented the path integral formulation of quantum mechanics using a combination of mathematical reasoning and physical insight, and today's string theory, a still-developing scientific theory which attempts to unify the four fundamental forces of nature, continues to inspire new mathematics.[18] Some mathematics is only relevant in the area that inspired it, and is applied to solve further problems in that area. But often mathematics inspired by one area proves useful in many areas, and joins the general stock of mathematical concepts. A distinction is often made between pure mathematics and applied mathematics. However pure mathematics topics often turn out to have applications, e.g. number theory in cryptography. This remarkable fact that even the "purest" mathematics often turns out to have practical applications is what Eugene Wigner has called "the unreasonable effectiveness of mathematics".[19] As in most areas of study, the explosion of knowledge in the scientific age has led to specialization: there are now hundreds of specialized areas in mathematics and the latest Mathematics Subject Classification runs to 46 pages.[20] Several areas of applied mathematics have merged with related traditions outside of mathematics and become disciplines in their own right, including statistics, operations research, and computer science.
+For those who are mathematically inclined, there is often a definite aesthetic aspect to much of mathematics. Many mathematicians talk about the elegance of mathematics, its intrinsic aesthetics and inner beauty. Simplicity and generality are valued. There is beauty in a simple and elegant proof, such as Euclid's proof that there are infinitely many prime numbers, and in an elegant numerical method that speeds calculation, such as the fast Fourier transform. G. H. Hardy in A Mathematician's Apology expressed the belief that these aesthetic considerations are, in themselves, sufficient to justify the study of pure mathematics. He identified criteria such as significance, unexpectedness, inevitability, and economy as factors that contribute to a mathematical aesthetic.[21] Mathematicians often strive to find proofs that are particularly elegant, proofs from "The Book" of God according to Paul Erdos.[22][23] The popularity of recreational mathematics is another sign of the pleasure many find in solving mathematical questions.
+Notation, language, and rigor
+
+Main article: Mathematical notation
+
+
+Leonhard Euler, who created and popularized much of the mathematical notation used today
+Most of the mathematical notation in use today was not invented until the 16th century.[24] Before that, mathematics was written out in words, a painstaking process that limited mathematical discovery.[25] Euler (1707–1783) was responsible for many of the notations in use today. Modern notation makes mathematics much easier for the professional, but beginners often find it daunting. It is extremely compressed: a few symbols contain a great deal of information. Like musical notation, modern mathematical notation has a strict syntax (which to a limited extent varies from author to author and from discipline to discipline) and encodes information that would be difficult to write in any other way.
+Mathematical language can be difficult to understand for beginners. Words such as or and only have more precise meanings than in everyday speech. Moreover, words such as open and field have been given specialized mathematical meanings. Technical terms such as homeomorphism and integrable have precise meanings in mathematics. Additionally, shorthand phrases such as "iff" for "if and only if" belong to mathematical jargon. There is a reason for special notation and technical vocabulary: mathematics requires more precision than everyday speech. Mathematicians refer to this precision of language and logic as "rigor".
+Mathematical proof is fundamentally a matter of rigor. Mathematicians want their theorems to follow from axioms by means of systematic reasoning. This is to avoid mistaken "theorems", based on fallible intuitions, of which many instances have occurred in the history of the subject.[26] The level of rigor expected in mathematics has varied over time: the Greeks expected detailed arguments, but at the time of Isaac Newton the methods employed were less rigorous. Problems inherent in the definitions used by Newton would lead to a resurgence of careful analysis and formal proof in the 19th century. Misunderstanding the rigor is a cause for some of the common misconceptions of mathematics. Today, mathematicians continue to argue among themselves about computer-assisted proofs. Since large computations are hard to verify, such proofs may not be sufficiently rigorous.[27]
+Axioms in traditional thought were "self-evident truths", but that conception is problematic. At a formal level, an axiom is just a string of symbols, which has an intrinsic meaning only in the context of all derivable formulas of an axiomatic system. It was the goal of Hilbert's program to put all of mathematics on a firm axiomatic basis, but according to Gödel's incompleteness theorem every (sufficiently powerful) axiomatic system has undecidable formulas; and so a final axiomatization of mathematics is impossible. Nonetheless mathematics is often imagined to be (as far as its formal content) nothing but set theory in some axiomatization, in the sense that every mathematical statement or proof could be cast into formulas within set theory.[28]
+Fields of mathematics
+
+
+
+An abacus, a simple calculating tool used since ancient times.
+See also: Areas of mathematics
+Mathematics can, broadly speaking, be subdivided into the study of quantity, structure, space, and change (i.e. arithmetic, algebra, geometry, and analysis). In addition to these main concerns, there are also subdivisions dedicated to exploring links from the heart of mathematics to other fields: to logic, to set theory (foundations), to the empirical mathematics of the various sciences (applied mathematics), and more recently to the rigorous study of uncertainty.
+Foundations and philosophy
+In order to clarify the foundations of mathematics, the fields of mathematical logic and set theory were developed. Mathematical logic includes the mathematical study of logic and the applications of formal logic to other areas of mathematics; set theory is the branch of mathematics that studies sets or collections of objects. Category theory, which deals in an abstract way with mathematical structures and relationships between them, is still in development. The phrase "crisis of foundations" describes the search for a rigorous foundation for mathematics that took place from approximately 1900 to 1930.[29] Some disagreement about the foundations of mathematics continues to the present day. The crisis of foundations was stimulated by a number of controversies at the time, including the controversy over Cantor's set theory and the Brouwer-Hilbert controversy.
+Mathematical logic is concerned with setting mathematics within a rigorous axiomatic framework, and studying the implications of such a framework. As such, it is home to Gödel's incompleteness theorems which (informally) imply that any formal system that contains basic arithmetic, if sound (meaning that all theorems that can be proven are true), is necessarily incomplete (meaning that there are true theorems which cannot be proved in that system). Whatever finite collection of number-theoretical axioms is taken as a foundation, Gödel showed how to construct a formal statement that is a true number-theoretical fact, but which does not follow from those axioms. Therefore no formal system is a complete axiomatization of full number theory. Modern logic is divided into recursion theory, model theory, and proof theory, and is closely linked to theoretical computer science[citation needed], as well as to Category Theory.
+Theoretical computer science includes computability theory, computational complexity theory, and information theory. Computability theory examines the limitations of various theoretical models of the computer, including the most well known model – the Turing machine. Complexity theory is the study of tractability by computer; some problems, although theoretically solvable by computer, are so expensive in terms of time or space that solving them is likely to remain practically unfeasible, even with rapid advance of computer hardware. A famous problem is the "P=NP?" problem, one of the Millennium Prize Problems.[30] Finally, information theory is concerned with the amount of data that can be stored on a given medium, and hence deals with concepts such as compression and entropy.
+			
+Mathematical logic	Set theory	Category theory	Theory of computation
+Pure mathematics
+Quantity
+The study of quantity starts with numbers, first the familiar natural numbers and integers ("whole numbers") and arithmetical operations on them, which are characterized in arithmetic. The deeper properties of integers are studied in number theory, from which come such popular results as Fermat's Last Theorem. The twin prime conjecture and Goldbach's conjecture are two unsolved problems in number theory.
+As the number system is further developed, the integers are recognized as a subset of the rational numbers ("fractions"). These, in turn, are contained within the real numbers, which are used to represent continuous quantities. Real numbers are generalized to complex numbers. These are the first steps of a hierarchy of numbers that goes on to include quarternions and octonions. Consideration of the natural numbers also leads to the transfinite numbers, which formalize the concept of "infinity". Another area of study is size, which leads to the cardinal numbers and then to another conception of infinity: the aleph numbers, which allow meaningful comparison of the size of infinitely large sets.
+				
+Natural numbers	Integers	Rational numbers	Real numbers	Complex numbers
+Structure
+Many mathematical objects, such as sets of numbers and functions, exhibit internal structure as a consequence of operations or relations that are defined on the set. Mathematics then studies properties of those sets that can be expressed in terms of that structure; for instance number theory studies properties of the set of integers that can be expressed in terms of arithmetic operations. Moreover, it frequently happens that different such structured sets (or structures) exhibit similar properties, which makes it possible, by a further step of abstraction, to state axioms for a class of structures, and then study at once the whole class of structures satisfying these axioms. Thus one can study groups, rings, fields and other abstract systems; together such studies (for structures defined by algebraic operations) constitute the domain of abstract algebra. By its great generality, abstract algebra can often be applied to seemingly unrelated problems; for instance a number of ancient problems concerning compass and straightedge constructions were finally solved using Galois theory, which involves field theory and group theory. Another example of an algebraic theory is linear algebra, which is the general study of vector spaces, whose elements called vectors have both quantity and direction, and can be used to model (relations between) points in space. This is one example of the phenomenon that the originally unrelated areas of geometry and algebra have very strong interactions in modern mathematics. Combinatorics studies ways of enumerating the number of objects that fit a given structure.
+				
+Combinatorics	Number theory	Group theory	Graph theory	Order theory
+Space
+The study of space originates with geometry – in particular, Euclidean geometry. Trigonometry is the branch of mathematics that deals with relationships between the sides and the angles of triangles and with the trigonometric functions; it combines space and numbers, and encompasses the well-known Pythagorean theorem. The modern study of space generalizes these ideas to include higher-dimensional geometry, non-Euclidean geometries (which play a central role in general relativity) and topology. Quantity and space both play a role in analytic geometry, differential geometry, and algebraic geometry. Convex and discrete geometry was developed to solve problems in number theory and functional analysis but now is pursued with an eye on applications in optimization and computer science. Within differential geometry are the concepts of fiber bundles and calculus on manifolds, in particular, vector and tensor calculus. Within algebraic geometry is the description of geometric objects as solution sets of polynomial equations, combining the concepts of quantity and space, and also the study of topological groups, which combine structure and space. Lie groups are used to study space, structure, and change. Topology in all its many ramifications may have been the greatest growth area in 20th century mathematics; it includes point-set topology, set-theoretic topology, algebraic topology and differential topology. In particular, instances of modern day topology are metrizability theory, axiomatic set theory, homotopy theory, and Morse theory. Topology also includes the now solved Poincaré conjecture. Other results in geometry and topology, including the four color theorem and Kepler conjecture, have been proved only with the help of computers.
+					
+Geometry	Trigonometry	Differential geometry	Topology	Fractal geometry	Measure theory
+Change
+Understanding and describing change is a common theme in the natural sciences, and calculus was developed as a powerful tool to investigate it. Functions arise here, as a central concept describing a changing quantity. The rigorous study of real numbers and functions of a real variable is known as real analysis, with complex analysis the equivalent field for the complex numbers. Functional analysis focuses attention on (typically infinite-dimensional) spaces of functions. One of many applications of functional analysis is quantum mechanics. Many problems lead naturally to relationships between a quantity and its rate of change, and these are studied as differential equations. Many phenomena in nature can be described by dynamical systems; chaos theory makes precise the ways in which many of these systems exhibit unpredictable yet still deterministic behavior.
+					
+Calculus	Vector calculus	Differential equations	Dynamical systems	Chaos theory	Complex analysis
+Applied mathematics
+Applied mathematics concerns itself with mathematical methods that are typically used in science, engineering, business, and industry. Thus, "applied mathematics" is a mathematical science with specialized knowledge. The term "applied mathematics" also describes the professional specialty in which mathematicians work on practical problems; as a profession focused on practical problems, applied mathematics focuses on the formulation, study, and use of mathematical models in science, engineering, and other areas of mathematical practice.
+In the past, practical applications have motivated the development of mathematical theories, which then became the subject of study in pure mathematics, where mathematics is developed primarily for its own sake. Thus, the activity of applied mathematics is vitally connected with research in pure mathematics.
+Statistics and other decision sciences
+Applied mathematics has significant overlap with the discipline of statistics, whose theory is formulated mathematically, especially with probability theory. Statisticians (working as part of a research project) "create data that makes sense" with random sampling and with randomized experiments;[31] the design of a statistical sample or experiment specifies the analysis of the data (before the data be available). When reconsidering data from experiments and samples or when analyzing data from observational studies, statisticians "make sense of the data" using the art of modelling and the theory of inference – with model selection and estimation; the estimated models and consequential predictions should be tested on new data.[32]
+Statistical theory studies decision problems such as minimizing the risk (expected loss) of a statistical action, such as using a procedure in, for example, parameter estimation, hypothesis testing, and selecting the best. In these traditional areas of mathematical statistics, a statistical-decision problem is formulated by minimizing an objective function, like expected loss or cost, under specific constraints: For example, a designing a survey often involves minimizing the cost of estimating a population mean with a given level of confidence.[33] Because of its use of optimization, the mathematical theory of statistics shares concerns with other decision sciences, such as operations research, control theory, and mathematical economics.[34]
+Computational mathematics
+Computational mathematics proposes and studies methods for solving mathematical problems that are typically too large for human numerical capacity. Numerical analysis studies methods for problems in analysis using functional analysis and approximation theory; numerical analysis includes the study of approximation and discretization broadly with special concern for rounding errors. Numerical analysis and, more broadly, scientific computing also study non-analytic topics of mathematical science, especially algorithmic matrix and graph theory. Other areas of computational mathematics include computer algebra and symbolic computation.
+						
+Mathematical physics	Fluid dynamics	Numerical analysis	Optimization	Probability theory	Statistics	Cryptography
+					
+Mathematical finance	Game theory	Mathematical biology	Mathematical chemistry	Mathematical economics	Control theory
+Mathematics as profession
+
+The best-known award in mathematics is the Fields Medal,[35][36] established in 1936 and now awarded every 4 years. It is often considered the equivalent of science's Nobel Prizes. The Wolf Prize in Mathematics, instituted in 1978, recognizes lifetime achievement, and another major international award, the Abel Prize, was introduced in 2003. The Chern Medal was introduced in 2010 to recognize lifetime achievement. These are awarded for a particular body of work, which may be innovation, or resolution of an outstanding problem in an established field.
+A famous list of 23 open problems, called "Hilbert's problems", was compiled in 1900 by German mathematician David Hilbert. This list achieved great celebrity among mathematicians, and at least nine of the problems have now been solved. A new list of seven important problems, titled the "Millennium Prize Problems", was published in 2000. Solution of each of these problems carries a $1 million reward, and only one (the Riemann hypothesis) is duplicated in Hilbert's problems.
+Mathematics as science
+
+
+
+Carl Friedrich Gauss, known as the "prince of mathematicians".[37]
+Carl Friedrich Gauss referred to mathematics as "the Queen of the Sciences".[38] In the original Latin Regina Scientiarum, as well as in German Königin der Wissenschaften, the word corresponding to science means a "field of knowledge", and this was the original meaning of "science" in English, also. Of course, mathematics is in this sense a field of knowledge. The specialization restricting the meaning of "science" to natural science follows the rise of Baconian science, which contrasted "natural science" to scholasticism, the Aristotelean method of inquiring from first principles. Of course, the role of empirical experimentation and observation is negligible in mathematics, compared to natural sciences such as psychology, biology, or physics. Albert Einstein stated that "as far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality."[9]
+Many philosophers believe that mathematics is not experimentally falsifiable, and thus not a science according to the definition of Karl Popper.[39] However, in the 1930s Gödel's incompleteness theorems convinced many mathematicians[who?] that mathematics cannot be reduced to logic alone, and Karl Popper concluded that "most mathematical theories are, like those of physics and biology, hypothetico-deductive: pure mathematics therefore turns out to be much closer to the natural sciences whose hypotheses are conjectures, than it seemed even recently."[40] Other thinkers, notably Imre Lakatos, have applied a version of falsificationism to mathematics itself.
+An alternative view is that certain scientific fields (such as theoretical physics) are mathematics with axioms that are intended to correspond to reality. In fact, the theoretical physicist, J. M. Ziman, proposed that science is public knowledge and thus includes mathematics.[41] In any case, mathematics shares much in common with many fields in the physical sciences, notably the exploration of the logical consequences of assumptions. Intuition and experimentation also play a role in the formulation of conjectures in both mathematics and the (other) sciences. Experimental mathematics continues to grow in importance within mathematics, and computation and simulation are playing an increasing role in both the sciences and mathematics, weakening the objection that mathematics does not use the scientific method.[citation needed]
+The opinions of mathematicians on this matter are varied. Many mathematicians[who?] feel that to call their area a science is to downplay the importance of its aesthetic side, and its history in the traditional seven liberal arts; others[who?] feel that to ignore its connection to the sciences is to turn a blind eye to the fact that the interface between mathematics and its applications in science and engineering has driven much development in mathematics. One way this difference of viewpoint plays out is in the philosophical debate as to whether mathematics is created (as in art) or discovered (as in science). It is common to see universities divided into sections that include a division of Science and Mathematics, indicating that the fields are seen as being allied but that they do not coincide. In practice, mathematicians are typically grouped with scientists at the gross level but separated at finer levels. This is one of many issues considered in the philosophy of mathematics.[citation needed]
+See also
+
+	Mathematics portal
+	Book: Mathematics
+Wikipedia books are collections of articles that can be downloaded or ordered in print.
+Main article: Lists of mathematics topics
+Definitions of mathematics
+Dyscalculia
+Iatromathematicians
+List of mathematics competitions
+Mathematical anxiety
+Mathematical game
+Mathematical model
+Mathematics and art
+Mathematics education
+Pseudomathematics
+Notes
+
+^ No likeness or description of Euclid's physical appearance made during his lifetime survived antiquity. Therefore, Euclid's depiction in works of art depends on the artist's imagination (see Euclid).
+^ http://academics.adelphi.edu/artsci/math/
+^ http://cns.knu.ac.kr/eng/02_sub/01_sub.html
+^ Steen, L.A. (April 29, 1988). The Science of Patterns Science, 240: 611–616. and summarized at Association for Supervision and Curriculum Development, ascd.org
+^ Devlin, Keith, Mathematics: The Science of Patterns: The Search for Order in Life, Mind and the Universe (Scientific American Paperback Library) 1996, ISBN 978-0-7167-5047-5
+^ Eves
+^ Peirce, p. 97.
+^ Hilbert, D. (1919-20), Natur und Mathematisches Erkennen: Vorlesungen, gehalten 1919-1920 in Göttingen. Nach der Ausarbeitung von Paul Bernays (Edited and with an English introduction by David E. Rowe), Basel, Birkhäuser (1992).
+^ a b Einstein, p. 28. The quote is Einstein's answer to the question: "how can it be that mathematics, being after all a product of human thought which is independent of experience, is so admirably appropriate to the objects of reality?" He, too, is concerned with The Unreasonable Effectiveness of Mathematics in the Natural Sciences.
+^ Peterson
+^ Both senses can be found in Plato. Liddell and Scott, s.voceµa??µat????
+^ The Oxford Dictionary of English Etymology, Oxford English Dictionary, sub "mathematics", "mathematic", "mathematics"
+^ S. Dehaene; G. Dehaene-Lambertz; L. Cohen (Aug 1998). "Abstract representations of numbers in the animal and human brain". Trends in Neuroscience 21 (8): 355–361. doi:10.1016/S0166-2236(98)01263-6. PMID 9720604.
+^ See, for example, Raymond L. Wilder, Evolution of Mathematical Concepts; an Elementary Study, passim
+^ Kline 1990, Chapter 1.
+^ "A History of Greek Mathematics: From Thales to Euclid". Thomas Little Heath (1981). ISBN 0-486-24073-8
+^ Sevryuk
+^ Johnson, Gerald W.; Lapidus, Michel L. (2002). The Feynman Integral and Feynman's Operational Calculus. Oxford University Press. ISBN 0821824139.
+^ Wigner, Eugene (1960). "The Unreasonable Effectiveness of Mathematics in the Natural Sciences". Communications on Pure and Applied Mathematics 13 (1): 1–14.
+^ "Mathematics Subject Classification 2010" (PDF). Retrieved 2010-11-09.
+^ Hardy, G. H. (1940). A Mathematician's Apology. Cambridge University Press. ISBN 0521427061.
+^ Gold, Bonnie; Simons, Rogers A. (2008). Proof and Other Dilemmas: Mathematics and Philosophy. MAA.
+^ Aigner, Martin; Ziegler, Günter M. (2001). Proofs from The Book. Springer. ISBN 3540404600.
+^ Earliest Uses of Various Mathematical Symbols (Contains many further references).
+^ Kline, p. 140, on Diophantus; p.261, on Vieta.
+^ See false proof for simple examples of what can go wrong in a formal proof.
+^ Ivars Peterson, The Mathematical Tourist, Freeman, 1988, ISBN 0-7167-1953-3. p. 4 "A few complain that the computer program can't be verified properly", (in reference to the Haken-Apple proof of the Four Color Theorem).
+^ Patrick Suppes, Axiomatic Set Theory, Dover, 1972, ISBN 0-486-61630-4. p. 1, "Among the many branches of modern mathematics set theory occupies a unique place: with a few rare exceptions the entities which are studied and analyzed in mathematics may be regarded as certain particular sets or classes of objects."
+^ Luke Howard Hodgkin & Luke Hodgkin, A History of Mathematics, Oxford University Press, 2005.
+^ Clay Mathematics Institute, P=NP, claymath.org
+^ Rao, C.R. (1997) Statistics and Truth: Putting Chance to Work, World Scientific. ISBN 9810231113
+^ Like other mathematical sciences such as physics and computer science, statistics is an autonomous discipline rather than a branch of applied mathematics. Like research physicists and computer scientists, research statisticians are mathematical scientists. Many statisticians have a degree in mathematics, and some statisticians are also mathematicians.
+^ Rao, C. R. (1981). "Foreword". In Arthanari, T. S.; Dodge, Yadolah. Wiley Series in Probability and Mathematical Statistics. Wiley. pp. vii–viii. ISBN 0-471-08073-X. MR607328.
+^ Whittle (1994, pp. 10–11 and 14–18): Whittle, Peter (1994). "Almost home". In Kelly, F. P.. Probability, statistics and optimisation: A Tribute to Peter Whittle (previously "A realised path: The Cambridge Statistical Laboratory upto 1993 (revised 2002)" ed.). Chichester: John Wiley. pp. 1–28. ISBN 0471948292.
+^ "The Fields Medal is now indisputably the best known and most influential award in mathematics." Monastyrsky
+^ Riehm
+^ Zeidler, Eberhard (2004). Oxford User's Guide to Mathematics. Oxford, UK: Oxford University Press. p. 1188. ISBN 0198507631.
+^ Waltershausen
+^ Shasha, Dennis Elliot; Lazere, Cathy A. (1998). Out of Their Minds: The Lives and Discoveries of 15 Great Computer Scientists. Springer. p. 228.
+^ Popper 1995, p. 56
+^ Ziman
+References
+
+Courant, Richard and H. Robbins, What Is Mathematics? : An Elementary Approach to Ideas and Methods, Oxford University Press, USA; 2 edition (July 18, 1996). ISBN 0-19-510519-2.
+Einstein, Albert (1923). Sidelights on Relativity (Geometry and Experience). P. Dutton., Co.
+Eves, Howard, An Introduction to the History of Mathematics, Sixth Edition, Saunders, 1990, ISBN 0-03-029558-0.
+Kline, Morris, Mathematical Thought from Ancient to Modern Times, Oxford University Press, USA; Paperback edition (March 1, 1990). ISBN 0-19-506135-7.
+Monastyrsky, Michael (2001) (PDF). Some Trends in Modern Mathematics and the Fields Medal. Canadian Mathematical Society. Retrieved 2006-07-28.
+Oxford English Dictionary, second edition, ed. John Simpson and Edmund Weiner, Clarendon Press, 1989, ISBN 0-19-861186-2.
+The Oxford Dictionary of English Etymology, 1983 reprint. ISBN 0-19-861112-9.
+Pappas, Theoni, The Joy Of Mathematics, Wide World Publishing; Revised edition (June 1989). ISBN 0-933174-65-9.
+Peirce, Benjamin (1881). Peirce, Charles Sanders. ed. "Linear associative algebra". American Journal of Mathematics (Johns Hopkins University) 4 (1–4): 97–229. doi:10.2307/2369153. Corrected, expanded, and annotated revision with an 1875 paper by B. Peirce and annotations by his son, C. S. Peirce, of the 1872 lithograph ed. Google Eprint and as an extract, D. Van Nostrand, 1882, Google Eprint.
+Peterson, Ivars, Mathematical Tourist, New and Updated Snapshots of Modern Mathematics, Owl Books, 2001, ISBN 0-8050-7159-8.
+Popper, Karl R. (1995). "On knowledge". In Search of a Better World: Lectures and Essays from Thirty Years. Routledge. ISBN 0-415-13548-6.
+Riehm, Carl (August 2002). "The Early History of the Fields Medal" (PDF). Notices of the AMS (AMS) 49 (7): 778–782.
+Sevryuk, Mikhail B. (January 2006). "Book Reviews" (PDF). Bulletin of the American Mathematical Society 43 (1): 101–109. doi:10.1090/S0273-0979-05-01069-4. Retrieved 2006-06-24.
+Waltershausen, Wolfgang Sartorius von (1856, repr. 1965). Gauss zum Gedächtniss. Sändig Reprint Verlag H. R. Wohlwend. ISBN 3-253-01702-8. ISSN B0000BN5SQ ASIN: B0000BN5SQ.
+Ziman, J.M., F.R.S. (1968). Public Knowledge:An essay concerning the social dimension of science.
+Further reading
+
+Benson, Donald C., The Moment of Proof: Mathematical Epiphanies, Oxford University Press, USA; New Ed edition (December 14, 2000). ISBN 0-19-513919-4.
+Boyer, Carl B., A History of Mathematics, Wiley; 2 edition (March 6, 1991). ISBN 0-471-54397-7. — A concise history of mathematics from the Concept of Number to contemporary Mathematics.
+Davis, Philip J. and Hersh, Reuben, The Mathematical Experience. Mariner Books; Reprint edition (January 14, 1999). ISBN 0-395-92968-7.
+Gullberg, Jan, Mathematics — From the Birth of Numbers. W. W. Norton & Company; 1st edition (October 1997). ISBN 0-393-04002-X.
+Hazewinkel, Michiel (ed.), Encyclopaedia of Mathematics. Kluwer Academic Publishers 2000. — A translated and expanded version of a Soviet mathematics encyclopedia, in ten (expensive) volumes, the most complete and authoritative work available. Also in paperback and on CD-ROM, and online.
+Jourdain, Philip E. B., The Nature of Mathematics, in The World of Mathematics, James R. Newman, editor, Dover Publications, 2003, ISBN 0-486-43268-8.
+External links
+
+Find more about Mathematics on Wikipedia's sister projects:
+	Definitions from Wiktionary
+	Images and media from Commons
+	Learning resources from Wikiversity
+	News stories from Wikinews
+	Quotations from Wikiquote
+	Source texts from Wikisource
+	Textbooks from Wikibooks
+
+At Wikiversity you can learn more and teach others about Mathematics at:
+The School of Mathematics
+Mathematics on In Our Time at the BBC. (listen now)
+Free Mathematics books Free Mathematics books collection.
+Encyclopaedia of Mathematics online encyclopaedia from Springer, Graduate-level reference work with over 8,000 entries, illuminating nearly 50,000 notions in mathematics.
+HyperMath site at Georgia State University
+FreeScience Library The mathematics section of FreeScience library
+Rusin, Dave: The Mathematical Atlas. A guided tour through the various branches of modern mathematics. (Can also be found at NIU.edu.)
+Polyanin, Andrei: EqWorld: The World of Mathematical Equations. An online resource focusing on algebraic, ordinary differential, partial differential (mathematical physics), integral, and other mathematical equations.
+Cain, George: Online Mathematics Textbooks available free online.
+Tricki, Wiki-style site that is intended to develop into a large store of useful mathematical problem-solving techniques.
+Mathematical Structures, list information about classes of mathematical structures.
+Mathematician Biographies. The MacTutor History of Mathematics archive Extensive history and quotes from all famous mathematicians.
+Metamath. A site and a language, that formalize mathematics from its foundations.
+Nrich, a prize-winning site for students from age five from Cambridge University
+Open Problem Garden, a wiki of open problems in mathematics
+Planet Math. An online mathematics encyclopedia under construction, focusing on modern mathematics. Uses the Attribution-ShareAlike license, allowing article exchange with Wikipedia. Uses TeX markup.
+Some mathematics applets, at MIT
+Weisstein, Eric et al.: MathWorld: World of Mathematics. An online encyclopedia of mathematics.
+Patrick Jones' Video Tutorials on Mathematics
+Citizendium: Theory (mathematics).
+[hide]v · d · e
+Here are the additional video lectures in mathematics (and theoretical computer science) which were in my bookmarks. Many of these are superior and I'd hope that the best online schools begin to offer such math lectures. I still have many links left to check so visit my blog in a few days for updates.
+
+Lectures are ordered by their complexity.
+
+Algebra Review
+Video Lectures: Math 160 (University of Idaho)
+Course covers: factoring, interval notation, definition of function, functions, piece-wise defined functions, function composition, quadratic functions, solving quadratic functions. Slope of the line, equation of the line, parallel and perpendicular lines. Law of exponents, properties of logarithms. Applications to exponential function, exponential growth and decay. Solving systems of equations by substitution and elimination.
+
+
+Intermediate Algebra
+Video Lectures: Math 108 (University of Idaho)
+Course website
+The primary purpose of Intermediate Algebra is to improve your skills and competency in algebra so that you will be successful in calculus, the other math courses required for your major, and in the courses that use mathematics. Another goal is to help you develop your mathematical learning skills so that you will be more confident in future mathematical courses.
+
+Course covers: the real numbers, linear equations, linear inequalities and absolute value, linear equations and inequalities in two variables, systems of linear equations, exponents, polynomials and polynomial functions, factoring, rational expressions, roots and radicals, quadratic equations and inequalities.
+
+
+Elementary Statistics
+Video lectures (De-Anza College)
+Course website
+Elementary Statistics is an introduction to data analysis course that makes use of graphical and numerical techniques to study patterns and departures from patterns. The student studies randomness with emphasis on understanding variation, collects information in the face of uncertainty, checks distributional assumptions, tests hypotheses, uses probability as a tool for anticipating what the distribution of data may look like under a set of assumptions, and uses appropriate statistical models to draw conclusions from data.
+
+The course introduces the student to applications in engineering, business, economics, medicine, education, the sciences, and other related fields. The use of technology (computers or graphing calculators) will be required in certain applications.
+
+Course covers: Sampling and data. Statistical graphs, quartiles and percentiles, mean, median, mode, variance and standard deviation. Basic probability, independent and dependent events, addition and multiplication rules. Discrete random variables, discrete probability distribution functions, expected value, binomial probability distribution function. Continuous random variables, continuous probability distribution functions, uniform probability distribution, exponential probability distribution. The normal probability distribution function, standard normal probability density function. Central limit theorem for averages and sums. Confidence intervals. Hypothesis testing. The Chi-Square distribution function. Linear regression and correlation.
+
+
+
+Applied Probability (5 lectures)
+Video Lectures at ArsDigita University
+Mirror at ArsDigita
+High Speed Mirror at Internet Archive
+Course website
+Focuses on modeling, quantification, and analysis of uncertainty by teaching random variables, simple random processes and their probability distributions, Markov processes, limit theorems, elements of statistical inference, and decision making under uncertainty. This course extends the discrete probability learned in the discrete math class. It focuses on actual applications, and places little emphasis on proofs. A problem set based on identifying tumors using MRI (Magnetic Resonance Imaging) is done using Matlab.
+
+
+Finite Mathematics with Applications
+Video Lectures: Math 1313 (University of Houston)
+Course covers slopes, equations and graphing of lines, linear depreciation, cost, revenue and profit functions, intersection of lines, break-even analysis, the method of least squares, graphing linear inequalities, graphing systems of linear inequalities, linear programming problems, graphical solution of linear problems, simple interest, future value, present value, and effect rate, annuities, amortization and sinking funds. Set notation and terminology, set operations, Venn diagrams, number of elements in a set, the multiplication rule, permutations and combinations. Experiments, events and sample spaces, definition of probability, rules of probability, use of counting technique, conditional probability, independent events, Bayes' theorem, distributions of random variables, expected value, odds, variance and standard deviation, Chebyshev's inequality, the binomial distribution, the normal distribution, applications of the normal distribution.
+
+
+Trigonometry for Calculus
+Video Lectures: Math 144 (University of Idaho)
+Course website
+The goal of this course is to prepare you for the trigonometry that you will encounter in calculus. During this one credit course in trigonometry, you will learn how to evaluate trigonometric functions, sketch the graphs of the sine, cosine and tangent functions, study the inverse trigonometric functions and much more.
+
+Course covers the Cartesian coordinate system, functions, angle and radian measure, special right triangles, the unit circle, the trigonometric ratios, graphs of trig. ratios, periodic functions, fundamental trigonometric identities and inverse trigonometric functions.
+
+
+Introduction to Mathematical Computation
+Video Lectures: Math 309 (San Francisco State University)
+Course website
+
+Throughout the course we will illustrate application of software in typical undergraduate mathematical subjects such as calculus, probability, linear algebra, and number theory. Further, we will move to structural programming. We conclude the course by illustrating elements of contemporary platform independent language, java. No programming experience required
+
+Course covers: Basic commands in Mathematica, Mathematica in Calculus, Mathematica in Probability, Mathematica and Linear Algebra, Mathematica and Number Theory, Mathematica and structural programming, Introduction to Java.
+
+
+Note: Links to lectures 6 - 17 are missing. You can access them by changing the last number of the link to the first 5 lectures. Example: to access lecture 12 use address http://130.212.40.150:8080/ramgen/mathematica/lecture12.rm, etc.
+
+
+Pre-Calculus and Introduction to Analytic Geometry
+Video Lectures: Math 143 (University of Idaho)
+Course website
+The primary purpose of Pre-Calculus and Analytic Geometry is to improve your skills and competency in algebra so that you will be successful in calculus, the other math courses required for your major, and in the courses that use mathematics. Another goal is to help you develop your mathematical learning skills so that you will be more confident in future mathematical courses.
+
+Course covers: equations and identities, graphs, functions and their graphs, polynomial and rational functions, exponential and logarithmic functions, analytic geometry.
+
+
+First Year Calculus (Calculus I)
+Video Lectures: Math 226.01 (San Francisco State University)
+Course website
+The central object of the study in calculus is the concept of a function. Functions are used to describe the real world around us. Calculus introduces two fundamental concepts which enable us to describe and investigate functions. These are: the derivative and the integral. The derivative describes the behavior of a function at a particular time. The integral carries information about the history of a function.
+
+Course covers: limits, limit laws, continuity, limits involving infinity, rates of change, derivatives, differentiation rules, product and quotient rules, rates of change in science, derivatives of trigonometric functions, the chain rule, implicit differentiation, logarithmic differentiation, maxima and minima, mean value theorem, L'Hospital's rule, optimization problems, areas and distances, definite integral, fundamental theorem of calculus.
+Course covers limits, one-sided limits and continuity, the derivative, basic rules of differentiation, the product and quotient rules, the chain rule, higher order derivatives, basic applications of derivative, marginal functions in economics, applications of the first derivative, applications of the second derivative, curve sketching, absolute extrema, optimization, applications with exponential functions, antiderivatives, integration by substitution, area under the curve - Riemann Sums, the fundamental theorem of calculus, evaluation of definite integral, area between two curves, functions of several variables, partial derivatives, relative extrema.
+
+
+Mathematical Writing (by Donald E. Knuth!)
+Video lectures: CS209 (Stanford University, 1987)
+Lecture notes (pdf)
+Issues of technical writing and the effective presentation of mathematics and computer science. Preparation of theses, papers, books, and "literate" computer programs.
+
+"I also gave a class called Mathematical Writing, just for one quarter," says Knuth. "The lectures are still of special interest because they feature quite a few important guest lecturers." This collection contains thirty-one tapes.
+
+
+Mathematics and Computer Science Problem Seminar (by Donald E. Knuth!)
+Video lectures: CS204 (Stanford University, 1985)
+Notes on problems (pdf)
+During the course students with Professor Knuth solve 5 problems which have not been solved.
+According to D. E. Knuth course is given only once in two years because it takes him two years to think of good enough problems. The goal of the course it to understand problem solving in general and not just to solve those 5 problems and to get into as many of the different areas of computer science research as possible.
+
+"This was an experimental project where we'd have three or four cameras in a basement studio and we would film classes of about an hour," says Knuth. "We got a bunch of our brightest students and gave them extremely difficult problems. You could literally see the Aha taking place. People can watch the problem-solving process as it occurred." Over 25 hours of these sessions are available for viewing.
+
+
+Dynamical Systems and Chaos
+Video Lectures: Math 614 (University of Texas A&M)
+Course website
+The course will provide quick introduction to Dynamical Systems, Ergodic Theory and Chaos. We will start with examples of dynamical systems, with basic notions such as orbits, periodic points, phase portraits, attraction and repulsion, calculus of fixed points, invariant measures, Bernoulli shifts and ergodic theorems of various types.
+Then we will study bifurcations on the example of dynamics of quadratic maps. The quadratic family will be used to demonstrate the transition to chaos and the main features of chaotic behaviour. We will touch Sarkovsii's Theorem and Newton's Method.
+
+Elements of Symbolic Dynamics and subshifts of finite type will be considered. Then we will move to fractals and discuss fractal dimension and related topics. After that we will introduce Holomorphic Dynamics and the main objects such as Julia sets and the Mandelbrot set. Time permitting, we will consider some rational maps in dimension two and higher. Henon map will be considered, as well as some maps arising in the theory of fractal groups, and the Smale horse shoe map. We will consider also spectra and spectral measures related to such groups and to fractal sets like Sierpinski gasket or Cantor set.
+
+
+Computer Musings Lecture Series (by Donald E. Knuth)
+Link to videos
+
+“These lectures I'’ve given have been inspired and shaped by the questions and responses of the audiences to whom I spoke, and I want to keep them alive,prof. D.E.Knuth explains. We'’ve got these tapes and the world is going digital; Stanford Centre for Professional Development has the talent and expertise to convert them. I feel that archiving is important. I'’ve learned from archived lectures and classes myself, so I think others can learn from these.
+
+A sampling of musings includes:
+Dancing Links
+Fast Input/Output with Many Disks, Using a Magic Trick
+MMIX: A RISC Computer for the New Millennium
+The Joy of Asymptotics
+Bubblesort at random (one-dimensional particle physics)
+Trees, Forests, and Polyominoes
+Finding all spanning trees
+
+
+"Other" Donald E. Knuth Lectures
+Link to videos
+
+Also available are two five-session short courses about TeX (1981); twelve lectures about the implementation of TeX (1982); video recordings of eight history sessions about Computer Science at Stanford, taped in 1987 and featuring many alumni of our department; and some reminiscences by Professors Feigenbaum, Floyd, Golub, Herriot, Knuth, McCarthy, Miller, and Wiederhold about the founding of Stanford's Computer Science Department, The Living Legends (1997).
+
+Questions from audience and students are important to the learning process, according to Knuth. Sometimes the expression of a more mature idea isn't the most interesting or effective way to learn you may learn more from how a professor reacts to an idea or a question. He pauses, and then adds, People might learn a lot from watching me fumble around to answer a question.
+
+
+Related Posts
+
+Free Mathematics Video Courses
+(Includes courses: discrete mathematics, algebra, linear algebra, mathematical problems, differential equations and math methods for engineers)
+
+Mathematics Video Lectures
+(Includes course practice of mathematics and lots of mathematics seminar videos in applied maths, geometry/topology, liquid flow and string theory)
+
+Mathematics Video Lectures
+(Includes calculus, vector calculus, tensors, the most important concepts of mathematics, basic mathematics, numerical methods, p=np problem, randomness, fractals and splines and various lectures from advanced institute for study.)

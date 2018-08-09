@@ -1,0 +1,408 @@
+This article is about the field of science. For other uses, see Physics (disambiguation).
+
+
+
+Various examples of physical phenomena
+Physics (from Ancient Greek: f?s?? physis "nature") is a natural science that involves the study of matter[1] and its motion through spacetime, along with related concepts such as energy and force.[2] More broadly, it is the general analysis of nature, conducted in order to understand how the universe behaves.[3][4][5]
+Physics is one of the oldest academic disciplines, perhaps the oldest through its inclusion of astronomy.[6] Over the last two millennia, physics was a part of natural philosophy along with chemistry, certain branches of mathematics, and biology, but during the Scientific Revolution in the 16th century, the natural sciences emerged as unique research programs in their own right.[7] Certain research areas are interdisciplinary, such as biophysics and quantum chemistry, which means that the boundaries of physics are not rigidly defined. In the nineteenth and twentieth centuries physicalism emerged as a major unifying feature of the philosophy of science as physics provided fundamental explanations for observed natural phenomenon. New ideas in physics often explain the fundamental mechanisms of other sciences, while opening new avenues of research in areas such as mathematics and philosophy.
+Physics also makes significant contributions through advances in new technologies that arise from theoretical breakthroughs. For example, advances in the understanding of electromagnetism or nuclear physics led directly to the development of new products which have dramatically transformed modern-day society, such as television, computers, domestic appliances, and nuclear weapons; advances in thermodynamics led to the development of industrialization; and, advances in mechanics inspired the development of calculus.
+Contents [hide]
+1 History
+2 Philosophy
+3 Core theories
+3.1 Fundamental physics
+4 Relation to other fields
+4.1 Prerequisites
+4.2 Application and influence
+5 Research
+5.1 Scientific method
+5.2 Theory and experiment
+5.3 Scope and aims
+5.4 Research fields
+5.4.1 Condensed matter
+5.4.2 Atomic, molecular, and optical physics
+5.4.3 High energy/particle physics
+5.4.4 Astrophysics
+6 Current research
+7 See also
+8 References
+9 External links
+History
+
+
+
+Isaac Newton (1643–1727)
+
+
+Albert Einstein (1879-1955)
+Main article: History of physics
+As noted below, the means used to understand the behavior of natural phenomena and their effects evolved from philosophy, progressively replaced by natural philosophy then natural science, to eventually arrive at the modern conception of physics.[citation needed]
+Natural philosophy has its origins in Greece during the Archaic period, (650 BCE – 480 BCE), when Pre-Socratic philosophers like Thales refused supernatural, religious or mythological explanations for natural phenomena and proclaimed that every event had a natural cause.[8] They proposed ideas verified by reason and observation and many of their hypotheses proved successful in experiment,[9] for example atomism.
+Natural science was developed in China, India and in Islamic caliphates, between the 4th and 10th century BCE. Quantitative descriptions became popular among physicists and astronomers, for example Archimedes in the domains of mechanics, statics and hydrostatics. Experimental physics had its debuts with experimentation concerning statics by medieval Muslim physicists like al-Biruni and Alhazen.[10][11]
+Classical physics became a separate science when early modern Europeans used these experimental and quantitative methods to discover what are now considered to be the laws of physics.[12][13] Kepler, Galileo and more specifically Newton discovered and unified the different laws of motion.[14] During the industrial revolution, as energy needs increased, so did research, which led to the discovery of new laws in thermodynamics, chemistry and electromagnetics.
+Modern physics started with the works of Einstein both in relativity and quantum physics.[citation needed]
+Philosophy
+
+For more details on this topic, see Philosophy of physics.
+In many ways, physics stems from ancient Greek philosophy. From Thales' first attempt to characterize matter, to Democritus' deduction that matter ought to reduce to an invariant state, the Ptolemaic astronomy of a crystalline firmament, and Aristotle's book Physics, different Greek philosophers advanced their own theories of nature. Well into the 18th century, physics was known as natural philosophy.
+By the 19th century physics was realized as a discipline distinct from philosophy and the other sciences. Physics, as with the rest of science, relies on philosophy of science to give an adequate description of the scientific method.[15] The scientific method employs a priori reasoning as well as a posteriori reasoning and the use of Bayesian inference to measure the validity of a given theory.[16]
+The development of physics has answered many questions of early philosophers, but has also raised new questions. Study of the philosophical issues surrounding physics, the philosophy of physics, involves issues such as the nature of space and time, determinism, and metaphysical outlooks such as empiricism, naturalism and realism.[17]
+Many physicists have written about the philosophical implications of their work, for instance Laplace, who championed causal determinism,[18] and Erwin Schrödinger, who wrote on quantum mechanics.[19] The mathematical physicist Roger Penrose has been called a Platonist by Stephen Hawking,[20] a view Penrose discusses in his book, The Road to Reality.[21] Hawking refers to himself as an "unashamed reductionist" and takes issue with Penrose's views.[22]
+Core theories
+
+Further information: Branches of physics, Classical physics, Modern physics, Topic outline of physics
+Though physics deals with a wide variety of systems, certain theories are used by all physicists. Each of these theories were experimentally tested numerous times and found correct as an approximation of nature (within a certain domain of validity). For instance, the theory of classical mechanics accurately describes the motion of objects, provided they are much larger than atoms and moving at much less than the speed of light. These theories continue to be areas of active research, and a remarkable aspect of classical mechanics known as chaos was discovered in the 20th century, three centuries after the original formulation of classical mechanics by Isaac Newton (1642–1727).
+These central theories are important tools for research into more specialized topics, and any physicist, regardless of his or her specialization, is expected to be literate in them. These include classical mechanics, quantum mechanics, thermodynamics and statistical mechanics, electromagnetism, and special relativity.
+Fundamental physics
+
+
+The basic domains of physics
+While physics aims to discover universal laws, its theories lie in explicit domains of applicability. Loosely speaking, the laws of classical physics accurately describe systems whose important length scales are greater than the atomic scale and whose motions are much slower than the speed of light. Outside of this domain, observations do not match their predictions. Albert Einstein contributed the framework of special relativity, which replaced notions of absolute time and space with spacetime and allowed an accurate description of systems whose components have speeds approaching the speed of light. Max Planck, Erwin Schrödinger, and others introduced quantum mechanics, a probabilistic notion of particles and interactions that allowed an accurate description of atomic and subatomic scales. Later, quantum field theory unified quantum mechanics and special relativity. General relativity allowed for a dynamical, curved spacetime, with which highly massive systems and the large-scale structure of the universe can be well described. General relativity has not yet been unified with the other fundamental descriptions; several candidates theories of quantum gravity are being developed.
+Relation to other fields
+
+
+
+This parabola-shaped lava flow illustrates the application of Mathematics in Physics – in this case, Galileo's law of falling bodies.
+
+
+Mathematics and Ontology are used in Physics. Physics is used in Chemistry and Cosmology.
+Prerequisites
+Mathematics is the language used for compact description of the order in nature, especially the laws of Physics. This was noted and advocated by Pythagoras,[23] Plato,[24] Galileo,[25] and Newton.
+Physics theories use Mathematics[26] to obtain order and provide precise formulas, precise or estimated solutions, quantitative results and predictions. Experiment results in physics are numerical measurements. Technologies based on Mathematics, like computation have made computational physics an active area of research.
+
+
+The distinction between Mathematics and Physics is clear-cut, but not always obvious, especially in Mathematical Physics.
+Ontology is a prerequisite for Physics, but not for Mathematics. It means Physics ultimately concerned with descriptions of the real world, while Mathematics is concerned with abstract patterns, even beyond the real world. Thus Physics statements are synthetic, while Math statements are analytic. Mathematics contains hypothesis, while Physics contains theories. Mathematics statements have to be only logically true, while predictions of Physics statements must match observed and experimental data.
+The distinction is clear-cut, but not always obvious. For example, Mathematical Physics is the application of Mathematics in Physics. Its methods are Mathematical, but its subject is Physical.[27] The problems in this field start with a "Math model of a Physical situation" and a "Math description of a Physical law". Every math statement used for solution has a hard-to-find Physical meaning. The final Mathematical solution has an easier-to-find meaning, because it is what the solver is looking for.
+Physics is a branch of fundamental science, not practical science.[28] Physics is also called "the fundamental science" because the subject of study of all branches of natural science like Chemistry, Astronomy, Geology and Biology are constrained by laws of physics.[29] For example, Chemistry studies properties, structures, and reactions of the matter, including atoms, molecules, solids, liquids and gases. Properties are bound by laws of physics, like conservation of their energy, mass and charge. Structures are formed because particles exert forces on each other, like electrical force and gravity. And reactions are a change in properties and forces that formed a structure, like the different ways in which atoms form molecules.
+Physics is applied in industries like engineering and medicine.
+Application and influence
+
+
+Archimedes' screw, a simple machine for lifting.
+
+
+application in lifting liquids
+Main article: Applied physics
+Applied physics is a general term for physics research which is intended for a particular use. An applied physics curriculum usually contains a few classes in an applied discipline, like geology or electrical engineering. It usually differs from engineering in that an applied physicist may not be designing something in particular, but rather is using physics or conducting physics research with the aim of developing new technologies or solving a problem.
+The approach is similar to that of applied mathematics. Applied physicists can also be interested in the use of physics for scientific research. For instance, people working on accelerator physics might seek to build better particle detectors for research in theoretical physics.
+Physics is used heavily in engineering. For example, Statics, a subfield of mechanics, is used in the building of bridges and other structures. The understanding and use of acoustics results in better concert halls; similarly, the use of optics creates better optical devices. An understanding of physics makes for more realistic flight simulators, video games, and movies, and is often critical in forensic investigations.
+With the standard consensus that the laws of physics are universal and do not change with time, physics can be used to study things that would ordinarily be mired in uncertainty. For example, in the study of the origin of the Earth, one can reasonably model Earth's mass, temperature, and rate of rotation, over time. It also allows for simulations in engineering which drastically speed up the development of a new technology.
+But there is also considerable interdisciplinarity in the physicist's methods, and so many other important fields are influenced by physics: e.g. presently the fields of econophysics plays an important role, as well as sociophysics.
+Research
+
+Scientific method
+Physicists use a scientific method to test the validity of a physical theory, using a methodical approach to compare the implications of the theory in question with the associated conclusions drawn from experiments and observations conducted to test it. Experiments and observations are to be collected and matched with the predictions and hypotheses made by a theory, thus aiding in the determination or the validity/invalidity of the theory.
+Theories which are very well supported by data and have never failed any competent empirical test are often called scientific laws, or natural laws. Of course, all theories, including those called scientific laws, can always be replaced by more accurate, generalized statements if a disagreement of theory with observed data is ever found.[30]
+Theory and experiment
+Main articles: Theoretical physics and Experimental physics
+
+
+The astronaut and Earth are both in free-fall
+
+
+Lightning is an electric current
+Theorists seek to develop mathematical models that both agree with existing experiments and successfully predict future results, while experimentalists devise and perform experiments to test theoretical predictions and explore new phenomena. Although theory and experiment are developed separately, they are strongly dependent upon each other. Progress in physics frequently comes about when experimentalists make a discovery that existing theories cannot explain, or when new theories generate experimentally testable predictions, which inspire new experiments.
+Physicists who work at the interplay of theory and experiment are called phenomenologists. Phenomenologists look at the complex phenomena observed in experiment and work to relate them to fundamental theory.
+Theoretical physics has historically taken inspiration from philosophy; electromagnetism was unified this way.[31] Beyond the known universe, the field of theoretical physics also deals with hypothetical issues,[32] such as parallel universes, a multiverse, and higher dimensions. Theorists invoke these ideas in hopes of solving particular problems with existing theories. They then explore the consequences of these ideas and work toward making testable predictions.
+Experimental physics informs, and is informed by, engineering and technology. Experimental physicists involved in basic research design and perform experiments with equipment such as particle accelerators and lasers, whereas those involved in applied research often work in industry, developing technologies such as magnetic resonance imaging (MRI) and transistors. Feynman has noted that experimentalists may seek areas which are not well explored by theorists.[33]
+Scope and aims
+
+
+Physics involves modeling the natural world with theory, usually quantitative. Here, the path of a particle is modeled with the mathematics of calculus to explain its behavior: the purview of the branch of physics known as mechanics.
+Physics covers a wide range of phenomena, from elementary particles (such as quarks, neutrinos and electrons) to the largest superclusters of galaxies. Included in these phenomena are the most basic objects composing all other things. Therefore physics is sometimes called the "fundamental science".[29] Physics aims to describe the various phenomena that occur in nature in terms of simpler phenomena. Thus, physics aims to both connect the things observable to humans to root causes, and then connect these causes together.
+For example, the ancient Chinese observed that certain rocks (lodestone) were attracted to one another by some invisible force. This effect was later called magnetism, and was first rigorously studied in the 17th century. A little earlier than the Chinese, the ancient Greeks knew of other objects such as amber, that when rubbed with fur would cause a similar invisible attraction between the two. This was also first studied rigorously in the 17th century, and came to be called electricity. Thus, physics had come to understand two observations of nature in terms of some root cause (electricity and magnetism). However, further work in the 19th century revealed that these two forces were just two different aspects of one force – electromagnetism. This process of "unifying" forces continues today, and electromagnetism and the weak nuclear force are now considered to be two aspects of the electroweak interaction. Physics hopes to find an ultimate reason (Theory of Everything) for why nature is as it is (see section Current research below for more information).
+Research fields
+Contemporary research in physics can be broadly divided into condensed matter physics; atomic, molecular, and optical physics; particle physics; astrophysics; geophysics and biophysics. Some physics departments also support research in Physics education.
+Since the twentieth century, the individual fields of physics have become increasingly specialized, and today most physicists work in a single field for their entire careers. "Universalists" such as Albert Einstein (1879–1955) and Lev Landau (1908–1968), who worked in multiple fields of physics, are now very rare.[34]
+Table of the major fields of physics, along with their subfields and the theories they employ[show]
+Condensed matter
+Main article: Condensed matter physics
+
+
+Velocity-distribution data of a gas of rubidium atoms, confirming the discovery of a new phase of matter, the Bose–Einstein condensate
+Condensed matter physics is the field of physics that deals with the macroscopic physical properties of matter. In particular, it is concerned with the "condensed" phases that appear whenever the number of constituents in a system is extremely large and the interactions between the constituents are strong.
+The most familiar examples of condensed phases are solids and liquids, which arise from the bonding and electromagnetic force between atoms. More exotic condensed phases include the superfluid and the Bose–Einstein condensate found in certain atomic systems at very low temperature, the superconducting phase exhibited by conduction electrons in certain materials, and the ferromagnetic and antiferromagnetic phases of spins on atomic lattices.
+Condensed matter physics is by far the largest field of contemporary physics. Historically, condensed matter physics grew out of solid-state physics, which is now considered one of its main subfields. The term condensed matter physics was apparently coined by Philip Anderson when he renamed his research group — previously solid-state theory — in 1967.
+In 1978, the Division of Solid State Physics at the American Physical Society was renamed as the Division of Condensed Matter Physics.[35] Condensed matter physics has a large overlap with chemistry, materials science, nanotechnology and engineering.
+Atomic, molecular, and optical physics
+Main article: Atomic, molecular, and optical physics
+Atomic, molecular, and optical physics (AMO) is the study of matter-matter and light-matter interactions on the scale of single atoms or structures containing a few atoms. The three areas are grouped together because of their interrelationships, the similarity of methods used, and the commonality of the energy scales that are relevant. All three areas include both classical and quantum treatments; they can treat their subject from a microscopic view (in contrast to a macroscopic view).
+Atomic physics studies the electron shells of atoms. Current research focuses on activities in quantum control, cooling and trapping of atoms and ions, low-temperature collision dynamics, the collective behavior of atoms in weakly interacting gases (Bose–Einstein Condensates and dilute Fermi degenerate systems), precision measurements of fundamental constants, and the effects of electron correlation on structure and dynamics. Atomic physics is influenced by the nucleus (see, e.g., hyperfine splitting), but intra-nuclear phenomenon such as fission and fusion are considered part of high energy physics.
+Molecular physics focuses on multi-atomic structures and their internal and external interactions with matter and light. Optical physics is distinct from optics in that it tends to focus not on the control of classical light fields by macroscopic objects, but on the fundamental properties of optical fields and their interactions with matter in the microscopic realm.
+High energy/particle physics
+Main article: Particle physics
+
+
+A simulated event in the CMS detector of the Large Hadron Collider, featuring a possible appearance of the Higgs boson.
+Particle physics is the study of the elementary constituents of matter and energy, and the interactions between them. It may also be called "high energy physics", because many elementary particles do not occur naturally, but are created only during high energy collisions of other particles, as can be detected in particle accelerators.
+Currently, the interactions of elementary particles are described by the Standard Model. The model accounts for the 12 known particles of matter (quarks and leptons) that interact via the strong, weak, and electromagnetic fundamental forces. Dynamics are described in terms of matter particles exchanging gauge bosons (gluons, W and Z bosons, and photons, respectively). The Standard Model also predicts a particle known as the Higgs boson, the existence of which has not yet been verified; as of 2010, searches for it are underway in the Tevatron at Fermilab and in the Large Hadron Collider at CERN.
+Astrophysics
+Main articles: Astrophysics and Physical cosmology
+
+
+The deepest visible-light image of the universe, the Hubble Ultra Deep Field
+Astrophysics and astronomy are the application of the theories and methods of physics to the study of stellar structure, stellar evolution, the origin of the solar system, and related problems of cosmology. Because astrophysics is a broad subject, astrophysicists typically apply many disciplines of physics, including mechanics, electromagnetism, statistical mechanics, thermodynamics, quantum mechanics, relativity, nuclear and particle physics, and atomic and molecular physics.
+The discovery by Karl Jansky in 1931 that radio signals were emitted by celestial bodies initiated the science of radio astronomy. Most recently, the frontiers of astronomy have been expanded by space exploration. Perturbations and interference from the earth’s atmosphere make space-based observations necessary for infrared, ultraviolet, gamma-ray, and X-ray astronomy.
+Physical cosmology is the study of the formation and evolution of the universe on its largest scales. Albert Einstein’s theory of relativity plays a central role in all modern cosmological theories. In the early 20th century, Hubble's discovery that the universe was expanding, as shown by the Hubble diagram, prompted rival explanations known as the steady state universe and the Big Bang.
+The Big Bang was confirmed by the success of Big Bang nucleosynthesis and the discovery of the cosmic microwave background in 1964. The Big Bang model rests on two theoretical pillars: Albert Einstein's general relativity and the cosmological principle. Cosmologists have recently established the ?CDM model of the evolution of the universe, which includes cosmic inflation, dark energy and dark matter.
+Numerous possibilities and discoveries are anticipated to emerge from new data from the Fermi Gamma-ray Space Telescope over the upcoming decade and vastly revise or clarify existing models of the Universe.[36][37] In particular, the potential for a tremendous discovery surrounding dark matter is possible over the next several years.[38] Fermi will search for evidence that dark matter is composed of weakly interacting massive particles, complementing similar experiments with the Large Hadron Collider and other underground detectors.
+IBEX is already yielding new astrophysical discoveries: "No one knows what is creating the ENA (energetic neutral atoms) ribbon" along the termination shock of the solar wind, "but everyone agrees that it means the textbook picture of the heliosphere — in which the solar system's enveloping pocket filled with the solar wind's charged particles is plowing through the onrushing 'galactic wind' of the interstellar medium in the shape of a comet — is wrong."[39]
+Current research
+
+Further information: List of unsolved problems in physics
+
+
+Feynman diagram signed by R. P. Feynman
+
+
+A typical event described by physics: a magnet levitating above a superconductor demonstrates the Meissner effect.
+Research in physics is continually progressing on a large number of fronts.
+In condensed matter physics, an important unsolved theoretical problem is that of high-temperature superconductivity. Many condensed matter experiments are aiming to fabricate workable spintronics and quantum computers.
+In particle physics, the first pieces of experimental evidence for physics beyond the Standard Model have begun to appear. Foremost among these are indications that neutrinos have non-zero mass. These experimental results appear to have solved the long-standing solar neutrino problem, and the physics of massive neutrinos remains an area of active theoretical and experimental research. Particle accelerators have begun probing energy scales in the TeV range, in which experimentalists are hoping to find evidence for the Higgs boson and supersymmetric particles.[40]
+Theoretical attempts to unify quantum mechanics and general relativity into a single theory of quantum gravity, a program ongoing for over half a century, have not yet been decisively resolved. The current leading candidates are M-theory, superstring theory and loop quantum gravity.
+Many astronomical and cosmological phenomena have yet to be satisfactorily explained, including the existence of ultra-high energy cosmic rays, the baryon asymmetry, the acceleration of the universe and the anomalous rotation rates of galaxies.
+Although much progress has been made in high-energy, quantum, and astronomical physics, many everyday phenomena involving complexity, chaos, or turbulence are still poorly understood.[citation needed] Complex problems that seem like they could be solved by a clever application of dynamics and mechanics remain unsolved; examples include the formation of sandpiles, nodes in trickling water, the shape of water droplets, mechanisms of surface tension catastrophes, and self-sorting in shaken heterogeneous collections.[citation needed]
+These complex phenomena have received growing attention since the 1970s for several reasons, including the availability of modern mathematical methods and computers, which enabled complex systems to be modeled in new ways. Complex physics has become part of increasingly interdisciplinary research, as exemplified by the study of turbulence in aerodynamics and the observation of pattern formation in biological systems. In 1932, Horace Lamb said:[41]
+I am an old man now, and when I die and go to heaven there are two matters on which I hope for enlightenment. One is quantum electrodynamics, and the other is the turbulent motion of fluids. And about the former I am rather optimistic.
+See also
+
+	Physics portal
+	Book: Physics
+Wikipedia books are collections of articles that can be downloaded or ordered in print.
+Main article: Outline of physics
+General
+Glossary of classical physics
+Index of physics articles
+List of elementary physics formulae, Elementary physics formulae
+List of important publications in physics
+List of unsolved problems in physics
+Perfection in physics and chemistry
+Philosophy of physics
+Physics (Aristotle) – an early book on physics, which attempted to analyze and define motion from a philosophical point of view
+Timeline of fundamental physics discoveries
+Related fields
+Astronomy
+Chemistry
+Engineering
+Mathematics
+Quantum Mechanics
+Science
+Interdisciplinary fields incorporating physics
+Nanotechnology
+Biophysics
+Econophysics
+Geophysics
+Neurophysics
+Psychophysics
+References
+
+^ Richard Feynman begins his Lectures with the atomic hypothesis, as his most compact statement of all scientific knowledge: "If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generations ..., what statement would contain the most information in the fewest words? I believe it is ... that all things are made up of atoms – little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. ..." R.P. Feynman, R.B. Leighton, M. Sands (1963). The Feynman Lectures on Physics. 1. p. I-2. ISBN 0-201-02116-1.
+^ J.C. Maxwell (1878). Matter and Motion. D. Van Nostrand. p. 9. ISBN 0486668959. "Physical science is that department of knowledge which relates to the order of nature, or, in other words, to the regular succession of events."
+^ H.D. Young, R.A. Freedman (2004). University Physics with Modern Physics (11th ed.). Addison Wesley. p. 2. "Physics is an experimental science. Physicists observe the phenomena of nature and try to find patterns and principles that relate these phenomena. These patterns are called physical theories or, when they are very well established and of broad use, physical laws or principles."
+^ S. Holzner (2006). Physics for Dummies. Wiley. p. 7. ISBN 0470618418. "Physics is the study of your world and the world and universe around you."
+^ Note: The term 'universe' is defined as everything that physically exists: the entirety of space and time, all forms of matter, energy and momentum, and the physical laws and constants that govern them. However, the term 'universe' may also be used in slightly different contextual senses, denoting concepts such as the cosmos or the philosophical world.
+^ Evidence exists that the earliest civilizations dating back to beyond 3000 BCE, such as the Sumerians, Ancient Egyptians, and the Indus Valley Civilization, all had a predictive knowledge and a very basic understanding of the motions of the Sun, Moon, and stars.
+^ Francis Bacon's 1620 Novum Organum was critical in the development of scientific method.
+^ Singer, C. A Short History of Science to the 19th century. Streeter Press, 2008. p. 35.
+^ Lloyd, Geoffrey (1970). Early Greek Science: Thales to Aristotle. London; New York: Chatto and Windus; W. W. Norton & Company. pp. 108–109. ISBN 0-393-00583-6.
+^ Glick, Livesey & Wallis (2005, pp. 89–90)
+^ Mariam Rozhanskaya and I. S. Levinova (1996), "Statics", p. 642, in Rashed & Morelon (1996, pp. 614–642)
+^ Ben-Chaim, Michael (2004). Experimental Philosophy and the Birth of Empirical Science: Boyle, Locke and Newton. Aldershot: Ashgate. ISBN 0754640914. OCLC 57202497 53887772 57202497
+^ Weidhorn, Manfred (2005). The Person of the Millennium: The Unique Impact of Galileo on World History. iUniverse. pp. 155. ISBN 0-595-36877-8. Weidhorn Introduces Galili as the "father of modern Physics"
+^ Guicciardini, Niccolò (1999), Reading the Principia: The Debate on Newton’s Methods for Natural Philosophy from 1687 to 1736, New York: Cambridge University Press.
+^ Rosenberg, Alex (2006). Philosophy of Science. Routledge. ISBN 0-415-34317-8. See Chapter 1 for a discussion on the necessity of philosophy of science.
+^ Peter Godfrey-Smith (2003), Chapter 14 "Bayesianism and Modern Theories of Evidence" Theory and Reality: an introduction to the philosophy of science ISBN 0-226-30063-3
+^ Peter Godfrey-Smith (2003), Chapter 15 "Empiricism, Naturalism, and Scientific Realism?" Theory and Reality: an introduction to the philosophy of science ISBN 0-226-30063-3
+^ See Laplace, Pierre Simon, A Philosophical Essay on Probabilities, translated from the 6th French edition by Frederick Wilson Truscott and Frederick Lincoln Emory, Dover Publications (New York, 1951)
+^ See "The Interpretation of Quantum Mechanics" Ox Bow Press (1995) ISBN 1-881987-09-4. and "My View of the World" Ox Bow Press (1983) ISBN 0-918024-30-7.
+^ Stephen Hawking and Roger Penrose (1996), The Nature of Space and Time ISBN 0-691-05084-8 p.4 "I think that Roger is a Platonist at heart but he must answer for himself."
+^ Roger Penrose, The Road to Reality ISBN 0-679-45443-8
+^ Penrose, Roger; Abner Shimony, Nancy Cartwright, Stephen Hawking (1997). The Large, the Small and the Human Mind. Cambridge University Press. ISBN 0-521-78572-3.
+^ http://www.getcited.org/pub/102471397
+^ "The story of mathematics". "Although usually remembered today as a philosopher, Plato was also one of ancient Greece’s most important patrons of mathematics. Inspired by Pythagoras, he founded his Academy in Athens in 387 BC, where he stressed mathematics as a way of understanding more about reality. In particular, he was convinced that geometry was the key to unlocking the secrets of the universe. The sign above the Academy entrance read: “Let no-one ignorant of geometry enter here.”"
+^ "Philosophy is written in that great book which ever lies before our eyes. I mean the universe, but we cannot understand it if we do not first learn the language and grasp the symbols in which it is written. This book is written in the mathematical language, and the symbols are triangles, circles and other geometrical figures, without whose help it is humanly impossible to comprehend a single word of it, and without which one wanders in vain through a dark labyrinth." – Galileo (1623), The Assayer, as quoted by G. Toraldo Di Francia (1976), The Investigation of the Physical World ISBN 0-521-29925-X p.10
+^ Applications of Mathematics to the Sciences
+^ The application of mathematics to problems in physics and the development of mathematical methods suitable for such applications and for the formulation of physical theories." Definition from the Journal of Mathematical Physics. http://jmp.aip.org/jmp/staff.jsp
+^ American Association for the Advancement of Science, Science. 1917. Page 645
+^ a b The Feynman Lectures on Physics Volume I. Feynman, Leighton and Sands. ISBN 0-201-02115-3 See Chapter 3 : "The Relation of Physics to Other Sciences" for a general discussion. For the philosophical issue of whether other sciences can be "reduced" to physics, see reductionism and special sciences).
+^ Some principles, such as Newton's laws of motion, are still generally called "laws" even though they are now known to be limiting cases of newer theories. Thus, for example, in Thomas Brody (1993, Luis de la Peña and Peter Hodgson, eds.) The Philosophy Behind Physics ISBN 0-387-55914-0, pp 18–24 (Chapter 2), explains the 'epistemic cycle' in which a student of physics discovers that physics is not a finished product but is instead the process of creating [that product].
+^ See, for example, the influence of Kant and Ritter on Oersted.
+^ Concepts which are denoted hypothetical can change with time. For example, the atom of nineteenth century physics was denigrated by some, including Ernst Mach's critique of Ludwig Boltzmann's formulation of statistical mechanics. By the end of World War II, the atom was no longer deemed hypothetical.
+^ Feynman, Richard (1965). The Character of Physical Law. ISBN 0262560038. p.157: "In fact experimenters have a certain individual character. They ... very often do their experiments in a region in which people know the theorist has not made any guesses. "
+^ Yet, universalism is encouraged in the culture of physics. For example, the World Wide Web, which was innovated at CERN by Tim Berners-Lee, was created in service to the computer infrastructure of CERN, and was/is intended for use by physicists worldwide. The same might be said for arXiv.org
+^ "Division of Condensed Matter Physics Governance History". Retrieved 13 February 2007.
+^ "NASA - Q&A on the GLAST Mission". Nasa: Fermi Gamma-ray Space Telescope. NASA. 28 August 2008. Retrieved 29 April 2009.
+^ See also Nasa - Fermi Science and NASA - Scientists Predict Major Discoveries for GLAST.
+^ NASA.gov
+^ Richard A. Kerr (16 October 2009). "Tying Up the Solar System With a Ribbon of Charged Particles". Science 326 (5951): pp. 350–351. Retrieved 27 November 2009.
+^ 584 co-authors "Direct observation of the strange 'b' baryon " Fermilab-Pub-07/196-E, June 12, 2007 http://arxiv.org/abs/0706.1690v2 finds a mass of 5.774 GeV for the 
+^ Goldstein, Sydney (1969). "Fluid Mechanics in the First Half of this Century". Annual Reviews in Fluid Mechanics 1: 1–28. Bibcode 1969AnRFM...1....1G. doi:10.1146/annurev.fl.01.010169.000245.
+External links
+
+	Look up physics in Wiktionary, the free dictionary.
+	Wikibooks has a book on the topic of
+Physics
+	Wikibooks has a book on the topic of
+Physics Study Guide
+	Wikibooks has a book on the topic of
+FHSST Physics
+	Wikisource has original text related to this article:
+Physics
+	Wikiversity has learning materials about Category:Physics
+General
+HyperPhysics website – HyperPhysics, a physics and astronomy mind-map from Georgia State University
+PhysicsCentral – Web portal run by the American Physical Society
+Physics.org – Web portal run by the Institute of Physics
+The Skeptic's Guide to Physics
+Usenet Physics FAQ – A FAQ compiled by sci.physics and other physics newsgroups
+Website of the Nobel Prize in physics
+World of Physics – An online encyclopedic dictionary of physics
+Nature: Physics
+Physics announced July 17, 2008 by the American Physical Society
+Physics/Publications at the Open Directory Project
+Physicsworld.com - News website from Institute of Physics Publishing
+Physics Central - includes articles on astronomy, particle physics, and mathematics.
+The Vega Science Trust - science videos, including physics
+Video: Physics "Lightning" Tour with Justin Morgan
+52-part video course: The Mechanical Universe...and Beyond Note: also available at 01 - Introduction Physics at Google Videos (Adobe Flash video)
+Encyclopedia of Physics at Scholarpedia
+de Haas, Paul, "Historic Papers in Physics (20th Century)"
+Organizations
+AIP.org – Website of the American Institute of Physics
+APS.org – Website of the American Physical Society
+IOP.org – Website of the Institute of Physics
+PlanetPhysics.org
+Royal Society – Although not exclusively a physics institution, it has a strong history of physics
+SPS National – Website of the Society of Physics Students
+About a decade ago, fresh with an undergraduate degree in physics, I picked up an intriguing book in a Barnes & Noble store: Darwin's Black Box. I knew about evolution, but as I'd pretty much steered clear of biology since my freshman year of high school, I had never read a book specifically on the subject.
+
+I was shocked at what I found within, which was a well-articulated criticism of Darwin's theory of evolution. Amazed that, growing up in Indiana, I had never encountered such a thing. I had long believed that the question of life's origin was firmly answered and only the ignorant were contesting it. I immediately began reading and researching more on this intriguing topic.
+
+One of my first forays into science writing was on this topic, as I wrote about it for the Southeast Michigan Mensa newsletter. In the  subsequent issue, I rightly got my argument ripped apart, because of the mistakes in my reasoning. For one thing, I attacked it because it was called a "theory" instead of a "law." (See Comparing theories and laws)
+
+Despite my philosophy of science course in college, I had never really ingrained the tentative nature of scientific claims until this post-college lesson from biology. Don't worry, I still believe that evolution is the best explanation that we have for the development of life on Earth, but I am much less arrogant about it than I once was. I don't take it as a given, as a "proven" theory.
+
+It's All Theory
+
+The reason for this is that all explanatory frameworks in science are fundamentally unproven. I recently made this claim on Facebook, which elicited the following response:
+
+I can scientifically PROVE each of these laws, Andrew. Go back to grade school.
+
+Newton's LAWS of Motion
+LAWS of THermodynamics
+Electrostatic laws
+Avogadro's Law 
+Boyle's Law 
+Charles' Law 
+Laws of Conservation of Energy and Mass
+Dalton's Law
+Graham's Law
+Law of Gravity
+
+etc. etc. ad nauseum
+And here was my response:
+
+No, you can't. You can conduct repeated experiments which confirm that those laws/theories make predictions which match with the outcomes of the experiments, but all that does is increase your confidence in the theory, it in no way guarantees that a future experiment won't show that the "law" is incomplete. Specifically, Newton's Law of Gravity was shown to be incomplete by Einstein, who refined the more comprehensive general relativity. You'll note that not a single one of the laws you mention was developed after 1900 ... the scientific community now realizes that pretty much everything they come up with is only a theory, so they don't really call anything new a "law" no matter how well confirmed it is. Thus, even after nearly a century of the most precisely supported evidence in the history of science, we still have "quantum theory" instead of a "quantum law." If scientists aren't convinced about something, they'll call it a "conjecture" or a "hypothesis." As a rule, by the time scientists name something a theory they're pretty confident that it represents a general truth about the system.
+This is all tied into Karl Popper's notion of "falsifiability" - the idea that the defining trait of a scientific hypothesis or theory is that it can be proven false in some way. The goal of science is to continually try to falsify claims about how the universe works.
+
+Climate Controversy
+
+The problem with this tentative nature of scientific claims is that politicians will frequently point to it not as a virtue of scientific thinking, but rather a fundamental failing in scientific claims, or an excuse for inaction. And, in return, scientists feel a motivation to forget that their claims are tentative, or to present them in ways that ignore this feature.
+
+Which brings us to some recent news: Nobel laureate physicist Dr. Ivar Giaever resigned from the American Physical Society (APS) over their stance on global warming. Giaever is a noted climate change skeptic. In his letter explaining his resignation, he cites the official APS stance on global warming:
+
+Emissions of greenhouse gases from human activities are changing the atmosphere in ways that affect the Earth's climate. Greenhouse gases include carbon dioxide as well as methane, nitrous oxide and other gases. They are emitted from fossil fuel combustion and a range of industrial and agricultural processes.
+The evidence is incontrovertible: Global warming is occurring.
+If no mitigating actions are taken, significant disruptions in the Earth's physical and ecological systems, social systems, security and human health are likely to occur. We must reduce emissions of greenhouse gases beginning now.
+What is his problem with this? Well, in his own words:
+
+In the APS it is ok to discuss whether the mass of the proton changes over time and how a multi-universe behaves, but the evidence of global warming is incontrovertible? The claim (how can you measure the average temperature of the whole earth for a whole year?) is that the temperature has changed from ~288.0 to ~288.8 degree Kelvin in about 150 years, which (if true) means to me is that the temperature has been amazingly stable, and both human health and happiness have definitely improved in this 'warming' period.
+While I don't personally agree with his high degree of skepticism on global warming, I actually do philosophically agree with his specific complaint about this one statement. The word "incontrovertible" has no real place in science, and certainly not in an official scientific society stance on any issue ... let alone one as nebulous as climate change.
+
+The whole point of science is that everything is controvertible!
+
+Clearly, this statement is motivated not by scientific best practices, but by some sort of political concerns.
+
+By all means, from a scientific standpoint we should question the conclusions of climate scientists. They should test and probe the claims, to whatever degree is possible. They should propose alternative explanations and investigate them.
+
+That's how scientific truths - tentative as they are - get discovered.
+News has been flying around about new findings out of CERN that they may have detected some neutrinos which were travelling faster than the speed of light. This is one single experiment and so, as the Bad Astronomy blog deftly points out, there's ample reason to be skeptical. However, team spokesman Antonio Ereditato said:
+
+We have high confidence in our results. We have checked and rechecked for anything that could have distorted our measurements but we found nothing. We now want colleagues to check them independently.
+I'll leave it to the real scientists to figure out the specifics on the experiment itself, and take this as an opportunity to explain the implications of this finding, which could be nothing short of revolutionary to the world of physics.
+
+The problem with this result is that nothing is supposed to be able to travel faster than the speed of light. This is one of the basic principles that comes out of Einstein's theory of relativity. So how could this happen?
+
+To figure that out, let's examine for a moment exactly why the speed of light is considered a universal speed limit.
+
+Why Is the Speed of Light a Barrier?
+
+Einstein used two principles upon which he built his 1905 theory of special relativity (and later general relativity):
+
+Principle of Relativity - The laws of physics are the same for all inertial reference frames (regions that are either stationary or moving at a constant speed).
+
+Principle of Constancy of the Speed of Light - Light always propagates through a vacuum at a definite velocity, c, which is independent of the state of motion of the emitting body.
+If you're paying close attention, you'll notice that neither of these principles preclude the idea that something other than light is in fact able to move at the speed of light.
+
+However, as part of this work, Einstein developed a series of mathematical relationships that needed to be used when two objects are moving relative to each other. This was built on mathematical work that had already been initiated by Henri Poincare, Hendrik Anton Lorentz, and others ... mathematical transformations which eventually earned the name Lorentz transformations. One of those relationships (we won't get into the details of how he arrived at it) is the following equation, which represents the total kinetic energy for a moving body:
+
+
+
+There are some logistical complexities to this equation, but for our purposes the key element is that denominator. As v (the velocity of the object) is 0, or very near 0, then you'd get a result that's basically in line with the classical kinetic energy theory. Incidentally, in the scales we're talking about, even a fighter jet is "very near 0." Pretty much anything we ever come in contact with - except light and other forms of electromagnetic energy - moves much slower than the speed of light.
+
+But what about if v is very large? Specifically, if the value of v becomes very close to the value of c (the speed of light), the v-squared over c-squared term is very close to 1, so 1 minus it is very close to 0. And when a denominator gets very close to 0, then the whole number gets very large. In mathematical terms, it "approaches infinity."
+
+Einstein's equations also say that the object would be getting more and more massive ... approaching infinite mass, as well.
+
+Any way you look at it, accelerating something to v = c requires infinite energy!
+
+That is why the speed of light is a speed limit ... because you just can't get enough energy to do it.
+
+Breaking the Rules
+
+Photons, however, are able to get around this, because they always move at the speed of light. They are created that way. As particles of light, this is just kind of what they do by definition. Their rest mass is zero, so the above equation doesn't apply to them. Their energy is calculated in a different way.
+
+Neutrinos were long thought to also be massless particles, but experiments have indicated that they do have a very small amount of mass, so they should be governed by the rules of the above equation. It shouldn't be possible to accelerate them to (or beyond) the speed of light.
+
+However, consider the reasoning behind making the speed of light a universal speed limit. It was because no object could get enough energy to accelerate to the speed of light. Which leaves me with one big question:
+
+Is there any way for an object to move faster than the speed of light without being accelerated?
+
+If the neutrinos in this experiment came into existence going faster than the speed of light already, this wouldn't technically violate the above equation. There's certainly no indication of a force acting on the neutrinos to give them this sort of boost, so really the expectation would be that they were moving this fast as soon as they were created, which is consistent with this idea.
+
+While this wouldn't require an infinite amount of energy, the energy involved would still be very unusual. The above equation would then contain a negative number within the square root, which means that the total kinetic energy would be an imaginary number. As a rule, when imaginary numbers show up in the results of physics problems, they lead to all sorts of problems with the theory (or represent some sort of error in the experiment).
+
+If confirmed, the experiment would force physicists to take a good long look at the theory of relativity and figure out how to revise it to account for this new evidence.
+
+One Other Possibility
+
+One possibility is that these particles are not actually neutrinos, but perhaps some other type of exotic, heretofore-unknown form of  matter which has properties similar to neutrinos ... similar enough to be detected by the OPERA detector, but strange enough that we've never encountered them before in our other experiments. I don't know enough about the details of the experiment to even guess how possible this is, but it might explain why we've never observed this effect before.
+
+Perhaps the exotic form of matter is governed by rules other than relativity, in some unknown way. It's just an idea.
+
+It'll definitely be interesting to see what the real scientists come up with as they delve deeper into this sort of mystery. I'll keep my eyes peeled and my ear to the ground, and let you know as soon as I have more information.
+
+Because if this pans out, this could be the biggest science story of the decade ... and we're only in 2011!
+
+Related Articles:
+
+Science - Neutrinos Travel Faster Than Light, According to One Experiment
+Discover magazine's Bad Astronomy blog - Faster-than-light travel discovered? Slow down, folks
+ArXiv.org - Measurement of the neutrino velocity with the OPERA detector in the CNGS beam (the actual research paper)
+Reuters - Particles found to break speed of light
+The Telegraph - CERN scientists 'break the speed of light'
+Oscillation Project with Emulsion -tRacking Apparatus (OPERA)
+USA Today - Particle might have traveled faster than speed of light
+Comments (22)PermalinkShare
+Science on Google+
+Tuesday September 20, 2011
+I've spent the last several weeks as part of the invitation-only beta of Google+. So far, the major difference between it and something like Facebook is that Google+ has been populated entirely by the early adopters. Well, that's about to change, because Google+ announced today that they're opening Google+ for everyone.  You can now just go to Google+, sign up, and begin searching for people to assign to your Circles.
+
+Of course, once you've added all of your friends (and me), who else should you include in your Circles? Unfortunately, so far there are only a handful of active celebrities on Google+, so how can you track down someone interesting to add?
+
+Well, if you're reading this blog, you probably like science ... so you may just be in luck! Chris Robinson of Ohio State University compiled this list of science voices on Google+, along with directions on how to auto-import all of them to create a Science Circle in mere moments.
+
+See you all on the plus-side!
+Comments (0)PermalinkShare
+Big Bang Theory Returns This Thursday!

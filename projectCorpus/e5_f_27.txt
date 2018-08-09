@@ -1,0 +1,749 @@
+Introduction
+
+A complete description of a programming language includes the computational model, the syntax and semantics of programs, and the pragmatic considerations that shape the language.
+Keywords and phrases: Computational model, computation, program, programming language, syntax, semantics, pragmatics, bound, free, scope, environment, block.
+
+Suppose that we have the values 3.14 and 5, the operation of multiplication (×) and we perform the computation specified by the following arithmetic expression
+
+2 × 3.14 × 5
+the result of which is the value:
+
+31.4
+If 3.14 is an approximation for pi, we can replace 3.14 with pi abstracting the expression to:
+
+2 × pi × 5 where pi = 3.14
+We say that pi is bound to 3.14 and is a constant. The where introduces a local environment or block for local definitions. The scope of the definitions is just the expression. If 5 is intended to be the value of a radius, then the expression can be generalized by introducing a variable for the radius:
+
+2 × pi × radius where pi = 3.14
+Of course the value of the expression is the circumference of a circle so we may further abstract by assigning a name to the expression:
+
+Circumference = 2 × pi × radius where pi = 3.14
+This last equation binds the name Circumference to the expression 2 × pi × radius where pi=3.14. The variable radius is said to be free in the right hand side of the equation. It is a variable since its value is not determined. pi is not a variable, it is a constant, the name of a particular value. Any context (scope), in which this equation and the variable radius appears and radius is assigned to a value, determines a value for Circumference. A further generalization is possible by parameterizing Circumference with the variable radius.
+
+Circumference(radius) = 2 × pi × radius where pi = 3.14
+The variable radius appearing in the right hand side is no longer free. It is bound to the parameter radius. Circumference has a value (other than the right hand side) only when the parameter is replaced with an expression. For example, in
+
+Circumference(5) = 3.14
+The parameter radius is bound to the value 5 and, as a result, Circumference(5) is bound to 3.14. In this form, the definition is a recipe or program for computing the circumference of a circle from the radius of the circle. The mathematical notation (syntax) provides the programming language and arithmetic provides the computational model for the computation. The mapping from the syntax to the computational model provides the meaning (semantics) for the program. The notation employed in this example is based on the very pragmatic considerations of ease of use and understanding. It is so similar to the usual mathematical notation that most people have difficulty in distinguishing between the syntax and the computational model.
+
+This example serves to illustrate several key ideas in the study of programming languages which are summarized in definition 1.1.
+
+Definition 1.1
+
+A computational model is a collection of values and operations.
+A computation is the application of a sequence of operations to a value to yield another value.
+A program is a specification of a computation.
+A programming language is a notation for writing programs.
+The syntax of a programming language refers to the structure or form of programs.
+The semantics of a programming language describe the relationship between a program and the model of computation.
+The pragmatics of a programming language describe the degree of success with which a programming language meets its goals both in its faithfulness to the underlying model of computation and in its utility for human programmers.
+Data
+
+A program can be viewed as a function, the output data values are a function of the input data values.
+Output = Program(Input)
+Another view of a program is that it models a problem domain and the execution of the program is a simulation of the problem domain.
+
+Program = Model of a problem domain
+Execution of a program = simulation of the problem domain
+In any case, data objects are central to programs.
+
+The values can be separated into two groups, primitive and compound. The primitive values are usually numbers, boolean values, and characters. The composite values are usually arrays, records, and recursively defined values. Strings may occur as either primitive or composite values. Lists, stacks, trees, and queues are examples of recursively defined values.
+
+Associated with the primitive values are the usual operations (e.g., arithmetic operations for the numbers). Associated with each composite value are operations to construct the values of that type and operations to access component elements of the type.  A collection of values that share a common set of operations is called a data type.
+
+The primitive types are implemented using the underlying hardware and, sometimes, special purpose software. So that only appropriate operations are applied to values, the value's type must be known. In assembly language programs it is up to the programmer to keep track of a datum's type. Type information is contained in a descriptor.
+
+ 
+Descriptor	Value
+When the type of a value is known at compile time the type descriptor is a part of the compiler's symbol table and the descriptor is not needed at run-time and therefore, the descriptor is discarded after compilation. When the type of a value is not known until run-time, the type descriptor must be associated with the value to permit type checking.
+Boolean values are implemented using a single bit of storage. Since single bits are not usually addressable, the implementation is extended to be a single addressable unit of memory. In this case either a single bit within the addressable unit is used for the value or a zero value in the storage unit designates false while any non-zero value designates true.  Operation on bits and boolean values are included in processor instruction sets.
+
+Integer values are most often implemented using a hardware defined integer storage representation, often 32-bits or four bytes with one bit for the sign.
+
+sign 
+bit	7-bits	byte	byte	byte
+The integer arithmetic and relational operations are implemented using the set of hardware operations. The storage unit is divided into a sign and a binary number. Since the integers form an infinite set, only a subrange of integers is provided. Some languages (for example Lisp and Scheme) provide for a greatly extended range by implementing integers in lists and providing the integer operations in software. This provides for ``infinite'' precision arithmetic.
+Natural number values are most often implemented using the hardware defined storage unit. The advantage of providing an natural number type is that an additional bit of storage is available thus providing larger positive values than are provided for integer values.
+
+Rational number values may be implemented as pairs of integers. Rationals are provided when it is desired to avoid the problems of round off and truncation which occurs when floating point numbers are used to represent rational numbers.
+
+Real number values are most often implemented using a hardware defined floating point representation. One such representation consists of 32-bits or four bytes where the first bit is the sign, the next seven bits the exponent and the remaining three bytes the mantissa. 
+ 
+
+sign 
+bit	exponent	byte	byte	byte
+The floating point arithmetic and relational operations are implemented using the set of hardware operations. Some floating point operations such as exponentiation are provided in software. The storage unit is divided into a mantissa and an exponent. Sometimes more than one storage unit is used to provide greater precision.
+Character values are almost always supported by the underlying hardware and operating system, usually one byte per character. 
+Characters are encoded using the 8-bit ASCII or EBCDIC encoding scheme or the emerging 16-bit Unicode encoding scheme.
+
+Enumeration values are usually represented by a subsequence of the integers and as such inherit an appropriate subset of the integer operations.
+
+Where strings are treated as a primitive type, they are usually of fixed length and their operations are implemented in hardware.
+
+Compound (or structured) data types include arrays, records, and files.
+
+Abstract data types are best implemented with pointers. The user program holds a pointer to a value of the abstract type. This use of pointers is quite safe since the pointer manipulation is restricted to the implementation module and the pointer is notationally hidden.
+
+Models of Computation
+
+There are three basic computational models -- functional, logic, and imperative. In addition to the set of values and associated operations, each of these computational models has a set of operations which are used to define computation. The functional model uses function application, the logic model uses logical inference and the imperative model uses sequences of state changes.
+The Functional Model
+
+The functional model of computation consists of a set of values, functions, and the operations of function application and function composition. In addition to the usual values, functions can take other functions as arguments and return functions as results (higher-order functions). A program is a collection of definitions of functions and a computation is function application (evaluation of an expression).
+The initial example of the computation of the circumference of a circle is an example of functional programming. A more interesting example is a program to compute the standard deviation of a list of scores. The formula for standard deviation is:
+
+sigma = sqrt( (Sigmai=1N xi2)/N - [(Sigmai=1N xi)/N]2 )
+where xi is an individual score and N is the number of scores. The formula requires computing both the sum of the scores and the sum of the squares of the scores. The higher-order function map applies a function to each element of a list and the higher-order function fold reduces a list by applying a function to the first element of a list and the result of folding the rest of the list. Figure 1 illustrates what an implementation in a functional programming language might look like.
+
+Figure 1.1: Standard deviation using higher-order functions
+sd(xs) = sqrt(v) 
+         where 
+            n = length( xs )
+            v = fold( plus, map(sqr, xs ))/n 
+                - sqr( fold(plus, xs)/n)
+The functional model is important because it has been under development for hundreds of years and its notation and methods form the base upon which a large portion of our problem solving methodologies rest. The prime concern in functional programming is defining functional relationships.
+
+ 
+Figure 1.2: Functional Programming
+values  
+functions  
+function definition  
+function application  
+function composition	Program = set of function definitions 
+Computation = function application
+The Logic Model
+
+The logic model of computation consists of a set of values, definitions of relations and logical inference. Programs consist of definitions of relations and a computation is a proof (a sequence of inferences). For example the earlier circumference computation can be represented as:
+circle(R, C) if Pi = 3.14 and C = 2 * pi * R.
+The function is represented as a relation between R and C.
+
+A better illustration logic programming is a program to determine the mortality of Socrates and Penelope. We begin with the fact that Socrates and Penelope are human and the rule that all humans are mortal or equivalently for all X, if X is human then X is mortal. An equivalent form of the fact and rule are:
+
+human(Socrates) 
+human(Penelope) 
+mortal(X) if human(X)
+To determine the mortality of Socrates or Penelope we make the assumption that there are no mortals i. e.
+¬mortal(Y)
+Figure 2 contains a computation (proof) that Socrates and Penelope are mortal.
+
+ 
+Figure 1.3: Socrates is mortal
+1a. human(Socrates)	Fact 
+1b. human(Penelope)	Fact 
+2. mortal(X) if human(X)	Rule 
+3. ¬mortal(Y)	Assumption 
+4a. X = Y 	from 2 & 3 by unification 
+4b. ¬human(Y)	and modus tollens 
+5a. Y = Socrates	from 1 and 4 by unification 
+5b. Y = Penelope	
+6. Contradiction 	5a, 4b, and 1a; 5b, 4b and 1b 
+The first step in the computation is the deduction of line 4 from lines 2 and 3. It is justified by the inference rule modus tollens which states that if the conclusion of a rule is known to be false, then so is the hypothesis. The variables X and Y may be unified since they may have any value. By unification, Lines 5a, 4b, and 1a; 5b, 4b and 1b produce contradictions and identify both Socrates and Penelope as mortal.
+
+Resolution is the an inference rule which looks for a contradiction and it is facilitated by unification which determines if there is a substitution which makes two terms the same. The logic model is important because it is a formalization of the reasoning process. It is related to relational data bases and expert systems. The prime concern in logic programming is defining relationships. 
+Figure 1.4: Logic  Programming
+values  
+relations  
+logical inference	Program = set of relation definitions 
+Computation = constructive proof (inference from definitions)
+ 
+Inferences
+
+program = set of axioms -- the formalization of knowledge computation = constructive proof of a goal statement from the program
+The Imperative Model
+
+The imperative model of computation consists of a set of values including a state and the operation of assignment to modify the state. State is the set of name-value pairs of the constants and variables. Programs consist of sequences of assignments and a computation is a sequence of states. Each step in the computation is the result of an assignment operation (See Figure 3).
+Figure 1.5: State Sequence
+S0 -O0-> S1 - ... -> Sn-1 -On-1-> Sn
+
+
+
+For example, an imperative implementation of the earlier circumference computation might be written as:
+constant pi = 3.14
+input (Radius) Circumference := 2 * pi * Radius Output (Circumference)
+The computation requires the implementation to determine the value of Radius and pi in the state and then change the state by pairing Circumference with a new value.
+It is easier to keep track of the state when state information is included with the code.
+
+constant pi = 3.14
+
+Radius _|_, Circumference = _|_, pi=3.14
+input (Radius)
+Radius x, Circumference = _|_, pi=3.14
+Circumference := 2 * pi * Radius
+Radius x, Circumference = 2 × x × pi, pi=3.14
+Output (Circumference)
+Radius x, Circumference = 2 × x × pi, pi=3.14
+where _|_ designates an undefined value.
+The imperative model is often called the procedural model because groups of operations are abstracted into procedures.
+
+The imperative-procedural model is important because it models change and changes are an integral part of our environment. It is the model of computation that is closest to the hardware on which programs are executed. Its closeness to hardware makes it the easiest to implement and imperative programs tend to make the least demands for system resources (time and space). The prime concern in imperative programming is defining a sequence of state changes.
+
+Figure 1.6: Imperative  Programming
+memory cells  
+values  
+commands	Program = sequence of commands 
+Computation = sequence of state changes
+Computability
+
+The functional, logic and imperative models of computation are equivalent in the sense that any problem that has a solution in one model is solvable (in principle) each of the other models. Other models of computation have been proposed. The other models have been shown to be equivalent to these three models. These are said to be universal models of computation.
+The method of computation provided in a programming language is dependent on the model of computation implemented by the programming language. Most programming languages utilize more than one model of computation but one model usually predominates. Lisp, Scheme, and ML are based on the functional model of computation but provide some imperative constructs while, Miranda and Haskell provide a nearly pure implementation of the functional model of computation. Prolog provides a partial implementation of the logic computational model but, for reasons of efficiency and practicality, fails in several areas and contains imperative constructs. The language Gödel is much closer to the ideal. The imperative model requires some functional and logical elements and languages such as Pascal, C/C++, Ada and Java emphasize assignments, methods of defining various computation sequences and provide minimal implementations of the functional and logic model of computation.
+
+Syntax and Semantics
+
+Syntax describes the structure of programs and semantics defines the relationship between the syntax and the computational model. To simplify the task of reasoning about programs, the syntax of a programming language should be closely related to the computational model. The key principle is the principle of clarity.
+Principle of Clarity
+
+The structure of a programming language should be well defined, and the outcome of a particular section of code easily predicted.
+The notation used in the functional and logic models reflects common mathematical practice and exhibits the notational simplicity and regularity found in that discipline. Because the notation used for the imperative model must be able to specify both a variety of state sequences and expressions, it tends to be irregular and of greater complexity than the notation for functional and logic models. Because of this complexity and the wide spread use of imperative programming languages, the bulk of the work done in the area of programming language semantics deals with imperative programming languages.
+Pragmatics
+
+Pragmatics is concerned about the usability of the language, the application areas, ease of implementation and use, and the language's success in fulfilling its design goals. The forces that shape a programming language include computer architecture, software engineering practices (especially the software life cycle), computational models, and the application domain (e.g. user interfaces, systems programming, and expert systems).
+For a language to have wide applicability it must make provision for abstraction, generalization and modularity. Abstraction (associating a name with an object and using the name to whenever the object is required) permits the suppression of detail and provides constructs which permit the extension of a programming language. These extensions are necessary to reduce the complexity of programs. Generalization (replacing a constant with a variable) permits the application of constructs to more objects and possibly to other classes of objects. Modularity is a partitioning of a program into sections usually for separate compilation and into libraries of reusable code. Abstraction, generalization and modularity ease the burden on a programmer by permitting the programmer to introduce levels of detail and logical partitioning of a program. The implementation of the programming language should be faithful to the underlying computational model and be an efficient implementation.
+
+Concurrent programming involves the notations for expressing potential parallel execution of portions of a program and the techniques for solving the resulting synchronization and communication problems. The concurrent programming may be implemented within any of the computational models. Concurrency within the functional and logic model is particularly attractive since, subexpression evaluation and inferences may be performed concurrently and requires no additional syntax. Concurrency in the imperative model requires additional syntactic elements.
+
+Object-oriented programming OOP involves the notations for structuring a program into a collection of objects which compute by exchanging messages. Each object is bound up with a value and a set of operations which determine the messages to which it can respond. The objects are organized hierarchically and inherit operations from objects higher up in the hierarchy. Object-oriented programming may be implemented within any of the other computational models.
+
+Programs are written and read by humans but are executed by computers. Since both humans and computers must be able to understand programs, it is necessary to understand the requirements of both classes of users.
+
+The native programming languages of computers bear little resemblance to natural languages. Machine languages are unstructured and contain few, if any, constructs resembling the level at which humans think. The instructions typically include arithmetic and logical operations, memory modification instructions and branching instructions. For example, the circumference computation might be written in assembly language as:
+
+Load Radius R1
+Mult R1 2 R1
+Load Pi R2
+Mult R1 R2 R1
+Store R1 Circumference
+Because the imperative model is closer to actual hardware, imperative programs have tended to be more efficient in their use of time and space than equivalent functional and logic programs.
+Natural languages are not suitable for programming languages because humans themselves do not use natural languages when they construct precise formulations of concepts and principles of particular knowledge domains. Instead, they use a mix of natural language, formalized symbolic notations of mathematics and logic and diagrams. The most successful of these symbolic notations contain a few basic objects which may be combined through a few simple rules to produce objects of arbitrary levels of complexity. In these systems, humans reduce complexity by the use of definitions, abstractions, generalizations and analogies. Successful programming languages do the same by catering to the natural problem solving approaches used by humans. Ideally, programming languages should approach the level at which humans reason and should reflect the notational approaches that humans use in problem solving and must include ways of structuring programs to ease the tasks of program understanding, debugging and maintenance.
+
+Language Design Principles
+
+Programming languages are largely determined by the importance the language designers attach to the the computational model, the intended application domain readability, write-ability and efficient execution. Some languages are largely determined by the necessity for efficient implementation and execution. Others are designed to be faithful to a computational model.
+Research in computer architecture is producing Research in programming language implementation is producing more efficient implementations of programming languages for all models of computation.
+
+Research in software engineering is producing a better understanding of the program structuring techniques that lead to programs that are easier to write, read (understand), and maintain.
+
+All general purpose programming languages adhere to the following programming language design principle.
+
+Principle of Computational Completeness
+The computational model for a general purpose programming language must be universal.
+Principle of Implementation
+The implementation should be efficient in its use of space and time.
+Principle of Programming The program should be written in a language that reflects the problem domain.
+The line of reasoning developed above may be summarized in the following principle.
+Principle of Programming Language Design
+A programming language must be designed to facilitate readability and writ-ability for its human users and efficient execution on the available hardware.
+Readability and write-ability are facilitated by the following principles.
+Principle of Simplicity
+The language should be based upon as few
+Principle of Orthogonality
+Independent functions should be controlled by independent mechanisms.
+Principle of Regularity
+A set of objects is said to be regular with respect to some condition if, and only if, the condition is applicable to each element of the set.
+Principle of Extensibility
+New objects of each syntactic class may be constructed (defined) from the basic and defined constructs in a systematic way.
+The principle of regularity and and extensibility require that the basic concepts of the language should be applied consistently and universally.
+In the following pages we will study programming languages as the realization of computational models, semantics as the relationship between computational models and syntax, and associated pragmatic concerns.
+
+Historical Perspectives and Further Reading
+
+For a programming languages text which presents programming languages from the virtual machine point of view see Pratt, from the point of view of denotational semantics see Tennent, and from a programming methodology point of view see Hehner.
+Hehner, E. C. R. (1984)
+The Logic of Programming Prentice-Hall International.
+Pratt, T. W. and Zelkowitz, M. V. (1996)
+Programming Languages: Design and Implementation 3rd ed. Prentice-Hall.
+Tennent, R. D. (1981)
+Principles of Programming Languages Prentice-Hall International.
+Exercises
+
+Identify the applicable scope rules in Figure 2.
+Construct a trace of the execution of the following program (i.e. complete the following proof).
+parentOf(john, mary).
+parentOf(kay, john).
+parentOf(bill, kay).
+ancestorOf(X,Y) if parentOf(X,Y).
+ancestorOf(X,Z) if parentOf(X,Y) and ancestorOf(Y,Z).
+not ancestorOf(bill,mary).
+Construct a trace of the execution of fac(4) given the function definition
+fac(N) = if N = 0 then 1
+         else N*fac(N-1)
+Construct a trace of the execution of the following program
+N := 4;
+F := 1;
+While N > 0 do
+   F := N*F;
+   N := N-1;
+end;
+Using the following definition of a list,
+list([ ]) -- the empty list
+list([X|L]) if list(L) -- first element is X the rest of
+                          the list is L
+[X0,...Xn] is an abbreviation for [X0|[...[Xn|[ ]]...]
+complete the following computation (proof) and determine the result of concatenating the two lists. 
+ 
+1. concat([ ],L,L)	Fact 
+2. concat([X|L0],L1,[X|L2]) if concat(L0,L1,L2)	Rule 
+3. ¬concat([0,1],[a,b],L)	Assumption 
+Classify the following languages in terms of a computational model: Ada, APL, BASIC, C, COBOL, FORTRAN, Haskell, Icon, LISP, Pascal, Prolog, SNOBOL.
+For the following applications, determine an appropriate computational model which might serve to provide a solution: automated teller machine, flight-control system, a legal advice service, nuclear power station monitoring system, and an industrial robot.
+Compare the syntactical form of the if-command/expression as found in Ada, APL, BASIC, C, COBOL, FORTRAN, Haskell, Icon, LISP, Pascal, Prolog, SNOBOL.
+An extensible language is a language which can be extended after language design time. Compare the extensibility features of C or Pascal with those of LISP or Scheme.
+What programming language constructs of C are dependent on the local environment?
+What languages provide for binding of type to a variable at run-time?
+Discuss the advantages and disadvantages of early and late binding for the following language features. The type of a variable, the size of an array, the forms of expressions and commands.
+Compare two programming languages from the same computational paradigm with respect to the programming language design principles.
+Construct a program in your favorite language to do one of the following:
+Perform numerical integration where the function is passed as a parameter.
+Perform sorting where the the less-than function is passed as a parameter.
+Permission to make digital/hard copy of part or all of this work for personal or classroom use is granted without fee provided that the copies are not made or distributed for profit or commercial advantage, the copyright notice, the title of the publication, and its date appear, and notice is given that copying is by permission of Anthony A. Aaby. To copy otherwise, to republish, to post on servers, or to redistribute to lists, requires prior specific permission and/or fee. 
+© 1998 Anthony A. Aaby. Last Modified - 04/01/2004 11:43:43. Send comments to aabyan@wwc.edu
+The syntax of a programming language describes the structure of programs without any consideration of their meaning.
+Keywords and phrases: Regular expression, regular grammar, context-free grammar, parse tree, ambiguity, BNF, context sensitivity, attribute grammar, inherited and synthesized attributes, scanner, lexical analysis, parser, static semantics.
+
+Syntax is concerned with the structure of programs and layout with their appearance.  The syntactic elements of a programming language are determined by the computation model and pragmatic concerns. There are well developed tools (regular, context-free and attribute grammars) for the description of the syntax of programming languages. Grammars are rewriting rules and may be used for both recognition and generation of programs. Grammars are independent of computational models and are useful for the description of the structure of languages in general.
+
+Context-free grammars are used to describe the bulk of the language's structure; regular expressions are used to describe the lexical units (tokens); attribute grammars are used to describe the context sensitive portions of the language. Attribute grammars are described in a later chapter.
+
+Alphabets and Languages
+
+A language is formally defined by its words and its sentence structure. In this section, we develop the basic notions of words and sentences as strings of words. The collection of words from which sentences are constructed is called an alphabet and a language is a collection of strings formed from the elements of the alphabet. A string with no words from the alphabet is called the empty string and is denoted by lambda. Definition 2.1 formalizes these notions.
+Definition 2.1: Alphabet and Language
+Sigma
+An alphabet Sigma is a nonempty, finite set of symbols.
+L
+A language L over an alphabet Sigma is a collection of strings of elements of Sigma. The empty string lambda is a string with no symbols at all.
+Sigma*
+The set of all possible finite strings of elements of Sigma is denoted by Sigma*. Lambda is an element of Sigma*.
+A string is a finite sequence of symbols from an alphabet, Sigma.  The concatenation of two strings v and w is the string wv obtained by appending the string w to the right of string v.
+
+Programming languages require two levels of description, the lowest level is that of a token. The tokens of a programming language are the keywords, identifiers, constants and other symbols appearing in the language. In the program
+
+void main()
+{
+  printf("Hello World\n");
+}
+the tokens are
+void, main, (, ), {, printf, (, "Hello World\n", ), ;, }
+The alphabet for the language of the lexical tokens is the character set while the alphabet for a programming language is the set of lexical tokens;
+A string in a language L is called a sentence and is an element of Sigma*.  Thus a language L is a subset of Sigma*.  Sigma+ is the set of all possible nonempty strings of Sigma, so Sigma+ = Sigma* - { lambda }.  A token is a sentence in the language for tokens and a program is a sentence in the language of programs.
+
+If L0 and L1 are languages, then L0L1 denotes the language {xy | x is in L0, and y is in L1 }. That is L0L1 consists of all possible concatenations of a string from L0 followed by a string from L1.
+
+Grammars and Languages
+
+The ordering of symbols within a token are described by regular expressions. The ordering of symbols within a program are described by context-free grammars. In this section, we describe context-free grammars. A later section describes regular expressions. Context-free grammars describe how lexical units (tokens) are grouped into meaningful structures. The alphabet (the set of lexical units) consists of the keywords, identifiers, constants, punctuation symbols, and various operators. While context-free grammars are sufficient to describe most programming language constructs, they cannot specify context-sensitive aspects of a language such as the requirements that a name must be declared before it is referenced, the order and number of actual parameters in a procedure call must match the order and number of formal arguments in a procedure declaration, and that types must be compatible on both sides of an assignment operator.
+A grammar consists of a finite collection of grammatical categories (e.g. noun phrase, verb phrase, article, noun, verb etc), individual words (elements of the alphabet), rules for describing the order in which elements of the grammatical categories must appear and there must be a most general grammatical category.  Figure 2.1 contains a context-free grammar for a fragment of English.
+
+Figure 2.1: G0 a grammar for a fragment of English
+The grammatical categories are: S, NP, VP, D, N, V. 
+The words are: a, the, cat, mouse, ball, boy, girl, ran, bounced, caught. 
+The grammar rules are:
+
+S  --> NP VP
+NP --> N
+NP --> D N
+VP --> V
+VP --> V NP
+V  --> ran | bounced | caught
+D  --> a | the
+N  --> cat | mouse | ball | boy | girl
+The most general category is S, a sentence.
+In a context-free grammar, the grammatical categories are called variables, the words (tokens) are called terminals, the grammar rules are rewriting rules called productions, and the most general grammatical category is called the start symbol. This terminology is restated in Definition 2.2.
+
+Definition 2.2: Context-free grammar
+Context-free grammar G is a quadruple
+
+G = (V, T, P, S)
+where
+
+V is a finite set of variable symbols, 
+T is a finite set of terminal symbols disjoint from V, 
+P is a finite set of rewriting rules (productions) of the form
+
+A --> w where A in V, w in (V union T)*
+S is an element of V called the start symbol.
+
+Grammars may be used to generate the sentences of a language. Given a string w of the form
+
+w = uxv
+the production x --> y is applicable to this string since x appears in the string.  The production allows us to replace x with y obtaining the string z
+
+z = uyv
+and say that w derives z. This is written as
+
+w ==> z
+If
+
+w1 ==> w2 ==> ... ==> wn
+we say that w1 derives wn and write
+
+w1 ==>* wn
+The set of sentences of a language are derived from the start symbol of the grammar. Definition 2.3 formalizes these ideas.
+
+Definition 2.3: Generation of a Language from the Grammar
+Let G be a grammar. Then the set
+L(G) = {w in T* | S ==>* w}
+is the language generated by G.
+
+A language L is context-free iff there is a context-free grammar G such that L = L(G).
+
+If w in L(G), then the sequence
+
+S ==> w1 ==> w2 ==> ... ==> wn ==> w
+is a derivation of the sentence w and the wi are called sentential forms.
+
+Using the grammar G0 the sentence the cat caught the mouse can be generated as follows:
+
+S ==> NP VP
+  ==> D N VP 
+  ==> the N VP 
+  ==> the cat VP 
+  ==> the cat V NP 
+  ==> the cat caught NP 
+  ==> the cat caught D N
+  ==> the cat caught the N
+  ==> the cat caught the mouse
+This derivation is performed in a leftmost manner. That is, in each step the leftmost variable in the sentential form is replaced.
+Sometimes a derivation is more readable if it is displayed in the form of a derivation tree.
+
+                             S
+                            / \
+                          NP   VP
+                         /\     /\
+                        D  N   V  NP
+                       /  /    /   \  
+                    the cat caught  \
+                                    /\
+                                   D  N
+                                   \   \
+                                   the mouse
+The notion of a tree based derivation is formalized in Definition 2.5.
+
+Definition 2.5: Derivation Tree
+Let G = (V, T, P, S) be a context-free grammar. A derivation tree has the following properties.
+The root is labeled S.
+Every interior vertex has a label from V.
+If a vertex has label A in V, and its children are labeled (from left to right) a1, ..., an, then P must contain a production of the form
+A --> a1...an
+Every leaf has a label from T union {lambda}.
+In the generation example we chose to rewrite the left-most nonterminal first. When there are two or more left-most derivations of a string in a given grammar or, equivalently, there are two distinct derivation trees for the same sentence, the grammar is said to be ambiguous.  In some instances, ambiguity may be eliminated by the selection of another grammar for the language or adding rules which may not be context-free rules. Definition 2.6 defines ambiguity in terms of derivation trees.
+
+
+Definition 2.6: Ambiguous Grammar
+A context-free grammar G is said to be ambiguous if there exists some w in L(G) which has two distinct derivation trees.
+Abstract Syntax
+
+Programmers and compiler writers need to know the actual symbols used in programs -- the concrete syntax.  A grammar defining the concrete syntax of arithmetic expressions is grammar G1 in Figure 2.2,.
+Figure 2.2: G1 An expression grammar
+   V = { E } 
+   T = { c, id, +, *, (, ) }
+   P = {E --> c,
+        E --> id,
+        E --> (E),
+        E --> E + E,
+        E --> E * E }  
+   S = E
+We assume that c and id stand for any constants and identifiers respectively. Concrete syntax is concerned with the hierarchical relationships and the particular symbols used. The main point of abstract syntax is to omit the details of physical representation, specifying the pure structure of the language by specifying the logical relations between parts of the language.  A grammar defining the abstract syntax of arithmetic expressions is grammar G2 in Figure 2.3.
+
+Figure 2.3: G2 An abstract expression grammar
+   V = { E } 
+   T = { c, id, add, mult}
+   P = {E --> c,
+        E --> id,
+        E --> add E E ,
+        E --> mult E E }  
+   S = E
+The terminal symbols are names for classes of objects.
+
+An additional difference between concrete and abstract syntax appeThe key difference in the use of concrete and abstract grammars is best illustrated by comparing the derivation tree and the abstract syntax tree for the expression id + (id * id). The derivation tree for the concrete grammar is just what we would expect
+
+                              E
+                             /|\
+                            E + E
+                           /   /|\ 
+                         id   ( E ) 
+                               /|\ 
+                              E * E 
+                             /     \
+                           id       id
+while the abstract syntax tree for the abstract grammar is quite different.
+                             add
+                             / \
+                           id   mult
+                                 /\
+                               id  id
+In a derivation tree for an abstract grammar, the internal nodes are labeled with the operator and the the operands are their children and there are no concrete symbols in the tree.  Abstract syntax trees are used by compilers for an intermediate representation of the program.
+Concrete syntax defines the way programs are written while abstract syntax describes the pure structure of a program by specifying the logical relation between parts of the program. Abstract syntax is important when we are interested in understanding the meaning of a program (its semantics) and when translating a program to machine code.
+
+Parsing
+
+Grammars may be used both for the generation and recognition (parsing) of sentences. Both generation and recognition requires finding a rewriting sequence consisting of applications of the rewriting rules which begins with the grammar's start symbol and ends with the sentence. The recognition of a program in terms of the grammar is called parsing. An algorithm which recognizes programs is called a parser. A parser either implicitly or explicitly builds a derivation tree for the sentence.
+There are two approaches to parsing. The parser can begin with the start symbol of the grammar and attempt to generate the same sentence that it is attempting to recognize or it can try to match the input to the right-hand side of the productions building a derivation tree in reverse. The first approach is called top-down parsing and the second, bottom-up parsing.
+
+Figure 2.4 illustrates top-down parsing by displaying both the parse tree and the remaing unrecognized input.  The input is scanned from left to right one token at a time.
+
+Figure 2.4: Top-down Parse
+PARSE TREE                 UNRECOGNIZED INPUT
+
+     S                     the cat caught the mouse
+    /\
+   NP VP                   the cat caught the mouse
+  / \  \
+ D   N  \                  the cat caught the mouse
+ |   |   \
+the  |    \                cat caught the mouse
+     |     \
+    cat     \              caught the mouse
+            /\
+           V  NP           caught the mouse
+           |   \
+        caught  \          the mouse
+                /\
+               D  N        the mouse
+               |  |
+              the |        mouse
+                  |
+                mouse
+Each line in the figure represents a single step in the parse. Each nonterminal is replaced by the right-hand side defining it. Each time a terminal matches the input, the corresponding token is removed from the input.
+Figure 2.5 illustrates bottom-up parsing by displaying both the parse tree and the remaining unrecognized input. Note that the parse tree is constructed up-side down, i.e., the parse tree is built in reverse.
+
+Figure 2.5: Bottom-up Parse
+PARSE TREE              UNRECOGNIZED INPUT
+
+                        the cat caught the mouse
+  
+the                     cat caught the mouse
+ |
+ D                      cat caught the mouse
+ |
+ |  cat                 caught the mouse
+ |   |
+ |   N                  caught the mouse
+ \  /
+  NP                    caught the mouse
+   |
+   | caught             the mouse
+   |   |
+   |   V                the mouse
+   |   | 
+   |   | the            mouse
+   |   |  |
+   |   |  D             mouse
+   |   |  |
+   |   |  |  mouse
+   |   |  |   |
+   |   |  |   N
+   |   |  \  /
+   |   |   NP
+   |   \  /
+   |    VP
+   \   /
+     S
+Each line represents a step in the parsing sequence. The input tokens shifted from the input to the parse tree when the parser is unable to reduce branches of the tree to a variable.
+
+Table-driven and recursive descent parsing
+
+The simplest and most intuitive approach to constructing a parser is to translate the grammar into a collection of recursive routines. Such a parser is called a recursive descent parser. A procedure parseN is constructed for each variable N. The right-hand side of the productions determine the body of the parse procedure. Variables in the right-hand side become calls to a parse procedure. Terminals in the right-hand side are translated to a verification check to make sure the input corresponds to the terminal and a procedure call to get the next input token. Additional details and restrictions on grammars are given in the Chapter: Translation.
+An alternate approach is to construct top-down table-driven parser which consists of a driver routine, a stack and the grammar (usually stored in tabular form). The driver routine follows the following algorithm:
+
+Initialize the stack with the start symbol of the grammar.
+Repeat until no further actions are possible
+If the top of the stack and the next input symbol are the same, pop the top of the stack and consume the input symbol.
+If the top of the stack is a nonterminal symbol, pop the stack and push the right hand side of the corresponding grammar rule onto the stack.
+If both the stack and input are empty, accept the input otherwise, reject the input.
+To illustrate this approach we use the grammar G1 for expressions and parse the expression id+id*id. Figure 2.6 contains a trace of the parse.
+Figure 2.6 Top-down parse of id+id*id
+STACK        INPUT          RULE/ACTION
+
+   E]        id+id*id]     pop & push using E --> E+E
+ E+E]        id+id*id]     pop & push using E --> id
+id+E]        id+id*id]     pop & consume
+  +E]          +id*id]     pop & consume
+   E]           id*id]     pop & push using E --> E*E
+ E*E]           id*id]     pop & push using E --> id
+id*E]           id*id]     pop & consume
+  *E]             *id]     pop & consume
+   E]              id]     pop & push using E --> id
+  id]              id]     pop & consume
+    ]                ]     accept
+The trace shows the contents of the stack and the remaining input at each step of the parse.
+
+A third alternative is to construct a bottom-up table driven parser which consists of a driver routine, a stack and a grammar stored in tabular form. The driver routine follows the following algorithm:
+
+Initially the stack is empty.
+Repeat until no further actions are possible.
+If the top n stack symbols match the right hand side of a grammar rule in reverse, then reduce the stack by replacing the n symbols with the left hand symbol of the grammar rule.
+If no reduction is possible then shift the current input symbol to the stack.
+If the input is empty and the stack contains only the start symbol of the grammar, then accept the input otherwise, reject the input.
+To illustrate this approach we use the grammar G1 for expressions and parse the expression id+id*id. Figure 2.7 contains a trace of the parse.
+Figure 2.7: Bottom-up parse of id+id*id
+STACK    INPUT        RULE/ACTION
+
+      ]  id+id*id]    Shift
+    id]    +id*id]    Reduce using E --> id
+     E]    +id*id]    Shift
+    +E]     id*id]    Shift
+  id+E]       *id]    Reduce using E --> id
+   E+E]       *id]    Shift
+  *E+E]        id]    Shift
+id*E+E]          ]    Reduce using E --> id
+ E*E+E]          ]    Reduce using E --> E*E
+   E+E]          ]    Reduce using E --> E+E
+     E]          ]    Accept
+The trace shows the contents of the stack and the remaining input at each step of the parse.
+
+In these examples the choice of the which production to use may appear to be magical. In the case of a top-down parser, grammar G1 should be rewritten to remove the ambiguity.  For bottom up parsers, there are techniques for the analysis of the grammar to produce a set of unambiguous choices for productions.  Such techniques are beyond the scope of this text.
+
+Nondeterministic pushdown automata
+
+A careful study of the parsing process reveals that whether the parse is top-down or bottom-up, the parser must hold some information on a stack. In the case of a recursive descent parser, the stack is implicit in the recursion. In the case of the top-down parser, it must pop variables off the stack and push the corresponding right-hand side on the stack and pop terminals off the stack when they match the input. In the case of the bottom-up parser, it must shift (push) terminals onto the stack from the input and reduce (pop) sequences of terminals and variables off the stack replacing them with a variable where the sequence of terminals and variables correspond to the right-hand side of some production.
+This observation leads us to the notion of push-down automata. A push-down automata has an input that it scans from left to right, a stack, and a finite control to control the operations of reading the input and pushing data on and popping data off the stack.  Definition 2.6 is a formal definition of a push-down automata.
+
+
+Definition 2.6: Push-down automaton
+A push-down automaton M is a 7-tuple (Q, Sigma, Tau, delta, q0, Z0, F)
+ 
+Q	is a finite set of states
+Sigma	is a finite alphabet called the input alphabet
+Tau	is a finite alphabet called the stack alphabet
+delta	is a transition function from Q× (Sigma union {e})× Tau to finite subsets of Q× Tau*
+q0	in Q is the initial state
+Z0	in Tau is called the start symbol
+F	a subset of Q; the set of accepting states
+
+PDA = < States, StartState, FinalStates, InputAlphabet, Input, StackAlphabet, Stack, TransitionFunction, > 
+Configuration: C = State x Stack x Input; initial configuration (StartState, [], Input) 
+ 
+t : C --> C
+Allowed transitions
+t(s,    [],      []) -- accept (empty stack)
+t(s,    [],      S) -- accept s in FinalStates
+t(s,     I,      S) = (s', I,      S) -- epsilon move
+t(s, [i|I],      S) = (s', I,      S) -- consume input
+t(s,     I, [x|S]) = (s', I,      S) -- pop stack
+t(s,     I,      S) = (s', I, [x|S]) -- push stack
+t(s, [i|I], [x|S]) = (s', I,      S) -- consume input and pop stack
+t(s, [i|I],      S) = (s', I, [x|S]) -- consume input and push stack
+
+Example: palindroms program (StartState, Input, [])
+
+t(push,     [],     []) = accept              // empty input 
+t(push, [x|I],      S) = (pop,  I,      S) // center, odd length palindrom 
+t(push, [x|I],      S) = (pop,  I, [x|S]) // center, even length palindrom 
+t(push, [x|I],      S) = (push, I, [x|S]) // left side 
+t(pop,  [x|I], [x|S]) = (pop,  I,      S) // right side 
+t(pop,      [],      []) = accept
+
+Applications of PDAs are explored in the exercises.
+
+Equivalence of PDA and CFGs
+
+Just as a grammar defines a language L(G), so a PDA M defines a language L(M), the set of strings that it accepts. The relationship between PDAs and CFG is interesting. Any language accepted by a PDA can be shown to be shown to have a context-free grammar. Also any context-free grammar defines a PDA. While the proof of these statements is beyond the scope of this text, the idea of the proof is this. The configurations of a PDA can be described in terms of a context-free grammar.  All CFGs can be put into a special form (Greibach normal form) which can be used to describe the configurations of a PDA.
+Regular Expressions
+
+While CFGs can be used to describe the tokens of a programming languages, regular expressions (RE) are a more convenient notation for describing their simple structure. The alphabet consists of the character set chosen for the language and the notation includes
+`·' to concatenate items (juxtaposition is used for the same purpose),
+`|' to separate alternatives (often `+' is used for the same purpose),
+`*' to indicate that the previous item may be repeated zero or more times, and
+`(' and `)' for grouping.
+Definition 2.7: Regular expressions and Regular languages
+ 
+Regular Expression E	Language Denoted L(E) 
+ø	ø	The empty set; language 
+lambda	{lambda}	empty string; language which consists of the empty string 
+a	{ a }	a; the language which consists of just a 
+(E ·F)	{uv | u in L(E) and v in L(F) }	concatenation; 
+(E|F)	{u | u in L(E) or u in L(F) }	alternation; union of L(E) and L(F) 
+(E*)	{u1u2...un| ui in L(E) 0 <= i <=n, n >=0 }	any sequence from E 
+Identifiers and real numbers may be defined using regular expressions as follows:
+
+integer = D D*
+identifier = A(A|D)*
+A scanner is a program which groups the characters of an input stream into a sequence of tokens.  Scanners based on regular expressions are easy to write.  Lex is a scanner generator often packaged with the UNIX environment. A user creates a file containing regular expressions and Lex creates a program to search for tokens defined by those regular expressions. Text editors use regular expressions to search for and replace text. The UNIX grep command uses regular expressions to search for text.
+Deterministic and nondeterministic Finite State Machines
+
+Regular expressions are equivalent to finite state machines. A finite state machine consists of a set of states (one of which is a start state and one or more which are accepting states), a set of transitions from one state to another each labeled with an input symbol, and an input string. Each step of the finite state machine consists of comparing the current input symbol with the set of transitions corresponding to the current state and then consuming the input symbol and moving to the state corresponding to the selected transition. Definition 2.8 states this formally.
+Definition 2.8: Finite State Automaton
+A finite state automaton or fsa is defined by the quintuple
+M = (Q, Sigma, delta, q0, F),
+where
+
+Q is a finite set of internal states 
+Sigma is a finite set of symbols called the input alphabet 
+delta: Q × Sigma --> 2Q is a total function called the transition function 
+q0 in Q is the initial state 
+F a subset of Q is the set of final states
+
+
+FSM = <States, StartState, FinalStates, InputAlphabet, Input, TransitionFunction> 
+Configuration: C = State x Input; inititial configuration (StartState, Input)
+t : C --> C
+Allowed transitions
+t(s,     []) -- accept s in FinalStates
+t(s, [x|I]) = (s', I) -- consume input
+t(s,      I) = (s', I) -- epsilon move
+Example: identifiers (StartState, Input)
+t(start, [i|I]) = (ad, I) 
+t(ad,   [i|I]) = (ad, I) 
+t(ad,  [d|I]) = (ad, I) 
+t(ad,      []) -- accept
+The transition function delta is defined on a state and an input symbol.  It can be extended to a function delta* on strings of input symbols as follows:
+delta*(q,-)=q for the empty string
+delta*(q,wa)=delta(delta*(q,w),a) for all strings w and input symbols a
+A FSA is called deterministic if there is at most one transition from one state to another for a given input and there are no lambda transitions. A FSA is called nondeterministic if there is one or more transitions from one state to another for a given input. A Moore machine is a FSA which associates an output with each state and a Mealy machine is a FSA which associates an output with each transition. The Moore and Mealy FSAs are important in applications of FSAs.
+Equivalence of deterministic and nondeterministic fsa
+
+It might seem that a machine that could `guess' (nondeterministic) which move to make next would be more powerful than one that could not (deterministic). The following theorems show that in the case of FSAs, it is not the case.
+Theorem: Every deterministic finite state automaton is a nondeterministic finite state automaton. 
+Proof: The definition of a deterministic FSA is included in the definition of a nondeterministic FSA.
+Theorem: For every nondeterministic finite state automaton there is a deterministic finite state automaton that accepts the same language. 
+Proof:
+
+Let M=(S,A,t,q0,F) be a nondeterministic FSA. Define M'=(S',A,t',F') as follows:
+S' is the set of all subsets of S; an element of S' is denoted by [q1...,qm] 
+t': t'([q1...,qm],a) = [p1,...,pn] where [p1,...,pn] is the union of the states of S such that t(qi,a) = pj} F' is the set of all states of S' that contain an accepting state of M
+
+The proof is completed by induction on the length of the input string.
+
+Equivalence of fsa and regular expressions
+
+Just as context-free grammars and PDAs are equivalent, so regular expressions and FSAs are equivalent as the following theorems show.
+Theorem: If r is a regular expression then there exists an NFA that accepts L(r). 
+Proof (Sketch) The formal proof is by induction on the number of operators in the expression. For the base cases (empty set, empty string and singleton set) the corresponding fsa is simple to define. The more complex cases are handled by merging states of simpler fsa.
+
+Theorem: If L is accepted by a DFA then L is denoted by a regular expression. 
+Proof beyond the scope of this text.
+
+Graphical Representation
+
+In a graphical representation, states are represented by circles, with final (or accepting) states indicated by two concentric circles. The start state is indicated by the word ``Start''. An arc from state s to state t labeled a indicates a transition from s to t on input a. A label a/b indicates that this transition produces an output b. A label a1, a2,..., ak indicates that the transition is made on any of the inputs a1, a2,..., ak.
+/* NEED A NICE DIAGRAM HERE */
+Tabular Representation
+
+In a tabular representation, states are one index and inputs the other. The entries in the table are the next state (and actions if required).
+ 
+Figure 2.8: Tabular representation for a transition function.
+state/input	I0	...	In
+S0	S00	...	S0n
+...	...	...	...
+Sm	Sm0	...	Smn
+Implementation of FSAs
+
+The transition function of a FSA can be implemented as a case statement, a collection of procedures and as a table. In a case based representation state is represented by the value of a variable, the case statement is placed in the body of a loop and on each iteration of the loop, the input is read and the state variable updated.
+State := Start;
+repeat
+   get input I
+   case State of
+        ...
+        Si : case I of
+                ...
+                Ci : State := Sj;
+                        ...
+             end   
+        ...
+   end
+until empty input and accepting state
+In a procedural representation, each state is a procedure. Transitions to the next state occur when the procedure representing the next state is ``called''.
+procedure StateS(I : input)
+        case I of
+                ...
+                Ci : get input I; StateT(I)

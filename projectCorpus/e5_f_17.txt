@@ -1,0 +1,608 @@
+International Business Machines, abbreviated IBM and nicknamed "Big Blue", is a multinational computer technology and IT consulting corporation headquartered in Armonk, New York, United States. The company is one of the few information technology companies with a continuous history dating back to the 19th century. IBM manufactures and sells computer hardware and software (with a focus on the latter), and offers infrastructure services, hosting services, and consulting services in areas ranging from mainframe computers to nanotechnology.[1] Samuel J Palmisano is the chairman and CEO of IBM.
+
+
+IBM has been well known through most of its recent history as one of the world's largest computer companies and systems integrators.[2] With over 388,000 employees worldwide, IBM is one of the largest and most profitable information technology employers in the world. IBM holds more patents than any other U.S. based technology company and has eight research laboratories worldwide.[3] The company has scientists, engineers, consultants, and sales professionals in over 170 countries.[4] IBM employees have earned Five Nobel Prizes, four Turing Awards, five National Medals of Technology, and five National Medals of Science.[5]
+Contents
+[hide]
+
+  
+History
+
+The roots of IBM date back the 1880s, decades before the development of electronic computers. The company was formed through a merger of four different companies: the Tabulating Machine Company (with origins in Washington, D.C. in the 1880s), the International Time Recording Company (founded 1900 in Endicott), the Computing Scale Corporation (founded 1901 in Dayton, Ohio, USA), and the Bundy Manufacturing Company (founded in 1889).[6][7] The merger was engineered by noted financier Charles Flint, and the new company was called the Computing Tabulating Recording (CTR) Corporation.[8] CTR was incorporated on June 16, 1911 in Endicott, New York, U.S.A.. Flint remained a member of the board of CTR until his retirement in 1930.[9]
+
+The companies that merged to form CTR manufactured a wide range of products, including employee time-keeping systems, weighing scales, automatic meat slicers, coffee grinders, and most importantly for the development of the computer, punched card equipment. The product lines were very different; Flint stated that the consolidation
+
+    ... instead of being dependent for earnings upon a single industry, would own three separate and distinct lines of business, so that in normal times the interest and sinking funds on its bonds could be earned by any one of these independent lines, while in abnormal times the consolidation would have three chances instead of one to meet its obligations and pay dividends.[10]
+
+Based in New York City, the new company had 1,300 employees and offices and plants in Endicott and Binghamton, New York; Dayton, Ohio; Detroit, Michigan; Washington, D.C.; and Toronto, Ontario.
+
+Of the companies merged to form CTR, the most technologically significant was the Tabulating Machine Company, founded by Herman Hollerith, and specialized in the development of punched card data processing equipment. Hollerith's series of patents on tabulating machine technology, first applied for in 1884, drew on his work at the U.S. Census Bureau from 1879–82. Hollerith was initially trying to reduce the time and complexity needed to tabulate the 1890 Census. His development of punched cards in 1886 set the industry standard for the next 80 years of tabulating and computing data input.[11]
+
+In 1896 the Tabulating Machine Company leased some machines to a railway company[12] but quickly focused on the challenges of the largest statistical endeavor of its day – the 1900 US Census. After winning the government contract, and completing the project with amazing speed, Hollerith was faced with the challenge of sustaining the company in non-Census years. He returned to targeting private businesses both in the United States and abroad, attempting to identify industry applications for his automatic punching, tabulating and sorting machines. In 1911, Hollerith, now 51 and in failing health sold the business to Flint for $2.3 million (of which Hollerith got $1.2 million), who then created CTR. When the diversified businesses of CTR proved difficult to manage, Flint turned for help to the former No. 2 executive at the National Cash Register Company, Thomas J. Watson, Sr.. Watson became General Manager of CTR in 1914 and President in 1915. By drawing upon his managerial experience at NCR, Watson quickly implemented a series of effective business tactics: generous sales incentives, a focus on customer service, an insistence on well-groomed, dark-suited salesmen, and an evangelical fervor for instilling company pride and loyalty in every worker. As the sales force grew into a highly professional and knowledgeable arm of the company, Watson focused their attention on providing large-scale, custom-built tabulating solutions for businesses, leaving the market for small office products to others. He also stressed the importance of the customer, a lasting IBM tenet. The strategy proved successful, as during Watson's first four years, revenues doubled to $2 million, and company operations expanded to Europe, South America, Asia and Australia.
+
+At the helm during this period, Watson played a central role in establishing what would become the IBM organization and culture. He launched a number of initiatives that collectively demonstrated an unwavering faith in his workers: he hired the company's first disabled worker in 1914, he formed the company's first employee education department in 1916, and in 1915 he introduced his favorite slogan, "THINK," which quickly became a corporate mantra. Watson boosted company spirit by encouraging any employee with a complaint to approach him or any other company executive – his famed Open Door policy. He also sponsored employee sports teams, family outings and a company band, believing that employees were most productive when they were supported by healthy and supportive families and communities. These initiatives – each deeply rooted in Watson's personal values system – became core aspects of IBM culture for the remainder of the century.
+
+Given the company's geographic growth (including the completion of three manufacturing facilities in Europe), and his own expansive vision, Watson found the CTR name too limiting,. A name of a publication from CTR's Canadian operation caught his eye, and on February 14, 1924, the CTR name was formally changed to International Business Machines Corporation, later to be abbreviated IBM.
+[edit] Key events
+
+1890: Hollerith's punched cards used for 1890 Census
+    The U.S. Census Bureau contracts to use Herman Hollerith's punched card tabulating technology on the 1890 United States Census, reducing a 10-year process to two years and saving the government $5 million. Hollerith's punched cards become the tabulating industry standard for input for the next 70 years. Hollerith's Tabulating Machine Company is later merged into what becomes IBM.[13]
+1906: Hollerith Type I Tabulator
+    The first tabulator with an automatic card feed and control panel.[14]
+1911: Formation
+    Charles Flint, a noted trust organizer, engineers the merger of four companies: the Tabulating Machine Company, the International Time Recording Company, the Computing Scale Corporation, and the Bundy Manufacturing Company. The combined Computing Tabulating Recording Corporation (CTR) manufactures and sells machinery ranging from commercial scales and industrial time recorders to meat and cheese slicers, along with tabulators and punched cards. Based in New York City, the new company had 1,300 employees and offices and plants in Endicott and Binghamton, New York; Dayton, Ohio; Detroit, Michigan; Washington, D.C.; and Toronto, Ontario.[15]
+1914: Thomas J. Watson arrives
+    Thomas J. Watson Sr., a one year jail sentence pending – see NCR – is made general manager of CTR. Less than a year later, the jail sentence having been overturned, he becomes president of the firm.[16]
+1914: First disabled employee
+    CTR hires its first disabled employee.[17]
+1915: "THINK" signs
+    "THINK" signs, based on the slogan coined by Thomas J. Watson, Sr., and are used in the company for the first time.[18]
+1916: Employee education
+    CTR invests in its employees and creates an education program. Over the next two decades the program would expand to include management education, volunteer study clubs, and the construction of the IBM Schoolhouse in 1933.[19]
+1920: First CTR printing tabulator.
+    With prior tabulators the results were displayed and had to be copied by hand.[20]
+1923: CTR Germany
+    CTR acquires majority ownership of the German tabulating firm Deutsche Hollerith Maschinen Groupe (Dehomag).[21]
+1924: International Business Machines Corporation
+    On February 14, 1924, CTR's name was formally changed to International Business Machines Corporation (IBM), to more accurately reflect the company's aspirations and mission. The name was first used by the company's Canadian subsidiary in 1917.[22]
+
+[edit] 1925–1938: IBM's early growth, the Great Depression
+	This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (August 2010)
+Year 	Gross income (in $m) 	Employees
+1925 	13 	3,698
+1930 	19 	6,346
+1935 	21 	8,654
+
+The newly minted IBM continued to develop its core cultural attributes during the 1920s. It launched a flagship newspaper, Business Machines, which unified coverage of all of IBM's businesses under one publication.[23] It introduced the Quarter Century Club,[24] to honor employees with 25 years of service to the company, and launched the Hundred Percent Club, to reward sales personnel who met their annual quotas.[25] In 1928, the Suggestion Plan program – which granted cash rewards to employees who contributed viable ideas on how to improve IBM products and procedures – made its debut.[26]
+IBM International Daily Dial Attendance Recorder. 1930s time clock made by IBM's International Time Recording division. The face shows employee numbers which would be dialed up by employees entering and leaving the factory. The day and time of entry and exit was punched onto cards inside the box.[27]
+
+IBM and its predecessor companies made clocks and other time recording products for 70 years, culminating in the 1958 sale of the IBM Time Equipment Division to Simplex Time Recorder Company,[28] IBM manufactured and sold such equipment as dial recorders, job recorders, recording door locks, time stamps and traffic recorders.[29][30]
+
+The company also expanded its product line through innovative engineering. Behind a core group of inventors – James W. Bryce, Clair Lake,[31] Fred Carroll,[32] and Royden Pierce[33] – IBM produced a series of significant product innovations. In the optimistic years following World War I, CTR's engineering and research staff developed new and improved mechanisms to meet the broadening needs of its customers. In 1920, the company introduced the first complete school time control system,[34] and launched its first printing tabulator.[35] Three years later the company introduced the first electric keypunch,[36] and 1924's Carroll Rotary Press produced punched cards at previously unheard of speeds.[23] In 1928, the company held its first customer engineering education class, demonstrating an early recognition of the importance of tailoring solutions to fit customer needs.[37] It also introduced the 80-column punched card in 1928, which doubled its information capacity.[37] This new format, soon dubbed the "IBM Card", became and remained an industry standard until the 1970s.
+
+The Great Depression of the 1930s presented an unprecedented economic challenge, and Watson met the challenge head on, continuing to invest in people, manufacturing, and technological innovation despite the difficult economic times. Rather than reduce staff, he hired additional employees in support of President Franklin Roosevelt's National Recovery Administration plan – not just salesmen, which he joked that he had a lifelong weakness for, but engineers too. Watson not only kept his workforce employed, he increased their benefits. IBM was among the first corporations to provide group life insurance (1934), survivor benefits (1935) and paid vacations (1936). He upped his ante on his workforce by opening the IBM Schoolhouse in Endicott to provide education and training for IBM employees. And he greatly increased IBM's research capabilities by building a modern research laboratory on the Endicott manufacturing site.
+
+With all this internal investment, Watson was, in essence, gambling on the future. It was IBM's first ‘Bet the Company’ gamble, but the risk paid off handsomely. Watson's factories, running full tilt for six years with no market to sell to, created a huge inventory of unused tabulating equipment, straining IBM's resources. To reduce the cash drain, the struggling Dayton Scale Division (the food services equipment business) was sold in 1933 to Hobart Manufacturing for stock.[38][39] When the Social Security Act of 1935 – labeled as “the biggest accounting operation of all time”[40] – came up for bid, IBM was the only bidder that could quickly provide the necessary equipment. Watson's gamble brought the company a landmark government contract to maintain employment records for 26 million people. IBM's successful performance on the contract soon led to other government orders, and by the end of the decade IBM has not only safely negotiated the Depression, it had risen to the forefront of the industry. Watson's Depression-era decision to invest heavily in technical development and sales capabilities, education to expand the breadth of those capabilities, and his commitment to the data processing product line laid the foundation for 50 years of IBM growth and successes.
+
+His avowed focus on international expansion proved an equally key component of the company's 20th century growth and success. Watson, having witnessed the havoc the First World War wreaked on society and business, envisioned commerce as an obstacle to war. He saw business interests and peace as being mutually compatible. In fact, he felt so strongly about the connection between the two that he had his slogan “World Peace Through World Trade” carved into the exterior of IBM's new World Headquarters (1938) in New York City.[41] The slogan became an IBM business mantra, and Watson campaigned tirelessly for the concept with global business and government leaders. He served as an informal, unofficial government host for world leaders when they visited New York, and received numerous awards from foreign governments for his efforts to improve international relations through the formation of business ties.
+[edit] International subsidiaries growth
+Main article: International subsidiaries of IBM
+
+IBM had subsidiaries and operations in 70 countries in those early years. They included Austria, Belgium, Bulgaria, Czechoslovakia, France, Germany, Holland / Netherlands , Italy, Japan, Norway, Poland, Romania, the Soviet Union, Sweden, Switzerland, Yugoslavia, and others.
+[edit] Key events
+
+1927: IBM Italy
+    IBM opens its first office in Italy in Milan, and starts selling and operating with National Insurance and Banks.
+1928: A Tabulator that can subtract, Columbia University, 80-column card
+    The first IBM tabulator that could subtract, the IBM Type IV tabulator.[42] IBM begins its collaboration with Benjamin Wood, Wallace John Eckert and the Statistical Bureau at Columbia University.[43][44] The IBM 80-column punched card is introduced. Its rectangular holes are patented, ending vendor compatibility (of the prior 45 column card; Remington Rand would soon introduce a 90 column card).[45]
+1931: The first IBM punched card machine that could multiply, IBMs first alphabetical accounting machine
+    The IBM 600 Multiplying Punch.[46] IBMs first alphabetical accounting machine - although not a complete alphabet, the Alphabetic Tabulator Model B was quickly followed by the full alphabet ATC.[47]
+1931: Super Computing Machine
+    The term Super Computing Machine is used by the New York World newspaper to describe the Columbia Difference Tabulator, a one-of-a-kind special purpose tabulator-based machine made for the Columbia Statistical Bureau, a machine so massive it was nicknamed Packard.[48][49] The Packard attracted users from across the country: “the Carnegie Foundation, Yale, Pittsburgh, Chicago, Ohio State, Harvard, California and Princeton.”[50]
+1933: 40-hour week
+    IBM introduces the 40-hour week for both manufacturing and office locations.
+1933: Electromatic Typewriter Co. purchased
+    Purchased primarily to get important patents safely into IBM hands, electric typewriters would become one of IBM's most widely known products.[51] By 1958 IBM was deriving 8% of its revenue from the sale of electric typewriters.[52]
+1934 – Group life insurance
+    IBM creates a group life insurance plan for all employees with at least one year of service.[53]
+1934: Elimination of piece work
+    Watson, Sr., places IBM's factory employees on salary, eliminating piece work and providing employees and their families with an added degree of economic stability.[54]
+1934: IBM 801
+    The IBM 801 Bank Proof machine to clear bank checks is introduced. A new type of proof machine, the 801 lists and separates checks, endorses them, and records totals. It dramatically improves the efficiency of the check clearing process.[55]
+1935: Social Security Administration
+    During the Great Depression, IBM keeps its factories producing new machines even while demand is slack. When Congress passes the Social Security Act in 1935, IBM – with its overstocked inventory – is consequently positioned to win the landmark government contract, which is called "the biggest accounting operation of all time.[56]
+1937: Scientific computing
+    The tabulating machine data center established at Columbia University, dedicated to scientific research, is named the Thomas J. Watson Astronomical Computing Bureau.[57]
+1937: The first collator, the IBM 077 Collator [58]
+1937: IBM produces 5 to 10 million punched cards every day
+    By 1937... IBM had 32 presses at work in Endicott, N.Y., printing, cutting and stacking five to 10 million punched cards every day.[59]
+1937: IBM 805 test scoring machine
+    IBM's Rey Johnson designs the IBM 805 Test Scoring Machine to greatly speed the process of test scoring. The 805's innovative pencil-mark sensing technology gives rise to the ubiquitous phrase, “Please completely fill in the oval”.[60]
+1937: Berlin conference
+    As president of the International Chamber of Commerce, Watson Sr., presides over the ICC's 9th Congress in Berlin. While there he accepts a Merit Cross of the German Eagle with Star medal from the Nazi government honoring his activities on behalf of world peace and international trade. (he later returned it)[61][62]
+1937: Paid holidays, paid vacation
+    “IBM announces a policy of paying employees for six annual holidays and becomes one of the first U.S. companies to grant holiday pay. Paid vacations also begin.”[63]
+1938: New headquarters
+    When IBM dedicates its new World Headquarters on 590 Madison Avenue, New York, New York, in January 1938, the company has operations in 79 countries.[64]
+
+[edit] 1939-1945: World War II
+	This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (August 2010)
+Year 	Gross income (in $m) 	Employees
+1940 	45 	12,656
+1945 	138 	18,257
+Browning Automatic Rifle
+M1 Carbine
+
+Despite Watson's efforts on behalf of world peace, the interests of international commerce failed to prevent the breakout of war. When the Second World War began – well before the United States was formally engaged in the conflict – Watson placed all IBM facilities at the disposal of the U.S. government. IBM's product line[65] shifted from tabulating equipment and time recording devices to Sperry and Norden bombsights, Browning Automatic Rifle and the M1 Carbine, and engine parts — in all, more than three dozen major ordnance items and 70 products overall. Watson set a nominal one percent profit on those products and used the profits to establish a fund for widows and orphans of IBM war casualties.[66]
+
+Allied military forces widely utilized IBM's tabulating equipment for mobile records units, ballistics, accounting and logistics, and other war-related purposes. There was extensive use of IBM punched card machines for calculations made at Los Alamos during the Manhattan Project for developing the first atomic bombs.[67] During the War, IBM also built the Automatic Sequence Controlled Calculator, also known as the Harvard Mark I for the U.S. Navy – the first large-scale electro-mechanical calculator in the U.S..
+
+In 1933 IBM had acquired the rights to Radiotype, an IBM Electric typewriter attached to a radio transmitter.[68] “In 1935 Admiral Richard E. Byrd successfully sent a test Radiotype message 11,000 miles from Antarctica to an IBM receiving station in Ridgewood, New Jersey”[69] Selected by the Signal Corps for use during the war, Radiotype installations handled up to 50,000,000 words a day.[70]
+
+To meet wartime product demands, IBM greatly expanded its manufacturing capacity. IBM added new buildings at its Endicott, New York plant (1941), and opened new facilities in Poughkeepsie, New York (1941), Washington, D.C. (1942),[71] and San Jose, California (1943).[72] IBM's decision to establish a presence on the West Coast took advantage of the growing base of electronics research and other high technology innovation in the southern part of the San Francisco Bay Area, an area that came to be known many decades later as Silicon Valley.
+
+Many international subsidiaries of IBM in Axis territory were legally cut off from IBM starting in Dec 1941 after Pearl Harbor. Several were involved in the holocaust, both before Dec 1941 and after.[73] After the war these subsidiaries were fused back into IBM. A book published in 2001, IBM and the Holocaust, as well as a dismissed lawsuit against the company treats the use of Hollerith equipment by the Nazi government and IBM's role. In a "IBM Statement on Nazi-era Book and Lawsuit," IBM responded in February 2001 that
+
+    It has been known for decades that the Nazis used Hollerith equipment and that IBM's German subsidiary during the 1930s – Deutsche Hollerith Maschinen GmbH (Dehomag) – supplied Hollerith equipment. As with hundreds of foreign-owned companies that did business in Germany at that time, Dehomag came under the control of Nazi authorities prior to and during World War II. It is also widely known that Thomas J. Watson, Sr., received and subsequently repudiated and returned a medal presented to him by the German government for his role in global economic relations. These well-known facts appear to be the primary underpinning for these recent allegations.[74]
+
+For more details on these allegations, see IBM during World War II.
+[edit] Key events
+
+1942: Training for the disabled
+    IBM launches a program to train and employ disabled people in Topeka, Kansas. The next year classes begin in New York City, and soon the company is asked to join the President's Committee for Employment of the Handicapped.[75]
+1943: Equal opportunity
+    IBM appoints its first female vice president.[76]
+1944: ASCC
+    IBM introduces the world's first large-scale calculating computer, the Automatic Sequence Control Calculator (ASCC). Designed in collaboration with Harvard University, the ASCC, also known as the Mark I, uses electromechanical relays to solve addition problems in less than a second, multiplication in six seconds, and division in 12 seconds.[77]
+1944: United Negro College Fund
+    IBM President Thomas J. Watson, Sr., joins the Advisory Committee of the United Negro College Fund (UNCF), and IBM contributes to the UNCF's fund-raising efforts.[78]
+1945: IBM's first research lab
+    IBM's first research facility, the Watson Scientific Computing Laboratory, opens in a renovated fraternity house near Columbia University in Manhattan. In 1961, IBM moves its research headquarters to the T.J. Watson Research Center in Yorktown Heights, New York.[79]
+
+[edit] 1946–1960: Postwar recovery, rise of business computing, space exploration, the Cold War
+Year 	Gross income (in $m) 	Employees
+1950 	266 	30,261
+1955 	696 	56,297
+1960 	1,810 	104,241
+
+IBM had expanded so much by the end of the War that the company faced a potentially difficult situation – what would happen if military spending dropped sharply? One way IBM addressed that concern was to accelerate its international growth in the years after the war, culminating with the formation of the World Trade Corporation in 1949 to manage and grow its foreign operations. Under the leadership of Watson's youngest son, Arthur K. ‘Dick’ Watson, the WTC would eventually produce half of IBM's bottom line by the 1970s.
+
+A new IBM emerged in the 1950s. With the passing of Founding Father Thomas J. Watson, Sr. on June 19, 1956 at age 82, IBM experienced its first leadership change in more than four decades. The mantle of chief executive fell to his eldest son, Thomas J. Watson, Jr., IBM's president since 1952.
+
+The new chief executive faced a daunting task. The company was in the midst of a period of rapid technological change, with nascent computer technologies – electronic computers, magnetic tape storage, disk drives, programming – creating new competitors and market uncertainties. Internally, the company was growing by leaps and bounds, creating organizational pressures and significant management challenges. Lacking the force of personality that Watson, Sr. had long used to bind IBM together, Watson, Jr. and his senior executives privately wondered if the new generation of leadership was up to challenge of managing a company through this tumultuous period.[80] “We are,” wrote one longtime IBM executive in 1956, “in grave danger of losing our “eternal” values that are as valid in electronic days as in mechanical counter days.”
+
+Watson, Jr., responded by drastically restructuring the organization mere months after his father died, creating a modern management structure that enabled him to more effectively oversee the fast moving company.[81] He codified well known but unwritten IBM practices and philosophy into formal corporate policies and programs – such as IBM's Three Basic Beliefs, and Open Door and Speak Up! Perhaps the most significant of which was his shepherding of the company's first equal opportunity policy letter into existence in 1953, one year before the U.S. Supreme Court decision in Brown vs. Board of Education and 11 years before the Civil Rights Act of 1964.[82] He continued to expand the company's physical capabilities – in 1952 IBM San Jose launched a storage development laboratory which pioneered disk drives. Major facilities would later follow in Rochester, Minnesota; Greencastle, Indiana; Kingston, New York; and Lexington, Kentucky. And he ended a raging internal debate about computer architecture with this unambiguous 1957 product development policy statement: “It shall be the policy of IBM to use solid-state circuitry in all machine developments. Furthermore, no new commercial machines or devices shall be announced which make primary use of tube circuitry.”[83]
+
+Watson, Jr., also continued to partner with the United States government to drive computational innovation. The emergence of the Cold War accelerated the government's growing awareness of the significance of digital computing, and drove major Department of Defense supported computer development projects in the 1950s. Of these, none was more important than the SAGE interceptor early detection air defense system.
+IBM 7090 installation
+
+In 1952, IBM began working with MIT's Lincoln Laboratories to finalize the design of an air defense computer. The merger of academic and business engineering cultures proved troublesome, but the two organizations finally hammered out a design by the summer of 1953, and IBM was awarded the contract to build two prototypes in September.[84] In 1954, IBM was named as the primary computer hardware contractor for developing SAGE for the United States Air Force. Working on this massive computing and communications system, IBM gained access to pioneering research being done at Massachusetts Institute of Technology on the first real-time, digital computer. This included working on many other computer technology advancements such as magnetic core memory, a large real-time operating system, an integrated video display, light guns, the first effective algebraic computer language, analog-to-digital and digital-to-analog conversion techniques, digital data transmission over telephone lines, duplexing, multiprocessing, and geographically distributed networks). IBM built fifty-six SAGE computers at the price of US$30 million each, and at the peak of the project devoted more than 7,000 employees (20% of its then workforce) to the project. SAGE had the largest computer footprint ever, and continued in service until 1984.[85]
+
+More valuable to the IBM in the long run than the profits from governmental projects, however, was the access to cutting-edge research into digital computers being done under military auspices. IBM neglected, however, to gain an even more dominant role in the nascent industry by allowing the RAND Corporation to take over the job of programming the new computers, because, according to one project participant, Robert P. Crago, "we couldn't imagine where we could absorb two thousand programmers at IBM when this job would be over some day, which shows how well we were understanding the future at that time."[86] IBM would use its experience designing massive, integrated real-time networks with SAGE to design its SABRE airline reservation system, which met with much success.
+
+These government partnerships, combined with pioneering computer technology research and a series of commercially successful products (IBM's 700 series of computer systems, the IBM 650, the IBM 305 RAMAC (with disk drive memory), and the IBM 1401) enabled IBM to emerge from the 1950s as the world's leading technology firm. Watson Jr. had answered his self-doubt. In the five years since the passing of Watson, Sr., IBM was two and a half times bigger, its stock had quintupled, and of the 6000 computers in operation in the United States, more than 4000 were IBM machines.[87]
+[edit] Key events
+
+1946: IBM 603
+    IBM announces the IBM 603 Electronic Multiplier, the first commercial product to incorporate electronic arithmetic circuits. The 603 used vacuum tubes to perform multiplication far more rapidly than earlier electromechanical devices. It had begun its development as part of a program to make a "super calculator" that would perform faster than 1944's IBM ASCC by using electronics.[88]
+1946: Chinese character typewriter
+    IBM introduces an electric Chinese ideographic character typewriter, which allowed an experienced user to type at a rate of 40 to 45 Chinese words a minute. The machine utilizes a cylinder on which 5,400 ideographic type faces are engraved.[89]
+1946: First black salesman
+    IBM hires its first Black salesman, 18 years before the Civil Rights Act of 1964.[90]
+1948: IBM SSEC
+    IBM's first large-scale digital calculating machine, the Selective Sequence Electronic Calculator, is announced. The SSEC is the first computer that can modify a stored program, and featured 12,000 vacuum tubes and 21,000 electromechanical relays.[91]
+1950s: Space exploration
+    From developing ballistics tables during World War II to the design and development of intercontinental missiles to the launching and tracking of satellites to manned lunar and shuttle space flights, IBM has been a contractor to NASA and the aerospace industry.[92]
+1952: IBM 701
+    IBM throws its hat into the computer business ring by introducing the 701, its first large-scale electronic computer to be manufactured in quantity. The 701, IBM President Thomas J. Watson, Jr., later recalled, is "the machine that carried us into the electronics business."[93]
+1952: Magnetic tape vacuum column
+    IBM introduces the magnetic tape drive vacuum column, making it possible for fragile magnetic tape to become a viable data storage medium. The use of the vacuum column in the IBM 701 system signals the beginning of the era of magnetic storage, as the technology becomes widely adopted throughout the industry.[94]
+1952: First California research lab
+    IBM opens its first West Coast lab in San Jose, California: the area that decades later will come to be known as "Silicon Valley." Within four years, the lab begins to make its mark by inventing the hard disk drive.[93]
+1953: Equal opportunity policy letter
+    Thomas J. Watson, Jr., publishes the company's first written equal opportunity policy letter: one year before the U.S. Supreme Court decision in Brown vs. Board of Education and 11 years before the Civil Rights Act of 1964.[82]
+1953: IBM 650
+    IBM announces the IBM 650 Magnetic Drum Calculator, an intermediate size electronic computer, to handle both business and scientific computations. A hit with both universities and businesses, nearly 2,000 IBM 650s are leased by 1962, making it the most popular computer of the 1950s.[95]
+1954: NORC
+    IBM develops and builds the fastest, most powerful electronic computer of its time: the Naval Ordnance Research Computer (NORC): for the U.S. Navy Bureau of Ordnance.[96]
+1956: First magnetic Hard disk drive
+    IBM introduces the world's first magnetic hard disk for data storage. The IBM 305 RAMAC (Random Access Method of Accounting and Control) offers unprecedented performance by permitting random access to any of the million characters distributed over both sides of 50 two-foot-diameter disks. Produced in California, IBM's first hard disk stored about 2,000 bits of data per square inch and cost about $10,000 per megabyte. By 1997, the cost of storing a megabyte had dropped to around ten cents.[97]
+1956: Consent decree
+    The United States Justice Department enters a consent decree against IBM in 1956 to prevent the company from becoming a monopoly in the market for punched-card tabulating and, later, electronic data-processing machines. The decree requires IBM to sell its computers as well as lease them and to service and sell parts for computers that IBM no longer owned.[98]
+1956: Corporate design
+    In the mid-1950s, Thomas J. Watson, Jr., was struck by how poorly IBM was handling corporate design. He hired design consultant Eliot Noyes to oversee the creation of a formal Corporate Design Program, and charged Noyes with creating a consistent, world class look and feel at IBM. Over the next two decades Noyes hired a host of influential architects, designers, and artists to design IBM products, structures, exhibits and graphics. The list of Noyes contacts includes such iconic figures as Eero Saarinen, Marcel Breuer, Mies van der Rohe, John Bolles, Paul Rand, Isamu Noguchi and Alexander Calder.[99]
+1956: First European research lab
+    IBM opens its first research lab outside the United States, in the Swiss city of Zurich. [100]
+1956: Changing hands
+    Watson Sr., retires and hands IBM to his son, Watson Jr.. Senior passes away soon after.[101]
+1956: Williamsburg conference
+    Watson Jr., gathered some 100 senior IBM executives together for a special three-day meeting in Williamsburg, Virginia. The meeting resulted in a new organizational structure that featured a six-member corporate management committee and delegated more authority to business unit leadership. It was the first major meeting IBM had ever held without Thomas J. Watson Sr., and it marked the emergence of a second generation of IBM leadership.[102]
+1956: Artificial intelligence
+    Arthur L. Samuel of IBM's Poughkeepsie, New York, laboratory programs an IBM 704 to play checkers (English draughts) using a method in which the machine can “learn” from its own experience. It is believed to be the first “self-learning” program, a demonstration of the concept of artificial intelligence.[103]
+1957: FORTRAN
+    IBM revolutionizes programming with the introduction of FORTRAN (Formula Translator), which soon becomes the most widely used computer programming language for technical work. FORTRAN is still the basis for many important numerical analysis programs.[104]
+1958: SAGE AN/FSQ-7
+    The SAGE (Semi-Automatic Ground Environment) AN/FSQ-7 computer is built under contract to MIT's Lincoln Laboratories for the North American Air Defense System.[105]
+1958: Open Door program
+    First implemented by Watson, Sr., in the 1910s, the Open Door was a traditional company practice that granted employees with complaints hearings with senior executives, up to and including Watson, Sr., himself. IBM formalized this practice into policy in 1958 with the creation of the Open Door Program.[106]
+1959: Speak up!
+    A further example of IBM's willingness to solicit and act upon employee feedback, the Speak Up! Program was first created in San Jose.[107]
+1959: IBM 1401
+    IBM introduces the 1401, the first high-volume, stored-program, core-memory, transistorized computer. Its versatility in running enterprise applications of all kinds helps it become the most popular computer model in the world in the early 1960s.[108]
+1959: IBM 1403
+    IBM introduces the 1403 chain printer, which launches the era of high-speed, high-volume impact printing. The 1403 will not be surpassed for print quality until the advent of laser printing in the 1970s.[109]
+
+[edit] 1960–1968: The System/360 era
+Year 	Gross income (in $m) 	Employees
+1955 	696 	56,297
+1960 	1,810 	104,241
+1965 	3,750 	172,445
+1970 	7,500 	269,291
+
+Just as his father saw the company's future in tabulators rather than scales and clocks, Thomas J. Watson, Jr., foresaw the role computers would play in business, and in less than twenty years he led IBM's transformation from a medium-sized maker of tabulating equipment and typewriters into a corporate giant that was the world's leading computer company. IBM was the largest of the eight major computer companies (with UNIVAC, Burroughs, NCR, Control Data Corporation, General Electric, RCA and Honeywell) through most of the 1960s. People in this business would talk jokingly of "Snow White and the Seven Dwarfs", given the much smaller size of the other companies' computer divisions (IBM produced approximately 70% of all computers in 1964).[110]
+
+Moreover, under Watson, Jr.'s leadership, IBM became one of the world's most admired companies, a legitimate business icon. The company began four decades of Olympic sponsorship with the 1960 Winter Games in Squaw Valley, California. It became a recognized leader in corporate social responsibility, joining federal equal opportunity programs in 1962, opening an inner city manufacturing plant in 1968, and creating a minority supplier program. It led efforts to improve data security and protect privacy. It set environmental air/water emissions standards that exceeded those dictated by law, and brought all its facilities into compliance with those standards. It opened one of the world's most advanced research centers in Yorktown, New York. Its international operations grew rapidly, producing more than half of IBM's revenues by the early 1970s and through technology transfer shaping the way governments and businesses operated around the world. Its personnel and technology played an integral role in the space program and landing the first men on the moon in 1969. In that same year it changed the way it marketed its technology to customers, unbundling hardware from software and services, effectively launching today's multi-billion dollar software and services industry. See unbundling of software and services, below. And it was massively profitable, with a nearly fivefold increase in revenues and earnings during the 1960s. But it might not have turned out that way, if Watson hadn’t taken the biggest risk of his career.
+
+On April 7, 1964, IBM introduced the revolutionary System/360, the first large “family” of computers to use interchangeable software and peripheral equipment. It was a bold departure from IBM's current product line of incompatible machines, each machine “designed as an economical solution to a limited class of customer requirements”.[111] But Fortune magazine dubbed it “I.B.M.'s $5,000,000,000 Gamble” because there was no guarantee the concept of computer compatibility was going to succeed in the marketplace.[112] If the S/360 failed, IBM's existing computer product line would be rapidly outpaced by competitors. But in order for it to succeed, it would have to cannibalize IBM's existing, revenue-producing computer product lines – current customers would have to be convinced to migrate from their current IBM systems to this new, unproven system. Both scenarios were fraught with risk. So, when he committed to developing the System/360, Watson, Jr., like his father 30 years before, was literally betting the company.
+See also: History of CP/CMS
+
+And, like it did for his father, Watson Jr.'s bet paid off, and then some. Within two years, the System/360 became the dominant mainframe computer in the marketplace, so dominant that its architecture became a de facto industry standard, even to the present day. The IBM mainframe that seized market share in the 1960s is the direct ancestor of today's IBM System z10.
+
+Riding the crest of the S/360 compatibility wave, IBM cemented its leadership position in the computer industry throughout the 1960s. By the end of the decade, the Seven Dwarfs were forced to reconsider their place in the computer industry. Most of those companies are now long gone as IBM competitors, except for Unisys, which is the result of multiple mergers that included Sperry Rand, UNIVAC and Burroughs, and General Electric, which has re-entered the business in recent years.[citation needed] In 1970, GE sold most of its computer business to Honeywell and in 1971, RCA sold its computing division to Sperry Rand. With only Burroughs, UNIVAC, NCR, Control Data, and Honeywell producing mainframes, people then talked of IBM and the BUNCH.[113] NCR and Honeywell later dropped out of the general mainframe and mini sector and concentrated on lucrative specialized markets.
+[edit] Key events
+
+1961: IBM 7030 Stretch
+    IBM delivers its first 7030 Stretch supercomputer. Stretch falls short of its original design objectives, and is not a commercial success. But it is a visionary product that pioneers numerous revolutionary computing technologies which are soon widely adopted by the computer industry.[114][115]
+1961: Thomas J. Watson Research Center
+    IBM moves its research headquarters from Manhattan to Westchester County, NY, opening the Thomas J. Watson Research Center which remains IBM's largest research facility, centering on semiconductors, computer science, physical science and mathematics.[116]
+1961: IBM Selectric typewriter
+    IBM introduces the Selectric typewriter product line. Later Selectric models feature memory, giving rise to the concepts of word processing and desktop publishing. The machine won numerous awards for its design and functionality. Selectrics and their descendants eventually captured 75 percent of the United States market for electric typewriters used in business.[117] IBM replaced the Selectric line with the IBM Wheelwriter in 1984 and transferred its typewriter business to the newly-formed Lexmark in 1991.[118]
+1961: Report Program Generator
+    IBM offers its Report Program Generator, an application that allows IBM 1401 users to produce reports. This capability was widely adopted throughout the industry, becoming a feature offered in subsequent generations of computers. It played an important role in the successful introduction of computers into small businesses.[119]
+1962: Basic beliefs
+    Drawing on established IBM policies, Thomas J. Watson, Jr., codifies three IBM basic beliefs: respect for the individual, customer service, and excellence.[120]
+1962: SABRE
+    Two IBM 7090 mainframes formed the backbone of the SABRE reservation system for American Airlines. As the first airline reservation system to work live over phone lines, SABRE linked high speed computers and data communications to handle seat inventory and passenger records.[121]
+1964: IBM System/360
+    In the most important product announcement in company history to date, IBM introduces the IBM System/360: a new concept in computers which creates a "family" of small to large computers, incorporating IBM Solid Logic Technology (SLT) microelectronics and using the same programming instructions. The concept of a compatible "family" of computers transforms the industry.[122]
+1964: Word processing
+    IBM introduces the IBM Magnetic Tape Selectric Typewriter, a product which pioneered the application of magnetic recording devices to typewriting, and gave rise to desktop word processing. Referred to then as "power typing," the feature of revising stored text improved office efficiency by allowing typists to type at "rough draft" speed without the pressure of worrying about mistakes.[123]
+1964: New corporate headquarters
+    IBM moves its corporate headquarters from New York City to Armonk, New York.[124]
+1965: Gemini space flights
+    A 59-pound onboard IBM guidance computer is used on all Gemini space flights, including the first spaceship rendezvous. IBM scientists complete the most precise computation of the Moon's orbit and develop a fabrication technique to connect hundreds of circuits on a silicon wafer.[125]
+1965: New York World's Fair
+    The IBM Pavilion at the New York World's Fair closes, having hosted more than 10 million visitors during its two-year existence.[126]
+1966: Dynamic Random-Access Memory (DRAM)
+    IBM invents one-transistor DRAM cells which permit major increases in memory capacity. DRAM chips become the mainstay of modern computer memory systems: the “crude oil” of the information age is born.[127]
+1966: IBM System/4 Pi
+    IBM ships its first System/4Pi computer, designed to meet U.S. Department of Defense and NASA requirements. More than 9000 units of the 4Pi systems are delivered by the 1980s for use in the air, sea, and space.[128]
+1967: Fractal geometry
+    IBM researcher Benoit Mandelbrot conceives fractal geometry — the concept that seemingly irregular shapes can have identical structure at all scales. This new geometry makes it possible to mathematically describe the kinds of irregularities existing in nature. The concept greatly impacts the fields of engineering, economics, metallurgy, art, health sciences, and computer graphics and animation.[129]
+1968: IBM Customer Information Control System (CICS)
+    IBM introduces the CICS transaction monitor. CICS remains to this day the industry's most popular transactions monitor.[130]
+
+[edit] 1969: Antitrust, the Unbundling of software and services
+
+IBM's dominant market share in the mid-1960s led to antitrust inquiries by the U.S. Department of Justice, which filed a complaint for the case U.S. v. IBM in the United States District Court for the Southern District of New York, on January 17, 1969. The suit alleged that IBM violated the Section 2 of the Sherman Act by monopolizing or attempting to monopolize the general purpose electronic digital computer system market, specifically computers designed primarily for business. The case dragged out for 13 years, turning into a resource-sapping war of attrition. In 1982, the Justice Department finally concluded that the case was “without merit” and dropped it, But having to operate under the pall of antitrust litigation significantly impacted IBM's business decisions and operations during all of the 1970s and a good portion of the 1980s.
+
+In 1969 IBM "unbundled" software and services from hardware sales. Until this time customers did not pay for software or services separately from the very high price for leasing the hardware. Software was provided at no additional charge, generally in source code form; services (systems engineering, education and training, system installation) were provided free of charge at the discretion of the IBM Branch office. This practice existed throughout the industry. Quoting from the abstract to a widely-read IEEE paper on the topic:[131][132]
+“ 	Many people believe that one pivotal event in the growth of the business software products market was IBM's decision, in 1969, to price its software and services separately from its hardware. 	”
+
+At the time, the unbundling of services was perhaps the most contentious point, involving antitrust issues that had recently been widely debated in the press and the courts. However, IBM's unbundling of software had long-term impact. After the unbundling, IBM software was divided into two main categories: System Control Programming (SCP), which remained free to customers, and Program Products (PP), which were charged for. This transformed the customer's value proposition for computer solutions, giving a significant monetary value to something that had hitherto essentially been free. This helped enable the creation of a software industry.[133][134]
+
+Similarly, IBM services were divided into two categories: general information, which remained free and provided at the discretion of IBM, and on-the-job assistance and training of customer personnel, which were subject to a separate charge and were open to non-IBM customers. This decision vastly expanded the market for independent computing services companies.
+[edit] Key events
+
+1969: Antitrust
+    The United States government launches what would become a 13-year-long antitrust suit against IBM. The suit becomes a draining war of attrition, and is eventually dropped in 1982.[135]
+1969: Unbundling
+    IBM adopts a new marketing policy that charges separately for most systems engineering activities, future computer programs, and customer education courses. This "unbundling" gives rise to a multibillion-dollar software and services industry.[136]
+1969: Magnetic stripe cards
+    The American National Standards Institute makes the IBM-developed magnetic stripe technology a national standard, jump starting the credit card industry. Two years later, the International Organization for Standardization adopts the IBM design, making it a world standard.[137]
+1969: First moon landing
+    IBM personnel and computers help NASA land the first men on the Moon.
+
+[edit] 1970–1974: The challenges of success
+Year 	Gross income (in $m) 	Employees
+1965 	3,750 	172,445
+1970 	7,500 	269,291
+1975 	14,430 	288,647
+
+The Golden Decade of the 1960s was a hard act to follow, and the 1970s got off to a troubling start when CEO Thomas J. Watson, Jr., suffered a heart attack and retired in 1971. For the first time since 1914 – nearly six decades – IBM would not have a Watson at the helm. Moreover, after just one leadership change over those nearly 60 years, IBM would suffer two in two years. T. Vincent Learson, a hard-driving IBM executive, succeeded Watson as CEO and then quickly retired himself upon reaching the mandatory retirement age of 60 in 1973. Following Learson in the CEO office was Frank T. Cary, a 26-year IBMer who had earned his stripes running the fabulously successful data processing division in the 1960s.
+
+During Cary's tenure as CEO, the company continued to dominate in hardware. The IBM System/370 was introduced in 1970 as IBM's new mainframe. The S/370 did not prove as technologically revolutionary as its predecessor, the System/360. But from a revenue perspective, it more than sustained the cash cow status of the 360.[138] A less successful effort to replicate the 360 mainframe revolution was the Future Systems project. Between 1971 and 1975, IBM investigated the feasibility of a new revolutionary line of products designed to make obsolete all existing products in order to re-establish its technical supremacy. This effort was terminated by IBM's top management in 1975. But by then it had consumed most of the high-level technical planning and design resources, thus jeopardizing progress of the existing product lines (although some elements of FS were later incorporated into actual products).[139] Other IBM innovations during the early 1970s included the IBM 3340 disk unit – introduced in 1973 and known as "Winchester" after IBM's internal project name—was an advanced storage technology which more than doubled the information density on disk surfaces. Winchester technology was adopted by the industry and used for the next two decades.
+
+Some 1970s-era IBM technologies emerged to become familiar facets of everyday life. IBM developed magnetic stripe technology in the 1960s, and it became a credit card industry standard in 1971. The IBM-invented floppy disk, also introduced in 1971, became the standard for storing personal computer data during the first decades of the PC era. IBM Research scientist Edgar 'Ted' Codd wrote a seminal paper describing the relational database – an invention that Forbes magazine described as one of the most important innovations of the 20th century. The IBM Portable Computer, 50 lbs. and $9000 of personal mobility, was introduced in 1975 and presaged – at least in function if not size or price or units sold – the Personal Computer of the 1980s. IBM's 3660 supermarket checkout station, introduced in 1973, used holographic technology to scan product prices from the now the ubiquitous UPC bar code, which itself was based a 1952 IBM patent that became a grocery industry standard. Also in 1973, bank customers began making withdrawals, transfers and other account inquiries via the IBM 3614 Consumer Transaction Facility, an early form of today's Automatic Teller Machines.
+
+IBM had an innovator's role in pervasive technologies that were less visible as well. In 1974, IBM announced Systems Network Architecture (SNA), a networking protocol for computing systems. SNA is a uniform set of rules and procedures for computer communications to free computer users from the technical complexities of communicating through local, national, and international computer networks. SNA became the most widely used system for data processing until more open architecture standards were approved in the 1990s. In 1975, IBM researcher Benoit Mandelbrot conceived fractal geometry—a new geometrical concept that made it possible to describe mathematically the kinds of irregularities existing in nature. Fractals had a great impact on engineering, economics, metallurgy, art and health sciences, and are integral to the field of computer graphics and animation.
+
+A less successful business endeavor for IBM was its entry into the office copier market in 1970. The company was immediately sued by Xerox Corporation for patent infringement. Although Xerox held the patents for the use of selenium as a photoconductor, IBM researchers perfected the use of organic photoconductors which avoided the Xerox patents. The litigation lasted until the late 1970s and was ultimately settled. Despite this victory, IBM never gained traction in the copier market, and withdrew from the marketplace in the 1980s. Organic photoconductors, however, are now widely-used in office copiers.
+
+Throughout this period, IBM was litigating the massive anti-trust suit filed by the Justice Department in 1969. But in a related bit of case law, the landmark Honeywell v. Sperry Rand U.S. federal court case was concluded in April 1973. IBM was ruled to have created a monopoly via its 1956 patent-sharing agreement with Sperry-Rand, a decision that invalidated the 1964 patent for the ENIAC, the world's first general-purpose electronic digital computer, thus putting the invention of the electronic digital computer into the public domain.
+[edit] Key events
+
+1970: Relational databases
+    IBM introduces relational databases which call for information stored within a computer to be arranged in easy-to-interpret tables to access and manage large amounts of data. Today, nearly all database structures are based on the IBM concept of relational databases.
+1970: Office copiers
+    IBM introduces its first of three models of xerographic copiers. These machines mark the first commercial use of organic photoconductors which since grew to become the dominant technology.
+1971: Speech recognition
+    IBM achieves its first operational application of speech recognition, which enables engineers servicing equipment to talk to and receive spoken answers from a computer that can recognize about 5,000 words. Today, IBM's ViaVoice recognition technology has a vocabulary of 64,000 words and a 260,000-word back-up dictionary.[140]
+1971: Floppy disk
+    IBM introduces the floppy disk. Convenient and highly portable, the floppy becomes a personal computer industry standard for storing data.[141]
+1973: Winchester storage technology
+    The IBM 3340 disk unit—known as “Winchester” after IBM's internal project name—is introduced, an advanced technology which more than doubled the information density on disk surfaces. It featured a smaller, lighter read/write head that was designed to ride on an air film only 18 millionths of an inch thick. Winchester technology was adopted by the industry and used for the next two decades.[142]
+1973: Nobel Prize
+    Dr. Leo Esaki, an IBM Fellow who joined the company in 1960, shares the 1973 Nobel Prize in physics for his 1958 discovery of the phenomenon of electron tunneling. His discovery of the semiconductor junction called the Esaki diode finds wide use in electronics applications. More importantly, his work in the field of semiconductors lays a foundation for further exploration in the electronic transport of solids.[143]
+1974: SNA
+    IBM announces Systems Network Architecture (SNA), a networking protocol for computing systems. SNA is a uniform set of rules and procedures for computer communications to free computer users from the technical complexities of communicating through local, national, and international computer networks. SNA becomes the most widely used system for data processing until more open architecture standards were approved in the 1990s.[144]
+
+[edit] 1975–1992: Information revolution, rise of software and PC industries
+Year 	Gross income (in $m) 	Employees
+1975 	14,430 	288,647
+1980 	26,210 	341,279
+1985 	50,050 	405,535
+1990 	69,010 	373,816
+1995 	71,940 	225,347
+
+By the end of the 1970s, IBM had met and exceeded the legacy of the Golden Decade, and the appointment of John R. Opel as CEO in 1981 coincided with the beginning of a new era in computing – the age of personal computing.
+The original IBM PC (ca. 1981)
+
+The company hired Don Estridge at the IBM Entry Systems Division in Boca Raton, Florida. With a team known as "Project Chess," they built the IBM PC, launched on August 12, 1981. IBM immediately became more of a presence in the consumer marketplace, thanks to the memorable Little Tramp advertising campaign. Though not a spectacular machine by technological standards of the day, the IBM PC brought together all of the most desirable features of a computer into one small machine. It had 128 kilobytes of memory (expandable to 256 kilobytes), one or two floppy disks and an optional color monitor. And it had the prestige of the IBM brand. It was not cheap, but with a base price of US$1,565 it was affordable for businesses — and many businesses purchased PCs. Reassured by the IBM name, they began buying microcomputers on their own budgets aimed at numerous applications that corporate computer departments did not, and in many cases could not, accommodate. Typically, these purchases were not by corporate computer departments, as the PC was not seen as a "proper" computer. Purchases were often instigated by middle managers and senior staff who saw the potential — once the revolutionary VisiCalc spreadsheet, the killer app, had been surpassed by a far more powerful and stable product, Lotus 1-2-3.
+Boca Corporate Center & Campus was originally one of IBM's research labs where the IBM PC was created.
+
+However, IBM soon lost this early lead in both PC hardware and software, thanks in part to its unprecedented (for IBM) decision to contract PC components to outside companies like Microsoft and Intel. Up to this point in its history, IBM relied on a vertically integrated strategy, building most key components of its systems itself, including processors, operating systems, peripherals, databases and the like. In an attempt to speed time to market for the PC, IBM chose not to build a proprietary operating system and microprocessor. Instead it sourced these vital components from Microsoft and Intel respectively. Ironically, in a decade which marked the end of IBM's monopoly, it was this fateful decision by IBM that passed the sources of its monopolistic power (operating system and processor architecture) to Microsoft and Intel, paving the way for rise of PC compatibles and the creation of hundreds of billions of dollars of market value outside of IBM.
+
+John Akers became IBM's CEO in 1985. During the 1980s, IBM's significant investment in building a world class research organization produced four Nobel Prize winners in physics, achieved breakthroughs in mathematics, memory storage and telecommunications, and made great strides in expanding computing capabilities. In 1980, IBM Research legend John Cocke introduced Reduced Instruction Set Technology (RISC). Cocke received both the National Medal of Technology and the National Medal of Science for his innovation, but IBM itself failed to recognize the importance of RISC, and lost the lead in RISC technology to Sun. In 1984 the company partnered with Sears to develop a pioneering online home banking and shopping service for home PCs that launched in 1988 as Prodigy. Despite a strong reputation and anticipating many of the features, functions, and technology of that characterize the online experience of today, the venture was plagued by extremely conservative management decisions, and was eventually sold in the mid-1990s. The IBM token-ring local area network, introduced in 1985, permitted personal computer users to exchange information and share printers and files within a building or complex. In 1988, IBM partnered with the University of Michigan and MCI Communications to create the National Science Foundation Network (NSFNet), an important step in the creation of the Internet. But within five years the company backed away from this early lead in Internet protocols and router technologies in order to support its existing SNA cash cow, thereby missing a boom market of the 1990s. Still, IBM investments and advances in microprocessors, disk drives, network technologies, software applications, and online commerce in the 1980s that set the stage for the emergence of the connected world in the 1990s.
+
+But by the end of the decade, IBM was clearly in trouble. By the late 1980s it was a bloated organization of some 400,000 employees that was heavily invested in low margin, transactional, commodity businesses. Technologies IBM invented and or commercialized – DRAM, hard disk drives, the PC, electric typewriters – were starting to erode. The company had a massive international organization characterized by redundant processes and functions – its cost structure couldn’t compete with smaller, less diversified competitors. And then the back-to-back revolutions – the PC and the client server – did the unthinkable. They combined to dramatically undermine IBM's core mainframe business. The PC revolution placed computers directly in the hands of millions of people. It was followed by the client/server revolution, which sought to link all of those PCs (the "clients") with larger computers that labored in the background (the "servers" that served data and applications to client machines). Both revolutions transformed the way customers viewed, used and bought technology. And both fundamentally rocked IBM. Businesses' purchasing decisions were put in the hands of individuals and departments – not the places where IBM had long-standing customer relationships. Piece-part technologies took precedence over integrated solutions. The focus was on the desktop and personal productivity, not on business applications across the enterprise. As a result, earnings – which had been at or above US$5 billion since the early 1980s, dropped by more than a third to US$3 billion in 1989. A brief spike in earnings in 1990 proved illusory as corporate spending continued to shift from high profit margin mainframes to lower margin microprocessor-based systems. In addition, corporate downsizing was in full swing.
+
+Akers tried to stop the bleeding – desperate moves and radical changes were considered and implemented. As IBM assessed the situation, it was clear that competition and innovation in the computer industry was now taking place along segmented, versus vertically integrated lines, where leaders emerged in their respective domains. Examples included Intel in microprocessors, Microsoft in desktop software, Novell in networking, HP in printers, Seagate in disk drives and Oracle Corporation in database software. IBM's dominance in personal computers was challenged by the likes of Compaq and later Dell. Recognizing this trend, management, with the support of the Board of Directors, began to implement a plan to split IBM into increasingly autonomous business units (e.g. processors, storage, software, services, printers, etc.) to compete more effectively with competitors that were more focused and nimble and had lower cost structures.
+
+IBM also began shedding businesses that it felt were no longer core. It sold its typewriter, keyboard, and printer business — the organization that created the popular “Selectric” typewriter with its floating “golf ball” type element in the 1960s — to the investment firm of Clayton, Dubilier & Rice Inc. and became an independent company, Lexmark Inc..
+
+But these efforts failed to halt the slide. A decade of steady acceptance and widening corporate growth of local area networking technology, a trend headed by Novell Inc. and other vendors, and its logical counterpart, the ensuing decline of mainframe sales, brought about a wake-up call for IBM: after two consecutive years of reporting losses in excess of $1 billion, on January 19, 1993, IBM announced a US$8.10 billion loss for the 1992 financial year, which was then the largest single-year corporate loss in U.S. history.[145] All told, between 1991 and 1993, the company posted net losses of nearly $16 billion. IBM's three-decade long Golden Age, triggered by Watson Jr. in the 1950s, was over. The computer industry now viewed IBM as no longer relevant, an organizational dinosaur. And hundreds of thousands of IBMers lost their jobs, including CEO John Akers.
+[edit] Key events
+
+mid 1970s: IBM VNET
+    VNET was an international computer networking system deployed in the mid 1970s, providing email and file-transfer for IBM. By September 1979, the network had grown to include 285 mainframe nodes in Europe, Asia and North America.
+1975: Fractals
+    IBM researcher Benoit Mandelbrot conceives fractal geometry—the concept that seemingly irregular shapes can have identical structure at all scales. This new geometry makes it possible to describe mathematically the kinds of irregularities existing in nature. Fractals later make a great impact on engineering, economics, metallurgy, art and health sciences, and are also applied in the field of computer graphics and animation.[146]
+1975: IBM 5100 Portable computer
+    IBM introduces the 5100 Portable Computer, a 50 lb. desktop machine that put computer capabilities at the fingertips of engineers, analysts, statisticians, and other problem-solvers. More “luggable” than portable, the 5100 can serve as a terminal for the System/370 and costs from $9000 to $20,000.[147]
+1976: Space Shuttle
+    The Enterprise, the first vehicle in the U.S. Space Shuttle program, makes its debut at Palmdale, California, carrying IBM AP-101 flight computers and special hardware built by IBM.
+1976: Laser printer
+    The first IBM 3800 printer is installed. The 3800 is the first commercial printer to combine laser technology and electrophotography. The technology speeds the printing of bank statements, premium notices, and other high-volume documents, and remains a workhorse for billing and accounts receivable departments.[148]
+1977: Data Encryption Standard
+    IBM-developed Data Encryption Standard (DES), a cryptographic algorithm, is adopted by the U.S. National Bureau of Standards as a national standard.[149]
+1979: Retail checkout
+    IBM develops the Universal Product Code (UPC) in the 1970s as a method for embedding pricing and identification information on individual retail items. In 1979, IBM applies holographic scanner technology in IBM's supermarket checkout station to read the UPC stripes on merchandise, one of the first major commercial uses of holography. IBM's support of the UPC concept helps lead to its widespread acceptance by retail and other industries around the world.[150]
+1979: Thin film recording heads
+    Instead of using hand-wound wire structures as coils for inductive elements, IBM researchers substitute thin film "wires" patterned by optical lithography. This leads to higher performance recording heads at reduced cost, and establishes IBM's leadership in "areal density": storing the most data in the least space. The result is higher-capacity and higher-performance disk drives.[151]
+1979: Overcoming barriers to technology use
+    Since 1946, with its announcement of Chinese and Arabic ideographic character typewriters, IBM has worked to overcome cultural and physical barriers to the use of technology. As part of these ongoing efforts, IBM introduces the 3270 Kanji Display Terminal; the System/34 Kanji System with an ideographic feature, which processes more than 11,000 Japanese and Chinese characters; and the Audio Typing Unit for sight-impaired typists.
+1980: Thermal conduction modules
+    IBM introduces the 3081 processor, the company's most powerful to date, which features Thermal Conduction Modules. In 1990, the Institute of Electrical and Electronics Engineers, Inc., awards its 1990 Corporate Innovation Recognition to IBM for the development of the Multilayer Ceramic Thermal Conduction Module for high performance computers.[152]
+1980: Reduced instruction set computing (RISC) architecture
+    IBM successfully builds the first prototype computer employing IBM Fellow John Cocke's RISC architecture. RISC simplified the instructions given to computers, making them faster and more powerful. Today, RISC architecture is the basis of most workstations and widely viewed as the dominant computing architecture.[153]
+1981: IBM PC
+    The IBM Personal Computer goes mass market and helps revolutionize the way the world does business. A year later, Time Magazine gives its “Person of the Year” award to the Personal Computer.[154]
+1981: LASIK surgery
+    Three IBM scientists invent the Excimer laser surgical procedure that later forms the basis of LASIK and PRK corrective eye surgeries.[155]
+1982: Antitrust suit
+    The United States antitrust suit against IBM, filed in 1969, is dismissed as being "without merit."[156]
+1982: Trellis-coded modulation
+    Trellis-coded modulation (TCM) is first used in voice-band modems to send data at higher rates over telephone channels. Today, TCM is applied in a large variety of terrestrial and satellite-based transmission systems as a key technique for achieving faster and more reliable digital transmission.[157]
+1983: IBM PCjr
+    IBM announces the widely anticipated PCjr., IBM's attempt to enter the home computing marketplace. The product, however, fails to capture the fancy of consumers due to its lack of compatibility with IBM PC software, its higher price point, and its unfortunate ‘chiclet’ keyboard design. IBM terminates the product after 18 months of disappointing sales.[158]
+1984: IBM 3480 magnetic tape system
+    The industry's most advanced magnetic tape system, the IBM 3480, introduces a new generation of tape drives that replace the familiar reel of tape with an easy-to-handle cartridge. The 3480 was the industry's first tape system to use “thin-film” recording head technology.
+1984: Sexual discrimination
+    IBM adds sexual orientation to the company's non-discrimination policy. IBM becomes one of the first major companies to make this change.[159]
+1984: ROLM partnership/acquisition
+    In 1984 IBM partnered with ROLM Communications based in Santa Clara, CA to develop digital telephone switches to compete directly with Northern Telecom and AT&T. Two of the most popular systems were the large scale PABX coined ROLM CBX and the smaller PABX coined ROLM Redwood. ROLM was later acquired by Siemens AG in 1990-1993.
+1985: RP3
+    Sparked in part by national concerns over losing its technology leadership crown in the early 1980s, IBM re-enters the supercomputing field with the RP3 (IBM Research Parallel Processor Prototype). IBM researchers worked with scientists from the New York University's Courant Institute of Mathematical Science to design RP3, an experimental computer consisting of up to 512 processors, linked in parallel and connected to as many as two billion characters of main memory. Over the next five years, IBM provides more than $30 million in products and support to a supercomputer facility established at Cornell University in Ithaca, New York.[160]
+1985: Token Ring Network
+    IBM's Token Ring technology brings a new level of control to local area networks and quickly becomes an industry standard for networks that connect printers, workstations and servers.[161]
+1986: IBM Almaden Research Center
+    IBM Research dedicates the Almaden Research Center in California. Today, Almaden is IBM's second-largest laboratory focused on storage systems, technology and computer science.[162]
+1986: Nobel Prize: Scanning tunneling microscopy
+    IBM Fellows Gerd K. Binnig and Heinrich Rohrer of the IBM Zurich Research Laboratory win the 1986 Nobel Prize in physics for their work in scanning tunneling microscopy. Drs. Binnig and Rohrer are recognized for developing a powerful microscopy technique which permits scientists to make images of surfaces so detailed that individual atoms may be seen.[163]
+1987: Nobel Prize: High-Temperature Superconductivity
+    J. Georg Bednorz and IBM Fellow K. Alex Müller of the IBM Zurich Research Laboratory receive the 1987 Nobel Prize for physics for their breakthrough discovery of high-temperature superconductivity in a new class of materials. They discover superconductivity in ceramic oxides that carry electricity without loss of energy at much higher temperatures than any other superconductor.[164]
+1987: Antivirus tools
+    As personal computers become vulnerable to attack from viruses, a small research group at IBM develops, practically overnight, a suite of antivirus tools. The effort leads to the establishment of the High Integrity Computing Laboratory (HICL) at IBM. HICL goes on to pioneer the science of theoretical and observational computer virus epidemiology.[165]
+1987: Special needs access
+    IBM Researchers demonstrate the feasibility for blind computer users to read information directly from computer screens with the aid of an experimental mouse. And in 1988 the IBM Personal System/2 Screen Reader is announced, permitting blind or visually impaired people to hear the text as it is displayed on the screen in the same way a sighted person would see it. This is the first in the IBM Independence Series of products for computer users with special needs.[166]
+1988: IBM AS/400
+    IBM introduces the IBM Application System/400 (AS/400), a new family of easy-to-use computers designed for small and intermediate-sized companies. As part of the introduction, IBM and IBM Business Partners worldwide announce more than 1,000 software packages in the biggest simultaneous applications announcement in computer history. The AS/400 quickly becomes one of the world's most popular business computing systems.[167]
+1988: National Science Foundation Network (NSFNET)
+    IBM collaborates with the Merit Network, MCI Communications, the State of Michigan, and the National Science Foundation to upgrade and expand the 56K bit per second NSFNET to 1.5M bps (T1) and later 45M bps (T3). This partnership provides the network infrastructure and lays the groundwork for the explosive growth of the Internet in the 1990s. The NSFNET upgrade boosts network capacity, not only making it faster, but also allowing more intensive forms of data, such as the graphics now common on the World Wide Web, to travel across the Internet.[168]
+1989: Silicon germanium transistors
+    The replacing of expensive and exotic materials like gallium arsenide with silicon germanium (known as SiGe), championed by IBM Fellow Bernie Meyerson, creates faster chips at lower costs. Introducing germanium into the base layer of an otherwise all-silicon bipolar transistor allows for significant improvements in operating frequency, current, noise and power capabilities.[169]
+1990: System/390
+    IBM makes its most comprehensive product announcement in 25 years by introducing the System/390 family. IBM incorporates complementary metal oxide silicon (CMOS) based processors into System/390 Parallel Enterprise Server in 1995, and in 1998 the System/390 G5 Parallel Enterprise Server 10-way Turbo model smashed the 1,000 MIPS barrier, making it the world's most powerful mainframe.[170]
+1990: RISC System/6000
+    IBM announces the RISC System/6000, a family of nine workstations that are among the fastest and most powerful in the industry. The RISC System/6000 uses Reduced instruction set computing technology, an innovative computer design pioneered by IBM that simplifies processing steps to speed the execution of commands.[171]
+1990: Moving individual atoms
+    Donald M. Eigler, a physicist and IBM Fellow at the IBM Almaden Research Center demonstrated the ability to manipulate individual atoms using a scanning tunneling microscope, writing I-B-M using 35 individual xenon atoms.[172]
+1990: Environmental programs
+    IBM joins 14 other leading U.S. corporations in April to establish a worldwide program designed to achieve environmental, health and safety goals by continuously improving environmental management practices and performance. IBM has invested more than $1 billion since 1973 to provide environmental protection for the communities in which IBM facilities are located.[173]
+1991: Services business
+    IBM reenters the computer services business through the formation of the Integrated Systems Solution Corporation. Still in compliance with the provisions of the 1956 Consent Decree, in just four ISSC becomes the second largest provider of computer services. The new business becomes one of IBM's primary revenue streams.[174]
+1992: Thinkpad
+    IBM introduces a new line of notebook computers. Housed in a distinctive black case and featuring the innovative TrackPoint device nestled in the middle of the keyboard, the ThinkPad is an immediate hit and goes on to collect more than 300 awards for design and quality.[175]
+
+[edit] 1993–present: IBM's near disaster and rebirth
+Year 	Gross income (in $m) 	Employees
+1985 	50,050 	405,535
+1990 	69,010 	373,816
+1995 	71,940 	225,347
+2000 	85,090 	316,303
+2005 	91,400 	398,455
+
+In April 1993, IBM hired Louis V. Gerstner, Jr. as its new CEO. For the first time since 1914 IBM had recruited a leader from outside its ranks. Gerstner had been chairman and CEO of RJR Nabisco for four years, and had previously spent 11 years as a top executive at American Express. Gerstner brought with him a customer-oriented sensibility and the strategic-thinking expertise that he had honed through years as a management consultant at McKinsey & Co.. Recognizing that his first priority was to stabilize the company, he adopted a triage mindset and took quick, dramatic action. His early decisions included recommitting to the mainframe, selling the Federal Systems Division to Loral in order to replenish the company's cash coffers, continuing to shrink the workforce (reaching a low of 220,000 employees in 1994), and driving significant cost reductions within the company. Most importantly, Gerstner decided to reverse the move to spin off IBM business units into separate companies. He recognized that one of IBM's enduring strengths was its ability to provide integrated solutions for customers – someone who could represent more than piece parts or components. Splitting the company would have destroyed that unique IBM advantage.[176]
+
+These initial steps worked. IBM was in the black by 1994, turning profits of $3 billion. But stabilization was not Gerstner's endgame – the restoration of IBM's once great reputation was. To do that, he needed to come up with a winning business strategy.[177] Over the next decade, Gerstner crafted a business model that shed commodity businesses and focused on high-margin opportunities. IBM divested itself of low margin industries (DRAM, IBM Network, personal printers, and hard drives). The company regained the business initiative by building upon the decision to keep the company whole – it unleashed a global services business that rapidly rose to became a leading technology integrator. Crucial to this success was the decision to become brand agnostic – IBM integrated whatever technologies the client required, even if they were from an IBM competitor.[178] IBM augmented this services business with the 2002 acquisition of the consultancy division of PricewaterhouseCoopers for $3.5 billion US.[179]
+
+Another high margin opportunity IBM invested heavily in was software, a strategic move that proved equally visionary. Starting in 1995 with its acquisition of Lotus Development Corp., IBM built up its software portfolio from one brand, DB2, to five: DB2, Lotus, WebSphere, Tivoli, and Rational. Content to leave the consumer applications business to other firms, IBM's software strategy focused on middleware – the vital software that connects operating systems to applications. The middleware business played to IBM's strengths, and its higher margins improved the company's bottom line significantly as the century came to an end.[180]
+
+While IBM hardware and technologies were relatively de-emphasized in Gerstner's three-legged business model, they were not relegated to stepchild status. The company brought its world class research organization to bear more closely on its existing product lines and development processes. As Internet applications and deep computing overtook client servers as key business technology priorities, mainframes returned to relevance. IBM reinvigorated their mainframe line with CMOS technologies, which made them among the most powerful and cost efficient in the marketplace.[181] Investments in microelectronics research and manufacturing made IBM a world leader in specialized, high margin chip production – it developed 200 mm wafer processes in 1992, and 300 mm wafers within the decade.[182] IBM designed chips are currently used in PlayStation 3, Xbox 360, and Wii game consoles. IBM also regained the lead in supercomputing with high end machines based upon scalable parallel processor technology.
+
+Equally significant in IBM's revival was its successful reentry into the popular mindset. Part of this revival was based on IBM technology. On October 5, 1992, at the COMDEX computer expo, IBM announced the first ThinkPad laptop computer, the 700c. The ThinkPad, a premium machine which then cost US$4350, included a 25 MHz Intel 80486SL processor, a 10.4-inch active matrix display, removable 120 MB hard drive, 4 MB RAM (expandable to 16 MB) and a TrackPoint II pointing device.[183] But it was the striking black design by noted designer Richard Sapper that made the ThinkPad an immediate hit with the digerati, and the cool factor of the ThinkPad brought back some of the cachet to the IBM brand that had been lost in the PC wars of the 1980s. Instrumental too to this popular resurgence was the 1997 chess match between IBM's chess-playing computer system Deep Blue and reigning world chess champion Garry Kasparov. Deep Blue's victory was an historic first for a computer over a reigning world champion. Also helping the company reclaim its position as a technology leader was its annual domination of supercomputer rankings[184] and patent leadership statistics.[185] Ironically, a serendipitous contributor in reviving the company's reputation was the Dot-com bubble collapse in 2000, where many of the edgy technology high flyers of the 1990s failed to ride out the downturn. These collapses discredited some of the more fashionable Internet-driven business models that stodgy IBM was previously compared against.
+
+Another part of the successful reentry into the popular mindset was the company's revival of the IBM brand. The company's marketing during the economic downturn was chaotic, presenting many different, sometimes discordant voices in the marketplace. This brand chaos was attributable in part to the company having 70 different advertising agencies in its employ. In 1994, IBM eliminated this chaos by consolidating its advertising in one agency. The result was a coherent, consistent message to the marketplace.[186]
+
+As IBM recovered its financial footing and its industry leadership position, the company remained aggressive in preaching to the industry that it was not the Old IBM, that it had learned from its near death experiences, and that it had been fundamentally changed by them. It sought to redefine the Internet age in ways that played to traditional IBM strengths, couching the discussion in business-centric manners with initiatives like ecommerce and On Demand.[187] And it supported open source initiatives, forming collaborative ventures with partners and competitors alike.[188]
+
+Change was manifested in IBM in other ways as well. The company revamped its scattershot philanthropic practices to bring a sharp focus on improving K-12 education. It ended its 40-year technology partnership with the International Olympic Committee after a successful engagement at the 2000 Olympic Games in Sydney, Australia. On the human resources front, IBM's adoption and integration of diversity principles and practices was cutting edge. It added sexual orientation to its non-discrimination practices in 1984, in 1995 created executive diversity task forces, and in 1996 offered domestic partner benefits to its employees. The company is routinely listed as among the best places for employees, employees of color, and women to work.[189] And in 1996, the Women in Technology International Hall of Fame inducted three IBMers as part of its inaugural class of 10 women: Ruth Leach Amonette, the first woman to hold an executive position at IBM; Barbara Grant, Ph.D., first woman to be named an IBM site general manager; and Linda Sanford, the highest – placed technical woman in IBM. Fran Allen – an early software pioneer and another IBM hero for her innovative work in compilers over the decades – is inducted the next year.[190]
+
+Gerstner retired at the end of 2002, and was replaced by long-time IBMer Samuel J. Palmisano.
+[edit] Key events
+
+1993: Billion dollar losses
+    IBM misreads two significant trends in the computer industry: personal computers and client-server computing: and as a result is poorly positioned in the marketplace. The misreads hit the bottom line hard: IBM loses more than $8 billion in 1993, its third straight year of billion dollar losses. Since 1991, the company has lost $16 billion, and many feel IBM is no longer a viable player in the industry.[191]
+1993: Louis V. Gerstner, Jr.
+    Gerstner arrives as IBM's chairman and CEO on April 1, 1993. For the first time since the arrival of Thomas J. Watson, Sr., in 1914, IBM has a leader pulled from outside its ranks. Gerstner had been chairman and CEO of RJR Nabisco for four years, and had previously spent 11 years as a top executive at American Express.[192]
+1993: IBM Scalable POWERparallel system
+    IBM introduces the Scalable POWERparallel System, the first in a family of microprocessor-based supercomputers using RISC System/6000 technology. IBM pioneers the breakthrough scalable parallel system technology of joining smaller, mass-produced computer processors rather than relying on one larger, custom-designed processor. Complex queries could then be broken down into a series of smaller jobs than are run concurrently (“in parallel”) to speed their completion.[193]
+1994: Turnaround
+    IBM reports a profit for the year, its first since 1990. Over the next few years the company successfully charts a new business course, one that focuses less on its traditional strengths in hardware, and more on services, software, and its ability to craft technology solutions.[194]
+1994: IBM RAMAC Array Storage Family
+    The IBM RAMAC Array Family is announced. With features like highly parallel processing, multi-level cache, RAID 5 and redundant components, RAMAC represents a major advance in information storage technology. Consisting of the RAMAC Array Direct Access Storage Device (DASD) and the RAMAC Array Subsystem, the products become one of IBM's most successful storage product launches ever, with almost 2,000 systems shipped to customers in its first three months of availability.[195]
+1994: Speech recognition
+    IBM releases the IBM Personal Dictation System (IPDS), the first wave of speech recognition products for the personal computer. It is later renamed VoiceType, and its capabilities are expanded to include control of computer applications and desktops simply by talking to them, without touching a keyboard. In 1997 IBM announces ViaVoice Gold, software that gives people a hands-free way to dictate text and navigate the desktop with the power of natural, continuous speech.[196]
+1994: Reinventing education
+    As part of IBM's reinvention of its corporate philanthropy function, the first of 10 grants is selected from 200 proposals for IBM's Reinventing Education Program, a project focusing on public school reform. Grant-winners receive the services of a project manager, consultants and researchers to create customized solutions designed to break down barriers to academic achievement.[197]
+1995: Lotus Development Corporation acquisition
+    IBM acquires all of the outstanding shares of the Lotus Development Corporation, whose pioneering Notes software enables greater collaboration across an enterprise and whose acquisition makes IBM the world's largest software company.[198]
+1995: Glueball calculation
+    IBM scientists complete a two-year calculation — the largest single numerical calculation in the history of computing — to pin down the properties of an elusive elementary particle called a “glueball.” The calculation was carried out on GF11, a massively parallel computer at the IBM Thomas J. Watson Research Center.[199]
+1996: IBM Austin Research Laboratory opens
+    Based in Austin, Texas, the lab is focused on advanced circuit design as well as new design techniques and tools for very high performance microprocessors.[200]
+1996: Atlanta Olympics
+    IBM suffers a highly public embarrassment when its IT support of the Olympic Games in Atlanta experiences technical difficulties.[201]
+1996: Domestic partner benefits
+    IBM announces Domestic Partner Benefits for gay and lesbian employees.[202]
+1997: Deep Blue
+    The 32-node IBM RS/6000 SP supercomputer, Deep Blue, defeats World Chess Champion Garry Kasparov in the first known instance of a computer vanquishing a reigning world champion chess player in tournament-style competition.[203]
+1997: eBusiness
+    IBM coins the term and defined an enormous new industry by using the Internet as a medium for real business and institutional transformation. e-business becomes synonymous with doing business in the Internet age.[204]
+1998: CMOS Gigaprocessor
+    IBM unveils the first microprocessor that runs at 1 billion cycles per second. IBM scientists develop new Silicon on insulator chips to be used in the construction of a mainstream processor. The breakthrough ushers in new circuit designs and product groups.[205]
+1999: Blue Gene
+    IBM Research starts a computer architecture cooperative project with the Lawrence Livermore National Laboratory, the United States Department of Energy (which is partially funding the project), and academia to build new supercomputers (4) capable of more than one quadrillion operations per second (one petaflop). Nicknamed "Blue Gene," the new supercomputers perform 500 times faster than other powerful supercomputers and can simulate folding complex proteins.[206]
+2000: Quantum mirage nanotechnology
+    IBM scientists discover a way to transport information on the atomic scale that uses electrons instead of conventional wiring. This new phenomenon, called the Quantum mirage effect, enables data transfer within future nanoscale electronic circuits too small to use wires. The quantum mirage technique is a unique way of sending information through solid forms and could do away with wiring that connects nanocircuit components.[207]
+2000: IBM ASCI White – Fastest supercomputer
+    IBM delivers the world's most powerful computer to the US Department of Energy, powerful enough to process an Internet transaction for every person on Earth in less than a minute. IBM built the supercomputer to accurately test the safety and effectiveness of the nation's aging nuclear weapons stockpile. This computer is 1,000 times more powerful than Deep Blue, the supercomputer that beat Garry Kasparov in chess in 1997.[208]
+2000: Flexible transistors
+    IBM created flexible transistors, combining organic and inorganic materials as a medium for semiconductors. This technology enables things like an "electronic newspaper", so lightweight and inexpensive that leaving one behind on the airplane or in a hotel lobby is no big deal. By eliminating the limitations of etching computer circuits in silicon, flexible transistors make it possible to create a new generation of inexpensive computer displays that can be embedded into curved plastic or other materials.[209]
+2000: Sydney Olympics
+    After a successful engagement at the 2000 Olympic games in Sydney, IBM ends its 40-year technology partnership with the International Olympic Committee.[210]
+2001: Holocaust controversy
+    A controversial book, IBM and the Holocaust: The Strategic Alliance Between Nazi Germany and America's Most Powerful Corporation by Edwin Black, accuses IBM of having knowingly assisted Nazi authorities in the perpetuation of the Holocaust through the provision of tabulating products and services. Several lawsuits are filed against IBM by Holocaust victims seeking restitution for their suffering and losses.[211]
+2001: Carbon nanotube transistors
+    IBM researchers build the world's first transistors out of carbon nanotubes – tiny cylinders of carbon atoms that are 500 times smaller than silicon-based transistors and 1,000 times stronger than steel. The breakthrough is an important step in finding materials that can be used to build computer chips when silicon-based chips can’t be made any smaller.[212]
+2001: Molecular computer circuit
+    IBM researchers create the world's first logic-performing computer circuit within a single molecule, which may lead to a new class of smaller and faster computers that consume less power than today's machines.[213]
+2001: Low power initiative
+    IBM launches its low-power initiative to improve the energy efficiency of IT and accelerates the development of ultra-low power components and power-efficient servers, storage systems, personal computers and ThinkPad notebook computers.[214]
+2001: Greater density & chip speeds
+    IBM is first to mass-produce computer hard disk drives using a revolutionary new type of magnetic coating – "pixie dust" – that eventually quadruples data density of current hard disk drive products. IBM also unveils “strained silicon," a breakthrough that alters silicon to boost chip speeds by up to 35 percent.[215][216]
+2003: Blue Gene/L
+    The BLUE GENE team unveils a proto-type of its Blue Gene/L computer roughly the size of a standard dishwasher that ranks as the 73rd most powerful supercomputer in the world. This one cubic meter machine is small scale model of the full Blue Gene/L built for the Lawrence Livermore National Laboratory in California, which will be 128 times larger when it's unveiled two years later.[217]
+2005: Crusade Against Cancer
+    IBM joins forces with Memorial Sloan-Kettering Cancer Center (MSKCC), the Molecular Profiling Institute and the CHU Sainte-Justine Research Center to collaborate on cancer research by building state-of-the-art integrated information management systems.[218]
+2005: The PC division is sold
+    The PC division (including Thinkpads) is sold to Chinese manufacturer, Lenovo.[219]
+2006: Translation software
+    IBM delivers an advanced speech-to-speech translation system to U.S. forces in Iraq using bidirectional English to Arabic translation software that improves communication between military personnel and Iraqi forces and citizens. The breakthrough software offsets the current shortage of military linguists.[220]
+2007: Renewable energy
+    IBM is recognized by the US EPA for its leading green power purchases in the US and for its support and participation in EPA's Fortune 500 Green Power Challenge. IBM ranked 12th on the EPA's list of Green Power Partners for 2007. IBM purchased enough renewable energy in 2007 to meet 4% of its US electricity use and 9% of its global electricity purchases. IBM's commitment to green power helps cut greenhouse gas emissions.[221]
+2007: River watch using IBM Stream Computing
+    In a unique collaboration, The Beacon Institute and IBM created the first technology-based river monitoring network. The River and Estuary Observatory Network (REON) allows for minute-to-minute monitoring of New York's Hudson River via an integrated network of sensors, robotics and computational technology. This first-of-its-kind project is made possible by IBM's "Stream Computing," a fundamentally new computer architecture that can examine thousands of information sources to help scientists better understand what is happening as it happens.[222][223]
+2007: Patent power
+    IBM has been granted more US patents than any other company. From 1993 to 2007, IBM was awarded over 38,000 US patents and has invested about $5 billion a year in research, development and engineering since 1996. IBM's current active portfolio is about 26,000 patents in the US and over 40,000 patents worldwide is a direct result of that investment.[224]
+2008: IBM Roadrunner No.1 Supercomputer
+    For a record-setting ninth consecutive time, IBM takes the No.1 spot in the ranking of the world's most powerful supercomputers. The IBM computer built for the Roadrunner project at Los Alamos National Laboratory: the first in the world to operate at speeds faster than one quadrillion calculations per second: remains the world speed champion. The Los Alamos system is twice as energy efficient as the No. 2 computer, using about half the electricity to maintain the same level of computing power.[225]
+2008: Green power
+    IBM opens its "greenest" data center in Boulder, Colorado. The energy efficient facility is part of a $350 million investment by IBM in Boulder to help meet customer demand for reducing energy costs. The new data center features leading-edge technologies and services, including high density computing systems with virtualization technology. Green Power centers allow IBM and its customers to cut their carbon footprint.[226]
+2011: Watson
+    IBM's supercomputer Watson competed on the TV show Jeopardy against Ken Jennings and Brad Rutter. The competition was presented by PBS.[227]
+June 16, 2011: IBM founded 100 years ago
+    Mark Krantz and Jon Swartz in USA Today state It has remained at the forefront through the decades... the fifth-most-valuable U.S. company [today] ... demonstrated a strength shared by most 100-year-old companies: the ability to change. ... survived not only the Depression and several recessions, but technological shifts and intense competition as well.[228]
+
+[edit] Products and technologies
+[edit] BICARSA (Billing, Inventory Control, Accounts Receivable, & Sales Analysis)
+
+1983 saw the announcement of the System/36, the replacement for the System/34. And in 1988, IBM announced the AS/400, intended to represent a point of convergence for both System/36 customers and System/38 customers. The 1970s had seen IBM develop a range of Billing, Inventory Control, Accounts Receivable, & Sales Analysis (BICARSA ) applications for specific industries: construction (CMAS), distribution (DMAS) and manufacturing (MMAS), all written in the RPG II language. By the end of the 1980s, IBM had almost completely withdrawn from the BICARSA applications marketplace. Because of developments in the antitrust cases against IBM brought by the US government and European Union, IBM sales representatives were now able to work openly with application software houses as partners. (For a period in the early 1980s, a 'rule of three' operated, which obliged IBM sales representatives, if they were to propose a third-party application to a customer, to also list at least two other third-party vendors in the IBM proposal. This caused some amusement to the customer, who would typically have engaged in intense negotiations with one of the third parties and probably not have heard of the other two vendors.)
+[edit] Evolution of IBM's computer hardware
+
+The story of IBM's hardware is intertwined with the story of the computer industry – from vacuum tubes, to transistors, to integrated circuits, to microprocessors and beyond. The following systems and series represent key steps:
+
+    IBM SSEC – 1948, the first operational machine able to treat its instructions as data
+    IBM NORC – 1954, the first supercomputer[229]
+    IBM 650 – 1954, the world’s first mass-produced computer
+    SAGE AN/FSQ-7 – 1958, half an acre of floor space, 275 tons, up to three megawatts, ... the largest computers ever built
+    IBM 700/7000 series
+    IBM 1400 series – 1959, "... by the mid-1960s nearly half of all computer systems in the world were 1401-type systems."[230]
+    System/360 – 1964, the first family of computers designed to cover the complete range of applications, small to large, commercial and scientific
+    System/3
+    System/370
+    System/38
+    IBM Series/1
+    IBM 801 RISC processor
+    IBM PC
+    PowerPC
+    System/390
+    AS/400
+    RS/6000
+    zSeries
+    Cell processor
+    Watson
+
+[edit] Evolution of IBM's operating systems
+Main article: History of IBM mainframe operating systems
+
+IBM operating systems have paralleled hardware development. On early systems, operating systems represented a relatively modest level of investment, and were essentially viewed as an adjunct to the hardware. By the time of the System/360, however, operating systems had assumed a much larger role, in terms of cost, complexity, importance, and risk.
+
+Mainframe operating systems include:
+
+    OS family, including: OS/360, OS/MFT, OS/MVT, OS/VS1, OS/VS2, MVS, OS/390, z/OS
+    DOS family, including: DOS/360, DOS/VS, DOS/VSE, z/VSE
+    VM family, including: CP/CMS, VM/370, VM/XA, VM/ESA, z/VM
+    Special purpose systems, including: TPF, z/TPF
+
+Other platforms with important operating systems include:
+
+    AIX family, including: AIX
+    Linux family, including: Linux for pSeries
+    OS/400 family, including: OS/400, IBM i5/OS and IBM i
+
+[edit] High-level languages
+
+Early IBM computer systems, like those from many other vendors, were programmed using assembly language. Computer science efforts through the 1950s and early 1960s led to the development of many new high-level languages (HLL) for programming. IBM played a complicated role in this process. Hardware vendors were naturally concerned about the implications of portable languages that would allow customers to pick and choose among vendors without compatibility problems. IBM, in particular, helped create barriers that tended to lock customers into a single platform.
+
+IBM had a significant role in the following major computer languages:
+
+    FORTRAN – for years, the dominant language for mathematics and scientific programming
+    PL/I – an attempt to create a "be all and end all" language
+    COBOL – eventually the ubiquitous, standard language for business applications
+    PL/S – an internal systems programming language proprietary to IBM
+    RPG – originally an acronym for 'Report Program Generator' on the mainframes to produce reports from data files. General Systems Division enhanced the language to HLL status on its midrange systems to rival with COBOL.
+    SQL – a relational query language developed for IBM's System R; now the standard RDBMS query language
+    Rexx – a macro and scripting language based on PL/I syntax originally developed for Conversational Monitor System (CMS) and authored by IBM Fellow Mike Cowlishaw
+
+[edit] IBM and AIX/UNIX/Linux/SCO
+
+IBM developed a schizophrenic relationship with the UNIX and Linux worlds. The importance of IBM's large computer business placed strange pressures on all of IBM's attempts to develop other lines of business. All IBM projects faced the risk of being seen as competing against company priorities. This was because, if a customer decided to build an application on an RS/6000 platform, this also meant that a decision had been made against a mainframe platform. So despite having some excellent technology, IBM often placed itself in a compromised position.
+
+A case in point is IBM's GFIS products for infrastructure management and GIS applications. Despite long having a dominant position in such industries as electric, gas, and water utilities, IBM stumbled badly in the 1990s trying to build workstation-based solutions to replace its old mainframe-based products. Customers were forced to move on to new technologies from other vendors; many felt betrayed by IBM.
+
+IBM embraced open source technologies in the 1990s. It later became embroiled in a complex litigation with SCO group over intellectual property rights related to the UNIX and Linux platforms.
+[edit] Midrange systems
+
+In the midrange arena, IBM consolidated the market position its General Systems Division had built in the 1970s with the System/3, System/32 and System/34. The System/38, with its radical architecture, had experienced delays to its first customer shipment since announcement in 1978. In 1982, IBM disbanded the organization that had meant the Data Processing Division sold only mainframes to large customers while the General Systems Division sold only S/3x machines to small and medium-sized customers. Instead, the new ISM (for small and medium customers) and ISAM divisions (large customers) could sell from the entire IBM portfolio.[citation needed]
+[edit] Non-computer lines of business
+
+IBM has largely been known for its dominance of the unit record equipment (punched cards, keypunches, accounting machines, ...) in the first part of the 20th century and then, overtaking UNIVAC's early 1950s public fame, leading in the computer industry for much of the latter part of the century. However it has also had roles, some significant, in other industries, including:
+
+    Food services (meat and coffee grinders, computing cheese slicers, computing scales) – founding to 1934, sold to Hobart Manufacturing Co.[231]
+    Time recorders (punch clocks, school and factory clocks) – founding to 1958, sold to Simplex Time Recorder Company.[28]
+    Typewriters and other office products (dictation machines, copiers, word processors, printers) – 1933 to 1991, then part of Lexmark [232]
+    Military products (Browning Automatic Rifle, bombsights) – IBM's World War II production
+    Digital telephone switches – 1984 to 1990-1993, ROLM sold to Siemens AG
+    Stadium scoreboards
+    Real estate (at one time owning vast tracts of undeveloped land on the U.S. east coast)
+    Medical instruments (heart lung machine, prostheses, blood cell separators)
+
+[edit] Organization
+[edit] Federal Systems Division
+
+A significant part of IBM's operations were contracts with the U.S. Federal Government for a wide range of projects ranging from the U.S. Census Bureau to the Department of Defense to the National Security Agency. These projects spanned mundane administrative processing to top secret supercomputing. In NASA's Apollo Program, the "brains" of each Saturn rocket was the Instrument Unit built by the IBM Space Systems Center in Huntsville, Alabama. FSD was sold to Loral in 1994.
+[edit] IBM service organizations
+
+IBM's early dominance of the computer industry was in part due to its strong professional services activities. IBM's advantage in building software for its own computers eventually was seen as monopolistic, leading to antitrust proceedings. As a result, a complex, artificial "arms-length" relationship was created separating IBM's computer business from its service organizations. This situation persisted for decades. An example was IBM Global Services, a huge services firm that competed with the likes of Electronic Data Systems or Computer Sciences Corporation.

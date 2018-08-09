@@ -1,0 +1,1063 @@
+Linear algebra is a branch of mathematics that studies vector spaces, also called linear spaces, along with linear functions that input one vector and output another. Such functions are called linear maps (or linear transformations or linear operators) and can be represented by matrices if a basis is given. Thus matrix theory is often considered as a part of linear algebra. Linear algebra is commonly restricted to the case of finite dimensional vector spaces, while the peculiarities of the infinite dimensional case are traditionally covered in linear functional analysis.
+Linear algebra is central to modern mathematics and its applications. An elementary application of linear algebra is to find the solution of a system of linear equations in several unknowns. More advanced applications are ubiquitous in areas as diverse as abstract algebra and functional analysis. Linear algebra has a concrete representation in analytic geometry and is generalized in operator theory and in module theory. It has extensive applications in engineering, physics, natural sciences, computer science, and the social sciences (particularly in economics). Nonlinear mathematical models can often be approximated by linear ones.
+Contents [hide]
+1 History
+2 Main structures
+3 Some main useful theorems
+4 Generalizations and related topics
+5 See also
+6 Notes
+7 Further reading
+8 External links
+8.1 Online books
+[edit]History
+
+The subject first took its modern form in the first half of the twentieth century. At this time, many ideas and methods of previous centuries were generalized as abstract algebra. Matrices and tensors were introduced in the latter part of the 19th century. The use of these objects in quantum mechanics, special relativity, and statistics did much to spread the subject of linear algebra beyond pure mathematics.
+The origin of many of these ideas is discussed in the articles on determinants and Gaussian elimination.
+[edit]Main structures
+
+The main structures of linear algebra are vector spaces and linear maps between them. A vector space is a set whose elements can be added together and multiplied by the scalars, or numbers. In many physical applications, the scalars are real numbers, R. More generally, the scalars may form any field F—thus one can consider vector spaces over the field Q of rational numbers, the field C of complex numbers, or a finite field Fq.
+In a vector space, the operations of addition and scalar multiplication must behave similarly to the usual addition and multiplication of numbers: addition is commutative and associative, multiplication distributes over addition, and so on. More precisely, the two operations must satisfy a list of axioms chosen to emulate the properties of addition and scalar multiplication of Euclidean vectors in the coordinate n-space Rn. One of the axioms stipulates the existence of a zero vector, which behaves analogously to the number zero with respect to addition.
+Elements of a general vector space V may be objects of any nature, for example, functions or polynomials, but when viewed as elements of V, they are frequently called vectors.
+Given two vector spaces V and W over a field F, a linear transformation (or "linear map") is a map
+
+that is compatible with addition and scalar multiplication:
+
+for any vectors u,v ? V and a scalar r ? F.
+Other fundamental notions in linear algebra include: linear combination, span, linear independence of vectors, a basis of a vector space, and the dimension of a vector space.
+Given a vector space V over a field F, an expression of the form
+
+where v1, v2, …, vk are vectors and r1, r2, …, rk are scalars, is called the linear combination of the vectors v1, v2, …, vk with coefficients r1, r2, …, rk. The set of all linear combinations of vectors v1, v2, …, vk is called their span. A linear combination of any system of vectors with all zero coefficients is zero vector of V. If this is the only way to express zero vector as a linear combination of v1, v2, …, vk then these vectors are linearly independent. A linearly independent set of vectors that spans a vector space V is a basis of V. If a vector space admits a finite basis then any two bases have the same number of elements (called the dimension of V) and V is a finite-dimensional vector space. This theory can be extended to infinite-dimensional spaces.
+There is an important distinction between the coordinate n-space Rn and a general finite-dimensional vector space V. While Rn has a standard basis {e1, e2, …, en}, a vector space V typically does not come equipped with a basis and many different bases exist (although they all consist of the same number of elements equal to the dimension of V). Having a particular basis {v1, v2, …, vn} of V allows one to construct a coordinate system in V: the vector with coordinates (r1, r2, …, rn) is the linear combination
+
+The condition that v1, v2, …, vn span V guarantees that each vector v can be assigned coordinates, whereas the linear independence of v1, v2, …, vn further assures that these coordinates are determined in a unique way (i.e. there is only one linear combination of the basis vectors that is equal to v). In this way, once a basis of a vector space V over F has been chosen, V may be identified with the coordinate n-space Fn. Under this identification, addition and scalar multiplication of vectors in V correspond to addition and scalar multiplication of their coordinate vectors in Fn. Furthermore, if V and W are an n-dimensional and m-dimensional vector space over F, and a basis of V and a basis of W have been fixed, then any linear transformation T: V ? W may be encoded by an m × n matrix A with entries in the field F, called the matrix of T with respect to these bases. Therefore, by and large, the study of linear transformations, which were defined axiomatically, may be replaced by the study of matrices, which are concrete objects. This is a major technique in linear algebra.
+[edit]Some main useful theorems
+
+(AC) Every vector space has a basis.[1]
+(AC) Any two bases of the same vector space have the same cardinality. Equivalently, the dimension of a vector space is well-defined.[2]
+A matrix is invertible, or non-singular, if and only if the linear map represented by the matrix is an isomorphism.
+Any vector space over a field F of dimension n is isomorphic to Fn as a vector space over F.
+Corollary: Any two vector spaces over F of the same finite dimension are isomorphic to each other.
+[edit]Generalizations and related topics
+
+Since linear algebra is a successful theory, its methods have been developed in other parts of mathematics. In module theory, one replaces the field of scalars by a ring. In multilinear algebra, one considers multivariable linear transformations, that is, mappings that are linear in each of a number of different variables. This line of inquiry naturally leads to the idea of the tensor product. Functional analysis mixes the methods of linear algebra with those of mathematical analysis.
+[edit]See also
+
+List of linear algebra topics
+Numerical linear algebra
+Eigenvectors
+Transformation matrix
+Fundamental matrix in computer vision
+Simplex method, a solution technique for linear programs
+Linear regression, a statistical estimation method
+[edit]Notes
+
+^ The existence of a basis is straightforward for countably generated vector spaces, and for well-ordered vector spaces, but in full generality it is logically equivalent to the axiom of choice.
+^ Dimension theorem for vector spaces
+[edit]Further reading
+
+History
+Fearnley-Sander, Desmond, "Hermann Grassmann and the Creation of Linear Algebra" (via JSTOR), American Mathematical Monthly 86 (1979), pp. 809–817.
+Grassmann, Hermann, Die lineale Ausdehnungslehre ein neuer Zweig der Mathematik: dargestellt und durch Anwendungen auf die übrigen Zweige der Mathematik, wie auch auf die Statik, Mechanik, die Lehre vom Magnetismus und die Krystallonomie erläutert, O. Wigand, Leipzig, 1844.
+Introductory textbooks
+Axler, Sheldon (February 26, 2004), Linear Algebra Done Right (2nd ed.), Springer, ISBN 978-0387982588
+Bretscher, Otto (June 28, 2004), Linear Algebra with Applications (3rd ed.), Prentice Hall, ISBN 978-0131453340
+Farin, Gerald; Hansford, Dianne (December 15, 2004), Practical Linear Algebra: A Geometry Toolbox, AK Peters, ISBN 978-1568812342
+Friedberg, Stephen H.; Insel, Arnold J.; Spence, Lawrence E. (November 11, 2002), Linear Algebra (4th ed.), Prentice Hall, ISBN 978-0130084514
+Hefferon, Jim (2008), Linear Algebra
+Anton, Howard (2005), Elementary Linear Algebra (Applications Version) (9th ed.), Wiley International
+Lay, David C. (August 22, 2005), Linear Algebra and Its Applications (3rd ed.), Addison Wesley, ISBN 978-0321287137
+Kolman, Bernard; Hill, David R. (May 3, 2007), Elementary Linear Algebra with Applications (9th ed.), Prentice Hall, ISBN 978-0132296540
+Leon, Steven J. (2006), Linear Algebra With Applications (7th ed.), Pearson Prentice Hall, ISBN 978-0131857858
+Poole, David (2010), Linear Algebra: A Modern Introduction (3rd ed.), Cengage - Brooks/Cole, ISBN 978-0538735452
+Strang, Gilbert (July 19, 2005), Linear Algebra and Its Applications (4th ed.), Brooks Cole, ISBN 978-0030105678
+Advanced textbooks
+Bhatia, Rajendra (November 15, 1996), Matrix Analysis, Graduate Texts in Mathematics, Springer, ISBN 978-0387948461
+Demmel, James W. (August 1, 1997), Applied Numerical Linear Algebra, SIAM, ISBN 978-0898713893
+Gantmacher, F.R. (2005, 1959 edition), Applications of the Theory of Matrices, Dover Publications, ISBN 978-0486445540
+Gantmacher, Felix R. (1990), Matrix Theory Vol. 1 (2nd ed.), American Mathematical Society, ISBN 978-0821813768
+Gantmacher, Felix R. (2000), Matrix Theory Vol. 2 (2nd ed.), American Mathematical Society, ISBN 978-0821826645
+Gelfand, I. M. (1989), Lectures on Linear Algebra, Dover Publications, ISBN 978-0486660820
+Glazman, I. M.; Ljubic, Ju. I. (2006), Finite-Dimensional Linear Analysis, Dover Publications, ISBN 978-0486453323
+Golan, Johnathan S. (January 2007), The Linear Algebra a Beginning Graduate Student Ought to Know (2nd ed.), Springer, ISBN 978-1402054945
+Golan, Johnathan S. (August 1995), Foundations of Linear Algebra, Kluwer, ISBN 0792336143
+Golub, Gene H.; Van Loan, Charles F. (October 15, 1996), Matrix Computations, Johns Hopkins Studies in Mathematical Sciences (3rd ed.), The Johns Hopkins University Press, ISBN 978-0801854149
+Greub, Werner H. (October 16, 1981), Linear Algebra, Graduate Texts in Mathematics (4th ed.), Springer, ISBN 978-0801854149
+Hoffman, Kenneth; Kunze, Ray (April 25, 1971), Linear Algebra (2nd ed.), Prentice Hall, ISBN 978-0135367971
+Halmos, Paul R. (August 20, 1993), Finite-Dimensional Vector Spaces, Undergraduate Texts in Mathematics, Springer, ISBN 978-0387900933
+Horn, Roger A.; Johnson, Charles R. (February 23, 1990), Matrix Analysis, Cambridge University Press, ISBN 978-0521386326
+Horn, Roger A.; Johnson, Charles R. (June 24, 1994), Topics in Matrix Analysis, Cambridge University Press, ISBN 978-0521467131
+Lang, Serge (March 9, 2004), Linear Algebra, Undergraduate Texts in Mathematics (3rd ed.), Springer, ISBN 978-0387964126
+Marcus, Marvin; Minc, Henryk (2010), A Survey of Matrix Theory and Matrix Inequalities, Dover Publications, ISBN 978-0486671024
+Meyer, Carl D. (February 15, 2001), Matrix Analysis and Applied Linear Algebra, Society for Industrial and Applied Mathematics (SIAM), ISBN 978-0898714548
+Mirsky, L. (1990), An Introduction to Linear Algebra, Dover Publications, ISBN 978-0486664347
+Roman, Steven (March 22, 2005), Advanced Linear Algebra, Graduate Texts in Mathematics (2nd ed.), Springer, ISBN 978-0387247663
+Shilov, Georgi E. (June 1, 1977), Linear algebra, Dover Publications, ISBN 978-0486635187
+Shores, Thomas S. (December 6, 2006), Applied Linear Algebra and Matrix Analysis, Undergraduate Texts in Mathematics, Springer, ISBN 978-0387331942
+Smith, Larry (May 28, 1998), Linear Algebra, Undergraduate Texts in Mathematics, Springer, ISBN 978-0387984551
+Study guides and outlines
+Leduc, Steven A. (May 1, 1996), Linear Algebra (Cliffs Quick Review), Cliffs Notes, ISBN 978-0822053316
+Lipschutz, Seymour; Lipson, Marc (December 6, 2000), Schaum's Outline of Linear Algebra (3rd ed.), McGraw-Hill, ISBN 978-0071362009
+Lipschutz, Seymour (January 1, 1989), 3,000 Solved Problems in Linear Algebra, McGraw-Hill, ISBN 978-0070380233
+McMahon, David (October 28, 2005), Linear Algebra Demystified, McGraw-Hill Professional, ISBN 978-0071465793
+Zhang, Fuzhen (April 7, 2009), Linear Algebra: Challenging Problems for Students, The Johns Hopkins University Press, ISBN 978-0801891250
+[edit]External links
+
+	Wikibooks has a book on the topic of
+Linear Algebra
+International Linear Algebra Society
+MIT Professor Gilbert Strang's Linear Algebra Course Homepage : MIT Course Website
+MIT Linear Algebra Lectures: free videos from MIT OpenCourseWare
+Linear Algebra Toolkit.
+Linear Algebra on MathWorld.
+Linear Algebra overview and notation summary on PlanetMath.
+Matrix and Linear Algebra Terms on Earliest Known Uses of Some of the Words of Mathematics
+Earliest Uses of Symbols for Matrices and Vectors on Earliest Uses of Various Mathematical Symbols
+Linear Algebra by Elmer G. Wiens. Interactive web pages for vectors, matrices, linear equations, etc.
+Linear Algebra Solved Problems: Interactive forums for discussion of linear algebra problems, from the lowest up to the hardest level (Putnam).
+Linear Algebra for Informatics. José Figueroa-O'Farrill, University of Edinburgh
+Online Notes / Linear Algebra Paul Dawkins, Lamar University
+Elementary Linear Algebra textbook with solutions
+Linear Algebra Wiki
+Linear algebra (math 21b) homework and exercises
+[edit]Online books
+Beezer, Rob, A First Course in Linear Algebra
+Connell, Edwin H., Elements of Abstract and Linear Algebra
+Hefferon, Jim, Linear Algebra
+Matthews, Keith, Elementary Linear Algebra
+Sharipov, Ruslan, Course of linear algebra and multidimensional geometry
+Treil, Sergei, Linear Algebra Done Wrong
+LINEAR EQUATIONS
+1.1 Introduction to linear equations
+A linear equation in n unknowns x1; x2;    ; xn is an equation of the form
+a1x1 + a2x2 +    + anxn = b;
+where a1; a2; : : : ; an; b are given real numbers.
+For example, with x and y instead of x1 and x2, the linear equation
+2x + 3y = 6 describes the line passing through the points (3; 0) and (0; 2).
+Similarly, with x; y and z instead of x1; x2 and x3, the linear equa-
+tion 2x + 3y + 4z = 12 describes the plane passing through the points
+(6; 0; 0); (0; 4; 0); (0; 0; 3).
+A system of m linear equations in n unknowns x1; x2;    ; xn is a family
+of linear equations
+a11x1 + a12x2 +    + a1nxn = b1
+a21x1 + a22x2 +    + a2nxn = b2
+.
+.
+.
+am1x1 + am2x2 +    + amnxn = bm:
+We wish to determine if such a system has a solution, that is to nd
+out if there exist numbers x1; x2;    ; xn which satisfy each of the equations
+simultaneously. We say that the system is consistent if it has a solution.
+Otherwise the system is called inconsistent.
+12 CHAPTER 1. LINEAR EQUATIONS
+Note that the above system can be written concisely as
+Xn
+j=1
+aijxj = bi
+; i = 1; 2;    ; m:
+The matrix 2
+4
+a11 a12    a1n
+a21 a22    a2n
+.
+.
+.
+.
+.
+.
+am1 am2    amn
+3
+5
+is called the coecient matrix of the system, while the matrix
+2
+4
+a11 a12    a1n b1
+a21 a22    a2n b2
+.
+.
+.
+.
+.
+.
+.
+.
+.
+am1 am2    amn bm
+3
+5
+is called the augmented matrix of the system.
+Geometrically, solving a system of linear equations in two (or three)
+unknowns is equivalent to determining whether or not a family of lines (or
+planes) has a common point of intersection.
+EXAMPLE 1.1.1 Solve the equation
+2x + 3y = 6:
+Solution. The equation 2x + 3y = 6 is equivalent to 2x = 6  3y or
+x = 3 
+3
+2
+y, where y is arbitrary. So there are innitely many solutions.
+EXAMPLE 1.1.2 Solve the system
+x + y + z = 1
+x  y + z = 0:
+Solution. We subtract the second equation from the rst, to get 2y = 1
+and y =
+1
+2
+. Then x = y  z =
+1
+2  z, where z is arbitrary. Again there are
+innitely many solutions.
+EXAMPLE 1.1.3 Find a polynomial of the form y = a0+a1x+a2x
+2+a3x
+3
+which passes through the points (3; 2); (1; 2); (1; 5); (2; 1).
+CHAPTER 1. LINEAR EQUATIONS
+START
+?
+Input A; m; n
+?
+i = 1; j = 1
+-  ?
+?
+Are the elements in the
+jth column on and below
+the ith row all zero?
+@ j = j + 1
+@
+@
+R YesNo
+?
+Is j = n?
+Yes
+No
+-
+6
+Let apj be the rst non{zero
+element in column j on or
+below the ith row
+?
+Is p = i?
+Yes
+?
+PPqP No
+Interchange the
+pth and ith rows
+
+
+
+
+
+Divide the ith row by aij
+?
+Subtract aqj times the ith
+row from the qth row for
+for q = 1; : : : ; m (q =6 i)
+?
+Set ci = j
+?
+Is i = m?
+
+
++
+ Is j = n?
+i = i + 1
+j = j + 1
+6
+No
+No
+Yes
+Yes -
+-
+6
+?
+Print A,
+c1; : : : ; ci
+?
+STOP
+Figure 1.1: Gauss{Jordan algorithm.1.4. SYSTEMATIC SOLUTION OF LINEAR SYSTEMS. 11
+Also assume that the remaining column numbers are cr+1;    ; cn+1, where
+1  cr+1 < cr+2 <    < cn  n + 1:
+Case 1: cr = n + 1. The system is inconsistent. For the last non{zero
+row of B is [0; 0;    ; 1] and the corresponding equation is
+0x1 + 0x2 +    + 0xn = 1;
+which has no solutions. Consequently the original system has no solutions.
+Case 2: cr  n. The system of equations corresponding to the non{zero
+rows of B is consistent. First notice that r  n here.
+If r = n, then c1 = 1; c2 = 2;    ; cn = n and
+B =
+2
+4
+1 0    0 d1
+0 1    0 d2
+.
+.
+.
+.
+.
+.
+0 0    1 dn
+0 0    0 0
+.
+.
+.
+.
+.
+.
+0 0    0 0
+3
+5
+:
+There is a unique solution x1 = d1; x2 = d2;    ; xn = dn.
+If r < n, there will be more than one solution (innitely many if the
+eld is innite). For all solutions are obtained by taking the unknowns
+xc1
+;    ; xcr as dependent unknowns and using the r equations correspond-
+ing to the non{zero rows of B to express these unknowns in terms of the
+remaining independent unknowns xcr+1
+; : : : ; xcn
+, which can take on arbi-
+trary values:
+xc1 = b1 n+1  b1cr+1 xcr+1      b1cn xcn
+.
+.
+.
+xcr = br n+1  brcr+1 xcr+1      brcn xcn
+:
+In particular, taking xcr+1 = 0; : : : ; xcn1 = 0 and xcn = 0; 1 respectively,
+produces at least two solutions.
+EXAMPLE 1.4.1 Solve the system
+x + y = 0
+x  y = 1
+4x + 2y = 1:
+What's Linear Algebra About?
+
+When I started teaching the subject I found three kinds of texts. There were applied mathematics books that avoid proofs and covered the linear algebra only as needed for their applications. There were advanced books that assumed students could understand their elegant proofs and also understand how to answer the homework questions having seen only one or two examples. And, there were books that spent a good part of the semester doing elementary things such as multiplying matrices and computing determinants, only to suddenly change level to working with definitions and proofs.
+
+Each of these three types was a problem in my classroom. The applications were interesting but I wanted to focus on the linear algebra. The advanced books were beautiful but my students were not ready for them. And, the level-switching books resulted in a great deal of grief.
+
+I took a level-switching book as an undergraduate, so I understood the struggle my students had with this. At the start of the semester they thought that these were like calculus books, where material labelled `proof' should be skipped in favor of the computational examples. Then, when the level switched, no amount of discussion on my part could convince students to switch with it, and the semester ended unhappily.
+
+That is, while I wish I could say that my students now perform at the level of the advanced books, I cannot. However, as a teacher I can work steadily to bring them up to it over the course of our undergraduate program. This means stepping back from focussing on rote computations in favor of focussing on an understanding of the mathematics. It means proving things and having students understand, e.g., that matrix multiplication is the application of a linear function. But it means also avoiding an approach that is too advanced for the students: the presentation must emphasize motivation, must have many illustrative examples, and must include exercises with many of the medium-difficult questions that are a challenge to a learner without being overwhelming. And, it means communicating to my students that the change of focus is what we are up to, right from the start.
+
+Summary Points
+
+The coverage is standard: linear systems and Gauss' method, vector spaces, linear maps and matrices, determinants, and eigenvectors and eigenvalues. The Table of Contents gives you a quick overview.
+Prerequisites. A semester of calculus. Students with three semesters of calculus can skip a few sections.
+Applications. Each chapter has three or four discussions of additional topics and applications. These are suitable for independent study or for small group work.
+What makes it different? The approach is developmental. Although the presentation is focused on covering the requisite material by proving things, it does not start with an assumption that students are already able at abstract work. Instead, it proceeds with a great deal of motivation, many computational examples, and exercises that range from routine verifications to (a few) challenges. The goal is, in the context of developing the usual material of an undergraduate linear algebra course, to help raise the level of mathematical maturity of the class.
+I know of only two reviews. One is at a site for free texts. The other is a blog, I believe. (Also, someone posted a link to this page on the math sub-reddit, so there are a number of comments.)
+
+Here Is Linear Algebra
+
+The files are current as of 2011-Jan-25.
+
+Click to get whole book Linear Algebra along with the answers to exercises. Note: save the two files in the same directory, so that clicking on an exercise will send you to its answer and clicking on an answer will send you to its exercise.
+You can also get the source. You need to know LaTeX and MetaPost to work with it, although there is a readme file to get you going (there is also a shell script make_book_for_web.sh that I use with TeX Live). Also there is a bit of optional material.
+You can get some materials that were contributed by folks other than me.
+If you are an instructor thinking of adopting Linear Algebra
+
+For a quick look, I suggest the second chapter. The first chapter is necessarily computational but the second chapter shows more clearly what the book works on: bridging between lower-division mathematics with its reliance on explicitly-given algorithms, and upper division college mathematics with its emphasis on concepts and proof.
+
+The text has been class-tested here and elsewhere and I'm delighted to have it on student's desks, doing what it is for. Running off double-sided copies and comb-binding them costs students around $25.00 (we include the Preface, Table of Contents, Appendix, and Index to make about 450 pages. With the Answers to Exercises at about 215 pages the total is about $30.00.
+
+License. This text is Free. Use it under either the GNU Free Documentation License or the Creative Commons Attribution-ShareAlike 2.5 License, at your discretion. To bookstores: in particular, instructors have permission to make copies of this material, either electronic or paper, and sell those copies to students. (Instructors may like to make an extra copy and prorate the price of student copies.) Many schools use this text in this way. If you have further questions, please feel free to contact me.
+
+If you adopt the book, and find it useful, do drop me a note. I'd like to hear it.
+
+Can You Help With Linear Algebra?
+
+If you have something that you are able to share, either comments (including bug reports) or additional material, then please write me. Naturally, all contributions will be gratefully acknowledged, or anonymous if you like. I save these and periodically revise the copy available here.
+
+In particular, I would welcome used exams or problem sets, especially if you can contribute the TeX or LaTeX source, so that a user could cut or paste. (Some instructors have expressed reservations about using a text where the answers to the exercises are downloadable, so more exercises would be helpful.)
+
+My email is jhefferon at smcvt.edu.
+
+
+Site Information
+
+This site Joshua is located in the Mathematics Department of Saint Michael's College in Colchester, Vermont USA.
+
+Joshua runs under Linux
+
+
+Open Source software is a great idea. This project would not have gotten done without it.
+
+(Credit for the logo to Matt Ericson.)
+A First Course in Linear Algebra is an introductory textbook designed for university sophomores and juniors. Typically such a student will have taken calculus, but this is not a prerequisite. The book begins with systems of linear equations, then covers matrix algebra, before taking up finite-dimensional vector spaces in full generality. The final chapter covers matrix representations of linear transformations, through diagonalization, change of basis and Jordan canonical form. Along the way, determinants and eigenvalues get fair time. PDF versions are available to download for printing or on-screen viewing, two online versions are available, and physical copies may be purchased from the print-on-demand service at Lulu.com.
+
+It seems therefore desirable to give permanent form to the lessons of experience so that others can benefit by them and be encouraged to undertake similar work.
+H.M. Cundy and A.P. Rollet, Mathematical Models, 1952
+
+This textbook has more freedom than most (but see some exceptions). First, there is no cost to acquire this text, and you are under no obligation whatsoever to compensate or donate to the author or publisher. So in this most basic sense, it is a free textbook. Therefore you can also make as many copies as you like, ensuring that the book will never go out-of-print. You may modify copies of the book for your own use - for example, you may wish to change to a prefered notation for certain objects or add a few new sections. I have applied a copyright to the book, and subsequently licensed it with a GNU Free Documentation License (GFDL). It is this combination that allows me to give you greater freedoms in how you use the text, thus liberating it from some of the antiquated notions of copyright that apply to books in physical form. The main caveat is that if you make modifications and then distribute a modified version, you are required to again apply the GFDL license to the result so that others may benefit from your modifications.
+
+If nature has made any one thing less susceptible than all others of exclusive property, it is the action of the thinking power called an idea, which an individual may exclusively possess as long as he keeps it to himself; but the moment it is divulged, it forces itself into the possession of every one, and the receiver cannot dispossess himself of it. Its peculiar character, too, is that no one possesses the less, because every other possesses the whole of it.
+Thomas Jefferson, Letter to Isaac McPherson, August 13, 1813
+
+It is hoped that by this arrangement, others will help improve the book through rapid correction of errors and contributions of exercises and new material. Grab an evaluation copy, and if you like what you see, consider helping out and/or making a donation to the project.
+
+In the News
+
+"Instructors who wish to teach a pure linear algebra course that emphasizes rigor and formal mathematics will be able to make good use of this material and feel secure in the knowledge that the book is not going to go out of print. Finally, the price is right."
+SIAM Review, Book Reviews, December 2007
+
+Open Textbook Catalog, five faculty reviews, March 10, 2010
+A mention in Seth Godin's blog, February 25, 2009
+EDUCAUSE Review Cover Story [FCLA Section], January/February 2009
+Seattle Post-Intelligencer, September 24, 2008
+Hattiesburg American, August 20, 2008
+American Public Media, Marketplace, August 18, 2008
+Los Angeles Times, August 18, 2008
+USA Today, July 9, 2008
+SlashDot, April 26, 2008
+New York Times Editorial, April 25, 2008
+Internet Scout, April 25, 2008
+Inside Higher Ed, April 16, 2008
+SchoolZone Blog, Seattle Post-Intelligencer, April 14, 2008
+Review in The Assayer
+Letter to the Editor, Chronicle of Higher Education, March 7, 2008
+Book Reviews, SIAM Review, December 2007, Volume 49, p. 726-727 [Reviewer's Copy]
+The Oregonian, September 8, 2007
+Notices of the American Mathematical Society, August, 2007
+Arches (UPS Alumni Magazine), July, 2007
+LifeHacker, September 25, 2006
+USA Today, August 16, 2006
+The Trail (UPS Student Newspaper), March 24, 2006
+http://linear.ups.edu/index.html
+Linear Algebra (Math 2318)
+Here are my online notes for my Linear Algebra course that I teach here at Lamar University.  Despite the fact that these are my “class notes”, they should be accessible to anyone wanting to learn Linear Algebra or needing a refresher. 
+ 
+These notes do assume that the reader has a good working knowledge of basic Algebra.  This set of notes is fairly self contained but there is enough Algebra type problems (arithmetic and occasionally solving equations) that can show up that not having a good background in Algebra can cause the occasional problem.
+ 
+Here are a couple of warnings to my students who may be here to get a copy of what happened on a day that you missed. 
+ 
+Because I wanted to make this a fairly complete set of notes for anyone wanting to learn Linear Algebra I have included some material that I do not usually have time to cover in class and because this changes from semester to semester it is not noted here.  You will need to find one of your fellow class mates to see if there is something in these notes that wasn’t covered in class.
+
+In general I try to work problems in class that are different from my notes.  However, with a Linear Algebra course while I can make up the problems off the top of my head there is no guarantee that they will work out nicely or the way I want them to.  So, because of that my class work will tend to follow these notes fairly close as far as worked problems go.  With that being said I will, on occasion, work problems off the top of my head when I can to provide more examples than just those in my notes.  Also, I often don’t have time in class to work all of the problems in the notes and so you will find that some sections contain problems that weren’t worked in class due to time restrictions.
+
+Sometimes questions in class will lead down paths that are not covered here.  I try to anticipate as many of the questions as possible in writing these notes up, but the reality is that I can’t anticipate all the questions.  Sometimes a very good question gets asked in class that leads to insights that I’ve not included here.  You should always talk to someone who was in class on the day you missed and compare these notes to their notes and see what the differences are.
+
+This is somewhat related to the previous three items, but is important enough to merit its own item.  THESE NOTES ARE NOT A SUBSTITUTE FOR ATTENDING CLASS!!  Using these notes as a substitute for class is liable to get you in trouble. As already noted not everything in these notes is covered in class and often material or insights not in these notes is covered in class.
+ 
+Here is a listing and brief description of the material in this set of notes.
+ 
+            Systems of Equations and Matrices
+Systems of Equations  In this section we’ll introduce most of the basic topics that we’ll need in order to solve systems of equations including augmented matrices and row operations.
+Solving Systems of Equations  Here we will look at the Gaussian Elimination and Gauss-Jordan Method of solving systems of equations.
+Matrices  We will introduce many of the basic ideas and properties involved in the study of matrices.
+Matrix Arithmetic & Operations  In this section we’ll take a look at matrix addition, subtraction and multiplication.  We’ll also take a quick look at the transpose and trace of a matrix.
+Properties of Matrix Arithmetic  We will take a more in depth look at many of the properties of matrix arithmetic and the transpose.
+Inverse Matrices and Elementary Matrices  Here we’ll define the inverse and take a look at some of its properties.  We’ll also introduce the idea of Elementary Matrices.
+Finding Inverse Matrices  In this section we’ll develop a method for finding inverse matrices.
+Special Matrices  We will introduce Diagonal, Triangular and Symmetric matrices in this section.
+LU-Decompositions  In this section we’ll introduce the LU-Decomposition a way of “factoring” certain kinds of matrices.
+Systems Revisited  Here we will revisit solving systems of equations.  We will take a look at how inverse matrices and LU-Decompositions can help with the solution process.  We’ll also take a look at a couple of other ideas in the solution of systems of equations.
+ 
+            Determinants
+The Determinant Function  We will give the formal definition of the determinant in this section.  We’ll also give formulas for computing determinants of  and  matrices.
+Properties of Determinants  Here we will take a look at quite a few properties of the determinant function.  Included are formulas for determinants of triangular matrices.
+The Method of Cofactors  In this section we’ll take a look at the first of two methods for computing determinants of general matrices.
+Using Row Reduction to Find Determinants  Here we will take a look at the second method for computing determinants in general.
+Cramer’s Rule  We will take a look at yet another method for solving systems.  This method will involve the use of determinants.
+ 
+            Euclidean n-space
+Vectors  In this section we’ll introduce vectors in 2-space and 3-space as well as some of the important ideas about them.
+Dot Product & Cross Product  Here we’ll look at the dot product and the cross product, two important products for vectors.  We’ll also take a look at an application of the dot product.
+Euclidean n-Space  We’ll introduce the idea of Euclidean n-space in this section and extend many of the ideas of the previous two sections.
+Linear Transformations  In this section we’ll introduce the topic of linear transformations and look at many of their properties.
+Examples of Linear Transformations  We’ll take a look at quite a few examples of linear transformations in this section.
+ 
+Vector Spaces
+Vector Spaces  In this section we’ll formally define vectors and vector spaces.
+Subspaces  Here we will be looking at vector spaces that live inside of other vector spaces.
+Span  The concept of the span of a set of vectors will be investigated in this section.
+Linear Independence  Here we will take a look at what it means for a set of vectors to be linearly independent or linearly dependent.
+Basis and Dimension  We’ll be looking at the idea of a set of basis vectors and the dimension of a vector space.
+Change of Basis  In this section we will see how to change the set of basis vectors for a vector space.
+Fundamental Subspaces  Here we will take a look at some of the fundamental subspaces of a matrix, including the row space, column space and null space.
+Inner Product Spaces  We will be looking at a special kind of vector spaces in this section as well as define the inner product.
+Orthonormal Basis  In this section we will develop and use the Gram-Schmidt process for constructing an orthogonal/orthonormal basis for an inner product space.
+Least Squares  In this section we’ll take a look at an application of some of the ideas that we will be discussing in this chapter.
+QR-Decomposition  Here we will take a look at the QR-Decomposition for a matrix and how it can be used in the least squares process.
+Orthogonal Matrices  We will take a look at a special kind of matrix, the orthogonal matrix, in this section.
+ 
+Eigenvalues and Eigenvectors
+Review of Determinants  In this section we’ll do a quick review of determinants.
+Eigenvalues and Eigenvectors  Here we will take a look at the main section in this chapter.  We’ll be looking at the concept of Eigenvalues and Eigenvectors.
+Diagonalization  We’ll be looking at diagonalizable matrices in this section.
+
+LECTURE  NOTES 
+ 
+  Disclaimer:
+
+Most of this material was written as informal notes, not intended for publication. However, some notes are copyrighted and may be used for private  use only. Errors are responsability of the authors. 
+ 
+
+ pdf format  dvi format  ps format 
+  
+ 
+
+Multivariable Calculus
+
+Curl, div, grad and all that stuff explained by J. Cooper in a geometric fashion.
+
+ Multivariable Calculus supplements. Include many applications to the physical sciences. By O. Knill.
+
+ Elementary vector calculus applied to Maxwell Equation's and electric potencial. By D. Bump. 
+  
+ 
+
+Real Analysis
+
+ Elementary notes on real analysis by T. Korner.
+
+ Notes in analysis on metric and Banach spaces with a twist of topology. By  Y. Safarov.
+
+ Notes on  Banach and Hilbert spaces and Fourier series by G. Olafsson.
+
+ A paper on unified analysis and generalized limits by Ch. Brown. Also available at www.limit.com. 
+  
+ 
+
+Measure Theory and Integration
+
+ Everything you need to know to get started on measure theory! Notes by G. Olafsson.
+
+ Another very good set of notes on measure theory. These ones by B. Driver.
+
+ Area of spheres, volume of balls and the Gamma function. Notes of  IAP2001 made by  D. Strook. 
+  
+ 
+
+Linear Algebra
+
+ Nice notes on elementary linear algebra by J. Ellenberg. Great for a first course!
+
+ Another set of notes in elementary linear algebra. By B. Lackey.
+
+ Yet some some more notes on linear algebra. Notes by P. Martin at University city, London.
+
+ Two sets of notes by R. Gardner. One of them based on Fraleigh's "Linear Algebra".
+
+ A brief survey on Jordan canonical form by J. Beachy.
+
+ Some basics fact on bilinear forms by Ch. Weibel. 
+  
+ 
+
+Abstract Algebra
+
+ A very elegant course in group theory by J. Milne.
+
+ A comprehensive introduction by J. Baker to finite groups representations.
+
+ Some notes on permuation and alternating groups.
+
+ Very basic facts about rings. Written by M. Vaughn-Lee.
+
+ Notes on commutative algebra (modules and rings) by I. Fesenko.
+
+ Notes on some topics on module theory  E. L. Lady.
+
+ An introduction to Galois theory by J. Milne.
+
+ A set of notes on Galois theory by D. Wilkins.
+
+ A short note on the fundamental theorem of algebra by M. Baker.
+
+ Defintion and some very basic facts about Lie algebras.
+
+ Nice introductory paper on representation of lie groups by B. Hall.
+
+ Brief notes on homological algebra by I. Fesenko.
+
+ An excellent reference on the history of homolgical algebra by Ch.Weibel. 
+  
+ 
+
+Complex Variables
+
+ Lecture notes on complex analysis by T.Tao. Very elementary. Great for a beginning course.
+
+ A more advanced course on complex variables. Notes written by Ch. Tiele.
+
+ Some papers by D. Bump on the Riemman's Zeta function. 
+  
+ 
+
+Topology
+
+ Notes on a neat general topology course taught by B. Driver.
+
+ Notes on a course based on Munkre's "Topology: a first course".  By B. Ikenaga.
+
+ Two sets of notes by D. Wilkins.  General topology is discused in the first and algebraic topology in the second.
+
+ A paper discussing one point and Stone-Cech compactifications. Written by J. Blankespoor and J. Krueger. 
+  
+ 
+
+Geometry
+
+ Geometry of curves and surfaces in R^3. Notes written by R. Gardner.
+
+ Brief and intuituve introduction to differential forms by D. Arapura.
+
+ Notes on a course in calculus on normed vector spaces.
+
+ Very concise introduction to differential geometry by S.Yakovenko.
+
+ Basics on differential geometry. A nice set of notes written by  D. Allcock.
+
+ A comprehensive introduction to algebraic geometry by I. Dolgachev.
+
+ Another very good set of notes by J. Milne. These ones devoted to algebraic geometry.
+
+ A nice introduction to symplectic geometry by  S. Montaldo.
+
+ Dynamics on one complex variable. Lecture notes by J. Milnor. 
+From the Introduction:
+
+The title of the book sounds a bit mysterious. Why should anyone read this book if it presents the subject in a wrong way? What is particularly done "wrong" in the book? 
+
+Before answering these questions, let me first describe the target audience of this text. This book appeared as lecture notes for the course "Honors Linear Algebra". It supposed to be a first linear algebra course for mathematically advanced students. It is intended for a student who, while not yet very familiar with abstract reasoning, is willing to study more rigorous mathematics that is presented in a "cookbook style" calculus type course. Besides being a first course in linear algebra it is also supposed to be a first course introducing a student to rigorous proof, formal definitions---in short, to the style of modern theoretical (abstract) mathematics. 
+The target audience explains the very specific blend of elementary ideas and concrete examples, which are usually presented in introductory linear algebra texts with more abstract definitions and constructions typical for advanced books. 
+
+Another specific of the book is that it is not written by or for an algebraist. So, I tried to emphasize the topics that are important for analysis, geometry, probability, etc., and did not include some traditional topics. For example, I am only considering vector spaces over the fields of real or complex numbers. Linear spaces over other fields are not considered at all, since I feel time required to introduce and explain abstract fields would be better spent on some more classical topics, which will be required in other disciplines. And later, when the students study general fields in an abstract algebra course they will understand that many of the constructions studied in this book will also work for general fields. 
+
+Also, I treat only finite-dimensional spaces in this book and a basis always means a finite basis. The reason is that it is impossible to say something non-trivial about infinite-dimensional spaces without introducing convergence, norms, completeness etc., i.e. the basics of functional analysis. And this is definitely a subject for a separate course (text). So, I do not consider infinite Hamel bases here: they are not needed in most applications to analysis and geometry, and I feel they belong in an abstract algebra course. 
+
+ 
+
+In the new (June 2010) I version  corrected numerous typos, and added some more detailed  explanations. 
+
+ 
+
+Introduction and Table of Contents--- PDF, 167K.
+Text of the book (July 2011)--- PDF, 1470K
+Errata (list of typos found in the above version); nothing here yet
+For the convinience of the reader I am posting the latest version of the text, with all the corrected typos here.  It will be changing as typos will be found, unlike the official text above, which will remain the same (at least untill the summer)
+If you want to see the older versions of the text, you can find it below:
+Errata to June 2010 version of the book
+June 2010 version of the book.
+Errata to January 2010 version (mistakes that vere corrected in June 2010 version)
+January 2010 version of the book.
+Previous (2009) version of the book.  
+The old (2004) version of the book..
+ 
+
+Math. Department home page	back to my home page
+Lecture notes: Applied linear algebra
+Part 2. Version 1
+Michael Karow
+Berlin University of Technology
+karow@math.TU-Berlin.de
+October 2, 2008
+First, some exercises:
+Exercise 0.1 (2 Points) Another least squares problem: Let c ? C
+n
+and let A ? C
+m×n
+,
+m = n, be a matrix with full column rank. Give a formla for min{kxk; x ? C
+m
+, A*
+x =
+c} in terms of c and A*A.
+Exercise 0.2 (4+4 Points) This is an exercise on the SVD.
+(a) Let U and V be subspaces of C
+n
+. Then there exist an orthonormal basis u1, . . . , uq
+of U and an orthonormal basis of v1, . . . , vp of V such that u
+*
+j
+vk = 0 for j =6 k and
+0 = u
+*
+k
+vk = 1 for k = min{p, q}. The numbers fk := arc cos(u
+*
+k
+vk) are called the
+canonical angles beween the subspaces.
+Hint: Take any orthonormal basis of X of U and Y of V and make a singular
+value decomposition of X*
+Y .
+(b) We consider a direct decompositon C
+n = U ? W. Let P the projector onto U along
+W. Suppose the columns of the matrix X span an orthonormal basis of U and the
+columns of Y span an orthonormal basis of W?
+. Then
+kP k =
+1
+smin(X*
+Y )
+,
+where smin(·) denotes the smallest singular value.
+Hint: you might use the fact that the matrix products AB and BA have the same
+nonzero eigenvalues. This holds for any A ? C
+m×n
+, B ? C
+n×m
+.
+The goal of the following notes is to give an introduction to perturbation theory of eigenvalues and invariant subspaces.
+11 Some preliminaries
+1.1 The dual basis
+Suppose the columns of V = [v1, . . . , vn] ? F
+n×n
+form a basis of F
+n
+. Then V
+-1
+exists.
+The columns of w1, . . . wn of W := (V
+-1
+)
+*
+are linearly independent and form a basis of
+F
+n
+. This is called the dual to the basis v1, . . . , vn. The identity W*
+V = V
+-1 = I then
+states that
+hwj
+, vki =
+(
+1 if j=k
+0 otherwise.
+The identity I = V V
+-1 = V W*
+yields for any x ? F
+n
+,
+x = V W*
+x =
+Xn
+k=1
+vkhwk, xi.
+Hence, the scalar products hwk, xi are the coordinates of x with respect to the basis
+v1, . . . , vn.
+1.2 Left eigenvectors
+A vector w ? C
+n
+\ {0} is said to be a left eigenvector of A ? C
+n×n
+to the eigenvalue ? ? C
+if
+w
+*
+A = ? w
+*
+.
+By transposing this equation we obtain AT
+w¯ = ? w¯. Hence the left eigenvectors are the
+conjugates of the right eigenvectors of AT
+. Recall that the eigenvalues of A and AT
+are
+the same. It follows that to each eigenvalue ? of A there exists a left eigenvector. Suppose
+A is diagonalizable, i.e.
+A = V ?V
+-1
+, ? = diag(?1, . . . , ?n) (*)
+Then the columns of V form a basis of (right) eigenvectors. However (*) implies that
+W*A = ?W*
+, where W = (V
+-1
+)
+*
+. Equivalently, w
+*
+j A = ?j w
+*
+j
+, j = 1, . . . , n. Thus the
+columns of W (i.e. the conjugates of the rows of V
+-1
+) form a basis of left eigenvectors.
+1.3 The Drazin inverse
+It is a basic fact in linear algebra that for any A ? F
+n×n
+,
+F
+n
+= R(A
+n
+) ? N (A
+n
+).
+The restriction of the linear map x 7? Ax to the A-invariant subspace R(A
+n
+) is invertible
+(one-to-one and onto). Hence, there is a unique matrix AD
+? F
+n×n
+such that ADAx = x
+for x ? R(An
+) and AD
+x = 0 for x ? N (An
+). This matrix is called the Drazin inverse of
+A. Suppose we have a factorization of the form
+A = V
+
+N 0
+0 M
+
+V
+-1
+2with square matrices N, M such that s(N) = {0} and 0 6? s(M). Write V and V
+-1
+in
+the block form
+V = [V1, V2], V
+-1
+=
+
+W*
+1
+W*
+2
+
+,
+where V1, W1 have the same number of columns as N. Then R(V1) = N (An
+), R(V2) =
+R(An
+) and
+A
+D
+= V
+
+0 0
+0 M-1
+
+V
+-1
+= V2M-1W*
+2
+.
+Exercise 1.1 (2 points) Show that AD = A+
+(A+=Moore-Penrose inverse) if A is
+normal.
+1.4 The Sylvester equation
+Proposition 1.2 Let A ? C
+m×m
+, B ? C
+q×q
+, C ? C
+m×q
+. If s(A) n s(B) = Ø then the
+Sylvester equation
+AX - XB = C (1)
+has a unique solution X ? C
+m×q
+.
+Proof: Suppose ?rst that B = [bjk] is upper triangular, i.e. bjk = 0 for j > k. Then
+the diagonal elements bkk are the eigenvalues of B. Let xk, bk, ck denote the kth column
+of X, B, C respectively. Then equation (1) is equivalent to
+ck = Axk - Xbk = Axk -
+Xn
+j=1
+xj bjk = Axk -
+Xk
+j=1
+xj bjk = (A - bkk I)xk -
+Xk-1
+j=1
+xj bjk (2)
+for k = 1, . . . , q. Since bkk is not an eigenvalue of A the matrix A - bkk I is invertible.
+Thus, (2) is equivalent to
+xk = (A - bkk I)
+-1
+ 
+ck +
+Xk-1
+j=1
+xj bjk
+!
+.
+This is a recursion formular for the computation of the columns xk. Suppose now that B
+is not upper triangular. Let B = V B0V
+*
+be a Schur decomposition with unitary V and
+upper triangular B0. By multiplying (1) with V
+*
+from the left and V from the right we
+obtain the equivalent equation
+V
+*
+AV
+| {z }
+=:A0
+V
+*
+XV
+| {z }
+=:X0
+- V
+*
+XV
+| {z }
+=X0
+B0 = V
+*
+CV
+| {z }
+=:C0
+Now we can apply the method above to compute the columns of X0. 
+31.5 Continuity of eigenvalues
+Proposition 1.3 Let ?0 ? C be an eigenvalue of A0 ? C
+n×n
+of algebraic multiplicity
+m. Let D ? C be a closed disk about ?0 that contains no other eigenvalue of A0. Then
+there exists an  > 0 such that D contains precisely m eigenvalues (counting algebraic
+multiplicites) of A ? C
+n×n
+if kA - A0k = .
+Proof: Let fA(?) = det(z I - A). By Rouche’s theorem the number of zeros of the
+holomorphic function fA in the interior of the disk D is given by
+m(A) =
+1
+2pi
+Z
+?D
+f
+0
+A(z)
+fA(z)
+dz.
+This integral is well de?ned if fA has no zeros on ?D, the boundary of D. The function
+A 7? m(A) is continuous and has discret values. Hence it is constant on each connected
+component of its domain of de?nition. 
+2 Invariant subspaces
+2.1 De?nition and matrix representation
+Let A ? F
+n×n
+, F = R or C be a square matrix. A subspace V ? F
+n
+is said to be
+A-invariant if AV ? V i.e. v ? V implies Av ? V.
+Exercise 2.1 (3 points) Let V and U be A-invariant subspaces. Show that the subspaces
+U + V = {u + v : u ? U, v ? V},
+U n V = {w : w ? U and w ? V}
+are also A-invariant. Show that the orthogonal complement of V,
+V
+?
+= {w ? C
+n
+: hw, vi = 0 for all v ? V},
+is an invariant subspace of A
+*
+.
+Let vk and `k denote the kth column of V ? F
+n×p
+and L = [`jk] ? F
+p×p
+. Then the matrix
+equation
+AV = V L (3)
+is equivalent to the equations
+Avk = V `k =
+Xp
+j=1
+vj `jk, k = 1, . . . , p. (4)
+These equations state that Avk is a linear combination of the vectors vj
+. Hence, if (3)
+holds then R(V ) is an A-invariant subspace. On the other hand, if the subspace V is
+4A-invariant and v1, . . . vp is any basis of V then (3) holds for some L ? F
+p×p
+. The matrix
+L is said to be the representation of A on V with respect to the basis v1, . . . , vp. Of course
+L depends on the basis. Precisely, let S ? F
+p×p
+be nonsingular. Then the columns of
+Vˆ = V S and the columns of V span the same subspace V. Let Lˆ = S
+-1
+LS. Then the
+equivalence
+AV = V L ? AVˆ = Vˆ Lˆ
+holds. Finally note that if V ? F
+n×n
+is a square matrix whose columns are linearly
+independent then
+AV = V L ? V
+-1
+AV = L ? A = V LV
+-1
+.
+2.2 Examples of invariant subspaces
+Example 1: Let v1, . . . vp ? C
+n
+be eigenvectors of A such that Avk = ?k vk, ?k ? C.
+Then
+A [v1, . . . , vp]
+| {z }
+=V
+= [v1 ?1, . . . , vp ?p] = [v1, . . . , vp] diag(?1, . . . , ?p)
+| {z }
+=?
+.
+Thus, V = R(V ) is A-invariant. Suppose additionaly that p = n and the v1, . . . , vn are
+linearly independent. Then the vectors vk form a basis of C
+n
+, the matrix V is invertible
+and the relation AV = V ? is equivalent to
+A = V ?V
+-1
+. (5)
+The latter factorization is called a diagonalization of A. Thus, A is diagonalizable if and
+only if there exists a basis of eigenvectors. The eigenvectors are then the columns of the
+matrix V in the factorization (5).
+Example 2: A ?nite sequence of of vectors v1, . . . , vp ? C
+n
+is said to be a Jordan
+chain of A ? C
+n×n
+to the eigenvalue ? ? C if Av1 = ? v1 and Avk = ? vk + vk-1 for
+1 < k = p. The latter relations are equivalent to the matrix equation
+A [v1, . . . , vp]
+| {z }
+=V
+= V J, where J =
+?
+?
+?
+?
+?
+? 1
+? 1
+.
+.
+.
+.
+.
+.
+? 1
+?
+?
+?
+?
+?
+?
+.
+Thus, range V is an invariant subspace. The matrix J is called a Jordan block. Note
+that if one ommits the last vectors of the chain then one obtains a shorter Jordan chain
+v1, . . . , vq, q < p which also forms an invariant subspace (with a shorter Jordan block).
+The Jordan canonical form theorem states that to each A ? C
+n×n
+there exists a basis of
+C
+n
+consisting of Jordan chains. Let vi1, . . . , vipi
+, i = 1, . . . , r (
+P
+i
+pi = n), be such a basis,
+
+
+  
+  
+  
+ 
+
+                          
+  
+ 

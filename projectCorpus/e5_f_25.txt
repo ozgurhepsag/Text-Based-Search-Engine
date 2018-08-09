@@ -1,0 +1,354 @@
+English is a West Germanic language, related to and classified alongside Dutch and German. The language arose in the Anglo-Saxon kingdoms of England and spread into what was to become south-east Scotland under the influence of the Anglian medieval kingdom of Northumbria. Following the economic, political, military, scientific, cultural, and colonial influence of Great Britain and the United Kingdom from the 18th century, via the British Empire, and of the United States since the mid-20th century,[5][6][7][8] it has been widely dispersed around the world, become the leading language of international discourse, and has acquired use as lingua franca in many regions.[9][10] It is widely learned as a second language and used as an official language of the European Union and many Commonwealth countries, as well as in many world organizations. It is the third most natively spoken language in the world, after Mandarin Chinese and Spanish.[11] It is the most widely spoken language across the world.[12]
+Historically, English originated from the fusion of languages and dialects, now collectively termed Old English, which were brought to the eastern coast of Great Britain by Germanic (Anglo-Saxon) settlers by the 5th century – with the word English being derived from the name of the Angles, and ultimately from their ancestral region of Angeln (in what is now Schleswig-Holstein).[13] A significant number of English words are constructed based on roots from Latin, because Latin in some form was the lingua franca of the Christian Church and of European intellectual life.[14] The language was further influenced by the Old Norse language due to Viking invasions in the 8th and 9th centuries.
+The Norman conquest of England in the 11th century gave rise to heavy borrowings from Norman-French, and vocabulary and spelling conventions began to give the superficial appearance of a close relationship with Romance languages[15][16] to what had now become Middle English. The Great Vowel Shift that began in the south of England in the 15th century is one of the historical events that mark the emergence of Modern English from Middle English.
+Owing to the significant assimilation of various European languages throughout history, modern English contains a very large vocabulary. The Oxford English Dictionary lists over 250,000 distinct words, not including many technical or slang terms, or words that belong to multiple word classes.[17][18]
+Contents [hide]
+1 Significance
+2 History
+3 Classification and related languages
+4 Geographical distribution
+4.1 Countries in order of total speakers
+4.2 Countries where English is a major language
+4.3 English as a global language
+4.4 Dialects and regional varieties
+4.5 Constructed varieties of English
+5 Phonology
+5.1 Vowels
+5.1.1 Notes for vowels
+5.2 Consonants
+5.2.1 Notes for consonants
+5.2.2 Voicing and aspiration
+5.3 Supra-segmental features
+5.3.1 Tone groups
+5.3.2 Characteristics of intonation—stress
+6 Grammar
+7 Vocabulary
+7.1 Number of words in English
+7.2 Word origins
+7.2.1 French origins
+7.2.2 Old Norse origins
+7.2.3 Dutch and Low German origins
+8 Writing system
+8.1 Basic consonant sound-letter correspondence
+8.2 Written accents
+9 Formal written English
+10 Basic and simplified versions
+11 See also
+12 References
+12.1 Bibliographic
+13 External links
+Significance
+
+See also: English-speaking world and Anglosphere
+Modern English, sometimes described as the first global lingua franca,[19][20] is the dominant language or in some instances even the required international language of communications, science, information technology, business, seafaring,[21] aviation,[22] entertainment, radio and diplomacy.[23] Its spread beyond the British Isles began with the growth of the British Empire, and by the late 19th century its reach was truly global .[3] Following British colonisation from the 16th to 19th centuries, it became the dominant language in the United States, Canada, Australia and New Zealand. The growing economic and cultural influence of the US and its status as a global superpower since World War II have significantly accelerated the language's spread across the planet.[20] English replaced German as the dominant language of science Nobel Prize laureates during the second half of the 20th century[24] (compare the Evolution of Nobel Prizes by country). English equalled and may have surpassed French as the dominant language of diplomacy during the last half of the 19th century.
+A working knowledge of English has become a requirement in a number of fields, occupations and professions such as medicine and computing; as a consequence over a billion people speak English to at least a basic level (see English language learning and teaching). It is one of six official languages of the United Nations.
+One impact of the growth of English is the reduction of native linguistic diversity in many parts of the world. Its influence continues to play an important role in language attrition.[25] Conversely, the natural internal variety of English along with creoles and pidgins have the potential to produce new distinct languages from English over time.[26]
+History
+
+Main article: History of the English language
+English is a West Germanic language that originated from the Anglo-Frisian and Old Saxon dialects brought to Britain by Germanic settlers from various parts of what is now northwest Germany, Denmark and the Netherlands.[27] Up to that point, in Roman Britain the native population is assumed to have spoken the Celtic language Brythonic alongside the acrolectal influence of Latin, from the 400-year Roman occupation.[28]
+One of these incoming Germanic tribes was the Angles,[29] whom Bede believed to have relocated entirely to Britain.[30] The names 'England' (from Engla land[31] "Land of the Angles") and English (Old English Englisc[32]) are derived from the name of this tribe—but Saxons, Jutes and a range of Germanic peoples from the coasts of Frisia, Lower Saxony, Jutland and Southern Sweden also moved to Britain in this era.[33][34][35]
+Initially, Old English was a diverse group of dialects, reflecting the varied origins of the Anglo-Saxon kingdoms of Great Britain[36] but one of these dialects, Late West Saxon, eventually came to dominate, and it is in this that the poem Beowulf is written.
+Old English was later transformed by two waves of invasion. The first was by speakers of the North Germanic language branch when Halfdan Ragnarsson and Ivar the Boneless started the conquering and colonisation of northern parts of the British Isles in the 8th and 9th centuries (see Danelaw). The second was by speakers of the Romance language Old Norman in the 11th century with the Norman conquest of England. Norman developed into Anglo-Norman, and then Anglo-French – and introduced a layer of words especially via the courts and government. As well as extending the lexicon with Scandinavian and Norman words these two events also simplified the grammar and transformed English into a borrowing language—more than normally open to accept new words from other languages.
+The linguistic shifts in English following the Norman invasion produced what is now referred to as Middle English, with Geoffrey Chaucer's The Canterbury Tales being the best known work.
+Throughout all this period Latin in some form was the lingua franca of European intellectual life, first the Medieval Latin of the Christian Church, but later the humanist Renaissance Latin, and those that wrote or copied texts in Latin[14] commonly coined new terms from Latin to refer to things or concepts for which there was no existing native English word.
+Modern English, which includes the works of William Shakespeare[37] and the King James Bible, is generally dated from about 1550, and when the United Kingdom became a colonial power, English served as the lingua franca of the colonies of the British Empire. In the post-colonial period, some of the newly created nations which had multiple indigenous languages opted to continue using English as the lingua franca to avoid the political difficulties inherent in promoting any one indigenous language above the others. As a result of the growth of the British Empire, English was adopted in North America, India, Africa, Australia and many other regions, a trend extended with the emergence of the United States as a superpower in the mid-20th century.
+Classification and related languages
+
+The English language belongs to the Anglo-Frisian sub-group of the West Germanic branch of the Germanic family, a member of the Indo-European languages. Modern English is the direct descendant of Middle English, itself a direct descendant of Old English, a descendant of Proto-Germanic. Typical of most Germanic languages, English is characterised by the use of modal verbs, the division of verbs into strong and weak classes, and common sound shifts from Proto-Indo-European known as Grimm's Law. The closest living relatives of English are the Scots language (spoken primarily in Scotland and parts of Ireland) and Frisian (spoken on the southern fringes of the North Sea in Denmark, the Netherlands, and Germany).
+After Scots and Frisian come those Germanic languages that are more distantly related: the non-Anglo-Frisian West Germanic languages (Dutch, Afrikaans, Low German, High German), and the North Germanic languages (Swedish, Danish, Norwegian, Icelandic, and Faroese). With the (partial) exception of Scots, none of the other languages is mutually intelligible with English, owing in part to the divergences in lexis, syntax, semantics, and phonology, and to the isolation afforded to the English language by the British Isles, although some, such as Dutch, do show strong affinities with English, especially to earlier stages of the language. Isolation has allowed English and Scots (as well as Icelandic and Faroese) to develop independently of the Continental Germanic languages and their influences over time.[38]
+In addition to isolation, lexical differences between English and other Germanic languages exist due to heavy borrowing in English of words from Latin and French. For example, compare "exit" (Latin), vs. Dutch uitgang, literally "out-going" (though outgang survives dialectally in restricted usage) and "change" (French) vs. German Änderung (literally "alteration, othering"); "movement" (French) vs. German Bewegung ("be-way-ing", i.e. "proceeding along the way"); etc. Preference of one synonym over another also causes differentiation in lexis, even where both words are Germanic, as in English care vs. German Sorge. Both words descend from Proto-Germanic *karo and *surgo respectively, but *karo has become the dominant word in English for "care" while in German, Dutch, and Scandinavian languages, the *surgo root prevailed. *Surgo still survives in English, however, as sorrow.
+Despite lexical borrowing, English retains its classification as a Germanic language due to its structure and grammar. Non-native words are incorporated into a Germanic system of conjugation, declension, and syntax (For example, the word reduce is borrowed from Latin reducere; however, in English we say "I reduce - I reduced - I will reduce" rather than "reduco - reduxi - reducam"; likewise, we say: "John's life insurance company" rather than "the company of insurance life of John", cf. the French: la compagnie d'assurance-vie de John). Furthermore, in English, all basic grammatical particles added to nouns, verbs, adjectives, and adverbs are Germanic. For nouns, these include the normal plural marker -s/-es, and the possessive markers -'s and -s' . For verbs, these include the third person present ending -s/-es (e.g. he stands/he reaches ), the present participle ending -ing, the simple past tense and past participle ending -ed, and the formation of the English infinitive using to (e.g. "to drive"; cf. Old English to drifenne). Adverbs generally receive an -ly ending, and adjectives and adverbs are inflected for the comparative and superlative using -er and -est (e.g. fast/faster/fastest), or through a combination with more and most. These particles append freely to all English words regardless of origin (tsunamis; communicates; to buccaneer; during; calmer; bizarrely) and all derive from Old English. Even the lack or absence of affixes, known as zero or null (-Ø) affixes, derive from endings which previously existed in Old English (usually -e, -a, -u, -o, -an, etc.), that later weakened to -e, and have since ceased to be pronounced and spelt (e.g. Modern English "I sing" = I sing-Ø < I singe < Old English ic singe; "we thought" = we thought-Ø < we thoughte(n) < Old English we þohton).
+Although the syntax of English is somewhat different from that of other West Germanic languages with regards to the placement and order of verbs (for example, "I have never seen anything in the square" = German Ich habe nie etwas auf dem Platz gesehen, and the Dutch Ik heb nooit iets op het plein gezien, where the participle is placed at the end), English syntax continues to adhere closely to that of the North Germanic languages, which are believed to have influenced English syntax during the Middle English Period (e.g., Danish Jeg har aldrig set noget på torvet; Icelandic Ég hef aldrei séð neitt á torginu). As in most Germanic languages, English adjectives usually come before the noun they modify, even when the adjective is of Latinate origin (e.g. medical emergency, national treasure). Also, English continues to make extensive use of self-explaining compounds (e.g. streetcar, classroom), and nouns which serve as modifiers (e.g. lamp post, life insurance company), traits inherited from Old English (See also Kenning).
+The kinship with other Germanic languages can also be seen in the tensing of English verbs (e.g. English fall/fell/fallen/will or shall fall, West Frisian fal/foel/fallen/sil falle, Dutch vallen/viel/gevallen/zullen vallen, German fallen/fiell/gefallen/werden fallen, Norwegian faller/falt/falt/vil or skal falle), the comparatives of adjectives and adverbs (e.g. English good/better/best, West Frisian goed/better/best, Dutch goed/beter/best, German gut/besser/best), the treatment of nouns (English shoemaker, shoemaker's, shoemakers, shoemakers'; Dutch schoenmaker, schoenmakers, schoenmakers, schoenmakeren; Swedish skomaker, skomakers, skomakere, skomakere), and the large amount of cognates (e.g. English wet, Scots weet, West Frisian wiet, Swedish våt; English send, Dutch zenden, German senden; English meaning, Swedish mening, Icelandic meining, etc.). It also gives rise to false friends (e.g. English time vs Norwegian time, meaning "hour"; English gift vs German Gift, meaning "poison"), while differences in phonology can obscure words that really are related (tooth vs. German Zahn; compare also Danish tand). Sometimes both semantics and phonology are different (German Zeit ("time") is related to English "tide", but the English word, through a transitional phase of meaning "period"/"interval", has come primarily to mean gravitational effects on the ocean by the moon, though the original meaning is preserved in forms like tidings and betide, and phrases such as to tide over).[citation needed]
+Many North Germanic words entered English due to the settlement of Viking raiders and Danish invasions which began around the 9th century (see Danelaw). Many of these words are common words, often mistaken for being native, which shows how close-knit the relations between the English and the Scandinavian settlers were (See below: Old Norse origins). Dutch and Low German also had a considerable influence on English vocabulary, contributing common everyday terms and many nautical and trading terms (See below: Dutch and Low German origins).
+Finally, English has been forming compound words and affixing existing words separately from the other Germanic languages for over 1500 years and has different habits in that regard. For instance, abstract nouns in English may be formed from native words by the suffixes "-hood", "-ship", "-dom" and "-ness". All of these have cognate suffixes in most or all other Germanic languages, but their usage patterns have diverged, as German "Freiheit" vs. English "freedom" (the suffix "-heit" being cognate of English "-hood", while English "-dom" is cognate with German "-tum"). The Germanic languages Icelandic and Faroese also follow English in this respect, since, like English, they developed independent of German influences.
+Many French words are also intelligible to an English speaker, especially when they are seen in writing (as pronunciations are often quite different), because English absorbed a large vocabulary from Norman and French, via Anglo-Norman after the Norman Conquest, and directly from French in subsequent centuries. As a result, a large portion of English vocabulary is derived from French, with some minor spelling differences (e.g. inflectional endings, use of old French spellings, lack of diacritics, etc.), as well as occasional divergences in meaning of so-called false friends: for example, compare "library" with the French librairie, which means bookstore; in French, the word for "library" is bibliothèque. The pronunciation of most French loanwords in English (with the exception of a handful of more recently borrowed words such as mirage, genre, café; or phrases like coup d’état, rendez-vous, etc.) has become largely anglicised and follows a typically English phonology and pattern of stress (compare English "nature" vs. French nature, "button" vs. bouton, "table" vs. table, "hour" vs. heure, "reside" vs. résider, etc.).
+Geographical distribution
+
+See also: List of countries by English-speaking population
+
+
+Pie chart showing the relative numbers of native English speakers in the major English-speaking countries of the world
+Approximately 375 million people speak English as their first language.[39] English today is probably the third largest language by number of native speakers, after Mandarin Chinese and Spanish.[11][40] However, when combining native and non-native speakers it is probably the most commonly spoken language in the world, though possibly second to a combination of the Chinese languages (depending on whether or not distinctions in the latter are classified as "languages" or "dialects").[41][42]
+Estimates that include second language speakers vary greatly from 470 million to over a billion depending on how literacy or mastery is defined and measured.[43][44] Linguistics professor David Crystal calculates that non-native speakers now outnumber native speakers by a ratio of 3 to 1.[45]
+The countries with the highest populations of native English speakers are, in descending order: United States (215 million),[46] United Kingdom (61 million),[47] Canada (18.2 million),[48] Australia (15.5 million),[49] Nigeria (4 million),[50] Ireland (3.8 million),[47] South Africa (3.7 million),[51] and New Zealand (3.6 million) 2006 Census.[52]
+Countries such as the Philippines, Jamaica and Nigeria also have millions of native speakers of dialect continua ranging from an English-based creole to a more standard version of English. Of those nations where English is spoken as a second language, India has the most such speakers ('Indian English'). Crystal claims that, combining native and non-native speakers, India now has more people who speak or understand English than any other country in the world.[53][54]
+Countries in order of total speakers
+Country	Total	Percent of population	First language	As an additional language	Population	Comment
+United States of America	251,388,301	96%	215,423,557	35,964,744	262,375,152	Source: US Census 2000: Language Use and English-Speaking Ability: 2000, Table 1. Figure for second language speakers are respondents who reported they do not speak English at home but know it "very well" or "well". Note: figures are for population age 5 and older
+India	125,344,736	12%	226,449	86,125,221 second language speakers.
+38,993,066 third language speakers	1,028,737,436	Figures include both those who speak English as a second language and those who speak it as a third language. 2001 figures.[55][56] The figures include English speakers, but not English users.[57]
+Nigeria	79,000,000	53%	4,000,000	>75,000,000	148,000,000	Figures are for speakers of Nigerian Pidgin, an English-based pidgin or creole. Ihemere gives a range of roughly 3 to 5 million native speakers; the midpoint of the range is used in the table. Ihemere, Kelechukwu Uchechukwu. 2006. "A Basic Description and Analytic Treatment of Noun Clauses in Nigerian Pidgin." Nordic Journal of African Studies 15(3): 296–313.
+United Kingdom	59,600,000	98%	58,100,000	1,500,000	60,000,000	Source: Crystal (2005), p. 109.
+Philippines	48,800,000	58%[58]	3,427,000[58]	43,974,000	84,566,000	Total speakers: Census 2000, text above Figure 7. 63.71% of the 66.7 million people aged 5 years or more could speak English. Native speakers: Census 1995, as quoted by Andrew González in The Language Planning Situation in the Philippines, Journal of Multilingual and Multicultural Development, 19 (5&6), 487–525. (1998). Ethnologue lists 3.4 million native speakers with 52% of the population speaking it as an additional language.[58]
+Canada	25,246,220	85%	17,694,830	7,551,390	29,639,030	Source: 2001 Census – Knowledge of Official Languages and Mother Tongue. The native speakers figure comprises 122,660 people with both French and English as a mother tongue, plus 17,572,170 people with English and not French as a mother tongue.
+Australia	18,172,989	92%	15,581,329	2,591,660	19,855,288	Source: 2006 Census.[59] The figure shown in the first language English speakers column is actually the number of Australian residents who speak only English at home. The additional language column shows the number of other residents who claim to speak English "well" or "very well". Another 5% of residents did not state their home language or English proficiency.
+Note: Total = First language + Other language; Percentage = Total / Population
+Countries where English is a major language
+English is the primary language in Anguilla, Antigua and Barbuda, Australia, the Bahamas, Barbados, Belize, Bermuda, the British Indian Ocean Territory, the British Virgin Islands, Canada, the Cayman Islands, Dominica, the Falkland Islands, Gibraltar, Grenada, Guam, Guernsey, Guyana, Ireland, the Isle of Man, Jamaica, Jersey, Montserrat, Nauru, New Zealand, Pitcairn Islands, Saint Helena, Ascension and Tristan da Cunha, Saint Kitts and Nevis, Saint Vincent and the Grenadines, Singapore, South Georgia and the South Sandwich Islands, Trinidad and Tobago, the Turks and Caicos Islands, the United Kingdom and the United States.
+In some countries where English is not the most spoken language, it is an official language; these countries include Botswana, Cameroon, the Federated States of Micronesia, Fiji, Gambia, Ghana, India, Kenya, Kiribati, Lesotho, Liberia, Madagascar, Malta, the Marshall Islands, Mauritius, Namibia, Nigeria, Pakistan, Palau, Papua New Guinea, the Philippines (Philippine English), Rwanda, Saint Lucia, Samoa, Seychelles, Sierra Leone, the Solomon Islands, Sri Lanka, Sudan, South Sudan, Swaziland, Tanzania, Uganda, Zambia, and Zimbabwe.
+It is also one of the 11 official languages that are given equal status in South Africa (South African English). English is also the official language in current dependent territories of Australia (Norfolk Island, Christmas Island and Cocos Island) and of the United States (American Samoa, Guam, Northern Mariana Islands, Puerto Rico, and the US Virgin Islands),[60] and the former British colony of Hong Kong. (See List of countries where English is an official language for more details.)
+English is not an official language in the United States.[61] Although the United States federal government has no official languages, English has been given official status by 30 of the 50 state governments.[62] Although falling short of official status, English is also an important language in several former colonies and protectorates of the United Kingdom, such as Bahrain, Bangladesh, Brunei, Cyprus, Malaysia, and the United Arab Emirates.
+English as a global language
+See also: English in computing, International English, World language, and English as a foreign or second language
+Because English is so widely spoken, it has often been referred to as a "world language", the lingua franca of the modern era,[20] and while it is not an official language in most countries, it is currently the language most often taught as a foreign language. Some linguists believe that it is no longer the exclusive cultural property of "native English speakers", but is rather a language that is absorbing aspects of cultures worldwide as it continues to grow.[20] It is, by international treaty, the official language for aerial and maritime communications.[63] English is an official language of the United Nations and many other international organisations, including the International Olympic Committee.
+English is the language most often studied as a foreign language in the European Union, by 89% of schoolchildren, ahead of French at 32%, while the perception of the usefulness of foreign languages amongst Europeans is 68% in favour of English ahead of 25% for French.[64] Among some non-English speaking EU countries, a large percentage of the adult population can converse in English – in particular: 85% in Sweden, 83% in Denmark, 79% in the Netherlands, 66% in Luxembourg and over 50% in Finland, Slovenia, Austria, Belgium, and Germany.[65]
+Books, magazines, and newspapers written in English are available in many countries around the world, and English is the most commonly used language in the sciences[20] with Science Citation Index reporting as early as 1997 that 95% of its articles were written in English, even though only half of them came from authors in English-speaking countries.
+This increasing use of the English language globally has had a large impact on many other languages, leading to language shift and even language death,[66] and to claims of linguistic imperialism.[67] English itself is now open to language shift as multiple regional varieties feed back into the language as a whole.[67]
+Dialects and regional varieties
+Main article: List of dialects of the English language
+The expansion of the British Empire and—since World War II—the influence of the United States have spread English around the world.[20] Because of that global spread, English has developed a host of English dialects and English-based creole languages and pidgins.
+Several educated native dialects of English have wide acceptance as standards in much of the world. In the United Kingdom much emphasis is placed on Received Pronunciation, an educated dialect of South East England. General American, which is spread over most of the United States and much of Canada, is more typically the model for the American continents and areas (such as the Philippines) that have had either close association with the United States, or a desire to be so identified. In Oceania, the major native dialect of Australian English is spoken as a first language by the vast majority of the inhabitants of the Australian continent, with General Australian serving as the standard accent. The English of neighbouring New Zealand as well as that of South Africa have to a lesser degree been influential native varieties of the language.
+Aside from these major dialects, there are numerous other varieties of English, which include, in most cases, several subvarieties, such as Cockney, Scouse and Geordie within British English; Newfoundland English within Canadian English; and African American Vernacular English ("Ebonics") and Southern American English within American English. English is a pluricentric language, without a central language authority like France's Académie française; and therefore no one variety is considered "correct" or "incorrect" except in terms of the expectations of the particular audience to which the language is directed.
+Scots has its origins in early Northern Middle English[68] and developed and changed during its history with influence from other sources, but following the Acts of Union 1707 a process of language attrition began, whereby successive generations adopted more and more features from Standard English, causing dialectalisation. Whether it is now a separate language or a dialect of English better described as Scottish English is in dispute, although the UK government now accepts Scots as a regional language and has recognised it as such under the European Charter for Regional or Minority Languages.[69] There are a number of regional dialects of Scots, and pronunciation, grammar and lexis of the traditional forms differ, sometimes substantially, from other varieties of English.
+English speakers have many different accents, which often signal the speaker's native dialect or language. For the most distinctive characteristics of regional accents, see Regional accents of English, and for a complete list of regional dialects, see List of dialects of the English language. Within England, variation is now largely confined to pronunciation rather than grammar or vocabulary. At the time of the Survey of English Dialects, grammar and vocabulary differed across the country, but a process of lexical attrition has led most of this variation to die out.[70]
+Just as English itself has borrowed words from many different languages over its history, English loanwords now appear in many languages around the world, indicative of the technological and cultural influence of its speakers. Several pidgins and creole languages have been formed on an English base, such as Jamaican Patois, Nigerian Pidgin, and Tok Pisin. There are many words in English coined to describe forms of particular non-English languages that contain a very high proportion of English words.
+Constructed varieties of English
+Basic English is simplified for easy international use. Manufacturers and other international businesses tend to write manuals and communicate in Basic English. Some English schools in Asia teach it as a practical subset of English for use by beginners.
+E-Prime excludes forms of the verb to be.
+English reform is an attempt to improve collectively upon the English language.
+Manually Coded English constitutes a variety of systems that have been developed to represent the English language with hand signals, designed primarily for use in deaf education. These should not be confused with true sign languages such as British Sign Language and American Sign Language used in Anglophone countries, which are independent and not based on English.
+Seaspeak and the related Airspeak and Policespeak, all based on restricted vocabularies, were designed by Edward Johnson in the 1980s to aid international cooperation and communication in specific areas. There is also a tunnelspeak for use in the Channel Tunnel.
+Simplified Technical English was historically developed for aerospace industry maintenance manuals and is now used in various industries.
+Special English is a simplified version of English used by the Voice of America. It uses a vocabulary of only 1500 words.
+Phonology
+
+Main article: English phonology
+Vowels
+See also: IPA chart for English dialects
+It is the vowels that differ most from region to region. Length is not phonemic in most varieties of North American English.
+IPA	word
+monophthongs
+i?	bead
+?	bid
+?	bed[vn 1]
+æ	bad[vn 2]
+?	box[vn 3]
+??	pawed[vn 4]
+??	bra
+?	good
+u?	booed[vn 5]
+?[vn 6]	bud
+?r	bird[vn 7]
+?	Rosa's[vn 8]
+?	roses[vn 8][vn 9]
+diphthongs
+e?	bayed[vn 10]
+o?	bode[vn 11][vn 10]
+a?	cry[vn 12]
+a?	cow[vn 13]
+??	boy
+??r	boor[vn 14]
+??r	fair[vn 15]
+Notes for vowels
+^ In RP, this is closer to [e]
+^ In younger speakers of RP, this is closer to [a]
+^ Many American English dialects lack this sound; in such dialects, words with this sound elsewhere are pronounced with /??/ or /??/. See Lot–cloth split.
+^ Some dialects of North American English do not have this vowel. See cot–caught merger.
+^ The letter <U> can represent either /u?/ or the iotated vowel /ju?/. In BRP, if this iotated vowel /ju?/ occurs after /t/, /d/, /s/ or /z/, it often triggers palatalisation of the preceding consonant, turning it to [t??], [d??], [?] and [?] respectively, as in tune, during, sugar, and azure. In American English, palatalisation does not generally happen unless the /ju?/ is followed by r, with the result that /(t, d, s, z)ju?r/ turn to [t??r], [d??r], [??r] and [??r] respectively, as in nature, verdure, sure, and treasure.
+^ The back-vowel symbol ? is conventional for this English central vowel. It is actually generally closer to ?. In the northern half of England, this vowel is not used and ? is used in its place.
+^ The North American variation of this sound is a rhotic vowel [?], the RP version a long central vowel [??].
+^ a b Speakers of some dialects do not distinguish between these unstressed vowels, /?/ and /?/. Called schwa.
+^ This sound is often transcribed with /?/ or with /?/. Closer to [?¨] than to [?].
+^ a b The diphthongs /e?/ and /o?/ are monophthongal [e?] and [o?] in many dialects, including Canadian, Scottish, Irish and Northern English.
+^ In RP and parts of North America, this is closer to [??]. As a reduced vowel, it may become [?] ([??] before another vowel) or [?], depending on accent.
+^ In parts of North America /a?/ is pronounced [??] before voiceless consonants, so that writer and rider and distinguished by their vowels, ['?????, '?a???], rather than their consonants. This is near-universal in Canada, and most non-Southern American English dialects also have undergone the shift; in the 2008 presidential election, both candidates as well as their vice-presidents all used [??] for the word "right".[citation needed] See Canadian raising.
+^ In Canada, /a?/ is pronounced [??] before a voiceless consonant. See Canadian raising.
+^ In many accents, this sound is coming to be pronounced [??(r)] rather than [??(r)]. See English-language vowel changes before historic r.
+^ In some non-rhotic accents, the schwa offglide of /??/ may be dropped, monophthising and lengthening the sound to [??].
+Consonants
+This is the English consonantal system using symbols from the International Phonetic Alphabet (IPA).
+ 	Bilabial	Labio-
+dental	Dental	Alveolar	Post-
+alveolar	Palatal	Velar	Labial-
+velar	Glottal
+Nasal	m	 	 	n	 	 	?[cn 1]		 
+Plosive	p  b	 	 	t  d	 	 	k  g		 
+Affricate	 	 	 	 	t?  d?[cn 2]	 		 	 
+Fricative	 	f  v	?  ð[cn 3]	s  z	?  ?[cn 2]	ç[cn 4]	x[cn 5]		h
+Flap	 	 	 	 	?[cn 6]	 	 		 
+Approximant	 	 	 	?[cn 2]	 	j	 	?  w[cn 7]	 
+Lateral	 	 	 	l	 	 	 		 
+Notes for consonants
+^ The velar nasal [?] is a non-phonemic allophone of /n/ in some northerly British accents, appearing only before /k/ and /g/. In all other dialects it is a separate phoneme, although it only occurs in syllable codas.
+^ a b c The sounds /?/, /?/, and /?/ are labialised in some dialects. Labialisation is never contrastive in initial position and therefore is sometimes not transcribed. Most speakers of General American realise <r> (always rhoticised) as the retroflex approximant /?/, whereas the same is realised in Scottish English, etc. as the alveolar trill.
+^ In some dialects, such as Cockney, the interdentals /?/ and /ð/ have usually merged with /f/ and /v/, and in others, like African American Vernacular English, /ð/ has merged with dental /d/. In some Irish varieties, /?/ and /ð/ become dental plosives, which then contrast with the usual alveolar plosives.
+^ The voiceless palatal fricative /ç/ is in most accents just an allophone of /h/ before /j/; for instance human /çju?m?n/. However, in some accents (see this), the /j/ has dropped, but the initial consonant is the same.
+^ The voiceless velar fricative /x/ is used by Scottish or Welsh speakers of English for Scots/Gaelic words such as loch /l?x/ or by some speakers for loanwords from German and Hebrew like Bach /bax/ or Chanukah /xanuka/. /x/ is also used in South African English. In some dialects such as Scouse (Liverpool) either [x] or the affricate [kx] may be used as an allophone of /k/ in words such as docker [d?kx?].
+^ The alveolar tap [?] is an allophone of /t/ and /d/ in unstressed syllables in North American English and Australian English.[71] This is the sound of tt or dd in the words latter and ladder, which are homophones for many speakers of North American English. In some accents such as Scottish English and Indian English it replaces /?/. This is the same sound represented by single r in most varieties of Spanish.
+^ Voiceless w [?] is found in Scottish and Irish English, as well as in some varieties of American, New Zealand, and English English. In most other dialects it is merged with /w/, in some dialects of Scots it is merged with /f/.
+Voicing and aspiration
+Voicing and aspiration of stop consonants in English depend on dialect and context, but a few general rules can be given:
+Voiceless plosives and affricates (/p/, /t/, /k/, and /t?/) are aspirated when they are word-initial or begin a stressed syllable – compare pin [p??n] and spin [sp?n], crap [k???æp] and scrap [sk?æp].
+In some dialects, aspiration extends to unstressed syllables as well.
+In other dialects, such as Indian English, all voiceless stops remain unaspirated.
+Word-initial voiced plosives may be devoiced in some dialects.
+Word-terminal voiceless plosives may be unreleased or accompanied by a glottal stop in some dialects; examples: tap [t?æp?], sack [sæk?].
+Word-terminal voiced plosives may be devoiced in some dialects (e.g. some varieties of American English) – examples: sad [sæd?], bag [bæ?g°]. In other dialects, they are fully voiced in final position, but only partially voiced in initial position.
+Supra-segmental features
+Tone groups
+English is an intonation language. This means that the pitch of the voice is used syntactically; for example, to convey surprise or irony, or to change a statement into a question.
+In English, intonation patterns are on groups of words, which are called tone groups, tone units, intonation groups, or sense groups. Tone groups are said on a single breath and, as a consequence, are of limited length, more often being on average five words long or lasting roughly two seconds. For example:
+/du? ju? 'ni?d '?n????/ Do you need anything?
+/a? 'do?nt | 'no?/ I don't, no
+/a? do?nt 'no?/ I don't know (contracted to, for example, ['a? do?no?] or ['a?d?no?] I dunno in fast or colloquial speech that de-emphasises the pause between 'don't' and 'know' even further)
+Characteristics of intonation—stress
+English is a strongly stressed language, in that certain syllables, both within words and within phrases, get a relative prominence/loudness during pronunciation while the others do not. The former kind of syllables are said to be accentuated/stressed and the latter are unaccentuated/unstressed. Stress can also be used in English to distinguish between certain verbs and their noun counterparts. For example, in the case of the verb contract, the second syllable is stressed: /k?n.'trækt/; in case of the corresponding noun, the first syllable is stressed: /'k?n.trækt/. Vowels in unstressed syllables can also change in quality, hence the verb contract often becomes (and indeed is listed in Oxford English Dictionary as) /k?n.'trækt/.[72] In each word, there can be only one principal stress, but in long words, there can be secondary stress(es) too, e.g. in civilisation /?s?.v?.la?.'ze?.?n?/, the 1st syllable carries the secondary stress, the 4th syllable carries the primary stress, and the other syllables are unstressed.[73]
+Hence in a sentence, each tone group can be subdivided into syllables, which can either be stressed (strong) or unstressed (weak). The stressed syllable is called the nuclear syllable. For example:
+That | was | the | best | thing | you | could | have | done!
+Here, all syllables are unstressed, except the syllables/words best and done, which are stressed. Best is stressed harder and, therefore, is the nuclear syllable.
+The nuclear syllable carries the main point the speaker wishes to make. For example:
+John had not stolen that money. (... Someone else had.)
+John had not stolen that money. (... Someone said he had. or... Not at that time, but later he did.)
+John had not stolen that money. (... He acquired the money by some other means.)
+John had not stolen that money. (... He had stolen some other money.)
+John had not stolen that money. (... He had stolen something else.)
+Also
+I did not tell her that. (... Someone else told her)
+I did not tell her that. (... You said I did. or... but now I will)
+I did not tell her that. (... I did not say it; she could have inferred it, etc)
+I did not tell her that. (... I told someone else)
+I did not tell her that. (... I told her something else)
+This can also be used to express emotion:
+Oh, really? (...I did not know that)
+Oh, really? (...I disbelieve you. or... That is blatantly obvious)
+The nuclear syllable is spoken more loudly than the others and has a characteristic change of pitch. The changes of pitch most commonly encountered in English are the rising pitch and the falling pitch, although the fall-rising pitch and/or the rise-falling pitch are sometimes used. In this opposition between falling and rising pitch, which plays a larger role in English than in most other languages, falling pitch conveys certainty and rising pitch uncertainty. This can have a crucial impact on meaning, specifically in relation to polarity, the positive–negative opposition; thus, falling pitch means, "polarity known", while rising pitch means "polarity unknown". This underlies the rising pitch of yes/no questions. For example:
+When do you want to be paid?
+Now? (Rising pitch. In this case, it denotes a question: "Can I be paid now?" or "Do you desire to pay now?")
+Now. (Falling pitch. In this case, it denotes a statement: "I choose to be paid now.")
+See also Intonation (linguistics)#Intonation in English.
+Grammar
+
+Main article: English grammar
+English grammar has minimal inflection compared with most other Indo-European languages. For example, Modern English, unlike Modern German or Dutch and the Romance languages, lacks grammatical gender and adjectival agreement. Case marking has almost disappeared from the language and mainly survives in pronouns. The patterning of strong (e.g. speak/spoke/spoken) versus weak verbs (e.g. love/loved or kick/kicked) inherited from its Germanic origins has declined in importance in modern English, and the remnants of inflection (such as plural marking) have become more regular.
+At the same time, the language has become more analytic, and has developed features such as modal verbs and word order as resources for conveying meaning. Auxiliary verbs mark constructions such as questions, negative polarity, the passive voice and progressive aspect.
+Vocabulary
+
+The English vocabulary has changed considerably over the centuries.[74]
+Like many languages deriving from Proto-Indo-European (PIE), many of the most common words in English can trace back their origin (through the Germanic branch) to PIE. Such words include the basic pronouns I, from Old English ic, (cf. German Ich, Gothic ik, Latin ego, Greek ego, Sanskrit aham), me (cf. German mich, mir, Gothic mik, mis, Latin me, Greek eme, Sanskrit mam), numbers (e.g. one, two, three, cf. Dutch een, twee, drie, Gothic ains, twai, threis (þreis), Latin unus, duo, tres, Greek oinos "ace (on dice)", duo, treis), common family relationships such as mother, father, brother, sister etc. (cf. Dutch moeder, Greek meter, Latin mater, Sanskrit mat?; mother), names of many animals (cf. German Maus, Dutch muis, Sanskrit mus, Greek mus, Latin mus; mouse), and many common verbs (cf. Old High German knajan, Old Norse kna, Greek gignomi, Latin gnoscere, Hittite kanes; to know).
+Germanic words (generally words of Old English or to a lesser extent Old Norse origin) tend to be shorter than Latinate words, and are more common in ordinary speech, and include nearly all the basic pronouns, prepositions, conjunctions, modal verbs etc. that form the basis of English syntax and grammar. The shortness of the words is generally due to syncope in Middle English (e.g. OldEng heafod > ModEng head, OldEng sawol > ModEng soul) and to the loss of final syllables due to stress (e.g. OldEng gamen > ModEng game, OldEng ?rende > ModEng errand), not because Germanic words are inherently shorter than Latinate words (the lengthier, higher-register words of Old English were largely forgotten following the subjugation of English after the Norman Conquest, and most of the Old English lexis devoted to literature, the arts, and sciences ceased to be productive when it fell into disuse. Only the shorter, more direct, words of Old English tended to pass into the Modern language.) Consequently, those words which tend to be regarded as elegant or educated in Modern English are usually Latinate. However, the excessive use of Latinate words is considered at times to be either pretentious or an attempt to obfuscate an issue. George Orwell's essay "Politics and the English Language", considered an important scrutinisation of the English language, is critical of this, as well as other perceived misuses of the language.
+An English speaker is in many cases able to choose between Germanic and Latinate synonyms: come or arrive; sight or vision; freedom or liberty. In some cases, there is a choice between a Germanic derived word (oversee), a Latin derived word (supervise), and a French word derived from the same Latin word (survey); or even words derived from Norman French (e.g., warranty) and Parisian French (guarantee), and even choices involving multiple Germanic and Latinate sources are possible: sickness (Old English), ill (Old Norse), infirmity (French), affliction (Latin). Such synonyms harbor a variety of different meanings and nuances. Yet the ability to choose between multiple synonyms is not a consequence of French and Latin influence, as this same richness existed in English prior to the extensive borrowing of French and Latin terms. Old English was extremely resourceful in its ability to express synonyms and shades of meaning on its own, in many respects rivaling or exceeding that of Modern English (synonyms numbering in the thirties for certain concepts were not uncommon). Take for instance the various ways to express the word "astronomer" or "astrologer" in Old English: tunglere, tungolcræftiga, tungolwitega, tidymbwlatend, tidsceawere.[75] In Modern English, however, the role of such synonyms has largely been replaced in favour of equivalents taken from Latin, French, and Greek. Familiarity with the etymology of groups of synonyms can give English speakers greater control over their linguistic register. See: List of Germanic and Latinate equivalents in English, Doublet (linguistics).
+An exception to this and a peculiarity perhaps unique to a handful of languages, English included, is that the nouns for meats are commonly different from, and unrelated to, those for the animals from which they are produced, the animal commonly having a Germanic name and the meat having a French-derived one. Examples include: deer and venison; cow and beef; swine/pig and pork; and sheep/lamb and mutton. This is assumed to be a result of the aftermath of the Norman conquest of England, where an Anglo-Norman-speaking elite were the consumers of the meat, produced by lower classes, which happened to be largely Anglo-Saxon, though this same duality can also be seen in other languages like French, which did not undergo such linguistic upheaval (e.g. boeuf "beef" vs. vache "cow"). With the exception of beef and pork, the distinction today is gradually becoming less and less pronounced (venison is commonly referred to simply as deer meat, mutton is lamb, and chicken is both the animal and the meat over the more traditional term poultry. (Use of the term mutton, however, remains, especially when referring to the meat of an older sheep, distinct from lamb; and poultry remains when referring to the meat of birds and fowls in general. Use of the term swineflesh for pork, is also widespread, especially in religious contexts.)
+There are Latinate words that are used in everyday speech. These words no longer appear Latinate and oftentimes have no Germanic equivalents. For instance, the words mountain, valley, river, aunt, uncle, move, use, push and stay ("to remain") are Latinate. Likewise, the inverse can occur: acknowledge, meaningful, understanding, mindful, behaviour, forbearance, behoove, forestall, allay, rhyme, starvation, embodiment come from Anglo-Saxon, and allegiance, abandonment, debutant, feudalism, seizure, guarantee, disregard, wardrobe, disenfranchise, disarray, bandolier, bourgeoisie, debauchery, performance, furniture, gallantry are of Germanic origin, usually through the Germanic element in French, so it is oftentimes impossible to know the origin of a word based on its register.
+English easily accepts technical terms into common usage and often imports new words and phrases. Examples of this phenomenon include contemporary words such as cookie, Internet and URL (technical terms), as well as genre, über, lingua franca and amigo (imported words/phrases from French, German, Italian, and Spanish, respectively). In addition, slang often provides new meanings for old words and phrases. In fact, this fluidity is so pronounced that a distinction often needs to be made between formal forms of English and contemporary usage.
+See also: sociolinguistics
+Number of words in English
+The General Explanations at the beginning of the Oxford English Dictionary states:
+The Vocabulary of a widely diffused and highly cultivated living language is not a fixed quantity circumscribed by definite limits... there is absolutely no defining line in any direction: the circle of the English language has a well-defined centre but no discernible circumference.
+The current FAQ for the OED further states:
+How many words are there in the English language? There is no single sensible answer to this question. It's impossible to count the number of words in a language, because it's so hard to decide what actually counts as a word.[76]
+The vocabulary of English is undoubtedly vast, but assigning a specific number to its size is more a matter of definition than of calculation. Unlike other languages such as French (the Académie française), German (Rat für deutsche Rechtschreibung), Spanish (Real Academia Española) and Italian (Accademia della Crusca), there is no academy to define officially accepted words and spellings. Neologisms are coined regularly in medicine, science, technology and other fields, and new slang is constantly developed. Some of these new words enter wide usage; others remain restricted to small circles. Foreign words used in immigrant communities often make their way into wider English usage. Archaic, dialectal, and regional words might or might not be widely considered as "English".
+The Oxford English Dictionary, 2nd edition (OED2) includes over 600,000 definitions, following a rather inclusive policy:
+It embraces not only the standard language of literature and conversation, whether current at the moment, or obsolete, or archaic, but also the main technical vocabulary, and a large measure of dialectal usage and slang (Supplement to the OED, 1933).[77]
+The editors of Webster's Third New International Dictionary, Unabridged (475,000 main headwords) in their preface, estimate the number to be much higher. It is estimated that about 25,000 words are added to the language each year.[78]
+The Global Language Monitor announced that the English language had crossed the 1,000,000-word threshold on 10 June 2009.[79] The announcement was met with strong scepticism by linguists and lexicographers,[80] though a number of non-specialist reports[81][82] accepted the figure uncritically. However, in December 2010 a joint Harvard/Google study found the language to contain 1,022,000 words and was expanding at the rate of 8,500 words per year.[83] The findings came from the computer analysis of 5,195,769 digitised books. The difference between the Google/Harvard estimate and that of the Global Language Monitor is about thirteen thousandth of one percent.
+Comparisons of the vocabulary size of English to that of other languages are generally not taken very seriously by linguists and lexicographers. Besides the fact that dictionaries will vary in their policies for including and counting entries,[84] what is meant by a given language and what counts as a word do not have simple definitions. Also, a definition of word that works for one language may not work well in another,[85] with differences in morphology and orthography making cross-linguistic definitions and word-counting difficult, and potentially giving very different results.[86] Linguist Geoffrey K. Pullum has gone so far as to compare concerns over vocabulary size (and the notion that a supposedly larger lexicon leads to "greater richness and precision") to an obsession with penis length.[87]
+Word origins
+Main article: Lists of English loanwords by country or language of origin
+One of the consequences of the French influence is that the vocabulary of English is, to a certain extent, divided between those words that are Germanic (mostly West Germanic, with a smaller influence from the North Germanic branch) and those that are "Latinate" (derived directly from Latin, or through Norman French or other Romance languages). The situation is further compounded, as French, particularly Old French and Anglo-French, were also contributors in English of significant numbers of Germanic words, mostly from the Frankish element in French (see List of English Latinates of Germanic origin).
+The majority (estimates range from roughly 50%[88] to more than 80%[89]) of the thousand most common English words are Germanic. However, the majority of more advanced words in subjects such as the sciences, philosophy and mathematics come from Latin or Greek, with Arabic also providing many words in astronomy, mathematics, and chemistry.[90]
+Source of the most frequent 7,476 English words
+1st 100	1st 1,000	2nd 1,000	Subsequent
+Germanic	97%	57%	39%	36%
+Italic	3%	36%	51%	51%
+Hellenic	0	4%	4%	7%
+Others	0	3%	6%	6%
+Source: Nation 2001, p. 265
+Numerous sets of statistics have been proposed to demonstrate the proportionate origins of English vocabulary. None, as of yet, is considered definitive by most linguists.
+A computerised survey of about 80,000 words in the old Shorter Oxford Dictionary (3rd ed.) was published in Ordered Profusion by Thomas Finkenstaedt and Dieter Wolff (1973)[91] that estimated the origin of English words as follows:
+
+
+Influences in English vocabulary
+Langue d'oïl, including French and Old Norman: 28.3%
+Latin, including modern scientific and technical Latin: 28.24%
+Germanic languages (including words directly inherited from Old English; does not include Germanic words coming from the Germanic element in French, Latin or other Romance languages): 25%
+Greek: 5.32%
+No etymology given: 4.03%
+Derived from proper names: 3.28%
+All other languages: less than 1%
+A survey by Joseph M. Williams in Origins of the English Language of 10,000 words taken from several thousand business letters gave this set of statistics:[92]
+French (langue d'oïl): 41%
+"Native" English: 33%
+Latin: 15%
+Old Norse: 2%
+Dutch: 1%
+Other: 10%
+French origins
+Main article: List of English words of French origin
+A large portion of English vocabulary is of French or Langues d'oïl origin, and was transmitted to English via the Anglo-Norman language spoken by the upper classes in England in the centuries following the Norman Conquest. Words of Norman-French origin include competition, mountain, art, table, publicity, police, role, routine, machine and force. As a result of the length of time they have been in use in English, these words have been anglicised to fit English rules of phonology, pronunciation and spelling.
+Some French words were adopted during the 17th to 19th centuries, when French was the dominant language of Western international politics and trade. These words can normally be distinguished because they retain French rules for pronunciation and spelling, including diacritics, are often phrases rather than single words, and are sometimes written in italics. Examples include façade, table d'hôte and affaire de cœur. These words and phrases retain their French spelling and pronunciation because historically their French origin was emphasised to denote the speaker as educated or well-travelled at a time when education and travelling was still restricted to the middle and upper classes, and so their use implied a higher social status in the user. (See also: French phrases used by English speakers).
+Old Norse origins
+Main article: List of English words of Old Norse origin
+Many words of Old Norse origin have entered the English language, primarily from the Viking colonisation of eastern and northern England between 800–1000 CE during the Danelaw. These include common words such as anger, awe, bag, big, birth, blunder, both, cake, call, cast, cosy, cross, cut, die, dirt, drag, drown, egg, fellow, flat, flounder, gain, get, gift, give, guess, guest, gust, hug, husband, ill, kid, law, leg, lift, likely, link, loan, loose, low, mistake, odd, race (running), raise, root, rotten, same, scale, scare, score, seat, seem, sister, skill, skin, skirt, skull, sky, stain, steak, sway, take, though, thrive, Thursday, tight, till (until), trust, ugly, want, weak, window, wing, wrong, the pronoun they (and its forms), and even the verb are (the present plural form of to be) through a merger of Old English and Old Norse cognates.[93] More recent Scandinavian imports include angstrom, fjord, geyser, kraken, litmus, nickel, ombudsman, saga, ski, slalom, smorgasbord, and tungsten.
+Dutch and Low German origins
+Main article: List of English words of Dutch origin
+Many words describing the navy, types of ships, and other objects or activities on the water are of Dutch origin. Yacht, skipper, cruiser, flag, freight, furlough, breeze, hoist, iceberg, boom, duck ("fabric, cloth"), and maelstrom are examples. Other words pertain to art and daily life: easel, etch, slim, staple (Middle Dutch stapel "market"), slip (Middle Dutch slippen), landscape, cookie, curl, shock, aloof, boss, brawl (brallen "to boast"), smack (smakken "to hurl down"), shudder, scum, peg, coleslaw, waffle, dope (doop "dipping sauce"), slender (Old Dutch slinder), slight, gas, pump. Dutch has also contributed to English slang, e.g. spook, and the now obsolete snyder (tailor) and stiver (small coin).
+Words from Low German include bluster, cower, dollar, drum, geek, grab, lazy, mate, monkey, mud, ogle, orlop, paltry, poll, poodle, prong, scurvy, smug, smuggle, trade.
+Writing system
+
+Main articles: English alphabet and English orthography
+Since around the 9th century, English has been written in the Latin alphabet, which replaced Anglo-Saxon runes. The spelling system, or orthography, is multilayered, with elements of French, Latin and Greek spelling on top of the native Germanic system; it has grown to vary significantly from the phonology of the language. The spelling of words often diverges considerably from how they are spoken.
+Though letters and sounds may not correspond in isolation, spelling rules that take into account syllable structure, phonetics, and accents are 75% or more reliable.[94] Some phonics spelling advocates claim that English is more than 80% phonetic.[95] However, English has fewer consistent relationships between sounds and letters than many other languages; for example, the letter sequence ough can be pronounced in 10 different ways. The consequence of this complex orthographic history is that reading can be challenging.[96]
+It takes longer for students to become completely fluent readers of English than of many other languages, including French, Greek, and Spanish.[97] "English-speaking children take up to two years more to learn reading than do children in 12 other European countries."(Professor Philip H K Seymour, University of Dundee, 2001)[98] "[dyslexia] is twice as prevalent among dyslexics in the United States (and France) as it is among Italian dyslexics. Again, this is seen to be because of Italian's 'transparent' orthography." (Eraldo Paulesu and 11 others. Science, 2001)[98]
+Basic consonant sound-letter correspondence
+See also: Hard and soft C and Hard and soft G
+IPA	Alphabetic representation	Dialect-specific
+p	p	
+b	b	
+t	t, th (rarely) thyme, Thames	th thing (African American, New York)
+d	d	th that (African American, New York)
+k	c (+ a, o, u, consonants), k, ck, ch, qu (rarely) conquer, kh (in foreign words)	
+g	g, gh, gu (+ a, e, i), gue (final position)	
+m	m	
+n	n	
+?	n (before g or k), ng	
+f	f, ph, gh (final, infrequent) laugh, rough	th thing (many forms of English language in England)
+v	v	th with (Cockney, Estuary English)
+?	th thick, think, through	
+ð	th that, this, the	
+s	s, c (+ e, i, y), sc (+ e, i, y), ç often c (façade/facade)	
+z	z, s (finally or occasionally medially), ss (rarely) possess, dessert, word-initial x xylophone	
+?	sh, sch (some dialects) schedule (plus words of German origin), ti (before vowel) portion, ci/ce (before vowel) suspicion, ocean; si/ssi (before vowel) tension, mission; ch (esp. in words of French origin); rarely s/ss before u sugar, issue; chsi in fuchsia only	
+?	medial si (before vowel) division, medial s (before "ur") pleasure, zh (in foreign words), z before u azure, g (in words of French origin) (+e, i, y) genre, j (in words of French origin) bijou	
+x	kh, ch, h (in foreign words)	occasionally ch loch (Scottish English, Welsh English)
+h	h (syllable-initially, otherwise silent), j (in words of Spanish origin) jai alai	
+t?	ch, tch, t before u future, culture	t (+ u, ue, eu) tune, Tuesday, Teutonic (several dialects – see Phonological history of English consonant clusters)
+d?	j, g (+ e, i, y), dg (+ e, i, consonant) badge, judg(e)ment	d (+ u, ue, ew) dune, due, dew (several dialects – another example of yod coalescence)
+?	r, wr (initial) wrangle	
+j	y (initially or surrounded by vowels), j hallelujah	
+l	l	
+w	w	
+?	wh (pronounced hw)	Scottish and Irish English, as well as some varieties of American, New Zealand, and English English
+Written accents
+
+This section does not cite any references or sources. Please help improve this section by adding citations to reliable sources. Unsourced material may be challenged and removed. (February 2011)
+Main article: English words with diacritics
+Unlike most other Germanic languages, English has almost no diacritics except in foreign loanwords (like the acute accent in café), and in the uncommon use of a diaeresis mark (often in formal writing) to indicate that two vowels are pronounced separately, rather than as one sound (e.g. naïve, Zoë). Words such as décor, café, résumé/resumé, entrée, fiancée and naïve are frequently spelled both with or without diacritics. Some accented words are used in both male and female versions, for example fiancée (female) and fiancé (male). Both spellings are mostly with the accent, but they may be written without the accent. The female word née in English refers to "maiden name" or literally "born as". The male version né is seldom used for a man, unless in rare cases where a man had changed his name by deed poll or on marriage or as an alias.
+Some English words retain diacritics to distinguish them from others, such as resumé, exposé, lamé, öre, pâté, piqué, and rosé, though these are sometimes also dropped (for example, melée/melee and résumé/resumé, is often spelt resume in the United States (as the US equivalent of curriculum vitae). To clarify pronunciation, a small number of loanwords may employ a diacritic that does not appear in the original word, such as maté, from Spanish yerba mate, or Malé, the capital of the Maldives, following the French usage.
+Formal written English
+
+Main article: Formal written English
+A version of the language almost universally agreed upon by educated English speakers around the world is called formal written English. It takes virtually the same form regardless of where it is written, in contrast to spoken English, which differs significantly between dialects, accents, and varieties of slang and of colloquial and regional expressions. Local variations in the formal written version of the language are quite limited, being restricted largely to minor spelling, lexical and grammatical differences between British, American, Canadian and Australian English.
+Basic and simplified versions
+
+To make English easier to read, there are some simplified versions of the language. One basic version is named Basic English, a constructed language with a small number of words created by Charles Kay Ogden and described in his book Basic English: A General Introduction with Rules and Grammar (1930). The language is based on a simplified version of English. Ogden said that it would take seven years to learn English, seven months for Esperanto, and seven weeks for Basic English. Thus, Basic English may be employed by companies that need to make complex books for international use, as well as by language schools that need to give people some knowledge of English in a short time.
+Ogden did not include any words in Basic English that could be said with a combination of other words, and he worked to make the vocabulary suitable for speakers of any other language. He put his vocabulary selections through a large number of tests and adjustments. Ogden also simplified the grammar but tried to keep it normal for English users. Although it was not built into a program, similar simplifications were devised for various international uses.
+Another version, Simplified English, exists, which is a controlled language originally developed for aerospace industry maintenance manuals. It offers a carefully limited and standardised[99] subset of English. Simplified English has a lexicon of approved words and those words can only be used in certain ways. For example, the word close can be used in the phrase "Close the door" but not "do not go close to the landing gear".
+See also
+
+	Language portal
+	Writing portal
+	England portal
+	Book: English language
+Wikipedia books are collections of articles that can be downloaded or ordered in print.
+Additional, more specific, and related topics may be found at:
+Changes to Old English vocabulary
+English for Academic Purposes
+English language in Europe
+English language learning and teaching
+Language Report
+Lists of English words
+Teaching English as a foreign language
+The Adventure of English (film)
+The Story of English

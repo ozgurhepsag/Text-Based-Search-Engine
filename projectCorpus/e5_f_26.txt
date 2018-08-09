@@ -1,0 +1,700 @@
+Volume I: Curves and Surfaces
+
+Lecture Notes 0
+Basics of Euclidean Geometry, Cauchy-Schwarz inequality.
+Lecture Notes 1
+Definition of curves, examples, reparametrizations, length, Cauchy's integral formula, curves of constant width.
+Lecture Notes 2
+Isometries of Euclidean space, formulas for curvature of smooth regular curves.
+Lecture Notes 3
+General definition of curvature using polygonal approximations (Fox-Milnor's theorem).
+Lecture Notes 4
+Curves of constant curvature, the principal normal, signed curvature, turning angle, Hopf's theorem on winding number, fundamental theorem for planar curves.
+Lecture Notes 5
+Osculating circle, Kneser's Nesting Theorem, total curvature, convex curves.
+Lecture Notes 6
+The four vertex theorem, Shur's arm lemma, isoperimetric inequality.
+Lecture Notes 7
+Torsion, Frenet-Seret frame, helices, spherical curves.
+Lecture Notes 8
+Definition of surface, differential map.
+Lecture Notes 9
+Gaussian curvature, Gauss map, shape operator, coefficients of the first and second fundamental forms, curvature of graphs.
+Lecture Notes 10
+Interpretations of Gaussian curvature as a measure of local convexity, ratio of areas, and products of principal curvatures.
+Lecture Notes 11
+Intrinsic metric and isometries of surfaces, Gauss's Theorema Egregium, Brioschi's formula for Gaussian curvature.
+Lecture Notes 12
+Gauss's formulas, Christoffel symbols, Gauss and Codazzi-Mainardi equations, Riemann curvature tensor, and a second proof of Gauss's Theorema Egregium.
+Lecture Notes 13
+The covariant derivative and Lie bracket; Riemann curvature tensor and Gauss's formulas revisited in index free notation.
+Lecture Notes 14
+The induced Lie bracket on surfaces. Self adjointness of the shape operator, Riemann curvature tensor of surfaces, Gauss and Codazzi Mainardi equations, and Theorema Egregium revisited.
+Lecture Notes 15
+The definition of geodesic curvature, and the proof that it is intrinsic.
+Lecture Notes 16
+Applications of the Gauss-Bonnet theorem.
+
+Volume II: Manifolds
+
+Lecture Notes 1
+Review of basics of Euclidean Geometry and Topology. Proofs of the Cauchy-Schwartz inequality, Heine-Borel and Invariance of Domain Theorems.
+Lecture Notes 2
+Definition of manifolds and some examples.
+Lecture Notes 3
+Immersions and Embeddings. Proof of the embeddibility of comapct manifolds in Euclidean space.
+Lecture Notes 4
+Definition of differential structures and smooth mappings between manifolds.
+Lecture Notes 5
+Definition of Tangent space. Characterization of tangent space as derivations of the germs of functions. Differential map and diffeomorphisms.
+Lecture Notes 6
+Proofs of the inverse function theorem and the rank theorem.
+Lecture Notes 7
+Smooth submanifolds, and immersions. Proof of the smooth embeddibility of smooth manifolds in Euclidean space. Tangent Bundles.
+Lecture Notes 8
+Proof of Whitney's 2n+1 embedding theorem.
+Lecture Notes 9
+Regular values, proof of fundamental theorem of algebra, Smooth manifolds with boundary, Sard's theorem, and proof of Brouwer's fixed point theorem.
+Lecture Notes 10
+Proof of Sard's theorem (not yet typeset, but contains some exercises).
+Lecture Notes 11
+Various definitions of orientability and the proof of their equivalence. Proof of the nonorientability of the Mobius strip and the nonembeddability of the real projective plane in R3. Proof that RPn is oreintable for n odd and is not orientable for n even.
+Lecture Notes 12
+Definition of a Riemannian metric, and examples of Riemannian manifolds, including quotients of isometry groups and the hyperbolic space. The notion of distance on a Riemannian manifold and proof of the equivalence of the metric topology of a Riemannian manifold with its original topology.
+Lecture Notes 13
+Integration on manifolds, definition of volume, and proof of the existence of partition of unity.
+Lecture Notes 14
+Connections, covariant derivative, parallel translations, and geodesics. Proof of the existence and uniqueness of geodesics.
+Lecture Notes 15
+Riemannian connections, brackets, proof of the fundamental theorem of Riemannian geometry, induced connection on Riemannian submanifolds, reparameterizations and speed of geodesics, geodesics of the Poincare's upper half plane.
+Lecture Notes 16
+Exponential map and geodesic flow.
+The description in the course guide: "Introduces the basic notions and techniques of modern algebraic geometry. Algebraic sets, Hilbert's Nullstellensatz and varieties over algebraically closed fields. We relate varieties over the complex numbers to complex analytic manifolds. For varieties of dimension one (i.e. curves) we discuss the genus, divisors, linear series, line bundles and the Riemann-Roch theorem." Johan de Jong will be teaching the follow-up course in the spring. The class is in 24-407.
+Here are various notes in dvi, ps, and pdf formats. (If you would like tar archives, just let me know; due to limited diskspace, I had to remove them from this page.) I've added all the corrections I've found (or been told about) on Dec. 30, 1999, so they are in as final form as they'll ever be.
+On the first day (Sept. 9), I gave out two handouts, one with information about the course (dvi, ps, or pdf), and one with fun problems in algebraic geometry to pique your interest (dvi, ps, or pdf). 
+Here's a rather detailed summary of the first lecture (dvi, ps, or pdf).
+On the second day (Sept. 14), I gave out the first problem set (dvi, ps, or pdf), due in class on Sept. 21. 
+Here's a detailed summary of the second lecture (dvi, ps, or pdf).
+Here's a detailed summary of the third lecture (dvi, ps, or pdf).
+Here's a detailed summary of the fourth lecture (dvi, ps, or pdf). I'm planning on revising it slightly in light of some good questions in class, and reposting it here. But there won't be any really substantive changes. 
+Here's the second problem set (dvi, ps, or pdf), due in class on Sept. 28.
+Here's a detailed summary of the fifth lecture (dvi, ps, or pdf) (Sept. 23).
+Here's a detailed summary of the sixth lecture (dvi, ps, or pdf) (Sept. 28). 
+Here's the third problem set (dvi, ps, or pdf), including minor corrections. By popular demand, it will be due in class on Thursday Oct. 7 (not Tuesday Oct. 5 as it says on the earlier version of the set).
+Here's a detailed summary of the seventh lecture (dvi, ps, or pdf) (Sept. 30).
+Here's a detailed summary of the eighth lecture (dvi, ps, or pdf) (Oct. 5). Note corrections to minor errors in ps3, that I mentioned in my e-mail of Oct. 5.
+Here's the ninth lecture (dvi, ps, or pdf) (Oct. 7). 
+Here's the fourth problem set (dvi, ps, or pdf), due Oct. 14. Don't do the scheme problems on the version handed out in class; they will reappear next week (after I introduce schemes).
+Here's the tenth lecture (dvi, ps, or pdf) (Oct. 12). It was an optional lightning-fast introduction to schemes. We'll return to prevarieties on Thursday.
+Here's the eleventh lecture (dvi, ps, or pdf) (Oct. 14). 
+Here's the fifth problem set (dvi, ps, or pdf), due Oct. 21.
+Here's the twelfth lecture (dvi, ps, or pdf) (Oct. 19).
+Here's the thirteenth lecture (dvi, ps, or pdf) (Oct. 21). 
+Here's the sixth problem set (dvi, ps, or pdf), due Oct. 28.
+Here's the fourteenth lecture (dvi, ps, or pdf) (Oct. 26).
+Here's the fifteenth lecture (dvi, ps, or pdf) (Oct. 28). 
+Here's the seventh problem set (dvi, ps, or pdf), minus 2 figures (which are in Hartshorne p. 36), due Nov. 4.
+Here's the sixteenth lecture (dvi, ps, or pdf) (Nov. 2).
+Here's the seventeenth lecture (dvi, ps, or pdf) (Nov. 4). 
+Here's the eighth problem set (dvi, ps, or pdf), due Nov. 11 (at noon, at my office 2-271).
+Here's the eighteenth lecture (dvi, ps, or pdf) (Nov. 9). 
+Here's the ninth problem set (dvi, ps, or pdf), due at some point in the indefinite future.
+No class on November 11.
+Here's the nineteenth lecture (dvi, ps, or pdf) (Nov. 16).
+Here's the twentieth lecture (dvi, ps, or pdf) (Nov. 18). 
+Here's the tenth problem set (dvi, ps, or pdf), due at some point in the indefinite future (probably Tues. Nov. 30).
+Here's the twenty-first lecture (dvi, ps, or pdf) (Nov. 23).
+Here's the twenty-second lecture (dvi, ps, or pdf) (Nov. 30). Owen Jones from Imperial College London has caught these typos. (Thanks Owen!) On the second page in the paragraph beginning "let's consider this as a rational" I have "g_0 (z_0) = f_{01} f_1 (y_0)" but the f_1 should be a g_1. In the same paragraph at the end of that line of working, "(z_0 - 1)" should be "(1 - z_0)". On page 4 of the same document in the paragraph starting "Now we'll deal" we have P^1 injecting into P^m, when we actually mean P^n.
+Here's the twenty-third lecture (dvi, ps, or pdf) (Dec. 2). Owen points out: Just under the definition of the Picard group I've forgotten the inverses when defining the mth tensor power of an invertible sheaf for m negative. 
+Here's the eleventh problem set (dvi, ps, or pdf), due Thurs. Dec. 9. (Thanks to a good question in Thursday's class, I've added a small part to problem 4.)
+Here's the twenty-fourth lecture (dvi, ps, or pdf) (Dec. 7). 
+Here's the twelfth problem set (dvi, ps, or pdf), due Monday Dec. 13 (in my office at noon). (In the version handed out, I omitted two dr's from problem 2.)
+Here's the twenty-fifth (and final) lecture (dvi, ps, or pdf) (Dec. 9). (Missing table of contents.)
+Here's a proof of Riemann-Roch and Serre duality (for curves) that I gave in the Baby Algebraic Geometry Seminar (dvi, ps, or pdf) (Feb. 11), that fits well at the end of these notes. (Later this week, after I've had a chance to make corrections, I'll put all of these notes in a tarred file for ease of downloading.)
+WARNING: These notes are not intended to be absolutely complete; they're a cleaned-up version of my notes to myself for each class. You will often need to supplement them by looking in references, or asking me questions. Also, I hope to correct errors in the notes every so often, but only when I have time (which isn't often). I'm hoping that access to these notes (errors and all) is better than access to no notes.
+Some fun questions that came up in discussions with Anders Buch (who is teaching this course in fall 2000). Is every affine open subscheme of an affine scheme a distinguished open? Given a morphism from an affine scheme to another scheme, must the image necessarily lie in an affine open of the target? (For answers, just ask.)
+Here are other links:
+The notes to Olivier Debarre's introductory course in algebraic geometry are available from his homepage (in french).
+The notes to Igor Dolgachev's introductory course in algebraic geometry are available from his lecture notes page.
+Bernd Sturmfels and Greg Smith developed some great computational problems to accompany an introductory course. They are available here.
+Back to my home page.
+Ravi Vakil 
+Department of Mathematics Rm. 2-271 
+Massachusetts Institute of Technology 
+77 Massachusetts Ave. 
+Cambridge MA USA 02139 
+Phone:             617-253-2683       (but e-mail is better) 
+Fax: 617-253-4358 
+Email: vakil@math.mit.edu
+Since I'm not an algebraic geometer, I don't know whether I'm qualified to comment. But if I am, I've got to disagree about Hartshorne. Every time I open my copy, I think "God, this makes algebraic geometry look unappetizing". Maybe if I worked through it systematically I'd like it. But as a reference for a non-expert, it's pretty off-putting, I find. – Tom Leinster Oct 25 2009 at 16:02	
+8	 
+Let me present my perspective on "Hartshorne is best issue". It's certainly very systematic with lots of exercises and a wonderful reference book, but it's only useful to people who somehow got the motivation to study abstract algebraic geometry, not as the first book. – Ilya Nikokoshev Oct 25 2009 at 21:52	
+15	 
+I can believe it's a wonderful reference, but I've found it unsatisfying at the conceptual level. Two examples: 1. He never mentions that the category of affine schemes is dual to the category of rings, as far as I can see. I'd expect to see that in huge letters near the definition of scheme. How could you miss that out? 2. He puts the condition "F(emptyset) is trivial" into the definition of presheaf, when really it belongs in the definition of sheaf. That's a small thing, but hinders the reader from getting a good understanding of these important concepts. – Tom Leinster Oct 27 2009 at 4:50	
+6	 
+Even worse than that, his construction of the structure sheaf basically rigs it so the stalks are the localizations at the primes, and doesn't even try to explain what's going on. There's no motivation, and it's not even described in a theorem or definition or theorem/definition. The reduced induced closed subscheme is introduced in an example, etc. It's not a book that you can read, it's a book that you have to work through. – Harry Gindi Dec 17 2009 at 3:50	
+16	 
+-1 for "I think (almost) everyone agrees that Hartshorne's Algebraic Geometry is still the best." It may be a decent reference that one takes with oneself on a journey for the case one should need some result, but as a textbook it is useless. – darij grinberg Jun 1 2010 at 20:54	
+show 5 more comments
+27 Answersoldestnewestvotes
+32
+
+I think the best "textbook" is Ravi Vakil's notes:
+
+http://math.stanford.edu/~vakil/0708-216/
+
+http://math.stanford.edu/~vakil/0910-216/
+
+link|flag|cite
+answered Oct 25 2009 at 13:43
+Kevin Lin
+community wiki
+1	 
+Professor Vakil has informed people at his site that this year's version of the notes will be posted in September at his blog.I think these notes are quickly becoming legendary,like Mumford's notes were before publication. A super,2 year long graduate course using totally free materials could begin with Fulton and then move on to Vakil's notes. – Andrew L Jul 7 2010 at 5:38	
+30
+
+Liu wrote a nice book, which is a bit more oriented to arithmetic geometry. (The last few chapters contain some material which is very pretty but unusual for a basic text, such as reduction of algebraic curves.)
+
+link|flag|cite
+answered Oct 25 2009 at 10:39
+Wanderer
+community wiki
+4	 
+I actually love Liu's approach. – Barbara Jul 7 2010 at 5:56	
+28
+
+Perhaps this is cliché, but I recommend EGA (links to full texts: I, II, III(1), III(2), IV(1), IV(2), IV(3), IV(4)).
+
+I know it's a scary 1800 pages of French, but
+
+It's really easy French. I would describe myself as not knowing any French, but I can read EGA without too much trouble.
+It's extremely clear. The proofs are usually very short because the results are very well organized.
+It's the canonical reference for algebraic geometry. I assure you it is not 1800 pages of fluff.
+I've found it quite rewarding to to familiarize myself with the contents of EGA. Many algebraic geometry students are able to say with confidence "that's one of the exercises in Hartshorne, chapter II, section 4." It's even more empowering to have that kind of command over a text like EGA, which covers much more material with fewer unnecessary hypotheses and with greater clarity. I've found this combined table of contents to be useful in this quest.
+
+link|flag|cite
+answered Oct 26 2009 at 0:38
+Anton Geraschenko??
+community wiki
+9	 
+Some time ago I had the idea of starting an EGA translation wiki project. The Berkeley math dept requires its grad students to pass a language exam which consists of translating a page of math in French, German, or Russian into English. I'm sure that many other schools have similar requirements. So every year, we have hundreds of grad students translating a page of math into English. Why not produce something useful with those man-hours? In lieu of a language exam, have the students translate a few pages of EGA. We'd be able to produce a translation of EGA and other works fairly quickly. – Kevin Lin Dec 17 2009 at 12:18	
+6	 
+"The proofs are usually very short because the results are very well organized." This is only one half of the truth!! When I have to look up something in EGA, it's like an infinite tree of theorems which I have to walk up. Every step seems to be trivial, yeah. I don't get the point till I work it out by myself. I'm really envious of the people who learn directly from the master Grothendieck. – Martin Brandenburg Feb 2 2010 at 0:08	
+3	 
+Excuse me Anton, but you have very perverse sense of what constitutes a textbook. EGA isn't any more textbook of algebraic geometry than Bourbaki is a textbook of mathematics. – Victor Protsak Jun 2 2010 at 1:04	
+6	 
+@Victor: I don't understand your objection. Could you explain in what ways EGA does not constitute a textbook? You certainly don't need to already know algebraic geometry to read it. Reading it, you will certainly learn algebraic geometry. Is your objection that there aren't any exercises? Is it that EGA also covers a lot of commutative algebra, which you'd rather think of as a separate subject? Is it the length? Why is it any worse than Eisenbud's 800 page commutative algebra book plus Griffiths & Harris' 900 page algebraic geometry book? – Anton Geraschenko? Jun 2 2010 at 16:17	
+6	 
+It's a research monograph (and it's unfinished, by the way). It does build the subject from the ground up, just like Bourbaki's "Elements of mathematics" builds mathematics from the ground up, but it is less pedagogical by comparison (which is understandable). The fact that there are no exercises in it and the manner in which it was written are probably reflections of its function. Note that I don't object that it's a good reference on the foundations of algebraic geometry; but to call it a textbook, and even nominate it as a best AG textbook, is simply preposterous. – Victor Protsak Jun 3 2010 at 17:59	
+show 4 more comments
+27
+
+I'm a fan of The Geometry of Schemes by Eisenbud and Harris. Its great for a conceptual introduction that won't turn people off as fast as Hartshorne. However, it barely even mentions the concept of a module of a scheme, and I believe it ignores sheaf cohomology entirely.
+
+link|flag|cite
+answered Oct 25 2009 at 13:47
+Greg Muller
+community wiki
+2	 
+It does, but it also talks about representability of functors, and does a lot of basic constructions a lot more concretely and in more detail than Hartshorne. – Charles Siegel Oct 25 2009 at 14:53	
+4	 
+Oh, I'm a big fan of the book. I'm just warning that if you read it all the way through, you still won't know the 'basics' of algebraic geometry. – Greg Muller Oct 25 2009 at 16:14	
+2	 
+Too few textbooks motivate mathematical machinery (not just in AG), so this book really stands apart for that reason. I just wish they kept the original title, Why Schemes? – Thierry Zell Aug 18 2010 at 15:53	
+22
+
+Shafarevich wrote a very basic introduction, it's used in undergraduate classes in algebraic geometry sometimes
+
+Basic Algebraic Geometry 1: Varieties in Projective Space
+
+also, for a more computational point of view
+
+Ideals, Varieties, and Algorithms: An Introduction to Computational Algebraic Geometry and Commutative Algebra
+
+And the followup by the same authors
+
+Using Algebraic Geometry
+
+link|flag|cite
+answered Oct 25 2009 at 11:03
+Michael Hoffman
+community wiki
+4	 
+The Cox, Little, O'Shea books are what I use when introducing the subject to someone with less background, or more concrete interests. They tend to work very well (advising a freshman through IVA this semester, actually.) – Charles Siegel Oct 25 2009 at 14:25	
+5	 
+Shafarevich also has a Volume 2, on schemes and advanced topics. I'd say that both books are suitable for a graduate-level introduction, and are my vote for best algebraic geometry textbook. – Alison Miller Oct 25 2009 at 20:27	
+2	 
+Yes, it might be good idea to include volume 2 in the answer as well, the book is highly readable. – Ilya Nikokoshev Oct 25 2009 at 22:02	
+1	 
+@ Alison I second your vote,Alison. – Andrew L Jun 1 2010 at 21:16	
+21
+
+I think Algebraic Geometry is too broad a subject to choose only one book. But my personal choices for the BEST BOOKS are
+
+UNDERGRADUATE: Beltrametti et al. "Lectures on Curves, Surfaces and Projective Varieties" which starts from the very beginning with a classical geometric style. Very complete (proves Riemann-Roch for curves in an easy language) and concrete in classic constructions needed to understand the reasons about why things are done the way they are in advanced purely algebraic books. There are very few books like this and they should be a must to start learning the subject.
+
+HALF-WAY: Shafarevich - "Basic Algebraic Geometry" vol. 1 and 2. They are the most complete on foundations and introductory into Schemes so they are very useful before more abstract studies. But the problems are almost impossible.
+
+GRADUATE FOR ALGEBRISTS AND NUMBER THEORISTS: Liu Qing - "Algebraic Geometry and Arithmetic Curves". It is a very complete book even introducing some needed commutative algebra and preparing the reader to learn arithmetic geometry like Mordell's conjecture, Faltings' or even Fermat-Wiles Theorem (If it were not out of stock, I would have said Iitaka's "Algebraic Geometry. Birational Geometry of Algebraic Varieties" because it is a book very similar to Hartshorne but it proves results that the latter leaves as problems).
+
+GRADUATE FOR GEOMETERS: Griffiths; Harris - "Principles of Algebraic Geometry". By far the best for a complex-geometry-oriented mind. Also useful coming from studies on several complex variables.
+
+ONLINE NOTES: Gathmann - "Algebraic Geometry" which can be found here. Just amazing notes; short but very complete, dealing even with schemes and cohomology and proving Riemann-Roch. It is the best free book you need to get enough algebraic geometry to understand the other titles.
+
+BEST ON SCHEMES: Go¨rtz; Wedhorn - Algebraic Geometry I, Schemes with Examples and Exercises. Tons of stuff on schemes; more complete than Mumford's Red Book. It does a great job complementing Hartshorne's treatment of schemes, above all because of the more solvable exercises.
+
+UNDERGRADUATE ON ALGEBRAIC CURVES: Fulton - "Algebraic Curves, an Introduction to Algebraic Geometry" which can be found here. It is a classic and although the flavor is clearly of typed notes, it is by far the shortest and manageable book on curves, which serves as a very nice introduction to the whole subject. It does everything that is needed to prove Riemann-Roch for curves.
+
+GRADUATE ON ALGEBRAIC CURVES: Arbarello; Cornalba; Griffiths; Harris - "Geometry of Algebraic Curves" vol 1 and 2. This one is focused on the reader, therefore many results are stated to be worked out. So some people find it the best way to really master the subject. Besides, the vol. 2 has finally appeared making the two huge volumes a complete reference on the subject.
+
+INTRODUCTORY ON ALGEBRAIC SURFACES: Beauville - "Complex Algebraic Surfaces". I have not found a quicker and simpler way to learn and clasify algebraic surfaces. The background needed is minimum compared to other titles.
+
+ADVANCED ON ALGEBRAIC SURFACES: Badescu - "Algebraic Surfaces". Excellent complete and advanced reference for surfaces. Very well done and indispensable for those needing a companion, but above all an expansion, to Hartshorne's chapter.
+
+ON MODULI SPACES AND DEFORMATIONS: Hartshorne - "Deformation Theory". Just the perfect complement to Hartshorne's main book, since it did not deal with these matters, and other books approach the subject from a different point of view (e.g. geared to complex geometry or to physicists) than what a student of AG from Hartshorne's book may like to learn the subject.
+
+ON GEOMETRIC INVARIANT THEORY: Mumford; Fogarty; Kirwan - "Geometric Invariant Theory". Simply put, it is still the best and most complete. Besides, Mumford himself developed the subject. Alternatives are more introductory lectures by Dolgachev.
+
+ON INTERSECTION THEORY: Fulton - "Intersection Theory". It is the standard reference and is also cheap compared to others. It deals with almost all the material needed for a serious student going beyond Hartshorne; it is a good reference for the use of the language of characteristic classes in algebraic geometry.
+
+ON HIGHER-DIMENSIONAL VARIETIES: Debarre - "Higher Dimensional Algebraic Geometry". The main alternative to this title is Kollar/Mori "Birational Geometry of Algebraic Varieties" but is regarded as much harder to understand by many students (and even professors).
+
+link|flag|cite
+edited Mar 2 at 2:17
+Javier Álvarez
+community wiki
+3 revisions
+2	 
+I agree with your assessment of the Go¨rtz + Wedhorn book - I'm really learning a lot from it. – Zev Chonoles Mar 2 at 3:29	
+1	 
+I agree with your point of view about Griffiths and Harris, its really beautiful. – George Jul 12 at 11:24	
+20
+
+At a lower level then Hartshorne is the fantastic "Algebraic Curves" by Fulton. It's available on his website.
+
+link|flag|cite
+answered Dec 17 2009 at 1:25
+Grétar Amazeen
+community wiki
+1	 
+This is a terrific book from what I've read of it and it will be my first choice when I start seriously relearning this material. – Andrew L Jul 7 2010 at 5:31	
+16
+
+I've been teaching an introductory course in algebraic geometry this semester and I've been looking at many sources. I've found that Milne's online book (jmilne.org) is excellent. He gives quite a thorough treatment of the theory of varieties over an algebraic closed field. The book is very complete and everything seems to be done "in the nicest way".
+
+link|flag|cite
+answered Oct 25 2009 at 11:33
+Joel Kamnitzer
+community wiki
+15
+
+The book An Invitation to Algebraic Geometry by Karen Smith et al. is excellent "for the working or the aspiring mathematician who is unfamiliar with algebraic geometry but wishes to gain an appreciation of its foundations and its goals with a minimum of prerequisites," to quote from the product description at amazon.com.
+
+link|flag|cite
+edited Dec 17 2009 at 13:27
+Alberto García-Raboso
+community wiki
+2 revisions, 2 users
+Richard Stanley 67%
+12
+
+Kenji Ueno's three-volume "Algebraic Geometry" is well-written, clear, and has the perfect mix of text and diagrams. It's undoubtedly a real masterpiece- very user-friendly.
+
+link|flag|cite
+answered Dec 17 2009 at 2:31
+Daniel Moskovich
+community wiki
+I haven't seen it yet,but I've heard a lot of nice things about it from some friends at Oxford,where apparently it's quite popular. – Andrew L Jun 1 2010 at 21:11	
+11
+
+I enjoyed Griffiths-Harris a lot.
+
+link|flag|cite
+answered Oct 25 2009 at 10:26
+Ilya Nikokoshev
+community wiki
+3	 
+How about the wrong definition of a sheaf which survived all editions of Griffiths-Harris inlcuding Russian translation (they extend from compatible pairs, not arbitrary compatible families of local sections: thus the non-sheaf examples like presheaf of bounded functions would do). – Zoran Škoda Oct 29 at 21:15	
+10
+
+Joe Harris's book Algebraic Geometry might be a good warm-up to Hartshorne.
+
+link|flag|cite
+answered Oct 25 2009 at 13:42
+John D. Cook
+community wiki
+10
+
+Miles Reid's Undergraduate Algebraic Geometry is an excellent topical (meaning it does not intend to cover any substantial part of the whole subject) introduction. In particular, it's the only undergraduate textbook that isn't commutative algebra with a few pictures thrown in.
+
+link|flag|cite
+answered Dec 17 2009 at 18:04
+Alexander Woo
+community wiki
+I agree,both of Reid's texts are fantastic introductions.But we don't really have a good,deep text for advanced students yet.Hartshorne-I'm sorry,Professor Hartshorne-is ridiculously abstract and has acted as a torture device for graduate students for far too long. – Andrew L Jun 1 2010 at 21:10	
+The uniqueness claim is a bit strong: what about Mumford, for example? – Victor Protsak Jun 2 2010 at 1:00	
+Not to mention Qing Liu's book... – Andy Putman Jun 2 2010 at 2:50	
+Mumford's Red Book-the second edition,at least-is quite good and while not easy,is quite a bit easier then Harsthorne.At least,I think so. – Andrew L Jun 2 2010 at 3:53	
+2	 
+The only differences between the first and second editions of Mumford's Red Book are the numerous typographical errors introduced during its incompetent TeXing... – Andy Putman Jun 4 2010 at 3:36	
+show 1 more comment
+9
+
+I second Shafarevitch's two volumes on Basic Algebraic Geometry: the best overview of the subject I have ever read.
+
+Another very nice book is Miranda's Algebraic Curves which manages to get a long way (Riemann-Roch etc) without doing sheaves and line bundles until the end. Of course, by then, you are really wanting sheaves and line bundles!
+
+link|flag|cite
+answered Oct 25 2009 at 21:49
+Fran Burstall
+community wiki
+I've also heard very great things about Miranda's book. It clearly is a less advanced book, but I've heard it makes great preparation for understanding more modern algebraic geometry (e.g. Hartshorne). – Davidac897 Jan 3 2010 at 22:26	
+Miranda looks very good,although I haven't read it carefully yet. And Shafarevitch right now,to me,is your best bet for serious graduate students
+. Beautifully written,comprehensive and not too abstract. – Andrew L Jun 1 
+the book back from Springer and the book is available for free online.
+
+Another book was supposed to be written that built on the "Red book" including cohomology. After many years, I think this is near completion; see Algebraic Geometry 2. Whlile many of the above books are excellent, it's a surprise that these books aren't the standard.
+
+link|flag|cite
+answered Jul 7 2010 at 4:37
+kh
+community wiki
+I would think Algebraic Geometry 2 would be the successor to Algebraic Geometry 1 and not Red Book. Also any news on when Algebraic Geometry 2 will be published? – Najdorf Feb 5 at 11:42	
+6
+
+Also Eisenbud.
+
+Every algebraic geometer needs to know at least some commutative algebra. And this is a very good introductory textbook, which teaches commutative algebra rigorously but at the same time provides a good geometric explanation.
+
+link|flag|cite
+edited Oct 25 2009 at 19:09
+Ilya Nikokoshev
+community wiki
+2 revisions
+This isn't really an algebraic geometry textbook. I think it is useful for algebraic geometers, but you should add an explanation of what is useful about it. As is, the only people who can appreciate this answer are the people who already know what you're trying to tell them. – Anton Geraschenko? Oct 25 2009 at 18:46	
+Hope this makes my post more clear. – Ilya Nikokoshev Oct 25 2009 at 19:25	
+Yes, that's much better. Thanks. – Anton Geraschenko? Oct 25 2009 at 21:49	
+Personally, I prefer Matsumura's "Commutative Ring Theory" to Eisenbud's book. Only problem I have with it, is the slightly annoying layout. – Lars Oct 29 2009 at 22:27	
+2	 
+Eisenbud's book is wonderfully written and a pleasure to read,but it's too damn long and has everything in the world in it,making it really tough to focus with. It joins Spivak and Lee's SMOOTH MANIFOLDS with the dubious distinction of being books everyone loves,but can't really use for coursework. – Andrew L Jul 7 2010 at 5:41	
+show 1 more comment
+6
+
+I believe the issue of "which book is best" is extremely sensitive to the path along which one is moving into the subject. If your background is in differential geometry, complex analysis, etc, then Huybrechts' Complex Geometry is a good bridge between those vantage points and a more algebraic geometric landscape. Obviously I'm taking liberties with the question, as I wouldn't advertise Huybrechts' book as an algebraic geometry text in the strict sense. However, I think it can, for certain people, help to ease the transition into one. It's also very well written, in my opinion. (I should also emphasize that I'm not saying this is the only purpose of the book: its content is extremely valuable for other reasons, with material on vector bundles, SUSY, deformations of complex structures, etc.)
+
+As for dedicated algebraic geometry texts other than Hartshorne, I also vote for Ravi Vakil's notes. They're excellent.
+
+link|flag|cite
+answered Oct 27 2009 at 2:37
+1--
+community wiki
+1	 
+If Griffiths-Harris is "algebraic geometry" then surely Huybrechts is as well! :) Even if your aim is to learn more abstract scheme theory, I think it's very important and helpful (at least it has been for me) to gain some intuition by learning about complex manifolds and varieties. It also provides some historical context. – Kevin Lin Dec 17 2009 at 11:59	
+Steven said what I think way better than I can. – Barbara Jul 7 2010 at 6:00	
+5
+
+Also lots of things on jmilne.org
+
+link|flag|cite
+answered Oct 25 2009 at 10:28
+Ilya Nikokoshev
+community wiki
+5
+
+Macdonald "Algebraic geometry: Introduction to schemes" (not only about noetherian schemes), Dieudonné's two booklets with focus on the motivation and history, the first chapter in Demazure, Gabriel "Groupes algebraique I" (recommended here to undergraduates as intro text), Mumford's "red book".
+
+link|flag|cite
+answered Oct 25 2009 at 10:38
+Thomas Riepe
+community wiki
+The Macdonald book is really good. – Charles Staats Aug 6 2010 at 22:48	
+4
+
+If you know french, you might enjoy David Harari's course notes. These are the notes for a basic course in schemes and cohomology of sheaves. He combines the best parts of Hartshorne with the best parts of Liu's book. Hartshorne doesn't always do things in the nicest possible way, and the same is of course true for Liu.
+
+I agree that Vakil's notes are great, since they also contain a lot of motivation, ideas and examples. But does anyone know where to get the files with this year's notes? I only found the notes of previous years on the web.
+
+link|flag|cite
+answered Oct 25 2009 at 19:50
+Wanderer
+community wiki
+5	 
+He's not posting them online yet; he's been handing out chunks of notes on various topics, but he wants to edit them more before posting. – Rebecca Bellovin Oct 25 2009 at 21:25	
+4
+
+I'm starting to like this book, by Görtz and Wedhorn. (and hoping in volume II soon...) Similarly to Qing Liu's wonderful book, it seems to me to be a good compromise between Hartshorne and EGA.
+
+link|flag|cite
+answered Aug 18 2010 at 10:55
+babubba
+community wiki
+2
+
+Mukai's Introduction to Invariants and Moduli surely deserves to be on this list.
+
+link|flag|cite
+answered Oct 25 2009 at 22:05
+anonymous
+community wiki
+2
+
+About HArtshorne and Griffith, I think a comparison between the two texts is misleading. The first is a introduction to the "Grothendieck ioga" where geometrical classical idea are "immersed" in the more large but abstract mathematical world of schemas. But also if the Complex differential manifold style of Griffith is "more concrete" is very different from the "Algebraic Geometry" idea, also if it is a deep study of it.
+
+As categorist I love Grothendiek, but I find Grothendieck work fantastic in itself (like a music), also if I never understand nothing about Geometry Geometry while studing or readind EGA or some SGA.
+
+FOr understant what is "ALgebraic Geometry" I had to read this
+
+Beltrametti-Carletti-Gallarati-Monti Bragadin, Letture su curve, superficie e varietà proiettive speciali, Boringhieri
+
+Beltrametti-Carletti-Gallarati-Monti Bragadin, Lezioni di geometria analitica e proiettiva, Boringhieri
+
+(sorry, these are in Italian)
+
+link|flag|cite
+answered Jun 1 2010 at 20:02
+Buschi Sergio
+community wiki
+1
+
+I've found something extraordinary and of equally extrordinary pedigree online recently. I mentioned it briefly in response to R. Vakil's question about the best way to introduce schemes to students. But this question is really where it belongs and I hope word of it spreads far and wide from here.
+
+Last fall at MIT, Micheal Artin taught an introductory course in algebraic geometry that required only a year of basic algebra at the level of his textbook. The official text was William Fulton's Algebraic Curves, but Artin also wrote an extensive set of lecture notes and exercise sets. I found them quite wonderful and very much in the spirit of his classic textbook(By the way, simply can't wait for the second edition.).
+
+Not only has he posted these notes for download, he's asked anyone working through them to email him any errors found and suggestions for improvements.All the course materials can be found at the MIT webpage. I've also posted the link at MathOnline, of course.
+
+I don't know if most of the hardcore algebraic geometers here would recommend these materials for a beginning course. But for any student not looking to specialize in AG, I can't think of a better source to begin with. That's just my opinion. But it certainly belongs as a possible response to this question. Then again, it may be too softball for the experts,particularly those of the Grothendieck school.
+
+Here's keeping our fingers crossed that this is the beginning of the gestation of a full blown text on the subject by Artin.
+
+link|flag|cite
+edited Jul 25 2010 at 7:52
+Anweshi
+community wiki
+2 revisions, 2 users
+Andrew L 73%
+4	 
+Dear Andrew, please put spaces after your punctuation. – Anweshi Jul 25 2010 at 7:52	
+1	 
+@Anweshi: Andrew has stated before that this is due to some typesetting bug on his end. @Andrew: I took this class for most of the semester. The lecture notes were actually scribed by the students, so caveat emptor. – Qiaochu Yuan Jul 25 2010 at 9:14	
+Oh, ok. I didn't know this. Sorry, Andrew. – Anweshi Jul 25 2010 at 14:29	
+1	 
+For what it's worth, I don't really believe that there's a bug causing these issues. Looking at Andrew L's posts over time, there has been a gradual improvement in the use of correct punctuation. I find it hard to imagine a software issue with these effects. – Scott Morrison? Jul 25 2010 at 18:36	
+@To All Above: To be honest,it's really a little of both. Sometimes,the LaTeX doesn't cooperate and I'm still learning how to use it. Then again,I'm not really a stickler for grammatical etiquitte.The second observation is really not professional on my part and I'm seriously trying to make an effort to improve. @Qiaochu This is the fundamental problem with all free lecture note sources. Artin's algebra book,however,began life that way and that worked out pretty well.Let's hope he finds time to edit them and post corrected versions. – Andrew L Jul 25 2010 at 19:19	
+show 6 more comments
+0
+
+The word "best" is relative. If you have a strong background in commutative algebra and has had considerably exposure to algebraic geometry I would say Hartshorne would suit you. But for an introductory graduate text, I don't think so. We're using Fulton. Organization and exposition is okay, and the discussion is not as "hardcore" as that of Hartshorne. I'm surprised it didnt show up from those of you who posted here.
+
+link|flag|cite
+answered 3 hours ago
+unknown (google)
+community wiki
+1	 
+Actually, Eisenbud is on the record as saying that he wrote his tome as (to paraphrase) "the book one should have read before tackling Hartshorne's". Given the size of Eisenbud's book... – Thierry Zell 3 hours ago	
+@unknown : Do you mean Fulton's book Algebraic curves ? It has already been mentioned in several answers. I agree this is a very good book. – François Brunault 2 hours ago	
+Your Answer
+
+ Preview Math
+OpenID Login
+
+Get an OpenID
+or
+Name
+
+Email never shown
+
+Home Page
+
+
+Not the answer you're looking for? Browse other questions tagged ag.algebraic-geometry books big-list textbook-recommendation or ask your own question.
+Welcome to MathOverflow
+A place for mathematicians to ask and answer questions.
+tagged
+ag.algebraic-geometry × 3546
+big-list × 314
+books × 112
+textbook-recommendation × 53
+asked
+1 year ago
+viewed
+12,469 times
+latest activity
+today
+Tip: Google's search is often better than MathOverflow's. You can restrict your search to MO using the site: keyword. Eg: site:http://mathoverflow.net "can't argue with that" See more tips and tricks.
+
+
+MathJax trouble? (Re)process math with jsMath.
+Related
+Good introductory text book on Matroid Theory?
+Undergraduate Differential Geometry Texts
+what is the best algebraic topology book for dummies
+Homological Algebra texts
+Text for an introductory Real Analysis course.
+Alternative Undergraduate Analysis Texts
+Elementary Number Theory Text from a Categorical Perspective
+good books on Dirichlet’s class number formula
+Book on mathematical “rigorous” String Theory?
+A good book of functional analysis
+Book on mixed Hodge structures?
+probability and math puzzle books/references
+A book about model theory
+Good books to study category theory?
+A book on Banach Manifold for a Dynamicist
+How to write math
+You can just type LaTeX formulas between dollar signs! There are some occasional strange behaviors: see the FAQ and this meta.MO thread for details. Basic solution: if you're having problems with the preview (or the post looks wrong), put backticks around any math that contains underscores or asterisks. E.g. write `$f'_n=g_{n+1}$`.
+
+question feed
+User contributed content licensed under the Creative Commons Attribution-Share Alike 3.0 Unported License with attribution required
+This page collects all of the expository notes I have written on algebraic geometry. These include self-contained summaries of particular topics, and looser lecture notes offering motivation for concepts or glimpses of more advanced topics, as well as cheat sheets of results and definitions. Many of the notes are somewhat rough, and no guarantees are made as to accuracy. Also, notes from my courses (Fall 2006, Spring 2007, Fall 2009, Winter 2010) may reference problem sets or such. 
+
+
+Topic Overviews
+
+These notes give self-contained introductions to various topics in foundational algebraic geometry, generally attempting to give arguments or references for all assertions. The earlier notes deal with varieties from a semi-classical perspective, while the later ones deal with schemes. 
+Recovering geometry from categories
+Explains how the underlying set and Zariski topology of a variety can be recovered solely from the category.
+
+Points and morphisms
+Discusses the classical and scheme-theoretic perspective on points and morphisms, and the relationship between them, in both the affine and projective cases.
+
+Varieties via atlases
+Gives a definition of abstract varieties over algebraically closed fields using atlases.
+
+Nonsingular curves
+A basic presentation of nonsingular curves over an algebraically closed field, including quasiprojectivity and the nonsingular projective compactification. To this end, discusses normality and normalization.
+
+Chevalley's theorem and complete varieties
+Gives a proof of Chevalley's theorem on the constructibility of the image of a morphism of varieties. Discusses completness, and gives the variety version of the valuative criterion, in terms of extending morphisms from nonsingular curves.
+
+Differential forms
+A presentation of differential forms on abstract varieties over algebraically closed fields, with applications to the ramification of a morphism of nonsingular curves.
+
+Secant varieties and curves in projective space
+A brief discussion of secant varieties, applied to projective of curves from higher-dimensional projective space to three-space and to the plane.
+
+Power series and nonsingular points
+A discussion of the complete local ring of a variety, and its basic consequences for singularity and nonsingularity, including the fact that a nonsingular point is a local complete intersection.
+
+Complex varieties and the analytic topology
+Introduces the analytic topology on complex (pre)varieties, and proves basic properties, including the equivalence of Hausdorff and the variety condition, and of compact and complete.
+
+Analytic functions and nonsingularity
+Defines analytic spaces and complex manifolds via charts, and proves that a complex variety yields a complex manifold if and only if it is nonsingular.
+
+Yoneda's lemma and representable functors
+Introduces representable functors, motivated by the desire to formalize the notion of a moduli space. Introduces variants to obtain more general universal properties.
+
+Zariski sheaves and the fiber product
+Introduces Zariski sheaves and the basic criterion for representability by finding a cover by representable open subfunctors. Applies this to proving the existence of fiber products. Briefly discusses the behavior of fiber products of schemes.
+
+Valuative criteria for separatedness and properness
+An essentially self-contained presentation of the valuative criteria which attempts to present minimal hypotheses, and organize the ideas behind the proofs as clearly as possible.
+
+Dimension theory
+Discusses the pathologies of dimension theory even for Noetherian schemes, and ways in which one can phrase dimension-theoretic arguments so that they go through nonetheless.
+
+Closed immersions
+An almost completely general criterion for closed immersions in terms of injectivity of points and tangent vectors, with conclusions drawn for varieties and curves, and consequent applications of Riemann-Roch.
+
+Associated points
+A development of associated points, imbedded points, and multiplicities, with an eye towards Hilbert polynomials.
+
+Hilbert polynomials
+Hilbert polynomials, degrees, and a generalized Bezout's theorem.
+
+Cohomology and base change
+Collects general results on the behavior of cohomology sheaves under base change. Primarily intended to help track down references for statements more general than those found in Hartshorne.
+
+Schlessinger's criterion
+Lecture notes from the MSRI workshop on deformation theory, primarily treating Schlessinger's criterion but also including a more informal discussion of some additional topics. 
+
+
+Lecture notes
+
+These are notes based on lectures I've given in classes or elsewhere on more advanced topics in algebraic geometry. On the whole these are less comprehensive, settling for giving a conceptual sketch of the topic in question rather than providing careful definitions and statements. 
+Algebraic geometry through the lens of elliptic curve theory
+An attempt to survey as many concepts from algebraic geometry as possible via relatively elementary elliptic curve theory.
+
+Why schemes?
+An attempt to motivate scheme theory.
+
+Fixing the Zariski topology
+Gives a detailed motivation from the perspectives of point-set topology and the analytic topology for the definitions of separatedness and properness.
+
+An introduction to deformation theory
+Gives a brief overview of deformation theory as a tool of moduli theory, intended as a motivation for scheme theory and an invitation to Cech cohomology.
+
+Intersection theory
+An introduction to intersection theory, motivated mainly by enumerative geometry.
+
+The minimal model program
+A sketch of the minimal model program, focusing mainly on the surface and threefold cases.
+
+The Weil conjectures and etale cohomology
+The well-worn tale of the Weil conjectures and the consequent development of the theory of etale cohomology.
+
+Quot and Hilbert schemes
+A description of the Quot and Hilbert schemes, together with a sketch of proof of representability, and application to Hom schemes.
+
+Deformations of subschemes and morphisms
+A local description of Hilbert and Hom schemes via deformation theory.
+
+Mori's bend-and-break argument
+An overview of Mori's bend-and-break argument for the existence of rational curves on Fano varieties.
+
+Two degeneration techniques for maps of curves
+Compares and contrasts the theories of admissible covers and limit linear series. 
+Published in: Snowbird Lectures in Algebraic Geometry, 137-143, Contemporary Mathematics 388, AMS, 2005.
+
+Connections, curvature, and p-curvature
+Examines algebraic connections from both the classical and Grothendieckian point of view, including Mochizuki's definition of p-curvature in the latter setting. 
+
+
+Cheat sheets
+
+These are condensed cheat sheets collecting definitions and statements in broad categories, with citations for the proofs. For now, they are based primarily on Hartshorne, although with some substantial supplementary material from elsewhere. 
+Properties of schemes
+
+Properties of morphisms of schemes
+
+Additional results
+
+Cohomology of sheaves (including first applications of Riemann-Roch to curve theory)
+
+
+Course outline:
+Algebraic curves. Conics (or quadrics), their euclidean and affine classification over the fields of real and complex numbers. Projective plane, homogeneous coordinates, projective transformations. Lines in projective plane. Projective classification of conics. Parametrization of nondegenerate conics.
+
+Homogeneous polynomials or forms. Roots of polynomials and their multiplicities. Bézout's Theorem, proof when one of the curve is a line or a quadric. Factorization of forms vanishing along lines and nondegenerate conics. Spaces of d-forms vanishing at certain points and their dimensions. Applications to quadrics passing through 5 points and cubics passing through 9 points. Pascal's Theorem.
+
+Nodal and cuspidal cubics, their parametrization. Tangent lines. Group law on a cubic.
+
+Affine algebraic sets, their ideals. Noetherian rings. Hilbert Basis Theorem. Algebraic sets defined by ideals, their properties. Zariski topology. Termination of descending chains of algebraic sets. Irreducible algebraic sets, their relation with prime ideals. Unique decomposition of algebraic set into irreducible components.
+
+Nullstellensatz (Hilber Zero Theorem) and Weak Nullstellensatz. Proof of the Nullstellensatz assuming Weak Nullstellensatz.
+
+Polynomial functions on affine algebraic sets. Coordinate ring. Polynomials maps between affine algebraic sets. Relation between polynomial maps and coordinate ring homomorphisms. Polynomial isomorphisms. Affine varieties. Rational functions on affine algebraic sets. Regular points of rational functions. Rational maps. Dominant maps.
+
+Projective algebraic sets. Homogeneous ideals and correspondence between them and projective algebraic sets. The affine cone over a projective algebraic set. Rational functions on projective algebraic sets, rational maps between them. Regular points of rational functions and maps. Morphisms and isomorphisms. Segre embedding of the product of two projective spaces into another projective space. Finite unions, finite products, and arbitrary intersections of projective algebraic sets are again projective algebraic.
+
+Textbooks. 
+M. Reid, Undergraduate Algebraic Geometry, London Mathematical Society Student Texts, Cambridge University Press. 
+I.R. Shafarevich, Basic algebraic geometry, Springer, 1994. 
+I. Dolgacev, Introduction to Algebraic Geometry, Lecture Notes. 
+D. Mumford, The Red Book of Varieties and Schemes, Lecture Notes in Mathematics.
+Some links. 
+Lecture courses on video by Miles Reid 
+Wolfram Mathworld Pages on Algebraic Geometry 
+Wikipedia Pages on Algebraic Geometry
+Further Online Lecture Notes. 
+Elementary Algebraic Geometry by David Marker
+Old courses homepages: 
+Course 2318 - Algebraic Geometry 2009-10 by Calin Lazaroiu
+For exam-related problems look in TCD past examination papers and Mathematics department examination papers.
+
+Student Counselling Service
+
+I will appreciate any (also critical) suggestions that you may have for the course. Let me know your opinion, what can/should be improved, avoided etc. and I will do my best to follow them. Feel free to come and see me if and when you have a question about anything in this course. Or use the feedback form from where you can also send me anonymous messages.
+
+
+
